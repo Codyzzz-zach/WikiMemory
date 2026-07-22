@@ -1,0 +1,81 @@
+{
+  "setId": "evolution",
+  "description": "进化实验题集——专门验证纠正、过期、冲突和影响传播。配合 T0-T4 进化实验使用。",
+  "frozenAt": "2026-07-22",
+  "totalQuestions": 8,
+  "timeline": {
+    "T0": "摄入 01-10 章，建立初始知识状态",
+    "T1": "加入 11-20 章，形成跨领域长链",
+    "T2": "注入 Correction-L2（L²⊆L¹ 有限测度条件）",
+    "T3": "注入 Correction-Uniform（一致收敛不保证可导）",
+    "T4": "周期性 Lint，检查下游传播与回归"
+  },
+  "questions": [
+    {
+      "id": "EVO-01",
+      "timeline": "T0",
+      "question": "L² 是否总是包含于 L¹？",
+      "category": "condition-counterexample",
+      "answerabilityAt": "T0: detect-source-overclaim",
+      "expectedT0Behavior": "系统可能输出无条件 'L² 属于 L¹'（源材料的过强表述）",
+      "expectedT2Behavior": "注入纠正后应输出 '需要有限测度条件'"
+    },
+    {
+      "id": "EVO-02",
+      "timeline": "T2",
+      "question": "在有限测度空间下，L² 和 L¹ 的包含关系是什么？",
+      "category": "condition-counterexample",
+      "answerabilityAt": "T2: correct-with-counterexample",
+      "expectedT2Behavior": "应正确引用 Hölder 不等式并保留有限测度条件"
+    },
+    {
+      "id": "EVO-03",
+      "timeline": "T0",
+      "question": "一致收敛的函数列，极限函数可导吗？",
+      "category": "condition-counterexample",
+      "answerabilityAt": "T0: detect-source-overclaim",
+      "expectedT0Behavior": "系统可能输出 '一致收敛保持可导'（过强表述）",
+      "expectedT3Behavior": "注入纠正后应输出 '一致收敛保持连续但不保证可导'"
+    },
+    {
+      "id": "EVO-04",
+      "timeline": "T3",
+      "question": "什么条件下，函数列的极限函数可导？",
+      "category": "condition-counterexample",
+      "answerabilityAt": "T3: correct-with-conditions",
+      "expectedT3Behavior": "应正确列出导数序列一致收敛等附加条件"
+    },
+    {
+      "id": "EVO-05",
+      "timeline": "T4",
+      "question": "L² 是否总是包含于 L¹？需要什么条件？",
+      "category": "regression",
+      "answerabilityAt": "T4: regression-after-lint",
+      "expectedT4Behavior": "周期 Lint 后旧错误不应复发"
+    },
+    {
+      "id": "EVO-06",
+      "timeline": "T4",
+      "question": "一致收敛是否足以保证极限函数可导？",
+      "category": "regression",
+      "answerabilityAt": "T4: regression-after-lint",
+      "expectedT4Behavior": "周期 Lint 后旧错误不应复发"
+    },
+    {
+      "id": "EVO-07",
+      "timeline": "T1",
+      "question": "紧致等价于闭且有界吗？",
+      "category": "condition-counterexample",
+      "mustMentionConditions": ["Heine-Borel 依赖有限维欧氏空间"],
+      "forbiddenClaims": ["任意空间中紧致等价于闭且有界"]
+    },
+    {
+      "id": "EVO-08",
+      "timeline": "T1",
+      "question": "所有 Cauchy 列都收敛吗？",
+      "category": "condition-counterexample",
+      "mustMentionConditions": ["只在完备空间中保证"],
+      "forbiddenClaims": ["任何空间中 Cauchy 列都收敛"]
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Environment
+.env
+.env.local
+
+# Rebuildable indexes (can be reconstructed from canonical state)
+indexes/
+
+# Temporary caches and logs
+*.log
+cache/
+tmp/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/settings.json
+.idea/
+
+# === IMPORTANT ===
+# Knowledge state (wiki/, claims/, concepts/, relations/, sources/, runs/, tests/)
+# is INTENTIONALLY tracked in Git — this is "knowledge as code".
+# Only indexes/ and temp files are ignored.

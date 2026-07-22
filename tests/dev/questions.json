@@ -1,0 +1,115 @@
+{
+  "setId": "dev",
+  "description": "开发题集——公开给开发使用，可反复调试。不用于最终实验结论。",
+  "frozenAt": "2026-07-22",
+  "totalQuestions": 12,
+  "categories": {
+    "D": "单文档直接题——基本事实、定义、局部忠实度",
+    "H2": "两跳跨文档题——跨两章连接、桥接概念",
+    "C": "条件/反例题——适用条件、反例、过强概括"
+  },
+  "questions": [
+    {
+      "id": "DEV-D01",
+      "category": "D",
+      "question": "自然数的 Peano 公理试图刻画哪些基本结构？",
+      "requiredSources": ["01-number-systems"],
+      "requiredClaims": ["Peano 公理包含零元素、后继函数、归纳原理"],
+      "forbiddenClaims": ["Peano 公理包含加法运算的定义"]
+    },
+    {
+      "id": "DEV-D02",
+      "category": "D",
+      "question": "度量空间与拓扑空间分别保留了什么结构？",
+      "requiredSources": ["02-spaces"],
+      "requiredClaims": ["度量空间保留距离结构", "拓扑空间只保留开集结构"],
+      "forbiddenClaims": ["拓扑空间一定有距离"]
+    },
+    {
+      "id": "DEV-D03",
+      "category": "D",
+      "question": "逐点收敛与一致收敛的定义差别是什么？",
+      "requiredSources": ["03-sequences-limits"],
+      "requiredClaims": ["逐点收敛逐点定义极限", "一致收敛要求收敛速度一致"],
+      "forbiddenClaims": []
+    },
+    {
+      "id": "DEV-D05",
+      "category": "D",
+      "question": "函数、映射、变换和算子之间如何区分？",
+      "requiredSources": ["05-functions-mappings"],
+      "requiredClaims": ["函数/映射是同一概念不同语境", "算子是函数空间到函数空间的映射"],
+      "forbiddenClaims": []
+    },
+    {
+      "id": "DEV-D09",
+      "category": "D",
+      "question": "Banach 空间与 Hilbert 空间的区别是什么？",
+      "requiredSources": ["09-functional-analysis"],
+      "requiredClaims": ["Banach 是完备赋范空间", "Hilbert 是完备内积空间", "Hilbert 是 Banach 的特例"],
+      "forbiddenClaims": ["Banach 空间一定有内积"]
+    },
+    {
+      "id": "DEV-D11",
+      "category": "D",
+      "question": "π、e 和 i 在欧拉公式中如何联系？",
+      "requiredSources": ["11-constants"],
+      "requiredClaims": ["e^(iπ)+1=0", "欧拉公式统一了指数、复数与周期现象"],
+      "forbiddenClaims": []
+    },
+    {
+      "id": "DEV-H2-04",
+      "category": "H2",
+      "question": "方程根的对称性如何把求根问题转化为群论问题？",
+      "requiredSources": ["04-equations", "08-groups-rings-fields"],
+      "expectedPath": ["方程根的置换", "Galois 群", "群结构决定可解性"],
+      "requiredClaims": ["方程根的对称置换构成群", "Galois 群的结构决定方程是否可根式求解"],
+      "forbiddenClaims": []
+    },
+    {
+      "id": "DEV-H2-06",
+      "category": "H2",
+      "question": "Fourier 变换为何可以被视为函数空间中的坐标变换？",
+      "requiredSources": ["05-functions-mappings", "09-functional-analysis"],
+      "expectedPath": ["正交基分解", "函数空间坐标", "Fourier 系数"],
+      "requiredClaims": ["Fourier 变换把函数分解为正交基的线性组合"],
+      "forbiddenClaims": []
+    },
+    {
+      "id": "DEV-H2-10",
+      "category": "H2",
+      "question": "为什么 L² 既是可积函数空间又是 Hilbert 空间？",
+      "requiredSources": ["09-functional-analysis", "10-measure-integration"],
+      "expectedPath": ["平方可积", "内积定义", "完备性"],
+      "requiredClaims": ["L² 由平方可积函数组成", "L² 有自然内积", "L² 是完备的"],
+      "forbiddenClaims": ["L² 中所有函数都属于 L¹"]
+    },
+    {
+      "id": "DEV-C01",
+      "category": "C",
+      "question": "L² 是否总是 L¹ 的子集？",
+      "mustMentionConditions": ["底层测度空间条件", "有限测度是常见充分条件"],
+      "requiredClaims": ["一般情形不成立", "有限测度空间下可由 Hölder 推出"],
+      "forbiddenClaims": ["对任意测度空间 L² 都属于 L¹"],
+      "requiredSources": ["05-functions-mappings", "10-measure-integration"]
+    },
+    {
+      "id": "DEV-C02",
+      "category": "C",
+      "question": "一致收敛是否足以保证极限函数可导？",
+      "mustMentionConditions": ["需要导数序列一致收敛等附加条件"],
+      "requiredClaims": ["一致收敛保持连续性", "一致收敛不保证可导性"],
+      "forbiddenClaims": ["一致收敛一定能推出可导"],
+      "requiredSources": ["03-sequences-limits"]
+    },
+    {
+      "id": "DEV-C05",
+      "category": "C",
+      "question": "每个 Cauchy 列都收敛吗？",
+      "mustMentionConditions": ["只在完备空间中保证收敛"],
+      "requiredClaims": ["Cauchy 列收敛依赖空间完备性", "有理数空间中存在不收敛的 Cauchy 列"],
+      "forbiddenClaims": ["任何空间中 Cauchy 列都收敛"],
+      "requiredSources": ["03-sequences-limits", "02-spaces"]
+    }
+  ]
+}

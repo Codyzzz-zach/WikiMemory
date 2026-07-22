@@ -1,0 +1,505 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WGEMemory4LLM · Product Definition v1.0</title>
+  <script type="module">
+    import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: "base",
+      securityLevel: "loose",
+      themeVariables: {
+        fontFamily: "Noto Sans CJK SC, Inter, ui-sans-serif, system-ui, sans-serif",
+        primaryColor: "#ecf8f3", primaryTextColor: "#172033", primaryBorderColor: "#4b9478",
+        lineColor: "#63788f", secondaryColor: "#eef5ff", tertiaryColor: "#fff7e8", fontSize: "13px"
+      },
+      flowchart: { useMaxWidth: true, htmlLabels: false, curve: "basis" },
+      sequence: { useMaxWidth: true },
+      state: { useMaxWidth: true }
+    });
+  </script>
+  <style>
+    :root {
+      --ink:#172033; --muted:#617087; --paper:#fbfcfe; --white:#fff; --soft:#eef3f8;
+      --line:#d7e0ea; --brand:#0d5c41; --brand2:#188b64; --blue:#2f6fbd;
+      --amber:#9b6a1a; --rose:#b2485a; --violet:#6656a8; --code:#172235;
+      --shadow:0 16px 44px rgba(32,50,72,.10);
+    }
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;font-family:"Noto Sans CJK SC",Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:linear-gradient(180deg,#eaf7f1 0,#fbfcfe 34rem);line-height:1.72}
+    a{color:var(--blue);text-underline-offset:.18em}.page{max-width:1220px;margin:auto;padding:0 24px 72px}
+    header{padding:68px 0 38px}.eyebrow{display:flex;align-items:center;gap:10px;color:var(--brand);font-size:.82rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase}.eyebrow:before{content:"";width:36px;height:2px;background:var(--brand)}
+    h1{max-width:980px;margin:14px 0 0;font-size:clamp(2.25rem,5.2vw,4.2rem);line-height:1.04;letter-spacing:-.035em}.subtitle{max-width:940px;margin:24px 0 0;color:#34445a;font-size:clamp(1rem,2vw,1.28rem);line-height:1.75}
+    .definition{margin:30px 0 0;padding:24px 28px;background:#103b2f;color:#f5fffb;border-radius:12px;box-shadow:var(--shadow);font-size:1.1rem}.definition b{color:#78e4b5}
+    .meta{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}.chip{padding:7px 12px;border:1px solid #c8d8d0;border-radius:999px;background:rgba(255,255,255,.72);font-size:.86rem}.chip b{color:var(--brand)}
+    nav{display:flex;flex-wrap:wrap;gap:9px;margin:28px 0 0}nav a{padding:7px 12px;border:1px solid var(--line);border-radius:999px;background:#fff;color:#2b3a50;text-decoration:none;font-size:.88rem;font-weight:650}nav a:first-child{border-color:var(--brand);color:var(--brand)}
+    main{display:grid;gap:8px}section{padding:46px 0;border-top:1px solid var(--line)}.section-head{display:grid;grid-template-columns:minmax(150px,.38fr) minmax(0,1fr);gap:34px;align-items:start;margin-bottom:28px}.kicker{color:var(--blue);font-size:.79rem;font-weight:820;letter-spacing:.09em;text-transform:uppercase}
+    h2{margin:0;font-size:clamp(1.65rem,3vw,2.55rem);line-height:1.15}h3{margin:28px 0 10px;font-size:1.27rem;line-height:1.3}h4{margin:18px 0 8px;font-size:1.05rem;color:#2d3f56}p{margin:0 0 16px}.lead{color:#33455d;font-size:1.06rem;line-height:1.82}
+    ul,ol{padding-left:24px;margin:10px 0 18px}li{margin:6px 0}.tight li{margin:3px 0}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}.card{padding:22px 24px;border:1px solid var(--line);border-radius:10px;background:var(--white);box-shadow:0 8px 24px rgba(32,50,72,.06)}.card h3,.card h4{margin-top:0}.card .label{color:var(--brand);font-size:.76rem;font-weight:820;letter-spacing:.08em;text-transform:uppercase}
+    .callout{margin:20px 0;padding:20px 24px;border:1px solid #c5daef;border-radius:9px;background:#f4f9fe}.callout.good{border-color:#b8d9cd;background:#f2fbf7}.callout.warn{border-color:#ead5a4;background:#fffaf0}.callout.danger{border-color:#e7c3c9;background:#fdf5f6}.callout b:first-child{color:#102c45}
+    table{width:100%;border-collapse:collapse;margin:22px 0;background:#fff;border:1px solid var(--line);box-shadow:0 8px 24px rgba(32,50,72,.05)}th,td{padding:12px 15px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;font-size:.91rem}th{background:#edf5f2;color:#1e3f34;font-size:.79rem;letter-spacing:.045em;text-transform:uppercase}tr:last-child td{border-bottom:0}
+    .diagram{margin:24px 0;padding:22px;background:#fff;border:1px solid var(--line);border-radius:10px;overflow:auto;box-shadow:0 8px 24px rgba(32,50,72,.06)}.mermaid{min-width:620px;text-align:center}
+    .philosophy{margin:22px 0;padding:26px 28px;background:#fff;border-left:5px solid var(--brand2);border-radius:0 10px 10px 0;box-shadow:0 8px 24px rgba(32,50,72,.06)}.philosophy .pnum{color:var(--brand2);font-weight:820;font-size:.78rem;letter-spacing:.09em;text-transform:uppercase}.philosophy h3{margin:5px 0 12px}.chain{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:10px;align-items:center;margin:16px 0}.chain div{padding:12px 14px;background:var(--soft);border-radius:7px;text-align:center;font-size:.9rem}.chain span{color:var(--brand);font-weight:800}
+    code{font-family:"SFMono-Regular",Consolas,monospace;font-size:.87em;background:var(--soft);padding:2px 5px;border-radius:4px}.schema{padding:18px 20px;background:var(--code);color:#eef7ff;border-radius:9px;overflow:auto;font:13px/1.65 "SFMono-Regular",Consolas,monospace;white-space:pre}
+    .status{display:inline-block;padding:2px 8px;border-radius:999px;font-size:.76rem;font-weight:760}.s-green{background:#dff4ea;color:#176143}.s-amber{background:#fff0cc;color:#76500e}.s-rose{background:#fae1e5;color:#8d3040}.s-blue{background:#e1eefc;color:#275f9f}.s-gray{background:#e9edf2;color:#536276}
+    footer{padding:32px 0;color:var(--muted);font-size:.88rem}.small{font-size:.86rem;color:var(--muted)}
+    @media(max-width:860px){.section-head,.grid,.grid.three{grid-template-columns:1fr}.chain{grid-template-columns:1fr}.chain span{transform:rotate(90deg);text-align:center}.mermaid{min-width:540px}}
+    @media print{body{background:#fff}.page{max-width:none}nav{display:none}.card,.diagram,table,.definition{box-shadow:none}section{break-before:auto}.diagram,.card,table{break-inside:avoid}}
+  </style>
+</head>
+<body>
+<div class="page">
+<header id="top">
+  <div class="eyebrow">WGEMemory4LLM · Product Definition <span class="status s-green">v1.0</span></div>
+  <h1>让 Agent 的领域认知随使用持续进化</h1>
+  <p class="subtitle">这不是一个给人浏览的 AI Wiki，也不是把更多文件塞进上下文的检索工具。WGEMemory4LLM 是外挂于通用 Agent 的自治知识编译与长期记忆层：它把不断到来的材料、对话、纠正与任务结果，转化为可验证、可演化、可被任务直接消费的知识状态。</p>
+  <div class="definition"><b>产品定义：</b>WGEMemory4LLM 持续将原始材料编译为可版本化的 Wiki 模块、带证据与条件的类型化知识图，并在任务发生时生成可追溯的任务子图与 Context Pack，使 Agent 能够跨文档、跨会话积累、修正并正确使用领域认知。</div>
+  <div class="meta">
+    <span class="chip"><b>首要消费者</b> 通用 Agent</span><span class="chip"><b>MVP 场景</b> 个人 AI 行业与技术学习</span>
+    <span class="chip"><b>核心结果</b> Agent 任务效果改善</span><span class="chip"><b>对照基线</b> 文件夹 + Coding Agent 搜索</span>
+    <span class="chip"><b>知识治理</b> AI 自治写入 + 语义 Lint + Git 回滚</span><span class="chip"><b>日期</b> 2026-07-21</span>
+  </div>
+  <nav aria-label="目录">
+    <a href="#goal">目标</a><a href="#problem">原始问题</a><a href="#boundaries">边界</a><a href="#philosophy">设计哲学</a>
+    <a href="#model">知识模型</a><a href="#architecture">产品架构</a><a href="#flows">核心流程</a><a href="#requirements">需求</a>
+    <a href="#success">成功标准</a><a href="#risks">风险与决策</a><a href="#glossary">术语</a>
+  </nav>
+</header>
+
+<main>
+<section id="goal">
+  <div class="section-head"><div class="kicker">01 / Goal</div><div><h2>先定义目标，再允许架构存在</h2></div></div>
+  <p class="lead">产品的北极星不是“Wiki 写得多”“Graph 边很多”或“编译准确率高”，而是：同一个 Agent 在同一领域使用 WGEMemory4LLM 一段时间后，能否比第一天更少要求用户重复解释、更少复发已纠正错误，并在跨材料任务中给出更完整、更有依据的判断。</p>
+  <div class="diagram"><div class="mermaid">
+flowchart LR
+    A["新材料与真实任务"] --> B["编译知识状态"]
+    B --> C["任务化 Context Pack"]
+    C --> D["Agent 回答与行动"]
+    D --> E["纠正与任务结果"]
+    E --> B
+    B --> F["认知更完整且更少过期"]
+  </div></div>
+  <div class="grid three">
+    <article class="card"><div class="label">Ultimate outcome</div><h3>持续改善任务结果</h3><p>系统最终为 Agent 的回答、判断与任务结果负责；Wiki、Graph、Claim 与 Lint 都只是实现该结果的机制。</p></article>
+    <article class="card"><div class="label">Compounding effect</div><h3>知识发生变化，而非文件堆积</h3><p>新证据进入后，旧认识会被增强、削弱、分叉、加条件或标记过期；后续任务使用的是“当前知识状态”。</p></article>
+    <article class="card"><div class="label">Trust boundary</div><h3>进化不能以失真换取</h3><p>任何进入回答的结论，都能回到来源、适用条件、生成版本与演化历史；不确定性不得被静默抹平。</p></article>
+  </div>
+  <div class="callout good"><b>目标公式：</b>有效进化 = 新证据带来的认知修正 × 后续任务中的正确复用 × 可追溯与可回滚；如果只增加材料数量而任务质量没有改善，不算进化。</div>
+</section>
+
+<section id="problem">
+  <div class="section-head"><div class="kicker">02 / Problem</div><div><h2>原始问题：知识更新快，但 Agent 每次都像第一次来</h2></div></div>
+  <div class="grid">
+    <article class="card"><h3>个人学习</h3><p>AI 行业、技术与产品实践更新快、材料多。用户需要 Agent 共同消化文章，形成跨文章的支持、冲突、补充与演化视野，而不是每次围绕一篇文章做孤立摘要。</p></article>
+    <article class="card"><h3>长期项目与业务</h3><p>项目持续产生背景、决策、复盘与纠正。团队需要一个懂业务、能持续跟进的 Agent；但 MVP 暂不解决多人权限与组织治理，仅保留未来扩展边界。</p></article>
+  </div>
+  <div class="diagram"><div class="mermaid">
+flowchart TD
+    S["材料快速增加"] --> P["信息散落在文件与对话"]
+    P --> R["每次任务重新检索与解释"]
+    R --> L["跨材料关系被临时发现后丢失"]
+    L --> E["Agent 不会随使用稳定进步"]
+    E --> S
+  </div></div>
+  <h3>现有替代方案为什么不够</h3>
+  <table>
+    <thead><tr><th>替代方案</th><th>能做好什么</th><th>无法稳定解决什么</th></tr></thead>
+    <tbody>
+      <tr><td>普通文件夹 + grep/BM25</td><td>定位关键词与已知答案</td><td>不能把多次临时发现的关系沉淀为长期依赖，也不知道新证据影响哪些旧结论。</td></tr>
+      <tr><td>向量 RAG</td><td>按语义召回局部片段</td><td>召回相似不等于恢复支持、冲突、条件、版本与多跳关系；更新通常只增加切片。</td></tr>
+      <tr><td>全量上下文</td><td>小语料时保留最多原文</td><td>成本随材料增长；任务相关性、过期观点和冲突处理仍依赖每次临时推理。</td></tr>
+      <tr><td>人工 Wiki</td><td>产生稳定、可寻址的知识页面</td><td>用户没有时间持续维护；知识更新速度高于人工策展能力。</td></tr>
+      <tr><td>对话 Memory</td><td>保存偏好与历史互动</td><td>若缺少证据、条件和版本治理，容易把推断与事实混在一起并长期放大错误。</td></tr>
+    </tbody>
+  </table>
+  <div class="callout warn"><b>替代方案死亡测试：</b>如果“文件夹 + Coding Agent”已经能在相同上下文预算内稳定恢复跨材料关系、正确处理条件与过期结论，并让已纠正错误不再复发，WGEMemory4LLM 就没有独立存在价值。</div>
+</section>
+
+<section id="boundaries">
+  <div class="section-head"><div class="kicker">03 / Scope</div><div><h2>产品边界：Agent-first，不是 Wiki-reader-first</h2></div></div>
+  <div class="diagram"><div class="mermaid">
+flowchart LR
+    U["人类用户"] -->|"提问 学习 纠正"| A["通用 Agent"]
+    A -->|"任务描述"| W["WGEMemory4LLM"]
+    W -->|"Context Pack 与证据路径"| A
+    S["文章 对话 反馈 任务结果"] --> W
+    W --> G["Git 管理的知识状态"]
+  </div></div>
+  <h3>MVP 明确包含</h3>
+  <ul>
+    <li>单用户、单领域的长期知识状态；第一验证场是个人 AI 行业与技术学习。</li>
+    <li>材料自动摄入、知识编译、Wiki 模块维护、类型化 Graph、Evidence 回链、写入时 Lint、周期性语义 Lint。</li>
+    <li>任务发生时生成任务子图与 Context Pack，供任意兼容 Agent 消费。</li>
+    <li>用户可通过自然语言纠正；不要求用户编辑 Wiki 或逐条审批 AI 写入。</li>
+    <li>Git diff、编译 manifest、依赖追踪、局部重编译与回滚。</li>
+  </ul>
+  <h3>MVP 明确不包含</h3>
+  <ul>
+    <li>多人协作权限、组织级事实责任人、审批流和合规审计。</li>
+    <li>以人类浏览量、页面编辑量或知识图可视化停留时长作为核心价值。</li>
+    <li>把全世界知识建成通用知识图，或承诺 Graph 自身能够保证多跳推理正确。</li>
+    <li>替代原始材料；原文是不可变证据，编译结果始终可被丢弃并重建。</li>
+    <li>固定依赖某个模型、向量数据库或图数据库。模型可替换，输入输出合同不可含糊。</li>
+  </ul>
+  <div class="callout"><b>角色区分：</b>用户是受益者与纠正者；通用 Agent 是首要消费者；Ingestor、Compiler/Librarian、Linter 是系统内部职责，而不是要求用户扮演的人工岗位。</div>
+</section>
+
+<section id="philosophy">
+  <div class="section-head"><div class="kicker">04 / Philosophy</div><div><h2>设计哲学：遵守它们，产品才会持续朝目标推进</h2><p class="lead">每条哲学都从目标反推，给出必须做什么、拒绝什么，以及怎样验证。它们高于具体技术方案：当模型、存储或检索实现变化时，哲学仍然约束产品方向。</p></div></div>
+  <div class="diagram"><div class="mermaid">
+flowchart TD
+    G["目标：Agent 随使用持续改善"] --> P1["Agent 效果优先"]
+    G --> P2["演化优先于堆积"]
+    G --> P3["证据与可逆性"]
+    P1 --> P4["任务化上下文"]
+    P2 --> P5["类型化且带条件的关系"]
+    P2 --> P6["自治写入与分级发布"]
+    P3 --> P7["语义 CI 与依赖重编译"]
+    P4 --> P8["复杂度必须被增益证明"]
+  </div></div>
+
+  <article class="philosophy"><div class="pnum">Philosophy 01</div><h3>为 Agent 的任务结果优化，而不是为知识资产的外观优化</h3>
+    <div class="chain"><div>Agent 要在真实任务中变好</div><span>→</span><div>Wiki 与 Graph 只是中间资产</div><span>→</span><div>所有功能都接受下游效果检验</div></div>
+    <p><b>必须：</b>以回答完整性、纠错复发、条件处理、任务偏好与用户继续学习意愿评估价值。<b>拒绝：</b>用节点数、边数、页面长度或“看起来像知识库”替代用户结果。</p>
+    <p><b>守门问题：</b>如果删除这个组件，Agent 的任务表现是否稳定下降？如果没有证据，该组件不能成为架构前提。</p>
+  </article>
+
+  <article class="philosophy"><div class="pnum">Philosophy 02</div><h3>积累的单位是“可修正的知识状态”，不是文件与摘要</h3>
+    <div class="chain"><div>新材料不断进入</div><span>→</span><div>旧认识必须被重新判断</div><span>→</span><div>后续任务只消费当前有效状态</div></div>
+    <p><b>必须：</b>识别支持、冲突、补充、取代和适用条件；新文章可能修改多个既有 Wiki 模块，而非机械新增一篇摘要。<b>拒绝：</b>只追加切片、只按来源建页面、只用“更新时间”假装知识已经演化。</p>
+    <p><b>验收：</b>摄入纠错材料后，系统能找到受影响的 Claim、Relation 和 WikiModule，局部重编译，并在新回答中停止复发旧错误。</p>
+  </article>
+
+  <article class="philosophy"><div class="pnum">Philosophy 03</div><h3>原文是不可变证据；Wiki 与 Graph 是可丢弃、可重编译的观点</h3>
+    <div class="chain"><div>AI 编译必然会错</div><span>→</span><div>派生知识不能冒充来源</div><span>→</span><div>每个结论都能回链并重建</div></div>
+    <p><b>必须：</b>SourceSpan、内容哈希、来源版本、编译器版本和引用链完整保存；Git 记录派生状态的变化。<b>拒绝：</b>把摘要覆盖原文、把无来源推断直接写成事实、用 Git 回滚能力替代正确性校验。</p>
+    <p><b>验收：</b>从任一回答中的关键结论，最多两次跳转可到原文片段；删除全部派生文件后可从原文重新生成。</p>
+  </article>
+
+  <article class="philosophy"><div class="pnum">Philosophy 04</div><h3>AI 拥有完整写入权，但不拥有无条件成为 Canonical 的权力</h3>
+    <div class="chain"><div>人不会持续维护</div><span>→</span><div>AI 必须自治写入</div><span>→</span><div>发布状态与认识状态必须分层</div></div>
+    <p><b>必须：</b>所有生成物自动保存；通过结构与证据 Lint 后才进入 Canonical 消费链。Hypothesis、Conflict、Superseded 与 Quarantine 都可保留，但 Agent 的默认使用规则不同。<b>拒绝：</b>要求人逐条审批，也拒绝“先全部当真、月底再统一纠错”。</p>
+    <p><b>验收：</b>低质量或无证据内容可以被记录和诊断，却不会污染默认检索、Graph 扩展与 Context Pack。</p>
+  </article>
+
+  <article class="philosophy"><div class="pnum">Philosophy 05</div><h3>关系必须类型化、带条件、带方向；“相关”不能冒充推理依据</h3>
+    <div class="chain"><div>多跳价值来自关系</div><span>→</span><div>压扁关系会稳定传播错误</div><span>→</span><div>Graph 边也必须接受证据治理</div></div>
+    <p><b>必须：</b>区分 <code>REQUIRES</code>、<code>DERIVED_FROM</code>、<code>SUPPORTS</code>、<code>CONTRADICTS</code>、<code>SUPERSEDES</code>、<code>EQUIVALENT_UNDER</code> 等；边携带适用条件、证据、时态和状态。<b>拒绝：</b>把“有限测度空间下 L²⊆L¹”压成无条件 <code>IS_A</code>，也拒绝强行注入不存在的 counter 来制造“多路证据”。</p>
+    <p><b>验收：</b>Graph 可以回答“为什么连”“在什么条件下连”“谁支持这条边”“它变化后影响谁”；<code>RELATED_TO</code> 只能导航，不能直接支撑结论。</p>
+  </article>
+
+  <article class="philosophy"><div class="pnum">Philosophy 06</div><h3>提前编译可复用结构，延后生成任务特定答案</h3>
+    <div class="chain"><div>纯查询时推理没有复利</div><span>→</span><div>过度预编译产生无关推断</div><span>→</span><div>编译层与运行时各司其职</div></div>
+    <p><b>摄入时：</b>保存原文、Claim、稳定 Concept、跨材料关系候选、Wiki 模块增量和依赖。<b>任务时：</b>理解意图、选择任务子图、回填必要原文、组织 Context Pack、生成答案。<b>拒绝：</b>摄入时穷举未来问题，也拒绝每次任务都从零发现已知关系。</p>
+    <p><b>验收：</b>相似任务可以复用既有模块与关系；不同任务仍能获得不同的 Context Pack，而不是同一份“大而全”摘要。</p>
+  </article>
+
+  <article class="philosophy"><div class="pnum">Philosophy 07</div><h3>全局视野是一张可导航的知识地图，不是把整个 Wiki 塞进上下文</h3>
+    <div class="chain"><div>材料规模持续增长</div><span>→</span><div>上下文预算永远有限</div><span>→</span><div>先地图、后子图、再证据</div></div>
+    <p><b>必须：</b>先让 Agent 获得主题、冲突、最近变化和关键路径，再按任务加载 WikiModule 与 SourceSpan。<b>拒绝：</b>用更大上下文窗口掩盖选择问题，或让 Graph 路径无限扩张。</p>
+    <p><b>验收：</b>Context Pack 有明确预算、选择理由、路径深度、去重规则和丢弃日志；重要的冲突与条件优先于重复背景。</p>
+  </article>
+
+  <article class="philosophy"><div class="pnum">Philosophy 08</div><h3>模型可以是黑盒，但产品责任必须白盒</h3>
+    <div class="chain"><div>底层模型会更换</div><span>→</span><div>能力波动不可避免</div><span>→</span><div>IO 合同、权限与失败处置必须稳定</div></div>
+    <p><b>必须：</b>定义每阶段输入输出 schema、上下文边界、工具权限、超时、重试、幂等、降级、隔离与回滚。<b>拒绝：</b>用“LLM 会理解”替代数据合同，用 prompt 约定替代消费链路隔离。</p>
+    <p><b>验收：</b>更换模型后，系统仍能运行结构 Lint、证据回链、版本 diff 和回归集；能力下降能被观测而非静默发生。</p>
+  </article>
+
+  <article class="philosophy"><div class="pnum">Philosophy 09</div><h3>语义 CI 必须发生在消费前，并能沿依赖传播</h3>
+    <div class="chain"><div>错误进入记忆后会被反复消费</div><span>→</span><div>定期检查太晚</div><span>→</span><div>写入时门禁 + 周期性全局 Lint</div></div>
+    <p><b>写入时：</b>检查 schema、引用存在、证据支持、条件、状态和孤儿依赖。<b>周期性：</b>检查跨模块冲突、重复、过期、循环依赖、孤立推断与回归问题。<b>拒绝：</b>failed 内容留在默认 Graph 中再在答案拼装阶段过滤。</p>
+    <p><b>验收：</b>Quarantine 与 Canonical 在物理或索引层隔离；任何默认消费路径都不能先被失败节点影响排名、再晚过滤。</p>
+  </article>
+
+  <article class="philosophy"><div class="pnum">Philosophy 10</div><h3>复杂度必须通过对照实验赢得存在权</h3>
+    <div class="chain"><div>Graph 与 Compiler 成本高</div><span>→</span><div>概念正确不等于产品有效</div><span>→</span><div>每层都设置消融与死亡标准</div></div>
+    <p><b>必须：</b>与全量上下文、文件检索、Wiki-only、无类型链接做同预算对照；分别评估单跳、多跳、条件、冲突与增量更新。<b>拒绝：</b>因为“Graph 理论上适合多跳”就默认放入运行时主链。</p>
+    <p><b>验收：</b>若类型化 Graph 对 Wiki-only 没有稳定增益，它仍可保留为依赖与 Lint 层，但从默认问答检索链路降级。</p>
+  </article>
+</section>
+
+<section id="model">
+  <div class="section-head"><div class="kicker">05 / Knowledge Model</div><div><h2>WGE：语义、拓扑与可信度三层共同构成 Memory</h2></div></div>
+  <div class="grid three">
+    <article class="card"><div class="label">Wiki</div><h3>完整语义</h3><p>围绕稳定主题、概念或长期问题组织的可寻址模块。它吸收多份来源，给 Agent 连贯解释，不等于某篇输入文章的摘要。</p></article>
+    <article class="card"><div class="label">Graph</div><h3>关系与依赖</h3><p>保存概念、Claim 和模块之间的类型化、条件化、可追溯关系，用于导航、多跳候选、冲突检测、影响分析和增量重编译。</p></article>
+    <article class="card"><div class="label">Evidence</div><h3>事实锚点</h3><p>不可变原文及定位信息。它回答“作者究竟说了什么”，约束 Wiki 与 Graph 不能独立成为没有出处的真理。</p></article>
+  </div>
+  <div class="diagram"><div class="mermaid">
+flowchart TD
+    E["Evidence：原文片段"] --> C["Claim：最小可判断结论"]
+    C --> K["Concept：稳定概念身份"]
+    C --> R["Relation：类型 条件 方向"]
+    K --> W["WikiModule：长期语义模块"]
+    R --> W
+    W --> P["Context Pack：任务投影"]
+    R --> P
+    E --> P
+  </div></div>
+  <h3>最小一等对象</h3>
+  <table>
+    <thead><tr><th>对象</th><th>职责</th><th>必须字段</th><th>不得承担</th></tr></thead>
+    <tbody>
+      <tr><td><code>Source</code> / <code>SourceSpan</code></td><td>保存不可变证据及精确定位</td><td>hash、URI/path、版本、位置、原文</td><td>不保存 AI 改写后的“更正确原文”</td></tr>
+      <tr><td><code>Claim</code></td><td>最小可判断结论</td><td>陈述、来源、条件、时态、认识状态</td><td>不把整篇摘要当一个 Claim</td></tr>
+      <tr><td><code>Concept</code></td><td>跨来源稳定身份与别名</td><td>ID、名称、别名、边界、领域</td><td>不承载长篇解释</td></tr>
+      <tr><td><code>Relation</code></td><td>连接 Claim/Concept/Module</td><td>类型、方向、条件、证据、状态、版本</td><td><code>RELATED_TO</code> 不可直接当推理证据</td></tr>
+      <tr><td><code>WikiModule</code></td><td>供 Agent 阅读的完整语义单元</td><td>稳定地址、核心问题、当前认识、争议、引用、依赖</td><td>不按输入文件一一生成</td></tr>
+      <tr><td><code>ContextPack</code></td><td>面向当前任务的运行时投影</td><td>任务、地图、子图、模块、证据、预算、选择解释</td><td>不成为长期知识的唯一存储</td></tr>
+    </tbody>
+  </table>
+  <h3>两个正交状态轴</h3>
+  <p>“是否可信”与“是否发布”不能混成一个字段。否则 Conflict 可能被误当失败，Hypothesis 可能被误当事实。</p>
+  <table>
+    <thead><tr><th>轴</th><th>状态</th><th>含义与默认消费规则</th></tr></thead>
+    <tbody>
+      <tr><td>认识状态 <code>epistemicStatus</code></td><td><span class="status s-green">ASSERTED</span> <span class="status s-blue">INFERRED</span> <span class="status s-rose">DISPUTED</span> <span class="status s-gray">SUPERSEDED</span></td><td>描述内容在知识上的地位；回答时必须保留不确定性与历史。</td></tr>
+      <tr><td>发布状态 <code>publicationState</code></td><td><span class="status s-amber">CANDIDATE</span> <span class="status s-green">CANONICAL</span> <span class="status s-rose">QUARANTINED</span></td><td>描述内容是否进入默认消费链；只有通过基础 Lint 的内容可进入 Canonical。</td></tr>
+    </tbody>
+  </table>
+  <div class="diagram"><div class="mermaid">
+stateDiagram-v2
+    [*] --> Candidate
+    Candidate --> Canonical: "写入时 Lint 通过"
+    Candidate --> Quarantined: "引用或结构失败"
+    Canonical --> Disputed: "发现冲突证据"
+    Disputed --> Canonical: "加条件或解决冲突"
+    Canonical --> Superseded: "被新证据取代"
+    Quarantined --> Candidate: "修复后重编译"
+    Superseded --> [*]
+  </div></div>
+  <h3>Relation 最小合同</h3>
+  <div class="schema">{
+  "id": "rel:...",
+  "from": "claim:...",
+  "to": "claim:...",
+  "type": "REQUIRES | DERIVED_FROM | SUPPORTS | CONTRADICTS | SUPERSEDES | ...",
+  "direction": "directed",
+  "conditions": ["适用空间、时间、假设或定义域"],
+  "evidenceSpanIds": ["span:..."],
+  "epistemicStatus": "ASSERTED | INFERRED | DISPUTED | SUPERSEDED",
+  "publicationState": "CANDIDATE | CANONICAL | QUARANTINED",
+  "validFrom": null,
+  "validTo": null,
+  "compilerVersion": "...",
+  "consumedBy": ["wiki:..."],
+  "confidence": 0.0
+}</div>
+</section>
+
+<section id="architecture">
+  <div class="section-head"><div class="kicker">06 / Architecture</div><div><h2>逻辑架构：编译时形成复利，运行时形成任务相关性</h2></div></div>
+  <div class="diagram"><div class="mermaid">
+flowchart TD
+    S["不可变 Sources"] --> I["Ingestor：解析 规范化 哈希"]
+    I --> C["Compiler：Claim Concept Relation"]
+    C --> L1["Write-time Lint"]
+    L1 -->|"通过"| W["Canonical Wiki Modules"]
+    L1 -->|"失败"| Q["Quarantine"]
+    C --> G["Typed Graph 与依赖索引"]
+    W --> R["Runtime Retriever"]
+    G --> R
+    S --> R
+    R --> P["Task Subgraph 与 Context Pack"]
+    P --> A["通用 Agent"]
+    A --> F["纠正与任务结果"]
+    F --> C
+    G --> L2["Periodic Semantic Lint"]
+    W --> L2
+    L2 --> C
+  </div></div>
+  <h3>职责分离</h3>
+  <table>
+    <thead><tr><th>组件</th><th>输入</th><th>输出</th><th>核心责任</th></tr></thead>
+    <tbody>
+      <tr><td>Ingestor</td><td>PDF/MD/HTML/对话/反馈</td><td>标准化 Source 与 SourceSpan</td><td>机械解析、去重、哈希、元数据；不做领域结论。</td></tr>
+      <tr><td>Compiler / Librarian</td><td>SourceSpan + 当前知识状态</td><td>Claim、Concept、Relation、Wiki diff</td><td>综合、归一、关系检测和影响分析；显式输出不确定性。</td></tr>
+      <tr><td>Write-time Linter</td><td>候选 diff</td><td>pass、issue、quarantine</td><td>在消费前验证引用、支持度、条件、schema 与依赖。</td></tr>
+      <tr><td>Periodic Semantic Linter</td><td>全局 Canonical + Graph</td><td>修复候选与重编译队列</td><td>检测跨模块冲突、过期、重复、孤立推断与回归。</td></tr>
+      <tr><td>Runtime Retriever</td><td>任务 + 预算</td><td>任务子图、Wiki 片段、原文证据</td><td>先地图后深入；记录为何选、为何丢弃。</td></tr>
+      <tr><td>Context Pack Builder</td><td>候选上下文</td><td>稳定消费合同</td><td>去重、排序、预算、风险标注与引用封装。</td></tr>
+    </tbody>
+  </table>
+  <h3>存储是“知识即代码”，但不被某种数据库绑死</h3>
+  <div class="schema">sources/                # 原始材料或其不可变引用
+  manifest.jsonl          # hash、版本、解析状态
+claims/                   # 原子结论与认识状态
+concepts/                 # 概念身份与别名
+relations/edges.jsonl     # 类型化、条件化边
+wiki/                     # Canonical WikiModule
+quarantine/               # 不进入默认消费链
+indexes/                  # 可重建的 BM25/vector/adjacency
+runs/                     # 编译、lint、query 与 benchmark manifest
+tests/                    # 回归问题与预期证据路径</div>
+  <div class="callout warn"><b>关键架构决策：</b>Graph 是一等关系与依赖层；它是否进入默认问答检索主链，必须由 Benchmark 中 Wiki-only 与 Typed-Graph 组的增益决定。即使运行时降级，Graph 仍可承担 Lint、影响分析和增量重编译。</div>
+</section>
+
+<section id="flows">
+  <div class="section-head"><div class="kicker">07 / Flows</div><div><h2>三条核心信息流：摄入、问答、进化</h2></div></div>
+  <h3>流 1：新材料进入后，不是“多一篇摘要”，而是“当前知识状态发生 diff”</h3>
+  <div class="diagram"><div class="mermaid">
+sequenceDiagram
+    participant U as 用户
+    participant I as Ingestor
+    participant C as Compiler
+    participant L as Linter
+    participant K as Knowledge State
+    U->>I: 投递文章或材料
+    I->>I: 解析 去重 哈希 定位
+    I->>C: SourceSpan 与当前状态
+    C->>C: 提取 Claim 对齐 Concept 检测 Relation
+    C->>K: 提交 Wiki 与 Graph 候选 diff
+    K->>L: 运行写入时 Lint
+    alt 通过
+      L->>K: 发布 Canonical 并记录 Git commit
+    else 失败
+      L->>K: 隔离到 Quarantine 并生成修复原因
+    end
+    K-->>U: 返回影响摘要而非要求逐条审批
+  </div></div>
+
+  <h3>流 2：Agent 先获得知识地图，再按任务加载子图与证据</h3>
+  <div class="diagram"><div class="mermaid">
+sequenceDiagram
+    participant U as 用户
+    participant A as 通用 Agent
+    participant R as Runtime
+    participant G as Wiki Graph
+    participant E as Evidence
+    U->>A: 提出学习或判断任务
+    A->>R: 任务 意图 上下文预算
+    R->>G: 检索主题 冲突 最近变化 关键路径
+    G-->>R: 候选任务子图与 WikiModule
+    R->>E: 回填关键 Claim 的原文片段
+    E-->>R: SourceSpan
+    R-->>A: Context Pack 选择理由 风险与引用
+    A-->>U: 回答并显式呈现冲突与条件
+  </div></div>
+
+  <h3>流 3：纠正进入系统后，必须沿依赖影响后续认知</h3>
+  <div class="diagram"><div class="mermaid">
+flowchart TD
+    N["新证据或用户纠正"] --> X["定位相关 Claim"]
+    X --> D["建立 SUPPORTS CONTRADICTS SUPERSEDES"]
+    D --> I["计算受影响 Relation 与 WikiModule"]
+    I --> R["局部重编译"]
+    R --> T["语义回归测试"]
+    T -->|"通过"| C["提交新 Canonical 版本"]
+    T -->|"失败"| Q["隔离并保留旧版本"]
+    C --> A["后续 Context Pack 使用新状态"]
+  </div></div>
+  <div class="callout good"><b>端到端完成定义：</b>“材料已入库”不是 done；只有当新证据被编译、通过门禁、影响正确模块、进入后续 Context Pack，并能回到来源与 Git diff，进化闭环才完成。</div>
+</section>
+
+<section id="requirements">
+  <div class="section-head"><div class="kicker">08 / Requirements</div><div><h2>MVP 产品需求与优先级</h2></div></div>
+  <table>
+    <thead><tr><th>ID</th><th>优先级</th><th>需求</th><th>完成定义</th></tr></thead>
+    <tbody>
+      <tr><td>PD-01</td><td>P0</td><td>摄入 MD/PDF/HTML 并生成稳定 Source ID</td><td>相同内容幂等；原文位置可定位；解析失败不产生伪 Claim。</td></tr>
+      <tr><td>PD-02</td><td>P0</td><td>从材料生成带证据的 Claim</td><td>每条 Claim 至少一个 SourceSpan；无法支持的内容标为推断或隔离。</td></tr>
+      <tr><td>PD-03</td><td>P0</td><td>维护跨来源 Concept 身份</td><td>别名可合并；同名异义可分叉；任何合并可回滚。</td></tr>
+      <tr><td>PD-04</td><td>P0</td><td>维护类型化、条件化 Relation</td><td>关系有方向、来源、条件、状态；弱相关不能支撑结论。</td></tr>
+      <tr><td>PD-05</td><td>P0</td><td>按长期问题维护 WikiModule</td><td>新材料优先修改既有模块；模块包含当前认识、争议、变化和引用。</td></tr>
+      <tr><td>PD-06</td><td>P0</td><td>写入时 Lint 与消费前隔离</td><td>失败内容不进入默认索引、Graph 扩展和 Context Pack。</td></tr>
+      <tr><td>PD-07</td><td>P0</td><td>按任务生成有预算的 Context Pack</td><td>包含任务地图、关键路径、Wiki 语义、原文证据、冲突与选择解释。</td></tr>
+      <tr><td>PD-08</td><td>P0</td><td>自然语言纠正与影响传播</td><td>纠正可定位旧 Claim，触发依赖重编译，并加入回归测试。</td></tr>
+      <tr><td>PD-09</td><td>P0</td><td>Git 版本、diff 与回滚</td><td>每次编译有 manifest；可恢复到任一已知健康版本。</td></tr>
+      <tr><td>PD-10</td><td>P1</td><td>周期性语义 Lint</td><td>检测冲突、过期、重复、孤立推断、循环依赖和未传播变更。</td></tr>
+      <tr><td>PD-11</td><td>P1</td><td>Benchmark 可观测性</td><td>记录模型、提示、上下文、路径、token、耗时、答案和裁判版本。</td></tr>
+      <tr><td>PD-12</td><td>P1</td><td>知识地图与最近变化摘要</td><td>Agent 可快速知道有哪些主题、争议、薄弱区域与最近 diff。</td></tr>
+      <tr><td>PD-13</td><td>P2</td><td>组织级权限与责任治理</td><td>不进入个人 MVP；待单用户价值验证后另立定义。</td></tr>
+    </tbody>
+  </table>
+  <h3>非功能约束</h3>
+  <div class="grid">
+    <article class="card"><h4>可靠性</h4><ul class="tight"><li>摄入与重编译幂等</li><li>部分失败可恢复</li><li>索引可从 Canonical 重建</li><li>Quarantine 与主链隔离</li></ul></article>
+    <article class="card"><h4>可审计</h4><ul class="tight"><li>每个派生对象有生成版本</li><li>关键答案有证据路径</li><li>每次选择有 run manifest</li><li>回滚不丢失原始材料</li></ul></article>
+    <article class="card"><h4>可替换</h4><ul class="tight"><li>模型通过稳定 schema 接入</li><li>Graph 可先用 JSONL/邻接索引</li><li>向量检索是可选能力</li><li>Agent 通过统一 Context Pack 消费</li></ul></article>
+    <article class="card"><h4>成本</h4><ul class="tight"><li>增量编译优先于全库重写</li><li>上下文有硬预算</li><li>低价值关系不进入深层推理</li><li>离线 Lint 与在线任务解耦</li></ul></article>
+  </div>
+</section>
+
+<section id="success">
+  <div class="section-head"><div class="kicker">09 / Success</div><div><h2>成功标准：先禁止明显失败，再证明相对增益</h2></div></div>
+  <h3>三个不可接受的硬失败</h3>
+  <div class="grid three">
+    <article class="card"><div class="label">Hard fail 01</div><h3>无依据断言</h3><p>答案把无来源或证据不足的推断包装成确定事实。</p></article>
+    <article class="card"><div class="label">Hard fail 02</div><h3>纠正后复发</h3><p>系统已经收到并发布纠正，但后续同类任务仍默认复用旧错误。</p></article>
+    <article class="card"><div class="label">Hard fail 03</div><h3>静默抹平冲突</h3><p>知识状态已知存在冲突或适用条件，答案却输出单一无条件结论。</p></article>
+  </div>
+  <h3>分层衡量</h3>
+  <table>
+    <thead><tr><th>层级</th><th>问题</th><th>候选指标</th><th>它不能替代什么</th></tr></thead>
+    <tbody>
+      <tr><td>编译质量</td><td>材料是否被忠实编译？</td><td>证据覆盖、Claim 支持度、条件保留、Relation 精度</td><td>不能替代真实任务效果。</td></tr>
+      <tr><td>检索与组装</td><td>任务是否拿到正确知识？</td><td>路径完整度、关键 Claim 召回、无关上下文率、预算利用</td><td>不能替代答案是否正确使用知识。</td></tr>
+      <tr><td>任务结果</td><td>Agent 是否真正变好？</td><td>成对偏好、事实正确、冲突处理、解释复用、人工查证次数</td><td>这是最终产品责任。</td></tr>
+      <tr><td>演化能力</td><td>新证据是否改变后续行为？</td><td>影响发现率、漏改率、纠错复发率、局部重编译范围、回归通过率</td><td>不能只看 Git 提交数量。</td></tr>
+    </tbody>
+  </table>
+  <div class="callout"><b>量化立场：</b>目前不伪造一个“提升 30%”的产品结论。Benchmark 会预注册架构假设和死亡标准；真实用户价值先用同模型、同预算的盲测、硬失败和长期纠错复发观察建立证据，再决定是否设商业化 KPI。</div>
+</section>
+
+<section id="risks">
+  <div class="section-head"><div class="kicker">10 / Risks & Decisions</div><div><h2>主要风险、控制方式与仍待实验回答的问题</h2></div></div>
+  <table>
+    <thead><tr><th>风险</th><th>为什么危险</th><th>产品控制</th><th>验证方式</th></tr></thead>
+    <tbody>
+      <tr><td>错误复利</td><td>一次错误编译会被后续 Wiki、Graph 和答案反复消费。</td><td>双状态轴、消费前门禁、证据回链、Quarantine、回归问题。</td><td>注入已知错误与纠错材料，观察是否传播与复发。</td></tr>
+      <tr><td>Graph 过度确定</td><td>条件被压扁成边后，比文本错误更稳定。</td><td>条件字段、弱边禁推理、跨来源证据、Relation Lint。</td><td>L²/L¹、一致收敛等条件陷阱题。</td></tr>
+      <tr><td>知识模块膨胀</td><td>Wiki 越来越长，运行时仍然无法选择。</td><td>稳定问题粒度、模块拆分规则、任务子图、上下文预算。</td><td>规模增长实验与无关上下文率。</td></tr>
+      <tr><td>模型自证循环</td><td>同一个模型生成、审核、回答，可能共同接受同一错误。</td><td>原文锚点、规则 Lint、独立提示/模型裁判、人工抽样盲评。</td><td>多裁判一致性与人工仲裁。</td></tr>
+      <tr><td>回滚伪安全</td><td>Git 能回退文件，却不知道哪个版本正确。</td><td>健康标签、语义 CI、benchmark 回归、发布 manifest。</td><td>故障注入后恢复到最近健康版本。</td></tr>
+      <tr><td>技术复杂度自嗨</td><td>Graph、命题化、六种 Board 都可能没有真实增益。</td><td>组件消融、C vs E 主比较、死亡标准。</td><td>详见 Benchmark 文档。</td></tr>
+    </tbody>
+  </table>
+  <h3>已冻结决策</h3>
+  <ul>
+    <li>首要消费者是通用 Agent，人类不负责浏览和维护 Wiki。</li>
+    <li>核心结果是 Agent 使用效果；编译质量是必要中间指标。</li>
+    <li>AI 可自动写入全部候选，但必须通过基础 Lint 才进入 Canonical。</li>
+    <li>Wiki、Typed Graph、Evidence 三层并存；Graph 不等于自动正确推理。</li>
+    <li>Git 提供版本与回滚，语义 CI 提供正确性门禁；二者不可互相替代。</li>
+    <li>第一产品验证场是个人 AI 行业与技术学习；数学 20 篇材料用于可控 Benchmark。</li>
+  </ul>
+  <h3>由实验决定、当前不应拍脑袋冻结</h3>
+  <ul>
+    <li>Typed Graph 是否进入默认在线检索主链，还是主要服务 Lint 与影响分析。</li>
+    <li>WikiModule 的最佳粒度、任务子图的默认深度和 Context Pack 的预算分配。</li>
+    <li>Canonical 自动晋级阈值，以及是否需要异构模型做关键关系复核。</li>
+    <li>向量检索在个人规模下是否提供足够增益；它不是默认必需组件。</li>
+  </ul>
+  <div class="callout danger"><b>停止方向的信号：</b>在同模型、同预算下，如果 WGEMemory4LLM 不能减少已纠正错误复发、不能更好处理跨材料关系和条件、也不能减少重复解释，那么“可演化知识层”的产品假设不成立，应回退为轻量文件组织或 Agent Skill，而不是继续堆叠架构。</div>
+</section>
+
+<section id="glossary">
+  <div class="section-head"><div class="kicker">11 / Glossary</div><div><h2>统一术语，防止三份文档口径漂移</h2></div></div>
+  <table>
+    <thead><tr><th>术语</th><th>定义</th></tr></thead>
+    <tbody>
+      <tr><td>WGEMemory4LLM</td><td>面向通用 Agent 的自治知识编译与长期记忆层；由 Wiki、Graph、Evidence 共同构成可演化知识状态。</td></tr>
+      <tr><td>Knowledge State</td><td>某一时间点上可被 Agent 消费的 Canonical Wiki、关系、状态与证据集合。</td></tr>
+      <tr><td>Knowledge Evolution</td><td>新证据导致已有 Claim/Relation/Module 被增强、削弱、加条件、分叉、取代或隔离，并改变后续任务行为。</td></tr>
+      <tr><td>Semantic Lint / Semantic CI</td><td>对证据支持、冲突、条件、时态、依赖、过期和回归问题进行的自动检查；不仅检查格式。</td></tr>
+      <tr><td>Context Pack</td><td>知识状态针对某个任务、在明确预算内生成的运行时投影，包含地图、子图、Wiki 解释、证据与风险。</td></tr>
+      <tr><td>Task Subgraph</td><td>从任务种子概念出发、按关系类型和深度筛选出的局部 Graph；不是全图复制。</td></tr>
+      <tr><td>Canonical</td><td>通过当前基础门禁、允许进入默认消费链的发布状态；不等于永恒真理。</td></tr>
+      <tr><td>Quarantine</td><td>保留但不进入默认消费链的候选资产，附带失败原因与修复路径。</td></tr>
+      <tr><td>Compounding</td><td>已付出的理解成本在后续任务中被复用并减少重复劳动，而不是仅增加存储量。</td></tr>
+    </tbody>
+  </table>
+</section>
+</main>
+
+<footer>
+  <p><b>WGEMemory4LLM Product Definition v1.0</b> · 2026-07-21。本文档定义“为什么做、为谁做、必须遵守什么”；User Story 定义“在真实旅程中如何表现”；Benchmark 定义“如何证明它比替代方案更有用”。</p>
+  <p class="small">建议使用现代浏览器打开；Mermaid 图通过 CDN 渲染。正文、表格与关键结论在脚本不可用时仍可阅读。</p>
+</footer>
+</div>
+</body>
+</html>
