@@ -1,0 +1,543 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WGEMemory4LLM Architecture Baseline · 2026-07-22</title>
+  <script type="module">
+    import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: "base",
+      securityLevel: "loose",
+      themeVariables: {
+        fontFamily: "Noto Sans CJK SC, Inter, ui-sans-serif, system-ui, sans-serif",
+        primaryColor: "#ecf8f3", primaryTextColor: "#172033", primaryBorderColor: "#4b9478",
+        lineColor: "#63788f", secondaryColor: "#eef5ff", tertiaryColor: "#fff7e8", fontSize: "13px",
+      },
+      flowchart: { useMaxWidth: true, htmlLabels: false, curve: "basis" },
+      sequence: { useMaxWidth: true },
+      state: { useMaxWidth: true },
+    });
+  </script>
+  <style>
+    :root {
+      --ink:#172033; --muted:#617087; --paper:#fbfcfe; --white:#fff; --soft:#eef3f8;
+      --line:#d7e0ea; --brand:#0d5c41; --brand2:#188b64; --blue:#2f6fbd;
+      --amber:#9b6a1a; --rose:#b2485a; --violet:#6656a8; --code:#172235;
+      --shadow:0 16px 44px rgba(32,50,72,.10);
+    }
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;font-family:"Noto Sans CJK SC",Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:linear-gradient(180deg,#eaf7f1 0,#fbfcfe 34rem);line-height:1.72}
+    a{color:var(--blue);text-underline-offset:.18em}.page{max-width:1220px;margin:auto;padding:0 24px 72px}
+    header{padding:68px 0 38px}.eyebrow{display:flex;align-items:center;gap:10px;color:var(--brand);font-size:.82rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase}.eyebrow:before{content:"";width:36px;height:2px;background:var(--brand)}
+    h1{max-width:980px;margin:14px 0 0;font-size:clamp(2.25rem,5.2vw,4.2rem);line-height:1.04;letter-spacing:-.035em}.subtitle{max-width:940px;margin:24px 0 0;color:#34445a;font-size:clamp(1rem,2vw,1.28rem);line-height:1.75}
+    .meta{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}.chip{padding:7px 12px;border:1px solid #c8d8d0;border-radius:999px;background:rgba(255,255,255,.72);font-size:.86rem}.chip b{color:var(--brand)}
+    nav{display:flex;flex-wrap:wrap;gap:9px;margin:28px 0 0}nav a{padding:7px 12px;border:1px solid var(--line);border-radius:999px;background:#fff;color:#2b3a50;text-decoration:none;font-size:.88rem;font-weight:650}nav a:first-child{border-color:var(--brand);color:var(--brand)}
+    main{display:grid;gap:8px}section{padding:46px 0;border-top:1px solid var(--line)}.section-head{display:grid;grid-template-columns:minmax(150px,.38fr) minmax(0,1fr);gap:34px;align-items:start;margin-bottom:28px}.kicker{color:var(--blue);font-size:.79rem;font-weight:820;letter-spacing:.09em;text-transform:uppercase}
+    h2{margin:0;font-size:clamp(1.65rem,3vw,2.55rem);line-height:1.15}h3{margin:28px 0 10px;font-size:1.27rem;line-height:1.3}h4{margin:18px 0 8px;font-size:1.05rem;color:#2d3f56}p{margin:0 0 16px}.lead{color:#33455d;font-size:1.06rem;line-height:1.82}
+    ul,ol{padding-left:24px;margin:10px 0 18px}li{margin:6px 0}.tight li{margin:3px 0}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}.card{padding:22px 24px;border:1px solid var(--line);border-radius:10px;background:var(--white);box-shadow:0 8px 24px rgba(32,50,72,.06)}.card h3,.card h4{margin-top:0}.label{color:var(--brand);font-size:.76rem;font-weight:820;letter-spacing:.08em;text-transform:uppercase}
+    .callout{margin:20px 0;padding:20px 24px;border:1px solid #c5daef;border-radius:9px;background:#f4f9fe}.callout.good{border-color:#b8d9cd;background:#f2fbf7}.callout.warn{border-color:#ead5a4;background:#fffaf0}.callout.danger{border-color:#e7c3c9;background:#fdf5f6}.callout b:first-child{color:#102c45}
+    table{width:100%;border-collapse:collapse;margin:22px 0;background:#fff;border:1px solid var(--line);box-shadow:0 8px 24px rgba(32,50,72,.05)}th,td{padding:12px 15px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;font-size:.91rem}th{background:#edf5f2;color:#1e3f34;font-size:.79rem;letter-spacing:.045em;text-transform:uppercase}tr:last-child td{border-bottom:0}
+    .diagram{margin:24px 0;padding:22px;background:#fff;border:1px solid var(--line);border-radius:10px;overflow:auto;box-shadow:0 8px 24px rgba(32,50,72,.06)}.mermaid{min-width:620px;text-align:center}
+    code{font-family:"SFMono-Regular",Consolas,monospace;font-size:.87em;background:var(--soft);padding:2px 5px;border-radius:4px}.schema{padding:18px 20px;background:var(--code);color:#eef7ff;border-radius:9px;overflow:auto;font:13px/1.65 "SFMono-Regular",Consolas,monospace;white-space:pre}
+    .status{display:inline-block;padding:2px 8px;border-radius:999px;font-size:.76rem;font-weight:760}.s-green{background:#dff4ea;color:#176143}.s-amber{background:#fff0cc;color:#76500e}.s-rose{background:#fae1e5;color:#8d3040}.s-blue{background:#e1eefc;color:#275f9f}.s-gray{background:#e9edf2;color:#536276}
+    .badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:.76rem;font-weight:700;white-space:nowrap}.b-done{background:#d4edda;color:#155724}.b-pending{background:#cce5ff;color:#004085}.b-stub{background:#fdf2d0;color:#7a5e1b}
+    footer{padding:32px 0;color:var(--muted);font-size:.88rem}.small{font-size:.86rem;color:var(--muted)}
+    @media(max-width:860px){.section-head,.grid,.grid.three{grid-template-columns:1fr}.mermaid{min-width:540px}}
+    @media print{body{background:#fff}.page{max-width:none}nav{display:none}.card,.diagram,table{box-shadow:none}.diagram,.card,table{break-inside:avoid}}
+  </style>
+</head>
+<body>
+<div class="page">
+<header id="top">
+  <div class="eyebrow">Architecture Baseline <span class="status s-green">2026-07-22 · Phase 0+1 Complete</span></div>
+  <h1>WGEMemory4LLM 架构基线</h1>
+  <p class="subtitle">
+    本文忠实记录 Phase 0（知识合同 + 基础设施）+ Phase 1（最小垂直切片）完成后的代码现状。
+    每个结论基于实读源码（src/ 下全部 16 个 TypeScript 文件），引用具体行号。
+    不来自文档推断，不来自设计宣称——只有代码事实。
+  </p>
+  <div class="meta">
+    <span class="chip"><b>代码文件</b> 16 个 TS 文件</span>
+    <span class="chip"><b>一等对象</b> 7 个（Source/SourceSpan/Claim/Concept/Relation/WikiModule/ContextPack）</span>
+    <span class="chip"><b>状态轴</b> 4 正交轴</span>
+    <span class="chip"><b>CLI 命令</b> 3 个（ingest/query/status）</span>
+    <span class="chip"><b>LLM Prompt</b> 3 个集中管理</span>
+    <span class="chip"><b>已验证</b> typecheck 0 错误 + Ingestor 5 篇测试通过</span>
+  </div>
+  <nav aria-label="目录">
+    <a href="#overview">1·总览</a>
+    <a href="#types">2·类型系统</a>
+    <a href="#status-axes">3·四状态轴</a>
+    <a href="#objects">4·一等对象</a>
+    <a href="#schemas">5·运行时校验</a>
+    <a href="#core">6·LLM 层</a>
+    <a href="#config">7·配置层</a>
+    <a href="#parser">8·解析层</a>
+    <a href="#ingestor">9·摄入层</a>
+    <a href="#prompts">10·Prompt 层</a>
+    <a href="#compiler">11·编译层</a>
+    <a href="#linter">12·门禁层</a>
+    <a href="#storage">13·存储层</a>
+    <a href="#graph">14·Graph 层</a>
+    <a href="#context">15·Context Pack</a>
+    <a href="#cli">16·CLI 层</a>
+    <a href="#dataflow">17·数据流</a>
+    <a href="#gitignore">18·Git 策略</a>
+    <a href="#gaps">19·设计差距</a>
+    <a href="#not-implemented">20·未实现</a>
+  </nav>
+</header>
+
+<main>
+
+<!-- ═══ 1 · 总览 ═══ -->
+<section id="overview">
+  <div class="section-head"><div class="kicker">§01 / Overview</div><div><h2>架构总览</h2><p class="lead">Phase 0+1 完成了极薄闭环：材料 → Ingestor → Compiler → Linter → Storage → Graph → Context Pack → CLI。每一层都已实现并通过 typecheck。</p></div></div>
+
+  <div class="diagram"><div class="mermaid">
+flowchart TD
+    R["raw MD file"] --> P["parser/markdown.ts<br/>机械解析 + blockId"]
+    P --> I["ingestor/index.ts<br/>Source + SourceSpan + hash 去重"]
+    I --> C1["compiler step 1<br/>LLM 命题切分<br/>返回 blockId+exactQuote"]
+    C1 --> C2["compiler step 2<br/>mapQuoteToSpan<br/>程序映射成 SourceSpan"]
+    C2 --> C3["compiler step 3<br/>LLM 编译 Claim/Concept/Relation"]
+    C3 --> L1["linter step 1<br/>结构性硬门禁<br/>statement 非空/引用存在"]
+    L1 -->|"通过"| L2["linter step 2<br/>语义门禁<br/>5 维度忠实度"]
+    L2 -->|"通过"| S1["storage<br/>publicationState=CANONICAL"]
+    L1 -->|"失败"| SQ["storage<br/>publicationState=QUARANTINED"]
+    L2 -->|"失败"| SQ
+    S1 --> G["graph/index.ts<br/>buildGraph<br/>从 Canonical Claim/Relation"]
+    G --> CP["context-pack/index.ts<br/>任务子图 + 预算 + 证据"]
+    CP --> CLI["cli/index.ts<br/>wge query"]
+  </div></div>
+
+  <h3>src/ 目录结构（16 个文件）</h3>
+  <table>
+    <thead><tr><th>层</th><th>文件</th><th>行数</th><th>核心职责</th><th>状态</th></tr></thead>
+    <tbody>
+      <tr><td rowspan="2">types</td><td>types/index.ts</td><td>200</td><td>7 个一等对象 + 4 状态轴 + branded NodeRef</td><td><span class="badge b-done">完成</span></td></tr>
+      <tr><td>types/schemas.ts</td><td>164</td><td>Zod 运行时校验 + parseLLMJson 工具</td><td><span class="badge b-done">完成</span></td></tr>
+      <tr><td rowspan="3">core</td><td>core/types.ts</td><td>34</td><td>ChatOptions / ChatResult 接口</td><td><span class="badge b-done">完成</span></td></tr>
+      <tr><td>core/client.ts</td><td>134</td><td>DeepSeekClient（maxRetries:3 + timeout:120s）</td><td><span class="badge b-done">完成</span></td></tr>
+      <tr><td>core/llm-provider.ts</td><td>41</td><td>LLMProvider 接口 + DeepSeekProvider + 工厂</td><td><span class="badge b-done">完成</span></td></tr>
+      <tr><td rowspan="2">config</td><td>config/types.ts</td><td>33</td><td>AppConfig 类型 + DEFAULT_MODEL/BASE_URL</td><td><span class="badge b-done">完成</span></td></tr>
+      <tr><td>config/index.ts</td><td>88</td><td>findProjectRoot(只找不建) + loadConfig + loadApiKey</td><td><span class="badge b-done">完成</span></td></tr>
+      <tr><td>parser</td><td>parser/markdown.ts</td><td>~280</td><td>MD 解析 + blockId + charStart/charEnd 机械生成</td><td><span class="badge b-done">完成</span></td></tr>
+      <tr><td>ingestor</td><td>ingestor/index.ts</td><td>158</td><td>Source/SourceSpan 产出 + hash 去重 + mapQuoteToSpan</td><td><span class="badge b-done">完成</span></td></tr>
+      <tr><td>prompts</td><td>prompts/index.ts</td><td>127</td><td>3 个 prompt 集中管理（命题切分/编译/审计）</td><td><span class="badge b-done">完成</span></td></tr>
+      <tr><td>compiler</td><td>compiler/index.ts</td><td>229</td><td>三步编译（命题切分→映射→Claim/Relation）</td><td><span class="badge b-done">完成</span></td></tr>
+      <tr><td rowspan="2">linter</td><td>linter/index.ts</td><td>197</td><td>结构性硬门禁 + 语义门禁 + 自动 Canonical</td><td><span class="badge b-done">完成</span></td></tr>
+      <tr><td>linter/storage.ts</td><td>112</td><td>JSONL 存储读写（claims/concepts/relations/spans）</td><td><span class="badge b-done">完成</span></td></tr>
+      <tr><td>graph</td><td>graph/index.ts</td><td>161</td><td>buildGraph + walkGraph + searchClaims</td><td><span class="badge b-done">完成</span></td></tr>
+      <tr><td>context-pack</td><td>context-pack/index.ts</td><td>162</td><td>buildContextPack（9 步组装 + 预算控制）</td><td><span class="badge b-done">完成</span></td></tr>
+      <tr><td>cli</td><td>cli/index.ts</td><td>194</td><td>wge ingest / wge query / wge status</td><td><span class="badge b-done">完成</span></td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ═══ 2 · 类型系统 ═══ -->
+<section id="types">
+  <div class="section-head"><div class="kicker">§02 / Type System</div><div><h2>类型系统：Semantics first, Types second</h2><p class="lead">所有类型从 docs/knowledge-contract.md 语义合同编译。修旧项目 lite-llmwiki 的 5 个类型坑（见 experience-index.md）。</p></div></div>
+
+  <h3>修复的旧项目类型坑</h3>
+  <table>
+    <thead><tr><th>旧项目坑</th><th>旧项目实现</th><th>新项目修正</th><th>行号</th></tr></thead>
+    <tbody>
+      <tr><td>propRefs 用 string[] 语义是数字</td><td>Evidence.propRefs: string[]</td><td>去掉 propRefs，Claim 用 evidenceSpanIds: string[] 引用 SourceSpan.id</td><td>types/index.ts:95</td></tr>
+      <tr><td>GraphEdge.source 无类型约束</td><td>source?: string</td><td>EdgeSource 字面量联合（4 种值）</td><td>types/index.ts:60-64</td></tr>
+      <tr><td>Relation.from/to 无类型区分</td><td>from: string, to: string</td><td>branded NodeRef（ClaimRef / ConceptRef / WikiRef）</td><td>types/index.ts:32-35</td></tr>
+      <tr><td>edges JSON 字符串读写不对称</td><td>JSON.parse 静默吞错</td><td>JSONL 存储 + Zod schema 校验 + parseLLMJson 失败抛诊断 Error</td><td>schemas.ts:129-164</td></tr>
+      <tr><td>auditStatus 单轴混合三种问题</td><td>"pending"|"passed"|"warning"|"failed"</td><td>四个正交轴：derivation × validity × lifecycle × publicationState</td><td>types/index.ts:14-23</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Branded Type 实现</h3>
+  <div class="schema">// 编译期区分引用类型（运行时是普通 string）
+type ClaimRef = string & { readonly __brand: "ClaimRef" };
+type ConceptRef = string & { readonly __brand: "ConceptRef" };
+type WikiRef = string & { readonly __brand: "WikiRef" };
+type NodeRef = ClaimRef | ConceptRef | WikiRef;
+
+// 创建 Ref 的唯一安全方式（避免裸 string 传入）
+function claimRef(id: string): ClaimRef { return id as ClaimRef; }
+function conceptRef(id: string): ConceptRef { return id as ConceptRef; }
+function wikiRef(id: string): WikiRef { return id as WikiRef; }</div>
+  <p><b>compiler/index.ts:165-166</b> 使用 <code>claimRef(fromClaim.id)</code> 创建 Relation.from，编译期防止把 ConceptRef 传给期望 ClaimRef 的地方。</p>
+</section>
+
+<!-- ═══ 3 · 四状态轴 ═══ -->
+<section id="status-axes">
+  <div class="section-head"><div class="kicker">§03 / Status Axes</div><div><h2>四个正交状态轴</h2><p class="lead">修 GPT 问题 4：Product Definition 的 epistemicStatus 混合了三种不同问题。新项目拆成三个正交轴 + publicationState。</p></div></div>
+
+  <div class="grid">
+    <div class="card"><div class="label">Axis 1</div><h3>derivation</h3><p><code>"EXTRACTED" | "INFERRED" | "HUMAN_ASSERTED"</code></p><p class="small">结论怎么来的。与可信度正交。</p><p><b>行号：</b>types/index.ts:14</p></div>
+    <div class="card"><div class="label">Axis 2</div><h3>validity</h3><p><code>"SUPPORTED" | "DISPUTED" | "UNRESOLVED"</code></p><p class="small">当前是否有争议。独立于 derivation。</p><p><b>行号：</b>types/index.ts:17</p></div>
+    <div class="card"><div class="label">Axis 3</div><h3>lifecycle</h3><p><code>"ACTIVE" | "SUPERSEDED"</code></p><p class="small">是否仍然有效（时态）。SUPERSEDED 不删除。</p><p><b>行号：</b>types/index.ts:20</p></div>
+    <div class="card"><div class="label">Axis 4</div><h3>publicationState</h3><p><code>"CANDIDATE" | "CANONICAL" | "QUARANTINED"</code></p><p class="small">是否进入默认消费链。Lint 通过自动 Canonical。</p><p><b>行号：</b>types/index.ts:23</p></div>
+  </div>
+
+  <div class="callout good"><b>正交性验证：</b>一个 Claim 可以同时是 INFERRED + DISPUTED + ACTIVE + CANONICAL。四个轴各自独立变化，不像旧项目 epistemicStatus 那样单选互斥。</p></div>
+
+  <h3>四轴组合场景</h3>
+  <table>
+    <thead><tr><th>场景</th><th>derivation</th><th>validity</th><th>lifecycle</th><th>publicationState</th></tr></thead>
+    <tbody>
+      <tr><td>LLM 从原文提取的事实</td><td>EXTRACTED</td><td>SUPPORTED</td><td>ACTIVE</td><td>CANONICAL</td></tr>
+      <tr><td>LLM 推导且被另一来源挑战</td><td>INFERRED</td><td>DISPUTED</td><td>ACTIVE</td><td>CANONICAL</td></tr>
+      <tr><td>被新证据取代的旧结论</td><td>EXTRACTED</td><td>SUPPORTED</td><td>SUPERSEDED</td><td>CANONICAL</td></tr>
+      <tr><td>LLM 编译但证据不足</td><td>INFERRED</td><td>UNRESOLVED</td><td>ACTIVE</td><td>QUARANTINED</td></tr>
+    </tbody>
+  </table>
+  <p><b>Graph 消费规则</b>（graph/index.ts:37-38）：只读 <code>publicationState=CANONICAL && lifecycle=ACTIVE</code> 的对象。</p>
+</section>
+
+<!-- ═══ 4 · 一等对象 ═══ -->
+<section id="objects">
+  <div class="section-head"><div class="kicker">§04 / First-Class Objects</div><div><h2>7 个一等对象</h2><p class="lead">严格对齐 Product Definition §05。Proposition <b>不是</b>一等对象（决策 4A）。</p></div></div>
+
+  <table>
+    <thead><tr><th>对象</th><th>核心字段</th><th>行号</th><th>语义</th></tr></thead>
+    <tbody>
+      <tr><td><b>Source</b></td><td>id, hash, uri, parsedText, sourceType, loaderVersion</td><td>types/index.ts:69-77</td><td>不可变证据载体。hash 去重。</td></tr>
+      <tr><td><b>SourceSpan</b></td><td>id, sourceId, blockId, charStart, charEnd, text</td><td>types/index.ts:80-87</td><td>证据精确定位。blockId+offset 由 parser 机械生成。</td></tr>
+      <tr><td><b>Claim</b></td><td>id, statement, evidenceSpanIds[], conditions[], 四轴, validFrom/To</td><td>types/index.ts:90-103</td><td>最小可判断结论。evidenceSpanIds 引用 SourceSpan.id。</td></tr>
+      <tr><td><b>Concept</b></td><td>id, name, aliases[], boundary, domain</td><td>types/index.ts:106-112</td><td>跨来源稳定身份。aliases 对齐，boundary 消歧。</td></tr>
+      <tr><td><b>Relation</b></td><td>id, from:NodeRef, to:NodeRef, type, conditions[], evidenceSpanIds[], 四轴, source:EdgeSource</td><td>types/index.ts:118-135</td><td>类型化关系。无 direction 字段（由 type 语义定义）。</td></tr>
+      <tr><td><b>WikiModule</b></td><td>id, stableAddress, coreQuestion, currentUnderstanding, disputes[], claimRefs[]</td><td>types/index.ts:138-149</td><td>围绕稳定主题的语义单元。<span class="badge b-stub">Phase 2</span></td></tr>
+      <tr><td><b>ContextPack</b></td><td>knowledgeVersion, taskMap, subgraph, wikiModules, evidenceSpans, conflictsAndConditions, selectionLog, knownGaps</td><td>types/index.ts:174-183</td><td>Agent 统一消费合同。</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout warn"><b>PropositionDraft</b>（types/index.ts:191-200）是<b>编译中间产物</b>，不长期存储、不进 Git。Compiler 产出后用于 Claim 编译，之后丢弃。决策 4A：验证有效后再升级为一等对象。</div>
+</section>
+
+<!-- ═══ 5 · 运行时校验 ═══ -->
+<section id="schemas">
+  <div class="section-head"><div class="kicker">§05 / Runtime Validation</div><div><h2>Zod 运行时校验</h2><p class="lead">修 GPT 问题 5.6：TypeScript 类型运行时不存在，不能校验 LLM 输出。</p></div></div>
+
+  <p>所有 LLM 输出用 Zod schema 运行时校验（schemas.ts）。核心工具 <code>parseLLMJson&lt;T&gt;</code>（schemas.ts:129）：</p>
+  <ol>
+    <li>剥除 markdown 围栏 <code>```json ... ```</code>（schemas.ts:133-142）</li>
+    <li>JSON.parse，失败抛带原文的诊断 Error（schemas.ts:146-151）</li>
+    <li>schema.safeParse 校验，失败抛 issues 列表 + 原文片段（schemas.ts:153-161）</li>
+  </ol>
+
+  <h3>已定义的 Zod Schema</h3>
+  <table>
+    <thead><tr><th>Schema</th><th>用途</th><th>行号</th></tr></thead>
+    <tbody>
+      <tr><td>PropositionResponseSchema</td><td>命题切分 LLM 输出</td><td>schemas.ts:41-43</td></tr>
+      <tr><td>CompileResponseSchema</td><td>Claim/Concept/Relation 编译输出</td><td>schemas.ts:73-85</td></tr>
+      <tr><td>SemanticVerdictSchema</td><td>语义审计 5 维度 verdict</td><td>schemas.ts:93-102</td></tr>
+      <tr><td>ContradictionResponseSchema</td><td>矛盾检测输出</td><td>schemas.ts:116-118</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ═══ 6 · LLM 层 ═══ -->
+<section id="core">
+  <div class="section-head"><div class="kicker">§06 / LLM Layer</div><div><h2>LLM 调用层（从旧项目迁移）</h2></div></div>
+  <p><b>DeepSeekClient</b>（client.ts:15-134）：封装 openai npm 包。DeepSeek API 与 OpenAI 兼容，只改 baseURL。保留旧项目的 <code>maxRetries: 3</code> + <code>timeout: 120_000</code>（experience-index 好设计 5.5）。</p>
+  <p><b>LLMProvider</b>（llm-provider.ts:14-17）：抽象接口，为跨模型审计提供基础设施。<code>chatWithThinking</code> 当前与 <code>chat</code> 实现一致（llm-provider.ts:31-33），DeepSeek 的 reasoning 通过 model 字段选择。</p>
+  <p><b>ChatOptions</b>（core/types.ts:8-22）关键参数：<code>responseFormat: "json_object" | "text"</code>、<code>thinkingDisabled?: boolean</code>、<code>maxTokens?: number</code>、<code>onStream?</code> 回调。</p>
+</section>
+
+<!-- ═══ 7 · 配置层 ═══ -->
+<section id="config">
+  <div class="section-head"><div class="kicker">§07 / Config Layer</div><div><h2>配置层（修旧项目坑 4.1）</h2></div></div>
+  <p><b>findProjectRoot</b>（config/index.ts:20-39）：从 cwd 向上最多 5 层，找<b>同时含</b> sources/ 和 wiki/ 的目录。<b>只找不建</b>——不做 ensureDir（修旧项目坑：loadConfig 自动建目录导致短路搜索）。</p>
+  <p><b>ensureDir</b>（config/index.ts:83-88）：独立提供，只在显式 init 命令调用，不在 loadConfig 里。</p>
+  <p><b>DEFAULT_MODEL</b> = <code>"deepseek-v4-flash"</code>（config/types.ts:11）。所有 LLM 调用走 config.model，不硬编码。</p>
+</section>
+
+<!-- ═══ 8 · 解析层 ═══ -->
+<section id="parser">
+  <div class="section-head"><div class="kicker">§08 / Parser Layer</div><div><h2>Markdown 解析 + blockId 机械生成</h2><p class="lead">修 GPT 问题 7：charStart/charEnd 由 parser 机械生成，不让 LLM 返回。</p></div></div>
+
+  <p><code>parseMarkdownFile</code>（markdown.ts:55）→ <code>parseMarkdownContent</code>（markdown.ts:65）：</p>
+  <ol>
+    <li>分离 frontmatter 和 body（markdown.ts:70-81）</li>
+    <li>按 Markdown 结构切块：标题/段落/列表/表格/引用/代码/数学（markdown.ts:124-166, 169-258）</li>
+    <li>每个块记录 blockId（<code>fileStem#block-N</code>）+ charStart + charEnd + text（markdown.ts:148-155）</li>
+  </ol>
+
+  <div class="callout good"><b>blockId 稳定性：</b>基于文件名 + 块索引生成（如 <code>01-number-systems#block-3</code>）。重新解析同一文件时 blockId 保持一致。LLM 只返回 blockId + exactQuote，程序用 exactQuote 在 block 内做字符串匹配。</div>
+
+  <p><b>TextBlock.kind</b>（markdown.ts:25）：<code>"heading" | "paragraph" | "list_item" | "table_row" | "code" | "blockquote" | "math"</code>。</p>
+</section>
+
+<!-- ═══ 9 · 摄入层 ═══ -->
+<section id="ingestor">
+  <div class="section-head"><div class="kicker">§09 / Ingestor Layer</div><div><h2>摄入层：Source + SourceSpan 产出</h2></div></div>
+
+  <p><code>ingestMarkdownFile</code>（ingestor/index.ts:36）：</p>
+  <ol>
+    <li>调用 parser 解析 MD（ingestor/index.ts:37-38）</li>
+    <li>sha256 hash 基于 body 去重（ingestor/index.ts:41-43）</li>
+    <li>检查是否已摄入——已存在则读回返回 <code>isDuplicate: true</code>（ingestor/index.ts:46-61）</li>
+    <li>从 blocks 生成 SourceSpan——每个 block 一个 span（ingestor/index.ts:76-83）</li>
+    <li>写 <code>sources/&lt;id&gt;.json</code> + <code>sources/&lt;id&gt;.spans.jsonl</code> + 追加 <code>manifest.jsonl</code>（ingestor/index.ts:86-109）</li>
+  </ol>
+
+  <p><code>mapQuoteToSpan</code>（ingestor/index.ts:125-158）：</p>
+  <ul class="tight">
+    <li>输入：所有 SourceSpan + blockId + exactQuote</li>
+    <li>在 blockId 对应的 span.text 里找 exactQuote 的位置（indexOf）</li>
+    <li>精确匹配失败时回退到 trim 后再试（ingestor/index.ts:144-152）</li>
+    <li>返回精确子 span（含精确 charStart/charEnd）；匹配失败返回 null</li>
+  </ul>
+
+  <div class="callout good"><b>已验证：</b>5 篇材料测试通过。01-number-systems 产出 103 blocks，mapQuoteToSpan 精确映射成功。</div>
+</section>
+
+<!-- ═══ 10 · Prompt 层 ═══ -->
+<section id="prompts">
+  <div class="section-head"><div class="kicker">§10 / Prompt Layer</div><div><h2>Prompt 集中管理（修旧项目坑 3.1）</h2></div></div>
+  <p>旧项目 prompt 散落 7+ 个文件。新项目集中在 <code>prompts/index.ts</code>（127 行），每个 prompt 独立常量 + version 字段。</p>
+  <table>
+    <thead><tr><th>Prompt</th><th>version</th><th>行号</th><th>用途</th></tr></thead>
+    <tbody>
+      <tr><td>PROPOSITION_EXTRACT_SYSTEM</td><td>v1.0</td><td>prompts/index.ts:12-43</td><td>命题切分：要求 blockId + exactQuote + relatesTo</td></tr>
+      <tr><td>COMPILE_SYSTEM</td><td>v1.0</td><td>prompts/index.ts:49-97</td><td>Claim/Concept/Relation 编译</td></tr>
+      <tr><td>SEMANTIC_AUDIT_SYSTEM</td><td>v1.0</td><td>prompts/index.ts:103-127</td><td>5 维度忠实度审计</td></tr>
+    </tbody>
+  </table>
+  <p><b>systemPrompt 都走 system 位</b>（修旧项目坑 3.5）。compiler/index.ts:61 和 compiler/index.ts:104 都传 systemPrompt 给 LLMProvider.chat。</p>
+</section>
+
+<!-- ═══ 11 · 编译层 ═══ -->
+<section id="compiler">
+  <div class="section-head"><div class="kicker">§11 / Compiler Layer</div><div><h2>三步编译</h2></div></div>
+
+  <div class="diagram"><div class="mermaid">
+flowchart LR
+    S1["Step 1<br/>命题切分 LLM<br/>返回 blockId+exactQuote+relatesTo<br/>maxTokens:32768"] --> S2
+    S2["Step 2<br/>mapQuoteToSpan<br/>程序用 exactQuote 在 block 内匹配<br/>匹配失败跳过该命题"] --> S3
+    S3["Step 3<br/>Claim/Concept/Relation 编译 LLM<br/>maxTokens:8192<br/>产出 publicationState=CANDIDATE"]
+  </div></div>
+
+  <p><b>compileSource</b>（compiler/index.ts:52-183）核心流程：</p>
+  <ol>
+    <li><b>命题切分</b>（compiler/index.ts:59-69）：LLM 返回 <code>{propositions: [{text, exactQuote, blockId, relatesTo?}]}</code>。用 Zod <code>PropositionResponseSchema</code> 校验。</li>
+    <li><b>映射</b>（compiler/index.ts:72-92）：对每条命题调 <code>mapQuoteToSpan</code>，匹配失败跳过（不信任 LLM 的引用定位）。</li>
+    <li><b>编译</b>（compiler/index.ts:99-183）：LLM 返回 Claim/Concept/Relation draft。构造一等对象时：
+      <ul class="tight">
+        <li>Claim 的 evidenceSpanIds 需 mapQuoteToSpan 成功（compiler/index.ts:120-127）</li>
+        <li>没找到 evidence 的 Claim 跳过（compiler/index.ts:131）</li>
+        <li>所有对象 publicationState=CANDIDATE（compiler/index.ts:141, 172）</li>
+        <li>Relation.source = "intra-material-compile"（compiler/index.ts:176）</li>
+      </ul>
+    </li>
+  </ol>
+
+  <div class="callout warn"><b>Proposition 是中间产物</b>（决策 4A）：PropositionDraft 在 compiler 内部产出，用于 Claim 编译，之后丢弃。不写入 storage，不进 Git。</div>
+</section>
+
+<!-- ═══ 12 · 门禁层 ═══ -->
+<section id="linter">
+  <div class="section-head"><div class="kicker">§12 / Linter Layer</div><div><h2>写入时门禁：硬门禁 + 语义门禁 + 自动 Canonical</h2><p class="lead">决策 2A：Lint 通过自动 Canonical，不等人类确认。失败进 Quarantine。</p></div></div>
+
+  <p><b>structuralCheck</b>（linter/index.ts:44-71）：确定性硬门禁（无 LLM）。</p>
+  <ol>
+    <li>statement 非空（linter/index.ts:49-51）</li>
+    <li>至少一个 evidenceSpanId（linter/index.ts:54-56）</li>
+    <li>所有 evidenceSpanId 都存在于 allSpanIds（linter/index.ts:59-62）</li>
+    <li>publicationState 合法（linter/index.ts:65-67）</li>
+  </ol>
+
+  <p><b>semanticCheck</b>（linter/index.ts:77-121）：语义门禁（1 次 LLM/claim）。</p>
+  <ul class="tight">
+    <li>取 claim 的证据原文组成 prompt</li>
+    <li>LLM 判 5 维度：support/addition/inference/limits/citation</li>
+    <li>用 Zod <code>SemanticVerdictSchema</code> 校验（linter/index.ts:116）</li>
+  </ul>
+
+  <p><b>lintClaims</b>（linter/index.ts:133-197）完整流程：</p>
+  <table>
+    <thead><tr><th>门禁结果</th><th>处置</th><th>行号</th></tr></thead>
+    <tbody>
+      <tr><td>硬门禁失败</td><td>publicationState=QUARANTINED + 写 quarantine-manifest.json</td><td>linter/index.ts:143-147, 185-194</td></tr>
+      <tr><td>语义门禁 failed</td><td>publicationState=QUARANTINED</td><td>linter/index.ts:163-170</td></tr>
+      <tr><td>语义门禁 warning + issues 含"冲突"</td><td>publicationState=CANONICAL + validity=DISPUTED</td><td>linter/index.ts:172-178</td></tr>
+      <tr><td>语义门禁 passed / warning(无冲突)</td><td>publicationState=CANONICAL（自动发布）</td><td>linter/index.ts:182</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout good"><b>决策 2A 实现：</b>没有任何"等人类确认"节点。Lint 通过自动 Canonical，冲突内容 Canonical+DISPUTED（不要求人类选边），失败进 Quarantine。</div>
+</section>
+
+<!-- ═══ 13 · 存储层 ═══ -->
+<section id="storage">
+  <div class="section-head"><div class="kicker">§13 / Storage Layer</div><div><h2>JSONL 存储（对齐 Product Definition §06）</h2></div></div>
+
+  <table>
+    <thead><tr><th>对象</th><th>存储路径</th><th>格式</th><th>行号</th></tr></thead>
+    <tbody>
+      <tr><td>Source</td><td>sources/&lt;id&gt;.json</td><td>单个 JSON</td><td>ingestor/index.ts:95</td></tr>
+      <tr><td>SourceSpan</td><td>sources/&lt;id&gt;.spans.jsonl</td><td>JSONL（每行一个 span）</td><td>ingestor/index.ts:100</td></tr>
+      <tr><td>Claim</td><td>claims/claims.jsonl</td><td>JSONL</td><td>storage.ts:61-63</td></tr>
+      <tr><td>Concept</td><td>concepts/concepts.jsonl</td><td>JSONL</td><td>storage.ts:71-73</td></tr>
+      <tr><td>Relation</td><td>relations/edges.jsonl</td><td>JSONL</td><td>storage.ts:81-83</td></tr>
+      <tr><td>Quarantine manifest</td><td>quarantine/quarantine-manifest.json</td><td>单个 JSON</td><td>linter/index.ts:190</td></tr>
+      <tr><td>Source manifest</td><td>manifest.jsonl</td><td>JSONL（追加）</td><td>ingestor/index.ts:105</td></tr>
+    </tbody>
+  </table>
+  <p><b>JSONL 优势</b>（storage.ts:1-9）：追加写入、流式读取、git diff 友好。与 Product Definition §06 的 <code>edges.jsonl</code> 定义一致。</p>
+</section>
+
+<!-- ═══ 14 · Graph 层 ═══ -->
+<section id="graph">
+  <div class="section-head"><div class="kicker">§14 / Graph Layer</div><div><h2>Graph 从 Claim/Relation 构建（修 GPT 问题 10）</h2></div></div>
+
+  <p><b>buildGraph</b>（graph/index.ts:31-62）：</p>
+  <ul class="tight">
+    <li>从 Canonical Claim/Concept/Relation 构建（<b>不从 Wiki 文本反向抽取</b>）</li>
+    <li>只读 <code>publicationState=CANONICAL && lifecycle=ACTIVE</code>（graph/index.ts:37-38）</li>
+    <li>QUARANTINED 和 SUPERSEDED 不进图</li>
+    <li>构建双向邻接 Map（graph/index.ts:44-54）</li>
+  </ul>
+
+  <p><b>walkGraph</b>（graph/index.ts:73-125）：BFS 从种子沿关系扩展。可按 <code>allowedTypes</code> 过滤关系类型。</p>
+  <p><b>searchClaims</b>（graph/index.ts:135-161）：简单包含匹配评分（Phase 1 替代 BM25，后续可升级）。过滤 Canonical+Active。</p>
+</section>
+
+<!-- ═══ 15 · Context Pack ═══ -->
+<section id="context">
+  <div class="section-head"><div class="kicker">§15 / Context Pack</div><div><h2>Agent 统一消费合同</h2></div></div>
+
+  <p><b>buildContextPack</b>（context-pack/index.ts:38-162）9 步组装：</p>
+  <ol>
+    <li>加载知识状态：readAllClaims + readAllConcepts + readAllRelations + readAllSpans（context-pack/index.ts:45-48）</li>
+    <li>构建 Graph（context-pack/index.ts:51）</li>
+    <li>关键词搜索种子取前 10（context-pack/index.ts:54-63）</li>
+    <li>Graph 扩展允许 6 种关系类型（context-pack/index.ts:66-67）</li>
+    <li>预算控制：4 chars ≈ 1 token，先放种子后放扩展 Claim（context-pack/index.ts:69-114）</li>
+    <li>回填原文证据（context-pack/index.ts:117）</li>
+    <li>提取冲突与条件：DISPUTED 和 conditions 标注（context-pack/index.ts:120-130）</li>
+    <li>生成知识地图（context-pack/index.ts:133-141）</li>
+    <li>已知缺口（context-pack/index.ts:144-150）</li>
+  </ol>
+
+  <p><b>wikiModules 为空</b>（context-pack/index.ts:157）——Phase 2 实现 WikiModule 生成。</p>
+</section>
+
+<!-- ═══ 16 · CLI 层 ═══ -->
+<section id="cli">
+  <div class="section-head"><div class="kicker">§16 / CLI Layer</div><div><h2>CLI 命令</h2></div></div>
+  <table>
+    <thead><tr><th>命令</th><th>参数</th><th>流程</th><th>行号</th></tr></thead>
+    <tbody>
+      <tr><td><code>wge ingest &lt;file&gt;</code></td><td>--no-semantic, --json</td><td>ingest→compile→lint→store 全链</td><td>cli/index.ts:25-118</td></tr>
+      <tr><td><code>wge query &lt;task&gt;</code></td><td>--budget, --depth, --json</td><td>buildContextPack→输出</td><td>cli/index.ts:122-172</td></tr>
+      <tr><td><code>wge status</code></td><td>无</td><td>统计 spans/claims/canonical/quarantined/disputed</td><td>cli/index.ts:174-194</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ═══ 17 · 数据流 ═══ -->
+<section id="dataflow">
+  <div class="section-head"><div class="kicker">§17 / Data Flow</div><div><h2>完整数据流：ingest 命令端到端</h2></div></div>
+  <div class="schema">// wge ingest mathtest-material/01-number-systems.md --json
+
+1. loadConfig()                          → AppConfig
+2. createLLMProvider(config)             → LLMProvider
+3. ingestMarkdownFile(config, file)      → { source: Source, spans: SourceSpan[], isDuplicate }
+   └─ parseMarkdownFile(filePath)        → ParsedMarkdown (frontmatter + body + blocks[])
+   └─ 每个 block → SourceSpan (blockId + charStart + charEnd)
+   └─ sha256(body).slice(16) → hash → sourceId
+   └─ 写 sources/<id>.json + sources/<id>.spans.jsonl + 追加 manifest.jsonl
+
+4. compileSource(config, source, spans, provider) → CompileResult
+   ├─ Step 1: LLM 命题切分 (maxTokens:32768, json_object, thinkingDisabled)
+   │  └─ Zod PropositionResponseSchema 校验
+   ├─ Step 2: mapQuoteToSpan(spans, blockId, exactQuote) → SourceSpan | null
+   │  └─ 匹配失败跳过该命题
+   └─ Step 3: LLM Claim 编译 (maxTokens:8192, json_object, thinkingDisabled)
+      └─ Zod CompileResponseSchema 校验
+      └─ 构造 Claim/Concept/Relation (publicationState=CANDIDATE)
+
+5. lintClaims(config, claims, allSpans, provider)
+   ├─ structuralCheck: statement 非空 + evidenceSpanIds 非空 + spanId 存在
+   ├─ semanticCheck: LLM 5 维度审计 (maxTokens:4096)
+   │  └─ Zod SemanticVerdictSchema 校验
+   └─ 通过 → publicationState=CANONICAL
+      失败 → publicationState=QUARANTINED + 写 quarantine-manifest.json
+      warning+冲突 → publicationState=CANONICAL + validity=DISPUTED
+
+6. appendClaims(canonical)               → claims/claims.jsonl
+   appendClaims(quarantined)             → claims/claims.jsonl
+   appendConcepts(concepts)              → concepts/concepts.jsonl
+   appendRelations(validRelations)       → relations/edges.jsonl</div>
+</section>
+
+<!-- ═══ 18 · Git 策略 ═══ -->
+<section id="gitignore">
+  <div class="section-head"><div class="kicker">§18 / Git Strategy</div><div><h2>Git 策略（修 GPT 问题 9）</h2></div></div>
+  <table>
+    <thead><tr><th>内容</th><th>是否进 Git</th><th>理由</th></tr></thead>
+    <tbody>
+      <tr><td>sources/</td><td><span class="badge b-done">进 Git</span></td><td>小规模原始材料——不可变证据</td></tr>
+      <tr><td>claims/</td><td><span class="badge b-done">进 Git</span></td><td>Canonical 知识状态——可追溯演化</td></tr>
+      <tr><td>concepts/</td><td><span class="badge b-done">进 Git</span></td><td>概念身份——可追溯合并/拆分</td></tr>
+      <tr><td>relations/</td><td><span class="badge b-done">进 Git</span></td><td>类型化边——可追溯关系演化</td></tr>
+      <tr><td>wiki/</td><td><span class="badge b-done">进 Git</span></td><td>Canonical WikiModule</td></tr>
+      <tr><td>runs/</td><td><span class="badge b-done">进 Git</span></td><td>编译 manifest——可恢复健康版本</td></tr>
+      <tr><td>tests/</td><td><span class="badge b-done">进 Git</span></td><td>回归问题 + Gold 题集</td></tr>
+      <tr><td>quarantine/</td><td><span class="badge b-done">进 Git</span></td><td>至少保存审计 manifest</td></tr>
+      <tr><td>indexes/</td><td><span class="badge b-pending">不进 Git</span></td><td>可重建的 BM25/vector 索引</td></tr>
+      <tr><td>node_modules/</td><td><span class="badge b-pending">不进 Git</span></td><td>依赖</td></tr>
+    </tbody>
+  </table>
+  <div class="callout good"><b>修 GPT 问题 9：</b>旧计划 .gitignore 了 wiki/sources/，与"Git 管理知识演化"的产品目标矛盾。新项目知识状态全部进 Git，只有可重建的 indexes/ 忽略。</div>
+</section>
+
+<!-- ═══ 19 · 设计差距 ═══ -->
+<section id="gaps">
+  <div class="section-head"><div class="kicker">§19 / Design Gaps</div><div><h2>当前设计差距（需后续 Phase 补齐）</h2></div></div>
+  <table>
+    <thead><tr><th>差距</th><th>当前状态</th><th>计划 Phase</th><th>影响</th></tr></thead>
+    <tbody>
+      <tr><td>WikiModule 生成</td><td>未实现——ContextPack.wikiModules 为空</td><td>Phase 2</td><td>Agent 拿不到连贯语义模块</td></tr>
+      <tr><td>跨材料检测</td><td>未实现——ContradictionResponseSchema 已定义但无调用</td><td>Phase 2</td><td>跨材料关系只有 intra-material 边</td></tr>
+      <tr><td>Concept 对齐</td><td>Compiler 产出 Concept 但无跨来源合并逻辑</td><td>Phase 2</td><td>同名异义可能误合并</td></tr>
+      <tr><td>进化机制（纠正+影响传播）</td><td>未实现</td><td>Phase 3</td><td>纠正后旧错误可能复发</td></tr>
+      <tr><td>周期性 Semantic Lint</td><td>只有写入时 Lint，无周期 Lint</td><td>Phase 3</td><td>跨模块冲突不会被检测</td></tr>
+      <tr><td>原子发布（事务边界）</td><td>未实现——Claim/Concept/Relation 分别追加</td><td>Phase 2</td><td>中途失败可能产生不一致状态</td></tr>
+      <tr><td>Git commit 集成</td><td>未实现——手动 git commit</td><td>Phase 2</td><td>知识状态版本未自动记录</td></tr>
+      <tr><td>BM25 索引</td><td>未实现——searchClaims 用简单包含匹配</td><td>Phase 2</td><td>检索质量可能不足</td></tr>
+      <tr><td>Benchmark A-E 对照</td><td>未实现——题集骨架已建好</td><td>Phase 4</td><td>产品价值未验证</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ═══ 20 · 未实现 ═══ -->
+<section id="not-implemented">
+  <div class="section-head"><div class="kicker">§20 / Not Implemented</div><div><h2>明确未实现的（不在 Phase 0+1 范围）</h2></div></div>
+  <ul>
+    <li><b>daemon 常驻进程</b>——不做（旧项目 Bug 5 教训：daemon self-heal 无效）</li>
+    <li><b>Vector 检索</b>——Phase 2 可选，个人场景 BM25 够用</li>
+    <li><b>三路 RRF</b>——简化到 searchClaims（包含匹配）+ walkGraph（Graph 路），后续可加 RRF 融合</li>
+    <li><b>人类审批</b>——不做（决策 2A：Lint 自动发布）</li>
+    <li><b>Proposition 一等对象</b>——不做（决策 4A：中间产物，验证有效再升级）</li>
+    <li><b>OKF/MCP 标准化</b>——不做（纯 Markdown + JSON，任何 Agent 能直接读）</li>
+    <li><b>chunk marker</b>——不做（旧项目 Bug 1/2/7 根因）</li>
+    <li><b>软门禁</b>——不做（旧项目 Bug 4：硬门禁物理隔离到 Quarantine）</li>
+  </ul>
+</section>
+
+</main>
+
+<footer>
+  <p><b>WGEMemory4LLM Architecture Baseline</b> · 2026-07-22 · Phase 0+1 Complete。
+  本文忠实记录代码现状，每个结论基于实读 src/ 下 16 个 TypeScript 文件，引用具体行号。
+  与 Product Definition / User Stories / Benchmark 三份定义文档对齐。
+  所有旧项目 lite-llmwiki 的逻辑矛盾（7 bug）和 GPT 反馈的 10 个问题均已修正。</p>
+  <p class="small">建议用现代浏览器打开；Mermaid 图通过 CDN 渲染。正文、表格与行号引用在脚本不可用时仍可阅读。</p>
+</footer>
+
+</div>
+</body>
+</html>

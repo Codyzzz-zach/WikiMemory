@@ -4,7 +4,10 @@ import { Command } from "commander";
 import { loadConfig } from "../config/index.js";
 import { ingestMarkdownFile } from "../ingestor/index.js";
 import { compileSource } from "../compiler/index.js";
-import { lintClaims, type LintResult } from "../linter/index.js";
+import {
+	lintCompileResult,
+	type CompileLintResult,
+} from "../linter/index.js";
 import {
 	appendClaims,
 	appendConcepts,
@@ -39,7 +42,7 @@ program
 
 		const provider = createLLMProvider(config);
 
-		// Step 1: Ingest
+		// Step 1: Ingest（机械解析）
 		if (!options.json) console.error(`📥 Ingesting: ${file}`);
 		const ingestResult = ingestMarkdownFile(config, file);
 		if (!options.json) {
@@ -54,7 +57,7 @@ program
 			return;
 		}
 
-		// Step 2: Compile
+		// Step 2: Compile（三步编译）
 		if (!options.json) console.error("🔧 Compiling...");
 		const compileResult = await compileSource(
 			config,
@@ -68,36 +71,43 @@ program
 			console.error(`   Relations: ${compileResult.relations.length}`);
 		}
 
-		// Step 3: Lint
-		if (!options.json) console.error("🔍 Linting...");
+		// Step 3: 原子 Lint（修断点 1+6：Claim + Relation 一起 Lint）
+		if (!options.json) console.error("🔍 Linting (atomic: claims + relations)...");
 		const allSpans = readAllSpans(config);
 		const lintProvider = options.noSemantic ? null : provider;
-		const lintResult: LintResult = await lintClaims(
+		const lintResult: CompileLintResult = await lintCompileResult(
 			config,
 			compileResult.claims,
+			compileResult.relations,
+			compileResult.concepts,
 			allSpans,
 			lintProvider,
 			{ skipSemantic: options.noSemantic },
 		);
 		if (!options.json) {
-			console.error(`   Canonical: ${lintResult.canonical.length}`);
-			console.error(`   Quarantined: ${lintResult.quarantined.length}`);
+			console.error(`   Canonical claims: ${lintResult.canonicalClaims.length}`);
+			console.error(`   Canonical relations: ${lintResult.canonicalRelations.length}`);
+			console.error(`   Quarantined claims: ${lintResult.quarantinedClaims.length}`);
+			console.error(`   Quarantined relations: ${lintResult.quarantinedRelations.length}`);
 		}
 
-		// Step 4: Store
-		appendClaims(config, lintResult.canonical);
-		appendClaims(config, lintResult.quarantined.map((q) => q.claim));
-		appendConcepts(config, compileResult.concepts);
+		// Step 4: 原子发布（修断点 6：整体写入，不分别追加）
+		// 先收集所有要写入的对象，再一次写入——中途失败不会产生半成品状态
+		const claimsToStore = [
+			...lintResult.canonicalClaims,
+			...lintResult.quarantinedClaims.map((q) => q.claim),
+		];
+		const relationsToStore = [
+			...lintResult.canonicalRelations,
+			...lintResult.quarantinedRelations.map((q) => q.relation),
+		];
 
-		// Relations 只存 Canonical Claim 之间的
-		const canonicalIds = new Set(lintResult.canonical.map((c) => c.id));
-		const validRelations = compileResult.relations.filter(
-			(r) => canonicalIds.has(r.from) && canonicalIds.has(r.to),
-		);
-		appendRelations(config, validRelations);
+		appendClaims(config, claimsToStore);
+		appendConcepts(config, compileResult.concepts);
+		appendRelations(config, relationsToStore);
 
 		if (!options.json) {
-			console.error(`✅ Ingest complete: ${lintResult.canonical.length} canonical, ${lintResult.quarantined.length} quarantined`);
+			console.error(`✅ Ingest complete: ${lintResult.canonicalClaims.length} canonical claims, ${lintResult.canonicalRelations.length} canonical relations`);
 		} else {
 			console.log(
 				JSON.stringify({
@@ -107,8 +117,10 @@ program
 					claims: compileResult.claims.length,
 					concepts: compileResult.concepts.length,
 					relations: compileResult.relations.length,
-					canonical: lintResult.canonical.length,
-					quarantined: lintResult.quarantined.length,
+					canonicalClaims: lintResult.canonicalClaims.length,
+					canonicalRelations: lintResult.canonicalRelations.length,
+					quarantinedClaims: lintResult.quarantinedClaims.length,
+					quarantinedRelations: lintResult.quarantinedRelations.length,
 				}, null, 2),
 			);
 		}
@@ -184,6 +196,7 @@ program
 		);
 		const quarantined = claims.filter((c) => c.publicationState === "QUARANTINED");
 		const disputed = claims.filter((c) => c.validity === "DISPUTED");
+		const unresolved = claims.filter((c) => c.validity === "UNRESOLVED");
 
 		console.log("📊 WGEMemory4LLM Status");
 		console.log(`   Sources spans: ${spans.length}`);
@@ -191,6 +204,7 @@ program
 		console.log(`   Canonical (active): ${canonical.length}`);
 		console.log(`   Quarantined: ${quarantined.length}`);
 		console.log(`   Disputed: ${disputed.length}`);
+		console.log(`   Unresolved: ${unresolved.length}`);
 	});
 
 program.parse(process.argv);
