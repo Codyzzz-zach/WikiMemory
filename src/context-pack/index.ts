@@ -15,17 +15,7 @@
  */
 
 import type { AppConfig } from "../config/types.js";
-import type {
-	Claim,
-	ContextPack,
-	Relation,
-	SelectionLogEntry,
-} from "../types/index.js";
-import {
-	buildGraph,
-	searchClaims,
-	walkGraph,
-} from "../graph/index.js";
+import { buildGraph, searchClaims, walkGraph } from "../graph/index.js";
 import {
 	findSpansByIds,
 	readAllClaims,
@@ -33,6 +23,13 @@ import {
 	readAllRelations,
 	readAllSpans,
 } from "../linter/storage.js";
+import type {
+	Claim,
+	ContextPack,
+	Relation,
+	ScopeContext,
+	SelectionLogEntry,
+} from "../types/index.js";
 
 // ─── Map-first：检索前地图 ──────────────────────────────────────
 
@@ -53,6 +50,27 @@ export interface KnowledgeMap {
 	recentChanges: string[];
 	/** 地图生成时的 Claim 总数 */
 	totalClaims: number;
+}
+
+/**
+ * 按 ScopeContext 过滤 Claim（v1.1：Global Base + Scoped Overlay）。
+ *
+ * 选择规则（Product Definition §05 作用域消费链）：
+ * 1. 始终包含 GLOBAL 知识
+ * 2. 包含当前 principalId 的 PERSONAL 知识
+ * 3. 有 projectId 时，只包含该项目的 PROJECT 知识
+ * 4. 绝不召回其他个人或项目作用域的知识
+ *
+ * 缺少 ScopeContext 时由调用方按 Global-only 处理（不调此函数）。
+ */
+export function filterClaimsByScope(claims: Claim[], scope: ScopeContext): Claim[] {
+	return claims.filter((claim) => {
+		const cs = claim.scope;
+		if (cs.type === "GLOBAL") return true;
+		if (cs.type === "PERSONAL") return cs.id === scope.principalId;
+		if (cs.type === "PROJECT") return cs.id === scope.projectId;
+		return false;
+	});
 }
 
 /**
@@ -93,9 +111,7 @@ export function buildKnowledgeMap(
 		.map((c) => `${c.id}: ${c.statement.slice(0, 80)}`);
 
 	// 关键概念
-	const keyConcepts = concepts
-		.slice(0, 15)
-		.map((c) => c.name);
+	const keyConcepts = concepts.slice(0, 15).map((c) => c.name);
 
 	// 最近变化（按 createdAt/validFrom 排序）
 	const recentChanges = [...active]
@@ -132,7 +148,10 @@ function selectSeeds(
 	}));
 
 	// 2. 地图辅助：检查查询词是否命中地图主题
-	const queryTerms = query.toLowerCase().split(/\s+/).filter((t) => t.length > 1);
+	const queryTerms = query
+		.toLowerCase()
+		.split(/\s+/)
+		.filter((t) => t.length > 1);
 	const matchedTopics = map.topics.filter((topic) =>
 		queryTerms.some((term) => topic.includes(term) || term.includes(topic)),
 	);
@@ -176,12 +195,26 @@ export function buildContextPack(
 	task: string,
 	budget = 12000,
 	maxDepth = 3,
+	scopeContext?: ScopeContext,
 ): ContextPack {
 	// ── 1. 加载知识状态 ──
-	const allClaims = readAllClaims(config);
+	let allClaims = readAllClaims(config);
 	const allConcepts = readAllConcepts(config);
-	const allRelations = readAllRelations(config);
+	let allRelations = readAllRelations(config);
 	const allSpans = readAllSpans(config);
+
+	// ── 1.5 v1.1：作用域过滤（Global Base + Scoped Overlay）──
+	// 缺少 ScopeContext 时按 Global-only 处理，不能"默认全选"
+	if (scopeContext) {
+		allClaims = filterClaimsByScope(allClaims, scopeContext);
+		// Relation 只保留两端 Claim 都在过滤后集合中的边
+		const claimIds = new Set(allClaims.map((c) => c.id));
+		allRelations = allRelations.filter((r) => {
+			const fromId = r.from as string;
+			const toId = r.to as string;
+			return claimIds.has(fromId) && claimIds.has(toId);
+		});
+	}
 
 	// ── 2. 构建全局地图（修断点 3：map-first）──
 	const knowledgeMap = buildKnowledgeMap(allClaims, allConcepts);
@@ -203,8 +236,12 @@ export function buildContextPack(
 
 	// ── 5. Graph 扩展（沿关系找更多 Claim）──
 	const allowedTypes = new Set([
-		"REQUIRES", "DERIVED_FROM", "SUPPORTS",
-		"CONTRADICTS", "SUPERSEDES", "EQUIVALENT_UNDER",
+		"REQUIRES",
+		"DERIVED_FROM",
+		"SUPPORTS",
+		"CONTRADICTS",
+		"SUPERSEDES",
+		"EQUIVALENT_UNDER",
 	]);
 	const subgraph = walkGraph(graph, seedIds, maxDepth, allowedTypes);
 
@@ -263,25 +300,19 @@ export function buildContextPack(
 
 	// DISPUTED Claim → conflictsAndConditions
 	for (const claim of subgraph.disputedClaims) {
-		conflictsAndConditions.push(
-			`⚠️ Claim ${claim.id} 存在争议: ${claim.statement.slice(0, 80)}`,
-		);
+		conflictsAndConditions.push(`⚠️ Claim ${claim.id} 存在争议: ${claim.statement.slice(0, 80)}`);
 	}
 	// 带 conditions 的 Claim
 	for (const claim of selectedClaims) {
 		if (claim.conditions.length > 0) {
-			conflictsAndConditions.push(
-				`📌 Claim ${claim.id} 适用条件: ${claim.conditions.join("; ")}`,
-			);
+			conflictsAndConditions.push(`📌 Claim ${claim.id} 适用条件: ${claim.conditions.join("; ")}`);
 		}
 	}
 
 	// ── 9. 已知缺口（修断点 5：UNRESOLVED → knownGaps）──
 	const knownGaps: string[] = [];
 	for (const claim of subgraph.unresolvedClaims) {
-		knownGaps.push(
-			`❓ Claim ${claim.id} 证据未决: ${claim.statement.slice(0, 60)}`,
-		);
+		knownGaps.push(`❓ Claim ${claim.id} 证据未决: ${claim.statement.slice(0, 60)}`);
 	}
 	if (selectedClaims.length === 0) {
 		knownGaps.push("未找到与任务相关的 Claim——知识库可能未覆盖此主题");

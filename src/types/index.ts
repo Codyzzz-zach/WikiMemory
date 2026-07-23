@@ -45,6 +45,68 @@ export function wikiRef(id: string): WikiRef {
 	return id as WikiRef;
 }
 
+// ─── Claim 语义元数据（v1.1：非状态轴，不参与"是否消费"判断）─────
+
+/** Claim 的内容类型——决定用户能否成为该 Claim 的权威 */
+export type ClaimKind = "FACT" | "DECISION" | "PREFERENCE";
+
+/** Claim 的作用域——决定 Claim 在哪里生效、能否被选入 Context Pack */
+export interface Scope {
+	type: "GLOBAL" | "PERSONAL" | "PROJECT";
+	/** 项目/作用域标识（PROJECT 时必填） */
+	id?: string;
+}
+
+// ─── 证据引用（v1.1：provenance vs supporting evidence 拆分）─────
+
+/**
+ * 知识引用——统一引用类型，覆盖三种证据来源。
+ * provenanceRefs 证明"谁说的"；supportingEvidenceRefs 证明"命题为真"。
+ */
+export type KnowledgeRef = SourceSpanRef | AssertedRecordRef | ExperimentRecordRef;
+
+export interface SourceSpanRef {
+	type: "SourceSpan";
+	spanId: string;
+}
+
+export interface AssertedRecordRef {
+	type: "AssertedRecord";
+	assertionId: string;
+}
+
+export interface ExperimentRecordRef {
+	type: "ExperimentRecord";
+	experimentId: string;
+}
+
+// ─── AssertedRecord（用户断言记录，DECISION/PREFERENCE 的依据）────
+
+export interface AssertedRecord {
+	assertionId: string;
+	claimId: string;
+	assertedBy: string;
+	assertedAt: string;
+	scope: Scope;
+	authorityBasis: string;
+	assertionText: string;
+	/** 推荐但非硬门槛——缺失标记"理由未记录" */
+	rationale?: string;
+	/** 可选：连接实验、会议纪要或分析材料 */
+	supportingSourceIds?: string[];
+}
+
+// ─── 执行上下文（Context Pack 作用域选择用）─────────────────────
+
+/**
+ * ScopeContext——Context Pack 请求的执行上下文。
+ * 缺少时按 Global-only 处理，不能"默认全选"。
+ */
+export interface ScopeContext {
+	principalId: string;
+	projectId?: string;
+}
+
 // ─── 关系类型 ────────────────────────────────────────────────────
 
 export type RelationType =
@@ -90,6 +152,7 @@ export interface SourceSpan {
 export interface Claim {
 	id: string;
 	statement: string;
+	/** @deprecated v1.1：迁移到 supportingEvidenceRefs，但保留向后兼容 */
 	evidenceSpanIds: string[];
 	conditions: string[];
 	derivation: Derivation;
@@ -100,6 +163,19 @@ export interface Claim {
 	validTo: string | null;
 	compilerVersion: string;
 	confidence: number;
+	// ── v1.1 新增字段 ──
+	/** 内容类型（FACT/DECISION/PREFERENCE）——决定用户能否成为权威 */
+	claimKind: ClaimKind;
+	/** 作用域——决定在哪里生效、能否被选入 Context Pack */
+	scope: Scope;
+	/** 证明"谁在何时提出了这个说法"——不证明它对不对 */
+	provenanceRefs: KnowledgeRef[];
+	/** 证明"命题本身为真"——原文片段、实验记录、或授权的 AssertedRecord */
+	supportingEvidenceRefs: KnowledgeRef[];
+	/** 知识状态版本标识（MVP 只支持 knowledge time） */
+	knowledgeVersion: string;
+	/** 系统记录这条知识的时间 */
+	recordedAt: string;
 }
 
 /** 跨来源稳定概念身份 */
@@ -162,6 +238,8 @@ export interface ContextPackRequest {
 	allowedRelationTypes: RelationType[];
 	mustIncludeEvidence: boolean;
 	uncertaintyPolicy: UncertaintyPolicy;
+	/** v1.1：执行上下文。缺少时按 Global-only 处理 */
+	scopeContext?: ScopeContext;
 }
 
 export interface SelectionLogEntry {

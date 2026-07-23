@@ -147,51 +147,63 @@ program
 	.option("--budget <tokens>", "Context budget in tokens", "12000")
 	.option("--depth <n>", "Max graph depth", "3")
 	.option("--json", "Output JSON Context Pack")
-	.action((task: string, options: { budget: string; depth: string; json?: boolean }) => {
-		const config = loadConfig();
-		const pack = buildContextPack(
-			config,
-			task,
-			Number.parseInt(options.budget, 10),
-			Number.parseInt(options.depth, 10),
-		);
+	.option("--user <id>", "Principal ID for scope filtering (PERSONAL claims)")
+	.option("--project <id>", "Project ID for scope filtering (PROJECT claims)")
+	.action(
+		(
+			task: string,
+			options: { budget: string; depth: string; json?: boolean; user?: string; project?: string },
+		) => {
+			const config = loadConfig();
+			// v1.1：ScopeContext——缺少时按 Global-only 处理
+			const scopeContext = options.user
+				? { principalId: options.user, projectId: options.project }
+				: undefined;
+			const pack = buildContextPack(
+				config,
+				task,
+				Number.parseInt(options.budget, 10),
+				Number.parseInt(options.depth, 10),
+				scopeContext,
+			);
 
-		if (options.json) {
-			console.log(JSON.stringify(pack, null, 2));
-		} else {
-			console.log("📋 Context Pack");
-			console.log(pack.taskMap);
-			console.log("");
+			if (options.json) {
+				console.log(JSON.stringify(pack, null, 2));
+			} else {
+				console.log("📋 Context Pack");
+				console.log(pack.taskMap);
+				console.log("");
 
-			if (pack.subgraph.length > 0) {
-				console.log(`🔗 Relations (${pack.subgraph.length}):`);
-				for (const rel of pack.subgraph.slice(0, 10)) {
-					console.log(`   ${rel.from} --[${rel.type}]--> ${rel.to}`);
+				if (pack.subgraph.length > 0) {
+					console.log(`🔗 Relations (${pack.subgraph.length}):`);
+					for (const rel of pack.subgraph.slice(0, 10)) {
+						console.log(`   ${rel.from} --[${rel.type}]--> ${rel.to}`);
+					}
+				}
+
+				if (pack.evidenceSpans.length > 0) {
+					console.log(`\n📄 Evidence (${pack.evidenceSpans.length}):`);
+					for (const span of pack.evidenceSpans.slice(0, 5)) {
+						console.log(`   [${span.blockId}] ${span.text.slice(0, 100)}...`);
+					}
+				}
+
+				if (pack.conflictsAndConditions.length > 0) {
+					console.log("\n⚠️ Conflicts & Conditions:");
+					for (const c of pack.conflictsAndConditions) {
+						console.log(`   ${c}`);
+					}
+				}
+
+				if (pack.knownGaps.length > 0) {
+					console.log("\n❓ Known Gaps:");
+					for (const g of pack.knownGaps) {
+						console.log(`   ${g}`);
+					}
 				}
 			}
-
-			if (pack.evidenceSpans.length > 0) {
-				console.log(`\n📄 Evidence (${pack.evidenceSpans.length}):`);
-				for (const span of pack.evidenceSpans.slice(0, 5)) {
-					console.log(`   [${span.blockId}] ${span.text.slice(0, 100)}...`);
-				}
-			}
-
-			if (pack.conflictsAndConditions.length > 0) {
-				console.log("\n⚠️ Conflicts & Conditions:");
-				for (const c of pack.conflictsAndConditions) {
-					console.log(`   ${c}`);
-				}
-			}
-
-			if (pack.knownGaps.length > 0) {
-				console.log("\n❓ Known Gaps:");
-				for (const g of pack.knownGaps) {
-					console.log(`   ${g}`);
-				}
-			}
-		}
-	});
+		},
+	);
 
 // ─── status 命令 ─────────────────────────────────────────────────
 

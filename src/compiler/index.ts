@@ -132,7 +132,6 @@ export async function compileSource(
 			conditions: draft.conditions ?? [],
 			derivation: draft.derivation ?? "EXTRACTED",
 			// 门禁前置：新 Claim 初始 UNRESOLVED（待证明），门禁通过才 SUPPORTED
-			// 依据：audit_reliability_research.md + Review 断点 1（不假定可信，审计后才放行）
 			validity: "UNRESOLVED",
 			lifecycle: "ACTIVE",
 			publicationState: "CANDIDATE",
@@ -140,6 +139,20 @@ export async function compileSource(
 			validTo: null,
 			compilerVersion: COMPILE_VERSION,
 			confidence: draft.confidence ?? 0.75,
+			// v1.1：语义元数据——编译产出的 Claim 默认 FACT + GLOBAL
+			claimKind: "FACT" as const,
+			scope: { type: "GLOBAL" as const },
+			// v1.1：证据引用拆分——编译产出的 Claim 来源是 SourceSpan
+			provenanceRefs: evidenceSpanIds.map((spanId) => ({
+				type: "SourceSpan" as const,
+				spanId,
+			})),
+			supportingEvidenceRefs: evidenceSpanIds.map((spanId) => ({
+				type: "SourceSpan" as const,
+				spanId,
+			})),
+			knowledgeVersion: "v1",
+			recordedAt: now,
 		});
 	}
 
