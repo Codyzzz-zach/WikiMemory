@@ -10,6 +10,9 @@
  */
 
 import type { AppConfig } from "../config/types.js";
+import type { LLMProvider } from "../core/llm-provider.js";
+import { mapQuoteToSpan } from "../ingestor/index.js";
+import { COMPILE_SYSTEM, COMPILE_VERSION, PROPOSITION_EXTRACT_SYSTEM } from "../prompts/index.js";
 import type {
 	Claim,
 	Concept,
@@ -19,18 +22,11 @@ import type {
 	SourceSpan,
 } from "../types/index.js";
 import { claimRef } from "../types/index.js";
-import { mapQuoteToSpan } from "../ingestor/index.js";
-import {
-	COMPILE_SYSTEM,
-	COMPILE_VERSION,
-	PROPOSITION_EXTRACT_SYSTEM,
-} from "../prompts/index.js";
 import {
 	CompileResponseSchema,
 	PropositionResponseSchema,
 	parseLLMJson,
 } from "../types/schemas.js";
-import type { LLMProvider } from "../core/llm-provider.js";
 
 /** 编译结果 */
 export interface CompileResult {
@@ -135,7 +131,9 @@ export async function compileSource(
 			evidenceSpanIds,
 			conditions: draft.conditions ?? [],
 			derivation: draft.derivation ?? "EXTRACTED",
-			validity: "SUPPORTED",
+			// 门禁前置：新 Claim 初始 UNRESOLVED（待证明），门禁通过才 SUPPORTED
+			// 依据：audit_reliability_research.md + Review 断点 1（不假定可信，审计后才放行）
+			validity: "UNRESOLVED",
 			lifecycle: "ACTIVE",
 			publicationState: "CANDIDATE",
 			validFrom: now,
@@ -150,7 +148,7 @@ export async function compileSource(
 		name: c.name,
 		aliases: c.aliases ?? [],
 		boundary: c.boundary ?? "",
-		domain: c.domain || "数学",
+		domain: c.domain || "未分类",
 	}));
 
 	const relations: Relation[] = [];
@@ -167,7 +165,8 @@ export async function compileSource(
 			conditions: rel.conditions ?? [],
 			evidenceSpanIds: [...fromClaim.evidenceSpanIds, ...toClaim.evidenceSpanIds],
 			derivation: "INFERRED",
-			validity: "SUPPORTED",
+			// Relation 跟随 Claim：初始 UNRESOLVED，门禁通过后跟随端点 Claim 状态
+			validity: "UNRESOLVED",
 			lifecycle: "ACTIVE",
 			publicationState: "CANDIDATE",
 			validFrom: now,
@@ -186,9 +185,7 @@ export async function compileSource(
 
 function buildPropositionPrompt(_source: Source, spans: SourceSpan[]): string {
 	// 只给 LLM 块的 blockId + text（不给 charStart/charEnd——那是程序管的）
-	const blockList = spans
-		.map((s) => `[${s.blockId}] ${s.text.slice(0, 500)}`)
-		.join("\n\n");
+	const blockList = spans.map((s) => `[${s.blockId}] ${s.text.slice(0, 500)}`).join("\n\n");
 
 	return `请将以下章节块拆分为原子命题。
 

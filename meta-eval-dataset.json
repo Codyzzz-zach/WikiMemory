@@ -1,0 +1,802 @@
+[
+  {
+    "caseId": "CAL-001",
+    "sourceSpanId": "span:01-number-systems-80440e2182e5653f-1",
+    "originalText": "> 从计数石子到量子态的复数——数是人类理解宇宙最底层的语言。本章沿着数系的逐级扩张路线，揭示每一次\"不够用\"的危机如何推动数学的革命性突破。",
+    "claim": "本章沿着数系逐级扩张的路线，讨论每一次“不够用”的危机如何推动数学突破。",
+    "groundTruth": "faithful",
+    "unfaithfulReason": null
+  },
+  {
+    "caseId": "CAL-002",
+    "sourceSpanId": "span:01-number-systems-80440e2182e5653f-1",
+    "originalText": "> 从计数石子到量子态的复数——数是人类理解宇宙最底层的语言。本章沿着数系的逐级扩张路线，揭示每一次\"不够用\"的危机如何推动数学的革命性突破。",
+    "claim": "原文把数描述为人类理解宇宙最底层的语言，其叙述从计数石子延伸到量子态的复数。",
+    "groundTruth": "faithful",
+    "unfaithfulReason": null
+  },
+  {
+    "caseId": "CAL-003",
+    "sourceSpanId": "span:01-number-systems-80440e2182e5653f-1",
+    "originalText": "> 从计数石子到量子态的复数——数是人类理解宇宙最底层的语言。本章沿着数系的逐级扩张路线，揭示每一次\"不够用\"的危机如何推动数学的革命性突破。",
+    "claim": "本章还将证明，每一次数系扩张都是由量子物理实验直接触发的。",
+    "groundTruth": "unfaithful",
+    "unfaithfulReason": "添加(addition)：原文只说“不够用”的危机推动数系扩张，没有说每次扩张都由量子物理实验直接触发。"
+  },
+  {
+    "caseId": "CAL-004",
+    "sourceSpanId": "span:01-number-systems-80440e2182e5653f-8",
+    "originalText": "**关键洞察**：自然数的本质不是\"0,1,2,3...\"这些符号，而是**递归结构**——从零出发，反复应用\"后继\"操作，生成无穷无尽的序列。这就是为什么数学归纳法如此根本：它直接编码了自然数的构造方式。",
+    "claim": "自然数的本质被概括为从零出发、反复应用“后继”操作的递归结构，而不只是数字符号。",
+    "groundTruth": "faithful",
+    "unfaithfulReason": null
+  },
+  {
+    "caseId": "CAL-005",
+    "sourceSpanId": "span:01-number-systems-80440e2182e5653f-8",
+    "originalText": "**关键洞察**：自然数的本质不是\"0,1,2,3...\"这些符号，而是**递归结构**——从零出发，反复应用\"后继\"操作，生成无穷无尽的序列。这就是为什么数学归纳法如此根本：它直接编码了自然数的构造方式。",
+    "claim": "数学归纳法之所以根本，是因为它直接编码了自然数的构造方式。",
+    "groundTruth": "faithful",
+    "unfaithfulReason": null
+  },
+  {
+    "caseId": "CAL-006",
+    "sourceSpanId": "span:01-number-systems-80440e2182e5653f-8",
+    "originalText": "**关键洞察**：自然数的本质不是\"0,1,2,3...\"这些符号，而是**递归结构**——从零出发，反复应用\"后继\"操作，生成无穷无尽的序列。这就是为什么数学归纳法如此根本：它直接编码了自然数的构造方式。",
+    "claim": "自然数的本质就是“0,1,2,3...”这些符号，递归结构只是辅助记法。",
+    "groundTruth": "unfaithful",
+    "unfaithfulReason": "曲解(distortion)：Claim 反转了原文判断；原文明确说自然数的本质不是这些符号，而是递归结构。"
+  },
+  {
+    "caseId": "CAL-007",
+    "sourceSpanId": "span:01-number-systems-80440e2182e5653f-18",
+    "originalText": "自然数的根本缺陷：**减法不封闭**。$3 - 5$ 在 $\\mathbb{N}$ 中没有答案。这个\"不够用\"推动了我们第一次数系扩张。",
+    "claim": "自然数对减法不封闭，例如 $3 - 5$ 在 $\\mathbb{N}$ 中没有答案。",
+    "groundTruth": "faithful",
+    "unfaithfulReason": null
+  },
+  {
+    "caseId": "CAL-008",
+    "sourceSpanId": "span:01-number-systems-80440e2182e5653f-18",
+    "originalText": "自然数的根本缺陷：**减法不封闭**。$3 - 5$ 在 $\\mathbb{N}$ 中没有答案。这个\"不够用\"推动了我们第一次数系扩张。",
+    "claim": "减法在自然数中的“不够用”推动了第一次数系扩张。",
+    "groundTruth": "faithful",
+    "unfaithfulReason": null
+  },
+  {
+    "caseId": "CAL-009",
+    "sourceSpanId": "span:01-number-systems-80440e2182e5653f-18",
+    "originalText": "自然数的根本缺陷：**减法不封闭**。$3 - 5$ 在 $\\mathbb{N}$ 中没有答案。这个\"不够用\"推动了我们第一次数系扩张。",
+    "claim": "$3 - 5$ 没有答案，因此减法本身是不封闭的。",
+    "groundTruth": "unfaithful",
+    "unfaithfulReason": "丢条件(lost-condition)：原文把“没有答案”和“不封闭”限定在 $\\mathbb{N}$ 中，Claim 去掉了数系条件。"
+  },
+  {
+    "caseId": "CAL-010",
+    "sourceSpanId": "span:01-number-systems-80440e2182e5653f-22",
+    "originalText": "$$\n\\mathbb{Z} = \\{\\ldots, -3, -2, -1, 0, 1, 2, 3, \\ldots\\}\n$$",
+    "claim": "$\\mathbb{Z}$ 包含从负整数、零到正整数的全部整数。",
+    "groundTruth": "faithful",
+    "unfaithfulReason": null
+  },
+  {
+    "caseId": "CAL-011",
+    "sourceSpanId": "span:01-number-systems-80440e2182e5653f-22",
+    "originalText": "$$\n\\mathbb{Z} = \\{\\ldots, -3, -2, -1, 0, 1, 2, 3, \\ldots\\}\n$$",
+    "claim": "原文将整数集合写成 $\\{\\ldots, -3, -2, -1, 0, 1, 2, 3, \\ldots\\}$。",
+    "groundTruth": "faithful",
+    "unfaithfulReason": null
+  },
+  {
+    "caseId": "CAL-012",
+    "sourceSpanId": "span:01-number-systems-80440e2182e5653f-22",
+    "originalText": "$$\n\\mathbb{Z} = \\{\\ldots, -3, -2, -1, 0, 1, 2, 3, \\ldots\\}\n$$",
+    "claim": "$\\mathbb{Q}$ 的加减乘除在除数非零时全部封闭。",
+    "groundTruth": "unfaithful",
+    "unfaithfulReason": "引用错位(wrong-citation)：该 Claim 讲的是有理数域的封闭性，内容来自 span:01-number-systems-80440e2182e5653f-41，而当前 span 只给出整数集合。"
+  },
+  {
+    "caseId": "CAL-013",
+    "sourceSpanId": "span:01-number-systems-80440e2182e5653f-28",
+    "originalText": "<div class=\"key-point\">\n**关键点**：整数通过引入\"负数\"解决了减法封闭问题，代价是失去了 $\\mathbb{N}$ 的良序性（整数没有最小元）。但换来的是**群结构**——$(\\mathbb{Z}, +)$ 成为一个阿贝尔群（$\\S$8）。\n</div>",
+    "claim": "整数通过引入负数解决了减法封闭问题，但失去了 $\\mathbb{N}$ 的良序性。",
+    "groundTruth": "faithful",
+    "unfaithfulReason": null
+  },
+  {
+    "caseId": "CAL-014",
+    "sourceSpanId": "span:01-number-systems-80440e2182e5653f-28",
+    "originalText": "<div class=\"key-point\">\n**关键点**：整数通过引入\"负数\"解决了减法封闭问题，代价是失去了 $\\mathbb{N}$ 的良序性（整数没有最小元）。但换来的是**群结构**——$(\\mathbb{Z}, +)$ 成为一个阿贝尔群（$\\S$8）。\n</div>",
+    "claim": "$(\\mathbb{Z}, +)$ 构成一个阿贝尔群。",
+    "groundTruth": "faithful",
+    "unfaithfulReason": null
+  },
+  {
+    "caseId": "CAL-015",
+    "sourceSpanId": "span:01-number-systems-80440e2182e5653f-28",
+    "originalText": "<div class=\"key-point\">\n**关键点**：整数通过引入\"负数\"解决了减法封闭问题，代价是失去了 $\\mathbb{N}$ 的良序性（整数没有最小元）。但换来的是**群结构**——$(\\mathbb{Z}, +)$ 成为一个阿贝尔群（$\\S$8）。\n</div>",
+    "claim": "引入负数后，整数的乘法也因此构成了阿贝尔群。",
+    "groundTruth": "unfaithful",
+    "unfaithfulReason": "添加(addition)：原文只断言 $(\\mathbb{Z}, +)$ 是阿贝尔群，没有断言整数在乘法下构成阿贝尔群。"
+  },
+  {
+    "caseId": "CAL-016",
+    "sourceSpanId": "span:01-number-systems-80440e2182e5653f-37",
+    "originalText": "$$\n\\forall p,q \\in \\mathbb{Q}, p < q \\implies \\exists r = \\frac{p+q}{2} \\in \\mathbb{Q}, \\; p < r < q\n$$",
+    "claim": "若 $p,q \\in \\mathbb{Q}$ 且 $p<q$，则 $r=\\frac{p+q}{2}$ 仍是有理数，并满足 $p<r<q$。",
+    "groundTruth": "faithful",
+    "unfaithfulReason": null
+  },
+  {
+    "caseId": "CAL-017",
+    "sourceSpanId": "span:01-number-systems-80440e2182e5653f-37",
+    "originalText": "$$\n\\forall p,q \\in \\mathbb{Q}, p < q \\implies \\exists r = \\frac{p+q}{2} \\in \\mathbb{Q}, \\; p < r < q\n$$",
+    "claim": "两个有理数 $p<q$ 之间可以取它们的平均数作为另一个有理数。",
+    "groundTruth": "faithful",
+    "unfaithfulReason": null
+  },
+  {
+    "caseId": "CAL-018",
+    "sourceSpanId": "span:01-number-systems-80440e2182e5653f-37",
+    "originalText": "$$\n\\forall p,q \\in \\mathbb{Q}, p < q \\implies \\exists r = \\frac{p+q}{2} \\in \\mathbb{Q}, \\; p < r < q\n$$",
+    "claim": "对任意两个数 $p<q$，$\\frac{p+q}{2}$ 都属于 $\\mathbb{Q}$。",
+    "groundTruth": "unfaithful",
+    "unfaithfulReason": "丢条件(lost-condition)：原文要求 $p,q$ 本身属于 $\\mathbb{Q}$，Claim 删除了这一前提。"
+  },
+  {
+    "caseId": "CAL-019",
+    "sourceSpanId": "span:01-number-systems-80440e2182e5653f-41",
+    "originalText": "$\\mathbb{Q}$ 是一个**域**（Field）——加减乘除（除数非零）全部封闭：",
+    "claim": "$\\mathbb{Q}$ 是一个域，对加、减、乘以及除数非零的除法封闭。",
+    "groundTruth": "faithful",
+    "unfaithfulReason": null
+  },
+  {
+    "caseId": "CAL-020",
+    "sourceSpanId": "span:01-number-systems-80440e2182e5653f-41",
+    "originalText": "$\\mathbb{Q}$ 是一个**域**（Field）——加减乘除（除数非零）全部封闭：",
+    "claim": "有理数的除法封闭性带有除数不能为零的限制。",
+    "groundTruth": "faithful",
+    "unfaithfulReason": null
+  },
+  {
+    "caseId": "CAL-021",
+    "sourceSpanId": "span:01-number-systems-80440e2182e5653f-41",
+    "originalText": "$\\mathbb{Q}$ 是一个**域**（Field）——加减乘除（除数非零）全部封闭：",
+    "claim": "$\\mathbb{Q}$ 对除法无条件封闭，包括除数为零的情形。",
+    "groundTruth": "unfaithful",
+    "unfaithfulReason": "丢条件(lost-condition)：原文明确限定“除数非零”，Claim 抹掉该限制并将结论扩展到除以零。"
+  },
+  {
+    "caseId": "CAL-022",
+    "sourceSpanId": "span:01-number-systems-80440e2182e5653f-47",
+    "originalText": "$$\n\\frac{1}{1}, \\frac{1}{2}, \\frac{2}{1}, \\frac{3}{1}, \\frac{2}{2}, \\frac{1}{3}, \\frac{1}{4}, \\frac{2}{3}, \\frac{3}{2}, \\frac{4}{1}, \\ldots\n$$",
+    "claim": "原文列出的分数序列开头是 $\\frac{1}{1}, \\frac{1}{2}, \\frac{2}{1}, \\frac{3}{1}, \\frac{2}{2}, \\frac{1}{3}$。",
+    "groundTruth": "faithful",
+    "unfaithfulReason": null
+  },
+  {
+    "caseId": "CAL-023",
+    "sourceSpanId": "span:01-number-systems-80440e2182e5653f-47",
+    "originalText": "$$\n\\frac{1}{1}, \\frac{1}{2}, \\frac{2}{1}, \\frac{3}{1}, \\frac{2}{2}, \\frac{1}{3}, \\frac{1}{4}, \\frac{2}{3}, \\frac{3}{2}, \\frac{4}{1}, \\ldots\n$$",
+    "claim": "$\\frac{1}{4}, \\frac{2}{3}, \\frac{3}{2}, \\frac{4}{1}$ 出现在该分数枚举的后续位置。",
+    "groundTruth": "faithful",
+    "unfaithfulReason": null
+  },
+  {
+    "caseId": "CAL-024",
+    "sourceSpanId": "span:01-number-systems-80440e2182e5653f-47",
+    "originalText": "$$\n\\frac{1}{1}, \\frac{1}{2}, \\frac{2}{1}, \\frac{3}{1}, \\frac{2}{2}, \\frac{1}{3}, \\frac{1}{4}, \\frac{2}{3}, \\frac{3}{2}, \\frac{4}{1}, \\ldots\n$$",
+    "claim": "$\\mathbb{R}$ 由 $\\mathbb{Q}$ 与无理数组成。",
+    "groundTruth": "unfaithful",
+    "unfaithfulReason": "引用错位(wrong-citation)：该 Claim 实际对应 span:01-number-systems-80440e2182e5653f-59；当前 span 只是一个分数枚举。"
+  },
+  {
+    "caseId": "CAL-025",
+    "sourceSpanId": "span:01-number-systems-80440e2182e5653f-54",
+    "originalText": "这个发现在古希腊引发了\"第一次数学危机\"——有理数不能覆盖数轴上所有的点。数轴上的\"洞\"需要一种新的数来填。",
+    "claim": "有理数不能覆盖数轴上的所有点，这一发现被描述为古希腊的“第一次数学危机”。",
+    "groundTruth": "faithful",
+    "unfaithfulReason": null
+  },
+  {
+    "caseId": "CAL-026",
+    "sourceSpanId": "span:01-number-systems-80440e2182e5653f-54",
+    "originalText": "这个发现在古希腊引发了\"第一次数学危机\"——有理数不能覆盖数轴上所有的点。数轴上的\"洞\"需要一种新的数来填。",
+    "claim": "数轴上有理数留下的“洞”需要新的数来填补。",
+    "groundTruth": "faithful",
+    "unfaithfulReason": null
+  },
+  {
+    "caseId": "CAL-027",
+    "sourceSpanId": "span:01-number-systems-80440e2182e5653f-54",
+    "originalText": "这个发现在古希腊引发了\"第一次数学危机\"——有理数不能覆盖数轴上所有的点。数轴上的\"洞\"需要一种新的数来填。",
+    "claim": "这一发现表明有理数已经覆盖数轴上的所有点，数轴并不存在需要填补的“洞”。",
+    "groundTruth": "unfaithful",
+    "unfaithfulReason": "曲解(distortion)：Claim 将原文“有理数不能覆盖所有点、存在洞”的意思完全反转。"
+  },
+  {
+    "caseId": "CAL-028",
+    "sourceSpanId": "span:01-number-systems-80440e2182e5653f-59",
+    "originalText": "$$\n\\mathbb{R} = \\mathbb{Q} \\cup \\{\\text{无理数}\\}\n$$",
+    "claim": "实数集合可写为 $\\mathbb{R} = \\mathbb{Q} \\cup \\{\\text{无理数}\\}$。",
+    "groundTruth": "faithful",
+    "unfaithfulReason": null
+  },
+  {
+    "caseId": "CAL-029",
+    "sourceSpanId": "span:01-number-systems-80440e2182e5653f-59",
+    "originalText": "$$\n\\mathbb{R} = \\mathbb{Q} \\cup \\{\\text{无理数}\\}\n$$",
+    "claim": "按照原文，实数由有理数与无理数合并而成。",
+    "groundTruth": "faithful",
+    "unfaithfulReason": null
+  },
+  {
+    "caseId": "CAL-030",
+    "sourceSpanId": "span:01-number-systems-80440e2182e5653f-59",
+    "originalText": "$$\n\\mathbb{R} = \\mathbb{Q} \\cup \\{\\text{无理数}\\}\n$$",
+    "claim": "该集合等式还表明，每个无理数都能通过有理数的有限次四则运算得到。",
+    "groundTruth": "unfaithful",
+    "unfaithfulReason": "添加(addition)：原文只给出实数集合的组成，没有说明无理数能由有理数有限次四则运算得到。"
+  },
+  {
+    "caseId": "CAL-031",
+    "sourceSpanId": "span:01-number-systems-80440e2182e5653f-68",
+    "originalText": "$$\n\\begin{aligned}\nx_1 &= 0.a_{11}a_{12}a_{13}\\ldots \\\\\nx_2 &= 0.a_{21}a_{22}a_{23}\\ldots \\\\\nx_3 &= 0.a_{31}a_{32}a_{33}\\ldots\n\\end{aligned}\n$$",
+    "claim": "原文将 $x_1,x_2,x_3$ 分别写成 $0.a_{11}a_{12}a_{13}\\ldots$、$0.a_{21}a_{22}a_{23}\\ldots$ 和 $0.a_{31}a_{32}a_{33}\\ldots$。",
+    "groundTruth": "faithful",
+    "unfaithfulReason": null
+  },
+  {
+    "caseId": "CAL-032",
+    "sourceSpanId": "span:01-number-systems-80440e2182e5653f-68",
+    "originalText": "$$\n\\begin{aligned}\nx_1 &= 0.a_{11}a_{12}a_{13}\\ldots \\\\\nx_2 &= 0.a_{21}a_{22}a_{23}\\ldots \\\\\nx_3 &= 0.a_{31}a_{32}a_{33}\\ldots\n\\end{aligned}\n$$",
+    "claim": "这组三行公式展示了三个数的无限小数位记法。",
+    "groundTruth": "faithful",
+    "unfaithfulReason": null
+  },
+  {
+    "caseId": "CAL-033",
+    "sourceSpanId": "span:01-number-systems-80440e2182e5653f-68",
+    "originalText": "$$\n\\begin{aligned}\nx_1 &= 0.a_{11}a_{12}a_{13}\\ldots \\\\\nx_2 &= 0.a_{21}a_{22}a_{23}\\ldots \\\\\nx_3 &= 0.a_{31}a_{32}a_{33}\\ldots\n\\end{aligned}\n$$",
+    "claim": "复数集合由所有满足 $a,b\\in\\mathbb{R}$ 且 $i^2=-1$ 的 $a+bi$ 构成。",
+    "groundTruth": "unfaithful",
+    "unfaithfulReason": "引用错位(wrong-citation)：该 Claim 来自 span:01-number-systems-80440e2182e5653f-76；当前 span 仅展示 $x_1,x_2,x_3$ 的小数展开。"
+  },
+  {
+    "caseId": "CAL-034",
+    "sourceSpanId": "span:01-number-systems-80440e2182e5653f-76",
+    "originalText": "$$\n\\mathbb{C} = \\{a + bi \\mid a,b \\in \\mathbb{R}, i^2 = -1\\}\n$$",
+    "claim": "$\\mathbb{C}$ 中的数可写为 $a+bi$，其中 $a,b\\in\\mathbb{R}$ 且 $i^2=-1$。",
+    "groundTruth": "faithful",
+    "unfaithfulReason": null
+  },
+  {
+    "caseId": "CAL-035",
+    "sourceSpanId": "span:01-number-systems-80440e2182e5653f-76",
+    "originalText": "$$\n\\mathbb{C} = \\{a + bi \\mid a,b \\in \\mathbb{R}, i^2 = -1\\}\n$$",
+    "claim": "原文用集合 $\\{a + bi \\mid a,b \\in \\mathbb{R}, i^2 = -1\\}$ 定义 $\\mathbb{C}$。",
+    "groundTruth": "faithful",
+    "unfaithfulReason": null
+  },
+  {
+    "caseId": "CAL-036",
+    "sourceSpanId": "span:01-number-systems-80440e2182e5653f-76",
+    "originalText": "$$\n\\mathbb{C} = \\{a + bi \\mid a,b \\in \\mathbb{R}, i^2 = -1\\}\n$$",
+    "claim": "任意 $a,b$ 和任意符号 $i$ 组成的 $a+bi$ 都属于 $\\mathbb{C}$。",
+    "groundTruth": "unfaithful",
+    "unfaithfulReason": "丢条件(lost-condition)：原文要求 $a,b\\in\\mathbb{R}$ 且 $i^2=-1$，Claim 删除了这两项限制。"
+  },
+  {
+    "caseId": "CAL-037",
+    "sourceSpanId": "span:01-number-systems-80440e2182e5653f-81",
+    "originalText": "$$\nz_1 \\cdot z_2 = r_1r_2 \\cdot e^{i(\\theta_1 + \\theta_2)}\n$$",
+    "claim": "若 $z_1,z_2$ 的极形式参数分别为 $(r_1,\\theta_1)$ 与 $(r_2,\\theta_2)$，其乘积写作 $r_1r_2e^{i(\\theta_1+\\theta_2)}$。",
+    "groundTruth": "faithful",
+    "unfaithfulReason": null
+  },
+  {
+    "caseId": "CAL-038",
+    "sourceSpanId": "span:01-number-systems-80440e2182e5653f-81",
+    "originalText": "$$\nz_1 \\cdot z_2 = r_1r_2 \\cdot e^{i(\\theta_1 + \\theta_2)}\n$$",
+    "claim": "该公式表达了复数相乘时模相乘、角度相加。",
+    "groundTruth": "faithful",
+    "unfaithfulReason": null
+  },
+  {
+    "caseId": "CAL-039",
+    "sourceSpanId": "span:01-number-systems-80440e2182e5653f-81",
+    "originalText": "$$\nz_1 \\cdot z_2 = r_1r_2 \\cdot e^{i(\\theta_1 + \\theta_2)}\n$$",
+    "claim": "该式说明复数相乘只会改变辐角，而乘积的模始终保持不变。",
+    "groundTruth": "unfaithful",
+    "unfaithfulReason": "曲解(distortion)：原式的乘积模为 $r_1r_2$，并不表示模始终保持不变。"
+  },
+  {
+    "caseId": "CAL-040",
+    "sourceSpanId": "span:01-number-systems-80440e2182e5653f-86",
+    "originalText": "更一般地：$e^{i\\theta} = \\cos\\theta + i\\sin\\theta$。这揭示了复指数与三角函数的深层统一——振动 = 复平面上的圆周运动。",
+    "claim": "欧拉公式的一般形式是 $e^{i\\theta}=\\cos\\theta+i\\sin\\theta$。",
+    "groundTruth": "faithful",
+    "unfaithfulReason": null
+  },
+  {
+    "caseId": "CAL-041",
+    "sourceSpanId": "span:01-number-systems-80440e2182e5653f-86",
+    "originalText": "更一般地：$e^{i\\theta} = \\cos\\theta + i\\sin\\theta$。这揭示了复指数与三角函数的深层统一——振动 = 复平面上的圆周运动。",
+    "claim": "原文用欧拉公式说明复指数与三角函数的统一，并把振动联系到复平面上的圆周运动。",
+    "groundTruth": "faithful",
+    "unfaithfulReason": null
+  },
+  {
+    "caseId": "CAL-042",
+    "sourceSpanId": "span:01-number-systems-80440e2182e5653f-86",
+    "originalText": "更一般地：$e^{i\\theta} = \\cos\\theta + i\\sin\\theta$。这揭示了复指数与三角函数的深层统一——振动 = 复平面上的圆周运动。",
+    "claim": "由该统一可知，所有振动都必须具有单位振幅并保持固定频率。",
+    "groundTruth": "unfaithful",
+    "unfaithfulReason": "添加(addition)：原文只建立振动与复平面圆周运动的联系，没有规定所有振动的振幅和频率。"
+  },
+  {
+    "caseId": "CAL-043",
+    "sourceSpanId": "span:01-number-systems-80440e2182e5653f-98",
+    "originalText": "![数轴上的数系扩张——从自然数到复数的逐级构造](../images/01-number-systems/01-number-systems_数轴上-数系扩张.png)",
+    "claim": "该图片展示数轴上的数系扩张，主题是从自然数到复数的逐级构造。",
+    "groundTruth": "faithful",
+    "unfaithfulReason": null
+  },
+  {
+    "caseId": "CAL-044",
+    "sourceSpanId": "span:01-number-systems-80440e2182e5653f-98",
+    "originalText": "![数轴上的数系扩张——从自然数到复数的逐级构造](../images/01-number-systems/01-number-systems_数轴上-数系扩张.png)",
+    "claim": "图片的替代文本将内容概括为“从自然数到复数的逐级构造”。",
+    "groundTruth": "faithful",
+    "unfaithfulReason": null
+  },
+  {
+    "caseId": "CAL-045",
+    "sourceSpanId": "span:01-number-systems-80440e2182e5653f-98",
+    "originalText": "![数轴上的数系扩张——从自然数到复数的逐级构造](../images/01-number-systems/01-number-systems_数轴上-数系扩张.png)",
+    "claim": "该图描绘了从 $(1,0)$ 沿单位圆旋转 $\\pi$ 弧度到 $(-1,0)$，再加 1 回到原点。",
+    "groundTruth": "unfaithful",
+    "unfaithfulReason": "引用错位(wrong-citation)：该 Claim 描述的是 span:11-constants-140ce51a25193ff7-22 的配图，而当前 span 的配图主题是数系扩张。"
+  },
+  {
+    "caseId": "CAL-046",
+    "sourceSpanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-5",
+    "originalText": "**数列** = 定义在自然数上的函数：$a: \\mathbb{N} \\to \\mathbb{R}$（或 $\\mathbb{C}$），记作 $(a_n)_{n=1}^\\infty$。",
+    "claim": "数列是定义在自然数上的函数 $a:\\mathbb{N}\\to\\mathbb{R}$（或 $\\mathbb{C}$），可记作 $(a_n)*{n=1}^{\\infty}$。",
+    "groundTruth": "faithful",
+    "unfaithfulReason": null
+  },
+  {
+    "caseId": "CAL-047",
+    "sourceSpanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-5",
+    "originalText": "**数列** = 定义在自然数上的函数：$a: \\mathbb{N} \\to \\mathbb{R}$（或 $\\mathbb{C}$），记作 $(a_n)_{n=1}^\\infty$。",
+    "claim": "定义在任意集合上的实值或复值函数都可以称为数列。",
+    "groundTruth": "unfaithful",
+    "unfaithfulReason": "丢条件(lost-condition)：原文把数列的定义域限定为 $\\mathbb{N}$，Claim 删除了这一条件。"
+  },
+  {
+    "caseId": "CAL-048",
+    "sourceSpanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-5",
+    "originalText": "**数列** = 定义在自然数上的函数：$a: \\mathbb{N} \\to \\mathbb{R}$（或 $\\mathbb{C}$），记作 $(a_n)_{n=1}^\\infty$。",
+    "claim": "数列是定义在 $\\mathbb{N}$ 上的函数，并且它的各项必须互不相同。",
+    "groundTruth": "unfaithful",
+    "unfaithfulReason": "添加(addition)：原文没有要求数列各项互不相同。"
+  },
+  {
+    "caseId": "CAL-049",
+    "sourceSpanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-13",
+    "originalText": "> **定义**（数列极限）：$\\lim_{n \\to \\infty} a_n = L$ 当且仅当：\n>\n> $$\\forall \\epsilon > 0, \\; \\exists N \\in \\mathbb{N}, \\; \\forall n > N: |a_n - L| < \\epsilon$$",
+    "claim": "$\\lim_{n\\to\\infty}a_n=L$ 当且仅当对每个 $\\epsilon>0$，存在 $N\\in\\mathbb{N}$，使所有 $n>N$ 都满足 $|a_n-L|<\\epsilon$。",
+    "groundTruth": "faithful",
+    "unfaithfulReason": null
+  },
+  {
+    "caseId": "CAL-050",
+    "sourceSpanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-13",
+    "originalText": "> **定义**（数列极限）：$\\lim_{n \\to \\infty} a_n = L$ 当且仅当：\n>\n> $$\\forall \\epsilon > 0, \\; \\exists N \\in \\mathbb{N}, \\; \\forall n > N: |a_n - L| < \\epsilon$$",
+    "claim": "只要存在某一个 $\\epsilon>0$ 和某个 $N$，使 $n>N$ 时 $|a_n-L|<\\epsilon$，就有 $a_n\\to L$。",
+    "groundTruth": "unfaithful",
+    "unfaithfulReason": "丢条件(lost-condition)：原定义要求“对所有 $\\epsilon>0$”，Claim 弱化成只需存在一个正 $\\epsilon$。"
+  },
+  {
+    "caseId": "CAL-051",
+    "sourceSpanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-13",
+    "originalText": "> **定义**（数列极限）：$\\lim_{n \\to \\infty} a_n = L$ 当且仅当：\n>\n> $$\\forall \\epsilon > 0, \\; \\exists N \\in \\mathbb{N}, \\; \\forall n > N: |a_n - L| < \\epsilon$$",
+    "claim": "极限定义要求先选定一个统一的 $N$，再让这个 $N$ 同时适用于所有 $\\epsilon>0$。",
+    "groundTruth": "unfaithful",
+    "unfaithfulReason": "曲解(distortion)：原文的量词顺序是对每个 $\\epsilon$ 可分别选择 $N$，Claim 将其曲解为一个 $N$ 适用于所有 $\\epsilon$。"
+  },
+  {
+    "caseId": "CAL-052",
+    "sourceSpanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-24",
+    "originalText": "**级数** = 数列的\"累加\"：$\\sum_{n=1}^\\infty a_n = \\lim_{N \\to \\infty} \\sum_{n=1}^N a_n$",
+    "claim": "级数 $\\sum_{n=1}^{\\infty}a_n$ 被定义为部分和 $\\sum_{n=1}^{N}a_n$ 在 $N\\to\\infty$ 时的极限。",
+    "groundTruth": "faithful",
+    "unfaithfulReason": null
+  },
+  {
+    "caseId": "CAL-053",
+    "sourceSpanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-24",
+    "originalText": "**级数** = 数列的\"累加\"：$\\sum_{n=1}^\\infty a_n = \\lim_{N \\to \\infty} \\sum_{n=1}^N a_n$",
+    "claim": "级数是部分和的极限，而且每个级数的这个极限都必然存在。",
+    "groundTruth": "unfaithful",
+    "unfaithfulReason": "添加(addition)：原文给出级数与部分和极限的关系，没有保证每个级数都收敛。"
+  },
+  {
+    "caseId": "CAL-054",
+    "sourceSpanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-24",
+    "originalText": "**级数** = 数列的\"累加\"：$\\sum_{n=1}^\\infty a_n = \\lim_{N \\to \\infty} \\sum_{n=1}^N a_n$",
+    "claim": "泛函 $J:V\\to\\mathbb{R}$ 或 $\\mathbb{C}$ 的输入是函数、输出是数。",
+    "groundTruth": "unfaithful",
+    "unfaithfulReason": "引用错位(wrong-citation)：该 Claim 对应 span:09-functional-analysis-9478dfc1ba6cb58f-5；当前 span 定义的是级数。"
+  },
+  {
+    "caseId": "CAL-055",
+    "sourceSpanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-37",
+    "originalText": "$$\nf(x) = f(0) + f'(0)x + \\frac{f''(0)}{2!}x^2 + \\frac{f'''(0)}{3!}x^3 + \\cdots\n$$",
+    "claim": "该展开式用 $f(0)$ 及 $f$ 在 0 处的各阶导数乘以相应的 $x$ 次幂来表示 $f(x)$。",
+    "groundTruth": "faithful",
+    "unfaithfulReason": null
+  },
+  {
+    "caseId": "CAL-056",
+    "sourceSpanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-37",
+    "originalText": "$$\nf(x) = f(0) + f'(0)x + \\frac{f''(0)}{2!}x^2 + \\frac{f'''(0)}{3!}x^3 + \\cdots\n$$",
+    "claim": "这条展开式是以 $x=1$ 为中心组织各阶导数项的。",
+    "groundTruth": "unfaithful",
+    "unfaithfulReason": "曲解(distortion)：公式中的系数全部取自 0 处，如 $f(0),f'(0),f''(0)$，展开中心不是 1。"
+  },
+  {
+    "caseId": "CAL-057",
+    "sourceSpanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-37",
+    "originalText": "$$\nf(x) = f(0) + f'(0)x + \\frac{f''(0)}{2!}x^2 + \\frac{f'''(0)}{3!}x^3 + \\cdots\n$$",
+    "claim": "该公式保证对任意函数和任意 $x$，右侧无穷级数都收敛并等于 $f(x)$。",
+    "groundTruth": "unfaithful",
+    "unfaithfulReason": "添加(addition)：原文只展示展开式，没有给出适用函数、收敛域或无条件收敛保证。"
+  },
+  {
+    "caseId": "CAL-058",
+    "sourceSpanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-51",
+    "originalText": "> **关键洞见**：一致收敛才是\"好的\"收敛——它保证极限函数继承逼近函数序列的优良性质（连续、可导、可积）。这就是为什么在 $\\S$9 泛函分析中要研究**算子的一致收敛**，而不仅仅是逐点收敛。",
+    "claim": "原文把一致收敛称为“好的”收敛，并称其能让极限函数继承连续、可导、可积等性质。",
+    "groundTruth": "faithful",
+    "unfaithfulReason": null
+  },
+  {
+    "caseId": "CAL-059",
+    "sourceSpanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-51",
+    "originalText": "> **关键洞见**：一致收敛才是\"好的\"收敛——它保证极限函数继承逼近函数序列的优良性质（连续、可导、可积）。这就是为什么在 $\\S$9 泛函分析中要研究**算子的一致收敛**，而不仅仅是逐点收敛。",
+    "claim": "只要函数序列发生收敛，极限函数就会继承连续、可导和可积性质。",
+    "groundTruth": "unfaithful",
+    "unfaithfulReason": "丢条件(lost-condition)：原文把保证与“一致收敛”绑定，Claim 去掉“一致”而扩展到任意收敛。"
+  },
+  {
+    "caseId": "CAL-060",
+    "sourceSpanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-51",
+    "originalText": "> **关键洞见**：一致收敛才是\"好的\"收敛——它保证极限函数继承逼近函数序列的优良性质（连续、可导、可积）。这就是为什么在 $\\S$9 泛函分析中要研究**算子的一致收敛**，而不仅仅是逐点收敛。",
+    "claim": "原文认为逐点收敛比一致收敛更能保留优良性质，因此泛函分析只研究逐点收敛。",
+    "groundTruth": "unfaithful",
+    "unfaithfulReason": "曲解(distortion)：原文强调一致收敛，并明确说不能只研究逐点收敛。"
+  },
+  {
+    "caseId": "CAL-061",
+    "sourceSpanId": "span:05-functions-mappings-7e02712717a02820-4",
+    "originalText": "**函数** $f: X \\to Y$ = 对 $X$ 中每个元素唯一指定 $Y$ 中一个元素。",
+    "claim": "函数 $f:X\\to Y$ 会给 $X$ 中每个元素唯一指定 $Y$ 中一个元素。",
+    "groundTruth": "faithful",
+    "unfaithfulReason": null
+  },
+  {
+    "caseId": "CAL-062",
+    "sourceSpanId": "span:05-functions-mappings-7e02712717a02820-4",
+    "originalText": "**函数** $f: X \\to Y$ = 对 $X$ 中每个元素唯一指定 $Y$ 中一个元素。",
+    "claim": "只要给 $X$ 中的一部分元素各指定一个 $Y$ 中元素，就已经得到从 $X$ 到 $Y$ 的函数。",
+    "groundTruth": "unfaithful",
+    "unfaithfulReason": "丢条件(lost-condition)：原文要求对 $X$ 中每个元素都进行指定，Claim 弱化为只覆盖一部分元素。"
+  },
+  {
+    "caseId": "CAL-063",
+    "sourceSpanId": "span:05-functions-mappings-7e02712717a02820-4",
+    "originalText": "**函数** $f: X \\to Y$ = 对 $X$ 中每个元素唯一指定 $Y$ 中一个元素。",
+    "claim": "同一个 $X$ 中元素可以同时对应 $Y$ 中多个元素，这仍符合函数定义。",
+    "groundTruth": "unfaithful",
+    "unfaithfulReason": "曲解(distortion)：原文要求每个输入唯一对应一个输出，Claim 反转了唯一性要求。"
+  },
+  {
+    "caseId": "CAL-064",
+    "sourceSpanId": "span:05-functions-mappings-7e02712717a02820-12",
+    "originalText": "当 $X$ 和 $Y$ 有额外的数学结构时，\"好的\"映射应该**保持**这些结构。",
+    "claim": "当定义域和值域带有额外数学结构时，原文认为“好的”映射应保持这些结构。",
+    "groundTruth": "faithful",
+    "unfaithfulReason": null
+  },
+  {
+    "caseId": "CAL-065",
+    "sourceSpanId": "span:05-functions-mappings-7e02712717a02820-12",
+    "originalText": "当 $X$ 和 $Y$ 有额外的数学结构时，\"好的\"映射应该**保持**这些结构。",
+    "claim": "任意集合之间的所有映射都必须保持某种额外数学结构。",
+    "groundTruth": "unfaithful",
+    "unfaithfulReason": "丢条件(lost-condition)：原文前提是 $X$ 和 $Y$ 具有额外数学结构，且结论针对“好的”映射；Claim 删除了这些限定。"
+  },
+  {
+    "caseId": "CAL-066",
+    "sourceSpanId": "span:05-functions-mappings-7e02712717a02820-12",
+    "originalText": "当 $X$ 和 $Y$ 有额外的数学结构时，\"好的\"映射应该**保持**这些结构。",
+    "claim": "线性算子 $T$ 连续当且仅当 $\\|T\\|=\\sup_{\\|f\\|=1}\\|Tf\\|<\\infty$。",
+    "groundTruth": "unfaithful",
+    "unfaithfulReason": "引用错位(wrong-citation)：该 Claim 来自 span:05-functions-mappings-7e02712717a02820-33；当前 span 只陈述结构保持的一般原则。"
+  },
+  {
+    "caseId": "CAL-067",
+    "sourceSpanId": "span:05-functions-mappings-7e02712717a02820-19",
+    "originalText": "| 变换 | 公式 | 核心作用 |\n|------|------|---------|\n| **Fourier** | $\\hat{f}(\\omega) = \\int f(t)e^{-i\\omega t}dt$ | 频率分解 |\n| **Laplace** | $F(s) = \\int_0^\\infty f(t)e^{-st}dt$ | ODE→代数方程 |\n| **Z变换** | $F(z) = \\sum f[n]z^{-n}$ | 离散信号 |\n| **小波** | 多尺度分析 | 局部时频分析 |",
+    "claim": "表中把 Fourier 变换对应到频率分解，把 Z 变换对应到离散信号。",
+    "groundTruth": "faithful",
+    "unfaithfulReason": null
+  },
+  {
+    "caseId": "CAL-068",
+    "sourceSpanId": "span:05-functions-mappings-7e02712717a02820-19",
+    "originalText": "| 变换 | 公式 | 核心作用 |\n|------|------|---------|\n| **Fourier** | $\\hat{f}(\\omega) = \\int f(t)e^{-i\\omega t}dt$ | 频率分解 |\n| **Laplace** | $F(s) = \\int_0^\\infty f(t)e^{-st}dt$ | ODE→代数方程 |\n| **Z变换** | $F(z) = \\sum f[n]z^{-n}$ | 离散信号 |\n| **小波** | 多尺度分析 | 局部时频分析 |",
+    "claim": "$e$ 同时等于 $\\lim_{n\\to\\infty}(1+\\frac1n)^n$ 和 $\\sum_{n=0}^{\\infty}\\frac1{n!}$。",
+    "groundTruth": "unfaithful",
+    "unfaithfulReason": "引用错位(wrong-citation)：该 Claim 对应 span:11-constants-140ce51a25193ff7-13；当前 span 是四种变换的公式与作用表。"
+  },
+  {
+    "caseId": "CAL-069",
+    "sourceSpanId": "span:05-functions-mappings-7e02712717a02820-19",
+    "originalText": "| 变换 | 公式 | 核心作用 |\n|------|------|---------|\n| **Fourier** | $\\hat{f}(\\omega) = \\int f(t)e^{-i\\omega t}dt$ | 频率分解 |\n| **Laplace** | $F(s) = \\int_0^\\infty f(t)e^{-st}dt$ | ODE→代数方程 |\n| **Z变换** | $F(z) = \\sum f[n]z^{-n}$ | 离散信号 |\n| **小波** | 多尺度分析 | 局部时频分析 |",
+    "claim": "Laplace 变换的核心作用是把代数方程还原成 ODE。",
+    "groundTruth": "unfaithful",
+    "unfaithfulReason": "曲解(distortion)：原文给出的方向是“ODE→代数方程”，Claim 将方向反转。"
+  },
+  {
+    "caseId": "CAL-070",
+    "sourceSpanId": "span:05-functions-mappings-7e02712717a02820-33",
+    "originalText": "$$\n\\|T\\| = \\sup_{\\|f\\|=1} \\|Tf\\| < \\infty \\iff T \\text{ 连续}\n$$",
+    "claim": "$\\|T\\|=\\sup_{\\|f\\|=1}\\|Tf\\|<\\infty$ 与 $T$ 连续等价。",
+    "groundTruth": "faithful",
+    "unfaithfulReason": null
+  },
+  {
+    "caseId": "CAL-071",
+    "sourceSpanId": "span:05-functions-mappings-7e02712717a02820-33",
+    "originalText": "$$\n\\|T\\| = \\sup_{\\|f\\|=1} \\|Tf\\| < \\infty \\iff T \\text{ 连续}\n$$",
+    "claim": "算子 $T$ 总是连续，无需满足 $\\sup_{\\|f\\|=1}\\|Tf\\|<\\infty$。",
+    "groundTruth": "unfaithful",
+    "unfaithfulReason": "丢条件(lost-condition)：原文把连续性与范数上确界有限等价起来，Claim 删除了有限性条件。"
+  },
+  {
+    "caseId": "CAL-072",
+    "sourceSpanId": "span:05-functions-mappings-7e02712717a02820-33",
+    "originalText": "$$\n\\|T\\| = \\sup_{\\|f\\|=1} \\|Tf\\| < \\infty \\iff T \\text{ 连续}\n$$",
+    "claim": "当 $T$ 连续时，这个上确界必定由某个单位向量 $f$ 实际取到。",
+    "groundTruth": "unfaithful",
+    "unfaithfulReason": "添加(addition)：原文只写上确界及其有限性，没有断言上确界一定能取到。"
+  },
+  {
+    "caseId": "CAL-073",
+    "sourceSpanId": "span:09-functional-analysis-9478dfc1ba6cb58f-5",
+    "originalText": "**泛函** $J: V \\to \\mathbb{R}$（或 $\\mathbb{C}$）——输入是函数，输出是数。",
+    "claim": "泛函 $J:V\\to\\mathbb{R}$（或 $\\mathbb{C}$）以函数为输入、以数为输出。",
+    "groundTruth": "faithful",
+    "unfaithfulReason": null
+  },
+  {
+    "caseId": "CAL-074",
+    "sourceSpanId": "span:09-functional-analysis-9478dfc1ba6cb58f-5",
+    "originalText": "**泛函** $J: V \\to \\mathbb{R}$（或 $\\mathbb{C}$）——输入是函数，输出是数。",
+    "claim": "每个泛函都必须同时是线性的和连续的。",
+    "groundTruth": "unfaithful",
+    "unfaithfulReason": "添加(addition)：原文只说明泛函的输入和输出类型，没有附加线性或连续性要求。"
+  },
+  {
+    "caseId": "CAL-075",
+    "sourceSpanId": "span:09-functional-analysis-9478dfc1ba6cb58f-5",
+    "originalText": "**泛函** $J: V \\to \\mathbb{R}$（或 $\\mathbb{C}$）——输入是函数，输出是数。",
+    "claim": "泛函满足方程 $\\frac{\\partial L}{\\partial y}-\\frac{d}{dx}(\\frac{\\partial L}{\\partial y'})=0$。",
+    "groundTruth": "unfaithful",
+    "unfaithfulReason": "引用错位(wrong-citation)：该方程来自 span:09-functional-analysis-9478dfc1ba6cb58f-9；当前 span 只是泛函的输入输出定义。"
+  },
+  {
+    "caseId": "CAL-076",
+    "sourceSpanId": "span:09-functional-analysis-9478dfc1ba6cb58f-9",
+    "originalText": "$$\n\\frac{\\partial L}{\\partial y} - \\frac{d}{dx}\\left(\\frac{\\partial L}{\\partial y'}\\right) = 0\n$$",
+    "claim": "原文给出的方程为 $\\frac{\\partial L}{\\partial y}-\\frac{d}{dx}\\left(\\frac{\\partial L}{\\partial y'}\\right)=0$。",
+    "groundTruth": "faithful",
+    "unfaithfulReason": null
+  },
+  {
+    "caseId": "CAL-077",
+    "sourceSpanId": "span:09-functional-analysis-9478dfc1ba6cb58f-9",
+    "originalText": "$$\n\\frac{\\partial L}{\\partial y} - \\frac{d}{dx}\\left(\\frac{\\partial L}{\\partial y'}\\right) = 0\n$$",
+    "claim": "欧拉常数 $\\gamma$ 是 $\\sum_{k=1}^{n}\\frac1k-\\ln n$ 在 $n\\to\\infty$ 时的极限。",
+    "groundTruth": "unfaithful",
+    "unfaithfulReason": "引用错位(wrong-citation)：该 Claim 对应 span:11-constants-140ce51a25193ff7-30；当前 span 仅给出一个关于 $L$ 的微分方程。"
+  },
+  {
+    "caseId": "CAL-078",
+    "sourceSpanId": "span:09-functional-analysis-9478dfc1ba6cb58f-9",
+    "originalText": "$$\n\\frac{\\partial L}{\\partial y} - \\frac{d}{dx}\\left(\\frac{\\partial L}{\\partial y'}\\right) = 0\n$$",
+    "claim": "该方程的每一个解都必然给出相应问题的唯一全局最小值。",
+    "groundTruth": "unfaithful",
+    "unfaithfulReason": "添加(addition)：原文只给出方程，没有说明解的全局最优性或唯一性。"
+  },
+  {
+    "caseId": "CAL-079",
+    "sourceSpanId": "span:09-functional-analysis-9478dfc1ba6cb58f-18",
+    "originalText": "> 这四大定理是泛函分析的\"武功秘籍\"——它们告诉你：在完备空间中，**逐点的性质往往能推出全局的性质**。",
+    "claim": "这四大定理被概括为：在完备空间中，逐点性质往往能够推出全局性质。",
+    "groundTruth": "faithful",
+    "unfaithfulReason": null
+  },
+  {
+    "caseId": "CAL-080",
+    "sourceSpanId": "span:09-functional-analysis-9478dfc1ba6cb58f-18",
+    "originalText": "> 这四大定理是泛函分析的\"武功秘籍\"——它们告诉你：在完备空间中，**逐点的性质往往能推出全局的性质**。",
+    "claim": "逐点性质必然推出全局性质，与所在空间是否完备无关。",
+    "groundTruth": "unfaithful",
+    "unfaithfulReason": "丢条件(lost-condition)：原文限定“在完备空间中”且只说“往往”，Claim 同时删除完备性条件并改成必然结论。"
+  },
+  {
+    "caseId": "CAL-081",
+    "sourceSpanId": "span:09-functional-analysis-9478dfc1ba6cb58f-18",
+    "originalText": "> 这四大定理是泛函分析的\"武功秘籍\"——它们告诉你：在完备空间中，**逐点的性质往往能推出全局的性质**。",
+    "claim": "原文认为完备性只能影响局部性质，不能帮助从逐点性质得到全局性质。",
+    "groundTruth": "unfaithful",
+    "unfaithfulReason": "曲解(distortion)：Claim 反转了原文关于完备空间中逐点性质可导向全局性质的判断。"
+  },
+  {
+    "caseId": "CAL-082",
+    "sourceSpanId": "span:09-functional-analysis-9478dfc1ba6cb58f-26",
+    "originalText": "$$\nf(x) = \\langle x, y \\rangle \\quad \\text{对某唯一的 } y \\in H\n$$",
+    "claim": "原文将 $f(x)$ 表示为内积 $\\langle x,y\\rangle$，其中对应某个唯一的 $y\\in H$。",
+    "groundTruth": "faithful",
+    "unfaithfulReason": null
+  },
+  {
+    "caseId": "CAL-083",
+    "sourceSpanId": "span:09-functional-analysis-9478dfc1ba6cb58f-26",
+    "originalText": "$$\nf(x) = \\langle x, y \\rangle \\quad \\text{对某唯一的 } y \\in H\n$$",
+    "claim": "表示 $f$ 的唯一向量 $y$ 还必须满足 $\\|y\\|=1$。",
+    "groundTruth": "unfaithful",
+    "unfaithfulReason": "添加(addition)：原文只要求 $y\\in H$ 且唯一，没有单位范数条件。"
+  },
+  {
+    "caseId": "CAL-084",
+    "sourceSpanId": "span:09-functional-analysis-9478dfc1ba6cb58f-26",
+    "originalText": "$$\nf(x) = \\langle x, y \\rangle \\quad \\text{对某唯一的 } y \\in H\n$$",
+    "claim": "紧算子的谱除可能的 $0$ 外完全由特征值构成。",
+    "groundTruth": "unfaithful",
+    "unfaithfulReason": "引用错位(wrong-citation)：该 Claim 来自 span:09-functional-analysis-9478dfc1ba6cb58f-41；当前 span 是 $f(x)$ 的内积表示。"
+  },
+  {
+    "caseId": "CAL-085",
+    "sourceSpanId": "span:09-functional-analysis-9478dfc1ba6cb58f-34",
+    "originalText": "| 谱的类型 | 含义 | 例子 |\n|---------|------|------|\n| **点谱** | $\\lambda I - T$ 非单射 | 真正的特征值 |\n| **连续谱** | 单射但值域稠密（却非满射） | 乘法算子 $(Tf)(x)=xf(x)$ |\n| **剩余谱** | 单射但值域不稠密 | unilateral shift |",
+    "claim": "连续谱对应 $\\lambda I-T$ 单射、值域稠密但并非满射的情形。",
+    "groundTruth": "faithful",
+    "unfaithfulReason": null
+  },
+  {
+    "caseId": "CAL-086",
+    "sourceSpanId": "span:09-functional-analysis-9478dfc1ba6cb58f-34",
+    "originalText": "| 谱的类型 | 含义 | 例子 |\n|---------|------|------|\n| **点谱** | $\\lambda I - T$ 非单射 | 真正的特征值 |\n| **连续谱** | 单射但值域稠密（却非满射） | 乘法算子 $(Tf)(x)=xf(x)$ |\n| **剩余谱** | 单射但值域不稠密 | unilateral shift |",
+    "claim": "只要 $\\lambda I-T$ 是单射，$\\lambda$ 就属于连续谱。",
+    "groundTruth": "unfaithful",
+    "unfaithfulReason": "丢条件(lost-condition)：原文对连续谱还要求值域稠密且非满射，Claim 只保留了单射条件。"
+  },
+  {
+    "caseId": "CAL-087",
+    "sourceSpanId": "span:09-functional-analysis-9478dfc1ba6cb58f-34",
+    "originalText": "| 谱的类型 | 含义 | 例子 |\n|---------|------|------|\n| **点谱** | $\\lambda I - T$ 非单射 | 真正的特征值 |\n| **连续谱** | 单射但值域稠密（却非满射） | 乘法算子 $(Tf)(x)=xf(x)$ |\n| **剩余谱** | 单射但值域不稠密 | unilateral shift |",
+    "claim": "剩余谱对应 $\\lambda I-T$ 非单射但值域稠密的情形。",
+    "groundTruth": "unfaithful",
+    "unfaithfulReason": "曲解(distortion)：原表把剩余谱定义为单射但值域不稠密，Claim 将两项性质都改反。"
+  },
+  {
+    "caseId": "CAL-088",
+    "sourceSpanId": "span:09-functional-analysis-9478dfc1ba6cb58f-41",
+    "originalText": "紧算子是\"最像矩阵\"的无限维算子——它的谱除了可能的 $0$ 之外，完全由特征值构成：",
+    "claim": "紧算子被称为“最像矩阵”的无限维算子，其谱除可能的 $0$ 外由特征值构成。",
+    "groundTruth": "faithful",
+    "unfaithfulReason": null
+  },
+  {
+    "caseId": "CAL-089",
+    "sourceSpanId": "span:09-functional-analysis-9478dfc1ba6cb58f-41",
+    "originalText": "紧算子是\"最像矩阵\"的无限维算子——它的谱除了可能的 $0$ 之外，完全由特征值构成：",
+    "claim": "紧算子的谱毫无例外地全部由特征值构成。",
+    "groundTruth": "unfaithful",
+    "unfaithfulReason": "丢条件(lost-condition)：原文保留了“可能的 $0$”这一例外，Claim 将例外删除。"
+  },
+  {
+    "caseId": "CAL-090",
+    "sourceSpanId": "span:09-functional-analysis-9478dfc1ba6cb58f-41",
+    "originalText": "紧算子是\"最像矩阵\"的无限维算子——它的谱除了可能的 $0$ 之外，完全由特征值构成：",
+    "claim": "有限维中所有范数等价、线性算子自动连续，但这些性质在无限维中全部失效。",
+    "groundTruth": "unfaithful",
+    "unfaithfulReason": "引用错位(wrong-citation)：该 Claim 来自 span:09-functional-analysis-9478dfc1ba6cb58f-48；当前 span 只讨论紧算子的谱。"
+  },
+  {
+    "caseId": "CAL-091",
+    "sourceSpanId": "span:09-functional-analysis-9478dfc1ba6cb58f-48",
+    "originalText": "> 💡 **核心哲学**：泛函分析 = 无限维线性代数 + 拓扑完备性。有限维中的很多\"理所当然\"（如所有范数等价、线性算子自动连续）在无限维中全部失效。但也正是这些\"失效\"创造了丰富性——谱的三种类型、有界与无界算子的鸿沟、紧性与非紧性的分野，构成了现代分析的深层景观。",
+    "claim": "原文将泛函分析概括为“无限维线性代数 + 拓扑完备性”。",
+    "groundTruth": "faithful",
+    "unfaithfulReason": null
+  },
+  {
+    "caseId": "CAL-092",
+    "sourceSpanId": "span:09-functional-analysis-9478dfc1ba6cb58f-48",
+    "originalText": "> 💡 **核心哲学**：泛函分析 = 无限维线性代数 + 拓扑完备性。有限维中的很多\"理所当然\"（如所有范数等价、线性算子自动连续）在无限维中全部失效。但也正是这些\"失效\"创造了丰富性——谱的三种类型、有界与无界算子的鸿沟、紧性与非紧性的分野，构成了现代分析的深层景观。",
+    "claim": "原文进一步断言，每个无限维空间都存在一个唯一的自然范数。",
+    "groundTruth": "unfaithful",
+    "unfaithfulReason": "添加(addition)：原文讨论范数等价在无限维中失效，但没有提出“唯一自然范数”的存在性。"
+  },
+  {
+    "caseId": "CAL-093",
+    "sourceSpanId": "span:11-constants-140ce51a25193ff7-13",
+    "originalText": "$$\ne = \\lim_{n\\to\\infty} \\left(1 + \\frac{1}{n}\\right)^n = \\sum_{n=0}^\\infty \\frac{1}{n!} \\approx 2.71828\\ldots\n$$",
+    "claim": "$e=\\lim_{n\\to\\infty}(1+\\frac1n)^n=\\sum_{n=0}^{\\infty}\\frac1{n!}\\approx2.71828\\ldots$。",
+    "groundTruth": "faithful",
+    "unfaithfulReason": null
+  },
+  {
+    "caseId": "CAL-094",
+    "sourceSpanId": "span:11-constants-140ce51a25193ff7-13",
+    "originalText": "$$\ne = \\lim_{n\\to\\infty} \\left(1 + \\frac{1}{n}\\right)^n = \\sum_{n=0}^\\infty \\frac{1}{n!} \\approx 2.71828\\ldots\n$$",
+    "claim": "原文中的极限式与无穷级数分别给出了两个不同的常数，只是近似值相同。",
+    "groundTruth": "unfaithful",
+    "unfaithfulReason": "曲解(distortion)：原文用等号明确表示两种表达式给出同一个常数 $e$，Claim 将其曲解为两个不同常数。"
+  },
+  {
+    "caseId": "CAL-095",
+    "sourceSpanId": "span:11-constants-140ce51a25193ff7-22",
+    "originalText": "![e^{iπ}+1=0——复平面上从(1,0)沿单位圆旋转π弧度到达(-1,0)，加1回到原点](../images/11-constants/11-constants_eiπ10-复平面.png)",
+    "claim": "图片说明 $e^{i\\pi}+1=0$：从 $(1,0)$ 沿单位圆旋转 $\\pi$ 弧度到 $(-1,0)$，再加 1 回到原点。",
+    "groundTruth": "faithful",
+    "unfaithfulReason": null
+  },
+  {
+    "caseId": "CAL-096",
+    "sourceSpanId": "span:11-constants-140ce51a25193ff7-22",
+    "originalText": "![e^{iπ}+1=0——复平面上从(1,0)沿单位圆旋转π弧度到达(-1,0)，加1回到原点](../images/11-constants/11-constants_eiπ10-复平面.png)",
+    "claim": "该图还证明了 $e^{i\\pi}+1=0$ 是唯一一个同时包含五个基本常数的等式。",
+    "groundTruth": "unfaithful",
+    "unfaithfulReason": "添加(addition)：图片替代文本只描述等式及复平面运动，没有“唯一性”或“五个基本常数”的判断。"
+  },
+  {
+    "caseId": "CAL-097",
+    "sourceSpanId": "span:11-constants-140ce51a25193ff7-30",
+    "originalText": "$$\n\\gamma = \\lim_{n\\to\\infty} \\left(\\sum_{k=1}^n \\frac{1}{k} - \\ln n\\right) \\approx 0.57721\\ldots\n$$",
+    "claim": "$\\gamma=\\lim_{n\\to\\infty}(\\sum_{k=1}^{n}\\frac1k-\\ln n)\\approx0.57721\\ldots$。",
+    "groundTruth": "faithful",
+    "unfaithfulReason": null
+  },
+  {
+    "caseId": "CAL-098",
+    "sourceSpanId": "span:11-constants-140ce51a25193ff7-30",
+    "originalText": "$$\n\\gamma = \\lim_{n\\to\\infty} \\left(\\sum_{k=1}^n \\frac{1}{k} - \\ln n\\right) \\approx 0.57721\\ldots\n$$",
+    "claim": "原文表明 $\\sum_{k=1}^{n}\\frac1k-\\ln n$ 会随 $n\\to\\infty$ 发散到正无穷。",
+    "groundTruth": "unfaithful",
+    "unfaithfulReason": "曲解(distortion)：原文给出该差值收敛到约 $0.57721$ 的有限极限，Claim 将收敛曲解为发散。"
+  },
+  {
+    "caseId": "CAL-099",
+    "sourceSpanId": "span:11-constants-140ce51a25193ff7-36",
+    "originalText": "$$\n\\varphi = \\frac{1+\\sqrt{5}}{2} \\approx 1.61803\\ldots\n$$",
+    "claim": "黄金比例满足 $\\varphi=\\frac{1+\\sqrt5}{2}\\approx1.61803\\ldots$。",
+    "groundTruth": "faithful",
+    "unfaithfulReason": null
+  },
+  {
+    "caseId": "CAL-100",
+    "sourceSpanId": "span:11-constants-140ce51a25193ff7-36",
+    "originalText": "$$\n\\varphi = \\frac{1+\\sqrt{5}}{2} \\approx 1.61803\\ldots\n$$",
+    "claim": "数列是定义在自然数上的函数 $a:\\mathbb{N}\\to\\mathbb{R}$ 或 $\\mathbb{C}$。",
+    "groundTruth": "unfaithful",
+    "unfaithfulReason": "引用错位(wrong-citation)：该 Claim 来自 span:03-sequences-limits-e7ea8bc17c2cc4ab-5；当前 span 只给出 $\\varphi$ 的表达式和近似值。"
+  }
+]

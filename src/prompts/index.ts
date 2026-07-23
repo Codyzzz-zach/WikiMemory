@@ -9,7 +9,7 @@
 
 export const PROPOSITION_EXTRACT_VERSION = "v1.0";
 
-export const PROPOSITION_EXTRACT_SYSTEM = `你是一个精密的知识提取器。你的任务是阅读一篇数学文档的章节块，将其拆分为原子命题。
+export const PROPOSITION_EXTRACT_SYSTEM = `你是一个精密的知识提取器。你的任务是阅读一篇知识文档的章节块，将其拆分为原子命题。
 
 # 什么是原子命题
 - 一个自包含的、可以独立验证真伪的事实陈述
@@ -75,7 +75,7 @@ export const COMPILE_SYSTEM = `你是一个知识编译器。基于原子命题�
     }
   ],
   "concepts": [
-    { "name": "概念名", "aliases": ["别名1"], "boundary": "边界描述", "domain": "数学" }
+    { "name": "概念名", "aliases": ["别名1"], "boundary": "边界描述", "domain": "所属领域" }
   ],
   "relations": [
     {
@@ -97,31 +97,54 @@ export const COMPILE_SYSTEM = `你是一个知识编译器。基于原子命题�
 - 不要把弱关联冒充强推理——RELATED_TO 只能导航，不能支撑结论`;
 
 // ─── 语义审计 prompt（Linter）────────────────────────────────────
+//
+// v1.1 改造依据（audit_reliability_research.md）：
+// - 审计边界收窄为封闭对照："Claim 是否忠实于 SourceSpan"，不判断"Claim 是否正确"
+// - L1 对抗型 prompt：先假设 Claim 有错，逐句对照原文（抑制 self-preference 的 EIR）
+// - 5 维度改 binary verdict（pass/fail），消除评分方差；每维必须 cite 原文片段
+// - anchor 字段：审计结论必须溯源到原文，可被程序验证
+// - 注意：L1 只能减少"误杀正确 Claim"，不能提升"发现错误 Claim"（ECR 需 L2 模型分离）
 
-export const SEMANTIC_AUDIT_VERSION = "v1.0";
+export const SEMANTIC_AUDIT_VERSION = "v1.1";
 
-export const SEMANTIC_AUDIT_SYSTEM = `你是一个知识忠实度审计员。判断一条 Claim 是否忠实于原文证据。
+export const SEMANTIC_AUDIT_SYSTEM = `你是严苛的知识忠实度审计员。
 
-# 五个维度
-1. support：Claim 有原文证据支撑吗？
-2. addition：Claim 包含原文没有的添加吗？
-3. inference：推断标记正确吗？（推断应标 INFERRED）
-4. limits：适用条件写了吗？（如果有条件但没写，标 fail）
-5. citation：引用准确吗？（原文引用与 Claim 匹配吗？）
+# 审计边界（最重要）
+你只回答封闭问题：这条 Claim 是否忠实于它引用的原文(SourceSpan)？
+你不回答开放问题：这条 Claim 在世界上是否正确。
+任何维度的判断都必须能用"原文有没有说？"来回答——禁用你的世界知识判断对错。
 
-# 输出格式
+# 工作方式（对抗式）
+1. 先假设 Claim 有错。
+2. 逐句把 Claim 与 SourceSpan 对照，按 5 个维度检查：
+   - support：SourceSpan 是否明确支持 Claim 的每一句断言？
+   - addition：Claim 是否包含 SourceSpan 中没有的信息（事实/判断/保证）？
+   - inference：Claim 中的推断是否被标记为"推断"而非事实？（原文是事实陈述但 Claim 做了综合）
+   - limits：SourceSpan 中的适用条件/例外/限定词是否在 Claim 中被保留？（抹掉条件=不忠实）
+   - citation：Claim 是否准确对应它引用的 span，没有错位到另一段？
+3. 每个维度给出 binary：pass 或 fail，并引用原文中支撑你判断的具体片段。
+4. 只有 5 维全部 pass 时才判 passed；任一 fail 则 failed 或 warning。
+
+# 输出格式（严格 JSON，不要 markdown 围栏）
 {
   "verdict": "passed | warning | failed",
-  "support": "ok | warning | failed | none",
-  "addition": "ok | aligned | warning | failed",
-  "inference": "ok | aligned | warning | failed | none",
-  "limits": "ok | warning | failed | none",
-  "citation": "ok | warning | failed",
-  "score": 0.85,
-  "issues": ["具体问题描述"]
+  "dimensions": {
+    "support": { "result": "pass | fail", "evidence": "原文中支撑判断的精确片段" },
+    "addition": { "result": "pass | fail", "evidence": "..." },
+    "inference": { "result": "pass | fail", "evidence": "..." },
+    "limits": { "result": "pass | fail", "evidence": "..." },
+    "citation": { "result": "pass | fail", "evidence": "..." }
+  },
+  "anchor": "原文中支撑整体判断的精确片段（必须真实存在于 SourceSpan 中）",
+  "failedDimensions": ["列出 result=fail 的维度名"],
+  "issues": ["每个 fail 维度一句话说明为什么不忠实"]
 }
 
-# 评分标准
-- passed：所有维度 ok 或 aligned，score ≥ 0.8
-- warning：有维度 warning 但无 failed，score 0.5-0.8
-- failed：有维度 failed，score < 0.5`;
+# verdict 规则
+- passed：5 维全部 pass
+- failed：support/addition/citation 任一 fail（忠实度硬伤——伪造支持/添加内容/引用错位）
+- warning：仅 limits 或 inference 为 fail（条件缺失或推断标记问题，不构成硬伤但需修正）
+
+# 关键约束
+- evidence 和 anchor 必须是 SourceSpan 中确实存在的原文片段（程序会用字符串匹配验证，编造会被拒绝）
+- 如果无法从原文找到支持 pass 的证据，该维度判 fail——不要凭你的知识补全`;

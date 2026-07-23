@@ -7,7 +7,7 @@
  * - 支持 --project-root 显式指定
  */
 
-import { existsSync, readFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync } from "node:fs";
 import { join, resolve } from "node:path";
 import type { AppConfig } from "./types.js";
 import { DEFAULT_BASE_URL, DEFAULT_MODEL } from "./types.js";
@@ -82,7 +82,6 @@ export function loadConfig(overrides?: Partial<AppConfig>): AppConfig {
 /** 确保目录存在（只在显式 init 时调用，不在 loadConfig 里调） */
 export function ensureDir(dir: string): void {
 	if (!existsSync(dir)) {
-		const { mkdirSync } = require("node:fs");
 		mkdirSync(dir, { recursive: true });
 	}
 }

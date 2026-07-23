@@ -87,21 +87,36 @@ export const CompileResponseSchema = z.object({
 export type CompileResponse = z.infer<typeof CompileResponseSchema>;
 
 // ─── 语义审计 LLM 输出（Linter）──────────────────────────────────
+//
+// v1.1 改造：5 维度改 binary verdict（pass/fail）+ 每维必带 evidence（原文片段）。
+// 消除旧版 score 0-1 的评分方差（faithfulness 是两次随机 LLM 调用，分数不稳定）。
+// anchor 是整体判断的原文锚点，程序验证它真实存在于 SourceSpan（防 LLM 编造证据）。
 
-export const AuditDimensionSchema = z.enum(["ok", "aligned", "warning", "failed", "none"]);
+const DimensionResultSchema = z.enum(["pass", "fail"]);
+
+export const DimensionVerdictSchema = z.object({
+	result: DimensionResultSchema,
+	/** 支撑该维度判断的原文片段（程序会用字符串匹配验证是否真实存在于 SourceSpan） */
+	evidence: z.string(),
+});
 
 export const SemanticVerdictSchema = z.object({
 	verdict: z.enum(["passed", "warning", "failed"]),
-	support: AuditDimensionSchema,
-	addition: AuditDimensionSchema,
-	inference: AuditDimensionSchema,
-	limits: AuditDimensionSchema,
-	citation: AuditDimensionSchema,
-	score: z.number().min(0).max(1),
-	issues: z.array(z.string()).default([]),
+	dimensions: z.object({
+		support: DimensionVerdictSchema,
+		addition: DimensionVerdictSchema,
+		inference: DimensionVerdictSchema,
+		limits: DimensionVerdictSchema,
+		citation: DimensionVerdictSchema,
+	}),
+	/** 整体判断的原文锚点——必须真实存在于 SourceSpan（程序验证） */
+	anchor: z.string().min(1, "anchor 不能为空"),
+	failedDimensions: z.array(z.string()).optional(),
+	issues: z.array(z.string()).optional(),
 });
 
 export type SemanticVerdict = z.infer<typeof SemanticVerdictSchema>;
+export type DimensionVerdict = z.infer<typeof DimensionVerdictSchema>;
 
 // ─── 矛盾检测 LLM 输出（Compiler Step 4）────────────────────────
 
@@ -155,9 +170,7 @@ export function parseLLMJson<T>(content: string, schema: z.ZodSchema<T>): T {
 		const issues = result.error.issues
 			.map((i) => `  [${i.path.join(".")}] ${i.message}`)
 			.join("\n");
-		throw new Error(
-			`LLM 输出不符合 schema:\n${issues}\n\n原文片段:\n${cleaned.slice(0, 300)}`,
-		);
+		throw new Error(`LLM 输出不符合 schema:\n${issues}\n\n原文片段:\n${cleaned.slice(0, 300)}`);
 	}
 
 	return result.data;

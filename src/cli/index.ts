@@ -1,20 +1,19 @@
 #!/usr/bin/env node
 
 import { Command } from "commander";
-import { loadConfig } from "../config/index.js";
-import { ingestMarkdownFile } from "../ingestor/index.js";
 import { compileSource } from "../compiler/index.js";
-import {
-	lintCompileResult,
-	type CompileLintResult,
-} from "../linter/index.js";
-import {
-	appendClaims,
-	appendConcepts,
-	appendRelations,
-} from "../linter/storage.js";
+import { loadConfig } from "../config/index.js";
 import { buildContextPack } from "../context-pack/index.js";
 import { createLLMProvider } from "../core/llm-provider.js";
+import { ingestMarkdownFile } from "../ingestor/index.js";
+import { type CompileLintResult, lintCompileResult } from "../linter/index.js";
+import {
+	appendClaims,
+	appendClaimsQuarantined,
+	appendConcepts,
+	appendRelations,
+	appendRelationsQuarantined,
+} from "../linter/storage.js";
 import { readAllClaims, readAllSpans } from "../linter/storage.js";
 
 const program = new Command();
@@ -53,7 +52,8 @@ program
 
 		if (ingestResult.isDuplicate) {
 			if (!options.json) console.error("✅ Already ingested. Skipping compile.");
-			if (options.json) console.log(JSON.stringify({ skipped: true, source: ingestResult.source.id }));
+			if (options.json)
+				console.log(JSON.stringify({ skipped: true, source: ingestResult.source.id }));
 			return;
 		}
 
@@ -92,36 +92,48 @@ program
 		}
 
 		// Step 4: 原子发布（修断点 6：整体写入，不分别追加）
-		// 先收集所有要写入的对象，再一次写入——中途失败不会产生半成品状态
-		const claimsToStore = [
-			...lintResult.canonicalClaims,
-			...lintResult.quarantinedClaims.map((q) => q.claim),
-		];
-		const relationsToStore = [
-			...lintResult.canonicalRelations,
-			...lintResult.quarantinedRelations.map((q) => q.relation),
-		];
-
-		appendClaims(config, claimsToStore);
+		// 物理隔离（轨道 D-2）：Canonical 写主目录，Quarantined 写 quarantine/
+		// readAllClaims 只读主目录，Quarantined 对象对默认消费路径不可见
+		appendClaims(config, lintResult.canonicalClaims);
 		appendConcepts(config, compileResult.concepts);
-		appendRelations(config, relationsToStore);
+		appendRelations(config, lintResult.canonicalRelations);
+
+		// Quarantined 物理隔离到独立目录（不混入主 claims/relations）
+		if (lintResult.quarantinedClaims.length > 0) {
+			appendClaimsQuarantined(
+				config,
+				lintResult.quarantinedClaims.map((q) => q.claim),
+			);
+		}
+		if (lintResult.quarantinedRelations.length > 0) {
+			appendRelationsQuarantined(
+				config,
+				lintResult.quarantinedRelations.map((q) => q.relation),
+			);
+		}
 
 		if (!options.json) {
-			console.error(`✅ Ingest complete: ${lintResult.canonicalClaims.length} canonical claims, ${lintResult.canonicalRelations.length} canonical relations`);
+			console.error(
+				`✅ Ingest complete: ${lintResult.canonicalClaims.length} canonical claims, ${lintResult.canonicalRelations.length} canonical relations`,
+			);
 		} else {
 			console.log(
-				JSON.stringify({
-					source: ingestResult.source.id,
-					blocks: ingestResult.spans.length,
-					propositions: compileResult.propositions.length,
-					claims: compileResult.claims.length,
-					concepts: compileResult.concepts.length,
-					relations: compileResult.relations.length,
-					canonicalClaims: lintResult.canonicalClaims.length,
-					canonicalRelations: lintResult.canonicalRelations.length,
-					quarantinedClaims: lintResult.quarantinedClaims.length,
-					quarantinedRelations: lintResult.quarantinedRelations.length,
-				}, null, 2),
+				JSON.stringify(
+					{
+						source: ingestResult.source.id,
+						blocks: ingestResult.spans.length,
+						propositions: compileResult.propositions.length,
+						claims: compileResult.claims.length,
+						concepts: compileResult.concepts.length,
+						relations: compileResult.relations.length,
+						canonicalClaims: lintResult.canonicalClaims.length,
+						canonicalRelations: lintResult.canonicalRelations.length,
+						quarantinedClaims: lintResult.quarantinedClaims.length,
+						quarantinedRelations: lintResult.quarantinedRelations.length,
+					},
+					null,
+					2,
+				),
 			);
 		}
 	});
@@ -166,14 +178,14 @@ program
 			}
 
 			if (pack.conflictsAndConditions.length > 0) {
-				console.log(`\n⚠️ Conflicts & Conditions:`);
+				console.log("\n⚠️ Conflicts & Conditions:");
 				for (const c of pack.conflictsAndConditions) {
 					console.log(`   ${c}`);
 				}
 			}
 
 			if (pack.knownGaps.length > 0) {
-				console.log(`\n❓ Known Gaps:`);
+				console.log("\n❓ Known Gaps:");
 				for (const g of pack.knownGaps) {
 					console.log(`   ${g}`);
 				}

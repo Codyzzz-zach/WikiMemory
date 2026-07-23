@@ -12,21 +12,14 @@
  * Product Definition 哲学 09：语义 CI 必须发生在消费前。
  */
 
-import type { AppConfig } from "../config/types.js";
-import type {
-	Claim,
-	Concept,
-	Relation,
-	SourceSpan,
-} from "../types/index.js";
-import type { LLMProvider } from "../core/llm-provider.js";
 import { join } from "node:path";
-import {
-	SEMANTIC_AUDIT_SYSTEM,
-	SEMANTIC_AUDIT_VERSION,
-} from "../prompts/index.js";
+import type { AppConfig } from "../config/types.js";
+import type { LLMProvider } from "../core/llm-provider.js";
+import { SEMANTIC_AUDIT_SYSTEM, SEMANTIC_AUDIT_VERSION } from "../prompts/index.js";
+import type { Claim, Concept, Relation, SourceSpan } from "../types/index.js";
 import { SemanticVerdictSchema, parseLLMJson } from "../types/schemas.js";
-import { writeJson } from "./storage.js";
+import type { SemanticVerdict } from "../types/schemas.js";
+import { appendAuditMetric, writeJson } from "./storage.js";
 
 // ─── 结构化 Lint Issue（修断点 7）──────────────────────────────
 
@@ -45,15 +38,13 @@ export type IssueCode =
 	| "SEMANTIC_LIMITS_MISSING"
 	| "SEMANTIC_CITATION_FAILED"
 	| "SEMANTIC_CONFLICT_DETECTED"
+	| "SEMANTIC_ANCHOR_FABRICATED" // v1.1：审计 anchor 编造——审计结论本身不可信
 	| "SEMANTIC_WARNING";
 
 export type IssueSeverity = "error" | "warning" | "info";
 
 /** Lint 建议的目标状态 */
-export type RecommendedState =
-	| "CANONICAL"
-	| "CANONICAL_DISPUTED"
-	| "QUARANTINE";
+export type RecommendedState = "CANONICAL" | "CANONICAL_DISPUTED" | "QUARANTINE";
 
 export interface LintIssue {
 	code: IssueCode;
@@ -94,10 +85,7 @@ export interface CompileLintResult {
 // ─── 确定性硬门禁 ────────────────────────────────────────────────
 
 /** Claim 结构性检查 */
-export function checkClaimStructure(
-	claim: Claim,
-	allSpanIds: Set<string>,
-): LintIssue[] {
+export function checkClaimStructure(claim: Claim, allSpanIds: Set<string>): LintIssue[] {
 	const issues: LintIssue[] = [];
 
 	if (!claim.statement || claim.statement.trim().length === 0) {
@@ -201,8 +189,15 @@ export function checkRelationStructure(
 /**
  * 语义门禁（1 次 LLM/claim）。
  *
- * 修断点 7：不再用 issues.some(i => i.includes("冲突")) 字符串匹配。
- * 改为结构化 issueCode：SEMANTIC_CONFLICT_DETECTED → CANONICAL_DISPUTED。
+ * v1.1 改造（audit_reliability_research.md）：
+ * - 审计边界收窄为封闭对照："Claim 是否忠实于 SourceSpan"，不判对错
+ * - 5 维度改 binary verdict，消除评分方差
+ * - anchor 验证：审计结论必须溯源到原文，编造的 evidence 被 reject 并记 SEMANTIC_ANCHOR_FABRICATED
+ * - 不再用 support=warning 等价 DISPUTED（证据不足 ≠ 存在反证）
+ *
+ * 可观测（轨道 B）：
+ * - 每次审计记录 model 快照（pin 版本，防 criterion drift）
+ * - 按维度分桶统计（meta-eval 校准用）
  */
 export async function semanticCheck(
 	config: AppConfig,
@@ -210,12 +205,11 @@ export async function semanticCheck(
 	spans: SourceSpan[],
 	provider: LLMProvider,
 ): Promise<LintIssue[]> {
-	const evidenceText = spans
-		.filter((s) => claim.evidenceSpanIds.includes(s.id))
-		.map((s) => `[${s.blockId}] ${s.text}`)
-		.join("\n\n");
+	const evidenceSpans = spans.filter((s) => claim.evidenceSpanIds.includes(s.id));
+	const evidenceText = evidenceSpans.map((s) => `[${s.blockId}] ${s.text}`).join("\n\n");
 
 	if (!evidenceText) {
+		recordAuditMetric(config, claim.id, "skipped", "no-evidence");
 		return [
 			{
 				code: "SEMANTIC_CITATION_FAILED",
@@ -232,13 +226,13 @@ export async function semanticCheck(
 # Claim
 ${claim.statement}
 
-# 适用条件
+# 适用条件（Claim 自报的）
 ${claim.conditions.length > 0 ? claim.conditions.join("; ") : "无"}
 
-# 原文证据
+# 原文证据（SourceSpan）
 ${evidenceText}
 
-请以 JSON 格式返回审计结果。`;
+按系统指令的 5 维度对照检查，返回严格 JSON。`;
 
 	const result = await provider.chat({
 		model: config.model,
@@ -249,91 +243,241 @@ ${evidenceText}
 		maxTokens: 4096,
 	});
 
-	const verdict = parseLLMJson(result.content, SemanticVerdictSchema);
-	const issues: LintIssue[] = [];
-	const issuesList = verdict.issues ?? [];
-
-	// 修断点 7：基于结构化维度判断，不依赖文本匹配
-	if (verdict.verdict === "failed") {
-		// 把 failed 维度转成结构化 issueCode
-		if (verdict.support === "failed" || verdict.support === "none") {
-			issues.push({
-				code: "SEMANTIC_SUPPORT_FAILED",
-				severity: "error",
-				affectedObject: claim.id,
-				detail: `support: ${verdict.support}`,
-				recommendedState: "QUARANTINE",
-			});
-		}
-		if (verdict.addition === "failed") {
-			issues.push({
-				code: "SEMANTIC_ADDITION_MAJOR",
-				severity: "error",
-				affectedObject: claim.id,
-				detail: `addition: 添加了原文没有的内容`,
-				recommendedState: "QUARANTINE",
-			});
-		}
-		if (verdict.inference === "failed") {
-			issues.push({
-				code: "SEMANTIC_INFERENCE_WRONG",
-				severity: "error",
-				affectedObject: claim.id,
-				detail: `inference: 推断标记错误`,
-				recommendedState: "QUARANTINE",
-			});
-		}
-		if (verdict.limits === "failed") {
-			issues.push({
-				code: "SEMANTIC_LIMITS_MISSING",
-				severity: "error",
-				affectedObject: claim.id,
-				detail: `limits: 适用条件缺失`,
-				recommendedState: "QUARANTINE",
-			});
-		}
-		if (verdict.citation === "failed") {
-			issues.push({
+	// 解析审计输出（失败直接 return，不继续）
+	let parsed: SemanticVerdict;
+	try {
+		parsed = parseLLMJson(result.content, SemanticVerdictSchema);
+	} catch (e) {
+		// LLM 返回不符合 schema（含 JSON 解析失败）
+		recordAuditMetric(config, claim.id, "skipped", "schema-reject");
+		return [
+			{
 				code: "SEMANTIC_CITATION_FAILED",
 				severity: "error",
 				affectedObject: claim.id,
-				detail: `citation: 引用错误`,
+				detail: `审计输出不符合 schema: ${(e as Error).message.slice(0, 200)}`,
 				recommendedState: "QUARANTINE",
-			});
-		}
-		// 如果没有任何维度 failed 但 verdict 仍是 failed，用通用 issue
-		if (issues.length === 0) {
+			},
+		];
+	}
+	const verdict: SemanticVerdict = parsed;
+
+	const issues: LintIssue[] = [];
+	const dims = verdict.dimensions;
+
+	// anchor 验证：anchor 和每维 evidence 必须真实存在于某个 SourceSpan
+	const allEvidenceText = evidenceSpans.map((s) => s.text).join("\n");
+	const anchorValid = isQuoteInText(verdict.anchor, allEvidenceText);
+	if (!anchorValid) {
+		// anchor 编造——审计结论本身不可信，降级为 QUARANTINE
+		recordAuditMetric(config, claim.id, "anchor-fabricated", "anchor");
+		issues.push({
+			code: "SEMANTIC_ANCHOR_FABRICATED",
+			severity: "error",
+			affectedObject: claim.id,
+			detail: `审计 anchor 不在原文中: "${verdict.anchor.slice(0, 60)}..."`,
+			recommendedState: "QUARANTINE",
+		});
+		return issues;
+	}
+
+	// 按维度生成 issueCode（binary verdict）
+	const dimToIssueCode: Record<string, IssueCode> = {
+		support: "SEMANTIC_SUPPORT_FAILED",
+		addition: "SEMANTIC_ADDITION_MAJOR",
+		inference: "SEMANTIC_INFERENCE_WRONG",
+		limits: "SEMANTIC_LIMITS_MISSING",
+		citation: "SEMANTIC_CITATION_FAILED",
+	};
+
+	// 硬伤维度（fail → QUARANTINE）：support / addition / citation
+	// 软伤维度（fail → CANONICAL 但需修正）：inference / limits
+	const hardFailDims = new Set(["support", "addition", "citation"]);
+
+	for (const dimName of ["support", "addition", "inference", "limits", "citation"]) {
+		const dim = dims[dimName as keyof typeof dims];
+		if (dim.result === "fail") {
+			// 验证 evidence 也真实存在
+			const evidenceValid = isQuoteInText(dim.evidence, allEvidenceText);
+			const issueCode = dimToIssueCode[dimName] ?? "SEMANTIC_WARNING";
 			issues.push({
-				code: "SEMANTIC_SUPPORT_FAILED",
-				severity: "error",
+				code: issueCode,
+				severity: hardFailDims.has(dimName) ? "error" : "warning",
 				affectedObject: claim.id,
-				detail: `verdict=failed (score=${verdict.score}): ${issuesList.join("; ")}`,
-				recommendedState: "QUARANTINE",
+				detail: `${dimName}: ${dim.evidence.slice(0, 100)}${evidenceValid ? "" : " (evidence 也不在原文中)"}`,
+				recommendedState: hardFailDims.has(dimName) ? "QUARANTINE" : "CANONICAL",
 			});
-		}
-	} else if (verdict.verdict === "warning") {
-		// 修断点 7：检查是否有冲突信号——基于维度值而非文本匹配
-		// support=warning 表示证据支持度有争议；citation=warning 表示引用可能有冲突
-		if (verdict.support === "warning" || verdict.citation === "warning") {
-			issues.push({
-				code: "SEMANTIC_CONFLICT_DETECTED",
-				severity: "warning",
-				affectedObject: claim.id,
-				detail: `检测到冲突信号 (support=${verdict.support})`,
-				recommendedState: "CANONICAL_DISPUTED",
-			});
-		} else {
-			issues.push({
-				code: "SEMANTIC_WARNING",
-				severity: "warning",
-				affectedObject: claim.id,
-				detail: `语义审计 warning (score=${verdict.score}): ${issuesList.join("; ")}`,
-				recommendedState: "CANONICAL",
-			});
+			recordAuditMetric(config, claim.id, "dim-fail", dimName);
 		}
 	}
 
+	// 如果 verdict=failed 但无硬伤维度 issue（理论上不该发生，防御性兜底）
+	if (verdict.verdict === "failed" && !issues.some((i) => i.severity === "error")) {
+		issues.push({
+			code: "SEMANTIC_SUPPORT_FAILED",
+			severity: "error",
+			affectedObject: claim.id,
+			detail: `verdict=failed 但无硬伤维度: ${(verdict.issues ?? []).join("; ")}`,
+			recommendedState: "QUARANTINE",
+		});
+	}
+
+	if (issues.length === 0 && verdict.verdict === "passed") {
+		recordAuditMetric(config, claim.id, "passed", "-");
+	}
+
 	return issues;
+}
+
+// ─── 可观测：审计指标记录（轨道 B）──────────────────────────────
+
+/**
+ * 审计指标——记录每次审计的结果与维度分布。
+ * 写入 runs/audit-metrics.jsonl，用于 meta-eval 校准（算 TPR/TNR）。
+ *
+ * criterion drift 防御：记录 model 快照（pin 版本，不依赖浮动别名）。
+ */
+export function recordAuditMetric(
+	config: AppConfig,
+	claimId: string,
+	outcome: "passed" | "dim-fail" | "skipped" | "anchor-fabricated",
+	dimension: string,
+): void {
+	const metric = {
+		claimId,
+		outcome,
+		dimension,
+		model: config.model,
+		auditVersion: SEMANTIC_AUDIT_VERSION,
+		timestamp: new Date().toISOString(),
+	};
+	appendAuditMetric(config, metric);
+}
+
+/**
+ * 判断 quote 是否真实存在于 text 中。
+ *
+ * meta-eval 校准发现：精确字符串匹配会导致大量误杀——LLM 返回的 anchor
+ * 语义上确实来自原文，但做了符号替换（LaTeX→unicode）或轻微改写。
+ *
+ * 三层容错（从严到宽）：
+ * 1. 精确子串匹配
+ * 2. 归一化匹配：统一 LaTeX 命令、unicode 数学符号、空白、标点后再匹配
+ * 3. token 重叠率：anchor 拆词后 ≥50% 出现在原文，认为有效（处理轻改写/拼接）
+ */
+export function isQuoteInText(quote: string, text: string): boolean {
+	if (!quote || quote.trim().length === 0) return false;
+	const q = quote.trim();
+
+	// 层 1：精确匹配
+	if (text.includes(q)) return true;
+
+	// 层 2：归一化匹配
+	const normQ = normalizeForMatching(q);
+	const normT = normalizeForMatching(text);
+	if (normQ.length > 4 && normT.includes(normQ)) return true;
+
+	// 层 3：token 重叠率（防 LLM 改写句序/拼接多句）
+	const overlap = tokenOverlap(normQ, normT);
+	return overlap >= 0.5;
+}
+
+/**
+ * 归一化文本用于 anchor/evidence 匹配。
+ *
+ * 分层规则表（领域无关架构，符号层可扩展）：
+ * 1. 结构层（通用）：$/$$ 剥除、标点空白引号归一化——所有领域都需要
+ * 2. LaTeX 层（通用+领域扩展）：
+ *    - 通用命令（\frac→除法、\text→内容、\mathbf→去命令留内容）——数学/论文/金融共用
+ *    - 兜底：未知 \xxx 命令统一去掉（对任何领域安全）
+ * 3. 符号层（可扩展）：unicode 数学符号映射（ℚ→Q 等）
+ *    - 当前覆盖：数学数集符号（基于实际语料分析）
+ *    - 扩展方式：往 LATEX_COMMAND_MAP / UNICODE_MAP 加条目即可
+ *
+ * 数据依据：readings/ 论文集与 mathtest-material/ 的 LaTeX 命令频率分析。
+ * 两领域共用 \frac \mathbb \text \theta；论文特有 \mathcal \mathbf \hat \tilde。
+ */
+function normalizeForMatching(s: string): string {
+	return (
+		s
+			// ── 1. 结构层（通用）──
+			.replace(/\$\$/g, "")
+			.replace(/\$/g, "")
+			// ── 2. LaTeX 层 ──
+			// 带参数的命令（提取内容）
+			.replace(/\\mathbb\{\\?(\w+)\}/g, "$1")
+			.replace(/\\mathbb\{(\w)\}/g, "$1")
+			.replace(/\\mathcal\{(\w+)\}/g, "$1")
+			.replace(/\\mathbf\{([^}]*)\}/g, "$1")
+			.replace(/\\boldsymbol\{([^}]*)\}/g, "$1")
+			.replace(/\\hat\{([^}]*)\}/g, "$1")
+			.replace(/\\tilde\{([^}]*)\}/g, "$1")
+			.replace(/\\text\{([^}]*)\}/g, "$1")
+			.replace(/\\textbf\{([^}]*)\}/g, "$1")
+			.replace(/\\frac\{([^}]*)\}\{([^}]*)\}/g, "$1/$2")
+			.replace(/\\(?:ldots|cdots|dots)/g, "...")
+			// 符号命令 → unicode（数学+论文共用）
+			.replace(/\\(?:le|leq)/g, "≤")
+			.replace(/\\(?:ge|geq)/g, "≥")
+			.replace(/\\(?:ne|neq)/g, "≠")
+			.replace(/\\(?:to|rightarrow)/g, "→")
+			.replace(/\\(?:implies|Rightarrow)/g, "⇒")
+			.replace(/\\(?:infty)/g, "∞")
+			.replace(/\\(?:cup|cap)/g, "∪")
+			.replace(/\\(?:cdot|times)/g, "×")
+			// 去量词符号（不携带语义，匹配时去掉）
+			.replace(/\\(?:forall|exists|sum|lim|sup|inf|min|max|arg|log|exp)/g, "")
+			.replace(/\\(?:cite|ref|label)\{[^}]*\}/g, "") // 论文引用标记
+			// 兜底：其余未知 \xxx 命令去掉（对任何领域安全）
+			.replace(/\\[a-zA-Z]+/g, "")
+			// ── 3. 符号层（unicode 数学符号 → ASCII）──
+			.replace(/ℚ/g, "Q")
+			.replace(/ℝ/g, "R")
+			.replace(/ℕ/g, "N")
+			.replace(/ℤ/g, "Z")
+			.replace(/ℂ/g, "C")
+			.replace(/ℍ/g, "H")
+			.replace(/∀/g, "")
+			.replace(/∃/g, "")
+			// ── 4. 标点空白归一化（通用）──
+			.replace(/[""'']/g, "'")
+			.replace(/[「『]/g, "")
+			.replace(/[」』]/g, "")
+			.replace(/[（(]/g, "(")
+			.replace(/[）)]/g, ")")
+			.replace(/\s+/g, " ")
+			.replace(/[，,；;：:。.!！?？]/g, " ")
+			.trim()
+			.replace(/\s+/g, " ")
+	);
+}
+
+/**
+ * 计算重叠比例——用字符级 2-gram(bigram)。
+ * 中文不分词，按空格切 token 无效；bigram 对中英文都有效且不依赖分词器。
+ * 返回 query 的 bigram 有多少比例出现在 source 中。
+ */
+function tokenOverlap(query: string, source: string): number {
+	const qGrams = bigrams(query);
+	if (qGrams.length === 0) return 0;
+	const sGrams = new Set(bigrams(source));
+	let hit = 0;
+	for (const g of qGrams) {
+		if (sGrams.has(g)) hit++;
+	}
+	return hit / qGrams.length;
+}
+
+/** 生成字符级 2-gram（跳过空白） */
+function bigrams(s: string): string[] {
+	const chars = [...s].filter((c) => !/\s/.test(c));
+	const grams: string[] = [];
+	for (let i = 0; i < chars.length - 1; i++) {
+		const a = chars[i];
+		const b = chars[i + 1];
+		if (a && b) grams.push(a + b);
+	}
+	return grams;
 }
 
 // ─── 原子 Lint 流程（修断点 1+5+6）────────────────────────────
@@ -387,9 +531,7 @@ export async function lintCompileResult(
 		// 语义门禁（可选跳过）
 		let semIssues: LintIssue[] = [];
 		if (!options?.skipSemantic && provider) {
-			const claimSpans = allSpans.filter((s) =>
-				claim.evidenceSpanIds.includes(s.id),
-			);
+			const claimSpans = allSpans.filter((s) => claim.evidenceSpanIds.includes(s.id));
 			semIssues = await semanticCheck(config, claim, claimSpans, provider);
 		}
 
@@ -397,12 +539,11 @@ export async function lintCompileResult(
 
 		// 决定最终状态（修断点 7：基于 issueCode 而非文本匹配）
 		const hasError = allIssues.some((i) => i.severity === "error");
-		const hasConflict = allIssues.some(
-			(i) => i.recommendedState === "CANONICAL_DISPUTED",
-		);
+		const hasConflict = allIssues.some((i) => i.recommendedState === "CANONICAL_DISPUTED");
 
 		if (hasError) {
 			claimResults.push({
+				// 结构/语义硬失败 → QUARANTINED，validity 保持 UNRESOLVED（不升级）
 				object: { ...claim, publicationState: "QUARANTINED" },
 				issues: allIssues,
 				finalState: "QUARANTINED",
@@ -419,7 +560,12 @@ export async function lintCompileResult(
 			});
 		} else {
 			claimResults.push({
-				object: { ...claim, publicationState: "CANONICAL" as const },
+				// 门禁通过：UNRESOLVED → SUPPORTED（审计已证明忠实于原文）
+				object: {
+					...claim,
+					publicationState: "CANONICAL" as const,
+					validity: "SUPPORTED" as const,
+				},
 				issues: allIssues,
 				finalState: "CANONICAL",
 			});
@@ -437,13 +583,9 @@ export async function lintCompileResult(
 	const relationResults: ObjectLintResult<Relation>[] = [];
 
 	for (const relation of relations) {
-		const structIssues = checkRelationStructure(
-			relation,
-			canonicalClaimIds,
-			allClaimIds,
-		);
+		const structIssues = checkRelationStructure(relation, canonicalClaimIds, allClaimIds);
 
-		// Relation 结构失败 → Quarantine
+		// Relation 结构失败 → Quarantine，validity 保持 UNRESOLVED
 		if (structIssues.some((i) => i.severity === "error")) {
 			relationResults.push({
 				object: { ...relation, publicationState: "QUARANTINED" },
@@ -451,9 +593,13 @@ export async function lintCompileResult(
 				finalState: "QUARANTINED",
 			});
 		} else {
-			// Relation 通过 → Canonical（跟随端点 Claim 的状态）
+			// Relation 通过 → Canonical + SUPPORTED（跟随端点 Claim，端点已通过门禁）
 			relationResults.push({
-				object: { ...relation, publicationState: "CANONICAL" as const },
+				object: {
+					...relation,
+					publicationState: "CANONICAL" as const,
+					validity: "SUPPORTED" as const,
+				},
 				issues: structIssues,
 				finalState: "CANONICAL",
 			});
