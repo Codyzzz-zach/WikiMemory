@@ -9,9 +9,11 @@
  * Proposition 是中间产物（决策 4A），不长期存储。
  */
 
+import { join } from "node:path";
 import type { AppConfig } from "../config/types.js";
 import type { LLMProvider } from "../core/llm-provider.js";
 import { mapQuoteToSpan } from "../ingestor/index.js";
+import { appendJsonl } from "../linter/storage.js";
 import { COMPILE_SYSTEM, COMPILE_VERSION, PROPOSITION_EXTRACT_SYSTEM } from "../prompts/index.js";
 import type {
 	Claim,
@@ -34,6 +36,23 @@ export interface CompileResult {
 	concepts: Concept[];
 	relations: Relation[];
 	propositions: PropositionDraft[]; // 中间产物（供调试/审计用）
+	/** v1.1：编译统计——映射失败可观测（Review 断点 8） */
+	compileStats: CompileStats;
+}
+
+/** 编译过程中的跳过/失败统计——不再静默丢弃 */
+export interface CompileStats {
+	sourceId: string;
+	totalPropositions: number;
+	mappedPropositions: number;
+	skippedPropositions: Array<{ blockId: string; exactQuote: string; reason: string }>;
+	totalClaimDrafts: number;
+	mappedClaims: number;
+	skippedClaims: Array<{ statement: string; reason: string }>;
+	totalRelationDrafts: number;
+	validRelations: number;
+	skippedRelations: Array<{ fromIndex: number; toIndex: number; reason: string }>;
+	timestamp: string;
 }
 
 /**
@@ -66,13 +85,33 @@ export async function compileSource(
 
 	// ── 第二步：exactQuote → SourceSpan 映射 ──
 	const propositions: PropositionDraft[] = [];
+	const stats: CompileStats = {
+		sourceId: source.id,
+		totalPropositions: propData.propositions.length,
+		mappedPropositions: 0,
+		skippedPropositions: [],
+		totalClaimDrafts: 0,
+		mappedClaims: 0,
+		skippedClaims: [],
+		totalRelationDrafts: 0,
+		validRelations: 0,
+		skippedRelations: [],
+		timestamp: new Date().toISOString(),
+	};
+
 	for (const item of propData.propositions) {
 		// 用 exactQuote 在 blockId 对应的 block 内做字符串匹配
 		const mappedSpan = mapQuoteToSpan(spans, item.blockId, item.exactQuote);
 		if (!mappedSpan) {
-			// 匹配失败——跳过这条命题（不信任 LLM 的引用）
+			// 匹配失败——记录后跳过（不再静默）
+			stats.skippedPropositions.push({
+				blockId: item.blockId,
+				exactQuote: item.exactQuote.slice(0, 100),
+				reason: "mapQuoteToSpan 失败：exactQuote 不在 blockId 对应的 block 中",
+			});
 			continue;
 		}
+		stats.mappedPropositions++;
 		propositions.push({
 			sourceId: source.id,
 			blockId: item.blockId,
@@ -88,7 +127,9 @@ export async function compileSource(
 	}
 
 	if (propositions.length === 0) {
-		return { claims: [], concepts: [], relations: [], propositions: [] };
+		// 即使没有命题也写 stats（覆盖率 = 0）
+		appendJsonl(join(config.runsDir, "compile-stats.jsonl"), [stats]);
+		return { claims: [], concepts: [], relations: [], propositions: [], compileStats: stats };
 	}
 
 	// ── 第三步：Claim/Concept/Relation 编译 ──
@@ -109,6 +150,7 @@ export async function compileSource(
 	const claims: Claim[] = [];
 
 	for (const draft of compileData.claims) {
+		stats.totalClaimDrafts++;
 		// 为每条 Claim 的 evidenceQuotes 找到精确 SourceSpan
 		const evidenceSpanIds: string[] = [];
 		const blockIds = draft.blockIds ?? [];
@@ -122,8 +164,15 @@ export async function compileSource(
 			}
 		}
 
-		// 如果没有找到任何 evidence，跳过这条 Claim
-		if (evidenceSpanIds.length === 0) continue;
+		// 如果没有找到任何 evidence，记录后跳过
+		if (evidenceSpanIds.length === 0) {
+			stats.skippedClaims.push({
+				statement: draft.statement.slice(0, 100),
+				reason: "所有 evidenceQuotes 都无法映射到 SourceSpan",
+			});
+			continue;
+		}
+		stats.mappedClaims++;
 
 		claims.push({
 			id: `claim:${source.hash}-${claims.length}`,
@@ -166,9 +215,18 @@ export async function compileSource(
 
 	const relations: Relation[] = [];
 	for (const rel of compileData.relations ?? []) {
+		stats.totalRelationDrafts++;
 		const fromClaim = claims[rel.fromClaimIndex];
 		const toClaim = claims[rel.toClaimIndex];
-		if (!fromClaim || !toClaim) continue;
+		if (!fromClaim || !toClaim) {
+			stats.skippedRelations.push({
+				fromIndex: rel.fromClaimIndex,
+				toIndex: rel.toClaimIndex,
+				reason: "端点 Claim 不存在（索引越界或 Claim 被跳过）",
+			});
+			continue;
+		}
+		stats.validRelations++;
 
 		relations.push({
 			id: `rel:${source.hash}-${relations.length}`,
@@ -191,7 +249,10 @@ export async function compileSource(
 		});
 	}
 
-	return { claims, concepts, relations, propositions };
+	// v1.1：写编译统计（映射失败可观测——Review 断点 8）
+	appendJsonl(join(config.runsDir, "compile-stats.jsonl"), [stats]);
+
+	return { claims, concepts, relations, propositions, compileStats: stats };
 }
 
 // ─── Prompt 构造（私有）──────────────────────────────────────────

@@ -19,7 +19,7 @@ import { SEMANTIC_AUDIT_SYSTEM, SEMANTIC_AUDIT_VERSION } from "../prompts/index.
 import type { Claim, Concept, Relation, SourceSpan } from "../types/index.js";
 import { SemanticVerdictSchema, parseLLMJson } from "../types/schemas.js";
 import type { SemanticVerdict } from "../types/schemas.js";
-import { appendAuditMetric, writeJson } from "./storage.js";
+import { appendAuditMetric, appendJsonl } from "./storage.js";
 
 // ─── 结构化 Lint Issue（修断点 7）──────────────────────────────
 
@@ -123,13 +123,24 @@ export function checkClaimStructure(claim: Claim, allSpanIds: Set<string>): Lint
 	return issues;
 }
 
+/** 合法的 RelationType 集合——用于 type 合法性硬检查 */
+const VALID_RELATION_TYPES = new Set<string>([
+	"REQUIRES",
+	"DERIVED_FROM",
+	"SUPPORTS",
+	"CONTRADICTS",
+	"SUPERSEDES",
+	"EQUIVALENT_UNDER",
+	"RELATED_TO",
+]);
+
 /**
  * Relation 结构性检查（修断点 1）。
  *
  * 检查：
- * 1. 端点 Claim 存在
- * 2. 端点 Claim 通过了 Lint（不是 Quarantined）
- * 3. 类型合法
+ * 1. 类型合法（未知类型 = 硬失败，不降级为 RELATED_TO）
+ * 2. 端点 Claim 存在
+ * 3. 端点 Claim 通过了 Lint（不是 Quarantined）
  */
 export function checkRelationStructure(
 	relation: Relation,
@@ -137,6 +148,17 @@ export function checkRelationStructure(
 	allClaimIds: Set<string>,
 ): LintIssue[] {
 	const issues: LintIssue[] = [];
+
+	// 类型合法性检查（偏离 1 修复：合同要求"未知类型硬失败"）
+	if (!VALID_RELATION_TYPES.has(relation.type)) {
+		issues.push({
+			code: "INVALID_RELATION_TYPE",
+			severity: "error",
+			affectedObject: relation.id,
+			detail: `未知的 Relation 类型: ${relation.type}（合法值: REQUIRES | DERIVED_FROM | SUPPORTS | CONTRADICTS | SUPERSEDES | EQUIVALENT_UNDER | RELATED_TO）`,
+			recommendedState: "QUARANTINE",
+		});
+	}
 
 	const fromId = relation.from as string;
 	const toId = relation.to as string;
@@ -623,10 +645,10 @@ export async function lintCompileResult(
 		.filter((r) => r.finalState === "QUARANTINED")
 		.map((r) => ({ relation: r.object, issues: r.issues }));
 
-	// ── Quarantine manifest ──
+	// ── Quarantine manifest（偏离 3 修复：追加而非覆盖，防历史丢失）──
 	const allQuarantined = [...quarantinedClaims, ...quarantinedRelations];
 	if (allQuarantined.length > 0) {
-		const manifest = allQuarantined.map((q) => {
+		const manifestEntries = allQuarantined.map((q) => {
 			const objectId = "claim" in q ? q.claim.id : q.relation.id;
 			const issues = q.issues;
 			return {
@@ -636,7 +658,7 @@ export async function lintCompileResult(
 				auditVersion: SEMANTIC_AUDIT_VERSION,
 			};
 		});
-		writeJson(join(config.quarantineDir, "quarantine-manifest.json"), manifest);
+		appendJsonl(join(config.quarantineDir, "quarantine-manifest.jsonl"), manifestEntries);
 	}
 
 	return {

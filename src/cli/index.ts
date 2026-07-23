@@ -69,6 +69,15 @@ program
 			console.error(`   Claims: ${compileResult.claims.length}`);
 			console.error(`   Concepts: ${compileResult.concepts.length}`);
 			console.error(`   Relations: ${compileResult.relations.length}`);
+			const cs = compileResult.compileStats;
+			console.error(
+				`   映射覆盖: 命题 ${cs.mappedPropositions}/${cs.totalPropositions}, Claim ${cs.mappedClaims}/${cs.totalClaimDrafts}`,
+			);
+			if (cs.skippedPropositions.length > 0 || cs.skippedClaims.length > 0) {
+				console.error(
+					`   ⚠️ 跳过: ${cs.skippedPropositions.length} 命题, ${cs.skippedClaims.length} Claim`,
+				);
+			}
 		}
 
 		// Step 3: 原子 Lint（修断点 1+6：Claim + Relation 一起 Lint）
@@ -130,6 +139,13 @@ program
 						canonicalRelations: lintResult.canonicalRelations.length,
 						quarantinedClaims: lintResult.quarantinedClaims.length,
 						quarantinedRelations: lintResult.quarantinedRelations.length,
+						compileStats: {
+							propositionCoverage: `${compileResult.compileStats.mappedPropositions}/${compileResult.compileStats.totalPropositions}`,
+							claimCoverage: `${compileResult.compileStats.mappedClaims}/${compileResult.compileStats.totalClaimDrafts}`,
+							skippedPropositions: compileResult.compileStats.skippedPropositions.length,
+							skippedClaims: compileResult.compileStats.skippedClaims.length,
+							skippedRelations: compileResult.compileStats.skippedRelations.length,
+						},
 					},
 					null,
 					2,

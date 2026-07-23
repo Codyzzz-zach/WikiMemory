@@ -245,22 +245,27 @@ export function buildContextPack(
 	]);
 	const subgraph = walkGraph(graph, seedIds, maxDepth, allowedTypes);
 
-	// ── 6. 预算控制（4 chars ≈ 1 token）──
+	// ── 6. 预算控制（v1.1 修复偏离 4：全部 Pack 内容计入预算）──
+	// 预算分配：Claim+Relation 占 60%，Evidence 占 25%，冲突+条件+缺口+taskMap 占 15%
 	const maxChars = budget * 4;
+	const claimRelationBudget = Math.floor(maxChars * 0.6);
+	const evidenceBudget = Math.floor(maxChars * 0.25);
+	const overheadBudget = maxChars - claimRelationBudget - evidenceBudget; // ~15%
+
 	let usedChars = 0;
 	const selectedClaims: Claim[] = [];
 	const selectedRelations: Relation[] = [];
 	const selectedSpanIds = new Set<string>();
 
-	// 先放种子 Claim（相关性最高）
+	// 6a. 选 Claim（从 claimRelationBudget 扣）
 	for (const r of seedResults) {
 		const claimChars = r.claim.statement.length;
-		if (usedChars + claimChars > maxChars) {
+		if (usedChars + claimChars > claimRelationBudget) {
 			selectionLog.push({
 				selected: "",
 				reason: "",
 				dropped: r.claim.id,
-				dropReason: "预算超限",
+				dropReason: "预算超限(Claim+Relation 段)",
 			});
 			continue;
 		}
@@ -271,12 +276,12 @@ export function buildContextPack(
 		}
 	}
 
-	// 再放 Graph 扩展的额外 Claim（去重）
+	// 6b. Graph 扩展 Claim（去重，继续从 claimRelationBudget 扣）
 	const existingIds = new Set(selectedClaims.map((c) => c.id));
 	for (const claim of subgraph.claims) {
 		if (existingIds.has(claim.id)) continue;
 		const claimChars = claim.statement.length;
-		if (usedChars + claimChars > maxChars) break;
+		if (usedChars + claimChars > claimRelationBudget) break;
 		selectedClaims.push(claim);
 		existingIds.add(claim.id);
 		usedChars += claimChars;
@@ -285,34 +290,62 @@ export function buildContextPack(
 		}
 	}
 
-	// 放 Relations
+	// 6c. Relations（从 claimRelationBudget 剩余扣，每条约 100 chars）
+	let relUsedChars = 0;
 	for (const rel of subgraph.relations) {
-		if (usedChars + 100 > maxChars) break;
+		const relChars = 100;
+		if (usedChars + relUsedChars + relChars > claimRelationBudget) break;
 		selectedRelations.push(rel);
-		usedChars += 100;
+		relUsedChars += relChars;
+	}
+	usedChars += relUsedChars;
+
+	// ── 7. 回填原文证据（从 evidenceBudget 扣，超限裁剪）──
+	let evidenceUsedChars = 0;
+	const evidenceSpans: typeof allSpans = [];
+	for (const span of findSpansByIds(allSpans, [...selectedSpanIds])) {
+		const spanChars = span.text.length + 30; // +30 for blockId 包装
+		if (evidenceUsedChars + spanChars > evidenceBudget) {
+			selectionLog.push({
+				selected: "",
+				reason: "",
+				dropped: span.id,
+				dropReason: "预算超限(Evidence 段)",
+			});
+			continue;
+		}
+		evidenceSpans.push(span);
+		evidenceUsedChars += spanChars;
 	}
 
-	// ── 7. 回填原文证据 ──
-	const evidenceSpans = findSpansByIds(allSpans, [...selectedSpanIds]);
-
-	// ── 8. 冲突与条件（修断点 5：从 walkGraph 返回值获取）──
+	// ── 8. 冲突与条件（从 overheadBudget 扣，超限裁剪）──
 	const conflictsAndConditions: string[] = [];
+	let overheadUsed = 0;
+	const addOverhead = (text: string): boolean => {
+		if (overheadUsed + text.length > overheadBudget) return false;
+		conflictsAndConditions.push(text);
+		overheadUsed += text.length;
+		return true;
+	};
 
-	// DISPUTED Claim → conflictsAndConditions
 	for (const claim of subgraph.disputedClaims) {
-		conflictsAndConditions.push(`⚠️ Claim ${claim.id} 存在争议: ${claim.statement.slice(0, 80)}`);
+		if (!addOverhead(`⚠️ Claim ${claim.id} 存在争议: ${claim.statement.slice(0, 80)}`)) break;
 	}
-	// 带 conditions 的 Claim
 	for (const claim of selectedClaims) {
 		if (claim.conditions.length > 0) {
-			conflictsAndConditions.push(`📌 Claim ${claim.id} 适用条件: ${claim.conditions.join("; ")}`);
+			if (!addOverhead(`📌 Claim ${claim.id} 适用条件: ${claim.conditions.join("; ")}`)) break;
 		}
 	}
 
-	// ── 9. 已知缺口（修断点 5：UNRESOLVED → knownGaps）──
+	// ── 9. 已知缺口（从 overheadBudget 剩余扣）──
 	const knownGaps: string[] = [];
+	let gapsUsed = 0;
+	const remainingOverhead = overheadBudget - overheadUsed;
 	for (const claim of subgraph.unresolvedClaims) {
-		knownGaps.push(`❓ Claim ${claim.id} 证据未决: ${claim.statement.slice(0, 60)}`);
+		const gapText = `❓ Claim ${claim.id} 证据未决: ${claim.statement.slice(0, 60)}`;
+		if (gapsUsed + gapText.length > remainingOverhead) break;
+		knownGaps.push(gapText);
+		gapsUsed += gapText.length;
 	}
 	if (selectedClaims.length === 0) {
 		knownGaps.push("未找到与任务相关的 Claim——知识库可能未覆盖此主题");
