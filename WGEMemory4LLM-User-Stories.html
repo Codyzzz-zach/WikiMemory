@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>WGEMemory4LLM · User Stories v1.0</title>
+  <title>WGEMemory4LLM · User Stories v1.1</title>
   <script type="module">
     import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
     mermaid.initialize({startOnLoad:true,theme:"base",securityLevel:"loose",themeVariables:{fontFamily:"Noto Sans CJK SC, Inter, ui-sans-serif, system-ui, sans-serif",primaryColor:"#eef5ff",primaryTextColor:"#172033",primaryBorderColor:"#5a8fc7",lineColor:"#657a91",secondaryColor:"#ecf8f3",tertiaryColor:"#fff7e8",fontSize:"13px"},flowchart:{useMaxWidth:true,htmlLabels:false,curve:"basis"},sequence:{useMaxWidth:true},state:{useMaxWidth:true}});
@@ -26,7 +26,7 @@
 <body>
 <div class="page">
 <header id="top">
-  <div class="eyebrow">WGEMemory4LLM · User Stories <span class="badge principle">v1.0</span></div>
+  <div class="eyebrow">WGEMemory4LLM · User Stories <span class="badge principle">v1.1</span></div>
   <h1>从“一篇新文章”到“一个真正进步的 Agent”</h1>
   <p class="subtitle">这份文档不是描述后台能生成多少文件，而是定义用户在长期学习中应该感受到什么：不维护 Wiki、不重复解释、不被陈旧结论拖回原点，同时能追问“为什么”“从哪里来”“这次和上次哪里不同”。</p>
   <div class="hero"><b>总用户故事：</b>作为持续学习 AI 行业与技术知识的用户，我希望把文章、讨论与纠正交给我的通用 Agent 后，它能自动形成并维护可追溯的长期知识状态；当我提出新问题时，它能复用跨材料关系、说明冲突与变化，并随真实使用不断给出更成熟的建议，而不要求我人工维护知识库。</div>
@@ -83,7 +83,7 @@ journey
       <tr><td>持续摄入</td><td>添加文章但不做人工整理</td><td>US-02 自动编译；US-03 消费前门禁</td><td>批量订阅、来源信誉策略</td></tr>
       <tr><td>跨材料学习</td><td>获得全局、关系化、有依据的解释</td><td>US-04 任务化问答；US-05 多跳；US-06 引用追溯</td><td>个性化学习路径</td></tr>
       <tr><td>处理变化</td><td>让新证据和纠正改变旧认知</td><td>US-07 冲突；US-08 用户纠正；US-09 取代与时态</td><td>自动关注领域变化</td></tr>
-      <tr><td>建立信任</td><td>知道系统为什么这么答、出错后可恢复</td><td>US-10 变化解释；US-11 隔离；US-12 回滚</td><td>组织审计与审批</td></tr>
+      <tr><td>建立信任</td><td>知道系统为什么这么答、出错后可恢复</td><td>US-10 变化解释；US-03 隔离；US-11 周期 Lint；US-12 回滚</td><td>组织审计与审批</td></tr>
     </tbody>
   </table>
 </section>
@@ -155,14 +155,15 @@ flowchart LR
   </article>
 
   <article class="story" id="us03">
-    <div class="story-head"><span class="badge p0">P0</span><span class="badge actor">系统</span><span class="badge principle">消费前门禁</span></div>
+    <div class="story-head"><span class="badge p0">P0</span><span class="badge actor">系统</span><span class="badge principle">消费前门禁</span><span class="badge principle">v1.1 扩展</span></div>
     <h3>US-03 · 全部自动保存，但失败内容不污染默认消费链</h3>
     <p><b>作为</b>用户，<b>我希望</b>AI 可以完全自治写入，同时错误或证据不足内容不会立即影响后续回答，<b>从而</b>不承担逐条审批负担。</p>
-    <div class="criteria"><b>验收：</b>候选自动保存；结构、引用或支持度失败时进入 Quarantine；Quarantine 不进入默认检索、Graph 扩展和 Context Pack；修复后可重新候选。</div>
+    <div class="criteria"><b>验收：</b>候选自动保存；结构、引用或支持度失败时进入 Quarantine；<b>Quarantine 必须物理隔离</b>（独立存储，默认读取 API 看不到）——不仅是状态标记；门禁覆盖 Claim <b>和 Relation</b>（端点必须 Canonical）；修复后可重新候选。</div>
     <div class="gherkin"><span class="kw">Given</span> 编译器生成一条没有可定位原文的关系
 <span class="kw">When</span> 写入时 Lint 运行
 <span class="kw">Then</span> 关系被保存到 Quarantine 并附失败原因
-<span class="kw">And</span> 它不能改变默认检索排序或出现在 Canonical Context Pack 中</div>
+<span class="kw">And</span> 它不能改变默认检索排序或出现在 Canonical Context Pack 中
+<span class="kw">And</span> <b>v1.1</b>：它被写入 quarantine/relations.jsonl 独立目录，readAllRelations 默认不读取它</div>
   </article>
 
   <article class="story" id="us04">
@@ -218,16 +219,19 @@ flowchart TD
   </div></div>
   </article>
 
-  <article class="story" id="us08">
-    <div class="story-head"><span class="badge p0">P0</span><span class="badge actor">用户</span><span class="badge principle">纠正进入闭环</span></div>
+  <article class=”story” id=”us08”>
+    <div class=”story-head”><span class=”badge p0”>P0</span><span class=”badge actor”>用户</span><span class=”badge principle”>纠正进入闭环</span><span class=”badge principle”>v1.1 双通道</span></div>
     <h3>US-08 · 用户纠正会改变后续行为，而不是停在当前对话</h3>
-    <p><b>作为</b>用户，<b>我希望</b>指出“这个结论不对，因为忽略了有限测度条件”后，系统能修正长期状态，<b>从而</b>以后不再重复同一错误。</p>
-    <div class="criteria"><b>验收：</b>纠正作为带来源类型的 Memory/Evidence 保存；定位受影响 Claim 和 Relation；触发局部重编译；自动生成回归问题；后续同类任务使用修正状态。</div>
-    <div class="gherkin"><span class="kw">Given</span> Canonical 中存在无条件的 “L² 属于 L¹”
-<span class="kw">When</span> 用户补充“仅在有限测度空间等条件下成立”
-<span class="kw">Then</span> 原关系被标记为有问题或被取代
-<span class="kw">And</span> 新关系保留适用条件与纠正来源
-<span class="kw">And</span> 回归问题“L² 是否总属于 L¹”必须通过后才能发布</div>
+    <p><b>作为</b>用户，<b>我希望</b>指出”这个结论不对，因为忽略了有限测度条件”后，系统能修正长期状态，<b>从而</b>以后不再重复同一错误。</p>
+    <div class=”criteria”><b>验收：</b>纠正分双通道处理。<b>事实通道</b>：旧 Claim → DISPUTED；新 Claim → HUMAN_ASSERTED + UNRESOLVED + CANDIDATE（不自动证明为真）；建 CONTRADICTS；获得来源后才 SUPPORTED。<b>决策/偏好通道</b>：绑定 AssertedRecord + 作用域校验后可直接 SUPPORTED + CANONICAL。分三阶段实现（2a-1 Claim 状态闭环 → 2a-2 WikiModule → 2b 派生层闭环）。<b>只有完成派生层重编译及”不复发”回归后才算产品闭环闭合。</b></div>
+    <div class=”gherkin”><span class=”kw”>Given</span> Canonical 中存在无条件的 “L² 属于 L¹”
+<span class=”kw”>When</span> 用户补充”仅在有限测度空间等条件下成立”
+<span class=”kw”>Then</span> 旧 Claim 进入 DISPUTED，停止无条件消费
+<span class=”kw”>And</span> 新 Claim 为 HUMAN_ASSERTED + UNRESOLVED + CANDIDATE（不自动成真）
+<span class=”kw”>And</span> 建立 CONTRADICTS 边
+<span class=”kw”>And</span> Context Pack 表达”原结论受到挑战，目前待核实”（而非自动相信用户说法）
+<span class=”kw”>And</span> <b>v1.1</b>：纠正产生 KnowledgeStateChanged 事件，驱动后续 Wiki 重编译</div>
+    <div class=”callout”><b>v1.1 非对称原则：</b>用户的纠正足以让系统立即停止无条件相信旧结论，但不足以自动证明用户的新结论为真。项目决策/偏好例外——绑定 AssertedRecord + 作用域校验后可直接生效。</div>
   </article>
 
   <article class="story" id="us09">
@@ -245,7 +249,7 @@ flowchart TD
   </article>
 
   <article class="story" id="us11">
-    <div class="story-head"><span class="badge p0">P0</span><span class="badge actor">系统</span><span class="badge principle">语义 CI</span></div>
+    <div class="story-head"><span class="badge p1">P1</span><span class="badge actor">系统</span><span class="badge principle">语义 CI</span></div>
     <h3>US-11 · 周期性 Lint 找出全局问题，并只修受影响区域</h3>
     <p><b>作为</b>用户，<b>我希望</b>系统定期检查跨模块冲突、过期、重复和孤立推断，<b>从而</b>让自治知识状态不会随时间腐化。</p>
     <div class="criteria"><b>验收：</b>Lint 生成问题、证据、严重度、受影响对象和修复候选；修复前后运行回归；低置信修复可隔离但不要求用户逐条处理。</div>
@@ -266,21 +270,22 @@ flowchart LR
   </article>
 
   <article class="story" id="us12">
-    <div class="story-head"><span class="badge p0">P0</span><span class="badge actor">用户</span><span class="badge principle">可逆性</span></div>
-    <h3>US-12 · 错误编译后恢复到最近健康状态</h3>
+    <div class="story-head"><span class="badge p0">P0</span><span class="badge actor">用户</span><span class="badge principle">可逆性</span><span class="badge principle">v1.1 未实现</span></div>
+    <h3>US-12 · 错误编译后恢复到最近健康状态 <span class="status s-amber">Phase 2b</span></h3>
     <p><b>作为</b>用户，<b>我希望</b>在一批错误更新污染知识时回滚，<b>从而</b>快速恢复使用，同时保留故障材料供后续修复。</p>
-    <div class="criteria"><b>验收：</b>系统展示健康版本、编译 manifest、影响范围和回滚后将丢弃的派生 diff；回滚不删除原始 Source；索引从恢复后的 Canonical 重建。</div>
+    <div class="criteria"><b>"健康"分两层（v1.1）：</b><code>systemHealthySnapshot</code>（系统自动：原子发布 + 硬门禁 + 回归通过 + 快照完整）和 <code>userTrustedCheckpoint</code>（用户主动标记满意版本）。回滚优先 userTrusted 再 systemHealthy。"不要求逐条审批"≠"不能标记满意版本"——用户只是不需要审核每个 Claim。<b>自动演化开启前必须具备</b>：候选快照、整体 Lint、原子发布、版本指针、可验证回滚。<b>当前版本未实现版本快照/回滚，仅有 Quarantine 对象级隔离。</b></div>
     <div class="gherkin"><span class="kw">Given</span> 当前版本未通过语义回归
 <span class="kw">When</span> 用户选择最近一个健康版本回滚
 <span class="kw">Then</span> Wiki、Graph 与索引恢复为同一知识快照
-<span class="kw">And</span> 新增原始材料仍被保留但其派生结果进入待重编译状态</div>
+<span class="kw">And</span> 新增原始材料仍被保留但其派生结果进入待重编译状态
+<span class="kw">And</span> <b>v1.1</b>：回滚优先最近的 userTrustedCheckpoint，没有则回 systemHealthySnapshot</div>
   </article>
 
   <article class="story" id="us13">
     <div class="story-head"><span class="badge p1">P1</span><span class="badge actor">Agent</span><span class="badge principle">稳定合同</span></div>
     <h3>US-13 · 不同 Agent 通过统一 Context Pack 消费知识</h3>
     <p><b>作为</b>通用 Agent，<b>我希望</b>通过稳定 schema 请求任务上下文，<b>从而</b>不用依赖 WGEMemory 的文件结构、具体数据库或编译模型。</p>
-    <div class="criteria"><b>验收：</b>请求包含任务、域、时间范围、预算、允许关系与风险偏好；响应包含知识版本、选择理由、证据、冲突、缺口和截断信息；未知字段可向前兼容。</div>
+    <div class="criteria"><b>验收：</b>请求包含任务、域、时间范围、预算、允许关系与风险偏好<b>、ScopeContext（principalId + 可选 projectId）</b>；响应包含知识版本、选择理由、证据、冲突、缺口和截断信息；未知字段可向前兼容。<b>缺少 ScopeContext 时按 Global-only 处理。</b></div>
   </article>
 
   <article class="story" id="us14">
@@ -404,7 +409,7 @@ flowchart LR
 </main>
 
 <footer>
-  <p><b>WGEMemory4LLM User Stories v1.0</b> · 2026-07-21。本文档把 Product Definition 的目标与哲学转化为可观察行为、异常路径和验收标准；具体对照实验、题集与统计口径见 Benchmark 文档。</p>
+  <p><b>WGEMemory4LLM User Stories v1.1</b> · 2026-07-23。v1.1 更新：US-03 扩展到物理隔离 + Relation 门禁；US-08 双通道纠正（事实/决策）+ 分阶段实现；US-12 健康/回滚两层定义 + 标注 Phase 2b 未实现。本文档把 Product Definition 的目标与哲学转化为可观察行为、异常路径和验收标准；具体对照实验、题集与统计口径见 Benchmark 文档。</p>
   <p class="small">建议使用现代浏览器打开；Mermaid 图通过 CDN 渲染。正文、表格与验收标准在脚本不可用时仍可阅读。</p>
 </footer>
 </div>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>WGEMemory4LLM Architecture Baseline · v1.1 · 2026-07-22</title>
+  <title>WGEMemory4LLM Architecture Baseline · v1.2 · 2026-07-23</title>
   <script type="module">
     import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
     mermaid.initialize({
@@ -35,7 +35,7 @@
     .diagram{margin:24px 0;padding:22px;background:#fff;border:1px solid var(--line);border-radius:10px;overflow:auto;box-shadow:0 8px 24px rgba(32,50,72,.06)}.mermaid{min-width:620px;text-align:center}
     code{font-family:"SFMono-Regular",Consolas,monospace;font-size:.87em;background:var(--soft);padding:2px 5px;border-radius:4px}.schema{padding:18px 20px;background:var(--code);color:#eef7ff;border-radius:9px;overflow:auto;font:13px/1.65 "SFMono-Regular",Consolas,monospace;white-space:pre}
     .status{display:inline-block;padding:2px 8px;border-radius:999px;font-size:.76rem;font-weight:760}.s-green{background:#dff4ea;color:#176143}.s-amber{background:#fff0cc;color:#76500e}.s-rose{background:#fae1e5;color:#8d3040}.s-blue{background:#e1eefc;color:#275f9f}
-    .badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:.76rem;font-weight:700;white-space:nowrap}.b-done{background:#d4edda;color:#155724}.b-pending{background:#cce5ff;color:#004085}.b-stub{background:#fdf2d0;color:#7a5e1b}.b-fixed{background:#d1e7ff;color:#084298}
+    .badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:.76rem;font-weight:700;white-space:nowrap}.b-done{background:#d4edda;color:#155724}.b-pending{background:#cce5ff;color:#004085}.b-stub{background:#fdf2d0;color:#7a5e1b}.b-fixed{background:#d1e7ff;color:#084298}.b-new{background:#e7f8ee;color:#0a5c34}
     footer{padding:32px 0;color:var(--muted);font-size:.88rem}.small{font-size:.86rem;color:var(--muted)}
     @media(max-width:860px){.section-head,.grid,.grid.three{grid-template-columns:1fr}.mermaid{min-width:540px}}
     @media print{body{background:#fff}.page{max-width:none}nav{display:none}.card,.diagram,table{box-shadow:none}.diagram,.card,table{break-inside:avoid}}
@@ -44,27 +44,28 @@
 <body>
 <div class="page">
 <header id="top">
-  <div class="eyebrow">Architecture Baseline <span class="status s-green">v1.1 · 2026-07-22 · Post-Audit-Fix</span></div>
-  <h1>WGEMemory4LLM 架构基线 v1.1</h1>
+  <div class="eyebrow">Architecture Baseline <span class="status s-green">v1.2 · 2026-07-23 · Audit Reliability + Validity Gate</span></div>
+  <h1>WGEMemory4LLM 架构基线 v1.2</h1>
   <p class="subtitle">
-    v1.1 修复了 Pre-Test Alignment Audit 识别的全部 7 个逻辑断点。
-    每个结论基于实读 src/ 下 16 个 TypeScript 文件（commit e86615a），引用具体行号。
-    断点 1（Relation 无 Lint 晋级）、断点 2（Graph 方向语义未分层）、断点 3（taskMap 检索后摘要）、
-    断点 5（消费矩阵未定义）、断点 6（原子发布缺失）、断点 7（warning→DISPUTED 字符串匹配）均已修复。
+    v1.2 把审计从"自证循环"升级为"校准过的忠实度门禁"，并把 validity 默认值从假定可信改为待证明。
+    核心产出：L1 对抗型审计 prompt + 5 维 binary verdict + anchor 验证；
+    meta-eval 校准结果 TPR 0.98 / TNR 0.98 / kappa 0.96（100 条标注）；
+    validity 初始 UNRESOLVED 经门禁通过才 SUPPORTED；Quarantine 物理隔离。
+    每个结论基于实读 src/ 代码，引用具体行号。
   </p>
   <div class="meta">
-    <span class="chip"><b>代码文件</b> 16 TS</span>
-    <span class="chip"><b>代码行数</b> ~3200</span>
-    <span class="chip"><b>断点修复</b> 7/7 <span class="badge b-fixed">已修</span></span>
+    <span class="chip"><b>代码文件</b> 16 src + 2 scripts</span>
+    <span class="chip"><b>审计校准</b> TPR 0.98 / TNR 0.98 <span class="badge b-done">达标</span></span>
+    <span class="chip"><b>validity 门禁</b> UNRESOLVED → SUPPORTED <span class="badge b-new">v1.2</span></span>
+    <span class="chip"><b>物理隔离</b> quarantine/ 独立存储 <span class="badge b-new">v1.2</span></span>
     <span class="chip"><b>typecheck</b> 0 错误</span>
-    <span class="chip"><b>审计状态</b> Gate 0 近完成 / Gate 1 可开始</span>
   </div>
   <nav aria-label="目录">
-    <a href="#overview">1·总览</a><a href="#audit-fix">2·断点修复</a><a href="#status-axes">3·四状态轴</a>
-    <a href="#objects">4·一等对象</a><a href="#consumption">5·消费矩阵</a><a href="#direction">6·关系方向语义</a>
-    <a href="#linter">7·门禁层</a><a href="#compiler">8·编译层</a><a href="#graph">9·Graph 层</a>
-    <a href="#context">10·Context Pack</a><a href="#dataflow">11·数据流</a>
-    <a href="#storage">12·存储</a><a href="#gaps">13·设计差距</a><a href="#not-impl">14·未实现</a>
+    <a href="#overview">1·总览</a><a href="#v12-changes">2·v1.2 改动</a><a href="#calibration">3·审计校准</a>
+    <a href="#status-axes">4·四状态轴</a><a href="#objects">5·一等对象</a><a href="#consumption">6·消费矩阵</a>
+    <a href="#direction">7·关系方向语义</a><a href="#linter">8·门禁层</a><a href="#compiler">9·编译层</a>
+    <a href="#graph">10·Graph 层</a><a href="#context">11·Context Pack</a><a href="#dataflow">12·数据流</a>
+    <a href="#storage">13·存储</a><a href="#gaps">14·设计差距</a><a href="#not-impl">15·未实现</a>
   </nav>
 </header>
 
@@ -72,324 +73,361 @@
 
 <!-- ═══ 1 · 总览 ═══ -->
 <section id="overview">
-  <div class="section-head"><div class="kicker">§01 / Overview</div><div><h2>架构总览（v1.1 断点修复后）</h2></div></div>
+  <div class="section-head"><div class="kicker">§01 / Overview</div><div><h2>架构总览（v1.2 校准后）</h2></div></div>
 
   <div class="diagram"><div class="mermaid">
 flowchart TD
     R["raw MD file"] --> P["parser/markdown.ts<br/>blockId + charStart/charEnd 机械生成"]
     P --> I["ingestor/index.ts<br/>Source + SourceSpan + hash 去重"]
-    I --> C["compiler/index.ts<br/>三步编译<br/>命题切分→映射→Claim/Relation<br/>publicationState=CANDIDATE"]
-    C --> L["linter/index.ts<br/>lintCompileResult()<br/>原子 Lint: Claim + Relation 一起审"]
-    L -->|"Claim 通过"| LC["canonicalClaims<br/>publicationState=CANONICAL"]
-    L -->|"Claim 冲突"| LD["canonicalClaims + validity=DISPUTED"]
-    L -->|"Claim/Relation 失败"| LQ["quarantine/"]
-    L -->|"Relation 端点 Canonical + 结构通过"| LR["canonicalRelations<br/>publicationState=CANONICAL"]
-    LC --> S["storage.ts<br/>原子发布: 一次性写入"]
+    I --> C["compiler/index.ts<br/>三步编译<br/>publicationState=CANDIDATE<br/>validity=UNRESOLVED v1.2"]
+    C --> L["linter/index.ts<br/>L1 对抗型审计 v1.2<br/>5 维 binary verdict + anchor 验证"]
+    L -->|"门禁通过"| LC["canonicalClaims<br/>CANONICAL + SUPPORTED"]
+    L -->|"有冲突"| LD["CANONICAL + DISPUTED"]
+    L -->|"失败/anchor 编造"| LQ["quarantine/claims.jsonl<br/>物理隔离 v1.2"]
+    L -->|"Relation 端点 Canonical"| LR["canonicalRelations<br/>CANONICAL + SUPPORTED"]
+    LC --> S["storage.ts<br/>Canonical 写主目录"]
     LR --> S
     LD --> S
-    LQ --> S
-    S --> G["graph/index.ts<br/>buildGraph (只 CANONICAL+ACTIVE)<br/>walkGraph (方向语义+消费矩阵)"]
+    LQ --> SQ["storage.ts<br/>Quarantine 写隔离目录"]
+    S --> G["graph/index.ts<br/>buildGraph 只读主目录<br/>walkGraph 方向语义+消费矩阵"]
+    SQ -.->|"默认不可见"| G
     G --> CP["context-pack/index.ts<br/>Map-first: 地图→种子→子图→证据"]
     CP --> CLI["cli/index.ts<br/>wge ingest / query / status"]
   </div></div>
 
-  <h3>src/ 文件清单（16 个，commit e86615a）</h3>
+  <div class="callout good">
+    <b>v1.2 的关键变化</b>
+    编译产出的 Claim 不再假定可信（validity 不再硬编码 SUPPORTED）。
+    新 Claim 初始 <code>validity=UNRESOLVED</code>，只有通过校准过的审计门禁（TPR/TNR 0.98）才升级为 SUPPORTED。
+    失败的对象物理隔离到 <code>quarantine/</code> 独立目录，默认读取 API 看不到它们——不依赖消费者记得过滤。
+  </div>
+
+  <h3>src/ 文件清单（16 个）</h3>
   <table>
-    <thead><tr><th>层</th><th>文件</th><th>行数</th><th>核心职责</th><th>v1.1 变更</th></tr></thead>
+    <thead><tr><th>层</th><th>文件</th><th>行数</th><th>核心职责</th><th>v1.2 变更</th></tr></thead>
     <tbody>
       <tr><td rowspan="2">types</td><td>types/index.ts</td><td>201</td><td>7 一等对象 + 4 轴 + branded NodeRef</td><td>未变</td></tr>
-      <tr><td>types/schemas.ts</td><td>165</td><td>Zod 运行时校验 + parseLLMJson</td><td>未变</td></tr>
+      <tr><td style="background:#f3fbf8">types/schemas.ts</td><td style="background:#f3fbf8">177</td><td style="background:#f3fbf8">Zod 校验 + SemanticVerdict binary 维度</td><td style="background:#f3fbf8"><span class="badge b-new">v1.2 重写</span></td></tr>
       <tr><td rowspan="3">core</td><td>core/types.ts</td><td>35</td><td>ChatOptions / ChatResult</td><td>未变</td></tr>
       <tr><td>core/client.ts</td><td>135</td><td>DeepSeekClient</td><td>未变</td></tr>
       <tr><td>core/llm-provider.ts</td><td>42</td><td>LLMProvider 接口 + 工厂</td><td>未变</td></tr>
       <tr><td rowspan="2">config</td><td>config/types.ts</td><td>34</td><td>AppConfig + DEFAULT_MODEL</td><td>未变</td></tr>
-      <tr><td>config/index.ts</td><td>89</td><td>findProjectRoot(只找不建)</td><td>未变</td></tr>
+      <tr><td style="background:#f3fbf8">config/index.ts</td><td style="background:#f3fbf8">88</td><td style="background:#f3fbf8">findProjectRoot（修 require→import）</td><td style="background:#f3fbf8"><span class="badge b-fixed">ESM 修复</span></td></tr>
       <tr><td>parser</td><td>parser/markdown.ts</td><td>286</td><td>MD 解析 + blockId 机械生成</td><td>未变</td></tr>
       <tr><td>ingestor</td><td>ingestor/index.ts</td><td>159</td><td>Source/Span 产出 + mapQuoteToSpan</td><td>未变</td></tr>
-      <tr><td>prompts</td><td>prompts/index.ts</td><td>128</td><td>3 个 prompt 集中管理</td><td>未变</td></tr>
-      <tr><td>compiler</td><td>compiler/index.ts</td><td>230</td><td>三步编译</td><td>未变</td></tr>
-      <tr><td style="background:#f3fbf8"><b>linter</b></td><td style="background:#f3fbf8">linter/index.ts</td><td style="background:#f3fbf8">572</td><td style="background:#f3fbf8">原子 Lint + 消费矩阵 + 结构化 issue</td><td style="background:#f3fbf8"><span class="badge b-fixed">全部重写</span></td></tr>
-      <tr><td>linter</td><td>linter/storage.ts</td><td>113</td><td>JSONL 存储读写</td><td>未变</td></tr>
-      <tr><td style="background:#f3fbf8"><b>graph</b></td><td style="background:#f3fbf8">graph/index.ts</td><td style="background:#f3fbf8">294</td><td style="background:#f3fbf8">方向语义 + 消费矩阵接入</td><td style="background:#f3fbf8"><span class="badge b-fixed">全部重写</span></td></tr>
-      <tr><td style="background:#f3fbf8"><b>context-pack</b></td><td style="background:#f3fbf8">context-pack/index.ts</td><td style="background:#f3fbf8">315</td><td style="background:#f3fbf8">Map-first + 消费矩阵接入</td><td style="background:#f3fbf8"><span class="badge b-fixed">全部重写</span></td></tr>
-      <tr><td style="background:#f3fbf8"><b>cli</b></td><td style="background:#f3fbf8">cli/index.ts</td><td style="background:#f3fbf8">210</td><td style="background:#f3fbf8">lintCompileResult + 原子发布</td><td style="background:#f3fbf8"><span class="badge b-fixed">重写</span></td></tr>
+      <tr><td style="background:#f3fbf8">prompts</td><td style="background:#f3fbf8">prompts/index.ts</td><td style="background:#f3fbf8">150</td><td style="background:#f3fbf8">L1 对抗型审计 prompt v1.1</td><td style="background:#f3fbf8"><span class="badge b-new">v1.2 重写</span></td></tr>
+      <tr><td style="background:#f3fbf8">compiler</td><td style="background:#f3fbf8">compiler/index.ts</td><td style="background:#f3fbf8">226</td><td style="background:#f3fbf8">三步编译 + validity=UNRESOLVED 初始</td><td style="background:#f3fbf8"><span class="badge b-new">validity 改</span></td></tr>
+      <tr><td style="background:#f3fbf8"><b>linter</b></td><td style="background:#f3fbf8">linter/index.ts</td><td style="background:#f3fbf8">696</td><td style="background:#f3fbf8">L1 审计 + anchor 验证 + 消费矩阵 + 可观测</td><td style="background:#f3fbf8"><span class="badge b-new">v1.2 大改</span></td></tr>
+      <tr><td style="background:#f3fbf8">linter</td><td style="background:#f3fbf8">linter/storage.ts</td><td style="background:#f3fbf8">176</td><td style="background:#f3fbf8">JSONL 存储 + Quarantine 物理隔离 API</td><td style="background:#f3fbf8"><span class="badge b-new">v1.2 隔离</span></td></tr>
+      <tr><td>graph</td><td>graph/index.ts</td><td>294</td><td>方向语义 + 消费矩阵接入</td><td>未变（v1.1 重写）</td></tr>
+      <tr><td>context-pack</td><td>context-pack/index.ts</td><td>315</td><td>Map-first + 消费矩阵接入</td><td>未变（v1.1 重写）</td></tr>
+      <tr><td style="background:#f3fbf8">cli</td><td style="background:#f3fbf8">cli/index.ts</td><td style="background:#f3fbf8">222</td><td style="background:#f3fbf8">Canonical/Quarantine 分离发布</td><td style="background:#f3fbf8"><span class="badge b-new">v1.2 隔离</span></td></tr>
     </tbody>
   </table>
+  <p class="small">另有 <code>scripts/meta-eval.ts</code>（审计校准工具）和 <code>scripts/meta-eval-dataset.json</code>（100 条标注）不进 src build。</p>
 </section>
 
-<!-- ═══ 2 · 断点修复 ═══ -->
-<section id="audit-fix">
-  <div class="section-head"><div class="kicker">§02 / Audit Fix</div><div><h2>Pre-Test Audit 7 断点修复对照</h2><p class="lead">每条断点对照代码事实，引用行号。</p></div></div>
+<!-- ═══ 2 · v1.2 改动 ═══ -->
+<section id="v12-changes">
+  <div class="section-head"><div class="kicker">§02 / v1.2 Changes</div><div><h2>v1.2 做了什么——四条轨道</h2><p class="lead">v1.2 由一份审计可信性研究（audit_reliability_research.md）驱动，回答"审计凭什么可信"。按四条并行轨道推进。</p></div></div>
 
-  <table>
-    <thead><tr><th>断点</th><th>审计描述</th><th>修复实现</th><th>行号</th><th>验证</th></tr></thead>
-    <tbody>
-      <tr>
-        <td><b>1</b><br><span class="badge b-fixed">已修</span></td>
-        <td>Relation 无 Lint 晋级，Graph 永远空</td>
-        <td><code>lintCompileResult()</code> 让 Claim+Relation 作为同一候选 diff 原子 Lint；<code>checkRelationStructure()</code> 检查端点存在+端点 Canonical；通过后 <code>publicationState=CANONICAL</code></td>
-        <td>linter:358-461<br>linter:146-197<br>linter:453-460</td>
-        <td><span class="badge b-done">typecheck ✓</span></td>
-      </tr>
-      <tr>
-        <td><b>2</b><br><span class="badge b-fixed">已修</span></td>
-        <td>双向邻接没区分导航和推理方向</td>
-        <td><code>RELATION_TYPE_SEMANTICS</code> 冻结 7 种关系的 symmetric/allowReverseNavigation/allowReverseReasoning/canSupportConclusion；walkGraph 遍历时检查方向语义</td>
-        <td>graph:36-79<br>graph:211-216</td>
-        <td><span class="badge b-done">typecheck ✓</span></td>
-      </tr>
-      <tr>
-        <td><b>3</b><br><span class="badge b-fixed">已修</span></td>
-        <td>taskMap 是检索后摘要不是选择机制</td>
-        <td><code>buildKnowledgeMap()</code> 检索前生成全局地图（topics/disputes/keyConcepts/recentChanges）；<code>selectSeeds()</code> map+keyword 双路种子</td>
-        <td>context-pack:62-113<br>context-pack:122-165<br>context-pack:187</td>
-        <td><span class="badge b-done">typecheck ✓</span></td>
-      </tr>
-      <tr>
-        <td><b>5</b><br><span class="badge b-fixed">已修</span></td>
-        <td>Canonical 消费矩阵未定义</td>
-        <td><code>getConsumptionRule()</code> 按 publicationState×lifecycle×validity 返回 allowRetrieval/allowReasoning/packBehavior；walkGraph/searchClaims 应用矩阵</td>
-        <td>linter:526-572<br>graph:182-186<br>graph:276-280</td>
-        <td><span class="badge b-done">typecheck ✓</span></td>
-      </tr>
-      <tr>
-        <td><b>6</b><br><span class="badge b-fixed">已修</span></td>
-        <td>原子发布缺失</td>
-        <td>CLI 收集全部对象（canonical+quarantined claims+relations）到内存数组，再一次 appendClaims/appendConcepts/appendRelations</td>
-        <td>cli:96-107</td>
-        <td><span class="badge b-done">typecheck ✓</span></td>
-      </tr>
-      <tr>
-        <td><b>7</b><br><span class="badge b-fixed">已修</span></td>
-        <td>warning→DISPUTED 依赖字符串匹配</td>
-        <td><code>LintIssue</code> 结构化（issueCode/severity/recommendedState）；判断基于 <code>verdict.support === "warning" || verdict.citation === "warning"</code> 维度值，不依赖文本匹配</td>
-        <td>linter:34-67<br>linter:315-332</td>
-        <td><span class="badge b-done">typecheck ✓</span></td>
-      </tr>
-    </tbody>
-  </table>
-
-  <div class="callout warn"><b>断点 4（四轴回写定义文档）尚未完成。</b>Product Definition v1.0 仍写两个轴（epistemicStatus + publicationState），代码已实现四轴。需要同步 Product Definition v1.1。这是文档同步任务，不影响代码正确性。</div>
-</section>
-
-<!-- ═══ 3 · 四状态轴 ═══ -->
-<section id="status-axes">
-  <div class="section-head"><div class="kicker">§03 / Status Axes</div><div><h2>四个正交状态轴</h2></div></div>
   <div class="grid">
-    <div class="card"><div class="label">Axis 1</div><h3>derivation</h3><p><code>EXTRACTED | INFERRED | HUMAN_ASSERTED</code></p><p class="small">结论怎么来的。types/index.ts:14</p></div>
-    <div class="card"><div class="label">Axis 2</div><h3>validity</h3><p><code>SUPPORTED | DISPUTED | UNRESOLVED</code></p><p class="small">当前是否有争议。types/index.ts:17</p></div>
-    <div class="card"><div class="label">Axis 3</div><h3>lifecycle</h3><p><code>ACTIVE | SUPERSEDED</code></p><p class="small">是否仍然有效。types/index.ts:20</p></div>
-    <div class="card"><div class="label">Axis 4</div><h3>publicationState</h3><p><code>CANDIDATE | CANONICAL | QUARANTINED</code></p><p class="small">是否进入消费链。types/index.ts:23</p></div>
+    <div class="card">
+      <div class="label">轨道 A</div>
+      <h3>审计层改造</h3>
+      <p>prompt 从中性"请审计"改为 L1 对抗型——先假设 Claim 有错，逐句对照原文。5 维度改 binary verdict（pass/fail），删掉 score 0-1（消除评分方差）。加 anchor 字段——审计结论必须溯源到原文，程序验证 anchor 真实存在。</p>
+      <p class="small">改动文件：prompts/index.ts, types/schemas.ts, linter/index.ts</p>
+    </div>
+    <div class="card">
+      <div class="label">轨道 B</div>
+      <h3>失败可观测</h3>
+      <p>每次审计记录到 <code>runs/audit-metrics.jsonl</code>：claimId / outcome / 失败维度 / model 快照（pin 版本防 criterion drift）/ 时间戳。这是 meta-eval 的数据源，也是回归基线。</p>
+      <p class="small">改动文件：linter/index.ts, linter/storage.ts</p>
+    </div>
+    <div class="card">
+      <div class="label">轨道 C</div>
+      <h3>meta-eval 校准</h3>
+      <p>100 条人工/GPT 标注用例（50 faithful / 50 unfaithful，覆盖 4 类不忠实）。脚本复用真实 semanticCheck 跑全量，算 TPR/TNR/kappa。第一轮 TPR 0.50（anchor 验证 bug），修复后第二轮 TPR/TNR 均 0.98。</p>
+      <p class="small">新增：scripts/meta-eval.ts, meta-eval-dataset.json</p>
+    </div>
+    <div class="card">
+      <div class="label">轨道 D</div>
+      <h3>validity 门禁 + 物理隔离</h3>
+      <p>校准达标后推进。compiler 产出 validity=UNRESOLVED；门禁通过才 SUPPORTED。Quarantined 对象物理隔离到 quarantine/ 独立目录，readAllClaims 默认不读它们。</p>
+      <p class="small">改动文件：compiler/index.ts, linter/index.ts, linter/storage.ts, cli/index.ts</p>
+    </div>
+  </div>
+
+  <div class="callout warn">
+    <b>方法论</b>
+    先校准再改门禁——原因：门禁（UNRESOLVED）的作用是拦下审计判为可疑的 Claim。
+    如果审计准度未知就拧紧门禁，可能误杀大批正确 Claim 导致系统瘫痪，也可能漏检导致错误流通。
+    meta-eval 先测出审计的 TPR/TNR，达标后才安全地改默认值。第一轮 TPR 0.50 正是这个决策的价值——发现了 anchor 验证 bug 而非盲目上门禁。
   </div>
 </section>
 
-<!-- ═══ 4 · 一等对象 ═══ -->
+<!-- ═══ 3 · 审计校准 ═══ -->
+<section id="calibration">
+  <div class="section-head"><div class="kicker">§03 / Audit Calibration</div><div><h2>meta-eval 校准结果</h2><p class="lead">"没做 meta-eval 的 judge 不是测量，是 vibe。"——audit_reliability_research.md §1.6</p></div></div>
+
+  <h3>最终结果（第二轮，修复 anchor 验证后）</h3>
+  <table>
+    <thead><tr><th>指标</th><th>第一轮</th><th>第二轮</th><th>门槛</th><th>含义</th></tr></thead>
+    <tbody>
+      <tr><td><b>TPR</b></td><td>0.500 ❌</td><td><b>0.980</b> ✅</td><td>≥0.8</td><td>忠实的 Claim 正确放行率（少误杀）</td></tr>
+      <tr><td><b>TNR</b></td><td>0.980 ✅</td><td><b>0.980</b> ✅</td><td>≥0.8</td><td>不忠实的 Claim 正确拦下率（少漏检）</td></tr>
+      <tr><td>accuracy</td><td>0.740</td><td><b>0.980</b></td><td>—</td><td>总体准确率</td></tr>
+      <tr><td>Cohen's kappa</td><td>0.480 ⚠️</td><td><b>0.960</b> ✅</td><td>≥0.6</td><td>审计与人工标注的一致性</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout good">
+    <b>第一轮 TPR 0.50 的根因</b>
+    25 个误杀中 23 个是 <code>SEMANTIC_ANCHOR_FABRICATED</code>——不是 LLM 审计能力问题，而是 anchor 验证用精确字符串匹配，LLM 返回的 anchor 做了符号替换（<code>\mathbb{Z}</code>→<code>𝕫</code>）或轻微改写，语义正确但字符串不匹配。
+    修复为三层容错（精确→归一化→bigram 重叠率）后 TPR 升至 0.98。
+  </div>
+
+  <h3>审计边界（写进 prompt 头部）</h3>
+  <div class="schema">审计只回答封闭问题："这条 Claim 是否忠实于它引用的 SourceSpan？"
+审计不回答开放问题："这条 Claim 在世界上是否正确？"
+任何维度的判断都必须能用"原文有没有说？"来回答——禁用世界知识判断对错。</div>
+
+  <h3>5 维 binary verdict（v1.2）</h3>
+  <table>
+    <thead><tr><th>维度</th><th>封闭问法</th><th>fail 时的 issueCode</th><th>fail 严重度</th></tr></thead>
+    <tbody>
+      <tr><td><b>support</b></td><td>SourceSpan 是否明确支持 Claim 每一句？</td><td>SEMANTIC_SUPPORT_FAILED</td><td>error（硬伤）</td></tr>
+      <tr><td><b>addition</b></td><td>Claim 是否含 SourceSpan 没有的信息？</td><td>SEMANTIC_ADDITION_MAJOR</td><td>error（硬伤）</td></tr>
+      <tr><td><b>inference</b></td><td>推断是否标为"推断"而非事实？</td><td>SEMANTIC_INFERENCE_WRONG</td><td>warning（软伤）</td></tr>
+      <tr><td><b>limits</b></td><td>原文条件是否被丢弃或弱化？</td><td>SEMANTIC_LIMITS_MISSING</td><td>warning（软伤）</td></tr>
+      <tr><td><b>citation</b></td><td>Claim 是否准确对应引用的 span？</td><td>SEMANTIC_CITATION_FAILED</td><td>error（硬伤）</td></tr>
+    </tbody>
+  </table>
+  <p class="small">硬伤维度（support/addition/citation）fail → QUARANTINE；软伤维度（inference/limits）fail → CANONICAL 但需修正。anchor 编造 → SEMANTIC_ANCHOR_FABRICATED → QUARANTINE（审计结论本身不可信）。</p>
+
+  <div class="callout warn">
+    <b>L1 的已知边界</b>
+    L1（同模型 + 对抗 prompt）只能减少"误杀正确 Claim"（EIR），无法显著提升"发现错误 Claim"（ECR）。
+    当前 TNR 0.98 在数学语料上表现好，但这是 L1 的天花板区域。
+    Phase 2 Benchmark 时应做 L2（换模型审计）敏感性实验，确认跨模型是否进一步提升。
+  </div>
+</section>
+
+<!-- ═══ 4 · 四状态轴 ═══ -->
+<section id="status-axes">
+  <div class="section-head"><div class="kicker">§04 / Status Axes</div><div><h2>四个正交状态轴</h2></div></div>
+  <div class="grid">
+    <div class="card"><div class="label">Axis 1</div><h3>derivation</h3><p><code>EXTRACTED | INFERRED | HUMAN_ASSERTED</code></p><p class="small">结论怎么来的。types/index.ts:14</p></div>
+    <div class="card"><div class="label">Axis 2 · v1.2 改</div><h3>validity</h3><p><code>SUPPORTED | DISPUTED | UNRESOLVED</code></p><p class="small">当前是否有争议。<b>v1.2：新 Claim 初始 UNRESOLVED</b>，门禁通过才 SUPPORTED。types/index.ts:17</p></div>
+    <div class="card"><div class="label">Axis 3</div><h3>lifecycle</h3><p><code>ACTIVE | SUPERSEDED</code></p><p class="small">是否仍然有效。types/index.ts:20</p></div>
+    <div class="card"><div class="label">Axis 4</div><h3>publicationState</h3><p><code>CANDIDATE | CANONICAL | QUARANTINED</code></p><p class="small">是否进入消费链。types/index.ts:23</p></div>
+  </div>
+
+  <div class="callout">
+    <b>v1.2 validity 语义修订</b>
+    <ul class="tight">
+      <li><b>UNRESOLVED</b>（待证明）：新 Claim 的初始状态。证据不足、尚未通过门禁。可导航但不进推理链。</li>
+      <li><b>SUPPORTED</b>（已支持）：门禁通过——审计证明 Claim 忠实于 SourceSpan。</li>
+      <li><b>DISPUTED</b>（有争议）：只由真实的可比较冲突产生（CONTRADICTS 边），不再由 <code>support=warning</code> 等价产生。</li>
+    </ul>
+    删除了 v1.1 的 <code>support=warning → DISPUTED</code> 直接映射——证据弱不等于存在反证。
+  </div>
+</section>
+
+<!-- ═══ 5 · 一等对象 ═══ -->
 <section id="objects">
-  <div class="section-head"><div class="kicker">§04 / Objects</div><div><h2>7 个一等对象</h2></div></div>
+  <div class="section-head"><div class="kicker">§05 / Objects</div><div><h2>7 个一等对象</h2></div></div>
   <table>
     <thead><tr><th>对象</th><th>核心字段</th><th>行号</th><th>四轴使用</th></tr></thead>
     <tbody>
       <tr><td><b>Source</b></td><td>id, hash, uri, parsedText</td><td>types:69-77</td><td>不可变来源状态</td></tr>
       <tr><td><b>SourceSpan</b></td><td>id, sourceId, blockId, charStart/End, text</td><td>types:80-87</td><td>不可变来源状态</td></tr>
-      <tr><td><b>Claim</b></td><td>id, statement, evidenceSpanIds, conditions, 四轴全字段</td><td>types:90-103</td><td>完整四轴</td></tr>
-      <tr><td><b>Concept</b></td><td>id, name, aliases, boundary, domain</td><td>types:106-112</td><td>至少发布/生命周期</td></tr>
-      <tr><td><b>Relation</b></td><td>id, from:NodeRef, to:NodeRef, type, conditions, 四轴全字段, source:EdgeSource</td><td>types:118-135</td><td>完整四轴</td></tr>
+      <tr><td><b>Claim</b></td><td>id, statement, evidenceSpanIds, conditions, 四轴全字段</td><td>types:90-103</td><td>完整四轴（v1.2: validity 初始 UNRESOLVED）</td></tr>
+      <tr><td><b>Concept</b></td><td>id, name, aliases, boundary, domain</td><td>types:106-112</td><td>至少发布/生命周期 <span class="badge b-stub">待加门禁</span></td></tr>
+      <tr><td><b>Relation</b></td><td>id, from:NodeRef, to:NodeRef, type, conditions, 四轴全字段, source:EdgeSource</td><td>types:118-135</td><td>完整四轴（v1.2: validity 跟随 Claim）</td></tr>
       <tr><td><b>WikiModule</b></td><td>id, stableAddress, coreQuestion, claimRefs</td><td>types:138-149</td><td><span class="badge b-stub">Phase 2</span></td></tr>
       <tr><td><b>ContextPack</b></td><td>knowledgeVersion, taskMap, subgraph, evidenceSpans, conflictsAndConditions, knownGaps</td><td>types:174-183</td><td>派生视图</td></tr>
     </tbody>
   </table>
-  <div class="callout warn"><b>PropositionDraft</b>（types:191-200）是编译中间产物，不长期存储。决策 4A。</div>
+  <p class="small">PropositionDraft（types:191-200）是编译中间产物，不长期存储。决策 4A。</p>
 </section>
 
-<!-- ═══ 5 · 消费矩阵 ═══ -->
+<!-- ═══ 6 · 消费矩阵 ═══ -->
 <section id="consumption">
-  <div class="section-head"><div class="kicker">§05 / Consumption Matrix</div><div><h2>Canonical 消费矩阵（断点 5 修复）</h2><p class="lead">Canonical 不等于"能否支撑推理"。linter/index.ts:526-572 的 <code>getConsumptionRule()</code> 冻结了消费规则。</p></div></div>
+  <div class="section-head"><div class="kicker">§06 / Consumption Matrix</div><div><h2>Canonical 消费矩阵</h2><p class="lead">Canonical 不等于"能否支撑推理"。linter/index.ts 的 <code>getConsumptionRule()</code> 冻结了消费规则。</p></div></div>
   <table>
-    <thead><tr><th>publicationState</th><th>lifecycle</th><th>validity</th><th>allowRetrieval</th><th>allowReasoning</th><th>packBehavior</th><th>行号</th></tr></thead>
+    <thead><tr><th>publicationState</th><th>lifecycle</th><th>validity</th><th>allowRetrieval</th><th>allowReasoning</th><th>packBehavior</th></tr></thead>
     <tbody>
-      <tr><td>CANONICAL</td><td>ACTIVE</td><td>SUPPORTED</td><td>✅</td><td>✅</td><td>normal</td><td>linter:567-571</td></tr>
-      <tr><td>CANONICAL</td><td>ACTIVE</td><td>DISPUTED</td><td>✅</td><td>❌</td><td>conflictsAndConditions</td><td>linter:550-556</td></tr>
-      <tr><td>CANONICAL</td><td>ACTIVE</td><td>UNRESOLVED</td><td>✅（可导航）</td><td>❌</td><td>knownGaps</td><td>linter:558-564</td></tr>
-      <tr><td>CANONICAL</td><td>SUPERSEDED</td><td>任何</td><td>❌</td><td>❌</td><td>excluded（仅历史查询）</td><td>linter:541-547</td></tr>
-      <tr><td>CANDIDATE/QUARANTINED</td><td>任何</td><td>任何</td><td>❌</td><td>❌</td><td>excluded</td><td>linter:532-538</td></tr>
+      <tr><td>CANONICAL</td><td>ACTIVE</td><td>SUPPORTED</td><td>✅</td><td>✅</td><td>normal</td></tr>
+      <tr><td>CANONICAL</td><td>ACTIVE</td><td>DISPUTED</td><td>✅</td><td>❌</td><td>conflictsAndConditions</td></tr>
+      <tr><td>CANONICAL</td><td>ACTIVE</td><td>UNRESOLVED</td><td>✅（可导航）</td><td>❌</td><td>knownGaps</td></tr>
+      <tr><td>CANONICAL</td><td>SUPERSEDED</td><td>任何</td><td>❌</td><td>❌</td><td>excluded（仅历史查询）</td></tr>
+      <tr><td>CANDIDATE/QUARANTINED</td><td>任何</td><td>任何</td><td>❌</td><td>❌</td><td>excluded（<b>v1.2: 物理隔离，默认不可见</b>）</td></tr>
     </tbody>
   </table>
-  <p><b>接入点</b>：searchClaims（graph:276-280 过滤 allowRetrieval）、walkGraph（graph:182-186 种子+扩展节点都过矩阵）、Context Pack（context-pack:265 disputedClaims→conflictsAndConditions, context-pack:281 unresolvedClaims→knownGaps）。</p>
+  <p class="small">接入点：searchClaims（graph 过滤 allowRetrieval）、walkGraph（种子+扩展节点都过矩阵）、Context Pack（disputed→conflictsAndConditions, unresolved→knownGaps）。</p>
 </section>
 
-<!-- ═══ 6 · 关系方向语义 ═══ -->
+<!-- ═══ 7 · 关系方向语义 ═══ -->
 <section id="direction">
-  <div class="section-head"><div class="kicker">§06 / Direction Semantics</div><div><h2>RelationType 方向语义（断点 2 修复）</h2><p class="lead">graph/index.ts:36-79 的 <code>RELATION_TYPE_SEMANTICS</code> 冻结了每种关系的导航/推理规则。</p></div></div>
+  <div class="section-head"><div class="kicker">§07 / Direction Semantics</div><div><h2>RelationType 方向语义</h2><p class="lead">graph/index.ts 的 <code>RELATION_TYPE_SEMANTICS</code> 冻结了每种关系的导航/推理规则。</p></div></div>
   <table>
-    <thead><tr><th>RelationType</th><th>symmetric</th><th>allowReverseNavigation</th><th>allowReverseReasoning</th><th>canSupportConclusion</th><th>行号</th></tr></thead>
+    <thead><tr><th>RelationType</th><th>symmetric</th><th>allowReverseNavigation</th><th>allowReverseReasoning</th><th>canSupportConclusion</th></tr></thead>
     <tbody>
-      <tr><td>REQUIRES</td><td>❌</td><td>✅</td><td>❌</td><td>✅</td><td>graph:37-42</td></tr>
-      <tr><td>DERIVED_FROM</td><td>❌</td><td>✅</td><td>❌</td><td>✅</td><td>graph:43-48</td></tr>
-      <tr><td>SUPPORTS</td><td>❌</td><td>✅</td><td>❌</td><td>✅</td><td>graph:49-54</td></tr>
-      <tr><td>CONTRADICTS</td><td><b>✅</b></td><td>✅</td><td><b>✅</b></td><td>✅</td><td>graph:55-60</td></tr>
-      <tr><td>SUPERSEDES</td><td>❌</td><td>✅</td><td>❌</td><td>✅</td><td>graph:61-66</td></tr>
-      <tr><td>EQUIVALENT_UNDER</td><td><b>✅</b></td><td>✅</td><td><b>✅</b></td><td>✅</td><td>graph:67-72</td></tr>
-      <tr><td>RELATED_TO</td><td>✅</td><td>✅</td><td>❌</td><td><b>❌</b></td><td>graph:73-78</td></tr>
+      <tr><td>REQUIRES</td><td>❌</td><td>✅</td><td>❌</td><td>✅</td></tr>
+      <tr><td>DERIVED_FROM</td><td>❌</td><td>✅</td><td>❌</td><td>✅</td></tr>
+      <tr><td>SUPPORTS</td><td>❌</td><td>✅</td><td>❌</td><td>✅</td></tr>
+      <tr><td>CONTRADICTS</td><td><b>✅</b></td><td>✅</td><td><b>✅</b></td><td>✅</td></tr>
+      <tr><td>SUPERSEDES</td><td>❌</td><td>✅</td><td>❌</td><td>✅</td></tr>
+      <tr><td>EQUIVALENT_UNDER</td><td><b>✅</b></td><td>✅</td><td><b>✅</b></td><td>✅</td></tr>
+      <tr><td>RELATED_TO</td><td>✅</td><td>✅</td><td>❌</td><td><b>❌</b></td></tr>
     </tbody>
   </table>
-  <p><b>walkGraph 方向检查</b>（graph:211-216）：反向遍历时检查 <code>sem.allowReverseNavigation || sem.symmetric</code>；正向遍历直接允许。</p>
-  <p><b>Context Pack allowedTypes</b>（context-pack:205-208）：排除 RELATED_TO，只用 6 种强关系类型做子图扩展。</p>
+  <p class="small">walkGraph 反向遍历检查 allowReverseNavigation || symmetric。Context Pack 排除 RELATED_TO，只用 6 种强关系做子图扩展。</p>
 </section>
 
-<!-- ═══ 7 · 门禁层 ═══ -->
+<!-- ═══ 8 · 门禁层 ═══ -->
 <section id="linter">
-  <div class="section-head"><div class="kicker">§07 / Linter</div><div><h2>门禁层：原子 Lint + 结构化 Issue</h2></div></div>
+  <div class="section-head"><div class="kicker">§08 / Linter</div><div><h2>门禁层：L1 审计 + anchor 验证 + 物理隔离</h2></div></div>
 
-  <h3>lintCompileResult 三阶段流程（linter:358-504）</h3>
+  <h3>lintCompileResult 三阶段流程</h3>
   <div class="diagram"><div class="mermaid">
 flowchart TD
     subgraph Phase1["Phase 1: Claim Lint"]
-        direction TB
-        C1["每个 Claim"] --> SC1["checkClaimStructure<br/>statement 非空 / evidence 非空 / spanId 存在"]
-        SC1 -->|"有 error"| Q1["QUARANTINED<br/>跳过语义"]
-        SC1 -->|"通过"| SE1["semanticCheck (可选)<br/>LLM 5 维度审计"]
-        SE1 -->|"failed 维度"| Q2["QUARANTINED"]
-        SE1 -->|"support/citation warning"| D1["CANONICAL + DISPUTED"]
-        SE1 -->|"passed/其他 warning"| OK1["CANONICAL"]
+      C1["每个 Claim<br/>validity=UNRESOLVED"] --> SC1["checkClaimStructure<br/>statement 非空 / evidence 非空 / spanId 存在"]
+      SC1 -->|"有 error"| Q1["QUARANTINED<br/>保持 UNRESOLVED"]
+      SC1 -->|"通过"| SE1["semanticCheck (L1 对抗)<br/>5 维 binary + anchor 验证"]
+      SE1 -->|"硬伤维度 fail"| Q2["QUARANTINED"]
+      SE1 -->|"anchor 编造"| Q3["QUARANTINED<br/>SEMANTIC_ANCHOR_FABRICATED"]
+      SE1 -->|"软伤维度 fail"| W1["CANONICAL + 需修正"]
+      SE1 -->|"全部 pass"| OK1["CANONICAL + SUPPORTED v1.2"]
     end
-    subgraph Phase2["Phase 2: Canonical 集合"]
-        CC["canonicalClaimIds<br/>= CANONICAL ∪ CANONICAL_DISPUTED"]
+    subgraph Phase2["Phase 2"]
+      CC["canonicalClaimIds<br/>= CANONICAL ∪ CANONICAL_DISPUTED"]
     end
     subgraph Phase3["Phase 3: Relation Lint"]
-        R1["每个 Relation"] --> SR1["checkRelationStructure<br/>端点存在 + 端点 ∈ canonicalClaimIds"]
-        SR1 -->|"有 error"| QR["QUARANTINED"]
-        SR1 -->|"通过"| OKR["CANONICAL"]
+      R1["每个 Relation<br/>validity=UNRESOLVED"] --> SR1["checkRelationStructure<br/>端点存在 + 端点 Canonical"]
+      SR1 -->|"有 error"| QR["QUARANTINED"]
+      SR1 -->|"通过"| OKR["CANONICAL + SUPPORTED v1.2"]
     end
     Phase1 --> Phase2 --> Phase3
   </div></div>
 
-  <h3>结构化 LintIssue（断点 7 修复）</h3>
-  <div class="schema">// 14 个稳定 issueCode——不依赖文本匹配（linter:34-48）
-type IssueCode =
-  | "MISSING_EVIDENCE" | "BROKEN_REFERENCE" | "EMPTY_STATEMENT"
-  | "INVALID_PUBLICATION_STATE"
-  | "BROKEN_RELATION_ENDPOINT" | "INVALID_RELATION_TYPE"
-  | "RELATION_ENDPOINT_QUARANTINED"     // 断点 1：端点被隔离则边不进图
-  | "SEMANTIC_SUPPORT_FAILED" | "SEMANTIC_ADDITION_MAJOR"
-  | "SEMANTIC_INFERENCE_WRONG" | "SEMANTIC_LIMITS_MISSING"
-  | "SEMANTIC_CITATION_FAILED"
-  | "SEMANTIC_CONFLICT_DETECTED"         // 断点 7：基于维度值而非文本匹配
-  | "SEMANTIC_WARNING";
+  <h3>v1.2 新增的 IssueCode</h3>
+  <div class="schema">// v1.2 新增（linter IssueCode 联合类型）
+| "SEMANTIC_ANCHOR_FABRICATED"  // 审计 anchor 不在原文中——审计结论本身不可信
 
-interface LintIssue {
-  code: IssueCode;
-  severity: "error" | "warning" | "info";
-  affectedObject: string;
-  detail: string;
-  recommendedState: "CANONICAL" | "CANONICAL_DISPUTED" | "QUARANTINE";
-}</div>
-  <p><b>冲突检测逻辑</b>（linter:314-332）：<code>verdict.support === "warning" || verdict.citation === "warning"</code> → <code>SEMANTIC_CONFLICT_DETECTED</code> → <code>recommendedState: "CANONICAL_DISPUTED"</code>。<b>不再用</b> <code>issues.some(i => i.includes("冲突"))</code>。</p>
+// anchor 验证：isQuoteInText 三层容错（linter:361）
+// 1. 精确子串匹配
+// 2. 归一化匹配（LaTeX→unicode, 标点空白统一）
+// 3. bigram 重叠率 ≥ 0.5（处理中文不分词 + 轻改写）</div>
+
+  <h3>可观测（轨道 B）</h3>
+  <p>每次审计调 <code>recordAuditMetric()</code> 写入 <code>runs/audit-metrics.jsonl</code>，含 claimId / outcome（passed/dim-fail/skipped/anchor-fabricated）/ 失败维度 / <b>model 快照</b>（pin 版本防 criterion drift）/ auditVersion / 时间戳。</p>
 </section>
 
-<!-- ═══ 8 · 编译层 ═══ -->
+<!-- ═══ 9 · 编译层 ═══ -->
 <section id="compiler">
-  <div class="section-head"><div class="kicker">§08 / Compiler</div><div><h2>编译层（未变）</h2></div></div>
-  <p><code>compileSource()</code>（compiler:52-183）三步：命题切分（LLM 返回 blockId+exactQuote）→ <code>mapQuoteToSpan</code> 映射 → Claim/Concept/Relation 编译。所有产出 <code>publicationState=CANDIDATE</code>（compiler:139-141），<code>validity=SUPPORTED</code>，<code>lifecycle=ACTIVE</code>。</p>
-  <p>Proposition 是中间产物，不持久化（决策 4A）。</p>
+  <div class="section-head"><div class="kicker">§09 / Compiler</div><div><h2>编译层（v1.2: validity 初始改 UNRESOLVED）</h2></div></div>
+  <p><code>compileSource()</code>（compiler:52-183）三步：命题切分（LLM 返回 blockId+exactQuote）→ mapQuoteToSpan 映射 → Claim/Concept/Relation 编译。</p>
+  <div class="callout warn">
+    <b>v1.2 关键改动</b>
+    所有产出 <code>publicationState=CANDIDATE</code>（不变），但 <code>validity</code> 从 <code>SUPPORTED</code> 改为 <code>UNRESOLVED</code>（compiler:138, compiler:172）。
+    依据：不假定编译结果可信——新 Claim 是"待证明"的，只有门禁通过才升级 SUPPORTED。
+  </div>
+  <p class="small">Proposition 是中间产物，不持久化（决策 4A）。</p>
 </section>
 
-<!-- ═══ 9 · Graph 层 ═══ -->
+<!-- ═══ 10 · Graph ═══ -->
 <section id="graph">
-  <div class="section-head"><div class="kicker">§09 / Graph</div><div><h2>Graph 层（断点 2+5+10 修复）</h2></div></div>
-  <p><b>buildGraph</b>（graph:105-136）：从 Canonical Claim/Relation 构建（不从 Wiki）。过滤 <code>publicationState=CANONICAL && lifecycle=ACTIVE</code>。不过滤 validity——validity 在 walkGraph/searchClaims 层面用消费矩阵处理。</p>
-  <p><b>walkGraph</b>（graph:155-257）：BFS 从种子扩展。返回 <code>{ claims, relations, disputedClaims, unresolvedClaims }</code>——后两者来自消费矩阵分类（graph:182-186 种子, graph:234-248 扩展节点）。方向检查在 graph:211-216。</p>
-  <p><b>searchClaims</b>（graph:265-294）：简单包含匹配。过滤 <code>getConsumptionRule(...).allowRetrieval</code>（graph:276-280）——UNRESOLVED 和 DISPUTED 可搜到，CANDIDATE/QUARANTINED/SUPERSEDED 被排除。</p>
+  <div class="section-head"><div class="kicker">§10 / Graph</div><div><h2>Graph 层</h2></div></div>
+  <p><b>buildGraph</b>：从 Canonical Claim/Relation 构建。过滤 <code>publicationState=CANONICAL && lifecycle=ACTIVE</code>。v1.2 起这些对象来自主目录（claims/claims.jsonl），Quarantined 在物理隔离区不参与构建。</p>
+  <p><b>walkGraph</b>：BFS 从种子扩展，返回 <code>{ claims, relations, disputedClaims, unresolvedClaims }</code>。方向检查 + 消费矩阵分类。</p>
+  <p><b>searchClaims</b>：关键词匹配，过滤 <code>allowRetrieval</code>——UNRESOLVED 和 DISPUTED 可搜到，CANDIDATE/QUARANTINED/SUPERSEDED 被排除。</p>
 </section>
 
-<!-- ═══ 10 · Context Pack ═══ -->
+<!-- ═══ 11 · Context Pack ═══ -->
 <section id="context">
-  <div class="section-head"><div class="kicker">§10 / Context Pack</div><div><h2>Context Pack（断点 3 修复：Map-first）</h2></div></div>
-  <p><b>buildContextPack</b>（context-pack:174-315）10 步流程：</p>
-  <ol>
-    <li>加载知识状态（context-pack:180-184）</li>
-    <li><b>buildKnowledgeMap</b>（context-pack:187）——<b>检索前</b>生成全局地图（topics/disputes/keyConcepts/recentChanges）</li>
-    <li>buildGraph（context-pack:190）</li>
-    <li><b>selectSeeds</b>（context-pack:193-202）——map+keyword 双路种子（keyword-direct + map-topic）</li>
-    <li>walkGraph 扩展（context-pack:205-209）——排除 RELATED_TO</li>
-    <li>预算控制 4chars≈1token（context-pack:211-256）</li>
-    <li>回填证据（context-pack:259）</li>
-    <li>conflictsAndConditions 从 <code>subgraph.disputedClaims</code> 获取（context-pack:262-277）</li>
-    <li>knownGaps 从 <code>subgraph.unresolvedClaims</code> 获取（context-pack:280-291）</li>
-    <li>裁剪 taskMap（context-pack:293-303）——地图是检索前生成的，Pack 携带裁剪版</li>
-  </ol>
-  <p><b>wikiModules 为空</b>（context-pack:309）——Phase 2 实现。</p>
+  <div class="section-head"><div class="kicker">§11 / Context Pack</div><div><h2>Context Pack（Map-first）</h2></div></div>
+  <p><code>buildContextPack()</code> 10 步流程：加载状态 → buildKnowledgeMap（检索前地图）→ buildGraph → selectSeeds（map+keyword 双路）→ walkGraph（排除 RELATED_TO）→ 预算控制 → 回填证据 → conflictsAndConditions（从 disputedClaims）→ knownGaps（从 unresolvedClaims）→ 裁剪 taskMap。</p>
+  <p class="small">wikiModules 为空——Phase 2 实现。预算 4chars≈1token 在中文/公式上有低估风险（Review 断点 7），Gate 2 前需修。</p>
 </section>
 
-<!-- ═══ 11 · 数据流 ═══ -->
+<!-- ═══ 12 · 数据流 ═══ -->
 <section id="dataflow">
-  <div class="section-head"><div class="kicker">§11 / Data Flow</div><div><h2>ingest 端到端数据流</h2></div></div>
-  <div class="schema">// wge ingest mathtest-material/01-number-systems.md --json
-
-1. loadConfig()                              → AppConfig
-2. createLLMProvider(config)                 → LLMProvider
-3. ingestMarkdownFile(config, file)          → { source, spans, isDuplicate }
-   └─ parser: blockId + charStart/charEnd 机械生成
-   └─ sha256(body).slice(16) → hash → sourceId
-4. compileSource(config, source, spans, provider) → { claims, concepts, relations, propositions }
-   ├─ Step 1: LLM 命题切分 (blockId+exactQuote, maxTokens:32768)
-   ├─ Step 2: mapQuoteToSpan → SourceSpan | null (失败跳过)
-   └─ Step 3: LLM Claim 编译 (maxTokens:8192)
-      └─ 全部 publicationState=CANDIDATE
-5. lintCompileResult(config, claims, relations, concepts, allSpans, provider)  ← 原子 Lint
-   ├─ Phase 1: Claim 结构+语义 Lint → CANONICAL / CANONICAL_DISPUTED / QUARANTINED
+  <div class="section-head"><div class="kicker">§12 / Data Flow</div><div><h2>ingest 端到端数据流（v1.2）</h2></div></div>
+  <div class="schema">// wge ingest mathtest-material/01-number-systems.md
+1. loadConfig() → AppConfig
+2. createLLMProvider(config) → LLMProvider
+3. ingestMarkdownFile → { source, spans, isDuplicate }
+4. compileSource → { claims, concepts, relations }
+   └─ 全部 publicationState=CANDIDATE, validity=UNRESOLVED  ← v1.2 改
+5. lintCompileResult（L1 对抗审计 + anchor 验证）
+   ├─ Phase 1: Claim 结构+语义 Lint → CANONICAL+SUPPORTED / DISPUTED / QUARANTINED
    ├─ Phase 2: canonicalClaimIds 集合
-   └─ Phase 3: Relation 结构 Lint (端点∈canonicalClaimIds) → CANONICAL / QUARANTINED
-6. 原子发布 (cli:96-107)
-   ├─ claimsToStore = canonicalClaims + quarantinedClaims
-   ├─ relationsToStore = canonicalRelations + quarantinedRelations
-   └─ appendClaims → appendConcepts → appendRelations (一次性写入)</div>
+   └─ Phase 3: Relation 结构 Lint → CANONICAL+SUPPORTED / QUARANTINED
+6. 物理隔离发布 ← v1.2 改
+   ├─ appendClaims(canonicalClaims)           → claims/claims.jsonl
+   ├─ appendConcepts(concepts)                → concepts/concepts.jsonl
+   ├─ appendRelations(canonicalRelations)     → relations/edges.jsonl
+   ├─ appendClaimsQuarantined(quarantinedClaims)    → quarantine/claims.jsonl
+   └─ appendRelationsQuarantined(quarantinedRelations) → quarantine/relations.jsonl</div>
+  <p class="small">readAllClaims 只读 claims/claims.jsonl。Quarantined 对象对 buildGraph/searchClaims/context-pack 默认不可见。</p>
 </section>
 
-<!-- ═══ 12 · 存储 ═══ -->
+<!-- ═══ 13 · 存储 ═══ -->
 <section id="storage">
-  <div class="section-head"><div class="kicker">§12 / Storage</div><div><h2>JSONL 存储（Product Definition §06 对齐）</h2></div></div>
+  <div class="section-head"><div class="kicker">§13 / Storage</div><div><h2>JSONL 存储（v1.2: 物理隔离）</h2></div></div>
   <table>
-    <thead><tr><th>对象</th><th>路径</th><th>格式</th><th>进 Git</th></tr></thead>
+    <thead><tr><th>对象</th><th>路径</th><th>格式</th><th>默认读取 API</th><th>进 Git</th></tr></thead>
     <tbody>
-      <tr><td>Source</td><td>sources/&lt;id&gt;.json</td><td>JSON</td><td>✅</td></tr>
-      <tr><td>SourceSpan</td><td>sources/&lt;id&gt;.spans.jsonl</td><td>JSONL</td><td>✅</td></tr>
-      <tr><td>Claim</td><td>claims/claims.jsonl</td><td>JSONL</td><td>✅</td></tr>
-      <tr><td>Concept</td><td>concepts/concepts.jsonl</td><td>JSONL</td><td>✅</td></tr>
-      <tr><td>Relation</td><td>relations/edges.jsonl</td><td>JSONL</td><td>✅</td></tr>
-      <tr><td>Quarantine manifest</td><td>quarantine/quarantine-manifest.json</td><td>JSON</td><td>✅</td></tr>
-      <tr><td>Source manifest</td><td>manifest.jsonl</td><td>JSONL</td><td>✅</td></tr>
-      <tr><td>indexes/</td><td>（可重建）</td><td>—</td><td>❌ 不进 Git</td></tr>
+      <tr><td>Source</td><td>sources/&lt;id&gt;.json</td><td>JSON</td><td>✅</td><td>✅</td></tr>
+      <tr><td>SourceSpan</td><td>sources/&lt;id&gt;.spans.jsonl</td><td>JSONL</td><td>readAllSpans</td><td>✅</td></tr>
+      <tr><td><b>Canonical Claim</b></td><td>claims/claims.jsonl</td><td>JSONL</td><td>readAllClaims</td><td>✅</td></tr>
+      <tr><td>Concept</td><td>concepts/concepts.jsonl</td><td>JSONL</td><td>readAllConcepts</td><td>✅</td></tr>
+      <tr><td><b>Canonical Relation</b></td><td>relations/edges.jsonl</td><td>JSONL</td><td>readAllRelations</td><td>✅</td></tr>
+      <tr><td style="background:#fdf5f6"><b>Quarantined Claim</b> <span class="badge b-new">v1.2</span></td><td style="background:#fdf5f6">quarantine/claims.jsonl</td><td style="background:#fdf5f6">JSONL</td><td style="background:#fdf5f6"><b>readAllClaimsQuarantined</b>（仅诊断）</td><td style="background:#fdf5f6">✅</td></tr>
+      <tr><td style="background:#fdf5f6"><b>Quarantined Relation</b> <span class="badge b-new">v1.2</span></td><td style="background:#fdf5f6">quarantine/relations.jsonl</td><td style="background:#fdf5f6">JSONL</td><td style="background:#fdf5f6"><b>readAllRelationsQuarantined</b>（仅诊断）</td><td style="background:#fdf5f6">✅</td></tr>
+      <tr><td>Quarantine manifest</td><td>quarantine/quarantine-manifest.json</td><td>JSON</td><td>—</td><td>✅</td></tr>
+      <tr><td><b>审计指标</b> <span class="badge b-new">v1.2</span></td><td>runs/audit-metrics.jsonl</td><td>JSONL</td><td>readAllAuditMetrics</td><td>✅</td></tr>
+      <tr><td>Source manifest</td><td>manifest.jsonl</td><td>JSONL</td><td>—</td><td>✅</td></tr>
+      <tr><td>indexes/</td><td>（可重建）</td><td>—</td><td>—</td><td>❌ 不进 Git</td></tr>
     </tbody>
   </table>
+  <div class="callout good">
+    <b>为什么物理隔离</b>
+    v1.1 把 Quarantined 和 Canonical 混在同一个 claims.jsonl，靠每个消费者运行时过滤。Review 断点 4 指出：任一新消费者漏用消费矩阵就会污染。
+    v1.2 物理隔离后，<code>readAllClaims</code> 默认只读主目录——任何新查询代码天生安全，不需要作者记得过滤。
+  </div>
 </section>
 
-<!-- ═══ 13 · 设计差距 ═══ -->
+<!-- ═══ 14 · 设计差距 ═══ -->
 <section id="gaps">
-  <div class="section-head"><div class="kicker">§13 / Gaps</div><div><h2>设计差距（Gate 0-1 之后补齐）</h2></div></div>
+  <div class="section-head"><div class="kicker">§14 / Gaps</div><div><h2>设计差距</h2></div></div>
   <table>
     <thead><tr><th>差距</th><th>当前状态</th><th>阻断哪个 Gate</th><th>计划</th></tr></thead>
     <tbody>
-      <tr><td>WikiModule 生成</td><td>未实现——ContextPack.wikiModules 为空</td><td><span class="badge b-stub">阻断 Gate 2+</span></td><td>Phase 2</td></tr>
-      <tr><td>跨材料 Relation 检测</td><td>Schema 已定义但无调用</td><td><span class="badge b-stub">阻断 Gate 2+</span></td><td>Phase 2</td></tr>
-      <tr><td>Concept 对齐</td><td>Compiler 产出但无跨来源合并</td><td><span class="badge b-stub">阻断 Gate 2+</span></td><td>Phase 2</td></tr>
-      <tr><td>进化机制</td><td>未实现</td><td><span class="badge b-stub">阻断 Gate 4</span></td><td>Phase 3</td></tr>
-      <tr><td>稳定逻辑 ID + 版本 ID</td><td>Claim ID 含 hash，无稳定逻辑身份</td><td><span class="badge b-stub">阻断 Gate 2+</span></td><td>Phase 2</td></tr>
-      <tr><td>Git commit 自动化</td><td>手动 commit</td><td><span class="badge b-pending">影响 Gate 3</span></td><td>Phase 2</td></tr>
-      <tr><td>BM25 索引</td><td>简单包含匹配</td><td><span class="badge b-pending">影响 Gate 3</span></td><td>Phase 2</td></tr>
-      <tr><td>四轴回写定义文档</td><td>Product Definition 仍写两轴</td><td><span class="badge b-pending">影响 Gate 0</span></td><td>文档同步</td></tr>
+      <tr><td>WikiModule 生成</td><td>未实现——wikiModules 为空</td><td><span class="badge b-stub">Gate 2+</span></td><td>Phase 2</td></tr>
+      <tr><td>跨材料 Relation 检测</td><td>Schema 已定义但无调用</td><td><span class="badge b-stub">Gate 2+</span></td><td>Phase 2</td></tr>
+      <tr><td>Concept 对齐 + 门禁</td><td>无跨来源合并；无状态字段/门禁</td><td><span class="badge b-stub">Gate 2+</span></td><td>Phase 2</td></tr>
+      <tr><td>进化机制</td><td>未实现</td><td><span class="badge b-stub">Gate 4</span></td><td>Phase 3</td></tr>
+      <tr><td>稳定逻辑 ID + 版本 ID</td><td>Claim ID 含 hash，无稳定逻辑身份</td><td><span class="badge b-stub">Gate 2+</span></td><td>Phase 2</td></tr>
+      <tr><td>Context 预算真实 token</td><td>4chars≈1token（中文低估）</td><td><span class="badge b-pending">Gate 2 前</span></td><td>Phase 2</td></tr>
+      <tr><td>L2 模型分离审计</td><td>L1 达标但未验证跨模型</td><td><span class="badge b-pending">Benchmark</span></td><td>Phase 2 敏感性实验</td></tr>
+      <tr><td>四轴回写定义文档</td><td>Product Definition 仍写两轴</td><td><span class="badge b-pending">Gate 0</span></td><td>文档同步</td></tr>
     </tbody>
   </table>
 </section>
 
-<!-- ═══ 14 · 未实现 ═══ -->
+<!-- ═══ 15 · 未实现 ═══ -->
 <section id="not-impl">
-  <div class="section-head"><div class="kicker">§14 / Not Implemented</div><div><h2>明确未实现</h2></div></div>
+  <div class="section-head"><div class="kicker">§15 / Not Implemented</div><div><h2>明确未实现</h2></div></div>
   <ul>
     <li><b>daemon 常驻</b>——不做（旧项目 Bug 5 教训）</li>
     <li><b>Vector 检索</b>——Phase 2 可选</li>
-    <li><b>人类审批</b>——不做（决策 2A）</li>
-    <li><b>Proposition 一等对象</b>——不做（决策 4A）</li>
-    <li><b>软门禁</b>——不做（硬门禁物理隔离）</li>
+    <li><b>人类审批</b>——不做（决策 2A：门禁通过自动 Canonical）</li>
+    <li><b>Proposition 一等对象</b>——不做（决策 4A：可重建中间产物）</li>
+    <li><b>软门禁</b>——不做（硬门禁 + 物理隔离）</li>
     <li><b>chunk marker</b>——不做（旧项目根因）</li>
   </ul>
 </section>
@@ -397,13 +435,10 @@ interface LintIssue {
 </main>
 
 <footer>
-  <p><b>WGEMemory4LLM Architecture Baseline v1.1</b> · 2026-07-22 · Post-Audit-Fix (commit e86615a)。
-  本文忠实记录断点修复后的代码现状。7 个逻辑断点（Relation Lint/方向语义/map-first/消费矩阵/原子发布/结构化 issue）全部修复。
-  每个结论基于实读 16 个 TypeScript 文件，引用具体行号。
-  Gate 0 近完成（剩四轴回写定义文档）；Gate 1 组件测试可开始。</p>
-  <p class="small">建议用现代浏览器打开；Mermaid 图通过 CDN 渲染。</p>
+  WGEMemory4LLM Architecture Baseline v1.2 · 2026-07-23<br>
+  v1.2 基于：audit_reliability_research.md（审计可信性研究）+ meta-eval 100 条校准 + Review v1.1 八个残余矛盾。
+  每个结论基于实读 src/ 代码 + 实跑 meta-eval 数据。引用具体行号。
 </footer>
-
 </div>
 </body>
 </html>
