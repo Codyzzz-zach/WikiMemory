@@ -46,6 +46,7 @@ interface SnapshotManifest {
 	schemaVersion: "wge-pilot-snapshot/v1";
 	createdAt: string;
 	codeCommit: string;
+	runtimeCodeHash: string;
 	configHash: string;
 	questionSetHash: string;
 	corpusHash: string;
@@ -180,6 +181,7 @@ program
 			schemaVersion: "wge-pilot-snapshot/v1",
 			createdAt: new Date().toISOString(),
 			codeCommit: git(rootConfig.projectRoot, ["rev-parse", "HEAD"]),
+			runtimeCodeHash: runtimeCodeHash(rootConfig.projectRoot),
 			configHash: sha256(stableJson(pilotConfig)),
 			questionSetHash: sha256(stableJson(questions)),
 			corpusHash: corpusHash(rootConfig.projectRoot, pilotConfig.corpus),
@@ -385,14 +387,18 @@ function assertSnapshotCurrent(
 	if (!existsSync(path))
 		throw new Error("缺少 snapshot-manifest.json；先执行 npm run pilot -- snapshot");
 	const snapshot = readJson<SnapshotManifest>(path);
-	const currentCommit = git(root, ["rev-parse", "HEAD"]);
-	if (snapshot.codeCommit !== currentCommit) {
-		throw new Error(`代码版本已变化: snapshot=${snapshot.codeCommit} current=${currentCommit}`);
-	}
+	if (snapshot.runtimeCodeHash !== runtimeCodeHash(root)) throw new Error("Pilot 运行代码已变化");
 	if (snapshot.configHash !== sha256(stableJson(config))) throw new Error("Pilot 配置已变化");
 	if (snapshot.questionSetHash !== sha256(stableJson(questions)))
 		throw new Error("Pilot 题集已变化");
 	if (snapshot.corpusHash !== corpusHash(root, config.corpus)) throw new Error("冻结语料已变化");
+	const appConfig = loadConfig();
+	const currentKnowledgeVersion = computeKnowledgeVersion(
+		readAllClaims(appConfig),
+		readAllConcepts(appConfig),
+		readAllRelations(appConfig),
+	);
+	if (snapshot.knowledgeVersion !== currentKnowledgeVersion) throw new Error("冻结知识版本已变化");
 	return snapshot;
 }
 
@@ -411,6 +417,27 @@ function snapshotPath(root: string): string {
 function corpusHash(root: string, paths: string[]): string {
 	const hash = createHash("sha256");
 	for (const path of [...paths].sort()) {
+		hash.update(path);
+		hash.update("\0");
+		hash.update(readFileSync(join(root, path)));
+		hash.update("\0");
+	}
+	return hash.digest("hex");
+}
+
+function runtimeCodeHash(root: string): string {
+	const tracked = git(root, [
+		"ls-files",
+		"src",
+		"scripts/pilot.ts",
+		"package.json",
+		"package-lock.json",
+	])
+		.split("\n")
+		.filter(Boolean)
+		.sort();
+	const hash = createHash("sha256");
+	for (const path of tracked) {
 		hash.update(path);
 		hash.update("\0");
 		hash.update(readFileSync(join(root, path)));
