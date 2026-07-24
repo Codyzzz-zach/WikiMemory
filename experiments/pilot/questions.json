@@ -1,8 +1,10 @@
 {
   "schemaVersion": "wge-pilot-questions/v1",
   "setId": "five-doc-pilot-16",
-  "status": "PROPOSED_FOR_HUMAN_FREEZE",
+  "status": "FROZEN",
   "selectedAt": "2026-07-24",
+  "frozenAt": "2026-07-24",
+  "frozenBy": "product-owner-delegated-codex-audit",
   "selectionRule": "4 direct + 5 two-hop + 3 three-hop + 3 condition/counterexample + 1 insufficient, restricted to the frozen five-document corpus except the deliberate insufficient item",
   "leakageRule": "Gold fields are available only to scoring; retrieval and answering receive id, category, question and answerabilityPolicy only.",
   "questions": [
@@ -10,13 +12,13 @@
       "id": "PILOT-D01",
       "benchmarkId": "D01",
       "category": "D",
-      "question": "自然数的 Peano 公理试图刻画哪些基本结构？",
+      "question": "为什么材料认为自然数的本质是从 0 和后继操作生成的递归结构，而不是“0,1,2,3…”这些符号本身？这如何解释数学归纳法的根本性？",
       "answerability": "answerable",
       "requiredSources": ["01-number-systems"],
-      "requiredClaims": ["存在起点 0", "每个自然数有后继", "0 不是任何自然数的后继", "后继映射具有单射性", "归纳原理刻画由后继生成的全部自然数"],
-      "expectedPath": ["0", "后继", "归纳"],
+      "requiredClaims": ["自然数的本质是从 0 出发反复应用后继操作的递归结构，而非具体符号序列", "数学归纳法直接编码了自然数的这种构造方式，因此具有根本性"],
+      "expectedPath": ["0", "后继生成", "递归结构", "归纳法编码构造"],
       "mustMentionConditions": [],
-      "forbiddenClaims": ["Peano 公理把加法或乘法作为原始公理"]
+      "forbiddenClaims": ["自然数必须从 1 开始", "归纳法只是与自然数构造无关的证明技巧"]
     },
     {
       "id": "PILOT-D02",
@@ -70,13 +72,13 @@
       "id": "PILOT-H2-03",
       "benchmarkId": "H2-03",
       "category": "H2",
-      "question": "函数列收敛方式为什么会影响积分与求导交换？",
+      "question": "范数如何先导出度量，而线性算子的有界性又如何通过算子范数与连续性联系起来？",
       "answerability": "answerable",
-      "requiredSources": ["03-sequences-limits", "09-functional-analysis"],
-      "requiredClaims": ["逐点收敛通常不足以交换极限与分析运算", "一致收敛可以保留连续性", "可导性或交换求导需要比函数本身一致收敛更强的附加条件"],
-      "expectedPath": ["收敛模式", "极限交换", "附加条件"],
-      "mustMentionConditions": ["不能把一致收敛无条件扩张为保持可导"],
-      "forbiddenClaims": ["一致收敛本身总能保证极限函数可导"]
+      "requiredSources": ["02-spaces", "05-functions-mappings"],
+      "requiredClaims": ["向量空间上的范数通过 $d(x,y)=\\|x-y\\|$ 导出度量", "线性算子的范数由单位球上的输出范数上确界刻画", "在线性算子的前提下，算子范数有限即有界与连续等价"],
+      "expectedPath": ["范数", "范数诱导度量", "算子范数", "有界线性算子", "连续性"],
+      "mustMentionConditions": ["有界性与连续性的等价结论限定在线性算子语境"],
+      "forbiddenClaims": ["任意非线性映射都有有界当且仅当连续", "范数与度量是毫无联系的独立结构"]
     },
     {
       "id": "PILOT-H2-06",
@@ -94,11 +96,11 @@
       "id": "PILOT-H2-20",
       "benchmarkId": "H2-20",
       "category": "H2",
-      "question": "变分法如何把泛函极值问题变成 Euler–Lagrange 方程？",
+      "question": "算子和泛函都可以函数为输入，它们的输出有何区别？在此基础上，变分法如何把泛函极值问题转化为 Euler–Lagrange 方程？",
       "answerability": "answerable",
       "requiredSources": ["05-functions-mappings", "09-functional-analysis"],
-      "requiredClaims": ["泛函以函数为输入并输出数", "对函数施加微小变分并令一阶变分为零", "由此得到 Euler–Lagrange 方程作为极值的必要条件"],
-      "expectedPath": ["泛函", "函数变分", "一阶必要条件", "Euler–Lagrange 方程"],
+      "requiredClaims": ["算子是函数空间之间的映射，通常把函数映为函数", "泛函以函数为输入并输出实数或复数", "若积分型泛函在函数 $y$ 处取极值，则材料给出 Euler–Lagrange 方程作为必要条件"],
+      "expectedPath": ["算子：函数空间到函数空间", "泛函：函数到数", "泛函极值", "Euler–Lagrange 必要条件"],
       "mustMentionConditions": ["方程通常是极值的必要条件而非无条件充分条件"],
       "forbiddenClaims": ["Euler–Lagrange 方程的每个解都是唯一全局最小值"]
     },
@@ -164,15 +166,15 @@
     },
     {
       "id": "PILOT-C02",
-      "benchmarkId": "C02",
+      "benchmarkId": "EXT-CAND-C02",
       "category": "C",
-      "question": "一致收敛是否足以保证极限函数可导？",
-      "answerability": "answerable_with_source_risk",
+      "question": "若数列满足 $a_n\\to0$，是否足以推出级数 $\\sum a_n$ 收敛？请按材料给出的逻辑强度回答，并说明反例。",
+      "answerability": "answerable",
       "requiredSources": ["03-sequences-limits"],
-      "requiredClaims": ["一致收敛本身能保留连续性但不足以保证可导", "保证可导需要导数序列一致收敛等附加假设"],
-      "expectedPath": ["一致收敛", "连续性", "可导性的额外条件"],
-      "mustMentionConditions": ["需要导数序列一致收敛等附加条件"],
-      "forbiddenClaims": ["一致收敛一定推出极限函数可导"]
+      "requiredClaims": ["级数收敛必然推出其通项趋于 0，所以 $a_n\\to0$ 是必要条件", "$a_n\\to0$ 不是充分条件", "调和级数的通项 $1/n\\to0$ 但级数仍发散"],
+      "expectedPath": ["通项趋零", "必要而非充分", "调和级数反例"],
+      "mustMentionConditions": ["不能把必要条件反向当成充分条件"],
+      "forbiddenClaims": ["只要 $a_n\\to0$，级数 $\\sum a_n$ 就必然收敛"]
     },
     {
       "id": "PILOT-C05",

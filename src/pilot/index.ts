@@ -18,6 +18,12 @@ export interface PilotConfig {
 		thinkingDisabled: boolean;
 		maxOutputTokens: number;
 	};
+	judge: {
+		model: string;
+		temperature: number;
+		thinkingDisabled: boolean;
+		maxOutputTokens: number;
+	};
 	retrieval: {
 		contextBudgetTokens: number;
 		maxGraphDepth: number;

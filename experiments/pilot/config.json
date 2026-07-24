@@ -21,6 +21,12 @@
     "thinkingDisabled": true,
     "maxOutputTokens": 1600
   },
+  "judge": {
+    "model": "deepseek-v4-flash",
+    "temperature": 0,
+    "thinkingDisabled": true,
+    "maxOutputTokens": 2400
+  },
   "retrieval": {
     "contextBudgetTokens": 12000,
     "maxGraphDepth": 3,

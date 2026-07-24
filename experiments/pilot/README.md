@@ -15,7 +15,7 @@
 ## 冻结边界
 
 - [config.json](./config.json) 锁定五篇语料、请求模型、temperature、上下文预算、输出预算和实验组。
-- [questions.json](./questions.json) 是 16 题候选 Gold。只有产品负责人逐题确认后，才能把状态从 `PROPOSED_FOR_HUMAN_FREEZE` 改成 `FROZEN`。
+- [questions.json](./questions.json) 是冻结的 16 题 Gold。产品负责人已明确委托 Codex 按 [gold-rubric.json](./gold-rubric.json) 完成逐题证据审计并直接冻结；这属于单审计代理的方向性 Pilot，不冒充人工双标金标准。
 - Gold 字段不进入 Source、Claim、Graph、Context Pack、检索索引或回答 prompt。
 - `snapshot-manifest.json` 只能在干净 Git 工作区、五篇 Source 全部 `COMPLETED` 且证据/边完整性通过后生成。
 

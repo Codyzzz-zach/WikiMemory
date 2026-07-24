@@ -61,6 +61,12 @@ function pilotConfig(): PilotConfig {
 			thinkingDisabled: true,
 			maxOutputTokens: 100,
 		},
+		judge: {
+			model: "test-model",
+			temperature: 0,
+			thinkingDisabled: true,
+			maxOutputTokens: 100,
+		},
 		retrieval: {
 			contextBudgetTokens: 100,
 			maxGraphDepth: 2,

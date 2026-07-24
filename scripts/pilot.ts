@@ -3,7 +3,7 @@
 import { execFileSync } from "node:child_process";
 import { createHash, randomUUID } from "node:crypto";
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
-import { join } from "node:path";
+import { isAbsolute, join, resolve } from "node:path";
 import { Command } from "commander";
 import { getCompileState } from "../src/compiler/run-state.js";
 import { estimateTokens } from "../src/compiler/telemetry.js";
@@ -35,11 +35,37 @@ const ANSWER_SYSTEM_PROMPT = `你是一个受证据约束的问答 Agent。只�
 3. 如果上下文不足，明确回答 insufficient，不得依赖外部常识补齐。
 4. 只输出严格 JSON：{"answer":"...","citations":["..."],"insufficient":false,"uncertainties":["..."]}。`;
 
+const JUDGE_SYSTEM_PROMPT = `你是知识系统的盲测评分员。你只按提供的 Gold 和评分合同评价匿名答案，不判断答案来自哪个实验组。
+必须逐项核对 requiredClaims、mustMentionConditions、forbiddenClaims、answerability 和证据引用。
+sourceRisk.present=true 时，Gold 风险说明是允许使用的人工审计结论；不得把源材料的过强表述当成正确答案。
+只输出严格 JSON：{"scores":[{"sampleId":"...","requiredClaimCoverage":0,"conditionFidelity":0,"evidenceGrounding":0,"answerabilityDiscipline":0,"hardFailure":false,"rationale":"..."}]}。`;
+
 interface QuestionFile {
 	schemaVersion: string;
 	setId: string;
 	status: "PROPOSED_FOR_HUMAN_FREEZE" | "FROZEN";
 	questions: PilotQuestion[];
+}
+
+interface GoldEvidence {
+	sourceFile: string;
+	heading: string;
+	exactQuote: string;
+	supportsRequiredClaims: number[];
+}
+
+interface GoldQuestion {
+	id: string;
+	sourceRisk: { present: boolean; detail: string };
+	evidence: GoldEvidence[];
+}
+
+interface GoldFile {
+	schemaVersion: "wge-pilot-gold/v1";
+	questionSetId: string;
+	status: "DRAFT" | "FROZEN";
+	scoringContract: unknown;
+	questionGold: GoldQuestion[];
 }
 
 interface SnapshotManifest {
@@ -49,6 +75,7 @@ interface SnapshotManifest {
 	runtimeCodeHash: string;
 	configHash: string;
 	questionSetHash: string;
+	goldHash: string;
 	corpusHash: string;
 	knowledgeVersion: string;
 	sources: Array<{
@@ -84,6 +111,10 @@ program
 		assertCleanWorktree(rootConfig.projectRoot);
 		const pilotConfig = readPilotConfig(rootConfig.projectRoot);
 		const questions = readQuestions(rootConfig.projectRoot);
+		const gold = readGold(rootConfig.projectRoot);
+		assertQuestionsFrozen(questions);
+		assertGoldFrozen(gold);
+		validateGold(rootConfig.projectRoot, pilotConfig, questions, gold);
 		if (
 			rootConfig.model !== pilotConfig.compiler.model ||
 			rootConfig.temperature !== pilotConfig.compiler.temperature
@@ -184,6 +215,7 @@ program
 			runtimeCodeHash: runtimeCodeHash(rootConfig.projectRoot),
 			configHash: sha256(stableJson(pilotConfig)),
 			questionSetHash: sha256(stableJson(questions)),
+			goldHash: sha256(stableJson(gold)),
 			corpusHash: corpusHash(rootConfig.projectRoot, pilotConfig.corpus),
 			knowledgeVersion: computeKnowledgeVersion(claims, concepts, relations),
 			sources: sourceRows,
@@ -319,6 +351,10 @@ program
 					modelReturned: result.model,
 					temperature: pilotConfig.answer.temperature,
 					promptHash,
+					request: {
+						systemPrompt: ANSWER_SYSTEM_PROMPT,
+						userPrompt,
+					},
 					contextHash: prepared.contextHash,
 					estimatedContextTokens: prepared.estimatedContextTokens,
 					estimatedTotalInputTokens: estimateTokens(`${ANSWER_SYSTEM_PROMPT}\n${userPrompt}`),
@@ -353,6 +389,108 @@ program
 		console.log(runDirectory);
 	});
 
+program
+	.command("score")
+	.description("Blind-score a completed Pilot run, then unblind and aggregate")
+	.requiredOption("--run <directory>", "Pilot run directory")
+	.action(async (options: { run: string }) => {
+		const baseConfig = loadConfig();
+		const pilotConfig = readPilotConfig(baseConfig.projectRoot);
+		const questions = readQuestions(baseConfig.projectRoot);
+		const gold = readGold(baseConfig.projectRoot);
+		assertQuestionsFrozen(questions);
+		assertGoldFrozen(gold);
+		validateGold(baseConfig.projectRoot, pilotConfig, questions, gold);
+		if (!baseConfig.apiKey) throw new Error("DEEPSEEK_API_KEY 未设置");
+		const runDirectory = isAbsolute(options.run)
+			? options.run
+			: resolve(baseConfig.projectRoot, options.run);
+		const blindAnswers = readJson<Array<{ sampleId: string; questionId: string; answer: string }>>(
+			join(runDirectory, "blind-answers.json"),
+		);
+		const blindingKey = readJson<
+			Array<{ sampleId: string; questionId: string; group: PilotGroup }>
+		>(join(runDirectory, "blinding-key.json"));
+		const keyBySample = new Map(blindingKey.map((item) => [item.sampleId, item]));
+		const goldById = new Map(gold.questionGold.map((item) => [item.id, item]));
+		const judgeConfig = loadConfig({
+			model: pilotConfig.judge.model,
+			temperature: pilotConfig.judge.temperature,
+		});
+		const provider = createLLMProvider(judgeConfig);
+		const blindScores: Array<JudgeScore & { questionId: string; total: number }> = [];
+		let expectedReturnedModel: string | null = null;
+		mkdirSync(join(runDirectory, "judge-records"), { recursive: true });
+
+		for (const question of questions.questions) {
+			const samples = blindAnswers.filter((item) => item.questionId === question.id);
+			if (samples.length === 0) continue;
+			const goldItem = goldById.get(question.id);
+			if (!goldItem) throw new Error(`评分缺少 Gold: ${question.id}`);
+			const userPrompt = buildJudgePrompt(gold.scoringContract, question, goldItem, samples);
+			const result = await provider.chat({
+				model: pilotConfig.judge.model,
+				temperature: pilotConfig.judge.temperature,
+				thinkingDisabled: pilotConfig.judge.thinkingDisabled,
+				systemPrompt: JUDGE_SYSTEM_PROMPT,
+				messages: [{ role: "user", content: userPrompt }],
+				responseFormat: "json_object",
+				maxTokens: pilotConfig.judge.maxOutputTokens,
+			});
+			if (expectedReturnedModel === null) expectedReturnedModel = result.model;
+			if (result.model !== expectedReturnedModel) {
+				throw new Error(`评分模型快照漂移: ${expectedReturnedModel} -> ${result.model}`);
+			}
+			const parsed = parseJudgeScores(result.content);
+			const expectedIds = new Set(samples.map((item) => item.sampleId));
+			if (
+				parsed.length !== expectedIds.size ||
+				parsed.some((item) => !expectedIds.has(item.sampleId))
+			) {
+				throw new Error(`评分返回样本集合不一致: ${question.id}`);
+			}
+			for (const score of parsed) {
+				const rawTotal =
+					score.requiredClaimCoverage +
+					score.conditionFidelity +
+					score.evidenceGrounding +
+					score.answerabilityDiscipline;
+				blindScores.push({
+					...score,
+					questionId: question.id,
+					total: score.hardFailure ? Math.min(2, rawTotal) : rawTotal,
+				});
+			}
+			writeJson(join(runDirectory, "judge-records", `${question.id}.json`), {
+				questionId: question.id,
+				modelRequested: pilotConfig.judge.model,
+				modelReturned: result.model,
+				request: { systemPrompt: JUDGE_SYSTEM_PROMPT, userPrompt },
+				usage: result.usage,
+				finishReason: result.finishReason,
+				rawResponse: result.content,
+				parsed,
+			});
+			console.error(`scored ${question.id}`);
+		}
+
+		const unblinded = blindScores.map((score) => {
+			const key = keyBySample.get(score.sampleId);
+			if (!key) throw new Error(`盲化键缺少样本: ${score.sampleId}`);
+			return { ...score, group: key.group };
+		});
+		const report = aggregateScores(unblinded, pilotConfig.execution.groups);
+		writeJson(join(runDirectory, "scores.blind.json"), blindScores);
+		writeJson(join(runDirectory, "scores.unblinded.json"), unblinded);
+		writeJson(join(runDirectory, "score-report.json"), {
+			judgeModelRequested: pilotConfig.judge.model,
+			judgeModelReturned: expectedReturnedModel,
+			generatedAt: new Date().toISOString(),
+			report,
+		});
+		console.log(JSON.stringify(report, null, 2));
+	});
+
 program.parseAsync(process.argv).catch((error: unknown) => {
 	console.error(`❌ ${error instanceof Error ? error.message : String(error)}`);
 	process.exitCode = 1;
@@ -366,6 +504,10 @@ function readQuestions(root: string): QuestionFile {
 	return readJson<QuestionFile>(join(root, "experiments", "pilot", "questions.json"));
 }
 
+function readGold(root: string): GoldFile {
+	return readJson<GoldFile>(join(root, "experiments", "pilot", "gold-rubric.json"));
+}
+
 function publicQuestion(question: PilotQuestion): Pick<PilotQuestion, "id" | "question"> {
 	return { id: question.id, question: question.question };
 }
@@ -376,6 +518,95 @@ function assertQuestionsFrozen(questions: QuestionFile): void {
 			`Pilot 题集状态是 ${questions.status}；产品负责人逐题确认后才能改为 FROZEN 并运行。`,
 		);
 	}
+}
+
+function assertGoldFrozen(gold: GoldFile): void {
+	if (gold.status !== "FROZEN") throw new Error(`Pilot Gold 状态是 ${gold.status}，尚未冻结。`);
+}
+
+interface JudgeScore {
+	sampleId: string;
+	requiredClaimCoverage: number;
+	conditionFidelity: number;
+	evidenceGrounding: number;
+	answerabilityDiscipline: number;
+	hardFailure: boolean;
+	rationale: string;
+}
+
+function buildJudgePrompt(
+	scoringContract: unknown,
+	question: PilotQuestion,
+	gold: GoldQuestion,
+	samples: Array<{ sampleId: string; answer: string }>,
+): string {
+	return `# 评分合同\n${JSON.stringify(scoringContract, null, 2)}\n\n# 题目与 Gold\n${JSON.stringify(
+		{
+			question: question.question,
+			answerability: question.answerability,
+			requiredClaims: question.requiredClaims,
+			mustMentionConditions: question.mustMentionConditions,
+			forbiddenClaims: question.forbiddenClaims,
+			sourceRisk: gold.sourceRisk,
+			evidence: gold.evidence,
+		},
+		null,
+		2,
+	)}\n\n# 匿名答案\n${JSON.stringify(samples, null, 2)}`;
+}
+
+function parseJudgeScores(content: string): JudgeScore[] {
+	const cleaned = content
+		.trim()
+		.replace(/^```(?:json)?\s*/i, "")
+		.replace(/\s*```$/, "");
+	const value = JSON.parse(cleaned) as { scores?: unknown };
+	if (!Array.isArray(value.scores)) throw new Error("评分输出缺少 scores 数组");
+	return value.scores.map((candidate) => {
+		if (!candidate || typeof candidate !== "object") throw new Error("评分项不是对象");
+		const row = candidate as Record<string, unknown>;
+		const score = (key: string): number => {
+			const item = row[key];
+			if (!Number.isInteger(item) || Number(item) < 0 || Number(item) > 2) {
+				throw new Error(`评分维度非法: ${key}=${String(item)}`);
+			}
+			return Number(item);
+		};
+		if (typeof row.sampleId !== "string" || typeof row.rationale !== "string") {
+			throw new Error("评分项缺少 sampleId/rationale");
+		}
+		return {
+			sampleId: row.sampleId,
+			requiredClaimCoverage: score("requiredClaimCoverage"),
+			conditionFidelity: score("conditionFidelity"),
+			evidenceGrounding: score("evidenceGrounding"),
+			answerabilityDiscipline: score("answerabilityDiscipline"),
+			hardFailure: row.hardFailure === true,
+			rationale: row.rationale,
+		};
+	});
+}
+
+function aggregateScores(
+	rows: Array<JudgeScore & { questionId: string; total: number; group: PilotGroup }>,
+	groups: PilotGroup[],
+): Record<string, unknown> {
+	const result: Record<string, unknown> = {};
+	for (const group of groups) {
+		const selected = rows.filter((row) => row.group === group);
+		const average = (values: number[]) =>
+			values.length === 0 ? null : values.reduce((sum, value) => sum + value, 0) / values.length;
+		result[group] = {
+			n: selected.length,
+			averageTotal: average(selected.map((row) => row.total)),
+			averageRequiredClaimCoverage: average(selected.map((row) => row.requiredClaimCoverage)),
+			averageConditionFidelity: average(selected.map((row) => row.conditionFidelity)),
+			averageEvidenceGrounding: average(selected.map((row) => row.evidenceGrounding)),
+			averageAnswerabilityDiscipline: average(selected.map((row) => row.answerabilityDiscipline)),
+			hardFailures: selected.filter((row) => row.hardFailure).length,
+		};
+	}
+	return result;
 }
 
 function assertSnapshotCurrent(
@@ -391,6 +622,10 @@ function assertSnapshotCurrent(
 	if (snapshot.configHash !== sha256(stableJson(config))) throw new Error("Pilot 配置已变化");
 	if (snapshot.questionSetHash !== sha256(stableJson(questions)))
 		throw new Error("Pilot 题集已变化");
+	const gold = readGold(root);
+	assertGoldFrozen(gold);
+	validateGold(root, config, questions, gold);
+	if (snapshot.goldHash !== sha256(stableJson(gold))) throw new Error("Pilot Gold 已变化");
 	if (snapshot.corpusHash !== corpusHash(root, config.corpus)) throw new Error("冻结语料已变化");
 	const appConfig = loadConfig();
 	const currentKnowledgeVersion = computeKnowledgeVersion(
@@ -400,6 +635,55 @@ function assertSnapshotCurrent(
 	);
 	if (snapshot.knowledgeVersion !== currentKnowledgeVersion) throw new Error("冻结知识版本已变化");
 	return snapshot;
+}
+
+function validateGold(
+	root: string,
+	config: PilotConfig,
+	questions: QuestionFile,
+	gold: GoldFile,
+): void {
+	if (gold.questionSetId !== questions.setId) throw new Error("Gold 与题集 setId 不一致");
+	const goldById = new Map(gold.questionGold.map((item) => [item.id, item]));
+	if (goldById.size !== gold.questionGold.length) throw new Error("Gold 存在重复题号");
+	const corpus = new Set(config.corpus);
+	for (const question of questions.questions) {
+		const item = goldById.get(question.id);
+		if (!item) throw new Error(`Gold 缺少题目: ${question.id}`);
+		const covered = new Set<number>();
+		for (const evidence of item.evidence) {
+			if (!corpus.has(evidence.sourceFile)) {
+				throw new Error(`Gold 证据越过冻结语料: ${question.id} -> ${evidence.sourceFile}`);
+			}
+			const source = readFileSync(join(root, evidence.sourceFile), "utf-8");
+			if (!source.includes(evidence.heading)) {
+				throw new Error(`Gold heading 无法解析: ${question.id} -> ${evidence.heading}`);
+			}
+			if (!source.includes(evidence.exactQuote)) {
+				throw new Error(`Gold exactQuote 无法解析: ${question.id} -> ${evidence.sourceFile}`);
+			}
+			for (const claimIndex of evidence.supportsRequiredClaims) {
+				if (claimIndex < 0 || claimIndex >= question.requiredClaims.length) {
+					throw new Error(`Gold requiredClaim 下标越界: ${question.id} -> ${claimIndex}`);
+				}
+				covered.add(claimIndex);
+			}
+		}
+		if (!item.sourceRisk.present && question.answerability !== "insufficient") {
+			for (let index = 0; index < question.requiredClaims.length; index++) {
+				if (!covered.has(index))
+					throw new Error(`Gold 未覆盖 requiredClaim: ${question.id}#${index}`);
+			}
+		}
+		if (question.answerability === "answerable_with_source_risk" && !item.sourceRisk.present) {
+			throw new Error(`source-risk 题缺少风险说明: ${question.id}`);
+		}
+	}
+	for (const item of gold.questionGold) {
+		if (!questions.questions.some((question) => question.id === item.id)) {
+			throw new Error(`Gold 含题集外题号: ${item.id}`);
+		}
+	}
 }
 
 function selectedGroups(config: PilotConfig, requested?: string): PilotGroup[] {
