@@ -519,15 +519,66 @@ export function computeKnowledgeVersion(
 	claims: Claim[],
 	concepts: Concept[],
 	relations: Relation[],
+	wikiModules: WikiModule[] = [],
+	assertedRecords: AssertedRecord[] = [],
 ): string {
 	const snapshot = {
 		claims: claims
-			.map((claim) => [claim.id, claim.validity, claim.lifecycle, claim.recordedAt])
-			.sort((left, right) => String(left[0]).localeCompare(String(right[0]))),
-		concepts: concepts.map((concept) => concept.id).sort(),
+			.map((claim) => ({
+				id: claim.id,
+				statement: claim.statement,
+				evidenceSpanIds: [...claim.evidenceSpanIds].sort(),
+				conditions: [...claim.conditions].sort(),
+				validity: claim.validity,
+				lifecycle: claim.lifecycle,
+				publicationState: claim.publicationState,
+				scope: claim.scope,
+				claimKind: claim.claimKind,
+			}))
+			.sort((left, right) => left.id.localeCompare(right.id)),
+		concepts: concepts
+			.map((concept) => ({
+				id: concept.id,
+				name: concept.name,
+				aliases: [...concept.aliases].sort(),
+				boundary: concept.boundary,
+				domain: concept.domain,
+			}))
+			.sort((left, right) => left.id.localeCompare(right.id)),
 		relations: relations
-			.map((relation) => [relation.id, relation.validity, relation.lifecycle])
-			.sort((left, right) => String(left[0]).localeCompare(String(right[0]))),
+			.map((relation) => ({
+				id: relation.id,
+				from: relation.from,
+				to: relation.to,
+				type: relation.type,
+				conditions: [...relation.conditions].sort(),
+				conditionStatus: relation.conditionStatus,
+				relationAuditVersion: relation.relationAuditVersion,
+				evidenceSpanIds: [...relation.evidenceSpanIds].sort(),
+				validity: relation.validity,
+				lifecycle: relation.lifecycle,
+				publicationState: relation.publicationState,
+			}))
+			.sort((left, right) => left.id.localeCompare(right.id)),
+		wikiModules: wikiModules
+			.map((module) => ({
+				id: module.id,
+				stableAddress: module.stableAddress,
+				coreQuestion: module.coreQuestion,
+				currentUnderstanding: module.currentUnderstanding,
+				disputes: [...module.disputes],
+				claimRefs: [...module.claimRefs].sort(),
+				conceptRefs: [...module.conceptRefs].sort(),
+				dependencies: [...module.dependencies].sort(),
+				publicationState: module.publicationState,
+			}))
+			.sort((left, right) => left.id.localeCompare(right.id)),
+		assertedRecords: assertedRecords
+			.map((record) => ({
+				...record,
+				supportingSourceIds: [...(record.supportingSourceIds ?? [])].sort(),
+			}))
+			.sort((left, right) => left.assertionId.localeCompare(right.assertionId)),
 	};
 	return `kv:${createHash("sha256").update(JSON.stringify(snapshot)).digest("hex").slice(0, 24)}`;
 }

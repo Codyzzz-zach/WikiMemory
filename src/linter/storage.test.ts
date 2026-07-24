@@ -7,6 +7,7 @@ import { RELATION_AUDIT_VERSION } from "../prompts/index.js";
 import type { Claim, Relation, SourceSpan } from "../types/index.js";
 import { claimRef } from "../types/index.js";
 import {
+	computeKnowledgeVersion,
 	findSpansByIds,
 	publishCrossMaterialRelations,
 	publishSourceResult,
@@ -25,6 +26,14 @@ afterEach(() => {
 });
 
 describe("publication storage", () => {
+	it("changes the knowledge version when semantic content changes under a stable ID", () => {
+		const original = claim("claim:stable", "旧条件");
+		const revised = { ...original, statement: "新条件", conditions: ["仅在新版协议下"] };
+		expect(computeKnowledgeVersion([original], [], [])).not.toBe(
+			computeKnowledgeVersion([revised], [], []),
+		);
+	});
+
 	it("atomically replaces a Source snapshot instead of appending duplicates", () => {
 		const config = temporaryConfig();
 		const first = claim("claim:first", "first");

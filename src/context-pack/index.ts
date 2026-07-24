@@ -160,7 +160,12 @@ export function buildContextPack(
 	let allRelations = readAllRelations(config);
 	const allSpans = readAllSpans(config);
 	const allWikiModules = readAllWikiModules(config);
-	const knowledgeVersion = computeKnowledgeVersion(allClaims, allConcepts, allRelations);
+	const knowledgeVersion = computeKnowledgeVersion(
+		allClaims,
+		allConcepts,
+		allRelations,
+		allWikiModules,
+	);
 
 	// ── 1.5 v1.1：作用域过滤（Global Base + Scoped Overlay）──
 	// 缺少 ScopeContext 时按 Global-only 处理，不能"默认全选"

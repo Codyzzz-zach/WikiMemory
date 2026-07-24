@@ -1,0 +1,52 @@
+{
+  "runId": "pilot-f19d0043-1099-4226-91e3-c58911e39df6",
+  "questionId": "PILOT-C01",
+  "category": "C",
+  "group": "P",
+  "corpusHash": "86268a6fbd559d17bb005c4c7bd64d3d1c91b2146010c625e9f2fc2fcb37d938",
+  "knowledgeVersion": "kv:e2f961a26664588188f91fe7",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "temperature": 0,
+  "promptHash": "e46b3dadf435c181fc955ed62d803ef270a5b7867be6384937766994e0e9e59b",
+  "request": {
+    "systemPrompt": "你是一个受证据约束的问答 Agent。只使用本次请求提供的检索上下文回答问题。\n要求：\n1. 保留所有影响结论的条件、例外和不确定性。\n2. 每个关键结论引用上下文中的 SOURCE、EVIDENCE 或 CLAIM 标识。\n3. 如果上下文不足，明确回答 insufficient，不得依赖外部常识补齐。\n4. 只输出严格 JSON：{\"answer\":\"...\",\"citations\":[\"...\"],\"insufficient\":false,\"uncertainties\":[\"...\"]}。",
+    "userPrompt": "# 问题\nL² 是否总是 L¹ 的子集？\n\n# 检索上下文\n## TASK MAP\n主题: L² 是否总是 L¹ 的子集？\n地图主题: 数集, 算子, 空间, 定义, 自然\n关键概念: 连通性, 单射, 浮点数, 无理数, 交换环\n已知争议: 0 个\n最近变化: 5 条\n找到 6 条相关 Claim\n找到 1 条关系\n找到 3 条原文证据\n\n## CLAIM claim:33a33396a17d4175-07205bc184b77466\n$\\ell^2$ 的内积是 $\\langle x,y \\rangle = \\sum x_i \\overline{y_i}$，完备基是 $e_i = (0,\\ldots,1,\\ldots)$，应用于离散信号。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:33a33396a17d4175-52ea70f5124a7a46\nHilbert 空间允许 Fourier 级数：$\\{e^{inx}\\}_{n=-\\infty}^\\infty$ 是 $L^2[-\\pi,\\pi]$ 中的一组正交基。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:33a33396a17d4175-a0d4455e06e3e901\n$L^2[a,b]$ 的内积是 $\\langle f,g \\rangle = \\int f \\overline{g}$，完备基是三角函数族，应用于连续信号。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:33a33396a17d4175-c9d5923499c228c8\n$\\mathbb{R}^n$ 的内积是 $\\langle x,y \\rangle = \\sum x_i y_i$，完备基是标准基 $e_i$，应用于几何。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:33a33396a17d4175-e66e2c5ebe1f16f9\n$\\mathbb{C}^n$ 的内积是 $\\langle x,y \\rangle = \\sum x_i \\overline{y_i}$，完备基是标准基，应用于量子态。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:33a33396a17d4175-ada647407ee05e48\n内积（点积）：⟨x, y⟩ = ∑_{i=1}^n x_i y_i。\nConditions: none\nValidity: SUPPORTED\n\n## RELATION rel:33a33396a17d4175-35939e27ba56ac1f\nclaim:33a33396a17d4175-ada647407ee05e48 --[RELATED_TO]--> claim:33a33396a17d4175-c9d5923499c228c8\nConditions: none\n\n## EVIDENCE span:02-spaces-33a33396a17d4175-69\n| 空间 | 内积 | 完备基 | 应用 |\n|------|------|--------|------|\n| $\\mathbb{R}^n$ | $\\langle x,y \\rangle = \\sum x_i y_i$ | 标准基 $e_i$ | 几何 |\n| $\\ell^2$ | $\\langle x,y \\rangle = \\sum x_i \\overline{y_i}$ | $e_i = (0,\\ldots,1,\\ldots)$ | 离散信号 |\n| $L^2[a,b]$ | $\\langle f,g \\rangle = \\int f \\overline{g}$ | 三角函数族 | 连续信号 |\n| $\\mathbb{C}^n$ | $\\langle x,y \\rangle = \\sum x_i \\overline{y_i}$ | 标准基 | 量子态 |\n\n## EVIDENCE span:02-spaces-33a33396a17d4175-66#chars-5832-5907\n- **Fourier 级数**：$\\{e^{inx}\\}_{n=-\\infty}^\\infty$ 是 $L^2[-\\pi,\\pi]$ 中的一组正交基\n\n## EVIDENCE span:02-spaces-33a33396a17d4175-14#chars-1097-1155\n- **内积（点积）**：$\\langle x, y \\rangle = \\sum_{i=1}^n x_i y_i$"
+  },
+  "contextHash": "e461b3fe16e090386903a7c780e6be3b09f824f1a41419e5f8e3f397368431f6",
+  "estimatedContextTokens": 694,
+  "estimatedTotalInputTokens": 864,
+  "usage": {
+    "promptTokens": 1086,
+    "completionTokens": 40,
+    "totalTokens": 1126,
+    "promptCacheHitTokens": 0,
+    "promptCacheMissTokens": 1086,
+    "reasoningTokens": 0
+  },
+  "latencyMs": 1252,
+  "finishReason": "stop",
+  "toolCalls": 1,
+  "retrievedClaims": [
+    "claim:33a33396a17d4175-07205bc184b77466",
+    "claim:33a33396a17d4175-52ea70f5124a7a46",
+    "claim:33a33396a17d4175-a0d4455e06e3e901",
+    "claim:33a33396a17d4175-c9d5923499c228c8",
+    "claim:33a33396a17d4175-e66e2c5ebe1f16f9",
+    "claim:33a33396a17d4175-ada647407ee05e48"
+  ],
+  "retrievedRelations": [
+    "rel:33a33396a17d4175-35939e27ba56ac1f"
+  ],
+  "evidenceSpans": [
+    "span:02-spaces-33a33396a17d4175-69",
+    "span:02-spaces-33a33396a17d4175-66#chars-5832-5907",
+    "span:02-spaces-33a33396a17d4175-14#chars-1097-1155"
+  ],
+  "retrievedSources": [
+    "source:02-spaces-33a33396a17d4175"
+  ],
+  "droppedContext": [],
+  "answer": "{\"answer\":\"insufficient\",\"citations\":[],\"insufficient\":true,\"uncertainties\":[\"上下文未定义 L¹ 和 L²，也未讨论它们之间的包含关系。\"]}",
+  "errors": []
+}

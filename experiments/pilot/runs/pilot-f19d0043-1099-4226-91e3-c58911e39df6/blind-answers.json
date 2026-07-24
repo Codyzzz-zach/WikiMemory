@@ -1,0 +1,242 @@
+[
+  {
+    "sampleId": "sample-da19f065-aa0f-46f5-8d82-76b41de06a97",
+    "questionId": "PILOT-C05",
+    "answer": "{\n  \"answer\": \"不一定。在一般的度量空间中，Cauchy 列不一定收敛；只有在完备空间中，每个 Cauchy 列才收敛。例如，在实数空间 ℝ 中每个 Cauchy 列都收敛，但在有理数空间 ℚ 中则不然。\",\n  \"citations\": [\n    \"SOURCE mathtest-material/02-spaces.md:209-227\",\n    \"SOURCE mathtest-material/01-number-systems.md:239-266\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}"
+  },
+  {
+    "sampleId": "sample-9ff0b7a4-60ba-404e-af61-c3df13450add",
+    "questionId": "PILOT-D02",
+    "answer": "{\n  \"answer\": \"度量空间保留了距离结构（远近），拓扑空间保留了开集结构（邻近性）。\",\n  \"citations\": [\n    \"SOURCE mathtest-material/02-spaces.md:316-331\",\n    \"SOURCE mathtest-material/02-spaces.md:191-196\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}"
+  },
+  {
+    "sampleId": "sample-bcc15a33-c670-44f2-9d06-bb5beb9efbb6",
+    "questionId": "PILOT-D01",
+    "answer": "{\n  \"answer\": \"材料认为自然数的本质是递归结构（从0出发反复应用后继操作），而非符号本身，因为Peano公理系统用五条公理精确定义了自然数，其中数学归纳法原理直接编码了这种构造方式：若性质对0成立且由对n成立可推出对S(n)成立，则对一切自然数成立。这解释了数学归纳法的根本性——它正是自然数递归生成结构的逻辑体现。\",\n  \"citations\": [\n    \"SOURCE mathtest-material/01-number-systems.md:15-30\",\n    \"SOURCE mathtest-material/01-number-systems.md:437-451\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}"
+  },
+  {
+    "sampleId": "sample-00a69c0f-5ee2-4d6d-86b4-48258c603802",
+    "questionId": "PILOT-D02",
+    "answer": "{\n  \"answer\": \"度量空间保留距离结构（距离函数 d），拓扑空间保留开集结构（开集概念）。度量空间通过开球生成开集，自然诱导一个拓扑，但拓扑空间去掉了距离数值，只保留开集。\",\n  \"citations\": [\n    \"claim:33a33396a17d4175-58316ab57e9e7927\",\n    \"claim:33a33396a17d4175-d32c5dbd5d97cfc6\",\n    \"claim:33a33396a17d4175-e6cea537d48d01a9\",\n    \"span:02-spaces-33a33396a17d4175-42#chars-4412-4448\",\n    \"span:02-spaces-33a33396a17d4175-36#chars-3224-3290\",\n    \"span:02-spaces-33a33396a17d4175-42#chars-4334-4395\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}"
+  },
+  {
+    "sampleId": "sample-9b1604d7-b0f8-4ec2-b337-02b6a7c33442",
+    "questionId": "PILOT-D03",
+    "answer": "{\n  \"answer\": \"逐点收敛要求对每个固定的 x，函数值序列 f_n(x) 收敛到 f(x)；一致收敛要求所有 x 上的最大误差 sup_x |f_n(x)-f(x)| 趋于 0。一致收敛比逐点收敛更强，能保持连续性等性质。\",\n  \"citations\": [\n    \"claim:e7ea8bc17c2cc4ab-ef4f93b1a8a89990\",\n    \"claim:e7ea8bc17c2cc4ab-762e52171f5fb5d4\",\n    \"span:03-sequences-limits-e7ea8bc17c2cc4ab-49\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}"
+  },
+  {
+    "sampleId": "sample-0ae6c096-fb0d-4369-83bf-fab5176b5e89",
+    "questionId": "PILOT-H3-05",
+    "answer": "{\n  \"answer\": \"Cauchy 列是定义完备性的基础：若空间中每个 Cauchy 列都收敛，则该空间是完备的。完备的赋范空间称为 Banach 空间。泛函分析的四大核心定理（Hahn-Banach、开映射、闭图像、一致有界）依赖于 Banach 空间的完备性，它们将逐点性质提升为全局性质。因此，Cauchy 列→完备性→Banach 空间→四大定理构成一条依赖链。\",\n  \"citations\": [\n    \"SOURCE mathtest-material/02-spaces.md:209-227\",\n    \"SOURCE mathtest-material/02-spaces.md:332-346\",\n    \"SOURCE mathtest-material/09-functional-analysis.md:71-83\",\n    \"SOURCE mathtest-material/09-functional-analysis.md:194-207\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}"
+  },
+  {
+    "sampleId": "sample-946b16fc-ee88-4dc4-9988-5bb474f8c8b7",
+    "questionId": "PILOT-INS-D10",
+    "answer": "{\n  \"answer\": \"Lebesgue 积分与 Riemann 积分的切分视角不同：Riemann 积分切分定义域（x 轴），在每个小区间上取函数值近似，要求函数“足够连续”；Lebesgue 积分切分值域（y 轴），将值域分成小段，测量每个值段对应的原像集的测度，从而能处理更不规则的函数。\",\n  \"citations\": [],\n  \"insufficient\": true,\n  \"uncertainties\": [\"检索上下文未直接讨论 Lebesgue 积分与 Riemann 积分的切分视角差异。\"]\n}"
+  },
+  {
+    "sampleId": "sample-3909e54e-6458-4f29-81d2-f32f9a9171da",
+    "questionId": "PILOT-H3-02",
+    "answer": "{\n  \"answer\": \"Fourier 级数同时是函数展开、Hilbert 空间投影和谱分解的原型，因为：1) 作为函数展开，它将函数分解为三角或复指数基的级数（EVIDENCE span:05-functions-mappings-7e02712717a02820-21#chars-1657-1681）；2) 在 L² Hilbert 空间中，{e^{inx}} 构成正交基（EVIDENCE span:02-spaces-33a33396a17d4175-66#chars-5832-5907），系数是函数在基上的坐标，有限项近似对应正交投影（EVIDENCE span:02-spaces-33a33396a17d4175-66#chars-5775-5800）；3) 泛函分析将这种“选基对角化”思想推广到自伴算子的谱分解，视为 Fourier 分解的抽象延伸（EVIDENCE span:09-functional-analysis-9478dfc1ba6cb58f-47）。注意：函数展开的具体收敛方式（逐点、L²、一致）需单独说明，不能相互替代；谱分解仅适用于自伴算子，不能推广到任意算子（WIKI wiki://analysis/fourier-projection-and-spectrum）。\",\n  \"citations\": [\n    \"EVIDENCE span:05-functions-mappings-7e02712717a02820-21#chars-1657-1681\",\n    \"EVIDENCE span:02-spaces-33a33396a17d4175-66#chars-5832-5907\",\n    \"EVIDENCE span:02-spaces-33a33396a17d4175-66#chars-5775-5800\",\n    \"EVIDENCE span:09-functional-analysis-9478dfc1ba6cb58f-47\",\n    \"WIKI wiki://analysis/fourier-projection-and-spectrum\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": [\n    \"函数展开的收敛方式（逐点、L²、一致）不能从坐标或投影视角自动推出\",\n    \"谱分解仅适用于自伴算子，不能推广到任意算子\"\n  ]\n}"
+  },
+  {
+    "sampleId": "sample-7ea797d3-2ab8-4995-852f-daeba2172f3e",
+    "questionId": "PILOT-H2-06",
+    "answer": "{\n  \"answer\": \"Fourier 变换可被视为函数空间中的坐标变换，因为它在 L² Hilbert 空间中把函数表示为正交基（如 {e^{inx}}）的线性组合，系数就是函数在该基下的坐标。具体地，Fourier 级数将函数分解为不同频率的正弦波叠加，而 Fourier 变换则通过积分将时域函数映射到频域，逆变换恢复原函数。这种视角下，函数在不同基下的表示相当于坐标变换，且有限项近似对应投影到有限维子空间。\",\n  \"citations\": [\n    \"claim:33a33396a17d4175-52ea70f5124a7a46\",\n    \"claim:7e02712717a02820-fda125036300712e\",\n    \"claim:7e02712717a02820-2c66480c74ccfebd\",\n    \"claim:7e02712717a02820-67b8de7721d103d9\",\n    \"claim:7e02712717a02820-7e87bf22b471c4c6\",\n    \"wiki://analysis/fourier-projection-and-spectrum\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": [\n    \"函数展开的具体收敛方式（如 L² 收敛、逐点收敛、一致收敛）不能从坐标或投影视角统一推出，需单独说明。\"\n  ]\n}"
+  },
+  {
+    "sampleId": "sample-f1d54a3a-99a0-4d1c-96ff-8d69f8b95393",
+    "questionId": "PILOT-D01",
+    "answer": "{\n  \"answer\": \"材料认为自然数的本质是递归结构，因为自然数不是简单的符号列表，而是由0和后继操作递归生成的无穷序列。这种观点直接解释了数学归纳法的根本性：归纳法原理（若性质对0成立，且由对n成立可推出对S(n)成立，则对一切自然数成立）正是自然数递归构造方式的编码。\",\n  \"citations\": [\n    \"span:01-number-systems-80440e2182e5653f-8#chars-377-440\",\n    \"span:01-number-systems-80440e2182e5653f-8#chars-440-471\",\n    \"span:01-number-systems-80440e2182e5653f-6#chars-261-323\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}"
+  },
+  {
+    "sampleId": "sample-864e6ef8-bf00-48ae-9c72-d6336da21cc6",
+    "questionId": "PILOT-H2-20",
+    "answer": "{\n  \"answer\": \"算子和泛函都以函数为输入，但输出不同：泛函输出一个数（标量），而算子输出一个函数（向量）。变分法通过引入变分δy，对泛函J[y]求一阶变分δJ，令其为零，并利用分部积分和边界条件，推导出Euler-Lagrange方程∂L/∂y - d/dx(∂L/∂y') = 0，作为泛函极值的必要条件。\",\n  \"citations\": [\n    \"SOURCE mathtest-material/09-functional-analysis.md:15-26\",\n    \"SOURCE mathtest-material/05-functions-mappings.md:133-145\",\n    \"SOURCE mathtest-material/09-functional-analysis.md:27-39\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}"
+  },
+  {
+    "sampleId": "sample-a0109051-7488-4a50-ad62-8b971d2bc908",
+    "questionId": "PILOT-H2-06",
+    "answer": "{\n  \"answer\": \"Fourier 变换可被视为函数空间中的坐标变换，因为它将函数从时域（或空域）表示转换到频域表示，这相当于在 Hilbert 空间 $L^2$ 中，将函数相对于一组正交基 $\\{e^{i n x}\\}$ 进行分解，即把函数投影到这些基向量上，从而得到新的坐标（频谱系数）。这种变换保持了函数的内积结构，类似于有限维向量空间中的正交坐标变换。\",\n  \"citations\": [\n    \"SOURCE mathtest-material/02-spaces.md:242-269\",\n    \"SOURCE mathtest-material/02-spaces.md:332-346\",\n    \"SOURCE mathtest-material/05-functions-mappings.md:82-110\",\n    \"SOURCE mathtest-material/05-functions-mappings.md:71-81\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}"
+  },
+  {
+    "sampleId": "sample-f228a64a-01bf-41c5-b3cc-34b6b48932aa",
+    "questionId": "PILOT-H3-02",
+    "answer": "{\n  \"answer\": \"Fourier 级数既是函数展开，因为它在 $L^2[-\\\\pi,\\\\pi]$ 中将函数分解为不同频率的正弦波叠加（EVIDENCE span:05-functions-mappings-7e02712717a02820-21#chars-1657-1681）；又是 Hilbert 空间投影，因为 $\\\\{e^{inx}\\\\}_{n=-\\\\infty}^\\\\infty$ 是 $L^2[-\\\\pi,\\\\pi]$ 中的一组正交基（EVIDENCE span:02-spaces-33a33396a17d4175-66#chars-5832-5907），而 Hilbert 空间允许正交投影，即找到子空间中最接近某点的元素（EVIDENCE span:02-spaces-33a33396a17d4175-66#chars-5775-5800）；它能推广到谱分解，因为谱分解是 Fourier 变换的终极推广（EVIDENCE span:09-functional-analysis-9478dfc1ba6cb58f-47），而 Fourier 级数是 Fourier 变换在周期函数上的特例。\",\n  \"citations\": [\n    \"EVIDENCE span:05-functions-mappings-7e02712717a02820-21#chars-1657-1681\",\n    \"EVIDENCE span:02-spaces-33a33396a17d4175-66#chars-5832-5907\",\n    \"EVIDENCE span:02-spaces-33a33396a17d4175-66#chars-5775-5800\",\n    \"EVIDENCE span:09-functional-analysis-9478dfc1ba6cb58f-47\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}"
+  },
+  {
+    "sampleId": "sample-f03865c3-aa64-4fa2-b98c-f6ac3b361c9f",
+    "questionId": "PILOT-H3-05",
+    "answer": "{\n  \"answer\": \"Cauchy 列是定义完备性的基础：如果空间中每个 Cauchy 列都收敛到空间内的一个点，则该空间是完备的（claim:33a33396a17d4175-92f0384fb17d1720）。Banach 空间是完备的赋范空间（claim:33a33396a17d4175-6d70b1c82ab10765, claim:9478dfc1ba6cb58f-0c27fbe0e2b1a1d3）。泛函分析的核心定理（Hahn-Banach、开映射、闭图像、一致有界）均以 Banach 空间为背景，依赖于空间的完备性。例如，开映射定理要求 Banach 空间之间的连续线性满射（claim:9478dfc1ba6cb58f-ef5f374785bd2634），闭图像定理要求算子的图像是闭集（claim:9478dfc1ba6cb58f-e90313bb0b7da2c5），一致有界定理要求逐点有界推出一致有界（claim:9478dfc1ba6cb58f-9478dfc1ba6cb58f-71a56b4ac7ad880b），Hahn-Banach 定理涉及子空间上线性泛函的延拓（claim:9478dfc1ba6cb58f-d1e15aadb197c142）。这些定理的证明通常需要利用空间的完备性。\",\n  \"citations\": [\n    \"claim:33a33396a17d4175-92f0384fb17d1720\",\n    \"claim:33a33396a17d4175-6d70b1c82ab10765\",\n    \"claim:9478dfc1ba6cb58f-0c27fbe0e2b1a1d3\",\n    \"claim:9478dfc1ba6cb58f-ef5f374785bd2634\",\n    \"claim:9478dfc1ba6cb58f-e90313bb0b7da2c5\",\n    \"claim:9478dfc1ba6cb58f-71a56b4ac7ad880b\",\n    \"claim:9478dfc1ba6cb58f-d1e15aadb197c142\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}"
+  },
+  {
+    "sampleId": "sample-e25077e4-2cbf-4399-addd-ead57c11b5a2",
+    "questionId": "PILOT-INS-D10",
+    "answer": "{\"answer\":\"insufficient\",\"citations\":[],\"insufficient\":true,\"uncertainties\":[\"检索上下文未提供关于 Lebesgue 积分与 Riemann 积分切分视角差异的任何信息。\"]}"
+  },
+  {
+    "sampleId": "sample-7c6a6324-f47e-4b9d-9f1d-8f76706e206c",
+    "questionId": "PILOT-D01",
+    "answer": "{\n  \"answer\": \"材料认为自然数的本质是递归结构而非符号本身，因为自然数的核心在于从0出发反复应用后继操作生成无穷序列的构造方式（EVIDENCE span:01-number-systems-80440e2182e5653f-8#chars-377-440）。这种递归结构直接编码了数学归纳法的原理：若性质对0成立且由对n成立可推出对S(n)成立，则对一切自然数成立（EVIDENCE span:01-number-systems-80440e2182e5653f-6#chars-261-323），因此数学归纳法之所以根本，是因为它直接反映了自然数的构造方式（EVIDENCE span:01-number-systems-80440e2182e5653f-8#chars-440-471）。\",\n  \"citations\": [\n    \"EVIDENCE span:01-number-systems-80440e2182e5653f-8#chars-377-440\",\n    \"EVIDENCE span:01-number-systems-80440e2182e5653f-6#chars-261-323\",\n    \"EVIDENCE span:01-number-systems-80440e2182e5653f-8#chars-440-471\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}"
+  },
+  {
+    "sampleId": "sample-b801206f-1cbf-4e1d-87a3-1cc82ce18b45",
+    "questionId": "PILOT-C01",
+    "answer": "{\n  \"answer\": \"上下文未提供 L¹ 和 L² 的定义，无法判断 L² 是否总是 L¹ 的子集。\",\n  \"citations\": [],\n  \"insufficient\": true,\n  \"uncertainties\": [\"上下文未定义 L¹ 和 L²，无法进行子集关系判断。\"]\n}"
+  },
+  {
+    "sampleId": "sample-041f7cd3-371a-4017-a74e-e03c3e8a6f09",
+    "questionId": "PILOT-H2-22",
+    "answer": "{\n  \"answer\": \"Cauchy 列是否收敛由所在空间的完备性决定，因为完备性的定义就是“空间中每个 Cauchy 列都收敛到空间内的一个点”。如果空间不完备，则存在 Cauchy 列不收敛（极限跑出空间）。\",\n  \"citations\": [\n    \"SOURCE mathtest-material/02-spaces.md:209-227\",\n    \"SOURCE mathtest-material/01-number-systems.md:239-266\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}"
+  },
+  {
+    "sampleId": "sample-e9df43d2-4238-4634-a8e7-84769d37b1c2",
+    "questionId": "PILOT-H3-17",
+    "answer": "{\n  \"answer\": \"Riesz 表示定理建立了 Hilbert 空间 H 与其对偶空间 H* 之间的同构，将每个连续线性泛函唯一表示为与某个固定向量的内积。这直接连接了线性泛函（作为 H* 的元素）与内积结构。Hilbert 空间的完备性（即完备内积空间）保证了该同构的成立，因为定理的证明依赖于完备性（如正交投影的存在）。对偶空间 H* 因此与 H 等同，使得泛函分析中的许多问题可以借助内积的几何直观处理。\",\n  \"citations\": [\n    \"claim:9478dfc1ba6cb58f-5f635e434ce1469b\",\n    \"claim:9478dfc1ba6cb58f-9970b8b9ed15793f\",\n    \"claim:33a33396a17d4175-c57d84208e8f6275\",\n    \"EVIDENCE span:09-functional-analysis-9478dfc1ba6cb58f-47\",\n    \"EVIDENCE span:02-spaces-33a33396a17d4175-61#chars-5644-5668\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}"
+  },
+  {
+    "sampleId": "sample-65b9edf8-251c-47e1-bcf0-2bb22fde68c5",
+    "questionId": "PILOT-C01",
+    "answer": "{\"answer\":\"insufficient\",\"citations\":[],\"insufficient\":true,\"uncertainties\":[\"上下文未定义 L¹ 和 L²，也未讨论它们之间的包含关系。\"]}"
+  },
+  {
+    "sampleId": "sample-4e0cddd7-0258-4296-be29-983500c8b63e",
+    "questionId": "PILOT-H2-22",
+    "answer": "{\n  \"answer\": \"Cauchy列是否收敛由所在空间的完备性决定，因为完备性正是定义为“空间中每个Cauchy列都收敛到空间内的一个点”。如果空间不完备，则存在Cauchy列不收敛（例如有理数中的Cauchy列可能收敛到无理数，不在有理数内）。因此，Cauchy列的收敛性依赖于空间是否“没有洞”，即完备性。\",\n  \"citations\": [\n    \"claim:33a33396a17d4175-92f0384fb17d1720\",\n    \"claim:80440e2182e5653f-1d1341c978df0a68\",\n    \"claim:80440e2182e5653f-4384f68c38d1c16d\",\n    \"claim:80440e2182e5653f-d89b79ca37b88b53\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}"
+  },
+  {
+    "sampleId": "sample-66d45f0c-9674-434b-8395-e97a67ab5dc2",
+    "questionId": "PILOT-C02",
+    "answer": "{\n  \"answer\": \"不能。反例：调和级数 ∑ 1/n，其通项 a_n = 1/n → 0，但级数发散。\",\n  \"citations\": [\"span:03-sequences-limits-e7ea8bc17c2cc4ab-29\"],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}"
+  },
+  {
+    "sampleId": "sample-c4e0676e-770e-495d-bde8-9d97c8fd5e6c",
+    "questionId": "PILOT-C05",
+    "answer": "{\n  \"answer\": \"不一定。Cauchy 列是否收敛取决于所在空间是否完备。在完备空间（如实数集 R）中，每个 Cauchy 列都收敛；但在不完备空间（如有理数集 Q）中，存在不收敛的 Cauchy 列。\",\n  \"citations\": [\n    \"claim:33a33396a17d4175-92f0384fb17d1720\",\n    \"claim:80440e2182e5653f-1d1341c978df0a68\",\n    \"claim:80440e2182e5653f-4384f68c38d1c16d\",\n    \"claim:80440e2182e5653f-fc60845834dda01f\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}"
+  },
+  {
+    "sampleId": "sample-fc92aff6-cf63-4679-a4a5-e1e5fb99d732",
+    "questionId": "PILOT-C02",
+    "answer": "{\n  \"answer\": \"不能。通项趋于零是级数收敛的必要条件，但不是充分条件。反例：调和级数 ∑ 1/n，其通项 1/n → 0，但级数发散。\",\n  \"citations\": [\n    \"SOURCE mathtest-material/03-sequences-limits.md:130-149\",\n    \"SOURCE mathtest-material/03-sequences-limits.md:106-129\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}"
+  },
+  {
+    "sampleId": "sample-0f12cbf8-262a-41cb-a594-bc57329c9723",
+    "questionId": "PILOT-C02",
+    "answer": "{\n  \"answer\": \"不能。反例：调和级数 ∑ 1/n，其通项 a_n = 1/n → 0，但级数发散。\",\n  \"citations\": [\"span:03-sequences-limits-e7ea8bc17c2cc4ab-29\"],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}"
+  },
+  {
+    "sampleId": "sample-0dc56a3e-1fd0-4512-b1c1-1e570305bd0c",
+    "questionId": "PILOT-D09",
+    "answer": "{\n  \"answer\": \"Banach 空间是完备的赋范空间，而 Hilbert 空间是完备的内积空间。Hilbert 空间具有内积结构，因此允许正交投影、正交基和 Fourier 级数展开，这些性质在一般 Banach 空间中不成立。\",\n  \"citations\": [\n    \"claim:33a33396a17d4175-6d70b1c82ab10765\",\n    \"claim:33a33396a17d4175-c57d84208e8f6275\",\n    \"claim:33a33396a17d4175-805fb4ab5d394c0a\",\n    \"claim:33a33396a17d4175-81349b735066881b\",\n    \"claim:33a33396a17d4175-52ea70f5124a7a46\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}"
+  },
+  {
+    "sampleId": "sample-c6ac2b92-c2fa-4ed1-aeb9-0bbe4277781e",
+    "questionId": "PILOT-H2-20",
+    "answer": "{\n  \"answer\": \"算子和泛函都以函数为输入，但输出不同：算子输出函数，泛函输出数。变分法通过考虑泛函的变分，令一阶变分为零，并利用分部积分和边界条件，推导出Euler-Lagrange方程，作为泛函极值的必要条件。\",\n  \"citations\": [\n    \"claim:9478dfc1ba6cb58f-05929b8c6db069b1\",\n    \"claim:9478dfc1ba6cb58f-ebe2d3dd016a802f\",\n    \"claim:9478dfc1ba6cb58f-430aac8fcebaaaf0\",\n    \"claim:9478dfc1ba6cb58f-cfc48ad935d73da8\",\n    \"claim:9478dfc1ba6cb58f-052f156df6dbd1c6\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}"
+  },
+  {
+    "sampleId": "sample-070aac98-841f-4abb-8770-8580189a9245",
+    "questionId": "PILOT-H2-01",
+    "answer": "{\n  \"answer\": \"有理数集Q不完备，存在“洞”（如√2的位置）。通过Dedekind分割（将Q划分为两个非空子集A,B，满足A无最大元且所有a<b）定义实数，每个分割对应一个实数，从而填补有理数的洞，得到完备的实数集R。在度量空间中，完备性定义为每个Cauchy列都收敛于空间内的点。\",\n  \"citations\": [\n    \"claim:80440e2182e5653f-4384f68c38d1c16d\",\n    \"claim:80440e2182e5653f-4a7c53f0e5ff715d\",\n    \"claim:80440e2182e5653f-c9cdc01ad322aa92\",\n    \"claim:80440e2182e5653f-e1f525a147f70055\",\n    \"claim:80440e2182e5653f-d1c80ec9bda36ba7\",\n    \"claim:33a33396a17d4175-92f0384fb17d1720\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}"
+  },
+  {
+    "sampleId": "sample-2f8971ce-d866-48c3-ab7a-3c68890728d1",
+    "questionId": "PILOT-D03",
+    "answer": "{\n  \"answer\": \"逐点收敛要求对每个固定的 x，函数值序列 f_n(x) 收敛到 f(x)；一致收敛要求所有 x 上的最大误差 sup_x |f_n(x)-f(x)| 趋于 0。一致收敛比逐点收敛更强，且能保持连续性等性质。\",\n  \"citations\": [\n    \"SOURCE mathtest-material/03-sequences-limits.md:238-263\",\n    \"SOURCE mathtest-material/03-sequences-limits.md:264-277\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}"
+  },
+  {
+    "sampleId": "sample-14eab0bc-ba91-459b-aee8-b20552c099bc",
+    "questionId": "PILOT-D03",
+    "answer": "{\n  \"answer\": \"逐点收敛要求对每个固定的 x，函数值序列 f_n(x) 收敛到 f(x)；一致收敛要求所有 x 上的最大误差 sup_x |f_n(x)-f(x)| 趋于 0。一致收敛比逐点收敛更强，能保持连续性等性质。\",\n  \"citations\": [\n    \"claim:e7ea8bc17c2cc4ab-ef4f93b1a8a89990\",\n    \"claim:e7ea8bc17c2cc4ab-762e52171f5fb5d4\",\n    \"span:03-sequences-limits-e7ea8bc17c2cc4ab-49\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}"
+  },
+  {
+    "sampleId": "sample-0ca14553-2a7c-4d74-a6e9-c94f401c67f1",
+    "questionId": "PILOT-D09",
+    "answer": "{\n  \"answer\": \"Banach 空间是完备的赋范空间，而 Hilbert 空间是完备的内积空间。Hilbert 空间具有内积结构，从而可以定义正交性、正交投影和正交基；Banach 空间只有范数（长度）结构，没有内积，因此没有角度或正交的概念。Hilbert 空间是 Banach 空间的子类：每个 Hilbert 空间都是 Banach 空间，但反之不成立。\",\n  \"citations\": [\n    \"mathtest-material/02-spaces.md:13-39\",\n    \"mathtest-material/02-spaces.md:316-331\",\n    \"mathtest-material/02-spaces.md:209-227\",\n    \"mathtest-material/02-spaces.md:242-269\",\n    \"mathtest-material/09-functional-analysis.md:95-108\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}"
+  },
+  {
+    "sampleId": "sample-64af7f0d-af28-4728-a9c0-ea872a43e35c",
+    "questionId": "PILOT-H3-17",
+    "answer": "{\n  \"answer\": \"Riesz 表示定理建立了 Hilbert 空间 H 与其对偶空间 H* 之间的同构，每个有界线性泛函 f ∈ H* 唯一对应一个向量 y ∈ H，使得 f(x) = ⟨x, y⟩ 对所有 x ∈ H 成立。该定理依赖于 Hilbert 空间的完备性（内积空间完备），而内积结构提供了正交基、Fourier 级数和正交投影等工具。\",\n  \"citations\": [\n    \"claim:9478dfc1ba6cb58f-5f635e434ce1469b\",\n    \"claim:9478dfc1ba6cb58f-9970b8b9ed15793f\",\n    \"claim:33a33396a17d4175-c57d84208e8f6275\",\n    \"claim:33a33396a17d4175-81349b735066881b\",\n    \"claim:33a33396a17d4175-52ea70f5124a7a46\",\n    \"claim:33a33396a17d4175-805fb4ab5d394c0a\",\n    \"span:09-functional-analysis-9478dfc1ba6cb58f-47\",\n    \"span:09-functional-analysis-9478dfc1ba6cb58f-15\",\n    \"span:02-spaces-33a33396a17d4175-61#chars-5644-5668\",\n    \"span:02-spaces-33a33396a17d4175-66#chars-5801-5831\",\n    \"span:02-spaces-33a33396a17d4175-66#chars-5832-5907\",\n    \"span:02-spaces-33a33396a17d4175-66#chars-5775-5800\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}"
+  },
+  {
+    "sampleId": "sample-06ed60be-9af6-48fe-8202-5c79446ed1e3",
+    "questionId": "PILOT-D02",
+    "answer": "{\n  \"answer\": \"度量空间保留距离结构（距离函数 d），拓扑空间保留开集结构（开集概念）。度量空间通过开球生成开集，自然诱导一个拓扑，但拓扑空间去掉了距离数值，只保留开集。\",\n  \"citations\": [\n    \"claim:33a33396a17d4175-58316ab57e9e7927\",\n    \"claim:33a33396a17d4175-d32c5dbd5d97cfc6\",\n    \"claim:33a33396a17d4175-e6cea537d48d01a9\",\n    \"span:02-spaces-33a33396a17d4175-42#chars-4412-4448\",\n    \"span:02-spaces-33a33396a17d4175-36#chars-3224-3290\",\n    \"span:02-spaces-33a33396a17d4175-42#chars-4334-4395\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}"
+  },
+  {
+    "sampleId": "sample-fb657875-1778-41db-857b-cbe5768827d6",
+    "questionId": "PILOT-D09",
+    "answer": "{\n  \"answer\": \"Banach 空间是完备的赋范空间，Hilbert 空间是完备的内积空间。Hilbert 空间具有内积诱导的范数，因此拥有正交基、正交投影和 Fourier 级数展开等结构，而 Banach 空间仅由范数定义，不一定具有这些性质。\",\n  \"citations\": [\n    \"claim:33a33396a17d4175-6d70b1c82ab10765\",\n    \"claim:33a33396a17d4175-c57d84208e8f6275\",\n    \"claim:33a33396a17d4175-81349b735066881b\",\n    \"claim:33a33396a17d4175-805fb4ab5d394c0a\",\n    \"claim:33a33396a17d4175-52ea70f5124a7a46\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}"
+  },
+  {
+    "sampleId": "sample-c0647568-f53b-4137-91ca-4f29702aaad7",
+    "questionId": "PILOT-H2-01",
+    "answer": "{\n  \"answer\": \"有理数通过Dedekind分割或Cauchy列完备化走向实数。Dedekind分割将有理数集划分为两个子集(A,B)，每个分割定义一个实数，直观上如同在有理数轴上切一刀，刀口位置即为实数；若刀口穿过有理数轴上的“洞”（如√2的位置），则创造了一个无理数。实数集是完备的，即每个Cauchy列都在R中有极限，数轴无洞。在度量空间中，完备性定义为：空间中每个Cauchy列都收敛到空间内的一个点。\",\n  \"citations\": [\n    \"claim:80440e2182e5653f-c9cdc01ad322aa92\",\n    \"claim:80440e2182e5653f-cb1a4e1c38f8e45f\",\n    \"claim:80440e2182e5653f-e1f525a147f70055\",\n    \"claim:80440e2182e5653f-d1c80ec9bda36ba7\",\n    \"claim:80440e2182e5653f-1d1341c978df0a68\",\n    \"claim:33a33396a17d4175-92f0384fb17d1720\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}"
+  },
+  {
+    "sampleId": "sample-fc1f4c4a-af00-429e-ab05-779d35eac04b",
+    "questionId": "PILOT-H2-22",
+    "answer": "{\n  \"answer\": \"Cauchy 列是否收敛由所在空间的完备性决定，因为完备性正是通过“每个 Cauchy 列都收敛到空间内的点”来定义的。如果空间不完备，则存在 Cauchy 列不收敛（如有理数中逼近√2的序列）；如果空间完备，则所有 Cauchy 列必然收敛。\",\n  \"citations\": [\n    \"claim:33a33396a17d4175-92f0384fb17d1720\",\n    \"claim:80440e2182e5653f-1d1341c978df0a68\",\n    \"claim:80440e2182e5653f-4384f68c38d1c16d\",\n    \"claim:80440e2182e5653f-d89b79ca37b88b53\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}"
+  },
+  {
+    "sampleId": "sample-ddd243bf-f240-4926-978e-688725bccd2d",
+    "questionId": "PILOT-H2-03",
+    "answer": "{\n  \"answer\": \"范数通过定义距离 d(x,y)=‖x-y‖ 导出度量。线性算子的有界性定义为算子范数有限：‖T‖=sup_{‖f‖=1}‖Tf‖<∞，且有界性等价于连续性。\",\n  \"citations\": [\n    \"claim:7e02712717a02820-d4f3c3b889df3080\",\n    \"claim:7e02712717a02820-03522d71ff27a7f6\",\n    \"evidence span:05-functions-mappings-7e02712717a02820-33#chars-2966-3028\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}"
+  },
+  {
+    "sampleId": "sample-728aba86-a495-4f0d-a55c-a65105599f1e",
+    "questionId": "PILOT-H2-03",
+    "answer": "{\n  \"answer\": \"范数通过定义 d(x,y) = ||x-y|| 自然地导出度量，使赋范空间成为度量空间。线性算子的有界性通过算子范数 ||T|| = sup_{||f||=1} ||Tf|| < ∞ 等价于连续性，即有界性 = 连续性。\",\n  \"citations\": [\n    \"SOURCE mathtest-material/02-spaces.md:199-208\",\n    \"SOURCE mathtest-material/05-functions-mappings.md:146-157\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}"
+  },
+  {
+    "sampleId": "sample-acc2ac70-1823-4e5d-8dcb-a348f42136eb",
+    "questionId": "PILOT-C01",
+    "answer": "{\n  \"answer\": \"否，L² 不总是 L¹ 的子集。根据函数空间层级图，L¹（可积函数）和 L²（平方可积函数）都是可测函数的子集，但两者之间没有包含关系。\",\n  \"citations\": [\n    \"mathtest-material/05-functions-mappings.md:158-173\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}"
+  },
+  {
+    "sampleId": "sample-dd4808f4-f52a-454f-aeee-38a17b51b839",
+    "questionId": "PILOT-H2-01",
+    "answer": "{\n  \"answer\": \"有理数通过完备化（如Dedekind分割或Cauchy列等价类）走向实数，填补了有理数轴上的“洞”。在度量空间中，完备性定义为每个Cauchy列都收敛于空间内的点。\",\n  \"citations\": [\n    \"SOURCE mathtest-material/01-number-systems.md:239-266\",\n    \"SOURCE mathtest-material/01-number-systems.md:222-238\",\n    \"SOURCE mathtest-material/02-spaces.md:209-227\",\n    \"SOURCE mathtest-material/02-spaces.md:149-156\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}"
+  },
+  {
+    "sampleId": "sample-5fa3a1cd-f6d3-419e-bb7d-2e772ffe1bdf",
+    "questionId": "PILOT-H2-06",
+    "answer": "{\n  \"answer\": \"Fourier 变换可被视为函数空间中的坐标变换，因为它将函数从时域/空域表示变换到频域/特征域表示，类似于线性代数中通过基变换改变坐标。具体地，在 Hilbert 空间 L²[−π,π] 中，{e^{inx}} 构成一组正交基，Fourier 级数展开相当于将函数表示为这些基的线性组合，而 Fourier 变换则推广到非周期函数，将函数分解为不同频率的正弦波叠加，从而在新的坐标系（频域）中简化操作（如微分方程变为代数方程）。\",\n  \"citations\": [\n    \"claim:33a33396a17d4175-52ea70f5124a7a46\",\n    \"claim:7e02712717a02820-fda125036300712e\",\n    \"claim:7e02712717a02820-2c66480c74ccfebd\",\n    \"claim:7e02712717a02820-7e87bf22b471c4c6\",\n    \"span:02-spaces-33a33396a17d4175-66#chars-5832-5907\",\n    \"span:05-functions-mappings-7e02712717a02820-21#chars-1657-1681\",\n    \"span:05-functions-mappings-7e02712717a02820-19\",\n    \"span:05-functions-mappings-7e02712717a02820-18#chars-1328-1373\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}"
+  },
+  {
+    "sampleId": "sample-d6fc314c-3816-4186-99e1-23e5a110ef33",
+    "questionId": "PILOT-INS-D10",
+    "answer": "{\"answer\":\"insufficient\",\"citations\":[],\"insufficient\":true,\"uncertainties\":[\"检索上下文未提供关于 Lebesgue 积分与 Riemann 积分切分视角差异的任何信息。\"]}"
+  },
+  {
+    "sampleId": "sample-193b1737-7d7d-4f8f-9e8a-9caec947a11f",
+    "questionId": "PILOT-H3-17",
+    "answer": "{\n  \"answer\": \"Riesz 表示定理建立了 Hilbert 空间 $H$ 与其对偶空间 $H^*$ 之间的同构：每个连续线性泛函 $f \\\\in H^*$ 都可以唯一地表示为 $f(x) = \\\\langle x, y \\\\rangle$，其中 $y \\\\in H$ 由 $f$ 唯一确定。这直接连接了线性泛函（对偶空间的元素）与内积（Hilbert 空间的结构），并且该同构依赖于 Hilbert 空间的完备性——完备内积空间保证了每个连续线性泛函都能由内积表示，且表示元 $y$ 存在唯一。\",\n  \"citations\": [\n    \"SOURCE mathtest-material/09-functional-analysis.md:95-108\",\n    \"SOURCE mathtest-material/09-functional-analysis.md:194-207\",\n    \"SOURCE mathtest-material/02-spaces.md:230-241\",\n    \"SOURCE mathtest-material/02-spaces.md:332-346\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}"
+  },
+  {
+    "sampleId": "sample-cf6fd070-5ade-4dd5-892d-753ac70e0dff",
+    "questionId": "PILOT-H2-20",
+    "answer": "{\n  \"answer\": \"算子和泛函都以函数为输入，但算子输出函数，泛函输出数。变分法通过考虑泛函的变分，令一阶变分为零，并利用分部积分和边界条件，推导出Euler-Lagrange方程，即泛函极值的必要条件。\",\n  \"citations\": [\n    \"claim:9478dfc1ba6cb58f-05929b8c6db069b1\",\n    \"claim:9478dfc1ba6cb58f-ebe2d3dd016a802f\",\n    \"claim:9478dfc1ba6cb58f-cfc48ad935d73da8\",\n    \"claim:9478dfc1ba6cb58f-052f156df6dbd1c6\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}"
+  },
+  {
+    "sampleId": "sample-cc1f1cb0-8344-423f-98ba-02c12837bbb5",
+    "questionId": "PILOT-H3-02",
+    "answer": "{\n  \"answer\": \"Fourier 级数在 $L^2$ 空间中表现为函数在正交基 $\\{e^{inx}\\}$ 上的正交投影，因此是函数展开和 Hilbert 空间投影。谱分解将自伴算子对角化为乘法算子，是 Fourier 变换的终极推广，因此 Fourier 级数可视为谱分解在周期函数空间的特例。\",\n  \"citations\": [\n    \"SOURCE mathtest-material/02-spaces.md:242-269\",\n    \"SOURCE mathtest-material/02-spaces.md:332-346\",\n    \"SOURCE mathtest-material/09-functional-analysis.md:127-153\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}"
+  },
+  {
+    "sampleId": "sample-6a0e4990-1e70-47ef-b327-b4d3e86a1c06",
+    "questionId": "PILOT-C05",
+    "answer": "{\n  \"answer\": \"不一定。在完备空间中每个 Cauchy 列都收敛，但在非完备空间中不一定。例如，实数集是完备的，每个 Cauchy 列都收敛；有理数集不完备，存在 Cauchy 列不收敛。\",\n  \"citations\": [\n    \"claim:33a33396a17d4175-92f0384fb17d1720\",\n    \"claim:80440e2182e5653f-1d1341c978df0a68\",\n    \"claim:80440e2182e5653f-d1c80ec9bda36ba7\",\n    \"claim:80440e2182e5653f-4384f68c38d1c16d\",\n    \"claim:80440e2182e5653f-fc60845834dda01f\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}"
+  },
+  {
+    "sampleId": "sample-c99830e6-e548-4d6b-9f03-3e6dd7ee1998",
+    "questionId": "PILOT-H2-03",
+    "answer": "{\n  \"answer\": \"范数通过定义距离 d(x,y)=‖x−y‖ 导出度量。线性算子的有界性定义为算子范数有限：‖T‖=sup_{‖f‖=1}‖Tf‖<∞，且有界性等价于连续性。\",\n  \"citations\": [\n    \"CLAIM:7e02712717a02820-d4f3c3b889df3080\",\n    \"CLAIM:7e02712717a02820-03522d71ff27a7f6\",\n    \"EVIDENCE:span:05-functions-mappings-7e02712717a02820-32#chars-2943-2964\",\n    \"EVIDENCE:span:05-functions-mappings-7e02712717a02820-33#chars-2966-3028\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}"
+  },
+  {
+    "sampleId": "sample-a33e9012-3615-421c-99b4-602b93565f44",
+    "questionId": "PILOT-H3-05",
+    "answer": "{\n  \"answer\": \"Cauchy 列是完备性的核心概念：一个空间完备当且仅当其中每个 Cauchy 列都收敛到空间内的点（claim:33a33396a17d4175-92f0384fb17d1720）。Banach 空间定义为完备的赋范空间（claim:33a33396a17d4175-6d70b1c82ab10765）。泛函分析的四大核心定理（Hahn-Banach、开映射、闭图像、一致有界）均以 Banach 空间为前提（span:09-functional-analysis-9478dfc1ba6cb58f-17），依赖空间的完备性；若缺少完备性，这些结论不能无条件推广到任意赋范空间（wiki://analysis/completeness-and-functional-spaces）。\",\n  \"citations\": [\n    \"claim:33a33396a17d4175-92f0384fb17d1720\",\n    \"claim:33a33396a17d4175-6d70b1c82ab10765\",\n    \"span:09-functional-analysis-9478dfc1ba6cb58f-17\",\n    \"wiki://analysis/completeness-and-functional-spaces\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}"
+  }
+]

@@ -15,6 +15,11 @@ import type { AppConfig } from "../config/types.js";
 import { buildContextPack } from "../context-pack/index.js";
 import { createLLMProvider } from "../core/llm-provider.js";
 import type { LLMProvider } from "../core/llm-provider.js";
+import {
+	createKnowledgeSnapshot,
+	currentKnowledgeVersion,
+	restoreKnowledgeSnapshot,
+} from "../evolution/version-store.js";
 import { ingestFile } from "../ingestor/index.js";
 import {
 	type CompileLintResult,
@@ -422,6 +427,53 @@ relationsCommand
 				console.error(
 					`✅ ${summary.sourceId}: ${summary.canonicalCrossRelations} cross-material relations`,
 				);
+	});
+
+// ─── versions 命令 ───────────────────────────────────────────────
+
+const versionsCommand = program.command("versions").description("Knowledge snapshot and rollback");
+versionsCommand
+	.command("snapshot")
+	.description("Create a verifiable snapshot of all mutable derived knowledge")
+	.argument("[label]", "Human-readable snapshot label", "manual snapshot")
+	.action((label: string) => {
+		const snapshot = createKnowledgeSnapshot(loadConfig(), label);
+		console.log(
+			JSON.stringify(
+				{
+					id: snapshot.id,
+					label: snapshot.label,
+					knowledgeVersion: snapshot.knowledgeVersion,
+					files: snapshot.files.length,
+					filesHash: snapshot.filesHash,
+				},
+				null,
+				2,
+			),
+		);
+	});
+versionsCommand
+	.command("restore")
+	.description("Restore a snapshot with an optimistic current-version guard")
+	.argument("<snapshotId>", "ks-... snapshot ID")
+	.requiredOption(
+		"--expect-current <knowledgeVersion>",
+		"Current kv:... observed by the caller; prevents overwriting concurrent changes",
+	)
+	.action((snapshotId: string, options: { expectCurrent: string }) => {
+		const config = loadConfig();
+		const restored = restoreKnowledgeSnapshot(config, snapshotId, options.expectCurrent);
+		console.log(
+			JSON.stringify(
+				{
+					restored: restored.id,
+					knowledgeVersion: currentKnowledgeVersion(config),
+					automaticBackupCreated: true,
+				},
+				null,
+				2,
+			),
+		);
 	});
 
 // ─── query 命令 ──────────────────────────────────────────────────

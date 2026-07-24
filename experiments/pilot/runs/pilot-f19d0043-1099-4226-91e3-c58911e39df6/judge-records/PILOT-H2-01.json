@@ -1,0 +1,48 @@
+{
+  "questionId": "PILOT-H2-01",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "request": {
+    "systemPrompt": "你是知识系统的盲测评分员。你只按提供的 Gold 和评分合同评价匿名答案，不判断答案来自哪个实验组。\n必须逐项核对 requiredClaims、mustMentionConditions、forbiddenClaims、answerability 和证据引用。\nsourceRisk.present=true 时，Gold 风险说明是允许使用的人工审计结论；不得把源材料的过强表述当成正确答案。\n只输出严格 JSON：{\"scores\":[{\"sampleId\":\"...\",\"requiredClaimCoverage\":0,\"conditionFidelity\":0,\"evidenceGrounding\":0,\"answerabilityDiscipline\":0,\"hardFailure\":false,\"rationale\":\"...\"}]}。",
+    "userPrompt": "# 评分合同\n{\n  \"dimensions\": {\n    \"requiredClaimCoverage\": {\n      \"score0\": \"没有覆盖 requiredClaims，或核心结论相反\",\n      \"score1\": \"覆盖部分 requiredClaims，但缺少一项以上关键连接\",\n      \"score2\": \"完整覆盖全部 requiredClaims\"\n    },\n    \"conditionFidelity\": {\n      \"score0\": \"触发 forbiddenClaims，或删除了决定结论的条件\",\n      \"score1\": \"方向基本正确，但条件、例外或必要/充分强度表达不完整\",\n      \"score2\": \"保留全部 mustMentionConditions，且未触发 forbiddenClaims\"\n    },\n    \"evidenceGrounding\": {\n      \"score0\": \"关键结论没有可解析引用，或引用与结论无关\",\n      \"score1\": \"有相关引用，但关键结论存在未落到证据的部分\",\n      \"score2\": \"关键结论均由当前上下文标识支持，引用位置正确\"\n    },\n    \"answerabilityDiscipline\": {\n      \"score0\": \"证据不足时仍编造答案，或证据充分时错误拒答\",\n      \"score1\": \"表达了不确定性，但回答/拒答边界不够准确\",\n      \"score2\": \"严格遵守该题 answerability，充分回答或明确拒答\"\n    }\n  },\n  \"totalScore\": 8,\n  \"hardFailure\": \"任何 forbiddenClaim、伪造引用、把 insufficient 题当作已由语料证明，均记 hardFailure；该样本总分最高为 2。\"\n}\n\n# 题目与 Gold\n{\n  \"question\": \"有理数如何通过完备化走向实数，而完备性又如何在度量空间中表达？\",\n  \"answerability\": \"answerable\",\n  \"requiredClaims\": [\n    \"有理数中存在缺少极限的 Cauchy 列\",\n    \"完备化补入这些极限得到实数\",\n    \"度量空间完备意味着每个 Cauchy 列都在空间内收敛\"\n  ],\n  \"mustMentionConditions\": [\n    \"收敛极限必须仍属于该空间\"\n  ],\n  \"forbiddenClaims\": [\n    \"有理数本身是完备的\"\n  ],\n  \"sourceRisk\": {\n    \"present\": false,\n    \"detail\": \"\"\n  },\n  \"evidence\": [\n    {\n      \"sourceFile\": \"mathtest-material/01-number-systems.md\",\n      \"heading\": \"实数的核心性质：完备性\",\n      \"exactQuote\": \"| **完备性** | ❌ | ✅ |\\n| 上确界存在性 | ❌ | ✅ 有上界必有上确界 |\\n| Cauchy 列必收敛 | ❌ | ✅ |\",\n      \"supportsRequiredClaims\": [\n        0,\n        1\n      ]\n    },\n    {\n      \"sourceFile\": \"mathtest-material/02-spaces.md\",\n      \"heading\": \"完备性：Banach 空间\",\n      \"exactQuote\": \"如果空间中每个 Cauchy 列都收敛到空间内的一个点，这个空间就是**完备的**。\",\n      \"supportsRequiredClaims\": [\n        2\n      ]\n    }\n  ]\n}\n\n# 匿名答案\n[\n  {\n    \"sampleId\": \"sample-070aac98-841f-4abb-8770-8580189a9245\",\n    \"questionId\": \"PILOT-H2-01\",\n    \"answer\": \"{\\n  \\\"answer\\\": \\\"有理数集Q不完备，存在“洞”（如√2的位置）。通过Dedekind分割（将Q划分为两个非空子集A,B，满足A无最大元且所有a<b）定义实数，每个分割对应一个实数，从而填补有理数的洞，得到完备的实数集R。在度量空间中，完备性定义为每个Cauchy列都收敛于空间内的点。\\\",\\n  \\\"citations\\\": [\\n    \\\"claim:80440e2182e5653f-4384f68c38d1c16d\\\",\\n    \\\"claim:80440e2182e5653f-4a7c53f0e5ff715d\\\",\\n    \\\"claim:80440e2182e5653f-c9cdc01ad322aa92\\\",\\n    \\\"claim:80440e2182e5653f-e1f525a147f70055\\\",\\n    \\\"claim:80440e2182e5653f-d1c80ec9bda36ba7\\\",\\n    \\\"claim:33a33396a17d4175-92f0384fb17d1720\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\"\n  },\n  {\n    \"sampleId\": \"sample-c0647568-f53b-4137-91ca-4f29702aaad7\",\n    \"questionId\": \"PILOT-H2-01\",\n    \"answer\": \"{\\n  \\\"answer\\\": \\\"有理数通过Dedekind分割或Cauchy列完备化走向实数。Dedekind分割将有理数集划分为两个子集(A,B)，每个分割定义一个实数，直观上如同在有理数轴上切一刀，刀口位置即为实数；若刀口穿过有理数轴上的“洞”（如√2的位置），则创造了一个无理数。实数集是完备的，即每个Cauchy列都在R中有极限，数轴无洞。在度量空间中，完备性定义为：空间中每个Cauchy列都收敛到空间内的一个点。\\\",\\n  \\\"citations\\\": [\\n    \\\"claim:80440e2182e5653f-c9cdc01ad322aa92\\\",\\n    \\\"claim:80440e2182e5653f-cb1a4e1c38f8e45f\\\",\\n    \\\"claim:80440e2182e5653f-e1f525a147f70055\\\",\\n    \\\"claim:80440e2182e5653f-d1c80ec9bda36ba7\\\",\\n    \\\"claim:80440e2182e5653f-1d1341c978df0a68\\\",\\n    \\\"claim:33a33396a17d4175-92f0384fb17d1720\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\"\n  },\n  {\n    \"sampleId\": \"sample-dd4808f4-f52a-454f-aeee-38a17b51b839\",\n    \"questionId\": \"PILOT-H2-01\",\n    \"answer\": \"{\\n  \\\"answer\\\": \\\"有理数通过完备化（如Dedekind分割或Cauchy列等价类）走向实数，填补了有理数轴上的“洞”。在度量空间中，完备性定义为每个Cauchy列都收敛于空间内的点。\\\",\\n  \\\"citations\\\": [\\n    \\\"SOURCE mathtest-material/01-number-systems.md:239-266\\\",\\n    \\\"SOURCE mathtest-material/01-number-systems.md:222-238\\\",\\n    \\\"SOURCE mathtest-material/02-spaces.md:209-227\\\",\\n    \\\"SOURCE mathtest-material/02-spaces.md:149-156\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\"\n  }\n]"
+  },
+  "usage": {
+    "promptTokens": 1742,
+    "completionTokens": 415,
+    "totalTokens": 2157,
+    "promptCacheHitTokens": 384,
+    "promptCacheMissTokens": 1358,
+    "reasoningTokens": 0
+  },
+  "finishReason": "stop",
+  "rawResponse": "{\n  \"scores\": [\n    {\n      \"sampleId\": \"sample-070aac98-841f-4abb-8770-8580189a9245\",\n      \"requiredClaimCoverage\": 2,\n      \"conditionFidelity\": 2,\n      \"evidenceGrounding\": 2,\n      \"answerabilityDiscipline\": 2,\n      \"hardFailure\": false,\n      \"rationale\": \"覆盖全部requiredClaims：有理数有洞、完备化得实数、度量空间完备定义。保留mustMentionConditions（收敛极限属于空间）。无forbiddenClaims。引用正确，证据充分。回答充分，无拒答错误。\"\n    },\n    {\n      \"sampleId\": \"sample-c0647568-f53b-4137-91ca-4f29702aaad7\",\n      \"requiredClaimCoverage\": 2,\n      \"conditionFidelity\": 2,\n      \"evidenceGrounding\": 2,\n      \"answerabilityDiscipline\": 2,\n      \"hardFailure\": false,\n      \"rationale\": \"覆盖全部requiredClaims：有理数有洞、完备化得实数、度量空间完备定义。保留mustMentionConditions（收敛极限属于空间）。无forbiddenClaims。引用正确，证据充分。回答充分，无拒答错误。\"\n    },\n    {\n      \"sampleId\": \"sample-dd4808f4-f52a-454f-aeee-38a17b51b839\",\n      \"requiredClaimCoverage\": 2,\n      \"conditionFidelity\": 2,\n      \"evidenceGrounding\": 2,\n      \"answerabilityDiscipline\": 2,\n      \"hardFailure\": false,\n      \"rationale\": \"覆盖全部requiredClaims：有理数有洞、完备化得实数、度量空间完备定义。保留mustMentionConditions（收敛极限属于空间）。无forbiddenClaims。引用正确，证据充分。回答充分，无拒答错误。\"\n    }\n  ]\n}",
+  "parsed": [
+    {
+      "sampleId": "sample-070aac98-841f-4abb-8770-8580189a9245",
+      "requiredClaimCoverage": 2,
+      "conditionFidelity": 2,
+      "evidenceGrounding": 2,
+      "answerabilityDiscipline": 2,
+      "hardFailure": false,
+      "rationale": "覆盖全部requiredClaims：有理数有洞、完备化得实数、度量空间完备定义。保留mustMentionConditions（收敛极限属于空间）。无forbiddenClaims。引用正确，证据充分。回答充分，无拒答错误。"
+    },
+    {
+      "sampleId": "sample-c0647568-f53b-4137-91ca-4f29702aaad7",
+      "requiredClaimCoverage": 2,
+      "conditionFidelity": 2,
+      "evidenceGrounding": 2,
+      "answerabilityDiscipline": 2,
+      "hardFailure": false,
+      "rationale": "覆盖全部requiredClaims：有理数有洞、完备化得实数、度量空间完备定义。保留mustMentionConditions（收敛极限属于空间）。无forbiddenClaims。引用正确，证据充分。回答充分，无拒答错误。"
+    },
+    {
+      "sampleId": "sample-dd4808f4-f52a-454f-aeee-38a17b51b839",
+      "requiredClaimCoverage": 2,
+      "conditionFidelity": 2,
+      "evidenceGrounding": 2,
+      "answerabilityDiscipline": 2,
+      "hardFailure": false,
+      "rationale": "覆盖全部requiredClaims：有理数有洞、完备化得实数、度量空间完备定义。保留mustMentionConditions（收敛极限属于空间）。无forbiddenClaims。引用正确，证据充分。回答充分，无拒答错误。"
+    }
+  ]
+}

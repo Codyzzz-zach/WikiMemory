@@ -11,6 +11,7 @@ import { loadConfig } from "../src/config/index.js";
 import { createLLMProvider } from "../src/core/llm-provider.js";
 import {
 	computeKnowledgeVersion,
+	readAllAssertedRecords,
 	readAllClaims,
 	readAllConcepts,
 	readAllRelations,
@@ -217,7 +218,13 @@ program
 			questionSetHash: sha256(stableJson(questions)),
 			goldHash: sha256(stableJson(gold)),
 			corpusHash: corpusHash(rootConfig.projectRoot, pilotConfig.corpus),
-			knowledgeVersion: computeKnowledgeVersion(claims, concepts, relations),
+			knowledgeVersion: computeKnowledgeVersion(
+				claims,
+				concepts,
+				relations,
+				wikiModules,
+				readAllAssertedRecords(rootConfig),
+			),
 			sources: sourceRows,
 			wikiModules: wikiModules.length,
 			integrity: {
@@ -632,6 +639,8 @@ function assertSnapshotCurrent(
 		readAllClaims(appConfig),
 		readAllConcepts(appConfig),
 		readAllRelations(appConfig),
+		readAllWikiModules(appConfig),
+		readAllAssertedRecords(appConfig),
 	);
 	if (snapshot.knowledgeVersion !== currentKnowledgeVersion) throw new Error("冻结知识版本已变化");
 	return snapshot;

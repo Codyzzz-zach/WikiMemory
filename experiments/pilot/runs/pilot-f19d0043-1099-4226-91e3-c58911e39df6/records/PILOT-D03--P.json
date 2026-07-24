@@ -1,0 +1,62 @@
+{
+  "runId": "pilot-f19d0043-1099-4226-91e3-c58911e39df6",
+  "questionId": "PILOT-D03",
+  "category": "D",
+  "group": "P",
+  "corpusHash": "86268a6fbd559d17bb005c4c7bd64d3d1c91b2146010c625e9f2fc2fcb37d938",
+  "knowledgeVersion": "kv:e2f961a26664588188f91fe7",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "temperature": 0,
+  "promptHash": "258e3583346bc03fa5855f143a9619564d0f812197b259d3e23297ba477814ad",
+  "request": {
+    "systemPrompt": "你是一个受证据约束的问答 Agent。只使用本次请求提供的检索上下文回答问题。\n要求：\n1. 保留所有影响结论的条件、例外和不确定性。\n2. 每个关键结论引用上下文中的 SOURCE、EVIDENCE 或 CLAIM 标识。\n3. 如果上下文不足，明确回答 insufficient，不得依赖外部常识补齐。\n4. 只输出严格 JSON：{\"answer\":\"...\",\"citations\":[\"...\"],\"insufficient\":false,\"uncertainties\":[\"...\"]}。",
+    "userPrompt": "# 问题\n逐点收敛与一致收敛的定义差别是什么？\n\n# 检索上下文\n## TASK MAP\n主题: 逐点收敛与一致收敛的定义差别是什么？\n地图主题: 数集, 算子, 空间, 定义, 自然\n关键概念: 连通性, 单射, 浮点数, 无理数, 交换环\n已知争议: 0 个\n最近变化: 5 条\n找到 12 条相关 Claim\n找到 2 条关系\n找到 6 条原文证据\n\n## CLAIM claim:e7ea8bc17c2cc4ab-5380fb0ab1f53bee\n$L^p$ 收敛的定义是 $\\int \\|f_n-f\\|^p \\to 0$。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:e7ea8bc17c2cc4ab-762e52171f5fb5d4\n一致收敛的定义是 $\\sup_x \\|f_n(x)-f(x)\\| \\to 0$。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:e7ea8bc17c2cc4ab-ef4f93b1a8a89990\n逐点收敛的定义是对每个 $x$，$f_n(x) \\to f(x)$。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:e7ea8bc17c2cc4ab-6f6a4936ff7b1be4\nLagrange余项用于精确控制近似误差。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:e7ea8bc17c2cc4ab-7d13eec4ee017d80\nTaylor级数用多项式无限逼近光滑函数。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:e7ea8bc17c2cc4ab-902aad625263a115\n几何级数与p-级数是收敛判别法的两个基准。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:e7ea8bc17c2cc4ab-adcf8db0c33ee742\nCauchy列是内部稳定的数列，在没有“外部极限”时也能判断。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:e7ea8bc17c2cc4ab-adeb058728bb1903\nε-N 定义是用逻辑量词精确刻画“无限接近”的关键概念。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:e7ea8bc17c2cc4ab-ddb0ddb62da7ae3f\n级数等于无穷和，是部分和序列的极限。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:e7ea8bc17c2cc4ab-27c597597c9fb62c\n在 §9 泛函分析中要研究算子的一致收敛，而不仅仅是逐点收敛。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:e7ea8bc17c2cc4ab-955c8cc667a798fd\n数列极限定义为：lim_{n→∞} a_n = L 当且仅当 ∀ε > 0, ∃N ∈ ℕ, ∀n > N: |a_n - L| < ε。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:e7ea8bc17c2cc4ab-0c3f7068eace3173\n级数的收敛性取决于部分和数列的极限。\nConditions: none\nValidity: SUPPORTED\n\n## RELATION rel:e7ea8bc17c2cc4ab-ad9123dc467f48c0\nclaim:e7ea8bc17c2cc4ab-955c8cc667a798fd --[SUPPORTS]--> claim:e7ea8bc17c2cc4ab-adeb058728bb1903\nConditions: 无\n\n## RELATION rel:e7ea8bc17c2cc4ab-a67212cec964cd98\nclaim:e7ea8bc17c2cc4ab-ddb0ddb62da7ae3f --[SUPPORTS]--> claim:e7ea8bc17c2cc4ab-0c3f7068eace3173\nConditions: 无\n\n## EVIDENCE span:03-sequences-limits-e7ea8bc17c2cc4ab-49\n| 类型 | 定义 | 重要性 |\n|------|------|--------|\n| **逐点收敛** | 对每个 $x$，$f_n(x) \\to f(x)$ | 最弱，可能丢失连续性 |\n| **一致收敛** | $\\sup_x \\|f_n(x)-f(x)\\| \\to 0$ | 保持连续性 |\n| **$L^p$ 收敛** | $\\int \\|f_n-f\\|^p \\to 0$ | 平均收敛（$\\S$10） |\n| **依测度收敛** | $\\mu(\\{\\|f_n-f\\|>\\epsilon\\}) \\to 0$ | 概率论（$\\S$10, $\\S$14） |\n\n## EVIDENCE span:03-sequences-limits-e7ea8bc17c2cc4ab-49#chars-5998-6023\n对每个 $x$，$f_n(x) \\to f(x)$\n\n## EVIDENCE span:03-sequences-limits-e7ea8bc17c2cc4ab-54\n| # | 关键概念 | 直觉 | 连接章节 |\n|---|---------|------|---------|\n| 1 | **$\\epsilon$-$N$ 定义** | 逻辑量词精确刻画\"无限接近\" | $\\S$12 微积分 |\n| 2 | **Cauchy列** | 内部稳定的数列，在没有\"外部极限\"时也能判断 | $\\S$2 完备性 |\n| 3 | **级数 = 无穷和** | 部分和序列的极限 | $\\S$11 常数 |\n| 4 | **几何级数与 $p$-级数** | 收敛判别法的两个基准 | 全书 |\n| 5 | **Taylor级数** | 用多项式无限逼近光滑函数 | $\\S$5, $\\S$12 |\n| 6 | **Lagrange余项** | 精确控制近似误差 | 数值分析 |\n| 7 | **一致收敛 vs 逐点收敛** | 好的收敛保持好的性质 | $\\S$9 泛函分析 |\n\n## EVIDENCE span:03-sequences-limits-e7ea8bc17c2cc4ab-51#chars-6553-6597\n这就是为什么在 $\\S$9 泛函分析中要研究**算子的一致收敛**，而不仅仅是逐点收敛。\n\n## EVIDENCE span:03-sequences-limits-e7ea8bc17c2cc4ab-13#chars-844-959\nn \\to \\infty} a_n = L$ 当且仅当：\n>\n> $$\\forall \\epsilon > 0, \\; \\exists N \\in \\mathbb{N}, \\; \\forall n > N: |a_n - L| <\n\n## EVIDENCE span:03-sequences-limits-e7ea8bc17c2cc4ab-25#chars-2510-2537\n关键事实：**级数的收敛性取决于部分和数列的极限**。\n\n## CONFLICTS AND CONDITIONS\n📌 Relation rel:e7ea8bc17c2cc4ab-ad9123dc467f48c0 (SUPPORTS) 适用条件: 无\n📌 Relation rel:e7ea8bc17c2cc4ab-a67212cec964cd98 (SUPPORTS) 适用条件: 无"
+  },
+  "contextHash": "e4eb587ceb44d6ae0597fd37750180848d5ba34e76ec56f0caa12529ab7a7ca6",
+  "estimatedContextTokens": 1309,
+  "estimatedTotalInputTokens": 1484,
+  "usage": {
+    "promptTokens": 1825,
+    "completionTokens": 166,
+    "totalTokens": 1991,
+    "promptCacheHitTokens": 0,
+    "promptCacheMissTokens": 1825,
+    "reasoningTokens": 0
+  },
+  "latencyMs": 1954,
+  "finishReason": "stop",
+  "toolCalls": 1,
+  "retrievedClaims": [
+    "claim:e7ea8bc17c2cc4ab-5380fb0ab1f53bee",
+    "claim:e7ea8bc17c2cc4ab-762e52171f5fb5d4",
+    "claim:e7ea8bc17c2cc4ab-ef4f93b1a8a89990",
+    "claim:e7ea8bc17c2cc4ab-6f6a4936ff7b1be4",
+    "claim:e7ea8bc17c2cc4ab-7d13eec4ee017d80",
+    "claim:e7ea8bc17c2cc4ab-902aad625263a115",
+    "claim:e7ea8bc17c2cc4ab-adcf8db0c33ee742",
+    "claim:e7ea8bc17c2cc4ab-adeb058728bb1903",
+    "claim:e7ea8bc17c2cc4ab-ddb0ddb62da7ae3f",
+    "claim:e7ea8bc17c2cc4ab-27c597597c9fb62c",
+    "claim:e7ea8bc17c2cc4ab-955c8cc667a798fd",
+    "claim:e7ea8bc17c2cc4ab-0c3f7068eace3173"
+  ],
+  "retrievedRelations": [
+    "rel:e7ea8bc17c2cc4ab-ad9123dc467f48c0",
+    "rel:e7ea8bc17c2cc4ab-a67212cec964cd98"
+  ],
+  "evidenceSpans": [
+    "span:03-sequences-limits-e7ea8bc17c2cc4ab-49",
+    "span:03-sequences-limits-e7ea8bc17c2cc4ab-49#chars-5998-6023",
+    "span:03-sequences-limits-e7ea8bc17c2cc4ab-54",
+    "span:03-sequences-limits-e7ea8bc17c2cc4ab-51#chars-6553-6597",
+    "span:03-sequences-limits-e7ea8bc17c2cc4ab-13#chars-844-959",
+    "span:03-sequences-limits-e7ea8bc17c2cc4ab-25#chars-2510-2537"
+  ],
+  "retrievedSources": [
+    "source:03-sequences-limits-e7ea8bc17c2cc4ab"
+  ],
+  "droppedContext": [],
+  "answer": "{\n  \"answer\": \"逐点收敛要求对每个固定的 x，函数值序列 f_n(x) 收敛到 f(x)；一致收敛要求所有 x 上的最大误差 sup_x |f_n(x)-f(x)| 趋于 0。一致收敛比逐点收敛更强，能保持连续性等性质。\",\n  \"citations\": [\n    \"claim:e7ea8bc17c2cc4ab-ef4f93b1a8a89990\",\n    \"claim:e7ea8bc17c2cc4ab-762e52171f5fb5d4\",\n    \"span:03-sequences-limits-e7ea8bc17c2cc4ab-49\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}",
+  "errors": []
+}
