@@ -1,0 +1,114 @@
+{
+  "propositions": [
+    {
+      "text": "X上的所有连续线性泛函构成对偶空间X*。",
+      "exactQuote": "$X$ 上的所有连续线性泛函构成**对偶空间** $X^*$。",
+      "blockId": "09-functional-analysis#block-24"
+    },
+    {
+      "text": "Riesz表示定理（Hilbert空间版本）指出每个连续线性泛函f∈H*都可由内积表示为f(x)=⟨x,y⟩对某唯一的y∈H。",
+      "exactQuote": "**Riesz 表示定理**（Hilbert空间版本）：每个连续线性泛函 $f \\in H^*$ 都可由内积表示为：",
+      "blockId": "09-functional-analysis#block-25"
+    },
+    {
+      "text": "f(x)=⟨x,y⟩对某唯一的y∈H。",
+      "exactQuote": "f(x) = \\langle x, y \\rangle \\quad \\text{对某唯一的 } y \\in H",
+      "blockId": "09-functional-analysis#block-26"
+    },
+    {
+      "text": "Hilbert空间中的作用在向量上的泛函本质上就是与某个固定向量做内积。",
+      "exactQuote": "这意味着 Hilbert 空间中的\"作用在向量上的泛函\"本质上就是\"与某个固定向量做内积\"。",
+      "blockId": "09-functional-analysis#block-27"
+    },
+    {
+      "text": "H≅H*。",
+      "exactQuote": "$H \\cong H^*$！",
+      "blockId": "09-functional-analysis#block-27"
+    },
+    {
+      "text": "在无限维空间中，算子T的谱σ(T)推广了有限维中矩阵的特征值集合。",
+      "exactQuote": "在无限维空间中，算子 $T$ 的**谱** $\\sigma(T)$ 推广了有限维中矩阵的**特征值集合**。",
+      "blockId": "09-functional-analysis#block-31"
+    },
+    {
+      "text": "λI-T不可逆当且仅当λ∈σ(T)。",
+      "exactQuote": "\\lambda I - T \\text{ 不可逆} \\iff \\lambda \\in \\sigma(T)",
+      "blockId": "09-functional-analysis#block-32"
+    },
+    {
+      "text": "在有限维中，不可逆等于有特征值。",
+      "exactQuote": "在有限维中，\"不可逆 = 有特征值\"。",
+      "blockId": "09-functional-analysis#block-33"
+    },
+    {
+      "text": "在无限维中，不可逆的原因有三个层次。",
+      "exactQuote": "在无限维中，不可逆的原因有三个层次：",
+      "blockId": "09-functional-analysis#block-33"
+    },
+    {
+      "text": "点谱的含义是λI-T非单射，例子是真正的特征值。",
+      "exactQuote": "| **点谱** | $\\lambda I - T$ 非单射 | 真正的特征值 |",
+      "blockId": "09-functional-analysis#block-34"
+    },
+    {
+      "text": "连续谱的含义是单射但值域稠密（却非满射），例子是乘法算子(Tf)(x)=xf(x)。",
+      "exactQuote": "| **连续谱** | 单射但值域稠密（却非满射） | 乘法算子 $(Tf)(x)=xf(x)$ |",
+      "blockId": "09-functional-analysis#block-34"
+    },
+    {
+      "text": "剩余谱的含义是单射但值域不稠密，例子是unilateral shift。",
+      "exactQuote": "| **剩余谱** | 单射但值域不稠密 | unilateral shift |",
+      "blockId": "09-functional-analysis#block-34"
+    },
+    {
+      "text": "若T=T*（自伴/Hermitian），则σ(T)⊆ℝ。",
+      "exactQuote": "1. $\\sigma(T) \\subseteq \\mathbb{R}$",
+      "blockId": "09-functional-analysis#block-37"
+    },
+    {
+      "text": "若T=T*，则不同特征值的特征向量正交。",
+      "exactQuote": "2. 不同特征值的特征向量正交",
+      "blockId": "09-functional-analysis#block-37"
+    },
+    {
+      "text": "若T=T*，则存在谱分解：T=∫_{σ(T)} λ dE(λ)。",
+      "exactQuote": "3. 存在**谱分解**：$T = \\int_{\\sigma(T)} \\lambda \\, dE(\\lambda)$",
+      "blockId": "09-functional-analysis#block-37"
+    },
+    {
+      "text": "谱分解是Fourier变换的终极推广——任何自伴算子都可以对角化为乘法算子。",
+      "exactQuote": "谱分解是 Fourier 变换的终极推广——任何自伴算子都可以\"对角化\"为乘法算子。",
+      "blockId": "09-functional-analysis#block-38"
+    },
+    {
+      "text": "量子力学的可观测量必须用自伴算子表示：谱=可能的测量值。",
+      "exactQuote": "这就是为什么量子力学的可观测量必须用自伴算子表示：**谱 = 可能的测量值**。",
+      "blockId": "09-functional-analysis#block-38"
+    },
+    {
+      "text": "紧算子的谱除了可能的0之外，完全由特征值构成。",
+      "exactQuote": "紧算子是\"最像矩阵\"的无限维算子——它的谱除了可能的 $0$ 之外，完全由特征值构成：",
+      "blockId": "09-functional-analysis#block-41"
+    },
+    {
+      "text": "σ_ess(K)={0}。",
+      "exactQuote": "\\sigma_{\\text{ess}}(K) = \\{0\\}",
+      "blockId": "09-functional-analysis#block-42"
+    },
+    {
+      "text": "σ(K)∖{0}=有限重特征值。",
+      "exactQuote": "\\sigma(K) \\setminus \\{0\\} = \\text{有限重特征值}",
+      "blockId": "09-functional-analysis#block-42"
+    },
+    {
+      "text": "Fredholm二择一：(I-K)x=y要么对任意y有唯一解，要么齐次方程(I-K)x=0有非零解。",
+      "exactQuote": "Fredholm 二择一（Fredholm alternative）：$(I-K)x = y$ 要么对任意 $y$ 有唯一解，要么齐次方程 $(I-K)x = 0$ 有非零解。",
+      "blockId": "09-functional-analysis#block-43"
+    },
+    {
+      "text": "Fredholm二择一是线性代数中det A≠0或ker A≠{0}的无限维版本。",
+      "exactQuote": "这正是线性代数中\"$\\det A \\neq 0$ 或 $\\ker A \\neq \\{0\\}$\"的无限维版本。",
+      "blockId": "09-functional-analysis#block-43"
+    }
+  ]
+}

@@ -138,9 +138,6 @@ function prepareKnowledgeContext(
 		pilotConfig.retrieval.contextBudgetTokens,
 		pilotConfig.retrieval.maxGraphDepth,
 	);
-	if (group === "E-min" && pack.wikiModules.length < 1) {
-		throw new Error("E-min 需要至少一个与当前问题相关的 WikiModule；当前 Context Pack 未选中模块");
-	}
 	const items: ContextItem[] = [
 		{ id: "task-map", text: `## TASK MAP\n${pack.taskMap}` },
 		...pack.subgraph.claims.map((claim) => ({

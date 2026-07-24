@@ -67,6 +67,8 @@ interface SnapshotManifest {
 		brokenEvidence: number;
 		brokenEndpoints: number;
 		unauditedRelations: number;
+		wikiModulesChecked: number;
+		brokenWikiRefs: number;
 	};
 }
 
@@ -128,10 +130,16 @@ program
 		const concepts = readAllConcepts(rootConfig);
 		const relations = readAllRelations(rootConfig);
 		const spans = readAllSpans(rootConfig);
+		const wikiModules = readAllWikiModules(rootConfig);
+		if (wikiModules.length < 2) {
+			throw new Error(`E-min 快照至少需要 2 个 WikiModule，当前只有 ${wikiModules.length} 个`);
+		}
 		const canonicalClaimIds = new Set(claims.map((claim) => claim.id));
+		const conceptIds = new Set(concepts.map((concept) => concept.id));
 		let brokenEvidence = 0;
 		let brokenEndpoints = 0;
 		let unauditedRelations = 0;
+		let brokenWikiRefs = 0;
 		for (const claim of claims) {
 			brokenEvidence += claim.evidenceSpanIds.filter(
 				(spanId) => !resolveSpanById(spans, spanId),
@@ -155,9 +163,17 @@ program
 				unauditedRelations++;
 			}
 		}
-		if (brokenEvidence > 0 || brokenEndpoints > 0 || unauditedRelations > 0) {
+		for (const module of wikiModules) {
+			brokenWikiRefs += module.claimRefs.filter(
+				(claimId) => !canonicalClaimIds.has(claimId as string),
+			).length;
+			brokenWikiRefs += module.conceptRefs.filter(
+				(conceptId) => !conceptIds.has(conceptId as string),
+			).length;
+		}
+		if (brokenEvidence > 0 || brokenEndpoints > 0 || unauditedRelations > 0 || brokenWikiRefs > 0) {
 			throw new Error(
-				`知识快照完整性失败: brokenEvidence=${brokenEvidence}, brokenEndpoints=${brokenEndpoints}, unauditedRelations=${unauditedRelations}`,
+				`知识快照完整性失败: brokenEvidence=${brokenEvidence}, brokenEndpoints=${brokenEndpoints}, unauditedRelations=${unauditedRelations}, brokenWikiRefs=${brokenWikiRefs}`,
 			);
 		}
 		const snapshot: SnapshotManifest = {
@@ -169,13 +185,15 @@ program
 			corpusHash: corpusHash(rootConfig.projectRoot, pilotConfig.corpus),
 			knowledgeVersion: computeKnowledgeVersion(claims, concepts, relations),
 			sources: sourceRows,
-			wikiModules: readAllWikiModules(rootConfig).length,
+			wikiModules: wikiModules.length,
 			integrity: {
 				claimsChecked: claims.length,
 				relationsChecked: relations.length,
 				brokenEvidence,
 				brokenEndpoints,
 				unauditedRelations,
+				wikiModulesChecked: wikiModules.length,
+				brokenWikiRefs,
 			},
 		};
 		const path = snapshotPath(rootConfig.projectRoot);

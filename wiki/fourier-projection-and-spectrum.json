@@ -1,0 +1,35 @@
+{
+  "id": "wiki:fourier-projection-and-spectrum",
+  "stableAddress": "wiki://analysis/fourier-projection-and-spectrum",
+  "coreQuestion": "为什么 Fourier 分析可以同时理解为函数展开、Hilbert 空间投影和算子谱分解的原型？",
+  "currentUnderstanding": "Fourier 变换把函数或信号分解到频率成分；Fourier 级数则把函数写成三角或复指数基的级数。在 L² 型 Hilbert 空间里，这些系数可理解为函数在正交基方向上的坐标，有限项近似对应投影到有限维子空间。泛函分析进一步把这种“选基后对角化”的思想推广到算子：自伴算子的谱分解是 Fourier 分解观念的抽象延伸。函数展开的具体收敛方式仍需单独说明，不能从坐标或投影视角推出所有函数都逐点收敛。",
+  "disputes": [
+    "函数展开、L² 收敛、逐点收敛和一致收敛是不同命题，不能相互替代。",
+    "谱分解的适用对象和条件必须保留；不能把自伴算子的结论推广到任意算子。"
+  ],
+  "claimRefs": [
+    "claim:33a33396a17d4175-52ea70f5124a7a46",
+    "claim:33a33396a17d4175-805fb4ab5d394c0a",
+    "claim:33a33396a17d4175-81349b735066881b",
+    "claim:33a33396a17d4175-a0d4455e06e3e901",
+    "claim:7e02712717a02820-2c66480c74ccfebd",
+    "claim:7e02712717a02820-fda125036300712e",
+    "claim:9478dfc1ba6cb58f-76dcd6455364b377",
+    "claim:9478dfc1ba6cb58f-bf39cdc59c43343a",
+    "claim:9478dfc1ba6cb58f-914a9068359d6d35",
+    "claim:e7ea8bc17c2cc4ab-762e52171f5fb5d4",
+    "claim:e7ea8bc17c2cc4ab-ef4f93b1a8a89990"
+  ],
+  "conceptRefs": [
+    "concept:2ea2a0e6fcc8301e",
+    "concept:9e4ba1d34d8e3f3d",
+    "concept:1586e86ed504ca3b",
+    "concept:b1c199d8ba847549",
+    "concept:c26757143f3952ae"
+  ],
+  "dependencies": [
+    "wiki://analysis/completeness-and-functional-spaces"
+  ],
+  "publicationState": "CANONICAL",
+  "updatedAt": "2026-07-24T02:45:00.000Z"
+}

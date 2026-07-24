@@ -1,0 +1,2639 @@
+{
+  "schemaVersion": "v1",
+  "sourceId": "source:09-functional-analysis-9478dfc1ba6cb58f",
+  "runId": "a4e42ea7-30ff-40e0-a58a-3e324ce08fb5",
+  "publishedAt": "2026-07-24T02:47:31.102Z",
+  "claims": [
+    {
+      "claim": {
+        "id": "claim:9478dfc1ba6cb58f-8206d493ad1b90c3",
+        "statement": "在有限维中，所有范数等价是理所当然的。",
+        "evidenceSpanIds": [
+          "span:09-functional-analysis-9478dfc1ba6cb58f-48#chars-4729-4735"
+        ],
+        "conditions": [],
+        "derivation": "EXTRACTED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:45:43.982Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "confidence": 1,
+        "claimKind": "FACT",
+        "scope": {
+          "type": "GLOBAL"
+        },
+        "provenanceRefs": [
+          {
+            "type": "SourceSpan",
+            "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-48#chars-4729-4735"
+          }
+        ],
+        "supportingEvidenceRefs": [
+          {
+            "type": "SourceSpan",
+            "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-48#chars-4729-4735"
+          }
+        ],
+        "knowledgeVersion": "v1",
+        "recordedAt": "2026-07-24T02:45:43.982Z"
+      },
+      "issues": [
+        {
+          "code": "SEMANTIC_SUPPORT_FAILED",
+          "severity": "error",
+          "affectedObject": "claim:9478dfc1ba6cb58f-8206d493ad1b90c3",
+          "detail": "support：证据没有明确支持 Claim 的全部断言；证据 [0:09-functional-analysis#block-48] “所有范数等价”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "SEMANTIC_ADDITION_MAJOR",
+          "severity": "error",
+          "affectedObject": "claim:9478dfc1ba6cb58f-8206d493ad1b90c3",
+          "detail": "addition：Claim 添加了证据未表达的内容；证据 [0:09-functional-analysis#block-48] “所有范数等价”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "SEMANTIC_LIMITS_MISSING",
+          "severity": "warning",
+          "affectedObject": "claim:9478dfc1ba6cb58f-8206d493ad1b90c3",
+          "detail": "limits：Claim 丢失了证据中的条件、例外或限定词；证据 [0:09-functional-analysis#block-48] “所有范数等价”",
+          "recommendedState": "CANONICAL"
+        }
+      ]
+    },
+    {
+      "claim": {
+        "id": "claim:9478dfc1ba6cb58f-f4ea0433ce71b5e5",
+        "statement": "在有限维中，线性算子自动连续是理所当然的。",
+        "evidenceSpanIds": [
+          "span:09-functional-analysis-9478dfc1ba6cb58f-48#chars-4736-4744"
+        ],
+        "conditions": [],
+        "derivation": "EXTRACTED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:45:43.982Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "confidence": 1,
+        "claimKind": "FACT",
+        "scope": {
+          "type": "GLOBAL"
+        },
+        "provenanceRefs": [
+          {
+            "type": "SourceSpan",
+            "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-48#chars-4736-4744"
+          }
+        ],
+        "supportingEvidenceRefs": [
+          {
+            "type": "SourceSpan",
+            "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-48#chars-4736-4744"
+          }
+        ],
+        "knowledgeVersion": "v1",
+        "recordedAt": "2026-07-24T02:45:43.982Z"
+      },
+      "issues": [
+        {
+          "code": "SEMANTIC_SUPPORT_FAILED",
+          "severity": "error",
+          "affectedObject": "claim:9478dfc1ba6cb58f-f4ea0433ce71b5e5",
+          "detail": "support：证据没有明确支持 Claim 的全部断言；证据 [0:09-functional-analysis#block-48] “线性算子自动连续”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "SEMANTIC_ADDITION_MAJOR",
+          "severity": "error",
+          "affectedObject": "claim:9478dfc1ba6cb58f-f4ea0433ce71b5e5",
+          "detail": "addition：Claim 添加了证据未表达的内容；证据 [0:09-functional-analysis#block-48] “线性算子自动连续”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "SEMANTIC_LIMITS_MISSING",
+          "severity": "warning",
+          "affectedObject": "claim:9478dfc1ba6cb58f-f4ea0433ce71b5e5",
+          "detail": "limits：Claim 丢失了证据中的条件、例外或限定词；证据 [0:09-functional-analysis#block-48] “线性算子自动连续”",
+          "recommendedState": "CANONICAL"
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "relation": {
+        "id": "rel:9478dfc1ba6cb58f-037319ca313e0de7",
+        "from": "claim:9478dfc1ba6cb58f-226dbcc62df2c418",
+        "to": "claim:9478dfc1ba6cb58f-2cf6d15a2dc76a25",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:09-functional-analysis-9478dfc1ba6cb58f-18#chars-1753-1780",
+          "span:09-functional-analysis-9478dfc1ba6cb58f-47"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:46:22.955Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-037319ca313e0de7",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:09-functional-analysis#block-18] “在完备空间中，**逐点的性质往往能推出全局的性质**。”; [1:09-functional-analysis#block-47] “| # | 关键概念 | 直觉 | 连接章节 | |---|---------|------|---------| | 1 | **泛函 = 函数的函数** |”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-037319ca313e0de7",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:09-functional-analysis#block-18] “在完备空间中，**逐点的性质往往能推出全局的性质**。”; [1:09-functional-analysis#block-47] “| # | 关键概念 | 直觉 | 连接章节 | |---|---------|------|---------| | 1 | **泛函 = 函数的函数** |”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:9478dfc1ba6cb58f-06be70f990825d7c",
+        "from": "claim:9478dfc1ba6cb58f-82844cc604351bda",
+        "to": "claim:9478dfc1ba6cb58f-80e567f66f11acc3",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:09-functional-analysis-9478dfc1ba6cb58f-34",
+          "span:09-functional-analysis-9478dfc1ba6cb58f-48#chars-4773-4779"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:46:22.955Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-06be70f990825d7c",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:09-functional-analysis#block-34] “| 谱的类型 | 含义 | 例子 | |---------|------|------| | **点谱** | $\\lambda I - T$ 非单射 | 真正”; [1:09-functional-analysis#block-48] “谱的三种类型”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-06be70f990825d7c",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:09-functional-analysis#block-34] “| 谱的类型 | 含义 | 例子 | |---------|------|------| | **点谱** | $\\lambda I - T$ 非单射 | 真正”; [1:09-functional-analysis#block-48] “谱的三种类型”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:9478dfc1ba6cb58f-0c1e87a1ab965cb6",
+        "from": "claim:9478dfc1ba6cb58f-381461387bb1bebc",
+        "to": "claim:9478dfc1ba6cb58f-b112d7ffc3e4f340",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:09-functional-analysis-9478dfc1ba6cb58f-15",
+          "span:09-functional-analysis-9478dfc1ba6cb58f-47"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:46:22.955Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-0c1e87a1ab965cb6",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:09-functional-analysis#block-15] “| 对象 | 有限维类比 | 无限维特征 | |------|-----------|-----------| | Banach空间 | $\\mathbb{R}”; [1:09-functional-analysis#block-47] “| # | 关键概念 | 直觉 | 连接章节 | |---|---------|------|---------| | 1 | **泛函 = 函数的函数** |”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-0c1e87a1ab965cb6",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:09-functional-analysis#block-15] “| 对象 | 有限维类比 | 无限维特征 | |------|-----------|-----------| | Banach空间 | $\\mathbb{R}”; [1:09-functional-analysis#block-47] “| # | 关键概念 | 直觉 | 连接章节 | |---|---------|------|---------| | 1 | **泛函 = 函数的函数** |”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:9478dfc1ba6cb58f-13fee21ac0fb69bb",
+        "from": "claim:9478dfc1ba6cb58f-51d7c78f3f30d9ff",
+        "to": "claim:9478dfc1ba6cb58f-80e567f66f11acc3",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:09-functional-analysis-9478dfc1ba6cb58f-34",
+          "span:09-functional-analysis-9478dfc1ba6cb58f-48#chars-4773-4779"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:46:22.955Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-13fee21ac0fb69bb",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:09-functional-analysis#block-34] “| 谱的类型 | 含义 | 例子 | |---------|------|------| | **点谱** | $\\lambda I - T$ 非单射 | 真正”; [1:09-functional-analysis#block-48] “谱的三种类型”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-13fee21ac0fb69bb",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:09-functional-analysis#block-34] “| 谱的类型 | 含义 | 例子 | |---------|------|------| | **点谱** | $\\lambda I - T$ 非单射 | 真正”; [1:09-functional-analysis#block-48] “谱的三种类型”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:9478dfc1ba6cb58f-15d58b437a5499e2",
+        "from": "claim:9478dfc1ba6cb58f-97113e6ef725088e",
+        "to": "claim:9478dfc1ba6cb58f-c4b3dcb5ec314151",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:09-functional-analysis-9478dfc1ba6cb58f-1#chars-51-59",
+          "span:09-functional-analysis-9478dfc1ba6cb58f-1#chars-60-67"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:46:22.955Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-15d58b437a5499e2",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:09-functional-analysis#block-1] “它把函数视作向量”; [1:09-functional-analysis#block-1] “把算子视作矩阵”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:9478dfc1ba6cb58f-17018b1ec2713965",
+        "from": "claim:9478dfc1ba6cb58f-cc40c1168307d58b",
+        "to": "claim:9478dfc1ba6cb58f-05929b8c6db069b1",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:09-functional-analysis-9478dfc1ba6cb58f-47",
+          "span:09-functional-analysis-9478dfc1ba6cb58f-6"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:46:22.955Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-17018b1ec2713965",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:09-functional-analysis#block-47] “| # | 关键概念 | 直觉 | 连接章节 | |---|---------|------|---------| | 1 | **泛函 = 函数的函数** |”; [1:09-functional-analysis#block-6] “| 泛函 | 表达式 | 应用 | |------|--------|------| | 定积分 | $J[f] = \\int_a^b f(x)dx$ | 面积”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-17018b1ec2713965",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:09-functional-analysis#block-47] “| # | 关键概念 | 直觉 | 连接章节 | |---|---------|------|---------| | 1 | **泛函 = 函数的函数** |”; [1:09-functional-analysis#block-6] “| 泛函 | 表达式 | 应用 | |------|--------|------| | 定积分 | $J[f] = \\int_a^b f(x)dx$ | 面积”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:9478dfc1ba6cb58f-17af1dd384c02dee",
+        "from": "claim:9478dfc1ba6cb58f-52d09edd0e4333b8",
+        "to": "claim:9478dfc1ba6cb58f-e6c98f9a8e327777",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:09-functional-analysis-9478dfc1ba6cb58f-33#chars-2409-2427",
+          "span:09-functional-analysis-9478dfc1ba6cb58f-47"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:46:22.955Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-17af1dd384c02dee",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:09-functional-analysis#block-33] “在无限维中，不可逆的原因有三个层次：”; [1:09-functional-analysis#block-47] “| # | 关键概念 | 直觉 | 连接章节 | |---|---------|------|---------| | 1 | **泛函 = 函数的函数** |”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-17af1dd384c02dee",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:09-functional-analysis#block-33] “在无限维中，不可逆的原因有三个层次：”; [1:09-functional-analysis#block-47] “| # | 关键概念 | 直觉 | 连接章节 | |---|---------|------|---------| | 1 | **泛函 = 函数的函数** |”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:9478dfc1ba6cb58f-19074e011c6e29b2",
+        "from": "claim:9478dfc1ba6cb58f-77cce3f44cbc3156",
+        "to": "claim:9478dfc1ba6cb58f-8dc4b64fb454fab6",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:09-functional-analysis-9478dfc1ba6cb58f-22",
+          "span:09-functional-analysis-9478dfc1ba6cb58f-48#chars-4780-4790"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:46:22.955Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-19074e011c6e29b2",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:09-functional-analysis#block-22] “| 性质 | 有界算子 | 无界算子 | |------|---------|---------| | 连续性 | ✅ 必然连续 | ❌ 不连续 | | 定义域”; [1:09-functional-analysis#block-48] “有界与无界算子的鸿沟”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:9478dfc1ba6cb58f-1e5f3f9bb27df677",
+        "from": "claim:9478dfc1ba6cb58f-8206d493ad1b90c3",
+        "to": "claim:9478dfc1ba6cb58f-6f3f23d80a2dee54",
+        "type": "CONTRADICTS",
+        "conditions": [],
+        "conditionStatus": "UNVERIFIED",
+        "relationAuditVersion": null,
+        "evidenceSpanIds": [
+          "span:09-functional-analysis-9478dfc1ba6cb58f-48#chars-4714-4754",
+          "span:09-functional-analysis-9478dfc1ba6cb58f-48#chars-4729-4735"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:46:22.955Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_ENDPOINT_QUARANTINED",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-1e5f3f9bb27df677",
+          "detail": "from 端点未通过 Lint（Quarantined）: claim:9478dfc1ba6cb58f-8206d493ad1b90c3",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:9478dfc1ba6cb58f-2896dc4f93de84c0",
+        "from": "claim:9478dfc1ba6cb58f-06a3aa261a1d8ba2",
+        "to": "claim:9478dfc1ba6cb58f-914a9068359d6d35",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:09-functional-analysis-9478dfc1ba6cb58f-36#chars-2624-2653",
+          "span:09-functional-analysis-9478dfc1ba6cb58f-38#chars-2811-2851"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:46:22.955Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-2896dc4f93de84c0",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:09-functional-analysis#block-36] “若 $T = T^*$（自伴/ Hermitian），则：”; [1:09-functional-analysis#block-38] “这就是为什么量子力学的可观测量必须用自伴算子表示：**谱 = 可能的测量值**。”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:9478dfc1ba6cb58f-29ae3521c75fed12",
+        "from": "claim:9478dfc1ba6cb58f-e8081e85ada20a22",
+        "to": "claim:9478dfc1ba6cb58f-2ffda8eeccee6117",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:09-functional-analysis-9478dfc1ba6cb58f-41#chars-3248-3291",
+          "span:09-functional-analysis-9478dfc1ba6cb58f-42#chars-3334-3375"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:46:22.955Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-29ae3521c75fed12",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:09-functional-analysis#block-41] “紧算子是\"最像矩阵\"的无限维算子——它的谱除了可能的 $0$ 之外，完全由特征值构成：”; [1:09-functional-analysis#block-42] “\\sigma(K) \\setminus \\{0\\} = \\text{有限重特征值}”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:9478dfc1ba6cb58f-340f430ff7ed8ae8",
+        "from": "claim:9478dfc1ba6cb58f-430aac8fcebaaaf0",
+        "to": "claim:9478dfc1ba6cb58f-c110ff80dd676cbb",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:09-functional-analysis-9478dfc1ba6cb58f-10#chars-741-773",
+          "span:09-functional-analysis-9478dfc1ba6cb58f-8#chars-489-520"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:46:22.955Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-340f430ff7ed8ae8",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:09-functional-analysis#block-10] “这是从\"最小作用量原理\"推导牛顿力学、电磁学、广义相对论的基础。”; [1:09-functional-analysis#block-8] “**Euler-Lagrange 方程**是变分法的核心结果。”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:9478dfc1ba6cb58f-3584f6aa9d938725",
+        "from": "claim:9478dfc1ba6cb58f-5f635e434ce1469b",
+        "to": "claim:9478dfc1ba6cb58f-573788127e6fe60f",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:09-functional-analysis-9478dfc1ba6cb58f-27#chars-2208-2222",
+          "span:09-functional-analysis-9478dfc1ba6cb58f-47"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:46:22.955Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-3584f6aa9d938725",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:09-functional-analysis#block-27] “$H \\cong H^*$！”; [1:09-functional-analysis#block-47] “| # | 关键概念 | 直觉 | 连接章节 | |---|---------|------|---------| | 1 | **泛函 = 函数的函数** |”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:9478dfc1ba6cb58f-3826e288f2e0ee87",
+        "from": "claim:9478dfc1ba6cb58f-0c27fbe0e2b1a1d3",
+        "to": "claim:9478dfc1ba6cb58f-9970b8b9ed15793f",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:09-functional-analysis-9478dfc1ba6cb58f-15"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:46:22.955Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-3826e288f2e0ee87",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:09-functional-analysis#block-15] “| 对象 | 有限维类比 | 无限维特征 | |------|-----------|-----------| | Banach空间 | $\\mathbb{R}”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-3826e288f2e0ee87",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:09-functional-analysis#block-15] “| 对象 | 有限维类比 | 无限维特征 | |------|-----------|-----------| | Banach空间 | $\\mathbb{R}”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:9478dfc1ba6cb58f-3c746b26e6187b85",
+        "from": "claim:9478dfc1ba6cb58f-d70c3a736faab20f",
+        "to": "claim:9478dfc1ba6cb58f-37f3aa0fcaa68536",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:09-functional-analysis-9478dfc1ba6cb58f-15",
+          "span:09-functional-analysis-9478dfc1ba6cb58f-22"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:46:22.955Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-3c746b26e6187b85",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:09-functional-analysis#block-15] “| 对象 | 有限维类比 | 无限维特征 | |------|-----------|-----------| | Banach空间 | $\\mathbb{R}”; [1:09-functional-analysis#block-22] “| 性质 | 有界算子 | 无界算子 | |------|---------|---------| | 连续性 | ✅ 必然连续 | ❌ 不连续 | | 定义域”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:9478dfc1ba6cb58f-3d465db48acbc65d",
+        "from": "claim:9478dfc1ba6cb58f-e1d2ac16226c4ed0",
+        "to": "claim:9478dfc1ba6cb58f-62ee7fefe71f511c",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:09-functional-analysis-9478dfc1ba6cb58f-43#chars-3382-3470",
+          "span:09-functional-analysis-9478dfc1ba6cb58f-43#chars-3470-3524"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:46:22.955Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-3d465db48acbc65d",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:09-functional-analysis#block-43] “Fredholm 二择一（Fredholm alternative）：$(I-K)x = y$ 要么对任意 $y$ 有唯一解，要么齐次方程 $(I-K)x = ”; [1:09-functional-analysis#block-43] “这正是线性代数中\"$\\det A \\neq 0$ 或 $\\ker A \\neq \\{0\\}$\"的无限维版本。”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:9478dfc1ba6cb58f-499b20007b7e3936",
+        "from": "claim:9478dfc1ba6cb58f-2c7ee7cdf00d693a",
+        "to": "claim:9478dfc1ba6cb58f-05929b8c6db069b1",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:09-functional-analysis-9478dfc1ba6cb58f-47",
+          "span:09-functional-analysis-9478dfc1ba6cb58f-6"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:46:22.955Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-499b20007b7e3936",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:09-functional-analysis#block-47] “| # | 关键概念 | 直觉 | 连接章节 | |---|---------|------|---------| | 1 | **泛函 = 函数的函数** |”; [1:09-functional-analysis#block-6] “| 泛函 | 表达式 | 应用 | |------|--------|------| | 定积分 | $J[f] = \\int_a^b f(x)dx$ | 面积”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-499b20007b7e3936",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:09-functional-analysis#block-47] “| # | 关键概念 | 直觉 | 连接章节 | |---|---------|------|---------| | 1 | **泛函 = 函数的函数** |”; [1:09-functional-analysis#block-6] “| 泛函 | 表达式 | 应用 | |------|--------|------| | 定积分 | $J[f] = \\int_a^b f(x)dx$ | 面积”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:9478dfc1ba6cb58f-4ba46a77a2e0e23e",
+        "from": "claim:9478dfc1ba6cb58f-2ffda8eeccee6117",
+        "to": "claim:9478dfc1ba6cb58f-e8081e85ada20a22",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:09-functional-analysis-9478dfc1ba6cb58f-41#chars-3248-3291",
+          "span:09-functional-analysis-9478dfc1ba6cb58f-42#chars-3334-3375"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:46:22.955Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-4ba46a77a2e0e23e",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:09-functional-analysis#block-41] “紧算子是\"最像矩阵\"的无限维算子——它的谱除了可能的 $0$ 之外，完全由特征值构成：”; [1:09-functional-analysis#block-42] “\\sigma(K) \\setminus \\{0\\} = \\text{有限重特征值}”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:9478dfc1ba6cb58f-4bad1da06a0efb97",
+        "from": "claim:9478dfc1ba6cb58f-c4b3dcb5ec314151",
+        "to": "claim:9478dfc1ba6cb58f-55310ac2f6440319",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:09-functional-analysis-9478dfc1ba6cb58f-1#chars-30-51",
+          "span:09-functional-analysis-9478dfc1ba6cb58f-1#chars-51-59"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:46:22.955Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-4bad1da06a0efb97",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:09-functional-analysis#block-1] “泛函分析是线性代数在无限维空间的自然推广。”; [1:09-functional-analysis#block-1] “它把函数视作向量”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:9478dfc1ba6cb58f-4c7eb2053c737b40",
+        "from": "claim:9478dfc1ba6cb58f-f4ea0433ce71b5e5",
+        "to": "claim:9478dfc1ba6cb58f-6f3f23d80a2dee54",
+        "type": "CONTRADICTS",
+        "conditions": [],
+        "conditionStatus": "UNVERIFIED",
+        "relationAuditVersion": null,
+        "evidenceSpanIds": [
+          "span:09-functional-analysis-9478dfc1ba6cb58f-48#chars-4714-4754",
+          "span:09-functional-analysis-9478dfc1ba6cb58f-48#chars-4736-4744"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:46:22.955Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_ENDPOINT_QUARANTINED",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-4c7eb2053c737b40",
+          "detail": "from 端点未通过 Lint（Quarantined）: claim:9478dfc1ba6cb58f-f4ea0433ce71b5e5",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:9478dfc1ba6cb58f-56463648c1c3aa36",
+        "from": "claim:9478dfc1ba6cb58f-05929b8c6db069b1",
+        "to": "claim:9478dfc1ba6cb58f-f2bd55a46f0c6f24",
+        "type": "EQUIVALENT_UNDER",
+        "conditions": [
+          "泛函的定义相同"
+        ],
+        "conditionStatus": "UNVERIFIED",
+        "relationAuditVersion": null,
+        "evidenceSpanIds": [
+          "span:09-functional-analysis-9478dfc1ba6cb58f-47",
+          "span:09-functional-analysis-9478dfc1ba6cb58f-5#chars-140-197"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:46:22.955Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_EQUIVALENCE_REVIEW_REQUIRED",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-56463648c1c3aa36",
+          "detail": "EQUIVALENT_UNDER 自动审计在真实抽检中 4/4 误判；独立人工复核或校准门禁完成前禁止自动晋级",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:9478dfc1ba6cb58f-574b43948589668e",
+        "from": "claim:9478dfc1ba6cb58f-9123adaeca78c358",
+        "to": "claim:9478dfc1ba6cb58f-2ffda8eeccee6117",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:09-functional-analysis-9478dfc1ba6cb58f-42#chars-3296-3326",
+          "span:09-functional-analysis-9478dfc1ba6cb58f-42#chars-3334-3375"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:46:22.955Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-574b43948589668e",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:09-functional-analysis#block-42] “\\sigma_{\\text{ess}}(K) = \\{0\\}”; [1:09-functional-analysis#block-42] “\\sigma(K) \\setminus \\{0\\} = \\text{有限重特征值}”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:9478dfc1ba6cb58f-59d0062cffc5b8ca",
+        "from": "claim:9478dfc1ba6cb58f-71a56b4ac7ad880b",
+        "to": "claim:9478dfc1ba6cb58f-226dbcc62df2c418",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:09-functional-analysis-9478dfc1ba6cb58f-17",
+          "span:09-functional-analysis-9478dfc1ba6cb58f-47"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:46:22.955Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-59d0062cffc5b8ca",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:09-functional-analysis#block-17] “| 定理 | 陈述 | 用途 | |------|------|------| | **Hahn-Banach** | 子空间上的线性泛函可延拓到全空间 | 分”; [1:09-functional-analysis#block-47] “| # | 关键概念 | 直觉 | 连接章节 | |---|---------|------|---------| | 1 | **泛函 = 函数的函数** |”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-59d0062cffc5b8ca",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:09-functional-analysis#block-17] “| 定理 | 陈述 | 用途 | |------|------|------| | **Hahn-Banach** | 子空间上的线性泛函可延拓到全空间 | 分”; [1:09-functional-analysis#block-47] “| # | 关键概念 | 直觉 | 连接章节 | |---|---------|------|---------| | 1 | **泛函 = 函数的函数** |”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:9478dfc1ba6cb58f-636c8a6494077fc6",
+        "from": "claim:9478dfc1ba6cb58f-a8dab44108d9e818",
+        "to": "claim:9478dfc1ba6cb58f-53217463fc578441",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:09-functional-analysis-9478dfc1ba6cb58f-37#chars-2655-2690",
+          "span:09-functional-analysis-9478dfc1ba6cb58f-37#chars-2707-2765"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:46:22.955Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-636c8a6494077fc6",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:09-functional-analysis#block-37] “1. $\\sigma(T) \\subseteq \\mathbb{R}$”; [1:09-functional-analysis#block-37] “3. 存在**谱分解**：$T = \\int_{\\sigma(T)} \\lambda \\, dE(\\lambda)$”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:9478dfc1ba6cb58f-667dfd4e7841d11e",
+        "from": "claim:9478dfc1ba6cb58f-ef5f374785bd2634",
+        "to": "claim:9478dfc1ba6cb58f-226dbcc62df2c418",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:09-functional-analysis-9478dfc1ba6cb58f-17",
+          "span:09-functional-analysis-9478dfc1ba6cb58f-47"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:46:22.955Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-667dfd4e7841d11e",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:09-functional-analysis#block-17] “| 定理 | 陈述 | 用途 | |------|------|------| | **Hahn-Banach** | 子空间上的线性泛函可延拓到全空间 | 分”; [1:09-functional-analysis#block-47] “| # | 关键概念 | 直觉 | 连接章节 | |---|---------|------|---------| | 1 | **泛函 = 函数的函数** |”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-667dfd4e7841d11e",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:09-functional-analysis#block-17] “| 定理 | 陈述 | 用途 | |------|------|------| | **Hahn-Banach** | 子空间上的线性泛函可延拓到全空间 | 分”; [1:09-functional-analysis#block-47] “| # | 关键概念 | 直觉 | 连接章节 | |---|---------|------|---------| | 1 | **泛函 = 函数的函数** |”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:9478dfc1ba6cb58f-6683057ad4cbba93",
+        "from": "claim:9478dfc1ba6cb58f-d1e15aadb197c142",
+        "to": "claim:9478dfc1ba6cb58f-226dbcc62df2c418",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:09-functional-analysis-9478dfc1ba6cb58f-17",
+          "span:09-functional-analysis-9478dfc1ba6cb58f-47"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:46:22.955Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-6683057ad4cbba93",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:09-functional-analysis#block-17] “| 定理 | 陈述 | 用途 | |------|------|------| | **Hahn-Banach** | 子空间上的线性泛函可延拓到全空间 | 分”; [1:09-functional-analysis#block-47] “| # | 关键概念 | 直觉 | 连接章节 | |---|---------|------|---------| | 1 | **泛函 = 函数的函数** |”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-6683057ad4cbba93",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:09-functional-analysis#block-17] “| 定理 | 陈述 | 用途 | |------|------|------| | **Hahn-Banach** | 子空间上的线性泛函可延拓到全空间 | 分”; [1:09-functional-analysis#block-47] “| # | 关键概念 | 直觉 | 连接章节 | |---|---------|------|---------| | 1 | **泛函 = 函数的函数** |”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:9478dfc1ba6cb58f-6c1025430176d3f4",
+        "from": "claim:9478dfc1ba6cb58f-32a7f03237f4a00e",
+        "to": "claim:9478dfc1ba6cb58f-05929b8c6db069b1",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:09-functional-analysis-9478dfc1ba6cb58f-47",
+          "span:09-functional-analysis-9478dfc1ba6cb58f-6"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:46:22.955Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-6c1025430176d3f4",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:09-functional-analysis#block-47] “| # | 关键概念 | 直觉 | 连接章节 | |---|---------|------|---------| | 1 | **泛函 = 函数的函数** |”; [1:09-functional-analysis#block-6] “| 泛函 | 表达式 | 应用 | |------|--------|------| | 定积分 | $J[f] = \\int_a^b f(x)dx$ | 面积”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:9478dfc1ba6cb58f-7d420fc4b5f2ba53",
+        "from": "claim:9478dfc1ba6cb58f-80c4dcb460b32155",
+        "to": "claim:9478dfc1ba6cb58f-8dc4b64fb454fab6",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:09-functional-analysis-9478dfc1ba6cb58f-22",
+          "span:09-functional-analysis-9478dfc1ba6cb58f-48#chars-4780-4790"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:46:22.955Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-7d420fc4b5f2ba53",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:09-functional-analysis#block-22] “| 性质 | 有界算子 | 无界算子 | |------|---------|---------| | 连续性 | ✅ 必然连续 | ❌ 不连续 | | 定义域”; [1:09-functional-analysis#block-48] “有界与无界算子的鸿沟”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:9478dfc1ba6cb58f-81217f122607f354",
+        "from": "claim:9478dfc1ba6cb58f-052f156df6dbd1c6",
+        "to": "claim:9478dfc1ba6cb58f-ebe2d3dd016a802f",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:09-functional-analysis-9478dfc1ba6cb58f-47",
+          "span:09-functional-analysis-9478dfc1ba6cb58f-9#chars-572-669"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:46:22.955Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-81217f122607f354",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:09-functional-analysis#block-47] “| # | 关键概念 | 直觉 | 连接章节 | |---|---------|------|---------| | 1 | **泛函 = 函数的函数** |”; [1:09-functional-analysis#block-9] “$$ \\frac{\\partial L}{\\partial y} - \\frac{d}{dx}\\left(\\frac{\\partial L}{\\partial ”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-81217f122607f354",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:09-functional-analysis#block-47] “| # | 关键概念 | 直觉 | 连接章节 | |---|---------|------|---------| | 1 | **泛函 = 函数的函数** |”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:9478dfc1ba6cb58f-847093d9f9c8dbbe",
+        "from": "claim:9478dfc1ba6cb58f-62ee7fefe71f511c",
+        "to": "claim:9478dfc1ba6cb58f-e1d2ac16226c4ed0",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:09-functional-analysis-9478dfc1ba6cb58f-43#chars-3382-3470",
+          "span:09-functional-analysis-9478dfc1ba6cb58f-43#chars-3470-3524"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:46:22.955Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-847093d9f9c8dbbe",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:09-functional-analysis#block-43] “Fredholm 二择一（Fredholm alternative）：$(I-K)x = y$ 要么对任意 $y$ 有唯一解，要么齐次方程 $(I-K)x = ”; [1:09-functional-analysis#block-43] “这正是线性代数中\"$\\det A \\neq 0$ 或 $\\ker A \\neq \\{0\\}$\"的无限维版本。”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:9478dfc1ba6cb58f-8559b45e0ed67889",
+        "from": "claim:9478dfc1ba6cb58f-1370547ce5666a0f",
+        "to": "claim:9478dfc1ba6cb58f-e6c98f9a8e327777",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:09-functional-analysis-9478dfc1ba6cb58f-1#chars-68-76",
+          "span:09-functional-analysis-9478dfc1ba6cb58f-47"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:46:22.955Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-8559b45e0ed67889",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:09-functional-analysis#block-1] “把特征值推广为谱”; [1:09-functional-analysis#block-47] “| # | 关键概念 | 直觉 | 连接章节 | |---|---------|------|---------| | 1 | **泛函 = 函数的函数** |”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:9478dfc1ba6cb58f-856de175a8ec285f",
+        "from": "claim:9478dfc1ba6cb58f-23e316c39e6b89e0",
+        "to": "claim:9478dfc1ba6cb58f-5f635e434ce1469b",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:09-functional-analysis-9478dfc1ba6cb58f-27#chars-2162-2208",
+          "span:09-functional-analysis-9478dfc1ba6cb58f-47"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:46:22.955Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-856de175a8ec285f",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:09-functional-analysis#block-27] “这意味着 Hilbert 空间中的\"作用在向量上的泛函\"本质上就是\"与某个固定向量做内积\"。”; [1:09-functional-analysis#block-47] “| # | 关键概念 | 直觉 | 连接章节 | |---|---------|------|---------| | 1 | **泛函 = 函数的函数** |”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-856de175a8ec285f",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:09-functional-analysis#block-27] “这意味着 Hilbert 空间中的\"作用在向量上的泛函\"本质上就是\"与某个固定向量做内积\"。”; [1:09-functional-analysis#block-47] “| # | 关键概念 | 直觉 | 连接章节 | |---|---------|------|---------| | 1 | **泛函 = 函数的函数** |”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:9478dfc1ba6cb58f-91ada973000eef19",
+        "from": "claim:9478dfc1ba6cb58f-e90313bb0b7da2c5",
+        "to": "claim:9478dfc1ba6cb58f-226dbcc62df2c418",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:09-functional-analysis-9478dfc1ba6cb58f-17",
+          "span:09-functional-analysis-9478dfc1ba6cb58f-47"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:46:22.955Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-91ada973000eef19",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:09-functional-analysis#block-17] “| 定理 | 陈述 | 用途 | |------|------|------| | **Hahn-Banach** | 子空间上的线性泛函可延拓到全空间 | 分”; [1:09-functional-analysis#block-47] “| # | 关键概念 | 直觉 | 连接章节 | |---|---------|------|---------| | 1 | **泛函 = 函数的函数** |”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-91ada973000eef19",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:09-functional-analysis#block-17] “| 定理 | 陈述 | 用途 | |------|------|------| | **Hahn-Banach** | 子空间上的线性泛函可延拓到全空间 | 分”; [1:09-functional-analysis#block-47] “| # | 关键概念 | 直觉 | 连接章节 | |---|---------|------|---------| | 1 | **泛函 = 函数的函数** |”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:9478dfc1ba6cb58f-95a2acb8fc651801",
+        "from": "claim:9478dfc1ba6cb58f-53217463fc578441",
+        "to": "claim:9478dfc1ba6cb58f-76dcd6455364b377",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:09-functional-analysis-9478dfc1ba6cb58f-37#chars-2707-2765",
+          "span:09-functional-analysis-9478dfc1ba6cb58f-38#chars-2769-2811"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:46:22.955Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-95a2acb8fc651801",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:09-functional-analysis#block-37] “3. 存在**谱分解**：$T = \\int_{\\sigma(T)} \\lambda \\, dE(\\lambda)$”; [1:09-functional-analysis#block-38] “谱分解是 Fourier 变换的终极推广——任何自伴算子都可以\"对角化\"为乘法算子。”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:9478dfc1ba6cb58f-9a408aa7b25a68c2",
+        "from": "claim:9478dfc1ba6cb58f-8dc4b64fb454fab6",
+        "to": "claim:9478dfc1ba6cb58f-4d5f5b6d9d6d604a",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:09-functional-analysis-9478dfc1ba6cb58f-48#chars-4773-4813",
+          "span:09-functional-analysis-9478dfc1ba6cb58f-48#chars-4780-4790"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:46:22.955Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-9a408aa7b25a68c2",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:09-functional-analysis#block-48] “谱的三种类型、有界与无界算子的鸿沟、紧性与非紧性的分野，构成了现代分析的深层景观”; [1:09-functional-analysis#block-48] “有界与无界算子的鸿沟”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:9478dfc1ba6cb58f-a0455423b5978462",
+        "from": "claim:9478dfc1ba6cb58f-e26e321d2f547741",
+        "to": "claim:9478dfc1ba6cb58f-53217463fc578441",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:09-functional-analysis-9478dfc1ba6cb58f-37#chars-2691-2706",
+          "span:09-functional-analysis-9478dfc1ba6cb58f-37#chars-2707-2765"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:46:22.955Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-a0455423b5978462",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:09-functional-analysis#block-37] “2. 不同特征值的特征向量正交”; [1:09-functional-analysis#block-37] “3. 存在**谱分解**：$T = \\int_{\\sigma(T)} \\lambda \\, dE(\\lambda)$”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:9478dfc1ba6cb58f-ad20fd35c909cd28",
+        "from": "claim:9478dfc1ba6cb58f-bf39cdc59c43343a",
+        "to": "claim:9478dfc1ba6cb58f-76dcd6455364b377",
+        "type": "EQUIVALENT_UNDER",
+        "conditions": [
+          "谱分解是Fourier变换的终极推广"
+        ],
+        "conditionStatus": "UNVERIFIED",
+        "relationAuditVersion": null,
+        "evidenceSpanIds": [
+          "span:09-functional-analysis-9478dfc1ba6cb58f-38#chars-2769-2811",
+          "span:09-functional-analysis-9478dfc1ba6cb58f-47"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:46:22.955Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_EQUIVALENCE_REVIEW_REQUIRED",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-ad20fd35c909cd28",
+          "detail": "EQUIVALENT_UNDER 自动审计在真实抽检中 4/4 误判；独立人工复核或校准门禁完成前禁止自动晋级",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:9478dfc1ba6cb58f-aebc922315f86e50",
+        "from": "claim:9478dfc1ba6cb58f-7a4e125b173a6c30",
+        "to": "claim:9478dfc1ba6cb58f-05929b8c6db069b1",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:09-functional-analysis-9478dfc1ba6cb58f-47",
+          "span:09-functional-analysis-9478dfc1ba6cb58f-6"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:46:22.955Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-aebc922315f86e50",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:09-functional-analysis#block-47] “| # | 关键概念 | 直觉 | 连接章节 | |---|---------|------|---------| | 1 | **泛函 = 函数的函数** |”; [1:09-functional-analysis#block-6] “| 泛函 | 表达式 | 应用 | |------|--------|------| | 定积分 | $J[f] = \\int_a^b f(x)dx$ | 面积”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-aebc922315f86e50",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:09-functional-analysis#block-47] “| # | 关键概念 | 直觉 | 连接章节 | |---|---------|------|---------| | 1 | **泛函 = 函数的函数** |”; [1:09-functional-analysis#block-6] “| 泛函 | 表达式 | 应用 | |------|--------|------| | 定积分 | $J[f] = \\int_a^b f(x)dx$ | 面积”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:9478dfc1ba6cb58f-b2b64a6522eaac2d",
+        "from": "claim:9478dfc1ba6cb58f-8e2b19dabba3cd6a",
+        "to": "claim:9478dfc1ba6cb58f-37f3aa0fcaa68536",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:09-functional-analysis-9478dfc1ba6cb58f-22"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:46:22.955Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-b2b64a6522eaac2d",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:09-functional-analysis#block-22] “| 性质 | 有界算子 | 无界算子 | |------|---------|---------| | 连续性 | ✅ 必然连续 | ❌ 不连续 | | 定义域”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:9478dfc1ba6cb58f-b5b4c4a5c90ffe80",
+        "from": "claim:9478dfc1ba6cb58f-ebe2d3dd016a802f",
+        "to": "claim:9478dfc1ba6cb58f-052f156df6dbd1c6",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:09-functional-analysis-9478dfc1ba6cb58f-47",
+          "span:09-functional-analysis-9478dfc1ba6cb58f-9#chars-572-669"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:46:22.955Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-b5b4c4a5c90ffe80",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:09-functional-analysis#block-47] “| # | 关键概念 | 直觉 | 连接章节 | |---|---------|------|---------| | 1 | **泛函 = 函数的函数** |”; [1:09-functional-analysis#block-9] “$$ \\frac{\\partial L}{\\partial y} - \\frac{d}{dx}\\left(\\frac{\\partial L}{\\partial ”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:9478dfc1ba6cb58f-b8e755c6fa2e2d3f",
+        "from": "claim:9478dfc1ba6cb58f-80e567f66f11acc3",
+        "to": "claim:9478dfc1ba6cb58f-e6c98f9a8e327777",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:09-functional-analysis-9478dfc1ba6cb58f-47",
+          "span:09-functional-analysis-9478dfc1ba6cb58f-48#chars-4773-4779"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:46:22.955Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-b8e755c6fa2e2d3f",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:09-functional-analysis#block-47] “| # | 关键概念 | 直觉 | 连接章节 | |---|---------|------|---------| | 1 | **泛函 = 函数的函数** |”; [1:09-functional-analysis#block-48] “谱的三种类型”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-b8e755c6fa2e2d3f",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:09-functional-analysis#block-47] “| # | 关键概念 | 直觉 | 连接章节 | |---|---------|------|---------| | 1 | **泛函 = 函数的函数** |”; [1:09-functional-analysis#block-48] “谱的三种类型”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:9478dfc1ba6cb58f-bcc091a3e91d890e",
+        "from": "claim:9478dfc1ba6cb58f-4d5f5b6d9d6d604a",
+        "to": "claim:9478dfc1ba6cb58f-8dc4b64fb454fab6",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:09-functional-analysis-9478dfc1ba6cb58f-48#chars-4773-4813",
+          "span:09-functional-analysis-9478dfc1ba6cb58f-48#chars-4780-4790"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:46:22.955Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-bcc091a3e91d890e",
+          "detail": "Relation 审计虽返回 passed，但边级支持证据未同时覆盖 FROM 与 TO 端点；拒绝用单侧证据和模型外部知识补全关系",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:9478dfc1ba6cb58f-bea950624e9df85c",
+        "from": "claim:9478dfc1ba6cb58f-487cf42e24ef8175",
+        "to": "claim:9478dfc1ba6cb58f-97113e6ef725088e",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:09-functional-analysis-9478dfc1ba6cb58f-1#chars-60-67",
+          "span:09-functional-analysis-9478dfc1ba6cb58f-15"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:46:22.955Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-bea950624e9df85c",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:09-functional-analysis#block-1] “把算子视作矩阵”; [1:09-functional-analysis#block-15] “| 对象 | 有限维类比 | 无限维特征 | |------|-----------|-----------| | Banach空间 | $\\mathbb{R}”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:9478dfc1ba6cb58f-c7450be4bda43344",
+        "from": "claim:9478dfc1ba6cb58f-5bbd5f16a556247b",
+        "to": "claim:9478dfc1ba6cb58f-6f3f23d80a2dee54",
+        "type": "CONTRADICTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:09-functional-analysis-9478dfc1ba6cb58f-33#chars-2390-2409",
+          "span:09-functional-analysis-9478dfc1ba6cb58f-48#chars-4714-4754"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:46:22.955Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-c7450be4bda43344",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:09-functional-analysis#block-33] “在有限维中，\"不可逆 = 有特征值\"。”; [1:09-functional-analysis#block-48] “有限维中的很多\"理所当然\"（如所有范数等价、线性算子自动连续）在无限维中全部失效”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-c7450be4bda43344",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:09-functional-analysis#block-33] “在有限维中，\"不可逆 = 有特征值\"。”; [1:09-functional-analysis#block-48] “有限维中的很多\"理所当然\"（如所有范数等价、线性算子自动连续）在无限维中全部失效”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:9478dfc1ba6cb58f-c7fbf815ee6d6742",
+        "from": "claim:9478dfc1ba6cb58f-b112d7ffc3e4f340",
+        "to": "claim:9478dfc1ba6cb58f-381461387bb1bebc",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:09-functional-analysis-9478dfc1ba6cb58f-15",
+          "span:09-functional-analysis-9478dfc1ba6cb58f-47"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:46:22.955Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-c7fbf815ee6d6742",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:09-functional-analysis#block-15] “| 对象 | 有限维类比 | 无限维特征 | |------|-----------|-----------| | Banach空间 | $\\mathbb{R}”; [1:09-functional-analysis#block-47] “| # | 关键概念 | 直觉 | 连接章节 | |---|---------|------|---------| | 1 | **泛函 = 函数的函数** |”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:9478dfc1ba6cb58f-c8c23dce88c6f037",
+        "from": "claim:9478dfc1ba6cb58f-0e7148fb74211eee",
+        "to": "claim:9478dfc1ba6cb58f-23e316c39e6b89e0",
+        "type": "EQUIVALENT_UNDER",
+        "conditions": [
+          "在Hilbert空间语境下"
+        ],
+        "conditionStatus": "UNVERIFIED",
+        "relationAuditVersion": null,
+        "evidenceSpanIds": [
+          "span:09-functional-analysis-9478dfc1ba6cb58f-25#chars-2037-2095",
+          "span:09-functional-analysis-9478dfc1ba6cb58f-27#chars-2162-2208"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:46:22.955Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_EQUIVALENCE_REVIEW_REQUIRED",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-c8c23dce88c6f037",
+          "detail": "EQUIVALENT_UNDER 自动审计在真实抽检中 4/4 误判；独立人工复核或校准门禁完成前禁止自动晋级",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:9478dfc1ba6cb58f-c9f0395cce346a16",
+        "from": "claim:9478dfc1ba6cb58f-5612070baa6619f2",
+        "to": "claim:9478dfc1ba6cb58f-0e7148fb74211eee",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:09-functional-analysis-9478dfc1ba6cb58f-24#chars-2004-2035",
+          "span:09-functional-analysis-9478dfc1ba6cb58f-25#chars-2037-2095"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:46:22.955Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-c9f0395cce346a16",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:09-functional-analysis#block-24] “$X$ 上的所有连续线性泛函构成**对偶空间** $X^*$。”; [1:09-functional-analysis#block-25] “**Riesz 表示定理**（Hilbert空间版本）：每个连续线性泛函 $f \\in H^*$ 都可由内积表示为：”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:9478dfc1ba6cb58f-cc242ef0e955388e",
+        "from": "claim:9478dfc1ba6cb58f-76dcd6455364b377",
+        "to": "claim:9478dfc1ba6cb58f-bf39cdc59c43343a",
+        "type": "EQUIVALENT_UNDER",
+        "conditions": [
+          "谱分解是Fourier变换的终极推广"
+        ],
+        "conditionStatus": "UNVERIFIED",
+        "relationAuditVersion": null,
+        "evidenceSpanIds": [
+          "span:09-functional-analysis-9478dfc1ba6cb58f-38#chars-2769-2811",
+          "span:09-functional-analysis-9478dfc1ba6cb58f-47"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:46:22.955Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_EQUIVALENCE_REVIEW_REQUIRED",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-cc242ef0e955388e",
+          "detail": "EQUIVALENT_UNDER 自动审计在真实抽检中 4/4 误判；独立人工复核或校准门禁完成前禁止自动晋级",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:9478dfc1ba6cb58f-cc67019cb8061176",
+        "from": "claim:9478dfc1ba6cb58f-e6c98f9a8e327777",
+        "to": "claim:9478dfc1ba6cb58f-1370547ce5666a0f",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:09-functional-analysis-9478dfc1ba6cb58f-1#chars-68-76",
+          "span:09-functional-analysis-9478dfc1ba6cb58f-47"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:46:22.955Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-cc67019cb8061176",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:09-functional-analysis#block-1] “把特征值推广为谱”; [1:09-functional-analysis#block-47] “| # | 关键概念 | 直觉 | 连接章节 | |---|---------|------|---------| | 1 | **泛函 = 函数的函数** |”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:9478dfc1ba6cb58f-cf489ea8de590bdd",
+        "from": "claim:9478dfc1ba6cb58f-f2bd55a46f0c6f24",
+        "to": "claim:9478dfc1ba6cb58f-05929b8c6db069b1",
+        "type": "EQUIVALENT_UNDER",
+        "conditions": [
+          "泛函的定义相同"
+        ],
+        "conditionStatus": "UNVERIFIED",
+        "relationAuditVersion": null,
+        "evidenceSpanIds": [
+          "span:09-functional-analysis-9478dfc1ba6cb58f-47",
+          "span:09-functional-analysis-9478dfc1ba6cb58f-5#chars-140-197"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:46:22.955Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_EQUIVALENCE_REVIEW_REQUIRED",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-cf489ea8de590bdd",
+          "detail": "EQUIVALENT_UNDER 自动审计在真实抽检中 4/4 误判；独立人工复核或校准门禁完成前禁止自动晋级",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:9478dfc1ba6cb58f-d07acee030ca8086",
+        "from": "claim:9478dfc1ba6cb58f-a2245bb4222acf0e",
+        "to": "claim:9478dfc1ba6cb58f-d258ac6b3076f7aa",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:09-functional-analysis-9478dfc1ba6cb58f-1#chars-77-106",
+          "span:09-functional-analysis-9478dfc1ba6cb58f-48#chars-4691-4713"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:46:22.955Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-d07acee030ca8086",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:09-functional-analysis#block-1] “量子力学、信号处理、偏微分方程的理论基础全部建立在此之上。”; [1:09-functional-analysis#block-48] “泛函分析 = 无限维线性代数 + 拓扑完备性”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-d07acee030ca8086",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:09-functional-analysis#block-1] “量子力学、信号处理、偏微分方程的理论基础全部建立在此之上。”; [1:09-functional-analysis#block-48] “泛函分析 = 无限维线性代数 + 拓扑完备性”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:9478dfc1ba6cb58f-d121a0fa7c266032",
+        "from": "claim:9478dfc1ba6cb58f-21c2b036913545cb",
+        "to": "claim:9478dfc1ba6cb58f-3e5745a740426163",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:09-functional-analysis-9478dfc1ba6cb58f-22"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:46:22.955Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-d121a0fa7c266032",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:09-functional-analysis#block-22] “| 性质 | 有界算子 | 无界算子 | |------|---------|---------| | 连续性 | ✅ 必然连续 | ❌ 不连续 | | 定义域”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-d121a0fa7c266032",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:09-functional-analysis#block-22] “| 性质 | 有界算子 | 无界算子 | |------|---------|---------| | 连续性 | ✅ 必然连续 | ❌ 不连续 | | 定义域”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:9478dfc1ba6cb58f-d5742f263791b73a",
+        "from": "claim:9478dfc1ba6cb58f-46c027a433327781",
+        "to": "claim:9478dfc1ba6cb58f-80e567f66f11acc3",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:09-functional-analysis-9478dfc1ba6cb58f-34",
+          "span:09-functional-analysis-9478dfc1ba6cb58f-48#chars-4773-4779"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:46:22.955Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-d5742f263791b73a",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:09-functional-analysis#block-34] “| 谱的类型 | 含义 | 例子 | |---------|------|------| | **点谱** | $\\lambda I - T$ 非单射 | 真正”; [1:09-functional-analysis#block-48] “谱的三种类型”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-d5742f263791b73a",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:09-functional-analysis#block-34] “| 谱的类型 | 含义 | 例子 | |---------|------|------| | **点谱** | $\\lambda I - T$ 非单射 | 真正”; [1:09-functional-analysis#block-48] “谱的三种类型”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:9478dfc1ba6cb58f-e93e35d0e3dea8d4",
+        "from": "claim:9478dfc1ba6cb58f-a003c3da791c3533",
+        "to": "claim:9478dfc1ba6cb58f-05929b8c6db069b1",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:09-functional-analysis-9478dfc1ba6cb58f-47",
+          "span:09-functional-analysis-9478dfc1ba6cb58f-6"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:46:22.955Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-e93e35d0e3dea8d4",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:09-functional-analysis#block-47] “| # | 关键概念 | 直觉 | 连接章节 | |---|---------|------|---------| | 1 | **泛函 = 函数的函数** |”; [1:09-functional-analysis#block-6] “| 泛函 | 表达式 | 应用 | |------|--------|------| | 定积分 | $J[f] = \\int_a^b f(x)dx$ | 面积”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-e93e35d0e3dea8d4",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:09-functional-analysis#block-47] “| # | 关键概念 | 直觉 | 连接章节 | |---|---------|------|---------| | 1 | **泛函 = 函数的函数** |”; [1:09-functional-analysis#block-6] “| 泛函 | 表达式 | 应用 | |------|--------|------| | 定积分 | $J[f] = \\int_a^b f(x)dx$ | 面积”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:9478dfc1ba6cb58f-ea0bfa7d16f67657",
+        "from": "claim:9478dfc1ba6cb58f-0e7148fb74211eee",
+        "to": "claim:9478dfc1ba6cb58f-5f635e434ce1469b",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:09-functional-analysis-9478dfc1ba6cb58f-25#chars-2037-2095",
+          "span:09-functional-analysis-9478dfc1ba6cb58f-47"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:46:22.955Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-ea0bfa7d16f67657",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:09-functional-analysis#block-25] “**Riesz 表示定理**（Hilbert空间版本）：每个连续线性泛函 $f \\in H^*$ 都可由内积表示为：”; [1:09-functional-analysis#block-47] “| # | 关键概念 | 直觉 | 连接章节 | |---|---------|------|---------| | 1 | **泛函 = 函数的函数** |”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-ea0bfa7d16f67657",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:09-functional-analysis#block-25] “**Riesz 表示定理**（Hilbert空间版本）：每个连续线性泛函 $f \\in H^*$ 都可由内积表示为：”; [1:09-functional-analysis#block-47] “| # | 关键概念 | 直觉 | 连接章节 | |---|---------|------|---------| | 1 | **泛函 = 函数的函数** |”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:9478dfc1ba6cb58f-ed527675a80e63ed",
+        "from": "claim:9478dfc1ba6cb58f-9970b8b9ed15793f",
+        "to": "claim:9478dfc1ba6cb58f-0c27fbe0e2b1a1d3",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:09-functional-analysis-9478dfc1ba6cb58f-15"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:46:22.955Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-ed527675a80e63ed",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:09-functional-analysis#block-15] “| 对象 | 有限维类比 | 无限维特征 | |------|-----------|-----------| | Banach空间 | $\\mathbb{R}”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-ed527675a80e63ed",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:09-functional-analysis#block-15] “| 对象 | 有限维类比 | 无限维特征 | |------|-----------|-----------| | Banach空间 | $\\mathbb{R}”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:9478dfc1ba6cb58f-f5a7b38fcd6948c3",
+        "from": "claim:9478dfc1ba6cb58f-206c18fcb49f54d4",
+        "to": "claim:9478dfc1ba6cb58f-c9090a5bd644569b",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:09-functional-analysis-9478dfc1ba6cb58f-31#chars-2263-2317",
+          "span:09-functional-analysis-9478dfc1ba6cb58f-32#chars-2333-2385"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:46:22.955Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-f5a7b38fcd6948c3",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:09-functional-analysis#block-31] “在无限维空间中，算子 $T$ 的**谱** $\\sigma(T)$ 推广了有限维中矩阵的**特征值集合**。”; [1:09-functional-analysis#block-32] “\\lambda I - T \\text{ 不可逆} \\iff \\lambda \\in \\sigma(T)”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-f5a7b38fcd6948c3",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:09-functional-analysis#block-31] “在无限维空间中，算子 $T$ 的**谱** $\\sigma(T)$ 推广了有限维中矩阵的**特征值集合**。”; [1:09-functional-analysis#block-32] “\\lambda I - T \\text{ 不可逆} \\iff \\lambda \\in \\sigma(T)”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:9478dfc1ba6cb58f-f889c1fa4349e58f",
+        "from": "claim:9478dfc1ba6cb58f-37f3aa0fcaa68536",
+        "to": "claim:9478dfc1ba6cb58f-d70c3a736faab20f",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:09-functional-analysis-9478dfc1ba6cb58f-15",
+          "span:09-functional-analysis-9478dfc1ba6cb58f-22"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:46:22.955Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-f889c1fa4349e58f",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:09-functional-analysis#block-15] “| 对象 | 有限维类比 | 无限维特征 | |------|-----------|-----------| | Banach空间 | $\\mathbb{R}”; [1:09-functional-analysis#block-22] “| 性质 | 有界算子 | 无界算子 | |------|---------|---------| | 连续性 | ✅ 必然连续 | ❌ 不连续 | | 定义域”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:9478dfc1ba6cb58f-f8d4b71faac24d58",
+        "from": "claim:9478dfc1ba6cb58f-573788127e6fe60f",
+        "to": "claim:9478dfc1ba6cb58f-5f635e434ce1469b",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:09-functional-analysis-9478dfc1ba6cb58f-27#chars-2208-2222",
+          "span:09-functional-analysis-9478dfc1ba6cb58f-47"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:46:22.955Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-f8d4b71faac24d58",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:09-functional-analysis#block-27] “$H \\cong H^*$！”; [1:09-functional-analysis#block-47] “| # | 关键概念 | 直觉 | 连接章节 | |---|---------|------|---------| | 1 | **泛函 = 函数的函数** |”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:9478dfc1ba6cb58f-f8d4b71faac24d58",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:09-functional-analysis#block-27] “$H \\cong H^*$！”; [1:09-functional-analysis#block-47] “| # | 关键概念 | 直觉 | 连接章节 | |---|---------|------|---------| | 1 | **泛函 = 函数的函数** |”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-0f705edd57bfe192",
+        "from": "claim:9478dfc1ba6cb58f-9970b8b9ed15793f",
+        "to": "claim:33a33396a17d4175-81349b735066881b",
+        "type": "EQUIVALENT_UNDER",
+        "conditions": [
+          "Hilbert空间允许正交基"
+        ],
+        "conditionStatus": "UNVERIFIED",
+        "relationAuditVersion": null,
+        "evidenceSpanIds": [
+          "span:02-spaces-33a33396a17d4175-66#chars-5801-5831",
+          "span:09-functional-analysis-9478dfc1ba6cb58f-15"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:47:31.081Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_EQUIVALENCE_REVIEW_REQUIRED",
+          "severity": "error",
+          "affectedObject": "rel:cross-0f705edd57bfe192",
+          "detail": "EQUIVALENT_UNDER 自动审计在真实抽检中 4/4 误判；独立人工复核或校准门禁完成前禁止自动晋级",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-14e64ddbaa2fadc0",
+        "from": "claim:9478dfc1ba6cb58f-9970b8b9ed15793f",
+        "to": "claim:33a33396a17d4175-c57d84208e8f6275",
+        "type": "EQUIVALENT_UNDER",
+        "conditions": [
+          "Hilbert空间定义为完备内积空间"
+        ],
+        "conditionStatus": "UNVERIFIED",
+        "relationAuditVersion": null,
+        "evidenceSpanIds": [
+          "span:02-spaces-33a33396a17d4175-61#chars-5644-5668",
+          "span:09-functional-analysis-9478dfc1ba6cb58f-15"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:47:31.081Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 1,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_EQUIVALENCE_REVIEW_REQUIRED",
+          "severity": "error",
+          "affectedObject": "rel:cross-14e64ddbaa2fadc0",
+          "detail": "EQUIVALENT_UNDER 自动审计在真实抽检中 4/4 误判；独立人工复核或校准门禁完成前禁止自动晋级",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-1a7acd585e920b4c",
+        "from": "claim:9478dfc1ba6cb58f-9970b8b9ed15793f",
+        "to": "claim:33a33396a17d4175-8f51714c9f008157",
+        "type": "EQUIVALENT_UNDER",
+        "conditions": [
+          "内积诱导范数"
+        ],
+        "conditionStatus": "UNVERIFIED",
+        "relationAuditVersion": null,
+        "evidenceSpanIds": [
+          "span:02-spaces-33a33396a17d4175-60#chars-5596-5640",
+          "span:09-functional-analysis-9478dfc1ba6cb58f-15"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:47:31.081Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_EQUIVALENCE_REVIEW_REQUIRED",
+          "severity": "error",
+          "affectedObject": "rel:cross-1a7acd585e920b4c",
+          "detail": "EQUIVALENT_UNDER 自动审计在真实抽检中 4/4 误判；独立人工复核或校准门禁完成前禁止自动晋级",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-1ae3848cbc5bf4df",
+        "from": "claim:9478dfc1ba6cb58f-487cf42e24ef8175",
+        "to": "claim:7e02712717a02820-116a9a49353d524d",
+        "type": "EQUIVALENT_UNDER",
+        "conditions": [
+          "线性算子是核心概念"
+        ],
+        "conditionStatus": "UNVERIFIED",
+        "relationAuditVersion": null,
+        "evidenceSpanIds": [
+          "span:05-functions-mappings-7e02712717a02820-29#chars-2671-2691",
+          "span:09-functional-analysis-9478dfc1ba6cb58f-15"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:47:31.081Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_EQUIVALENCE_REVIEW_REQUIRED",
+          "severity": "error",
+          "affectedObject": "rel:cross-1ae3848cbc5bf4df",
+          "detail": "EQUIVALENT_UNDER 自动审计在真实抽检中 4/4 误判；独立人工复核或校准门禁完成前禁止自动晋级",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-3af6177fb77cd094",
+        "from": "claim:9478dfc1ba6cb58f-9970b8b9ed15793f",
+        "to": "claim:33a33396a17d4175-52ea70f5124a7a46",
+        "type": "EQUIVALENT_UNDER",
+        "conditions": [
+          "Hilbert空间允许Fourier级数"
+        ],
+        "conditionStatus": "UNVERIFIED",
+        "relationAuditVersion": null,
+        "evidenceSpanIds": [
+          "span:02-spaces-33a33396a17d4175-66#chars-5832-5907",
+          "span:09-functional-analysis-9478dfc1ba6cb58f-15"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:47:31.081Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_EQUIVALENCE_REVIEW_REQUIRED",
+          "severity": "error",
+          "affectedObject": "rel:cross-3af6177fb77cd094",
+          "detail": "EQUIVALENT_UNDER 自动审计在真实抽检中 4/4 误判；独立人工复核或校准门禁完成前禁止自动晋级",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-5f52f2c0a55be19a",
+        "from": "claim:9478dfc1ba6cb58f-0c27fbe0e2b1a1d3",
+        "to": "claim:33a33396a17d4175-6d70b1c82ab10765",
+        "type": "EQUIVALENT_UNDER",
+        "conditions": [
+          "Banach空间定义为完备赋范空间"
+        ],
+        "conditionStatus": "UNVERIFIED",
+        "relationAuditVersion": null,
+        "evidenceSpanIds": [
+          "span:02-spaces-33a33396a17d4175-52#chars-4909-4932",
+          "span:09-functional-analysis-9478dfc1ba6cb58f-15"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:47:31.081Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 1,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_EQUIVALENCE_REVIEW_REQUIRED",
+          "severity": "error",
+          "affectedObject": "rel:cross-5f52f2c0a55be19a",
+          "detail": "EQUIVALENT_UNDER 自动审计在真实抽检中 4/4 误判；独立人工复核或校准门禁完成前禁止自动晋级",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-a61ff880fc7e7374",
+        "from": "claim:9478dfc1ba6cb58f-9970b8b9ed15793f",
+        "to": "claim:33a33396a17d4175-805fb4ab5d394c0a",
+        "type": "EQUIVALENT_UNDER",
+        "conditions": [
+          "Hilbert空间允许正交投影"
+        ],
+        "conditionStatus": "UNVERIFIED",
+        "relationAuditVersion": null,
+        "evidenceSpanIds": [
+          "span:02-spaces-33a33396a17d4175-66#chars-5775-5800",
+          "span:09-functional-analysis-9478dfc1ba6cb58f-15"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:47:31.081Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_EQUIVALENCE_REVIEW_REQUIRED",
+          "severity": "error",
+          "affectedObject": "rel:cross-a61ff880fc7e7374",
+          "detail": "EQUIVALENT_UNDER 自动审计在真实抽检中 4/4 误判；独立人工复核或校准门禁完成前禁止自动晋级",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-d4d179461fa380dc",
+        "from": "claim:9478dfc1ba6cb58f-37f3aa0fcaa68536",
+        "to": "claim:7e02712717a02820-03522d71ff27a7f6",
+        "type": "EQUIVALENT_UNDER",
+        "conditions": [
+          "有界算子等价于连续算子"
+        ],
+        "conditionStatus": "UNVERIFIED",
+        "relationAuditVersion": null,
+        "evidenceSpanIds": [
+          "span:05-functions-mappings-7e02712717a02820-32#chars-2943-2964",
+          "span:09-functional-analysis-9478dfc1ba6cb58f-22"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:47:31.081Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 1,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_EQUIVALENCE_REVIEW_REQUIRED",
+          "severity": "error",
+          "affectedObject": "rel:cross-d4d179461fa380dc",
+          "detail": "EQUIVALENT_UNDER 自动审计在真实抽检中 4/4 误判；独立人工复核或校准门禁完成前禁止自动晋级",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-f948daad2cd362e6",
+        "from": "claim:9478dfc1ba6cb58f-d70c3a736faab20f",
+        "to": "claim:7e02712717a02820-d4f3c3b889df3080",
+        "type": "EQUIVALENT_UNDER",
+        "conditions": [
+          "有界算子范数定义相同"
+        ],
+        "conditionStatus": "UNVERIFIED",
+        "relationAuditVersion": null,
+        "evidenceSpanIds": [
+          "span:05-functions-mappings-7e02712717a02820-33#chars-2966-3028",
+          "span:09-functional-analysis-9478dfc1ba6cb58f-15"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:47:31.081Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 1,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_EQUIVALENCE_REVIEW_REQUIRED",
+          "severity": "error",
+          "affectedObject": "rel:cross-f948daad2cd362e6",
+          "detail": "EQUIVALENT_UNDER 自动审计在真实抽检中 4/4 误判；独立人工复核或校准门禁完成前禁止自动晋级",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    }
+  ]
+}

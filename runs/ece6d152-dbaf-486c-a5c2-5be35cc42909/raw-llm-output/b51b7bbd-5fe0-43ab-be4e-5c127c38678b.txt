@@ -1,0 +1,356 @@
+{
+  "claims": [
+    {
+      "statement": "函数是数学中最重要的抽象——输入与输出之间的确定关系。",
+      "evidenceQuotes": ["函数是数学中最重要的抽象——输入与输出之间的确定关系。"],
+      "blockIds": ["05-functions-mappings#block-1"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "从中学课本的 y=f(x) 到现代数学的函子 (functor)，'映射'的概念在每一次泛化中获得更强大的表达能力。",
+      "evidenceQuotes": ["从中学课本的 $y=f(x)$ 到现代数学的函子 (functor)，\"映射\"的概念在每一次泛化中获得更强大的表达能力。"],
+      "blockIds": ["05-functions-mappings#block-1"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "函数 f: X → Y 是对 X 中每个元素唯一指定 Y 中一个元素。",
+      "evidenceQuotes": ["**函数** $f: X \\to Y$ = 对 $X$ 中每个元素唯一指定 $Y$ 中一个元素。"],
+      "blockIds": ["05-functions-mappings#block-4"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "函数 f: X → Y 满足 ∀x ∈ X, ∃! y ∈ Y: f(x) = y。",
+      "evidenceQuotes": ["$$\n\\forall x \\in X, \\exists! y \\in Y: f(x) = y\n$$"],
+      "blockIds": ["05-functions-mappings#block-5"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "函数不是'公式'，而是对应关系。",
+      "evidenceQuotes": ["关键转变：函数不是\"公式\"，而是**对应关系**。"],
+      "blockIds": ["05-functions-mappings#block-6"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "'不可用初等函数表达'的函数远远多于'有公式'的函数。",
+      "evidenceQuotes": ["\"不可用初等函数表达\"的函数远远多于\"有公式\"的函数。"],
+      "blockIds": ["05-functions-mappings#block-6"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "单射的定义：f(x1)=f(x2) ⇒ x1=x2。",
+      "evidenceQuotes": ["**单射** | $f(x_1)=f(x_2) \\Rightarrow x_1=x_2$ | 不同输入→不同输出"],
+      "blockIds": ["05-functions-mappings#block-8"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "满射的定义：∀y ∈ Y, ∃x: f(x)=y。",
+      "evidenceQuotes": ["**满射** | $\\forall y \\in Y, \\exists x: f(x)=y$ | 覆盖整个目标域"],
+      "blockIds": ["05-functions-mappings#block-8"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "双射是既单又满的函数。",
+      "evidenceQuotes": ["**双射** | 既单又满 | 一一对应，可逆"],
+      "blockIds": ["05-functions-mappings#block-8"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "当 X 和 Y 有额外的数学结构时，'好的'映射应该保持这些结构。",
+      "evidenceQuotes": ["当 $X$ 和 $Y$ 有额外的数学结构时，\"好的\"映射应该**保持**这些结构。"],
+      "blockIds": ["05-functions-mappings#block-12"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "保持序结构的映射是单调函数，条件为 x ≤ y ⇒ f(x) ≤ f(y)。",
+      "evidenceQuotes": ["| 序 | 单调函数 | $x \\leq y \\Rightarrow f(x) \\leq f(y)$ |"],
+      "blockIds": ["05-functions-mappings#block-13"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "保持代数运算的映射是同态，条件为 f(x·y) = f(x)·f(y)。",
+      "evidenceQuotes": ["| 代数运算 | 同态 | $f(x \\cdot y) = f(x) \\cdot f(y)$ |"],
+      "blockIds": ["05-functions-mappings#block-13"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "保持线性结构的映射是线性映射，条件为 f(ax+by) = a f(x) + b f(y)。",
+      "evidenceQuotes": ["| 线性 | 线性映射 | $f(ax+by) = a f(x) + b f(y)$ |"],
+      "blockIds": ["05-functions-mappings#block-13"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "保持拓扑结构的映射是连续映射，条件为开集的原像是开集。",
+      "evidenceQuotes": ["| 拓扑 | 连续映射 | 开集的原像是开集 |"],
+      "blockIds": ["05-functions-mappings#block-13"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "保持距离结构的映射是等距映射，条件为 d(f(x), f(y)) = d(x,y)。",
+      "evidenceQuotes": ["| 距离 | 等距映射 | $d(f(x), f(y)) = d(x,y)$ |"],
+      "blockIds": ["05-functions-mappings#block-13"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "保持光滑结构的映射是微分同胚，条件为可微且逆也可微。",
+      "evidenceQuotes": ["| 光滑结构 | 微分同胚 | 可微且逆也可微 |"],
+      "blockIds": ["05-functions-mappings#block-13"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "学习数学就是学习'什么映射保持了什么样的结构'。",
+      "evidenceQuotes": ["**核心洞见**：学习数学就是学习\"什么映射保持了什么样的结构\"。"],
+      "blockIds": ["05-functions-mappings#block-14"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "在 §18 范畴论中，范畴 = 对象 + 保持结构的态射。",
+      "evidenceQuotes": ["这在 $\\S$18 范畴论中将获得终极统一——范畴 = 对象 + 保持结构的态射。"],
+      "blockIds": ["05-functions-mappings#block-14"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "变换是把函数从'时域/空域'变到'频域/特征域'，使得原来困难的操作变得简单。",
+      "evidenceQuotes": ["**变换** = 把函数从\"时域/空域\"变到\"频域/特征域\"，使得原来困难的操作变得简单。"],
+      "blockIds": ["05-functions-mappings#block-18"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "Fourier 变换的公式为 f̂(ω) = ∫ f(t)e^{-iωt} dt，核心作用是频率分解。",
+      "evidenceQuotes": ["| **Fourier** | $\\hat{f}(\\omega) = \\int f(t)e^{-i\\omega t}dt$ | 频率分解 |"],
+      "blockIds": ["05-functions-mappings#block-19"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "Laplace 变换的公式为 F(s) = ∫_0^∞ f(t)e^{-st} dt，核心作用是将 ODE 转化为代数方程。",
+      "evidenceQuotes": ["| **Laplace** | $F(s) = \\int_0^\\infty f(t)e^{-st}dt$ | ODE→代数方程 |"],
+      "blockIds": ["05-functions-mappings#block-19"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "Z 变换的公式为 F(z) = ∑ f[n]z^{-n}，用于离散信号。",
+      "evidenceQuotes": ["| **Z变换** | $F(z) = \\sum f[n]z^{-n}$ | 离散信号 |"],
+      "blockIds": ["05-functions-mappings#block-19"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "小波变换是多尺度分析，用于局部时频分析。",
+      "evidenceQuotes": ["| **小波** | 多尺度分析 | 局部时频分析 |"],
+      "blockIds": ["05-functions-mappings#block-19"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "Fourier 变换把一个函数（信号）分解为不同频率的正弦波叠加。",
+      "evidenceQuotes": ["它把一个函数（信号）分解为不同频率的正弦波叠加："],
+      "blockIds": ["05-functions-mappings#block-21"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "Fourier 逆变换公式为 f(t) = (1/(2π)) ∫_{-∞}^∞ f̂(ω) e^{iωt} dω。",
+      "evidenceQuotes": ["$$\nf(t) = \\frac{1}{2\\pi} \\int_{-\\infty}^\\infty \\hat{f}(\\omega) e^{i\\omega t} d\\omega\n$$"],
+      "blockIds": ["05-functions-mappings#block-22"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "算子 T: V → W 是两个函数空间之间的映射。",
+      "evidenceQuotes": ["**算子** $T: V \\to W$ 是两个**函数空间**之间的映射。"],
+      "blockIds": ["05-functions-mappings#block-28"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "算子在 §9 泛函分析中是核心概念。",
+      "evidenceQuotes": ["这在 $\\S$9 泛函分析中是核心概念。"],
+      "blockIds": ["05-functions-mappings#block-29"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "在线性算子中，有界性等价于连续性。",
+      "evidenceQuotes": ["在线性算子中，**有界性 = 连续性**："],
+      "blockIds": ["05-functions-mappings#block-32"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "有界性定义为算子范数有限：‖T‖ = sup_{‖f‖=1} ‖Tf‖ < ∞。",
+      "evidenceQuotes": ["$$\n\\|T\\| = \\sup_{\\|f\\|=1} \\|Tf\\| < \\infty \\iff T \\text{ 连续}\n$$"],
+      "blockIds": ["05-functions-mappings#block-33"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "微分算子 d/dx 是无界的。",
+      "evidenceQuotes": ["微分算子 $\\frac{d}{dx}$ 是**无界**的"],
+      "blockIds": ["05-functions-mappings#block-34"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "微分算子无界是微分方程比代数方程难的原因。",
+      "evidenceQuotes": ["这就是为什么微分方程比代数方程难得多。"],
+      "blockIds": ["05-functions-mappings#block-34"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "无界算子的谱理论是量子力学的数学基础。",
+      "evidenceQuotes": ["无界算子的谱理论是量子力学的数学基础（$\\S$9）。"],
+      "blockIds": ["05-functions-mappings#block-34"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "函数空间的层级包括可测函数、可积函数、平方可积函数、连续函数、可微函数、光滑函数和解析函数。",
+      "evidenceQuotes": ["```mermaid\n    graph TD\n        ALL[\"所有函数 X→Y\"] --> MEAS[\"可测函数\"]\n        MEAS --> INT[\"可积函数 L¹\"]\n        MEAS --> SQINT[\"平方可积 L2 (Hilbert空间)\"]\n        INT --> CONT[\"连续函数 C0\"]\n        SQINT --> CONT\n        CONT --> DIFF[\"可微函数 C1\"]\n        DIFF --> SMOOTH[\"光滑函数 C-infinity\"]\n        SMOOTH --> ANALYTIC[\"解析函数 C-omega\"]\n        \n        style SQINT fill:#2980b9,color:#fff\n    ```"],
+      "blockIds": ["05-functions-mappings#block-37"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "正则性层级包括可测、可积、平方可积、连续、可微、光滑和解析。",
+      "evidenceQuotes": ["| 正则性层级 | 记号 | 含义 | 例子 |\n|-----------|------|------|------|\n| 可测 | — | \"能被积分\" | Dirichlet函数 |\n| 可积 | $L^1$ | $\\int \\|f\\| < \\infty$ | $f(x)=1/\\sqrt{x}$ 在 $(0,1)$ |\n| 平方可积 | $L^2$ | $\\int \\|f\\|^2 < \\infty$ | \"有限能量\"信号 |\n| 连续 | $C^0$ | 无跳跃 | $\\|x\\|$ |\n| 可微 | $C^1$ | 有连续导函数 | 光滑无尖角 |\n| 光滑 | $C^\\infty$ | 任意阶可导 | $e^{-1/x^2}$ |\n| 解析 | $C^\\omega$ | 等于其Taylor级数 | $e^x, \\sin x$ |"],
+      "blockIds": ["05-functions-mappings#block-39"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "本章关键点汇总包括函数=对应关系、同态=保持结构的映射、Fourier变换、卷积定理、算子=函数的函数、正则性层级。",
+      "evidenceQuotes": ["| # | 关键概念 | 直觉 | 连接章节 |\n|---|---------|------|---------|\n| 1 | **函数 = 对应关系** | 不是\"公式\" | $\\S$18 范畴论 |\n| 2 | **同态 = 保持结构的映射** | 结构→保持结构的映射 | $\\S$8 代数 |\n| 3 | **Fourier 变换** | 时域→频域，卷积→乘积 | $\\S$9, $\\S$14 |\n| 4 | **卷积定理** | $\\mathcal{F}(f*g) = \\mathcal{F}(f) \\cdot \\mathcal{F}(g)$ | $\\S$12 |\n| 5 | **算子 = 函数的函数** | 无限维的\"矩阵\" | $\\S$9 泛函分析 |\n| 6 | **正则性层级** | $L^1 \\supset L^2 \\supset C^0 \\supset C^1 \\supset C^\\infty \\supset C^\\omega$ | $\\S$10 测度 |"],
+      "blockIds": ["05-functions-mappings#block-42"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "函数概念的三级跳包括从公式到对应关系、从函数到映射、从函数的函数到算子。",
+      "evidenceQuotes": ["> 💡 **核心哲学**：函数概念的三级跳——(1) 从\"公式\"到\"对应关系\"；(2) 从\"函数\"到\"映射\"（保持结构）；(3) 从\"函数的函数\"到\"算子\"（无限维线性代数）。每一步都极大地拓展了数学的疆域。"],
+      "blockIds": ["05-functions-mappings#block-43"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "微分算子的形式是 Tf = f'。",
+      "evidenceQuotes": ["微分算子 | $Tf = f'$ | $\\frac{d}{dx}: C^1 \\to C$ |"],
+      "blockIds": ["05-functions-mappings#block-30"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "微分算子的例子是 d/dx: C^1 → C。",
+      "evidenceQuotes": ["微分算子 | $Tf = f'$ | $\\frac{d}{dx}: C^1 \\to C$ |"],
+      "blockIds": ["05-functions-mappings#block-30"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "积分算子的形式是 (Tf)(x) = ∫ K(x,y)f(y)dy。",
+      "evidenceQuotes": ["积分算子 | $(Tf)(x) = \\int K(x,y)f(y)dy$ | Fredholm 算子 |"],
+      "blockIds": ["05-functions-mappings#block-30"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "积分算子的例子是 Fredholm 算子。",
+      "evidenceQuotes": ["积分算子 | $(Tf)(x) = \\int K(x,y)f(y)dy$ | Fredholm 算子 |"],
+      "blockIds": ["05-functions-mappings#block-30"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "乘法算子的形式是 (Tf)(x) = φ(x)f(x)。",
+      "evidenceQuotes": ["乘法算子 | $(Tf)(x) = \\phi(x)f(x)$ | 量子力学中的位置算子 |"],
+      "blockIds": ["05-functions-mappings#block-30"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "乘法算子的例子是量子力学中的位置算子。",
+      "evidenceQuotes": ["乘法算子 | $(Tf)(x) = \\phi(x)f(x)$ | 量子力学中的位置算子 |"],
+      "blockIds": ["05-functions-mappings#block-30"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "投影算子的形式是 P^2 = P。",
+      "evidenceQuotes": ["投影算子 | $P^2 = P$ | 正交投影到子空间 |"],
+      "blockIds": ["05-functions-mappings#block-30"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "投影算子的例子是正交投影到子空间。",
+      "evidenceQuotes": ["投影算子 | $P^2 = P$ | 正交投影到子空间 |"],
+      "blockIds": ["05-functions-mappings#block-30"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    }
+  ]
+}

@@ -1,0 +1,529 @@
+{
+  "relations": [
+    {
+      "fromClaimIndex": 0,
+      "toClaimIndex": 19,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 0,
+      "toClaimIndex": 60,
+      "type": "DERIVED_FROM",
+      "conditions": [],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 0,
+      "toClaimIndex": 69,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 1,
+      "toClaimIndex": 71,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["泛函的定义相同"],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 2,
+      "toClaimIndex": 47,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 2,
+      "toClaimIndex": 52,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 3,
+      "toClaimIndex": 49,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 4,
+      "toClaimIndex": 11,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["在Hilbert空间语境下"],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 4,
+      "toClaimIndex": 31,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 4,
+      "toClaimIndex": 43,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 5,
+      "toClaimIndex": 58,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 5,
+      "toClaimIndex": 66,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 6,
+      "toClaimIndex": 16,
+      "type": "CONTRADICTS",
+      "conditions": [],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 8,
+      "toClaimIndex": 58,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 9,
+      "toClaimIndex": 18,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 10,
+      "toClaimIndex": 13,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 11,
+      "toClaimIndex": 31,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 12,
+      "toClaimIndex": 1,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 14,
+      "toClaimIndex": 67,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 15,
+      "toClaimIndex": 1,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 16,
+      "toClaimIndex": 63,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 17,
+      "toClaimIndex": 54,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 19,
+      "toClaimIndex": 56,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 20,
+      "toClaimIndex": 40,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 21,
+      "toClaimIndex": 48,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 22,
+      "toClaimIndex": 44,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 23,
+      "toClaimIndex": 0,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 24,
+      "toClaimIndex": 40,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 25,
+      "toClaimIndex": 66,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 26,
+      "toClaimIndex": 36,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 27,
+      "toClaimIndex": 62,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 28,
+      "toClaimIndex": 4,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 29,
+      "toClaimIndex": 31,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 30,
+      "toClaimIndex": 34,
+      "type": "CONTRADICTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 31,
+      "toClaimIndex": 29,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 32,
+      "toClaimIndex": 64,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 33,
+      "toClaimIndex": 22,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 34,
+      "toClaimIndex": 7,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.6
+    },
+    {
+      "fromClaimIndex": 35,
+      "toClaimIndex": 10,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 36,
+      "toClaimIndex": 55,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["谱分解是Fourier变换的终极推广"],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 37,
+      "toClaimIndex": 44,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 38,
+      "toClaimIndex": 1,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 39,
+      "toClaimIndex": 44,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 40,
+      "toClaimIndex": 66,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 41,
+      "toClaimIndex": 34,
+      "type": "CONTRADICTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 42,
+      "toClaimIndex": 40,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 44,
+      "toClaimIndex": 22,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 45,
+      "toClaimIndex": 16,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 46,
+      "toClaimIndex": 14,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 47,
+      "toClaimIndex": 52,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 48,
+      "toClaimIndex": 57,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 49,
+      "toClaimIndex": 3,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 50,
+      "toClaimIndex": 1,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 51,
+      "toClaimIndex": 62,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 52,
+      "toClaimIndex": 26,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 53,
+      "toClaimIndex": 16,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 54,
+      "toClaimIndex": 17,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 55,
+      "toClaimIndex": 36,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["谱分解是Fourier变换的终极推广"],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 56,
+      "toClaimIndex": 19,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 57,
+      "toClaimIndex": 27,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 58,
+      "toClaimIndex": 5,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 59,
+      "toClaimIndex": 1,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 60,
+      "toClaimIndex": 0,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 61,
+      "toClaimIndex": 10,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 62,
+      "toClaimIndex": 27,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 63,
+      "toClaimIndex": 16,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 64,
+      "toClaimIndex": 32,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 65,
+      "toClaimIndex": 26,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 66,
+      "toClaimIndex": 5,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 67,
+      "toClaimIndex": 14,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 68,
+      "toClaimIndex": 10,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 69,
+      "toClaimIndex": 0,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 70,
+      "toClaimIndex": 10,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 71,
+      "toClaimIndex": 1,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["泛函的定义相同"],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 72,
+      "toClaimIndex": 34,
+      "type": "CONTRADICTS",
+      "conditions": [],
+      "confidence": 0.8
+    }
+  ]
+}

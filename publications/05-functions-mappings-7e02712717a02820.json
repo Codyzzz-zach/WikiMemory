@@ -1,0 +1,1917 @@
+{
+  "schemaVersion": "v1",
+  "sourceId": "source:05-functions-mappings-7e02712717a02820",
+  "runId": "ece6d152-dbaf-486c-a5c2-5be35cc42909",
+  "publishedAt": "2026-07-24T02:44:00.545Z",
+  "claims": [
+    {
+      "id": "claim:7e02712717a02820-017bff68a13a5d9e",
+      "statement": "在 §18 范畴论中，范畴 = 对象 + 保持结构的态射。",
+      "evidenceSpanIds": [
+        "span:05-functions-mappings-7e02712717a02820-14#chars-1247-1288"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:42:37.228Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-14#chars-1247-1288"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-14#chars-1247-1288"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:42:37.228Z"
+    },
+    {
+      "id": "claim:7e02712717a02820-03522d71ff27a7f6",
+      "statement": "在线性算子中，有界性等价于连续性。",
+      "evidenceSpanIds": [
+        "span:05-functions-mappings-7e02712717a02820-32#chars-2943-2964"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:42:37.228Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-32#chars-2943-2964"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-32#chars-2943-2964"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:42:37.228Z"
+    },
+    {
+      "id": "claim:7e02712717a02820-056675e2c7d3bbd3",
+      "statement": "微分算子 d/dx 是无界的。",
+      "evidenceSpanIds": [
+        "span:05-functions-mappings-7e02712717a02820-34#chars-3032-3060"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:42:37.228Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-34#chars-3032-3060"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-34#chars-3032-3060"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:42:37.228Z"
+    },
+    {
+      "id": "claim:7e02712717a02820-0bc82717b933f0e1",
+      "statement": "满射的定义：∀y ∈ Y, ∃x: f(x)=y。",
+      "evidenceSpanIds": [
+        "span:05-functions-mappings-7e02712717a02820-8"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:42:37.228Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-8"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-8"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:42:37.228Z"
+    },
+    {
+      "id": "claim:7e02712717a02820-10e1720ba9dea1cc",
+      "statement": "乘法算子的例子是量子力学中的位置算子。",
+      "evidenceSpanIds": [
+        "span:05-functions-mappings-7e02712717a02820-30"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:42:37.228Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-30"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-30"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:42:37.228Z"
+    },
+    {
+      "id": "claim:7e02712717a02820-116a9a49353d524d",
+      "statement": "算子在 §9 泛函分析中是核心概念。",
+      "evidenceSpanIds": [
+        "span:05-functions-mappings-7e02712717a02820-29#chars-2671-2691"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:42:37.228Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-29#chars-2671-2691"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-29#chars-2671-2691"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:42:37.228Z"
+    },
+    {
+      "id": "claim:7e02712717a02820-195740430f11fdd5",
+      "statement": "算子 T: V → W 是两个函数空间之间的映射。",
+      "evidenceSpanIds": [
+        "span:05-functions-mappings-7e02712717a02820-28#chars-2632-2669"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:42:37.228Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-28#chars-2632-2669"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-28#chars-2632-2669"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:42:37.228Z"
+    },
+    {
+      "id": "claim:7e02712717a02820-1aa72aeacc3fd801",
+      "statement": "函数不是'公式'，而是对应关系。",
+      "evidenceSpanIds": [
+        "span:05-functions-mappings-7e02712717a02820-6#chars-229-254"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:42:37.228Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-6#chars-229-254"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-6#chars-229-254"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:42:37.228Z"
+    },
+    {
+      "id": "claim:7e02712717a02820-242de70f3401ac93",
+      "statement": "保持拓扑结构的映射是连续映射，条件为开集的原像是开集。",
+      "evidenceSpanIds": [
+        "span:05-functions-mappings-7e02712717a02820-13"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:42:37.228Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-13"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-13"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:42:37.228Z"
+    },
+    {
+      "id": "claim:7e02712717a02820-2c66480c74ccfebd",
+      "statement": "Fourier 变换的公式为 f̂(ω) = ∫ f(t)e^{-iωt} dt，核心作用是频率分解。",
+      "evidenceSpanIds": [
+        "span:05-functions-mappings-7e02712717a02820-19"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:42:37.228Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-19"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-19"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:42:37.228Z"
+    },
+    {
+      "id": "claim:7e02712717a02820-2df5cd91c770a58f",
+      "statement": "从中学课本的 y=f(x) 到现代数学的函子 (functor)，'映射'的概念在每一次泛化中获得更强大的表达能力。",
+      "evidenceSpanIds": [
+        "span:05-functions-mappings-7e02712717a02820-1#chars-43-103"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:42:37.228Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-1#chars-43-103"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-1#chars-43-103"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:42:37.228Z"
+    },
+    {
+      "id": "claim:7e02712717a02820-2eb6a4ee3764a145",
+      "statement": "函数空间的层级包括可测函数、可积函数、平方可积函数、连续函数、可微函数、光滑函数和解析函数。",
+      "evidenceSpanIds": [
+        "span:05-functions-mappings-7e02712717a02820-37#chars-3130-3456"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:42:37.228Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-37#chars-3130-3456"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-37#chars-3130-3456"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:42:37.228Z"
+    },
+    {
+      "id": "claim:7e02712717a02820-35f0febedb8f829f",
+      "statement": "双射是既单又满的函数。",
+      "evidenceSpanIds": [
+        "span:05-functions-mappings-7e02712717a02820-8"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:42:37.228Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-8"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-8"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:42:37.228Z"
+    },
+    {
+      "id": "claim:7e02712717a02820-3a57a079fc7d14cb",
+      "statement": "函数 f: X → Y 满足 ∀x ∈ X, ∃! y ∈ Y: f(x) = y。",
+      "evidenceSpanIds": [
+        "span:05-functions-mappings-7e02712717a02820-5#chars-176-225"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:42:37.228Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-5#chars-176-225"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-5#chars-176-225"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:42:37.228Z"
+    },
+    {
+      "id": "claim:7e02712717a02820-3dda803c4e4dde19",
+      "statement": "Laplace 变换的公式为 F(s) = ∫_0^∞ f(t)e^{-st} dt，核心作用是将 ODE 转化为代数方程。",
+      "evidenceSpanIds": [
+        "span:05-functions-mappings-7e02712717a02820-19"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:42:37.228Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-19"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-19"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:42:37.228Z"
+    },
+    {
+      "id": "claim:7e02712717a02820-4302493da201acdd",
+      "statement": "保持线性结构的映射是线性映射，条件为 f(ax+by) = a f(x) + b f(y)。",
+      "evidenceSpanIds": [
+        "span:05-functions-mappings-7e02712717a02820-13"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:42:37.228Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-13"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-13"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:42:37.228Z"
+    },
+    {
+      "id": "claim:7e02712717a02820-44efa19fedc2d30c",
+      "statement": "保持距离结构的映射是等距映射，条件为 d(f(x), f(y)) = d(x,y)。",
+      "evidenceSpanIds": [
+        "span:05-functions-mappings-7e02712717a02820-13"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:42:37.228Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-13"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-13"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:42:37.228Z"
+    },
+    {
+      "id": "claim:7e02712717a02820-45f0ffcee612f42c",
+      "statement": "微分算子的例子是 d/dx: C^1 → C。",
+      "evidenceSpanIds": [
+        "span:05-functions-mappings-7e02712717a02820-30"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:42:37.228Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-30"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-30"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:42:37.228Z"
+    },
+    {
+      "id": "claim:7e02712717a02820-47b702032740fcaa",
+      "statement": "当 X 和 Y 有额外的数学结构时，'好的'映射应该保持这些结构。",
+      "evidenceSpanIds": [
+        "span:05-functions-mappings-7e02712717a02820-12#chars-877-918"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:42:37.228Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-12#chars-877-918"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-12#chars-877-918"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:42:37.228Z"
+    },
+    {
+      "id": "claim:7e02712717a02820-4b44dfd542547883",
+      "statement": "投影算子的例子是正交投影到子空间。",
+      "evidenceSpanIds": [
+        "span:05-functions-mappings-7e02712717a02820-30"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:42:37.228Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-30"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-30"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:42:37.228Z"
+    },
+    {
+      "id": "claim:7e02712717a02820-4d77453ef87e4578",
+      "statement": "积分算子的形式是 (Tf)(x) = ∫ K(x,y)f(y)dy。",
+      "evidenceSpanIds": [
+        "span:05-functions-mappings-7e02712717a02820-30"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:42:37.228Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-30"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-30"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:42:37.228Z"
+    },
+    {
+      "id": "claim:7e02712717a02820-5b3ec0910c8f7305",
+      "statement": "函数 f: X → Y 是对 X 中每个元素唯一指定 Y 中一个元素。",
+      "evidenceSpanIds": [
+        "span:05-functions-mappings-7e02712717a02820-4#chars-126-174"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:42:37.228Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-4#chars-126-174"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-4#chars-126-174"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:42:37.228Z"
+    },
+    {
+      "id": "claim:7e02712717a02820-63d23190d9b21ca4",
+      "statement": "Z 变换的公式为 F(z) = ∑ f[n]z^{-n}，用于离散信号。",
+      "evidenceSpanIds": [
+        "span:05-functions-mappings-7e02712717a02820-19"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:42:37.228Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-19"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-19"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:42:37.228Z"
+    },
+    {
+      "id": "claim:7e02712717a02820-67b8de7721d103d9",
+      "statement": "Fourier 逆变换公式为 f(t) = (1/(2π)) ∫_{-∞}^∞ f̂(ω) e^{iωt} dω。",
+      "evidenceSpanIds": [
+        "span:05-functions-mappings-7e02712717a02820-22#chars-1683-1770"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:42:37.228Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-22#chars-1683-1770"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-22#chars-1683-1770"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:42:37.228Z"
+    },
+    {
+      "id": "claim:7e02712717a02820-6866e9a61851d0b0",
+      "statement": "保持代数运算的映射是同态，条件为 f(x·y) = f(x)·f(y)。",
+      "evidenceSpanIds": [
+        "span:05-functions-mappings-7e02712717a02820-13"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:42:37.228Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-13"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-13"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:42:37.228Z"
+    },
+    {
+      "id": "claim:7e02712717a02820-757f1f3fa38781db",
+      "statement": "保持序结构的映射是单调函数，条件为 x ≤ y ⇒ f(x) ≤ f(y)。",
+      "evidenceSpanIds": [
+        "span:05-functions-mappings-7e02712717a02820-13"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:42:37.228Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-13"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-13"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:42:37.228Z"
+    },
+    {
+      "id": "claim:7e02712717a02820-7e87bf22b471c4c6",
+      "statement": "变换是把函数从'时域/空域'变到'频域/特征域'，使得原来困难的操作变得简单。",
+      "evidenceSpanIds": [
+        "span:05-functions-mappings-7e02712717a02820-18#chars-1328-1373"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:42:37.228Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-18#chars-1328-1373"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-18#chars-1328-1373"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:42:37.228Z"
+    },
+    {
+      "id": "claim:7e02712717a02820-8cb3f8cd4d5a108b",
+      "statement": "学习数学就是学习'什么映射保持了什么样的结构'。",
+      "evidenceSpanIds": [
+        "span:05-functions-mappings-7e02712717a02820-14#chars-1214-1247"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:42:37.228Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-14#chars-1214-1247"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-14#chars-1214-1247"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:42:37.228Z"
+    },
+    {
+      "id": "claim:7e02712717a02820-8f064c995bffa492",
+      "statement": "积分算子的例子是 Fredholm 算子。",
+      "evidenceSpanIds": [
+        "span:05-functions-mappings-7e02712717a02820-30"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:42:37.228Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-30"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-30"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:42:37.228Z"
+    },
+    {
+      "id": "claim:7e02712717a02820-9a5132464f856037",
+      "statement": "乘法算子的形式是 (Tf)(x) = φ(x)f(x)。",
+      "evidenceSpanIds": [
+        "span:05-functions-mappings-7e02712717a02820-30"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:42:37.228Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-30"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-30"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:42:37.228Z"
+    },
+    {
+      "id": "claim:7e02712717a02820-9ca023fd937f8202",
+      "statement": "函数是数学中最重要的抽象——输入与输出之间的确定关系。",
+      "evidenceSpanIds": [
+        "span:05-functions-mappings-7e02712717a02820-1#chars-16-43"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:42:37.228Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-1#chars-16-43"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-1#chars-16-43"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:42:37.228Z"
+    },
+    {
+      "id": "claim:7e02712717a02820-9fc614b1617e7ec7",
+      "statement": "正则性层级包括可测、可积、平方可积、连续、可微、光滑和解析。",
+      "evidenceSpanIds": [
+        "span:05-functions-mappings-7e02712717a02820-39#chars-3476-3848"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:42:37.228Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-39#chars-3476-3848"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-39#chars-3476-3848"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:42:37.228Z"
+    },
+    {
+      "id": "claim:7e02712717a02820-bdbed2d8b5cabfd6",
+      "statement": "保持光滑结构的映射是微分同胚，条件为可微且逆也可微。",
+      "evidenceSpanIds": [
+        "span:05-functions-mappings-7e02712717a02820-13"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:42:37.228Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-13"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-13"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:42:37.228Z"
+    },
+    {
+      "id": "claim:7e02712717a02820-beb093a46a6d0d62",
+      "statement": "函数概念的三级跳包括从公式到对应关系、从函数到映射、从函数的函数到算子。",
+      "evidenceSpanIds": [
+        "span:05-functions-mappings-7e02712717a02820-43#chars-4316-4421"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:42:37.228Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-43#chars-4316-4421"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-43#chars-4316-4421"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:42:37.228Z"
+    },
+    {
+      "id": "claim:7e02712717a02820-cde44cccdde17919",
+      "statement": "本章关键点汇总包括函数=对应关系、同态=保持结构的映射、Fourier变换、卷积定理、算子=函数的函数、正则性层级。",
+      "evidenceSpanIds": [
+        "span:05-functions-mappings-7e02712717a02820-42#chars-3871-4314"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:42:37.228Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-42#chars-3871-4314"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-42#chars-3871-4314"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:42:37.228Z"
+    },
+    {
+      "id": "claim:7e02712717a02820-d4f3c3b889df3080",
+      "statement": "有界性定义为算子范数有限：‖T‖ = sup_{‖f‖=1} ‖Tf‖ < ∞。",
+      "evidenceSpanIds": [
+        "span:05-functions-mappings-7e02712717a02820-33#chars-2966-3028"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:42:37.228Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-33#chars-2966-3028"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-33#chars-2966-3028"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:42:37.228Z"
+    },
+    {
+      "id": "claim:7e02712717a02820-e08428990b11a063",
+      "statement": "'不可用初等函数表达'的函数远远多于'有公式'的函数。",
+      "evidenceSpanIds": [
+        "span:05-functions-mappings-7e02712717a02820-6#chars-254-281"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:42:37.228Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-6#chars-254-281"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-6#chars-254-281"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:42:37.228Z"
+    },
+    {
+      "id": "claim:7e02712717a02820-e160ef7a3ba480ac",
+      "statement": "小波变换是多尺度分析，用于局部时频分析。",
+      "evidenceSpanIds": [
+        "span:05-functions-mappings-7e02712717a02820-19"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:42:37.228Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-19"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-19"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:42:37.228Z"
+    },
+    {
+      "id": "claim:7e02712717a02820-e6fadfa9a23b1e2e",
+      "statement": "单射的定义：f(x1)=f(x2) ⇒ x1=x2。",
+      "evidenceSpanIds": [
+        "span:05-functions-mappings-7e02712717a02820-8"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:42:37.228Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-8"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-8"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:42:37.228Z"
+    },
+    {
+      "id": "claim:7e02712717a02820-ea158e8d688f8740",
+      "statement": "微分算子的形式是 Tf = f'。",
+      "evidenceSpanIds": [
+        "span:05-functions-mappings-7e02712717a02820-30"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:42:37.228Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-30"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-30"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:42:37.228Z"
+    },
+    {
+      "id": "claim:7e02712717a02820-eedf37417f29e662",
+      "statement": "无界算子的谱理论是量子力学的数学基础。",
+      "evidenceSpanIds": [
+        "span:05-functions-mappings-7e02712717a02820-34#chars-3081-3107"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:42:37.228Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-34#chars-3081-3107"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-34#chars-3081-3107"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:42:37.228Z"
+    },
+    {
+      "id": "claim:7e02712717a02820-fd1c634627222eca",
+      "statement": "投影算子的形式是 P^2 = P。",
+      "evidenceSpanIds": [
+        "span:05-functions-mappings-7e02712717a02820-30"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:42:37.228Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-30"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-30"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:42:37.228Z"
+    },
+    {
+      "id": "claim:7e02712717a02820-fda125036300712e",
+      "statement": "Fourier 变换把一个函数（信号）分解为不同频率的正弦波叠加。",
+      "evidenceSpanIds": [
+        "span:05-functions-mappings-7e02712717a02820-21#chars-1657-1681"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:42:37.228Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-21#chars-1657-1681"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:05-functions-mappings-7e02712717a02820-21#chars-1657-1681"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:42:37.228Z"
+    }
+  ],
+  "concepts": [
+    {
+      "id": "concept:0415a3d0ef7e4ce7",
+      "name": "Laplace变换",
+      "aliases": [],
+      "boundary": "公式 F(s) = ∫_0^∞ f(t)e^{-st} dt，ODE转代数方程",
+      "domain": "积分变换"
+    },
+    {
+      "id": "concept:083329b6c70da509",
+      "name": "微分同胚",
+      "aliases": [
+        "保持光滑结构的映射"
+      ],
+      "boundary": "可微且逆也可微",
+      "domain": "微分几何"
+    },
+    {
+      "id": "concept:089f343284a1c559",
+      "name": "谱理论",
+      "aliases": [],
+      "boundary": "无界算子的谱理论",
+      "domain": "泛函分析"
+    },
+    {
+      "id": "concept:0a44f109bee15950",
+      "name": "Fourier逆变换",
+      "aliases": [],
+      "boundary": "公式 f(t) = (1/(2π)) ∫_{-∞}^∞ f̂(ω) e^{iωt} dω",
+      "domain": "调和分析"
+    },
+    {
+      "id": "concept:11d6aae54603383a",
+      "name": "范畴",
+      "aliases": [],
+      "boundary": "对象 + 保持结构的态射",
+      "domain": "范畴论"
+    },
+    {
+      "id": "concept:1586e86ed504ca3b",
+      "name": "投影算子",
+      "aliases": [],
+      "boundary": "形式 P^2 = P",
+      "domain": "泛函分析"
+    },
+    {
+      "id": "concept:1759b357d4e00d12",
+      "name": "态射",
+      "aliases": [],
+      "boundary": "保持结构的映射",
+      "domain": "范畴论"
+    },
+    {
+      "id": "concept:2ea2a0e6fcc8301e",
+      "name": "Fourier变换",
+      "aliases": [],
+      "boundary": "公式 f̂(ω) = ∫ f(t)e^{-iωt} dt，频率分解",
+      "domain": "调和分析"
+    },
+    {
+      "id": "concept:3c9a59820a5e6225",
+      "name": "算子范数",
+      "aliases": [],
+      "boundary": "‖T‖ = sup_{‖f‖=1} ‖Tf‖",
+      "domain": "泛函分析"
+    },
+    {
+      "id": "concept:3e4f0883904645a2",
+      "name": "同态",
+      "aliases": [
+        "保持代数运算的映射"
+      ],
+      "boundary": "f(x·y) = f(x)·f(y)",
+      "domain": "抽象代数"
+    },
+    {
+      "id": "concept:41d08e0c9061c230",
+      "name": "函子",
+      "aliases": [
+        "functor"
+      ],
+      "boundary": "范畴间的映射",
+      "domain": "范畴论"
+    },
+    {
+      "id": "concept:420cf8500a9da2e4",
+      "name": "线性映射",
+      "aliases": [
+        "保持线性结构的映射"
+      ],
+      "boundary": "f(ax+by) = a f(x) + b f(y)",
+      "domain": "线性代数"
+    },
+    {
+      "id": "concept:42ce043c7ec979e4",
+      "name": "小波变换",
+      "aliases": [],
+      "boundary": "多尺度分析，局部时频分析",
+      "domain": "信号处理"
+    },
+    {
+      "id": "concept:491fdefb13b602d6",
+      "name": "无界算子",
+      "aliases": [
+        "无界"
+      ],
+      "boundary": "微分算子是无界的",
+      "domain": "泛函分析"
+    },
+    {
+      "id": "concept:49ab11a2a8cea045",
+      "name": "连续映射",
+      "aliases": [
+        "保持拓扑结构的映射"
+      ],
+      "boundary": "开集的原像是开集",
+      "domain": "拓扑学"
+    },
+    {
+      "id": "concept:4f5bf2444ef20ad8",
+      "name": "乘法算子",
+      "aliases": [],
+      "boundary": "形式为 (Tf)(x) = φ(x)f(x)",
+      "domain": "泛函分析"
+    },
+    {
+      "id": "concept:676a0e1bc32af5a6",
+      "name": "微分算子",
+      "aliases": [
+        "d/dx"
+      ],
+      "boundary": "形式为 Tf = f'",
+      "domain": "泛函分析"
+    },
+    {
+      "id": "concept:8da783bf4a4cd4e7",
+      "name": "函数",
+      "aliases": [],
+      "boundary": "对应关系，输入与输出的确定关系",
+      "domain": "数学基础"
+    },
+    {
+      "id": "concept:aeb47ba702d8a010",
+      "name": "有界算子",
+      "aliases": [
+        "有界性"
+      ],
+      "boundary": "算子范数有限",
+      "domain": "泛函分析"
+    },
+    {
+      "id": "concept:b5449a576f596ceb",
+      "name": "积分算子",
+      "aliases": [],
+      "boundary": "形式 (Tf)(x) = ∫ K(x,y)f(y)dy",
+      "domain": "泛函分析"
+    },
+    {
+      "id": "concept:b600a617278a32a0",
+      "name": "连续算子",
+      "aliases": [
+        "连续性"
+      ],
+      "boundary": "有界性等价于连续性",
+      "domain": "泛函分析"
+    },
+    {
+      "id": "concept:b8b9c493c69c4bab",
+      "name": "卷积定理",
+      "aliases": [],
+      "boundary": "Fourier变换相关",
+      "domain": "调和分析"
+    },
+    {
+      "id": "concept:bb3b42fda6c07d1e",
+      "name": "正交投影",
+      "aliases": [],
+      "boundary": "将元素投影到子空间上，使得差向量垂直于子空间",
+      "domain": "泛函分析"
+    },
+    {
+      "id": "concept:be496414a74e9941",
+      "name": "变换",
+      "aliases": [],
+      "boundary": "时域/空域到频域/特征域的映射",
+      "domain": "积分变换"
+    },
+    {
+      "id": "concept:c01b95d77f46c5b1",
+      "name": "算子",
+      "aliases": [],
+      "boundary": "函数的函数，映射 V → W",
+      "domain": "泛函分析"
+    },
+    {
+      "id": "concept:c1ef71075ab7162d",
+      "name": "映射",
+      "aliases": [],
+      "boundary": "泛化的函数概念",
+      "domain": "数学基础"
+    },
+    {
+      "id": "concept:c2245191a91a7d4a",
+      "name": "函数概念三级跳",
+      "aliases": [],
+      "boundary": "公式→对应关系→映射→算子",
+      "domain": "数学史"
+    },
+    {
+      "id": "concept:cd058ae4e0913c10",
+      "name": "等距映射",
+      "aliases": [
+        "保持距离结构的映射"
+      ],
+      "boundary": "d(f(x), f(y)) = d(x,y)",
+      "domain": "度量几何"
+    },
+    {
+      "id": "concept:ce4d541943471543",
+      "name": "单调函数",
+      "aliases": [
+        "保持序结构的映射"
+      ],
+      "boundary": "x ≤ y ⇒ f(x) ≤ f(y)",
+      "domain": "序理论"
+    },
+    {
+      "id": "concept:d27382a6c046cf71",
+      "name": "函数空间层级",
+      "aliases": [
+        "正则性层级"
+      ],
+      "boundary": "可测、可积、平方可积、连续、可微、光滑、解析",
+      "domain": "泛函分析"
+    },
+    {
+      "id": "concept:d338e3e80f6e4f88",
+      "name": "单射",
+      "aliases": [],
+      "boundary": "f(x1)=f(x2) ⇒ x1=x2",
+      "domain": "集合论"
+    },
+    {
+      "id": "concept:d652932fe8f95ad0",
+      "name": "双射",
+      "aliases": [],
+      "boundary": "既单又满",
+      "domain": "集合论"
+    },
+    {
+      "id": "concept:dbe16016d4b82224",
+      "name": "位置算子",
+      "aliases": [],
+      "boundary": "量子力学中的乘法算子",
+      "domain": "量子力学"
+    },
+    {
+      "id": "concept:ed95aec3ee962b6d",
+      "name": "满射",
+      "aliases": [],
+      "boundary": "∀y ∈ Y, ∃x: f(x)=y",
+      "domain": "集合论"
+    },
+    {
+      "id": "concept:ef113e8f9a7f4696",
+      "name": "函数空间",
+      "aliases": [],
+      "boundary": "算子定义域和值域",
+      "domain": "泛函分析"
+    },
+    {
+      "id": "concept:f44ad3dcfc18a2b1",
+      "name": "Z变换",
+      "aliases": [],
+      "boundary": "公式 F(z) = ∑ f[n]z^{-n}，离散信号",
+      "domain": "信号处理"
+    },
+    {
+      "id": "concept:ff0289e4270afb76",
+      "name": "Fredholm算子",
+      "aliases": [],
+      "boundary": "积分算子的例子",
+      "domain": "泛函分析"
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel:7e02712717a02820-19fc2a355e273b06",
+      "from": "claim:7e02712717a02820-47b702032740fcaa",
+      "to": "claim:7e02712717a02820-8cb3f8cd4d5a108b",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:05-functions-mappings-7e02712717a02820-12#chars-877-918",
+        "span:05-functions-mappings-7e02712717a02820-14#chars-1214-1247"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:43:00.676Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.7,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:7e02712717a02820-6dcea6aca2a44bfa",
+      "from": "claim:7e02712717a02820-9ca023fd937f8202",
+      "to": "claim:7e02712717a02820-1aa72aeacc3fd801",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:05-functions-mappings-7e02712717a02820-1#chars-16-43",
+        "span:05-functions-mappings-7e02712717a02820-6#chars-229-254"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:43:00.676Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.8,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:7e02712717a02820-717b200e21aa71bf",
+      "from": "claim:7e02712717a02820-10e1720ba9dea1cc",
+      "to": "claim:7e02712717a02820-9a5132464f856037",
+      "type": "RELATED_TO",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:05-functions-mappings-7e02712717a02820-30"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:43:00.676Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.6,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:7e02712717a02820-79a54864f627c5cf",
+      "from": "claim:7e02712717a02820-44efa19fedc2d30c",
+      "to": "claim:7e02712717a02820-47b702032740fcaa",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:05-functions-mappings-7e02712717a02820-12#chars-877-918",
+        "span:05-functions-mappings-7e02712717a02820-13"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:43:00.676Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.8,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:7e02712717a02820-9a69a544a63b06ab",
+      "from": "claim:7e02712717a02820-fda125036300712e",
+      "to": "claim:7e02712717a02820-2c66480c74ccfebd",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:05-functions-mappings-7e02712717a02820-19",
+        "span:05-functions-mappings-7e02712717a02820-21#chars-1657-1681"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:43:00.676Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.8,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:7e02712717a02820-cb91624dfe85a006",
+      "from": "claim:7e02712717a02820-2c66480c74ccfebd",
+      "to": "claim:7e02712717a02820-7e87bf22b471c4c6",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:05-functions-mappings-7e02712717a02820-18#chars-1328-1373",
+        "span:05-functions-mappings-7e02712717a02820-19"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:43:00.676Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.7,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:cross-7cf4b0eaa7680358",
+      "from": "claim:80440e2182e5653f-e611219202858bcc",
+      "to": "claim:7e02712717a02820-e6fadfa9a23b1e2e",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-6#chars-223-257",
+        "span:05-functions-mappings-7e02712717a02820-8"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:43:53.999Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "cross-material-detect",
+      "confidence": 0.7,
+      "consumedBy": []
+    }
+  ]
+}

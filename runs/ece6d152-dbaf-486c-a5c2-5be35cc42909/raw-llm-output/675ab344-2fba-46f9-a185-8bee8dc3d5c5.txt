@@ -1,0 +1,69 @@
+{
+  "propositions": [
+    {
+      "text": "Fourier变换演示代码使用NumPy从叠加的正弦波中提取频率成分。",
+      "exactQuote": "```python\nimport numpy as np\n\n# Fourier 变换演示：从叠加的正弦波中提取频率成分\nt = np.linspace(0, 1, 500, endpoint=False)\n# 信号: 50Hz + 120Hz 叠加\nsignal = np.sin(2*np.pi*50*t) + 0.5*np.sin(2*np.pi*120*t)\n\n# FFT\nfft = np.fft.fft(signal)\nfreqs = np.fft.fftfreq(len(t), t[1]-t[0])\n\n# 找到主要频率\nmagnitude = np.abs(fft)\npeak_indices = np.argsort(magnitude)[-4:]  # 取前4个峰值\nprint(\"主要频率成分:\")\nfor idx in peak_indices:\n    if freqs[idx] >= 0 and magnitude[idx] > 1:\n        print(f\"  频率: {freqs[idx]:.1f} Hz, 振幅: {magnitude[idx]/len(t):.3f}\")\n```",
+      "blockId": "05-functions-mappings#block-24"
+    },
+    {
+      "text": "算子T: V → W是两个函数空间之间的映射。",
+      "exactQuote": "**算子** $T: V \\to W$ 是两个**函数空间**之间的映射。",
+      "blockId": "05-functions-mappings#block-28"
+    },
+    {
+      "text": "算子在§9泛函分析中是核心概念。",
+      "exactQuote": "这在 $\\S$9 泛函分析中是核心概念。",
+      "blockId": "05-functions-mappings#block-29"
+    },
+    {
+      "text": "最重要的两类算子包括微分算子、积分算子、乘法算子和投影算子。",
+      "exactQuote": "最重要的两类：\n\n| 算子类型 | 形式 | 例子 |\n|---------|------|------|\n| 微分算子 | $Tf = f'$ | $\\frac{d}{dx}: C^1 \\to C$ |\n| 积分算子 | $(Tf)(x) = \\int K(x,y)f(y)dy$ | Fredholm 算子 |\n| 乘法算子 | $(Tf)(x) = \\phi(x)f(x)$ | 量子力学中的位置算子 |\n| 投影算子 | $P^2 = P$ | 正交投影到子空间 |",
+      "blockId": "05-functions-mappings#block-30"
+    },
+    {
+      "text": "在线性算子中，有界性等价于连续性。",
+      "exactQuote": "在线性算子中，**有界性 = 连续性**：",
+      "blockId": "05-functions-mappings#block-32"
+    },
+    {
+      "text": "有界性定义为算子范数有限：‖T‖ = sup_{‖f‖=1} ‖Tf‖ < ∞。",
+      "exactQuote": "$$\n\\|T\\| = \\sup_{\\|f\\|=1} \\|Tf\\| < \\infty \\iff T \\text{ 连续}\n$$",
+      "blockId": "05-functions-mappings#block-33"
+    },
+    {
+      "text": "微分算子d/dx是无界的。",
+      "exactQuote": "微分算子 $\\frac{d}{dx}$ 是**无界**的",
+      "blockId": "05-functions-mappings#block-34"
+    },
+    {
+      "text": "微分算子无界是微分方程比代数方程难的原因。",
+      "exactQuote": "这就是为什么微分方程比代数方程难得多。",
+      "blockId": "05-functions-mappings#block-34"
+    },
+    {
+      "text": "无界算子的谱理论是量子力学的数学基础。",
+      "exactQuote": "无界算子的谱理论是量子力学的数学基础（$\\S$9）。",
+      "blockId": "05-functions-mappings#block-34"
+    },
+    {
+      "text": "函数空间的层级包括可测函数、可积函数、平方可积函数、连续函数、可微函数、光滑函数和解析函数。",
+      "exactQuote": "```mermaid\ngraph TD\n    ALL[\"所有函数 X→Y\"] --> MEAS[\"可测函数\"]\n    MEAS --> INT[\"可积函数 L¹\"]\n    MEAS --> SQINT[\"平方可积 L2 (Hilbert空间)\"]\n    INT --> CONT[\"连续函数 C0\"]\n    SQINT --> CONT\n    CONT --> DIFF[\"可微函数 C1\"]\n    DIFF --> SMOOTH[\"光滑函数 C-infinity\"]\n    SMOOTH --> ANALYTIC[\"解析函数 C-omega\"]\n    \n    style SQINT fill:#2980b9,color:#fff\n```",
+      "blockId": "05-functions-mappings#block-37"
+    },
+    {
+      "text": "正则性层级包括可测、可积、平方可积、连续、可微、光滑和解析。",
+      "exactQuote": "| 正则性层级 | 记号 | 含义 | 例子 |\n|-----------|------|------|------|\n| 可测 | — | \"能被积分\" | Dirichlet函数 |\n| 可积 | $L^1$ | $\\int \\|f\\| < \\infty$ | $f(x)=1/\\sqrt{x}$ 在 $(0,1)$ |\n| 平方可积 | $L^2$ | $\\int \\|f\\|^2 < \\infty$ | \"有限能量\"信号 |\n| 连续 | $C^0$ | 无跳跃 | $\\|x\\|$ |\n| 可微 | $C^1$ | 有连续导函数 | 光滑无尖角 |\n| 光滑 | $C^\\infty$ | 任意阶可导 | $e^{-1/x^2}$ |\n| 解析 | $C^\\omega$ | 等于其Taylor级数 | $e^x, \\sin x$ |",
+      "blockId": "05-functions-mappings#block-39"
+    },
+    {
+      "text": "本章关键点汇总包括函数=对应关系、同态=保持结构的映射、Fourier变换、卷积定理、算子=函数的函数、正则性层级。",
+      "exactQuote": "| # | 关键概念 | 直觉 | 连接章节 |\n|---|---------|------|---------|\n| 1 | **函数 = 对应关系** | 不是\"公式\" | $\\S$18 范畴论 |\n| 2 | **同态 = 保持结构的映射** | 结构→保持结构的映射 | $\\S$8 代数 |\n| 3 | **Fourier 变换** | 时域→频域，卷积→乘积 | $\\S$9, $\\S$14 |\n| 4 | **卷积定理** | $\\mathcal{F}(f*g) = \\mathcal{F}(f) \\cdot \\mathcal{F}(g)$ | $\\S$12 |\n| 5 | **算子 = 函数的函数** | 无限维的\"矩阵\" | $\\S$9 泛函分析 |\n| 6 | **正则性层级** | $L^1 \\supset L^2 \\supset C^0 \\supset C^1 \\supset C^\\infty \\supset C^\\omega$ | $\\S$10 测度 |",
+      "blockId": "05-functions-mappings#block-42"
+    },
+    {
+      "text": "函数概念的三级跳包括从公式到对应关系、从函数到映射、从函数的函数到算子。",
+      "exactQuote": "> 💡 **核心哲学**：函数概念的三级跳——(1) 从\"公式\"到\"对应关系\"；(2) 从\"函数\"到\"映射\"（保持结构）；(3) 从\"函数的函数\"到\"算子\"（无限维线性代数）。每一步都极大地拓展了数学的疆域。",
+      "blockId": "05-functions-mappings#block-43"
+    }
+  ]
+}
