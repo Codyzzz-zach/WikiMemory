@@ -1,0 +1,48 @@
+{
+  "questionId": "PILOT-H2-20",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "request": {
+    "systemPrompt": "你是知识系统的盲测评分员。你只按提供的 Gold 和评分合同评价匿名答案，不判断答案来自哪个实验组。\n必须逐项核对 requiredClaims、mustMentionConditions、forbiddenClaims、answerability 和证据引用。\nsourceRisk.present=true 时，Gold 风险说明是允许使用的人工审计结论；不得把源材料的过强表述当成正确答案。\n只输出严格 JSON：{\"scores\":[{\"sampleId\":\"...\",\"requiredClaimCoverage\":0,\"conditionFidelity\":0,\"evidenceGrounding\":0,\"answerabilityDiscipline\":0,\"hardFailure\":false,\"rationale\":\"...\"}]}。",
+    "userPrompt": "# 评分合同\n{\n  \"dimensions\": {\n    \"requiredClaimCoverage\": {\n      \"score0\": \"没有覆盖 requiredClaims，或核心结论相反\",\n      \"score1\": \"覆盖部分 requiredClaims，但缺少一项以上关键连接\",\n      \"score2\": \"完整覆盖全部 requiredClaims\"\n    },\n    \"conditionFidelity\": {\n      \"score0\": \"触发 forbiddenClaims，或删除了决定结论的条件\",\n      \"score1\": \"方向基本正确，但条件、例外或必要/充分强度表达不完整\",\n      \"score2\": \"保留全部 mustMentionConditions，且未触发 forbiddenClaims\"\n    },\n    \"evidenceGrounding\": {\n      \"score0\": \"关键结论没有可解析引用，或引用与结论无关\",\n      \"score1\": \"有相关引用，但关键结论存在未落到证据的部分\",\n      \"score2\": \"关键结论均由当前上下文标识支持，引用位置正确\"\n    },\n    \"answerabilityDiscipline\": {\n      \"score0\": \"证据不足时仍编造答案，或证据充分时错误拒答\",\n      \"score1\": \"表达了不确定性，但回答/拒答边界不够准确\",\n      \"score2\": \"严格遵守该题 answerability，充分回答或明确拒答\"\n    }\n  },\n  \"totalScore\": 8,\n  \"hardFailure\": \"任何 forbiddenClaim、伪造引用、把 insufficient 题当作已由语料证明，均记 hardFailure；该样本总分最高为 2。\"\n}\n\n# 题目与 Gold\n{\n  \"question\": \"算子和泛函都可以函数为输入，它们的输出有何区别？在此基础上，变分法如何把泛函极值问题转化为 Euler–Lagrange 方程？\",\n  \"answerability\": \"answerable\",\n  \"requiredClaims\": [\n    \"算子是函数空间之间的映射，通常把函数映为函数\",\n    \"泛函以函数为输入并输出实数或复数\",\n    \"若积分型泛函在函数 $y$ 处取极值，则材料给出 Euler–Lagrange 方程作为必要条件\"\n  ],\n  \"mustMentionConditions\": [\n    \"方程通常是极值的必要条件而非无条件充分条件\"\n  ],\n  \"forbiddenClaims\": [\n    \"Euler–Lagrange 方程的每个解都是唯一全局最小值\"\n  ],\n  \"sourceRisk\": {\n    \"present\": false,\n    \"detail\": \"\"\n  },\n  \"evidence\": [\n    {\n      \"sourceFile\": \"mathtest-material/05-functions-mappings.md\",\n      \"heading\": \"5.4 算子：以函数为输入的函数\",\n      \"exactQuote\": \"**算子** $T: V \\\\to W$ 是两个**函数空间**之间的映射。\",\n      \"supportsRequiredClaims\": [\n        0\n      ]\n    },\n    {\n      \"sourceFile\": \"mathtest-material/09-functional-analysis.md\",\n      \"heading\": \"9.1 泛函：把函数映射为数\",\n      \"exactQuote\": \"**泛函** $J: V \\\\to \\\\mathbb{R}$（或 $\\\\mathbb{C}$）——输入是函数，输出是数。\",\n      \"supportsRequiredClaims\": [\n        1\n      ]\n    },\n    {\n      \"sourceFile\": \"mathtest-material/09-functional-analysis.md\",\n      \"heading\": \"变分法：泛函的最优化\",\n      \"exactQuote\": \"**Euler-Lagrange 方程**是变分法的核心结果。若 $J[y] = \\\\int_a^b L(x, y, y')dx$ 在 $y(x)$ 处取极值，则：\",\n      \"supportsRequiredClaims\": [\n        2\n      ]\n    }\n  ]\n}\n\n# 匿名答案\n[\n  {\n    \"sampleId\": \"sample-5b0bc3a3-9d85-4c4b-94ee-bafb16d62a50\",\n    \"questionId\": \"PILOT-H2-20\",\n    \"answer\": \"{\\\"answer\\\":\\\"insufficient\\\",\\\"citations\\\":[],\\\"insufficient\\\":true,\\\"uncertainties\\\":[\\\"检索上下文未提供关于算子与泛函输出区别以及变分法推导Euler-Lagrange方程的任何信息。\\\"]}\"\n  },\n  {\n    \"sampleId\": \"sample-b58818ac-3756-4aa7-8e97-eaaf99e6c751\",\n    \"questionId\": \"PILOT-H2-20\",\n    \"answer\": \"{\\\"answer\\\":\\\"insufficient\\\",\\\"citations\\\":[],\\\"insufficient\\\":true,\\\"uncertainties\\\":[\\\"检索上下文未提供关于算子与泛函输出区别以及变分法推导Euler-Lagrange方程的任何信息。\\\"]}\"\n  },\n  {\n    \"sampleId\": \"sample-e5873450-b13b-454e-ae4c-5f61b5244437\",\n    \"questionId\": \"PILOT-H2-20\",\n    \"answer\": \"{\\n  \\\"answer\\\": \\\"算子和泛函都以函数为输入，但输出不同：泛函输出一个数（标量），而算子输出一个函数（向量）。变分法通过引入变分δy，对泛函J[y]求一阶变分δJ，令其为零，并利用分部积分和边界条件，推导出Euler-Lagrange方程∂L/∂y - d/dx(∂L/∂y') = 0，作为泛函极值的必要条件。\\\",\\n  \\\"citations\\\": [\\n    \\\"SOURCE mathtest-material/09-functional-analysis.md:15-26\\\",\\n    \\\"SOURCE mathtest-material/05-functions-mappings.md:133-145\\\",\\n    \\\"SOURCE mathtest-material/09-functional-analysis.md:27-39\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\"\n  }\n]"
+  },
+  "usage": {
+    "promptTokens": 1430,
+    "completionTokens": 378,
+    "totalTokens": 1808,
+    "promptCacheHitTokens": 384,
+    "promptCacheMissTokens": 1046,
+    "reasoningTokens": 0
+  },
+  "finishReason": "stop",
+  "rawResponse": "{\n  \"scores\": [\n    {\n      \"sampleId\": \"sample-5b0bc3a3-9d85-4c4b-94ee-bafb16d62a50\",\n      \"requiredClaimCoverage\": 0,\n      \"conditionFidelity\": 0,\n      \"evidenceGrounding\": 0,\n      \"answerabilityDiscipline\": 0,\n      \"hardFailure\": true,\n      \"rationale\": \"答案声称insufficient，但题目是answerable且证据充分，违反了answerabilityDiscipline，属于hardFailure。\"\n    },\n    {\n      \"sampleId\": \"sample-b58818ac-3756-4aa7-8e97-eaaf99e6c751\",\n      \"requiredClaimCoverage\": 0,\n      \"conditionFidelity\": 0,\n      \"evidenceGrounding\": 0,\n      \"answerabilityDiscipline\": 0,\n      \"hardFailure\": true,\n      \"rationale\": \"答案声称insufficient，但题目是answerable且证据充分，违反了answerabilityDiscipline，属于hardFailure。\"\n    },\n    {\n      \"sampleId\": \"sample-e5873450-b13b-454e-ae4c-5f61b5244437\",\n      \"requiredClaimCoverage\": 2,\n      \"conditionFidelity\": 2,\n      \"evidenceGrounding\": 2,\n      \"answerabilityDiscipline\": 2,\n      \"hardFailure\": false,\n      \"rationale\": \"答案完整覆盖所有requiredClaims：算子输出函数，泛函输出数，Euler-Lagrange方程作为极值必要条件。保留了mustMentionConditions（必要条件），未触发forbiddenClaims。所有关键结论均有正确引用。正确回答，未拒答。\"\n    }\n  ]\n}",
+  "parsed": [
+    {
+      "sampleId": "sample-5b0bc3a3-9d85-4c4b-94ee-bafb16d62a50",
+      "requiredClaimCoverage": 0,
+      "conditionFidelity": 0,
+      "evidenceGrounding": 0,
+      "answerabilityDiscipline": 0,
+      "hardFailure": true,
+      "rationale": "答案声称insufficient，但题目是answerable且证据充分，违反了answerabilityDiscipline，属于hardFailure。"
+    },
+    {
+      "sampleId": "sample-b58818ac-3756-4aa7-8e97-eaaf99e6c751",
+      "requiredClaimCoverage": 0,
+      "conditionFidelity": 0,
+      "evidenceGrounding": 0,
+      "answerabilityDiscipline": 0,
+      "hardFailure": true,
+      "rationale": "答案声称insufficient，但题目是answerable且证据充分，违反了answerabilityDiscipline，属于hardFailure。"
+    },
+    {
+      "sampleId": "sample-e5873450-b13b-454e-ae4c-5f61b5244437",
+      "requiredClaimCoverage": 2,
+      "conditionFidelity": 2,
+      "evidenceGrounding": 2,
+      "answerabilityDiscipline": 2,
+      "hardFailure": false,
+      "rationale": "答案完整覆盖所有requiredClaims：算子输出函数，泛函输出数，Euler-Lagrange方程作为极值必要条件。保留了mustMentionConditions（必要条件），未触发forbiddenClaims。所有关键结论均有正确引用。正确回答，未拒答。"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "questionId": "PILOT-H3-17",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "request": {
+    "systemPrompt": "你是知识系统的盲测评分员。你只按提供的 Gold 和评分合同评价匿名答案，不判断答案来自哪个实验组。\n必须逐项核对 requiredClaims、mustMentionConditions、forbiddenClaims、answerability 和证据引用。\nsourceRisk.present=true 时，Gold 风险说明是允许使用的人工审计结论；不得把源材料的过强表述当成正确答案。\n只输出严格 JSON：{\"scores\":[{\"sampleId\":\"...\",\"requiredClaimCoverage\":0,\"conditionFidelity\":0,\"evidenceGrounding\":0,\"answerabilityDiscipline\":0,\"hardFailure\":false,\"rationale\":\"...\"}]}。",
+    "userPrompt": "# 评分合同\n{\n  \"dimensions\": {\n    \"requiredClaimCoverage\": {\n      \"score0\": \"没有覆盖 requiredClaims，或核心结论相反\",\n      \"score1\": \"覆盖部分 requiredClaims，但缺少一项以上关键连接\",\n      \"score2\": \"完整覆盖全部 requiredClaims\"\n    },\n    \"conditionFidelity\": {\n      \"score0\": \"触发 forbiddenClaims，或删除了决定结论的条件\",\n      \"score1\": \"方向基本正确，但条件、例外或必要/充分强度表达不完整\",\n      \"score2\": \"保留全部 mustMentionConditions，且未触发 forbiddenClaims\"\n    },\n    \"evidenceGrounding\": {\n      \"score0\": \"关键结论没有可解析引用，或引用与结论无关\",\n      \"score1\": \"有相关引用，但关键结论存在未落到证据的部分\",\n      \"score2\": \"关键结论均由当前上下文标识支持，引用位置正确\"\n    },\n    \"answerabilityDiscipline\": {\n      \"score0\": \"证据不足时仍编造答案，或证据充分时错误拒答\",\n      \"score1\": \"表达了不确定性，但回答/拒答边界不够准确\",\n      \"score2\": \"严格遵守该题 answerability，充分回答或明确拒答\"\n    }\n  },\n  \"totalScore\": 8,\n  \"hardFailure\": \"任何 forbiddenClaim、伪造引用、把 insufficient 题当作已由语料证明，均记 hardFailure；该样本总分最高为 2。\"\n}\n\n# 题目与 Gold\n{\n  \"question\": \"Riesz 表示定理如何连接线性泛函、对偶空间、内积与 Hilbert 完备性？\",\n  \"answerability\": \"answerable\",\n  \"requiredClaims\": [\n    \"连续线性泛函属于对偶空间\",\n    \"Hilbert 空间中的连续线性泛函可由与唯一向量的内积表示\",\n    \"这种表示使用内积结构并建立 H 与其对偶的对应\"\n  ],\n  \"mustMentionConditions\": [\n    \"定理针对 Hilbert 空间上的连续线性泛函\"\n  ],\n  \"forbiddenClaims\": [\n    \"任意非连续泛函或任意 Banach 空间都具有同样的内积表示\"\n  ],\n  \"sourceRisk\": {\n    \"present\": false,\n    \"detail\": \"\"\n  },\n  \"evidence\": [\n    {\n      \"sourceFile\": \"mathtest-material/05-functions-mappings.md\",\n      \"heading\": \"5.2 映射：保持结构的函数\",\n      \"exactQuote\": \"| 线性 | 线性映射 | $f(ax+by) = a f(x) + b f(y)$ |\",\n      \"supportsRequiredClaims\": [\n        0\n      ]\n    },\n    {\n      \"sourceFile\": \"mathtest-material/02-spaces.md\",\n      \"heading\": \"2.6 内积空间与 Hilbert 空间\",\n      \"exactQuote\": \"> **Hilbert 空间 = 完备的内积空间**\",\n      \"supportsRequiredClaims\": [\n        1,\n        2\n      ]\n    },\n    {\n      \"sourceFile\": \"mathtest-material/09-functional-analysis.md\",\n      \"heading\": \"对偶空间与 Riesz 表示定理\",\n      \"exactQuote\": \"$X$ 上的所有连续线性泛函构成**对偶空间** $X^*$。\\n\\n**Riesz 表示定理**（Hilbert空间版本）：每个连续线性泛函 $f \\\\in H^*$ 都可由内积表示为：\",\n      \"supportsRequiredClaims\": [\n        0,\n        1,\n        2\n      ]\n    }\n  ]\n}\n\n# 匿名答案\n[\n  {\n    \"sampleId\": \"sample-f1715bef-69ec-4472-bd89-26514100af6e\",\n    \"questionId\": \"PILOT-H3-17\",\n    \"answer\": \"{\\n  \\\"answer\\\": \\\"Riesz 表示定理建立了 Hilbert 空间 H 与其对偶空间 H* 之间的等距同构：每个连续线性泛函 f ∈ H* 都可以唯一地表示为 f(x) = ⟨x, y⟩，其中 y ∈ H 由 f 唯一确定。这直接连接了线性泛函（对偶空间元素）与内积（通过固定向量 y）。该定理依赖于 Hilbert 空间的完备性（即完备内积空间），因为完备性保证了表示向量 y 的存在性和唯一性。\\\",\\n  \\\"citations\\\": [\\n    \\\"claim:9478dfc1ba6cb58f-0e7148fb74211eee\\\",\\n    \\\"claim:9478dfc1ba6cb58f-23e316c39e6b89e0\\\",\\n    \\\"claim:9478dfc1ba6cb58f-5f635e434ce1469b\\\",\\n    \\\"claim:9478dfc1ba6cb58f-9970b8b9ed15793f\\\",\\n    \\\"claim:9478dfc1ba6cb58f-84815c445d9df358\\\",\\n    \\\"span:09-functional-analysis-9478dfc1ba6cb58f-25#chars-2037-2095\\\",\\n    \\\"span:09-functional-analysis-9478dfc1ba6cb58f-27#chars-2162-2208\\\",\\n    \\\"span:09-functional-analysis-9478dfc1ba6cb58f-47\\\",\\n    \\\"span:02-spaces-33a33396a17d4175-61#chars-5644-5668\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\"\n  },\n  {\n    \"sampleId\": \"sample-1b5b7ea3-aaec-4cf2-9f7e-d2befd03698e\",\n    \"questionId\": \"PILOT-H3-17\",\n    \"answer\": \"{\\n  \\\"answer\\\": \\\"Riesz 表示定理将 Hilbert 空间中的每个连续线性泛函 f ∈ H* 唯一表示为内积形式 f(x) = ⟨x, y⟩，其中 y ∈ H 唯一。这建立了 H 与其对偶空间 H* 之间的等距同构，从而将线性泛函、对偶空间、内积和 Hilbert 空间的完备性紧密连接：Hilbert 空间是完备的内积空间（claim:33a33396a17d4175-c57d84208e8f6275, claim:9478dfc1ba6cb58f-9970b8b9ed15793f），而 Riesz 表示定理表明 H 同构于 H*，泛函等于内积（claim:9478dfc1ba6cb58f-5f635e434ce1469b），即 Hilbert 空间中的作用在向量上的泛函本质上就是与某个固定向量做内积（claim:9478dfc1ba6cb58f-23e316c39e6b89e0）。\\\",\\n  \\\"citations\\\": [\\n    \\\"claim:9478dfc1ba6cb58f-0e7148fb74211eee\\\",\\n    \\\"claim:9478dfc1ba6cb58f-5f635e434ce1469b\\\",\\n    \\\"claim:9478dfc1ba6cb58f-23e316c39e6b89e0\\\",\\n    \\\"claim:33a33396a17d4175-c57d84208e8f6275\\\",\\n    \\\"claim:9478dfc1ba6cb58f-9970b8b9ed15793f\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\"\n  },\n  {\n    \"sampleId\": \"sample-3824ab26-082a-4265-9358-5ceb5628662a\",\n    \"questionId\": \"PILOT-H3-17\",\n    \"answer\": \"{\\n  \\\"answer\\\": \\\"Riesz 表示定理建立了 Hilbert 空间 $H$ 与其对偶空间 $H^*$ 之间的同构：每个连续线性泛函 $f \\\\\\\\in H^*$ 都可以唯一地表示为 $f(x) = \\\\\\\\langle x, y \\\\\\\\rangle$，其中 $y \\\\\\\\in H$ 由 $f$ 唯一确定。这直接连接了线性泛函（对偶空间的元素）与内积（Hilbert 空间的结构），并依赖于 Hilbert 空间的完备性（确保 $y$ 的存在性）。\\\",\\n  \\\"citations\\\": [\\n    \\\"SOURCE mathtest-material/09-functional-analysis.md:95-108\\\",\\n    \\\"SOURCE mathtest-material/09-functional-analysis.md:194-207\\\",\\n    \\\"SOURCE mathtest-material/02-spaces.md:230-241\\\",\\n    \\\"SOURCE mathtest-material/02-spaces.md:332-346\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\"\n  }\n]"
+  },
+  "usage": {
+    "promptTokens": 2139,
+    "completionTokens": 355,
+    "totalTokens": 2494,
+    "promptCacheHitTokens": 384,
+    "promptCacheMissTokens": 1755,
+    "reasoningTokens": 0
+  },
+  "finishReason": "stop",
+  "rawResponse": "{\n  \"scores\": [\n    {\n      \"sampleId\": \"sample-f1715bef-69ec-4472-bd89-26514100af6e\",\n      \"requiredClaimCoverage\": 2,\n      \"conditionFidelity\": 2,\n      \"evidenceGrounding\": 2,\n      \"answerabilityDiscipline\": 2,\n      \"hardFailure\": false,\n      \"rationale\": \"覆盖全部requiredClaims，提及Hilbert空间上的连续线性泛函条件，无forbiddenClaims，引用正确，充分回答。\"\n    },\n    {\n      \"sampleId\": \"sample-1b5b7ea3-aaec-4cf2-9f7e-d2befd03698e\",\n      \"requiredClaimCoverage\": 2,\n      \"conditionFidelity\": 2,\n      \"evidenceGrounding\": 2,\n      \"answerabilityDiscipline\": 2,\n      \"hardFailure\": false,\n      \"rationale\": \"覆盖全部requiredClaims，提及Hilbert空间上的连续线性泛函条件，无forbiddenClaims，引用正确，充分回答。\"\n    },\n    {\n      \"sampleId\": \"sample-3824ab26-082a-4265-9358-5ceb5628662a\",\n      \"requiredClaimCoverage\": 2,\n      \"conditionFidelity\": 2,\n      \"evidenceGrounding\": 2,\n      \"answerabilityDiscipline\": 2,\n      \"hardFailure\": false,\n      \"rationale\": \"覆盖全部requiredClaims，提及Hilbert空间上的连续线性泛函条件，无forbiddenClaims，引用正确，充分回答。\"\n    }\n  ]\n}",
+  "parsed": [
+    {
+      "sampleId": "sample-f1715bef-69ec-4472-bd89-26514100af6e",
+      "requiredClaimCoverage": 2,
+      "conditionFidelity": 2,
+      "evidenceGrounding": 2,
+      "answerabilityDiscipline": 2,
+      "hardFailure": false,
+      "rationale": "覆盖全部requiredClaims，提及Hilbert空间上的连续线性泛函条件，无forbiddenClaims，引用正确，充分回答。"
+    },
+    {
+      "sampleId": "sample-1b5b7ea3-aaec-4cf2-9f7e-d2befd03698e",
+      "requiredClaimCoverage": 2,
+      "conditionFidelity": 2,
+      "evidenceGrounding": 2,
+      "answerabilityDiscipline": 2,
+      "hardFailure": false,
+      "rationale": "覆盖全部requiredClaims，提及Hilbert空间上的连续线性泛函条件，无forbiddenClaims，引用正确，充分回答。"
+    },
+    {
+      "sampleId": "sample-3824ab26-082a-4265-9358-5ceb5628662a",
+      "requiredClaimCoverage": 2,
+      "conditionFidelity": 2,
+      "evidenceGrounding": 2,
+      "answerabilityDiscipline": 2,
+      "hardFailure": false,
+      "rationale": "覆盖全部requiredClaims，提及Hilbert空间上的连续线性泛函条件，无forbiddenClaims，引用正确，充分回答。"
+    }
+  ]
+}

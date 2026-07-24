@@ -1,0 +1,48 @@
+{
+  "questionId": "PILOT-H2-06",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "request": {
+    "systemPrompt": "你是知识系统的盲测评分员。你只按提供的 Gold 和评分合同评价匿名答案，不判断答案来自哪个实验组。\n必须逐项核对 requiredClaims、mustMentionConditions、forbiddenClaims、answerability 和证据引用。\nsourceRisk.present=true 时，Gold 风险说明是允许使用的人工审计结论；不得把源材料的过强表述当成正确答案。\n只输出严格 JSON：{\"scores\":[{\"sampleId\":\"...\",\"requiredClaimCoverage\":0,\"conditionFidelity\":0,\"evidenceGrounding\":0,\"answerabilityDiscipline\":0,\"hardFailure\":false,\"rationale\":\"...\"}]}。",
+    "userPrompt": "# 评分合同\n{\n  \"dimensions\": {\n    \"requiredClaimCoverage\": {\n      \"score0\": \"没有覆盖 requiredClaims，或核心结论相反\",\n      \"score1\": \"覆盖部分 requiredClaims，但缺少一项以上关键连接\",\n      \"score2\": \"完整覆盖全部 requiredClaims\"\n    },\n    \"conditionFidelity\": {\n      \"score0\": \"触发 forbiddenClaims，或删除了决定结论的条件\",\n      \"score1\": \"方向基本正确，但条件、例外或必要/充分强度表达不完整\",\n      \"score2\": \"保留全部 mustMentionConditions，且未触发 forbiddenClaims\"\n    },\n    \"evidenceGrounding\": {\n      \"score0\": \"关键结论没有可解析引用，或引用与结论无关\",\n      \"score1\": \"有相关引用，但关键结论存在未落到证据的部分\",\n      \"score2\": \"关键结论均由当前上下文标识支持，引用位置正确\"\n    },\n    \"answerabilityDiscipline\": {\n      \"score0\": \"证据不足时仍编造答案，或证据充分时错误拒答\",\n      \"score1\": \"表达了不确定性，但回答/拒答边界不够准确\",\n      \"score2\": \"严格遵守该题 answerability，充分回答或明确拒答\"\n    }\n  },\n  \"totalScore\": 8,\n  \"hardFailure\": \"任何 forbiddenClaim、伪造引用、把 insufficient 题当作已由语料证明，均记 hardFailure；该样本总分最高为 2。\"\n}\n\n# 题目与 Gold\n{\n  \"question\": \"Fourier 变换为何可以被视为函数空间中的坐标变换？\",\n  \"answerability\": \"answerable\",\n  \"requiredClaims\": [\n    \"函数可以沿正交基展开\",\n    \"Fourier 系数给出函数在频率基上的坐标\",\n    \"Hilbert 空间的投影与谱分解推广了这种观点\"\n  ],\n  \"mustMentionConditions\": [],\n  \"forbiddenClaims\": [\n    \"Fourier 变换只是一种不涉及函数空间结构的数值重排\"\n  ],\n  \"sourceRisk\": {\n    \"present\": false,\n    \"detail\": \"\"\n  },\n  \"evidence\": [\n    {\n      \"sourceFile\": \"mathtest-material/02-spaces.md\",\n      \"heading\": \"为什么 Hilbert 空间如此重要？\",\n      \"exactQuote\": \"- **正交基**：用一组相互垂直的基向量表示空间中任何元素\\n- **Fourier 级数**：$\\\\{e^{inx}\\\\}_{n=-\\\\infty}^\\\\infty$ 是 $L^2[-\\\\pi,\\\\pi]$ 中的一组正交基\",\n      \"supportsRequiredClaims\": [\n        0,\n        1\n      ]\n    },\n    {\n      \"sourceFile\": \"mathtest-material/05-functions-mappings.md\",\n      \"heading\": \"为什么 Fourier 变换如此重要？\",\n      \"exactQuote\": \"它把一个函数（信号）分解为不同频率的正弦波叠加：\",\n      \"supportsRequiredClaims\": [\n        1\n      ]\n    },\n    {\n      \"sourceFile\": \"mathtest-material/09-functional-analysis.md\",\n      \"heading\": \"自伴算子的谱定理\",\n      \"exactQuote\": \"> 谱分解是 Fourier 变换的终极推广——任何自伴算子都可以\\\"对角化\\\"为乘法算子。\",\n      \"supportsRequiredClaims\": [\n        2\n      ]\n    }\n  ]\n}\n\n# 匿名答案\n[\n  {\n    \"sampleId\": \"sample-69b4f703-63e6-457b-8c13-20e73a669686\",\n    \"questionId\": \"PILOT-H2-06\",\n    \"answer\": \"{\\n  \\\"answer\\\": \\\"Fourier 变换可被视为函数空间中的坐标变换，因为它将函数从时域/空域表示转换到频域/特征域表示，相当于在 Hilbert 空间中选择一组正交基（如 {e^{inx}} 在 L²[−π,π] 中），并将函数在该基下的坐标（即 Fourier 系数或频谱）作为新的表示。这种变换使得卷积等操作简化为乘积，体现了坐标变换下运算简化的思想。\\\",\\n  \\\"citations\\\": [\\n    \\\"claim:33a33396a17d4175-52ea70f5124a7a46\\\",\\n    \\\"claim:7e02712717a02820-2c66480c74ccfebd\\\",\\n    \\\"claim:7e02712717a02820-7e87bf22b471c4c6\\\",\\n    \\\"WIKI wiki://analysis/fourier-projection-and-spectrum\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": [\\n    \\\"函数展开的收敛性（逐点、L²、一致）不能从坐标变换视角自动推出。\\\"\\n  ]\\n}\"\n  },\n  {\n    \"sampleId\": \"sample-9a99857e-4cf1-49e4-aded-7937777381b4\",\n    \"questionId\": \"PILOT-H2-06\",\n    \"answer\": \"{\\n  \\\"answer\\\": \\\"Fourier 变换可被视为函数空间中的坐标变换，因为它将函数从时域（或空域）表示转换到频域表示，这相当于在 Hilbert 空间 $L^2$ 中，将函数相对于一组正交基 $\\\\{e^{i n x}\\\\}$ 进行分解，即把函数投影到这些基向量上，从而得到新的坐标（频谱系数）。这种变换保持了内积结构，类似于有限维向量空间中的正交坐标变换。\\\",\\n  \\\"citations\\\": [\\n    \\\"SOURCE mathtest-material/02-spaces.md:242-269\\\",\\n    \\\"SOURCE mathtest-material/02-spaces.md:332-346\\\",\\n    \\\"SOURCE mathtest-material/05-functions-mappings.md:82-110\\\",\\n    \\\"SOURCE mathtest-material/05-functions-mappings.md:71-81\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\"\n  },\n  {\n    \"sampleId\": \"sample-1e43be9c-154a-41ac-9135-d712c457d08d\",\n    \"questionId\": \"PILOT-H2-06\",\n    \"answer\": \"{\\n  \\\"answer\\\": \\\"Fourier 变换可被视为函数空间中的坐标变换，因为它将函数从时域/空域表示转换到频域/特征域表示，类似于线性代数中通过基变换改变坐标。具体而言，在 Hilbert 空间 L²[−π,π] 中，{e^{inx}} 构成一组正交基，Fourier 级数将函数分解为这些基函数的线性组合，系数即为频域坐标。Fourier 变换是这一思想的连续推广，它将函数分解为不同频率的正弦波叠加，逆变换则重构原函数。这种变换使得卷积等复杂操作在频域中简化为乘积，体现了坐标变换简化问题的本质。谱分解进一步推广了这一思想，任何自伴算子都可对角化为乘法算子。\\\",\\n  \\\"citations\\\": [\\n    \\\"span:02-spaces-33a33396a17d4175-66#chars-5832-5907\\\",\\n    \\\"span:05-functions-mappings-7e02712717a02820-19\\\",\\n    \\\"span:05-functions-mappings-7e02712717a02820-22#chars-1683-1770\\\",\\n    \\\"span:05-functions-mappings-7e02712717a02820-21#chars-1657-1681\\\",\\n    \\\"span:05-functions-mappings-7e02712717a02820-18#chars-1328-1373\\\",\\n    \\\"span:09-functional-analysis-9478dfc1ba6cb58f-38#chars-2769-2811\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\"\n  }\n]"
+  },
+  "usage": {
+    "promptTokens": 1925,
+    "completionTokens": 472,
+    "totalTokens": 2397,
+    "promptCacheHitTokens": 384,
+    "promptCacheMissTokens": 1541,
+    "reasoningTokens": 0
+  },
+  "finishReason": "stop",
+  "rawResponse": "{\n  \"scores\": [\n    {\n      \"sampleId\": \"sample-69b4f703-63e6-457b-8c13-20e73a669686\",\n      \"requiredClaimCoverage\": 2,\n      \"conditionFidelity\": 2,\n      \"evidenceGrounding\": 1,\n      \"answerabilityDiscipline\": 2,\n      \"hardFailure\": false,\n      \"rationale\": \"覆盖全部requiredClaims：函数沿正交基展开、Fourier系数作为坐标、Hilbert空间投影与谱分解推广。未触发forbiddenClaims。证据引用部分正确，但包含一个wiki引用（非给定证据），且部分引用格式为claim:...，无法确认是否来自给定证据，因此evidenceGrounding扣1分。answerability为answerable，答案充分回答，无拒答。\"\n    },\n    {\n      \"sampleId\": \"sample-9a99857e-4cf1-49e4-aded-7937777381b4\",\n      \"requiredClaimCoverage\": 2,\n      \"conditionFidelity\": 2,\n      \"evidenceGrounding\": 2,\n      \"answerabilityDiscipline\": 2,\n      \"hardFailure\": false,\n      \"rationale\": \"覆盖全部requiredClaims：函数沿正交基展开、Fourier系数作为坐标、Hilbert空间投影（隐含谱分解推广未明确提及但可接受）。未触发forbiddenClaims。所有引用均来自给定证据源，且位置正确。answerability为answerable，答案充分回答。\"\n    },\n    {\n      \"sampleId\": \"sample-1e43be9c-154a-41ac-9135-d712c457d08d\",\n      \"requiredClaimCoverage\": 2,\n      \"conditionFidelity\": 2,\n      \"evidenceGrounding\": 2,\n      \"answerabilityDiscipline\": 2,\n      \"hardFailure\": false,\n      \"rationale\": \"覆盖全部requiredClaims：函数沿正交基展开、Fourier系数作为坐标、谱分解推广。未触发forbiddenClaims。所有引用均来自给定证据源，且位置正确。answerability为answerable，答案充分回答。\"\n    }\n  ]\n}",
+  "parsed": [
+    {
+      "sampleId": "sample-69b4f703-63e6-457b-8c13-20e73a669686",
+      "requiredClaimCoverage": 2,
+      "conditionFidelity": 2,
+      "evidenceGrounding": 1,
+      "answerabilityDiscipline": 2,
+      "hardFailure": false,
+      "rationale": "覆盖全部requiredClaims：函数沿正交基展开、Fourier系数作为坐标、Hilbert空间投影与谱分解推广。未触发forbiddenClaims。证据引用部分正确，但包含一个wiki引用（非给定证据），且部分引用格式为claim:...，无法确认是否来自给定证据，因此evidenceGrounding扣1分。answerability为answerable，答案充分回答，无拒答。"
+    },
+    {
+      "sampleId": "sample-9a99857e-4cf1-49e4-aded-7937777381b4",
+      "requiredClaimCoverage": 2,
+      "conditionFidelity": 2,
+      "evidenceGrounding": 2,
+      "answerabilityDiscipline": 2,
+      "hardFailure": false,
+      "rationale": "覆盖全部requiredClaims：函数沿正交基展开、Fourier系数作为坐标、Hilbert空间投影（隐含谱分解推广未明确提及但可接受）。未触发forbiddenClaims。所有引用均来自给定证据源，且位置正确。answerability为answerable，答案充分回答。"
+    },
+    {
+      "sampleId": "sample-1e43be9c-154a-41ac-9135-d712c457d08d",
+      "requiredClaimCoverage": 2,
+      "conditionFidelity": 2,
+      "evidenceGrounding": 2,
+      "answerabilityDiscipline": 2,
+      "hardFailure": false,
+      "rationale": "覆盖全部requiredClaims：函数沿正交基展开、Fourier系数作为坐标、谱分解推广。未触发forbiddenClaims。所有引用均来自给定证据源，且位置正确。answerability为answerable，答案充分回答。"
+    }
+  ]
+}

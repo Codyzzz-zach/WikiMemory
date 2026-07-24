@@ -1,0 +1,17 @@
+[
+  {
+    "sampleId": "sample-39fed71b-5110-4261-8621-302a021dc53c",
+    "questionId": "PILOT-D01",
+    "answer": "{\n  \"answer\": \"材料认为自然数的本质是从 0 和后继操作生成的递归结构，而不是符号本身，因为这种递归定义（如 0=∅, 1={0}, 2={0,1}）揭示了自然数的构造性本质，即每个自然数都是通过重复应用后继操作从 0 得到的。这种观点解释了数学归纳法的根本性：归纳法正是基于这种递归结构——基础步骤验证 P(0) 成立，归纳步骤假设 P(n) 成立并证明 P(n+1) 成立，从而确保对所有自然数成立。\",\n  \"citations\": [\n    \"claim:80440e2182e5653f-b4910dd2840eaf36\",\n    \"span:01-number-systems-80440e2182e5653f-14#chars-1423-1466\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}"
+  },
+  {
+    "sampleId": "sample-d0993b90-543a-49ac-9beb-ddcc589824fb",
+    "questionId": "PILOT-D01",
+    "answer": "{\n  \"answer\": \"材料认为自然数的本质是递归结构而非符号本身，因为Peano公理系统将自然数定义为从0出发反复应用后继操作生成的无穷序列，而数学归纳法原理（第5条公理）直接编码了这一构造方式：若性质对0成立且由对n成立可推出对S(n)成立，则对一切自然数成立。这解释了数学归纳法的根本性——它正是自然数递归结构的逻辑体现。\",\n  \"citations\": [\n    \"SOURCE mathtest-material/01-number-systems.md:15-30\",\n    \"SOURCE mathtest-material/01-number-systems.md:437-451\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}"
+  },
+  {
+    "sampleId": "sample-fa7a500a-5111-4684-b213-b9a61a33f1b0",
+    "questionId": "PILOT-D01",
+    "answer": "{\n  \"answer\": \"材料认为自然数的本质是从 0 和后继操作生成的递归结构，而不是符号本身，因为这种递归定义（如 0=∅, 1={0}, 2={0,1}）揭示了自然数的构造性本质，即每个自然数都是通过重复应用后继操作从 0 得到的。这种观点解释了数学归纳法的根本性：归纳法正是基于这种递归结构——基础步骤验证 P(0) 成立，归纳步骤假设 P(n) 成立并证明 P(n+1) 成立，从而确保对所有自然数成立。\",\n  \"citations\": [\n    \"claim:80440e2182e5653f-b4910dd2840eaf36\",\n    \"span:01-number-systems-80440e2182e5653f-14#chars-1423-1466\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}"
+  }
+]

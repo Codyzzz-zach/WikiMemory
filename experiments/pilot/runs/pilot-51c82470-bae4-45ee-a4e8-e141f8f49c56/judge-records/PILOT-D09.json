@@ -1,0 +1,48 @@
+{
+  "questionId": "PILOT-D09",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "request": {
+    "systemPrompt": "你是知识系统的盲测评分员。你只按提供的 Gold 和评分合同评价匿名答案，不判断答案来自哪个实验组。\n必须逐项核对 requiredClaims、mustMentionConditions、forbiddenClaims、answerability 和证据引用。\nsourceRisk.present=true 时，Gold 风险说明是允许使用的人工审计结论；不得把源材料的过强表述当成正确答案。\n只输出严格 JSON：{\"scores\":[{\"sampleId\":\"...\",\"requiredClaimCoverage\":0,\"conditionFidelity\":0,\"evidenceGrounding\":0,\"answerabilityDiscipline\":0,\"hardFailure\":false,\"rationale\":\"...\"}]}。",
+    "userPrompt": "# 评分合同\n{\n  \"dimensions\": {\n    \"requiredClaimCoverage\": {\n      \"score0\": \"没有覆盖 requiredClaims，或核心结论相反\",\n      \"score1\": \"覆盖部分 requiredClaims，但缺少一项以上关键连接\",\n      \"score2\": \"完整覆盖全部 requiredClaims\"\n    },\n    \"conditionFidelity\": {\n      \"score0\": \"触发 forbiddenClaims，或删除了决定结论的条件\",\n      \"score1\": \"方向基本正确，但条件、例外或必要/充分强度表达不完整\",\n      \"score2\": \"保留全部 mustMentionConditions，且未触发 forbiddenClaims\"\n    },\n    \"evidenceGrounding\": {\n      \"score0\": \"关键结论没有可解析引用，或引用与结论无关\",\n      \"score1\": \"有相关引用，但关键结论存在未落到证据的部分\",\n      \"score2\": \"关键结论均由当前上下文标识支持，引用位置正确\"\n    },\n    \"answerabilityDiscipline\": {\n      \"score0\": \"证据不足时仍编造答案，或证据充分时错误拒答\",\n      \"score1\": \"表达了不确定性，但回答/拒答边界不够准确\",\n      \"score2\": \"严格遵守该题 answerability，充分回答或明确拒答\"\n    }\n  },\n  \"totalScore\": 8,\n  \"hardFailure\": \"任何 forbiddenClaim、伪造引用、把 insufficient 题当作已由语料证明，均记 hardFailure；该样本总分最高为 2。\"\n}\n\n# 题目与 Gold\n{\n  \"question\": \"Banach 空间与 Hilbert 空间的区别是什么？\",\n  \"answerability\": \"answerable\",\n  \"requiredClaims\": [\n    \"Banach 空间是完备赋范空间\",\n    \"Hilbert 空间是完备内积空间\",\n    \"内积诱导范数，因此 Hilbert 空间是 Banach 空间的特例\"\n  ],\n  \"mustMentionConditions\": [],\n  \"forbiddenClaims\": [\n    \"每个 Banach 空间的范数都来自内积\"\n  ],\n  \"sourceRisk\": {\n    \"present\": false,\n    \"detail\": \"\"\n  },\n  \"evidence\": [\n    {\n      \"sourceFile\": \"mathtest-material/02-spaces.md\",\n      \"heading\": \"2.5 赋范空间与 Banach 空间\",\n      \"exactQuote\": \"> **Banach 空间 = 完备的赋范空间**\",\n      \"supportsRequiredClaims\": [\n        0\n      ]\n    },\n    {\n      \"sourceFile\": \"mathtest-material/02-spaces.md\",\n      \"heading\": \"2.6 内积空间与 Hilbert 空间\",\n      \"exactQuote\": \"内积诱导范数：$\\\\|x\\\\| = \\\\sqrt{\\\\langle x, x \\\\rangle}$\\n\\n> **Hilbert 空间 = 完备的内积空间**\",\n      \"supportsRequiredClaims\": [\n        1,\n        2\n      ]\n    }\n  ]\n}\n\n# 匿名答案\n[\n  {\n    \"sampleId\": \"sample-96bbb016-de10-454b-9230-adc09ef5a0ef\",\n    \"questionId\": \"PILOT-D09\",\n    \"answer\": \"{\\n  \\\"answer\\\": \\\"Banach 空间是完备的赋范空间，而 Hilbert 空间是完备的内积空间。Hilbert 空间具有内积结构，因此支持正交性概念，如正交基、正交投影和 Fourier 级数展开，并且 Riesz 表示定理成立（每个连续线性泛函可表示为与某固定向量的内积）。Banach 空间仅由范数定义，不具备内积，因此没有正交性，但满足 Hahn-Banach、开映射、闭图像和一致有界等定理。\\\",\\n  \\\"citations\\\": [\\n    \\\"claim:33a33396a17d4175-6d70b1c82ab10765\\\",\\n    \\\"claim:33a33396a17d4175-c57d84208e8f6275\\\",\\n    \\\"claim:33a33396a17d4175-81349b735066881b\\\",\\n    \\\"claim:33a33396a17d4175-805fb4ab5d394c0a\\\",\\n    \\\"claim:33a33396a17d4175-52ea70f5124a7a46\\\",\\n    \\\"claim:9478dfc1ba6cb58f-0e7148fb74211eee\\\",\\n    \\\"claim:9478dfc1ba6cb58f-71a56b4ac7ad880b\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\"\n  },\n  {\n    \"sampleId\": \"sample-bc48c2a5-3818-4397-86a7-5eac77371c2c\",\n    \"questionId\": \"PILOT-D09\",\n    \"answer\": \"{\\n  \\\"answer\\\": \\\"Banach 空间是完备的赋范空间，而 Hilbert 空间是完备的内积空间。Hilbert 空间具有内积诱导的范数，因此额外拥有正交性、正交投影、正交基和 Riesz 表示定理等结构，这些在一般 Banach 空间中不一定成立。\\\",\\n  \\\"citations\\\": [\\n    \\\"claim:33a33396a17d4175-6d70b1c82ab10765\\\",\\n    \\\"claim:33a33396a17d4175-c57d84208e8f6275\\\",\\n    \\\"claim:33a33396a17d4175-805fb4ab5d394c0a\\\",\\n    \\\"claim:33a33396a17d4175-81349b735066881b\\\",\\n    \\\"claim:9478dfc1ba6cb58f-0e7148fb74211eee\\\",\\n    \\\"WIKI wiki://analysis/completeness-and-functional-spaces\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\"\n  },\n  {\n    \"sampleId\": \"sample-18fbfc7e-1e0a-4d5d-89f9-f6d8a42f9507\",\n    \"questionId\": \"PILOT-D09\",\n    \"answer\": \"{\\n  \\\"answer\\\": \\\"Banach 空间是完备的赋范空间，而 Hilbert 空间是完备的内积空间。Hilbert 空间具有内积结构，从而可以定义正交性、正交投影和正交基，而 Banach 空间只有范数（长度）结构，没有内积（角度）概念。Hilbert 空间是 Banach 空间的特例：每个 Hilbert 空间都是 Banach 空间，但反之不成立。\\\",\\n  \\\"citations\\\": [\\n    \\\"mathtest-material/02-spaces.md:13-39\\\",\\n    \\\"mathtest-material/02-spaces.md:316-331\\\",\\n    \\\"mathtest-material/02-spaces.md:209-227\\\",\\n    \\\"mathtest-material/02-spaces.md:242-269\\\",\\n    \\\"mathtest-material/09-functional-analysis.md:95-108\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\"\n  }\n]"
+  },
+  "usage": {
+    "promptTokens": 1776,
+    "completionTokens": 377,
+    "totalTokens": 2153,
+    "promptCacheHitTokens": 384,
+    "promptCacheMissTokens": 1392,
+    "reasoningTokens": 0
+  },
+  "finishReason": "stop",
+  "rawResponse": "{\n  \"scores\": [\n    {\n      \"sampleId\": \"sample-96bbb016-de10-454b-9230-adc09ef5a0ef\",\n      \"requiredClaimCoverage\": 2,\n      \"conditionFidelity\": 2,\n      \"evidenceGrounding\": 1,\n      \"answerabilityDiscipline\": 2,\n      \"hardFailure\": false,\n      \"rationale\": \"覆盖全部requiredClaims，未触发forbiddenClaims，但部分引用（如Riesz表示定理）未在给定证据中明确支持，证据引用不完全匹配。\"\n    },\n    {\n      \"sampleId\": \"sample-bc48c2a5-3818-4397-86a7-5eac77371c2c\",\n      \"requiredClaimCoverage\": 2,\n      \"conditionFidelity\": 2,\n      \"evidenceGrounding\": 1,\n      \"answerabilityDiscipline\": 2,\n      \"hardFailure\": false,\n      \"rationale\": \"覆盖全部requiredClaims，未触发forbiddenClaims，但引用了未提供的WIKI来源，且部分引用（如Riesz表示定理）未在给定证据中明确支持。\"\n    },\n    {\n      \"sampleId\": \"sample-18fbfc7e-1e0a-4d5d-89f9-f6d8a42f9507\",\n      \"requiredClaimCoverage\": 2,\n      \"conditionFidelity\": 2,\n      \"evidenceGrounding\": 2,\n      \"answerabilityDiscipline\": 2,\n      \"hardFailure\": false,\n      \"rationale\": \"覆盖全部requiredClaims，未触发forbiddenClaims，引用均来自给定材料且位置正确，关键结论均有证据支持。\"\n    }\n  ]\n}",
+  "parsed": [
+    {
+      "sampleId": "sample-96bbb016-de10-454b-9230-adc09ef5a0ef",
+      "requiredClaimCoverage": 2,
+      "conditionFidelity": 2,
+      "evidenceGrounding": 1,
+      "answerabilityDiscipline": 2,
+      "hardFailure": false,
+      "rationale": "覆盖全部requiredClaims，未触发forbiddenClaims，但部分引用（如Riesz表示定理）未在给定证据中明确支持，证据引用不完全匹配。"
+    },
+    {
+      "sampleId": "sample-bc48c2a5-3818-4397-86a7-5eac77371c2c",
+      "requiredClaimCoverage": 2,
+      "conditionFidelity": 2,
+      "evidenceGrounding": 1,
+      "answerabilityDiscipline": 2,
+      "hardFailure": false,
+      "rationale": "覆盖全部requiredClaims，未触发forbiddenClaims，但引用了未提供的WIKI来源，且部分引用（如Riesz表示定理）未在给定证据中明确支持。"
+    },
+    {
+      "sampleId": "sample-18fbfc7e-1e0a-4d5d-89f9-f6d8a42f9507",
+      "requiredClaimCoverage": 2,
+      "conditionFidelity": 2,
+      "evidenceGrounding": 2,
+      "answerabilityDiscipline": 2,
+      "hardFailure": false,
+      "rationale": "覆盖全部requiredClaims，未触发forbiddenClaims，引用均来自给定材料且位置正确，关键结论均有证据支持。"
+    }
+  ]
+}

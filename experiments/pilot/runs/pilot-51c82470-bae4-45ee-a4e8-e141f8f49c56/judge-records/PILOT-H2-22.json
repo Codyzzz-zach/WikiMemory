@@ -1,0 +1,48 @@
+{
+  "questionId": "PILOT-H2-22",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "request": {
+    "systemPrompt": "你是知识系统的盲测评分员。你只按提供的 Gold 和评分合同评价匿名答案，不判断答案来自哪个实验组。\n必须逐项核对 requiredClaims、mustMentionConditions、forbiddenClaims、answerability 和证据引用。\nsourceRisk.present=true 时，Gold 风险说明是允许使用的人工审计结论；不得把源材料的过强表述当成正确答案。\n只输出严格 JSON：{\"scores\":[{\"sampleId\":\"...\",\"requiredClaimCoverage\":0,\"conditionFidelity\":0,\"evidenceGrounding\":0,\"answerabilityDiscipline\":0,\"hardFailure\":false,\"rationale\":\"...\"}]}。",
+    "userPrompt": "# 评分合同\n{\n  \"dimensions\": {\n    \"requiredClaimCoverage\": {\n      \"score0\": \"没有覆盖 requiredClaims，或核心结论相反\",\n      \"score1\": \"覆盖部分 requiredClaims，但缺少一项以上关键连接\",\n      \"score2\": \"完整覆盖全部 requiredClaims\"\n    },\n    \"conditionFidelity\": {\n      \"score0\": \"触发 forbiddenClaims，或删除了决定结论的条件\",\n      \"score1\": \"方向基本正确，但条件、例外或必要/充分强度表达不完整\",\n      \"score2\": \"保留全部 mustMentionConditions，且未触发 forbiddenClaims\"\n    },\n    \"evidenceGrounding\": {\n      \"score0\": \"关键结论没有可解析引用，或引用与结论无关\",\n      \"score1\": \"有相关引用，但关键结论存在未落到证据的部分\",\n      \"score2\": \"关键结论均由当前上下文标识支持，引用位置正确\"\n    },\n    \"answerabilityDiscipline\": {\n      \"score0\": \"证据不足时仍编造答案，或证据充分时错误拒答\",\n      \"score1\": \"表达了不确定性，但回答/拒答边界不够准确\",\n      \"score2\": \"严格遵守该题 answerability，充分回答或明确拒答\"\n    }\n  },\n  \"totalScore\": 8,\n  \"hardFailure\": \"任何 forbiddenClaim、伪造引用、把 insufficient 题当作已由语料证明，均记 hardFailure；该样本总分最高为 2。\"\n}\n\n# 题目与 Gold\n{\n  \"question\": \"为什么 Cauchy 列是否收敛由所在空间的完备性决定？\",\n  \"answerability\": \"answerable\",\n  \"requiredClaims\": [\n    \"Cauchy 性只描述列内部后期项彼此接近\",\n    \"完备性保证这种列的极限点仍在空间内\",\n    \"非完备空间中极限可能落在空间外\"\n  ],\n  \"mustMentionConditions\": [\n    \"只在完备空间中保证每个 Cauchy 列收敛\"\n  ],\n  \"forbiddenClaims\": [\n    \"任何度量空间中的 Cauchy 列都收敛\"\n  ],\n  \"sourceRisk\": {\n    \"present\": false,\n    \"detail\": \"\"\n  },\n  \"evidence\": [\n    {\n      \"sourceFile\": \"mathtest-material/03-sequences-limits.md\",\n      \"heading\": \"3.1 数列：离散变化的数学描述\",\n      \"exactQuote\": \"| Cauchy列 | $\\\\forall \\\\epsilon>0, \\\\exists N, \\\\forall m,n>N: \\\\lvert a_m-a_n\\\\rvert<\\\\epsilon$ | $a_n = 1/n$ |\",\n      \"supportsRequiredClaims\": [\n        0\n      ]\n    },\n    {\n      \"sourceFile\": \"mathtest-material/02-spaces.md\",\n      \"heading\": \"完备性：Banach 空间\",\n      \"exactQuote\": \"如果空间中每个 Cauchy 列都收敛到空间内的一个点，这个空间就是**完备的**。\",\n      \"supportsRequiredClaims\": [\n        1\n      ]\n    },\n    {\n      \"sourceFile\": \"mathtest-material/02-spaces.md\",\n      \"heading\": \"完备性：Banach 空间\",\n      \"exactQuote\": \"> **不完备的例子**：在 $\\\\|f\\\\|_1$ 下，连续函数空间中存在 Cauchy 列收敛到不连续的函数——极限\\\"跑出了空间\\\"。\",\n      \"supportsRequiredClaims\": [\n        2\n      ]\n    }\n  ]\n}\n\n# 匿名答案\n[\n  {\n    \"sampleId\": \"sample-65149241-a86e-4778-9873-64d90f9ab5d6\",\n    \"questionId\": \"PILOT-H2-22\",\n    \"answer\": \"{\\n  \\\"answer\\\": \\\"Cauchy列是否收敛由所在空间的完备性决定，因为完备性定义为空间中每个Cauchy列都收敛到空间内的一个点。在完备空间（如实数集R）中，所有Cauchy列都收敛；而在不完备空间（如有理数集Q）中，存在Cauchy列不收敛（例如收敛到无理数的有理数Cauchy列）。因此，Cauchy列的收敛性依赖于空间是否“没有洞”，即是否完备。\\\",\\n  \\\"citations\\\": [\\n    \\\"claim:80440e2182e5653f-1d1341c978df0a68\\\",\\n    \\\"claim:33a33396a17d4175-92f0384fb17d1720\\\",\\n    \\\"claim:80440e2182e5653f-4384f68c38d1c16d\\\",\\n    \\\"claim:80440e2182e5653f-d1c80ec9bda36ba7\\\",\\n    \\\"claim:80440e2182e5653f-d89b79ca37b88b53\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\"\n  },\n  {\n    \"sampleId\": \"sample-deb80bb6-4485-4c67-bef8-b9c7d9080225\",\n    \"questionId\": \"PILOT-H2-22\",\n    \"answer\": \"{\\n  \\\"answer\\\": \\\"Cauchy 列是否收敛由所在空间的完备性决定，因为完备性的定义就是“空间中每个 Cauchy 列都收敛到空间内的一个点”。如果空间不完备，则存在 Cauchy 列不收敛（极限跑出空间）；如果空间完备，则所有 Cauchy 列必收敛。\\\",\\n  \\\"citations\\\": [\\n    \\\"SOURCE mathtest-material/02-spaces.md:209-227\\\",\\n    \\\"SOURCE mathtest-material/01-number-systems.md:239-266\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\"\n  },\n  {\n    \"sampleId\": \"sample-4e7ee1f0-a9a9-4190-9f03-7fc1af900e8a\",\n    \"questionId\": \"PILOT-H2-22\",\n    \"answer\": \"{\\n  \\\"answer\\\": \\\"Cauchy列是否收敛取决于所在空间的完备性，因为完备性定义为空间中每个Cauchy列都收敛到空间内的一个点。如果空间不完备（如有理数集Q），则存在Cauchy列（如逼近√2的有理数列）不收敛于空间内的点；而完备空间（如实数集R）保证每个Cauchy列都有极限。\\\",\\n  \\\"citations\\\": [\\n    \\\"claim:33a33396a17d4175-92f0384fb17d1720\\\",\\n    \\\"claim:80440e2182e5653f-1d1341c978df0a68\\\",\\n    \\\"claim:80440e2182e5653f-4384f68c38d1c16d\\\",\\n    \\\"claim:80440e2182e5653f-d1c80ec9bda36ba7\\\",\\n    \\\"span:01-number-systems-80440e2182e5653f-62#chars-5808-5985\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\"\n  }\n]"
+  },
+  "usage": {
+    "promptTokens": 1746,
+    "completionTokens": 339,
+    "totalTokens": 2085,
+    "promptCacheHitTokens": 384,
+    "promptCacheMissTokens": 1362,
+    "reasoningTokens": 0
+  },
+  "finishReason": "stop",
+  "rawResponse": "{\n  \"scores\": [\n    {\n      \"sampleId\": \"sample-65149241-a86e-4778-9873-64d90f9ab5d6\",\n      \"requiredClaimCoverage\": 2,\n      \"conditionFidelity\": 2,\n      \"evidenceGrounding\": 2,\n      \"answerabilityDiscipline\": 2,\n      \"hardFailure\": false,\n      \"rationale\": \"覆盖全部requiredClaims，提及完备性条件，无forbiddenClaims，引用有效，充分回答。\"\n    },\n    {\n      \"sampleId\": \"sample-deb80bb6-4485-4c67-bef8-b9c7d9080225\",\n      \"requiredClaimCoverage\": 2,\n      \"conditionFidelity\": 2,\n      \"evidenceGrounding\": 2,\n      \"answerabilityDiscipline\": 2,\n      \"hardFailure\": false,\n      \"rationale\": \"覆盖全部requiredClaims，提及完备性条件，无forbiddenClaims，引用有效，充分回答。\"\n    },\n    {\n      \"sampleId\": \"sample-4e7ee1f0-a9a9-4190-9f03-7fc1af900e8a\",\n      \"requiredClaimCoverage\": 2,\n      \"conditionFidelity\": 2,\n      \"evidenceGrounding\": 2,\n      \"answerabilityDiscipline\": 2,\n      \"hardFailure\": false,\n      \"rationale\": \"覆盖全部requiredClaims，提及完备性条件，无forbiddenClaims，引用有效，充分回答。\"\n    }\n  ]\n}",
+  "parsed": [
+    {
+      "sampleId": "sample-65149241-a86e-4778-9873-64d90f9ab5d6",
+      "requiredClaimCoverage": 2,
+      "conditionFidelity": 2,
+      "evidenceGrounding": 2,
+      "answerabilityDiscipline": 2,
+      "hardFailure": false,
+      "rationale": "覆盖全部requiredClaims，提及完备性条件，无forbiddenClaims，引用有效，充分回答。"
+    },
+    {
+      "sampleId": "sample-deb80bb6-4485-4c67-bef8-b9c7d9080225",
+      "requiredClaimCoverage": 2,
+      "conditionFidelity": 2,
+      "evidenceGrounding": 2,
+      "answerabilityDiscipline": 2,
+      "hardFailure": false,
+      "rationale": "覆盖全部requiredClaims，提及完备性条件，无forbiddenClaims，引用有效，充分回答。"
+    },
+    {
+      "sampleId": "sample-4e7ee1f0-a9a9-4190-9f03-7fc1af900e8a",
+      "requiredClaimCoverage": 2,
+      "conditionFidelity": 2,
+      "evidenceGrounding": 2,
+      "answerabilityDiscipline": 2,
+      "hardFailure": false,
+      "rationale": "覆盖全部requiredClaims，提及完备性条件，无forbiddenClaims，引用有效，充分回答。"
+    }
+  ]
+}

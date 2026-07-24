@@ -1,0 +1,48 @@
+{
+  "questionId": "PILOT-H2-03",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "request": {
+    "systemPrompt": "你是知识系统的盲测评分员。你只按提供的 Gold 和评分合同评价匿名答案，不判断答案来自哪个实验组。\n必须逐项核对 requiredClaims、mustMentionConditions、forbiddenClaims、answerability 和证据引用。\nsourceRisk.present=true 时，Gold 风险说明是允许使用的人工审计结论；不得把源材料的过强表述当成正确答案。\n只输出严格 JSON：{\"scores\":[{\"sampleId\":\"...\",\"requiredClaimCoverage\":0,\"conditionFidelity\":0,\"evidenceGrounding\":0,\"answerabilityDiscipline\":0,\"hardFailure\":false,\"rationale\":\"...\"}]}。",
+    "userPrompt": "# 评分合同\n{\n  \"dimensions\": {\n    \"requiredClaimCoverage\": {\n      \"score0\": \"没有覆盖 requiredClaims，或核心结论相反\",\n      \"score1\": \"覆盖部分 requiredClaims，但缺少一项以上关键连接\",\n      \"score2\": \"完整覆盖全部 requiredClaims\"\n    },\n    \"conditionFidelity\": {\n      \"score0\": \"触发 forbiddenClaims，或删除了决定结论的条件\",\n      \"score1\": \"方向基本正确，但条件、例外或必要/充分强度表达不完整\",\n      \"score2\": \"保留全部 mustMentionConditions，且未触发 forbiddenClaims\"\n    },\n    \"evidenceGrounding\": {\n      \"score0\": \"关键结论没有可解析引用，或引用与结论无关\",\n      \"score1\": \"有相关引用，但关键结论存在未落到证据的部分\",\n      \"score2\": \"关键结论均由当前上下文标识支持，引用位置正确\"\n    },\n    \"answerabilityDiscipline\": {\n      \"score0\": \"证据不足时仍编造答案，或证据充分时错误拒答\",\n      \"score1\": \"表达了不确定性，但回答/拒答边界不够准确\",\n      \"score2\": \"严格遵守该题 answerability，充分回答或明确拒答\"\n    }\n  },\n  \"totalScore\": 8,\n  \"hardFailure\": \"任何 forbiddenClaim、伪造引用、把 insufficient 题当作已由语料证明，均记 hardFailure；该样本总分最高为 2。\"\n}\n\n# 题目与 Gold\n{\n  \"question\": \"范数如何先导出度量，而线性算子的有界性又如何通过算子范数与连续性联系起来？\",\n  \"answerability\": \"answerable\",\n  \"requiredClaims\": [\n    \"向量空间上的范数通过 $d(x,y)=\\\\|x-y\\\\|$ 导出度量\",\n    \"线性算子的范数由单位球上的输出范数上确界刻画\",\n    \"在线性算子的前提下，算子范数有限即有界与连续等价\"\n  ],\n  \"mustMentionConditions\": [\n    \"有界性与连续性的等价结论限定在线性算子语境\"\n  ],\n  \"forbiddenClaims\": [\n    \"任意非线性映射都有有界当且仅当连续\",\n    \"范数与度量是毫无联系的独立结构\"\n  ],\n  \"sourceRisk\": {\n    \"present\": false,\n    \"detail\": \"\"\n  },\n  \"evidence\": [\n    {\n      \"sourceFile\": \"mathtest-material/02-spaces.md\",\n      \"heading\": \"2.5 赋范空间与 Banach 空间\",\n      \"exactQuote\": \"范数自然地导出距离：$d(x,y) = \\\\|x-y\\\\|$。所以 $(V, \\\\|\\\\cdot\\\\|)$ 构成赋范空间，也自动成为度量空间。\",\n      \"supportsRequiredClaims\": [\n        0\n      ]\n    },\n    {\n      \"sourceFile\": \"mathtest-material/05-functions-mappings.md\",\n      \"heading\": \"有界性与连续性\",\n      \"exactQuote\": \"在线性算子中，**有界性 = 连续性**：\\n\\n$$\\n\\\\|T\\\\| = \\\\sup_{\\\\|f\\\\|=1} \\\\|Tf\\\\| < \\\\infty \\\\iff T \\\\text{ 连续}\\n$$\",\n      \"supportsRequiredClaims\": [\n        1,\n        2\n      ]\n    }\n  ]\n}\n\n# 匿名答案\n[\n  {\n    \"sampleId\": \"sample-2df6db4d-42cd-4820-bb58-37e703467129\",\n    \"questionId\": \"PILOT-H2-03\",\n    \"answer\": \"{\\\"answer\\\":\\\"insufficient\\\",\\\"citations\\\":[],\\\"insufficient\\\":true,\\\"uncertainties\\\":[\\\"检索上下文未提供任何关于范数导出度量、算子范数与连续性之间关系的相关信息。\\\"]}\"\n  },\n  {\n    \"sampleId\": \"sample-e40a0fc9-0d2d-49f8-a5e6-9cfd8fa8ca69\",\n    \"questionId\": \"PILOT-H2-03\",\n    \"answer\": \"{\\\"answer\\\":\\\"insufficient\\\",\\\"citations\\\":[],\\\"insufficient\\\":true,\\\"uncertainties\\\":[\\\"检索上下文未提供任何关于范数导出度量、算子范数与连续性之间关系的相关信息。\\\"]}\"\n  },\n  {\n    \"sampleId\": \"sample-fa9c1e27-5e62-4857-8694-6a636b4dd8fd\",\n    \"questionId\": \"PILOT-H2-03\",\n    \"answer\": \"{\\n  \\\"answer\\\": \\\"范数通过定义 d(x,y) = ||x-y|| 自然地导出度量，使赋范空间成为度量空间。线性算子的有界性通过算子范数 ||T|| = sup_{||f||=1} ||Tf|| < ∞ 等价于连续性，即有界性 = 连续性。\\\",\\n  \\\"citations\\\": [\\n    \\\"SOURCE mathtest-material/02-spaces.md:199-208\\\",\\n    \\\"SOURCE mathtest-material/05-functions-mappings.md:146-157\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\"\n  }\n]"
+  },
+  "usage": {
+    "promptTokens": 1305,
+    "completionTokens": 355,
+    "totalTokens": 1660,
+    "promptCacheHitTokens": 384,
+    "promptCacheMissTokens": 921,
+    "reasoningTokens": 0
+  },
+  "finishReason": "stop",
+  "rawResponse": "{\n  \"scores\": [\n    {\n      \"sampleId\": \"sample-2df6db4d-42cd-4820-bb58-37e703467129\",\n      \"requiredClaimCoverage\": 0,\n      \"conditionFidelity\": 0,\n      \"evidenceGrounding\": 0,\n      \"answerabilityDiscipline\": 0,\n      \"hardFailure\": true,\n      \"rationale\": \"答案声称insufficient，但题目是answerable且证据充分，违反了answerabilityDiscipline，属于hardFailure。\"\n    },\n    {\n      \"sampleId\": \"sample-e40a0fc9-0d2d-49f8-a5e6-9cfd8fa8ca69\",\n      \"requiredClaimCoverage\": 0,\n      \"conditionFidelity\": 0,\n      \"evidenceGrounding\": 0,\n      \"answerabilityDiscipline\": 0,\n      \"hardFailure\": true,\n      \"rationale\": \"答案声称insufficient，但题目是answerable且证据充分，违反了answerabilityDiscipline，属于hardFailure。\"\n    },\n    {\n      \"sampleId\": \"sample-fa9c1e27-5e62-4857-8694-6a636b4dd8fd\",\n      \"requiredClaimCoverage\": 2,\n      \"conditionFidelity\": 2,\n      \"evidenceGrounding\": 2,\n      \"answerabilityDiscipline\": 2,\n      \"hardFailure\": false,\n      \"rationale\": \"答案完整覆盖了三个requiredClaims，保留了线性算子条件，未触发forbiddenClaims，引用了正确证据，且正确回答了问题。\"\n    }\n  ]\n}",
+  "parsed": [
+    {
+      "sampleId": "sample-2df6db4d-42cd-4820-bb58-37e703467129",
+      "requiredClaimCoverage": 0,
+      "conditionFidelity": 0,
+      "evidenceGrounding": 0,
+      "answerabilityDiscipline": 0,
+      "hardFailure": true,
+      "rationale": "答案声称insufficient，但题目是answerable且证据充分，违反了answerabilityDiscipline，属于hardFailure。"
+    },
+    {
+      "sampleId": "sample-e40a0fc9-0d2d-49f8-a5e6-9cfd8fa8ca69",
+      "requiredClaimCoverage": 0,
+      "conditionFidelity": 0,
+      "evidenceGrounding": 0,
+      "answerabilityDiscipline": 0,
+      "hardFailure": true,
+      "rationale": "答案声称insufficient，但题目是answerable且证据充分，违反了answerabilityDiscipline，属于hardFailure。"
+    },
+    {
+      "sampleId": "sample-fa9c1e27-5e62-4857-8694-6a636b4dd8fd",
+      "requiredClaimCoverage": 2,
+      "conditionFidelity": 2,
+      "evidenceGrounding": 2,
+      "answerabilityDiscipline": 2,
+      "hardFailure": false,
+      "rationale": "答案完整覆盖了三个requiredClaims，保留了线性算子条件，未触发forbiddenClaims，引用了正确证据，且正确回答了问题。"
+    }
+  ]
+}
