@@ -1,0 +1,126 @@
+{
+  "propositions": [
+    {
+      "text": "本章介绍数系从自然数到复数的逐级扩张。",
+      "exactQuote": "本章沿着数系的逐级扩张路线，揭示每一次'不够用'的危机如何推动数学的革命性突破。",
+      "blockId": "01-number-systems#block-1"
+    },
+    {
+      "text": "1889年，皮亚诺用五条公理精确定义了自然数。",
+      "exactQuote": "1889年，皮亚诺用五条公理精确定义了自然数：",
+      "blockId": "01-number-systems#block-5"
+    },
+    {
+      "text": "0是自然数。",
+      "exactQuote": "$0$ 是自然数",
+      "blockId": "01-number-systems#block-6"
+    },
+    {
+      "text": "每个自然数n有一个后继S(n)。",
+      "exactQuote": "每个自然数 $n$ 有一个**后继** $S(n)$",
+      "blockId": "01-number-systems#block-6"
+    },
+    {
+      "text": "0不是任何自然数的后继。",
+      "exactQuote": "$0$ 不是任何自然数的后继",
+      "blockId": "01-number-systems#block-6"
+    },
+    {
+      "text": "若S(m) = S(n)，则m = n，即后继函数是单射。",
+      "exactQuote": "若 $S(m) = S(n)$，则 $m = n$（后继函数是单射）",
+      "blockId": "01-number-systems#block-6"
+    },
+    {
+      "text": "数学归纳法原理：若某性质对0成立，且由对n成立可推出对S(n)成立，则该性质对一切自然数成立。",
+      "exactQuote": "**数学归纳法原理**：若某性质对 $0$ 成立，且由对 $n$ 成立可推出对 $S(n)$ 成立，则该性质对一切自然数成立",
+      "blockId": "01-number-systems#block-6"
+    },
+    {
+      "text": "自然数的集合表示为N = {0, 1, 2, 3, ...}。",
+      "exactQuote": "$$\n\\mathbb{N} = \\{0, 1, 2, 3, \\ldots\\}\n$$",
+      "blockId": "01-number-systems#block-7"
+    },
+    {
+      "text": "自然数的本质是递归结构——从零出发，反复应用后继操作，生成无穷序列。",
+      "exactQuote": "自然数的本质不是'0,1,2,3...'这些符号，而是**递归结构**——从零出发，反复应用'后继'操作，生成无穷无尽的序列。",
+      "blockId": "01-number-systems#block-8"
+    },
+    {
+      "text": "数学归纳法之所以根本，是因为它直接编码了自然数的构造方式。",
+      "exactQuote": "这就是为什么数学归纳法如此根本：它直接编码了自然数的构造方式。",
+      "blockId": "01-number-systems#block-8",
+      "relatesTo": {
+        "fromPropIndex": 6,
+        "type": "DERIVED_FROM"
+      }
+    },
+    {
+      "text": "自然数具有良序性：任何非空子集有最小元。",
+      "exactQuote": "| 良序性 | 任何非空子集有最小元 | $\\{3,5,1\\} \\to 1$ 最小 |",
+      "blockId": "01-number-systems#block-10"
+    },
+    {
+      "text": "自然数对加法封闭：a,b ∈ N ⇒ a+b ∈ N。",
+      "exactQuote": "| 加法封闭 | $a,b \\in \\mathbb{N} \\Rightarrow a+b \\in \\mathbb{N}$ | $3+5=8$ |",
+      "blockId": "01-number-systems#block-10"
+    },
+    {
+      "text": "自然数对乘法封闭：a,b ∈ N ⇒ a×b ∈ N。",
+      "exactQuote": "| 乘法封闭 | $a,b \\in \\mathbb{N} \\Rightarrow a \\times b \\in \\mathbb{N}$ | $3 \\times 5=15$ |",
+      "blockId": "01-number-systems#block-10"
+    },
+    {
+      "text": "自然数对减法不封闭：a-b可能不是自然数。",
+      "exactQuote": "| 减法不封闭 | $a-b$ 可能不是自然数 | $3-5$ 无意义（在 $\\mathbb{N}$ 内） |",
+      "blockId": "01-number-systems#block-10"
+    },
+    {
+      "text": "自然数对除法不封闭：a÷b可能不是自然数。",
+      "exactQuote": "| 除法不封闭 | $a \\div b$ 可能不是自然数 | $3 \\div 5$ 不是自然数 |",
+      "blockId": "01-number-systems#block-10"
+    },
+    {
+      "text": "直到19世纪末，数学家才开始严格定义'什么是数'，由Frege、Peano、Dedekind等人建立了公理基础。",
+      "exactQuote": "但直到19世纪末，数学家才开始认真追问'什么是数'，最终由 Frege、Peano、Dedekind 等人建立了严格的公理基础。",
+      "blockId": "01-number-systems#block-12"
+    },
+    {
+      "text": "自然数的最基本缺陷是减法不封闭。",
+      "exactQuote": "自然数的根本缺陷：**减法不封闭**。$3 - 5$ 在 $\\mathbb{N}$ 中没有答案。",
+      "blockId": "01-number-systems#block-18"
+    },
+    {
+      "text": "减法不封闭推动了一次数系扩张。",
+      "exactQuote": "这个'不够用'推动了我们第一次数系扩张。",
+      "blockId": "01-number-systems#block-18",
+      "relatesTo": {
+        "fromPropIndex": 16,
+        "type": "DERIVED_FROM"
+      }
+    },
+    {
+      "text": "整数可以看作自然数有序对(a,b)的等价类，其中(a,b)代表'a-b'这个差。",
+      "exactQuote": "整数可以看作自然数有序对 $(a,b)$ 的等价类，其中 $(a,b)$ 代表'$a-b$'这个差。",
+      "blockId": "01-number-systems#block-19",
+      "relatesTo": {
+        "fromPropIndex": 17,
+        "type": "REQUIRES"
+      }
+    },
+    {
+      "text": "整数等价关系定义为：(a,b) ~ (c,d) 当且仅当 a+d = b+c。",
+      "exactQuote": "$$\n(a,b) \\sim (c,d) \\iff a + d = b + c\n$$",
+      "blockId": "01-number-systems#block-20"
+    },
+    {
+      "text": "例如(0,3) ~ (1,4) ~ (2,5)都代表-3。",
+      "exactQuote": "例如 $(0,3) \\sim (1,4) \\sim (2,5)$ 都代表 $-3$。",
+      "blockId": "01-number-systems#block-21"
+    },
+    {
+      "text": "整数的集合表示为Z = {..., -3, -2, -1, 0, 1, 2, 3, ...}。",
+      "exactQuote": "$$\n\\mathbb{Z} = \\{\\ldots, -3, -2, -1, 0, 1, 2, 3, \\ldots\\}\n$$",
+      "blockId": "01-number-systems#block-22"
+    }
+  ]
+}

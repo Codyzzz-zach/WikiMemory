@@ -1,0 +1,31 @@
+{
+  "verdict": "failed",
+  "dimensions": {
+    "support": {
+      "result": "fail",
+      "evidence": "原文只说'这个'不够用推动数系扩张，但未说明'这个'具体指减法不封闭。"
+    },
+    "addition": {
+      "result": "fail",
+      "evidence": "Claim 添加了原文未明确提及的'减法不封闭'作为推动因素。"
+    },
+    "inference": {
+      "result": "pass",
+      "evidence": "Claim 以事实陈述形式断言，并未标记为推断，但原文本身未提供足够支持。"
+    },
+    "limits": {
+      "result": "pass",
+      "evidence": "无适用条件被忽略。"
+    },
+    "citation": {
+      "result": "pass",
+      "evidence": "引用对应原文块。"
+    }
+  },
+  "anchor": "这个'不够用'推动了我们第一次数系扩张。",
+  "failedDimensions": ["support", "addition"],
+  "issues": [
+    "原文未明确'不够用'是减法不封闭，Claim 缺乏直接支持。",
+    "Claim 添加了'减法不封闭'这一原文未提及的原因。"
+  ]
+}

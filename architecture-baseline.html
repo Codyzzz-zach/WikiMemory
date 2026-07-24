@@ -3,18 +3,26 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>WGEMemory4LLM Architecture Baseline · v1.2 · 2026-07-23</title>
+  <title>WGEMemory4LLM Architecture Baseline · v1.5 · 2026-07-23</title>
   <script type="module">
     import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
     mermaid.initialize({
-      startOnLoad: true, theme: "base", securityLevel: "loose",
+      startOnLoad: true,
+      theme: "base",
+      securityLevel: "loose",
       themeVariables: {
         fontFamily: "Noto Sans CJK SC, Inter, ui-sans-serif, system-ui, sans-serif",
-        primaryColor: "#ecf8f3", primaryTextColor: "#172033", primaryBorderColor: "#4b9478",
-        lineColor: "#63788f", secondaryColor: "#eef5ff", tertiaryColor: "#fff7e8", fontSize: "13px",
+        primaryColor: "#ecf8f3",
+        primaryTextColor: "#172033",
+        primaryBorderColor: "#4b9478",
+        lineColor: "#63788f",
+        secondaryColor: "#eef5ff",
+        tertiaryColor: "#fff7e8",
+        fontSize: "13px",
       },
       flowchart: { useMaxWidth: true, htmlLabels: false, curve: "basis" },
-      sequence: { useMaxWidth: true }, state: { useMaxWidth: true },
+      sequence: { useMaxWidth: true },
+      state: { useMaxWidth: true },
     });
   </script>
   <style>
@@ -23,421 +31,377 @@
     body{margin:0;font-family:"Noto Sans CJK SC",Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:linear-gradient(180deg,#eaf7f1 0,#fbfcfe 34rem);line-height:1.72}
     a{color:var(--blue);text-underline-offset:.18em}.page{max-width:1220px;margin:auto;padding:0 24px 72px}
     header{padding:68px 0 38px}.eyebrow{display:flex;align-items:center;gap:10px;color:var(--brand);font-size:.82rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase}.eyebrow:before{content:"";width:36px;height:2px;background:var(--brand)}
-    h1{max-width:980px;margin:14px 0 0;font-size:clamp(2.25rem,5.2vw,4.2rem);line-height:1.04;letter-spacing:-.035em}.subtitle{max-width:940px;margin:24px 0 0;color:#34445a;font-size:clamp(1rem,2vw,1.28rem);line-height:1.75}
-    .meta{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}.chip{padding:7px 12px;border:1px solid #c8d8d0;border-radius:999px;background:rgba(255,255,255,.72);font-size:.86rem}.chip b{color:var(--brand)}
-    nav{display:flex;flex-wrap:wrap;gap:9px;margin:28px 0 0}nav a{padding:7px 12px;border:1px solid var(--line);border-radius:999px;background:#fff;color:#2b3a50;text-decoration:none;font-size:.88rem;font-weight:650}nav a:first-child{border-color:var(--brand);color:var(--brand)}
+    h1{max-width:1040px;margin:14px 0 0;font-size:clamp(2.25rem,5.2vw,4.2rem);line-height:1.04;letter-spacing:-.035em}.subtitle{max-width:980px;margin:24px 0 0;color:#34445a;font-size:clamp(1rem,2vw,1.25rem);line-height:1.75}
+    .meta{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}.chip{padding:7px 12px;border:1px solid #c8d8d0;border-radius:999px;background:rgba(255,255,255,.75);font-size:.86rem}.chip b{color:var(--brand)}
+    nav{display:flex;flex-wrap:wrap;gap:9px;margin:28px 0 0}nav a{padding:7px 12px;border:1px solid var(--line);border-radius:999px;background:#fff;color:#2b3a50;text-decoration:none;font-size:.86rem;font-weight:650}nav a:first-child{border-color:var(--brand);color:var(--brand)}
     main{display:grid;gap:8px}section{padding:46px 0;border-top:1px solid var(--line)}.section-head{display:grid;grid-template-columns:minmax(150px,.38fr) minmax(0,1fr);gap:34px;align-items:start;margin-bottom:28px}.kicker{color:var(--blue);font-size:.79rem;font-weight:820;letter-spacing:.09em;text-transform:uppercase}
     h2{margin:0;font-size:clamp(1.65rem,3vw,2.55rem);line-height:1.15}h3{margin:28px 0 10px;font-size:1.27rem;line-height:1.3}h4{margin:18px 0 8px;font-size:1.05rem;color:#2d3f56}p{margin:0 0 16px}.lead{color:#33455d;font-size:1.06rem;line-height:1.82}
     ul,ol{padding-left:24px;margin:10px 0 18px}li{margin:6px 0}.tight li{margin:3px 0}
     .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}.card{padding:22px 24px;border:1px solid var(--line);border-radius:10px;background:var(--white);box-shadow:0 8px 24px rgba(32,50,72,.06)}.card h3,.card h4{margin-top:0}.label{color:var(--brand);font-size:.76rem;font-weight:820;letter-spacing:.08em;text-transform:uppercase}
     .callout{margin:20px 0;padding:20px 24px;border:1px solid #c5daef;border-radius:9px;background:#f4f9fe}.callout.good{border-color:#b8d9cd;background:#f2fbf7}.callout.warn{border-color:#ead5a4;background:#fffaf0}.callout.danger{border-color:#e7c3c9;background:#fdf5f6}.callout b:first-child{color:#102c45}
     table{width:100%;border-collapse:collapse;margin:22px 0;background:#fff;border:1px solid var(--line);box-shadow:0 8px 24px rgba(32,50,72,.05)}th,td{padding:12px 15px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;font-size:.91rem}th{background:#edf5f2;color:#1e3f34;font-size:.79rem;letter-spacing:.045em;text-transform:uppercase}tr:last-child td{border-bottom:0}
-    .diagram{margin:24px 0;padding:22px;background:#fff;border:1px solid var(--line);border-radius:10px;overflow:auto;box-shadow:0 8px 24px rgba(32,50,72,.06)}.mermaid{min-width:620px;text-align:center}
-    code{font-family:"SFMono-Regular",Consolas,monospace;font-size:.87em;background:var(--soft);padding:2px 5px;border-radius:4px}.schema{padding:18px 20px;background:var(--code);color:#eef7ff;border-radius:9px;overflow:auto;font:13px/1.65 "SFMono-Regular",Consolas,monospace;white-space:pre}
+    .diagram{margin:24px 0;padding:22px;background:#fff;border:1px solid var(--line);border-radius:10px;overflow:auto;box-shadow:0 8px 24px rgba(32,50,72,.06)}.mermaid{min-width:680px;text-align:center}
+    code{font-family:"SFMono-Regular",Consolas,monospace;font-size:.87em;background:var(--soft);padding:2px 5px;border-radius:4px}.schema{padding:18px 20px;background:var(--code);color:#eef7ff;border-radius:9px;overflow:auto;font:13px/1.65 "SFMono-Regular",Consolas,monospace;white-space:pre-wrap}
     .status{display:inline-block;padding:2px 8px;border-radius:999px;font-size:.76rem;font-weight:760}.s-green{background:#dff4ea;color:#176143}.s-amber{background:#fff0cc;color:#76500e}.s-rose{background:#fae1e5;color:#8d3040}.s-blue{background:#e1eefc;color:#275f9f}
-    .badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:.76rem;font-weight:700;white-space:nowrap}.b-done{background:#d4edda;color:#155724}.b-pending{background:#cce5ff;color:#004085}.b-stub{background:#fdf2d0;color:#7a5e1b}.b-fixed{background:#d1e7ff;color:#084298}.b-new{background:#e7f8ee;color:#0a5c34}
+    .badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:.76rem;font-weight:700;white-space:nowrap}.b-done{background:#d4edda;color:#155724}.b-pending{background:#cce5ff;color:#004085}.b-stub{background:#fdf2d0;color:#7a5e1b}.b-fixed{background:#d1e7ff;color:#084298}.b-new{background:#e7f8ee;color:#0a5c34}.b-blocked{background:#fae1e5;color:#8d3040}
     footer{padding:32px 0;color:var(--muted);font-size:.88rem}.small{font-size:.86rem;color:var(--muted)}
-    @media(max-width:860px){.section-head,.grid,.grid.three{grid-template-columns:1fr}.mermaid{min-width:540px}}
+    @media(max-width:860px){.section-head,.grid,.grid.three{grid-template-columns:1fr}.mermaid{min-width:560px}}
     @media print{body{background:#fff}.page{max-width:none}nav{display:none}.card,.diagram,table{box-shadow:none}.diagram,.card,table{break-inside:avoid}}
   </style>
 </head>
 <body>
 <div class="page">
 <header id="top">
-  <div class="eyebrow">Architecture Baseline <span class="status s-green">v1.2 · 2026-07-23 · Audit Reliability + Validity Gate</span></div>
-  <h1>WGEMemory4LLM 架构基线 v1.2</h1>
+  <div class="eyebrow">Architecture Baseline <span class="status s-green">v1.5 · Three-source E2E / Cross Navigation Verified</span></div>
+  <h1>WGEMemory4LLM 架构基线 v1.5</h1>
   <p class="subtitle">
-    v1.2 把审计从"自证循环"升级为"校准过的忠实度门禁"，并把 validity 默认值从假定可信改为待证明。
-    核心产出：L1 对抗型审计 prompt + 5 维 binary verdict + anchor 验证；
-    meta-eval 校准结果 TPR 0.98 / TNR 0.98 / kappa 0.96（100 条标注）；
-    validity 初始 UNRESOLVED 经门禁通过才 SUPPORTED；Quarantine 物理隔离。
-    每个结论基于实读 src/ 代码，引用具体行号。
+    本版以 2026-07-23 当前工作区代码和持久化产物为事实源，覆盖有界编译、可恢复状态机、Claim 与 Relation 双语义门禁、两阶段跨材料扫描、可插拔 Loader、provenance 权限边界、原子发布和 Context Pack 消费合同。
+    01/02/03 已完成真实 LLM 重编和 v1.2 跨材料回填；本版记录正向 cross edge、目标 Source 重编造成的悬空边生命周期缺陷、模型审计假阳性、人工否决轨迹以及 RELATED_TO 消费断路。必须区分两个结论：<b>三材料跨边生成、失效、隔离和导航链路已真实验证</b>；<b>LLM 重编输出仍存在显著非确定性，自动 Relation 审计也不能替代人工质量抽检</b>。
   </p>
   <div class="meta">
-    <span class="chip"><b>代码文件</b> 16 src + 2 scripts</span>
-    <span class="chip"><b>审计校准</b> TPR 0.98 / TNR 0.98 <span class="badge b-done">达标</span></span>
-    <span class="chip"><b>validity 门禁</b> UNRESOLVED → SUPPORTED <span class="badge b-new">v1.2</span></span>
-    <span class="chip"><b>物理隔离</b> quarantine/ 独立存储 <span class="badge b-new">v1.2</span></span>
-    <span class="chip"><b>typecheck</b> 0 错误</span>
+    <span class="chip"><b>静态检查</b> src + scripts 全覆盖</span>
+    <span class="chip"><b>测试</b> 9 files / 43 tests <span class="badge b-done">通过</span></span>
+    <span class="chip"><b>现存 Claim</b> 261 canonical / 23 quarantine</span>
+    <span class="chip"><b>现存 Relation</b> 76 canonical / 76 consumable <span class="badge b-done">audit v1.2 + human review</span></span>
+    <span class="chip"><b>最终跨材料回填</b> 120 recalled / 4 auto-pass / 3 human-accepted</span>
   </div>
   <nav aria-label="目录">
-    <a href="#overview">1·总览</a><a href="#v12-changes">2·v1.2 改动</a><a href="#calibration">3·审计校准</a>
-    <a href="#status-axes">4·四状态轴</a><a href="#objects">5·一等对象</a><a href="#consumption">6·消费矩阵</a>
-    <a href="#direction">7·关系方向语义</a><a href="#linter">8·门禁层</a><a href="#compiler">9·编译层</a>
-    <a href="#graph">10·Graph 层</a><a href="#context">11·Context Pack</a><a href="#dataflow">12·数据流</a>
-    <a href="#storage">13·存储</a><a href="#gaps">14·设计差距</a><a href="#not-impl">15·未实现</a>
+    <a href="#truth">1·事实快照</a><a href="#review">2·审查裁决</a><a href="#overview">3·总览</a>
+    <a href="#ingest">4·Loader/摄入</a><a href="#compiler">5·编译状态机</a><a href="#objects">6·对象与证据</a>
+    <a href="#gates">7·双门禁</a><a href="#relations">8·跨材料关系</a><a href="#storage">9·原子存储</a>
+    <a href="#context">10·Graph/Context</a><a href="#calibration">11·校准口径</a><a href="#verification">12·验证证据</a>
+    <a href="#gaps">13·真实缺口</a><a href="#next">14·下一步验收</a>
   </nav>
 </header>
 
 <main>
+<section id="truth">
+  <div class="section-head"><div class="kicker">§01 / Truth Snapshot</div><div><h2>当前事实快照，不把“代码存在”写成“能力已验证”</h2></div></div>
+  <table>
+    <thead><tr><th>项目</th><th>当前实测</th><th>判定</th></tr></thead>
+    <tbody>
+      <tr><td>Source / Span</td><td>6 个 Source 已机械摄入，共 382 个持久化 Span</td><td><span class="badge b-done">可用</span></td></tr>
+      <tr><td>发布快照</td><td>01、02、03 有 publication；05、09、11 仅 SOURCE_INGESTED</td><td><span class="badge b-pending">三篇完成</span></td></tr>
+      <tr><td>Claim</td><td>261 Canonical Active；23 Quarantined；当前 Claim/Relation 证据引用全部可解析</td><td><span class="badge b-done">可消费</span></td></tr>
+      <tr><td>Concept</td><td>183 个合并后 Concept；单 Source 快照合计 184 个</td><td><span class="badge b-pending">身份漂移待治理</span></td></tr>
+      <tr><td>Relation</td><td>76 条 Canonical Active；76/76 为 relationAuditVersion=v1.2；UNVERIFIED=0；悬空端点=0；坏证据=0；EQUIVALENT_UNDER=0</td><td><span class="badge b-done">可消费</span></td></tr>
+      <tr><td>跨材料 Relation</td><td>最终 01/02/03 各召回 40 个候选；4 条自动通过，人工否决 1 条错误 SUPPORTS，保留 3 条 RELATED_TO</td><td><span class="badge b-done">正边与人工拒绝均已验证</span></td></tr>
+      <tr><td>CompileState</td><td>01/02/03=COMPLETED；05、09、11=SOURCE_INGESTED</td><td><span class="badge b-done">三篇完成</span></td></tr>
+      <tr><td>Context Pack</td><td>真实“Cauchy/完备性”查询返回 15 Claims / 14 Relations，其中 3 条跨材料 RELATED_TO；弱边只导航、不支撑结论</td><td><span class="badge b-done">跨材料导航恢复</span></td></tr>
+      <tr><td>WikiModule</td><td>读取与预算消费已实现；生成链路和真实模块仍为空</td><td><span class="badge b-stub">未完成产品层</span></td></tr>
+    </tbody>
+  </table>
+  <div class="callout good">
+    <b>安全冻结已解除</b>
+    旧的 189 条无审计 Relation 已被 Source 快照替换；Graph 现在只消费 76 条 v1.2 边。跨材料边在目标 Claim 因重编消失时会先进入原所有者 quarantine，再从 canonical 移除；5 条机器误判边经人工否决并保留原因，不会静默删除或污染 Agent。
+  </div>
+</section>
 
-<!-- ═══ 1 · 总览 ═══ -->
+<section id="review">
+  <div class="section-head"><div class="kicker">§02 / Review Verdict</div><div><h2>对 GLM 三项审查的独立裁决</h2></div></div>
+  <table>
+    <thead><tr><th>审查项</th><th>核验证据</th><th>裁决</th><th>处理</th></tr></thead>
+    <tbody>
+      <tr><td>lint 只覆盖 src</td><td><code>npm run lint</code> 原为 <code>biome check src</code>；单独检查 scripts 确有 4 类问题</td><td><b>真实问题</b>。此前“全仓 lint”措辞不准确</td><td>lint/lint:fix 改为覆盖 <code>src scripts</code>；scripts 全部纳入 typecheck</td></tr>
+      <tr><td>当前没有可用关系图</td><td>审查时确为 189 legacy Relation、0 audit version</td><td><b>历史事实正确</b>，且 fail-closed 行为正确</td><td>01/02/03 重编后已恢复为 76 条 v1.2 可消费边</td></tr>
+      <tr><td>跨材料 Relation 未真实验证</td><td>审查时 publication 中 cross-material-detect=0，只有单元测试</td><td><b>历史未验证项真实</b></td><td>现有 3 条人工复核通过的 cross RELATED_TO；错误 SUPPORTS 已显式隔离</td></tr>
+    </tbody>
+  </table>
+  <p class="small"><code>scripts/debug-compile.ts</code> 当前在 Git 中是 untracked 文件，没有提交历史，无法仅凭仓库证明由谁创建。它已被标明为旧的单次 8192-token 容量故障复现器，不是生产编译入口。</p>
+</section>
+
 <section id="overview">
-  <div class="section-head"><div class="kicker">§01 / Overview</div><div><h2>架构总览（v1.2 校准后）</h2></div></div>
-
+  <div class="section-head"><div class="kicker">§03 / Architecture</div><div><h2>当前端到端架构</h2></div></div>
   <div class="diagram"><div class="mermaid">
 flowchart TD
-    R["raw MD file"] --> P["parser/markdown.ts<br/>blockId + charStart/charEnd 机械生成"]
-    P --> I["ingestor/index.ts<br/>Source + SourceSpan + hash 去重"]
-    I --> C["compiler/index.ts<br/>三步编译<br/>publicationState=CANDIDATE<br/>validity=UNRESOLVED v1.2"]
-    C --> L["linter/index.ts<br/>L1 对抗型审计 v1.2<br/>5 维 binary verdict + anchor 验证"]
-    L -->|"门禁通过"| LC["canonicalClaims<br/>CANONICAL + SUPPORTED"]
-    L -->|"有冲突"| LD["CANONICAL + DISPUTED"]
-    L -->|"失败/anchor 编造"| LQ["quarantine/claims.jsonl<br/>物理隔离 v1.2"]
-    L -->|"Relation 端点 Canonical"| LR["canonicalRelations<br/>CANONICAL + SUPPORTED"]
-    LC --> S["storage.ts<br/>Canonical 写主目录"]
-    LR --> S
-    LD --> S
-    LQ --> SQ["storage.ts<br/>Quarantine 写隔离目录"]
-    S --> G["graph/index.ts<br/>buildGraph 只读主目录<br/>walkGraph 方向语义+消费矩阵"]
-    SQ -.->|"默认不可见"| G
-    G --> CP["context-pack/index.ts<br/>Map-first: 地图→种子→子图→证据"]
-    CP --> CLI["cli/index.ts<br/>wge ingest / query / status"]
+    F["External file"] --> REG["LoaderRegistry"]
+    REG --> MD["MarkdownLoader today"]
+    REG -.-> FUT["PDF / HTML adapters later"]
+    MD --> ING["Ingestor: immutable Source + SourceSpan"]
+    ING --> RS["Compile run-state + telemetry"]
+    RS --> PC["Bounded compiler: propositions → claims → concepts → local relations"]
+    PC --> CL["Claim structure + fidelity audit"]
+    PC --> RL["Relation structure + edge-level semantic audit"]
+    CL --> PUB1["Stage 1 atomic source publication"]
+    RL --> PUB1
+    PUB1 --> XREC["Concept/keyword recall of old claims"]
+    XREC --> XREL["Cross-material detect + relation audit"]
+    XREL --> PUB2["Stage 2 atomic relation replacement"]
+    PUB2 --> DONE["CompileState COMPLETED"]
+    PUB1 -->|"stage 2 fails"| PART["RELATION_SCAN_PENDING"]
+    PUB1 --> STORE["Canonical snapshots + physical quarantine"]
+    PUB2 --> STORE
+    STORE --> GRAPH["Graph: current audit + endpoint closure"]
+    GRAPH --> PACK["Scoped Context Pack + evidence + exact budget"]
   </div></div>
-
-  <div class="callout good">
-    <b>v1.2 的关键变化</b>
-    编译产出的 Claim 不再假定可信（validity 不再硬编码 SUPPORTED）。
-    新 Claim 初始 <code>validity=UNRESOLVED</code>，只有通过校准过的审计门禁（TPR/TNR 0.98）才升级为 SUPPORTED。
-    失败的对象物理隔离到 <code>quarantine/</code> 独立目录，默认读取 API 看不到它们——不依赖消费者记得过滤。
-  </div>
-
-  <h3>src/ 文件清单（16 个）</h3>
-  <table>
-    <thead><tr><th>层</th><th>文件</th><th>行数</th><th>核心职责</th><th>v1.2 变更</th></tr></thead>
-    <tbody>
-      <tr><td rowspan="2">types</td><td>types/index.ts</td><td>201</td><td>7 一等对象 + 4 轴 + branded NodeRef</td><td>未变</td></tr>
-      <tr><td style="background:#f3fbf8">types/schemas.ts</td><td style="background:#f3fbf8">177</td><td style="background:#f3fbf8">Zod 校验 + SemanticVerdict binary 维度</td><td style="background:#f3fbf8"><span class="badge b-new">v1.2 重写</span></td></tr>
-      <tr><td rowspan="3">core</td><td>core/types.ts</td><td>35</td><td>ChatOptions / ChatResult</td><td>未变</td></tr>
-      <tr><td>core/client.ts</td><td>135</td><td>DeepSeekClient</td><td>未变</td></tr>
-      <tr><td>core/llm-provider.ts</td><td>42</td><td>LLMProvider 接口 + 工厂</td><td>未变</td></tr>
-      <tr><td rowspan="2">config</td><td>config/types.ts</td><td>34</td><td>AppConfig + DEFAULT_MODEL</td><td>未变</td></tr>
-      <tr><td style="background:#f3fbf8">config/index.ts</td><td style="background:#f3fbf8">88</td><td style="background:#f3fbf8">findProjectRoot（修 require→import）</td><td style="background:#f3fbf8"><span class="badge b-fixed">ESM 修复</span></td></tr>
-      <tr><td>parser</td><td>parser/markdown.ts</td><td>286</td><td>MD 解析 + blockId 机械生成</td><td>未变</td></tr>
-      <tr><td>ingestor</td><td>ingestor/index.ts</td><td>159</td><td>Source/Span 产出 + mapQuoteToSpan</td><td>未变</td></tr>
-      <tr><td style="background:#f3fbf8">prompts</td><td style="background:#f3fbf8">prompts/index.ts</td><td style="background:#f3fbf8">150</td><td style="background:#f3fbf8">L1 对抗型审计 prompt v1.1</td><td style="background:#f3fbf8"><span class="badge b-new">v1.2 重写</span></td></tr>
-      <tr><td style="background:#f3fbf8">compiler</td><td style="background:#f3fbf8">compiler/index.ts</td><td style="background:#f3fbf8">226</td><td style="background:#f3fbf8">三步编译 + validity=UNRESOLVED 初始</td><td style="background:#f3fbf8"><span class="badge b-new">validity 改</span></td></tr>
-      <tr><td style="background:#f3fbf8"><b>linter</b></td><td style="background:#f3fbf8">linter/index.ts</td><td style="background:#f3fbf8">696</td><td style="background:#f3fbf8">L1 审计 + anchor 验证 + 消费矩阵 + 可观测</td><td style="background:#f3fbf8"><span class="badge b-new">v1.2 大改</span></td></tr>
-      <tr><td style="background:#f3fbf8">linter</td><td style="background:#f3fbf8">linter/storage.ts</td><td style="background:#f3fbf8">176</td><td style="background:#f3fbf8">JSONL 存储 + Quarantine 物理隔离 API</td><td style="background:#f3fbf8"><span class="badge b-new">v1.2 隔离</span></td></tr>
-      <tr><td>graph</td><td>graph/index.ts</td><td>294</td><td>方向语义 + 消费矩阵接入</td><td>未变（v1.1 重写）</td></tr>
-      <tr><td>context-pack</td><td>context-pack/index.ts</td><td>315</td><td>Map-first + 消费矩阵接入</td><td>未变（v1.1 重写）</td></tr>
-      <tr><td style="background:#f3fbf8">cli</td><td style="background:#f3fbf8">cli/index.ts</td><td style="background:#f3fbf8">222</td><td style="background:#f3fbf8">Canonical/Quarantine 分离发布</td><td style="background:#f3fbf8"><span class="badge b-new">v1.2 隔离</span></td></tr>
-    </tbody>
-  </table>
-  <p class="small">另有 <code>scripts/meta-eval.ts</code>（审计校准工具）和 <code>scripts/meta-eval-dataset.json</code>（100 条标注）不进 src build。</p>
-</section>
-
-<!-- ═══ 2 · v1.2 改动 ═══ -->
-<section id="v12-changes">
-  <div class="section-head"><div class="kicker">§02 / v1.2 Changes</div><div><h2>v1.2 做了什么——四条轨道</h2><p class="lead">v1.2 由一份审计可信性研究（audit_reliability_research.md）驱动，回答"审计凭什么可信"。按四条并行轨道推进。</p></div></div>
-
-  <div class="grid">
-    <div class="card">
-      <div class="label">轨道 A</div>
-      <h3>审计层改造</h3>
-      <p>prompt 从中性"请审计"改为 L1 对抗型——先假设 Claim 有错，逐句对照原文。5 维度改 binary verdict（pass/fail），删掉 score 0-1（消除评分方差）。加 anchor 字段——审计结论必须溯源到原文，程序验证 anchor 真实存在。</p>
-      <p class="small">改动文件：prompts/index.ts, types/schemas.ts, linter/index.ts</p>
-    </div>
-    <div class="card">
-      <div class="label">轨道 B</div>
-      <h3>失败可观测</h3>
-      <p>每次审计记录到 <code>runs/audit-metrics.jsonl</code>：claimId / outcome / 失败维度 / model 快照（pin 版本防 criterion drift）/ 时间戳。这是 meta-eval 的数据源，也是回归基线。</p>
-      <p class="small">改动文件：linter/index.ts, linter/storage.ts</p>
-    </div>
-    <div class="card">
-      <div class="label">轨道 C</div>
-      <h3>meta-eval 校准</h3>
-      <p>100 条人工/GPT 标注用例（50 faithful / 50 unfaithful，覆盖 4 类不忠实）。脚本复用真实 semanticCheck 跑全量，算 TPR/TNR/kappa。第一轮 TPR 0.50（anchor 验证 bug），修复后第二轮 TPR/TNR 均 0.98。</p>
-      <p class="small">新增：scripts/meta-eval.ts, meta-eval-dataset.json</p>
-    </div>
-    <div class="card">
-      <div class="label">轨道 D</div>
-      <h3>validity 门禁 + 物理隔离</h3>
-      <p>校准达标后推进。compiler 产出 validity=UNRESOLVED；门禁通过才 SUPPORTED。Quarantined 对象物理隔离到 quarantine/ 独立目录，readAllClaims 默认不读它们。</p>
-      <p class="small">改动文件：compiler/index.ts, linter/index.ts, linter/storage.ts, cli/index.ts</p>
-    </div>
-  </div>
-
-  <div class="callout warn">
-    <b>方法论</b>
-    先校准再改门禁——原因：门禁（UNRESOLVED）的作用是拦下审计判为可疑的 Claim。
-    如果审计准度未知就拧紧门禁，可能误杀大批正确 Claim 导致系统瘫痪，也可能漏检导致错误流通。
-    meta-eval 先测出审计的 TPR/TNR，达标后才安全地改默认值。第一轮 TPR 0.50 正是这个决策的价值——发现了 anchor 验证 bug 而非盲目上门禁。
+  <div class="grid three">
+    <div class="card"><div class="label">Write path</div><h3>先候选、后门禁</h3><p>Compiler 永远产出 CANDIDATE/UNRESOLVED。只有确定性结构校验和对应语义门禁通过后才进入 Canonical。</p></div>
+    <div class="card"><div class="label">Visibility</div><h3>原子快照</h3><p>每个 Source 的 canonical 与 quarantine 分开写；canonical rename 是可见性边界，重跑替换而非追加重复。</p></div>
+    <div class="card"><div class="label">Read path</div><h3>消费端再次 fail-closed</h3><p>Graph 只接收当前 Relation 审计版本、已确认条件状态、有效端点和非 UNRESOLVED 边。</p></div>
   </div>
 </section>
 
-<!-- ═══ 3 · 审计校准 ═══ -->
-<section id="calibration">
-  <div class="section-head"><div class="kicker">§03 / Audit Calibration</div><div><h2>meta-eval 校准结果</h2><p class="lead">"没做 meta-eval 的 judge 不是测量，是 vibe。"——audit_reliability_research.md §1.6</p></div></div>
-
-  <h3>最终结果（第二轮，修复 anchor 验证后）</h3>
-  <table>
-    <thead><tr><th>指标</th><th>第一轮</th><th>第二轮</th><th>门槛</th><th>含义</th></tr></thead>
-    <tbody>
-      <tr><td><b>TPR</b></td><td>0.500 ❌</td><td><b>0.980</b> ✅</td><td>≥0.8</td><td>忠实的 Claim 正确放行率（少误杀）</td></tr>
-      <tr><td><b>TNR</b></td><td>0.980 ✅</td><td><b>0.980</b> ✅</td><td>≥0.8</td><td>不忠实的 Claim 正确拦下率（少漏检）</td></tr>
-      <tr><td>accuracy</td><td>0.740</td><td><b>0.980</b></td><td>—</td><td>总体准确率</td></tr>
-      <tr><td>Cohen's kappa</td><td>0.480 ⚠️</td><td><b>0.960</b> ✅</td><td>≥0.6</td><td>审计与人工标注的一致性</td></tr>
-    </tbody>
-  </table>
-
-  <div class="callout good">
-    <b>第一轮 TPR 0.50 的根因</b>
-    25 个误杀中 23 个是 <code>SEMANTIC_ANCHOR_FABRICATED</code>——不是 LLM 审计能力问题，而是 anchor 验证用精确字符串匹配，LLM 返回的 anchor 做了符号替换（<code>\mathbb{Z}</code>→<code>𝕫</code>）或轻微改写，语义正确但字符串不匹配。
-    修复为三层容错（精确→归一化→bigram 重叠率）后 TPR 升至 0.98。
-  </div>
-
-  <h3>审计边界（写进 prompt 头部）</h3>
-  <div class="schema">审计只回答封闭问题："这条 Claim 是否忠实于它引用的 SourceSpan？"
-审计不回答开放问题："这条 Claim 在世界上是否正确？"
-任何维度的判断都必须能用"原文有没有说？"来回答——禁用世界知识判断对错。</div>
-
-  <h3>5 维 binary verdict（v1.2）</h3>
-  <table>
-    <thead><tr><th>维度</th><th>封闭问法</th><th>fail 时的 issueCode</th><th>fail 严重度</th></tr></thead>
-    <tbody>
-      <tr><td><b>support</b></td><td>SourceSpan 是否明确支持 Claim 每一句？</td><td>SEMANTIC_SUPPORT_FAILED</td><td>error（硬伤）</td></tr>
-      <tr><td><b>addition</b></td><td>Claim 是否含 SourceSpan 没有的信息？</td><td>SEMANTIC_ADDITION_MAJOR</td><td>error（硬伤）</td></tr>
-      <tr><td><b>inference</b></td><td>推断是否标为"推断"而非事实？</td><td>SEMANTIC_INFERENCE_WRONG</td><td>warning（软伤）</td></tr>
-      <tr><td><b>limits</b></td><td>原文条件是否被丢弃或弱化？</td><td>SEMANTIC_LIMITS_MISSING</td><td>warning（软伤）</td></tr>
-      <tr><td><b>citation</b></td><td>Claim 是否准确对应引用的 span？</td><td>SEMANTIC_CITATION_FAILED</td><td>error（硬伤）</td></tr>
-    </tbody>
-  </table>
-  <p class="small">硬伤维度（support/addition/citation）fail → QUARANTINE；软伤维度（inference/limits）fail → CANONICAL 但需修正。anchor 编造 → SEMANTIC_ANCHOR_FABRICATED → QUARANTINE（审计结论本身不可信）。</p>
-
-  <div class="callout warn">
-    <b>L1 的已知边界</b>
-    L1（同模型 + 对抗 prompt）只能减少"误杀正确 Claim"（EIR），无法显著提升"发现错误 Claim"（ECR）。
-    当前 TNR 0.98 在数学语料上表现好，但这是 L1 的天花板区域。
-    Phase 2 Benchmark 时应做 L2（换模型审计）敏感性实验，确认跨模型是否进一步提升。
-  </div>
-</section>
-
-<!-- ═══ 4 · 四状态轴 ═══ -->
-<section id="status-axes">
-  <div class="section-head"><div class="kicker">§04 / Status Axes</div><div><h2>四个正交状态轴</h2></div></div>
-  <div class="grid">
-    <div class="card"><div class="label">Axis 1</div><h3>derivation</h3><p><code>EXTRACTED | INFERRED | HUMAN_ASSERTED</code></p><p class="small">结论怎么来的。types/index.ts:14</p></div>
-    <div class="card"><div class="label">Axis 2 · v1.2 改</div><h3>validity</h3><p><code>SUPPORTED | DISPUTED | UNRESOLVED</code></p><p class="small">当前是否有争议。<b>v1.2：新 Claim 初始 UNRESOLVED</b>，门禁通过才 SUPPORTED。types/index.ts:17</p></div>
-    <div class="card"><div class="label">Axis 3</div><h3>lifecycle</h3><p><code>ACTIVE | SUPERSEDED</code></p><p class="small">是否仍然有效。types/index.ts:20</p></div>
-    <div class="card"><div class="label">Axis 4</div><h3>publicationState</h3><p><code>CANDIDATE | CANONICAL | QUARANTINED</code></p><p class="small">是否进入消费链。types/index.ts:23</p></div>
-  </div>
-
-  <div class="callout">
-    <b>v1.2 validity 语义修订</b>
-    <ul class="tight">
-      <li><b>UNRESOLVED</b>（待证明）：新 Claim 的初始状态。证据不足、尚未通过门禁。可导航但不进推理链。</li>
-      <li><b>SUPPORTED</b>（已支持）：门禁通过——审计证明 Claim 忠实于 SourceSpan。</li>
-      <li><b>DISPUTED</b>（有争议）：只由真实的可比较冲突产生（CONTRADICTS 边），不再由 <code>support=warning</code> 等价产生。</li>
-    </ul>
-    删除了 v1.1 的 <code>support=warning → DISPUTED</code> 直接映射——证据弱不等于存在反证。
-  </div>
-</section>
-
-<!-- ═══ 5 · 一等对象 ═══ -->
-<section id="objects">
-  <div class="section-head"><div class="kicker">§05 / Objects</div><div><h2>7 个一等对象</h2></div></div>
-  <table>
-    <thead><tr><th>对象</th><th>核心字段</th><th>行号</th><th>四轴使用</th></tr></thead>
-    <tbody>
-      <tr><td><b>Source</b></td><td>id, hash, uri, parsedText</td><td>types:69-77</td><td>不可变来源状态</td></tr>
-      <tr><td><b>SourceSpan</b></td><td>id, sourceId, blockId, charStart/End, text</td><td>types:80-87</td><td>不可变来源状态</td></tr>
-      <tr><td><b>Claim</b></td><td>id, statement, evidenceSpanIds, conditions, 四轴全字段</td><td>types:90-103</td><td>完整四轴（v1.2: validity 初始 UNRESOLVED）</td></tr>
-      <tr><td><b>Concept</b></td><td>id, name, aliases, boundary, domain</td><td>types:106-112</td><td>至少发布/生命周期 <span class="badge b-stub">待加门禁</span></td></tr>
-      <tr><td><b>Relation</b></td><td>id, from:NodeRef, to:NodeRef, type, conditions, 四轴全字段, source:EdgeSource</td><td>types:118-135</td><td>完整四轴（v1.2: validity 跟随 Claim）</td></tr>
-      <tr><td><b>WikiModule</b></td><td>id, stableAddress, coreQuestion, claimRefs</td><td>types:138-149</td><td><span class="badge b-stub">Phase 2</span></td></tr>
-      <tr><td><b>ContextPack</b></td><td>knowledgeVersion, taskMap, subgraph, evidenceSpans, conflictsAndConditions, knownGaps</td><td>types:174-183</td><td>派生视图</td></tr>
-    </tbody>
-  </table>
-  <p class="small">PropositionDraft（types:191-200）是编译中间产物，不长期存储。决策 4A。</p>
-</section>
-
-<!-- ═══ 6 · 消费矩阵 ═══ -->
-<section id="consumption">
-  <div class="section-head"><div class="kicker">§06 / Consumption Matrix</div><div><h2>Canonical 消费矩阵</h2><p class="lead">Canonical 不等于"能否支撑推理"。linter/index.ts 的 <code>getConsumptionRule()</code> 冻结了消费规则。</p></div></div>
-  <table>
-    <thead><tr><th>publicationState</th><th>lifecycle</th><th>validity</th><th>allowRetrieval</th><th>allowReasoning</th><th>packBehavior</th></tr></thead>
-    <tbody>
-      <tr><td>CANONICAL</td><td>ACTIVE</td><td>SUPPORTED</td><td>✅</td><td>✅</td><td>normal</td></tr>
-      <tr><td>CANONICAL</td><td>ACTIVE</td><td>DISPUTED</td><td>✅</td><td>❌</td><td>conflictsAndConditions</td></tr>
-      <tr><td>CANONICAL</td><td>ACTIVE</td><td>UNRESOLVED</td><td>✅（可导航）</td><td>❌</td><td>knownGaps</td></tr>
-      <tr><td>CANONICAL</td><td>SUPERSEDED</td><td>任何</td><td>❌</td><td>❌</td><td>excluded（仅历史查询）</td></tr>
-      <tr><td>CANDIDATE/QUARANTINED</td><td>任何</td><td>任何</td><td>❌</td><td>❌</td><td>excluded（<b>v1.2: 物理隔离，默认不可见</b>）</td></tr>
-    </tbody>
-  </table>
-  <p class="small">接入点：searchClaims（graph 过滤 allowRetrieval）、walkGraph（种子+扩展节点都过矩阵）、Context Pack（disputed→conflictsAndConditions, unresolved→knownGaps）。</p>
-</section>
-
-<!-- ═══ 7 · 关系方向语义 ═══ -->
-<section id="direction">
-  <div class="section-head"><div class="kicker">§07 / Direction Semantics</div><div><h2>RelationType 方向语义</h2><p class="lead">graph/index.ts 的 <code>RELATION_TYPE_SEMANTICS</code> 冻结了每种关系的导航/推理规则。</p></div></div>
-  <table>
-    <thead><tr><th>RelationType</th><th>symmetric</th><th>allowReverseNavigation</th><th>allowReverseReasoning</th><th>canSupportConclusion</th></tr></thead>
-    <tbody>
-      <tr><td>REQUIRES</td><td>❌</td><td>✅</td><td>❌</td><td>✅</td></tr>
-      <tr><td>DERIVED_FROM</td><td>❌</td><td>✅</td><td>❌</td><td>✅</td></tr>
-      <tr><td>SUPPORTS</td><td>❌</td><td>✅</td><td>❌</td><td>✅</td></tr>
-      <tr><td>CONTRADICTS</td><td><b>✅</b></td><td>✅</td><td><b>✅</b></td><td>✅</td></tr>
-      <tr><td>SUPERSEDES</td><td>❌</td><td>✅</td><td>❌</td><td>✅</td></tr>
-      <tr><td>EQUIVALENT_UNDER</td><td><b>✅</b></td><td>✅</td><td><b>✅</b></td><td>✅</td></tr>
-      <tr><td>RELATED_TO</td><td>✅</td><td>✅</td><td>❌</td><td><b>❌</b></td></tr>
-    </tbody>
-  </table>
-  <p class="small">walkGraph 反向遍历检查 allowReverseNavigation || symmetric。Context Pack 排除 RELATED_TO，只用 6 种强关系做子图扩展。</p>
-</section>
-
-<!-- ═══ 8 · 门禁层 ═══ -->
-<section id="linter">
-  <div class="section-head"><div class="kicker">§08 / Linter</div><div><h2>门禁层：L1 审计 + anchor 验证 + 物理隔离</h2></div></div>
-
-  <h3>lintCompileResult 三阶段流程</h3>
-  <div class="diagram"><div class="mermaid">
-flowchart TD
-    subgraph Phase1["Phase 1: Claim Lint"]
-      C1["每个 Claim<br/>validity=UNRESOLVED"] --> SC1["checkClaimStructure<br/>statement 非空 / evidence 非空 / spanId 存在"]
-      SC1 -->|"有 error"| Q1["QUARANTINED<br/>保持 UNRESOLVED"]
-      SC1 -->|"通过"| SE1["semanticCheck (L1 对抗)<br/>5 维 binary + anchor 验证"]
-      SE1 -->|"硬伤维度 fail"| Q2["QUARANTINED"]
-      SE1 -->|"anchor 编造"| Q3["QUARANTINED<br/>SEMANTIC_ANCHOR_FABRICATED"]
-      SE1 -->|"软伤维度 fail"| W1["CANONICAL + 需修正"]
-      SE1 -->|"全部 pass"| OK1["CANONICAL + SUPPORTED v1.2"]
-    end
-    subgraph Phase2["Phase 2"]
-      CC["canonicalClaimIds<br/>= CANONICAL ∪ CANONICAL_DISPUTED"]
-    end
-    subgraph Phase3["Phase 3: Relation Lint"]
-      R1["每个 Relation<br/>validity=UNRESOLVED"] --> SR1["checkRelationStructure<br/>端点存在 + 端点 Canonical"]
-      SR1 -->|"有 error"| QR["QUARANTINED"]
-      SR1 -->|"通过"| OKR["CANONICAL + SUPPORTED v1.2"]
-    end
-    Phase1 --> Phase2 --> Phase3
-  </div></div>
-
-  <h3>v1.2 新增的 IssueCode</h3>
-  <div class="schema">// v1.2 新增（linter IssueCode 联合类型）
-| "SEMANTIC_ANCHOR_FABRICATED"  // 审计 anchor 不在原文中——审计结论本身不可信
-
-// anchor 验证：isQuoteInText 三层容错（linter:361）
-// 1. 精确子串匹配
-// 2. 归一化匹配（LaTeX→unicode, 标点空白统一）
-// 3. bigram 重叠率 ≥ 0.5（处理中文不分词 + 轻改写）</div>
-
-  <h3>可观测（轨道 B）</h3>
-  <p>每次审计调 <code>recordAuditMetric()</code> 写入 <code>runs/audit-metrics.jsonl</code>，含 claimId / outcome（passed/dim-fail/skipped/anchor-fabricated）/ 失败维度 / <b>model 快照</b>（pin 版本防 criterion drift）/ auditVersion / 时间戳。</p>
-</section>
-
-<!-- ═══ 9 · 编译层 ═══ -->
-<section id="compiler">
-  <div class="section-head"><div class="kicker">§09 / Compiler</div><div><h2>编译层（v1.2: validity 初始改 UNRESOLVED）</h2></div></div>
-  <p><code>compileSource()</code>（compiler:52-183）三步：命题切分（LLM 返回 blockId+exactQuote）→ mapQuoteToSpan 映射 → Claim/Concept/Relation 编译。</p>
-  <div class="callout warn">
-    <b>v1.2 关键改动</b>
-    所有产出 <code>publicationState=CANDIDATE</code>（不变），但 <code>validity</code> 从 <code>SUPPORTED</code> 改为 <code>UNRESOLVED</code>（compiler:138, compiler:172）。
-    依据：不假定编译结果可信——新 Claim 是"待证明"的，只有门禁通过才升级 SUPPORTED。
-  </div>
-  <p class="small">Proposition 是中间产物，不持久化（决策 4A）。</p>
-</section>
-
-<!-- ═══ 10 · Graph ═══ -->
-<section id="graph">
-  <div class="section-head"><div class="kicker">§10 / Graph</div><div><h2>Graph 层</h2></div></div>
-  <p><b>buildGraph</b>：从 Canonical Claim/Relation 构建。过滤 <code>publicationState=CANONICAL && lifecycle=ACTIVE</code>。v1.2 起这些对象来自主目录（claims/claims.jsonl），Quarantined 在物理隔离区不参与构建。</p>
-  <p><b>walkGraph</b>：BFS 从种子扩展，返回 <code>{ claims, relations, disputedClaims, unresolvedClaims }</code>。方向检查 + 消费矩阵分类。</p>
-  <p><b>searchClaims</b>：关键词匹配，过滤 <code>allowRetrieval</code>——UNRESOLVED 和 DISPUTED 可搜到，CANDIDATE/QUARANTINED/SUPERSEDED 被排除。</p>
-</section>
-
-<!-- ═══ 11 · Context Pack ═══ -->
-<section id="context">
-  <div class="section-head"><div class="kicker">§11 / Context Pack</div><div><h2>Context Pack（Map-first）</h2></div></div>
-  <p><code>buildContextPack()</code> 10 步流程：加载状态 → buildKnowledgeMap（检索前地图）→ buildGraph → selectSeeds（map+keyword 双路）→ walkGraph（排除 RELATED_TO）→ 预算控制 → 回填证据 → conflictsAndConditions（从 disputedClaims）→ knownGaps（从 unresolvedClaims）→ 裁剪 taskMap。</p>
-  <p class="small">wikiModules 为空——Phase 2 实现。预算 4chars≈1token 在中文/公式上有低估风险（Review 断点 7），Gate 2 前需修。</p>
-</section>
-
-<!-- ═══ 12 · 数据流 ═══ -->
-<section id="dataflow">
-  <div class="section-head"><div class="kicker">§12 / Data Flow</div><div><h2>ingest 端到端数据流（v1.2）</h2></div></div>
-  <div class="schema">// wge ingest mathtest-material/01-number-systems.md
-1. loadConfig() → AppConfig
-2. createLLMProvider(config) → LLMProvider
-3. ingestMarkdownFile → { source, spans, isDuplicate }
-4. compileSource → { claims, concepts, relations }
-   └─ 全部 publicationState=CANDIDATE, validity=UNRESOLVED  ← v1.2 改
-5. lintCompileResult（L1 对抗审计 + anchor 验证）
-   ├─ Phase 1: Claim 结构+语义 Lint → CANONICAL+SUPPORTED / DISPUTED / QUARANTINED
-   ├─ Phase 2: canonicalClaimIds 集合
-   └─ Phase 3: Relation 结构 Lint → CANONICAL+SUPPORTED / QUARANTINED
-6. 物理隔离发布 ← v1.2 改
-   ├─ appendClaims(canonicalClaims)           → claims/claims.jsonl
-   ├─ appendConcepts(concepts)                → concepts/concepts.jsonl
-   ├─ appendRelations(canonicalRelations)     → relations/edges.jsonl
-   ├─ appendClaimsQuarantined(quarantinedClaims)    → quarantine/claims.jsonl
-   └─ appendRelationsQuarantined(quarantinedRelations) → quarantine/relations.jsonl</div>
-  <p class="small">readAllClaims 只读 claims/claims.jsonl。Quarantined 对象对 buildGraph/searchClaims/context-pack 默认不可见。</p>
-</section>
-
-<!-- ═══ 13 · 存储 ═══ -->
-<section id="storage">
-  <div class="section-head"><div class="kicker">§13 / Storage</div><div><h2>JSONL 存储（v1.2: 物理隔离）</h2></div></div>
-  <table>
-    <thead><tr><th>对象</th><th>路径</th><th>格式</th><th>默认读取 API</th><th>进 Git</th></tr></thead>
-    <tbody>
-      <tr><td>Source</td><td>sources/&lt;id&gt;.json</td><td>JSON</td><td>✅</td><td>✅</td></tr>
-      <tr><td>SourceSpan</td><td>sources/&lt;id&gt;.spans.jsonl</td><td>JSONL</td><td>readAllSpans</td><td>✅</td></tr>
-      <tr><td><b>Canonical Claim</b></td><td>claims/claims.jsonl</td><td>JSONL</td><td>readAllClaims</td><td>✅</td></tr>
-      <tr><td>Concept</td><td>concepts/concepts.jsonl</td><td>JSONL</td><td>readAllConcepts</td><td>✅</td></tr>
-      <tr><td><b>Canonical Relation</b></td><td>relations/edges.jsonl</td><td>JSONL</td><td>readAllRelations</td><td>✅</td></tr>
-      <tr><td style="background:#fdf5f6"><b>Quarantined Claim</b> <span class="badge b-new">v1.2</span></td><td style="background:#fdf5f6">quarantine/claims.jsonl</td><td style="background:#fdf5f6">JSONL</td><td style="background:#fdf5f6"><b>readAllClaimsQuarantined</b>（仅诊断）</td><td style="background:#fdf5f6">✅</td></tr>
-      <tr><td style="background:#fdf5f6"><b>Quarantined Relation</b> <span class="badge b-new">v1.2</span></td><td style="background:#fdf5f6">quarantine/relations.jsonl</td><td style="background:#fdf5f6">JSONL</td><td style="background:#fdf5f6"><b>readAllRelationsQuarantined</b>（仅诊断）</td><td style="background:#fdf5f6">✅</td></tr>
-      <tr><td>Quarantine manifest</td><td>quarantine/quarantine-manifest.json</td><td>JSON</td><td>—</td><td>✅</td></tr>
-      <tr><td><b>审计指标</b> <span class="badge b-new">v1.2</span></td><td>runs/audit-metrics.jsonl</td><td>JSONL</td><td>readAllAuditMetrics</td><td>✅</td></tr>
-      <tr><td>Source manifest</td><td>manifest.jsonl</td><td>JSONL</td><td>—</td><td>✅</td></tr>
-      <tr><td>indexes/</td><td>（可重建）</td><td>—</td><td>—</td><td>❌ 不进 Git</td></tr>
-    </tbody>
-  </table>
-  <div class="callout good">
-    <b>为什么物理隔离</b>
-    v1.1 把 Quarantined 和 Canonical 混在同一个 claims.jsonl，靠每个消费者运行时过滤。Review 断点 4 指出：任一新消费者漏用消费矩阵就会污染。
-    v1.2 物理隔离后，<code>readAllClaims</code> 默认只读主目录——任何新查询代码天生安全，不需要作者记得过滤。
-  </div>
-</section>
-
-<!-- ═══ 14 · 设计差距 ═══ -->
-<section id="gaps">
-  <div class="section-head"><div class="kicker">§14 / Gaps</div><div><h2>设计差距</h2></div></div>
-  <table>
-    <thead><tr><th>差距</th><th>当前状态</th><th>阻断哪个 Gate</th><th>计划</th></tr></thead>
-    <tbody>
-      <tr><td>WikiModule 生成</td><td>未实现——wikiModules 为空</td><td><span class="badge b-stub">Gate 2+</span></td><td>Phase 2</td></tr>
-      <tr><td>跨材料 Relation 检测</td><td>Schema 已定义但无调用</td><td><span class="badge b-stub">Gate 2+</span></td><td>Phase 2</td></tr>
-      <tr><td>Concept 对齐 + 门禁</td><td>无跨来源合并；无状态字段/门禁</td><td><span class="badge b-stub">Gate 2+</span></td><td>Phase 2</td></tr>
-      <tr><td>进化机制</td><td>未实现</td><td><span class="badge b-stub">Gate 4</span></td><td>Phase 3</td></tr>
-      <tr><td>稳定逻辑 ID + 版本 ID</td><td>Claim ID 含 hash，无稳定逻辑身份</td><td><span class="badge b-stub">Gate 2+</span></td><td>Phase 2</td></tr>
-      <tr><td>Context 预算真实 token</td><td>4chars≈1token（中文低估）</td><td><span class="badge b-pending">Gate 2 前</span></td><td>Phase 2</td></tr>
-      <tr><td>L2 模型分离审计</td><td>L1 达标但未验证跨模型</td><td><span class="badge b-pending">Benchmark</span></td><td>Phase 2 敏感性实验</td></tr>
-      <tr><td>四轴回写定义文档</td><td>Product Definition 仍写两轴</td><td><span class="badge b-pending">Gate 0</span></td><td>文档同步</td></tr>
-    </tbody>
-  </table>
-</section>
-
-<!-- ═══ 15 · 未实现 ═══ -->
-<section id="not-impl">
-  <div class="section-head"><div class="kicker">§15 / Not Implemented</div><div><h2>明确未实现</h2></div></div>
+<section id="ingest">
+  <div class="section-head"><div class="kicker">§04 / Loader &amp; Ingest</div><div><h2>当前只摄入 Markdown，但格式能力已经解耦</h2></div></div>
+  <p><code>DocumentLoader</code> 只负责把外部格式机械转换为统一的 <code>LoadedDocument</code>：uri、sourceType、loaderVersion、sourceKey、parsedText 和可回溯 blocks。Loader 不得生成 Claim，也不得做语义判断。</p>
+  <div class="schema">DocumentLoader.canLoad(filePath)
+DocumentLoader.load(filePath) → LoadedDocument
+LoaderRegistry.resolve(filePath) → 唯一匹配的 adapter
+ingestLoadedDocument(...) → Source + SourceSpan[]</div>
   <ul>
-    <li><b>daemon 常驻</b>——不做（旧项目 Bug 5 教训）</li>
-    <li><b>Vector 检索</b>——Phase 2 可选</li>
-    <li><b>人类审批</b>——不做（决策 2A：门禁通过自动 Canonical）</li>
-    <li><b>Proposition 一等对象</b>——不做（决策 4A：可重建中间产物）</li>
-    <li><b>软门禁</b>——不做（硬门禁 + 物理隔离）</li>
-    <li><b>chunk marker</b>——不做（旧项目根因）</li>
+    <li>默认 registry 目前只注册 <code>MarkdownLoader</code>；PDF/HTML 未伪装成“已支持”。</li>
+    <li>第三方 Loader 可注册到同一 registry；测试已用 fake PDF loader 验证适配边界。</li>
+    <li>Ingestor 对每个 block 验证 offset、范围和 <code>parsedText.slice(start,end)===text</code>，防止不可回溯 Loader 产物进入系统。</li>
+    <li><code>readings/back-to-basics/latex/</code> 中已确认存在多文件 TeX、样式、参考文献和图片，但按当前产品决策不摄入；未来 TeX adapter 必须在 Loader 边界实现 include/bibliography/asset 解析，不能把 TeX 逻辑塞进编译器。</li>
+    <li>Source 以正文 hash 建立不可变证据载体；同 Source 重跑不会删除原文或 Span。</li>
   </ul>
 </section>
 
+<section id="compiler">
+  <div class="section-head"><div class="kicker">§05 / Bounded Compiler</div><div><h2>有边界、可观测、可恢复的编译状态机</h2></div></div>
+  <h3>状态与阶段分离</h3>
+  <div class="diagram"><div class="mermaid">
+stateDiagram-v2
+    [*] --> SOURCE_INGESTED
+    SOURCE_INGESTED --> COMPILE_RUNNING
+    COMPILE_FAILED --> COMPILE_RUNNING: retry without deleting Source
+    COMPILE_PARTIAL --> COMPILE_RUNNING: full retry
+    COMPILED --> COMPILE_RUNNING: legacy full recompile
+    COMPILE_RUNNING --> COMPILE_FAILED: before local publication
+    COMPILE_RUNNING --> COMPILE_PARTIAL: semantic lint intentionally skipped
+    COMPILE_RUNNING --> RELATION_SCAN_PENDING: local published, stage 2 failed
+    RELATION_SCAN_PENDING --> COMPILE_RUNNING: relation-only resume
+    COMPILE_RUNNING --> COMPLETED: stage 1 + stage 2 complete
+    COMPLETED --> COMPILE_RUNNING: explicit --recompile
+  </div></div>
+  <p>阶段日志覆盖 INGESTED、PROPOSITION_EXTRACTION、CLAIM_COMPILATION、CONCEPT_CONSOLIDATION、RELATION_DETECTION、LINT、PUBLISH 以及三个 CROSS_MATERIAL 阶段。状态事件是 append-only JSONL；hostname+pid 拒绝活跃并发，僵尸运行自动封存为失败。</p>
+  <h3>容量与重试策略</h3>
+  <table>
+    <thead><tr><th>机制</th><th>当前实现</th><th>保护的失败模式</th></tr></thead>
+    <tbody>
+      <tr><td>输入预算</td><td>混合中英文保守 token 估算；按预算分命题/Claim/Concept/Relation 批次</td><td>无边界 prompt</td></tr>
+      <tr><td>截断识别</td><td>finishReason=length；近 maxTokens 的非法 JSON；截断缓存提示</td><td>不完整 JSON 被误判为普通格式错误</td></tr>
+      <tr><td>缩批</td><td>二分重试，最大深度 8，最小单元仍截断则失败</td><td>固定 maxTokens 对大材料必败</td></tr>
+      <tr><td>格式重试</td><td>非截断非法 JSON 有界重试</td><td>偶发 schema/转义错误</td></tr>
+      <tr><td>可观测</td><td>原始输出、prompt hash、usage、finishReason、batchId、attempt、parse outcome</td><td>只能看到“解析失败”而无法定位</td></tr>
+    </tbody>
+  </table>
+  <p class="small">生产入口是 <code>compileSource()</code>。<code>scripts/debug-compile.ts</code> 故意保留旧的一次性 8192-token 调用，只用于复现历史容量故障。</p>
+</section>
+
+<section id="objects">
+  <div class="section-head"><div class="kicker">§06 / Contracts</div><div><h2>对象、状态轴与 provenance 语义</h2></div></div>
+  <h3>四个正交状态轴</h3>
+  <table>
+    <thead><tr><th>轴</th><th>枚举</th><th>回答的问题</th></tr></thead>
+    <tbody>
+      <tr><td>derivation</td><td>EXTRACTED / INFERRED / HUMAN_ASSERTED</td><td>结论怎么来的？</td></tr>
+      <tr><td>validity</td><td>SUPPORTED / DISPUTED / UNRESOLVED</td><td>当前是否被支持或存在争议？</td></tr>
+      <tr><td>lifecycle</td><td>ACTIVE / SUPERSEDED</td><td>是否仍是当前知识？</td></tr>
+      <tr><td>publicationState</td><td>CANDIDATE / CANONICAL / QUARANTINED</td><td>是否进入默认消费边界？</td></tr>
+    </tbody>
+  </table>
+  <h3>Claim 证据角色不是两个重复字段</h3>
+  <div class="grid">
+    <div class="card"><div class="label">provenanceRefs</div><h3>谁在何时提出</h3><p>回答出处和血缘，不自动证明内容成立。SourceSpan、AssertedRecord、ExperimentRecord 都可以作为 provenance。</p></div>
+    <div class="card"><div class="label">supportingEvidenceRefs</div><h3>凭什么可以支持</h3><p>回答该 Claim 为什么能进入 SUPPORTED。其合法类型由 claimKind 决定。</p></div>
+  </div>
+  <table>
+    <thead><tr><th>claimKind</th><th>允许的支持依据</th><th>硬规则</th></tr></thead>
+    <tbody>
+      <tr><td>FACT</td><td>SourceSpan 或 ExperimentRecord</td><td>AssertedRecord 只能在 provenance；用户说过不等于事实已证明</td></tr>
+      <tr><td>DECISION</td><td>同 Claim、同 PROJECT scope 的有效 AssertedRecord</td><td>必须有 assertedBy/assertedAt/authorityBasis/assertionText</td></tr>
+      <tr><td>PREFERENCE</td><td>同 Claim、同 PERSONAL scope 的有效 AssertedRecord</td><td>assertedBy 必须是该 PERSONAL 主体</td></tr>
+    </tbody>
+  </table>
+  <p>材料型 FACT 中，同一个 SourceSpan 同时是“原话出自哪里”和“原文是否支持 Claim”，因此两组引用相同可以是正确语义，不应仅凭数组相等判定设计失效。</p>
+</section>
+
+<section id="gates">
+  <div class="section-head"><div class="kicker">§07 / Semantic Gates</div><div><h2>Claim 与 Relation 必须分别被审计</h2></div></div>
+  <div class="diagram"><div class="mermaid">
+flowchart LR
+    C["Candidate Claim"] --> CS["Deterministic structure/provenance gate"]
+    CS --> CA["5-dimension fidelity audit"]
+    CA -->|"pass"| CC["Canonical Claim"]
+    CA -->|"hard fail"| CQ["Claim quarantine"]
+    R["Candidate Relation"] --> RS["type/endpoints/evidence/condition gate"]
+    RS --> RA["edge-level semantic audit"]
+    RA -->|"relation+type+direction+conditions pass"| RC["Canonical Relation + audit version"]
+    RA -->|"any fail"| RQ["Relation quarantine"]
+    CC -.-> RS
+  </div></div>
+  <h3>Claim 忠实度门禁</h3>
+  <p>只回答 Claim 是否忠实于引用原文，不判断世界事实。维度为 support、addition、inference、limits、citation；固定 JSON schema、证据下标和 failedDimensions 一致性由程序验证。基础设施故障或连续非法 verdict 会让运行失败，不会伪装成“Claim 不忠实”。</p>
+  <h3>Relation 边级门禁</h3>
+  <p>端点分别正确不等于边正确。Relation 独立审计 relation、type、direction、conditions 四维；通过后只保留审计器明确选择的边级证据。v1.2 进一步要求被选择的证据必须同时覆盖 FROM 与 TO，拒绝用单侧引文和模型外部知识补全另一端。真实 E2E 仍发现模型把“欧拉公式成立”误判为支持“可由 Taylor 展开推出”，证明协议正确不等于模型每次执行正确；该边已由人工否决入口隔离。</p>
+  <p>由于真实人工抽检中的 <code>EQUIVALENT_UNDER</code> 为 4/4 假阳性，该类型现由结构门禁统一标记 <code>RELATION_EQUIVALENCE_REVIEW_REQUIRED</code> 并进入 quarantine；在独立人工复核或校准 critic 完成前，不能自动晋级。</p>
+  <ul>
+    <li><code>EQUIVALENT_UNDER</code> 必须有非空 conditions，且两端在相同对象域与范围内具有相同真值条件；一般定义与具体直觉、共享术语、循环条件均不能制造等价。</li>
+    <li><code>conditionStatus</code> 区分 PRESERVED、EXPLICIT_NONE、UNVERIFIED，避免空数组同时表示“确实无条件”和“没提取到”。</li>
+    <li>跳过语义审计时，Relation 只能保持 UNRESOLVED/UNVERIFIED，不能冒充 SUPPORTED。</li>
+    <li>Graph 只接受当前审计版本，旧边自动降级；审计规则升级不会静默沿用历史边。</li>
+  </ul>
+</section>
+
+<section id="relations">
+  <div class="section-head"><div class="kicker">§08 / Two-stage Relations</div><div><h2>单材料发布与跨材料扫描是两个可恢复原子阶段</h2></div></div>
+  <div class="diagram"><div class="mermaid">
+sequenceDiagram
+    participant CLI
+    participant Local as Stage 1 local compile/lint
+    participant Store as Publication store
+    participant Recall as Cross-material recall
+    participant Audit as Relation audit
+    CLI->>Local: compile Source
+    Local->>Store: atomic local Claim/Concept/Relation snapshot
+    Store-->>CLI: localPublished=true
+    CLI->>Recall: new Claims/Concepts vs existing Canonical Claims
+    Recall->>Audit: bounded candidate relation batches
+    Audit->>Store: atomically replace this Source's cross edges
+    Store-->>CLI: COMPLETED
+    Note over CLI,Store: if stage 2 fails → RELATION_SCAN_PENDING; local publication remains
+  </div></div>
+  <h3>召回边界</h3>
+  <ul>
+    <li>只比较“新 Source Claim”与召回的旧 Claim，不做全库 O(n²) 两两检测。</li>
+    <li>召回使用 Concept 名称/别名和文本 bigram 相似度；当前上限 40 个候选，不依赖 embedding。</li>
+    <li>Concept ID 不再包含 Source hash；同名、同领域且 boundary 兼容时复用既有 ID；同名不同边界会分叉。</li>
+    <li>跨材料 Relation 的 telemetry 使用独立 CROSS_MATERIAL_RELATION_DETECTION 阶段。</li>
+    <li>Source 重编导致旧 Claim ID 消失时，不再只依赖 Graph 读时过滤：发布层会把其他 Source 拥有、但指向旧 Claim 的 cross 边连同 <code>BROKEN_RELATION_ENDPOINT</code> 原因先写入 quarantine，再移出 canonical。</li>
+    <li>Claim 去重当前只覆盖规范化 statement+conditions 的确定性重复；跨来源语义改写/同义 Claim 尚不会自动合并。</li>
+  </ul>
+  <div class="callout good"><b>当前验证边界</b> 01→02→03 已真实执行。最终 backfill 每篇均报告 40 个召回候选；机器门禁通过 4 条，人工抽检否决 1 条错误 SUPPORTS，保留 3 条 Cauchy/完备性 RELATED_TO。可以宣称正边生成、拒绝和消费链路通过；不能宣称自动审计已达到无需人工抽检的生产精度。</div>
+</section>
+
+<section id="storage">
+  <div class="section-head"><div class="kicker">§09 / Atomic Storage</div><div><h2>Source 快照替换、物理隔离与审计日志</h2></div></div>
+  <table>
+    <thead><tr><th>数据</th><th>当前路径</th><th>写入语义</th><th>默认消费</th></tr></thead>
+    <tbody>
+      <tr><td>Source</td><td>sources/&lt;source&gt;.json</td><td>内容寻址、不可变</td><td>证据根</td></tr>
+      <tr><td>SourceSpan</td><td>sources/&lt;source&gt;.spans.jsonl</td><td>机械 offset；支持确定性 #chars 子区间</td><td>可解析证据</td></tr>
+      <tr><td>Canonical publication</td><td>publications/&lt;source&gt;.json</td><td>完整快照，临时文件+rename 原子替换</td><td>readAllClaims/Concepts/Relations</td></tr>
+      <tr><td>Quarantine publication</td><td>quarantine/publications/&lt;source&gt;.json</td><td>先于 canonical 写入；与默认链物理隔离</td><td>仅显式诊断 API</td></tr>
+      <tr><td>Compile state</td><td>runs/compile-state.jsonl</td><td>append-only 运行状态事件</td><td>恢复、并发保护、status</td></tr>
+      <tr><td>LLM telemetry</td><td>runs/llm-calls.jsonl + raw output</td><td>调用/解析/截断证据</td><td>工程审计</td></tr>
+      <tr><td>Audit cache/metrics</td><td>runs/audit-cache、relation-audit-cache、audit-metrics.jsonl</td><td>版本化判定缓存和指标</td><td>回归与诊断</td></tr>
+      <tr><td>AssertedRecord</td><td>assertions/asserted-records.jsonl</td><td>按 assertionId 读取最新记录</td><td>DECISION/PREFERENCE 门禁</td></tr>
+    </tbody>
+  </table>
+  <p>阶段 2 发布只替换当前 Source 拥有的 <code>cross-material-detect</code> 边，保留阶段 1 的 Claim、Concept、同材料边及既有隔离结果。重复 backfill 不追加同 ID 重复边。Source 快照替换前会按“即将生效的全局 Claim 集”协调外来 cross 边；失效边先写 quarantine 再从 canonical 删除，因此崩溃最多造成暂时少边，不会暴露悬空边。</p>
+  <p><code>relations quarantine &lt;relationId&gt; --reason ...</code> 是人工质量复核入口：保留原 Relation 和明确否决理由，再安全移出默认消费链。它不是修改模型历史输出，而是在模型判定之上记录可审计的人类处置。</p>
+</section>
+
+<section id="context">
+  <div class="section-head"><div class="kicker">§10 / Read Contract</div><div><h2>Graph 与 Context Pack 的双重消费保护</h2></div></div>
+  <h3>Graph 可见性</h3>
+  <p><code>buildGraph()</code> 只接受 Canonical+Active Claim，并进一步要求 Relation：非 UNRESOLVED、conditionStatus 已确认、relationAuditVersion 等于当前版本、from/to 端点仍存在。双向 adjacency 仅用于导航，不改变关系方向语义。</p>
+  <p><code>RELATED_TO</code> 已进入 Context Pack 的图遍历白名单，用于跨材料发现邻居；其类型语义固定为 <code>canSupportConclusion=false</code>，因此 Agent 可以看到“这两条知识相关”，但不能把弱相关当成证明或推导。</p>
+  <table>
+    <thead><tr><th>Claim 状态</th><th>可检索</th><th>可支撑推理</th><th>Context Pack 区域</th></tr></thead>
+    <tbody>
+      <tr><td>CANONICAL + ACTIVE + SUPPORTED</td><td>是</td><td>是</td><td>正文</td></tr>
+      <tr><td>CANONICAL + ACTIVE + DISPUTED</td><td>是</td><td>否</td><td>conflictsAndConditions</td></tr>
+      <tr><td>CANONICAL + ACTIVE + UNRESOLVED</td><td>是</td><td>否</td><td>knownGaps</td></tr>
+      <tr><td>SUPERSEDED / CANDIDATE / QUARANTINED</td><td>否</td><td>否</td><td>排除</td></tr>
+    </tbody>
+  </table>
+  <h3>Scope 隔离</h3>
+  <ul>
+    <li>无 ScopeContext：只允许 GLOBAL，禁止默认全选。</li>
+    <li>有 principalId：GLOBAL + 该主体 PERSONAL。</li>
+    <li>有 projectId：再叠加该 PROJECT；其他个人和项目不可通过 Relation 泄漏。</li>
+  </ul>
+  <h3>预算与证据闭包</h3>
+  <p>Context Pack 先做 Map→Seed→Subgraph→Evidence，再以混合中英文 token 估算器对最终 JSON 序列化载荷复核。裁剪时保持 Relation→Endpoint、WikiModule→Claim、Claim→Evidence 闭包；预算过小到无法容纳最小合同外壳时显式报错，不返回悄悄超预算的 Pack。</p>
+</section>
+
+<section id="calibration">
+  <div class="section-head"><div class="kicker">§11 / Meta-eval</div><div><h2>审计校准的正确口径</h2></div></div>
+  <p>历史运行在 100 条校准集上得到 TPR=0.98、TNR=0.98、kappa=0.96，但这组数据由模型生成，不能写成人工金标准或“生产 Claim 98% 正确”。审计只测忠实度，不测世界事实正确性。</p>
+  <table>
+    <thead><tr><th>报告字段</th><th>当前脚本行为</th><th>目的</th></tr></thead>
+    <tbody>
+      <tr><td>auditVersion / promptHash</td><td>绑定当前审计规则与 prompt 内容</td><td>识别 criterion drift</td></tr>
+      <tr><td>datasetHash</td><td>绑定具体测试集</td><td>不同数据集结果不可混报</td></tr>
+      <tr><td>datasetLabelStatus</td><td>默认 SYNTHETIC_UNVERIFIED；显式标记后才 HUMAN_REVIEWED</td><td>不把合成标签伪装成人工标签</td></tr>
+      <tr><td>TPR95 / TNR95</td><td>Wilson 95% 区间</td><td>避免只报单点比例</td></tr>
+      <tr><td>benchmarkRole</td><td>REGRESSION</td><td>校准集用于回归，不替代独立验收集</td></tr>
+      <tr><td>thinkingMode</td><td>disabled</td><td>减少不可控推理开销和输出截断</td></tr>
+    </tbody>
+  </table>
+  <div class="callout warn"><b>尚未完成</b> 当前 prompt 已调整以减少校准样例泄漏，但新版脚本尚未在“人工复核、独立保留集”上重跑；历史 0.98 只能作为回归参考。</div>
+</section>
+
+<section id="verification">
+  <div class="section-head"><div class="kicker">§12 / Verification</div><div><h2>本版已经验证了什么</h2></div></div>
+  <table>
+    <thead><tr><th>验证层</th><th>结果</th><th>覆盖内容</th></tr></thead>
+    <tbody>
+      <tr><td>Biome</td><td>src + scripts 全通过</td><td>格式、import、推荐 lint 规则</td></tr>
+      <tr><td>TypeScript</td><td>主代码 + scripts 全通过</td><td>严格模式、noUnused、脚本合同</td></tr>
+      <tr><td>Vitest</td><td>9 files / 43 tests</td><td>批次缩分、状态恢复、Loader 插件、provenance、Relation 双端证据、跨 Source 悬空边协调、人工否决、EQUIVALENT_UNDER fail-closed、RELATED_TO 导航、Context 预算</td></tr>
+      <tr><td>Build</td><td>tsup ESM + DTS 成功</td><td>CLI 构建</td></tr>
+      <tr><td>只读真实查询</td><td>成功</td><td>“Cauchy/完备性”Context Pack 返回 15 Claims / 14 Relations，其中 3 条是跨材料 RELATED_TO；弱边不可支撑结论</td></tr>
+      <tr><td>真实新版 ingest</td><td>01/02/03 已执行</td><td>真实长材料、截断缩批、schema null 归一化、原子替换、跨边正样本、目标重编失效和人工隔离</td></tr>
+      <tr><td>v1.5 验证周期在线消耗</td><td>所列 8 个诊断/有效 run 合计 684 calls / 937,452 tokens，另有 88 次审计缓存命中</td><td>完整重编触发逐 Claim/Relation 审计，且 prompt 变化导致缓存失效；不能表述成“3 篇=3 次调用”</td></tr>
+    </tbody>
+  </table>
+  <p class="small">真实重编证明编排、正向 cross edge、生命周期失效和消费链可运行；人工抽检同时发现 1 条错误 SUPPORTS 与 4 条错误 EQUIVALENT_UNDER。自动门禁是必要的 fail-closed 层，但当前不是人工质量验收的替代品。</p>
+</section>
+
+<section id="gaps">
+  <div class="section-head"><div class="kicker">§13 / Open Gaps</div><div><h2>剩余真实缺口与非缺口</h2></div></div>
+  <table>
+    <thead><tr><th>项目</th><th>当前状态</th><th>严重度</th><th>进入下一阶段前的要求</th></tr></thead>
+    <tbody>
+      <tr><td>01/02/03 新版真实重编</td><td>均为 COMPLETED；Graph 有 76 条 v1.2 边，其中 3 条人工复核通过的 cross RELATED_TO</td><td><span class="badge b-done">完成</span></td><td>保留本页 §14 验收证据</td></tr>
+      <tr><td>Relation 自动审计精度</td><td>人工抽检否决 1 条错误 SUPPORTS 和全部 4 条 EQUIVALENT_UNDER；后者已 fail-closed 禁止自动晋级，其他强边仍需抽检</td><td><span class="badge b-blocked">P0 质量</span></td><td>建立人工 Relation 金标准与独立 critic/确定性反循环规则；验证前不恢复 EQUIVALENT_UNDER 自动发布</td></tr>
+      <tr><td>逐对象审计成本</td><td>v1.5 所列 8 个 run 使用 684 次在线调用、937,452 tokens；prompt 变化会使大量缓存失效</td><td><span class="badge b-pending">P1 成本</span></td><td>版本化增量复用与有界批量 critic，同时保持失败可定位、不可部分发布</td></tr>
+      <tr><td>重编非确定性</td><td>同一 01 从 162 canonical Claim 漂移到 134，Concept 从 55 级别扩张到 110；02 Claim 从 89 漂移到 57</td><td><span class="badge b-blocked">P0 可靠性</span></td><td>冻结提取协议、建立重编 diff 门禁和保留旧 publication 的人工/阈值审批；禁止把 COMPLETED 等同于语义稳定</td></tr>
+      <tr><td>跨来源 Concept 对齐</td><td>当前合并后 183 Concept；Source 快照合计 184，数量受重编输出显著影响</td><td><span class="badge b-pending">P1</span></td><td>完善稳定身份、同名边界冲突与 Source 重编迁移策略</td></tr>
+      <tr><td>语义重复 Claim 合并</td><td>欧氏距离同义 Claim 曾被生成两条反向 EQUIVALENT_UNDER，现已人工隔离；自动合并未实现</td><td><span class="badge b-pending">P1</span></td><td>建立语义重复审核与证据合并，不用 Relation 长期承载重复 Claim</td></tr>
+      <tr><td>WikiModule 生成</td><td>读取/消费已实现，生成和发布门禁未实现</td><td><span class="badge b-stub">产品 P0 后续</span></td><td>Relation E2E 通过后施工</td></tr>
+      <tr><td>AssertedRecord 写入入口</td><td>类型、存储、门禁存在；无用户 CLI/API 和真实授权系统</td><td><span class="badge b-stub">Phase 2a</span></td><td>实现原子 Claim+Record 创建与权限适配</td></tr>
+      <tr><td>ExperimentRecord</td><td>KnowledgeRef 类型存在，尚无持久化 schema/解析门禁</td><td><span class="badge b-stub">Phase 2a</span></td><td>在实验事实通道启用前补齐</td></tr>
+      <tr><td>confidence</td><td>LLM 值未校准，下游当前不使用</td><td><span class="badge b-stub">低风险</span></td><td>使用前先校准或删除排序语义</td></tr>
+      <tr><td>Claim 审计版本持久化</td><td>缓存和 metrics 有版本；Claim 对象本身没有独立 auditVersion</td><td><span class="badge b-pending">P1</span></td><td>周期重审/规则升级前设计迁移策略</td></tr>
+      <tr><td>版本快照与可验证回滚</td><td>Source 快照原子替换已实现；知识版本指针/回滚未实现</td><td><span class="badge b-stub">Phase 2b-0</span></td><td>自动演化之前必须完成</td></tr>
+      <tr><td>Relation 安全收敛</td><td>189 legacy → 76 v1.2 consumable；244 个唯一 Relation 在 quarantine；悬空端点和坏证据均为 0</td><td><span class="badge b-done">结构安全</span></td><td>继续用人工抽检改进语义精度，不得以数量代替质量</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="next">
+  <div class="section-head"><div class="kicker">§14 / E2E Acceptance</div><div><h2>真实重编结果与尚未关闭的验收项</h2></div></div>
+  <div class="schema">npm run dev -- ingest mathtest-material/01-number-systems.md --recompile
+npm run dev -- ingest mathtest-material/02-spaces.md --recompile
+npm run dev -- ingest mathtest-material/03-sequences-limits.md --recompile
+npm run dev -- relations backfill source:01-number-systems-80440e2182e5653f --json
+npm run dev -- relations backfill source:02-spaces-33a33396a17d4175 --json
+npm run dev -- relations backfill source:03-sequences-limits-e7ea8bc17c2cc4ab --json</div>
+  <h3>执行结果</h3>
+  <p>v1.2 完整重编 run：01=<code>cbe59a0a-c740-4c8b-bd70-e61ce31abe1d</code>，02=<code>0e3b3093-f819-4989-835f-f43f1da0d91a</code>，03=<code>1c7f1cac-3461-4f46-ac6d-e3bc0f0484db</code>。最终 cross backfill run：01=<code>f856ccd7-381d-42b9-b165-0af345d83476</code>，02=<code>06a8cb99-b3bb-405d-8e33-e5649ede8a5c</code>，03=<code>74c1f631-a487-49ae-ba6a-c7d3c3f4243d</code>。</p>
+  <h3>九项验收结论</h3>
+  <ol>
+    <li><b>状态通过：</b>01、02、03 最终均为 COMPLETED；05、09、11 仍明确为 SOURCE_INGESTED。</li>
+    <li><b>账平通过：</b>01 propositions 162=159 mapped+3 skipped，Claim 150=149+1，Lint 149=134 canonical+15 quarantine；02 为 117=117、58=58、58=57+1；03 为 80=77+3、77=77、77=70+7。Relation draft 的 valid/skipped 与 canonical/quarantine 同样闭合。</li>
+    <li><b>引用通过：</b>261 Claim 与 76 Relation 的当前证据均可解析；Relation 悬空端点=0。目标 Source 重编造成的外来悬空边已有回归测试和真实修复。</li>
+    <li><b>边级结构门禁通过：</b>76/76 可消费 Relation 为 v1.2，conditionStatus 均非 UNVERIFIED；双端证据覆盖为硬门禁。</li>
+    <li><b>条件自动质量未通过：</b>人工复核否决全部 4 条 EQUIVALENT_UNDER，包括循环条件和“无”占位；当前 canonical EQUIVALENT_UNDER=0。</li>
+    <li><b>跨材料编排通过：</b>最终每篇明确报告 40 个召回候选；机器通过 4 条，人工保留 3 条 RELATED_TO、隔离 1 条错误 SUPPORTS，可区分“执行后无边”与“未执行”。</li>
+    <li><b>原子性部分通过：</b>发布前失败保留旧 publication、跨 Source 端点失效先隔离后删除已有真实/单元覆盖；发布后故障→RELATION_SCAN_PENDING 仍未做生产环境故障注入。</li>
+    <li><b>消费通过：</b>真实查询返回 15 Claims / 14 Relations，并展示全部 3 条 cross RELATED_TO；这些弱边的 <code>canSupportConclusion=false</code>。</li>
+    <li><b>质量抽检未完全通过：</b>跨边 4 抽 1 假阳性，EQUIVALENT_UNDER 4 抽 4 假阳性；人工隔离机制有效，但自动 Relation 语义精度尚未达到无人复核发布标准。</li>
+  </ol>
+  <div class="callout warn"><b>推进门槛</b> 不应立即批量编译 05/09/11。下一步优先解决重编非确定性 diff 门禁，以及 Relation 人工金标准/critic，尤其暂时禁止 EQUIVALENT_UNDER 自动晋级。TeX 文件已确认存在，但 Loader 产品边界仍按约定保持 Markdown-only。</div>
+</section>
 </main>
 
 <footer>
-  WGEMemory4LLM Architecture Baseline v1.2 · 2026-07-23<br>
-  v1.2 基于：audit_reliability_research.md（审计可信性研究）+ meta-eval 100 条校准 + Review v1.1 八个残余矛盾。
-  每个结论基于实读 src/ 代码 + 实跑 meta-eval 数据。引用具体行号。
+  WGEMemory4LLM Architecture Baseline v1.5 · 2026-07-23<br>
+  事实源：当前 src/ 与 scripts/、CLI status、publications/、runs/ 状态及自动化测试。本文明确区分 implemented、unit-tested、real-data-validated 三种成熟度，不以计划冒充现状。
 </footer>
 </div>
 </body>

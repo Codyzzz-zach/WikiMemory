@@ -1,0 +1,28 @@
+{
+  "verdict": "passed",
+  "dimensions": {
+    "support": {
+      "result": "pass",
+      "evidence": "\\mathbb{R} = \\mathbb{Q} \\cup \\{\\text{无理数}"
+    },
+    "addition": {
+      "result": "pass",
+      "evidence": "Claim 中没有额外信息"
+    },
+    "inference": {
+      "result": "pass",
+      "evidence": "无推断"
+    },
+    "limits": {
+      "result": "pass",
+      "evidence": "无适用条件或限定词"
+    },
+    "citation": {
+      "result": "pass",
+      "evidence": "Claim 正确对应原文 span"
+    }
+  },
+  "anchor": "\\mathbb{R} = \\mathbb{Q} \\cup \\{\\text{无理数}",
+  "failedDimensions": [],
+  "issues": []
+}

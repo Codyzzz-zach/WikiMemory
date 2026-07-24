@@ -1,0 +1,28 @@
+{
+  "verdict": "passed",
+  "dimensions": {
+    "support": {
+      "result": "pass",
+      "evidence": "任何 $n$ 次复系数多项式在 $\\mathbb{C}$ 中恰好有 $n$ 个根（计重数）。"
+    },
+    "addition": {
+      "result": "pass",
+      "evidence": "无添加内容。"
+    },
+    "inference": {
+      "result": "pass",
+      "evidence": "原文是直接陈述，无推断。"
+    },
+    "limits": {
+      "result": "pass",
+      "evidence": "原文无适用条件或例外，Claim 也无条件。"
+    },
+    "citation": {
+      "result": "pass",
+      "evidence": "Claim 内容完全对应 [01-number-systems#block-88] 处原文。"
+    }
+  },
+  "anchor": "任何 $n$ 次复系数多项式在 $\\mathbb{C}$ 中恰好有 $n$ 个根（计重数）。",
+  "failedDimensions": [],
+  "issues": []
+}

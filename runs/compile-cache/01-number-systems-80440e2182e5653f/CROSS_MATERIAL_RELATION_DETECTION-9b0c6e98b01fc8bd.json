@@ -1,0 +1,6 @@
+{
+  "kind": "VALID",
+  "content": "{\n  \"relations\": [\n    {\n      \"fromClaimIndex\": 21,\n      \"toClaimIndex\": 163,\n      \"type\": \"EQUIVALENT_UNDER\",\n      \"conditions\": [\"两个陈述都定义了完备性：每个Cauchy列都收敛。\"],\n      \"confidence\": 1.0\n    },\n    {\n      \"fromClaimIndex\": 56,\n      \"toClaimIndex\": 163,\n      \"type\": \"SUPPORTS\",\n      \"conditions\": [\"实数集R具有Cauchy列必收敛的性质，符合完备性定义。\"],\n      \"confidence\": 0.9\n    },\n    {\n      \"fromClaimIndex\": 46,\n      \"toClaimIndex\": 164,\n      \"type\": \"SUPPORTS\",\n      \"conditions\": [\"有理数集不完备，正如连续函数空间在L1范数下不完备。\"],\n      \"confidence\": 0.7\n    },\n    {\n      \"fromClaimIndex\": 83,\n      \"toClaimIndex\": 162,\n      \"type\": \"EQUIVALENT_UNDER\",\n      \"conditions\": [\"两者都陈述了实数集R的完备性。\"],\n      \"confidence\": 0.9\n    },\n    {\n      \"fromClaimIndex\": 97,\n      \"toClaimIndex\": 82,\n      \"type\": \"RELATED_TO\",\n      \"conditions\": [\"两者都涉及有理数或实数在数轴上的分布性质。\"],\n      \"confidence\": 0.6\n    }\n  ]\n}",
+  "model": "deepseek-v4-flash",
+  "outputHash": "9884e3b21106558b"
+}

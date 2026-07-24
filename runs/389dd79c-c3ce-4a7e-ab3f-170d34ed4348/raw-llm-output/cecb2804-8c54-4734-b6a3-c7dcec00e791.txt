@@ -1,0 +1,28 @@
+{
+  "verdict": "passed",
+  "dimensions": {
+    "support": {
+      "result": "pass",
+      "evidence": "加法封闭"
+    },
+    "addition": {
+      "result": "pass",
+      "evidence": "无额外信息"
+    },
+    "inference": {
+      "result": "pass",
+      "evidence": "原文直接陈述，无推断"
+    },
+    "limits": {
+      "result": "pass",
+      "evidence": "无适用条件或例外"
+    },
+    "citation": {
+      "result": "pass",
+      "evidence": "引用准确对应"
+    }
+  },
+  "anchor": "加法封闭",
+  "failedDimensions": [],
+  "issues": []
+}

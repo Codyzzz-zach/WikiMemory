@@ -7,8 +7,8 @@
  */
 
 import type { AppConfig } from "../config/types.js";
-import type { ChatOptions, ChatResult } from "./types.js";
 import { DeepSeekClient } from "./client.js";
+import type { ChatOptions, ChatResult } from "./types.js";
 
 /** LLM 调用接口——所有 LLM 交互的统一入口 */
 export interface LLMProvider {

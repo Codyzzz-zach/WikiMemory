@@ -1,0 +1,28 @@
+{
+  "verdict": "passed",
+  "dimensions": {
+    "support": {
+      "result": "pass",
+      "evidence": "代数封闭 | ❌"
+    },
+    "addition": {
+      "result": "pass",
+      "evidence": "原文明确表示非代数封闭，Claim无添加信息"
+    },
+    "inference": {
+      "result": "pass",
+      "evidence": "此为直接陈述，非推断"
+    },
+    "limits": {
+      "result": "pass",
+      "evidence": "无省略条件或限定词"
+    },
+    "citation": {
+      "result": "pass",
+      "evidence": "Claim与SourceSpan对应，无错位"
+    }
+  },
+  "anchor": "代数封闭 | ❌",
+  "failedDimensions": [],
+  "issues": []
+}

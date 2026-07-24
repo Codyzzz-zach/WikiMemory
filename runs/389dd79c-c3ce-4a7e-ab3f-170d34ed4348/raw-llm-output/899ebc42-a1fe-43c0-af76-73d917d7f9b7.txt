@@ -1,0 +1,28 @@
+{
+  "verdict": "passed",
+  "dimensions": {
+    "support": {
+      "result": "pass",
+      "evidence": "它直接编码了自然数的构造方式"
+    },
+    "addition": {
+      "result": "pass",
+      "evidence": "无额外信息"
+    },
+    "inference": {
+      "result": "pass",
+      "evidence": "原文为陈述句，Claim 无推断标记"
+    },
+    "limits": {
+      "result": "pass",
+      "evidence": "原文无额外限定条件，Claim 未遗漏"
+    },
+    "citation": {
+      "result": "pass",
+      "evidence": "Claim 与引用的原文证据段直接匹配"
+    }
+  },
+  "anchor": "它直接编码了自然数的构造方式",
+  "failedDimensions": [],
+  "issues": []
+}

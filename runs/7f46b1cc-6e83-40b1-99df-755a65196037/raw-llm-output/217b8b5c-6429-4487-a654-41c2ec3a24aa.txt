@@ -1,0 +1,39 @@
+{
+  "relations": [
+    {
+      "fromClaimIndex": 21,
+      "toClaimIndex": 163,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["两个陈述都定义了完备性：每个Cauchy列都收敛。"],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 56,
+      "toClaimIndex": 163,
+      "type": "SUPPORTS",
+      "conditions": ["实数集R具有Cauchy列必收敛的性质，符合完备性定义。"],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 46,
+      "toClaimIndex": 164,
+      "type": "SUPPORTS",
+      "conditions": ["有理数集不完备，正如连续函数空间在L1范数下不完备。"],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 83,
+      "toClaimIndex": 162,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["两者都陈述了实数集R的完备性。"],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 97,
+      "toClaimIndex": 82,
+      "type": "RELATED_TO",
+      "conditions": ["两者都涉及有理数或实数在数轴上的分布性质。"],
+      "confidence": 0.6
+    }
+  ]
+}

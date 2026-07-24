@@ -1,0 +1,28 @@
+{
+  "verdict": "passed",
+  "dimensions": {
+    "support": {
+      "result": "pass",
+      "evidence": "$\mathbb{C}$ 是**代数封闭的**——数系扩张至此终结"
+    },
+    "addition": {
+      "result": "pass",
+      "evidence": "无额外信息"
+    },
+    "inference": {
+      "result": "pass",
+      "evidence": "无推断"
+    },
+    "limits": {
+      "result": "pass",
+      "evidence": "无适用条件"
+    },
+    "citation": {
+      "result": "pass",
+      "evidence": "Claim 引用的原始行号与 SourceSpan 一致"
+    }
+  },
+  "anchor": "$\mathbb{C}$ 是**代数封闭的**——数系扩张至此终结",
+  "failedDimensions": [],
+  "issues": []
+}

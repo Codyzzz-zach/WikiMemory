@@ -1,0 +1,316 @@
+{
+  "concepts": [
+    {
+      "name": "实数集",
+      "aliases": ["ℝ", "R", "实数集", "实数"],
+      "boundary": "所有实数的集合",
+      "domain": "集合论、数学分析"
+    },
+    {
+      "name": "加法",
+      "aliases": ["加法", "+"],
+      "boundary": "二元运算，将两个数相加",
+      "domain": "算术、抽象代数"
+    },
+    {
+      "name": "乘法",
+      "aliases": ["乘法", "×"],
+      "boundary": "二元运算，将两个数相乘",
+      "domain": "算术、抽象代数"
+    },
+    {
+      "name": "减法",
+      "aliases": ["减法", "-"],
+      "boundary": "二元运算，从一个数减去另一个数",
+      "domain": "算术"
+    },
+    {
+      "name": "除法",
+      "aliases": ["除法", "÷"],
+      "boundary": "二元运算，将一个数除以另一个非零数",
+      "domain": "算术"
+    },
+    {
+      "name": "封闭性",
+      "aliases": ["封闭", "closed"],
+      "boundary": "集合在某种运算下运算结果仍属于该集合的性质",
+      "domain": "抽象代数"
+    },
+    {
+      "name": "代数封闭",
+      "aliases": ["代数封闭", "algebraically closed"],
+      "boundary": "一个域中任何非常数多项式都有根的性质",
+      "domain": "域论"
+    },
+    {
+      "name": "域",
+      "aliases": ["域", "field"],
+      "boundary": "具有加法、乘法两种运算，且满足域公理的代数结构",
+      "domain": "抽象代数"
+    },
+    {
+      "name": "环",
+      "aliases": ["环", "ring"],
+      "boundary": "具有加法、乘法两种运算，且满足环公理的代数结构",
+      "domain": "抽象代数"
+    },
+    {
+      "name": "交换环",
+      "aliases": ["交换环", "commutative ring"],
+      "boundary": "乘法满足交换律的环",
+      "domain": "抽象代数"
+    },
+    {
+      "name": "整环",
+      "aliases": ["整环", "integral domain"],
+      "boundary": "无零因子的交换环",
+      "domain": "抽象代数"
+    },
+    {
+      "name": "有理数集",
+      "aliases": ["Q", "ℚ", "有理数", "有理数集"],
+      "boundary": "所有有理数的集合",
+      "domain": "数论、分析"
+    },
+    {
+      "name": "整数集",
+      "aliases": ["Z", "ℤ", "整数", "整数集"],
+      "boundary": "所有整数的集合",
+      "domain": "数论"
+    },
+    {
+      "name": "自然数集",
+      "aliases": ["N", "ℕ", "自然数", "自然数集", "自然数集N"],
+      "boundary": "所有自然数的集合（通常含0）",
+      "domain": "数论、集合论"
+    },
+    {
+      "name": "复数集",
+      "aliases": ["C", "ℂ", "复数", "复数集"],
+      "boundary": "所有复数的集合",
+      "domain": "复分析、代数"
+    },
+    {
+      "name": "数轴",
+      "aliases": ["数轴"],
+      "boundary": "表示实数的直线",
+      "domain": "几何、分析"
+    },
+    {
+      "name": "稠密",
+      "aliases": ["稠密", "处处稠密"],
+      "boundary": "集合在拓扑空间中任意开集内都有其元素的性质",
+      "domain": "拓扑学、分析"
+    },
+    {
+      "name": "完备性",
+      "aliases": ["完备", "完备性"],
+      "boundary": "度量空间中所有柯西列都收敛的性质",
+      "domain": "分析"
+    },
+    {
+      "name": "柯西列",
+      "aliases": ["Cauchy列"],
+      "boundary": "项之间距离趋于零的数列",
+      "domain": "分析"
+    },
+    {
+      "name": "可数",
+      "aliases": ["可数", "可数性"],
+      "boundary": "集合与自然数集之间存在双射的性质",
+      "domain": "集合论"
+    },
+    {
+      "name": "不可数",
+      "aliases": ["不可数"],
+      "boundary": "集合不是可数的",
+      "domain": "集合论"
+    },
+    {
+      "name": "良序性",
+      "aliases": ["良序性"],
+      "boundary": "任何非空子集有最小元",
+      "domain": "序理论"
+    },
+    {
+      "name": "加法逆元",
+      "aliases": ["加法逆元"],
+      "boundary": "对于元素a，存在b使得a+b=0",
+      "domain": "抽象代数"
+    },
+    {
+      "name": "乘法逆元",
+      "aliases": ["乘法逆元"],
+      "boundary": "对于非零元素a，存在b使得a×b=1",
+      "domain": "抽象代数"
+    },
+    {
+      "name": "单位元",
+      "aliases": ["单位元", "乘法单位元"],
+      "boundary": "运算中保持元素不变的元（加法为0，乘法为1）",
+      "domain": "抽象代数"
+    },
+    {
+      "name": "等价类",
+      "aliases": ["等价类"],
+      "boundary": "等价关系下的等价类",
+      "domain": "集合论"
+    },
+    {
+      "name": "数学归纳法",
+      "aliases": ["数学归纳法", "归纳法"],
+      "boundary": "一种证明方法：对自然数命题，若对0成立且能传递则对所有自然数成立",
+      "domain": "数学基础"
+    },
+    {
+      "name": "集合论定义",
+      "aliases": ["集合论定义"],
+      "boundary": "用集合论语言定义数学对象",
+      "domain": "集合论"
+    },
+    {
+      "name": "后继操作",
+      "aliases": ["后继", "后继操作", "S(n)"],
+      "boundary": "将自然数n映射到n+1的操作",
+      "domain": "数论"
+    },
+    {
+      "name": "递归结构",
+      "aliases": ["递归结构"],
+      "boundary": "以递归方式定义的结构",
+      "domain": "计算机科学、数学"
+    },
+    {
+      "name": "实部",
+      "aliases": ["实部", "Re(z)"],
+      "boundary": "复数z=a+bi中的a",
+      "domain": "复分析"
+    },
+    {
+      "name": "虚部",
+      "aliases": ["虚部", "Im(z)"],
+      "boundary": "复数z=a+bi中的b",
+      "domain": "复分析"
+    },
+    {
+      "name": "多项式",
+      "aliases": ["多项式"],
+      "boundary": "形如a_n x^n+...+a_0的表达式",
+      "domain": "代数"
+    },
+    {
+      "name": "根",
+      "aliases": ["根", "根（计重数）"],
+      "boundary": "使多项式取零的值",
+      "domain": "代数"
+    },
+    {
+      "name": "代数基本定理",
+      "aliases": ["代数基本定理"],
+      "boundary": "任何n次复系数多项式在ℂ中恰好有n个根",
+      "domain": "复分析、代数"
+    },
+    {
+      "name": "欧拉公式",
+      "aliases": ["欧拉公式"],
+      "boundary": "e^{iπ}+1=0",
+      "domain": "复分析"
+    },
+    {
+      "name": "数学常数",
+      "aliases": ["数学常数", "e", "i", "π", "1", "0"],
+      "boundary": "数学中固定不变的数",
+      "domain": "数学"
+    },
+    {
+      "name": "Cantor枚举法",
+      "aliases": ["Cantor枚举法"],
+      "boundary": "一种枚举有理数的方法",
+      "domain": "集合论"
+    },
+    {
+      "name": "对角线论证",
+      "aliases": ["对角线论证", "Cantor对角论证"],
+      "boundary": "证明实数不可数的一种方法",
+      "domain": "集合论"
+    },
+    {
+      "name": "Dedekind分割",
+      "aliases": ["Dedekind分割", "Dedekind的实数定义"],
+      "boundary": "用有理数的分割定义实数",
+      "domain": "数学分析"
+    },
+    {
+      "name": "数系扩张",
+      "aliases": ["数系扩张", "扩张"],
+      "boundary": "从自然数逐步扩充到复数的过程",
+      "domain": "数论、数学史"
+    },
+    {
+      "name": "有序性",
+      "aliases": ["有序性"],
+      "boundary": "集合上具有全序关系",
+      "domain": "序理论"
+    },
+    {
+      "name": "数学危机",
+      "aliases": ["数学危机"],
+      "boundary": "数学发展中的重大困难时期",
+      "domain": "数学史"
+    },
+    {
+      "name": "负数",
+      "aliases": ["负数"],
+      "boundary": "小于0的数",
+      "domain": "数论"
+    },
+    {
+      "name": "分数",
+      "aliases": ["分数"],
+      "boundary": "形如a/b的数，b≠0",
+      "domain": "算术"
+    },
+    {
+      "name": "无理数",
+      "aliases": ["无理数"],
+      "boundary": "不是有理数的实数",
+      "domain": "数论"
+    },
+    {
+      "name": "虚数单位",
+      "aliases": ["i"],
+      "boundary": "满足i²=-1的数",
+      "domain": "复分析"
+    },
+    {
+      "name": "方程",
+      "aliases": ["方程"],
+      "boundary": "含有未知数的等式",
+      "domain": "代数"
+    },
+    {
+      "name": "上确界",
+      "aliases": ["上确界"],
+      "boundary": "最小上界",
+      "domain": "分析"
+    },
+    {
+      "name": "极限",
+      "aliases": ["极限"],
+      "boundary": "数列或函数趋近的值",
+      "domain": "分析"
+    },
+    {
+      "name": "连通性",
+      "aliases": ["连通性"],
+      "boundary": "拓扑空间不能分割为两个非空开集的性质",
+      "domain": "拓扑学"
+    },
+    {
+      "name": "公理化集合论",
+      "aliases": ["公理化集合论"],
+      "boundary": "用公理系统化定义的集合论",
+      "domain": "数学基础"
+    }
+  ]
+}

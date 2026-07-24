@@ -12,9 +12,10 @@
  * 修 GPT 审计断点 10：Graph 从 Canonical Claim/Concept/Relation 构建，不从 Wiki 文本反向抽取。
  */
 
+import { getConsumptionRule } from "../linter/index.js";
+import { RELATION_AUDIT_VERSION } from "../prompts/index.js";
 import type { Claim, Concept, Relation } from "../types/index.js";
 import type { RelationType } from "../types/index.js";
-import { getConsumptionRule } from "../linter/index.js";
 
 // ─── RelationType 方向语义（修断点 2）──────────────────────────
 
@@ -102,17 +103,24 @@ export interface GraphData {
  * @param concepts - 所有 Concept
  * @param relations - 所有 Relation
  */
-export function buildGraph(
-	claims: Claim[],
-	concepts: Concept[],
-	relations: Relation[],
-): GraphData {
+export function buildGraph(claims: Claim[], concepts: Concept[], relations: Relation[]): GraphData {
 	// 过滤：只保留 Canonical + Active
 	const activeClaims = claims.filter(
 		(c) => c.publicationState === "CANONICAL" && c.lifecycle === "ACTIVE",
 	);
+	const activeNodeIds = new Set([
+		...activeClaims.map((claim) => claim.id),
+		...concepts.map((concept) => concept.id),
+	]);
 	const activeRelations = relations.filter(
-		(r) => r.publicationState === "CANONICAL" && r.lifecycle === "ACTIVE",
+		(r) =>
+			r.publicationState === "CANONICAL" &&
+			r.lifecycle === "ACTIVE" &&
+			r.validity !== "UNRESOLVED" &&
+			r.conditionStatus !== "UNVERIFIED" &&
+			r.relationAuditVersion === RELATION_AUDIT_VERSION &&
+			activeNodeIds.has(r.from as string) &&
+			activeNodeIds.has(r.to as string),
 	);
 
 	// 构建双向邻接 Map（导航用——修断点 2：双向是导航，不是推理）
@@ -179,11 +187,7 @@ export function walkGraph(
 		const claim = claimMap.get(seedId);
 		if (!claim) continue;
 
-		const rule = getConsumptionRule(
-			claim.publicationState,
-			claim.lifecycle,
-			claim.validity,
-		);
+		const rule = getConsumptionRule(claim.publicationState, claim.lifecycle, claim.validity);
 
 		if (!rule.allowRetrieval) continue;
 

@@ -1,0 +1,33 @@
+{
+  "verdict": "failed",
+  "dimensions": {
+    "support": {
+      "result": "fail",
+      "evidence": "原文证据仅包含'可数 | ✅'，没有说明有理数集Q是可数的具体论证或断言，因此不支持Claim。"
+    },
+    "addition": {
+      "result": "fail",
+      "evidence": "Claim中'有理数集Q是可数的'是一个完整的断言，但原文证据中并未出现'有理数集'或'Q'等词语，是额外添加的信息。"
+    },
+    "inference": {
+      "result": "fail",
+      "evidence": "原文没有提供任何可推导的基础，Claim中的断言无法通过原文推断得出。"
+    },
+    "limits": {
+      "result": "pass",
+      "evidence": "原文证据无适用条件或限定词，Claim也未添加额外限制，故此项通过。"
+    },
+    "citation": {
+      "result": "fail",
+      "evidence": "Claim引用的span [01-number-systems#block-97] 中内容仅为'可数 | ✅'，与有理数集Q的可数性无关，引用不准确。"
+    }
+  },
+  "anchor": "可数",
+  "failedDimensions": ["support", "addition", "inference", "citation"],
+  "issues": [
+    "原文证据未提及有理数集Q，不支持Claim的断言。",
+    "Claim添加了原文中没有的信息（有理数集Q）。",
+    "原文无法推断出有理数集Q是可数的。",
+    "Claim引用的span内容与Claim不匹配，引用错位。"
+  ]
+}

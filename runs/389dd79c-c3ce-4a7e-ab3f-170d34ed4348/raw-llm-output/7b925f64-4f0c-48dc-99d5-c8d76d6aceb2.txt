@@ -1,0 +1,418 @@
+{
+  "concepts": [
+    {
+      "name": "自然数集",
+      "aliases": ["N", "自然数"],
+      "boundary": "自然数集N，通常包含0和所有正整数。",
+      "domain": "数论/基础数学"
+    },
+    {
+      "name": "乘法单位元",
+      "aliases": ["乘法单位元1", "1"],
+      "boundary": "在自然数集N中，乘法单位元是1。",
+      "domain": "抽象代数"
+    },
+    {
+      "name": "自然数对减法的封闭性",
+      "aliases": ["减法不封闭"],
+      "boundary": "自然数集对减法不封闭。",
+      "domain": "算术"
+    },
+    {
+      "name": "交换幺半群",
+      "aliases": [],
+      "boundary": "自然数集关于加法和乘法是交换幺半群。",
+      "domain": "抽象代数"
+    },
+    {
+      "name": "复数集",
+      "aliases": ["C", "复数"],
+      "boundary": "复数集C。",
+      "domain": "复分析"
+    },
+    {
+      "name": "代数封闭性",
+      "aliases": ["代数封闭"],
+      "boundary": "复数集是代数封闭的。",
+      "domain": "抽象代数/域论"
+    },
+    {
+      "name": "有理数集",
+      "aliases": ["Q", "有理数"],
+      "boundary": "有理数集Q，所有分数a/b（整数a,b，b≠0）。",
+      "domain": "数论"
+    },
+    {
+      "name": "Dedekind分割",
+      "aliases": ["Dedekind分割"],
+      "boundary": "有理数集Q的一个划分(A,B)，满足三个条件。",
+      "domain": "实数构造"
+    },
+    {
+      "name": "Dedekind分割的直观",
+      "aliases": ["刀口位置"],
+      "boundary": "用刀在有理数轴切下，刀口位置就是一个实数。",
+      "domain": "实数构造"
+    },
+    {
+      "name": "三次方程",
+      "aliases": ["方程 x^3 = 15x + 4"],
+      "boundary": "16世纪意大利数学家发现的三次方程。",
+      "domain": "方程论/历史"
+    },
+    {
+      "name": "sqrt(-121)",
+      "aliases": ["sqrt(-121)"],
+      "boundary": "求解过程中出现的虚数。",
+      "domain": "复数"
+    },
+    {
+      "name": "域",
+      "aliases": [],
+      "boundary": "有理数集关于加法和乘法构成域。",
+      "domain": "抽象代数"
+    },
+    {
+      "name": "整数集",
+      "aliases": ["Z", "整数"],
+      "boundary": "整数集Z。",
+      "domain": "数论"
+    },
+    {
+      "name": "乘法的封闭性",
+      "aliases": ["在乘法下封闭"],
+      "boundary": "整数集在乘法下封闭。",
+      "domain": "算术"
+    },
+    {
+      "name": "有序性",
+      "aliases": ["有序的"],
+      "boundary": "有理数集是有序的。",
+      "domain": "序理论"
+    },
+    {
+      "name": "实数",
+      "aliases": ["实数"],
+      "boundary": "方程x=4是实数。",
+      "domain": "实数"
+    },
+    {
+      "name": "数系的扩张失去性质",
+      "aliases": ["失去有序性"],
+      "boundary": "扩张到复数失去有序性。",
+      "domain": "数系"
+    },
+    {
+      "name": "可数性",
+      "aliases": ["可数的"],
+      "boundary": "整数集是可数的。",
+      "domain": "集合论"
+    },
+    {
+      "name": "乘法单位元1",
+      "aliases": [],
+      "boundary": "整数集Z有乘法单位元1。",
+      "domain": "抽象代数"
+    },
+    {
+      "name": "公理基础",
+      "aliases": ["严格的公理基础"],
+      "boundary": "由Frege、Peano、Dedekind建立。",
+      "domain": "数学基础"
+    },
+    {
+      "name": "复数集关于乘法的封闭性",
+      "aliases": ["乘法封闭"],
+      "boundary": "复数集C关于乘法封闭。",
+      "domain": "复分析"
+    },
+    {
+      "name": "自然数对加法的封闭性",
+      "aliases": ["加法封闭"],
+      "boundary": "自然数对加法封闭。",
+      "domain": "算术"
+    },
+    {
+      "name": "Cauchy列",
+      "aliases": ["Cauchy列"],
+      "boundary": "每一个Cauchy列都在R中有极限。",
+      "domain": "实数分析"
+    },
+    {
+      "name": "数学归纳法原理",
+      "aliases": ["公理5"],
+      "boundary": "若性质对0成立，且由对n成立可推出对S(n)成立，则对一切自然数成立。",
+      "domain": "数学基础"
+    },
+    {
+      "name": "稠密性",
+      "aliases": ["在数轴上稠密"],
+      "boundary": "有理数集在数轴上稠密但可数。",
+      "domain": "实数分析"
+    },
+    {
+      "name": "欧拉公式",
+      "aliases": ["欧拉公式"],
+      "boundary": "揭示复指数与三角函数的统一。",
+      "domain": "复分析"
+    },
+    {
+      "name": "Cantor枚举法",
+      "aliases": ["Cantor 枚举法"],
+      "boundary": "给出有理数的一个列举。",
+      "domain": "集合论"
+    },
+    {
+      "name": "有序对等价关系",
+      "aliases": ["(a,b) ~ (c,d) 当且仅当 a+d = b+c"],
+      "boundary": "整数作为自然数有序对的等价类。",
+      "domain": "数系构造"
+    },
+    {
+      "name": "实数集关于加法的封闭性",
+      "aliases": ["加法封闭"],
+      "boundary": "实数集R关于加法封闭。",
+      "domain": "实数分析"
+    },
+    {
+      "name": "R不可数",
+      "aliases": ["不可数"],
+      "boundary": "Cantor证明：R不可数。",
+      "domain": "集合论"
+    },
+    {
+      "name": "自然数集关于乘法的封闭性",
+      "aliases": ["乘法封闭"],
+      "boundary": "自然数集N关于乘法封闭。",
+      "domain": "算术"
+    },
+    {
+      "name": "自然数的根本缺陷",
+      "aliases": ["减法不封闭"],
+      "boundary": "自然数的根本缺陷是减法不封闭。",
+      "domain": "算术"
+    },
+    {
+      "name": "2 = {0,1}",
+      "aliases": [],
+      "boundary": "von Neumann构造中自然数定义。",
+      "domain": "集合论"
+    },
+    {
+      "name": "代表-3的有序对",
+      "aliases": ["(0,3)、(1,4)、(2,5)都代表-3"],
+      "boundary": "整数作为等价类的例子。",
+      "domain": "数系构造"
+    },
+    {
+      "name": "自然数集的完备性",
+      "aliases": [],
+      "boundary": "自然数集N的完备性标记为—。",
+      "domain": "实数分析"
+    },
+    {
+      "name": "平方根2",
+      "aliases": ["平方根2"],
+      "boundary": "平方根2不是有理数。",
+      "domain": "数论"
+    },
+    {
+      "name": "自然数集的有序性",
+      "aliases": ["有序的"],
+      "boundary": "自然数集N是有序的。",
+      "domain": "序理论"
+    },
+    {
+      "name": "域的性质",
+      "aliases": ["加减乘除全部封闭"],
+      "boundary": "有理数集Q是一个域。",
+      "domain": "抽象代数"
+    },
+    {
+      "name": "有理数集的定义",
+      "aliases": ["分数 a/b"],
+      "boundary": "有理数集Q定义为所有分数a/b的集合。",
+      "domain": "数论"
+    },
+    {
+      "name": "自然数的递归结构",
+      "aliases": ["后继操作"],
+      "boundary": "从零出发，反复应用后继操作。",
+      "domain": "数学基础"
+    },
+    {
+      "name": "极限导致无理数",
+      "aliases": ["无理数的引入"],
+      "boundary": "极限导致无理数的引入。",
+      "domain": "实数分析"
+    },
+    {
+      "name": "Cantor对角线法",
+      "aliases": ["偶数对角线"],
+      "boundary": "在偶数对角线上，分子从d到1递减，分母相应递增。",
+      "domain": "集合论"
+    },
+    {
+      "name": "虚部",
+      "aliases": ["Im(z)"],
+      "boundary": "复数的虚部Im(z)=b。",
+      "domain": "复分析"
+    },
+    {
+      "name": "19世纪数学基础追问",
+      "aliases": ["什么是数"],
+      "boundary": "直到19世纪末，数学家开始追问什么是数。",
+      "domain": "数学史"
+    },
+    {
+      "name": "公理3",
+      "aliases": [],
+      "boundary": "0不是任何自然数的后继。",
+      "domain": "数学基础"
+    },
+    {
+      "name": "von Neumann构造",
+      "aliases": ["集合论构造"],
+      "boundary": "每个自然数等于它之前所有自然数的集合。",
+      "domain": "集合论"
+    },
+    {
+      "name": "自然数集的幺半群结构",
+      "aliases": ["幺半群"],
+      "boundary": "自然数集N的结构是幺半群。",
+      "domain": "抽象代数"
+    },
+    {
+      "name": "0 = ∅",
+      "aliases": [],
+      "boundary": "von Neumann构造中0定义为空集。",
+      "domain": "集合论"
+    },
+    {
+      "name": "实数集的有序性",
+      "aliases": ["有序的"],
+      "boundary": "实数集R是有序的。",
+      "domain": "序理论"
+    },
+    {
+      "name": "欧拉公式 e^(iπ) + 1 = 0",
+      "aliases": ["五个常数"],
+      "boundary": "连接e, i, π, 1, 0。",
+      "domain": "复分析"
+    },
+    {
+      "name": "有理数集四则运算封闭",
+      "aliases": ["加减乘除封闭"],
+      "boundary": "在有理数集Q中，加、减、乘、除（除数非零）都封闭。",
+      "domain": "算术"
+    },
+    {
+      "name": "整数集的完备性",
+      "aliases": [],
+      "boundary": "整数集Z的完备性标记为—。",
+      "domain": "实数分析"
+    },
+    {
+      "name": "乘法逆元",
+      "aliases": ["没有乘法逆元"],
+      "boundary": "自然数集N没有乘法逆元。",
+      "domain": "抽象代数"
+    },
+    {
+      "name": "整环",
+      "aliases": [],
+      "boundary": "整数集Z的代数身份是整环。",
+      "domain": "抽象代数"
+    },
+    {
+      "name": "1 = {0}",
+      "aliases": [],
+      "boundary": "von Neumann构造中1定义为{0}。",
+      "domain": "集合论"
+    },
+    {
+      "name": "欧拉公式连接三种运算",
+      "aliases": ["加法、乘法、指数"],
+      "boundary": "欧拉公式连接加法、乘法、指数。",
+      "domain": "复分析"
+    },
+    {
+      "name": "方程导致复数的引入",
+      "aliases": ["复数的引入"],
+      "boundary": "方程导致复数的引入。",
+      "domain": "复分析"
+    },
+    {
+      "name": "Cantor蛇形对角线",
+      "aliases": ["蛇形对角线"],
+      "boundary": "从自然数到正有理数的双射。",
+      "domain": "集合论"
+    },
+    {
+      "name": "自然数集的可数性",
+      "aliases": ["可数的"],
+      "boundary": "自然数集N是可数的。",
+      "domain": "集合论"
+    },
+    {
+      "name": "n < m 等价于 n ∈ m",
+      "aliases": [],
+      "boundary": "von Neumann构造中序关系的定义。",
+      "domain": "集合论"
+    },
+    {
+      "name": "整数集是交换环",
+      "aliases": ["交换环"],
+      "boundary": "整数集Z是一个交换环。",
+      "domain": "抽象代数"
+    },
+    {
+      "name": "自然数集在乘法下封闭",
+      "aliases": ["乘法封闭"],
+      "boundary": "自然数集N在乘法下封闭。",
+      "domain": "算术"
+    },
+    {
+      "name": "自然数的历史起源",
+      "aliases": ["刻痕计数、结绳记事"],
+      "boundary": "自然数是最古老的概念。",
+      "domain": "数学史"
+    },
+    {
+      "name": "有理数集关于加法的封闭性",
+      "aliases": ["加法封闭"],
+      "boundary": "有理数集Q关于加法封闭。",
+      "domain": "算术"
+    },
+    {
+      "name": "无理数的发现引发第一次数学危机",
+      "aliases": ["第一次数学危机"],
+      "boundary": "有理数不能覆盖数轴上所有的点。",
+      "domain": "数学史"
+    },
+    {
+      "name": "加法逆元",
+      "aliases": ["没有加法逆元"],
+      "boundary": "自然数集N没有加法逆元。",
+      "domain": "抽象代数"
+    },
+    {
+      "name": "刀口落在有理数上",
+      "aliases": ["对应有理数"],
+      "boundary": "Dedekind分割中刀口落在有理数上对应有理数。",
+      "domain": "实数构造"
+    },
+    {
+      "name": "公理4",
+      "aliases": [],
+      "boundary": "若S(m)=S(n)，则m=n（后继函数是单射）。",
+      "domain": "数学基础"
+    },
+    {
+      "name": "自然数集关于加法的封闭性",
+      "aliases": ["加法封闭"],
+      "boundary": "自然数集N关于加法封闭。",
+      "domain": "算术"
+    }
+  ]
+}

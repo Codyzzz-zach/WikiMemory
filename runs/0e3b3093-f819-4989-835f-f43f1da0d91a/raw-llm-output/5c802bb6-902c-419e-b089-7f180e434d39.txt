@@ -1,0 +1,94 @@
+{
+  "propositions": [
+    {
+      "text": "从教室里的三维直觉出发，逐步抽象到无限维量子态空间——'空间'这个概念是数学从具体走向抽象的典范。每一层抽象丢掉一些结构，也获得更广的适用范围。",
+      "exactQuote": "从教室里的三维直觉出发，逐步抽象到无限维量子态空间——'空间'这个概念是数学从具体走向抽象的典范。每一层抽象丢掉一些结构，也获得更广的适用范围。",
+      "blockId": "02-spaces#block-1"
+    },
+    {
+      "text": "在数学中，'空间' = 一个集合 + 附加结构。",
+      "exactQuote": "在数学中，'空间' = **一个集合 + 附加结构**。",
+      "blockId": "02-spaces#block-4"
+    },
+    {
+      "text": "不同的结构定义了不同的空间类型。",
+      "exactQuote": "不同的结构定义了不同的空间类型。",
+      "blockId": "02-spaces#block-4"
+    },
+    {
+      "text": "从裸集合出发，每一步添加结构（距离、线性、开集、内积）创造出不同品种的空间。",
+      "exactQuote": "从裸集合出发，每一步添加结构（距离、线性、开集、内积）创造出不同品种的空间。",
+      "blockId": "02-spaces#block-6"
+    },
+    {
+      "text": "这个层级关系是贯穿全章的地图。",
+      "exactQuote": "这个层级关系是贯穿全章的地图。",
+      "blockId": "02-spaces#block-6"
+    },
+    {
+      "text": "这是我们最熟悉的空间——我们生活在其中的三维空间 ℝ³。",
+      "exactQuote": "这是我们最熟悉的空间——我们生活在其中的三维空间 $\\mathbb{R}^3$。",
+      "blockId": "02-spaces#block-11"
+    },
+    {
+      "text": "ℝⁿ = {(x₁, x₂, …, xₙ) | xᵢ ∈ ℝ}。",
+      "exactQuote": "$$\n\\mathbb{R}^n = \\{(x_1, x_2, \\ldots, x_n) \\mid x_i \\in \\mathbb{R}\\}\n$$",
+      "blockId": "02-spaces#block-12"
+    },
+    {
+      "text": "欧几里得结构 = 线性结构 + 内积。",
+      "exactQuote": "**欧几里得结构 = 线性结构 + 内积**：",
+      "blockId": "02-spaces#block-13"
+    },
+    {
+      "text": "向量加法：(xᵢ) + (yᵢ) = (xᵢ + yᵢ)。",
+      "exactQuote": "- **向量加法**：$(x_i) + (y_i) = (x_i + y_i)$",
+      "blockId": "02-spaces#block-14"
+    },
+    {
+      "text": "标量乘法：c · (xᵢ) = (c xᵢ)。",
+      "exactQuote": "- **标量乘法**：$c \\cdot (x_i) = (c x_i)$",
+      "blockId": "02-spaces#block-14"
+    },
+    {
+      "text": "内积（点积）：⟨x, y⟩ = ∑_{i=1}^n x_i y_i。",
+      "exactQuote": "- **内积（点积）**：$\\langle x, y \\rangle = \\sum_{i=1}^n x_i y_i$",
+      "blockId": "02-spaces#block-14"
+    },
+    {
+      "text": "欧氏距离：d(x,y) = √∑(xᵢ - yᵢ)²。",
+      "exactQuote": "- **欧氏距离**：$d(x,y) = \\sqrt{\\sum (x_i - y_i)^2}$",
+      "blockId": "02-spaces#block-14"
+    },
+    {
+      "text": "欧氏范数：‖x‖ = √⟨x, x⟩。",
+      "exactQuote": "- **欧氏范数**：$\\|x\\| = \\sqrt{\\langle x, x \\rangle}$",
+      "blockId": "02-spaces#block-14"
+    },
+    {
+      "text": "欧氏空间是所有空间的原型，因为它同时拥有线性、距离、内积三种结构，而且它们是自然兼容的。",
+      "exactQuote": "因为它**同时拥有**线性、距离、内积三种结构，而且它们是自然兼容的：",
+      "blockId": "02-spaces#block-16"
+    },
+    {
+      "text": "‖x‖² = ⟨x, x⟩, d(x,y) = ‖x - y‖。",
+      "exactQuote": "$$\n\\|x\\|^2 = \\langle x, x \\rangle, \\quad d(x,y) = \\|x - y\\|\n$$",
+      "blockId": "02-spaces#block-17"
+    },
+    {
+      "text": "下面的所有空间类型都是对 ℝⁿ 的某一方面进行推广或削弱。",
+      "exactQuote": "下面的所有空间类型都是对 $\\mathbb{R}^n$ 的某一方面进行**推广或削弱**。",
+      "blockId": "02-spaces#block-18"
+    },
+    {
+      "text": "ℝⁿ 太具体了——它假设我们有一组坐标 (x₁,…,xₙ)。",
+      "exactQuote": "$\\mathbb{R}^n$ 太具体了——它假设我们有一组坐标 $(x_1,\\ldots,x_n)$。",
+      "blockId": "02-spaces#block-23"
+    },
+    {
+      "text": "很多数学对象也满足'可加可缩'的性质。",
+      "exactQuote": "很多数学对象也满足'可加可缩'的性质：",
+      "blockId": "02-spaces#block-23"
+    }
+  ]
+}

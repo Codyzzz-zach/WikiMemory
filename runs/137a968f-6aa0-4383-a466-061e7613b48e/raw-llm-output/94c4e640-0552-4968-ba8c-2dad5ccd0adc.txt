@@ -1,0 +1,13 @@
+{
+  "verdict": "passed",
+  "dimensions": {
+    "support": { "result": "pass", "evidence": "Cauchy 列必收敛" },
+    "addition": { "result": "pass", "evidence": "无额外信息" },
+    "inference": { "result": "pass", "evidence": "原文为直接断言" },
+    "limits": { "result": "pass", "evidence": "无限制条件" },
+    "citation": { "result": "pass", "evidence": "Claim与原文一致" }
+  },
+  "anchor": "Cauchy 列必收敛",
+  "failedDimensions": [],
+  "issues": []
+}

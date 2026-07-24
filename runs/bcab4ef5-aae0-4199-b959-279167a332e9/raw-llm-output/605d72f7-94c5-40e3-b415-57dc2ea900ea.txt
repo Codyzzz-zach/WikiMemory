@@ -1,0 +1,57 @@
+{
+  "propositions": [
+    {
+      "text": "第1章数与数系。",
+      "exactQuote": "# 第1章 数与数系",
+      "blockId": "01-number-systems#block-0"
+    },
+    {
+      "text": "从计数石子到量子态的复数——数是人类理解宇宙最底层的语言。",
+      "exactQuote": "从计数石子到量子态的复数——数是人类理解宇宙最底层的语言。",
+      "blockId": "01-number-systems#block-1"
+    },
+    {
+      "text": "本章沿着数系的逐级扩张路线，揭示每一次\"不够用\"的危机如何推动数学的革命性突破。",
+      "exactQuote": "本章沿着数系的逐级扩张路线，揭示每一次\"不够用\"的危机如何推动数学的革命性突破。",
+      "blockId": "01-number-systems#block-1"
+    },
+    {
+      "text": "第1.1节讨论自然数 $\\mathbb{N}$。",
+      "exactQuote": "## 1.1 自然数 $\\mathbb{N}$",
+      "blockId": "01-number-systems#block-3"
+    },
+    {
+      "text": "定义部分介绍Peano公理系统。",
+      "exactQuote": "### 定义：Peano 公理系统",
+      "blockId": "01-number-systems#block-4"
+    },
+    {
+      "text": "1889年，皮亚诺用五条公理精确定义了自然数。",
+      "exactQuote": "1889年，皮亚诺用五条公理精确定义了自然数：",
+      "blockId": "01-number-systems#block-5"
+    },
+    {
+      "text": "0是自然数。",
+      "exactQuote": "1. $0$ 是自然数",
+      "blockId": "01-number-systems#block-6",
+      "relatesTo": { "fromPropIndex": 5, "type": "DERIVED_FROM" }
+    },
+    {
+      "text": "每个自然数n有一个后继S(n)。",
+      "exactQuote": "2. 每个自然数 $n$ 有一个**后继** $S(n)$",
+      "blockId": "01-number-systems#block-6",
+      "relatesTo": { "fromPropIndex": 5, "type": "DERIVED_FROM" }
+    },
+    {
+      "text": "0不是任何自然数的后继。",
+      "exactQuote": "3. $0$ 不是任何自然数的后继",
+      "blockId": "01-number-systems#block-6",
+      "relatesTo": { "fromPropIndex": 5, "type": "DERIVED_FROM" }
+    },
+    {
+      "text": "若S(m)=S(n)，则m=n（后继函数是单射）。",
+      "exactQuote": "4. 若 $S(m) = S(n)$，则 $m = n$（后继函数是单射）",
+      "blockId": "01-number-systems#block-6",
+      "relatesTo": { "fromPropIndex": 5, "type": "DERIVED_FROM" }
+    },
+    {

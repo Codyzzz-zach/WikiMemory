@@ -1,0 +1,18 @@
+{
+  "relations": [
+    {
+      "fromClaimIndex": 75,
+      "toClaimIndex": 6,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["自然数集N的加法封闭性"],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 49,
+      "toClaimIndex": 6,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["自然数集合ℕ的加法封闭性"],
+      "confidence": 1.0
+    }
+  ]
+}

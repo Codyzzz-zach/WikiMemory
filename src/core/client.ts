@@ -8,7 +8,11 @@
  */
 
 import OpenAI from "openai";
-import type { ChatCompletionMessageParam } from "openai/resources/chat/completions";
+import type {
+	ChatCompletionCreateParamsNonStreaming,
+	ChatCompletionCreateParamsStreaming,
+	ChatCompletionMessageParam,
+} from "openai/resources/chat/completions";
 import type { AppConfig } from "../config/types.js";
 import type { ChatOptions, ChatResult } from "./types.js";
 
@@ -34,32 +38,20 @@ export class DeepSeekClient {
 			),
 		];
 
-		const response = await this.client.chat.completions.create(
-			{
-				model: opts.model,
-				messages: openAiMessages,
-				response_format:
-					opts.responseFormat === "json_object"
-						? { type: "json_object" }
-						: undefined,
-				max_tokens: opts.maxTokens,
-				stream: false,
-			},
-			{
-				signal: opts.signal,
-				...(opts.thinkingDisabled
-					? { extra_body: { thinking: { type: "disabled" } } }
-					: {}),
-			},
-		);
+		const request = buildDeepSeekRequest(opts, openAiMessages, false);
+		const response = await this.client.chat.completions.create(request, { signal: opts.signal });
 
 		const choice = response.choices[0];
 		const content = choice?.message?.content ?? "";
+		const reasoningContent = (choice?.message as unknown as { reasoning_content?: string | null })
+			?.reasoning_content;
 		const usage = response.usage;
 
 		return {
 			content,
 			model: response.model,
+			finishReason: choice?.finish_reason ?? null,
+			reasoningContentChars: reasoningContent?.length ?? 0,
 			usage: usage
 				? {
 						promptTokens: usage.prompt_tokens ?? 0,
@@ -69,6 +61,7 @@ export class DeepSeekClient {
 							(usage as unknown as Record<string, number>).prompt_cache_hit_tokens ?? 0,
 						promptCacheMissTokens:
 							(usage as unknown as Record<string, number>).prompt_cache_miss_tokens ?? 0,
+						reasoningTokens: extractReasoningTokens(usage),
 					}
 				: null,
 		};
@@ -84,27 +77,13 @@ export class DeepSeekClient {
 			),
 		];
 
-		const stream = await this.client.chat.completions.create(
-			{
-				model: opts.model,
-				messages: openAiMessages,
-				response_format:
-					opts.responseFormat === "json_object"
-						? { type: "json_object" }
-						: undefined,
-				max_tokens: opts.maxTokens,
-				stream: true,
-			},
-			{
-				signal: opts.signal,
-				...(opts.thinkingDisabled
-					? { extra_body: { thinking: { type: "disabled" } } }
-					: {}),
-			},
-		);
+		const request = buildDeepSeekRequest(opts, openAiMessages, true);
+		const stream = await this.client.chat.completions.create(request, { signal: opts.signal });
 
 		let fullContent = "";
 		let usage: ChatResult["usage"] = null;
+		let finishReason: string | null = null;
+		let reasoningContentChars = 0;
 
 		for await (const chunk of stream) {
 			const delta = chunk.choices[0]?.delta?.content;
@@ -112,6 +91,13 @@ export class DeepSeekClient {
 				fullContent += delta;
 				opts.onStream?.(delta);
 			}
+			if (chunk.choices[0]?.finish_reason) {
+				finishReason = chunk.choices[0].finish_reason;
+			}
+			const reasoningDelta = (
+				chunk.choices[0]?.delta as unknown as { reasoning_content?: string | null }
+			)?.reasoning_content;
+			if (reasoningDelta) reasoningContentChars += reasoningDelta.length;
 			if (chunk.usage) {
 				usage = {
 					promptTokens: chunk.usage.prompt_tokens ?? 0,
@@ -121,6 +107,7 @@ export class DeepSeekClient {
 						(chunk.usage as unknown as Record<string, number>).prompt_cache_hit_tokens ?? 0,
 					promptCacheMissTokens:
 						(chunk.usage as unknown as Record<string, number>).prompt_cache_miss_tokens ?? 0,
+					reasoningTokens: extractReasoningTokens(chunk.usage),
 				};
 			}
 		}
@@ -128,7 +115,48 @@ export class DeepSeekClient {
 		return {
 			content: fullContent,
 			model: opts.model,
+			finishReason,
+			reasoningContentChars,
 			usage,
 		};
 	}
+}
+
+type DeepSeekThinkingControl = { thinking?: { type: "disabled" } };
+
+export function buildDeepSeekRequest(
+	opts: ChatOptions,
+	messages: ChatCompletionMessageParam[],
+	stream: false,
+): ChatCompletionCreateParamsNonStreaming & DeepSeekThinkingControl;
+export function buildDeepSeekRequest(
+	opts: ChatOptions,
+	messages: ChatCompletionMessageParam[],
+	stream: true,
+): ChatCompletionCreateParamsStreaming & DeepSeekThinkingControl;
+export function buildDeepSeekRequest(
+	opts: ChatOptions,
+	messages: ChatCompletionMessageParam[],
+	stream: boolean,
+):
+	| (ChatCompletionCreateParamsNonStreaming & DeepSeekThinkingControl)
+	| (ChatCompletionCreateParamsStreaming & DeepSeekThinkingControl) {
+	return {
+		model: opts.model,
+		messages,
+		response_format:
+			opts.responseFormat === "json_object" ? { type: "json_object" as const } : undefined,
+		max_tokens: opts.maxTokens,
+		stream,
+		...(opts.thinkingDisabled ? { thinking: { type: "disabled" as const } } : {}),
+	} as
+		| (ChatCompletionCreateParamsNonStreaming & DeepSeekThinkingControl)
+		| (ChatCompletionCreateParamsStreaming & DeepSeekThinkingControl);
+}
+
+function extractReasoningTokens(usage: unknown): number {
+	const details = (
+		usage as { completion_tokens_details?: { reasoning_tokens?: number | null } } | null
+	)?.completion_tokens_details;
+	return details?.reasoning_tokens ?? 0;
 }

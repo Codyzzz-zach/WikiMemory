@@ -1,0 +1,28 @@
+{
+  "verdict": "passed",
+  "dimensions": {
+    "support": {
+      "result": "pass",
+      "evidence": "乘法封闭 | $a,b \\in \\mathbb{N} \\Rightarrow a \\times b \\in \\mathbb{N}$"
+    },
+    "addition": {
+      "result": "pass",
+      "evidence": "无额外信息"
+    },
+    "inference": {
+      "result": "pass",
+      "evidence": "无推断"
+    },
+    "limits": {
+      "result": "pass",
+      "evidence": "无限制条件缺失"
+    },
+    "citation": {
+      "result": "pass",
+      "evidence": "精确引用[01-number-systems#block-10]"
+    }
+  },
+  "anchor": "乘法封闭 | $a,b \\in \\mathbb{N} \\Rightarrow a \\times b \\in \\mathbb{N}$",
+  "failedDimensions": [],
+  "issues": []
+}

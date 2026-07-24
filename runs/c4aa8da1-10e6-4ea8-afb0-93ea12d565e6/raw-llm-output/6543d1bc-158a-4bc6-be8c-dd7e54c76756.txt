@@ -1,0 +1,597 @@
+{
+  "claims": [
+    {
+      "statement": "空间这个概念是数学从具体走向抽象的典范。",
+      "evidenceQuotes": ["空间这个概念是数学从具体走向抽象的典范。"],
+      "blockIds": ["02-spaces#block-1"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "在数学中，'空间' = 一个集合 + 附加结构。",
+      "evidenceQuotes": ["在数学中，\"空间\" = **一个集合 + 附加结构**。"],
+      "blockIds": ["02-spaces#block-4"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "不同的结构定义了不同的空间类型。",
+      "evidenceQuotes": ["不同的结构定义了不同的空间类型。"],
+      "blockIds": ["02-spaces#block-4"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "欧几里得空间 R^n 是定义在实数域上的 n 维向量空间。",
+      "evidenceQuotes": ["\\mathbb{R}^n = \\{(x_1, x_2, \\ldots, x_n) \\mid x_i \\in \\mathbb{R}\\}"],
+      "blockIds": ["02-spaces#block-12"],
+      "conditions": [],
+      "derivation": "INFERRED",
+      "confidence": 0.9
+    },
+    {
+      "statement": "欧几里得结构包含线性结构和内积。",
+      "evidenceQuotes": ["**欧几里得结构 = 线性结构 + 内积**："],
+      "blockIds": ["02-spaces#block-13"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "向量加法定义为 (x_i) + (y_i) = (x_i + y_i)。",
+      "evidenceQuotes": ["**向量加法**：$(x_i) + (y_i) = (x_i + y_i)$"],
+      "blockIds": ["02-spaces#block-14"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "标量乘法定义为 c·(x_i) = (c x_i)。",
+      "evidenceQuotes": ["**标量乘法**：$c \\cdot (x_i) = (c x_i)$"],
+      "blockIds": ["02-spaces#block-14"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "内积（点积）定义为 ⟨x,y⟩ = ∑_{i=1}^n x_i y_i。",
+      "evidenceQuotes": ["**内积（点积）**：$\\langle x, y \\rangle = \\sum_{i=1}^n x_i y_i$"],
+      "blockIds": ["02-spaces#block-14"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "欧氏距离定义为 d(x,y) = √(∑ (x_i - y_i)^2)。",
+      "evidenceQuotes": ["**欧氏距离**：$d(x,y) = \\sqrt{\\sum (x_i - y_i)^2}$"],
+      "blockIds": ["02-spaces#block-14"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "欧氏范数定义为 ‖x‖ = √⟨x,x⟩。",
+      "evidenceQuotes": ["**欧氏范数**：$\\|x\\| = \\sqrt{\\langle x, x \\rangle}$"],
+      "blockIds": ["02-spaces#block-14"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "欧氏空间同时拥有线性、距离、内积三种结构，而且是自然兼容的。",
+      "evidenceQuotes": ["因为它**同时拥有**线性、距离、内积三种结构，而且它们是自然兼容的："],
+      "blockIds": ["02-spaces#block-16"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "在欧氏空间中，范数的平方等于内积，距离等于范数之差。",
+      "evidenceQuotes": ["\\|x\\|^2 = \\langle x, x \\rangle, \\quad d(x,y) = \\|x - y\\|"],
+      "blockIds": ["02-spaces#block-17"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "多项式、连续函数、矩阵、数列的加法和标量乘法运算具有相似的形式。",
+      "evidenceQuotes": ["多项式：$p(x) + q(x)$、$c \\cdot p(x)$\n- 连续函数：$f(x) + g(x)$、$c \\cdot f(x)$\n- 矩阵：$A + B$、$c \\cdot A$\n- 数列：$(a_n) + (b_n)$、$c \\cdot (a_n)$"],
+      "blockIds": ["02-spaces#block-24"],
+      "conditions": [],
+      "derivation": "INFERRED",
+      "confidence": 0.9
+    },
+    {
+      "statement": "向量空间公理要求集合 V 配备加法运算和标量乘法运算。",
+      "evidenceQuotes": ["**向量空间公理**：集合 $V$ 配备运算 $+ : V \\times V \\to V$ 和 $\\cdot : \\mathbb{R} \\times V \\to V$，满足："],
+      "blockIds": ["02-spaces#block-25"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "向量空间公理包括加法交换群公理：u+v=v+u, (u+v)+w=u+(v+w), 存在零向量0和负向量-v。",
+      "evidenceQuotes": ["| **加法交换群** | $u+v=v+u$, $(u+v)+w=u+(v+w)$, 存在 $0$ 和 $-v$ |"],
+      "blockIds": ["02-spaces#block-26"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "向量空间公理包括标量乘法的分配律：c(u+v)=cu+cv, (c+d)u=cu+du。",
+      "evidenceQuotes": ["| **标量乘法的分配律** | $c(u+v)=cu+cv$, $(c+d)u=cu+du$ |"],
+      "blockIds": ["02-spaces#block-26"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "向量空间公理包括标量乘法的结合律：(cd)u = c(du)。",
+      "evidenceQuotes": ["| **标量乘法的结合律** | $(cd)u = c(du)$ |"],
+      "blockIds": ["02-spaces#block-26"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "向量空间公理包括单位标量公理：1·u = u。",
+      "evidenceQuotes": ["| **单位标量** | $1 \\cdot u = u$ |"],
+      "blockIds": ["02-spaces#block-26"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "向量空间中最深刻的事实是所有基的大小都相同，这就是维度。",
+      "evidenceQuotes": ["向量空间中最深刻的事实是——所有基的大小都相同，这就是**维度**。"],
+      "blockIds": ["02-spaces#block-28"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "维度dim V定义为任何一组基中的向量个数。",
+      "evidenceQuotes": ["$$\n\\dim V = \\text{任何一组基中的向量个数}\n$$"],
+      "blockIds": ["02-spaces#block-29"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "R^n的标准基是e1,...,en，维度为n。",
+      "evidenceQuotes": ["- $\\mathbb{R}^n$：标准基 $e_1,\\ldots,e_n$，维度 $n$"],
+      "blockIds": ["02-spaces#block-30"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "次数≤n的多项式空间P_n的基是{1,x,x^2,...,x^n}，维度为n+1。",
+      "evidenceQuotes": ["- 次数 $\\leq n$ 的多项式空间 $P_n$：基 $\\{1,x,x^2,\\ldots,x^n\\}$，维度 $n+1$"],
+      "blockIds": ["02-spaces#block-30"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "连续函数空间C[0,1]是无限维的，没有有限基。",
+      "evidenceQuotes": ["- 连续函数空间 $C[0,1]$：**无限维！**（没有有限基）"],
+      "blockIds": ["02-spaces#block-30"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "有限维与无限维是向量空间的第一个大分岔口。",
+      "evidenceQuotes": ["有限维 vs 无限维是向量空间的第一个大分岔口。 $\\S 13$ 线性代数专注于有限维，而本章下半部分的泛函分析进入无限维世界。"],
+      "blockIds": ["02-spaces#block-31"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "度量空间定义为一个集合X配上一个距离函数d: X×X → R≥0。",
+      "evidenceQuotes": ["**定义**：度量空间是一个集合 $X$ 配上一个距离函数 $d: X \\times X \\to \\mathbb{R}_{\\geq 0}$，满足："],
+      "blockIds": ["02-spaces#block-36"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "度量空间的距离函数d满足正定性：d(x,y)≥0，且d(x,y)=0当且仅当x=y。",
+      "evidenceQuotes": ["1. **正定性**：$d(x,y) \\geq 0$，且 $d(x,y) = 0 \\iff x = y$"],
+      "blockIds": ["02-spaces#block-37"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "度量空间的距离函数d满足对称性：d(x,y)=d(y,x)。",
+      "evidenceQuotes": ["2. **对称性**：$d(x,y) = d(y,x)$"],
+      "blockIds": ["02-spaces#block-37"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "度量空间的距离函数d满足三角不等式：d(x,z)≤d(x,y)+d(y,z)。",
+      "evidenceQuotes": ["3. **三角不等式**：$d(x,z) \\leq d(x,y) + d(y,z)$"],
+      "blockIds": ["02-spaces#block-37"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "欧氏距离d2(x,y)=√∑(xi-yi)^2用于几何和物理。",
+      "evidenceQuotes": ["| $\\mathbb{R}^n$ 欧氏 | $d_2(x,y) = \\sqrt{\\sum (x_i-y_i)^2}$ | 几何、物理 |"],
+      "blockIds": ["02-spaces#block-39"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "曼哈顿距离d1(x,y)=∑|xi-yi|用于城市街区距离。",
+      "evidenceQuotes": ["| $\\mathbb{R}^n$ 曼哈顿 | $d_1(x,y) = \\sum \\|x_i-y_i\\|$ | 城市街区距离 |"],
+      "blockIds": ["02-spaces#block-39"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "切比雪夫距离d∞(x,y)=max_i|xi-yi|用于最坏情况分析。",
+      "evidenceQuotes": ["| $\\mathbb{R}^n$ 切比雪夫 | $d_\\infty(x,y) = \\max_i \\|x_i-y_i\\|$ | 最坏情况分析 |"],
+      "blockIds": ["02-spaces#block-39"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "离散度量定义为d(x,y)=0若x=y，否则为1，用于理论构造。",
+      "evidenceQuotes": ["| 离散度量 | $d(x,y) = \\begin{cases}0 & x=y \\\\ 1 & x\\neq y\\end{cases}$ | 理论构造 |"],
+      "blockIds": ["02-spaces#block-39"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "Hamming距离定义为不同位置的个数，用于编码理论和DNA比对。",
+      "evidenceQuotes": ["| Hamming距离 | 不同位置的个数 | 编码理论、DNA比对 |"],
+      "blockIds": ["02-spaces#block-39"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "图上的最短路径距离定义为最少边数，用于网络路由。",
+      "evidenceQuotes": ["| 图上的最短路径 | 最少边数 | 网络路由 |"],
+      "blockIds": ["02-spaces#block-39"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "任何度量空间自然诱导一个拓扑，以开球B(x,r)={y|d(x,y)<r}生成开集。",
+      "evidenceQuotes": ["任何度量空间自然诱导一个拓扑：以**开球** $B(x,r) = \\{y \\mid d(x,y) < r\\}$ 生成开集。"],
+      "blockIds": ["02-spaces#block-42"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "拓扑空间是度量空间的进一步推广，它丢掉了距离数值，只保留开集的概念。",
+      "evidenceQuotes": ["这是 $\\S$7 拓扑学的起点——拓扑空间是度量空间的进一步推广，它丢掉了距离数值，只保留\"开集\"的概念。"],
+      "blockIds": ["02-spaces#block-42"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "在向量空间上叠加一个范数||·||: V→R≥0构成赋范空间。",
+      "evidenceQuotes": ["在向量空间上叠加一个**范数** $\\|\\cdot\\|: V \\to \\mathbb{R}_{\\geq 0}$："],
+      "blockIds": ["02-spaces#block-46"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "范数满足非负性：||x||≥0，且||x||=0当且仅当x=0。",
+      "evidenceQuotes": ["1. $\\|x\\| \\geq 0$，且 $\\|x\\| = 0 \\iff x = 0$"],
+      "blockIds": ["02-spaces#block-47"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "范数满足齐次性：||αx||=|α|·||x||。",
+      "evidenceQuotes": ["2. $\\|\\alpha x\\| = |\\alpha| \\cdot \\|x\\|$ （齐次性）"],
+      "blockIds": ["02-spaces#block-47"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "范数满足三角不等式：||x+y||≤||x||+||y||。",
+      "evidenceQuotes": ["3. $\\|x + y\\| \\leq \\|x\\| + \\|y\\|$ （三角不等式）"],
+      "blockIds": ["02-spaces#block-47"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "范数自然地导出距离：d(x,y)=||x-y||。",
+      "evidenceQuotes": ["范数自然地导出距离：$d(x,y) = \\|x-y\\|$。"],
+      "blockIds": ["02-spaces#block-48"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "(V, ||·||) 构成赋范空间，也自动成为度量空间。",
+      "evidenceQuotes": ["所以 $(V, \\|\\cdot\\|)$ 构成赋范空间，也自动成为度量空间。"],
+      "blockIds": ["02-spaces#block-48"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "Cauchy列的定义是：对任意ε>0，存在N，使得当m,n>N时，有||x_m - x_n||<ε。",
+      "evidenceQuotes": ["**Cauchy 列**：$\\forall \\epsilon > 0, \\exists N, \\forall m,n > N: \\|x_m - x_n\\| < \\epsilon$"],
+      "blockIds": ["02-spaces#block-50"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "如果空间中每个Cauchy列都收敛到空间内的一个点，这个空间就是完备的。",
+      "evidenceQuotes": ["如果空间中每个 Cauchy 列都收敛到空间内的一个点，这个空间就是**完备的**。"],
+      "blockIds": ["02-spaces#block-51"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "Banach空间是完备的赋范空间。",
+      "evidenceQuotes": ["> **Banach 空间 = 完备的赋范空间**"],
+      "blockIds": ["02-spaces#block-52"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "R^n 在L2范数下是完备的，属于Banach空间。",
+      "evidenceQuotes": ["| $\\mathbb{R}^n$ | $\\|x\\|_2$ | ✅ | Banach空间 |"],
+      "blockIds": ["02-spaces#block-53"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "C[0,1]在无穷范数下是完备的，属于Banach空间。",
+      "evidenceQuotes": ["| $C[0,1]$ | $\\|f\\|_\\infty = \\sup\\|f(x)\\|$ | ✅ | Banach空间 |"],
+      "blockIds": ["02-spaces#block-53"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "C[0,1]在L1范数下不是完备的，只是赋范空间。",
+      "evidenceQuotes": ["| $C[0,1]$ | $\\|f\\|_1 = \\int\\|f\\|$ | ❌ | 赋范(不完备) |"],
+      "blockIds": ["02-spaces#block-53"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "ℓ^p在p范数下是完备的，属于Banach空间。",
+      "evidenceQuotes": ["| $\\ell^p$ | $\\|x\\|_p = (\\sum \\|x_i\\|^p)^{1/p}$ | ✅ | Banach空间 |"],
+      "blockIds": ["02-spaces#block-53"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "在L1范数下，连续函数空间中存在Cauchy列收敛到不连续的函数，极限跑出了空间，因此不完备。",
+      "evidenceQuotes": ["在 $\\|f\\|_1$ 下，连续函数空间中存在 Cauchy 列收敛到不连续的函数——极限\"跑出了空间\"。"],
+      "blockIds": ["02-spaces#block-54"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "不完备的空间完备化后得到 L^1[0,1]。",
+      "evidenceQuotes": ["完备化这个空间得到 $L^1[0,1]$（$\\S$10 测度与积分）。"],
+      "blockIds": ["02-spaces#block-54"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "内积满足：⟨x,x⟩≥0，且⟨x,x⟩=0当且仅当x=0。",
+      "evidenceQuotes": ["1. $\\langle x, x \\rangle \\geq 0$，$\\langle x, x \\rangle = 0 \\iff x = 0$"],
+      "blockIds": ["02-spaces#block-59"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "内积满足共轭对称性：⟨x,y⟩=⟨y,x⟩的共轭。",
+      "evidenceQuotes": ["2. $\\langle x, y \\rangle = \\overline{\\langle y, x \\rangle}$ （共轭对称）"],
+      "blockIds": ["02-spaces#block-59"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "内积对第一个变量是线性的。",
+      "evidenceQuotes": ["3. 对第一个变量线性"],
+      "blockIds": ["02-spaces#block-59"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "内积诱导范数：||x||=sqrt(⟨x,x⟩)。",
+      "evidenceQuotes": ["内积诱导范数：$\\|x\\| = \\sqrt{\\langle x, x \\rangle}$"],
+      "blockIds": ["02-spaces#block-60"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "Hilbert空间是完备的内积空间。",
+      "evidenceQuotes": ["> **Hilbert 空间 = 完备的内积空间**"],
+      "blockIds": ["02-spaces#block-61"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "正交投影：找到子空间中最接近某点的元素。",
+      "evidenceQuotes": ["- **正交投影**：找到子空间中最接近某点的元素"],
+      "blockIds": ["02-spaces#block-66"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "正交基：用一组相互垂直的基向量表示空间中任何元素。",
+      "evidenceQuotes": ["- **正交基**：用一组相互垂直的基向量表示空间中任何元素"],
+      "blockIds": ["02-spaces#block-66"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "Fourier级数：{e^{inx}}是L^2[-π,π]中的一组正交基。",
+      "evidenceQuotes": ["- **Fourier 级数**：$\\{e^{inx}\\}_{n=-\\infty}^\\infty$ 是 $L^2[-\\pi,\\pi]$ 中的一组正交基"],
+      "blockIds": ["02-spaces#block-66"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "R^n的内积是⟨x,y⟩=∑x_i y_i，完备基是标准基e_i，应用于几何。",
+      "evidenceQuotes": ["| $\\mathbb{R}^n$ | $\\langle x,y \\rangle = \\sum x_i y_i$ | 标准基 $e_i$ | 几何 |"],
+      "blockIds": ["02-spaces#block-69"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "ℓ^2的内积是⟨x,y⟩=∑x_i y_i的共轭，完备基是e_i=(0,...,1,...)，应用于离散信号。",
+      "evidenceQuotes": ["| $\\ell^2$ | $\\langle x,y \\rangle = \\sum x_i \\overline{y_i}$ | $e_i = (0,\\ldots,1,\\ldots)$ | 离散信号 |"],
+      "blockIds": ["02-spaces#block-69"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "L^2[a,b]的内积是⟨f,g⟩=∫f g的共轭，完备基是三角函数族，应用于连续信号。",
+      "evidenceQuotes": ["| $L^2[a,b]$ | $\\langle f,g \\rangle = \\int f \\overline{g}$ | 三角函数族 | 连续信号 |"],
+      "blockIds": ["02-spaces#block-69"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "C^n的内积是⟨x,y⟩=∑x_i y_i的共轭，完备基是标准基，应用于量子态。",
+      "evidenceQuotes": ["| $\\mathbb{C}^n$ | $\\langle x,y \\rangle = \\sum x_i \\overline{y_i}$ | 标准基 | 量子态 |"],
+      "blockIds": ["02-spaces#block-69"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "2.7节标题为“空间的谱系——一张全景表”。",
+      "evidenceQuotes": ["## 2.7 空间的谱系——一张全景表"],
+      "blockIds": ["02-spaces#block-72"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "存在一张表格，列出空间类型、附加结构、关键概念、完备版本和应用领域。",
+      "evidenceQuotes": ["| 空间类型 | 附加结构 | 关键概念 | 完备版本 | 应用领域 |\n|---------|---------|---------|---------|---------|\n| 集合 | 无 | 元素 | — | — |\n| 拓扑空间 | 开集 | 连续性、紧致性 | — | $\\S$7 拓扑学 |\n| 度量空间 | 距离 | Cauchy列、收敛 | 完备度量空间 | 分析、聚类 |\n| 向量空间 | 线性运算 | 基、维度、线性变换 | — | $\\S$13 线性代数 |\n| 赋范空间 | 范数 | 长度、有界性 | **Banach空间** | 泛函分析 |\n| 内积空间 | 内积 | 角度、正交性 | **Hilbert空间** | 量子力学 |\n| 欧氏空间 | 全部以上 | — | $\\mathbb{R}^n$ | 几何、物理 |"],
+      "blockIds": ["02-spaces#block-73"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "集合没有附加结构，关键概念是元素，没有完备版本和应用领域；拓扑空间的附加结构是开集，关键概念是连续性和紧致性，应用领域是拓扑学。",
+      "evidenceQuotes": ["| 集合 | 无 | 元素 | — | — |\n| 拓扑空间 | 开集 | 连续性、紧致性 | — | $\\S$7 拓扑学 |"],
+      "blockIds": ["02-spaces#block-73"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "度量空间的附加结构是距离，关键概念是Cauchy列和收敛，完备版本是完备度量空间，应用领域是分析和聚类。",
+      "evidenceQuotes": ["| 度量空间 | 距离 | Cauchy列、收敛 | 完备度量空间 | 分析、聚类 |"],
+      "blockIds": ["02-spaces#block-73"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "向量空间的附加结构是线性运算，关键概念是基、维度和线性变换，没有完备版本，应用领域是线性代数。",
+      "evidenceQuotes": ["| 向量空间 | 线性运算 | 基、维度、线性变换 | — | $\\S$13 线性代数 |"],
+      "blockIds": ["02-spaces#block-73"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "赋范空间的附加结构是范数，关键概念是长度和有界性，完备版本是Banach空间，应用领域是泛函分析。",
+      "evidenceQuotes": ["| 赋范空间 | 范数 | 长度、有界性 | **Banach空间** | 泛函分析 |"],
+      "blockIds": ["02-spaces#block-73"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "内积空间的附加结构是内积，关键概念是角度和正交性，完备版本是Hilbert空间，应用领域是量子力学。",
+      "evidenceQuotes": ["| 内积空间 | 内积 | 角度、正交性 | **Hilbert空间** | 量子力学 |"],
+      "blockIds": ["02-spaces#block-73"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "欧氏空间有全部以上附加结构，没有单独的关键概念，完备版本是R^n，应用领域是几何和物理。",
+      "evidenceQuotes": ["| 欧氏空间 | 全部以上 | — | $\\mathbb{R}^n$ | 几何、物理 |"],
+      "blockIds": ["02-spaces#block-73"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "记忆钩子：欧氏空间是“满配”——什么结构都有。",
+      "evidenceQuotes": ["**记忆钩子**：欧氏空间是\"满配\"——什么结构都有。"],
+      "blockIds": ["02-spaces#block-74"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "往其他方向推广时，每次只去掉一种结构，研究“还剩下什么”。",
+      "evidenceQuotes": ["往其他方向推广时，我们每次只去掉一种结构，研究\"还剩下什么\"。"],
+      "blockIds": ["02-spaces#block-74"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "2.8节标题为“本章关键点汇总”。",
+      "evidenceQuotes": ["## 2.8 本章关键点汇总"],
+      "blockIds": ["02-spaces#block-76"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "存在一张表格，列出关键概念、直觉和连接章节。",
+      "evidenceQuotes": ["| # | 关键概念 | 直觉 | 连接章节 |\n|---|---------|------|---------|\n| 1 | **空间 = 集合 + 结构** | 不同的结构→不同的\"空间感\" | 全书线索 |\n| 2 | **向量空间公理** | 可加可缩 = 线性世界 | $\\S$13 线性代数 |\n| 3 | **基与维度** | 有限 vs 无限是第一个大分岔 | $\\S$9, $\\S$13 |\n| 4 | **距离公理** | 三角不等式是最关键的一条 | $\\S$7 拓扑 |\n| 5 | **完备性** | Cauchy列有极限→没有\"洞\" | $\\S$3, $\\S$9, $\\S$10 |\n| 6 | **Banach空间** | = 完备赋范空间 | $\\S$9 泛函分析 |\n| 7 | **Hilbert空间** | = 完备内积空间，有正交性 | $\\S$9, 量子力学 |\n| 8 | **Fourier

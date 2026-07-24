@@ -1,0 +1,270 @@
+{
+  "relations": [
+    {
+      "fromClaimIndex": 27,
+      "toClaimIndex": 0,
+      "type": "SUPPORTS",
+      "conditions": ["自然数集是实数集的子集"],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 27,
+      "toClaimIndex": 5,
+      "type": "SUPPORTS",
+      "conditions": ["自然数集在加法下封闭"],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 31,
+      "toClaimIndex": 25,
+      "type": "SUPPORTS",
+      "conditions": ["整数除法不封闭导致需要分数"],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 54,
+      "toClaimIndex": 68,
+      "type": "SUPPORTS",
+      "conditions": ["自然数减法不封闭，引入负数解决"],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 68,
+      "toClaimIndex": 43,
+      "type": "SUPPORTS",
+      "conditions": ["整数集在加法下封闭"],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 33,
+      "toClaimIndex": 20,
+      "type": "SUPPORTS",
+      "conditions": ["三次方程求解导致复数出现"],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 20,
+      "toClaimIndex": 12,
+      "type": "SUPPORTS",
+      "conditions": ["需要解决x²+1=0引入复数"],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 10,
+      "toClaimIndex": 13,
+      "type": "SUPPORTS",
+      "conditions": ["代数基本定理说明复数代数封闭"],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 13,
+      "toClaimIndex": 2,
+      "type": "SUPPORTS",
+      "conditions": ["实数不是代数封闭的，复数才是"],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 30,
+      "toClaimIndex": 2,
+      "type": "SUPPORTS",
+      "conditions": ["实数不可数，有理数可数"],
+      "confidence": 0.6
+    },
+    {
+      "fromClaimIndex": 17,
+      "toClaimIndex": 35,
+      "type": "SUPPORTS",
+      "conditions": ["有理数不完备，实数完备"],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 7,
+      "toClaimIndex": 9,
+      "type": "SUPPORTS",
+      "conditions": ["任意有理数间存在有理数体现稠密性"],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 56,
+      "toClaimIndex": 7,
+      "type": "SUPPORTS",
+      "conditions": ["构造中点为具体有理数证明稠密"],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 9,
+      "toClaimIndex": 35,
+      "type": "SUPPORTS",
+      "conditions": ["稠密但可数说明不完备"],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 32,
+      "toClaimIndex": 9,
+      "type": "SUPPORTS",
+      "conditions": ["有理数可数且稠密"],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 1,
+      "toClaimIndex": 14,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["Q是一个域"],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 1,
+      "toClaimIndex": 49,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["Q是一个域"],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 49,
+      "toClaimIndex": 39,
+      "type": "SUPPORTS",
+      "conditions": ["Q中加减乘除封闭"],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 41,
+      "toClaimIndex": 19,
+      "type": "SUPPORTS",
+      "conditions": ["有理数构造为分式等价类"],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 8,
+      "toClaimIndex": 18,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["同一个欧拉公式的不同表述"],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 23,
+      "toClaimIndex": 61,
+      "type": "SUPPORTS",
+      "conditions": ["Cantor对角论证法步骤"],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 73,
+      "toClaimIndex": 61,
+      "type": "SUPPORTS",
+      "conditions": ["列举实数的小数表示"],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 36,
+      "toClaimIndex": 74,
+      "type": "SUPPORTS",
+      "conditions": ["归纳法体现递归结构"],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 37,
+      "toClaimIndex": 74,
+      "type": "SUPPORTS",
+      "conditions": ["良序性体现自然数结构"],
+      "confidence": 0.6
+    },
+    {
+      "fromClaimIndex": 63,
+      "toClaimIndex": 74,
+      "type": "SUPPORTS",
+      "conditions": ["自然数定义包含0和后续"],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 21,
+      "toClaimIndex": 63,
+      "type": "SUPPORTS",
+      "conditions": ["von Neumann序数是集合论定义"],
+      "confidence": 0.6
+    },
+    {
+      "fromClaimIndex": 0,
+      "toClaimIndex": 16,
+      "type": "SUPPORTS",
+      "conditions": ["实数集在加法下封闭隐含加法逆元存在"],
+      "confidence": 0.5
+    },
+    {
+      "fromClaimIndex": 43,
+      "toClaimIndex": 11,
+      "type": "SUPPORTS",
+      "conditions": ["整数集在加法下封闭隐含加法逆元"],
+      "confidence": 0.5
+    },
+    {
+      "fromClaimIndex": 43,
+      "toClaimIndex": 22,
+      "type": "SUPPORTS",
+      "conditions": ["整数集是交换环"],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 47,
+      "toClaimIndex": 22,
+      "type": "SUPPORTS",
+      "conditions": ["整环是交换环的特殊情况"],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 64,
+      "toClaimIndex": 32,
+      "type": "SUPPORTS",
+      "conditions": ["整数可数，有理数也可数"],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 55,
+      "toClaimIndex": 60,
+      "type": "SUPPORTS",
+      "conditions": ["集合N和Z在乘法下封闭且有乘法单位元1"],
+      "confidence": 0.6
+    },
+    {
+      "fromClaimIndex": 55,
+      "toClaimIndex": 42,
+      "type": "SUPPORTS",
+      "conditions": ["自然数集在乘法下封闭"],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 69,
+      "toClaimIndex": 71,
+      "type": "SUPPORTS",
+      "conditions": ["复数集在加法下封闭隐含加法逆元"],
+      "confidence": 0.5
+    },
+    {
+      "fromClaimIndex": 38,
+      "toClaimIndex": 46,
+      "type": "SUPPORTS",
+      "conditions": ["复数有乘法逆元，实数也有"],
+      "confidence": 0.5
+    },
+    {
+      "fromClaimIndex": 26,
+      "toClaimIndex": 35,
+      "type": "SUPPORTS",
+      "conditions": ["复数完备，有理数不完备"],
+      "confidence": 0.6
+    },
+    {
+      "fromClaimIndex": 13,
+      "toClaimIndex": 26,
+      "type": "SUPPORTS",
+      "conditions": ["代数封闭的域通常完备"],
+      "confidence": 0.5
+    },
+    {
+      "fromClaimIndex": 48,
+      "toClaimIndex": 2,
+      "type": "SUPPORTS",
+      "conditions": ["自然数不是代数封闭的，类比实数"],
+      "confidence": 0.5
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "verdict": "passed",
+  "dimensions": {
+    "support": { "result": "pass", "evidence": "实部 $\\Re(z) = a$" },
+    "addition": { "result": "pass", "evidence": "无额外信息" },
+    "inference": { "result": "pass", "evidence": "无推断" },
+    "limits": { "result": "pass", "evidence": "无条件限制" },
+    "citation": { "result": "pass", "evidence": "引用准确匹配" }
+  },
+  "anchor": "实部 $\\Re(z) = a$",
+  "failedDimensions": [],
+  "issues": []
+}

@@ -30,12 +30,15 @@ export const PropositionItemSchema = z.object({
 	text: z.string().min(1, "命题文本不能为空"),
 	exactQuote: z.string().min(1, "原文引用不能为空"),
 	blockId: z.string().min(1, "blockId 不能为空"),
-	relatesTo: z
-		.object({
-			fromPropIndex: z.number().int().positive(),
-			type: RelationTypeSchema,
-		})
-		.optional(),
+	relatesTo: z.preprocess(
+		(value) => (value === null ? undefined : value),
+		z
+			.object({
+				fromPropIndex: z.number().int().nonnegative(),
+				type: RelationTypeSchema,
+			})
+			.optional(),
+	),
 });
 
 export const PropositionResponseSchema = z.object({
@@ -54,6 +57,7 @@ export const ClaimDraftSchema = z.object({
 	derivation: DerivationSchema.default("EXTRACTED"),
 	confidence: z.number().min(0).max(1).default(0.75),
 });
+export type ClaimDraft = z.infer<typeof ClaimDraftSchema>;
 
 export const ConceptDraftSchema = z.object({
 	name: z.string().min(1),
@@ -61,6 +65,7 @@ export const ConceptDraftSchema = z.object({
 	boundary: z.string().default(""),
 	domain: z.string().default(""),
 });
+export type ConceptDraft = z.infer<typeof ConceptDraftSchema>;
 
 export const RelationDraftSchema = z.object({
 	fromStatement: z.string().min(1),
@@ -86,6 +91,28 @@ export const CompileResponseSchema = z.object({
 
 export type CompileResponse = z.infer<typeof CompileResponseSchema>;
 
+/** Token-batched Claim compilation deliberately excludes Concept/Relation generation. */
+export const ClaimBatchResponseSchema = z.object({
+	claims: z.array(ClaimDraftSchema),
+});
+
+export const ConceptResponseSchema = z.object({
+	concepts: z.array(ConceptDraftSchema).default([]),
+});
+
+export const RelationOnlyDraftSchema = z.object({
+	fromClaimIndex: z.number().int().nonnegative(),
+	toClaimIndex: z.number().int().nonnegative(),
+	type: RelationTypeSchema,
+	conditions: z.array(z.string()).default([]),
+	confidence: z.number().min(0).max(1).default(0.7),
+});
+export type RelationOnlyDraft = z.infer<typeof RelationOnlyDraftSchema>;
+
+export const RelationResponseSchema = z.object({
+	relations: z.array(RelationOnlyDraftSchema).default([]),
+});
+
 // ─── 语义审计 LLM 输出（Linter）──────────────────────────────────
 //
 // v1.1 改造：5 维度改 binary verdict（pass/fail）+ 每维必带 evidence（原文片段）。
@@ -93,11 +120,19 @@ export type CompileResponse = z.infer<typeof CompileResponseSchema>;
 // anchor 是整体判断的原文锚点，程序验证它真实存在于 SourceSpan（防 LLM 编造证据）。
 
 const DimensionResultSchema = z.enum(["pass", "fail"]);
+export const AuditDimensionNameSchema = z.enum([
+	"support",
+	"addition",
+	"inference",
+	"limits",
+	"citation",
+]);
+export type AuditDimensionName = z.infer<typeof AuditDimensionNameSchema>;
 
 export const DimensionVerdictSchema = z.object({
 	result: DimensionResultSchema,
-	/** 支撑该维度判断的原文片段（程序会用字符串匹配验证是否真实存在于 SourceSpan） */
-	evidence: z.string(),
+	/** 输入证据数组的下标。避免模型复述原文时产生转义错误或伪造 quote。 */
+	evidenceSpanIndexes: z.array(z.number().int().nonnegative()),
 });
 
 export const SemanticVerdictSchema = z.object({
@@ -109,14 +144,38 @@ export const SemanticVerdictSchema = z.object({
 		limits: DimensionVerdictSchema,
 		citation: DimensionVerdictSchema,
 	}),
-	/** 整体判断的原文锚点——必须真实存在于 SourceSpan（程序验证） */
-	anchor: z.string().min(1, "anchor 不能为空"),
-	failedDimensions: z.array(z.string()).optional(),
-	issues: z.array(z.string()).optional(),
+	/** 整体判断的证据锚点，必须是输入证据数组中的有效下标。 */
+	anchorSpanIndex: z.number().int().nonnegative(),
+	failedDimensions: z.array(AuditDimensionNameSchema),
 });
 
 export type SemanticVerdict = z.infer<typeof SemanticVerdictSchema>;
 export type DimensionVerdict = z.infer<typeof DimensionVerdictSchema>;
+
+// ─── Relation 语义审计输出 ──────────────────────────────────────
+
+export const RelationAuditDimensionNameSchema = z.enum([
+	"relation",
+	"type",
+	"direction",
+	"conditions",
+]);
+export type RelationAuditDimensionName = z.infer<typeof RelationAuditDimensionNameSchema>;
+
+export const RelationSemanticVerdictSchema = z.object({
+	verdict: z.enum(["passed", "failed"]),
+	dimensions: z.object({
+		relation: DimensionVerdictSchema,
+		type: DimensionVerdictSchema,
+		direction: DimensionVerdictSchema,
+		conditions: DimensionVerdictSchema,
+	}),
+	anchorSpanIndex: z.number().int().nonnegative(),
+	failedDimensions: z.array(RelationAuditDimensionNameSchema),
+	/** 真正支撑“边”而不仅是端点的证据下标；失败判定允许为空。 */
+	supportingEvidenceSpanIndexes: z.array(z.number().int().nonnegative()),
+});
+export type RelationSemanticVerdict = z.infer<typeof RelationSemanticVerdictSchema>;
 
 // ─── 矛盾检测 LLM 输出（Compiler Step 4）────────────────────────
 
@@ -141,7 +200,7 @@ export type ContradictionResponse = z.infer<typeof ContradictionResponseSchema>;
  * 剥除可能的 markdown 围栏（```json ... ```），然后 JSON.parse。
  * 失败抛带原文的诊断 Error（不静默吞掉）。
  */
-export function parseLLMJson<T>(content: string, schema: z.ZodSchema<T>): T {
+export function parseLLMJson<T>(content: string, schema: z.ZodType<T, z.ZodTypeDef, unknown>): T {
 	let cleaned = content.trim();
 
 	// 剥除 markdown 围栏

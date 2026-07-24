@@ -1,0 +1,6 @@
+{
+  "kind": "VALID",
+  "content": "{\n  \"relations\": [\n    {\n      \"fromClaimIndex\": 0,\n      \"toClaimIndex\": 3,\n      \"type\": \"RELATED_TO\",\n      \"conditions\": [],\n      \"confidence\": 0.6\n    },\n    {\n      \"fromClaimIndex\": 1,\n      \"toClaimIndex\": 5,\n      \"type\": \"RELATED_TO\",\n      \"conditions\": [],\n      \"confidence\": 0.5\n    },\n    {\n      \"fromClaimIndex\": 3,\n      \"toClaimIndex\": 5,\n      \"type\": \"RELATED_TO\",\n      \"conditions\": [],\n      \"confidence\": 0.6\n    },\n    {\n      \"fromClaimIndex\": 4,\n      \"toClaimIndex\": 0,\n      \"type\": \"RELATED_TO\",\n      \"conditions\": [],\n      \"confidence\": 0.5\n    }\n  ]\n}",
+  "model": "deepseek-v4-flash",
+  "outputHash": "b9521ece3c5f7ac7"
+}

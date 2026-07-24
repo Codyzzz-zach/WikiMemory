@@ -1,0 +1,142 @@
+{
+  "propositions": [
+    {
+      "text": "范数自然地导出距离：$d(x,y) = \\|x-y\\|$。",
+      "exactQuote": "范数自然地导出距离：$d(x,y) = \\|x-y\\|$。",
+      "blockId": "02-spaces#block-48"
+    },
+    {
+      "text": "所以 $(V, \\|\\cdot\\|)$ 构成赋范空间，也自动成为度量空间。",
+      "exactQuote": "所以 $(V, \\|\\cdot\\|)$ 构成赋范空间，也自动成为度量空间。",
+      "blockId": "02-spaces#block-48",
+      "relatesTo": { "fromPropIndex": 0, "type": "DERIVED_FROM" }
+    },
+    {
+      "text": "Cauchy 列的定义是：$\\forall \\epsilon > 0, \\exists N, \\forall m,n > N: \\|x_m - x_n\\| < \\epsilon$。",
+      "exactQuote": "**Cauchy 列**：$\\forall \\epsilon > 0, \\exists N, \\forall m,n > N: \\|x_m - x_n\\| < \\epsilon$",
+      "blockId": "02-spaces#block-50"
+    },
+    {
+      "text": "如果空间中每个 Cauchy 列都收敛到空间内的一个点，这个空间就是完备的。",
+      "exactQuote": "如果空间中每个 Cauchy 列都收敛到空间内的一个点，这个空间就是**完备的**。",
+      "blockId": "02-spaces#block-51"
+    },
+    {
+      "text": "Banach 空间是完备的赋范空间。",
+      "exactQuote": "**Banach 空间 = 完备的赋范空间**",
+      "blockId": "02-spaces#block-52",
+      "relatesTo": { "fromPropIndex": 3, "type": "DERIVED_FROM" }
+    },
+    {
+      "text": "$\\mathbb{R}^n$ 在 $\\|x\\|_2$ 范数下是完备的，因此是 Banach 空间。",
+      "exactQuote": "| 空间 | 范数 | 完备？ | 身份 |\n|------|------|:---:|------|\n| $\\mathbb{R}^n$ | $\\|x\\|_2$ | ✅ | Banach空间 |\n| $C[0,1]$ | $\\|f\\|_\\infty = \\sup\\|f(x)\\|$ | ✅ | Banach空间 |\n| $C[0,1]$ | $\\|f\\|_1 = \\int\\|f\\|$ | ❌ | 赋范(不完备) |\n| $\\ell^p$ | $\\|x\\|_p = (\\sum \\|x_i\\|^p)^{1/p}$ | ✅ | Banach空间 |",
+      "blockId": "02-spaces#block-53"
+    },
+    {
+      "text": "$C[0,1]$ 在 $\\|f\\|_\\infty = \\sup\\|f(x)\\|$ 范数下是完备的，因此是 Banach 空间。",
+      "exactQuote": "| 空间 | 范数 | 完备？ | 身份 |\n|------|------|:---:|------|\n| $\\mathbb{R}^n$ | $\\|x\\|_2$ | ✅ | Banach空间 |\n| $C[0,1]$ | $\\|f\\|_\\infty = \\sup\\|f(x)\\|$ | ✅ | Banach空间 |\n| $C[0,1]$ | $\\|f\\|_1 = \\int\\|f\\|$ | ❌ | 赋范(不完备) |\n| $\\ell^p$ | $\\|x\\|_p = (\\sum \\|x_i\\|^p)^{1/p}$ | ✅ | Banach空间 |",
+      "blockId": "02-spaces#block-53",
+      "relatesTo": { "fromPropIndex": 5, "type": "EQUIVALENT_UNDER" }
+    },
+    {
+      "text": "$C[0,1]$ 在 $\\|f\\|_1 = \\int\\|f\\|$ 范数下不是完备的，仅是赋范空间。",
+      "exactQuote": "| 空间 | 范数 | 完备？ | 身份 |\n|------|------|:---:|------|\n| $\\mathbb{R}^n$ | $\\|x\\|_2$ | ✅ | Banach空间 |\n| $C[0,1]$ | $\\|f\\|_\\infty = \\sup\\|f(x)\\|$ | ✅ | Banach空间 |\n| $C[0,1]$ | $\\|f\\|_1 = \\int\\|f\\|$ | ❌ | 赋范(不完备) |\n| $\\ell^p$ | $\\|x\\|_p = (\\sum \\|x_i\\|^p)^{1/p}$ | ✅ | Banach空间 |",
+      "blockId": "02-spaces#block-53",
+      "relatesTo": { "fromPropIndex": 5, "type": "EQUIVALENT_UNDER" }
+    },
+    {
+      "text": "$\\ell^p$ 在 $\\|x\\|_p = (\\sum \\|x_i\\|^p)^{1/p}$ 范数下是完备的，因此是 Banach 空间。",
+      "exactQuote": "| 空间 | 范数 | 完备？ | 身份 |\n|------|------|:---:|------|\n| $\\mathbb{R}^n$ | $\\|x\\|_2$ | ✅ | Banach空间 |\n| $C[0,1]$ | $\\|f\\|_\\infty = \\sup\\|f(x)\\|$ | ✅ | Banach空间 |\n| $C[0,1]$ | $\\|f\\|_1 = \\int\\|f\\|$ | ❌ | 赋范(不完备) |\n| $\\ell^p$ | $\\|x\\|_p = (\\sum \\|x_i\\|^p)^{1/p}$ | ✅ | Banach空间 |",
+      "blockId": "02-spaces#block-53",
+      "relatesTo": { "fromPropIndex": 5, "type": "EQUIVALENT_UNDER" }
+    },
+    {
+      "text": "在 $\\|f\\|_1$ 下，连续函数空间中存在 Cauchy 列收敛到不连续的函数——极限\"跑出了空间\"。",
+      "exactQuote": "在 $\\|f\\|_1$ 下，连续函数空间中存在 Cauchy 列收敛到不连续的函数——极限\"跑出了空间\"。",
+      "blockId": "02-spaces#block-54",
+      "relatesTo": { "fromPropIndex": 7, "type": "SUPPORTS" }
+    },
+    {
+      "text": "完备化这个空间得到 $L^1[0,1]$（$\\S$10 测度与积分）。",
+      "exactQuote": "完备化这个空间得到 $L^1[0,1]$（$\\S$10 测度与积分）。",
+      "blockId": "02-spaces#block-54",
+      "relatesTo": { "fromPropIndex": 9, "type": "DERIVED_FROM" }
+    },
+    {
+      "text": "内积 $\\langle \\cdot, \\cdot \\rangle: V \\times V \\to \\mathbb{R}$（或 $\\mathbb{C}$）满足三个条件。",
+      "exactQuote": "**内积** $\\langle \\cdot, \\cdot \\rangle: V \\times V \\to \\mathbb{R}$（或 $\\mathbb{C}$）满足：",
+      "blockId": "02-spaces#block-58"
+    },
+    {
+      "text": "内积的第一个条件是 $\\langle x, x \\rangle \\geq 0$，且 $\\langle x, x \\rangle = 0 \\iff x = 0$。",
+      "exactQuote": "1. $\\langle x, x \\rangle \\geq 0$，$\\langle x, x \\rangle = 0 \\iff x = 0$",
+      "blockId": "02-spaces#block-59",
+      "relatesTo": { "fromPropIndex": 11, "type": "REQUIRES" }
+    },
+    {
+      "text": "内积的第二个条件是 $\\langle x, y \\rangle = \\overline{\\langle y, x \\rangle}$（共轭对称）。",
+      "exactQuote": "2. $\\langle x, y \\rangle = \\overline{\\langle y, x \\rangle}$ （共轭对称）",
+      "blockId": "02-spaces#block-59",
+      "relatesTo": { "fromPropIndex": 11, "type": "REQUIRES" }
+    },
+    {
+      "text": "内积的第三个条件是对第一个变量线性。",
+      "exactQuote": "3. 对第一个变量线性",
+      "blockId": "02-spaces#block-59",
+      "relatesTo": { "fromPropIndex": 11, "type": "REQUIRES" }
+    },
+    {
+      "text": "内积诱导范数：$\\|x\\| = \\sqrt{\\langle x, x \\rangle}$。",
+      "exactQuote": "内积诱导范数：$\\|x\\| = \\sqrt{\\langle x, x \\rangle}$",
+      "blockId": "02-spaces#block-60"
+    },
+    {
+      "text": "Hilbert 空间是完备的内积空间。",
+      "exactQuote": "**Hilbert 空间 = 完备的内积空间**",
+      "blockId": "02-spaces#block-61"
+    },
+    {
+      "text": "$x \\perp y \\iff \\langle x, y \\rangle = 0$。",
+      "exactQuote": "$$\nx \\perp y \\iff \\langle x, y \\rangle = 0\n$$",
+      "blockId": "02-spaces#block-64"
+    },
+    {
+      "text": "Hilbert 空间允许正交投影：找到子空间中最接近某点的元素。",
+      "exactQuote": "- **正交投影**：找到子空间中最接近某点的元素",
+      "blockId": "02-spaces#block-66"
+    },
+    {
+      "text": "Hilbert 空间允许正交基：用一组相互垂直的基向量表示空间中任何元素。",
+      "exactQuote": "- **正交基**：用一组相互垂直的基向量表示空间中任何元素",
+      "blockId": "02-spaces#block-66"
+    },
+    {
+      "text": "Hilbert 空间允许 Fourier 级数：$\\{e^{inx}\\}_{n=-\\infty}^\\infty$ 是 $L^2[-\\pi,\\pi]$ 中的一组正交基。",
+      "exactQuote": "- **Fourier 级数**：$\\{e^{inx}\\}_{n=-\\infty}^\\infty$ 是 $L^2[-\\pi,\\pi]$ 中的一组正交基",
+      "blockId": "02-spaces#block-66"
+    },
+    {
+      "text": "$\\mathbb{R}^n$ 的内积是 $\\langle x,y \\rangle = \\sum x_i y_i$，完备基是标准基 $e_i$，应用于几何。",
+      "exactQuote": "| 空间 | 内积 | 完备基 | 应用 |\n|------|------|--------|------|\n| $\\mathbb{R}^n$ | $\\langle x,y \\rangle = \\sum x_i y_i$ | 标准基 $e_i$ | 几何 |\n| $\\ell^2$ | $\\langle x,y \\rangle = \\sum x_i \\overline{y_i}$ | $e_i = (0,\\ldots,1,\\ldots)$ | 离散信号 |\n| $L^2[a,b]$ | $\\langle f,g \\rangle = \\int f \\overline{g}$ | 三角函数族 | 连续信号 |\n| $\\mathbb{C}^n$ | $\\langle x,y \\rangle = \\sum x_i \\overline{y_i}$ | 标准基 | 量子态 |",
+      "blockId": "02-spaces#block-69"
+    },
+    {
+      "text": "$\\ell^2$ 的内积是 $\\langle x,y \\rangle = \\sum x_i \\overline{y_i}$，完备基是 $e_i = (0,\\ldots,1,\\ldots)$，应用于离散信号。",
+      "exactQuote": "| 空间 | 内积 | 完备基 | 应用 |\n|------|------|--------|------|\n| $\\mathbb{R}^n$ | $\\langle x,y \\rangle = \\sum x_i y_i$ | 标准基 $e_i$ | 几何 |\n| $\\ell^2$ | $\\langle x,y \\rangle = \\sum x_i \\overline{y_i}$ | $e_i = (0,\\ldots,1,\\ldots)$ | 离散信号 |\n| $L^2[a,b]$ | $\\langle f,g \\rangle = \\int f \\overline{g}$ | 三角函数族 | 连续信号 |\n| $\\mathbb{C}^n$ | $\\langle x,y \\rangle = \\sum x_i \\overline{y_i}$ | 标准基 | 量子态 |",
+      "blockId": "02-spaces#block-69",
+      "relatesTo": { "fromPropIndex": 20, "type": "EQUIVALENT_UNDER" }
+    },
+    {
+      "text": "$L^2[a,b]$ 的内积是 $\\langle f,g \\rangle = \\int f \\overline{g}$，完备基是三角函数族，应用于连续信号。",
+      "exactQuote": "| 空间 | 内积 | 完备基 | 应用 |\n|------|------|--------|------|\n| $\\mathbb{R}^n$ | $\\langle x,y \\rangle = \\sum x_i y_i$ | 标准基 $e_i$ | 几何 |\n| $\\ell^2$ | $\\langle x,y \\rangle = \\sum x_i \\overline{y_i}$ | $e_i = (0,\\ldots,1,\\ldots)$ | 离散信号 |\n| $L^2[a,b]$ | $\\langle f,g \\rangle = \\int f \\overline{g}$ | 三角函数族 | 连续信号 |\n| $\\mathbb{C}^n$ | $\\langle x,y \\rangle = \\sum x_i \\overline{y_i}$ | 标准基 | 量子态 |",
+      "blockId": "02-spaces#block-69",
+      "relatesTo": { "fromPropIndex": 20, "type": "EQUIVALENT_UNDER" }
+    },
+    {
+      "text": "$\\mathbb{C}^n$ 的内积是 $\\langle x,y \\rangle = \\sum x_i \\overline{y_i}$，完备基是标准基，应用于量子态。",
+      "exactQuote": "| 空间 | 内积 | 完备基 | 应用 |\n|------|------|--------|------|\n| $\\mathbb{R}^n$ | $\\langle x,y \\rangle = \\sum x_i y_i$ | 标准基 $e_i$ | 几何 |\n| $\\ell^2$ | $\\langle x,y \\rangle = \\sum x_i \\overline{y_i}$ | $e_i = (0,\\ldots,1,\\ldots)$ | 离散信号 |\n| $L^2[a,b]$ | $\\langle f,g \\rangle = \\int f \\overline{g}$ | 三角函数族 | 连续信号 |\n| $\\mathbb{C}^n$ | $\\langle x,y \\rangle = \\sum x_i \\overline{y_i}$ | 标准基 | 量子态 |",
+      "blockId": "02-spaces#block-69",
+      "relatesTo": { "fromPropIndex": 20, "type": "EQUIVALENT_UNDER" }
+    }
+  ]
+}

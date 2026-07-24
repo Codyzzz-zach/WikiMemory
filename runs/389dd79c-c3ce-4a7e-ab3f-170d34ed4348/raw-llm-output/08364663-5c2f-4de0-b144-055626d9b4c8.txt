@@ -1,0 +1,28 @@
+{
+  "verdict": "failed",
+  "dimensions": {
+    "support": {
+      "result": "fail",
+      "evidence": "原文证据仅为'减法→负数'，未提供任何因果或过程描述。"
+    },
+    "addition": {
+      "result": "pass",
+      "evidence": "Claim 未添加原文不存在的信息，仅重新表述了箭头关系。"
+    },
+    "inference": {
+      "result": "pass",
+      "evidence": "Claim 未包含推断性语言，直接陈述关系。"
+    },
+    "limits": {
+      "result": "pass",
+      "evidence": "原文无适用条件或限定词，Claim 未引入额外条件。"
+    },
+    "citation": {
+      "result": "pass",
+      "evidence": "Claim 引用的 span 标记与内容对应。"
+    }
+  },
+  "anchor": "减法→负数",
+  "failedDimensions": ["support"],
+  "issues": ["原文仅显示'减法→负数'，未明确表达'导致引入'这一因果关系，缺乏支持性内容。"]
+}

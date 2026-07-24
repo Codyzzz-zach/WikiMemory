@@ -1,0 +1,352 @@
+{
+  "concepts": [
+    {
+      "name": "有理数集",
+      "aliases": ["有理数集", "有理数"],
+      "boundary": "所有可以表示为两个整数之比的数构成的集合",
+      "domain": "数学-数论"
+    },
+    {
+      "name": "加法逆元",
+      "aliases": ["加法逆元"],
+      "boundary": "对于集合中的每个元素a，存在b使得a+b=0",
+      "domain": "数学-代数"
+    },
+    {
+      "name": "整数集",
+      "aliases": ["整数集", "整数", "Z", "集合Z"],
+      "boundary": "所有正整数、负整数和零构成的集合",
+      "domain": "数学-数论"
+    },
+    {
+      "name": "代数封闭",
+      "aliases": ["代数封闭"],
+      "boundary": "域中所有非常系数多项式都有根",
+      "domain": "数学-代数"
+    },
+    {
+      "name": "实数",
+      "aliases": ["实数", "实数集", "R", "实数集R"],
+      "boundary": "有理数和无理数的全体",
+      "domain": "数学-数论"
+    },
+    {
+      "name": "完备有序域",
+      "aliases": ["完备有序域"],
+      "boundary": "满足完备性的有序域",
+      "domain": "数学-分析"
+    },
+    {
+      "name": "自然数集",
+      "aliases": ["自然数集", "自然数", "N", "集合N"],
+      "boundary": "从0开始的正整数集合，通常包括0",
+      "domain": "数学-数论"
+    },
+    {
+      "name": "加法单位元",
+      "aliases": ["加法单位元"],
+      "boundary": "对于加法运算，满足a+0=a的元素",
+      "domain": "数学-代数"
+    },
+    {
+      "name": "√2",
+      "aliases": ["√2"],
+      "boundary": "平方等于2的正实数",
+      "domain": "数学-数论"
+    },
+    {
+      "name": "数学归纳法",
+      "aliases": ["数学归纳法"],
+      "boundary": "一种证明方法：基础情况成立，且从k到k+1成立",
+      "domain": "数学-逻辑"
+    },
+    {
+      "name": "有序集",
+      "aliases": ["有序的", "有序性"],
+      "boundary": "集合上定义了全序关系",
+      "domain": "数学-序理论"
+    },
+    {
+      "name": "封闭性",
+      "aliases": ["封闭", "封闭的"],
+      "boundary": "集合对某运算的结果仍在该集合内",
+      "domain": "数学-代数"
+    },
+    {
+      "name": "等价关系",
+      "aliases": ["等价关系"],
+      "boundary": "满足自反、对称、传递的关系",
+      "domain": "数学-关系理论"
+    },
+    {
+      "name": "幺半群",
+      "aliases": ["幺半群"],
+      "boundary": "具有单位元的半群",
+      "domain": "数学-代数"
+    },
+    {
+      "name": "可数集",
+      "aliases": ["可数的", "可数"],
+      "boundary": "与自然数集一一对应的集合",
+      "domain": "数学-集合论"
+    },
+    {
+      "name": "完备性",
+      "aliases": ["完备的", "完备"],
+      "boundary": "所有柯西列收敛",
+      "domain": "数学-分析"
+    },
+    {
+      "name": "反证法",
+      "aliases": ["反证法"],
+      "boundary": "先假设命题不成立，推出矛盾，从而证明命题成立",
+      "domain": "数学-逻辑"
+    },
+    {
+      "name": "最简分数",
+      "aliases": ["最简分数"],
+      "boundary": "分子分母互素的分数",
+      "domain": "数学-数论"
+    },
+    {
+      "name": "交换幺半群",
+      "aliases": ["交换幺半群"],
+      "boundary": "满足交换律的幺半群",
+      "domain": "数学-代数"
+    },
+    {
+      "name": "von Neumann的集合论构造",
+      "aliases": ["von Neumann的集合论构造"],
+      "boundary": "用集合定义自然数：0=∅，n+1=n∪{n}",
+      "domain": "数学-集合论"
+    },
+    {
+      "name": "复数",
+      "aliases": ["复数", "复数集", "复数集合"],
+      "boundary": "形如a+bi的数，a,b为实数，i^2=-1",
+      "domain": "数学-分析"
+    },
+    {
+      "name": "模",
+      "aliases": ["模", "绝对值"],
+      "boundary": "复数z=a+bi的模为√(a^2+b^2)",
+      "domain": "数学-分析"
+    },
+    {
+      "name": "Cantor证明",
+      "aliases": ["Cantor证明"],
+      "boundary": "康托尔对角线法证明实数不可数",
+      "domain": "数学-集合论"
+    },
+    {
+      "name": "不可数集",
+      "aliases": ["不可数", "不可数的"],
+      "boundary": "不是可数集的无限集",
+      "domain": "数学-集合论"
+    },
+    {
+      "name": "代数封闭域",
+      "aliases": ["代数封闭域"],
+      "boundary": "每个非常数多项式都有根",
+      "domain": "数学-代数"
+    },
+    {
+      "name": "数列",
+      "aliases": ["数列"],
+      "boundary": "按一定顺序排列的一列数",
+      "domain": "数学-分析"
+    },
+    {
+      "name": "极限",
+      "aliases": ["极限"],
+      "boundary": "函数或数列在某个变化过程中的趋势",
+      "domain": "数学-分析"
+    },
+    {
+      "name": "测度",
+      "aliases": ["测度"],
+      "boundary": "给集合赋予大小的函数",
+      "domain": "数学-测度论"
+    },
+    {
+      "name": "积分",
+      "aliases": ["积分"],
+      "boundary": "微积分中求面积的方法",
+      "domain": "数学-分析"
+    },
+    {
+      "name": "群结构",
+      "aliases": ["群"],
+      "boundary": "满足封闭、结合、单位元、逆元的代数结构",
+      "domain": "数学-代数"
+    },
+    {
+      "name": "阿贝尔群",
+      "aliases": ["阿贝尔群"],
+      "boundary": "交换群",
+      "domain": "数学-代数"
+    },
+    {
+      "name": "乘法逆元",
+      "aliases": ["乘法逆元"],
+      "boundary": "对于每个非零元a，存在b使得a*b=1",
+      "domain": "数学-代数"
+    },
+    {
+      "name": "有理数轴",
+      "aliases": ["有理数轴"],
+      "boundary": "实数轴上有理数所在的点",
+      "domain": "数学-分析"
+    },
+    {
+      "name": "有序对",
+      "aliases": ["有序对"],
+      "boundary": "两个对象按顺序排列组成的对",
+      "domain": "数学-集合论"
+    },
+    {
+      "name": "等价类",
+      "aliases": ["等价类"],
+      "boundary": "等价关系下互相等价的元素构成的集合",
+      "domain": "数学-关系理论"
+    },
+    {
+      "name": "Dedekind分割",
+      "aliases": ["Dedekind分割", "Dedekind"],
+      "boundary": "有理数的分割，用于定义实数",
+      "domain": "数学-分析"
+    },
+    {
+      "name": "极坐标表示",
+      "aliases": ["极坐标表示"],
+      "boundary": "用模和辐角表示复数",
+      "domain": "数学-分析"
+    },
+    {
+      "name": "Python整数",
+      "aliases": ["Python整数", "Python"],
+      "boundary": "Python编程语言中的整数类型",
+      "domain": "计算机科学-编程"
+    },
+    {
+      "name": "浮点数",
+      "aliases": ["浮点数"],
+      "boundary": "计算机中表示非整数的数值格式",
+      "domain": "计算机科学-编程"
+    },
+    {
+      "name": "减法",
+      "aliases": ["减法"],
+      "boundary": "两个数相减的运算",
+      "domain": "数学-算术"
+    },
+    {
+      "name": "负数",
+      "aliases": ["负数"],
+      "boundary": "小于0的数",
+      "domain": "数学-数论"
+    },
+    {
+      "name": "后继",
+      "aliases": ["后继"],
+      "boundary": "自然数的后一个数",
+      "domain": "数学-数论"
+    },
+    {
+      "name": "数系扩张",
+      "aliases": ["数系扩张"],
+      "boundary": "从自然数逐步扩展到复数的过程",
+      "domain": "数学-数论"
+    },
+    {
+      "name": "复平面",
+      "aliases": ["复平面"],
+      "boundary": "用平面表示复数的几何方法",
+      "domain": "数学-几何"
+    },
+    {
+      "name": "向量平移",
+      "aliases": ["向量平移"],
+      "boundary": "向量在空间中平行移动",
+      "domain": "数学-几何"
+    },
+    {
+      "name": "缩放和旋转",
+      "aliases": ["缩放和旋转"],
+      "boundary": "复数乘法对应模缩放和辐角旋转",
+      "domain": "数学-分析"
+    },
+    {
+      "name": "无限精度",
+      "aliases": ["无限精度"],
+      "boundary": "可以表示任意大的整数而不损失精度",
+      "domain": "计算机科学-编程"
+    },
+    {
+      "name": "整环",
+      "aliases": ["整环"],
+      "boundary": "无零因子的交换环",
+      "domain": "数学-代数"
+    },
+    {
+      "name": "单射",
+      "aliases": ["单射"],
+      "boundary": "函数满足如果x≠y则f(x)≠f(y)",
+      "domain": "数学-函数"
+    },
+    {
+      "name": "辐角",
+      "aliases": ["辐角"],
+      "boundary": "复数在复平面上与实轴的夹角",
+      "domain": "数学-分析"
+    },
+    {
+      "name": "共轭",
+      "aliases": ["共轭"],
+      "boundary": "复数a+bi的共轭为a-bi",
+      "domain": "数学-分析"
+    },
+    {
+      "name": "交换环",
+      "aliases": ["交换环"],
+      "boundary": "满足交换律的环",
+      "domain": "数学-代数"
+    },
+    {
+      "name": "皮亚诺公理",
+      "aliases": ["皮亚诺公理", "皮亚诺"],
+      "boundary": "定义自然数的五条公理",
+      "domain": "数学-数论"
+    },
+    {
+      "name": "无理数",
+      "aliases": ["无理数"],
+      "boundary": "不能表示为两整数之比的实数",
+      "domain": "数学-数论"
+    },
+    {
+      "name": "稠密性",
+      "aliases": ["稠密性"],
+      "boundary": "任意两个不同实数之间都存在另一个实数",
+      "domain": "数学-分析"
+    },
+    {
+      "name": "上确界存在性",
+      "aliases": ["上确界存在性"],
+      "boundary": "非空有上界的子集必有上确界",
+      "domain": "数学-分析"
+    },
+    {
+      "name": "Cauchy列必收敛",
+      "aliases": ["Cauchy列必收敛"],
+      "boundary": "柯西列一定收敛到实数",
+      "domain": "数学-分析"
+    },
+    {
+      "name": "连通性",
+      "aliases": ["连通性"],
+      "boundary": "拓扑空间不能表示为两个非空开集的并",
+      "domain": "数学-拓扑"
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "propositions": [
+    {
+      "text": "Cantor 蛇形对角线从自然数到正有理数构造了一个双射，首先生成分子分母和为d+1的最简分数。",
+      "exactQuote": "生成前 n 个正有理数的 Cantor 蛇形对角线枚举",
+      "blockId": "01-number-systems#block-48"
+    },
+    {
+      "text": "在奇数对角线上，分子从1到d递增，分母相应递减，只添加互质的分数。",
+      "exactQuote": "if d % 2 == 1: 奇数对角线: 分子从1到d",
+      "blockId": "01-number-systems#block-48"
+    },
+    {
+      "text": "在偶数对角线上，分子从d到1递减，分母相应递增，只添加互质的分数。",
+      "exactQuote": "else: 偶数对角线: 分子从d到1 (反向)",
+      "blockId": "01-number-systems#block-48"
+    },
+    {
+      "text": "平方根2不是有理数。",
+      "exactQuote": "√2 不是有理数",
+      "blockId": "01-number-systems#block-51"
+    },
+    {
+      "text": "证明平方根2是无理数的经典反证法假设√2 = p/q是最简分数，导出p和q都是偶数，与最简分数矛盾。",
+      "exactQuote": "假设 √2 = p/q （最简分数），则 p^2 = 2q^2。所以 p 为偶数，设 p=2k，代入得 4k^2 = 2q^2 ⇒ q^2 = 2k^2，故 q 也是偶数——与最简分数矛盾。",
+      "blockId": "01-number-systems#block-53"
+    },
+    {
+      "text": "无理数的发现引发了第一次数学危机，因为有理数不能覆盖数轴上所有的点。",
+      "exactQuote": "这个发现在古希腊引发了'第一次数学危机'——有理数不能覆盖数轴上所有的点。",
+      "blockId": "01-number-systems#block-54"
+    },
+    {
+      "text": "数轴上的洞需要无理数来填补。",
+      "exactQuote": "数轴上的'洞'需要一种新的数来填。",
+      "blockId": "01-number-systems#block-54"
+    },
+    {
+      "text": "Dedekind分割是有理数集Q的一个划分(A,B)，满足三个条件：A和B非空、不交且并集为Q；A中每个元素小于B中每个元素；A没有最大元。每个这样的分割定义一个实数。",
+      "exactQuote": "一个Dedekind分割是有理数集 Q 的一个划分 (A,B)，满足：1. A, B ≠ ∅，A ∪ B = Q，A ∩ B = ∅ 2. ∀a∈A, ∀b∈B: a<b 3. A 没有最大元 每个这样的分割定义一个实数。",
+      "blockId": "01-number-systems#block-57"
+    },
+    {
+      "text": "Dedekind分割的直观是用一把刀在有理数轴上切下去，刀口位置就是一个实数。",
+      "exactQuote": "用一把'刀'在有理数轴上切下去——刀口位置就是一个实数。",
+      "blockId": "01-number-systems#block-58"
+    },
+    {
+      "text": "如果刀口正好落在有理数上，对应有理数；如果刀口穿过一个洞，就创造了一个无理数。",
+      "exactQuote": "如果刀口正好落在有理数上（如2），对应有理数；如果刀口穿过一个'洞'（如√2的位置），就创造了一个无理数。",
+      "blockId": "01-number-systems#block-58"
+    },
+    {
+      "text": "实数集R等于有理数集Q并上无理数集。",
+      "exactQuote": "R = Q ∪ {无理数}",
+      "blockId": "01-number-systems#block-59"
+    },
+    {
+      "text": "完备性是R与Q的本质区别。",
+      "exactQuote": "这是 R 与 Q 的本质区别",
+      "blockId": "01-number-systems#block-61"
+    },
+    {
+      "text": "有理数集Q具有稠密性，但不具有完备性、上确界存在性、Cauchy列必收敛性和连通性。",
+      "exactQuote": "Q：稠密性 ✅，完备性 ❌，上确界存在性 ❌，Cauchy列必收敛 ❌，连通性 ❌",
+      "blockId": "01-number-systems#block-62"
+    },
+    {
+      "text": "实数集R具有稠密性、完备性、上确界存在性、Cauchy列必收敛性和连通性。",
+      "exactQuote": "R：稠密性 ✅，完备性 ✅，上确界存在性 ✅，Cauchy列必收敛 ✅，连通性 ✅",
+      "blockId": "01-number-systems#block-62"
+    },
+    {
+      "text": "完备性意味着数轴没有洞，每一个Cauchy列都在R中有极限。",
+      "exactQuote": "完备性 = 数轴没有'洞'。每一个 Cauchy 列都在 R 中有极限。",
+      "blockId": "01-number-systems#block-63"
+    },
+    {
+      "text": "完备性在数列与极限和测度与积分中是基石。",
+      "exactQuote": "这在 §3 数列与极限和 §10 测度与积分中将反复成为基石。",
+      "blockId": "01-number-systems#block-63"
+    },
+    {
+      "text": "Cantor证明了实数集R不可数，即实数比自然数多得多。",
+      "exactQuote": "Cantor 证明：R 不可数——实数比自然数'多得多'。",
+      "blockId": "01-number-systems#block-66"
+    },
+    {
+      "text": "假设(0,1)中的实数可以列出，每个数表示为二进制或十进制小数，如x1=0.a11a12a13...",
+      "exactQuote": "假设 (0,1) 中的实数可以列出：x1 = 0.a11a12a13...\nx2 = 0.a21a22a23...\nx3 = 0.a31a32a33...",
+      "blockId": "01-number-systems#block-67"
+    },
+    {
+      "text": "构造新数y=0.b1b2b3...，其中第i位bi与xii不同，则y不在列表中，产生矛盾。",
+      "exactQuote": "构造新数 y = 0.b1b2b3... 其中 bi ≠ aii——则 y 不与列表中任何数相同，矛盾！",
+      "blockId": "01-number-systems#block-69"
+    }
+  ]
+}

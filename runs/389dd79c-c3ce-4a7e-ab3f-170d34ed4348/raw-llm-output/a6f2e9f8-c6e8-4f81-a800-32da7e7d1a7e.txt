@@ -1,0 +1,28 @@
+{
+  "verdict": "passed",
+  "dimensions": {
+    "support": {
+      "result": "pass",
+      "evidence": "整数的独特之处在于它还是一个**整环**（没有零因子：$ab=0 \\Rightarrow a=0 \\text{ 或 } b=0$）。"
+    },
+    "addition": {
+      "result": "pass",
+      "evidence": "Claim 中的“整数集 Z 是一个整环”与原文“整数的独特之处在于它还是一个整环”一致，未添加新信息。"
+    },
+    "inference": {
+      "result": "pass",
+      "evidence": "Claim 直接陈述原文内容，无推断。"
+    },
+    "limits": {
+      "result": "pass",
+      "evidence": "原文无额外限制条件，Claim 未遗漏。"
+    },
+    "citation": {
+      "result": "pass",
+      "evidence": "Claim 引用原文证据，未错位。"
+    }
+  },
+  "anchor": "整数的独特之处在于它还是一个**整环**（没有零因子：$ab=0 \\Rightarrow a=0 \\text{ 或 } b=0$）。",
+  "failedDimensions": [],
+  "issues": []
+}

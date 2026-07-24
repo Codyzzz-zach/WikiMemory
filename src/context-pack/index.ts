@@ -14,14 +14,17 @@
  *   - UNRESOLVED → knownGaps
  */
 
+import { estimateTokens } from "../compiler/telemetry.js";
 import type { AppConfig } from "../config/types.js";
 import { buildGraph, searchClaims, walkGraph } from "../graph/index.js";
 import {
+	computeKnowledgeVersion,
 	findSpansByIds,
 	readAllClaims,
 	readAllConcepts,
 	readAllRelations,
 	readAllSpans,
+	readAllWikiModules,
 } from "../linter/storage.js";
 import type {
 	Claim,
@@ -100,7 +103,7 @@ export function buildKnowledgeMap(
 	}
 	const topics = [...wordFreq.entries()]
 		.filter(([, count]) => count >= 2) // 至少出现 2 次
-		.sort((a, b) => b[1]! - a[1]!)
+		.sort(([, leftCount], [, rightCount]) => rightCount - leftCount)
 		.slice(0, 10)
 		.map(([word]) => word);
 
@@ -202,19 +205,19 @@ export function buildContextPack(
 	const allConcepts = readAllConcepts(config);
 	let allRelations = readAllRelations(config);
 	const allSpans = readAllSpans(config);
+	const allWikiModules = readAllWikiModules(config);
+	const knowledgeVersion = computeKnowledgeVersion(allClaims, allConcepts, allRelations);
 
 	// ── 1.5 v1.1：作用域过滤（Global Base + Scoped Overlay）──
 	// 缺少 ScopeContext 时按 Global-only 处理，不能"默认全选"
-	if (scopeContext) {
-		allClaims = filterClaimsByScope(allClaims, scopeContext);
-		// Relation 只保留两端 Claim 都在过滤后集合中的边
-		const claimIds = new Set(allClaims.map((c) => c.id));
-		allRelations = allRelations.filter((r) => {
-			const fromId = r.from as string;
-			const toId = r.to as string;
-			return claimIds.has(fromId) && claimIds.has(toId);
-		});
-	}
+	allClaims = scopeContext
+		? filterClaimsByScope(allClaims, scopeContext)
+		: allClaims.filter((claim) => claim.scope.type === "GLOBAL");
+	// Relation 只保留两端 Claim 都在过滤后集合中的边，防止通过边泄露其他作用域。
+	const scopedClaimIds = new Set(allClaims.map((claim) => claim.id));
+	allRelations = allRelations.filter((relation) =>
+		[relation.from as string, relation.to as string].every((id) => scopedClaimIds.has(id)),
+	);
 
 	// ── 2. 构建全局地图（修断点 3：map-first）──
 	const knowledgeMap = buildKnowledgeMap(allClaims, allConcepts);
@@ -242,6 +245,7 @@ export function buildContextPack(
 		"CONTRADICTS",
 		"SUPERSEDES",
 		"EQUIVALENT_UNDER",
+		"RELATED_TO",
 	]);
 	const subgraph = walkGraph(graph, seedIds, maxDepth, allowedTypes);
 
@@ -255,6 +259,7 @@ export function buildContextPack(
 	let usedChars = 0;
 	const selectedClaims: Claim[] = [];
 	const selectedRelations: Relation[] = [];
+	const selectedWikiModules: typeof allWikiModules = [];
 	const selectedSpanIds = new Set<string>();
 
 	// 6a. 选 Claim（从 claimRelationBudget 扣）
@@ -300,6 +305,26 @@ export function buildContextPack(
 	}
 	usedChars += relUsedChars;
 
+	// 6d. 只选引用了当前 Claim 的 WikiModule；Wiki 不能脱离 Canonical Claim 独立进入 Pack。
+	for (const module of allWikiModules) {
+		if (!module.claimRefs.some((claimId) => existingIds.has(claimId as string))) continue;
+		const moduleChars =
+			module.coreQuestion.length +
+			module.currentUnderstanding.length +
+			module.disputes.join(";").length;
+		if (usedChars + moduleChars > claimRelationBudget) {
+			selectionLog.push({
+				selected: "",
+				reason: "",
+				dropped: module.id,
+				dropReason: "预算超限(WikiModule)",
+			});
+			continue;
+		}
+		selectedWikiModules.push(module);
+		usedChars += moduleChars;
+	}
+
 	// ── 7. 回填原文证据（从 evidenceBudget 扣，超限裁剪）──
 	let evidenceUsedChars = 0;
 	const evidenceSpans: typeof allSpans = [];
@@ -336,6 +361,22 @@ export function buildContextPack(
 			if (!addOverhead(`📌 Claim ${claim.id} 适用条件: ${claim.conditions.join("; ")}`)) break;
 		}
 	}
+	for (const relation of selectedRelations) {
+		if (relation.conditions.length > 0) {
+			if (
+				!addOverhead(
+					`📌 Relation ${relation.id} (${relation.type}) 适用条件: ${relation.conditions.join("; ")}`,
+				)
+			)
+				break;
+		}
+		if (
+			relation.conditionStatus === "UNVERIFIED" &&
+			!addOverhead(`⚠️ Relation ${relation.id} 条件尚未审计`)
+		) {
+			break;
+		}
+	}
 
 	// ── 9. 已知缺口（从 overheadBudget 剩余扣）──
 	const knownGaps: string[] = [];
@@ -366,14 +407,67 @@ export function buildContextPack(
 		`找到 ${evidenceSpans.length} 条原文证据`,
 	].join("\n");
 
-	return {
-		knowledgeVersion: new Date().toISOString(),
+	const availableEvidenceIds = new Set(evidenceSpans.map((span) => span.id));
+	const evidenceBackedClaims = selectedClaims.filter((claim) =>
+		claim.evidenceSpanIds.every((spanId) => availableEvidenceIds.has(spanId)),
+	);
+	const evidenceBackedClaimIds = new Set(evidenceBackedClaims.map((claim) => claim.id));
+	const evidenceBackedRelations = selectedRelations.filter((relation) =>
+		[relation.from as string, relation.to as string].every((id) => evidenceBackedClaimIds.has(id)),
+	);
+	const evidenceBackedWikiModules = selectedWikiModules.filter((module) =>
+		module.claimRefs.some((claimId) => evidenceBackedClaimIds.has(claimId as string)),
+	);
+	const pack: ContextPack = {
+		knowledgeVersion,
 		taskMap,
-		subgraph: selectedRelations,
-		wikiModules: [], // Phase 2 实现
+		subgraph: { claims: evidenceBackedClaims, relations: evidenceBackedRelations },
+		wikiModules: evidenceBackedWikiModules,
 		evidenceSpans,
 		conflictsAndConditions,
-		selectionLog,
+		selectionLog: selectionLog.slice(0, 50),
 		knownGaps,
 	};
+	return enforceContextBudget(pack, budget);
+}
+
+/** 最终以真实序列化载荷复核预算；裁剪时保持 Claim→Evidence 和 Relation→Endpoint 闭包。 */
+function enforceContextBudget(pack: ContextPack, budget: number): ContextPack {
+	if (!Number.isSafeInteger(budget) || budget <= 0)
+		throw new Error(`非法 Context budget: ${budget}`);
+	const fits = () => estimateTokens(JSON.stringify(pack)) <= budget;
+	const refreshDerivedClosure = () => {
+		const claimIds = new Set(pack.subgraph.claims.map((claim) => claim.id));
+		pack.subgraph.relations = pack.subgraph.relations.filter((relation) =>
+			[relation.from as string, relation.to as string].every((id) => claimIds.has(id)),
+		);
+		pack.wikiModules = pack.wikiModules.filter((module) =>
+			module.claimRefs.some((claimId) => claimIds.has(claimId as string)),
+		);
+		const requiredSpanIds = new Set(pack.subgraph.claims.flatMap((claim) => claim.evidenceSpanIds));
+		pack.evidenceSpans = pack.evidenceSpans.filter((span) => requiredSpanIds.has(span.id));
+		pack.taskMap = pack.taskMap
+			.replace(/找到 \d+ 条相关 Claim/, `找到 ${pack.subgraph.claims.length} 条相关 Claim`)
+			.replace(/找到 \d+ 条关系/, `找到 ${pack.subgraph.relations.length} 条关系`)
+			.replace(/找到 \d+ 条原文证据/, `找到 ${pack.evidenceSpans.length} 条原文证据`);
+	};
+
+	while (!fits() && pack.selectionLog.length > 0) pack.selectionLog.pop();
+	while (!fits() && pack.wikiModules.length > 0) pack.wikiModules.pop();
+	while (!fits() && pack.subgraph.relations.length > 0) pack.subgraph.relations.pop();
+	while (!fits() && pack.subgraph.claims.length > 0) {
+		pack.subgraph.claims.pop();
+		refreshDerivedClosure();
+	}
+	while (!fits() && pack.conflictsAndConditions.length > 0) {
+		pack.conflictsAndConditions.pop();
+	}
+	while (!fits() && pack.knownGaps.length > 0) pack.knownGaps.pop();
+	if (!fits()) {
+		pack.taskMap = `主题: ${pack.taskMap.split("\n")[0]?.replace(/^主题:\s*/, "") ?? "未知"}`;
+	}
+	if (!fits()) {
+		throw new Error(`Context budget=${budget} 过小，连最小合同外壳都无法容纳`);
+	}
+	return pack;
 }

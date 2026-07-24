@@ -125,6 +125,22 @@ export type EdgeSource =
 	| "human-confirm"
 	| "periodic-lint";
 
+/** Relation 条件是否经过显式确认，避免 [] 同时表示“无条件”和“未提取”。 */
+export type RelationConditionStatus = "EXPLICIT_NONE" | "PRESERVED" | "UNVERIFIED";
+
+/**
+ * Source 的编译状态——与不可变 Source 及 Source manifest 分离。
+ * 状态事件记录在 runs/compile-state.jsonl，按 sourceId 取最后一条为准。
+ */
+export type CompileState =
+	| "SOURCE_INGESTED" // Source/Span 已写入，未开始编译
+	| "COMPILE_RUNNING" // 编译进行中
+	| "COMPILE_FAILED" // 编译失败（可重试）
+	| "COMPILE_PARTIAL" // 部分阶段完成但未发布
+	| "RELATION_SCAN_PENDING" // 单材料已发布，跨材料扫描待完成/重试
+	| "COMPLETED" // 单材料与跨材料两个阶段都已完成
+	| "COMPILED"; // v1.1 遗留状态：缺少当前 Relation 审计证明，必须完整重编
+
 // ─── 一等对象（严格对齐 Product Definition §05）─────────────────
 
 /** 不可变证据载体 */
@@ -197,6 +213,9 @@ export interface Relation {
 	to: NodeRef;
 	type: RelationType;
 	conditions: string[];
+	conditionStatus: RelationConditionStatus;
+	/** 通过哪一版边级语义门禁；null 表示未审核，不得进入图消费。 */
+	relationAuditVersion: string | null;
 	evidenceSpanIds: string[];
 	derivation: Derivation;
 	validity: Validity;
@@ -252,7 +271,10 @@ export interface SelectionLogEntry {
 export interface ContextPack {
 	knowledgeVersion: string;
 	taskMap: string;
-	subgraph: Relation[];
+	subgraph: {
+		claims: Claim[];
+		relations: Relation[];
+	};
 	wikiModules: WikiModule[];
 	evidenceSpans: SourceSpan[];
 	conflictsAndConditions: string[];

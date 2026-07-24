@@ -1,0 +1,60 @@
+{
+  "claims": [
+    {
+      "statement": "皮亚诺使用五条公理精确定义了自然数。",
+      "evidenceQuotes": ["1889年，皮亚诺用五条公理精确定义了自然数："],
+      "blockIds": ["01-number-systems#block-5"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "任意两个不同的有理数之间存在无穷多个有理数。",
+      "evidenceQuotes": ["任意两个不同的有理数之间，存在无穷多个有理数"],
+      "blockIds": ["01-number-systems#block-36"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "发现根号2不是有理数在古希腊引发了第一次数学危机。",
+      "evidenceQuotes": ["这个发现在古希腊引发了\"第一次数学危机\""],
+      "blockIds": ["01-number-systems#block-54"],
+      "conditions": [],
+      "derivation": "INFERRED",
+      "confidence": 0.9
+    },
+    {
+      "statement": "Dedekind（1872）给出了实数的精妙定义。",
+      "evidenceQuotes": ["Dedekind（1872）给出了实数的精妙定义"],
+      "blockIds": ["01-number-systems#block-56"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "每个这样的分割定义一个实数。",
+      "evidenceQuotes": ["每个这样的分割定义一个实数。"],
+      "blockIds": ["01-number-systems#block-57"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "有上界必有上确界。",
+      "evidenceQuotes": ["有上界必有上确界"],
+      "blockIds": ["01-number-systems#block-62"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "Cauchy列必收敛。",
+      "evidenceQuotes": ["Cauchy 列必收敛"],
+      "blockIds": ["01-number-systems#block-62"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    }
+  ]
+}

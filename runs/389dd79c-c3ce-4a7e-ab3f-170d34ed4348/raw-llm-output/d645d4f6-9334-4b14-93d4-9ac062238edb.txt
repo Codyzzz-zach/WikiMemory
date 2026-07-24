@@ -1,0 +1,28 @@
+{
+  "verdict": "passed",
+  "dimensions": {
+    "support": {
+      "result": "pass",
+      "evidence": "虽然最终答案 $x=4$ 是实数"
+    },
+    "addition": {
+      "result": "pass",
+      "evidence": "原文已明确表述，无添加信息"
+    },
+    "inference": {
+      "result": "pass",
+      "evidence": "原文直接陈述事实，无推断"
+    },
+    "limits": {
+      "result": "pass",
+      "evidence": "原文无附加条件或限定词，Claim未遗漏"
+    },
+    "citation": {
+      "result": "pass",
+      "evidence": "Claim与引用的SourceSpan准确对应"
+    }
+  },
+  "anchor": "虽然最终答案 $x=4$ 是实数",
+  "failedDimensions": [],
+  "issues": []
+}

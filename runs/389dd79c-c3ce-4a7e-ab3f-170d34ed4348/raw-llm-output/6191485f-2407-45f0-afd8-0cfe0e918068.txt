@@ -1,0 +1,28 @@
+{
+  "verdict": "passed",
+  "dimensions": {
+    "support": {
+      "result": "pass",
+      "evidence": "极坐标 $z = r(\\cos\\theta + i\\sin\\theta) = re^{i\\theta}$"
+    },
+    "addition": {
+      "result": "pass",
+      "evidence": "Claim 未添加原文以外的信息"
+    },
+    "inference": {
+      "result": "pass",
+      "evidence": "Claim 为直接陈述，无推断"
+    },
+    "limits": {
+      "result": "pass",
+      "evidence": "原文无限制条件，Claim 也未添加"
+    },
+    "citation": {
+      "result": "pass",
+      "evidence": "Claim 内容与 SourceSpan 完全匹配"
+    }
+  },
+  "anchor": "极坐标 $z = r(\\cos\\theta + i\\sin\\theta) = re^{i\\theta}$",
+  "failedDimensions": [],
+  "issues": []
+}

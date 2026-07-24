@@ -1,0 +1,32 @@
+{
+  "relations": [
+    {
+      "fromClaimIndex": 57,
+      "toClaimIndex": 89,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["在完备度量空间的定义下"],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 90,
+      "toClaimIndex": 99,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["实数集 R 的完备性概念相同"],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 91,
+      "toClaimIndex": 97,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["有理数集 Q 的不完备性概念相同"],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 100,
+      "toClaimIndex": 96,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["实数集 R 的 Cauchy 收敛性质相同"],
+      "confidence": 0.9
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "verdict": "failed",
+  "dimensions": {
+    "support": {
+      "result": "fail",
+      "evidence": "原文证据仅给出标题'乘法封闭'和勾标记，未提供任何关于整数集Z的实际描述或断言。"
+    },
+    "addition": {
+      "result": "pass",
+      "evidence": "无额外信息添加。"
+    },
+    "inference": {
+      "result": "pass",
+      "evidence": "未涉及推断。"
+    },
+    "limits": {
+      "result": "pass",
+      "evidence": "未涉及限定词。"
+    },
+    "citation": {
+      "result": "pass",
+      "evidence": "引用位置准确。"
+    }
+  },
+  "anchor": "乘法封闭 | ✅",
+  "failedDimensions": ["support"],
+  "issues": ["原文证据未包含任何关于整数集Z或乘法封闭性的实际陈述，无法支持Claim的断言。"]
+}

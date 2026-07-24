@@ -1,0 +1,64 @@
+{
+  "propositions": [
+    {
+      "text": "复数集合C的定义是C = {a + bi | a, b ∈ R, i^2 = -1}。",
+      "exactQuote": "$$\\mathbb{C} = \\{a + bi \\mid a,b \\in \\mathbb{R}, i^2 = -1\\}$$",
+      "blockId": "01-number-systems#block-76"
+    },
+    {
+      "text": "复数的实部Re(z) = a，虚部Im(z) = b。",
+      "exactQuote": "- **实部** $\\Re(z) = a$，**虚部** $\\Im(z) = b$",
+      "blockId": "01-number-systems#block-77"
+    },
+    {
+      "text": "复数的模|z| = sqrt(a^2 + b^2)。",
+      "exactQuote": "- **模** $|z| = \\sqrt{a^2 + b^2}$",
+      "blockId": "01-number-systems#block-77"
+    },
+    {
+      "text": "复数的共轭是z = a - bi。",
+      "exactQuote": "- **共轭** $\\overline{z} = a - bi$",
+      "blockId": "01-number-systems#block-77"
+    },
+    {
+      "text": "复数的极坐标表示为z = r(cosθ + i sinθ) = re^{iθ}。",
+      "exactQuote": "- **极坐标** $z = r(\\cos\\theta + i\\sin\\theta) = re^{i\\theta}$",
+      "blockId": "01-number-systems#block-77"
+    },
+    {
+      "text": "复数的加法对应向量平移，乘法对应缩放加旋转。",
+      "exactQuote": "加法 = 向量平移，乘法 = 缩放 + 旋转。",
+      "blockId": "01-number-systems#block-80"
+    },
+    {
+      "text": "复数乘积的模等于模的乘积，辐角等于辐角的和：z1·z2 = r1·r2·e^{i(θ1+θ2)}。",
+      "exactQuote": "$$z_1 \\cdot z_2 = r_1r_2 \\cdot e^{i(\\theta_1 + \\theta_2)}$$",
+      "blockId": "01-number-systems#block-81"
+    },
+    {
+      "text": "欧拉公式e^{iπ} + 1 = 0连接了五个最基础的数学常数和三种基本运算。",
+      "exactQuote": "这个公式连接了五个最基础的数学常数（$e, i, \\pi, 1, 0$）和三种基本运算（加法、乘法、指数）。",
+      "blockId": "01-number-systems#block-85"
+    },
+    {
+      "text": "一般欧拉公式为e^{iθ} = cosθ + i sinθ，揭示了复指数与三角函数的深层统一。",
+      "exactQuote": "更一般地：$e^{i\\theta} = \\cos\\theta + i\\sin\\theta$。这揭示了复指数与三角函数的深层统一——振动 = 复平面上的圆周运动。",
+      "blockId": "01-number-systems#block-86"
+    },
+    {
+      "text": "代数基本定理：任何n次复系数多项式在C中恰好有n个根（计重数）。",
+      "exactQuote": "**代数基本定理**：任何 $n$ 次复系数多项式在 $\\mathbb{C}$ 中恰好有 $n$ 个根（计重数）。",
+      "blockId": "01-number-systems#block-88"
+    },
+    {
+      "text": "C是代数封闭的，在C上再扩张只会失去域结构，不会获得新的方程解。",
+      "exactQuote": "$\\mathbb{C}$ 是**代数封闭的**——数系扩张至此终结：在 $\\mathbb{C}$ 上再扩张，只会失去域结构，不会获得新的方程解。",
+      "blockId": "01-number-systems#block-90"
+    },
+    {
+      "text": "数系扩张顺序为自然数N到整数Z（减法封闭）、到有理数Q（除法封闭）、到实数R（极限封闭）、到复数C（方程解封闭）。",
+      "exactQuote": "$$\\text{N}$$ $$\\text{Z}$$ $$\\text{Q}$$ $$\\text{R}$$ $$\\text{C}$$",
+      "blockId": "01-number-systems#block-95"
+    }
+  ]
+}

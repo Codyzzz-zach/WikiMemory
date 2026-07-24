@@ -12,26 +12,70 @@
  * Product Definition 哲学 09：语义 CI 必须发生在消费前。
  */
 
+import { createHash } from "node:crypto";
 import { join } from "node:path";
+import type { CompileRunHandle } from "../compiler/run-state.js";
+import { observedChat, recordParseResult } from "../compiler/telemetry.js";
 import type { AppConfig } from "../config/types.js";
 import type { LLMProvider } from "../core/llm-provider.js";
-import { SEMANTIC_AUDIT_SYSTEM, SEMANTIC_AUDIT_VERSION } from "../prompts/index.js";
-import type { Claim, Concept, Relation, SourceSpan } from "../types/index.js";
-import { SemanticVerdictSchema, parseLLMJson } from "../types/schemas.js";
-import type { SemanticVerdict } from "../types/schemas.js";
-import { appendAuditMetric, appendJsonl } from "./storage.js";
+import type { ChatOptions } from "../core/types.js";
+import {
+	RELATION_AUDIT_SYSTEM,
+	RELATION_AUDIT_VERSION,
+	SEMANTIC_AUDIT_SYSTEM,
+	SEMANTIC_AUDIT_VERSION,
+} from "../prompts/index.js";
+import type {
+	AssertedRecord,
+	Claim,
+	Concept,
+	Relation,
+	Scope,
+	SourceSpan,
+} from "../types/index.js";
+import {
+	RelationSemanticVerdictSchema,
+	SemanticVerdictSchema,
+	parseLLMJson,
+} from "../types/schemas.js";
+import type {
+	AuditDimensionName,
+	RelationAuditDimensionName,
+	RelationSemanticVerdict,
+	SemanticVerdict,
+} from "../types/schemas.js";
+import {
+	appendAuditMetric,
+	appendJsonl,
+	findSpansByIds,
+	readAllAssertedRecords,
+	readJson,
+	resolveSpanById,
+	writeJsonAtomic,
+} from "./storage.js";
 
 // ─── 结构化 Lint Issue（修断点 7）──────────────────────────────
 
 /** Lint issue 的稳定编码——不依赖文本匹配 */
 export type IssueCode =
 	| "MISSING_EVIDENCE"
+	| "MISSING_PROVENANCE"
+	| "INVALID_SUPPORTING_EVIDENCE"
+	| "INVALID_ASSERTED_RECORD"
+	| "INVALID_SCOPE"
 	| "BROKEN_REFERENCE"
 	| "EMPTY_STATEMENT"
 	| "INVALID_PUBLICATION_STATE"
 	| "BROKEN_RELATION_ENDPOINT"
 	| "INVALID_RELATION_TYPE"
 	| "RELATION_ENDPOINT_QUARANTINED"
+	| "RELATION_CONDITION_REQUIRED"
+	| "RELATION_EQUIVALENCE_REVIEW_REQUIRED"
+	| "HUMAN_REVIEW_REJECTED"
+	| "RELATION_SEMANTIC_FAILED"
+	| "RELATION_TYPE_MISMATCH"
+	| "RELATION_DIRECTION_MISMATCH"
+	| "RELATION_CONDITIONS_MISSING"
 	| "SEMANTIC_SUPPORT_FAILED"
 	| "SEMANTIC_ADDITION_MAJOR"
 	| "SEMANTIC_INFERENCE_WRONG"
@@ -82,10 +126,16 @@ export interface CompileLintResult {
 	quarantinedRelations: Array<{ relation: Relation; issues: LintIssue[] }>;
 }
 
+const SEMANTIC_AUDIT_CONCURRENCY = 4;
+
 // ─── 确定性硬门禁 ────────────────────────────────────────────────
 
 /** Claim 结构性检查 */
-export function checkClaimStructure(claim: Claim, allSpanIds: Set<string>): LintIssue[] {
+export function checkClaimStructure(
+	claim: Claim,
+	allSpans: SourceSpan[],
+	assertedRecords: AssertedRecord[] = [],
+): LintIssue[] {
 	const issues: LintIssue[] = [];
 
 	if (!claim.statement || claim.statement.trim().length === 0) {
@@ -98,18 +148,133 @@ export function checkClaimStructure(claim: Claim, allSpanIds: Set<string>): Lint
 		});
 	}
 
-	if (claim.evidenceSpanIds.length === 0) {
+	if (claim.provenanceRefs.length === 0) {
 		issues.push({
-			code: "MISSING_EVIDENCE",
+			code: "MISSING_PROVENANCE",
 			severity: "error",
 			affectedObject: claim.id,
-			detail: "无证据（evidenceSpanIds 为空）",
+			detail: "无来源血缘（provenanceRefs 为空）",
 			recommendedState: "QUARANTINE",
 		});
 	}
 
+	if (claim.supportingEvidenceRefs.length === 0) {
+		issues.push({
+			code: "INVALID_SUPPORTING_EVIDENCE",
+			severity: "error",
+			affectedObject: claim.id,
+			detail: "无成立依据（supportingEvidenceRefs 为空）",
+			recommendedState: "QUARANTINE",
+		});
+	}
+
+	if (claim.scope.type !== "GLOBAL" && !claim.scope.id) {
+		issues.push({
+			code: "INVALID_SCOPE",
+			severity: "error",
+			affectedObject: claim.id,
+			detail: `${claim.scope.type} Claim 缺少 scope.id`,
+			recommendedState: "QUARANTINE",
+		});
+	}
+	if (claim.scope.type === "GLOBAL" && claim.scope.id) {
+		issues.push({
+			code: "INVALID_SCOPE",
+			severity: "error",
+			affectedObject: claim.id,
+			detail: "GLOBAL Claim 不应携带 scope.id",
+			recommendedState: "QUARANTINE",
+		});
+	}
+
+	const sourceSupportIds = new Set(
+		claim.supportingEvidenceRefs
+			.filter((ref) => ref.type === "SourceSpan")
+			.map((ref) => ref.spanId),
+	);
 	for (const spanId of claim.evidenceSpanIds) {
-		if (!allSpanIds.has(spanId)) {
+		if (!sourceSupportIds.has(spanId)) {
+			issues.push({
+				code: "INVALID_SUPPORTING_EVIDENCE",
+				severity: "error",
+				affectedObject: claim.id,
+				detail: `evidenceSpanIds 中的 ${spanId} 未在 supportingEvidenceRefs 中声明`,
+				recommendedState: "QUARANTINE",
+			});
+		}
+	}
+	for (const spanId of sourceSupportIds) {
+		if (!claim.evidenceSpanIds.includes(spanId)) {
+			issues.push({
+				code: "INVALID_SUPPORTING_EVIDENCE",
+				severity: "error",
+				affectedObject: claim.id,
+				detail: `supportingEvidenceRefs 中的 SourceSpan ${spanId} 未同步到 evidenceSpanIds`,
+				recommendedState: "QUARANTINE",
+			});
+		}
+	}
+
+	const hasMaterialSupport = claim.supportingEvidenceRefs.some(
+		(ref) => ref.type === "SourceSpan" || ref.type === "ExperimentRecord",
+	);
+	const hasAssertedSupport = claim.supportingEvidenceRefs.some(
+		(ref) => ref.type === "AssertedRecord",
+	);
+	if (claim.claimKind === "FACT" && (!hasMaterialSupport || hasAssertedSupport)) {
+		issues.push({
+			code: "INVALID_SUPPORTING_EVIDENCE",
+			severity: "error",
+			affectedObject: claim.id,
+			detail:
+				"FACT 的 supportingEvidenceRefs 只能使用 SourceSpan/ExperimentRecord；AssertedRecord 只能记录在 provenanceRefs",
+			recommendedState: "QUARANTINE",
+		});
+	}
+	if ((claim.claimKind === "DECISION" || claim.claimKind === "PREFERENCE") && !hasAssertedSupport) {
+		issues.push({
+			code: "INVALID_SUPPORTING_EVIDENCE",
+			severity: "error",
+			affectedObject: claim.id,
+			detail: `${claim.claimKind} 需要经过权限/主体校验的 AssertedRecord 作为成立依据`,
+			recommendedState: "QUARANTINE",
+		});
+	}
+	if (claim.claimKind === "DECISION" && claim.scope.type !== "PROJECT") {
+		issues.push(invalidAssertedRecordIssue(claim, "DECISION 必须绑定 PROJECT scope"));
+	}
+	if (claim.claimKind === "PREFERENCE" && claim.scope.type !== "PERSONAL") {
+		issues.push(invalidAssertedRecordIssue(claim, "PREFERENCE 必须绑定 PERSONAL scope"));
+	}
+
+	const recordsById = new Map(assertedRecords.map((record) => [record.assertionId, record]));
+	const provenanceAssertionIds = new Set(
+		claim.provenanceRefs
+			.filter((ref) => ref.type === "AssertedRecord")
+			.map((ref) => ref.assertionId),
+	);
+	for (const ref of [...claim.provenanceRefs, ...claim.supportingEvidenceRefs]) {
+		if (ref.type !== "AssertedRecord") continue;
+		const record = recordsById.get(ref.assertionId);
+		if (!record) {
+			issues.push(invalidAssertedRecordIssue(claim, `找不到 AssertedRecord: ${ref.assertionId}`));
+			continue;
+		}
+		issues.push(...validateAssertedRecord(claim, record));
+	}
+	for (const ref of claim.supportingEvidenceRefs) {
+		if (ref.type === "AssertedRecord" && !provenanceAssertionIds.has(ref.assertionId)) {
+			issues.push(
+				invalidAssertedRecordIssue(
+					claim,
+					`作为 support 的 AssertedRecord ${ref.assertionId} 也必须出现在 provenanceRefs`,
+				),
+			);
+		}
+	}
+
+	for (const spanId of claim.evidenceSpanIds) {
+		if (!resolveSpanById(allSpans, spanId)) {
 			issues.push({
 				code: "BROKEN_REFERENCE",
 				severity: "error",
@@ -119,8 +284,53 @@ export function checkClaimStructure(claim: Claim, allSpanIds: Set<string>): Lint
 			});
 		}
 	}
+	for (const ref of [...claim.provenanceRefs, ...claim.supportingEvidenceRefs]) {
+		if (ref.type === "SourceSpan" && !resolveSpanById(allSpans, ref.spanId)) {
+			issues.push({
+				code: "BROKEN_REFERENCE",
+				severity: "error",
+				affectedObject: claim.id,
+				detail: `KnowledgeRef 引用了不存在的 spanId: ${ref.spanId}`,
+				recommendedState: "QUARANTINE",
+			});
+		}
+	}
 
 	return issues;
+}
+
+function invalidAssertedRecordIssue(claim: Claim, detail: string): LintIssue {
+	return {
+		code: "INVALID_ASSERTED_RECORD",
+		severity: "error",
+		affectedObject: claim.id,
+		detail,
+		recommendedState: "QUARANTINE",
+	};
+}
+
+function validateAssertedRecord(claim: Claim, record: AssertedRecord): LintIssue[] {
+	const problems: string[] = [];
+	if (record.claimId !== claim.id) problems.push(`claimId=${record.claimId} 与 ${claim.id} 不一致`);
+	if (!sameScope(record.scope, claim.scope)) problems.push("scope 与 Claim 不一致");
+	if (!record.assertedBy.trim()) problems.push("assertedBy 为空");
+	if (!record.assertionText.trim()) problems.push("assertionText 为空");
+	if (!record.authorityBasis.trim()) problems.push("authorityBasis 为空");
+	if (Number.isNaN(Date.parse(record.assertedAt))) problems.push("assertedAt 不是合法时间");
+	if (
+		claim.claimKind === "PREFERENCE" &&
+		claim.scope.type === "PERSONAL" &&
+		record.assertedBy !== claim.scope.id
+	) {
+		problems.push("PREFERENCE 的 assertedBy 必须是 PERSONAL scope 主体");
+	}
+	return problems.map((problem) =>
+		invalidAssertedRecordIssue(claim, `AssertedRecord ${record.assertionId}: ${problem}`),
+	);
+}
+
+function sameScope(left: Scope, right: Scope): boolean {
+	return left.type === right.type && left.id === right.id;
 }
 
 /** 合法的 RelationType 集合——用于 type 合法性硬检查 */
@@ -146,6 +356,7 @@ export function checkRelationStructure(
 	relation: Relation,
 	canonicalClaimIds: Set<string>,
 	allClaimIds: Set<string>,
+	allSpans: SourceSpan[] = [],
 ): LintIssue[] {
 	const issues: LintIssue[] = [];
 
@@ -158,6 +369,47 @@ export function checkRelationStructure(
 			detail: `未知的 Relation 类型: ${relation.type}（合法值: REQUIRES | DERIVED_FROM | SUPPORTS | CONTRADICTS | SUPERSEDES | EQUIVALENT_UNDER | RELATED_TO）`,
 			recommendedState: "QUARANTINE",
 		});
+	}
+
+	if (relation.type === "EQUIVALENT_UNDER" && relation.conditions.length === 0) {
+		issues.push({
+			code: "RELATION_CONDITION_REQUIRED",
+			severity: "error",
+			affectedObject: relation.id,
+			detail: "EQUIVALENT_UNDER 必须声明等价成立的明确条件；无条件重复 Claim 应在去重阶段合并",
+			recommendedState: "QUARANTINE",
+		});
+	}
+	if (relation.type === "EQUIVALENT_UNDER") {
+		issues.push({
+			code: "RELATION_EQUIVALENCE_REVIEW_REQUIRED",
+			severity: "error",
+			affectedObject: relation.id,
+			detail:
+				"EQUIVALENT_UNDER 自动审计在真实抽检中 4/4 误判；独立人工复核或校准门禁完成前禁止自动晋级",
+			recommendedState: "QUARANTINE",
+		});
+	}
+
+	if (relation.evidenceSpanIds.length === 0) {
+		issues.push({
+			code: "MISSING_EVIDENCE",
+			severity: "error",
+			affectedObject: relation.id,
+			detail: "Relation 没有边级证据候选",
+			recommendedState: "QUARANTINE",
+		});
+	}
+	for (const spanId of relation.evidenceSpanIds) {
+		if (allSpans.length > 0 && !resolveSpanById(allSpans, spanId)) {
+			issues.push({
+				code: "BROKEN_REFERENCE",
+				severity: "error",
+				affectedObject: relation.id,
+				detail: `Relation 引用了不存在的 spanId: ${spanId}`,
+				recommendedState: "QUARANTINE",
+			});
+		}
 	}
 
 	const fromId = relation.from as string;
@@ -226,9 +478,12 @@ export async function semanticCheck(
 	claim: Claim,
 	spans: SourceSpan[],
 	provider: LLMProvider,
+	run?: CompileRunHandle,
 ): Promise<LintIssue[]> {
 	const evidenceSpans = spans.filter((s) => claim.evidenceSpanIds.includes(s.id));
-	const evidenceText = evidenceSpans.map((s) => `[${s.blockId}] ${s.text}`).join("\n\n");
+	const evidenceText = evidenceSpans
+		.map((span, index) => `[证据 ${index}][block=${span.blockId}][span=${span.id}]\n${span.text}`)
+		.join("\n\n");
 
 	if (!evidenceText) {
 		recordAuditMetric(config, claim.id, "skipped", "no-evidence");
@@ -254,54 +509,110 @@ ${claim.conditions.length > 0 ? claim.conditions.join("; ") : "无"}
 # 原文证据（SourceSpan）
 ${evidenceText}
 
-按系统指令的 5 维度对照检查，返回严格 JSON。`;
+按系统指令的 5 维度对照检查。只能用上面的证据编号返回严格 JSON。`;
 
-	const result = await provider.chat({
+	const baseChatOptions: ChatOptions = {
 		model: config.model,
 		systemPrompt: SEMANTIC_AUDIT_SYSTEM,
 		messages: [{ role: "user", content: prompt }],
-		responseFormat: "json_object",
+		responseFormat: "json_object" as const,
 		thinkingDisabled: true,
 		maxTokens: 4096,
-	});
+	};
+	let parsed: SemanticVerdict | null = null;
+	let lastAuditError: unknown = null;
+	const cachePath = semanticAuditCachePath(config, claim, prompt);
+	const cached = readJson<{
+		auditVersion: string;
+		model: string;
+		verdict: unknown;
+	}>(cachePath);
+	if (cached?.auditVersion === SEMANTIC_AUDIT_VERSION && cached.model === config.model) {
+		const cacheResult = SemanticVerdictSchema.safeParse(cached.verdict);
+		if (cacheResult.success) {
+			try {
+				validateSemanticVerdict(cacheResult.data, evidenceSpans.length);
+				parsed = cacheResult.data;
+				if (run) {
+					appendJsonl(join(config.runsDir, "llm-calls.jsonl"), [
+						{
+							eventType: "LLM_AUDIT_CACHE_HIT",
+							runId: run.runId,
+							sourceId: run.sourceId,
+							stage: "LINT",
+							batchId: `audit-${claim.id}`,
+							cacheRef: cachePath.slice(config.projectRoot.length + 1),
+							timestamp: new Date().toISOString(),
+						},
+					]);
+				}
+			} catch {
+				// Generated cache is only an optimization. Invalid entries are ignored and replaced.
+			}
+		}
+	}
 
-	// 解析审计输出（失败直接 return，不继续）
-	let parsed: SemanticVerdict;
-	try {
-		parsed = parseLLMJson(result.content, SemanticVerdictSchema);
-	} catch (e) {
-		// LLM 返回不符合 schema（含 JSON 解析失败）
+	for (let attempt = 1; !parsed && attempt <= 2; attempt++) {
+		const chatOptions: ChatOptions = {
+			...baseChatOptions,
+			messages: [
+				{
+					role: "user",
+					content:
+						attempt === 1
+							? prompt
+							: `${prompt}\n\n机器协议重试：不要复述原文、不要输出自由文本，只输出枚举、证据整数下标和固定 JSON 键。`,
+				},
+			],
+		};
+		const telemetryContext = run
+			? {
+					runId: run.runId,
+					sourceId: run.sourceId,
+					stage: "LINT" as const,
+					batchId: `audit-${claim.id}`,
+					attempt,
+				}
+			: null;
+		const observed = telemetryContext
+			? await observedChat(config, provider, chatOptions, telemetryContext)
+			: null;
+		const result = observed ? observed.result : await provider.chat(chatOptions);
+		try {
+			if (result.finishReason === "length") {
+				throw new Error("语义审计输出被 maxTokens 截断");
+			}
+			const candidate = parseLLMJson(result.content, SemanticVerdictSchema);
+			validateSemanticVerdict(candidate, evidenceSpans.length);
+			parsed = candidate;
+			if (observed && telemetryContext) {
+				recordParseResult(config, telemetryContext, observed.callId, "VALID");
+			}
+			writeJsonAtomic(cachePath, {
+				auditVersion: SEMANTIC_AUDIT_VERSION,
+				model: config.model,
+				verdict: parsed,
+			});
+			break;
+		} catch (error) {
+			lastAuditError = error;
+			if (observed && telemetryContext) {
+				recordParseResult(config, telemetryContext, observed.callId, "INVALID", error);
+			}
+		}
+	}
+	if (!parsed) {
 		recordAuditMetric(config, claim.id, "skipped", "schema-reject");
-		return [
-			{
-				code: "SEMANTIC_CITATION_FAILED",
-				severity: "error",
-				affectedObject: claim.id,
-				detail: `审计输出不符合 schema: ${(e as Error).message.slice(0, 200)}`,
-				recommendedState: "QUARANTINE",
-			},
-		];
+		throw new Error(
+			`语义审计连续两次无法产生可信结构化结果: ${
+				lastAuditError instanceof Error ? lastAuditError.message : String(lastAuditError)
+			}`,
+		);
 	}
 	const verdict: SemanticVerdict = parsed;
 
 	const issues: LintIssue[] = [];
 	const dims = verdict.dimensions;
-
-	// anchor 验证：anchor 和每维 evidence 必须真实存在于某个 SourceSpan
-	const allEvidenceText = evidenceSpans.map((s) => s.text).join("\n");
-	const anchorValid = isQuoteInText(verdict.anchor, allEvidenceText);
-	if (!anchorValid) {
-		// anchor 编造——审计结论本身不可信，降级为 QUARANTINE
-		recordAuditMetric(config, claim.id, "anchor-fabricated", "anchor");
-		issues.push({
-			code: "SEMANTIC_ANCHOR_FABRICATED",
-			severity: "error",
-			affectedObject: claim.id,
-			detail: `审计 anchor 不在原文中: "${verdict.anchor.slice(0, 60)}..."`,
-			recommendedState: "QUARANTINE",
-		});
-		return issues;
-	}
 
 	// 按维度生成 issueCode（binary verdict）
 	const dimToIssueCode: Record<string, IssueCode> = {
@@ -319,29 +630,16 @@ ${evidenceText}
 	for (const dimName of ["support", "addition", "inference", "limits", "citation"]) {
 		const dim = dims[dimName as keyof typeof dims];
 		if (dim.result === "fail") {
-			// 验证 evidence 也真实存在
-			const evidenceValid = isQuoteInText(dim.evidence, allEvidenceText);
 			const issueCode = dimToIssueCode[dimName] ?? "SEMANTIC_WARNING";
 			issues.push({
 				code: issueCode,
 				severity: hardFailDims.has(dimName) ? "error" : "warning",
 				affectedObject: claim.id,
-				detail: `${dimName}: ${dim.evidence.slice(0, 100)}${evidenceValid ? "" : " (evidence 也不在原文中)"}`,
+				detail: `${dimensionFailureDetail(dimName as AuditDimensionName)}；证据 ${formatEvidenceReferences(dim.evidenceSpanIndexes.length > 0 ? dim.evidenceSpanIndexes : [verdict.anchorSpanIndex], evidenceSpans)}`,
 				recommendedState: hardFailDims.has(dimName) ? "QUARANTINE" : "CANONICAL",
 			});
 			recordAuditMetric(config, claim.id, "dim-fail", dimName);
 		}
-	}
-
-	// 如果 verdict=failed 但无硬伤维度 issue（理论上不该发生，防御性兜底）
-	if (verdict.verdict === "failed" && !issues.some((i) => i.severity === "error")) {
-		issues.push({
-			code: "SEMANTIC_SUPPORT_FAILED",
-			severity: "error",
-			affectedObject: claim.id,
-			detail: `verdict=failed 但无硬伤维度: ${(verdict.issues ?? []).join("; ")}`,
-			recommendedState: "QUARANTINE",
-		});
 	}
 
 	if (issues.length === 0 && verdict.verdict === "passed") {
@@ -349,6 +647,340 @@ ${evidenceText}
 	}
 
 	return issues;
+}
+
+export interface RelationSemanticCheckResult {
+	issues: LintIssue[];
+	evidenceSpanIds: string[];
+	conditionStatus: Relation["conditionStatus"];
+	relationAuditVersion: string | null;
+}
+
+/**
+ * 审计“边”而不是重复审计两个端点。端点各自为真并不能推出 Relation 成立。
+ * 通过时只保留审计器明确选中的边级证据；任何维度失败都隔离该边。
+ */
+export async function relationSemanticCheck(
+	config: AppConfig,
+	relation: Relation,
+	fromClaim: Claim,
+	toClaim: Claim,
+	spans: SourceSpan[],
+	provider: LLMProvider,
+	run?: CompileRunHandle,
+): Promise<RelationSemanticCheckResult> {
+	const evidenceSpans = findSpansByIds(spans, relation.evidenceSpanIds);
+	if (evidenceSpans.length === 0) {
+		return {
+			issues: [
+				{
+					code: "MISSING_EVIDENCE",
+					severity: "error",
+					affectedObject: relation.id,
+					detail: "无法获取 Relation 的候选证据原文",
+					recommendedState: "QUARANTINE",
+				},
+			],
+			evidenceSpanIds: [],
+			conditionStatus: "UNVERIFIED",
+			relationAuditVersion: null,
+		};
+	}
+
+	const fromEvidenceIds = new Set(fromClaim.evidenceSpanIds);
+	const toEvidenceIds = new Set(toClaim.evidenceSpanIds);
+	const evidenceText = evidenceSpans
+		.map((span, index) => {
+			const roles = [
+				...(fromEvidenceIds.has(span.id) ? ["FROM"] : []),
+				...(toEvidenceIds.has(span.id) ? ["TO"] : []),
+			];
+			return `[证据 ${index}][roles=${roles.join(",") || "RELATION"}][block=${span.blockId}][span=${span.id}]\n${span.text}`;
+		})
+		.join("\n\n");
+	const prompt = `请审计以下候选 Relation。
+
+# From Claim
+${fromClaim.statement}
+条件：${fromClaim.conditions.join("; ") || "无"}
+
+# Relation
+${relation.type}
+条件：${relation.conditions.join("; ") || "无"}
+
+# To Claim
+${toClaim.statement}
+条件：${toClaim.conditions.join("; ") || "无"}
+
+# 候选原文证据
+${evidenceText}
+
+只能使用以上证据编号，按系统指令返回严格 JSON。`;
+
+	const baseChatOptions: ChatOptions = {
+		model: config.model,
+		systemPrompt: RELATION_AUDIT_SYSTEM,
+		messages: [{ role: "user", content: prompt }],
+		responseFormat: "json_object",
+		thinkingDisabled: true,
+		maxTokens: 4096,
+	};
+	const cachePath = relationAuditCachePath(config, relation, prompt);
+	const cached = readJson<{ auditVersion: string; model: string; verdict: unknown }>(cachePath);
+	let verdict: RelationSemanticVerdict | null = null;
+	if (cached?.auditVersion === RELATION_AUDIT_VERSION && cached.model === config.model) {
+		const parsedCache = RelationSemanticVerdictSchema.safeParse(cached.verdict);
+		if (parsedCache.success) {
+			try {
+				validateRelationSemanticVerdict(parsedCache.data, evidenceSpans.length);
+				verdict = parsedCache.data;
+			} catch {
+				// Invalid generated cache is ignored and replaced.
+			}
+		}
+	}
+
+	let lastError: unknown = null;
+	for (let attempt = 1; !verdict && attempt <= 2; attempt++) {
+		const chatOptions: ChatOptions = {
+			...baseChatOptions,
+			messages: [
+				{
+					role: "user",
+					content:
+						attempt === 1
+							? prompt
+							: `${prompt}\n\n机器协议重试：只输出固定 JSON 键、枚举值和证据整数下标。`,
+				},
+			],
+		};
+		const telemetryContext = run
+			? {
+					runId: run.runId,
+					sourceId: run.sourceId,
+					stage: "LINT" as const,
+					batchId: `relation-audit-${relation.id}`,
+					attempt,
+				}
+			: null;
+		const observed = telemetryContext
+			? await observedChat(config, provider, chatOptions, telemetryContext)
+			: null;
+		const result = observed ? observed.result : await provider.chat(chatOptions);
+		try {
+			if (result.finishReason === "length") throw new Error("Relation 审计输出被截断");
+			const candidate = parseLLMJson(result.content, RelationSemanticVerdictSchema);
+			validateRelationSemanticVerdict(candidate, evidenceSpans.length);
+			verdict = candidate;
+			if (observed && telemetryContext) {
+				recordParseResult(config, telemetryContext, observed.callId, "VALID");
+			}
+			writeJsonAtomic(cachePath, {
+				auditVersion: RELATION_AUDIT_VERSION,
+				model: config.model,
+				verdict,
+			});
+		} catch (error) {
+			lastError = error;
+			if (observed && telemetryContext) {
+				recordParseResult(config, telemetryContext, observed.callId, "INVALID", error);
+			}
+		}
+	}
+	if (!verdict) {
+		throw new Error(
+			`Relation 语义审计连续两次无法产生可信结果: ${
+				lastError instanceof Error ? lastError.message : String(lastError)
+			}`,
+		);
+	}
+
+	const issueCodes: Record<RelationAuditDimensionName, IssueCode> = {
+		relation: "RELATION_SEMANTIC_FAILED",
+		type: "RELATION_TYPE_MISMATCH",
+		direction: "RELATION_DIRECTION_MISMATCH",
+		conditions: "RELATION_CONDITIONS_MISSING",
+	};
+	const issues: LintIssue[] = [];
+	for (const dimension of RELATION_AUDIT_DIMENSIONS) {
+		if (verdict.dimensions[dimension].result === "fail") {
+			issues.push({
+				code: issueCodes[dimension],
+				severity: "error",
+				affectedObject: relation.id,
+				detail: `${dimension}：Relation 未通过边级语义审计；证据 ${formatEvidenceReferences(
+					verdict.dimensions[dimension].evidenceSpanIndexes.length > 0
+						? verdict.dimensions[dimension].evidenceSpanIndexes
+						: [verdict.anchorSpanIndex],
+					evidenceSpans,
+				)}`,
+				recommendedState: "QUARANTINE",
+			});
+		}
+	}
+	const selectedEvidenceIds = verdict.supportingEvidenceSpanIndexes.map(
+		(index) => (evidenceSpans[index] as SourceSpan).id,
+	);
+	if (
+		verdict.verdict === "passed" &&
+		(!selectedEvidenceIds.some((spanId) => fromEvidenceIds.has(spanId)) ||
+			!selectedEvidenceIds.some((spanId) => toEvidenceIds.has(spanId)))
+	) {
+		issues.push({
+			code: "RELATION_SEMANTIC_FAILED",
+			severity: "error",
+			affectedObject: relation.id,
+			detail:
+				"Relation 审计虽返回 passed，但边级支持证据未同时覆盖 FROM 与 TO 端点；拒绝用单侧证据和模型外部知识补全关系",
+			recommendedState: "QUARANTINE",
+		});
+	}
+	return {
+		issues,
+		evidenceSpanIds: selectedEvidenceIds,
+		conditionStatus: relation.conditions.length > 0 ? "PRESERVED" : "EXPLICIT_NONE",
+		relationAuditVersion: RELATION_AUDIT_VERSION,
+	};
+}
+
+const RELATION_AUDIT_DIMENSIONS: RelationAuditDimensionName[] = [
+	"relation",
+	"type",
+	"direction",
+	"conditions",
+];
+
+function validateRelationSemanticVerdict(
+	verdict: RelationSemanticVerdict,
+	evidenceCount: number,
+): void {
+	const indexes = [
+		verdict.anchorSpanIndex,
+		...verdict.supportingEvidenceSpanIndexes,
+		...RELATION_AUDIT_DIMENSIONS.flatMap(
+			(dimension) => verdict.dimensions[dimension].evidenceSpanIndexes,
+		),
+	];
+	const invalid = indexes.find(
+		(index) => !Number.isInteger(index) || index < 0 || index >= evidenceCount,
+	);
+	if (invalid !== undefined) throw new Error(`Relation 审计引用了不存在的证据下标: ${invalid}`);
+
+	const actualFailed = RELATION_AUDIT_DIMENSIONS.filter(
+		(dimension) => verdict.dimensions[dimension].result === "fail",
+	).sort();
+	const declaredFailed = [...new Set(verdict.failedDimensions)].sort();
+	if (JSON.stringify(actualFailed) !== JSON.stringify(declaredFailed)) {
+		throw new Error("Relation 审计 failedDimensions 与维度结果不一致");
+	}
+	const expected = actualFailed.length === 0 ? "passed" : "failed";
+	if (verdict.verdict !== expected) {
+		throw new Error(`Relation 审计 verdict 不一致: expected=${expected} actual=${verdict.verdict}`);
+	}
+	if (verdict.verdict === "passed" && verdict.supportingEvidenceSpanIndexes.length === 0) {
+		throw new Error("通过的 Relation 审计必须提供至少一条边级支持证据");
+	}
+}
+
+function relationAuditCachePath(config: AppConfig, relation: Relation, prompt: string): string {
+	const hash = createHash("sha256")
+		.update(
+			JSON.stringify({
+				auditVersion: RELATION_AUDIT_VERSION,
+				model: config.model,
+				relationId: relation.id,
+				systemPrompt: RELATION_AUDIT_SYSTEM,
+				prompt,
+			}),
+		)
+		.digest("hex");
+	return join(config.runsDir, "relation-audit-cache", `${hash}.json`);
+}
+
+const AUDIT_DIMENSIONS: AuditDimensionName[] = [
+	"support",
+	"addition",
+	"inference",
+	"limits",
+	"citation",
+];
+const HARD_FAIL_AUDIT_DIMENSIONS = new Set<AuditDimensionName>(["support", "addition", "citation"]);
+
+/** Validate semantic consistency beyond the JSON shape before an audit can affect publication. */
+function validateSemanticVerdict(verdict: SemanticVerdict, evidenceCount: number): void {
+	const referencedIndexes = [
+		verdict.anchorSpanIndex,
+		...AUDIT_DIMENSIONS.flatMap((dimension) => verdict.dimensions[dimension].evidenceSpanIndexes),
+	];
+	const invalidIndex = referencedIndexes.find(
+		(index) => index < 0 || !Number.isInteger(index) || index >= evidenceCount,
+	);
+	if (invalidIndex !== undefined) {
+		throw new Error(`语义审计引用了不存在的证据下标: ${invalidIndex}`);
+	}
+
+	const actualFailed = AUDIT_DIMENSIONS.filter(
+		(dimension) => verdict.dimensions[dimension].result === "fail",
+	).sort();
+	const declaredFailed = [...new Set(verdict.failedDimensions)].sort();
+	if (JSON.stringify(actualFailed) !== JSON.stringify(declaredFailed)) {
+		throw new Error(
+			`语义审计 failedDimensions 与维度结果不一致: actual=${actualFailed.join(",")} declared=${declaredFailed.join(",")}`,
+		);
+	}
+
+	const expectedVerdict = actualFailed.some((dimension) =>
+		HARD_FAIL_AUDIT_DIMENSIONS.has(dimension),
+	)
+		? "failed"
+		: actualFailed.length > 0
+			? "warning"
+			: "passed";
+	if (verdict.verdict !== expectedVerdict) {
+		throw new Error(
+			`语义审计 verdict 与维度结果不一致: expected=${expectedVerdict} actual=${verdict.verdict}`,
+		);
+	}
+}
+
+function semanticAuditCachePath(config: AppConfig, claim: Claim, prompt: string): string {
+	const hash = createHash("sha256")
+		.update(
+			JSON.stringify({
+				auditVersion: SEMANTIC_AUDIT_VERSION,
+				model: config.model,
+				systemPrompt: SEMANTIC_AUDIT_SYSTEM,
+				prompt,
+			}),
+		)
+		.digest("hex");
+	const sourceKey = claim.id
+		.replace(/^claim:/, "")
+		.split("-")[0]
+		?.replace(/[^a-zA-Z0-9._-]/g, "_");
+	return join(config.runsDir, "audit-cache", sourceKey || "unknown-source", `${hash}.json`);
+}
+
+function dimensionFailureDetail(dimension: AuditDimensionName): string {
+	const details: Record<AuditDimensionName, string> = {
+		support: "support：证据没有明确支持 Claim 的全部断言",
+		addition: "addition：Claim 添加了证据未表达的内容",
+		inference: "inference：Claim 把推断表述成了原文事实",
+		limits: "limits：Claim 丢失了证据中的条件、例外或限定词",
+		citation: "citation：Claim 与所引用的证据位置不对应",
+	};
+	return details[dimension];
+}
+
+function formatEvidenceReferences(indexes: number[], spans: SourceSpan[]): string {
+	return [...new Set(indexes)]
+		.map((index) => {
+			const span = spans[index];
+			if (!span) return `[${index}:INVALID]`;
+			const excerpt = span.text.replace(/\s+/g, " ").trim().slice(0, 80);
+			return `[${index}:${span.blockId}] “${excerpt}”`;
+		})
+		.join("; ");
 }
 
 // ─── 可观测：审计指标记录（轨道 B）──────────────────────────────
@@ -502,7 +1134,120 @@ function bigrams(s: string): string[] {
 	return grams;
 }
 
+async function mapWithConcurrency<T, R>(
+	items: T[],
+	concurrency: number,
+	worker: (item: T, index: number) => Promise<R>,
+): Promise<R[]> {
+	const results: R[] = new Array(items.length);
+	let nextIndex = 0;
+	let firstError: unknown = null;
+	const workers = Array.from(
+		{ length: Math.min(Math.max(concurrency, 1), items.length) },
+		async () => {
+			while (firstError === null) {
+				const index = nextIndex++;
+				const item = items[index];
+				if (item === undefined) return;
+				try {
+					results[index] = await worker(item, index);
+				} catch (error) {
+					firstError = error;
+				}
+			}
+		},
+	);
+	await Promise.all(workers);
+	if (firstError !== null) throw firstError;
+	return results;
+}
+
 // ─── 原子 Lint 流程（修断点 1+5+6）────────────────────────────
+
+export async function lintRelationsAgainstCanonicalClaims(
+	config: AppConfig,
+	relations: Relation[],
+	canonicalClaims: Claim[],
+	allSpans: SourceSpan[],
+	provider: LLMProvider | null,
+	options?: { skipSemantic?: boolean; run?: CompileRunHandle },
+	allKnownClaimIds: Set<string> = new Set(canonicalClaims.map((claim) => claim.id)),
+): Promise<ObjectLintResult<Relation>[]> {
+	const eligibleClaims = canonicalClaims.filter(
+		(claim) => claim.publicationState === "CANONICAL" && claim.lifecycle === "ACTIVE",
+	);
+	const canonicalClaimIds = new Set(eligibleClaims.map((claim) => claim.id));
+	const canonicalClaimsById = new Map(eligibleClaims.map((claim) => [claim.id, claim]));
+	return mapWithConcurrency(
+		relations,
+		SEMANTIC_AUDIT_CONCURRENCY,
+		async (relation): Promise<ObjectLintResult<Relation>> => {
+			const structIssues = checkRelationStructure(
+				relation,
+				canonicalClaimIds,
+				allKnownClaimIds,
+				allSpans,
+			);
+			if (structIssues.some((issue) => issue.severity === "error")) {
+				return {
+					object: { ...relation, publicationState: "QUARANTINED" },
+					issues: structIssues,
+					finalState: "QUARANTINED",
+				};
+			}
+			const fromClaim = canonicalClaimsById.get(relation.from as string);
+			const toClaim = canonicalClaimsById.get(relation.to as string);
+			if (!fromClaim || !toClaim) {
+				throw new Error(`Relation ${relation.id} 通过结构检查后仍无法解析 Canonical 端点`);
+			}
+			const semanticWasRun = !options?.skipSemantic && provider !== null;
+			const semanticResult = semanticWasRun
+				? await relationSemanticCheck(
+						config,
+						relation,
+						fromClaim,
+						toClaim,
+						allSpans,
+						provider,
+						options?.run,
+					)
+				: {
+						issues: [] as LintIssue[],
+						evidenceSpanIds: relation.evidenceSpanIds,
+						conditionStatus: "UNVERIFIED" as const,
+						relationAuditVersion: null,
+					};
+			const allIssues = [...structIssues, ...semanticResult.issues];
+			if (allIssues.some((issue) => issue.severity === "error")) {
+				return {
+					object: {
+						...relation,
+						publicationState: "QUARANTINED",
+						conditionStatus: semanticResult.conditionStatus,
+						relationAuditVersion: semanticResult.relationAuditVersion,
+					},
+					issues: allIssues,
+					finalState: "QUARANTINED",
+				};
+			}
+			const endpointsSupported =
+				fromClaim.validity === "SUPPORTED" && toClaim.validity === "SUPPORTED";
+			return {
+				object: {
+					...relation,
+					evidenceSpanIds: semanticResult.evidenceSpanIds,
+					conditionStatus: semanticResult.conditionStatus,
+					relationAuditVersion: semanticResult.relationAuditVersion,
+					publicationState: "CANONICAL",
+					validity:
+						semanticWasRun && endpointsSupported ? ("SUPPORTED" as const) : ("UNRESOLVED" as const),
+				},
+				issues: allIssues,
+				finalState: "CANONICAL",
+			};
+		},
+	);
+}
 
 /**
  * 对一次编译的全部候选（Claim + Relation）做原子 Lint。
@@ -528,105 +1273,92 @@ export async function lintCompileResult(
 	_concepts: Concept[],
 	allSpans: SourceSpan[],
 	provider: LLMProvider | null,
-	options?: { skipSemantic?: boolean },
+	options?: { skipSemantic?: boolean; run?: CompileRunHandle },
 ): Promise<CompileLintResult> {
-	const allSpanIds = new Set(allSpans.map((s) => s.id));
 	const allClaimIds = new Set(claims.map((c) => c.id));
+	const assertedRecords = readAllAssertedRecords(config);
 
 	// ── Phase 1: Claim Lint ──
-	const claimResults: ObjectLintResult<Claim>[] = [];
+	const claimResults = await mapWithConcurrency(
+		claims,
+		SEMANTIC_AUDIT_CONCURRENCY,
+		async (claim): Promise<ObjectLintResult<Claim>> => {
+			// 结构性硬门禁
+			const structIssues = checkClaimStructure(claim, allSpans, assertedRecords);
 
-	for (const claim of claims) {
-		// 结构性硬门禁
-		const structIssues = checkClaimStructure(claim, allSpanIds);
+			// 如果结构失败，直接 Quarantine（不跑语义）
+			if (structIssues.some((i) => i.severity === "error")) {
+				return {
+					object: { ...claim, publicationState: "QUARANTINED" },
+					issues: structIssues,
+					finalState: "QUARANTINED",
+				};
+			}
 
-		// 如果结构失败，直接 Quarantine（不跑语义）
-		if (structIssues.some((i) => i.severity === "error")) {
-			claimResults.push({
-				object: { ...claim, publicationState: "QUARANTINED" },
-				issues: structIssues,
-				finalState: "QUARANTINED",
-			});
-			continue;
-		}
+			// 语义门禁（可选跳过）
+			let semIssues: LintIssue[] = [];
+			if (claim.claimKind === "FACT" && !options?.skipSemantic && provider) {
+				const claimSpans = findSpansByIds(allSpans, claim.evidenceSpanIds);
+				semIssues = await semanticCheck(config, claim, claimSpans, provider, options?.run);
+			}
 
-		// 语义门禁（可选跳过）
-		let semIssues: LintIssue[] = [];
-		if (!options?.skipSemantic && provider) {
-			const claimSpans = allSpans.filter((s) => claim.evidenceSpanIds.includes(s.id));
-			semIssues = await semanticCheck(config, claim, claimSpans, provider);
-		}
+			const allIssues = [...structIssues, ...semIssues];
 
-		const allIssues = [...structIssues, ...semIssues];
+			// 决定最终状态（修断点 7：基于 issueCode 而非文本匹配）
+			const hasError = allIssues.some((i) => i.severity === "error");
+			const hasConflict = allIssues.some((i) => i.recommendedState === "CANONICAL_DISPUTED");
 
-		// 决定最终状态（修断点 7：基于 issueCode 而非文本匹配）
-		const hasError = allIssues.some((i) => i.severity === "error");
-		const hasConflict = allIssues.some((i) => i.recommendedState === "CANONICAL_DISPUTED");
-
-		if (hasError) {
-			claimResults.push({
-				// 结构/语义硬失败 → QUARANTINED，validity 保持 UNRESOLVED（不升级）
-				object: { ...claim, publicationState: "QUARANTINED" },
-				issues: allIssues,
-				finalState: "QUARANTINED",
-			});
-		} else if (hasConflict) {
-			claimResults.push({
-				object: {
-					...claim,
-					publicationState: "CANONICAL",
-					validity: "DISPUTED" as const,
-				},
-				issues: allIssues,
-				finalState: "CANONICAL_DISPUTED",
-			});
-		} else {
-			claimResults.push({
-				// 门禁通过：UNRESOLVED → SUPPORTED（审计已证明忠实于原文）
+			if (hasError) {
+				return {
+					// 结构/语义硬失败 → QUARANTINED，validity 保持 UNRESOLVED（不升级）
+					object: { ...claim, publicationState: "QUARANTINED" },
+					issues: allIssues,
+					finalState: "QUARANTINED",
+				};
+			}
+			if (hasConflict) {
+				return {
+					object: {
+						...claim,
+						publicationState: "CANONICAL",
+						validity: "DISPUTED" as const,
+					},
+					issues: allIssues,
+					finalState: "CANONICAL_DISPUTED",
+				};
+			}
+			const publicationGatePassed =
+				claim.claimKind !== "FACT" || (!options?.skipSemantic && provider !== null);
+			return {
+				// 只有语义门禁实际运行且通过，才允许 UNRESOLVED → SUPPORTED。
 				object: {
 					...claim,
 					publicationState: "CANONICAL" as const,
-					validity: "SUPPORTED" as const,
+					validity: publicationGatePassed ? ("SUPPORTED" as const) : claim.validity,
 				},
 				issues: allIssues,
 				finalState: "CANONICAL",
-			});
-		}
-	}
-
-	// ── Phase 2: 确定 Canonical Claim 集合 ──
-	const canonicalClaimIds = new Set(
-		claimResults
-			.filter((r) => r.finalState === "CANONICAL" || r.finalState === "CANONICAL_DISPUTED")
-			.map((r) => r.object.id),
+			};
+		},
 	);
 
+	// ── Phase 2: 确定 Canonical Claim 集合 ──
+	const canonicalClaimsForRelations = claimResults
+		.filter(
+			(result) => result.finalState === "CANONICAL" || result.finalState === "CANONICAL_DISPUTED",
+		)
+		.map((result) => result.object);
+
 	// ── Phase 3: Relation Lint（修断点 1）──
-	const relationResults: ObjectLintResult<Relation>[] = [];
-
-	for (const relation of relations) {
-		const structIssues = checkRelationStructure(relation, canonicalClaimIds, allClaimIds);
-
-		// Relation 结构失败 → Quarantine，validity 保持 UNRESOLVED
-		if (structIssues.some((i) => i.severity === "error")) {
-			relationResults.push({
-				object: { ...relation, publicationState: "QUARANTINED" },
-				issues: structIssues,
-				finalState: "QUARANTINED",
-			});
-		} else {
-			// Relation 通过 → Canonical + SUPPORTED（跟随端点 Claim，端点已通过门禁）
-			relationResults.push({
-				object: {
-					...relation,
-					publicationState: "CANONICAL" as const,
-					validity: "SUPPORTED" as const,
-				},
-				issues: structIssues,
-				finalState: "CANONICAL",
-			});
-		}
-	}
+	const relationResults = await lintRelationsAgainstCanonicalClaims(
+		config,
+		relations,
+		canonicalClaimsForRelations,
+		allSpans,
+		provider,
+		options,
+		allClaimIds,
+	);
 
 	// ── 汇总结果 ──
 	const canonicalClaims = claimResults
@@ -644,22 +1376,6 @@ export async function lintCompileResult(
 	const quarantinedRelations = relationResults
 		.filter((r) => r.finalState === "QUARANTINED")
 		.map((r) => ({ relation: r.object, issues: r.issues }));
-
-	// ── Quarantine manifest（偏离 3 修复：追加而非覆盖，防历史丢失）──
-	const allQuarantined = [...quarantinedClaims, ...quarantinedRelations];
-	if (allQuarantined.length > 0) {
-		const manifestEntries = allQuarantined.map((q) => {
-			const objectId = "claim" in q ? q.claim.id : q.relation.id;
-			const issues = q.issues;
-			return {
-				objectId,
-				reasons: issues.map((i) => ({ code: i.code, detail: i.detail })),
-				timestamp: new Date().toISOString(),
-				auditVersion: SEMANTIC_AUDIT_VERSION,
-			};
-		});
-		appendJsonl(join(config.quarantineDir, "quarantine-manifest.jsonl"), manifestEntries);
-	}
 
 	return {
 		claims: claimResults,

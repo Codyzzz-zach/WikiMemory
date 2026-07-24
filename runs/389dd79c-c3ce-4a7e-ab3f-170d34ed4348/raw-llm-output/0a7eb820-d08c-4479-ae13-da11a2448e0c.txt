@@ -1,0 +1,33 @@
+{
+  "verdict": "failed",
+  "dimensions": {
+    "support": {
+      "result": "fail",
+      "evidence": "原文只提到 '分子从1到d'，未提及分母递减、互质、只添加等"
+    },
+    "addition": {
+      "result": "fail",
+      "evidence": "Claim 添加了 '分母相应递减'、'只添加互质的分数'，原文无此信息"
+    },
+    "inference": {
+      "result": "fail",
+      "evidence": "Claim 将未言明的推断（互质、只添加）当作事实陈述，未标记推断"
+    },
+    "limits": {
+      "result": "fail",
+      "evidence": "原文有 'if d % 2 == 1:' 条件，Claim 中未保留"
+    },
+    "citation": {
+      "result": "pass",
+      "evidence": "Claim 引用的 span 地址正确"
+    }
+  },
+  "anchor": "分子从1到d",
+  "failedDimensions": ["support", "addition", "inference", "limits"],
+  "issues": [
+    "原文未支持分母递减和互质条件",
+    "添加了原文没有的'只添加互质的分数'",
+    "将推断当作事实而未标记",
+    "遗漏了原文中'd%2==1'的条件"
+  ]
+}

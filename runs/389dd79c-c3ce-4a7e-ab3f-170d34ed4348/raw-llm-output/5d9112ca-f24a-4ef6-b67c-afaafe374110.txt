@@ -1,0 +1,28 @@
+{
+  "verdict": "passed",
+  "dimensions": {
+    "support": {
+      "result": "pass",
+      "evidence": "$a \\div b$ ($b \\neq 0$) | ❌ | ✅ |"
+    },
+    "addition": {
+      "result": "pass",
+      "evidence": "$a \\div b$ ($b \\neq 0$) | ❌ | ✅ |"
+    },
+    "inference": {
+      "result": "pass",
+      "evidence": "原文以表格形式直接表示 a÷b (b≠0) 在整数集中不封闭（❌），因此 claim 是直接陈述，没有额外推断。"
+    },
+    "limits": {
+      "result": "pass",
+      "evidence": "原文明确包含条件 b≠0，claim 中保留了该条件。"
+    },
+    "citation": {
+      "result": "pass",
+      "evidence": "claim 引用的 block-43 包含该表格行，对应准确。"
+    }
+  },
+  "anchor": "$a \\div b$ ($b \\neq 0$) | ❌",
+  "failedDimensions": [],
+  "issues": []
+}

@@ -1,0 +1,28 @@
+{
+  "verdict": "failed",
+  "dimensions": {
+    "support": {
+      "result": "fail",
+      "evidence": "原文证据仅包含"代数封闭 | ❌"，没有明确说明自然数集N不是代数封闭的。"
+    },
+    "addition": {
+      "result": "pass",
+      "evidence": "Claim没有添加原文证据之外的信息。"
+    },
+    "inference": {
+      "result": "pass",
+      "evidence": "Claim没有进行推断，是直接陈述。"
+    },
+    "limits": {
+      "result": "pass",
+      "evidence": "Claim没有适用条件或限定词问题。"
+    },
+    "citation": {
+      "result": "pass",
+      "evidence": "Claim准确对应了给定的SourceSpan。"
+    }
+  },
+  "anchor": "代数封闭 | ❌",
+  "failedDimensions": ["support"],
+  "issues": ["原文证据仅包含符号'❌'，未明确提及自然数集N或'不是代数封闭的'，因此不支持该Claim。"]
+}

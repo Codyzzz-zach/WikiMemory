@@ -1,0 +1,13 @@
+{
+  "verdict": "passed",
+  "dimensions": {
+    "support": { "result": "pass", "evidence": "但中间步骤必须经过复数。" },
+    "addition": { "result": "pass", "evidence": "无添加" },
+    "inference": { "result": "pass", "evidence": "原文即为事实陈述，无推断" },
+    "limits": { "result": "pass", "evidence": "无限制条件" },
+    "citation": { "result": "pass", "evidence": "Claim 引用的 span 准确" }
+  },
+  "anchor": "但中间步骤必须经过复数。",
+  "failedDimensions": [],
+  "issues": []
+}

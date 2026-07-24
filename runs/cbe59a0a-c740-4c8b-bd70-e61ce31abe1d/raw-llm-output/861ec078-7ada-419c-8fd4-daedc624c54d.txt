@@ -1,0 +1,67 @@
+{
+  "relations": [
+    {
+      "fromClaimIndex": 17,
+      "toClaimIndex": 135,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["指数列极限在同一个空间内"],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 105,
+      "toClaimIndex": 135,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["空间为实数集"],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 10,
+      "toClaimIndex": 89,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["系数为复数"],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 8,
+      "toClaimIndex": 138,
+      "type": "DERIVED_FROM",
+      "conditions": ["利用泰勒展开"],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 8,
+      "toClaimIndex": 152,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["θ为任意实数"],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 18,
+      "toClaimIndex": 152,
+      "type": "DERIVED_FROM",
+      "conditions": ["θ=π"],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 17,
+      "toClaimIndex": 134,
+      "type": "SUPPORTS",
+      "conditions": ["完备性概念在实数上的应用"],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 105,
+      "toClaimIndex": 141,
+      "type": "SUPPORTS",
+      "conditions": ["R是完备赋范空间"],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 110,
+      "toClaimIndex": 29,
+      "type": "RELATED_TO",
+      "conditions": [],
+      "confidence": 0.6
+    }
+  ]
+}

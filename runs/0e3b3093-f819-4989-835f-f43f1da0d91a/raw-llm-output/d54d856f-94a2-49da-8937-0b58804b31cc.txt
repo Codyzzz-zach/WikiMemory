@@ -1,0 +1,19 @@
+{
+  "propositions": [
+    {
+      "text": "正交性允许定义垂直概念。",
+      "exactQuote": "因为它有**正交性**——可以定义\"垂直\"：",
+      "blockId": "02-spaces#block-63",
+      "relatesTo": null
+    },
+    {
+      "text": "正交性使得某些操作成为可能。",
+      "exactQuote": "这使我们可以做：",
+      "blockId": "02-spaces#block-65",
+      "relatesTo": {
+        "fromPropIndex": 0,
+        "type": "REQUIRES"
+      }
+    }
+  ]
+}

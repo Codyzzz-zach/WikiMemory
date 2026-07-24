@@ -1,0 +1,13 @@
+{
+  "verdict": "passed",
+  "dimensions": {
+    "support": { "result": "pass", "evidence": "$3 \\div 5$ 在 $\\mathbb{Z}$ 中无解。" },
+    "addition": { "result": "pass", "evidence": "Claim 与原文完全一致，无额外信息。" },
+    "inference": { "result": "pass", "evidence": "原文为事实陈述，Claim 直接复述，无推断。" },
+    "limits": { "result": "pass", "evidence": "原文无限制条件，Claim 未添加或遗漏条件。" },
+    "citation": { "result": "pass", "evidence": "Claim 引用 [01-number-systems#block-32]，内容完全对应。" }
+  },
+  "anchor": "$3 \\div 5$ 在 $\\mathbb{Z}$ 中无解。",
+  "failedDimensions": [],
+  "issues": []
+}

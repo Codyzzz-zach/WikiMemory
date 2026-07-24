@@ -1,0 +1,1353 @@
+{
+  "schemaVersion": "v1",
+  "sourceId": "source:02-spaces-33a33396a17d4175",
+  "runId": "06a8cb99-b3bb-405d-8e33-e5649ede8a5c",
+  "publishedAt": "2026-07-23T16:59:32.652Z",
+  "claims": [
+    {
+      "claim": {
+        "id": "claim:33a33396a17d4175-a4aaa7d77850ad0c",
+        "statement": "欧氏空间是所有空间的原型，因为它同时拥有线性、距离、内积三种结构，而且它们是自然兼容的。",
+        "evidenceSpanIds": [
+          "span:02-spaces-33a33396a17d4175-16#chars-1276-1311"
+        ],
+        "conditions": [],
+        "derivation": "EXTRACTED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:27:44.729Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "confidence": 1,
+        "claimKind": "FACT",
+        "scope": {
+          "type": "GLOBAL"
+        },
+        "provenanceRefs": [
+          {
+            "type": "SourceSpan",
+            "spanId": "span:02-spaces-33a33396a17d4175-16#chars-1276-1311"
+          }
+        ],
+        "supportingEvidenceRefs": [
+          {
+            "type": "SourceSpan",
+            "spanId": "span:02-spaces-33a33396a17d4175-16#chars-1276-1311"
+          }
+        ],
+        "knowledgeVersion": "v1",
+        "recordedAt": "2026-07-23T16:27:44.729Z"
+      },
+      "issues": [
+        {
+          "code": "SEMANTIC_ADDITION_MAJOR",
+          "severity": "error",
+          "affectedObject": "claim:33a33396a17d4175-a4aaa7d77850ad0c",
+          "detail": "addition：Claim 添加了证据未表达的内容；证据 [0:02-spaces#block-16] “因为它**同时拥有**线性、距离、内积三种结构，而且它们是自然兼容的：”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "relation": {
+        "id": "rel:33a33396a17d4175-0e2074f8125cb4e0",
+        "from": "claim:33a33396a17d4175-e34a583f9fd77b38",
+        "to": "claim:33a33396a17d4175-dad798e9c86ba5d3",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:02-spaces-33a33396a17d4175-46#chars-4494-4550",
+          "span:02-spaces-33a33396a17d4175-47"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:28:05.986Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 1,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:33a33396a17d4175-0e2074f8125cb4e0",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:02-spaces#block-46] “在向量空间上叠加一个**范数** $\\|\\cdot\\|: V \\to \\mathbb{R}_{\\geq 0}$：”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:33a33396a17d4175-0e2074f8125cb4e0",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:02-spaces#block-46] “在向量空间上叠加一个**范数** $\\|\\cdot\\|: V \\to \\mathbb{R}_{\\geq 0}$：”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:33a33396a17d4175-188031cd5330fe5a",
+        "from": "claim:33a33396a17d4175-0cbc839885b7d24f",
+        "to": "claim:33a33396a17d4175-dad798e9c86ba5d3",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:02-spaces-33a33396a17d4175-47"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:28:05.986Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 1,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:33a33396a17d4175-188031cd5330fe5a",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:02-spaces#block-47] “1. $\\|x\\| \\geq 0$，且 $\\|x\\| = 0 \\iff x = 0$ 2. $\\|\\alpha x\\| = |\\alpha| \\cdot \\|x”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:33a33396a17d4175-188031cd5330fe5a",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:02-spaces#block-47] “1. $\\|x\\| \\geq 0$，且 $\\|x\\| = 0 \\iff x = 0$ 2. $\\|\\alpha x\\| = |\\alpha| \\cdot \\|x”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_DIRECTION_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:33a33396a17d4175-188031cd5330fe5a",
+          "detail": "direction：Relation 未通过边级语义审计；证据 [0:02-spaces#block-47] “1. $\\|x\\| \\geq 0$，且 $\\|x\\| = 0 \\iff x = 0$ 2. $\\|\\alpha x\\| = |\\alpha| \\cdot \\|x”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:33a33396a17d4175-195187485182359d",
+        "from": "claim:33a33396a17d4175-5bfebccc9567417f",
+        "to": "claim:33a33396a17d4175-fb4f069d7b7a3635",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:02-spaces-33a33396a17d4175-58#chars-5360-5443",
+          "span:02-spaces-33a33396a17d4175-59#chars-5583-5594"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:28:05.986Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 1,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_CONDITIONS_MISSING",
+          "severity": "error",
+          "affectedObject": "rel:33a33396a17d4175-195187485182359d",
+          "detail": "conditions：Relation 未通过边级语义审计；证据 [1:02-spaces#block-59] “3. 对第一个变量线性”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:33a33396a17d4175-1dde01bbc5d24741",
+        "from": "claim:33a33396a17d4175-4950e4c49740163a",
+        "to": "claim:33a33396a17d4175-c3d8425593fe6472",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:02-spaces-33a33396a17d4175-48#chars-4685-4714",
+          "span:02-spaces-33a33396a17d4175-48#chars-4714-4751"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:28:05.986Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 1,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:33a33396a17d4175-1dde01bbc5d24741",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:02-spaces#block-48] “范数自然地导出距离：$d(x,y) = \\|x-y\\|$。”; [1:02-spaces#block-48] “所以 $(V, \\|\\cdot\\|)$ 构成赋范空间，也自动成为度量空间。”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:33a33396a17d4175-463bf6e41a3c3786",
+        "from": "claim:33a33396a17d4175-92f0384fb17d1720",
+        "to": "claim:33a33396a17d4175-f61bd8bdddda89dc",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:02-spaces-33a33396a17d4175-50#chars-4772-4861",
+          "span:02-spaces-33a33396a17d4175-51#chars-4863-4905"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:28:05.986Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 1,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:33a33396a17d4175-463bf6e41a3c3786",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:02-spaces#block-50] “**Cauchy 列**：$\\forall \\epsilon > 0, \\exists N, \\forall m,n > N: \\|x_m - x_n\\| < ”; [1:02-spaces#block-51] “如果空间中每个 Cauchy 列都收敛到空间内的一个点，这个空间就是**完备的**。”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:33a33396a17d4175-463bf6e41a3c3786",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:02-spaces#block-50] “**Cauchy 列**：$\\forall \\epsilon > 0, \\exists N, \\forall m,n > N: \\|x_m - x_n\\| < ”; [1:02-spaces#block-51] “如果空间中每个 Cauchy 列都收敛到空间内的一个点，这个空间就是**完备的**。”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:33a33396a17d4175-46c97e43ade985b5",
+        "from": "claim:33a33396a17d4175-c58d8da1bdba73c7",
+        "to": "claim:33a33396a17d4175-dad798e9c86ba5d3",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:02-spaces-33a33396a17d4175-47"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:28:05.986Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 1,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:33a33396a17d4175-46c97e43ade985b5",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:02-spaces#block-47] “1. $\\|x\\| \\geq 0$，且 $\\|x\\| = 0 \\iff x = 0$ 2. $\\|\\alpha x\\| = |\\alpha| \\cdot \\|x”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:33a33396a17d4175-48df7c8c62c69130",
+        "from": "claim:33a33396a17d4175-474f254664c49580",
+        "to": "claim:33a33396a17d4175-982aae16d53301a2",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:02-spaces-33a33396a17d4175-37#chars-3295-3344",
+          "span:02-spaces-33a33396a17d4175-37#chars-3377-3416"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:28:05.986Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 1,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:33a33396a17d4175-48df7c8c62c69130",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:02-spaces#block-37] “**正定性**：$d(x,y) \\geq 0$，且 $d(x,y) = 0 \\iff x = y$”; [1:02-spaces#block-37] “**三角不等式**：$d(x,z) \\leq d(x,y) + d(y,z)$”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:33a33396a17d4175-52ee867f9747ccc5",
+        "from": "claim:33a33396a17d4175-8260abc6b22d29d8",
+        "to": "claim:33a33396a17d4175-04fae87adfe0b796",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:02-spaces-33a33396a17d4175-28#chars-2497-2517",
+          "span:02-spaces-33a33396a17d4175-29#chars-2527-2549"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:28:05.986Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:33a33396a17d4175-52ee867f9747ccc5",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:02-spaces#block-28] “所有基的大小都相同，这就是**维度**。”; [1:02-spaces#block-29] “V = \\text{任何一组基中的向量个数}”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:33a33396a17d4175-647b59d49d572b15",
+        "from": "claim:33a33396a17d4175-3820b4db68e7f911",
+        "to": "claim:33a33396a17d4175-521f0026cd31b4b8",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:02-spaces-33a33396a17d4175-14#chars-1060-1096",
+          "span:02-spaces-33a33396a17d4175-25#chars-2166-2252"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:28:05.986Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 1,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:33a33396a17d4175-647b59d49d572b15",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:02-spaces#block-14] “- **标量乘法**：$c \\cdot (x_i) = (c x_i)$”; [1:02-spaces#block-25] “**向量空间公理**：集合 $V$ 配备运算 $+ : V \\times V \\to V$ 和 $\\cdot : \\mathbb{R} \\times V \\to”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:33a33396a17d4175-647b59d49d572b15",
+          "detail": "type：Relation 未通过边级语义审计；证据 [1:02-spaces#block-25] “**向量空间公理**：集合 $V$ 配备运算 $+ : V \\times V \\to V$ 和 $\\cdot : \\mathbb{R} \\times V \\to”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:33a33396a17d4175-6e88bdcdac599bd2",
+        "from": "claim:33a33396a17d4175-52ea70f5124a7a46",
+        "to": "claim:33a33396a17d4175-81349b735066881b",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:02-spaces-33a33396a17d4175-66#chars-5801-5831",
+          "span:02-spaces-33a33396a17d4175-66#chars-5832-5907"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:28:05.986Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 1,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:33a33396a17d4175-6e88bdcdac599bd2",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:02-spaces#block-66] “- **正交基**：用一组相互垂直的基向量表示空间中任何元素”; [1:02-spaces#block-66] “- **Fourier 级数**：$\\{e^{inx}\\}_{n=-\\infty}^\\infty$ 是 $L^2[-\\pi,\\pi]$ 中的一组正交基”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:33a33396a17d4175-6e88bdcdac599bd2",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:02-spaces#block-66] “- **正交基**：用一组相互垂直的基向量表示空间中任何元素”; [1:02-spaces#block-66] “- **Fourier 级数**：$\\{e^{inx}\\}_{n=-\\infty}^\\infty$ 是 $L^2[-\\pi,\\pi]$ 中的一组正交基”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:33a33396a17d4175-6f7f2ecca3f48bbe",
+        "from": "claim:33a33396a17d4175-f61bd8bdddda89dc",
+        "to": "claim:33a33396a17d4175-92f0384fb17d1720",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:02-spaces-33a33396a17d4175-50#chars-4772-4861",
+          "span:02-spaces-33a33396a17d4175-51#chars-4863-4905"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:28:05.986Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 1,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:33a33396a17d4175-6f7f2ecca3f48bbe",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:02-spaces#block-50] “**Cauchy 列**：$\\forall \\epsilon > 0, \\exists N, \\forall m,n > N: \\|x_m - x_n\\| < ”; [1:02-spaces#block-51] “如果空间中每个 Cauchy 列都收敛到空间内的一个点，这个空间就是**完备的**。”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:33a33396a17d4175-6f7f2ecca3f48bbe",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:02-spaces#block-50] “**Cauchy 列**：$\\forall \\epsilon > 0, \\exists N, \\forall m,n > N: \\|x_m - x_n\\| < ”; [1:02-spaces#block-51] “如果空间中每个 Cauchy 列都收敛到空间内的一个点，这个空间就是**完备的**。”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:33a33396a17d4175-719bbb758f0f3c03",
+        "from": "claim:33a33396a17d4175-a0d4455e06e3e901",
+        "to": "claim:33a33396a17d4175-8f51714c9f008157",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:02-spaces-33a33396a17d4175-60#chars-5596-5640",
+          "span:02-spaces-33a33396a17d4175-69"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:28:05.986Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 1,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:33a33396a17d4175-719bbb758f0f3c03",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:02-spaces#block-60] “内积诱导范数：$\\|x\\| = \\sqrt{\\langle x, x \\rangle}$”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:33a33396a17d4175-88a31b989df15029",
+        "from": "claim:33a33396a17d4175-a4aaa7d77850ad0c",
+        "to": "claim:33a33396a17d4175-1ac3c46a165e0cb3",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "UNVERIFIED",
+        "relationAuditVersion": null,
+        "evidenceSpanIds": [
+          "span:02-spaces-33a33396a17d4175-16#chars-1276-1311",
+          "span:02-spaces-33a33396a17d4175-74#chars-7832-7850"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:28:05.986Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_ENDPOINT_QUARANTINED",
+          "severity": "error",
+          "affectedObject": "rel:33a33396a17d4175-88a31b989df15029",
+          "detail": "from 端点未通过 Lint（Quarantined）: claim:33a33396a17d4175-a4aaa7d77850ad0c",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:33a33396a17d4175-9ab254c432d4f540",
+        "from": "claim:33a33396a17d4175-226a8e67423bcc04",
+        "to": "claim:33a33396a17d4175-521f0026cd31b4b8",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:02-spaces-33a33396a17d4175-25#chars-2166-2252",
+          "span:02-spaces-33a33396a17d4175-26#chars-2368-2398"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:28:05.986Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 1,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:33a33396a17d4175-9ab254c432d4f540",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:02-spaces#block-25] “**向量空间公理**：集合 $V$ 配备运算 $+ : V \\times V \\to V$ 和 $\\cdot : \\mathbb{R} \\times V \\to”; [1:02-spaces#block-26] “$c(u+v)=cu+cv$, $(c+d)u=cu+du$”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:33a33396a17d4175-9ab254c432d4f540",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:02-spaces#block-25] “**向量空间公理**：集合 $V$ 配备运算 $+ : V \\times V \\to V$ 和 $\\cdot : \\mathbb{R} \\times V \\to”; [1:02-spaces#block-26] “$c(u+v)=cu+cv$, $(c+d)u=cu+du$”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:33a33396a17d4175-9e4d9b0af342e022",
+        "from": "claim:33a33396a17d4175-c57d84208e8f6275",
+        "to": "claim:33a33396a17d4175-92f0384fb17d1720",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:02-spaces-33a33396a17d4175-51#chars-4863-4905",
+          "span:02-spaces-33a33396a17d4175-61#chars-5644-5668"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:28:05.986Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 1,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:33a33396a17d4175-9e4d9b0af342e022",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:02-spaces#block-51] “如果空间中每个 Cauchy 列都收敛到空间内的一个点，这个空间就是**完备的**。”; [1:02-spaces#block-61] “**Hilbert 空间 = 完备的内积空间**”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:33a33396a17d4175-a43c9a7d0e7b23ff",
+        "from": "claim:33a33396a17d4175-20db362d06156aa4",
+        "to": "claim:33a33396a17d4175-422a5d83871f9031",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:02-spaces-33a33396a17d4175-14#chars-1019-1059",
+          "span:02-spaces-33a33396a17d4175-26#chars-2305-2348"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:28:05.986Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 1,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:33a33396a17d4175-a43c9a7d0e7b23ff",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:02-spaces#block-14] “- **向量加法**：$(x_i) + (y_i) = (x_i + y_i)$”; [1:02-spaces#block-26] “$u+v=v+u$, $(u+v)+w=u+(v+w)$, 存在 $0$ 和 $-v$”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:33a33396a17d4175-a43c9a7d0e7b23ff",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:02-spaces#block-14] “- **向量加法**：$(x_i) + (y_i) = (x_i + y_i)$”; [1:02-spaces#block-26] “$u+v=v+u$, $(u+v)+w=u+(v+w)$, 存在 $0$ 和 $-v$”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:33a33396a17d4175-b2033ba08c00d2bc",
+        "from": "claim:33a33396a17d4175-c57d84208e8f6275",
+        "to": "claim:33a33396a17d4175-6d70b1c82ab10765",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:02-spaces-33a33396a17d4175-52#chars-4909-4932",
+          "span:02-spaces-33a33396a17d4175-61#chars-5644-5668"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:28:05.986Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 1,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:33a33396a17d4175-b2033ba08c00d2bc",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:02-spaces#block-52] “**Banach 空间 = 完备的赋范空间**”; [1:02-spaces#block-61] “**Hilbert 空间 = 完备的内积空间**”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:33a33396a17d4175-b2033ba08c00d2bc",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:02-spaces#block-52] “**Banach 空间 = 完备的赋范空间**”; [1:02-spaces#block-61] “**Hilbert 空间 = 完备的内积空间**”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_DIRECTION_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:33a33396a17d4175-b2033ba08c00d2bc",
+          "detail": "direction：Relation 未通过边级语义审计；证据 [0:02-spaces#block-52] “**Banach 空间 = 完备的赋范空间**”; [1:02-spaces#block-61] “**Hilbert 空间 = 完备的内积空间**”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:33a33396a17d4175-bc8d2f2882adac86",
+        "from": "claim:33a33396a17d4175-07205bc184b77466",
+        "to": "claim:33a33396a17d4175-8f51714c9f008157",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:02-spaces-33a33396a17d4175-60#chars-5596-5640",
+          "span:02-spaces-33a33396a17d4175-69"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:28:05.986Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 1,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:33a33396a17d4175-bc8d2f2882adac86",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:02-spaces#block-60] “内积诱导范数：$\\|x\\| = \\sqrt{\\langle x, x \\rangle}$”; [1:02-spaces#block-69] “| 空间 | 内积 | 完备基 | 应用 | |------|------|--------|------| | $\\mathbb{R}^n$ | $\\lang”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:33a33396a17d4175-c90ed5f864ca4474",
+        "from": "claim:33a33396a17d4175-422a5d83871f9031",
+        "to": "claim:33a33396a17d4175-521f0026cd31b4b8",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:02-spaces-33a33396a17d4175-25#chars-2166-2252",
+          "span:02-spaces-33a33396a17d4175-26#chars-2305-2348"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:28:05.986Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 1,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:33a33396a17d4175-c90ed5f864ca4474",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:02-spaces#block-25] “**向量空间公理**：集合 $V$ 配备运算 $+ : V \\times V \\to V$ 和 $\\cdot : \\mathbb{R} \\times V \\to”; [1:02-spaces#block-26] “$u+v=v+u$, $(u+v)+w=u+(v+w)$, 存在 $0$ 和 $-v$”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:33a33396a17d4175-c90ed5f864ca4474",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:02-spaces#block-25] “**向量空间公理**：集合 $V$ 配备运算 $+ : V \\times V \\to V$ 和 $\\cdot : \\mathbb{R} \\times V \\to”; [1:02-spaces#block-26] “$u+v=v+u$, $(u+v)+w=u+(v+w)$, 存在 $0$ 和 $-v$”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:33a33396a17d4175-cd32e98cc947ed77",
+        "from": "claim:33a33396a17d4175-2720ac293420909b",
+        "to": "claim:33a33396a17d4175-a4aaa7d77850ad0c",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "UNVERIFIED",
+        "relationAuditVersion": null,
+        "evidenceSpanIds": [
+          "span:02-spaces-33a33396a17d4175-13#chars-994-1017",
+          "span:02-spaces-33a33396a17d4175-16#chars-1276-1311"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:28:05.986Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_ENDPOINT_QUARANTINED",
+          "severity": "error",
+          "affectedObject": "rel:33a33396a17d4175-cd32e98cc947ed77",
+          "detail": "to 端点未通过 Lint（Quarantined）: claim:33a33396a17d4175-a4aaa7d77850ad0c",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:33a33396a17d4175-dfd8a86926ccdc4f",
+        "from": "claim:33a33396a17d4175-04fae87adfe0b796",
+        "to": "claim:33a33396a17d4175-8260abc6b22d29d8",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:02-spaces-33a33396a17d4175-28#chars-2497-2517",
+          "span:02-spaces-33a33396a17d4175-29#chars-2527-2549"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:28:05.986Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 1,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:33a33396a17d4175-dfd8a86926ccdc4f",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:02-spaces#block-28] “所有基的大小都相同，这就是**维度**。”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:33a33396a17d4175-f4e964cfcccc92f0",
+        "from": "claim:33a33396a17d4175-a1256162969d9b33",
+        "to": "claim:33a33396a17d4175-ada647407ee05e48",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:02-spaces-33a33396a17d4175-14#chars-1097-1155",
+          "span:02-spaces-33a33396a17d4175-64#chars-5722-5761"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:28:05.986Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 1,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:33a33396a17d4175-f4e964cfcccc92f0",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:02-spaces#block-14] “- **内积（点积）**：$\\langle x, y \\rangle = \\sum_{i=1}^n x_i y_i$”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:33a33396a17d4175-f4e964cfcccc92f0",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:02-spaces#block-14] “- **内积（点积）**：$\\langle x, y \\rangle = \\sum_{i=1}^n x_i y_i$”; [1:02-spaces#block-64] “x \\perp y \\iff \\langle x, y \\rangle = 0”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:33a33396a17d4175-f907af2376ee53c9",
+        "from": "claim:33a33396a17d4175-d32c5dbd5d97cfc6",
+        "to": "claim:33a33396a17d4175-aaf4860e28d1685c",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:02-spaces-33a33396a17d4175-36#chars-3224-3290",
+          "span:02-spaces-33a33396a17d4175-37#chars-3348-3373"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:28:05.986Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 1,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:33a33396a17d4175-f907af2376ee53c9",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:02-spaces#block-36] “度量空间是一个集合 $X$ 配上一个距离函数 $d: X \\times X \\to \\mathbb{R}_{\\geq 0}$，满足：”; [1:02-spaces#block-37] “**对称性**：$d(x,y) = d(y,x)$”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-09244ac884c3bba2",
+        "from": "claim:33a33396a17d4175-92f0384fb17d1720",
+        "to": "claim:e7ea8bc17c2cc4ab-299b0a9eebcfbe7c",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:02-spaces-33a33396a17d4175-51#chars-4863-4905",
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-8"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:42:51.908Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-09244ac884c3bba2",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:02-spaces#block-51] “如果空间中每个 Cauchy 列都收敛到空间内的一个点，这个空间就是**完备的**。”; [1:03-sequences-limits#block-8] “| 类型 | 定义 | 例子 | |------|------|------| | 等差数列 | $a_{n+1} = a_n + d$ | $1, 3, 5,”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-09244ac884c3bba2",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:02-spaces#block-51] “如果空间中每个 Cauchy 列都收敛到空间内的一个点，这个空间就是**完备的**。”; [1:03-sequences-limits#block-8] “| 类型 | 定义 | 例子 | |------|------|------| | 等差数列 | $a_{n+1} = a_n + d$ | $1, 3, 5,”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-1fe8b5a75ee4170d",
+        "from": "claim:33a33396a17d4175-f61bd8bdddda89dc",
+        "to": "claim:e7ea8bc17c2cc4ab-adcf8db0c33ee742",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:02-spaces-33a33396a17d4175-50#chars-4772-4861",
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-54"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:42:51.908Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-1fe8b5a75ee4170d",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:02-spaces#block-50] “**Cauchy 列**：$\\forall \\epsilon > 0, \\exists N, \\forall m,n > N: \\|x_m - x_n\\| < ”; [1:03-sequences-limits#block-54] “| # | 关键概念 | 直觉 | 连接章节 | |---|---------|------|---------| | 1 | **$\\epsilon$-$N$”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-8dd9bf0ee72d6d75",
+        "from": "claim:33a33396a17d4175-92f0384fb17d1720",
+        "to": "claim:e7ea8bc17c2cc4ab-adcf8db0c33ee742",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:02-spaces-33a33396a17d4175-51#chars-4863-4905",
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-54"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:42:51.908Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-8dd9bf0ee72d6d75",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:02-spaces#block-51] “如果空间中每个 Cauchy 列都收敛到空间内的一个点，这个空间就是**完备的**。”; [1:03-sequences-limits#block-54] “| # | 关键概念 | 直觉 | 连接章节 | |---|---------|------|---------| | 1 | **$\\epsilon$-$N$”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-8dd9bf0ee72d6d75",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:02-spaces#block-51] “如果空间中每个 Cauchy 列都收敛到空间内的一个点，这个空间就是**完备的**。”; [1:03-sequences-limits#block-54] “| # | 关键概念 | 直觉 | 连接章节 | |---|---------|------|---------| | 1 | **$\\epsilon$-$N$”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_DIRECTION_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-8dd9bf0ee72d6d75",
+          "detail": "direction：Relation 未通过边级语义审计；证据 [0:02-spaces#block-51] “如果空间中每个 Cauchy 列都收敛到空间内的一个点，这个空间就是**完备的**。”; [1:03-sequences-limits#block-54] “| # | 关键概念 | 直觉 | 连接章节 | |---|---------|------|---------| | 1 | **$\\epsilon$-$N$”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-9c00b238eb847313",
+        "from": "claim:80440e2182e5653f-797348eed1bd0bbf",
+        "to": "claim:33a33396a17d4175-92f0384fb17d1720",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:01-number-systems-80440e2182e5653f-62#chars-5808-5985",
+          "span:02-spaces-33a33396a17d4175-51#chars-4863-4905"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:42:51.908Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-9c00b238eb847313",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:01-number-systems#block-62] “| 性质 | $\\mathbb{Q}$ | $\\mathbb{R}$ | |------|-------------|-------------| | 稠密性 ”; [1:02-spaces#block-51] “如果空间中每个 Cauchy 列都收敛到空间内的一个点，这个空间就是**完备的**。”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-b36a7a987b6e42db",
+        "from": "claim:80440e2182e5653f-05cd59169d655147",
+        "to": "claim:33a33396a17d4175-92f0384fb17d1720",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:01-number-systems-80440e2182e5653f-61#chars-5769-5806",
+          "span:02-spaces-33a33396a17d4175-51#chars-4863-4905"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:42:51.908Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.6,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-b36a7a987b6e42db",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:01-number-systems#block-61] “这是 $\\mathbb{R}$ 与 $\\mathbb{Q}$ 的本质区别：”; [1:02-spaces#block-51] “如果空间中每个 Cauchy 列都收敛到空间内的一个点，这个空间就是**完备的**。”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-b36a7a987b6e42db",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:01-number-systems#block-61] “这是 $\\mathbb{R}$ 与 $\\mathbb{Q}$ 的本质区别：”; [1:02-spaces#block-51] “如果空间中每个 Cauchy 列都收敛到空间内的一个点，这个空间就是**完备的**。”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_DIRECTION_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-b36a7a987b6e42db",
+          "detail": "direction：Relation 未通过边级语义审计；证据 [0:01-number-systems#block-61] “这是 $\\mathbb{R}$ 与 $\\mathbb{Q}$ 的本质区别：”; [1:02-spaces#block-51] “如果空间中每个 Cauchy 列都收敛到空间内的一个点，这个空间就是**完备的**。”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-cc559cff90b0f070",
+        "from": "claim:33a33396a17d4175-92f0384fb17d1720",
+        "to": "claim:80440e2182e5653f-b4f1b45af3d91918",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:01-number-systems-80440e2182e5653f-63#chars-6040-6077",
+          "span:02-spaces-33a33396a17d4175-51#chars-4863-4905"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:42:51.908Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-cc559cff90b0f070",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:01-number-systems#block-63] “这在 $\\S$3 数列与极限和 $\\S$10 测度与积分中将反复成为基石。”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-cc559cff90b0f070",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:01-number-systems#block-63] “这在 $\\S$3 数列与极限和 $\\S$10 测度与积分中将反复成为基石。”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-cf1443322152e372",
+        "from": "claim:33a33396a17d4175-92f0384fb17d1720",
+        "to": "claim:80440e2182e5653f-1d1341c978df0a68",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:01-number-systems-80440e2182e5653f-63#chars-5987-6040",
+          "span:02-spaces-33a33396a17d4175-51#chars-4863-4905"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:42:51.908Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-cf1443322152e372",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:01-number-systems#block-63] “> **完备性** = 数轴没有\"洞\"。每一个 Cauchy 列都在 $\\mathbb{R}$ 中有极限。”; [1:02-spaces#block-51] “如果空间中每个 Cauchy 列都收敛到空间内的一个点，这个空间就是**完备的**。”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-d319e48e3b06961d",
+        "from": "claim:80440e2182e5653f-d89b79ca37b88b53",
+        "to": "claim:33a33396a17d4175-92f0384fb17d1720",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:01-number-systems-80440e2182e5653f-64#chars-6079-6379",
+          "span:02-spaces-33a33396a17d4175-51#chars-4863-4905"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:42:51.908Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-d319e48e3b06961d",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:01-number-systems#block-64] “```mermaid graph TD subgraph \"有理数轴 (有洞)\" Q1[0] --- Q2[1] --- GAP1[...洞?] --- Q3[”; [1:02-spaces#block-51] “如果空间中每个 Cauchy 列都收敛到空间内的一个点，这个空间就是**完备的**。”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-d319e48e3b06961d",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:01-number-systems#block-64] “```mermaid graph TD subgraph \"有理数轴 (有洞)\" Q1[0] --- Q2[1] --- GAP1[...洞?] --- Q3[”; [1:02-spaces#block-51] “如果空间中每个 Cauchy 列都收敛到空间内的一个点，这个空间就是**完备的**。”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-df1200169cdab25d",
+        "from": "claim:80440e2182e5653f-4384f68c38d1c16d",
+        "to": "claim:33a33396a17d4175-92f0384fb17d1720",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:01-number-systems-80440e2182e5653f-97",
+          "span:02-spaces-33a33396a17d4175-51#chars-4863-4905"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:42:51.908Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-df1200169cdab25d",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:01-number-systems#block-97] “| 性质 | $\\mathbb{N}$ | $\\mathbb{Z}$ | $\\mathbb{Q}$ | $\\mathbb{R}$ | $\\mathbb{C}$ ”; [1:02-spaces#block-51] “如果空间中每个 Cauchy 列都收敛到空间内的一个点，这个空间就是**完备的**。”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:33a33396a17d4175-7b1f22434e5a69c1",
+        "from": "claim:33a33396a17d4175-4caca798370d0f3d",
+        "to": "claim:33a33396a17d4175-5c05908f28bd7944",
+        "type": "EQUIVALENT_UNDER",
+        "conditions": [
+          "欧氏距离定义相同"
+        ],
+        "conditionStatus": "PRESERVED",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:02-spaces-33a33396a17d4175-14#chars-1156-1203",
+          "span:02-spaces-33a33396a17d4175-39#chars-3499-3535"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:28:05.986Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 1,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "HUMAN_REVIEW_REJECTED",
+          "severity": "error",
+          "affectedObject": "rel:33a33396a17d4175-7b1f22434e5a69c1",
+          "detail": "人工复核否决：两端是同一欧氏距离定义的语义重复，应合并 Claim；条件“定义相同”是循环表述，不能构成 EQUIVALENT_UNDER。",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:33a33396a17d4175-a81435cc6faadd5d",
+        "from": "claim:33a33396a17d4175-5c05908f28bd7944",
+        "to": "claim:33a33396a17d4175-4caca798370d0f3d",
+        "type": "EQUIVALENT_UNDER",
+        "conditions": [
+          "欧氏距离定义相同"
+        ],
+        "conditionStatus": "PRESERVED",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:02-spaces-33a33396a17d4175-14#chars-1156-1203",
+          "span:02-spaces-33a33396a17d4175-39#chars-3499-3535"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:28:05.986Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 1,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "HUMAN_REVIEW_REJECTED",
+          "severity": "error",
+          "affectedObject": "rel:33a33396a17d4175-a81435cc6faadd5d",
+          "detail": "人工复核否决：与反向边重复；两端是同一欧氏距离定义的语义重复，应合并 Claim，而非保留双向等价边。",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "verdict": "passed",
+  "dimensions": {
+    "support": { "result": "pass", "evidence": "更一般地：$e^{i\\theta} = \\cos\\theta + i\\sin\\theta$。" },
+    "addition": { "result": "pass", "evidence": "无额外信息" },
+    "inference": { "result": "pass", "evidence": "原文也是直接陈述，无需推断标记" },
+    "limits": { "result": "pass", "evidence": "无适用条件或例外" },
+    "citation": { "result": "pass", "evidence": "一致对应源文本" }
+  },
+  "anchor": "更一般地：$e^{i\\theta} = \\cos\\theta + i\\sin\\theta$。",
+  "failedDimensions": [],
+  "issues": []
+}

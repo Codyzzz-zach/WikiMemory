@@ -1,0 +1,28 @@
+{
+  "verdict": "passed",
+  "dimensions": {
+    "support": {
+      "result": "pass",
+      "evidence": "除法不封闭 | $a \\div b$ 可能不是自然数 | $3 \\div 5$ 不是自然数"
+    },
+    "addition": {
+      "result": "pass",
+      "evidence": "原文包含所有对应信息，无新增内容"
+    },
+    "inference": {
+      "result": "pass",
+      "evidence": "原文直接陈述，非推断"
+    },
+    "limits": {
+      "result": "pass",
+      "evidence": "原文无额外条件，claim 与之一致"
+    },
+    "citation": {
+      "result": "pass",
+      "evidence": "claim 内容与引用的原文片段完全对应"
+    }
+  },
+  "anchor": "除法不封闭 | $a \\div b$ 可能不是自然数",
+  "failedDimensions": [],
+  "issues": []
+}

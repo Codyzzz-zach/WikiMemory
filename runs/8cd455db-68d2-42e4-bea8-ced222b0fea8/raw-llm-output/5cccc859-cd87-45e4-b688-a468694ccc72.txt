@@ -1,0 +1,134 @@
+{
+  "propositions": [
+    {
+      "text": "级数是数列的累加，定义为部分和序列的极限。",
+      "exactQuote": "**级数** = 数列的\"累加\"：$\\sum_{n=1}^\\infty a_n = \\lim_{N \\to \\infty} \\sum_{n=1}^N a_n$",
+      "blockId": "03-sequences-limits#block-24"
+    },
+    {
+      "text": "级数的收敛性取决于部分和数列的极限。",
+      "exactQuote": "**级数的收敛性取决于部分和数列的极限**。",
+      "blockId": "03-sequences-limits#block-25"
+    },
+    {
+      "text": "如果通项不趋近于0，级数发散（必要条件）。",
+      "exactQuote": "\"否\" DIV[\"发散 (必要条件)\"]",
+      "blockId": "03-sequences-limits#block-27"
+    },
+    {
+      "text": "对于正项级数，可以使用比值判别、根值判别、积分判别、比较判别或极限比较判别。",
+      "exactQuote": "正项级数判别法: RATIO[\"比值判别: lim|aₙ₊₁/aₙ|\"] ROOT[\"根值判别: lim |a_n|^(1/n)\"] INTEGRAL[\"积分判别\"] COMPARISON[\"比较判别 / 极限比较\"]",
+      "blockId": "03-sequences-limits#block-27"
+    },
+    {
+      "text": "对于交错或复级数，若绝对值级数收敛则绝对收敛。",
+      "exactQuote": "ABS{\"Σ|aₙ| 收敛?\"} ABS[\"绝对收敛\"]",
+      "blockId": "03-sequences-limits#block-27"
+    },
+    {
+      "text": "若绝对值级数发散但原级数收敛，则条件收敛（如交错判别）。",
+      "exactQuote": "COND[\"条件收敛 (交错判别等)\"]",
+      "blockId": "03-sequences-limits#block-27"
+    },
+    {
+      "text": "几何级数∑ar^{n-1}当|r|<1时收敛，和为a/(1-r)。",
+      "exactQuote": "| 几何级数 $\\sum ar^{n-1}$ | $\\lvert r\\rvert < 1$ | $\\frac{a}{1-r}$ |",
+      "blockId": "03-sequences-limits#block-29"
+    },
+    {
+      "text": "p-级数∑1/n^p当p>1时收敛，和为ζ(p)。",
+      "exactQuote": "| $p$-级数 $\\sum \\frac{1}{n^p}$ | $p > 1$ | $\\zeta(p)$ |",
+      "blockId": "03-sequences-limits#block-29"
+    },
+    {
+      "text": "调和级数∑1/n发散。",
+      "exactQuote": "| 调和级数 $\\sum \\frac{1}{n}$ | **发散** | $\\infty$（$\\sim \\ln n + \\gamma$） |",
+      "blockId": "03-sequences-limits#block-29"
+    },
+    {
+      "text": "交错调和级数∑(-1)^{n-1}/n条件收敛，和为ln2。",
+      "exactQuote": "| 交错调和 $\\sum \\frac{(-1)^{n-1}}{n}$ | 条件收敛 | $\\ln 2$ |",
+      "blockId": "03-sequences-limits#block-29"
+    },
+    {
+      "text": "级数∑1/n!收敛，和为e。",
+      "exactQuote": "| $\\sum \\frac{1}{n!}$ | 收敛 | $e$ |",
+      "blockId": "03-sequences-limits#block-29"
+    },
+    {
+      "text": "如果函数足够光滑，可以用它在某点的各阶导数构造一个幂级数，该级数在收敛半径内等于原函数。",
+      "exactQuote": "如果函数足够光滑，就可以用它在某点的各阶导数构造一个幂级数，该级数在收敛半径内等于原函数",
+      "blockId": "03-sequences-limits#block-34"
+    },
+    {
+      "text": "Taylor级数公式为f(x)=∑f^{(n)}(a)/n!(x-a)^n。",
+      "exactQuote": "$$ f(x) = \\sum_{n=0}^\\infty \\frac{f^{(n)}(a)}{n!}(x-a)^n $$",
+      "blockId": "03-sequences-limits#block-35"
+    },
+    {
+      "text": "Maclaurin级数是a=0时的泰勒级数。",
+      "exactQuote": "**Maclaurin 级数**（$a=0$ 的特例）",
+      "blockId": "03-sequences-limits#block-36"
+    },
+    {
+      "text": "Maclaurin级数公式为f(x)=f(0)+f'(0)x+f''(0)/2!x^2+...。",
+      "exactQuote": "$$ f(x) = f(0) + f'(0)x + \\frac{f''(0)}{2!}x^2 + \\frac{f'''(0)}{3!}x^3 + \\cdots $$",
+      "blockId": "03-sequences-limits#block-37"
+    },
+    {
+      "text": "e^x的Maclaurin级数为∑x^n/n!，收敛半径为∞。",
+      "exactQuote": "| $e^x$ | $\\sum_{n=0}^\\infty \\frac{x^n}{n!}$ | $\\infty$ |",
+      "blockId": "03-sequences-limits#block-39"
+    },
+    {
+      "text": "sin x的Maclaurin级数为∑(-1)^n x^{2n+1}/(2n+1)!，收敛半径为∞。",
+      "exactQuote": "| $\\sin x$ | $\\sum_{n=0}^\\infty (-1)^n \\frac{x^{2n+1}}{(2n+1)!}$ | $\\infty$ |",
+      "blockId": "03-sequences-limits#block-39"
+    },
+    {
+      "text": "cos x的Maclaurin级数为∑(-1)^n x^{2n}/(2n)!，收敛半径为∞。",
+      "exactQuote": "| $\\cos x$ | $\\sum_{n=0}^\\infty (-1)^n \\frac{x^{2n}}{(2n)!}$ | $\\infty$ |",
+      "blockId": "03-sequences-limits#block-39"
+    },
+    {
+      "text": "1/(1-x)的Maclaurin级数为∑x^n，收敛半径为1。",
+      "exactQuote": "| $\\frac{1}{1-x}$ | $\\sum_{n=0}^\\infty x^n$ | $1$ |",
+      "blockId": "03-sequences-limits#block-39"
+    },
+    {
+      "text": "ln(1+x)的Maclaurin级数为∑(-1)^{n+1}x^n/n，收敛半径为1。",
+      "exactQuote": "| $\\ln(1+x)$ | $\\sum_{n=1}^\\infty (-1)^{n+1}\\frac{x^n}{n}$ | $1$ |",
+      "blockId": "03-sequences-limits#block-39"
+    },
+    {
+      "text": "欧拉公式可以从e^x、sin x、cos x的Taylor展开直接推出。",
+      "exactQuote": "**注意**：欧拉公式 $e^{i\\theta} = \\cos\\theta + i\\sin\\theta$ 可以从 $e^x$、$\\sin x$、$\\cos x$ 各自的 Taylor 展开直接推出",
+      "blockId": "03-sequences-limits#block-40"
+    },
+    {
+      "text": "将x=iθ代入e^x展开并分离实部和虚部可得到欧拉公式。",
+      "exactQuote": "将 $x=i\\theta$ 代入 $e^x$ 展开，分离实部和虚部即可",
+      "blockId": "03-sequences-limits#block-40"
+    },
+    {
+      "text": "Taylor级数截断到n项的误差由Lagrange余项给出。",
+      "exactQuote": "Taylor 级数截断到 $n$ 项的误差由 Lagrange 余项给出",
+      "blockId": "03-sequences-limits#block-43"
+    },
+    {
+      "text": "Lagrange余项公式为R_n(x)=f^{(n+1)}(ξ)/(n+1)! (x-a)^{n+1}，ξ在a和x之间。",
+      "exactQuote": "$$ R_n(x) = \\frac{f^{(n+1)}(\\xi)}{(n+1)!}(x-a)^{n+1}, \\quad \\xi \\text{ 在 } a \\text{ 和 } x \\text{ 之间} $$",
+      "blockId": "03-sequences-limits#block-44"
+    },
+    {
+      "text": "Lagrange余项让我们可以在数值计算中控制精度。",
+      "exactQuote": "这让我们可以在数值计算中**控制精度**",
+      "blockId": "03-sequences-limits#block-45"
+    },
+    {
+      "text": "给定所需精度，可以反推需要多少项。",
+      "exactQuote": "给定所需精度，反推需要多少项",
+      "blockId": "03-sequences-limits#block-45"
+    }
+  ]
+}

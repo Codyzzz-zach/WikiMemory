@@ -1,0 +1,6 @@
+{
+  "kind": "VALID",
+  "content": "{\n  \"propositions\": [\n    {\n      \"text\": \"正交性允许定义垂直概念。\",\n      \"exactQuote\": \"因为它有**正交性**——可以定义\\\"垂直\\\"：\",\n      \"blockId\": \"02-spaces#block-63\",\n      \"relatesTo\": null\n    },\n    {\n      \"text\": \"正交性使得某些操作成为可能。\",\n      \"exactQuote\": \"这使我们可以做：\",\n      \"blockId\": \"02-spaces#block-65\",\n      \"relatesTo\": {\n        \"fromPropIndex\": 0,\n        \"type\": \"REQUIRES\"\n      }\n    }\n  ]\n}",
+  "model": "deepseek-v4-flash",
+  "outputHash": "f2ee656565a845a5"
+}

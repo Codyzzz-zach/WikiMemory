@@ -1,0 +1,375 @@
+{
+  "relations": [
+    {
+      "fromClaimIndex": 1,
+      "toClaimIndex": 126,
+      "type": "DERIVED_FROM",
+      "conditions": [],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 23,
+      "toClaimIndex": 126,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 10,
+      "toClaimIndex": 123,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 14,
+      "toClaimIndex": 90,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 70,
+      "toClaimIndex": 115,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 90,
+      "toClaimIndex": 14,
+      "type": "DERIVED_FROM",
+      "conditions": [],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 68,
+      "toClaimIndex": 108,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["完备性定义为上确界存在性"],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 48,
+      "toClaimIndex": 108,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["完备性定义为Cauchy列收敛"],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 88,
+      "toClaimIndex": 48,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["完备性定义为Cauchy列收敛"],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 59,
+      "toClaimIndex": 154,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["完备性定义为Cauchy列收敛"],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 63,
+      "toClaimIndex": 154,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["完备性定义为上确界存在性"],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 154,
+      "toClaimIndex": 60,
+      "type": "DERIVED_FROM",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 80,
+      "toClaimIndex": 118,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 142,
+      "toClaimIndex": 103,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 4,
+      "toClaimIndex": 142,
+      "type": "CONTRADICTS",
+      "conditions": [],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 57,
+      "toClaimIndex": 118,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 43,
+      "toClaimIndex": 57,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 97,
+      "toClaimIndex": 127,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 127,
+      "toClaimIndex": 66,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 66,
+      "toClaimIndex": 127,
+      "type": "DERIVED_FROM",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 137,
+      "toClaimIndex": 83,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 126,
+      "toClaimIndex": 137,
+      "type": "DERIVED_FROM",
+      "conditions": [],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 126,
+      "toClaimIndex": 148,
+      "type": "DERIVED_FROM",
+      "conditions": [],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 148,
+      "toClaimIndex": 126,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 126,
+      "toClaimIndex": 120,
+      "type": "DERIVED_FROM",
+      "conditions": [],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 120,
+      "toClaimIndex": 17,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 17,
+      "toClaimIndex": 58,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 56,
+      "toClaimIndex": 17,
+      "type": "CONTRADICTS",
+      "conditions": [],
+      "confidence": 0.6
+    },
+    {
+      "fromClaimIndex": 65,
+      "toClaimIndex": 126,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 75,
+      "toClaimIndex": 11,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 11,
+      "toClaimIndex": 75,
+      "type": "DERIVED_FROM",
+      "conditions": [],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 157,
+      "toClaimIndex": 34,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 34,
+      "toClaimIndex": 21,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["代数封闭域定义为代数扩张终点"],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 30,
+      "toClaimIndex": 34,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["代数封闭定义为每多项式有根"],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 96,
+      "toClaimIndex": 34,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["代数封闭定义为多项式所有根在域内"],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 76,
+      "toClaimIndex": 31,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 31,
+      "toClaimIndex": 76,
+      "type": "DERIVED_FROM",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 41,
+      "toClaimIndex": 152,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["不可数定义为不能与自然数一一对应"],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 32,
+      "toClaimIndex": 151,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 71,
+      "toClaimIndex": 102,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 0,
+      "toClaimIndex": 104,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 16,
+      "toClaimIndex": 52,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["欧拉公式指同一公式"],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 52,
+      "toClaimIndex": 162,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 162,
+      "toClaimIndex": 149,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 18,
+      "toClaimIndex": 153,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 165,
+      "toClaimIndex": 153,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 39,
+      "toClaimIndex": 109,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 147,
+      "toClaimIndex": 1,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["减法不封闭指减法结果可能不在集中"],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 106,
+      "toClaimIndex": 119,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["加法逆元存在性"],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 139,
+      "toClaimIndex": 161,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["乘法逆元存在性"],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 72,
+      "toClaimIndex": 167,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 20,
+      "toClaimIndex": 72,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 29,
+      "toClaimIndex": 105,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    }
+  ]
+}

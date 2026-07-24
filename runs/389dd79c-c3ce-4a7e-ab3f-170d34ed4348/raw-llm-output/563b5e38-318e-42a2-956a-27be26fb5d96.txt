@@ -1,0 +1,13 @@
+{
+  "verdict": "passed",
+  "dimensions": {
+    "support": { "result": "pass", "evidence": "共轭 $\\overline{z} = a - bi$" },
+    "addition": { "result": "pass", "evidence": "原文无额外信息，Claim无添加" },
+    "inference": { "result": "pass", "evidence": "原文为定义，无推断" },
+    "limits": { "result": "pass", "evidence": "原文无条件限制，Claim无条件缺失" },
+    "citation": { "result": "pass", "evidence": "Claim引用的内容与SourceSpan完全对应" }
+  },
+  "anchor": "共轭 $\\overline{z} = a - bi$",
+  "failedDimensions": [],
+  "issues": []
+}

@@ -1,0 +1,348 @@
+{
+  "claims": [
+    {
+      "statement": "本章介绍数系从自然数到复数的逐级扩张，并揭示了每一次'不够用'的危机如何推动数学的革命性突破。",
+      "evidenceQuotes": ["本章沿着数系的逐级扩张路线，揭示每一次'不够用'的危机如何推动数学的革命性突破。"],
+      "blockIds": ["01-number-systems#block-1"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 0.95
+    },
+    {
+      "statement": "1889年，皮亚诺用五条公理精确定义了自然数。",
+      "evidenceQuotes": ["1889年，皮亚诺用五条公理精确定义了自然数："],
+      "blockIds": ["01-number-systems#block-5"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 0.95
+    },
+    {
+      "statement": "0是自然数。",
+      "evidenceQuotes": ["$0$ 是自然数"],
+      "blockIds": ["01-number-systems#block-6"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 0.95
+    },
+    {
+      "statement": "每个自然数n有一个后继S(n)。",
+      "evidenceQuotes": ["每个自然数 $n$ 有一个**后继** $S(n)$"],
+      "blockIds": ["01-number-systems#block-6"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 0.95
+    },
+    {
+      "statement": "0不是任何自然数的后继。",
+      "evidenceQuotes": ["$0$ 不是任何自然数的后继"],
+      "blockIds": ["01-number-systems#block-6"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 0.95
+    },
+    {
+      "statement": "若S(m) = S(n)，则m = n，即后继函数是单射。",
+      "evidenceQuotes": ["若 $S(m) = S(n)$，则 $m = n$（后继函数是单射）"],
+      "blockIds": ["01-number-systems#block-6"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 0.95
+    },
+    {
+      "statement": "数学归纳法原理：若某性质对0成立，且由对n成立可推出对S(n)成立，则该性质对一切自然数成立。",
+      "evidenceQuotes": ["**数学归纳法原理**：若某性质对 $0$ 成立，且由对 $n$ 成立可推出对 $S(n)$ 成立，则该性质对一切自然数成立"],
+      "blockIds": ["01-number-systems#block-6"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 0.95
+    },
+    {
+      "statement": "自然数的集合表示为N = {0, 1, 2, 3, ...}。",
+      "evidenceQuotes": ["$$\n\\mathbb{N} = \\{0, 1, 2, 3, \\ldots\\}\n$$"],
+      "blockIds": ["01-number-systems#block-7"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 0.95
+    },
+    {
+      "statement": "自然数的本质是递归结构——从零出发，反复应用后继操作，生成无穷序列。",
+      "evidenceQuotes": ["自然数的本质不是'0,1,2,3...'这些符号，而是**递归结构**——从零出发，反复应用'后继'操作，生成无穷无尽的序列。"],
+      "blockIds": ["01-number-systems#block-8"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 0.95
+    },
+    {
+      "statement": "数学归纳法之所以根本，是因为它直接编码了自然数的构造方式。",
+      "evidenceQuotes": ["这就是为什么数学归纳法如此根本：它直接编码了自然数的构造方式。"],
+      "blockIds": ["01-number-systems#block-8"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 0.95
+    },
+    {
+      "statement": "自然数具有良序性：任何非空子集有最小元。",
+      "evidenceQuotes": ["| 良序性 | 任何非空子集有最小元 | $\\{3,5,1\\} \\to 1$ 最小 |"],
+      "blockIds": ["01-number-systems#block-10"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 0.95
+    },
+    {
+      "statement": "自然数对加法封闭：a,b ∈ N ⇒ a+b ∈ N。",
+      "evidenceQuotes": ["| 加法封闭 | $a,b \\in \\mathbb{N} \\Rightarrow a+b \\in \\mathbb{N}$ | $3+5=8$ |"],
+      "blockIds": ["01-number-systems#block-10"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 0.95
+    },
+    {
+      "statement": "自然数对乘法封闭：a,b ∈ N ⇒ a×b ∈ N。",
+      "evidenceQuotes": ["| 乘法封闭 | $a,b \\in \\mathbb{N} \\Rightarrow a \\times b \\in \\mathbb{N}$ | $3 \\times 5=15$ |"],
+      "blockIds": ["01-number-systems#block-10"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 0.95
+    },
+    {
+      "statement": "自然数对减法不封闭：a-b可能不是自然数。",
+      "evidenceQuotes": ["| 减法不封闭 | $a-b$ 可能不是自然数 | $3-5$ 无意义（在 $\\mathbb{N}$ 内） |"],
+      "blockIds": ["01-number-systems#block-10"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 0.95
+    },
+    {
+      "statement": "自然数对除法不封闭：a÷b可能不是自然数。",
+      "evidenceQuotes": ["| 除法不封闭 | $a \\div b$ 可能不是自然数 | $3 \\div 5$ 不是自然数 |"],
+      "blockIds": ["01-number-systems#block-10"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 0.95
+    },
+    {
+      "statement": "直到19世纪末，数学家才开始严格定义'什么是数'，由Frege、Peano、Dedekind等人建立了公理基础。",
+      "evidenceQuotes": ["但直到19世纪末，数学家才开始认真追问'什么是数'，最终由 Frege、Peano、Dedekind 等人建立了严格的公理基础。"],
+      "blockIds": ["01-number-systems#block-12"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 0.95
+    },
+    {
+      "statement": "自然数的最基本缺陷是减法不封闭。",
+      "evidenceQuotes": ["自然数的根本缺陷：**减法不封闭**。$3 - 5$ 在 $\\mathbb{N}$ 中没有答案。"],
+      "blockIds": ["01-number-systems#block-18"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 0.95
+    },
+    {
+      "statement": "减法不封闭推动了一次数系扩张。",
+      "evidenceQuotes": ["这个'不够用'推动了我们第一次数系扩张。"],
+      "blockIds": ["01-number-systems#block-18"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 0.95
+    },
+    {
+      "statement": "整数可以看作自然数有序对(a,b)的等价类，其中(a,b)代表'a-b'这个差。",
+      "evidenceQuotes": ["整数可以看作自然数有序对 $(a,b)$ 的等价类，其中 $(a,b)$ 代表'$a-b$'这个差。"],
+      "blockIds": ["01-number-systems#block-19"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 0.95
+    },
+    {
+      "statement": "整数等价关系定义为：(a,b) ~ (c,d) 当且仅当 a+d = b+c。",
+      "evidenceQuotes": ["$$\n(a,b) \\sim (c,d) \\iff a + d = b + c\n$$"],
+      "blockIds": ["01-number-systems#block-20"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 0.95
+    },
+    {
+      "statement": "例如(0,3) ~ (1,4) ~ (2,5)都代表-3。",
+      "evidenceQuotes": ["例如 $(0,3) \\sim (1,4) \\sim (2,5)$ 都代表 $-3$。"],
+      "blockIds": ["01-number-systems#block-21"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 0.95
+    },
+    {
+      "statement": "整数的集合表示为Z = {..., -3, -2, -1, 0, 1, 2, 3, ...}。",
+      "evidenceQuotes": ["$$\n\\mathbb{Z} = \\{\\ldots, -3, -2, -1, 0, 1, 2, 3, \\ldots\\}\n$$"],
+      "blockIds": ["01-number-systems#block-22"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 0.95
+    },
+    {
+      "statement": "自然数集合ℕ在加法下封闭。",
+      "evidenceQuotes": ["加法 | ✅ 封闭"],
+      "blockIds": ["01-number-systems#block-24"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 0.9
+    },
+    {
+      "statement": "整数集合ℤ在加法下封闭。",
+      "evidenceQuotes": ["加法 | ✅ 封闭"],
+      "blockIds": ["01-number-systems#block-24"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 0.9
+    },
+    {
+      "statement": "ℕ的加法单位元是0。",
+      "evidenceQuotes": ["加法单位元 | ✅ $0$"],
+      "blockIds": ["01-number-systems#block-24"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 0.9
+    },
+    {
+      "statement": "ℤ的加法单位元是0。",
+      "evidenceQuotes": ["加法单位元 | ✅ $0$"],
+      "blockIds": ["01-number-systems#block-24"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 0.9
+    },
+    {
+      "statement": "ℕ中不存在加法逆元。",
+      "evidenceQuotes": ["加法逆元 | ❌"],
+      "blockIds": ["01-number-systems#block-24"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 0.9
+    },
+    {
+      "statement": "ℤ中每个元素a都有加法逆元-a。",
+      "evidenceQuotes": ["加法逆元 | ✅ 每个 $a$ 有 $-a$"],
+      "blockIds": ["01-number-systems#block-24"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 0.9
+    },
+    {
+      "statement": "ℕ在乘法下封闭。",
+      "evidenceQuotes": ["乘法 | ✅ 封闭"],
+      "blockIds": ["01-number-systems#block-24"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 0.9
+    },
+    {
+      "statement": "ℤ在乘法下封闭。",
+      "evidenceQuotes": ["乘法 | ✅ 封闭"],
+      "blockIds": ["01-number-systems#block-24"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 0.9
+    },
+    {
+      "statement": "ℕ的乘法单位元是1。",
+      "evidenceQuotes": ["乘法单位元 | ✅ $1$"],
+      "blockIds": ["01-number-systems#block-24"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 0.9
+    },
+    {
+      "statement": "ℤ的乘法单位元是1。",
+      "evidenceQuotes": ["乘法单位元 | ✅ $1$"],
+      "blockIds": ["01-number-systems#block-24"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 0.9
+    },
+    {
+      "statement": "ℕ中不存在乘法逆元。",
+      "evidenceQuotes": ["乘法逆元 | ❌"],
+      "blockIds": ["01-number-systems#block-24"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 0.9
+    },
+    {
+      "statement": "ℤ中不存在乘法逆元，例如2没有整数倒数。",
+      "evidenceQuotes": ["乘法逆元 | ❌（$2$ 没有整数倒数）"],
+      "blockIds": ["01-number-systems#block-24"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 0.9
+    },
+    {
+      "statement": "ℕ的代数身份是交换幺半群。",
+      "evidenceQuotes": ["**代数身份** | 交换幺半群"],
+      "blockIds": ["01-number-systems#block-24"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 0.9
+    },
+    {
+      "statement": "ℤ的代数身份是交换环。",
+      "evidenceQuotes": ["**代数身份** | **交换环**"],
+      "blockIds": ["01-number-systems#block-24"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 0.9
+    },
+    {
+      "statement": "ℤ是一个交换环。",
+      "evidenceQuotes": ["$\\mathbb{Z}$ 是一个**交换环**——这是$\\S$8群环域中将详述的核心结构。"],
+      "blockIds": ["01-number-systems#block-25"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 0.95
+    },
+    {
+      "statement": "ℤ还是一个整环，即没有零因子：若ab=0则a=0或b=0。",
+      "evidenceQuotes": ["整数的独特之处在于它还是一个**整环**（没有零因子：$ab=0 \\Rightarrow a=0 \\text{ 或 } b=0$）。"],
+      "blockIds": ["01-number-systems#block-25"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 0.95
+    },
+    {
+      "statement": "整数通过引入负数解决了减法封闭问题。",
+      "evidenceQuotes": ["整数通过引入\"负数\"解决了减法封闭问题"],
+      "blockIds": ["01-number-systems#block-28"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 0.95
+    },
+    {
+      "statement": "整数扩张的代价是失去了ℕ的良序性，整数没有最小元。",
+      "evidenceQuotes": ["代价是失去了 $\\mathbb{N}$ 的良序性（整数没有最小元）"],
+      "blockIds": ["01-number-systems#block-28"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 0.95
+    },
+    {
+      "statement": "整数扩张换来的是群结构，(ℤ, +)成为一个阿贝尔群。",
+      "evidenceQuotes": ["换来的是**群结构**——$(\\mathbb{Z}, +)$ 成为一个阿贝尔群（$\\S$8）。"],
+      "blockIds": ["01-number-systems#block-28"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 0.95
+    },
+    {
+      "statement": "整数的下一个缺陷是除法不封闭。",
+      "evidenceQuotes": ["整数的下一个缺陷：**除法不封闭**。"],
+      "blockIds": ["01-number-systems#block-32"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 0.95
+    },
+    {
+      "statement": "3除以5在整数中无解。",
+      "evidenceQuotes": ["$3 \\div 5$ 在 $\\mathbb{Z}$ 中无解。"],
+      "blockIds": ["01-number-systems#block-32"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 0.95
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "verdict": "passed",
+  "dimensions": {
+    "support": { "result": "pass", "evidence": "这迫使数学家正视这个'幽灵'。" },
+    "addition": { "result": "pass", "evidence": "无额外信息" },
+    "inference": { "result": "pass", "evidence": "原文为事实陈述，claim 无额外推断" },
+    "limits": { "result": "pass", "evidence": "无条件限制" },
+    "citation": { "result": "pass", "evidence": "claim 与引用 span 一致" }
+  },
+  "anchor": "这迫使数学家正视这个'幽灵'。",
+  "failedDimensions": [],
+  "issues": []
+}

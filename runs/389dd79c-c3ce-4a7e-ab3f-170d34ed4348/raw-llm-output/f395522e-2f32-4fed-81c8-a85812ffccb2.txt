@@ -1,0 +1,28 @@
+{
+  "verdict": "passed",
+  "dimensions": {
+    "support": {
+      "result": "pass",
+      "evidence": "加法单位元 | ✅ $0$"
+    },
+    "addition": {
+      "result": "pass",
+      "evidence": "原文仅提及\"加法单位元\"和\"0\"，无额外信息"
+    },
+    "inference": {
+      "result": "pass",
+      "evidence": "原文直接断言\"加法单位元 | ✅ $0$\"，Claim 直接引用，无推断"
+    },
+    "limits": {
+      "result": "pass",
+      "evidence": "原文无任何限定条件"
+    },
+    "citation": {
+      "result": "pass",
+      "evidence": "SourceSpan 明确包含该内容"
+    }
+  },
+  "anchor": "加法单位元 | ✅ $0$",
+  "failedDimensions": [],
+  "issues": []
+}

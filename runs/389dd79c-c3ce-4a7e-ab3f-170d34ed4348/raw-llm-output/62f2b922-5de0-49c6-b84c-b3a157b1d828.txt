@@ -1,0 +1,28 @@
+{
+  "verdict": "passed",
+  "dimensions": {
+    "support": {
+      "result": "pass",
+      "evidence": "原文中"代数封闭"后标有"❌"，且所在表格上下文通常表示自然数集不具备该性质。"
+    },
+    "addition": {
+      "result": "pass",
+      "evidence": "Claim 内容未增加原文中不存在的信息。"
+    },
+    "inference": {
+      "result": "pass",
+      "evidence": "Claim 直接陈述原文符号表示的事实，未进行额外推理。"
+    },
+    "limits": {
+      "result": "pass",
+      "evidence": "原文未设定限定条件，Claim 无需保留额外条件。"
+    },
+    "citation": {
+      "result": "pass",
+      "evidence": "Claim 引用的 SourceSpan 正确指向[01-number-systems#block-97]中关于代数封闭的否定标记。"
+    }
+  },
+  "anchor": "代数封闭 | ❌",
+  "failedDimensions": [],
+  "issues": []
+}

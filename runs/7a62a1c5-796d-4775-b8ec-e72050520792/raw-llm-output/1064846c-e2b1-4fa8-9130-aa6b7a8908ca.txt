@@ -1,0 +1,669 @@
+{
+  "claims": [
+    {
+      "statement": "复数的实部Re(z) = a，虚部Im(z) = b。",
+      "evidenceQuotes": ["- **实部** $\\Re(z) = a$，**虚部** $\\Im(z) = b$"],
+      "blockIds": ["01-number-systems#block-77"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "复数的模|z| = sqrt(a^2 + b^2)。",
+      "evidenceQuotes": ["- **模** $|z| = \\sqrt{a^2 + b^2}$"],
+      "blockIds": ["01-number-systems#block-77"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "复数的共轭是z = a - bi。",
+      "evidenceQuotes": ["- **共轭** $\\overline{z} = a - bi$"],
+      "blockIds": ["01-number-systems#block-77"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "复数的极坐标表示为z = r(cosθ + i sinθ) = re^{iθ}。",
+      "evidenceQuotes": ["- **极坐标** $z = r(\\cos\\theta + i\\sin\\theta) = re^{i\\theta}$"],
+      "blockIds": ["01-number-systems#block-77"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "复数的加法对应向量平移，乘法对应缩放加旋转。",
+      "evidenceQuotes": ["加法 = 向量平移，乘法 = 缩放 + 旋转。"],
+      "blockIds": ["01-number-systems#block-80"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "复数乘积的模等于模的乘积，辐角等于辐角的和：z1·z2 = r1·r2·e^{i(θ1+θ2)}。",
+      "evidenceQuotes": ["$$z_1 \\cdot z_2 = r_1r_2 \\cdot e^{i(\\theta_1 + \\theta_2)}$$"],
+      "blockIds": ["01-number-systems#block-81"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "欧拉公式e^{iπ} + 1 = 0连接了五个最基础的数学常数和三种基本运算。",
+      "evidenceQuotes": ["这个公式连接了五个最基础的数学常数（$e, i, \\pi, 1, 0$）和三种基本运算（加法、乘法、指数）。"],
+      "blockIds": ["01-number-systems#block-85"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "一般欧拉公式为e^{iθ} = cosθ + i sinθ，揭示了复指数与三角函数的深层统一。",
+      "evidenceQuotes": ["更一般地：$e^{i\\theta} = \\cos\\theta + i\\sin\\theta$。这揭示了复指数与三角函数的深层统一——振动 = 复平面上的圆周运动。"],
+      "blockIds": ["01-number-systems#block-86"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "代数基本定理：任何n次复系数多项式在C中恰好有n个根（计重数）。",
+      "evidenceQuotes": ["**代数基本定理**：任何 $n$ 次复系数多项式在 $\\mathbb{C}$ 中恰好有 $n$ 个根（计重数）。"],
+      "blockIds": ["01-number-systems#block-88"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "C是代数封闭的，在C上再扩张只会失去域结构，不会获得新的方程解。",
+      "evidenceQuotes": ["$\\mathbb{C}$ 是**代数封闭的**——数系扩张至此终结：在 $\\mathbb{C}$ 上再扩张，只会失去域结构，不会获得新的方程解。"],
+      "blockIds": ["01-number-systems#block-90"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "自然数集 N 是加法封闭的。",
+      "evidenceQuotes": ["| 性质 | $\\mathbb{N}$ | $\\mathbb{Z}$ | $\\mathbb{Q}$ | $\\mathbb{R}$ | $\\mathbb{C}$ |\n|------|:---:|:---:|:---:|:---:|:---:|\n| 加法封闭 | ✅ | ✅ | ✅ | ✅ | ✅ |"],
+      "blockIds": ["01-number-systems#block-97"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "整数集 Z 是加法封闭的。",
+      "evidenceQuotes": ["| 性质 | $\\mathbb{N}$ | $\\mathbb{Z}$ | $\\mathbb{Q}$ | $\\mathbb{R}$ | $\\mathbb{C}$ |\n|------|:---:|:---:|:---:|:---:|:---:|\n| 加法封闭 | ✅ | ✅ | ✅ | ✅ | ✅ |"],
+      "blockIds": ["01-number-systems#block-97"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "有理数集 Q 是加法封闭的。",
+      "evidenceQuotes": ["| 性质 | $\\mathbb{N}$ | $\\mathbb{Z}$ | $\\mathbb{Q}$ | $\\mathbb{R}$ | $\\mathbb{C}$ |\n|------|:---:|:---:|:---:|:---:|:---:|\n| 加法封闭 | ✅ | ✅ | ✅ | ✅ | ✅ |"],
+      "blockIds": ["01-number-systems#block-97"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "实数集 R 是加法封闭的。",
+      "evidenceQuotes": ["| 性质 | $\\mathbb{N}$ | $\\mathbb{Z}$ | $\\mathbb{Q}$ | $\\mathbb{R}$ | $\\mathbb{C}$ |\n|------|:---:|:---:|:---:|:---:|:---:|\n| 加法封闭 | ✅ | ✅ | ✅ | ✅ | ✅ |"],
+      "blockIds": ["01-number-systems#block-97"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "复数集 C 是加法封闭的。",
+      "evidenceQuotes": ["| 性质 | $\\mathbb{N}$ | $\\mathbb{Z}$ | $\\mathbb{Q}$ | $\\mathbb{R}$ | $\\mathbb{C}$ |\n|------|:---:|:---:|:---:|:---:|:---:|\n| 加法封闭 | ✅ | ✅ | ✅ | ✅ | ✅ |"],
+      "blockIds": ["01-number-systems#block-97"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "自然数集 N 没有加法逆元。",
+      "evidenceQuotes": ["| 有加法逆元 | ❌ | ✅ | ✅ | ✅ | ✅ |"],
+      "blockIds": ["01-number-systems#block-97"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "整数集 Z 有加法逆元。",
+      "evidenceQuotes": ["| 有加法逆元 | ❌ | ✅ | ✅ | ✅ | ✅ |"],
+      "blockIds": ["01-number-systems#block-97"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "有理数集 Q 有加法逆元。",
+      "evidenceQuotes": ["| 有加法逆元 | ❌ | ✅ | ✅ | ✅ | ✅ |"],
+      "blockIds": ["01-number-systems#block-97"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "实数集 R 有加法逆元。",
+      "evidenceQuotes": ["| 有加法逆元 | ❌ | ✅ | ✅ | ✅ | ✅ |"],
+      "blockIds": ["01-number-systems#block-97"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "复数集 C 有加法逆元。",
+      "evidenceQuotes": ["| 有加法逆元 | ❌ | ✅ | ✅ | ✅ | ✅ |"],
+      "blockIds": ["01-number-systems#block-97"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "自然数集 N 是乘法封闭的。",
+      "evidenceQuotes": ["| 乘法封闭 | ✅ | ✅ | ✅ | ✅ | ✅ |"],
+      "blockIds": ["01-number-systems#block-97"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "整数集 Z 是乘法封闭的。",
+      "evidenceQuotes": ["| 乘法封闭 | ✅ | ✅ | ✅ | ✅ | ✅ |"],
+      "blockIds": ["01-number-systems#block-97"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "有理数集 Q 是乘法封闭的。",
+      "evidenceQuotes": ["| 乘法封闭 | ✅ | ✅ | ✅ | ✅ | ✅ |"],
+      "blockIds": ["01-number-systems#block-97"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "实数集 R 是乘法封闭的。",
+      "evidenceQuotes": ["| 乘法封闭 | ✅ | ✅ | ✅ | ✅ | ✅ |"],
+      "blockIds": ["01-number-systems#block-97"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "复数集 C 是乘法封闭的。",
+      "evidenceQuotes": ["| 乘法封闭 | ✅ | ✅ | ✅ | ✅ | ✅ |"],
+      "blockIds": ["01-number-systems#block-97"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "自然数集 N 没有乘法逆元。",
+      "evidenceQuotes": ["| 有乘法逆元 | ❌ | ❌ | ✅ | ✅ | ✅ |"],
+      "blockIds": ["01-number-systems#block-97"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "整数集 Z 没有乘法逆元。",
+      "evidenceQuotes": ["| 有乘法逆元 | ❌ | ❌ | ✅ | ✅ | ✅ |"],
+      "blockIds": ["01-number-systems#block-97"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "有理数集 Q 有乘法逆元。",
+      "evidenceQuotes": ["| 有乘法逆元 | ❌ | ❌ | ✅ | ✅ | ✅ |"],
+      "blockIds": ["01-number-systems#block-97"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "实数集 R 有乘法逆元。",
+      "evidenceQuotes": ["| 有乘法逆元 | ❌ | ❌ | ✅ | ✅ | ✅ |"],
+      "blockIds": ["01-number-systems#block-97"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "复数集 C 有乘法逆元。",
+      "evidenceQuotes": ["| 有乘法逆元 | ❌ | ❌ | ✅ | ✅ | ✅ |"],
+      "blockIds": ["01-number-systems#block-97"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "自然数集 N 是有序的。",
+      "evidenceQuotes": ["| 有序 | ✅ | ✅ | ✅ | ✅ | ❌ |"],
+      "blockIds": ["01-number-systems#block-97"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "整数集 Z 是有序的。",
+      "evidenceQuotes": ["| 有序 | ✅ | ✅ | ✅ | ✅ | ❌ |"],
+      "blockIds": ["01-number-systems#block-97"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "有理数集 Q 是有序的。",
+      "evidenceQuotes": ["| 有序 | ✅ | ✅ | ✅ | ✅ | ❌ |"],
+      "blockIds": ["01-number-systems#block-97"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "实数集 R 是有序的。",
+      "evidenceQuotes": ["| 有序 | ✅ | ✅ | ✅ | ✅ | ❌ |"],
+      "blockIds": ["01-number-systems#block-97"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "复数集 C 不是有序的。",
+      "evidenceQuotes": ["| 有序 | ✅ | ✅ | ✅ | ✅ | ❌ |"],
+      "blockIds": ["01-number-systems#block-97"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "自然数集 N 是可数的。",
+      "evidenceQuotes": ["| 可数 | ✅ | ✅ | ✅ | ❌ | ❌ |"],
+      "blockIds": ["01-number-systems#block-97"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "整数集 Z 是可数的。",
+      "evidenceQuotes": ["| 可数 | ✅ | ✅ | ✅ | ❌ | ❌ |"],
+      "blockIds": ["01-number-systems#block-97"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "有理数集 Q 是可数的。",
+      "evidenceQuotes": ["| 可数 | ✅ | ✅ | ✅ | ❌ | ❌ |"],
+      "blockIds": ["01-number-systems#block-97"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "实数集 R 不是可数的。",
+      "evidenceQuotes": ["| 可数 | ✅ | ✅ | ✅ | ❌ | ❌ |"],
+      "blockIds": ["01-number-systems#block-97"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "复数集 C 不是可数的。",
+      "evidenceQuotes": ["| 可数 | ✅ | ✅ | ✅ | ❌ | ❌ |"],
+      "blockIds": ["01-number-systems#block-97"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "自然数集 N 的完备性标记为“—”（不适用）。",
+      "evidenceQuotes": ["| 完备 | — | — | ❌ | ✅ | ✅ |"],
+      "blockIds": ["01-number-systems#block-97"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "整数集 Z 的完备性标记为“—”（不适用）。",
+      "evidenceQuotes": ["| 完备 | — | — | ❌ | ✅ | ✅ |"],
+      "blockIds": ["01-number-systems#block-97"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "有理数集 Q 不是完备的。",
+      "evidenceQuotes": ["| 完备 | — | — | ❌ | ✅ | ✅ |"],
+      "blockIds": ["01-number-systems#block-97"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "实数集 R 是完备的。",
+      "evidenceQuotes": ["| 完备 | — | — | ❌ | ✅ | ✅ |"],
+      "blockIds": ["01-number-systems#block-97"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "复数集 C 是完备的。",
+      "evidenceQuotes": ["| 完备 | — | — | ❌ | ✅ | ✅ |"],
+      "blockIds": ["01-number-systems#block-97"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "自然数集 N 不是代数封闭的。",
+      "evidenceQuotes": ["| 代数封闭 | ❌ | ❌ | ❌ | ❌ | ✅ |"],
+      "blockIds": ["01-number-systems#block-97"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "整数集 Z 不是代数封闭的。",
+      "evidenceQuotes": ["| 代数封闭 | ❌ | ❌ | ❌ | ❌ | ✅ |"],
+      "blockIds": ["01-number-systems#block-97"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "有理数集 Q 不是代数封闭的。",
+      "evidenceQuotes": ["| 代数封闭 | ❌ | ❌ | ❌ | ❌ | ✅ |"],
+      "blockIds": ["01-number-systems#block-97"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "实数集 R 不是代数封闭的。",
+      "evidenceQuotes": ["| 代数封闭 | ❌ | ❌ | ❌ | ❌ | ✅ |"],
+      "blockIds": ["01-number-systems#block-97"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "复数集 C 是代数封闭的。",
+      "evidenceQuotes": ["| 代数封闭 | ❌ | ❌ | ❌ | ❌ | ✅ |"],
+      "blockIds": ["01-number-systems#block-97"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "自然数集 N 的结构是幺半群。",
+      "evidenceQuotes": ["| **结构** | 幺半群 | 整环 | 域 | 完备有序域 | 代数封闭域 |"],
+      "blockIds": ["01-number-systems#block-97"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "整数集 Z 的结构是整环。",
+      "evidenceQuotes": ["| **结构** | 幺半群 | 整环 | 域 | 完备有序域 | 代数封闭域 |"],
+      "blockIds": ["01-number-systems#block-97"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "有理数集 Q 的结构是域。",
+      "evidenceQuotes": ["| **结构** | 幺半群 | 整环 | 域 | 完备有序域 | 代数封闭域 |"],
+      "blockIds": ["01-number-systems#block-97"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "实数集 R 的结构是完备有序域。",
+      "evidenceQuotes": ["| **结构** | 幺半群 | 整环 | 域 | 完备有序域 | 代数封闭域 |"],
+      "blockIds": ["01-number-systems#block-97"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "复数集 C 的结构是代数封闭域。",
+      "evidenceQuotes": ["| **结构** | 幺半群 | 整环 | 域 | 完备有序域 | 代数封闭域 |"],
+      "blockIds": ["01-number-systems#block-97"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "数系扩张的关键概念包括Peano公理、等价类构造、Cantor对角线、Dedekind分割、完备性、代数基本定理、欧拉公式和数系扩张链。",
+      "evidenceQuotes": ["| # | 关键概念 | 直觉 | 连接章节 |\n|---|---------|------|---------|\n| 1 | **Peano公理** | 自然数=0+后继的递归结构 | $\\S$17 集合论 |\n| 2 | **等价类构造** | 整数/有理数=有序对的等价类 | $\\S$8 群环域 |\n| 3 | **Cantor对角线** | $\\mathbb{Q}$可数但$\\mathbb{R}$不可数 | $\\S$10 测度论 |\n| 4 | **Dedekind分割** | 实数=有理数轴上的\"刀口\" | $\\S$3 极限 |\n| 5 | **完备性** | $\\mathbb{R}$与$\\mathbb{Q}$的本质鸿沟 | $\\S$3, $\\S$12 微积分 |\n| 6 | **代数基本定理** | $\\mathbb{C}$是代数扩张的终点 | $\\S$8 域扩张 |\n| 7 | **欧拉公式** | $e^{i\\theta}=\\cos\\theta+i\\sin\\theta$ | $\\S$11 常数 |\n| 8 | **数系扩张链** | 每次扩张解决一种\"不够用\" | 全书线索 |"],
+      "blockIds": ["01-number-systems#block-101"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "Peano公理的关键直觉是自然数等于0加后继的递归结构。",
+      "evidenceQuotes": ["| 1 | **Peano公理** | 自然数=0+后继的递归结构 | $\\S$17 集合论 |"],
+      "blockIds": ["01-number-systems#block-101"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "等价类构造的直觉是整数和有理数可以看作有序对的等价类。",
+      "evidenceQuotes": ["| 2 | **等价类构造** | 整数/有理数=有序对的等价类 | $\\S$8 群环域 |"],
+      "blockIds": ["01-number-systems#block-101"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "Cantor对角线的直觉是有理数集可数但实数集不可数。",
+      "evidenceQuotes": ["| 3 | **Cantor对角线** | $\\mathbb{Q}$可数但$\\mathbb{R}$不可数 | $\\S$10 测度论 |"],
+      "blockIds": ["01-number-systems#block-101"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "Dedekind分割的直觉是把实数看作有理数轴上的刀口。",
+      "evidenceQuotes": ["| 4 | **Dedekind分割** | 实数=有理数轴上的\"刀口\" | $\\S$3 极限 |"],
+      "blockIds": ["01-number-systems#block-101"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "完备性概念强调实数集与有理数集的本质鸿沟。",
+      "evidenceQuotes": ["| 5 | **完备性** | $\\mathbb{R}$与$\\mathbb{Q}$的本质鸿沟 | $\\S$3, $\\S$12 微积分 |"],
+      "blockIds": ["01-number-systems#block-101"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "代数基本定理指出复数集是代数扩张的终点。",
+      "evidenceQuotes": ["| 6 | **代数基本定理** | $\\mathbb{C}$是代数扩张的终点 | $\\S$8 域扩张 |"],
+      "blockIds": ["01-number-systems#block-101"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "欧拉公式为 $e^{i\\theta}=\\cos\\theta+i\\sin\\theta$。",
+      "evidenceQuotes": ["| 7 | **欧拉公式** | $e^{i\\theta}=\\cos\\theta+i\\sin\\theta$ | $\\S$11 常数 |"],
+      "blockIds": ["01-number-systems#block-101"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "数系扩张链的直觉是每次扩张解决一种“不够用”。",
+      "evidenceQuotes": ["| 8 | **数系扩张链** | 每次扩张解决一种\"不够用\" | 全书线索 |"],
+      "blockIds": ["01-number-systems#block-101"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "数系的扩张不是数学家凭空发明，而是被问题的“不够用”逼出来的。",
+      "evidenceQuotes": ["> 💡 **核心哲学**：数系的扩张不是数学家凭空发明，而是**被问题的\"不够用\"逼出来的**。减法→负数，除法→分数，极限→无理数，方程→复数。每一步失去一些性质（如 $\\mathbb{C}$ 失去了有序性），但获得了更强大的运算能力。"],
+      "blockIds": ["01-number-systems#block-102"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "减法导致负数，除法导致分数，极限导致无理数，方程导致复数。",
+      "evidenceQuotes": ["减法→负数，除法→分数，极限→无理数，方程→复数。"],
+      "blockIds": ["01-number-systems#block-102"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "每一步扩张会失去一些性质，例如复数集失去了有序性。",
+      "evidenceQuotes": ["每一步失去一些性质（如 $\\mathbb{C}$ 失去了有序性），但获得了更强大的运算能力。"],
+      "blockIds": ["01-number-systems#block-102"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "von Neumann 的集合论构造中，每个自然数等于它之前所有自然数的集合。",
+      "evidenceQuotes": ["von Neumann 的集合论构造——每个自然数等于它之前所有自然数的集合。"],
+      "blockIds": ["01-number-systems#block-14"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "在 von Neumann 构造中，0 等于空集。",
+      "evidenceQuotes": ["$0 = \\emptyset$"],
+      "blockIds": ["01-number-systems#block-14"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "在 von Neumann 构造中，1 等于 {0}。",
+      "evidenceQuotes": ["$1 = \\{0\\}$"],
+      "blockIds": ["01-number-systems#block-14"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "在 von Neumann 构造中，2 等于 {0,1}。",
+      "evidenceQuotes": ["$2 = \\{0,1\\}$"],
+      "blockIds": ["01-number-systems#block-14"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "在 von Neumann 构造中，'n < m' 等价于 'n ∈ m'。",
+      "evidenceQuotes": ["这个巧妙的定义让\"$n < m$\"等价于\"$n \\in m$\"。"],
+      "blockIds": ["01-number-systems#block-14"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "Cantor 枚举法是一种用于可数集合的枚举方法。",
+      "evidenceQuotes": ["Cantor 枚举法："],
+      "blockIds": ["01-number-systems#block-46"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 0.8
+    },
+    {
+      "statement": "用一把“刀”在有理数轴上切下去，刀口位置就是一个实数。",
+      "evidenceQuotes": ["用一把\"刀\"在有理数轴上切下去——刀口位置就是一个实数。"],
+      "blockIds": ["01-number-systems#block-58"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "如果刀口正好落在有理数上（如 2），则对应有理数。",
+      "evidenceQuotes": ["如果刀口正好落在有理数上（如 $2$），对应有理数；"],
+      "blockIds": ["01-number-systems#block-58"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "如果刀口穿过一个“洞”（如 √2 的位置），则创造了一个无理数。",
+      "evidenceQuotes": ["如果刀口穿过一个\"洞\"（如 $\\sqrt{2}$ 的位置），就创造了一个无理数。"],
+      "blockIds": ["01-number-systems#block-58"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "ℝ 与 ℚ 有本质区别。",
+      "evidenceQuotes": ["这是 $\\mathbb{R}$ 与 $\\mathbb{Q}$ 的本质区别："],
+      "blockIds": ["01-number-systems#block-61"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "Cantor 对角论证法假设 (0,1) 中的实数可以列出。",
+      "evidenceQuotes": ["假设 $(0,1)$ 中的实数可以列出："],
+      "blockIds": ["01-number-systems#block-67"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "16世纪，意大利数学家发现三次方程 x^3 = 15x + 4 的求解过程中出现了 √(-121)。",
+      "evidenceQuotes": ["16世纪，意大利数学家发现三次方程 $x^3 = 15x + 4$ 的求解过程中出现了 $\\sqrt{-121}$。"],
+      "blockIds": ["01-number-systems#block-74"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "方程 x^3 = 15x + 4 的最终答案 x=4 是实数。",
+      "evidenceQuotes": ["虽然最终答案 $x=4$ 是实数，"],
+      "blockIds": ["01-number-systems#block-74"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "方程 x^3 = 15x + 4 的求解中间步骤必须经过复数。",
+      "evidenceQuotes": ["但中间步骤必须经过复数。"],
+      "blockIds": ["01-number-systems#block-74"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "出现 √(-121) 迫使数学家正视这个“幽灵”。",
+      "evidenceQuotes": ["这迫使数学家正视这个\"幽灵\"。"],
+      "blockIds": ["01-number-systems#block-74"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "欧拉恒等式 e^(iπ) + 1 = 0 成立。",
+      "evidenceQuotes": ["$$e^{i\\pi} + 1 = 0$$"],
+      "blockIds": ["01-number-systems#block-84"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "方程 x^2 + 1 = 0 在实数范围内无解。",
+      "evidenceQuotes": ["$x^2 +

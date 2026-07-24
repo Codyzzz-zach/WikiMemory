@@ -1,0 +1,28 @@
+{
+  "verdict": "passed",
+  "dimensions": {
+    "support": {
+      "result": "pass",
+      "evidence": "$3 - 5$ 在 $\\mathbb{N}$ 中没有答案。"
+    },
+    "addition": {
+      "result": "pass",
+      "evidence": "没有添加原文外信息。"
+    },
+    "inference": {
+      "result": "pass",
+      "evidence": "无推理，直接陈述。"
+    },
+    "limits": {
+      "result": "pass",
+      "evidence": "无条件或限定词被忽略。"
+    },
+    "citation": {
+      "result": "pass",
+      "evidence": "引用精确对应。"
+    }
+  },
+  "anchor": "$3 - 5$ 在 $\\mathbb{N}$ 中没有答案。",
+  "failedDimensions": [],
+  "issues": []
+}

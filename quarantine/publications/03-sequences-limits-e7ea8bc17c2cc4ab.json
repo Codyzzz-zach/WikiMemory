@@ -1,0 +1,3022 @@
+{
+  "schemaVersion": "v1",
+  "sourceId": "source:03-sequences-limits-e7ea8bc17c2cc4ab",
+  "runId": "74c1f631-a487-49ae-ba6a-c7d3c3f4243d",
+  "publishedAt": "2026-07-23T16:59:32.924Z",
+  "claims": [
+    {
+      "claim": {
+        "id": "claim:e7ea8bc17c2cc4ab-08c0cd4a801ed306",
+        "statement": "数列通常表示为 a_1, a_2, a_3, …, a_n, …。",
+        "evidenceSpanIds": [
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-6#chars-242-268"
+        ],
+        "conditions": [],
+        "derivation": "EXTRACTED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:33:04.363Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "confidence": 1,
+        "claimKind": "FACT",
+        "scope": {
+          "type": "GLOBAL"
+        },
+        "provenanceRefs": [
+          {
+            "type": "SourceSpan",
+            "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-6#chars-242-268"
+          }
+        ],
+        "supportingEvidenceRefs": [
+          {
+            "type": "SourceSpan",
+            "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-6#chars-242-268"
+          }
+        ],
+        "knowledgeVersion": "v1",
+        "recordedAt": "2026-07-23T16:33:04.363Z"
+      },
+      "issues": [
+        {
+          "code": "SEMANTIC_SUPPORT_FAILED",
+          "severity": "error",
+          "affectedObject": "claim:e7ea8bc17c2cc4ab-08c0cd4a801ed306",
+          "detail": "support：证据没有明确支持 Claim 的全部断言；证据 [0:03-sequences-limits#block-6] “a_1, a_2, a_3, \\ldots, a_n”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "SEMANTIC_CITATION_FAILED",
+          "severity": "error",
+          "affectedObject": "claim:e7ea8bc17c2cc4ab-08c0cd4a801ed306",
+          "detail": "citation：Claim 与所引用的证据位置不对应；证据 [0:03-sequences-limits#block-6] “a_1, a_2, a_3, \\ldots, a_n”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "claim": {
+        "id": "claim:e7ea8bc17c2cc4ab-528f21cfddbf669d",
+        "statement": "一致收敛保持连续性。",
+        "evidenceSpanIds": [
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-49#chars-6085-6090"
+        ],
+        "conditions": [],
+        "derivation": "EXTRACTED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:33:04.363Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "confidence": 1,
+        "claimKind": "FACT",
+        "scope": {
+          "type": "GLOBAL"
+        },
+        "provenanceRefs": [
+          {
+            "type": "SourceSpan",
+            "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-49#chars-6085-6090"
+          }
+        ],
+        "supportingEvidenceRefs": [
+          {
+            "type": "SourceSpan",
+            "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-49#chars-6085-6090"
+          }
+        ],
+        "knowledgeVersion": "v1",
+        "recordedAt": "2026-07-23T16:33:04.363Z"
+      },
+      "issues": [
+        {
+          "code": "SEMANTIC_SUPPORT_FAILED",
+          "severity": "error",
+          "affectedObject": "claim:e7ea8bc17c2cc4ab-528f21cfddbf669d",
+          "detail": "support：证据没有明确支持 Claim 的全部断言；证据 [0:03-sequences-limits#block-49] “保持连续性”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "SEMANTIC_ADDITION_MAJOR",
+          "severity": "error",
+          "affectedObject": "claim:e7ea8bc17c2cc4ab-528f21cfddbf669d",
+          "detail": "addition：Claim 添加了证据未表达的内容；证据 [0:03-sequences-limits#block-49] “保持连续性”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "SEMANTIC_INFERENCE_WRONG",
+          "severity": "warning",
+          "affectedObject": "claim:e7ea8bc17c2cc4ab-528f21cfddbf669d",
+          "detail": "inference：Claim 把推断表述成了原文事实；证据 [0:03-sequences-limits#block-49] “保持连续性”",
+          "recommendedState": "CANONICAL"
+        },
+        {
+          "code": "SEMANTIC_LIMITS_MISSING",
+          "severity": "warning",
+          "affectedObject": "claim:e7ea8bc17c2cc4ab-528f21cfddbf669d",
+          "detail": "limits：Claim 丢失了证据中的条件、例外或限定词；证据 [0:03-sequences-limits#block-49] “保持连续性”",
+          "recommendedState": "CANONICAL"
+        }
+      ]
+    },
+    {
+      "claim": {
+        "id": "claim:e7ea8bc17c2cc4ab-72cbcbd8435597e2",
+        "statement": "一致收敛保持连续性、可积性。",
+        "evidenceSpanIds": [
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-50#chars-6402-6429"
+        ],
+        "conditions": [],
+        "derivation": "EXTRACTED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:33:04.363Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "confidence": 1,
+        "claimKind": "FACT",
+        "scope": {
+          "type": "GLOBAL"
+        },
+        "provenanceRefs": [
+          {
+            "type": "SourceSpan",
+            "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-50#chars-6402-6429"
+          }
+        ],
+        "supportingEvidenceRefs": [
+          {
+            "type": "SourceSpan",
+            "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-50#chars-6402-6429"
+          }
+        ],
+        "knowledgeVersion": "v1",
+        "recordedAt": "2026-07-23T16:33:04.363Z"
+      },
+      "issues": [
+        {
+          "code": "SEMANTIC_SUPPORT_FAILED",
+          "severity": "error",
+          "affectedObject": "claim:e7ea8bc17c2cc4ab-72cbcbd8435597e2",
+          "detail": "support：证据没有明确支持 Claim 的全部断言；证据 [0:03-sequences-limits#block-50] “UNIF -.- NOTE2[\"保持连续性、可积性\"]”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "claim": {
+        "id": "claim:e7ea8bc17c2cc4ab-84a7a08ac4a32732",
+        "statement": "$L^p$ 收敛表示平均收敛。",
+        "evidenceSpanIds": [
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-49#chars-6137-6149"
+        ],
+        "conditions": [],
+        "derivation": "EXTRACTED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:33:04.363Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "confidence": 1,
+        "claimKind": "FACT",
+        "scope": {
+          "type": "GLOBAL"
+        },
+        "provenanceRefs": [
+          {
+            "type": "SourceSpan",
+            "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-49#chars-6137-6149"
+          }
+        ],
+        "supportingEvidenceRefs": [
+          {
+            "type": "SourceSpan",
+            "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-49#chars-6137-6149"
+          }
+        ],
+        "knowledgeVersion": "v1",
+        "recordedAt": "2026-07-23T16:33:04.363Z"
+      },
+      "issues": [
+        {
+          "code": "SEMANTIC_SUPPORT_FAILED",
+          "severity": "error",
+          "affectedObject": "claim:e7ea8bc17c2cc4ab-84a7a08ac4a32732",
+          "detail": "support：证据没有明确支持 Claim 的全部断言；证据 [0:03-sequences-limits#block-49] “平均收敛（$\\S$10）”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "SEMANTIC_ADDITION_MAJOR",
+          "severity": "error",
+          "affectedObject": "claim:e7ea8bc17c2cc4ab-84a7a08ac4a32732",
+          "detail": "addition：Claim 添加了证据未表达的内容；证据 [0:03-sequences-limits#block-49] “平均收敛（$\\S$10）”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "SEMANTIC_CITATION_FAILED",
+          "severity": "error",
+          "affectedObject": "claim:e7ea8bc17c2cc4ab-84a7a08ac4a32732",
+          "detail": "citation：Claim 与所引用的证据位置不对应；证据 [0:03-sequences-limits#block-49] “平均收敛（$\\S$10）”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "claim": {
+        "id": "claim:e7ea8bc17c2cc4ab-da0c6b6557ef6c69",
+        "statement": "收敛有四种强度：逐点收敛、一致收敛、L^p收敛和依测度收敛。",
+        "evidenceSpanIds": [
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-49#chars-5942-6225"
+        ],
+        "conditions": [],
+        "derivation": "EXTRACTED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:33:04.363Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "confidence": 1,
+        "claimKind": "FACT",
+        "scope": {
+          "type": "GLOBAL"
+        },
+        "provenanceRefs": [
+          {
+            "type": "SourceSpan",
+            "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-49#chars-5942-6225"
+          }
+        ],
+        "supportingEvidenceRefs": [
+          {
+            "type": "SourceSpan",
+            "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-49#chars-5942-6225"
+          }
+        ],
+        "knowledgeVersion": "v1",
+        "recordedAt": "2026-07-23T16:33:04.363Z"
+      },
+      "issues": [
+        {
+          "code": "SEMANTIC_ADDITION_MAJOR",
+          "severity": "error",
+          "affectedObject": "claim:e7ea8bc17c2cc4ab-da0c6b6557ef6c69",
+          "detail": "addition：Claim 添加了证据未表达的内容；证据 [0:03-sequences-limits#block-49] “| 类型 | 定义 | 重要性 | |------|------|--------| | **逐点收敛** | 对每个 $x$，$f_n(x) \\to f(x)”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "claim": {
+        "id": "claim:e7ea8bc17c2cc4ab-ed9d4dc47e8201dc",
+        "statement": "一致收敛与逐点收敛的区别在于，好的收敛保持好的性质。",
+        "evidenceSpanIds": [
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-54"
+        ],
+        "conditions": [],
+        "derivation": "EXTRACTED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:33:04.363Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "confidence": 1,
+        "claimKind": "FACT",
+        "scope": {
+          "type": "GLOBAL"
+        },
+        "provenanceRefs": [
+          {
+            "type": "SourceSpan",
+            "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-54"
+          }
+        ],
+        "supportingEvidenceRefs": [
+          {
+            "type": "SourceSpan",
+            "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-54"
+          }
+        ],
+        "knowledgeVersion": "v1",
+        "recordedAt": "2026-07-23T16:33:04.363Z"
+      },
+      "issues": [
+        {
+          "code": "SEMANTIC_SUPPORT_FAILED",
+          "severity": "error",
+          "affectedObject": "claim:e7ea8bc17c2cc4ab-ed9d4dc47e8201dc",
+          "detail": "support：证据没有明确支持 Claim 的全部断言；证据 [0:03-sequences-limits#block-54] “| # | 关键概念 | 直觉 | 连接章节 | |---|---------|------|---------| | 1 | **$\\epsilon$-$N$”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "claim": {
+        "id": "claim:e7ea8bc17c2cc4ab-ff9bbe547117c4c9",
+        "statement": "逐点收敛是最弱的收敛，可能丢失连续性。",
+        "evidenceSpanIds": [
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-49#chars-6026-6036"
+        ],
+        "conditions": [],
+        "derivation": "EXTRACTED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:33:04.363Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "confidence": 1,
+        "claimKind": "FACT",
+        "scope": {
+          "type": "GLOBAL"
+        },
+        "provenanceRefs": [
+          {
+            "type": "SourceSpan",
+            "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-49#chars-6026-6036"
+          }
+        ],
+        "supportingEvidenceRefs": [
+          {
+            "type": "SourceSpan",
+            "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-49#chars-6026-6036"
+          }
+        ],
+        "knowledgeVersion": "v1",
+        "recordedAt": "2026-07-23T16:33:04.363Z"
+      },
+      "issues": [
+        {
+          "code": "SEMANTIC_SUPPORT_FAILED",
+          "severity": "error",
+          "affectedObject": "claim:e7ea8bc17c2cc4ab-ff9bbe547117c4c9",
+          "detail": "support：证据没有明确支持 Claim 的全部断言；证据 [0:03-sequences-limits#block-49] “最弱，可能丢失连续性”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "SEMANTIC_ADDITION_MAJOR",
+          "severity": "error",
+          "affectedObject": "claim:e7ea8bc17c2cc4ab-ff9bbe547117c4c9",
+          "detail": "addition：Claim 添加了证据未表达的内容；证据 [0:03-sequences-limits#block-49] “最弱，可能丢失连续性”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "relation": {
+        "id": "rel:e7ea8bc17c2cc4ab-02500f303f497a92",
+        "from": "claim:e7ea8bc17c2cc4ab-e9cff07b08d10afd",
+        "to": "claim:e7ea8bc17c2cc4ab-7d13eec4ee017d80",
+        "type": "RELATED_TO",
+        "conditions": [
+          "在收敛半径内"
+        ],
+        "conditionStatus": "PRESERVED",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-34#chars-4131-4145",
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-54"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:33:04.381Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.6,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-02500f303f497a92",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-34] “该级数在收敛半径内等于原函数”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-02500f303f497a92",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-34] “该级数在收敛半径内等于原函数”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_CONDITIONS_MISSING",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-02500f303f497a92",
+          "detail": "conditions：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-34] “该级数在收敛半径内等于原函数”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:e7ea8bc17c2cc4ab-06429f424dd449d7",
+        "from": "claim:e7ea8bc17c2cc4ab-adeb058728bb1903",
+        "to": "claim:e7ea8bc17c2cc4ab-955c8cc667a798fd",
+        "type": "SUPPORTS",
+        "conditions": [
+          "无"
+        ],
+        "conditionStatus": "PRESERVED",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-13#chars-844-959",
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-54"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:33:04.381Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-06429f424dd449d7",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-13] “n \\to \\infty} a_n = L$ 当且仅当： > > $$\\forall \\epsilon > 0, \\; \\exists N \\in \\mathb”; [1:03-sequences-limits#block-54] “| # | 关键概念 | 直觉 | 连接章节 | |---|---------|------|---------| | 1 | **$\\epsilon$-$N$”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-06429f424dd449d7",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-13] “n \\to \\infty} a_n = L$ 当且仅当： > > $$\\forall \\epsilon > 0, \\; \\exists N \\in \\mathb”; [1:03-sequences-limits#block-54] “| # | 关键概念 | 直觉 | 连接章节 | |---|---------|------|---------| | 1 | **$\\epsilon$-$N$”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:e7ea8bc17c2cc4ab-079e1b87afe3068f",
+        "from": "claim:e7ea8bc17c2cc4ab-9f53e5a35611ef1a",
+        "to": "claim:e7ea8bc17c2cc4ab-d4659e5a55f4a046",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-35#chars-4151-4204",
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-43#chars-5719-5755"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:33:04.381Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.6,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-079e1b87afe3068f",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-35] “f(x) = \\sum_{n=0}^\\infty \\frac{f^{(n)}(a)}{n!}(x-a)^n”; [1:03-sequences-limits#block-43] “Taylor 级数截断到 $n$ 项的误差由 Lagrange 余项给出”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-079e1b87afe3068f",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-35] “f(x) = \\sum_{n=0}^\\infty \\frac{f^{(n)}(a)}{n!}(x-a)^n”; [1:03-sequences-limits#block-43] “Taylor 级数截断到 $n$ 项的误差由 Lagrange 余项给出”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:e7ea8bc17c2cc4ab-10171f78b21ec385",
+        "from": "claim:e7ea8bc17c2cc4ab-62d2ef837b1c0052",
+        "to": "claim:e7ea8bc17c2cc4ab-6f6a4936ff7b1be4",
+        "type": "EQUIVALENT_UNDER",
+        "conditions": [
+          "无"
+        ],
+        "conditionStatus": "PRESERVED",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-45#chars-5863-5900",
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-54"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:33:04.381Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-10171f78b21ec385",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-45] “这让我们可以在数值计算中**控制精度**——给定所需精度，反推需要多少项。”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-10171f78b21ec385",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-45] “这让我们可以在数值计算中**控制精度**——给定所需精度，反推需要多少项。”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:e7ea8bc17c2cc4ab-115fcf362a13c811",
+        "from": "claim:e7ea8bc17c2cc4ab-281deed57a6d6f97",
+        "to": "claim:e7ea8bc17c2cc4ab-955c8cc667a798fd",
+        "type": "EQUIVALENT_UNDER",
+        "conditions": [
+          "无"
+        ],
+        "conditionStatus": "PRESERVED",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-13#chars-844-959",
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-14#chars-972-1046"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:33:04.381Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-115fcf362a13c811",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-13] “n \\to \\infty} a_n = L$ 当且仅当： > > $$\\forall \\epsilon > 0, \\; \\exists N \\in \\mathb”; [1:03-sequences-limits#block-14] “**逐词翻译**：\"无论你要求多小的误差 $\\epsilon$，我都能找到一个位置 $N$，使得第 $N$ 项之后的所有项与 $L$ 的偏差都不超过”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:e7ea8bc17c2cc4ab-11f8194d38cbb407",
+        "from": "claim:e7ea8bc17c2cc4ab-b0a1307d4dcc4369",
+        "to": "claim:e7ea8bc17c2cc4ab-63f16c60977b2469",
+        "type": "SUPPORTS",
+        "conditions": [
+          "无"
+        ],
+        "conditionStatus": "PRESERVED",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-20"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:33:04.381Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.5,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-11f8194d38cbb407",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-20] “| 数列 | 极限 | 关键 | |------|------|------| | $\\frac{1}{n}$ | $0$ | $N = \\lceil 1/\\e”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-11f8194d38cbb407",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-20] “| 数列 | 极限 | 关键 | |------|------|------| | $\\frac{1}{n}$ | $0$ | $N = \\lceil 1/\\e”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_CONDITIONS_MISSING",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-11f8194d38cbb407",
+          "detail": "conditions：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-20] “| 数列 | 极限 | 关键 | |------|------|------| | $\\frac{1}{n}$ | $0$ | $N = \\lceil 1/\\e”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:e7ea8bc17c2cc4ab-127c4654c7e9df40",
+        "from": "claim:e7ea8bc17c2cc4ab-da0c6b6557ef6c69",
+        "to": "claim:e7ea8bc17c2cc4ab-5380fb0ab1f53bee",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "UNVERIFIED",
+        "relationAuditVersion": null,
+        "evidenceSpanIds": [
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-49",
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-49#chars-5942-6225"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:33:04.381Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.6,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_ENDPOINT_QUARANTINED",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-127c4654c7e9df40",
+          "detail": "from 端点未通过 Lint（Quarantined）: claim:e7ea8bc17c2cc4ab-da0c6b6557ef6c69",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:e7ea8bc17c2cc4ab-233e62a628927c2f",
+        "from": "claim:e7ea8bc17c2cc4ab-762e52171f5fb5d4",
+        "to": "claim:e7ea8bc17c2cc4ab-ef4f93b1a8a89990",
+        "type": "SUPPORTS",
+        "conditions": [
+          "无"
+        ],
+        "conditionStatus": "PRESERVED",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-49",
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-49#chars-5998-6023"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:33:04.381Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.5,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-233e62a628927c2f",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-49] “| 类型 | 定义 | 重要性 | |------|------|--------| | **逐点收敛** | 对每个 $x$，$f_n(x) \\to f(x)”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:e7ea8bc17c2cc4ab-2572fdeacf511cab",
+        "from": "claim:e7ea8bc17c2cc4ab-66946ad79d5b7782",
+        "to": "claim:e7ea8bc17c2cc4ab-58454e7eee4bde6f",
+        "type": "SUPPORTS",
+        "conditions": [
+          "无"
+        ],
+        "conditionStatus": "PRESERVED",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-1#chars-84-107",
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-55#chars-7151-7162"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:33:04.381Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.5,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-2572fdeacf511cab",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-1] “本章既是微积分的基石，也是分析学的方法论核心。”; [1:03-sequences-limits#block-55] “这是现代分析学的精髓。”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:e7ea8bc17c2cc4ab-26c709ee110f4541",
+        "from": "claim:e7ea8bc17c2cc4ab-63af72dabe89e16f",
+        "to": "claim:e7ea8bc17c2cc4ab-e35ac7ff4fe72d46",
+        "type": "SUPPORTS",
+        "conditions": [
+          "无"
+        ],
+        "conditionStatus": "PRESERVED",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-1#chars-29-84",
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-12#chars-780-820"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:33:04.381Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-26c709ee110f4541",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-1] “极限概念的严格化（19世纪的 $\\epsilon$-$\\delta$ 革命）是数学史上从直觉到精确的最大飞跃。”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-26c709ee110f4541",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-1] “极限概念的严格化（19世纪的 $\\epsilon$-$\\delta$ 革命）是数学史上从直觉到精确的最大飞跃。”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:e7ea8bc17c2cc4ab-2806b28f41ba62d3",
+        "from": "claim:e7ea8bc17c2cc4ab-c1a2fff3ab5f702f",
+        "to": "claim:e7ea8bc17c2cc4ab-08c0cd4a801ed306",
+        "type": "SUPPORTS",
+        "conditions": [
+          "无"
+        ],
+        "conditionStatus": "UNVERIFIED",
+        "relationAuditVersion": null,
+        "evidenceSpanIds": [
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-5#chars-146-237",
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-6#chars-242-268"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:33:04.381Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_ENDPOINT_QUARANTINED",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-2806b28f41ba62d3",
+          "detail": "to 端点未通过 Lint（Quarantined）: claim:e7ea8bc17c2cc4ab-08c0cd4a801ed306",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:e7ea8bc17c2cc4ab-281660a0b6c4c106",
+        "from": "claim:e7ea8bc17c2cc4ab-ff9bbe547117c4c9",
+        "to": "claim:e7ea8bc17c2cc4ab-1dd3bf2da010f272",
+        "type": "EQUIVALENT_UNDER",
+        "conditions": [
+          "无"
+        ],
+        "conditionStatus": "UNVERIFIED",
+        "relationAuditVersion": null,
+        "evidenceSpanIds": [
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-49#chars-6026-6036",
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-50#chars-6371-6397"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:33:04.381Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_ENDPOINT_QUARANTINED",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-281660a0b6c4c106",
+          "detail": "from 端点未通过 Lint（Quarantined）: claim:e7ea8bc17c2cc4ab-ff9bbe547117c4c9",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:e7ea8bc17c2cc4ab-37f4b4d307e4fca1",
+        "from": "claim:e7ea8bc17c2cc4ab-edcf3c99a605d9b7",
+        "to": "claim:e7ea8bc17c2cc4ab-63af72dabe89e16f",
+        "type": "SUPPORTS",
+        "conditions": [
+          "无"
+        ],
+        "conditionStatus": "PRESERVED",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-1#chars-29-84",
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-12#chars-755-780"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:33:04.381Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.5,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-37f4b4d307e4fca1",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-1] “极限概念的严格化（19世纪的 $\\epsilon$-$\\delta$ 革命）是数学史上从直觉到精确的最大飞跃。”; [1:03-sequences-limits#block-12] “但\"无限接近\"是什么意思？这导致了大量混乱和错误。”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-37f4b4d307e4fca1",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-1] “极限概念的严格化（19世纪的 $\\epsilon$-$\\delta$ 革命）是数学史上从直觉到精确的最大飞跃。”; [1:03-sequences-limits#block-12] “但\"无限接近\"是什么意思？这导致了大量混乱和错误。”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:e7ea8bc17c2cc4ab-385ea83b3e6f4c03",
+        "from": "claim:e7ea8bc17c2cc4ab-28db2687beed1921",
+        "to": "claim:e7ea8bc17c2cc4ab-f211dd23a63f96d6",
+        "type": "SUPPORTS",
+        "conditions": [
+          "无"
+        ],
+        "conditionStatus": "PRESERVED",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-29"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:33:04.381Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-385ea83b3e6f4c03",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-29] “| 级数 | 收敛条件 | 和（若收敛） | |------|---------|------------| | 几何级数 $\\sum ar^{n-1}$ | ”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-385ea83b3e6f4c03",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-29] “| 级数 | 收敛条件 | 和（若收敛） | |------|---------|------------| | 几何级数 $\\sum ar^{n-1}$ | ”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:e7ea8bc17c2cc4ab-4126f65a51dc5bcc",
+        "from": "claim:e7ea8bc17c2cc4ab-03fa695ee7a422d8",
+        "to": "claim:e7ea8bc17c2cc4ab-90898101d65b1615",
+        "type": "EQUIVALENT_UNDER",
+        "conditions": [
+          "无"
+        ],
+        "conditionStatus": "PRESERVED",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-39"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:33:04.381Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-4126f65a51dc5bcc",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-39] “| 函数 | Maclaurin 级数 | 收敛半径 | |------|---------------|:---:| | $e^x$ | $\\sum_{n=0”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-4126f65a51dc5bcc",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-39] “| 函数 | Maclaurin 级数 | 收敛半径 | |------|---------------|:---:| | $e^x$ | $\\sum_{n=0”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:e7ea8bc17c2cc4ab-4d76639338a08d93",
+        "from": "claim:e7ea8bc17c2cc4ab-5380fb0ab1f53bee",
+        "to": "claim:e7ea8bc17c2cc4ab-da0c6b6557ef6c69",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "UNVERIFIED",
+        "relationAuditVersion": null,
+        "evidenceSpanIds": [
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-49",
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-49#chars-5942-6225"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:33:04.381Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.6,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_ENDPOINT_QUARANTINED",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-4d76639338a08d93",
+          "detail": "to 端点未通过 Lint（Quarantined）: claim:e7ea8bc17c2cc4ab-da0c6b6557ef6c69",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:e7ea8bc17c2cc4ab-5d309a943451e62a",
+        "from": "claim:e7ea8bc17c2cc4ab-0c3f7068eace3173",
+        "to": "claim:e7ea8bc17c2cc4ab-ddb0ddb62da7ae3f",
+        "type": "SUPPORTS",
+        "conditions": [
+          "无"
+        ],
+        "conditionStatus": "PRESERVED",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-25#chars-2510-2537",
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-54"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:33:04.381Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-5d309a943451e62a",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-25] “关键事实：**级数的收敛性取决于部分和数列的极限**。”; [1:03-sequences-limits#block-54] “| # | 关键概念 | 直觉 | 连接章节 | |---|---------|------|---------| | 1 | **$\\epsilon$-$N$”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:e7ea8bc17c2cc4ab-5e3b338ee6c52223",
+        "from": "claim:e7ea8bc17c2cc4ab-1dd3bf2da010f272",
+        "to": "claim:e7ea8bc17c2cc4ab-ff9bbe547117c4c9",
+        "type": "EQUIVALENT_UNDER",
+        "conditions": [
+          "无"
+        ],
+        "conditionStatus": "UNVERIFIED",
+        "relationAuditVersion": null,
+        "evidenceSpanIds": [
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-49#chars-6026-6036",
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-50#chars-6371-6397"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:33:04.381Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_ENDPOINT_QUARANTINED",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-5e3b338ee6c52223",
+          "detail": "to 端点未通过 Lint（Quarantined）: claim:e7ea8bc17c2cc4ab-ff9bbe547117c4c9",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:e7ea8bc17c2cc4ab-6235513ec9f1333b",
+        "from": "claim:e7ea8bc17c2cc4ab-83dfb49b8578b573",
+        "to": "claim:e7ea8bc17c2cc4ab-d45c9ec8b39db963",
+        "type": "DERIVED_FROM",
+        "conditions": [
+          "无"
+        ],
+        "conditionStatus": "PRESERVED",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-29"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:33:04.381Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-6235513ec9f1333b",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-29] “| 级数 | 收敛条件 | 和（若收敛） | |------|---------|------------| | 几何级数 $\\sum ar^{n-1}$ | ”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:e7ea8bc17c2cc4ab-6338225eef907a56",
+        "from": "claim:e7ea8bc17c2cc4ab-63f16c60977b2469",
+        "to": "claim:e7ea8bc17c2cc4ab-b0a1307d4dcc4369",
+        "type": "SUPPORTS",
+        "conditions": [
+          "无"
+        ],
+        "conditionStatus": "PRESERVED",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-20"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:33:04.381Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.5,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-6338225eef907a56",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-20] “| 数列 | 极限 | 关键 | |------|------|------| | $\\frac{1}{n}$ | $0$ | $N = \\lceil 1/\\e”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-6338225eef907a56",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-20] “| 数列 | 极限 | 关键 | |------|------|------| | $\\frac{1}{n}$ | $0$ | $N = \\lceil 1/\\e”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:e7ea8bc17c2cc4ab-64e1ffe090b4cda8",
+        "from": "claim:e7ea8bc17c2cc4ab-ef4f93b1a8a89990",
+        "to": "claim:e7ea8bc17c2cc4ab-1dd3bf2da010f272",
+        "type": "REQUIRES",
+        "conditions": [
+          "无"
+        ],
+        "conditionStatus": "PRESERVED",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-49#chars-5998-6023",
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-50#chars-6371-6397"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:33:04.381Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.6,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-64e1ffe090b4cda8",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-49] “对每个 $x$，$f_n(x) \\to f(x)$”; [1:03-sequences-limits#block-50] “POINT -.- NOTE1[\"可能丢失连续性\"]”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-64e1ffe090b4cda8",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-49] “对每个 $x$，$f_n(x) \\to f(x)$”; [1:03-sequences-limits#block-50] “POINT -.- NOTE1[\"可能丢失连续性\"]”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:e7ea8bc17c2cc4ab-653168f209bab0d2",
+        "from": "claim:e7ea8bc17c2cc4ab-ef4f93b1a8a89990",
+        "to": "claim:e7ea8bc17c2cc4ab-da0c6b6557ef6c69",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "UNVERIFIED",
+        "relationAuditVersion": null,
+        "evidenceSpanIds": [
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-49#chars-5942-6225",
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-49#chars-5998-6023"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:33:04.381Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.6,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_ENDPOINT_QUARANTINED",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-653168f209bab0d2",
+          "detail": "to 端点未通过 Lint（Quarantined）: claim:e7ea8bc17c2cc4ab-da0c6b6557ef6c69",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:e7ea8bc17c2cc4ab-66c65e1e95bfb6ec",
+        "from": "claim:e7ea8bc17c2cc4ab-6687882ec7900386",
+        "to": "claim:e7ea8bc17c2cc4ab-762e52171f5fb5d4",
+        "type": "SUPPORTS",
+        "conditions": [
+          "无"
+        ],
+        "conditionStatus": "PRESERVED",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-49",
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-51#chars-6508-6553"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:33:04.381Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-66c65e1e95bfb6ec",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-49] “| 类型 | 定义 | 重要性 | |------|------|--------| | **逐点收敛** | 对每个 $x$，$f_n(x) \\to f(x)”; [1:03-sequences-limits#block-51] “一致收敛才是\"好的\"收敛——它保证极限函数继承逼近函数序列的优良性质（连续、可导、可积）。”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:e7ea8bc17c2cc4ab-6a0c36d17f533918",
+        "from": "claim:e7ea8bc17c2cc4ab-3b7a0b55e34b6691",
+        "to": "claim:e7ea8bc17c2cc4ab-7d13eec4ee017d80",
+        "type": "REQUIRES",
+        "conditions": [
+          "函数足够光滑"
+        ],
+        "conditionStatus": "PRESERVED",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-34#chars-4101-4130",
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-54"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:33:04.381Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-6a0c36d17f533918",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-34] “如果函数足够光滑，就可以用它在某点的各阶导数构造一个幂级数”; [1:03-sequences-limits#block-54] “| # | 关键概念 | 直觉 | 连接章节 | |---|---------|------|---------| | 1 | **$\\epsilon$-$N$”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:e7ea8bc17c2cc4ab-6bbc8af12c77bf28",
+        "from": "claim:e7ea8bc17c2cc4ab-03fa695ee7a422d8",
+        "to": "claim:e7ea8bc17c2cc4ab-936964a2e23a58e1",
+        "type": "SUPPORTS",
+        "conditions": [
+          "无"
+        ],
+        "conditionStatus": "PRESERVED",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-39"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:33:04.381Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.6,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-6bbc8af12c77bf28",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-39] “| 函数 | Maclaurin 级数 | 收敛半径 | |------|---------------|:---:| | $e^x$ | $\\sum_{n=0”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:e7ea8bc17c2cc4ab-6bf1c87440e043f3",
+        "from": "claim:e7ea8bc17c2cc4ab-c63c389fb0e91b45",
+        "to": "claim:e7ea8bc17c2cc4ab-03fa695ee7a422d8",
+        "type": "DERIVED_FROM",
+        "conditions": [
+          "无"
+        ],
+        "conditionStatus": "PRESERVED",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-39"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:33:04.381Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-6bf1c87440e043f3",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-39] “| 函数 | Maclaurin 级数 | 收敛半径 | |------|---------------|:---:| | $e^x$ | $\\sum_{n=0”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-6bf1c87440e043f3",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-39] “| 函数 | Maclaurin 级数 | 收敛半径 | |------|---------------|:---:| | $e^x$ | $\\sum_{n=0”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_DIRECTION_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-6bf1c87440e043f3",
+          "detail": "direction：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-39] “| 函数 | Maclaurin 级数 | 收敛半径 | |------|---------------|:---:| | $e^x$ | $\\sum_{n=0”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:e7ea8bc17c2cc4ab-723d7c0355a5adb2",
+        "from": "claim:e7ea8bc17c2cc4ab-936964a2e23a58e1",
+        "to": "claim:e7ea8bc17c2cc4ab-03fa695ee7a422d8",
+        "type": "SUPPORTS",
+        "conditions": [
+          "无"
+        ],
+        "conditionStatus": "PRESERVED",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-39"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:33:04.381Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.6,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-723d7c0355a5adb2",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-39] “| 函数 | Maclaurin 级数 | 收敛半径 | |------|---------------|:---:| | $e^x$ | $\\sum_{n=0”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-723d7c0355a5adb2",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-39] “| 函数 | Maclaurin 级数 | 收敛半径 | |------|---------------|:---:| | $e^x$ | $\\sum_{n=0”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:e7ea8bc17c2cc4ab-735bea5455be0427",
+        "from": "claim:e7ea8bc17c2cc4ab-902aad625263a115",
+        "to": "claim:e7ea8bc17c2cc4ab-722d33fc1d688ebb",
+        "type": "RELATED_TO",
+        "conditions": [
+          "p > 1"
+        ],
+        "conditionStatus": "PRESERVED",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-29",
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-54"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:33:04.381Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-735bea5455be0427",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-29] “| 级数 | 收敛条件 | 和（若收敛） | |------|---------|------------| | 几何级数 $\\sum ar^{n-1}$ | ”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-735bea5455be0427",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-29] “| 级数 | 收敛条件 | 和（若收敛） | |------|---------|------------| | 几何级数 $\\sum ar^{n-1}$ | ”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_CONDITIONS_MISSING",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-735bea5455be0427",
+          "detail": "conditions：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-29] “| 级数 | 收敛条件 | 和（若收敛） | |------|---------|------------| | 几何级数 $\\sum ar^{n-1}$ | ”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:e7ea8bc17c2cc4ab-76533c68825e4782",
+        "from": "claim:e7ea8bc17c2cc4ab-1179d617ab1927f1",
+        "to": "claim:e7ea8bc17c2cc4ab-0c3f7068eace3173",
+        "type": "EQUIVALENT_UNDER",
+        "conditions": [
+          "无"
+        ],
+        "conditionStatus": "PRESERVED",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-24#chars-2429-2508",
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-25#chars-2510-2537"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:33:04.381Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-76533c68825e4782",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-24] “**级数** = 数列的\"累加\"：$\\sum_{n=1}^\\infty a_n = \\lim_{N \\to \\infty} \\sum_{n=1}^N a_n$”; [1:03-sequences-limits#block-25] “关键事实：**级数的收敛性取决于部分和数列的极限**。”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-76533c68825e4782",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-24] “**级数** = 数列的\"累加\"：$\\sum_{n=1}^\\infty a_n = \\lim_{N \\to \\infty} \\sum_{n=1}^N a_n$”; [1:03-sequences-limits#block-25] “关键事实：**级数的收敛性取决于部分和数列的极限**。”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_DIRECTION_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-76533c68825e4782",
+          "detail": "direction：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-24] “**级数** = 数列的\"累加\"：$\\sum_{n=1}^\\infty a_n = \\lim_{N \\to \\infty} \\sum_{n=1}^N a_n$”; [1:03-sequences-limits#block-25] “关键事实：**级数的收敛性取决于部分和数列的极限**。”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:e7ea8bc17c2cc4ab-7c6b98ba7c75ccc5",
+        "from": "claim:e7ea8bc17c2cc4ab-955c8cc667a798fd",
+        "to": "claim:e7ea8bc17c2cc4ab-281deed57a6d6f97",
+        "type": "EQUIVALENT_UNDER",
+        "conditions": [
+          "无"
+        ],
+        "conditionStatus": "PRESERVED",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-13#chars-844-959",
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-14#chars-972-1046"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:33:04.381Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-7c6b98ba7c75ccc5",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-13] “n \\to \\infty} a_n = L$ 当且仅当： > > $$\\forall \\epsilon > 0, \\; \\exists N \\in \\mathb”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-7c6b98ba7c75ccc5",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-13] “n \\to \\infty} a_n = L$ 当且仅当： > > $$\\forall \\epsilon > 0, \\; \\exists N \\in \\mathb”; [1:03-sequences-limits#block-14] “**逐词翻译**：\"无论你要求多小的误差 $\\epsilon$，我都能找到一个位置 $N$，使得第 $N$ 项之后的所有项与 $L$ 的偏差都不超过”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:e7ea8bc17c2cc4ab-7d6f9b0cba3d3d6c",
+        "from": "claim:e7ea8bc17c2cc4ab-0c3f7068eace3173",
+        "to": "claim:e7ea8bc17c2cc4ab-1179d617ab1927f1",
+        "type": "EQUIVALENT_UNDER",
+        "conditions": [
+          "无"
+        ],
+        "conditionStatus": "PRESERVED",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-24#chars-2429-2508",
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-25#chars-2510-2537"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:33:04.381Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-7d6f9b0cba3d3d6c",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-24] “**级数** = 数列的\"累加\"：$\\sum_{n=1}^\\infty a_n = \\lim_{N \\to \\infty} \\sum_{n=1}^N a_n$”; [1:03-sequences-limits#block-25] “关键事实：**级数的收敛性取决于部分和数列的极限**。”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-7d6f9b0cba3d3d6c",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-24] “**级数** = 数列的\"累加\"：$\\sum_{n=1}^\\infty a_n = \\lim_{N \\to \\infty} \\sum_{n=1}^N a_n$”; [1:03-sequences-limits#block-25] “关键事实：**级数的收敛性取决于部分和数列的极限**。”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:e7ea8bc17c2cc4ab-824a6de837329c8e",
+        "from": "claim:e7ea8bc17c2cc4ab-7d13eec4ee017d80",
+        "to": "claim:e7ea8bc17c2cc4ab-3b7a0b55e34b6691",
+        "type": "REQUIRES",
+        "conditions": [
+          "函数足够光滑"
+        ],
+        "conditionStatus": "PRESERVED",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-34#chars-4101-4130",
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-54"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:33:04.381Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-824a6de837329c8e",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-34] “如果函数足够光滑，就可以用它在某点的各阶导数构造一个幂级数”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:e7ea8bc17c2cc4ab-86a33d978d586aac",
+        "from": "claim:e7ea8bc17c2cc4ab-b0a1307d4dcc4369",
+        "to": "claim:e7ea8bc17c2cc4ab-8ff9b6cc65112903",
+        "type": "SUPPORTS",
+        "conditions": [
+          "p>0"
+        ],
+        "conditionStatus": "PRESERVED",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-20"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:33:04.381Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.5,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-86a33d978d586aac",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-20] “| 数列 | 极限 | 关键 | |------|------|------| | $\\frac{1}{n}$ | $0$ | $N = \\lceil 1/\\e”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-86a33d978d586aac",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-20] “| 数列 | 极限 | 关键 | |------|------|------| | $\\frac{1}{n}$ | $0$ | $N = \\lceil 1/\\e”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_CONDITIONS_MISSING",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-86a33d978d586aac",
+          "detail": "conditions：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-20] “| 数列 | 极限 | 关键 | |------|------|------| | $\\frac{1}{n}$ | $0$ | $N = \\lceil 1/\\e”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:e7ea8bc17c2cc4ab-892d49c213af3ed4",
+        "from": "claim:e7ea8bc17c2cc4ab-4e2db7677b3ec251",
+        "to": "claim:e7ea8bc17c2cc4ab-281deed57a6d6f97",
+        "type": "SUPPORTS",
+        "conditions": [
+          "无"
+        ],
+        "conditionStatus": "PRESERVED",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-14#chars-972-1046",
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-16#chars-1369-1445"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:33:04.381Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-892d49c213af3ed4",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-14] “**逐词翻译**：\"无论你要求多小的误差 $\\epsilon$，我都能找到一个位置 $N$，使得第 $N$ 项之后的所有项与 $L$ 的偏差都不超过”; [1:03-sequences-limits#block-16] “$\\epsilon$-$N$ 论证像一个\"挑战游戏\"。对手出 $\\epsilon$（想要多小就多小），我们出 $N$——如果能永远赢下去，极限就成立了。”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-892d49c213af3ed4",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-14] “**逐词翻译**：\"无论你要求多小的误差 $\\epsilon$，我都能找到一个位置 $N$，使得第 $N$ 项之后的所有项与 $L$ 的偏差都不超过”; [1:03-sequences-limits#block-16] “$\\epsilon$-$N$ 论证像一个\"挑战游戏\"。对手出 $\\epsilon$（想要多小就多小），我们出 $N$——如果能永远赢下去，极限就成立了。”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:e7ea8bc17c2cc4ab-89ac94aa85a2b444",
+        "from": "claim:e7ea8bc17c2cc4ab-7d13eec4ee017d80",
+        "to": "claim:e7ea8bc17c2cc4ab-9f53e5a35611ef1a",
+        "type": "DERIVED_FROM",
+        "conditions": [
+          "无"
+        ],
+        "conditionStatus": "PRESERVED",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-35#chars-4151-4204",
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-54"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:33:04.381Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-89ac94aa85a2b444",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-35] “f(x) = \\sum_{n=0}^\\infty \\frac{f^{(n)}(a)}{n!}(x-a)^n”; [1:03-sequences-limits#block-54] “| # | 关键概念 | 直觉 | 连接章节 | |---|---------|------|---------| | 1 | **$\\epsilon$-$N$”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-89ac94aa85a2b444",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-35] “f(x) = \\sum_{n=0}^\\infty \\frac{f^{(n)}(a)}{n!}(x-a)^n”; [1:03-sequences-limits#block-54] “| # | 关键概念 | 直觉 | 连接章节 | |---|---------|------|---------| | 1 | **$\\epsilon$-$N$”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:e7ea8bc17c2cc4ab-8e6dbeeb7760c1f9",
+        "from": "claim:e7ea8bc17c2cc4ab-da0c6b6557ef6c69",
+        "to": "claim:e7ea8bc17c2cc4ab-3ff4c29c480587f9",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "UNVERIFIED",
+        "relationAuditVersion": null,
+        "evidenceSpanIds": [
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-49#chars-5942-6225",
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-49#chars-6166-6201"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:33:04.381Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.6,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_ENDPOINT_QUARANTINED",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-8e6dbeeb7760c1f9",
+          "detail": "from 端点未通过 Lint（Quarantined）: claim:e7ea8bc17c2cc4ab-da0c6b6557ef6c69",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:e7ea8bc17c2cc4ab-8e96e3a742c2dd5e",
+        "from": "claim:e7ea8bc17c2cc4ab-02610b4e92ce3e70",
+        "to": "claim:e7ea8bc17c2cc4ab-902aad625263a115",
+        "type": "RELATED_TO",
+        "conditions": [
+          "|r| < 1"
+        ],
+        "conditionStatus": "PRESERVED",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-29",
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-54"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:33:04.381Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-8e96e3a742c2dd5e",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-29] “| 级数 | 收敛条件 | 和（若收敛） | |------|---------|------------| | 几何级数 $\\sum ar^{n-1}$ | ”; [1:03-sequences-limits#block-54] “| # | 关键概念 | 直觉 | 连接章节 | |---|---------|------|---------| | 1 | **$\\epsilon$-$N$”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_CONDITIONS_MISSING",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-8e96e3a742c2dd5e",
+          "detail": "conditions：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-29] “| 级数 | 收敛条件 | 和（若收敛） | |------|---------|------------| | 几何级数 $\\sum ar^{n-1}$ | ”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:e7ea8bc17c2cc4ab-9d3c7309f3d78336",
+        "from": "claim:e7ea8bc17c2cc4ab-8ff9b6cc65112903",
+        "to": "claim:e7ea8bc17c2cc4ab-b0a1307d4dcc4369",
+        "type": "SUPPORTS",
+        "conditions": [
+          "p>0"
+        ],
+        "conditionStatus": "PRESERVED",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-20"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:33:04.381Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.5,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-9d3c7309f3d78336",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-20] “| 数列 | 极限 | 关键 | |------|------|------| | $\\frac{1}{n}$ | $0$ | $N = \\lceil 1/\\e”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-9d3c7309f3d78336",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-20] “| 数列 | 极限 | 关键 | |------|------|------| | $\\frac{1}{n}$ | $0$ | $N = \\lceil 1/\\e”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_CONDITIONS_MISSING",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-9d3c7309f3d78336",
+          "detail": "conditions：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-20] “| 数列 | 极限 | 关键 | |------|------|------| | $\\frac{1}{n}$ | $0$ | $N = \\lceil 1/\\e”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:e7ea8bc17c2cc4ab-a281620619f46a6d",
+        "from": "claim:e7ea8bc17c2cc4ab-9f762f2f4e22f39d",
+        "to": "claim:e7ea8bc17c2cc4ab-b0a1307d4dcc4369",
+        "type": "SUPPORTS",
+        "conditions": [
+          "无"
+        ],
+        "conditionStatus": "PRESERVED",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-20"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:33:04.381Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.5,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-a281620619f46a6d",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-20] “| 数列 | 极限 | 关键 | |------|------|------| | $\\frac{1}{n}$ | $0$ | $N = \\lceil 1/\\e”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-a281620619f46a6d",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-20] “| 数列 | 极限 | 关键 | |------|------|------| | $\\frac{1}{n}$ | $0$ | $N = \\lceil 1/\\e”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_DIRECTION_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-a281620619f46a6d",
+          "detail": "direction：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-20] “| 数列 | 极限 | 关键 | |------|------|------| | $\\frac{1}{n}$ | $0$ | $N = \\lceil 1/\\e”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:e7ea8bc17c2cc4ab-a7f1547c265ee5de",
+        "from": "claim:e7ea8bc17c2cc4ab-adcf8db0c33ee742",
+        "to": "claim:e7ea8bc17c2cc4ab-299b0a9eebcfbe7c",
+        "type": "SUPPORTS",
+        "conditions": [
+          "无"
+        ],
+        "conditionStatus": "PRESERVED",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-54",
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-8"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:33:04.381Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.6,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-a7f1547c265ee5de",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-54] “| # | 关键概念 | 直觉 | 连接章节 | |---|---------|------|---------| | 1 | **$\\epsilon$-$N$”; [1:03-sequences-limits#block-8] “| 类型 | 定义 | 例子 | |------|------|------| | 等差数列 | $a_{n+1} = a_n + d$ | $1, 3, 5,”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-a7f1547c265ee5de",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-54] “| # | 关键概念 | 直觉 | 连接章节 | |---|---------|------|---------| | 1 | **$\\epsilon$-$N$”; [1:03-sequences-limits#block-8] “| 类型 | 定义 | 例子 | |------|------|------| | 等差数列 | $a_{n+1} = a_n + d$ | $1, 3, 5,”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:e7ea8bc17c2cc4ab-acca46c0718f5e15",
+        "from": "claim:e7ea8bc17c2cc4ab-294aad5979a3de5f",
+        "to": "claim:e7ea8bc17c2cc4ab-9f53e5a35611ef1a",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-35#chars-4151-4204",
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-36#chars-4209-4236"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:33:04.381Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-acca46c0718f5e15",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-35] “f(x) = \\sum_{n=0}^\\infty \\frac{f^{(n)}(a)}{n!}(x-a)^n”; [1:03-sequences-limits#block-36] “**Maclaurin 级数**（$a=0$ 的特例）”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:e7ea8bc17c2cc4ab-add93e57d5c88a0c",
+        "from": "claim:e7ea8bc17c2cc4ab-92b05785fac6823c",
+        "to": "claim:e7ea8bc17c2cc4ab-e96ba74017c95ec0",
+        "type": "SUPPORTS",
+        "conditions": [
+          "无"
+        ],
+        "conditionStatus": "PRESERVED",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-29"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:33:04.381Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.6,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-add93e57d5c88a0c",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-29] “| 级数 | 收敛条件 | 和（若收敛） | |------|---------|------------| | 几何级数 $\\sum ar^{n-1}$ | ”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:e7ea8bc17c2cc4ab-af33c2610e99b5da",
+        "from": "claim:e7ea8bc17c2cc4ab-bf69379101dba880",
+        "to": "claim:e7ea8bc17c2cc4ab-62d2ef837b1c0052",
+        "type": "SUPPORTS",
+        "conditions": [
+          "无"
+        ],
+        "conditionStatus": "PRESERVED",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-44#chars-5761-5858",
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-45#chars-5863-5900"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:33:04.381Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-af33c2610e99b5da",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-44] “R_n(x) = \\frac{f^{(n+1)}(\\xi)}{(n+1)!}(x-a)^{n+1}, \\quad \\xi \\text{ 在 } a \\text{”; [1:03-sequences-limits#block-45] “这让我们可以在数值计算中**控制精度**——给定所需精度，反推需要多少项。”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:e7ea8bc17c2cc4ab-b14517f07307b470",
+        "from": "claim:e7ea8bc17c2cc4ab-83ca0c95c9d98825",
+        "to": "claim:e7ea8bc17c2cc4ab-294aad5979a3de5f",
+        "type": "REQUIRES",
+        "conditions": [
+          "无"
+        ],
+        "conditionStatus": "PRESERVED",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-36#chars-4209-4236",
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-37#chars-4242-4311"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:33:04.381Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-b14517f07307b470",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-36] “**Maclaurin 级数**（$a=0$ 的特例）”; [1:03-sequences-limits#block-37] “f(x) = f(0) + f'(0)x + \\frac{f''(0)}{2!}x^2 + \\frac{f'''(0)}{3!}x^3 +”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:e7ea8bc17c2cc4ab-b42a2f7279a1ab1b",
+        "from": "claim:e7ea8bc17c2cc4ab-299b0a9eebcfbe7c",
+        "to": "claim:e7ea8bc17c2cc4ab-adcf8db0c33ee742",
+        "type": "SUPPORTS",
+        "conditions": [
+          "无"
+        ],
+        "conditionStatus": "PRESERVED",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-54",
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-8"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:33:04.381Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.6,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-b42a2f7279a1ab1b",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-54] “| # | 关键概念 | 直觉 | 连接章节 | |---|---------|------|---------| | 1 | **$\\epsilon$-$N$”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:e7ea8bc17c2cc4ab-b5325d5246f72061",
+        "from": "claim:e7ea8bc17c2cc4ab-722d33fc1d688ebb",
+        "to": "claim:e7ea8bc17c2cc4ab-902aad625263a115",
+        "type": "RELATED_TO",
+        "conditions": [
+          "p > 1"
+        ],
+        "conditionStatus": "PRESERVED",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-29",
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-54"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:33:04.381Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-b5325d5246f72061",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-29] “| 级数 | 收敛条件 | 和（若收敛） | |------|---------|------------| | 几何级数 $\\sum ar^{n-1}$ | ”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:e7ea8bc17c2cc4ab-be7882bc2fe9e8d8",
+        "from": "claim:e7ea8bc17c2cc4ab-281deed57a6d6f97",
+        "to": "claim:e7ea8bc17c2cc4ab-4e2db7677b3ec251",
+        "type": "SUPPORTS",
+        "conditions": [
+          "无"
+        ],
+        "conditionStatus": "PRESERVED",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-14#chars-972-1046",
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-16#chars-1369-1445"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:33:04.381Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-be7882bc2fe9e8d8",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-14] “**逐词翻译**：\"无论你要求多小的误差 $\\epsilon$，我都能找到一个位置 $N$，使得第 $N$ 项之后的所有项与 $L$ 的偏差都不超过”; [1:03-sequences-limits#block-16] “$\\epsilon$-$N$ 论证像一个\"挑战游戏\"。对手出 $\\epsilon$（想要多小就多小），我们出 $N$——如果能永远赢下去，极限就成立了。”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:e7ea8bc17c2cc4ab-c2505f2fa51dc544",
+        "from": "claim:e7ea8bc17c2cc4ab-ed9d4dc47e8201dc",
+        "to": "claim:e7ea8bc17c2cc4ab-6687882ec7900386",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "UNVERIFIED",
+        "relationAuditVersion": null,
+        "evidenceSpanIds": [
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-51#chars-6508-6553",
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-54"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:33:04.381Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_ENDPOINT_QUARANTINED",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-c2505f2fa51dc544",
+          "detail": "from 端点未通过 Lint（Quarantined）: claim:e7ea8bc17c2cc4ab-ed9d4dc47e8201dc",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:e7ea8bc17c2cc4ab-c2968bc0a6a6c8fb",
+        "from": "claim:e7ea8bc17c2cc4ab-d4659e5a55f4a046",
+        "to": "claim:e7ea8bc17c2cc4ab-62d2ef837b1c0052",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-43#chars-5719-5755",
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-45#chars-5863-5900"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:33:04.381Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-c2968bc0a6a6c8fb",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-43] “Taylor 级数截断到 $n$ 项的误差由 Lagrange 余项给出”; [1:03-sequences-limits#block-45] “这让我们可以在数值计算中**控制精度**——给定所需精度，反推需要多少项。”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:e7ea8bc17c2cc4ab-ca9be290345e43f3",
+        "from": "claim:e7ea8bc17c2cc4ab-62d2ef837b1c0052",
+        "to": "claim:e7ea8bc17c2cc4ab-d4659e5a55f4a046",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-43#chars-5719-5755",
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-45#chars-5863-5900"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:33:04.381Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-ca9be290345e43f3",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-43] “Taylor 级数截断到 $n$ 项的误差由 Lagrange 余项给出”; [1:03-sequences-limits#block-45] “这让我们可以在数值计算中**控制精度**——给定所需精度，反推需要多少项。”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_DIRECTION_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-ca9be290345e43f3",
+          "detail": "direction：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-43] “Taylor 级数截断到 $n$ 项的误差由 Lagrange 余项给出”; [1:03-sequences-limits#block-45] “这让我们可以在数值计算中**控制精度**——给定所需精度，反推需要多少项。”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:e7ea8bc17c2cc4ab-d25a4d5bd4b52348",
+        "from": "claim:e7ea8bc17c2cc4ab-d45c9ec8b39db963",
+        "to": "claim:e7ea8bc17c2cc4ab-83dfb49b8578b573",
+        "type": "REQUIRES",
+        "conditions": [
+          "无"
+        ],
+        "conditionStatus": "PRESERVED",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-29"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:33:04.381Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-d25a4d5bd4b52348",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-29] “| 级数 | 收敛条件 | 和（若收敛） | |------|---------|------------| | 几何级数 $\\sum ar^{n-1}$ | ”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:e7ea8bc17c2cc4ab-d6bd96e74ea9eaa4",
+        "from": "claim:e7ea8bc17c2cc4ab-da0c6b6557ef6c69",
+        "to": "claim:e7ea8bc17c2cc4ab-ef4f93b1a8a89990",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "UNVERIFIED",
+        "relationAuditVersion": null,
+        "evidenceSpanIds": [
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-49#chars-5942-6225",
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-49#chars-5998-6023"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:33:04.381Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.6,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_ENDPOINT_QUARANTINED",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-d6bd96e74ea9eaa4",
+          "detail": "from 端点未通过 Lint（Quarantined）: claim:e7ea8bc17c2cc4ab-da0c6b6557ef6c69",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:e7ea8bc17c2cc4ab-de53c6839d14308c",
+        "from": "claim:e7ea8bc17c2cc4ab-f211dd23a63f96d6",
+        "to": "claim:e7ea8bc17c2cc4ab-28db2687beed1921",
+        "type": "SUPPORTS",
+        "conditions": [
+          "无"
+        ],
+        "conditionStatus": "PRESERVED",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-29"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:33:04.381Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-de53c6839d14308c",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-29] “| 级数 | 收敛条件 | 和（若收敛） | |------|---------|------------| | 几何级数 $\\sum ar^{n-1}$ | ”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:e7ea8bc17c2cc4ab-e3c52fcee4a158ac",
+        "from": "claim:e7ea8bc17c2cc4ab-5380fb0ab1f53bee",
+        "to": "claim:e7ea8bc17c2cc4ab-84a7a08ac4a32732",
+        "type": "SUPPORTS",
+        "conditions": [
+          "无"
+        ],
+        "conditionStatus": "UNVERIFIED",
+        "relationAuditVersion": null,
+        "evidenceSpanIds": [
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-49",
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-49#chars-6137-6149"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:33:04.381Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_ENDPOINT_QUARANTINED",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-e3c52fcee4a158ac",
+          "detail": "to 端点未通过 Lint（Quarantined）: claim:e7ea8bc17c2cc4ab-84a7a08ac4a32732",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:e7ea8bc17c2cc4ab-e538006efaa91816",
+        "from": "claim:e7ea8bc17c2cc4ab-3ff4c29c480587f9",
+        "to": "claim:e7ea8bc17c2cc4ab-da0c6b6557ef6c69",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "UNVERIFIED",
+        "relationAuditVersion": null,
+        "evidenceSpanIds": [
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-49#chars-5942-6225",
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-49#chars-6166-6201"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:33:04.381Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.6,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_ENDPOINT_QUARANTINED",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-e538006efaa91816",
+          "detail": "to 端点未通过 Lint（Quarantined）: claim:e7ea8bc17c2cc4ab-da0c6b6557ef6c69",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:e7ea8bc17c2cc4ab-ed7a00e8bff3353b",
+        "from": "claim:e7ea8bc17c2cc4ab-528f21cfddbf669d",
+        "to": "claim:e7ea8bc17c2cc4ab-72cbcbd8435597e2",
+        "type": "EQUIVALENT_UNDER",
+        "conditions": [
+          "无"
+        ],
+        "conditionStatus": "UNVERIFIED",
+        "relationAuditVersion": null,
+        "evidenceSpanIds": [
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-49#chars-6085-6090",
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-50#chars-6402-6429"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:33:04.381Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_ENDPOINT_QUARANTINED",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-ed7a00e8bff3353b",
+          "detail": "from 端点未通过 Lint（Quarantined）: claim:e7ea8bc17c2cc4ab-528f21cfddbf669d",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_ENDPOINT_QUARANTINED",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-ed7a00e8bff3353b",
+          "detail": "to 端点未通过 Lint（Quarantined）: claim:e7ea8bc17c2cc4ab-72cbcbd8435597e2",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:e7ea8bc17c2cc4ab-ee474e60af451a23",
+        "from": "claim:e7ea8bc17c2cc4ab-6687882ec7900386",
+        "to": "claim:e7ea8bc17c2cc4ab-72cbcbd8435597e2",
+        "type": "EQUIVALENT_UNDER",
+        "conditions": [
+          "无"
+        ],
+        "conditionStatus": "UNVERIFIED",
+        "relationAuditVersion": null,
+        "evidenceSpanIds": [
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-50#chars-6402-6429",
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-51#chars-6508-6553"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:33:04.381Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_ENDPOINT_QUARANTINED",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-ee474e60af451a23",
+          "detail": "to 端点未通过 Lint（Quarantined）: claim:e7ea8bc17c2cc4ab-72cbcbd8435597e2",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:e7ea8bc17c2cc4ab-f3475bc46f24b06b",
+        "from": "claim:e7ea8bc17c2cc4ab-902aad625263a115",
+        "to": "claim:e7ea8bc17c2cc4ab-02610b4e92ce3e70",
+        "type": "RELATED_TO",
+        "conditions": [
+          "|r| < 1"
+        ],
+        "conditionStatus": "PRESERVED",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-29",
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-54"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:33:04.381Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_CONDITIONS_MISSING",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-f3475bc46f24b06b",
+          "detail": "conditions：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-29] “| 级数 | 收敛条件 | 和（若收敛） | |------|---------|------------| | 几何级数 $\\sum ar^{n-1}$ | ”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:e7ea8bc17c2cc4ab-f7eaa44156350141",
+        "from": "claim:e7ea8bc17c2cc4ab-07e8ca8a41f4452d",
+        "to": "claim:e7ea8bc17c2cc4ab-c63c389fb0e91b45",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-39"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:33:04.381Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.5,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-f7eaa44156350141",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-39] “| 函数 | Maclaurin 级数 | 收敛半径 | |------|---------------|:---:| | $e^x$ | $\\sum_{n=0”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-f7eaa44156350141",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-39] “| 函数 | Maclaurin 级数 | 收敛半径 | |------|---------------|:---:| | $e^x$ | $\\sum_{n=0”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_DIRECTION_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-f7eaa44156350141",
+          "detail": "direction：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-39] “| 函数 | Maclaurin 级数 | 收敛半径 | |------|---------------|:---:| | $e^x$ | $\\sum_{n=0”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:e7ea8bc17c2cc4ab-fea732c1bb5bb892",
+        "from": "claim:e7ea8bc17c2cc4ab-0ede92f2a50f9084",
+        "to": "claim:e7ea8bc17c2cc4ab-b0a1307d4dcc4369",
+        "type": "SUPPORTS",
+        "conditions": [
+          "|q|<1"
+        ],
+        "conditionStatus": "PRESERVED",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-20"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:33:04.381Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-fea732c1bb5bb892",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-20] “| 数列 | 极限 | 关键 | |------|------|------| | $\\frac{1}{n}$ | $0$ | $N = \\lceil 1/\\e”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_CONDITIONS_MISSING",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-fea732c1bb5bb892",
+          "detail": "conditions：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-20] “| 数列 | 极限 | 关键 | |------|------|------| | $\\frac{1}{n}$ | $0$ | $N = \\lceil 1/\\e”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-5257034809ccf4f5",
+        "from": "claim:e7ea8bc17c2cc4ab-7eb30748d7d95e77",
+        "to": "claim:80440e2182e5653f-10a95ba642d5f530",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:01-number-systems-80440e2182e5653f-84#chars-8194-8210",
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-40#chars-4744-4835"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:43:03.347Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-5257034809ccf4f5",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:01-number-systems#block-84] “e^{i\\pi} + 1 = 0”; [1:03-sequences-limits#block-40] “欧拉公式 $e^{i\\theta} = \\cos\\theta + i\\sin\\theta$ 可以从 $e^x$、$\\sin x$、$\\cos x$ 各自的 Ta”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-7e4c63155c0dda87",
+        "from": "claim:33a33396a17d4175-f61bd8bdddda89dc",
+        "to": "claim:e7ea8bc17c2cc4ab-299b0a9eebcfbe7c",
+        "type": "EQUIVALENT_UNDER",
+        "conditions": [
+          "皆在度量空间中"
+        ],
+        "conditionStatus": "PRESERVED",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:02-spaces-33a33396a17d4175-50#chars-4772-4861",
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-8"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:43:03.347Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-7e4c63155c0dda87",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:02-spaces#block-50] “**Cauchy 列**：$\\forall \\epsilon > 0, \\exists N, \\forall m,n > N: \\|x_m - x_n\\| < ”; [1:03-sequences-limits#block-8] “| 类型 | 定义 | 例子 | |------|------|------| | 等差数列 | $a_{n+1} = a_n + d$ | $1, 3, 5,”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_CONDITIONS_MISSING",
+          "severity": "error",
+          "affectedObject": "rel:cross-7e4c63155c0dda87",
+          "detail": "conditions：Relation 未通过边级语义审计；证据 [0:02-spaces#block-50] “**Cauchy 列**：$\\forall \\epsilon > 0, \\exists N, \\forall m,n > N: \\|x_m - x_n\\| < ”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-aefd73e24a22c64c",
+        "from": "claim:e7ea8bc17c2cc4ab-b21af8e470488c66",
+        "to": "claim:80440e2182e5653f-d00a7fa19daa861b",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:01-number-systems-80440e2182e5653f-86#chars-8271-8351",
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-40#chars-4837-4872"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:43:03.347Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-aefd73e24a22c64c",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:01-number-systems#block-86] “更一般地：$e^{i\\theta} = \\cos\\theta + i\\sin\\theta$。这揭示了复指数与三角函数的深层统一——振动 = 复平面上的圆周运动。”; [1:03-sequences-limits#block-40] “将 $x=i\\theta$ 代入 $e^x$ 展开，分离实部和虚部即可”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-aefd73e24a22c64c",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:01-number-systems#block-86] “更一般地：$e^{i\\theta} = \\cos\\theta + i\\sin\\theta$。这揭示了复指数与三角函数的深层统一——振动 = 复平面上的圆周运动。”; [1:03-sequences-limits#block-40] “将 $x=i\\theta$ 代入 $e^x$ 展开，分离实部和虚部即可”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-cf8eaedb5462bb0c",
+        "from": "claim:e7ea8bc17c2cc4ab-7eb30748d7d95e77",
+        "to": "claim:80440e2182e5653f-d00a7fa19daa861b",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:01-number-systems-80440e2182e5653f-86#chars-8271-8351",
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-40#chars-4744-4835"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:43:03.347Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-cf8eaedb5462bb0c",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [1:03-sequences-limits#block-40] “欧拉公式 $e^{i\\theta} = \\cos\\theta + i\\sin\\theta$ 可以从 $e^x$、$\\sin x$、$\\cos x$ 各自的 Ta”; [0:01-number-systems#block-86] “更一般地：$e^{i\\theta} = \\cos\\theta + i\\sin\\theta$。这揭示了复指数与三角函数的深层统一——振动 = 复平面上的圆周运动。”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-e20c2ca5529ee7b7",
+        "from": "claim:80440e2182e5653f-85a8e85bac120b8e",
+        "to": "claim:e7ea8bc17c2cc4ab-c1a2fff3ab5f702f",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:01-number-systems-80440e2182e5653f-8#chars-377-440",
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-5#chars-146-237"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:43:03.347Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-e20c2ca5529ee7b7",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:01-number-systems#block-8] “自然数的本质不是\"0,1,2,3...\"这些符号，而是**递归结构**——从零出发，反复应用\"后继\"操作，生成无穷无尽的序列。”; [1:03-sequences-limits#block-5] “**数列** = 定义在自然数上的函数：$a: \\mathbb{N} \\to \\mathbb{R}$（或 $\\mathbb{C}$），记作 $(a_n)_{n=”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-e20c2ca5529ee7b7",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:01-number-systems#block-8] “自然数的本质不是\"0,1,2,3...\"这些符号，而是**递归结构**——从零出发，反复应用\"后继\"操作，生成无穷无尽的序列。”; [1:03-sequences-limits#block-5] “**数列** = 定义在自然数上的函数：$a: \\mathbb{N} \\to \\mathbb{R}$（或 $\\mathbb{C}$），记作 $(a_n)_{n=”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-f67492b0c49fa8f5",
+        "from": "claim:e7ea8bc17c2cc4ab-b21af8e470488c66",
+        "to": "claim:80440e2182e5653f-10a95ba642d5f530",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:01-number-systems-80440e2182e5653f-84#chars-8194-8210",
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-40#chars-4837-4872"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:43:03.347Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-f67492b0c49fa8f5",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:01-number-systems#block-84] “e^{i\\pi} + 1 = 0”; [1:03-sequences-limits#block-40] “将 $x=i\\theta$ 代入 $e^x$ 展开，分离实部和虚部即可”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-f67492b0c49fa8f5",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:01-number-systems#block-84] “e^{i\\pi} + 1 = 0”; [1:03-sequences-limits#block-40] “将 $x=i\\theta$ 代入 $e^x$ 展开，分离实部和虚部即可”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:e7ea8bc17c2cc4ab-8235a3ceb79a9066",
+        "from": "claim:e7ea8bc17c2cc4ab-90898101d65b1615",
+        "to": "claim:e7ea8bc17c2cc4ab-03fa695ee7a422d8",
+        "type": "EQUIVALENT_UNDER",
+        "conditions": [
+          "无"
+        ],
+        "conditionStatus": "PRESERVED",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-39"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-23T16:33:04.381Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "HUMAN_REVIEW_REJECTED",
+          "severity": "error",
+          "affectedObject": "rel:e7ea8bc17c2cc4ab-8235a3ceb79a9066",
+          "detail": "人工复核否决：sin 与 cos 的 Maclaurin 级数收敛半径都为无穷，不表示两个 Claim 互相等价；条件字符串“无”没有语义。",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    }
+  ]
+}

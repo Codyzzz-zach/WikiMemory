@@ -1,0 +1,410 @@
+{
+  "relations": [
+    {
+      "fromClaimIndex": 75,
+      "toClaimIndex": 105,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 75,
+      "toClaimIndex": 123,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 76,
+      "toClaimIndex": 116,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["相同集合：整数集与有理数集不是代数封闭的"],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 77,
+      "toClaimIndex": 113,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 78,
+      "toClaimIndex": 84,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 79,
+      "toClaimIndex": 89,
+      "type": "REQUIRES",
+      "conditions": [],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 80,
+      "toClaimIndex": 143,
+      "type": "RELATED_TO",
+      "conditions": [],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 81,
+      "toClaimIndex": 87,
+      "type": "RELATED_TO",
+      "conditions": [],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 82,
+      "toClaimIndex": 119,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["相同集合：自然数对除法不封闭等同于对减法不封闭？不，是不同的操作，但都是自然数不封闭的例子"],
+      "confidence": 0.5
+    },
+    {
+      "fromClaimIndex": 83,
+      "toClaimIndex": 102,
+      "type": "REQUIRES",
+      "conditions": [],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 84,
+      "toClaimIndex": 91,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["相同对象：自然数的代数结构，幺半群与交换幺半群同一性不同，但条件为交换"],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 85,
+      "toClaimIndex": 114,
+      "type": "RELATED_TO",
+      "conditions": [],
+      "confidence": 0.6
+    },
+    {
+      "fromClaimIndex": 86,
+      "toClaimIndex": 97,
+      "type": "RELATED_TO",
+      "conditions": [],
+      "confidence": 0.6
+    },
+    {
+      "fromClaimIndex": 87,
+      "toClaimIndex": 117,
+      "type": "RELATED_TO",
+      "conditions": [],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 88,
+      "toClaimIndex": 134,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 89,
+      "toClaimIndex": 79,
+      "type": "DERIVED_FROM",
+      "conditions": [],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 90,
+      "toClaimIndex": 98,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["相同集合：自然数集没有加法逆元，重复表述"],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 92,
+      "toClaimIndex": 96,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["相同的von Neumann构造：0=∅, 1={0}, 2={0,1}"],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 94,
+      "toClaimIndex": 120,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 95,
+      "toClaimIndex": 115,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["复数集是代数封闭的，并且是代数封闭域，同一性质"],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 99,
+      "toClaimIndex": 136,
+      "type": "REQUIRES",
+      "conditions": [],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 100,
+      "toClaimIndex": 148,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["相同集合：整数集没有乘法逆元"],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 102,
+      "toClaimIndex": 83,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 103,
+      "toClaimIndex": 108,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 105,
+      "toClaimIndex": 75,
+      "type": "DERIVED_FROM",
+      "conditions": [],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 107,
+      "toClaimIndex": 141,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 108,
+      "toClaimIndex": 103,
+      "type": "DERIVED_FROM",
+      "conditions": [],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 109,
+      "toClaimIndex": 117,
+      "type": "RELATED_TO",
+      "conditions": [],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 110,
+      "toClaimIndex": 101,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 111,
+      "toClaimIndex": 104,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 112,
+      "toClaimIndex": 135,
+      "type": "REQUIRES",
+      "conditions": [],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 113,
+      "toClaimIndex": 146,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 114,
+      "toClaimIndex": 85,
+      "type": "RELATED_TO",
+      "conditions": [],
+      "confidence": 0.6
+    },
+    {
+      "fromClaimIndex": 117,
+      "toClaimIndex": 81,
+      "type": "RELATED_TO",
+      "conditions": [],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 118,
+      "toClaimIndex": 141,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 119,
+      "toClaimIndex": 82,
+      "type": "RELATED_TO",
+      "conditions": [],
+      "confidence": 0.6
+    },
+    {
+      "fromClaimIndex": 121,
+      "toClaimIndex": 113,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 122,
+      "toClaimIndex": 137,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 123,
+      "toClaimIndex": 75,
+      "type": "DERIVED_FROM",
+      "conditions": [],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 124,
+      "toClaimIndex": 77,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 125,
+      "toClaimIndex": 106,
+      "type": "RELATED_TO",
+      "conditions": [],
+      "confidence": 0.5
+    },
+    {
+      "fromClaimIndex": 126,
+      "toClaimIndex": 131,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["相同集合：自然数集没有乘法逆元"],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 127,
+      "toClaimIndex": 139,
+      "type": "REQUIRES",
+      "conditions": [],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 128,
+      "toClaimIndex": 138,
+      "type": "RELATED_TO",
+      "conditions": [],
+      "confidence": 0.6
+    },
+    {
+      "fromClaimIndex": 129,
+      "toClaimIndex": 101,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 130,
+      "toClaimIndex": 95,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 132,
+      "toClaimIndex": 134,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 133,
+      "toClaimIndex": 135,
+      "type": "REQUIRES",
+      "conditions": [],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 135,
+      "toClaimIndex": 112,
+      "type": "REQUIRES",
+      "conditions": [],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 136,
+      "toClaimIndex": 99,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 137,
+      "toClaimIndex": 122,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 138,
+      "toClaimIndex": 128,
+      "type": "RELATED_TO",
+      "conditions": [],
+      "confidence": 0.6
+    },
+    {
+      "fromClaimIndex": 141,
+      "toClaimIndex": 107,
+      "type": "DERIVED_FROM",
+      "conditions": [],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 142,
+      "toClaimIndex": 92,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 144,
+      "toClaimIndex": 121,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 145,
+      "toClaimIndex": 86,
+      "type": "RELATED_TO",
+      "conditions": [],
+      "confidence": 0.6
+    },
+    {
+      "fromClaimIndex": 146,
+      "toClaimIndex": 113,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 147,
+      "toClaimIndex": 109,
+      "type": "CONTRADICTS",
+      "conditions": [],
+      "confidence": 0.8
+    }
+  ]
+}

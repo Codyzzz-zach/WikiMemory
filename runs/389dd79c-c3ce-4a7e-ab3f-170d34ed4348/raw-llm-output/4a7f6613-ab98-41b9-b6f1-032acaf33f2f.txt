@@ -1,0 +1,31 @@
+{
+  "verdict": "failed",
+  "dimensions": {
+    "support": {
+      "result": "fail",
+      "evidence": "原文证据标题虽然提到'整数运算的封闭性验证'，但未提供具体内容来支持 Claim 中的断言。"
+    },
+    "addition": {
+      "result": "pass",
+      "evidence": "未在原文中找到具体内容，因此无法判断添加信息。"
+    },
+    "inference": {
+      "result": "pass",
+      "evidence": "未在原文中找到具体内容，因此无法判断推断标记。"
+    },
+    "limits": {
+      "result": "pass",
+      "evidence": "未在原文中找到具体内容，因此无法判断限定词保留。"
+    },
+    "citation": {
+      "result": "fail",
+      "evidence": "引用 span 仅为标题，未包含支持 Claim 的实质内容，存在引用错位。"
+    }
+  },
+  "anchor": "整数运算的封闭性验证",
+  "failedDimensions": ["support", "citation"],
+  "issues": [
+    "原文证据仅为一个标题，未提供任何具体内容来支持 Claim 中'整数在 Python 中运算具有封闭性'的断言。",
+    "引用 span 与 Claim 的内容不匹配，标题不能作为支持论点的具体证据。"
+  ]
+}

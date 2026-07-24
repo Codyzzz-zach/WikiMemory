@@ -1,0 +1,149 @@
+{
+  "propositions": [
+    {
+      "text": "多项式的加法运算 p(x) + q(x) 和标量乘法 c·p(x) 是向量空间运算的实例。",
+      "exactQuote": "多项式：$p(x) + q(x)$、$c \\cdot p(x)$",
+      "blockId": "02-spaces#block-24"
+    },
+    {
+      "text": "连续函数的加法运算 f(x) + g(x) 和标量乘法 c·f(x) 是向量空间运算的实例。",
+      "exactQuote": "连续函数：$f(x) + g(x)$、$c \\cdot f(x)$",
+      "blockId": "02-spaces#block-24"
+    },
+    {
+      "text": "矩阵的加法运算 A + B 和标量乘法 c·A 是向量空间运算的实例。",
+      "exactQuote": "矩阵：$A + B$、$c \\cdot A$",
+      "blockId": "02-spaces#block-24"
+    },
+    {
+      "text": "数列的加法运算 (a_n) + (b_n) 和标量乘法 c·(a_n) 是向量空间运算的实例。",
+      "exactQuote": "数列：$(a_n) + (b_n)$、$c \\cdot (a_n)$",
+      "blockId": "02-spaces#block-24"
+    },
+    {
+      "text": "向量空间公理要求集合 V 配备加法运算 + : V × V → V 和标量乘法运算 · : R × V → V。",
+      "exactQuote": "向量空间公理：集合 $V$ 配备运算 $+ : V \\times V \\to V$ 和 $\\cdot : \\mathbb{R} \\times V \\to V$，满足：",
+      "blockId": "02-spaces#block-25"
+    },
+    {
+      "text": "加法交换群公理包括 u+v=v+u、(u+v)+w=u+(v+w) 以及存在零元素 0 和负元素 -v。",
+      "exactQuote": "$u+v=v+u$, $(u+v)+w=u+(v+w)$, 存在 $0$ 和 $-v$",
+      "blockId": "02-spaces#block-26"
+    },
+    {
+      "text": "标量乘法的分配律包括 c(u+v)=cu+cv 和 (c+d)u=cu+du。",
+      "exactQuote": "$c(u+v)=cu+cv$, $(c+d)u=cu+du$",
+      "blockId": "02-spaces#block-26"
+    },
+    {
+      "text": "标量乘法的结合律是 (cd)u = c(du)。",
+      "exactQuote": "$(cd)u = c(du)$",
+      "blockId": "02-spaces#block-26"
+    },
+    {
+      "text": "单位标量公理是 1·u = u。",
+      "exactQuote": "$1 \\cdot u = u$",
+      "blockId": "02-spaces#block-26"
+    },
+    {
+      "text": "所有基的大小都相同，这就是维度。",
+      "exactQuote": "所有基的大小都相同，这就是**维度**。",
+      "blockId": "02-spaces#block-28"
+    },
+    {
+      "text": "维度定义为任何一组基中的向量个数。",
+      "exactQuote": "$$\\dim V = \\text{任何一组基中的向量个数}$$",
+      "blockId": "02-spaces#block-29"
+    },
+    {
+      "text": "R^n 的标准基是 e1,...,en，维度为 n。",
+      "exactQuote": "$\\mathbb{R}^n$：标准基 $e_1,\\ldots,e_n$，维度 $n$",
+      "blockId": "02-spaces#block-30"
+    },
+    {
+      "text": "次数 ≤ n 的多项式空间 P_n 的基是 {1,x,x^2,...,x^n}，维度为 n+1。",
+      "exactQuote": "次数 $\\leq n$ 的多项式空间 $P_n$：基 $\\{1,x,x^2,\\ldots,x^n\\}$，维度 $n+1$",
+      "blockId": "02-spaces#block-30"
+    },
+    {
+      "text": "连续函数空间 C[0,1] 是无限维的，没有有限基。",
+      "exactQuote": "连续函数空间 $C[0,1]$：**无限维！**（没有有限基）",
+      "blockId": "02-spaces#block-30"
+    },
+    {
+      "text": "有限维与无限维是向量空间的第一个大分岔口。",
+      "exactQuote": "有限维 vs 无限维是向量空间的第一个大分岔口。",
+      "blockId": "02-spaces#block-31"
+    },
+    {
+      "text": "度量空间是一个集合 X 配上距离函数 d: X × X → R_{≥0}。",
+      "exactQuote": "度量空间是一个集合 $X$ 配上一个距离函数 $d: X \\times X \\to \\mathbb{R}_{\\geq 0}$，满足：",
+      "blockId": "02-spaces#block-36"
+    },
+    {
+      "text": "距离函数满足正定性：d(x,y) ≥ 0，且 d(x,y)=0 当且仅当 x=y。",
+      "exactQuote": "**正定性**：$d(x,y) \\geq 0$，且 $d(x,y) = 0 \\iff x = y$",
+      "blockId": "02-spaces#block-37"
+    },
+    {
+      "text": "距离函数满足对称性：d(x,y) = d(y,x)。",
+      "exactQuote": "**对称性**：$d(x,y) = d(y,x)$",
+      "blockId": "02-spaces#block-37"
+    },
+    {
+      "text": "距离函数满足三角不等式：d(x,z) ≤ d(x,y) + d(y,z)。",
+      "exactQuote": "**三角不等式**：$d(x,z) \\leq d(x,y) + d(y,z)$",
+      "blockId": "02-spaces#block-37"
+    },
+    {
+      "text": "R^n 上的欧氏距离定义为 d_2(x,y) = sqrt(∑(x_i-y_i)^2)。",
+      "exactQuote": "$d_2(x,y) = \\sqrt{\\sum (x_i-y_i)^2}$",
+      "blockId": "02-spaces#block-39"
+    },
+    {
+      "text": "R^n 上的曼哈顿距离定义为 d_1(x,y) = ∑|x_i-y_i|。",
+      "exactQuote": "$d_1(x,y) = \\sum \\|x_i-y_i\\|$",
+      "blockId": "02-spaces#block-39"
+    },
+    {
+      "text": "R^n 上的切比雪夫距离定义为 d_∞(x,y) = max_i |x_i-y_i|。",
+      "exactQuote": "$d_\\infty(x,y) = \\max_i \\|x_i-y_i\\|$",
+      "blockId": "02-spaces#block-39"
+    },
+    {
+      "text": "离散度量定义为 d(x,y)=0 当 x=y，否则 d(x,y)=1。",
+      "exactQuote": "$d(x,y) = \\begin{cases}0 & x=y \\\\ 1 & x\\neq y\\end{cases}$",
+      "blockId": "02-spaces#block-39"
+    },
+    {
+      "text": "任何度量空间自然诱导一个拓扑，以开球 B(x,r) = {y | d(x,y)<r} 生成开集。",
+      "exactQuote": "任何度量空间自然诱导一个拓扑：以**开球** $B(x,r) = \\{y \\mid d(x,y) < r\\}$ 生成开集。",
+      "blockId": "02-spaces#block-42"
+    },
+    {
+      "text": "拓扑空间是度量空间的进一步推广，它丢掉了距离数值，只保留开集的概念。",
+      "exactQuote": "拓扑空间是度量空间的进一步推广，它丢掉了距离数值，只保留\"开集\"的概念。",
+      "blockId": "02-spaces#block-42"
+    },
+    {
+      "text": "在向量空间上叠加一个范数 ∥·∥: V → R_{≥0}。",
+      "exactQuote": "在向量空间上叠加一个**范数** $\\|\\cdot\\|: V \\to \\mathbb{R}_{\\geq 0}$：",
+      "blockId": "02-spaces#block-46"
+    },
+    {
+      "text": "范数满足正定性：∥x∥ ≥ 0，且 ∥x∥=0 当且仅当 x=0。",
+      "exactQuote": "$\\|x\\| \\geq 0$，且 $\\|x\\| = 0 \\iff x = 0$",
+      "blockId": "02-spaces#block-47"
+    },
+    {
+      "text": "范数满足齐次性：∥αx∥ = |α|·∥x∥。",
+      "exactQuote": "$\\|\\alpha x\\| = |\\alpha| \\cdot \\|x\\|$ （齐次性）",
+      "blockId": "02-spaces#block-47"
+    },
+    {
+      "text": "范数满足三角不等式：∥x+y∥ ≤ ∥x∥+∥y∥。",
+      "exactQuote": "$\\|x + y\\| \\leq \\|x\\| + \\|y\\|$ （三角不等式）",
+      "blockId": "02-spaces#block-47"
+    }
+  ]
+}

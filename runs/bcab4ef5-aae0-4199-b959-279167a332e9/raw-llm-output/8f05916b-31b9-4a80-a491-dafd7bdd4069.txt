@@ -1,0 +1,173 @@
+{
+  "propositions": [
+    {
+      "text": "从计数石子到量子态的复数——数是人类理解宇宙最底层的语言。",
+      "exactQuote": "从计数石子到量子态的复数——数是人类理解宇宙最底层的语言。",
+      "blockId": "01-number-systems#block-1",
+      "relatesTo": null
+    },
+    {
+      "text": "本章沿着数系的逐级扩张路线，揭示每一次'不够用'的危机如何推动数学的革命性突破。",
+      "exactQuote": "本章沿着数系的逐级扩张路线，揭示每一次'不够用'的危机如何推动数学的革命性突破。",
+      "blockId": "01-number-systems#block-1",
+      "relatesTo": null
+    },
+    {
+      "text": "1889年，皮亚诺用五条公理精确定义了自然数。",
+      "exactQuote": "1889年，皮亚诺用五条公理精确定义了自然数：",
+      "blockId": "01-number-systems#block-5",
+      "relatesTo": null
+    },
+    {
+      "text": "0是自然数。",
+      "exactQuote": "1. $0$ 是自然数",
+      "blockId": "01-number-systems#block-6",
+      "relatesTo": null
+    },
+    {
+      "text": "每个自然数n有一个后继S(n)。",
+      "exactQuote": "2. 每个自然数 $n$ 有一个**后继** $S(n)$",
+      "blockId": "01-number-systems#block-6",
+      "relatesTo": { "fromPropIndex": 3, "type": "REQUIRES" }
+    },
+    {
+      "text": "0不是任何自然数的后继。",
+      "exactQuote": "3. $0$ 不是任何自然数的后继",
+      "blockId": "01-number-systems#block-6",
+      "relatesTo": { "fromPropIndex": 4, "type": "REQUIRES" }
+    },
+    {
+      "text": "若S(m)=S(n)，则m=n（后继函数是单射）。",
+      "exactQuote": "4. 若 $S(m) = S(n)$，则 $m = n$（后继函数是单射）",
+      "blockId": "01-number-systems#block-6",
+      "relatesTo": null
+    },
+    {
+      "text": "数学归纳法原理：若某性质对0成立，且由对n成立可推出对S(n)成立，则该性质对一切自然数成立。",
+      "exactQuote": "5. **数学归纳法原理**：若某性质对 $0$ 成立，且由对 $n$ 成立可推出对 $S(n)$ 成立，则该性质对一切自然数成立",
+      "blockId": "01-number-systems#block-6",
+      "relatesTo": { "fromPropIndex": 4, "type": "DERIVED_FROM" }
+    },
+    {
+      "text": "自然数集是{0,1,2,3,...}。",
+      "exactQuote": "$$\n\\mathbb{N} = \\{0, 1, 2, 3, \\ldots\\}\n$$",
+      "blockId": "01-number-systems#block-7",
+      "relatesTo": { "fromPropIndex": 3, "type": "REQUIRES" }
+    },
+    {
+      "text": "自然数的本质不是'0,1,2,3...'这些符号，而是递归结构——从零出发，反复应用'后继'操作，生成无穷无尽的序列。",
+      "exactQuote": "自然数的本质不是'0,1,2,3...'这些符号，而是**递归结构**——从零出发，反复应用'后继'操作，生成无穷无尽的序列。",
+      "blockId": "01-number-systems#block-8",
+      "relatesTo": { "fromPropIndex": 8, "type": "SUPPORTS" }
+    },
+    {
+      "text": "数学归纳法直接编码了自然数的构造方式。",
+      "exactQuote": "这就是为什么数学归纳法如此根本：它直接编码了自然数的构造方式。",
+      "blockId": "01-number-systems#block-8",
+      "relatesTo": { "fromPropIndex": 9, "type": "DERIVED_FROM" }
+    },
+    {
+      "text": "自然数集具有良序性：任何非空子集有最小元。",
+      "exactQuote": "良序性 | 任何非空子集有最小元 | $\\{3,5,1\\} \\to 1$ 最小",
+      "blockId": "01-number-systems#block-10",
+      "relatesTo": null
+    },
+    {
+      "text": "加法封闭：a,b∈N ⇒ a+b∈N。",
+      "exactQuote": "加法封闭 | $a,b \\in \\mathbb{N} \\Rightarrow a+b \\in \\mathbb{N}$ | $3+5=8$",
+      "blockId": "01-number-systems#block-10",
+      "relatesTo": null
+    },
+    {
+      "text": "乘法封闭：a,b∈N ⇒ a×b∈N。",
+      "exactQuote": "乘法封闭 | $a,b \\in \\mathbb{N} \\Rightarrow a \\times b \\in \\mathbb{N}$ | $3 \\times 5=15$",
+      "blockId": "01-number-systems#block-10",
+      "relatesTo": null
+    },
+    {
+      "text": "减法不封闭：a-b可能不是自然数。",
+      "exactQuote": "减法不封闭 | $a-b$ 可能不是自然数 | $3-5$ 无意义（在 $\\mathbb{N}$ 内）",
+      "blockId": "01-number-systems#block-10",
+      "relatesTo": null
+    },
+    {
+      "text": "除法不封闭：a÷b可能不是自然数。",
+      "exactQuote": "除法不封闭 | $a \\div b$ 可能不是自然数 | $3 \\div 5$ 不是自然数",
+      "blockId": "01-number-systems#block-10",
+      "relatesTo": null
+    },
+    {
+      "text": "自然数是最古老的概念，用于刻痕计数、结绳记事。",
+      "exactQuote": "自然数是最古老的概念——刻痕计数、结绳记事。",
+      "blockId": "01-number-systems#block-12",
+      "relatesTo": null
+    },
+    {
+      "text": "直到19世纪末，数学家才开始认真追问'什么是数'，最终由 Frege、Peano、Dedekind 等人建立了严格的公理基础。",
+      "exactQuote": "但直到19世纪末，数学家才开始认真追问'什么是数'，最终由 Frege、Peano、Dedekind 等人建立了严格的公理基础。",
+      "blockId": "01-number-systems#block-12",
+      "relatesTo": null
+    },
+    {
+      "text": "自然数的集合论定义（von Neumann 序数）是公理化集合论的基石。",
+      "exactQuote": "自然数的集合论定义（von Neumann 序数）是公理化集合论的基石。",
+      "blockId": "01-number-systems#block-12",
+      "relatesTo": null
+    },
+    {
+      "text": "von Neumann 的集合论构造中，每个自然数等于它之前所有自然数的集合。",
+      "exactQuote": "von Neumann 的集合论构造——每个自然数等于它之前所有自然数的集合。",
+      "blockId": "01-number-systems#block-14",
+      "relatesTo": null
+    },
+    {
+      "text": "在von Neumann构造中，0等于空集，1等于{0}，2等于{0,1}。",
+      "exactQuote": "$0 = \\emptyset$，$1 = \\{0\\}$，$2 = \\{0,1\\}$",
+      "blockId": "01-number-systems#block-14",
+      "relatesTo": { "fromPropIndex": 19, "type": "SUPPORTS" }
+    },
+    {
+      "text": "这个定义让'n<m'等价于'n∈m'。",
+      "exactQuote": "这个巧妙的定义让'$n < m$'等价于'$n \\in m$'。",
+      "blockId": "01-number-systems#block-14",
+      "relatesTo": { "fromPropIndex": 19, "type": "DERIVED_FROM" }
+    },
+    {
+      "text": "自然数的根本缺陷是减法不封闭：3-5在N中没有答案。",
+      "exactQuote": "自然数的根本缺陷：**减法不封闭**。$3 - 5$ 在 $\\mathbb{N}$ 中没有答案。",
+      "blockId": "01-number-systems#block-18",
+      "relatesTo": null
+    },
+    {
+      "text": "减法不封闭推动了一次数系扩张。",
+      "exactQuote": "这个'不够用'推动了我们第一次数系扩张。",
+      "blockId": "01-number-systems#block-18",
+      "relatesTo": { "fromPropIndex": 22, "type": "DERIVED_FROM" }
+    },
+    {
+      "text": "整数可以看作自然数有序对(a,b)的等价类，其中(a,b)代表a-b这个差。",
+      "exactQuote": "构造思路（等价类方法）：整数可以看作自然数有序对 $(a,b)$ 的等价类，其中 $(a,b)$ 代表'$a-b$'这个差。",
+      "blockId": "01-number-systems#block-19",
+      "relatesTo": null
+    },
+    {
+      "text": "等价关系定义为(a,b)～(c,d)当且仅当a+d=b+c。",
+      "exactQuote": "$(a,b) \\sim (c,d) \\iff a + d = b + c$",
+      "blockId": "01-number-systems#block-20",
+      "relatesTo": { "fromPropIndex": 24, "type": "REQUIRES" }
+    },
+    {
+      "text": "(0,3)～(1,4)～(2,5)都代表-3。",
+      "exactQuote": "例如 $(0,3) \\sim (1,4) \\sim (2,5)$ 都代表 $-3$。",
+      "blockId": "01-number-systems#block-21",
+      "relatesTo": { "fromPropIndex": 25, "type": "SUPPORTS" }
+    },
+    {
+      "text": "整数集Z是{…,-3,-2,-1,0,1,2,3,…}。",
+      "exactQuote": "$$\n\\mathbb{Z} = \\{\\ldots, -3, -2, -1, 0, 1, 2, 3, \\ldots\\}\n$$",
+      "blockId": "01-number-systems#block-22",
+      "relatesTo": null
+    },
+    {
+      "text": "整数集Z是一个交换环，也是一个整环（没有零因子）。",
+      "exactQuote": "$\\mathbb{Z}$ 是一个**交换环**——这是 $\\S$8 群环域中将详述的核心结构。整数的独特之处在于它还是一个**整环**（没有零

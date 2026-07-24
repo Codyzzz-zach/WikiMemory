@@ -1,0 +1,27 @@
+{
+  "verdict": "failed",
+  "dimensions": {
+    "support": {
+      "result": "fail",
+      "evidenceSpanIndexes": []
+    },
+    "addition": {
+      "result": "fail",
+      "evidenceSpanIndexes": []
+    },
+    "inference": {
+      "result": "fail",
+      "evidenceSpanIndexes": []
+    },
+    "limits": {
+      "result": "fail",
+      "evidenceSpanIndexes": []
+    },
+    "citation": {
+      "result": "fail",
+      "evidenceSpanIndexes": [0]
+    }
+  },
+  "anchorSpanIndex": 0,
+  "failedDimensions": ["support", "addition", "inference", "limits", "citation"]
+}

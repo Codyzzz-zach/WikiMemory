@@ -24,11 +24,16 @@ export interface ChatOptions {
 export interface ChatResult {
 	content: string;
 	model: string;
+	/** Provider termination reason; "length" proves output-budget truncation. */
+	finishReason: string | null;
+	/** Non-zero indicates that the provider actually used thinking mode. */
+	reasoningContentChars: number;
 	usage: {
 		promptTokens: number;
 		completionTokens: number;
 		totalTokens: number;
 		promptCacheHitTokens: number;
 		promptCacheMissTokens: number;
+		reasoningTokens: number;
 	} | null;
 }

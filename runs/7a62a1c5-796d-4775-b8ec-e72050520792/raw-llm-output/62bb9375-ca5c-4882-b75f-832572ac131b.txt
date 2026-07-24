@@ -1,0 +1,161 @@
+{
+  "propositions": [
+    {
+      "text": "von Neumann 的集合论构造中，每个自然数等于它之前所有自然数的集合。",
+      "exactQuote": "von Neumann 的集合论构造——每个自然数等于它之前所有自然数的集合。",
+      "blockId": "01-number-systems#block-14"
+    },
+    {
+      "text": "在 von Neumann 构造中，0 等于空集。",
+      "exactQuote": "$0 = \\emptyset$",
+      "blockId": "01-number-systems#block-14",
+      "relatesTo": {
+        "fromPropIndex": 0,
+        "type": "SUPPORTS"
+      }
+    },
+    {
+      "text": "在 von Neumann 构造中，1 等于 {0}。",
+      "exactQuote": "$1 = \\{0\\}$",
+      "blockId": "01-number-systems#block-14",
+      "relatesTo": {
+        "fromPropIndex": 1,
+        "type": "DERIVED_FROM"
+      }
+    },
+    {
+      "text": "在 von Neumann 构造中，2 等于 {0,1}。",
+      "exactQuote": "$2 = \\{0,1\\}$",
+      "blockId": "01-number-systems#block-14",
+      "relatesTo": {
+        "fromPropIndex": 2,
+        "type": "DERIVED_FROM"
+      }
+    },
+    {
+      "text": "在 von Neumann 构造中，'n < m' 等价于 'n ∈ m'。",
+      "exactQuote": "这个巧妙的定义让\"$n < m$\"等价于\"$n \\in m$\"。",
+      "blockId": "01-number-systems#block-14",
+      "relatesTo": {
+        "fromPropIndex": 0,
+        "type": "DERIVED_FROM"
+      }
+    },
+    {
+      "text": "Cantor 枚举法是一种用于可数集合的枚举方法。",
+      "exactQuote": "Cantor 枚举法：",
+      "blockId": "01-number-systems#block-46"
+    },
+    {
+      "text": "用一把“刀”在有理数轴上切下去，刀口位置就是一个实数。",
+      "exactQuote": "用一把\"刀\"在有理数轴上切下去——刀口位置就是一个实数。",
+      "blockId": "01-number-systems#block-58"
+    },
+    {
+      "text": "如果刀口正好落在有理数上（如 2），则对应有理数。",
+      "exactQuote": "如果刀口正好落在有理数上（如 $2$），对应有理数；",
+      "blockId": "01-number-systems#block-58",
+      "relatesTo": {
+        "fromPropIndex": 6,
+        "type": "SUPPORTS"
+      }
+    },
+    {
+      "text": "如果刀口穿过一个“洞”（如 √2 的位置），则创造了一个无理数。",
+      "exactQuote": "如果刀口穿过一个\"洞\"（如 $\\sqrt{2}$ 的位置），就创造了一个无理数。",
+      "blockId": "01-number-systems#block-58",
+      "relatesTo": {
+        "fromPropIndex": 6,
+        "type": "SUPPORTS"
+      }
+    },
+    {
+      "text": "ℝ 与 ℚ 有本质区别。",
+      "exactQuote": "这是 $\\mathbb{R}$ 与 $\\mathbb{Q}$ 的本质区别：",
+      "blockId": "01-number-systems#block-61"
+    },
+    {
+      "text": "Cantor 对角论证法假设 (0,1) 中的实数可以列出。",
+      "exactQuote": "假设 $(0,1)$ 中的实数可以列出：",
+      "blockId": "01-number-systems#block-67"
+    },
+    {
+      "text": "Cantor 列举的实数 x1 的小数表示为 0.a11a12a13...。",
+      "exactQuote": "$x_1 = 0.a_{11}a_{12}a_{13}\\ldots$",
+      "blockId": "01-number-systems#block-68",
+      "relatesTo": {
+        "fromPropIndex": 10,
+        "type": "SUPPORTS"
+      }
+    },
+    {
+      "text": "Cantor 列举的实数 x2 的小数表示为 0.a21a22a23...。",
+      "exactQuote": "$x_2 = 0.a_{21}a_{22}a_{23}\\ldots$",
+      "blockId": "01-number-systems#block-68",
+      "relatesTo": {
+        "fromPropIndex": 10,
+        "type": "SUPPORTS"
+      }
+    },
+    {
+      "text": "Cantor 列举的实数 x3 的小数表示为 0.a31a32a33...。",
+      "exactQuote": "$x_3 = 0.a_{31}a_{32}a_{33}\\ldots$",
+      "blockId": "01-number-systems#block-68",
+      "relatesTo": {
+        "fromPropIndex": 10,
+        "type": "SUPPORTS"
+      }
+    },
+    {
+      "text": "16世纪，意大利数学家发现三次方程 x^3 = 15x + 4 的求解过程中出现了 √(-121)。",
+      "exactQuote": "16世纪，意大利数学家发现三次方程 $x^3 = 15x + 4$ 的求解过程中出现了 $\\sqrt{-121}$。",
+      "blockId": "01-number-systems#block-74"
+    },
+    {
+      "text": "方程 x^3 = 15x + 4 的最终答案 x=4 是实数。",
+      "exactQuote": "虽然最终答案 $x=4$ 是实数，",
+      "blockId": "01-number-systems#block-74",
+      "relatesTo": {
+        "fromPropIndex": 14,
+        "type": "SUPPORTS"
+      }
+    },
+    {
+      "text": "方程 x^3 = 15x + 4 的求解中间步骤必须经过复数。",
+      "exactQuote": "但中间步骤必须经过复数。",
+      "blockId": "01-number-systems#block-74",
+      "relatesTo": {
+        "fromPropIndex": 14,
+        "type": "SUPPORTS"
+      }
+    },
+    {
+      "text": "出现 √(-121) 迫使数学家正视这个“幽灵”。",
+      "exactQuote": "这迫使数学家正视这个\"幽灵\"。",
+      "blockId": "01-number-systems#block-74",
+      "relatesTo": {
+        "fromPropIndex": 14,
+        "type": "DERIVED_FROM"
+      }
+    },
+    {
+      "text": "欧拉恒等式 e^(iπ) + 1 = 0 成立。",
+      "exactQuote": "$$e^{i\\pi} + 1 = 0$$",
+      "blockId": "01-number-systems#block-84"
+    },
+    {
+      "text": "方程 x^2 + 1 = 0 在实数范围内无解。",
+      "exactQuote": "$x^2 + 1 = 0 \\xrightarrow{\\mathbb{R}} \\text{无解}$",
+      "blockId": "01-number-systems#block-89"
+    },
+    {
+      "text": "方程 x^2 + 1 = 0 在复数范围内有解 x = ±i。",
+      "exactQuote": "$x^2 + 1 = 0 \\xrightarrow{\\mathbb{C}} x = \\pm i$",
+      "blockId": "01-number-systems#block-89",
+      "relatesTo": {
+        "fromPropIndex": 19,
+        "type": "CONTRADICTS"
+      }
+    }
+  ]
+}

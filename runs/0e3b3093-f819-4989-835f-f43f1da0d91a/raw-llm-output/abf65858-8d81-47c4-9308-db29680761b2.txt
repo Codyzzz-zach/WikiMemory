@@ -1,0 +1,219 @@
+{
+  "propositions": [
+    {
+      "text": "空间类型包括集合、拓扑空间、度量空间、向量空间、赋范空间、内积空间和欧氏空间。",
+      "exactQuote": "| 空间类型 | 附加结构 | 关键概念 | 完备版本 | 应用领域 |\n|---------|---------|---------|---------|---------|\n| 集合 | 无 | 元素 | — | — |\n| 拓扑空间 | 开集 | 连续性、紧致性 | — | $\\S$7 拓扑学 |\n| 度量空间 | 距离 | Cauchy列、收敛 | 完备度量空间 | 分析、聚类 |\n| 向量空间 | 线性运算 | 基、维度、线性变换 | — | $\\S$13 线性代数 |\n| 赋范空间 | 范数 | 长度、有界性 | **Banach空间** | 泛函分析 |\n| 内积空间 | 内积 | 角度、正交性 | **Hilbert空间** | 量子力学 |\n| 欧氏空间 | 全部以上 | — | $\\mathbb{R}^n$ | 几何、物理 |",
+      "blockId": "02-spaces#block-73"
+    },
+    {
+      "text": "集合没有附加结构。",
+      "exactQuote": "集合 | 无 | 元素 | — | —",
+      "blockId": "02-spaces#block-73"
+    },
+    {
+      "text": "拓扑空间的附加结构是开集。",
+      "exactQuote": "拓扑空间 | 开集 | 连续性、紧致性 | — | $\\S$7 拓扑学",
+      "blockId": "02-spaces#block-73"
+    },
+    {
+      "text": "拓扑空间的关键概念是连续性和紧致性。",
+      "exactQuote": "拓扑空间 | 开集 | 连续性、紧致性 | — | $\\S$7 拓扑学",
+      "blockId": "02-spaces#block-73"
+    },
+    {
+      "text": "拓扑空间在拓扑学中应用。",
+      "exactQuote": "— | $\\S$7 拓扑学",
+      "blockId": "02-spaces#block-73"
+    },
+    {
+      "text": "度量空间的附加结构是距离。",
+      "exactQuote": "度量空间 | 距离 | Cauchy列、收敛 | 完备度量空间 | 分析、聚类",
+      "blockId": "02-spaces#block-73"
+    },
+    {
+      "text": "度量空间的关键概念是Cauchy列和收敛。",
+      "exactQuote": "度量空间 | 距离 | Cauchy列、收敛 | 完备度量空间 | 分析、聚类",
+      "blockId": "02-spaces#block-73"
+    },
+    {
+      "text": "度量空间的完备版本是完备度量空间。",
+      "exactQuote": "度量空间 | 距离 | Cauchy列、收敛 | 完备度量空间 | 分析、聚类",
+      "blockId": "02-spaces#block-73"
+    },
+    {
+      "text": "度量空间应用于分析和聚类。",
+      "exactQuote": "度量空间 | 距离 | Cauchy列、收敛 | 完备度量空间 | 分析、聚类",
+      "blockId": "02-spaces#block-73"
+    },
+    {
+      "text": "向量空间的附加结构是线性运算。",
+      "exactQuote": "向量空间 | 线性运算 | 基、维度、线性变换 | — | $\\S$13 线性代数",
+      "blockId": "02-spaces#block-73"
+    },
+    {
+      "text": "向量空间的关键概念是基、维度和线性变换。",
+      "exactQuote": "向量空间 | 线性运算 | 基、维度、线性变换 | — | $\\S$13 线性代数",
+      "blockId": "02-spaces#block-73"
+    },
+    {
+      "text": "向量空间在线性代数中应用。",
+      "exactQuote": "— | $\\S$13 线性代数",
+      "blockId": "02-spaces#block-73"
+    },
+    {
+      "text": "赋范空间的附加结构是范数。",
+      "exactQuote": "赋范空间 | 范数 | 长度、有界性 | **Banach空间** | 泛函分析",
+      "blockId": "02-spaces#block-73"
+    },
+    {
+      "text": "赋范空间的关键概念是长度和有界性。",
+      "exactQuote": "赋范空间 | 范数 | 长度、有界性 | **Banach空间** | 泛函分析",
+      "blockId": "02-spaces#block-73"
+    },
+    {
+      "text": "赋范空间的完备版本是Banach空间。",
+      "exactQuote": "赋范空间 | 范数 | 长度、有界性 | **Banach空间** | 泛函分析",
+      "blockId": "02-spaces#block-73"
+    },
+    {
+      "text": "赋范空间应用于泛函分析。",
+      "exactQuote": "赋范空间 | 范数 | 长度、有界性 | **Banach空间** | 泛函分析",
+      "blockId": "02-spaces#block-73"
+    },
+    {
+      "text": "内积空间的附加结构是内积。",
+      "exactQuote": "内积空间 | 内积 | 角度、正交性 | **Hilbert空间** | 量子力学",
+      "blockId": "02-spaces#block-73"
+    },
+    {
+      "text": "内积空间的关键概念是角度和正交性。",
+      "exactQuote": "内积空间 | 内积 | 角度、正交性 | **Hilbert空间** | 量子力学",
+      "blockId": "02-spaces#block-73"
+    },
+    {
+      "text": "内积空间的完备版本是Hilbert空间。",
+      "exactQuote": "内积空间 | 内积 | 角度、正交性 | **Hilbert空间** | 量子力学",
+      "blockId": "02-spaces#block-73"
+    },
+    {
+      "text": "内积空间应用于量子力学。",
+      "exactQuote": "内积空间 | 内积 | 角度、正交性 | **Hilbert空间** | 量子力学",
+      "blockId": "02-spaces#block-73"
+    },
+    {
+      "text": "欧氏空间拥有全部以上的结构。",
+      "exactQuote": "欧氏空间 | 全部以上 | — | $\\mathbb{R}^n$ | 几何、物理",
+      "blockId": "02-spaces#block-73"
+    },
+    {
+      "text": "欧氏空间的完备版本是ℝⁿ。",
+      "exactQuote": "欧氏空间 | 全部以上 | — | $\\mathbb{R}^n$ | 几何、物理",
+      "blockId": "02-spaces#block-73"
+    },
+    {
+      "text": "欧氏空间应用于几何和物理。",
+      "exactQuote": "欧氏空间 | 全部以上 | — | $\\mathbb{R}^n$ | 几何、物理",
+      "blockId": "02-spaces#block-73"
+    },
+    {
+      "text": "欧氏空间是'满配'——什么结构都有。",
+      "exactQuote": "欧氏空间是\"满配\"——什么结构都有。",
+      "blockId": "02-spaces#block-74"
+    },
+    {
+      "text": "往其他方向推广时，我们每次只去掉一种结构，研究'还剩下什么'。",
+      "exactQuote": "往其他方向推广时，我们每次只去掉一种结构，研究\"还剩下什么\"。",
+      "blockId": "02-spaces#block-74"
+    },
+    {
+      "text": "关键概念1：空间 = 集合 + 结构。",
+      "exactQuote": "1 | **空间 = 集合 + 结构** | 不同的结构→不同的\"空间感\" | 全书线索",
+      "blockId": "02-spaces#block-77"
+    },
+    {
+      "text": "不同的结构导致不同的'空间感'。",
+      "exactQuote": "不同的结构→不同的\"空间感\"",
+      "blockId": "02-spaces#block-77"
+    },
+    {
+      "text": "关键概念2：向量空间公理。",
+      "exactQuote": "2 | **向量空间公理** | 可加可缩 = 线性世界 | $\\S$13 线性代数",
+      "blockId": "02-spaces#block-77"
+    },
+    {
+      "text": "向量空间公理的直觉是'可加可缩 = 线性世界'。",
+      "exactQuote": "可加可缩 = 线性世界",
+      "blockId": "02-spaces#block-77"
+    },
+    {
+      "text": "关键概念3：基与维度。",
+      "exactQuote": "3 | **基与维度** | 有限 vs 无限是第一个大分岔 | $\\S$9, $\\S$13",
+      "blockId": "02-spaces#block-77"
+    },
+    {
+      "text": "有限 versus 无限是第一个大分岔。",
+      "exactQuote": "有限 vs 无限是第一个大分岔",
+      "blockId": "02-spaces#block-77"
+    },
+    {
+      "text": "关键概念4：距离公理。",
+      "exactQuote": "4 | **距离公理** | 三角不等式是最关键的一条 | $\\S$7 拓扑",
+      "blockId": "02-spaces#block-77"
+    },
+    {
+      "text": "三角不等式是距离公理中最关键的一条。",
+      "exactQuote": "三角不等式是最关键的一条",
+      "blockId": "02-spaces#block-77"
+    },
+    {
+      "text": "关键概念5：完备性。",
+      "exactQuote": "5 | **完备性** | Cauchy列有极限→没有\"洞\" | $\\S$3, $\\S$9, $\\S$10",
+      "blockId": "02-spaces#block-77"
+    },
+    {
+      "text": "完备性的直觉是'Cauchy列有极限→没有洞'。",
+      "exactQuote": "Cauchy列有极限→没有\"洞\"",
+      "blockId": "02-spaces#block-77"
+    },
+    {
+      "text": "关键概念6：Banach空间 = 完备赋范空间。",
+      "exactQuote": "6 | **Banach空间** | = 完备赋范空间 | $\\S$9 泛函分析",
+      "blockId": "02-spaces#block-77"
+    },
+    {
+      "text": "关键概念7：Hilbert空间 = 完备内积空间，有正交性。",
+      "exactQuote": "7 | **Hilbert空间** | = 完备内积空间，有正交性 | $\\S$9, 量子力学",
+      "blockId": "02-spaces#block-77"
+    },
+    {
+      "text": "关键概念8：Fourier级数 = 投影。",
+      "exactQuote": "8 | **Fourier级数 = 投影** | 三角函数基上的正交投影 | $\\S$5 函数与映射",
+      "blockId": "02-spaces#block-77"
+    },
+    {
+      "text": "Fourier级数的直觉是'三角函数基上的正交投影'。",
+      "exactQuote": "三角函数基上的正交投影",
+      "blockId": "02-spaces#block-77"
+    },
+    {
+      "text": "数学中的'空间'是一个渐进抽象的谱系。",
+      "exactQuote": "数学中的\"空间\"是一个**渐进抽象**的谱系。",
+      "blockId": "02-spaces#block-78"
+    },
+    {
+      "text": "每一层抽象都在'失去具体'和'获得普适'之间做交易。",
+      "exactQuote": "每一层抽象都在\"失去具体\"和\"获得普适\"之间做交易",
+      "blockId": "02-spaces#block-78"
+    },
+    {
+      "text": "拓扑空间没有距离，但能描述任何连续性概念。",
+      "exactQuote": "拓扑空间没有距离，但能描述任何连续性概念",
+      "blockId": "02-spaces#block-78"
+    },
+    {
+      "text": "Hilbert空间失去了有限维的具体性，但能统一描述从量子态到声波的一切。",
+      "exactQuote": "Hilbert空间失去了有限维的具体性，但能统一描述从量子态到声波的一切",
+      "blockId": "02-spaces#block-78"
+    }
+  ]
+}

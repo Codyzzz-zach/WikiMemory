@@ -1,0 +1,28 @@
+{
+  "verdict": "passed",
+  "dimensions": {
+    "support": {
+      "result": "pass",
+      "evidence": "失去了 ℕ 的良序性（整数没有最小元）"
+    },
+    "addition": {
+      "result": "pass",
+      "evidence": "无额外信息"
+    },
+    "inference": {
+      "result": "pass",
+      "evidence": "因果表述与原文一致"
+    },
+    "limits": {
+      "result": "pass",
+      "evidence": "无遗漏条件"
+    },
+    "citation": {
+      "result": "pass",
+      "evidence": "引用 span 为 [01-number-systems#block-28]"
+    }
+  },
+  "anchor": "失去了 ℕ 的良序性（整数没有最小元）",
+  "failedDimensions": [],
+  "issues": []
+}

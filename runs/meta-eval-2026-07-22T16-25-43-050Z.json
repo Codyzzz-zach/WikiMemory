@@ -1,0 +1,293 @@
+{
+  "total": 100,
+  "TPR": 0.98,
+  "TNR": 0.98,
+  "accuracy": 0.98,
+  "kappa": 0.96,
+  "byReason": {
+    "添加(addition)：原文只说“不够用”的危机推动数系扩张，没有说每次扩张都由量子物理实验直接触发。": {
+      "total": 1,
+      "detected": 1,
+      "tnr": 1
+    },
+    "曲解(distortion)：Claim 反转了原文判断；原文明确说自然数的本质不是这些符号，而是递归结构。": {
+      "total": 1,
+      "detected": 1,
+      "tnr": 1
+    },
+    "丢条件(lost-condition)：原文把“没有答案”和“不封闭”限定在 $\\mathbb{N}$ 中，Claim 去掉了数系条件。": {
+      "total": 1,
+      "detected": 0,
+      "tnr": 0
+    },
+    "引用错位(wrong-citation)：该 Claim 讲的是有理数域的封闭性，内容来自 span:01-number-systems-80440e2182e5653f-41，而当前 span 只给出整数集合。": {
+      "total": 1,
+      "detected": 1,
+      "tnr": 1
+    },
+    "添加(addition)：原文只断言 $(\\mathbb{Z}, +)$ 是阿贝尔群，没有断言整数在乘法下构成阿贝尔群。": {
+      "total": 1,
+      "detected": 1,
+      "tnr": 1
+    },
+    "丢条件(lost-condition)：原文要求 $p,q$ 本身属于 $\\mathbb{Q}$，Claim 删除了这一前提。": {
+      "total": 1,
+      "detected": 1,
+      "tnr": 1
+    },
+    "丢条件(lost-condition)：原文明确限定“除数非零”，Claim 抹掉该限制并将结论扩展到除以零。": {
+      "total": 1,
+      "detected": 1,
+      "tnr": 1
+    },
+    "引用错位(wrong-citation)：该 Claim 实际对应 span:01-number-systems-80440e2182e5653f-59；当前 span 只是一个分数枚举。": {
+      "total": 1,
+      "detected": 1,
+      "tnr": 1
+    },
+    "曲解(distortion)：Claim 将原文“有理数不能覆盖所有点、存在洞”的意思完全反转。": {
+      "total": 1,
+      "detected": 1,
+      "tnr": 1
+    },
+    "添加(addition)：原文只给出实数集合的组成，没有说明无理数能由有理数有限次四则运算得到。": {
+      "total": 1,
+      "detected": 1,
+      "tnr": 1
+    },
+    "引用错位(wrong-citation)：该 Claim 来自 span:01-number-systems-80440e2182e5653f-76；当前 span 仅展示 $x_1,x_2,x_3$ 的小数展开。": {
+      "total": 1,
+      "detected": 1,
+      "tnr": 1
+    },
+    "丢条件(lost-condition)：原文要求 $a,b\\in\\mathbb{R}$ 且 $i^2=-1$，Claim 删除了这两项限制。": {
+      "total": 1,
+      "detected": 1,
+      "tnr": 1
+    },
+    "曲解(distortion)：原式的乘积模为 $r_1r_2$，并不表示模始终保持不变。": {
+      "total": 1,
+      "detected": 1,
+      "tnr": 1
+    },
+    "添加(addition)：原文只建立振动与复平面圆周运动的联系，没有规定所有振动的振幅和频率。": {
+      "total": 1,
+      "detected": 1,
+      "tnr": 1
+    },
+    "引用错位(wrong-citation)：该 Claim 描述的是 span:11-constants-140ce51a25193ff7-22 的配图，而当前 span 的配图主题是数系扩张。": {
+      "total": 1,
+      "detected": 1,
+      "tnr": 1
+    },
+    "丢条件(lost-condition)：原文把数列的定义域限定为 $\\mathbb{N}$，Claim 删除了这一条件。": {
+      "total": 1,
+      "detected": 1,
+      "tnr": 1
+    },
+    "添加(addition)：原文没有要求数列各项互不相同。": {
+      "total": 1,
+      "detected": 1,
+      "tnr": 1
+    },
+    "丢条件(lost-condition)：原定义要求“对所有 $\\epsilon>0$”，Claim 弱化成只需存在一个正 $\\epsilon$。": {
+      "total": 1,
+      "detected": 1,
+      "tnr": 1
+    },
+    "曲解(distortion)：原文的量词顺序是对每个 $\\epsilon$ 可分别选择 $N$，Claim 将其曲解为一个 $N$ 适用于所有 $\\epsilon$。": {
+      "total": 1,
+      "detected": 1,
+      "tnr": 1
+    },
+    "添加(addition)：原文给出级数与部分和极限的关系，没有保证每个级数都收敛。": {
+      "total": 1,
+      "detected": 1,
+      "tnr": 1
+    },
+    "引用错位(wrong-citation)：该 Claim 对应 span:09-functional-analysis-9478dfc1ba6cb58f-5；当前 span 定义的是级数。": {
+      "total": 1,
+      "detected": 1,
+      "tnr": 1
+    },
+    "曲解(distortion)：公式中的系数全部取自 0 处，如 $f(0),f'(0),f''(0)$，展开中心不是 1。": {
+      "total": 1,
+      "detected": 1,
+      "tnr": 1
+    },
+    "添加(addition)：原文只展示展开式，没有给出适用函数、收敛域或无条件收敛保证。": {
+      "total": 1,
+      "detected": 1,
+      "tnr": 1
+    },
+    "丢条件(lost-condition)：原文把保证与“一致收敛”绑定，Claim 去掉“一致”而扩展到任意收敛。": {
+      "total": 1,
+      "detected": 1,
+      "tnr": 1
+    },
+    "曲解(distortion)：原文强调一致收敛，并明确说不能只研究逐点收敛。": {
+      "total": 1,
+      "detected": 1,
+      "tnr": 1
+    },
+    "丢条件(lost-condition)：原文要求对 $X$ 中每个元素都进行指定，Claim 弱化为只覆盖一部分元素。": {
+      "total": 1,
+      "detected": 1,
+      "tnr": 1
+    },
+    "曲解(distortion)：原文要求每个输入唯一对应一个输出，Claim 反转了唯一性要求。": {
+      "total": 1,
+      "detected": 1,
+      "tnr": 1
+    },
+    "丢条件(lost-condition)：原文前提是 $X$ 和 $Y$ 具有额外数学结构，且结论针对“好的”映射；Claim 删除了这些限定。": {
+      "total": 1,
+      "detected": 1,
+      "tnr": 1
+    },
+    "引用错位(wrong-citation)：该 Claim 来自 span:05-functions-mappings-7e02712717a02820-33；当前 span 只陈述结构保持的一般原则。": {
+      "total": 1,
+      "detected": 1,
+      "tnr": 1
+    },
+    "引用错位(wrong-citation)：该 Claim 对应 span:11-constants-140ce51a25193ff7-13；当前 span 是四种变换的公式与作用表。": {
+      "total": 1,
+      "detected": 1,
+      "tnr": 1
+    },
+    "曲解(distortion)：原文给出的方向是“ODE→代数方程”，Claim 将方向反转。": {
+      "total": 1,
+      "detected": 1,
+      "tnr": 1
+    },
+    "丢条件(lost-condition)：原文把连续性与范数上确界有限等价起来，Claim 删除了有限性条件。": {
+      "total": 1,
+      "detected": 1,
+      "tnr": 1
+    },
+    "添加(addition)：原文只写上确界及其有限性，没有断言上确界一定能取到。": {
+      "total": 1,
+      "detected": 1,
+      "tnr": 1
+    },
+    "添加(addition)：原文只说明泛函的输入和输出类型，没有附加线性或连续性要求。": {
+      "total": 1,
+      "detected": 1,
+      "tnr": 1
+    },
+    "引用错位(wrong-citation)：该方程来自 span:09-functional-analysis-9478dfc1ba6cb58f-9；当前 span 只是泛函的输入输出定义。": {
+      "total": 1,
+      "detected": 1,
+      "tnr": 1
+    },
+    "引用错位(wrong-citation)：该 Claim 对应 span:11-constants-140ce51a25193ff7-30；当前 span 仅给出一个关于 $L$ 的微分方程。": {
+      "total": 1,
+      "detected": 1,
+      "tnr": 1
+    },
+    "添加(addition)：原文只给出方程，没有说明解的全局最优性或唯一性。": {
+      "total": 1,
+      "detected": 1,
+      "tnr": 1
+    },
+    "丢条件(lost-condition)：原文限定“在完备空间中”且只说“往往”，Claim 同时删除完备性条件并改成必然结论。": {
+      "total": 1,
+      "detected": 1,
+      "tnr": 1
+    },
+    "曲解(distortion)：Claim 反转了原文关于完备空间中逐点性质可导向全局性质的判断。": {
+      "total": 1,
+      "detected": 1,
+      "tnr": 1
+    },
+    "添加(addition)：原文只要求 $y\\in H$ 且唯一，没有单位范数条件。": {
+      "total": 1,
+      "detected": 1,
+      "tnr": 1
+    },
+    "引用错位(wrong-citation)：该 Claim 来自 span:09-functional-analysis-9478dfc1ba6cb58f-41；当前 span 是 $f(x)$ 的内积表示。": {
+      "total": 1,
+      "detected": 1,
+      "tnr": 1
+    },
+    "丢条件(lost-condition)：原文对连续谱还要求值域稠密且非满射，Claim 只保留了单射条件。": {
+      "total": 1,
+      "detected": 1,
+      "tnr": 1
+    },
+    "曲解(distortion)：原表把剩余谱定义为单射但值域不稠密，Claim 将两项性质都改反。": {
+      "total": 1,
+      "detected": 1,
+      "tnr": 1
+    },
+    "丢条件(lost-condition)：原文保留了“可能的 $0$”这一例外，Claim 将例外删除。": {
+      "total": 1,
+      "detected": 1,
+      "tnr": 1
+    },
+    "引用错位(wrong-citation)：该 Claim 来自 span:09-functional-analysis-9478dfc1ba6cb58f-48；当前 span 只讨论紧算子的谱。": {
+      "total": 1,
+      "detected": 1,
+      "tnr": 1
+    },
+    "添加(addition)：原文讨论范数等价在无限维中失效，但没有提出“唯一自然范数”的存在性。": {
+      "total": 1,
+      "detected": 1,
+      "tnr": 1
+    },
+    "曲解(distortion)：原文用等号明确表示两种表达式给出同一个常数 $e$，Claim 将其曲解为两个不同常数。": {
+      "total": 1,
+      "detected": 1,
+      "tnr": 1
+    },
+    "添加(addition)：图片替代文本只描述等式及复平面运动，没有“唯一性”或“五个基本常数”的判断。": {
+      "total": 1,
+      "detected": 1,
+      "tnr": 1
+    },
+    "曲解(distortion)：原文给出该差值收敛到约 $0.57721$ 的有限极限，Claim 将收敛曲解为发散。": {
+      "total": 1,
+      "detected": 1,
+      "tnr": 1
+    },
+    "引用错位(wrong-citation)：该 Claim 来自 span:03-sequences-limits-e7ea8bc17c2cc4ab-5；当前 span 只给出 $\\varphi$ 的表达式和近似值。": {
+      "total": 1,
+      "detected": 1,
+      "tnr": 1
+    }
+  },
+  "misclassifications": [
+    {
+      "caseId": "CAL-009",
+      "groundTruth": "unfaithful",
+      "predicted": "faithful",
+      "failedDimensions": [],
+      "issues": [
+        {
+          "code": "SEMANTIC_LIMITS_MISSING",
+          "severity": "warning",
+          "detail": "limits: 原文强调'在 $\\mathbb{N}$ 中'，Claim 省略了该范围限定。 (evidence 也不在原文中)"
+        }
+      ],
+      "unfaithfulReason": "丢条件(lost-condition)：原文把“没有答案”和“不封闭”限定在 $\\mathbb{N}$ 中，Claim 去掉了数系条件。"
+    },
+    {
+      "caseId": "CAL-019",
+      "groundTruth": "faithful",
+      "predicted": "unfaithful",
+      "failedDimensions": [
+        "SEMANTIC_CITATION_FAILED"
+      ],
+      "issues": [
+        {
+          "code": "SEMANTIC_CITATION_FAILED",
+          "severity": "error",
+          "detail": "审计输出不符合 schema: LLM 返回的内容不是合法 JSON:\n{\n  \"verdict\": \"passed\",\n  \"dimensions\": {\n    \"support\": {\n      \"result\": \"pass\",\n      \"evidence\": \"$\\mathbb{Q}$ 是一个**域**（Field）——加减乘除（除数非零）全部封闭\"\n    },\n    \"addition\": {\n      "
+        }
+      ],
+      "unfaithfulReason": null
+    }
+  ],
+  "model": "deepseek-v4-flash",
+  "timestamp": "2026-07-22T16:25:43.048Z"
+}

@@ -1,0 +1,41 @@
+{
+  "auditVersion": "v1.0",
+  "model": "deepseek-v4-flash",
+  "verdict": {
+    "verdict": "failed",
+    "dimensions": {
+      "relation": {
+        "result": "fail",
+        "evidenceSpanIndexes": [
+          0
+        ]
+      },
+      "type": {
+        "result": "pass",
+        "evidenceSpanIndexes": [
+          0,
+          1
+        ]
+      },
+      "direction": {
+        "result": "pass",
+        "evidenceSpanIndexes": [
+          0,
+          1
+        ]
+      },
+      "conditions": {
+        "result": "pass",
+        "evidenceSpanIndexes": [
+          0,
+          1
+        ]
+      }
+    },
+    "anchorSpanIndex": 0,
+    "failedDimensions": [
+      "relation"
+    ],
+    "supportingEvidenceSpanIndexes": []
+  }
+}

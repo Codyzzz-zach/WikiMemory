@@ -1,0 +1,196 @@
+{
+  "propositions": [
+    {
+      "text": "向量空间公理包括加法交换群、标量乘法的分配律、标量乘法的结合律和单位标量。",
+      "exactQuote": "向量空间公理：集合 $V$ 配备运算 $+ : V \\times V \\to V$ 和 $\\cdot : \\mathbb{R} \\times V \\to V$，满足：\n\n| 公理群 | 具体公理 |\n|--------|---------|\n| **加法交换群** | $u+v=v+u$, $(u+v)+w=u+(v+w)$, 存在 $0$ 和 $-v$ |\n| **标量乘法的分配律** | $c(u+v)=cu+cv$, $(c+d)u=cu+du$ |\n| **标量乘法的结合律** | $(cd)u = c(du)$ |\n| **单位标量** | $1 \\cdot u = u$",
+      "blockId": "02-spaces#block-25",
+      "relatesTo": null
+    },
+    {
+      "text": "向量空间的加法满足交换律：u+v=v+u。",
+      "exactQuote": "$u+v=v+u$",
+      "blockId": "02-spaces#block-26",
+      "relatesTo": null
+    },
+    {
+      "text": "向量空间的加法满足结合律：(u+v)+w=u+(v+w)。",
+      "exactQuote": "$(u+v)+w=u+(v+w)$",
+      "blockId": "02-spaces#block-26",
+      "relatesTo": null
+    },
+    {
+      "text": "向量空间存在零向量 0 和每个向量的负向量 -v。",
+      "exactQuote": "存在 $0$ 和 $-v$",
+      "blockId": "02-spaces#block-26",
+      "relatesTo": null
+    },
+    {
+      "text": "标量乘法对向量加法满足分配律：c(u+v)=cu+cv。",
+      "exactQuote": "$c(u+v)=cu+cv$",
+      "blockId": "02-spaces#block-26",
+      "relatesTo": null
+    },
+    {
+      "text": "标量乘法对标量加法满足分配律：(c+d)u=cu+du。",
+      "exactQuote": "$(c+d)u=cu+du$",
+      "blockId": "02-spaces#block-26",
+      "relatesTo": null
+    },
+    {
+      "text": "标量乘法满足结合律：(cd)u = c(du)。",
+      "exactQuote": "$(cd)u = c(du)$",
+      "blockId": "02-spaces#block-26",
+      "relatesTo": null
+    },
+    {
+      "text": "存在单位标量 1 使得 1·u = u。",
+      "exactQuote": "$1 \\cdot u = u$",
+      "blockId": "02-spaces#block-26",
+      "relatesTo": null
+    },
+    {
+      "text": "向量空间中最深刻的事实是——所有基的大小都相同，这就是维度。",
+      "exactQuote": "向量空间中最深刻的事实是——所有基的大小都相同，这就是**维度**。",
+      "blockId": "02-spaces#block-28",
+      "relatesTo": null
+    },
+    {
+      "text": "维度 dim V 等于任何一组基中的向量个数。",
+      "exactQuote": "$$\n\\dim V = \\text{任何一组基中的向量个数}\n$$",
+      "blockId": "02-spaces#block-29",
+      "relatesTo": null
+    },
+    {
+      "text": "R^n 的标准基是 e_1,...,e_n，维度为 n。",
+      "exactQuote": "$\\mathbb{R}^n$：标准基 $e_1,\\ldots,e_n$，维度 $n$",
+      "blockId": "02-spaces#block-30",
+      "relatesTo": null
+    },
+    {
+      "text": "次数 ≤ n 的多项式空间 P_n 有一组基 {1,x,x^2,...,x^n}，维度为 n+1。",
+      "exactQuote": "次数 $\\leq n$ 的多项式空间 $P_n$：基 $\\{1,x,x^2,\\ldots,x^n\\}$，维度 $n+1$",
+      "blockId": "02-spaces#block-30",
+      "relatesTo": null
+    },
+    {
+      "text": "连续函数空间 C[0,1] 是无限维的，没有有限基。",
+      "exactQuote": "连续函数空间 $C[0,1]$：**无限维！**（没有有限基）",
+      "blockId": "02-spaces#block-30",
+      "relatesTo": null
+    },
+    {
+      "text": "有限维和无限维是向量空间的第一个大分岔口。",
+      "exactQuote": "有限维 vs 无限维是向量空间的第一个大分岔口。",
+      "blockId": "02-spaces#block-31",
+      "relatesTo": null
+    },
+    {
+      "text": "在线性代数中专注于有限维向量空间。",
+      "exactQuote": "$\\S$13 线性代数专注于有限维",
+      "blockId": "02-spaces#block-31",
+      "relatesTo": null
+    },
+    {
+      "text": "在泛函分析中进入无限维世界。",
+      "exactQuote": "本章下半部分的泛函分析进入无限维世界。",
+      "blockId": "02-spaces#block-31",
+      "relatesTo": null
+    },
+    {
+      "text": "度量空间是一个集合 X 配上一个距离函数 d: X × X → R≥0。",
+      "exactQuote": "度量空间是一个集合 $X$ 配上一个距离函数 $d: X \\times X \\to \\mathbb{R}_{\\geq 0}$",
+      "blockId": "02-spaces#block-36",
+      "relatesTo": null
+    },
+    {
+      "text": "距离函数 d 满足正定性：d(x,y) ≥ 0，且 d(x,y)=0 当且仅当 x=y。",
+      "exactQuote": "**正定性**：$d(x,y) \\geq 0$，且 $d(x,y) = 0 \\iff x = y$",
+      "blockId": "02-spaces#block-37",
+      "relatesTo": null
+    },
+    {
+      "text": "距离函数 d 满足对称性：d(x,y)=d(y,x)。",
+      "exactQuote": "**对称性**：$d(x,y) = d(y,x)$",
+      "blockId": "02-spaces#block-37",
+      "relatesTo": null
+    },
+    {
+      "text": "距离函数 d 满足三角不等式：d(x,z) ≤ d(x,y)+d(y,z)。",
+      "exactQuote": "**三角不等式**：$d(x,z) \\leq d(x,y) + d(y,z)$",
+      "blockId": "02-spaces#block-37",
+      "relatesTo": null
+    },
+    {
+      "text": "欧氏距离 d_2(x,y) = sqrt(∑(xi-yi)^2)，用于几何和物理。",
+      "exactQuote": "| $\\mathbb{R}^n$ 欧氏 | $d_2(x,y) = \\sqrt{\\sum (x_i-y_i)^2}$ | 几何、物理 |",
+      "blockId": "02-spaces#block-39",
+      "relatesTo": null
+    },
+    {
+      "text": "曼哈顿距离 d_1(x,y) = ∑|xi-yi|，用于城市街区距离。",
+      "exactQuote": "| $\\mathbb{R}^n$ 曼哈顿 | $d_1(x,y) = \\sum \\|x_i-y_i\\|$ | 城市街区距离 |",
+      "blockId": "02-spaces#block-39",
+      "relatesTo": null
+    },
+    {
+      "text": "切比雪夫距离 d_∞(x,y) = max_i |xi-yi|，用于最坏情况分析。",
+      "exactQuote": "| $\\mathbb{R}^n$ 切比雪夫 | $d_\\infty(x,y) = \\max_i \\|x_i-y_i\\|$ | 最坏情况分析 |",
+      "blockId": "02-spaces#block-39",
+      "relatesTo": null
+    },
+    {
+      "text": "离散度量定义为当 x=y 时 d(x,y)=0，否则 d(x,y)=1，用于理论构造。",
+      "exactQuote": "| 离散度量 | $d(x,y) = \\begin{cases}0 & x=y \\\\ 1 & x\\neq y\\end{cases}$ | 理论构造 |",
+      "blockId": "02-spaces#block-39",
+      "relatesTo": null
+    },
+    {
+      "text": "Hamming距离定义为不同位置的个数，用于编码理论和DNA比对。",
+      "exactQuote": "| Hamming距离 | 不同位置的个数 | 编码理论、DNA比对 |",
+      "blockId": "02-spaces#block-39",
+      "relatesTo": null
+    },
+    {
+      "text": "图上的最短路径距离定义为最少边数，用于网络路由。",
+      "exactQuote": "| 图上的最短路径 | 最少边数 | 网络路由 |",
+      "blockId": "02-spaces#block-39",
+      "relatesTo": null
+    },
+    {
+      "text": "任何度量空间自然诱导一个拓扑：以开球 B(x,r) = {y | d(x,y) < r} 生成开集。",
+      "exactQuote": "任何度量空间自然诱导一个拓扑：以**开球** $B(x,r) = \\{y \\mid d(x,y) < r\\}$ 生成开集。",
+      "blockId": "02-spaces#block-42",
+      "relatesTo": null
+    },
+    {
+      "text": "拓扑空间是度量空间的进一步推广，它丢掉了距离数值，只保留开集的概念。",
+      "exactQuote": "这是 $\\S$7 拓扑学的起点——拓扑空间是度量空间的进一步推广，它丢掉了距离数值，只保留\"开集\"的概念。",
+      "blockId": "02-spaces#block-42",
+      "relatesTo": null
+    },
+    {
+      "text": "赋范空间是在向量空间上叠加一个范数 ||·||: V → R≥0。",
+      "exactQuote": "在向量空间上叠加一个**范数** $\\|\\cdot\\|: V \\to \\mathbb{R}_{\\geq 0}$",
+      "blockId": "02-spaces#block-46",
+      "relatesTo": null
+    },
+    {
+      "text": "范数满足正定性：||x|| ≥ 0，且 ||x||=0 当且仅当 x=0。",
+      "exactQuote": "$\\|x\\| \\geq 0$，且 $\\|x\\| = 0 \\iff x = 0$",
+      "blockId": "02-spaces#block-47",
+      "relatesTo": null
+    },
+    {
+      "text": "范数满足齐次性：||αx|| = |α|·||x||。",
+      "exactQuote": "$\\|\\alpha x\\| = |\\alpha| \\cdot \\|x\\|$",
+      "blockId": "02-spaces#block-47",
+      "relatesTo": null
+    },
+    {
+      "text": "范数满足三角不等式：||x+y|| ≤ ||x|| + ||y||。",
+      "exactQuote": "$\\|x + y\\| \\leq \\|x\\| + \\|y\\|$",
+      "blockId": "02-spaces#block-47",
+      "relatesTo": null
+    }
+  ]
+}

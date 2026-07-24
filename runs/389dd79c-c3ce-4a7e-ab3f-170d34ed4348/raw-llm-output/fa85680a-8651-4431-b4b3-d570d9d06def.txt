@@ -1,0 +1,28 @@
+{
+  "verdict": "warning",
+  "dimensions": {
+    "support": {
+      "result": "pass",
+      "evidence": "交换幺半群"
+    },
+    "addition": {
+      "result": "pass",
+      "evidence": "自然数集 N 关于加法和乘法是交换幺半群。"
+    },
+    "inference": {
+      "result": "fail",
+      "evidence": "原文仅提到‘交换幺半群’，未明确说明自然数集N关于加法和乘法是交换幺半群。Claim将原文中的抽象概念推断为具体代数结构的性质，但未标记为推断。"
+    },
+    "limits": {
+      "result": "pass",
+      "evidence": "无适用条件"
+    },
+    "citation": {
+      "result": "pass",
+      "evidence": "原文证据[01-number-systems#block-24]中明确出现‘交换幺半群’，与Claim的引用一致。"
+    }
+  },
+  "anchor": "交换幺半群",
+  "failedDimensions": ["inference"],
+  "issues": ["Claim将原文中的‘交换幺半群’这一抽象概念推断为自然数集N关于加法和乘法是交换幺半群的具体事实，但未以推断形式呈现，且原文证据未明确支持该具体陈述。"]
+}

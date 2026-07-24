@@ -102,11 +102,19 @@ function parseSimpleFrontmatter(fmText: string): Record<string, string> {
 	const result: Record<string, string> = {};
 	for (const line of fmText.split("\n")) {
 		const match = line.match(/^(\w+):\s*"?(.*?)"?\s*$/);
-		if (match) {
-			result[match[1]!] = match[2]!;
+		const key = match?.[1];
+		const value = match?.[2];
+		if (key !== undefined && value !== undefined) {
+			result[key] = value;
 		}
 	}
 	return result;
+}
+
+function lineAt(lines: string[], index: number): string {
+	const line = lines[index];
+	if (line === undefined) throw new Error(`Markdown parser 行号越界: ${index}`);
+	return line;
 }
 
 /**
@@ -129,7 +137,7 @@ function splitIntoBlocks(body: string, fileStem: string): TextBlock[] {
 	let i = 0;
 
 	while (i < lines.length) {
-		const line = lines[i]!;
+		const line = lineAt(lines, i);
 		const trimmed = line.trim();
 
 		// 空行跳过
@@ -170,7 +178,7 @@ function collectBlock(
 	lines: string[],
 	startIdx: number,
 ): { blockLines: string[]; kind: TextBlock["kind"]; consumedLines: number } {
-	const line = lines[startIdx]!;
+	const line = lineAt(lines, startIdx);
 	const trimmed = line.trim();
 
 	// 数学块 $$ ... $$
@@ -194,14 +202,18 @@ function collectBlock(
 		const blockLines: string[] = [];
 		let j = startIdx;
 		while (j < lines.length) {
-			const l = lines[j]!.trim();
-			if (/^[-*]\s/.test(l) || /^\d+\.\s/.test(l) || (l === "" && j + 1 < lines.length && /^[-*]\s|^\d+\.\s/.test(lines[j + 1]!.trim()))) {
+			const l = lineAt(lines, j).trim();
+			if (
+				/^[-*]\s/.test(l) ||
+				/^\d+\.\s/.test(l) ||
+				(l === "" && j + 1 < lines.length && /^[-*]\s|^\d+\.\s/.test(lineAt(lines, j + 1).trim()))
+			) {
 				if (l === "") {
 					// 列表中的空行，不单独成块
 					j++;
 					continue;
 				}
-				blockLines.push(lines[j]!);
+				blockLines.push(lineAt(lines, j));
 				j++;
 			} else {
 				break;
@@ -214,8 +226,8 @@ function collectBlock(
 	if (trimmed.startsWith("|")) {
 		const blockLines: string[] = [];
 		let j = startIdx;
-		while (j < lines.length && lines[j]!.trim().startsWith("|")) {
-			blockLines.push(lines[j]!);
+		while (j < lines.length && lineAt(lines, j).trim().startsWith("|")) {
+			blockLines.push(lineAt(lines, j));
 			j++;
 		}
 		return { blockLines, kind: "table_row", consumedLines: j - startIdx };
@@ -225,8 +237,8 @@ function collectBlock(
 	if (trimmed.startsWith(">")) {
 		const blockLines: string[] = [];
 		let j = startIdx;
-		while (j < lines.length && lines[j]!.trim().startsWith(">")) {
-			blockLines.push(lines[j]!);
+		while (j < lines.length && lineAt(lines, j).trim().startsWith(">")) {
+			blockLines.push(lineAt(lines, j));
 			j++;
 		}
 		return { blockLines, kind: "blockquote", consumedLines: j - startIdx };
@@ -237,7 +249,7 @@ function collectBlock(
 		const blockLines: string[] = [line];
 		let j = startIdx + 1;
 		while (j < lines.length) {
-			const l = lines[j]!.trim();
+			const l = lineAt(lines, j).trim();
 			if (
 				l === "" ||
 				/^#{1,6}\s/.test(l) ||
@@ -250,7 +262,7 @@ function collectBlock(
 			) {
 				break;
 			}
-			blockLines.push(lines[j]!);
+			blockLines.push(lineAt(lines, j));
 			j++;
 		}
 		return { blockLines, kind: "paragraph", consumedLines: j - startIdx };
@@ -264,17 +276,19 @@ function collectUntilClose(
 	closeMarker: string,
 	kind: TextBlock["kind"],
 ): { blockLines: string[]; kind: TextBlock["kind"]; consumedLines: number } {
-	const blockLines: string[] = [lines[startIdx]!];
+	const firstLine = lineAt(lines, startIdx);
+	const blockLines: string[] = [firstLine];
 	let j = startIdx + 1;
 
 	// 单行情况（如 $$ ... $$ 在同一行）
-	if ((lines[startIdx]!.match(/\$\$/g)?.length ?? 0) >= 2 && kind === "math") {
+	if ((firstLine.match(/\$\$/g)?.length ?? 0) >= 2 && kind === "math") {
 		return { blockLines, kind, consumedLines: 1 };
 	}
 
 	while (j < lines.length) {
-		blockLines.push(lines[j]!);
-		if (lines[j]!.trim().endsWith(closeMarker) || lines[j]!.trim() === closeMarker) {
+		const line = lineAt(lines, j);
+		blockLines.push(line);
+		if (line.trim().endsWith(closeMarker) || line.trim() === closeMarker) {
 			j++;
 			break;
 		}

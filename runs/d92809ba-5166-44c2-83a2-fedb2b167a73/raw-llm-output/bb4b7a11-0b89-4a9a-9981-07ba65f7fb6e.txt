@@ -1,0 +1,24 @@
+{
+  "verdict": "failed",
+  "dimensions": {
+    "relation": {
+      "result": "fail",
+      "evidenceSpanIndexes": [1]
+    },
+    "type": {
+      "result": "fail",
+      "evidenceSpanIndexes": [1]
+    },
+    "direction": {
+      "result": "fail",
+      "evidenceSpanIndexes": []
+    },
+    "conditions": {
+      "result": "pass",
+      "evidenceSpanIndexes": []
+    }
+  },
+  "anchorSpanIndex": 1,
+  "failedDimensions": ["relation", "type", "direction"],
+  "supportingEvidenceSpanIndexes": []
+}

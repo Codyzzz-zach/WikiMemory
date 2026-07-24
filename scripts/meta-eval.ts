@@ -23,11 +23,13 @@
  *   - 按 unfaithfulReason 分桶的 TNR（知道审计哪类不忠实最弱）
  *   - 每条用例的判定明细（存 runs/meta-eval-<timestamp>.json）
  */
+import { createHash } from "node:crypto";
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { loadConfig } from "../src/config/index.js";
 import { createLLMProvider } from "../src/core/llm-provider.js";
 import { semanticCheck } from "../src/linter/index.js";
+import { SEMANTIC_AUDIT_SYSTEM, SEMANTIC_AUDIT_VERSION } from "../src/prompts/index.js";
 import type { Claim, SourceSpan } from "../src/types/index.js";
 
 // ─── 类型 ──────────────────────────────────────────────────────────
@@ -65,6 +67,14 @@ interface EvalReport {
 	/** 误判明细（审计判错 的用例） */
 	misclassifications: CaseResult[];
 	model: string;
+	auditVersion: string;
+	promptHash: string;
+	datasetHash: string;
+	datasetLabelStatus: "SYNTHETIC_UNVERIFIED" | "HUMAN_REVIEWED";
+	benchmarkRole: "REGRESSION";
+	thinkingMode: "disabled";
+	TPR95: { lower: number; upper: number; method: "wilson" };
+	TNR95: { lower: number; upper: number; method: "wilson" };
 	timestamp: string;
 }
 
@@ -84,7 +94,11 @@ async function main() {
 	}
 
 	const provider = createLLMProvider(config);
-	const cases: EvalCase[] = JSON.parse(readFileSync(datasetPath, "utf-8"));
+	const datasetText = readFileSync(datasetPath, "utf-8");
+	const cases: EvalCase[] = JSON.parse(datasetText);
+	const datasetLabelStatus = process.argv.includes("--human-reviewed")
+		? "HUMAN_REVIEWED"
+		: "SYNTHETIC_UNVERIFIED";
 
 	if (cases.length < 50) {
 		console.warn(`⚠️ 只有 ${cases.length} 条用例，建议 ≥100 条才有统计意义`);
@@ -119,6 +133,12 @@ async function main() {
 			validTo: null,
 			compilerVersion: "meta-eval",
 			confidence: 0.75,
+			claimKind: "FACT",
+			scope: { type: "GLOBAL" },
+			provenanceRefs: [{ type: "SourceSpan", spanId: c.sourceSpanId }],
+			supportingEvidenceRefs: [{ type: "SourceSpan", spanId: c.sourceSpanId }],
+			knowledgeVersion: `meta-eval:${SEMANTIC_AUDIT_VERSION}`,
+			recordedAt: new Date().toISOString(),
 		};
 
 		const issues = await semanticCheck(config, claim, [span], provider);
@@ -143,7 +163,10 @@ async function main() {
 		}
 	}
 
-	const report = computeReport(results, config.model);
+	const report = computeReport(results, config.model, {
+		datasetHash: createHash("sha256").update(datasetText).digest("hex"),
+		datasetLabelStatus,
+	});
 	printReport(report);
 
 	// 存报告
@@ -167,7 +190,14 @@ async function main() {
 
 // ─── 指标计算 ──────────────────────────────────────────────────────
 
-function computeReport(results: CaseResult[], model: string): EvalReport {
+function computeReport(
+	results: CaseResult[],
+	model: string,
+	metadata: {
+		datasetHash: string;
+		datasetLabelStatus: "SYNTHETIC_UNVERIFIED" | "HUMAN_REVIEWED";
+	},
+): EvalReport {
 	const faithful = results.filter((r) => r.groundTruth === "faithful");
 	const unfaithful = results.filter((r) => r.groundTruth === "unfaithful");
 
@@ -214,8 +244,27 @@ function computeReport(results: CaseResult[], model: string): EvalReport {
 		byReason,
 		misclassifications,
 		model,
+		auditVersion: SEMANTIC_AUDIT_VERSION,
+		promptHash: createHash("sha256").update(SEMANTIC_AUDIT_SYSTEM).digest("hex"),
+		datasetHash: metadata.datasetHash,
+		datasetLabelStatus: metadata.datasetLabelStatus,
+		benchmarkRole: "REGRESSION",
+		thinkingMode: "disabled",
+		TPR95: { ...wilsonInterval(TP, faithful.length), method: "wilson" },
+		TNR95: { ...wilsonInterval(TN, unfaithful.length), method: "wilson" },
 		timestamp: new Date().toISOString(),
 	};
+}
+
+function wilsonInterval(successes: number, total: number): { lower: number; upper: number } {
+	if (total === 0) return { lower: 0, upper: 0 };
+	const z = 1.959963984540054;
+	const point = successes / total;
+	const denominator = 1 + (z * z) / total;
+	const center = (point + (z * z) / (2 * total)) / denominator;
+	const margin =
+		(z * Math.sqrt((point * (1 - point)) / total + (z * z) / (4 * total * total))) / denominator;
+	return { lower: center - margin, upper: center + margin };
 }
 
 function printReport(r: EvalReport) {
@@ -224,9 +273,13 @@ function printReport(r: EvalReport) {
 	console.error("════════════════════════════════════════════");
 	console.error(`总用例: ${r.total}`);
 	console.error(`model:  ${r.model}`);
+	console.error(`audit:  ${r.auditVersion} (${r.promptHash.slice(0, 12)})`);
+	console.error(`labels: ${r.datasetLabelStatus} / ${r.benchmarkRole}`);
 	console.error("");
 	console.error(`TPR (少误杀):     ${r.TPR.toFixed(3)}  ${r.TPR >= 0.8 ? "✅" : "❌ <0.8"}`);
 	console.error(`TNR (少漏检):     ${r.TNR.toFixed(3)}  ${r.TNR >= 0.8 ? "✅" : "❌ <0.8"}`);
+	console.error(`TPR 95% Wilson:   [${r.TPR95.lower.toFixed(3)}, ${r.TPR95.upper.toFixed(3)}]`);
+	console.error(`TNR 95% Wilson:   [${r.TNR95.lower.toFixed(3)}, ${r.TNR95.upper.toFixed(3)}]`);
 	console.error(`accuracy:         ${r.accuracy.toFixed(3)}`);
 	console.error(`Cohen's kappa:    ${r.kappa.toFixed(3)}  ${r.kappa >= 0.6 ? "✅" : "⚠️ <0.6"}`);
 	console.error("");

@@ -1,0 +1,13 @@
+{
+  "verdict": "passed",
+  "dimensions": {
+    "support": { "result": "pass", "evidence": "Dedekind（1872）给出了实数的精妙定义" },
+    "addition": { "result": "pass", "evidence": "无额外信息" },
+    "inference": { "result": "pass", "evidence": "无推断" },
+    "limits": { "result": "pass", "evidence": "无适用条件" },
+    "citation": { "result": "pass", "evidence": "Claim与SourceSpan一致" }
+  },
+  "anchor": "Dedekind（1872）给出了实数的精妙定义",
+  "failedDimensions": [],
+  "issues": []
+}
