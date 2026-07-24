@@ -513,6 +513,7 @@ ${evidenceText}
 
 	const baseChatOptions: ChatOptions = {
 		model: config.model,
+		temperature: config.temperature,
 		systemPrompt: SEMANTIC_AUDIT_SYSTEM,
 		messages: [{ role: "user", content: prompt }],
 		responseFormat: "json_object" as const,
@@ -525,9 +526,14 @@ ${evidenceText}
 	const cached = readJson<{
 		auditVersion: string;
 		model: string;
+		temperature?: number;
 		verdict: unknown;
 	}>(cachePath);
-	if (cached?.auditVersion === SEMANTIC_AUDIT_VERSION && cached.model === config.model) {
+	if (
+		cached?.auditVersion === SEMANTIC_AUDIT_VERSION &&
+		cached.model === config.model &&
+		cached.temperature === config.temperature
+	) {
 		const cacheResult = SemanticVerdictSchema.safeParse(cached.verdict);
 		if (cacheResult.success) {
 			try {
@@ -591,6 +597,7 @@ ${evidenceText}
 			writeJsonAtomic(cachePath, {
 				auditVersion: SEMANTIC_AUDIT_VERSION,
 				model: config.model,
+				temperature: config.temperature,
 				verdict: parsed,
 			});
 			break;
@@ -719,6 +726,7 @@ ${evidenceText}
 
 	const baseChatOptions: ChatOptions = {
 		model: config.model,
+		temperature: config.temperature,
 		systemPrompt: RELATION_AUDIT_SYSTEM,
 		messages: [{ role: "user", content: prompt }],
 		responseFormat: "json_object",
@@ -726,9 +734,18 @@ ${evidenceText}
 		maxTokens: 4096,
 	};
 	const cachePath = relationAuditCachePath(config, relation, prompt);
-	const cached = readJson<{ auditVersion: string; model: string; verdict: unknown }>(cachePath);
+	const cached = readJson<{
+		auditVersion: string;
+		model: string;
+		temperature?: number;
+		verdict: unknown;
+	}>(cachePath);
 	let verdict: RelationSemanticVerdict | null = null;
-	if (cached?.auditVersion === RELATION_AUDIT_VERSION && cached.model === config.model) {
+	if (
+		cached?.auditVersion === RELATION_AUDIT_VERSION &&
+		cached.model === config.model &&
+		cached.temperature === config.temperature
+	) {
 		const parsedCache = RelationSemanticVerdictSchema.safeParse(cached.verdict);
 		if (parsedCache.success) {
 			try {
@@ -778,6 +795,7 @@ ${evidenceText}
 			writeJsonAtomic(cachePath, {
 				auditVersion: RELATION_AUDIT_VERSION,
 				model: config.model,
+				temperature: config.temperature,
 				verdict,
 			});
 		} catch (error) {
@@ -888,6 +906,7 @@ function relationAuditCachePath(config: AppConfig, relation: Relation, prompt: s
 			JSON.stringify({
 				auditVersion: RELATION_AUDIT_VERSION,
 				model: config.model,
+				temperature: config.temperature,
 				relationId: relation.id,
 				systemPrompt: RELATION_AUDIT_SYSTEM,
 				prompt,
@@ -949,6 +968,7 @@ function semanticAuditCachePath(config: AppConfig, claim: Claim, prompt: string)
 			JSON.stringify({
 				auditVersion: SEMANTIC_AUDIT_VERSION,
 				model: config.model,
+				temperature: config.temperature,
 				systemPrompt: SEMANTIC_AUDIT_SYSTEM,
 				prompt,
 			}),

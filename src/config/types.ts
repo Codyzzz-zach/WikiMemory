@@ -10,6 +10,7 @@
 
 export const DEFAULT_MODEL = "deepseek-v4-flash";
 export const DEFAULT_BASE_URL = "https://api.deepseek.com/v1";
+export const DEFAULT_TEMPERATURE = 0;
 
 export interface AppConfig {
 	/** 项目根目录（含 sources/ wiki/ 等知识状态目录） */
@@ -30,4 +31,6 @@ export interface AppConfig {
 	baseUrl: string;
 	/** 默认模型 */
 	model: string;
+	/** 所有编译与审计请求的显式采样温度；实验运行不得依赖 Provider 默认值 */
+	temperature: number;
 }

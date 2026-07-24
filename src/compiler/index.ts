@@ -271,6 +271,7 @@ async function extractPropositionBatch(
 			provider,
 			{
 				model: config.model,
+				temperature: config.temperature,
 				systemPrompt: PROPOSITION_EXTRACT_SYSTEM,
 				messages: [{ role: "user", content: buildPropositionPrompt(spans, coverageRepair) }],
 				responseFormat: "json_object",
@@ -348,6 +349,7 @@ async function compileClaimBatch(
 			provider,
 			{
 				model: config.model,
+				temperature: config.temperature,
 				systemPrompt: CLAIM_COMPILE_SYSTEM,
 				messages: [{ role: "user", content: buildClaimPrompt(propositions) }],
 				responseFormat: "json_object",
@@ -530,6 +532,7 @@ async function compileConceptBatch(
 			provider,
 			{
 				model: config.model,
+				temperature: config.temperature,
 				systemPrompt: CONCEPT_CONSOLIDATE_SYSTEM,
 				messages: [{ role: "user", content: buildConceptPrompt(claims) }],
 				responseFormat: "json_object",
@@ -791,6 +794,7 @@ async function detectRelationTask(
 			provider,
 			{
 				model: config.model,
+				temperature: config.temperature,
 				systemPrompt: RELATION_DETECT_SYSTEM,
 				messages: [{ role: "user", content: buildRelationPrompt(task) }],
 				responseFormat: "json_object",

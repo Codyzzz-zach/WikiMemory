@@ -42,6 +42,7 @@ export async function observedChat(
 		promptChars: prompt.length,
 		estimatedPromptTokens: estimateTokens(prompt),
 		maxTokens: options.maxTokens ?? null,
+		temperature: options.temperature ?? null,
 		timestamp: new Date().toISOString(),
 	};
 

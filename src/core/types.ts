@@ -13,6 +13,8 @@ export interface ChatOptions {
 	responseFormat?: "json_object" | "text";
 	/** 最大输出 token 数 */
 	maxTokens?: number;
+	/** 显式采样温度；生产编译/审计必须传入，避免依赖 Provider 默认值 */
+	temperature?: number;
 	/** 流式输出回调（可选） */
 	onStream?: (delta: string) => void;
 	/** 中止信号 */

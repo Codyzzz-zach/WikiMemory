@@ -65,5 +65,6 @@ function config(): AppConfig {
 		apiKey: "test",
 		baseUrl: "http://localhost",
 		model: "test-model",
+		temperature: 0,
 	};
 }

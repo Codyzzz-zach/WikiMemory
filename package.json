@@ -14,7 +14,8 @@
 		"lint:fix": "biome check --write src scripts",
 		"format": "biome format --write src",
 		"test": "vitest run",
-		"test:watch": "vitest"
+		"test:watch": "vitest",
+		"pilot": "tsx scripts/pilot.ts"
 	},
 	"dependencies": {
 		"commander": "^13.0.0",

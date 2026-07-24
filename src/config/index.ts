@@ -10,7 +10,7 @@
 import { existsSync, mkdirSync, readFileSync } from "node:fs";
 import { join, resolve } from "node:path";
 import type { AppConfig } from "./types.js";
-import { DEFAULT_BASE_URL, DEFAULT_MODEL } from "./types.js";
+import { DEFAULT_BASE_URL, DEFAULT_MODEL, DEFAULT_TEMPERATURE } from "./types.js";
 
 /**
  * 从 cwd 向上找项目根目录。
@@ -65,6 +65,15 @@ export function loadApiKey(): string {
  */
 export function loadConfig(overrides?: Partial<AppConfig>): AppConfig {
 	const projectRoot = overrides?.projectRoot ?? findProjectRoot();
+	const environmentTemperature = process.env.WGE_TEMPERATURE;
+	const temperature =
+		overrides?.temperature ??
+		(environmentTemperature === undefined
+			? DEFAULT_TEMPERATURE
+			: Number.parseFloat(environmentTemperature));
+	if (!Number.isFinite(temperature) || temperature < 0 || temperature > 2) {
+		throw new Error(`WGE_TEMPERATURE 必须是 0 到 2 之间的数，收到: ${environmentTemperature}`);
+	}
 
 	return {
 		projectRoot,
@@ -75,7 +84,8 @@ export function loadConfig(overrides?: Partial<AppConfig>): AppConfig {
 		runsDir: join(projectRoot, "runs"),
 		apiKey: overrides?.apiKey ?? loadApiKey(),
 		baseUrl: overrides?.baseUrl ?? process.env.DEEPSEEK_BASE_URL ?? DEFAULT_BASE_URL,
-		model: overrides?.model ?? DEFAULT_MODEL,
+		model: overrides?.model ?? process.env.WGE_MODEL ?? DEFAULT_MODEL,
+		temperature,
 	};
 }
 

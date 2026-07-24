@@ -78,6 +78,7 @@ function fixture(relationType: Relation["type"] = "SUPPORTS"): AppConfig {
 		apiKey: "test",
 		baseUrl: "http://localhost",
 		model: "test-model",
+		temperature: 0,
 	};
 	const spans: SourceSpan[] = [
 		{

@@ -11,6 +11,7 @@ describe("DeepSeek request body", () => {
 			thinkingDisabled: true,
 			responseFormat: "json_object",
 			maxTokens: 100,
+			temperature: 0,
 		};
 		const request = buildDeepSeekRequest(
 			options,
@@ -22,6 +23,7 @@ describe("DeepSeek request body", () => {
 		);
 
 		expect(request.thinking).toEqual({ type: "disabled" });
+		expect(request.temperature).toBe(0);
 		expect(request.stream).toBe(false);
 		expect("extra_body" in request).toBe(false);
 	});

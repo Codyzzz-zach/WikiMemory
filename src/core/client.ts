@@ -147,6 +147,7 @@ export function buildDeepSeekRequest(
 		response_format:
 			opts.responseFormat === "json_object" ? { type: "json_object" as const } : undefined,
 		max_tokens: opts.maxTokens,
+		temperature: opts.temperature,
 		stream,
 		...(opts.thinkingDisabled ? { thinking: { type: "disabled" as const } } : {}),
 	} as

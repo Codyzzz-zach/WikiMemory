@@ -35,6 +35,7 @@ import {
 } from "../linter/storage.js";
 import type { SourcePublication } from "../linter/storage.js";
 import { RELATION_AUDIT_VERSION } from "../prompts/index.js";
+import { evaluatePublicationGate, writePublicationDiffReport } from "../publication-gate/index.js";
 import type { Source } from "../types/index.js";
 
 const program = new Command();
@@ -52,9 +53,21 @@ program
 	.argument("<file>", "Path to .md file")
 	.option("--no-semantic", "Skip semantic lint (structure only)")
 	.option("--recompile", "Recompile and atomically replace an already compiled Source")
+	.option(
+		"--accept-publication-diff",
+		"Acknowledge a REVIEW_REQUIRED recompile diff; hard integrity failures still block",
+	)
 	.option("--json", "Output JSON result")
 	.action(
-		async (file: string, options: { semantic: boolean; recompile?: boolean; json?: boolean }) => {
+		async (
+			file: string,
+			options: {
+				semantic: boolean;
+				recompile?: boolean;
+				acceptPublicationDiff?: boolean;
+				json?: boolean;
+			},
+		) => {
 			const config = loadConfig();
 			const skipSemantic = options.semantic === false;
 			if (!config.apiKey) {
@@ -161,28 +174,53 @@ program
 						console.error(`   Quarantined relations: ${lintResult.quarantinedRelations.length}`);
 					}
 
-					recordCompileStage(config, run, "PUBLISH");
 					const publishedAt = new Date().toISOString();
-					publishSourceResult(
+					const candidatePublication: SourcePublication = {
+						schemaVersion: "v1",
+						sourceId: ingestResult.source.id,
+						runId: run.runId,
+						publishedAt,
+						claims: lintResult.canonicalClaims,
+						concepts: compileResult.concepts,
+						relations: lintResult.canonicalRelations,
+					};
+					const candidateQuarantine = {
+						schemaVersion: "v1" as const,
+						sourceId: ingestResult.source.id,
+						runId: run.runId,
+						publishedAt,
+						claims: lintResult.quarantinedClaims,
+						relations: lintResult.quarantinedRelations,
+					};
+					recordCompileStage(config, run, "PUBLICATION_GATE");
+					const baselinePublication =
+						readSourcePublications(config).find(
+							(entry) => entry.sourceId === ingestResult.source.id,
+						) ?? null;
+					const publicationDiff = evaluatePublicationGate({
 						config,
-						{
-							schemaVersion: "v1",
-							sourceId: ingestResult.source.id,
-							runId: run.runId,
-							publishedAt,
-							claims: lintResult.canonicalClaims,
-							concepts: compileResult.concepts,
-							relations: lintResult.canonicalRelations,
-						},
-						{
-							schemaVersion: "v1",
-							sourceId: ingestResult.source.id,
-							runId: run.runId,
-							publishedAt,
-							claims: lintResult.quarantinedClaims,
-							relations: lintResult.quarantinedRelations,
-						},
-					);
+						runId: run.runId,
+						source: ingestResult.source,
+						baseline: baselinePublication,
+						candidate: candidatePublication,
+						quarantine: candidateQuarantine,
+						allSpans,
+						allCanonicalClaims: readAllClaims(config),
+						acceptReview: options.acceptPublicationDiff,
+					});
+					const publicationDiffPath = writePublicationDiffReport(config, publicationDiff);
+					if (!options.json) {
+						console.error(`   Publication gate: ${publicationDiff.status}`);
+						console.error(`   Diff report: ${publicationDiffPath}`);
+					}
+					if (publicationDiff.status !== "PASS") {
+						throw new Error(
+							`Publication gate ${publicationDiff.status}; canonical 未被覆盖。详见 ${publicationDiffPath}`,
+						);
+					}
+
+					recordCompileStage(config, run, "PUBLISH");
+					publishSourceResult(config, candidatePublication, candidateQuarantine);
 					localPublished = true;
 					localSummary = {
 						propositions: compileResult.propositions.length,
@@ -193,6 +231,8 @@ program
 						canonicalRelations: lintResult.canonicalRelations.length,
 						quarantinedClaims: lintResult.quarantinedClaims.length,
 						quarantinedRelations: lintResult.quarantinedRelations.length,
+						publicationGate: publicationDiff.status,
+						publicationDiffPath,
 					};
 					if (skipSemantic) {
 						finishCompileRun(config, run, "COMPILE_PARTIAL", "PUBLISH");
