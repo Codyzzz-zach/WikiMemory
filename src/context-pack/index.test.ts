@@ -63,6 +63,13 @@ describe("Context Pack contract", () => {
 			expect(claimIds.has(relation.to as string)).toBe(true);
 		}
 	});
+
+	it("keeps an uncovered named topic empty instead of expanding from generic words", () => {
+		const pack = buildContextPack(fixture(), "WebAssembly 与传统部署方式有什么不同？", 4000, 2);
+		expect(pack.subgraph.claims).toEqual([]);
+		expect(pack.knownGaps.join("\n")).toContain("Seed Retriever 未找到可靠匹配");
+		expect(pack.selectionLog[0]?.reason).toContain("matchedClaims=0");
+	});
 });
 
 function fixture(relationType: Relation["type"] = "SUPPORTS"): AppConfig {

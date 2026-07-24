@@ -5,7 +5,7 @@
  *
  * 修 GPT 审计断点 3：taskMap 从「检索后摘要」改为「检索前地图」。
  *   - 先从 Claim/Concept 构建全局地图（主题/争议/关键概念/最近变化）
- *   - 地图参与种子选择（不只是关键词匹配）
+ *   - Seed Retriever 独立选择可靠起点，地图为 Agent 提供全局定向
  *   - Context Pack 最终携带裁剪后的 taskMap
  *
  * 修 GPT 审计断点 5：接入消费矩阵。
@@ -16,7 +16,7 @@
 
 import { estimateTokens } from "../compiler/telemetry.js";
 import type { AppConfig } from "../config/types.js";
-import { buildGraph, searchClaims, walkGraph } from "../graph/index.js";
+import { buildGraph, walkGraph } from "../graph/index.js";
 import {
 	computeKnowledgeVersion,
 	findSpansByIds,
@@ -26,6 +26,7 @@ import {
 	readAllSpans,
 	readAllWikiModules,
 } from "../linter/storage.js";
+import { lexicalFeatures, retrieveClaimSeeds } from "../retrieval/index.js";
 import type {
 	Claim,
 	ContextPack,
@@ -37,7 +38,7 @@ import type {
 // ─── Map-first：检索前地图 ──────────────────────────────────────
 
 /**
- * 全局知识地图（检索前生成，参与种子选择）。
+ * 全局知识地图（检索前生成，为 Agent 提供低成本全局定向）。
  *
  * 修断点 3：这不是搜索结果的摘要，是一个低成本导航索引。
  * 它在种子选择之前生成，帮助系统知道"应该选什么"。
@@ -89,23 +90,19 @@ export function buildKnowledgeMap(
 		(c) => c.publicationState === "CANONICAL" && c.lifecycle === "ACTIVE",
 	);
 
-	// 主题提取：从 Claim statement 提取高频关键词（简单分词）
+	// 主题提取：使用与 Seed Retriever 一致的 Unicode 特征，避免整句中文成为一个 token。
 	const wordFreq = new Map<string, number>();
 	for (const claim of active) {
-		// 简单分词：按空格和标点切分，取长度 > 1 的词
-		const words = claim.statement
-			.toLowerCase()
-			.split(/[\s,，。.;；:：!！?？""""''()（）\[\]]+/)
-			.filter((w) => w.length > 1);
-		for (const word of words) {
-			wordFreq.set(word, (wordFreq.get(word) ?? 0) + 1);
+		for (const feature of lexicalFeatures(claim.statement)) {
+			if (feature.startsWith("g3:")) continue;
+			wordFreq.set(feature, (wordFreq.get(feature) ?? 0) + 1);
 		}
 	}
 	const topics = [...wordFreq.entries()]
 		.filter(([, count]) => count >= 2) // 至少出现 2 次
 		.sort(([, leftCount], [, rightCount]) => rightCount - leftCount)
 		.slice(0, 10)
-		.map(([word]) => word);
+		.map(([feature]) => feature.slice(feature.indexOf(":") + 1));
 
 	// 已知争议
 	const disputes = active
@@ -132,58 +129,15 @@ export function buildKnowledgeMap(
 }
 
 /**
- * 基于地图 + 查询生成种子 Claim ID。
- *
- * 修断点 3：种子不只来自关键词匹配，还参考地图。
- * - 先用关键词搜索找到直接匹配
- * - 再用地图的 topics/disputes 补充可能遗漏的相关 Claim
+ * 基于查询生成可靠的种子 Claim。
+ * 地图与 Seed 职责分开：地图负责全局定向，Seed Retriever 负责相关性。
  */
 function selectSeeds(
-	map: KnowledgeMap,
 	claims: Claim[],
+	spans: ReturnType<typeof readAllSpans>,
 	query: string,
-): Array<{ claim: Claim; score: number; source: string }> {
-	// 1. 关键词搜索直接匹配
-	const directMatches = searchClaims(claims, query, 10).map((r) => ({
-		claim: r.claim,
-		score: r.score,
-		source: "keyword-direct",
-	}));
-
-	// 2. 地图辅助：检查查询词是否命中地图主题
-	const queryTerms = query
-		.toLowerCase()
-		.split(/\s+/)
-		.filter((t) => t.length > 1);
-	const matchedTopics = map.topics.filter((topic) =>
-		queryTerms.some((term) => topic.includes(term) || term.includes(topic)),
-	);
-
-	// 如果有地图主题匹配，找与该主题相关的 Claim 补充到种子
-	const existingIds = new Set(directMatches.map((m) => m.claim.id));
-	const topicMatches: Array<{ claim: Claim; score: number; source: string }> = [];
-
-	if (matchedTopics.length > 0) {
-		for (const claim of claims) {
-			if (existingIds.has(claim.id)) continue;
-			if (claim.publicationState !== "CANONICAL" || claim.lifecycle !== "ACTIVE") continue;
-
-			const text = claim.statement.toLowerCase();
-			for (const topic of matchedTopics) {
-				if (text.includes(topic)) {
-					topicMatches.push({
-						claim,
-						score: 0.5, // 地图辅助匹配分数低于直接匹配
-						source: "map-topic",
-					});
-					existingIds.add(claim.id);
-					break;
-				}
-			}
-		}
-	}
-
-	return [...directMatches, ...topicMatches.slice(0, 5)];
+): ReturnType<typeof retrieveClaimSeeds> {
+	return retrieveClaimSeeds(claims, spans, query, 10);
 }
 
 // ─── Context Pack 构建 ──────────────────────────────────────────
@@ -225,11 +179,25 @@ export function buildContextPack(
 	// ── 3. 构建 Graph ──
 	const graph = buildGraph(allClaims, allConcepts, allRelations);
 
-	// ── 4. 基于地图 + 查询选择种子（修断点 3）──
-	const seedResults = selectSeeds(knowledgeMap, graph.claims, task);
+	// ── 4. 选择可靠种子；Graph 只能在 Seed 之后扩展 ──
+	const retrieval = selectSeeds(graph.claims, allSpans, task);
+	const seedResults = retrieval.candidates.map((candidate) => ({
+		claim: candidate.claim,
+		score: candidate.score,
+		source: `lexical:${candidate.channels.join("+")}`,
+	}));
 	const seedIds = seedResults.map((r) => r.claim.id);
 
-	const selectionLog: SelectionLogEntry[] = [];
+	const selectionLog: SelectionLogEntry[] = [
+		{
+			selected: "",
+			reason:
+				`seed-retrieval queryFeatures=${retrieval.diagnostics.queryFeatureCount} ` +
+				`eligibleClaims=${retrieval.diagnostics.eligibleClaimCount} ` +
+				`matchedClaims=${retrieval.diagnostics.matchedClaimCount} ` +
+				`evidenceIndex=${retrieval.diagnostics.usedEvidenceText}`,
+		},
+	];
 	for (const r of seedResults) {
 		selectionLog.push({
 			selected: r.claim.id,
@@ -389,7 +357,9 @@ export function buildContextPack(
 		gapsUsed += gapText.length;
 	}
 	if (selectedClaims.length === 0) {
-		knownGaps.push("未找到与任务相关的 Claim——知识库可能未覆盖此主题");
+		knownGaps.push(
+			"Seed Retriever 未找到可靠匹配——知识库可能未覆盖此主题，或相关原文尚未编译为 Canonical Claim",
+		);
 	}
 	if (selectedRelations.length === 0) {
 		knownGaps.push("未找到关系——Graph 可能尚未建立跨材料边");
