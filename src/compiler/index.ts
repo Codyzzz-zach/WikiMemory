@@ -19,6 +19,7 @@ import {
 	PROPOSITION_EXTRACT_SYSTEM,
 	RELATION_DETECT_SYSTEM,
 } from "../prompts/index.js";
+import { isSourceMetadataClaim } from "../relations/semantics.js";
 import type {
 	Claim,
 	Concept,
@@ -666,13 +667,23 @@ export async function compileCrossMaterialRelations(
 	newConcepts: Concept[],
 	existingClaims: Claim[],
 ): Promise<CrossMaterialCompileResult> {
-	const candidates = selectCrossMaterialCandidates(newClaims, newConcepts, existingClaims);
-	if (newClaims.length === 0 || candidates.length === 0) {
+	const relationEligibleNewClaims = newClaims.filter(
+		(claim) => !isSourceMetadataClaim(claim.statement),
+	);
+	const candidates = selectCrossMaterialCandidates(
+		relationEligibleNewClaims,
+		newConcepts,
+		existingClaims,
+	);
+	if (relationEligibleNewClaims.length === 0 || candidates.length === 0) {
 		return { relations: [], candidateClaimIds: candidates.map((claim) => claim.id) };
 	}
-	const combined = [...newClaims, ...candidates];
-	const indexedNew = newClaims.map((claim, index) => ({ index, claim }));
-	const indexedOld = candidates.map((claim, index) => ({ index: newClaims.length + index, claim }));
+	const combined = [...relationEligibleNewClaims, ...candidates];
+	const indexedNew = relationEligibleNewClaims.map((claim, index) => ({ index, claim }));
+	const indexedOld = candidates.map((claim, index) => ({
+		index: relationEligibleNewClaims.length + index,
+		claim,
+	}));
 	const newGroups = partitionByTokenBudget(indexedNew, renderClaim, RELATION_GROUP_TOKEN_BUDGET);
 	const oldGroups = partitionByTokenBudget(indexedOld, renderClaim, RELATION_GROUP_TOKEN_BUDGET);
 	const stats = emptyCompileStats(runId, source.id);
@@ -722,6 +733,7 @@ export function selectCrossMaterialCandidates(
 			(claim) =>
 				claim.publicationState === "CANONICAL" &&
 				claim.lifecycle === "ACTIVE" &&
+				!isSourceMetadataClaim(claim.statement) &&
 				!newClaims.some((newClaim) => newClaim.id === claim.id),
 		)
 		.map((claim) => {

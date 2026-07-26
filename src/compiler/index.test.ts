@@ -148,6 +148,15 @@ describe("bounded compiler", () => {
 		expect(candidates.map((claim) => claim.id)).toEqual(["claim:relevant"]);
 	});
 
+	it("keeps Source management metadata out of cross-material candidates", () => {
+		const candidates = selectCrossMaterialCandidates(
+			[compiledClaim("claim:new", "发布日期为 1 月 10 日")],
+			[{ id: "concept:date", name: "发布日期", aliases: [], boundary: "日期", domain: "meta" }],
+			[compiledClaim("claim:old", "另一文档发布日期为 1 月 7 日")],
+		);
+		expect(candidates).toEqual([]);
+	});
+
 	it("shows endpoint source evidence to cross-material relation detection", async () => {
 		const provider = new RelationPromptCaptureProvider();
 		const source: Source = {
@@ -159,9 +168,9 @@ describe("bounded compiler", () => {
 			loaderVersion: "test",
 			createdAt: "2026-07-23T00:00:00.000Z",
 		};
-		const newClaim = compiledClaim("claim:new", "发布日期为 1 月 10 日");
+		const newClaim = compiledClaim("claim:new", "Northstar 发布流程要求双人审批");
 		newClaim.evidenceSpanIds = ["span:new-policy-bbb-1#chars-0-10"];
-		const oldClaim = compiledClaim("claim:old", "发布日期为 1 月 7 日");
+		const oldClaim = compiledClaim("claim:old", "旧版发布流程要求单人审批");
 		oldClaim.evidenceSpanIds = ["span:old-policy-aaa-1#chars-0-9"];
 		await compileCrossMaterialRelations(
 			temporaryConfig(),
@@ -169,7 +178,15 @@ describe("bounded compiler", () => {
 			"run:test",
 			source,
 			[newClaim],
-			[{ id: "concept:date", name: "发布日期", aliases: [], boundary: "日期", domain: "meta" }],
+			[
+				{
+					id: "concept:release",
+					name: "发布流程",
+					aliases: [],
+					boundary: "生产发布治理",
+					domain: "platform",
+				},
+			],
 			[oldClaim],
 		);
 		expect(provider.prompt).toContain("source evidence: span:new-policy-bbb-1");

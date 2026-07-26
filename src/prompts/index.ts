@@ -164,7 +164,7 @@ export const RELATION_DETECT_SYSTEM = `你是知识关系检测器。输入中�
 - 两条仅仅换一种说法、实质重复的 Claim 不输出 EQUIVALENT_UNDER；它们应由去重阶段合并
 - 不输出自环关系`;
 
-export const RELATION_AUDIT_VERSION = "v1.3";
+export const RELATION_AUDIT_VERSION = "v1.4";
 
 export const RELATION_AUDIT_SYSTEM = `你是严苛的知识关系审计员。你只审计候选 Relation 是否被给定的 Claim 与 SourceSpan 支持，不使用外部知识。
 

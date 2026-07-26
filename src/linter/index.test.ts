@@ -88,7 +88,7 @@ describe("relation and provenance gates", () => {
 		expect(result.quarantinedRelations[0]?.issues[0]?.code).toBe("RELATION_SEMANTIC_FAILED");
 	});
 
-	it("quarantines a conflict when endpoint identity is not established", async () => {
+	it("deterministically quarantines cross-source metadata before LLM relation audit", async () => {
 		const provider = new ClaimPassRelationIdentityFailProvider();
 		const claims = [
 			claim("claim:a", "文档发布日期为 1 月 7 日", "span:a"),
@@ -110,8 +110,7 @@ describe("relation and provenance gates", () => {
 		);
 		expect(result.canonicalRelations).toHaveLength(0);
 		expect(result.quarantinedRelations[0]?.issues[0]?.code).toBe("RELATION_IDENTITY_MISMATCH");
-		expect(provider.relationPrompt).toContain("source=source:document-a");
-		expect(provider.relationPrompt).toContain("source=source:document-b");
+		expect(provider.relationAuditCalls).toBe(0);
 	});
 
 	it("rejects a passed Relation audit without edge-level supporting evidence", async () => {
@@ -331,7 +330,7 @@ class ClaimPassRelationFailProvider implements LLMProvider {
 }
 
 class ClaimPassRelationIdentityFailProvider implements LLMProvider {
-	relationPrompt = "";
+	relationAuditCalls = 0;
 
 	async chat(options: ChatOptions): Promise<ChatResult> {
 		if (options.systemPrompt === SEMANTIC_AUDIT_SYSTEM) {
@@ -343,7 +342,7 @@ class ClaimPassRelationIdentityFailProvider implements LLMProvider {
 			});
 		}
 		if (options.systemPrompt === RELATION_AUDIT_SYSTEM) {
-			this.relationPrompt = options.messages.map((message) => message.content).join("\n");
+			this.relationAuditCalls++;
 			return auditChatResult({
 				verdict: "failed",
 				dimensions: Object.fromEntries(

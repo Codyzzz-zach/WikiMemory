@@ -25,6 +25,7 @@ import {
 	SEMANTIC_AUDIT_SYSTEM,
 	SEMANTIC_AUDIT_VERSION,
 } from "../prompts/index.js";
+import { isSourceMetadataClaim } from "../relations/semantics.js";
 import type {
 	AssertedRecord,
 	Claim,
@@ -677,6 +678,26 @@ export async function relationSemanticCheck(
 	provider: LLMProvider,
 	run?: CompileRunHandle,
 ): Promise<RelationSemanticCheckResult> {
+	if (
+		relation.source === "cross-material-detect" &&
+		(isSourceMetadataClaim(fromClaim.statement) || isSourceMetadataClaim(toClaim.statement))
+	) {
+		return {
+			issues: [
+				{
+					code: "RELATION_IDENTITY_MISMATCH",
+					severity: "error",
+					affectedObject: relation.id,
+					detail:
+						"跨材料 Relation 端点包含 Source 自身的发布日期、发布机构或文档编号；该信息属于 provenance 层，不进入 Claim 语义图",
+					recommendedState: "QUARANTINE",
+				},
+			],
+			evidenceSpanIds: [],
+			conditionStatus: "UNVERIFIED",
+			relationAuditVersion: null,
+		};
+	}
 	const evidenceSpans = findSpansByIds(spans, relation.evidenceSpanIds);
 	if (evidenceSpans.length === 0) {
 		return {
