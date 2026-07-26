@@ -19,6 +19,49 @@ export interface RetrievalSummary {
 	emptyContexts: number;
 }
 
+export interface ExpectedEvolutionTransition {
+	documentId: string;
+	sourceId: string;
+	targetSourceIds: string[];
+}
+
+export interface EvolutionCandidateEndpoints {
+	fromSourceId: string;
+	toSourceId: string;
+}
+
+export interface EvolutionCoverage {
+	expectedDocumentIds: string[];
+	coveredDocumentIds: string[];
+	missingDocumentIds: string[];
+}
+
+export function summarizeEvolutionCoverage(
+	timeline: "T2" | "T3",
+	expected: ExpectedEvolutionTransition[],
+	candidates: EvolutionCandidateEndpoints[],
+): EvolutionCoverage {
+	const covered = expected
+		.filter((transition) =>
+			candidates.some((candidate) =>
+				timeline === "T2"
+					? candidate.fromSourceId === transition.sourceId &&
+						transition.targetSourceIds.includes(candidate.toSourceId)
+					: candidate.fromSourceId === transition.sourceId &&
+						candidate.toSourceId === transition.sourceId,
+			),
+		)
+		.map((transition) => transition.documentId)
+		.sort();
+	const expectedDocumentIds = expected.map((item) => item.documentId).sort();
+	const coveredSet = new Set(covered);
+	return {
+		expectedDocumentIds,
+		coveredDocumentIds: covered,
+		missingDocumentIds: expectedDocumentIds.filter((id) => !coveredSet.has(id)),
+	};
+}
+
 /** Enforce a single forward-only T0→T1→T2→T3 experiment timeline. */
 export function assertTimelineTransition(
 	completedTimelines: EvolutionTimeline[],

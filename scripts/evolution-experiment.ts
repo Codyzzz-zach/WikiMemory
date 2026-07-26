@@ -17,14 +17,17 @@ import { getCompileState } from "../src/compiler/run-state.js";
 import { loadConfig } from "../src/config/index.js";
 import {
 	EVOLUTION_TIMELINES,
+	type EvolutionCoverage,
 	type EvolutionTimeline,
 	assertTimelineTransition,
+	summarizeEvolutionCoverage,
 	summarizeRetrieval,
 } from "../src/evolution/experiment.js";
 import { applyKnowledgeEvolution } from "../src/evolution/transaction.js";
 import {
 	createKnowledgeSnapshot,
 	currentKnowledgeVersion,
+	readKnowledgeSnapshot,
 } from "../src/evolution/version-store.js";
 import {
 	readAllClaims,
@@ -89,6 +92,7 @@ interface ExperimentTimelineState {
 	snapshotId: string;
 	evolutionCandidateIds: string[];
 	evolutionAppliedIds: string[];
+	evolutionCoverage: EvolutionCoverage | null;
 	missingEvolutionAccepted: boolean;
 }
 
@@ -103,6 +107,13 @@ interface ExperimentState {
 	workspace: string;
 	documents: ExperimentDocumentState[];
 	timelines: ExperimentTimelineState[];
+	parent?: {
+		runId: string;
+		timeline: EvolutionTimeline;
+		snapshotId: string;
+		repoCommit: string;
+		knowledgeVersion: string;
+	};
 }
 
 interface ExperimentConfig {
@@ -198,6 +209,132 @@ program
 	});
 
 program
+	.command("fork")
+	.description("Fork a new run from a completed parent timeline snapshot with explicit lineage")
+	.requiredOption("--from-run <id>", "Completed parent run ID")
+	.requiredOption("--timeline <timeline>", "Completed parent timeline to inherit")
+	.requiredOption("--run-id <id>", "New run ID")
+	.action((options: { fromRun: string; timeline: string; runId: string }) => {
+		assertCleanWorktree();
+		const timeline = parseTimeline(options.timeline);
+		const parentDirectory = resolveRunDirectory(options.fromRun);
+		const parentState = readJson<ExperimentState>(join(parentDirectory, "state.json"));
+		assertStateWorkspace(parentDirectory, parentState);
+		const parentTimeline = parentState.timelines.find((item) => item.timeline === timeline);
+		if (!parentTimeline) throw new Error(`父 run 未完成 ${timeline}`);
+
+		const datasetRoot = selectedDatasetRoot();
+		validateDataset(datasetRoot);
+		const manifest = readJson<DatasetManifest>(join(datasetRoot, "manifest.json"));
+		const questions = readJson<QuestionFile>(join(datasetRoot, "questions.json"));
+		const experimentConfig = readExperimentConfig();
+		const datasetHash = hashDataset(datasetRoot, manifest, questions);
+		const configHash = hashJson("config", experimentConfig);
+		if (parentState.datasetHash !== datasetHash || parentState.configHash !== configHash) {
+			throw new Error("父 run 的数据或实验配置与当前冻结输入不一致");
+		}
+
+		const runDirectory = resolveRunDirectory(options.runId);
+		if (existsSync(runDirectory)) throw new Error(`实验 run 已存在: ${runDirectory}`);
+		const workspace = join(runDirectory, "workspace");
+		initializeWorkspace(workspace, datasetRoot, manifest);
+		const parentConfig = isolatedConfig(parentState.workspace, experimentConfig);
+		const inheritedSnapshot = readKnowledgeSnapshot(parentConfig, parentTimeline.snapshotId);
+		for (const file of inheritedSnapshot.files) {
+			writeInheritedFile(workspace, file.path, file.content);
+		}
+
+		const inheritedDocuments = parentState.documents.filter(
+			(document) =>
+				EVOLUTION_TIMELINES.indexOf(document.timeline) <= EVOLUTION_TIMELINES.indexOf(timeline),
+		);
+		const inheritedSourceIds = new Set(
+			inheritedDocuments.map((document) => {
+				if (document.status !== "COMPLETED" || !document.sourceId) {
+					throw new Error(`父 run 文档 ${document.documentId} 未完整发布`);
+				}
+				return document.sourceId;
+			}),
+		);
+		for (const document of inheritedDocuments) {
+			const key = (document.sourceId as string).replace(/^source:/u, "");
+			const source = readJson<Record<string, unknown>>(
+				join(parentState.workspace, "sources", `${key}.json`),
+			);
+			source.uri = join(workspace, "corpus", document.path);
+			writeJsonAtomic(join(workspace, "sources", `${key}.json`), source);
+			copyFileSync(
+				join(parentState.workspace, "sources", `${key}.spans.jsonl`),
+				join(workspace, "sources", `${key}.spans.jsonl`),
+			);
+		}
+		copyFilteredJsonl(
+			join(parentState.workspace, "manifest.jsonl"),
+			join(workspace, "manifest.jsonl"),
+			(record) => inheritedSourceIds.has(record.sourceId as string),
+			(record) => {
+				const document = inheritedDocuments.find((item) => item.sourceId === record.sourceId);
+				return { ...record, uri: document ? join(workspace, "corpus", document.path) : record.uri };
+			},
+		);
+		copyFilteredJsonl(
+			join(parentState.workspace, "runs", "compile-state.jsonl"),
+			join(workspace, "runs", "compile-state.jsonl"),
+			(record) => inheritedSourceIds.has(record.sourceId as string),
+		);
+		for (const inheritedTimeline of parentState.timelines) {
+			if (
+				EVOLUTION_TIMELINES.indexOf(inheritedTimeline.timeline) >
+				EVOLUTION_TIMELINES.indexOf(timeline)
+			) {
+				continue;
+			}
+			mkdirSync(join(workspace, "versions"), { recursive: true });
+			copyFileSync(
+				join(parentState.workspace, "versions", `${inheritedTimeline.snapshotId}.json.gz`),
+				join(workspace, "versions", `${inheritedTimeline.snapshotId}.json.gz`),
+			);
+		}
+
+		const inheritedById = new Map(
+			inheritedDocuments.map((document) => [document.documentId, document]),
+		);
+		const state: ExperimentState = {
+			schemaVersion: "wge-evolution-experiment/v1",
+			runId: options.runId,
+			datasetId: manifest.datasetId,
+			datasetHash,
+			configHash,
+			createdAt: new Date().toISOString(),
+			repoCommit: gitCommit(),
+			workspace,
+			documents: manifest.documents.map((document) => {
+				const inherited = inheritedById.get(document.documentId);
+				return inherited ? { ...inherited } : { ...document, status: "PENDING" };
+			}),
+			timelines: parentState.timelines.filter(
+				(item) =>
+					EVOLUTION_TIMELINES.indexOf(item.timeline) <= EVOLUTION_TIMELINES.indexOf(timeline),
+			),
+			parent: {
+				runId: parentState.runId,
+				timeline,
+				snapshotId: parentTimeline.snapshotId,
+				repoCommit: parentState.repoCommit,
+				knowledgeVersion: parentTimeline.knowledgeVersion,
+			},
+		};
+		const childConfig = isolatedConfig(workspace, experimentConfig);
+		if (currentKnowledgeVersion(childConfig) !== parentTimeline.knowledgeVersion) {
+			throw new Error("fork 后知识版本与父快照不一致");
+		}
+		writeJsonAtomic(join(runDirectory, "state.json"), state);
+		writeJsonAtomic(join(runDirectory, "dataset-manifest.json"), manifest);
+		writeJsonAtomic(join(runDirectory, "questions.json"), questions);
+		console.log(JSON.stringify({ runId: state.runId, parent: state.parent, workspace }, null, 2));
+	});
+
+program
 	.command("ingest")
 	.description("Compile one exact timeline into the isolated workspace")
 	.requiredOption("--run-id <id>", "Experiment run ID")
@@ -251,16 +388,26 @@ program
 
 			const config = isolatedConfig(state.workspace, experimentConfig);
 			const candidates = findEvolutionCandidates(config, state, timeline);
+			const evolutionCoverage =
+				timeline === "T2" || timeline === "T3"
+					? coverageForTimeline(state, timeline, candidates)
+					: null;
 			let appliedIds: string[] = [];
 			let missingEvolutionAccepted = false;
 			if (timeline === "T2" || timeline === "T3") {
-				if (candidates.length === 0 && !options.acceptMissingEvolution) {
+				if (
+					(evolutionCoverage?.missingDocumentIds.length ?? 0) > 0 &&
+					!options.acceptMissingEvolution
+				) {
 					writeJsonAtomic(join(runDirectory, "timelines", timeline, "evolution-candidates.json"), {
 						timeline,
-						candidates: [],
-						status: "MISSING_REQUIRED_EVOLUTION_RELATION",
+						candidates,
+						evolutionCoverage,
+						status: "INCOMPLETE_EVOLUTION_COVERAGE",
 					});
-					throw new Error(`${timeline} 没有产出 allowlisted 演化 Relation；已记录为硬缺口`);
+					throw new Error(
+						`${timeline} 演化覆盖不完整：缺少 ${evolutionCoverage?.missingDocumentIds.join(", ")}`,
+					);
 				}
 				if (candidates.length > 0 && !options.applyAudited) {
 					writeJsonAtomic(join(runDirectory, "timelines", timeline, "evolution-candidates.json"), {
@@ -281,7 +428,8 @@ program
 					appliedIds = result.impact.triggerRelationIds;
 				}
 				missingEvolutionAccepted =
-					candidates.length === 0 && options.acceptMissingEvolution === true;
+					(evolutionCoverage?.missingDocumentIds.length ?? 0) > 0 &&
+					options.acceptMissingEvolution === true;
 			}
 			const snapshot = createKnowledgeSnapshot(config, `${state.runId} ${timeline} completed`);
 			const timelineState: ExperimentTimelineState = {
@@ -291,6 +439,7 @@ program
 				snapshotId: snapshot.id,
 				evolutionCandidateIds: candidates.map((item) => item.id),
 				evolutionAppliedIds: appliedIds,
+				evolutionCoverage,
 				missingEvolutionAccepted,
 			};
 			state.timelines.push(timelineState);
@@ -299,6 +448,7 @@ program
 				timeline,
 				candidates,
 				appliedIds,
+				evolutionCoverage,
 				missingEvolutionAccepted,
 			});
 			console.log(
@@ -404,6 +554,57 @@ function selectedDatasetRoot(): string {
 	return resolve(program.opts<{ dataset: string }>().dataset);
 }
 
+function initializeWorkspace(
+	workspace: string,
+	datasetRoot: string,
+	manifest: DatasetManifest,
+): void {
+	for (const directory of [
+		"corpus",
+		"sources",
+		"wiki",
+		"quarantine",
+		"indexes",
+		"runs",
+		"publications",
+	]) {
+		mkdirSync(join(workspace, directory), { recursive: true });
+	}
+	for (const document of manifest.documents) {
+		const source = resolveDatasetFile(datasetRoot, document.path);
+		const target = join(workspace, "corpus", document.path);
+		mkdirSync(dirname(target), { recursive: true });
+		copyFileSync(source, target);
+	}
+}
+
+function writeInheritedFile(workspace: string, relativePath: string, content: string): void {
+	const absolute = resolve(workspace, relativePath);
+	const prefix = `${resolve(workspace)}${sep}`;
+	if (!absolute.startsWith(prefix)) throw new Error(`父快照路径越界: ${relativePath}`);
+	mkdirSync(dirname(absolute), { recursive: true });
+	writeFileSync(absolute, content, { encoding: "utf-8", flag: "wx" });
+}
+
+function copyFilteredJsonl(
+	source: string,
+	target: string,
+	filter: (record: Record<string, unknown>) => boolean,
+	map: (record: Record<string, unknown>) => Record<string, unknown> = (record) => record,
+): void {
+	const records = readFileSync(source, "utf-8")
+		.split(/\r?\n/u)
+		.filter((line) => line.trim().length > 0)
+		.map((line) => JSON.parse(line) as Record<string, unknown>)
+		.filter(filter)
+		.map(map);
+	mkdirSync(dirname(target), { recursive: true });
+	writeFileSync(target, `${records.map((record) => JSON.stringify(record)).join("\n")}\n`, {
+		encoding: "utf-8",
+		flag: "wx",
+	});
+}
+
 function validateDataset(datasetRoot: string): void {
 	const result = spawnSync(
 		process.execPath,
@@ -506,8 +707,33 @@ function findEvolutionCandidates(
 			to: relation.to,
 			conditions: relation.conditions,
 			evidenceSpanIds: relation.evidenceSpanIds,
+			fromSourceId: claimOwner.get(relation.from as string) as string,
+			toSourceId: claimOwner.get(relation.to as string) as string,
 		}))
 		.sort((left, right) => left.id.localeCompare(right.id));
+}
+
+function coverageForTimeline(
+	state: ExperimentState,
+	timeline: "T2" | "T3",
+	candidates: Array<{ fromSourceId: string; toSourceId: string }>,
+): EvolutionCoverage {
+	const expected = state.documents
+		.filter((document) => document.timeline === timeline)
+		.map((document) => {
+			if (!document.sourceId) throw new Error(`${document.documentId} 缺少 sourceId`);
+			return {
+				documentId: document.documentId,
+				sourceId: document.sourceId,
+				targetSourceIds: document.targetDocumentIds.map((targetDocumentId) => {
+					const target = state.documents.find((item) => item.documentId === targetDocumentId);
+					if (!target?.sourceId)
+						throw new Error(`${document.documentId} 的目标 ${targetDocumentId} 缺少 sourceId`);
+					return target.sourceId;
+				}),
+			};
+		});
+	return summarizeEvolutionCoverage(timeline, expected, candidates);
 }
 
 function experimentPilotConfig(corpus: string[], config: ExperimentConfig): PilotConfig {

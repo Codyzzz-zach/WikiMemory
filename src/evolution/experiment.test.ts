@@ -1,5 +1,9 @@
 import { describe, expect, it } from "vitest";
-import { assertTimelineTransition, summarizeRetrieval } from "./experiment.js";
+import {
+	assertTimelineTransition,
+	summarizeEvolutionCoverage,
+	summarizeRetrieval,
+} from "./experiment.js";
 
 describe("isolated evolution experiment contracts", () => {
 	it("allows only a contiguous forward timeline", () => {
@@ -44,5 +48,28 @@ describe("isolated evolution experiment contracts", () => {
 			emptyContexts: 1,
 		});
 		expect(summary.P).toMatchObject({ recall: 1, precision: 1, emptyContexts: 0 });
+	});
+
+	it("requires evolution coverage per expected document instead of any nonzero edge count", () => {
+		const expected = [
+			{ documentId: "new-a", sourceId: "source:new-a", targetSourceIds: ["source:old-a"] },
+			{ documentId: "new-b", sourceId: "source:new-b", targetSourceIds: ["source:old-b"] },
+		];
+		expect(
+			summarizeEvolutionCoverage("T2", expected, [
+				{ fromSourceId: "source:new-a", toSourceId: "source:old-a" },
+			]),
+		).toEqual({
+			expectedDocumentIds: ["new-a", "new-b"],
+			coveredDocumentIds: ["new-a"],
+			missingDocumentIds: ["new-b"],
+		});
+		expect(
+			summarizeEvolutionCoverage(
+				"T3",
+				[{ documentId: "conflict", sourceId: "source:conflict", targetSourceIds: [] }],
+				[{ fromSourceId: "source:conflict", toSourceId: "source:conflict" }],
+			),
+		).toMatchObject({ missingDocumentIds: [] });
 	});
 });
