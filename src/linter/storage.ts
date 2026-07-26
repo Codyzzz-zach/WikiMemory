@@ -640,7 +640,7 @@ export function computeKnowledgeVersion(
 				type: relation.type,
 				conditions: [...relation.conditions].sort(),
 				conditionStatus: relation.conditionStatus,
-				supersessionEffect: relation.supersessionEffect,
+				...(relation.supersessionEffect ? { supersessionEffect: relation.supersessionEffect } : {}),
 				relationAuditVersion: relation.relationAuditVersion,
 				evidenceSpanIds: [...relation.evidenceSpanIds].sort(),
 				validity: relation.validity,
