@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+import { resolve } from "node:path";
 import { Command } from "commander";
 import { compileCrossMaterialRelations, compileSource } from "../compiler/index.js";
 import type { CompileRunHandle } from "../compiler/run-state.js";
@@ -49,7 +50,18 @@ const program = new Command();
 program
 	.name("wge")
 	.description("WGEMemory4LLM — Agent-native knowledge compilation")
-	.version("0.1.0");
+	.version("0.1.0")
+	.option(
+		"--project-root <directory>",
+		"Explicit knowledge-state root; required for isolated experiment workspaces",
+	);
+
+function loadCliConfig(): AppConfig {
+	const options = program.opts<{ projectRoot?: string }>();
+	return loadConfig(
+		options.projectRoot ? { projectRoot: resolve(options.projectRoot) } : undefined,
+	);
+}
 
 // ─── ingest 命令 ─────────────────────────────────────────────────
 
@@ -74,7 +86,7 @@ program
 				json?: boolean;
 			},
 		) => {
-			const config = loadConfig();
+			const config = loadCliConfig();
 			const skipSemantic = options.semantic === false;
 			if (!config.apiKey) {
 				throw new Error("DEEPSEEK_API_KEY not set. Copy .env.example to .env.");
@@ -376,7 +388,7 @@ relationsCommand
 	.argument("<relationId>", "Canonical rel:... ID")
 	.requiredOption("--reason <text>", "Human-readable rejection reason")
 	.action((relationId: string, options: { reason: string }) => {
-		const config = loadConfig();
+		const config = loadCliConfig();
 		quarantineCanonicalRelation(config, relationId, options.reason);
 		console.log(`✅ Relation quarantined: ${relationId}`);
 	});
@@ -386,7 +398,7 @@ relationsCommand
 	.argument("[sourceId]", "Optional source:... ID; defaults to every published Source")
 	.option("--json", "Output JSON result")
 	.action(async (sourceId: string | undefined, options: { json?: boolean }) => {
-		const config = loadConfig();
+		const config = loadCliConfig();
 		if (!config.apiKey) throw new Error("DEEPSEEK_API_KEY not set. Copy .env.example to .env.");
 		const provider = createLLMProvider(config);
 		const sources = readAllSources(config);
@@ -438,7 +450,7 @@ versionsCommand
 	.description("Create a verifiable snapshot of all mutable derived knowledge")
 	.argument("[label]", "Human-readable snapshot label", "manual snapshot")
 	.action((label: string) => {
-		const snapshot = createKnowledgeSnapshot(loadConfig(), label);
+		const snapshot = createKnowledgeSnapshot(loadCliConfig(), label);
 		console.log(
 			JSON.stringify(
 				{
@@ -462,7 +474,7 @@ versionsCommand
 		"Current kv:... observed by the caller; prevents overwriting concurrent changes",
 	)
 	.action((snapshotId: string, options: { expectCurrent: string }) => {
-		const config = loadConfig();
+		const config = loadCliConfig();
 		const restored = restoreKnowledgeSnapshot(config, snapshotId, options.expectCurrent);
 		console.log(
 			JSON.stringify(
@@ -491,7 +503,7 @@ evolutionCommand
 		"Current kv:... observed by the caller; prevents overwriting concurrent changes",
 	)
 	.action((relationIds: string[], options: { expectCurrent: string }) => {
-		const result = applyKnowledgeEvolution(loadConfig(), relationIds, options.expectCurrent);
+		const result = applyKnowledgeEvolution(loadCliConfig(), relationIds, options.expectCurrent);
 		console.log(JSON.stringify(result, null, 2));
 	});
 
@@ -511,7 +523,7 @@ program
 			task: string,
 			options: { budget: string; depth: string; json?: boolean; user?: string; project?: string },
 		) => {
-			const config = loadConfig();
+			const config = loadCliConfig();
 			const scopeContext = options.user
 				? { principalId: options.user, projectId: options.project }
 				: undefined;
@@ -565,7 +577,7 @@ program
 	.command("status")
 	.description("Show knowledge state summary")
 	.action(() => {
-		const config = loadConfig();
+		const config = loadCliConfig();
 		const claims = readAllClaims(config);
 		const quarantinedClaims = readAllClaimsQuarantined(config);
 		const relations = readAllRelations(config);

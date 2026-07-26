@@ -1,0 +1,661 @@
+#!/usr/bin/env node
+
+import { spawnSync } from "node:child_process";
+import { createHash } from "node:crypto";
+import {
+	copyFileSync,
+	existsSync,
+	mkdirSync,
+	readFileSync,
+	renameSync,
+	writeFileSync,
+} from "node:fs";
+import { dirname, join, relative, resolve, sep } from "node:path";
+import { fileURLToPath } from "node:url";
+import { Command } from "commander";
+import { getCompileState } from "../src/compiler/run-state.js";
+import { loadConfig } from "../src/config/index.js";
+import {
+	EVOLUTION_TIMELINES,
+	type EvolutionTimeline,
+	assertTimelineTransition,
+	summarizeRetrieval,
+} from "../src/evolution/experiment.js";
+import { applyKnowledgeEvolution } from "../src/evolution/transaction.js";
+import {
+	createKnowledgeSnapshot,
+	currentKnowledgeVersion,
+} from "../src/evolution/version-store.js";
+import {
+	readAllClaims,
+	readAllConcepts,
+	readAllRelations,
+	readAllSources,
+	readAllWikiModules,
+	readSourcePublications,
+} from "../src/linter/storage.js";
+import { type PilotConfig, type PilotGroup, preparePilotContext } from "../src/pilot/index.js";
+import { RELATION_AUDIT_VERSION } from "../src/prompts/index.js";
+
+interface DatasetDocument {
+	documentId: string;
+	path: string;
+	domain: string;
+	timeline: EvolutionTimeline;
+	changeKind: "BASELINE" | "ADDITION" | "SUPERSESSION" | "UNRESOLVED_CONFLICT";
+	targetDocumentIds: string[];
+}
+
+interface DatasetManifest {
+	schemaVersion: "wge-evolution-manifest/v1";
+	datasetId: string;
+	documents: DatasetDocument[];
+}
+
+interface TimelineGold {
+	answerability: "ANSWERABLE" | "INSUFFICIENT" | "DISPUTED";
+	expectedAnswer: string;
+	requiredFacts: string[];
+	requiredConditions: string[];
+	forbiddenFacts: string[];
+	sourceDocumentIds: string[];
+}
+
+interface DatasetQuestion {
+	id: string;
+	domain: string;
+	category: string;
+	question: string;
+	goldByTimeline: Record<EvolutionTimeline, TimelineGold>;
+}
+
+interface QuestionFile {
+	schemaVersion: "wge-evolution-questions/v1";
+	datasetId: string;
+	questions: DatasetQuestion[];
+}
+
+interface ExperimentDocumentState extends DatasetDocument {
+	status: "PENDING" | "RUNNING" | "COMPLETED" | "FAILED";
+	sourceId?: string;
+	compileRunId?: string;
+	error?: string;
+}
+
+interface ExperimentTimelineState {
+	timeline: EvolutionTimeline;
+	completedAt: string;
+	knowledgeVersion: string;
+	snapshotId: string;
+	evolutionCandidateIds: string[];
+	evolutionAppliedIds: string[];
+	missingEvolutionAccepted: boolean;
+}
+
+interface ExperimentState {
+	schemaVersion: "wge-evolution-experiment/v1";
+	runId: string;
+	datasetId: string;
+	datasetHash: string;
+	configHash: string;
+	createdAt: string;
+	repoCommit: string;
+	workspace: string;
+	documents: ExperimentDocumentState[];
+	timelines: ExperimentTimelineState[];
+}
+
+interface ExperimentConfig {
+	schemaVersion: "wge-evolution-experiment-config/v1";
+	status: "LOCKED";
+	compiler: PilotConfig["compiler"];
+	answer: PilotConfig["answer"];
+	judge: PilotConfig["judge"];
+	retrieval: PilotConfig["retrieval"];
+	execution: PilotConfig["execution"];
+}
+
+interface IngestOutput {
+	runId?: string;
+	source?: string;
+	compileState?: string;
+}
+
+const scriptDirectory = dirname(fileURLToPath(import.meta.url));
+const repositoryRoot = resolve(scriptDirectory, "..");
+const defaultDatasetRoot = join(repositoryRoot, "experiments", "evolution", "dataset-v1");
+const experimentConfigPath = join(repositoryRoot, "experiments", "evolution", "config.json");
+const experimentRunsRoot = join(repositoryRoot, "experiments", "evolution", "runs");
+const groups: PilotGroup[] = ["B", "P", "E-min"];
+
+const program = new Command();
+program
+	.name("evolution-experiment")
+	.description("Isolated T0→T1→T2→T3 evolution experiment runner")
+	.option("--dataset <directory>", "Dataset root", defaultDatasetRoot);
+
+program
+	.command("init")
+	.description("Create a clean isolated workspace and copy the frozen corpus")
+	.option("--run-id <id>", "Stable run ID; generated when omitted")
+	.action((options: { runId?: string }) => {
+		assertCleanWorktree();
+		const datasetRoot = selectedDatasetRoot();
+		validateDataset(datasetRoot);
+		const manifest = readJson<DatasetManifest>(join(datasetRoot, "manifest.json"));
+		const questions = readJson<QuestionFile>(join(datasetRoot, "questions.json"));
+		const experimentConfig = readExperimentConfig();
+		if (manifest.datasetId !== questions.datasetId) throw new Error("datasetId 不一致");
+		const runId = options.runId ?? `evolution-${new Date().toISOString().replaceAll(/[:.]/g, "-")}`;
+		const runDirectory = resolveRunDirectory(runId);
+		if (existsSync(runDirectory)) throw new Error(`实验 run 已存在: ${runDirectory}`);
+		const workspace = join(runDirectory, "workspace");
+		for (const directory of [
+			"corpus",
+			"sources",
+			"wiki",
+			"quarantine",
+			"indexes",
+			"runs",
+			"publications",
+		]) {
+			mkdirSync(join(workspace, directory), { recursive: true });
+		}
+		for (const document of manifest.documents) {
+			const source = resolveDatasetFile(datasetRoot, document.path);
+			const target = join(workspace, "corpus", document.path);
+			mkdirSync(dirname(target), { recursive: true });
+			copyFileSync(source, target);
+		}
+		const state: ExperimentState = {
+			schemaVersion: "wge-evolution-experiment/v1",
+			runId,
+			datasetId: manifest.datasetId,
+			datasetHash: hashDataset(datasetRoot, manifest, questions),
+			configHash: hashJson("config", experimentConfig),
+			createdAt: new Date().toISOString(),
+			repoCommit: gitCommit(),
+			workspace,
+			documents: manifest.documents.map((document) => ({ ...document, status: "PENDING" })),
+			timelines: [],
+		};
+		writeJsonAtomic(join(runDirectory, "state.json"), state);
+		writeJsonAtomic(join(runDirectory, "dataset-manifest.json"), manifest);
+		writeJsonAtomic(join(runDirectory, "questions.json"), questions);
+		console.log(
+			JSON.stringify(
+				{
+					runId,
+					runDirectory,
+					workspace,
+					datasetHash: state.datasetHash,
+					configHash: state.configHash,
+				},
+				null,
+				2,
+			),
+		);
+	});
+
+program
+	.command("ingest")
+	.description("Compile one exact timeline into the isolated workspace")
+	.requiredOption("--run-id <id>", "Experiment run ID")
+	.requiredOption("--timeline <timeline>", "T0, T1, T2, or T3")
+	.option("--apply-audited", "Apply allowlisted audited SUPERSEDES/CONTRADICTS candidates")
+	.option(
+		"--accept-missing-evolution",
+		"Finalize T2/T3 even when no allowlisted evolution relation was produced; records a hard gap",
+	)
+	.action(
+		(options: {
+			runId: string;
+			timeline: string;
+			applyAudited?: boolean;
+			acceptMissingEvolution?: boolean;
+		}) => {
+			const timeline = parseTimeline(options.timeline);
+			const runDirectory = resolveRunDirectory(options.runId);
+			const statePath = join(runDirectory, "state.json");
+			const state = readJson<ExperimentState>(statePath);
+			assertFrozenCode(state);
+			const experimentConfig = assertExperimentConfig(state);
+			assertStateWorkspace(runDirectory, state);
+			assertTimelineTransition(
+				state.timelines.map((item) => item.timeline),
+				timeline,
+			);
+			const timelineDocuments = state.documents.filter((item) => item.timeline === timeline);
+			for (const document of timelineDocuments) {
+				if (document.status === "COMPLETED") continue;
+				document.status = "RUNNING";
+				document.error = undefined;
+				writeJsonAtomic(statePath, state);
+				try {
+					const output = ingestDocument(state.workspace, document.path, experimentConfig.compiler);
+					document.status = "COMPLETED";
+					document.sourceId = output.source;
+					document.compileRunId = output.runId;
+					writeJsonAtomic(statePath, state);
+					console.error(`completed ${timeline} ${document.documentId}`);
+				} catch (error) {
+					document.status = "FAILED";
+					document.error = error instanceof Error ? error.message : String(error);
+					writeJsonAtomic(statePath, state);
+					throw error;
+				}
+			}
+			if (timelineDocuments.some((item) => item.status !== "COMPLETED")) {
+				throw new Error(`${timeline} 尚有未完成文档`);
+			}
+
+			const config = isolatedConfig(state.workspace, experimentConfig);
+			const candidates = findEvolutionCandidates(config, state, timeline);
+			let appliedIds: string[] = [];
+			let missingEvolutionAccepted = false;
+			if (timeline === "T2" || timeline === "T3") {
+				if (candidates.length === 0 && !options.acceptMissingEvolution) {
+					writeJsonAtomic(join(runDirectory, "timelines", timeline, "evolution-candidates.json"), {
+						timeline,
+						candidates: [],
+						status: "MISSING_REQUIRED_EVOLUTION_RELATION",
+					});
+					throw new Error(`${timeline} 没有产出 allowlisted 演化 Relation；已记录为硬缺口`);
+				}
+				if (candidates.length > 0 && !options.applyAudited) {
+					writeJsonAtomic(join(runDirectory, "timelines", timeline, "evolution-candidates.json"), {
+						timeline,
+						candidates,
+						status: "AWAITING_EXPLICIT_APPLY",
+					});
+					throw new Error(
+						`${timeline} 有 ${candidates.length} 条候选；需 --apply-audited 明确应用`,
+					);
+				}
+				if (candidates.length > 0) {
+					const result = applyKnowledgeEvolution(
+						config,
+						candidates.map((item) => item.id),
+						currentKnowledgeVersion(config),
+					);
+					appliedIds = result.impact.triggerRelationIds;
+				}
+				missingEvolutionAccepted =
+					candidates.length === 0 && options.acceptMissingEvolution === true;
+			}
+			const snapshot = createKnowledgeSnapshot(config, `${state.runId} ${timeline} completed`);
+			const timelineState: ExperimentTimelineState = {
+				timeline,
+				completedAt: new Date().toISOString(),
+				knowledgeVersion: currentKnowledgeVersion(config),
+				snapshotId: snapshot.id,
+				evolutionCandidateIds: candidates.map((item) => item.id),
+				evolutionAppliedIds: appliedIds,
+				missingEvolutionAccepted,
+			};
+			state.timelines.push(timelineState);
+			writeJsonAtomic(statePath, state);
+			writeJsonAtomic(join(runDirectory, "timelines", timeline, "evolution-candidates.json"), {
+				timeline,
+				candidates,
+				appliedIds,
+				missingEvolutionAccepted,
+			});
+			console.log(
+				JSON.stringify({ ...timelineState, knowledge: knowledgeSummary(config) }, null, 2),
+			);
+		},
+	);
+
+program
+	.command("prepare")
+	.description(
+		"Prepare B/P/E-min contexts and document-level retrieval metrics for the latest timeline",
+	)
+	.requiredOption("--run-id <id>", "Experiment run ID")
+	.requiredOption("--timeline <timeline>", "Completed timeline to inspect")
+	.action((options: { runId: string; timeline: string }) => {
+		const timeline = parseTimeline(options.timeline);
+		const runDirectory = resolveRunDirectory(options.runId);
+		const state = readJson<ExperimentState>(join(runDirectory, "state.json"));
+		assertFrozenCode(state);
+		const experimentConfig = assertExperimentConfig(state);
+		assertStateWorkspace(runDirectory, state);
+		const latest = state.timelines.at(-1)?.timeline;
+		if (latest !== timeline) {
+			throw new Error(`只能为当前 workspace 最新 timeline=${latest ?? "<none>"} 生成上下文`);
+		}
+		const questions = readJson<QuestionFile>(join(runDirectory, "questions.json"));
+		const activeDocuments = state.documents.filter(
+			(item) => EVOLUTION_TIMELINES.indexOf(item.timeline) <= EVOLUTION_TIMELINES.indexOf(timeline),
+		);
+		const sourceToDocument = new Map(
+			activeDocuments
+				.filter((item) => item.sourceId)
+				.map((item) => [item.sourceId as string, item.documentId]),
+		);
+		const pathToDocument = new Map(
+			activeDocuments.map((item) => [`corpus/${item.path}`, item.documentId]),
+		);
+		const config = isolatedConfig(state.workspace, experimentConfig);
+		const pilotConfig = experimentPilotConfig(
+			activeDocuments.map((item) => `corpus/${item.path}`),
+			experimentConfig,
+		);
+		const observations = [];
+		for (const question of questions.questions) {
+			for (const group of groups) {
+				const prepared = preparePilotContext(
+					config,
+					pilotConfig,
+					{ id: question.id, question: question.question },
+					group,
+				);
+				const retrievedDocumentIds = [
+					...new Set(
+						prepared.retrievedSources
+							.map((source) =>
+								group === "B" ? pathToDocument.get(source) : sourceToDocument.get(source),
+							)
+							.filter((id): id is string => id !== undefined),
+					),
+				].sort();
+				const gold = question.goldByTimeline[timeline];
+				const record = {
+					...prepared,
+					timeline,
+					category: question.category,
+					expectedDocumentIds: gold.sourceDocumentIds,
+					retrievedDocumentIds,
+					answerability: gold.answerability,
+					contextEmpty: prepared.context.trim().length === 0,
+				};
+				writeJsonAtomic(
+					join(runDirectory, "timelines", timeline, "contexts", `${question.id}--${group}.json`),
+					record,
+				);
+				observations.push({
+					questionId: question.id,
+					group,
+					expectedDocumentIds: gold.sourceDocumentIds,
+					retrievedDocumentIds,
+					contextEmpty: record.contextEmpty,
+				});
+			}
+		}
+		const report = {
+			runId: state.runId,
+			timeline,
+			knowledgeVersion: currentKnowledgeVersion(config),
+			knowledge: knowledgeSummary(config),
+			retrieval: summarizeRetrieval(observations),
+			generatedAt: new Date().toISOString(),
+		};
+		writeJsonAtomic(join(runDirectory, "timelines", timeline, "retrieval-report.json"), report);
+		console.log(JSON.stringify(report, null, 2));
+	});
+
+program.parseAsync(process.argv).catch((error: unknown) => {
+	console.error(`❌ ${error instanceof Error ? error.message : String(error)}`);
+	process.exitCode = 1;
+});
+
+function selectedDatasetRoot(): string {
+	return resolve(program.opts<{ dataset: string }>().dataset);
+}
+
+function validateDataset(datasetRoot: string): void {
+	const result = spawnSync(
+		process.execPath,
+		[
+			"--import",
+			"tsx",
+			join(repositoryRoot, "scripts", "validate-evolution-dataset.ts"),
+			datasetRoot,
+		],
+		{ cwd: repositoryRoot, encoding: "utf-8", maxBuffer: 16 * 1024 * 1024 },
+	);
+	if (result.status !== 0) {
+		throw new Error(`数据集验证失败\n${result.stdout}\n${result.stderr}`);
+	}
+}
+
+function ingestDocument(
+	workspace: string,
+	documentPath: string,
+	compiler: ExperimentConfig["compiler"],
+): IngestOutput {
+	const absoluteDocument = join(workspace, "corpus", documentPath);
+	const result = spawnSync(
+		process.execPath,
+		[
+			"--import",
+			"tsx",
+			join(repositoryRoot, "src", "cli", "index.ts"),
+			"--project-root",
+			workspace,
+			"ingest",
+			absoluteDocument,
+			"--json",
+		],
+		{
+			cwd: repositoryRoot,
+			encoding: "utf-8",
+			env: {
+				...process.env,
+				WGE_MODEL: compiler.model,
+				WGE_TEMPERATURE: String(compiler.temperature),
+			},
+			maxBuffer: 64 * 1024 * 1024,
+			timeout: 45 * 60 * 1000,
+		},
+	);
+	if (result.status !== 0) {
+		throw new Error(`摄入失败: ${documentPath}\n${result.stderr}\n${result.stdout}`);
+	}
+	const output = JSON.parse(result.stdout.trim()) as IngestOutput;
+	if (output.compileState !== "COMPLETED" || !output.source || !output.runId) {
+		throw new Error(`摄入未完成: ${documentPath} -> ${result.stdout}`);
+	}
+	return output;
+}
+
+function findEvolutionCandidates(
+	config: ReturnType<typeof isolatedConfig>,
+	state: ExperimentState,
+	timeline: EvolutionTimeline,
+) {
+	if (timeline === "T0" || timeline === "T1") return [];
+	const publications = readSourcePublications(config);
+	const claimOwner = new Map<string, string>();
+	for (const publication of publications) {
+		for (const claim of publication.claims) claimOwner.set(claim.id, publication.sourceId);
+	}
+	const documents = state.documents.filter((item) => item.timeline === timeline);
+	const sourceIds = new Set(documents.map((item) => item.sourceId).filter(Boolean) as string[]);
+	const targetSourceIds = new Set(
+		documents
+			.flatMap((item) => item.targetDocumentIds)
+			.map((id) => state.documents.find((item) => item.documentId === id)?.sourceId)
+			.filter(Boolean) as string[],
+	);
+	return readAllRelations(config)
+		.filter(
+			(relation) =>
+				relation.publicationState === "CANONICAL" &&
+				relation.lifecycle === "ACTIVE" &&
+				relation.validity === "SUPPORTED" &&
+				relation.conditionStatus !== "UNVERIFIED" &&
+				relation.relationAuditVersion === RELATION_AUDIT_VERSION,
+		)
+		.filter((relation) => {
+			const fromOwner = claimOwner.get(relation.from as string);
+			const toOwner = claimOwner.get(relation.to as string);
+			if (!fromOwner || !toOwner) return false;
+			if (timeline === "T2") {
+				return (
+					relation.type === "SUPERSEDES" && sourceIds.has(fromOwner) && targetSourceIds.has(toOwner)
+				);
+			}
+			return relation.type === "CONTRADICTS" && sourceIds.has(fromOwner) && sourceIds.has(toOwner);
+		})
+		.map((relation) => ({
+			id: relation.id,
+			type: relation.type,
+			from: relation.from,
+			to: relation.to,
+			conditions: relation.conditions,
+			evidenceSpanIds: relation.evidenceSpanIds,
+		}))
+		.sort((left, right) => left.id.localeCompare(right.id));
+}
+
+function experimentPilotConfig(corpus: string[], config: ExperimentConfig): PilotConfig {
+	return {
+		schemaVersion: "wge-pilot-config/v1",
+		status: "LOCKED",
+		corpus,
+		compiler: config.compiler,
+		answer: config.answer,
+		judge: config.judge,
+		retrieval: config.retrieval,
+		execution: config.execution,
+	};
+}
+
+function isolatedConfig(workspace: string, config: ExperimentConfig) {
+	return loadConfig({
+		projectRoot: workspace,
+		model: config.compiler.model,
+		temperature: config.compiler.temperature,
+	});
+}
+
+function knowledgeSummary(config: ReturnType<typeof isolatedConfig>) {
+	const sources = readAllSources(config);
+	return {
+		sources: sources.length,
+		completedSources: sources.filter((source) => getCompileState(config, source.id) === "COMPLETED")
+			.length,
+		claims: readAllClaims(config).length,
+		concepts: readAllConcepts(config).length,
+		relations: readAllRelations(config).length,
+		wikiModules: readAllWikiModules(config).length,
+	};
+}
+
+function parseTimeline(value: string): EvolutionTimeline {
+	if (!EVOLUTION_TIMELINES.includes(value as EvolutionTimeline)) {
+		throw new Error(`非法 timeline: ${value}`);
+	}
+	return value as EvolutionTimeline;
+}
+
+function resolveRunDirectory(runId: string): string {
+	if (!/^[a-zA-Z0-9._-]+$/.test(runId)) throw new Error(`非法 runId: ${runId}`);
+	const path = resolve(experimentRunsRoot, runId);
+	const prefix = `${resolve(experimentRunsRoot)}${sep}`;
+	if (!path.startsWith(prefix)) throw new Error(`runId 路径越界: ${runId}`);
+	return path;
+}
+
+function assertStateWorkspace(runDirectory: string, state: ExperimentState): void {
+	const expected = resolve(runDirectory, "workspace");
+	if (resolve(state.workspace) !== expected) throw new Error("实验 state workspace 路径不匹配");
+	if (resolve(state.workspace) === repositoryRoot) throw new Error("拒绝在主知识库运行演化实验");
+}
+
+function resolveDatasetFile(datasetRoot: string, path: string): string {
+	const absolute = resolve(datasetRoot, path);
+	const prefix = `${resolve(datasetRoot)}${sep}`;
+	if (!absolute.startsWith(prefix) || relative(datasetRoot, absolute).startsWith("..")) {
+		throw new Error(`数据路径越界: ${path}`);
+	}
+	if (!existsSync(absolute)) throw new Error(`找不到数据文档: ${path}`);
+	return absolute;
+}
+
+function hashDataset(
+	datasetRoot: string,
+	manifest: DatasetManifest,
+	questions: QuestionFile,
+): string {
+	const hash = createHash("sha256");
+	hash.update(JSON.stringify(manifest));
+	hash.update(JSON.stringify(questions));
+	for (const document of [...manifest.documents].sort((a, b) => a.path.localeCompare(b.path))) {
+		hash.update(document.path);
+		hash.update(readFileSync(resolveDatasetFile(datasetRoot, document.path)));
+	}
+	return `dataset:${hash.digest("hex").slice(0, 24)}`;
+}
+
+function readExperimentConfig(): ExperimentConfig {
+	const config = readJson<ExperimentConfig>(experimentConfigPath);
+	if (config.schemaVersion !== "wge-evolution-experiment-config/v1" || config.status !== "LOCKED") {
+		throw new Error("演化实验配置必须是 LOCKED 的 wge-evolution-experiment-config/v1");
+	}
+	if (config.compiler.temperature !== 0)
+		throw new Error("演化实验 compiler temperature 必须锁定为 0");
+	if (config.execution.externalRetrievalNetwork !== false) {
+		throw new Error("演化实验禁止外部检索网络");
+	}
+	if (JSON.stringify(config.execution.groups) !== JSON.stringify(groups)) {
+		throw new Error("演化实验组必须严格为 B/P/E-min");
+	}
+	return config;
+}
+
+function assertExperimentConfig(state: ExperimentState): ExperimentConfig {
+	const config = readExperimentConfig();
+	const currentHash = hashJson("config", config);
+	if (state.configHash !== currentHash) {
+		throw new Error(`实验配置已漂移: state=${state.configHash}, current=${currentHash}`);
+	}
+	return config;
+}
+
+function hashJson(prefix: string, value: unknown): string {
+	const digest = createHash("sha256").update(JSON.stringify(value)).digest("hex").slice(0, 24);
+	return `${prefix}:${digest}`;
+}
+
+function gitCommit(): string {
+	const result = spawnSync("git", ["rev-parse", "HEAD"], {
+		cwd: repositoryRoot,
+		encoding: "utf-8",
+	});
+	if (result.status !== 0) throw new Error("无法读取 Git commit");
+	return result.stdout.trim();
+}
+
+function assertCleanWorktree(): void {
+	const result = spawnSync("git", ["status", "--porcelain"], {
+		cwd: repositoryRoot,
+		encoding: "utf-8",
+	});
+	if (result.status !== 0) throw new Error("无法检查 Git worktree");
+	if (result.stdout.trim().length > 0) {
+		throw new Error("初始化实验前必须提交或清理所有 Git 变更，以冻结可复现代码版本");
+	}
+}
+
+function assertFrozenCode(state: ExperimentState): void {
+	assertCleanWorktree();
+	const current = gitCommit();
+	if (state.repoCommit !== current) {
+		throw new Error(`实验代码版本已漂移: state=${state.repoCommit}, current=${current}`);
+	}
+}
+
+function readJson<T>(path: string): T {
+	if (!existsSync(path)) throw new Error(`找不到文件: ${path}`);
+	return JSON.parse(readFileSync(path, "utf-8")) as T;
+}
+
+function writeJsonAtomic(path: string, value: unknown): void {
+	mkdirSync(dirname(path), { recursive: true });
+	const temporary = `${path}.tmp-${process.pid}-${Date.now()}`;
+	writeFileSync(temporary, JSON.stringify(value, null, 2), { encoding: "utf-8", flag: "wx" });
+	renameSync(temporary, path);
+}

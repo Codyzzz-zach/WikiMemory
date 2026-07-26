@@ -155,6 +155,7 @@ export type DimensionVerdict = z.infer<typeof DimensionVerdictSchema>;
 // ─── Relation 语义审计输出 ──────────────────────────────────────
 
 export const RelationAuditDimensionNameSchema = z.enum([
+	"identity",
 	"relation",
 	"type",
 	"direction",
@@ -165,6 +166,7 @@ export type RelationAuditDimensionName = z.infer<typeof RelationAuditDimensionNa
 export const RelationSemanticVerdictSchema = z.object({
 	verdict: z.enum(["passed", "failed"]),
 	dimensions: z.object({
+		identity: DimensionVerdictSchema,
 		relation: DimensionVerdictSchema,
 		type: DimensionVerdictSchema,
 		direction: DimensionVerdictSchema,

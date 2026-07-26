@@ -73,6 +73,7 @@ export type IssueCode =
 	| "RELATION_EQUIVALENCE_REVIEW_REQUIRED"
 	| "HUMAN_REVIEW_REJECTED"
 	| "RELATION_SEMANTIC_FAILED"
+	| "RELATION_IDENTITY_MISMATCH"
 	| "RELATION_TYPE_MISMATCH"
 	| "RELATION_DIRECTION_MISMATCH"
 	| "RELATION_CONDITIONS_MISSING"
@@ -702,7 +703,7 @@ export async function relationSemanticCheck(
 				...(fromEvidenceIds.has(span.id) ? ["FROM"] : []),
 				...(toEvidenceIds.has(span.id) ? ["TO"] : []),
 			];
-			return `[证据 ${index}][roles=${roles.join(",") || "RELATION"}][block=${span.blockId}][span=${span.id}]\n${span.text}`;
+			return `[证据 ${index}][roles=${roles.join(",") || "RELATION"}][source=${span.sourceId}][block=${span.blockId}][span=${span.id}]\n${span.text}`;
 		})
 		.join("\n\n");
 	const prompt = `请审计以下候选 Relation。
@@ -814,6 +815,7 @@ ${evidenceText}
 	}
 
 	const issueCodes: Record<RelationAuditDimensionName, IssueCode> = {
+		identity: "RELATION_IDENTITY_MISMATCH",
 		relation: "RELATION_SEMANTIC_FAILED",
 		type: "RELATION_TYPE_MISMATCH",
 		direction: "RELATION_DIRECTION_MISMATCH",
@@ -862,6 +864,7 @@ ${evidenceText}
 }
 
 const RELATION_AUDIT_DIMENSIONS: RelationAuditDimensionName[] = [
+	"identity",
 	"relation",
 	"type",
 	"direction",

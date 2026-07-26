@@ -1145,7 +1145,10 @@ function renderProposition(item: IndexedProposition): string {
 }
 
 function renderClaim(item: IndexedClaim): string {
-	return `[claim ${item.index}] ${item.claim.statement}\nconditions: ${
+	const sourceIds = [
+		...new Set(item.claim.evidenceSpanIds.map((spanId) => spanId.split("#chars-")[0] ?? spanId)),
+	];
+	return `[claim ${item.index}] ${item.claim.statement}\nsource evidence: ${sourceIds.join(", ") || "无"}\nconditions: ${
 		item.claim.conditions.join("; ") || "无"
 	}`;
 }

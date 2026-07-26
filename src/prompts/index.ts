@@ -153,6 +153,9 @@ export const RELATION_DETECT_SYSTEM = `你是知识关系检测器。输入中�
 # 硬约束
 - 索引必须逐字使用输入中方括号里的全局 Claim 索引
 - 不确定时不输出关系
+- 强关系必须先证明两个端点在谈同一语义对象、同一规则槽位或明确的上下游对象；属性名相同不等于主语相同
+- 不同文档各自的发布日期、发布机构、文件编号、作者等元数据值不同，不构成 CONTRADICTS、SUPERSEDES、EQUIVALENT_UNDER 或 RELATED_TO
+- 不得把“同一文件”“同一对象”等作为臆造条件来补足共同主语；输入证据没有建立共指时，不输出关系
 - RELATED_TO 仅用于导航，不能冒充推理依据
 - conditions 必须保留两个端点 Claim 的适用条件以及关系自身成立的额外前提
 - EQUIVALENT_UNDER 只表示两个 Claim 在相同对象域、相同适用范围内具有相同真值条件，且证据支持双向推出；conditions 不能为空
@@ -161,11 +164,12 @@ export const RELATION_DETECT_SYSTEM = `你是知识关系检测器。输入中�
 - 两条仅仅换一种说法、实质重复的 Claim 不输出 EQUIVALENT_UNDER；它们应由去重阶段合并
 - 不输出自环关系`;
 
-export const RELATION_AUDIT_VERSION = "v1.2";
+export const RELATION_AUDIT_VERSION = "v1.3";
 
 export const RELATION_AUDIT_SYSTEM = `你是严苛的知识关系审计员。你只审计候选 Relation 是否被给定的 Claim 与 SourceSpan 支持，不使用外部知识。
 
 # 审计维度
+- identity：两端是否在谈同一语义对象、同一规则槽位，或证据明确建立的上下游对象；仅属性名相同、值不同，不能证明共同主语
 - relation：证据是否真的表达或严格支撑两个端点之间存在这条关系；两个端点分别为真或共享术语不等于关系成立
 - type：关系类型是否准确，不能把弱相关写成 SUPPORTS/REQUIRES/DERIVED_FROM；共享概念、直觉类比、一般定义与具体实例不能判为 EQUIVALENT_UNDER
 - direction：from/to 顺序是否符合该关系类型
@@ -177,10 +181,17 @@ export const RELATION_AUDIT_SYSTEM = `你是严苛的知识关系审计员。你
 - conditions 只是“概念相同”“定义相同”或改写关系结论时，conditions 必须 fail
 - 无法从证据分别说明 A→B 与 B→A 时，从严判 type=fail 或 relation=fail
 
+# 共指与元数据专项门禁
+- CONTRADICTS、SUPERSEDES、EQUIVALENT_UNDER 必须先通过 identity；若两端分别描述不同文档、不同政策、不同实验或不同主体，identity 必须 fail
+- 两篇不同文档的发布日期、发布机构、文件编号、作者等值不一致，只表示对象不同，不表示事实冲突
+- conditions 写了“同一文件”“同一对象”不能代替证据；证据未建立共指时 identity 必须 fail
+- RELATED_TO 也需要实质语义关联；仅同为“发布日期”或“文件编号”不构成导航价值
+
 # 输出格式（严格 JSON）
 {
   "verdict": "passed | failed",
   "dimensions": {
+    "identity": { "result": "pass | fail", "evidenceSpanIndexes": [0] },
     "relation": { "result": "pass | fail", "evidenceSpanIndexes": [0] },
     "type": { "result": "pass | fail", "evidenceSpanIndexes": [0] },
     "direction": { "result": "pass | fail", "evidenceSpanIndexes": [0] },

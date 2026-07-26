@@ -4,6 +4,7 @@ import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import type { AppConfig } from "../config/types.js";
 import type { SourcePublication, SourceQuarantinePublication } from "../linter/storage.js";
+import { RELATION_AUDIT_VERSION } from "../prompts/index.js";
 import type { Claim, Relation, Source, SourceSpan } from "../types/index.js";
 import { evaluatePublicationGate } from "./index.js";
 
@@ -131,7 +132,7 @@ function relation(from: string, to: string): Relation {
 		type: "SUPPORTS",
 		conditions: [],
 		conditionStatus: "EXPLICIT_NONE",
-		relationAuditVersion: "v1.2",
+		relationAuditVersion: RELATION_AUDIT_VERSION,
 		evidenceSpanIds: ["span:test"],
 		derivation: "INFERRED",
 		validity: "SUPPORTED",

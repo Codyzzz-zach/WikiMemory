@@ -88,6 +88,32 @@ describe("relation and provenance gates", () => {
 		expect(result.quarantinedRelations[0]?.issues[0]?.code).toBe("RELATION_SEMANTIC_FAILED");
 	});
 
+	it("quarantines a conflict when endpoint identity is not established", async () => {
+		const provider = new ClaimPassRelationIdentityFailProvider();
+		const claims = [
+			claim("claim:a", "文档发布日期为 1 月 7 日", "span:a"),
+			claim("claim:b", "另一文档发布日期为 1 月 10 日", "span:b"),
+		];
+		const candidate = relation(claims[0] as Claim, claims[1] as Claim);
+		candidate.type = "CONTRADICTS";
+		candidate.source = "cross-material-detect";
+		const result = await lintCompileResult(
+			temporaryConfig(),
+			claims,
+			[candidate],
+			[],
+			[
+				span("span:a", "发布日期为 1 月 7 日。", "source:document-a"),
+				span("span:b", "发布日期为 1 月 10 日。", "source:document-b"),
+			],
+			provider,
+		);
+		expect(result.canonicalRelations).toHaveLength(0);
+		expect(result.quarantinedRelations[0]?.issues[0]?.code).toBe("RELATION_IDENTITY_MISMATCH");
+		expect(provider.relationPrompt).toContain("source=source:document-a");
+		expect(provider.relationPrompt).toContain("source=source:document-b");
+	});
+
 	it("rejects a passed Relation audit without edge-level supporting evidence", async () => {
 		const provider = new ClaimPassRelationPassWithoutSupportProvider();
 		const claims = [claim("claim:a", "Alpha", "span:a"), claim("claim:b", "Beta", "span:b")];
@@ -283,7 +309,7 @@ class ClaimPassRelationFailProvider implements LLMProvider {
 		}
 		if (options.systemPrompt === RELATION_AUDIT_SYSTEM) {
 			const dimensions = Object.fromEntries(
-				["relation", "type", "direction", "conditions"].map((dimension) => [
+				["identity", "relation", "type", "direction", "conditions"].map((dimension) => [
 					dimension,
 					{ result: dimension === "relation" ? "fail" : "pass", evidenceSpanIndexes: [0] },
 				]),
@@ -293,6 +319,41 @@ class ClaimPassRelationFailProvider implements LLMProvider {
 				dimensions,
 				anchorSpanIndex: 0,
 				failedDimensions: ["relation"],
+				supportingEvidenceSpanIndexes: [],
+			});
+		}
+		throw new Error("Unexpected audit prompt");
+	}
+
+	async chatWithThinking(options: ChatOptions): Promise<ChatResult> {
+		return this.chat(options);
+	}
+}
+
+class ClaimPassRelationIdentityFailProvider implements LLMProvider {
+	relationPrompt = "";
+
+	async chat(options: ChatOptions): Promise<ChatResult> {
+		if (options.systemPrompt === SEMANTIC_AUDIT_SYSTEM) {
+			return auditChatResult({
+				verdict: "passed",
+				dimensions: passingDimensions(),
+				anchorSpanIndex: 0,
+				failedDimensions: [],
+			});
+		}
+		if (options.systemPrompt === RELATION_AUDIT_SYSTEM) {
+			this.relationPrompt = options.messages.map((message) => message.content).join("\n");
+			return auditChatResult({
+				verdict: "failed",
+				dimensions: Object.fromEntries(
+					["identity", "relation", "type", "direction", "conditions"].map((dimension) => [
+						dimension,
+						{ result: dimension === "identity" ? "fail" : "pass", evidenceSpanIndexes: [0, 1] },
+					]),
+				),
+				anchorSpanIndex: 0,
+				failedDimensions: ["identity"],
 				supportingEvidenceSpanIndexes: [],
 			});
 		}
@@ -318,7 +379,7 @@ class ClaimPassRelationPassWithoutSupportProvider implements LLMProvider {
 			return auditChatResult({
 				verdict: "passed",
 				dimensions: Object.fromEntries(
-					["relation", "type", "direction", "conditions"].map((dimension) => [
+					["identity", "relation", "type", "direction", "conditions"].map((dimension) => [
 						dimension,
 						{ result: "pass", evidenceSpanIndexes: [0] },
 					]),
@@ -350,7 +411,7 @@ class ClaimAndRelationPassProvider implements LLMProvider {
 			return auditChatResult({
 				verdict: "passed",
 				dimensions: Object.fromEntries(
-					["relation", "type", "direction", "conditions"].map((dimension) => [
+					["identity", "relation", "type", "direction", "conditions"].map((dimension) => [
 						dimension,
 						{ result: "pass", evidenceSpanIndexes: [0, 1] },
 					]),
@@ -382,7 +443,7 @@ class ClaimPassRelationOneSidedProvider implements LLMProvider {
 			return auditChatResult({
 				verdict: "passed",
 				dimensions: Object.fromEntries(
-					["relation", "type", "direction", "conditions"].map((dimension) => [
+					["identity", "relation", "type", "direction", "conditions"].map((dimension) => [
 						dimension,
 						{ result: "pass", evidenceSpanIndexes: [0] },
 					]),
@@ -449,10 +510,10 @@ function claim(id = "claim:test", statement = "Alpha", spanId = "span:test"): Cl
 	};
 }
 
-function span(id = "span:test", text = "Alpha."): SourceSpan {
+function span(id = "span:test", text = "Alpha.", sourceId = "source:test"): SourceSpan {
 	return {
 		id,
-		sourceId: "source:test",
+		sourceId,
 		blockId: "b0",
 		charStart: 0,
 		charEnd: text.length,

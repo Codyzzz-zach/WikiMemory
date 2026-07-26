@@ -13,7 +13,11 @@ import {
 	RELATION_DETECT_SYSTEM,
 } from "../prompts/index.js";
 import type { Claim, Source, SourceSpan } from "../types/index.js";
-import { compileSource, selectCrossMaterialCandidates } from "./index.js";
+import {
+	compileCrossMaterialRelations,
+	compileSource,
+	selectCrossMaterialCandidates,
+} from "./index.js";
 
 const temporaryRoots: string[] = [];
 
@@ -143,7 +147,49 @@ describe("bounded compiler", () => {
 		);
 		expect(candidates.map((claim) => claim.id)).toEqual(["claim:relevant"]);
 	});
+
+	it("shows endpoint source evidence to cross-material relation detection", async () => {
+		const provider = new RelationPromptCaptureProvider();
+		const source: Source = {
+			id: "source:new-policy-bbb",
+			hash: "bbb",
+			uri: "new-policy.md",
+			parsedText: "发布日不同",
+			sourceType: "md",
+			loaderVersion: "test",
+			createdAt: "2026-07-23T00:00:00.000Z",
+		};
+		const newClaim = compiledClaim("claim:new", "发布日期为 1 月 10 日");
+		newClaim.evidenceSpanIds = ["span:new-policy-bbb-1#chars-0-10"];
+		const oldClaim = compiledClaim("claim:old", "发布日期为 1 月 7 日");
+		oldClaim.evidenceSpanIds = ["span:old-policy-aaa-1#chars-0-9"];
+		await compileCrossMaterialRelations(
+			temporaryConfig(),
+			provider,
+			"run:test",
+			source,
+			[newClaim],
+			[{ id: "concept:date", name: "发布日期", aliases: [], boundary: "日期", domain: "meta" }],
+			[oldClaim],
+		);
+		expect(provider.prompt).toContain("source evidence: span:new-policy-bbb-1");
+		expect(provider.prompt).toContain("source evidence: span:old-policy-aaa-1");
+	});
 });
+
+class RelationPromptCaptureProvider implements LLMProvider {
+	prompt = "";
+
+	async chat(options: ChatOptions): Promise<ChatResult> {
+		if (options.systemPrompt !== RELATION_DETECT_SYSTEM) throw new Error("Unexpected prompt");
+		this.prompt = options.messages.map((message) => message.content).join("\n");
+		return chatResult('{"relations":[]}');
+	}
+
+	async chatWithThinking(options: ChatOptions): Promise<ChatResult> {
+		return this.chat(options);
+	}
+}
 
 class TruncatingProvider implements LLMProvider {
 	propositionCalls = 0;

@@ -11,6 +11,7 @@ dist/
 # Rebuildable indexes (can be reconstructed from canonical state)
 indexes/
 .codebase-memory/
+experiments/evolution/runs/
 
 # Temporary caches and logs
 *.log
