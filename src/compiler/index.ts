@@ -713,8 +713,22 @@ export async function compileCrossMaterialRelations(
 			);
 		}
 	}
+	const supersessionEvidenceSpanIds = relationEligibleNewClaims
+		.filter((claim) => isSupersessionDeclaration(claim.statement))
+		.flatMap((claim) => claim.evidenceSpanIds);
+	const relations = buildRelations(source, combined, drafts, stats, "cross-material-detect").map(
+		(relation) =>
+			relation.type === "SUPERSEDES"
+				? {
+						...relation,
+						evidenceSpanIds: [
+							...new Set([...relation.evidenceSpanIds, ...supersessionEvidenceSpanIds]),
+						],
+					}
+				: relation,
+	);
 	return {
-		relations: buildRelations(source, combined, drafts, stats, "cross-material-detect"),
+		relations,
 		candidateClaimIds: candidates.map((claim) => claim.id),
 	};
 }
@@ -787,6 +801,12 @@ function documentIdentifiers(text: string): Set<string> {
 function claimBelongsToSource(claim: Claim, sourceId: string): boolean {
 	const sourceKey = sourceId.replace(/^source:/u, "");
 	return claim.evidenceSpanIds.some((spanId) => spanId.startsWith(`span:${sourceKey}-`));
+}
+
+function isSupersessionDeclaration(statement: string): boolean {
+	return /(?:取代|替代|废止|不再适用|\breplac(?:e|es|ed|ing)\b|\bsupersed(?:e|es|ed|ing)\b)/iu.test(
+		statement,
+	);
 }
 
 function bigramOverlap(left: string, right: string): number {

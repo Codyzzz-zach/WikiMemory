@@ -226,6 +226,52 @@ describe("bounded compiler", () => {
 		);
 		expect(candidates.map((claim) => claim.id)).toEqual([oldClaim.id]);
 	});
+
+	it("attaches an explicit replacement declaration as edge evidence for SUPERSEDES", async () => {
+		const provider = new SupersedesProvider();
+		const newSource: Source = {
+			id: "source:new-policy-bbb",
+			hash: "bbb",
+			uri: "new-policy.md",
+			parsedText: "本政策取代旧政策 OLD-POLICY-2026-01。新规则要求双人审批。",
+			sourceType: "md",
+			loaderVersion: "test",
+			createdAt: "2026-07-23T00:00:00.000Z",
+		};
+		const declaration = compiledClaim("claim:declaration", "本政策取代旧政策 OLD-POLICY-2026-01");
+		declaration.evidenceSpanIds = ["span:new-policy-bbb-2#chars-0-30"];
+		const newRule = compiledClaim("claim:new-rule", "新规则要求双人审批");
+		newRule.evidenceSpanIds = ["span:new-policy-bbb-3#chars-31-45"];
+		const oldRule = compiledClaim("claim:old-rule", "旧规则要求单人审批");
+		oldRule.evidenceSpanIds = ["span:old-policy-aaa-4#chars-0-12"];
+		const oldSource: Source = {
+			id: "source:old-policy-aaa",
+			hash: "aaa",
+			uri: "old-policy.md",
+			parsedText: "文件编号 OLD-POLICY-2026-01。旧规则要求单人审批。",
+			sourceType: "md",
+			loaderVersion: "test",
+			createdAt: "2026-07-01T00:00:00.000Z",
+		};
+		const result = await compileCrossMaterialRelations(
+			temporaryConfig(),
+			provider,
+			"run:test",
+			newSource,
+			[declaration, newRule],
+			[],
+			[oldRule],
+			[oldSource],
+		);
+		expect(result.relations).toHaveLength(1);
+		expect(result.relations[0]?.evidenceSpanIds).toEqual(
+			expect.arrayContaining([
+				"span:new-policy-bbb-2#chars-0-30",
+				"span:new-policy-bbb-3#chars-31-45",
+				"span:old-policy-aaa-4#chars-0-12",
+			]),
+		);
+	});
 });
 
 class RelationPromptCaptureProvider implements LLMProvider {
@@ -235,6 +281,29 @@ class RelationPromptCaptureProvider implements LLMProvider {
 		if (options.systemPrompt !== RELATION_DETECT_SYSTEM) throw new Error("Unexpected prompt");
 		this.prompt = options.messages.map((message) => message.content).join("\n");
 		return chatResult('{"relations":[]}');
+	}
+
+	async chatWithThinking(options: ChatOptions): Promise<ChatResult> {
+		return this.chat(options);
+	}
+}
+
+class SupersedesProvider implements LLMProvider {
+	async chat(options: ChatOptions): Promise<ChatResult> {
+		if (options.systemPrompt !== RELATION_DETECT_SYSTEM) throw new Error("Unexpected prompt");
+		return chatResult(
+			JSON.stringify({
+				relations: [
+					{
+						fromClaimIndex: 1,
+						toClaimIndex: 2,
+						type: "SUPERSEDES",
+						conditions: ["自生效日起"],
+						confidence: 0.9,
+					},
+				],
+			}),
+		);
 	}
 
 	async chatWithThinking(options: ChatOptions): Promise<ChatResult> {
