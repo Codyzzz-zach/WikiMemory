@@ -723,14 +723,7 @@ export async function compileCrossMaterialRelations(
 			),
 		);
 		for (const oldItem of explicitlyReferencedOldClaims) {
-			const alreadyProposed = drafts.some(
-				(draft) =>
-					draft.type === "SUPERSEDES" &&
-					indexedNew.some((item) => item.index === draft.fromClaimIndex) &&
-					draft.toClaimIndex === oldItem.index,
-			);
-			if (alreadyProposed) continue;
-			const concreteReplacement = indexedNew
+			const concreteReplacements = indexedNew
 				.filter(
 					(item) =>
 						!isExplicitReplacementDeclaration(item.claim.statement) &&
@@ -746,7 +739,16 @@ export async function compileCrossMaterialRelations(
 				.sort(
 					(left, right) =>
 						right.score - left.score || left.item.claim.id.localeCompare(right.item.claim.id),
-				)[0];
+				);
+			const concreteReplacement = concreteReplacements[0];
+			const proposedByConcreteRule = drafts.some((draft) => {
+				if (draft.type !== "SUPERSEDES" || draft.toClaimIndex !== oldItem.index) return false;
+				const proposedFrom = concreteReplacements.find(
+					(candidate) => candidate.item.index === draft.fromClaimIndex,
+				);
+				return (proposedFrom?.score ?? 0) >= 0.12;
+			});
+			if (proposedByConcreteRule) continue;
 			const declaration = explicitDeclarations[0] as IndexedClaim;
 			const fromItem =
 				concreteReplacement && concreteReplacement.score >= 0.12

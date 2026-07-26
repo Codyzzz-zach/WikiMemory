@@ -695,7 +695,10 @@ function findEvolutionCandidates(
 			if (!fromOwner || !toOwner) return false;
 			if (timeline === "T2") {
 				return (
-					relation.type === "SUPERSEDES" && sourceIds.has(fromOwner) && targetSourceIds.has(toOwner)
+					relation.type === "SUPERSEDES" &&
+					relation.supersessionEffect === "TOTAL_TO_CLAIM" &&
+					sourceIds.has(fromOwner) &&
+					targetSourceIds.has(toOwner)
 				);
 			}
 			return relation.type === "CONTRADICTS" && sourceIds.has(fromOwner) && sourceIds.has(toOwner);
@@ -706,6 +709,7 @@ function findEvolutionCandidates(
 			from: relation.from,
 			to: relation.to,
 			conditions: relation.conditions,
+			supersessionEffect: relation.supersessionEffect,
 			evidenceSpanIds: relation.evidenceSpanIds,
 			fromSourceId: claimOwner.get(relation.from as string) as string,
 			toSourceId: claimOwner.get(relation.to as string) as string,
