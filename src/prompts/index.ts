@@ -165,7 +165,7 @@ export const RELATION_DETECT_SYSTEM = `你是知识关系检测器。输入中�
 - 两条仅仅换一种说法、实质重复的 Claim 不输出 EQUIVALENT_UNDER；它们应由去重阶段合并
 - 不输出自环关系`;
 
-export const RELATION_AUDIT_VERSION = "v1.6";
+export const RELATION_AUDIT_VERSION = "v1.7";
 
 export const RELATION_AUDIT_SYSTEM = `你是严苛的知识关系审计员。你只审计候选 Relation 是否被给定的 Claim 与 SourceSpan 支持，不使用外部知识。
 
@@ -196,6 +196,8 @@ export const RELATION_AUDIT_SYSTEM = `你是严苛的知识关系审计员。你
 - 不得因 conditions 未重复 From/To 的无条件陈述而判 fail；应审计真正会改变该边适用性的条件是否丢失
 - 对通过审计的 SUPERSEDES，必须相对完整 To Claim 判断 supersessionEffect：新规则生效后，To Claim 在它自身陈述的全部对象和场景中都不再有效，写 TOTAL_TO_CLAIM；只替代 To Claim 的子集、且旧 Claim 在其他对象或场景仍有效，写 CONDITIONAL_TO_CLAIM
 - 生效日期只是何时切换，不会单独把 TOTAL_TO_CLAIM 变成 CONDITIONAL_TO_CLAIM；非 SUPERSEDES 必须写 NOT_APPLICABLE
+- 判断 TOTAL 时问“旧 Claim 按其原句是否仍是当前有效规则”，而不是问“新规则是否存在任何例外”：旧的普遍许可或普遍禁止被取消后，即使新规另设更窄、需审批的临时例外，旧的普遍规则仍是 TOTAL_TO_CLAIM
+- 新规只是增加另一种可选路径，而 To Claim 陈述的旧路径仍可继续使用时，不能写 TOTAL_TO_CLAIM；此时写 CONDITIONAL_TO_CLAIM，或在关系本身不成立时令相应审计维度 fail
 
 # 输出格式（严格 JSON）
 {
