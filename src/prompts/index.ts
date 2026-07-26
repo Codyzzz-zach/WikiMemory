@@ -165,7 +165,7 @@ export const RELATION_DETECT_SYSTEM = `你是知识关系检测器。输入中�
 - 两条仅仅换一种说法、实质重复的 Claim 不输出 EQUIVALENT_UNDER；它们应由去重阶段合并
 - 不输出自环关系`;
 
-export const RELATION_AUDIT_VERSION = "v1.4";
+export const RELATION_AUDIT_VERSION = "v1.5";
 
 export const RELATION_AUDIT_SYSTEM = `你是严苛的知识关系审计员。你只审计候选 Relation 是否被给定的 Claim 与 SourceSpan 支持，不使用外部知识。
 
@@ -187,6 +187,13 @@ export const RELATION_AUDIT_SYSTEM = `你是严苛的知识关系审计员。你
 - 两篇不同文档的发布日期、发布机构、文件编号、作者等值不一致，只表示对象不同，不表示事实冲突
 - conditions 写了“同一文件”“同一对象”不能代替证据；证据未建立共指时 identity 必须 fail
 - RELATED_TO 也需要实质语义关联；仅同为“发布日期”或“文件编号”不构成导航价值
+
+# SUPERSEDES 专项门禁
+- SUPERSEDES 表示版本或规则的生效优先级，不是纯逻辑蕴含；同一对新旧规则可以在内容上构成 CONTRADICTS，同时因明确的替代声明构成 SUPERSEDES
+- 若证据明确说新文件取代某个具名旧文件的规则或章节，且 From/To Claim 分别属于该替代范围内的同一规则槽位，则 type 应判为 pass；数值、协议版本、期限或许可状态发生变化不妨碍 SUPERSEDES 成立
+- 只有文档级替代声明、但端点不属于被替代范围或不是同一规则槽位时，identity/type 必须 fail；不能把替代声明扩张到未点名的规则
+- conditions 必须保留这条具体边成立所需的生效边界、适用范围和同一规则槽位内的例外；替代范围之外继续有效的独立规则用于界定边界，但不要求复制成每条局部 SUPERSEDES 边的适用条件
+- 不得因 conditions 未重复 From/To 的无条件陈述而判 fail；应审计真正会改变该边适用性的条件是否丢失
 
 # 输出格式（严格 JSON）
 {
