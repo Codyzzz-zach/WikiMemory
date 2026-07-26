@@ -36,6 +36,56 @@ export interface EvolutionCoverage {
 	missingDocumentIds: string[];
 }
 
+export interface EvolutionApproval {
+	schemaVersion: "wge-evolution-approval/v1";
+	runId: string;
+	timeline: "T2" | "T3";
+	reviewer: string;
+	reviewedAt: string;
+	approvedRelationIds: string[];
+	rejectedRelations: Array<{ relationId: string; reason: string }>;
+}
+
+export function validateEvolutionApproval(
+	approval: EvolutionApproval,
+	runId: string,
+	timeline: "T2" | "T3",
+	candidateIds: string[],
+): EvolutionApproval {
+	if (
+		approval.schemaVersion !== "wge-evolution-approval/v1" ||
+		approval.runId !== runId ||
+		approval.timeline !== timeline ||
+		approval.reviewer.trim().length === 0 ||
+		Number.isNaN(Date.parse(approval.reviewedAt))
+	) {
+		throw new Error("演化 approval 元数据无效或与当前 run/timeline 不匹配");
+	}
+	const candidates = new Set(candidateIds);
+	const approved = new Set(approval.approvedRelationIds);
+	const rejected = new Set(approval.rejectedRelations.map((item) => item.relationId));
+	if (
+		approved.size !== approval.approvedRelationIds.length ||
+		rejected.size !== approval.rejectedRelations.length
+	) {
+		throw new Error("演化 approval 含重复 Relation ID");
+	}
+	if (approval.rejectedRelations.some((item) => item.reason.trim().length === 0)) {
+		throw new Error("演化 approval 的每条拒绝记录必须说明理由");
+	}
+	for (const id of approved) {
+		if (!candidates.has(id) || rejected.has(id)) throw new Error(`演化 approval 非法批准: ${id}`);
+	}
+	for (const id of rejected) {
+		if (!candidates.has(id)) throw new Error(`演化 approval 拒绝了非候选 Relation: ${id}`);
+	}
+	const reviewed = new Set([...approved, ...rejected]);
+	const missing = [...candidates].filter((id) => !reviewed.has(id));
+	if (missing.length > 0) throw new Error(`演化 approval 未逐条审查: ${missing.join(", ")}`);
+	if (approved.size === 0) throw new Error("演化 approval 未批准任何 Relation");
+	return approval;
+}
+
 export function summarizeEvolutionCoverage(
 	timeline: "T2" | "T3",
 	expected: ExpectedEvolutionTransition[],

@@ -17,11 +17,13 @@ import { getCompileState } from "../src/compiler/run-state.js";
 import { loadConfig } from "../src/config/index.js";
 import {
 	EVOLUTION_TIMELINES,
+	type EvolutionApproval,
 	type EvolutionCoverage,
 	type EvolutionTimeline,
 	assertTimelineTransition,
 	summarizeEvolutionCoverage,
 	summarizeRetrieval,
+	validateEvolutionApproval,
 } from "../src/evolution/experiment.js";
 import { applyKnowledgeEvolution } from "../src/evolution/transaction.js";
 import {
@@ -339,7 +341,8 @@ program
 	.description("Compile one exact timeline into the isolated workspace")
 	.requiredOption("--run-id <id>", "Experiment run ID")
 	.requiredOption("--timeline <timeline>", "T0, T1, T2, or T3")
-	.option("--apply-audited", "Apply allowlisted audited SUPERSEDES/CONTRADICTS candidates")
+	.option("--apply-audited", "Apply only candidates approved in a complete approval artifact")
+	.option("--approval-file <path>", "Per-relation approval artifact required by --apply-audited")
 	.option(
 		"--accept-missing-evolution",
 		"Finalize T2/T3 even when no allowlisted evolution relation was produced; records a hard gap",
@@ -349,6 +352,7 @@ program
 			runId: string;
 			timeline: string;
 			applyAudited?: boolean;
+			approvalFile?: string;
 			acceptMissingEvolution?: boolean;
 		}) => {
 			const timeline = parseTimeline(options.timeline);
@@ -393,6 +397,7 @@ program
 					? coverageForTimeline(state, timeline, candidates)
 					: null;
 			let appliedIds: string[] = [];
+			let approval: EvolutionApproval | null = null;
 			let missingEvolutionAccepted = false;
 			if (timeline === "T2" || timeline === "T3") {
 				if (
@@ -413,6 +418,7 @@ program
 					writeJsonAtomic(join(runDirectory, "timelines", timeline, "evolution-candidates.json"), {
 						timeline,
 						candidates,
+						evolutionCoverage,
 						status: "AWAITING_EXPLICIT_APPLY",
 					});
 					throw new Error(
@@ -420,9 +426,27 @@ program
 					);
 				}
 				if (candidates.length > 0) {
+					if (!options.approvalFile) {
+						throw new Error("--apply-audited 必须同时提供 --approval-file，禁止整批盲批");
+					}
+					approval = validateEvolutionApproval(
+						readJson<EvolutionApproval>(resolve(options.approvalFile)),
+						state.runId,
+						timeline,
+						candidates.map((item) => item.id),
+					);
+					const approved = candidates.filter((item) =>
+						approval?.approvedRelationIds.includes(item.id),
+					);
+					const approvedCoverage = coverageForTimeline(state, timeline, approved);
+					if (approvedCoverage.missingDocumentIds.length > 0) {
+						throw new Error(
+							`批准子集演化覆盖不完整：缺少 ${approvedCoverage.missingDocumentIds.join(", ")}`,
+						);
+					}
 					const result = applyKnowledgeEvolution(
 						config,
-						candidates.map((item) => item.id),
+						approved.map((item) => item.id),
 						currentKnowledgeVersion(config),
 					);
 					appliedIds = result.impact.triggerRelationIds;
@@ -450,6 +474,7 @@ program
 				appliedIds,
 				evolutionCoverage,
 				missingEvolutionAccepted,
+				approval,
 			});
 			console.log(
 				JSON.stringify({ ...timelineState, knowledge: knowledgeSummary(config) }, null, 2),

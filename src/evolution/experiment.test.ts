@@ -3,6 +3,7 @@ import {
 	assertTimelineTransition,
 	summarizeEvolutionCoverage,
 	summarizeRetrieval,
+	validateEvolutionApproval,
 } from "./experiment.js";
 
 describe("isolated evolution experiment contracts", () => {
@@ -71,5 +72,32 @@ describe("isolated evolution experiment contracts", () => {
 				[{ fromSourceId: "source:conflict", toSourceId: "source:conflict" }],
 			),
 		).toMatchObject({ missingDocumentIds: [] });
+	});
+
+	it("requires a complete, disjoint per-edge approval decision", () => {
+		const approval = {
+			schemaVersion: "wge-evolution-approval/v1" as const,
+			runId: "run-1",
+			timeline: "T2" as const,
+			reviewer: "reviewer:alice",
+			reviewedAt: "2026-07-26T00:00:00.000Z",
+			approvedRelationIds: ["rel:a"],
+			rejectedRelations: [{ relationId: "rel:b", reason: "作用域不完整" }],
+		};
+		expect(validateEvolutionApproval(approval, "run-1", "T2", ["rel:a", "rel:b"])).toBe(approval);
+		expect(() =>
+			validateEvolutionApproval({ ...approval, rejectedRelations: [] }, "run-1", "T2", [
+				"rel:a",
+				"rel:b",
+			]),
+		).toThrow("未逐条审查");
+		expect(() =>
+			validateEvolutionApproval(
+				{ ...approval, rejectedRelations: [{ relationId: "rel:a", reason: "冲突" }] },
+				"run-1",
+				"T2",
+				["rel:a"],
+			),
+		).toThrow("非法批准");
 	});
 });
