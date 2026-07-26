@@ -713,6 +713,34 @@ export async function compileCrossMaterialRelations(
 			);
 		}
 	}
+	const explicitDeclarations = indexedNew.filter((item) =>
+		isExplicitReplacementDeclaration(item.claim.statement),
+	);
+	if (explicitDeclarations.length > 0 && explicitlyReferencedSourceIds.size > 0) {
+		const explicitlyReferencedOldClaims = indexedOld.filter((item) =>
+			[...explicitlyReferencedSourceIds].some((sourceId) =>
+				claimBelongsToSource(item.claim, sourceId),
+			),
+		);
+		for (const oldItem of explicitlyReferencedOldClaims) {
+			const alreadyProposed = drafts.some(
+				(draft) =>
+					draft.type === "SUPERSEDES" &&
+					indexedNew.some((item) => item.index === draft.fromClaimIndex) &&
+					draft.toClaimIndex === oldItem.index,
+			);
+			if (alreadyProposed) continue;
+			const declaration = explicitDeclarations[0] as IndexedClaim;
+			drafts.push({
+				fromClaimIndex: declaration.index,
+				toClaimIndex: oldItem.index,
+				type: "SUPERSEDES",
+				conditions: [...declaration.claim.conditions],
+				confidence: 0.95,
+			});
+			stats.totalRelationDrafts++;
+		}
+	}
 	const supersessionContextClaims = newClaims.filter((claim) =>
 		isSupersessionContext(claim.statement),
 	);
@@ -813,6 +841,12 @@ function claimBelongsToSource(claim: Claim, sourceId: string): boolean {
 
 function isSupersessionContext(statement: string): boolean {
 	return /(?:取代|替代|废止|不再适用|继续有效|仍(?:然)?有效|不在本次替代范围|未被.+取消|生效日期|无需回算|\beffective date\b|\bremain(?:s|ed)? in effect\b|\breplac(?:e|es|ed|ing)\b|\bsupersed(?:e|es|ed|ing)\b)/iu.test(
+		statement,
+	);
+}
+
+function isExplicitReplacementDeclaration(statement: string): boolean {
+	return /(?:取代|替代|废止|\breplac(?:e|es|ed|ing)\b|\bsupersed(?:e|es|ed|ing)\b)/iu.test(
 		statement,
 	);
 }

@@ -285,6 +285,47 @@ describe("bounded compiler", () => {
 			]),
 		);
 	});
+
+	it("synthesizes an auditable supersession candidate when detection misses an explicit declaration", async () => {
+		const newSource: Source = {
+			id: "source:new-policy-bbb",
+			hash: "bbb",
+			uri: "new-policy.md",
+			parsedText: "本政策取代旧政策 OLD-POLICY-2026-01。",
+			sourceType: "md",
+			loaderVersion: "test",
+			createdAt: "2026-07-23T00:00:00.000Z",
+		};
+		const oldSource: Source = {
+			id: "source:old-policy-aaa",
+			hash: "aaa",
+			uri: "old-policy.md",
+			parsedText: "文件编号 OLD-POLICY-2026-01。旧规则要求单人审批。",
+			sourceType: "md",
+			loaderVersion: "test",
+			createdAt: "2026-07-01T00:00:00.000Z",
+		};
+		const declaration = compiledClaim("claim:declaration", "本政策取代旧政策 OLD-POLICY-2026-01");
+		declaration.evidenceSpanIds = ["span:new-policy-bbb-2#chars-0-30"];
+		const oldRule = compiledClaim("claim:old-rule", "旧规则要求单人审批");
+		oldRule.evidenceSpanIds = ["span:old-policy-aaa-4#chars-0-12"];
+		const result = await compileCrossMaterialRelations(
+			temporaryConfig(),
+			new RelationPromptCaptureProvider(),
+			"run:test",
+			newSource,
+			[declaration],
+			[],
+			[oldRule],
+			[oldSource],
+		);
+		expect(result.relations).toHaveLength(1);
+		expect(result.relations[0]).toMatchObject({
+			from: declaration.id,
+			to: oldRule.id,
+			type: "SUPERSEDES",
+		});
+	});
 });
 
 class RelationPromptCaptureProvider implements LLMProvider {
