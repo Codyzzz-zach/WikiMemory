@@ -1,0 +1,64 @@
+{
+  "manifest": {
+    "schemaVersion": "wge-evolution-manifest/v1",
+    "documents": [
+      {
+        "documentId": "platform-policy-t0-01",
+        "path": "platform-engineering/t0/release-policy.md",
+        "domain": "platform-engineering",
+        "timeline": "T0",
+        "issuedAt": "2026-01-01",
+        "effectiveAt": "2026-01-15",
+        "authority": "平台治理委员会",
+        "scope": "所有生产服务",
+        "changeKind": "BASELINE",
+        "targetDocumentIds": []
+      }
+    ]
+  },
+  "questions": {
+    "schemaVersion": "wge-evolution-questions/v1",
+    "questions": [
+      {
+        "id": "EV-PLAT-001",
+        "domain": "platform-engineering",
+        "category": "affected",
+        "question": "某服务已通过自动化测试，现在是否可以直接发布？",
+        "goldByTimeline": {
+          "T0": {
+            "answerability": "ANSWERABLE",
+            "expectedAnswer": "按 T0 材料给出答案。",
+            "requiredFacts": ["必须出现的事实"],
+            "requiredConditions": ["必须保留的条件"],
+            "forbiddenFacts": [],
+            "sourceDocumentIds": ["platform-policy-t0-01"]
+          },
+          "T1": {
+            "answerability": "ANSWERABLE",
+            "expectedAnswer": "若纯增量未影响该规则，应与 T0 一致。",
+            "requiredFacts": ["必须出现的事实"],
+            "requiredConditions": ["必须保留的条件"],
+            "forbiddenFacts": [],
+            "sourceDocumentIds": ["platform-policy-t0-01"]
+          },
+          "T2": {
+            "answerability": "ANSWERABLE",
+            "expectedAnswer": "按正式纠错后的当前规则回答。",
+            "requiredFacts": ["新规则"],
+            "requiredConditions": ["适用范围或例外"],
+            "forbiddenFacts": ["已被全局替代的旧规则"],
+            "sourceDocumentIds": ["platform-policy-t0-01", "platform-policy-t2-01"]
+          },
+          "T3": {
+            "answerability": "DISPUTED",
+            "expectedAnswer": "指出冲突双方及无法判定赢家的原因。",
+            "requiredFacts": ["冲突说法 A", "冲突说法 B"],
+            "requiredConditions": [],
+            "forbiddenFacts": ["未经证据选择唯一赢家"],
+            "sourceDocumentIds": ["platform-policy-t2-01", "platform-policy-t3-01"]
+          }
+        }
+      }
+    ]
+  }
+}

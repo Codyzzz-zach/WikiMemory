@@ -38,6 +38,9 @@ export interface SourcePublication {
 	claims: Claim[];
 	concepts: Concept[];
 	relations: Relation[];
+	/** 最近一次生命周期演化事务；不改变原编译 run 的归属。 */
+	evolutionSnapshotId?: string;
+	evolvedAt?: string;
 }
 
 export interface SourceQuarantinePublication {
@@ -251,7 +254,7 @@ export function readSourcePublications(config: AppConfig): SourcePublication[] {
 	);
 }
 
-function readQuarantinePublications(config: AppConfig): SourceQuarantinePublication[] {
+export function readQuarantinePublications(config: AppConfig): SourceQuarantinePublication[] {
 	return readPublicationFiles<SourceQuarantinePublication>(
 		join(config.quarantineDir, "publications"),
 	).map((publication) => ({
@@ -261,6 +264,87 @@ function readQuarantinePublications(config: AppConfig): SourceQuarantinePublicat
 			relation: normalizeRelation(item.relation),
 		})),
 	}));
+}
+
+export interface WikiModuleQuarantineRecord {
+	schemaVersion: "wge-wiki-quarantine/v1";
+	module: WikiModule;
+	reason: string;
+	quarantinedAt: string;
+	evolutionSnapshotId: string;
+}
+
+/**
+ * Fail closed for stale derived explanations. The canonical files are atomically rewritten with
+ * publicationState=QUARANTINED, while an explicit audit copy is retained under quarantine/wiki/.
+ */
+export function quarantineWikiModules(
+	config: AppConfig,
+	moduleIds: string[],
+	reason: string,
+	evolutionSnapshotId: string,
+): WikiModule[] {
+	const targets = new Set(moduleIds);
+	if (targets.size === 0) return [];
+	const found = new Map<string, WikiModule>();
+	const rewrites: Array<{ path: string; jsonl: boolean; modules: WikiModule[] }> = [];
+
+	for (const file of readdirSync(config.wikiDir).sort()) {
+		if (!file.endsWith(".json") && !file.endsWith(".jsonl")) continue;
+		const path = join(config.wikiDir, file);
+		const modules = file.endsWith(".json")
+			? [readJson<WikiModule>(path)].filter((item): item is WikiModule => item !== null)
+			: readJsonl<WikiModule>(path);
+		let changed = false;
+		const next = modules.map((module) => {
+			if (!targets.has(module.id)) return module;
+			if (found.has(module.id)) throw new Error(`WikiModule 重复归属: ${module.id}`);
+			found.set(module.id, module);
+			changed = true;
+			return { ...module, publicationState: "QUARANTINED" as const };
+		});
+		if (changed) rewrites.push({ path, jsonl: file.endsWith(".jsonl"), modules: next });
+	}
+
+	const missing = [...targets].filter((id) => !found.has(id));
+	if (missing.length > 0) throw new Error(`找不到待隔离 WikiModule: ${missing.join(", ")}`);
+	for (const rewrite of rewrites) {
+		if (rewrite.jsonl) writeJsonlAtomic(rewrite.path, rewrite.modules);
+		else writeJsonAtomic(rewrite.path, rewrite.modules[0]);
+	}
+	const quarantinedAt = new Date().toISOString();
+	for (const [id, module] of found) {
+		const record: WikiModuleQuarantineRecord = {
+			schemaVersion: "wge-wiki-quarantine/v1",
+			module: { ...module, publicationState: "QUARANTINED" },
+			reason,
+			quarantinedAt,
+			evolutionSnapshotId,
+		};
+		writeJsonAtomic(join(config.quarantineDir, "wiki", `${safeObjectFileName(id)}.json`), record);
+	}
+	return [...found.values()].map((module) => ({
+		...module,
+		publicationState: "QUARANTINED",
+	}));
+}
+
+export function readWikiModuleQuarantine(config: AppConfig): WikiModuleQuarantineRecord[] {
+	return readPublicationFiles<WikiModuleQuarantineRecord>(join(config.quarantineDir, "wiki"));
+}
+
+function writeJsonlAtomic<T>(filePath: string, items: T[]): void {
+	mkdirSync(join(filePath, ".."), { recursive: true });
+	const temporaryPath = `${filePath}.tmp-${process.pid}-${Date.now()}`;
+	const lines = items.map((item) => JSON.stringify(item)).join("\n");
+	writeFileSync(temporaryPath, `${lines}\n`, { encoding: "utf-8", flag: "wx" });
+	renameSync(temporaryPath, filePath);
+}
+
+function safeObjectFileName(id: string): string {
+	const readable = id.replace(/[^a-zA-Z0-9._-]/g, "_").slice(0, 96);
+	const suffix = createHash("sha256").update(id).digest("hex").slice(0, 12);
+	return `${readable}-${suffix}`;
 }
 
 /** 旧发布物没有边级审计证明：读取时 fail-closed，绝不沿用历史 SUPPORTED。 */

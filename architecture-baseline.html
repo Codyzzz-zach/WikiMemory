@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>WGEMemory4LLM Architecture Baseline · v1.6 · 2026-07-24</title>
+  <title>WGEMemory4LLM Architecture Baseline · v1.7 · 2026-07-26</title>
   <script type="module">
     import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
     mermaid.initialize({
@@ -52,15 +52,15 @@
 <body>
 <div class="page">
 <header id="top">
-  <div class="eyebrow">Architecture Baseline <span class="status s-green">v1.6 · Five-source Pilot / Evolution Foundation</span></div>
-  <h1>WGEMemory4LLM 架构基线 v1.6</h1>
+  <div class="eyebrow">Architecture Baseline <span class="status s-green">v1.7 · Protected Evolution Transaction</span></div>
+  <h1>WGEMemory4LLM 架构基线 v1.7</h1>
   <p class="subtitle">
-    本版以 2026-07-24 当前工作区代码、五篇冻结 Markdown 产物和盲测记录为事实源。除有界编译、双语义门禁、两阶段 Relation、原子 Source 发布和 Context Pack 外，新增了领域无关 Seed Retriever、五文档 B/P/E-min 同预算实验、确定性演化计划、内容敏感 knowledgeVersion 与可验证压缩快照/回滚。
-    必须区分三个结论：<b>五篇材料的编译与 99 条 Relation 可消费</b>；<b>修复 Seed 后 P 仅以 6.875 对 6.75 小幅领先文件夹基线，产品价值尚未被统计性证实</b>；<b>演化语义与回滚已经单元验证，但 Correction→真实写盘→重新回答的 T0/T1/T2 端到端仍未执行</b>。
+    本版以 2026-07-26 当前工作区代码、五篇冻结 Markdown 产物和盲测记录为事实源。除有界编译、双语义门禁、两阶段 Relation、原子 Source 发布和 Context Pack 外，现已具备领域无关 Seed Retriever、五文档 B/P/E-min 同预算实验、内容敏感 knowledgeVersion、可验证压缩快照，以及受快照保护的知识演化写盘事务。
+    必须区分三个结论：<b>五篇材料的编译与 99 条 Relation 可消费</b>；<b>修复 Seed 后 P 仅以 6.875 对 6.75 小幅领先文件夹基线，产品价值尚未被统计性证实</b>；<b>Correction 的跨 Source 生命周期写盘、Wiki fail-closed 和故障自动回滚已单元验证，但多领域真实 T0/T1/T2 与重新回答实验仍未执行</b>。
   </p>
   <div class="meta">
     <span class="chip"><b>静态检查</b> src + scripts 全覆盖</span>
-    <span class="chip"><b>测试</b> 14 files / 63 tests <span class="badge b-done">通过</span></span>
+    <span class="chip"><b>测试</b> 15 files / 67 tests <span class="badge b-done">通过</span></span>
     <span class="chip"><b>现存 Claim</b> 375 canonical / 26 quarantine</span>
     <span class="chip"><b>现存 Relation</b> 99 canonical / 99 consumable <span class="badge b-done">audit v1.2</span></span>
     <span class="chip"><b>Pilot</b> B 6.750 / P 6.875 / E-min 6.813</span>
@@ -89,14 +89,14 @@
       <tr><td>CompileState</td><td>01/02/03/05/09=COMPLETED；11=SOURCE_INGESTED</td><td><span class="badge b-done">五篇冻结</span></td></tr>
       <tr><td>Context Pack</td><td>Unicode 中英文与符号统一 Seed Retriever；五篇 Pilot 所需来源召回 57.6%→78.8%，precision 70.4%→76.5%，空包 7→1（唯一空包为库外题）</td><td><span class="badge b-done">通用检索基线</span></td></tr>
       <tr><td>产品 Pilot</td><td>16 题同预算盲测：B=6.750，P=6.875，E-min=6.813；P 硬失败 1 次、B 2 次。H2 仍落后，差距不足以宣称产品价值成立</td><td><span class="badge b-pending">方向性证据</span></td></tr>
-      <tr><td>知识演化</td><td>SUPERSEDES/CONTRADICTS 生命周期计划、影响列表和内容版本已单测；真实 Correction 写盘尚未接通</td><td><span class="badge b-new">unit-tested</span></td></tr>
+      <tr><td>知识演化</td><td>只接受当前审计版 SUPERSEDES/CONTRADICTS；唯一 Source 归属、跨 Source 写盘、stale Relation 淘汰、Wiki fail-closed、乐观并发保护和故障自动回滚已单测</td><td><span class="badge b-new">implemented + unit-tested</span></td></tr>
       <tr><td>快照/回滚</td><td>真实创建 12 文件 gzip 快照 96KB；哈希验证、并发版本前置条件、自动回滚前备份和精确恢复已单测</td><td><span class="badge b-new">实现 + 部分实测</span></td></tr>
-      <tr><td>WikiModule</td><td>读取与预算消费已实现；生成链路和真实模块仍为空</td><td><span class="badge b-stub">未完成产品层</span></td></tr>
+      <tr><td>WikiModule</td><td>现有 2 个 canonical 模块可读取/消费；引用失效 Claim 时会自动隔离并保留审计副本；自动生成与重建链路尚未实现</td><td><span class="badge b-stub">生成层未完成</span></td></tr>
     </tbody>
   </table>
   <div class="callout good">
     <b>安全冻结已解除</b>
-    旧的 189 条无审计 Relation 已被 Source 快照替换；Graph 现在只消费 76 条 v1.2 边。跨材料边在目标 Claim 因重编消失时会先进入原所有者 quarantine，再从 canonical 移除；5 条机器误判边经人工否决并保留原因，不会静默删除或污染 Agent。
+    旧的 189 条无审计 Relation 已被 Source 快照替换；Graph 当前只消费 99 条 v1.2 边。跨材料边在目标 Claim 因重编消失时会先进入原所有者 quarantine，再从 canonical 移除；机器误判边经人工否决并保留原因，不会静默删除或污染 Agent。
   </div>
 </section>
 
@@ -106,7 +106,7 @@
     <thead><tr><th>审查项</th><th>核验证据</th><th>裁决</th><th>处理</th></tr></thead>
     <tbody>
       <tr><td>lint 只覆盖 src</td><td><code>npm run lint</code> 原为 <code>biome check src</code>；单独检查 scripts 确有 4 类问题</td><td><b>真实问题</b>。此前“全仓 lint”措辞不准确</td><td>lint/lint:fix 改为覆盖 <code>src scripts</code>；scripts 全部纳入 typecheck</td></tr>
-      <tr><td>当前没有可用关系图</td><td>审查时确为 189 legacy Relation、0 audit version</td><td><b>历史事实正确</b>，且 fail-closed 行为正确</td><td>01/02/03 重编后已恢复为 76 条 v1.2 可消费边</td></tr>
+      <tr><td>当前没有可用关系图</td><td>审查时确为 189 legacy Relation、0 audit version</td><td><b>历史事实正确</b>，且 fail-closed 行为正确</td><td>后续五篇重编/回填后已恢复为 99 条 v1.2 可消费边</td></tr>
       <tr><td>跨材料 Relation 未真实验证</td><td>审查时 publication 中 cross-material-detect=0，只有单元测试</td><td><b>历史未验证项真实</b></td><td>现有 3 条人工复核通过的 cross RELATED_TO；错误 SUPPORTS 已显式隔离</td></tr>
     </tbody>
   </table>
@@ -346,7 +346,7 @@ sequenceDiagram
     <tbody>
       <tr><td>Biome</td><td>src + scripts 全通过</td><td>格式、import、推荐 lint 规则</td></tr>
       <tr><td>TypeScript</td><td>主代码 + scripts 全通过</td><td>严格模式、noUnused、脚本合同</td></tr>
-      <tr><td>Vitest</td><td>14 files / 63 tests</td><td>原有编译/门禁/存储合同，以及四域 Seed、库外专名 fail-closed、符号规范化、演化权限、条件化取代保护、影响传播、内容版本、快照完整性与回滚</td></tr>
+      <tr><td>Vitest</td><td>15 files / 67 tests</td><td>原有编译/门禁/存储合同，以及四域 Seed、库外专名 fail-closed、符号规范化、演化权限、条件化取代保护、跨 Source 写盘、Wiki 隔离、内容版本、证据复核、快照完整性与故障自动回滚</td></tr>
       <tr><td>Build</td><td>tsup ESM + DTS 成功</td><td>CLI 构建</td></tr>
       <tr><td>真实新版 ingest</td><td>01/02/03/05/09 已执行</td><td>五 Source 冻结为 375 Claim / 99 Relation / 2 WikiModule；完整性门禁均为 0 断证据、0 悬空端点、0 未审计 canonical Relation</td></tr>
       <tr><td>检索离线回归</td><td>通过</td><td>required source recall 57.6%→78.8%，precision 70.4%→76.5%，空包 7→1；库外题保持空包</td></tr>
@@ -355,7 +355,7 @@ sequenceDiagram
       <tr><td>v1.5 验证周期在线消耗</td><td>所列 8 个诊断/有效 run 合计 684 calls / 937,452 tokens，另有 88 次审计缓存命中</td><td>完整重编触发逐 Claim/Relation 审计，且 prompt 变化导致缓存失效；不能表述成“3 篇=3 次调用”</td></tr>
     </tbody>
   </table>
-  <p class="small">v1.6 新增证据证明 Seed 失败是上一轮 P/E-min 大幅落后的主因之一；修复后 P 只获得方向性领先。演化规划与回滚目前分别处于 unit-tested 和“创建真实快照、恢复仅临时目录验证”的成熟度，不能写成真实 Correction 闭环已完成。</p>
+  <p class="small">v1.6 证明 Seed 失败是上一轮 P/E-min 大幅落后的主因之一；修复后 P 只获得方向性领先。v1.7 把演化计划接入受保护写盘事务，并在临时多 Source 项目完成成功、并发拒绝和中途故障回滚验证；真实多领域 Correction→重新回答仍未完成，不能写成产品自进化已成立。</p>
 </section>
 
 <section id="gaps">
@@ -369,16 +369,16 @@ sequenceDiagram
       <tr><td>Relation 自动审计精度</td><td>人工抽检否决 1 条错误 SUPPORTS 和全部 4 条 EQUIVALENT_UNDER；后者已 fail-closed 禁止自动晋级，其他强边仍需抽检</td><td><span class="badge b-blocked">P0 质量</span></td><td>建立人工 Relation 金标准与独立 critic/确定性反循环规则；验证前不恢复 EQUIVALENT_UNDER 自动发布</td></tr>
       <tr><td>逐对象审计成本</td><td>v1.5 所列 8 个 run 使用 684 次在线调用、937,452 tokens；prompt 变化会使大量缓存失效</td><td><span class="badge b-pending">P1 成本</span></td><td>版本化增量复用与有界批量 critic，同时保持失败可定位、不可部分发布</td></tr>
       <tr><td>重编非确定性</td><td>同一 01 从 162 canonical Claim 漂移到 134，Concept 从 55 级别扩张到 110；02 Claim 从 89 漂移到 57</td><td><span class="badge b-blocked">P0 可靠性</span></td><td>冻结提取协议、建立重编 diff 门禁和保留旧 publication 的人工/阈值审批；禁止把 COMPLETED 等同于语义稳定</td></tr>
-      <tr><td>跨来源 Concept 对齐</td><td>当前合并后 183 Concept；Source 快照合计 184，数量受重编输出显著影响</td><td><span class="badge b-pending">P1</span></td><td>完善稳定身份、同名边界冲突与 Source 重编迁移策略</td></tr>
+      <tr><td>跨来源 Concept 对齐</td><td>当前合并后 267 Concept；数量与身份仍受重编输出显著影响</td><td><span class="badge b-pending">P1</span></td><td>完善稳定身份、同名边界冲突与 Source 重编迁移策略</td></tr>
       <tr><td>语义重复 Claim 合并</td><td>欧氏距离同义 Claim 曾被生成两条反向 EQUIVALENT_UNDER，现已人工隔离；自动合并未实现</td><td><span class="badge b-pending">P1</span></td><td>建立语义重复审核与证据合并，不用 Relation 长期承载重复 Claim</td></tr>
       <tr><td>WikiModule 生成</td><td>读取/消费已实现，生成和发布门禁未实现</td><td><span class="badge b-stub">产品 P0 后续</span></td><td>Relation E2E 通过后施工</td></tr>
       <tr><td>AssertedRecord 写入入口</td><td>类型、存储、门禁存在；无用户 CLI/API 和真实授权系统</td><td><span class="badge b-stub">Phase 2a</span></td><td>实现原子 Claim+Record 创建与权限适配</td></tr>
       <tr><td>ExperimentRecord</td><td>KnowledgeRef 类型存在，尚无持久化 schema/解析门禁</td><td><span class="badge b-stub">Phase 2a</span></td><td>在实验事实通道启用前补齐</td></tr>
       <tr><td>confidence</td><td>LLM 值未校准，下游当前不使用</td><td><span class="badge b-stub">低风险</span></td><td>使用前先校准或删除排序语义</td></tr>
       <tr><td>Claim 审计版本持久化</td><td>缓存和 metrics 有版本；Claim 对象本身没有独立 auditVersion</td><td><span class="badge b-pending">P1</span></td><td>周期重审/规则升级前设计迁移策略</td></tr>
-      <tr><td>版本快照与可验证回滚</td><td>内容敏感 knowledgeVersion、gzip 快照、哈希校验、并发前置条件、自动备份和恢复已实现；真实创建成功，恢复在临时项目验证</td><td><span class="badge b-new">Phase 2b-0 基线</span></td><td>接入真实演化写盘前做故障注入；当前多文件恢复不是单指针原子切换</td></tr>
-      <tr><td>Correction 写入与影响传播</td><td>SUPERSEDES/CONTRADICTS 的确定性计划、stale Relation 和 affected Wiki 列表已单测；尚未原子写回 Source publications</td><td><span class="badge b-blocked">下一 P0</span></td><td>实现“快照→应用→Lint→回归→提交/回滚”事务，再跑 T0/T1/T2</td></tr>
-      <tr><td>Relation 安全收敛</td><td>189 legacy → 76 v1.2 consumable；244 个唯一 Relation 在 quarantine；悬空端点和坏证据均为 0</td><td><span class="badge b-done">结构安全</span></td><td>继续用人工抽检改进语义精度，不得以数量代替质量</td></tr>
+      <tr><td>版本快照与可验证回滚</td><td>内容敏感 knowledgeVersion、gzip 快照、哈希校验、并发前置条件、自动备份和恢复已实现；真实创建成功，恢复和演化中途故障在临时项目验证</td><td><span class="badge b-new">Phase 2b-0 基线</span></td><td>当前多文件事务依靠写前快照补偿恢复，不是单指针原子切换；真实数据仍需故障演练</td></tr>
+      <tr><td>Correction 写入与影响传播</td><td>受审计边可通过 CLI/代码驱动跨 Source 生命周期更新；变更前快照、唯一归属、证据复核、Wiki 隔离、结构验证和失败自动恢复均已实现</td><td><span class="badge b-new">unit-tested</span></td><td>用多领域 T0/T1/T2 数据验证 Relation 召回与回答更新；再接入候选答案回归钩子</td></tr>
+      <tr><td>Relation 安全收敛</td><td>189 legacy 已替换；当前 99 条 v1.2 Relation 可消费，361 条 Relation 在 quarantine；悬空端点和坏证据均为 0</td><td><span class="badge b-done">结构安全</span></td><td>继续用人工抽检改进语义精度，不得以数量代替质量</td></tr>
     </tbody>
   </table>
 </section>
@@ -406,7 +406,7 @@ npm run dev -- relations backfill source:03-sequences-limits-e7ea8bc17c2cc4ab --
     <li><b>消费通过：</b>真实查询返回 15 Claims / 14 Relations，并展示全部 3 条 cross RELATED_TO；这些弱边的 <code>canSupportConclusion=false</code>。</li>
     <li><b>质量抽检未完全通过：</b>跨边 4 抽 1 假阳性，EQUIVALENT_UNDER 4 抽 4 假阳性；人工隔离机制有效，但自动 Relation 语义精度尚未达到无人复核发布标准。</li>
   </ol>
-  <h3>v1.6 下一轮：多领域 T0→T1→T2</h3>
+  <h3>v1.7 下一轮：多领域 T0→T1→T2/T3</h3>
   <ol>
     <li><b>T0 冻结：</b>选取至少三个领域（软件工程、AI 研究、产品/项目）的初始材料和可纠正命题；创建 knowledge snapshot，并记录 B/C/W/G 四组初始回答。</li>
     <li><b>T1 积累：</b>加入相关但不纠正旧结论的新材料，验证未受影响问题不退化、跨材料召回路径可观测。</li>
@@ -414,12 +414,12 @@ npm run dev -- relations backfill source:03-sequences-limits-e7ea8bc17c2cc4ab --
     <li><b>消费验证：</b>同一问题在 T2 必须停止复发旧错误，同时保留条件、来源与版本；无关问题不得因局部纠正退化。</li>
     <li><b>回滚验证：</b>故障注入或回归不通过时恢复 T1 快照，恢复后的 knowledgeVersion、对象内容和回答上下文哈希必须与 T1 一致。</li>
   </ol>
-  <div class="callout warn"><b>当前唯一 P0</b> 演化计划尚未写回 publication。下一施工必须是带快照保护的演化事务，而不是继续扩数学材料或继续针对 16 道题提升静态分数。TeX Loader 仍按既定边界保持解耦但不施工。</div>
+  <div class="callout warn"><b>当前唯一 P0</b> 不再是演化写盘，而是用独立的多领域时序材料验证“知识积累→纠错→重新回答→无关回归→回滚”闭环。不得继续针对五篇数学材料或 16 道题调规则；测试数据合同已冻结在 <code>experiments/evolution/</code>。TeX Loader 仍按既定边界保持解耦但不施工。</div>
 </section>
 </main>
 
 <footer>
-  WGEMemory4LLM Architecture Baseline v1.6 · 2026-07-24<br>
+  WGEMemory4LLM Architecture Baseline v1.7 · 2026-07-26<br>
   事实源：当前 src/ 与 scripts/、CLI status、五 Source publications、Pilot run <code>pilot-f19d0043-1099-4226-91e3-c58911e39df6</code>、知识快照与自动化测试。本文明确区分 implemented、unit-tested、real-data-validated 三种成熟度，不以计划冒充现状。
 </footer>
 </div>

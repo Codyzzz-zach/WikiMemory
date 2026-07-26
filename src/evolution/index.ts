@@ -93,13 +93,17 @@ export function planKnowledgeEvolution(
 	const next: KnowledgeState = {
 		claims: [...claimById.values()],
 		relations: [...relationById.values()],
-		wikiModules: current.wikiModules.map((module) => ({
-			...module,
-			claimRefs: [...module.claimRefs],
-			conceptRefs: [...module.conceptRefs],
-			disputes: [...module.disputes],
-			dependencies: [...module.dependencies],
-		})),
+		// WikiModule 是面向 Agent 的派生解释。引用的 Claim 一旦失效或进入争议，
+		// 旧解释不能继续留在 canonical 视图中；持久化层会保留隔离副本供重建。
+		wikiModules: current.wikiModules
+			.filter((module) => !affectedWikiModuleIds.includes(module.id))
+			.map((module) => ({
+				...module,
+				claimRefs: [...module.claimRefs],
+				conceptRefs: [...module.conceptRefs],
+				disputes: [...module.disputes],
+				dependencies: [...module.dependencies],
+			})),
 	};
 	return {
 		next,

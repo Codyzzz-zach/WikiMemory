@@ -48,6 +48,7 @@ const MANAGED_LOCATIONS: Array<{
 	{ directory: "relations", names: ["edges.jsonl"] },
 	{ directory: "quarantine", names: ["claims.jsonl", "relations.jsonl"] },
 	{ directory: "wiki", extensions: [".json", ".jsonl"] },
+	{ directory: "quarantine/wiki", extensions: [".json"] },
 	{ directory: "assertions", names: ["asserted-records.jsonl"] },
 ];
 

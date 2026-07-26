@@ -15,6 +15,7 @@ import type { AppConfig } from "../config/types.js";
 import { buildContextPack } from "../context-pack/index.js";
 import { createLLMProvider } from "../core/llm-provider.js";
 import type { LLMProvider } from "../core/llm-provider.js";
+import { applyKnowledgeEvolution } from "../evolution/transaction.js";
 import {
 	createKnowledgeSnapshot,
 	currentKnowledgeVersion,
@@ -474,6 +475,24 @@ versionsCommand
 				2,
 			),
 		);
+	});
+
+// ─── evolution 命令 ──────────────────────────────────────────────
+
+const evolutionCommand = program
+	.command("evolution")
+	.description("Apply audited correction relations as a rollback-protected transaction");
+evolutionCommand
+	.command("apply")
+	.description("Apply audited SUPERSEDES/CONTRADICTS relations to canonical knowledge")
+	.argument("<relationIds...>", "One or more audited rel:... IDs")
+	.requiredOption(
+		"--expect-current <knowledgeVersion>",
+		"Current kv:... observed by the caller; prevents overwriting concurrent changes",
+	)
+	.action((relationIds: string[], options: { expectCurrent: string }) => {
+		const result = applyKnowledgeEvolution(loadConfig(), relationIds, options.expectCurrent);
+		console.log(JSON.stringify(result, null, 2));
 	});
 
 // ─── query 命令 ──────────────────────────────────────────────────
