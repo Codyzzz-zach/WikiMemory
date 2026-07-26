@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>WGEMemory4LLM Architecture Baseline · v1.7 · 2026-07-26</title>
+  <title>WGEMemory4LLM Architecture Baseline · v1.8 · 2026-07-26</title>
   <script type="module">
     import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
     mermaid.initialize({
@@ -52,11 +52,11 @@
 <body>
 <div class="page">
 <header id="top">
-  <div class="eyebrow">Architecture Baseline <span class="status s-green">v1.7 · Protected Evolution Transaction</span></div>
-  <h1>WGEMemory4LLM 架构基线 v1.7</h1>
+  <div class="eyebrow">Architecture Baseline <span class="status s-green">v1.8 · Controlled Evolution Dataset</span></div>
+  <h1>WGEMemory4LLM 架构基线 v1.8</h1>
   <p class="subtitle">
-    本版以 2026-07-26 当前工作区代码、五篇冻结 Markdown 产物和盲测记录为事实源。除有界编译、双语义门禁、两阶段 Relation、原子 Source 发布和 Context Pack 外，现已具备领域无关 Seed Retriever、五文档 B/P/E-min 同预算实验、内容敏感 knowledgeVersion、可验证压缩快照，以及受快照保护的知识演化写盘事务。
-    必须区分三个结论：<b>五篇材料的编译与 99 条 Relation 可消费</b>；<b>修复 Seed 后 P 仅以 6.875 对 6.75 小幅领先文件夹基线，产品价值尚未被统计性证实</b>；<b>Correction 的跨 Source 生命周期写盘、Wiki fail-closed 和故障自动回滚已单元验证，但多领域真实 T0/T1/T2 与重新回答实验仍未执行</b>。
+    本版以 2026-07-26 当前工作区代码、五篇冻结 Markdown 产物和盲测记录为事实源。除有界编译、双语义门禁、两阶段 Relation、原子 Source 发布和 Context Pack 外，现已具备领域无关 Seed Retriever、五文档 B/P/E-min 同预算实验、内容敏感 knowledgeVersion、可验证压缩快照、受快照保护的知识演化写盘事务，以及独立的三领域受控演化数据集。
+    必须区分三个结论：<b>五篇材料的编译与 99 条 Relation 可消费</b>；<b>修复 Seed 后 P 仅以 6.875 对 6.75 小幅领先文件夹基线，产品价值尚未被统计性证实</b>；<b>24 篇/36 题/144 时点 Gold 的合成银标准已通过离线合同验证，但尚未执行在线 T0→T1→T2→T3 和重新回答实验</b>。
   </p>
   <div class="meta">
     <span class="chip"><b>静态检查</b> src + scripts 全覆盖</span>
@@ -65,6 +65,7 @@
     <span class="chip"><b>现存 Relation</b> 99 canonical / 99 consumable <span class="badge b-done">audit v1.2</span></span>
     <span class="chip"><b>Pilot</b> B 6.750 / P 6.875 / E-min 6.813</span>
     <span class="chip"><b>可回滚快照</b> 12 files / 96KB <span class="badge b-new">真实创建</span></span>
+    <span class="chip"><b>演化数据</b> 3 domains / 24 docs / 144 Gold <span class="badge b-new">silver</span></span>
   </div>
   <nav aria-label="目录">
     <a href="#truth">1·事实快照</a><a href="#review">2·审查裁决</a><a href="#overview">3·总览</a>
@@ -351,11 +352,12 @@ sequenceDiagram
       <tr><td>真实新版 ingest</td><td>01/02/03/05/09 已执行</td><td>五 Source 冻结为 375 Claim / 99 Relation / 2 WikiModule；完整性门禁均为 0 断证据、0 悬空端点、0 未审计 canonical Relation</td></tr>
       <tr><td>检索离线回归</td><td>通过</td><td>required source recall 57.6%→78.8%，precision 70.4%→76.5%，空包 7→1；库外题保持空包</td></tr>
       <tr><td>同预算盲测</td><td>16题×3组完成</td><td>B=6.750 / P=6.875 / E-min=6.813；P 首次略高于 B，但 H2 和条件题仍落后，不能外推到多领域产品价值</td></tr>
+      <tr><td>演化数据合同</td><td>PASS</td><td><code>wge-controlled-evolution-v1</code>：3 领域、24 篇独立 Markdown、36 题、144 个四时点 Gold、正文 13,550 字符；数量、路径、时间引用、替代目标和泄漏规则由脚本验证</td></tr>
       <tr><td>知识快照</td><td>真实创建成功</td><td><code>ks-2026-07-24T07-19-09-980Z-632d1680c050</code>，12 个托管文件、96KB gzip、knowledgeVersion=<code>kv:c1ca37825394fd06055271f8</code></td></tr>
       <tr><td>v1.5 验证周期在线消耗</td><td>所列 8 个诊断/有效 run 合计 684 calls / 937,452 tokens，另有 88 次审计缓存命中</td><td>完整重编触发逐 Claim/Relation 审计，且 prompt 变化导致缓存失效；不能表述成“3 篇=3 次调用”</td></tr>
     </tbody>
   </table>
-  <p class="small">v1.6 证明 Seed 失败是上一轮 P/E-min 大幅落后的主因之一；修复后 P 只获得方向性领先。v1.7 把演化计划接入受保护写盘事务，并在临时多 Source 项目完成成功、并发拒绝和中途故障回滚验证；真实多领域 Correction→重新回答仍未完成，不能写成产品自进化已成立。</p>
+  <p class="small">v1.6 证明 Seed 失败是上一轮 P/E-min 大幅落后的主因之一；v1.7 把演化计划接入受保护写盘事务；v1.8 建立可执行的三领域时序银标准。数据合同通过不等于产品实验通过，更不等于人工金标准或大规模真实语料验证。</p>
 </section>
 
 <section id="gaps">
@@ -365,7 +367,7 @@ sequenceDiagram
     <tbody>
       <tr><td>五篇冻结知识状态</td><td>01/02/03/05/09 均为 COMPLETED；375 Claim、99 条可消费 Relation、2 WikiModule</td><td><span class="badge b-done">完成</span></td><td>作为静态回归，不再按题目调规则</td></tr>
       <tr><td>Seed Retriever</td><td>通用 Unicode/IDF/Evidence 检索已实现并通过四域单测；真实 Pilot source recall 78.8%</td><td><span class="badge b-done">基线完成</span></td><td>下一轮用独立多领域 Dev/Held-out 验证泛化</td></tr>
-      <tr><td>产品效果证据</td><td>P 6.875 略高于 B 6.750；优势主要来自库外题的诚实拒答，H2 仍落后</td><td><span class="badge b-pending">证据不足</span></td><td>不能以 0.125 差距宣称胜出；进入多领域演化 Pilot</td></tr>
+      <tr><td>产品效果证据</td><td>P 6.875 略高于 B 6.750；三领域演化银标准已经冻结但尚未运行</td><td><span class="badge b-pending">证据不足</span></td><td>不能以静态 0.125 差距宣称胜出；下一步在隔离状态运行四时间线</td></tr>
       <tr><td>Relation 自动审计精度</td><td>人工抽检否决 1 条错误 SUPPORTS 和全部 4 条 EQUIVALENT_UNDER；后者已 fail-closed 禁止自动晋级，其他强边仍需抽检</td><td><span class="badge b-blocked">P0 质量</span></td><td>建立人工 Relation 金标准与独立 critic/确定性反循环规则；验证前不恢复 EQUIVALENT_UNDER 自动发布</td></tr>
       <tr><td>逐对象审计成本</td><td>v1.5 所列 8 个 run 使用 684 次在线调用、937,452 tokens；prompt 变化会使大量缓存失效</td><td><span class="badge b-pending">P1 成本</span></td><td>版本化增量复用与有界批量 critic，同时保持失败可定位、不可部分发布</td></tr>
       <tr><td>重编非确定性</td><td>同一 01 从 162 canonical Claim 漂移到 134，Concept 从 55 级别扩张到 110；02 Claim 从 89 漂移到 57</td><td><span class="badge b-blocked">P0 可靠性</span></td><td>冻结提取协议、建立重编 diff 门禁和保留旧 publication 的人工/阈值审批；禁止把 COMPLETED 等同于语义稳定</td></tr>
@@ -406,7 +408,7 @@ npm run dev -- relations backfill source:03-sequences-limits-e7ea8bc17c2cc4ab --
     <li><b>消费通过：</b>真实查询返回 15 Claims / 14 Relations，并展示全部 3 条 cross RELATED_TO；这些弱边的 <code>canSupportConclusion=false</code>。</li>
     <li><b>质量抽检未完全通过：</b>跨边 4 抽 1 假阳性，EQUIVALENT_UNDER 4 抽 4 假阳性；人工隔离机制有效，但自动 Relation 语义精度尚未达到无人复核发布标准。</li>
   </ol>
-  <h3>v1.7 下一轮：多领域 T0→T1→T2/T3</h3>
+  <h3>v1.8 下一轮：隔离运行多领域 T0→T1→T2/T3</h3>
   <ol>
     <li><b>T0 冻结：</b>选取至少三个领域（软件工程、AI 研究、产品/项目）的初始材料和可纠正命题；创建 knowledge snapshot，并记录 B/C/W/G 四组初始回答。</li>
     <li><b>T1 积累：</b>加入相关但不纠正旧结论的新材料，验证未受影响问题不退化、跨材料召回路径可观测。</li>
@@ -414,12 +416,12 @@ npm run dev -- relations backfill source:03-sequences-limits-e7ea8bc17c2cc4ab --
     <li><b>消费验证：</b>同一问题在 T2 必须停止复发旧错误，同时保留条件、来源与版本；无关问题不得因局部纠正退化。</li>
     <li><b>回滚验证：</b>故障注入或回归不通过时恢复 T1 快照，恢复后的 knowledgeVersion、对象内容和回答上下文哈希必须与 T1 一致。</li>
   </ol>
-  <div class="callout warn"><b>当前唯一 P0</b> 不再是演化写盘，而是用独立的多领域时序材料验证“知识积累→纠错→重新回答→无关回归→回滚”闭环。不得继续针对五篇数学材料或 16 道题调规则；测试数据合同已冻结在 <code>experiments/evolution/</code>。TeX Loader 仍按既定边界保持解耦但不施工。</div>
+  <div class="callout warn"><b>当前唯一 P0</b> 在独立实验状态中按时间线摄入 <code>dataset-v1</code>，验证“知识积累→纠错→重新回答→无关回归→回滚”，不能把测试 Source 混入当前 canonical 知识库。该银标准先测演化行为，不承担容量压力或真实世界正确性证明；TeX Loader 仍保持解耦但不施工。</div>
 </section>
 </main>
 
 <footer>
-  WGEMemory4LLM Architecture Baseline v1.7 · 2026-07-26<br>
+  WGEMemory4LLM Architecture Baseline v1.8 · 2026-07-26<br>
   事实源：当前 src/ 与 scripts/、CLI status、五 Source publications、Pilot run <code>pilot-f19d0043-1099-4226-91e3-c58911e39df6</code>、知识快照与自动化测试。本文明确区分 implemented、unit-tested、real-data-validated 三种成熟度，不以计划冒充现状。
 </footer>
 </div>

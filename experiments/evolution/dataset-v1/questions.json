@@ -1,0 +1,438 @@
+{
+  "schemaVersion": "wge-evolution-questions/v1",
+  "datasetId": "wge-controlled-evolution-v1",
+  "questions": [
+    {
+      "id": "EV-PLAT-001",
+      "domain": "platform-engineering",
+      "category": "affected",
+      "question": "一个非 P0 生产服务已经通过测试，现在还需要哪些批准，何时可以发布？",
+      "goldByTimeline": {
+        "T0": {"answerability":"ANSWERABLE","expectedAnswer":"需要开发、测试、当班运维三方人工批准，只能在周二或周四 02:00–04:00 发布；测试通过不能替代批准。","requiredFacts":["三方人工批准","周二或周四 02:00–04:00"],"requiredConditions":["非 P0 生产服务"],"forbiddenFacts":["测试门禁通过即可自动发布","全天候发布"],"sourceDocumentIds":["plat-release-t0"]},
+        "T1": {"answerability":"ANSWERABLE","expectedAnswer":"流程仍是三方人工批准并受周二、周四凌晨窗口限制；T1 的边缘日志和 CI 规定没有修改发布权限。","requiredFacts":["三方人工批准","周二或周四 02:00–04:00"],"requiredConditions":["T1 只是增量规定"],"forbiddenFacts":["CI 名称合规等于获准发布"],"sourceDocumentIds":["plat-release-t0","plat-ci-t1"]},
+        "T2": {"answerability":"ANSWERABLE","expectedAnswer":"不再需要三方人工批准。自动化测试全部通过、变更覆盖率至少 80%、没有严重漏洞，并登记回滚版本和监控负责人后，可以全天候自动发布。","requiredFacts":["覆盖率不低于 80%","没有严重漏洞","可全天候自动发布","不再要求三方批准"],"requiredConditions":["非 P0","所有自动化门禁均满足"],"forbiddenFacts":["覆盖率必须严格大于 80%","仍限周二周四凌晨"],"sourceDocumentIds":["plat-release-t2"]},
+        "T3": {"answerability":"ANSWERABLE","expectedAnswer":"普通非 P0 服务仍按 T2 自动门禁全天候发布；T3 的分歧只涉及活动期间内部传输，不改变发布审批。","requiredFacts":["自动化门禁","全天候发布"],"requiredConditions":["非 P0","传输争议不改变发布政策"],"forbiddenFacts":["因 T3 恢复三方审批"],"sourceDocumentIds":["plat-release-t2","plat-mtls-t3"]}
+      }
+    },
+    {
+      "id": "EV-PLAT-002",
+      "domain": "platform-engineering",
+      "category": "affected",
+      "question": "P0 服务当前要经过什么流程才能发布？",
+      "goldByTimeline": {
+        "T0": {"answerability":"ANSWERABLE","expectedAnswer":"先取得开发、测试、运维三方人工批准，再取得技术副总裁邮件特批，并在常规发布窗口执行。","requiredFacts":["三方人工批准","技术副总裁邮件特批","常规发布窗口"],"requiredConditions":["服务目录标记为 P0"],"forbiddenFacts":["只要 VP 口头同意即可"],"sourceDocumentIds":["plat-release-t0"]},
+        "T1": {"answerability":"ANSWERABLE","expectedAnswer":"仍需三方人工批准、技术副总裁邮件特批和常规发布窗口；T1 没有修改 P0 发布流程。","requiredFacts":["三方人工批准","技术副总裁邮件特批"],"requiredConditions":["P0"],"forbiddenFacts":["CI 任务合规可替代审批"],"sourceDocumentIds":["plat-release-t0"]},
+        "T2": {"answerability":"ANSWERABLE","expectedAnswer":"P0 服务必须先通过自动化门禁，再取得技术副总裁邮件特批；不再需要旧三方人工批准，也不受旧发布窗口限制。","requiredFacts":["自动化门禁","技术副总裁邮件特批","取消三方批准和旧窗口"],"requiredConditions":["P0 额外条件被明确保留"],"forbiddenFacts":["P0 可以只凭门禁自动发布","仍需三方审批"],"sourceDocumentIds":["plat-release-t2"]},
+        "T3": {"answerability":"ANSWERABLE","expectedAnswer":"仍是自动化门禁加技术副总裁邮件特批；活动传输争议没有修改该流程。","requiredFacts":["自动化门禁","VP 邮件特批"],"requiredConditions":["P0"],"forbiddenFacts":["T3 已取消 VP 特批"],"sourceDocumentIds":["plat-release-t2"]}
+      }
+    },
+    {
+      "id": "EV-PLAT-003",
+      "domain": "platform-engineering",
+      "category": "affected",
+      "question": "合作伙伴调用 Northstar 外部 API 时，最低允许使用哪个 TLS 版本？",
+      "goldByTimeline": {
+        "T0": {"answerability":"ANSWERABLE","expectedAnswer":"最低使用 TLS 1.2，TLS 1.0 和 1.1 不允许。","requiredFacts":["TLS 1.2"],"requiredConditions":["外部 API"],"forbiddenFacts":["TLS 1.3 是最低要求"],"sourceDocumentIds":["plat-security-t0"]},
+        "T1": {"answerability":"ANSWERABLE","expectedAnswer":"仍最低使用 TLS 1.2；T1 没有修改传输协议。","requiredFacts":["TLS 1.2"],"requiredConditions":["外部 API"],"forbiddenFacts":["日志驻留改变 TLS"],"sourceDocumentIds":["plat-security-t0"]},
+        "T2": {"answerability":"ANSWERABLE","expectedAnswer":"必须使用 TLS 1.3，不允许为了兼容自动降级到 TLS 1.2。","requiredFacts":["TLS 1.3","不得自动降级"],"requiredConditions":["外部 API"],"forbiddenFacts":["TLS 1.2 仍可接受"],"sourceDocumentIds":["plat-security-t2"]},
+        "T3": {"answerability":"ANSWERABLE","expectedAnswer":"外部 API 仍必须使用 TLS 1.3；T3 只争议内部 mTLS。","requiredFacts":["TLS 1.3"],"requiredConditions":["外部接口不在 T3 争议范围"],"forbiddenFacts":["星海节允许外部 TLS 1.2"],"sourceDocumentIds":["plat-security-t2","plat-mtls-t3"]}
+      }
+    },
+    {
+      "id": "EV-PLAT-004",
+      "domain": "platform-engineering",
+      "category": "affected",
+      "question": "非活动期间，生产微服务之间当前应采用什么传输方式？",
+      "goldByTimeline": {
+        "T0": {"answerability":"ANSWERABLE","expectedAnswer":"受管生产网络内允许明文 HTTP，但必须有网络访问控制、身份白名单和服务身份令牌。","requiredFacts":["允许明文 HTTP","服务身份令牌"],"requiredConditions":["受管生产网络内","非公网"],"forbiddenFacts":["所有内部调用强制 mTLS"],"sourceDocumentIds":["plat-security-t0"]},
+        "T1": {"answerability":"ANSWERABLE","expectedAnswer":"仍允许在满足受管网络条件时使用明文 HTTP；T1 未修改内部传输。","requiredFacts":["条件化允许明文 HTTP"],"requiredConditions":["受管生产网络"],"forbiddenFacts":["海外日志规定强制 mTLS"],"sourceDocumentIds":["plat-security-t0"]},
+        "T2": {"answerability":"ANSWERABLE","expectedAnswer":"所有生产微服务调用都必须启用 mTLS，不能在轮换异常时退回明文。","requiredFacts":["强制 mTLS","不得退回明文"],"requiredConditions":["生产微服务"],"forbiddenFacts":["同集群可继续明文"],"sourceDocumentIds":["plat-security-t2"]},
+        "T3": {"answerability":"ANSWERABLE","expectedAnswer":"题目限定非活动期间，因此仍按正式政策强制 mTLS；T3 的未决提议只针对星海节。","requiredFacts":["强制 mTLS"],"requiredConditions":["非星海节活动期间"],"forbiddenFacts":["把活动争议扩展为全时段明文"],"sourceDocumentIds":["plat-security-t2","plat-mtls-t3"]}
+      }
+    },
+    {
+      "id": "EV-PLAT-005",
+      "domain": "platform-engineering",
+      "category": "unaffected",
+      "question": "对外开放的 API 下线前需要提前多久发布正式弃用公告？",
+      "goldByTimeline": {
+        "T0": {"answerability":"ANSWERABLE","expectedAnswer":"至少提前 180 个自然日。","requiredFacts":["180 个自然日"],"requiredConditions":["已向其他团队或外部客户开放"],"forbiddenFacts":["90 天"],"sourceDocumentIds":["plat-lifecycle-t0"]},
+        "T1": {"answerability":"ANSWERABLE","expectedAnswer":"仍至少提前 180 个自然日；海外节点规定明确不免除该期限。","requiredFacts":["180 个自然日"],"requiredConditions":[],"forbiddenFacts":["日志保留 30 天等于弃用期"],"sourceDocumentIds":["plat-lifecycle-t0","plat-edge-t1"]},
+        "T2": {"answerability":"ANSWERABLE","expectedAnswer":"仍至少提前 180 个自然日，T2 没有修改生命周期规则。","requiredFacts":["180 个自然日"],"requiredConditions":[],"forbiddenFacts":["随发布窗口取消而取消公告"],"sourceDocumentIds":["plat-lifecycle-t0"]},
+        "T3": {"answerability":"ANSWERABLE","expectedAnswer":"仍至少提前 180 个自然日。","requiredFacts":["180 个自然日"],"requiredConditions":[],"forbiddenFacts":["T3 传输争议改变弃用期"],"sourceDocumentIds":["plat-lifecycle-t0"]}
+      }
+    },
+    {
+      "id": "EV-PLAT-006",
+      "domain": "platform-engineering",
+      "category": "unaffected",
+      "question": "测试服务器连续闲置多久会进入回收流程，标记后还等待多久？",
+      "goldByTimeline": {
+        "T0": {"answerability":"ANSWERABLE","expectedAnswer":"连续 90 天无活动后标记闲置，通知所有者并再等待 7 天；未申请保留才回收。","requiredFacts":["90 天","再等待 7 天"],"requiredConditions":["没有登录、部署和任务执行记录"],"forbiddenFacts":["第 90 天立即删除全部数据"],"sourceDocumentIds":["plat-lifecycle-t0"]},
+        "T1": {"answerability":"ANSWERABLE","expectedAnswer":"仍是 90 天闲置加 7 天通知等待期。","requiredFacts":["90 天","7 天"],"requiredConditions":[],"forbiddenFacts":["CI 产物 14 天规则适用于服务器"],"sourceDocumentIds":["plat-lifecycle-t0"]},
+        "T2": {"answerability":"ANSWERABLE","expectedAnswer":"仍是 90 天闲置后标记，再等待 7 天。","requiredFacts":["90 天","7 天"],"requiredConditions":[],"forbiddenFacts":["自动发布政策修改服务器回收"],"sourceDocumentIds":["plat-lifecycle-t0"]},
+        "T3": {"answerability":"ANSWERABLE","expectedAnswer":"仍是 90 天加 7 天。","requiredFacts":["90 天","7 天"],"requiredConditions":[],"forbiddenFacts":[],"sourceDocumentIds":["plat-lifecycle-t0"]}
+      }
+    },
+    {
+      "id": "EV-PLAT-007",
+      "domain": "platform-engineering",
+      "category": "unaffected",
+      "question": "服务身份令牌的最长有效期是多少？传输协议升级后该规则是否仍有效？",
+      "goldByTimeline": {
+        "T0": {"answerability":"ANSWERABLE","expectedAnswer":"最长 90 天，发现泄露时立即吊销。","requiredFacts":["90 天"],"requiredConditions":[],"forbiddenFacts":["24 小时"],"sourceDocumentIds":["plat-security-t0"]},
+        "T1": {"answerability":"ANSWERABLE","expectedAnswer":"仍最长 90 天。","requiredFacts":["90 天"],"requiredConditions":[],"forbiddenFacts":[],"sourceDocumentIds":["plat-security-t0"]},
+        "T2": {"answerability":"ANSWERABLE","expectedAnswer":"仍最长 90 天；T2 明确保留令牌控制。mTLS 证书默认 24 小时，不能与令牌有效期混淆。","requiredFacts":["令牌 90 天","规则被保留"],"requiredConditions":["区分服务令牌与 mTLS 证书"],"forbiddenFacts":["令牌改为 24 小时"],"sourceDocumentIds":["plat-security-t0","plat-security-t2"]},
+        "T3": {"answerability":"ANSWERABLE","expectedAnswer":"服务身份令牌仍最长 90 天。","requiredFacts":["90 天"],"requiredConditions":[],"forbiddenFacts":["传输争议取消轮换"],"sourceDocumentIds":["plat-security-t0","plat-security-t2"]}
+      }
+    },
+    {
+      "id": "EV-PLAT-008",
+      "domain": "platform-engineering",
+      "category": "synthesis",
+      "question": "海外边缘节点的原始访问日志和普通分支构建产物分别至少或默认保留多久？",
+      "goldByTimeline": {
+        "T0": {"answerability":"INSUFFICIENT","expectedAnswer":"T0 没有海外日志驻留和 CI 构建产物期限，无法回答。","requiredFacts":[],"requiredConditions":[],"forbiddenFacts":["凭常识给出期限"],"sourceDocumentIds":[]},
+        "T1": {"answerability":"ANSWERABLE","expectedAnswer":"海外节点原始访问日志在产生地区至少保留 30 天；普通分支构建产物保留 14 天。","requiredFacts":["日志至少 30 天","普通分支产物 14 天"],"requiredConditions":["原始日志不得在 30 天内跨区","普通分支而非生产引用产物"],"forbiddenFacts":["两者都保留 30 天"],"sourceDocumentIds":["plat-edge-t1","plat-ci-t1"]},
+        "T2": {"answerability":"ANSWERABLE","expectedAnswer":"仍分别是日志至少 30 天、普通分支产物 14 天。","requiredFacts":["30 天","14 天"],"requiredConditions":[],"forbiddenFacts":[],"sourceDocumentIds":["plat-edge-t1","plat-ci-t1"]},
+        "T3": {"answerability":"ANSWERABLE","expectedAnswer":"仍分别是日志至少 30 天、普通分支产物 14 天。","requiredFacts":["30 天","14 天"],"requiredConditions":[],"forbiddenFacts":[],"sourceDocumentIds":["plat-edge-t1","plat-ci-t1"]}
+      }
+    },
+    {
+      "id": "EV-PLAT-009",
+      "domain": "platform-engineering",
+      "category": "synthesis",
+      "question": "准备下线一个部署在海外边缘节点、已对其他团队开放的 API，至少要同时考虑哪两项时间义务？",
+      "goldByTimeline": {
+        "T0": {"answerability":"INSUFFICIENT","expectedAnswer":"只能确认 API 至少提前 180 天公告，T0 没有海外边缘日志义务，无法完整回答两项。","requiredFacts":["已知 180 天公告"],"requiredConditions":[],"forbiddenFacts":["编造第二项期限"],"sourceDocumentIds":["plat-lifecycle-t0"]},
+        "T1": {"answerability":"ANSWERABLE","expectedAnswer":"API 下线至少提前 180 天正式公告；海外节点原始访问日志在产生地区至少保留 30 天，两项彼此独立。","requiredFacts":["180 天公告","日志至少 30 天","义务独立"],"requiredConditions":["API 已开放","海外边缘节点"],"forbiddenFacts":["完成 30 天日志即可免除公告"],"sourceDocumentIds":["plat-lifecycle-t0","plat-edge-t1"]},
+        "T2": {"answerability":"ANSWERABLE","expectedAnswer":"仍需同时满足 180 天弃用公告和至少 30 天本地日志驻留。","requiredFacts":["180 天","30 天"],"requiredConditions":[],"forbiddenFacts":[],"sourceDocumentIds":["plat-lifecycle-t0","plat-edge-t1"]},
+        "T3": {"answerability":"ANSWERABLE","expectedAnswer":"仍需同时满足 180 天弃用公告和至少 30 天本地日志驻留。","requiredFacts":["180 天","30 天"],"requiredConditions":[],"forbiddenFacts":[],"sourceDocumentIds":["plat-lifecycle-t0","plat-edge-t1"]}
+      }
+    },
+    {
+      "id": "EV-PLAT-010",
+      "domain": "platform-engineering",
+      "category": "dispute",
+      "question": "关于星海节期间是否关闭内部 mTLS，相关委员会是否已经形成可执行的一致决定？",
+      "goldByTimeline": {
+        "T0": {"answerability":"INSUFFICIENT","expectedAnswer":"T0 没有星海节或委员会分歧信息。","requiredFacts":[],"requiredConditions":[],"forbiddenFacts":["虚构一致决定"],"sourceDocumentIds":[]},
+        "T1": {"answerability":"INSUFFICIENT","expectedAnswer":"T1 仍没有该活动分歧信息。","requiredFacts":[],"requiredConditions":[],"forbiddenFacts":["虚构一致决定"],"sourceDocumentIds":[]},
+        "T2": {"answerability":"INSUFFICIENT","expectedAnswer":"正式政策要求 mTLS 且性能活动不是自动例外，但尚无题目所问的两个委员会是否形成一致决定的信息。","requiredFacts":["正式政策要求 mTLS"],"requiredConditions":[],"forbiddenFacts":["声称委员会已讨论"],"sourceDocumentIds":["plat-security-t2"]},
+        "T3": {"answerability":"DISPUTED","expectedAnswer":"没有形成一致决定。性能委员会主张活动期间关闭 mTLS，安全合规委员会主张维持 mTLS；双方同级，最终机构尚未裁决。","requiredFacts":["关闭 mTLS 的主张","维持 mTLS 的主张","无最终裁决"],"requiredConditions":["备忘录不是批准文件"],"forbiddenFacts":["未经裁决宣布某一主张已生效"],"sourceDocumentIds":["plat-security-t2","plat-mtls-t3"]}
+      }
+    },
+    {
+      "id": "EV-PLAT-011",
+      "domain": "platform-engineering",
+      "category": "insufficient",
+      "question": "Northstar 前端 CDN 的默认缓存刷新周期是多少？",
+      "goldByTimeline": {
+        "T0": {"answerability":"INSUFFICIENT","expectedAnswer":"材料未规定 CDN 缓存刷新周期。","requiredFacts":[],"requiredConditions":[],"forbiddenFacts":["给出任意分钟或小时数"],"sourceDocumentIds":[]},
+        "T1": {"answerability":"INSUFFICIENT","expectedAnswer":"材料仍未规定 CDN 缓存刷新周期。","requiredFacts":[],"requiredConditions":[],"forbiddenFacts":["把日志或产物期限当缓存周期"],"sourceDocumentIds":[]},
+        "T2": {"answerability":"INSUFFICIENT","expectedAnswer":"材料仍未规定。","requiredFacts":[],"requiredConditions":[],"forbiddenFacts":[],"sourceDocumentIds":[]},
+        "T3": {"answerability":"INSUFFICIENT","expectedAnswer":"材料仍未规定。","requiredFacts":[],"requiredConditions":[],"forbiddenFacts":[],"sourceDocumentIds":[]}
+      }
+    },
+    {
+      "id": "EV-PLAT-012",
+      "domain": "platform-engineering",
+      "category": "insufficient",
+      "question": "生产数据库完整备份应该保留多少天？",
+      "goldByTimeline": {
+        "T0": {"answerability":"INSUFFICIENT","expectedAnswer":"材料没有数据库完整备份保留期；测试服务器回收规则明确不覆盖数据库快照。","requiredFacts":["现有回收规则不覆盖数据库快照"],"requiredConditions":[],"forbiddenFacts":["回答 90 天"],"sourceDocumentIds":["plat-lifecycle-t0"]},
+        "T1": {"answerability":"INSUFFICIENT","expectedAnswer":"仍无数据库备份保留期限。","requiredFacts":[],"requiredConditions":[],"forbiddenFacts":["用日志 30 天代替"],"sourceDocumentIds":["plat-lifecycle-t0"]},
+        "T2": {"answerability":"INSUFFICIENT","expectedAnswer":"仍无数据库备份保留期限。","requiredFacts":[],"requiredConditions":[],"forbiddenFacts":[],"sourceDocumentIds":["plat-lifecycle-t0"]},
+        "T3": {"answerability":"INSUFFICIENT","expectedAnswer":"仍无数据库备份保留期限。","requiredFacts":[],"requiredConditions":[],"forbiddenFacts":[],"sourceDocumentIds":["plat-lifecycle-t0"]}
+      }
+    },
+    {
+      "id": "EV-COMM-001",
+      "domain": "commerce-operations",
+      "category": "affected",
+      "question": "普通衣服没有质量问题，签收后最晚多久可以申请无理由退货？",
+      "goldByTimeline": {
+        "T0": {"answerability":"ANSWERABLE","expectedAnswer":"签收次日起 7 个自然日内。","requiredFacts":["7 个自然日"],"requiredConditions":["普通实物商品","无质量问题"],"forbiddenFacts":["15 天"],"sourceDocumentIds":["comm-returns-t0"]},
+        "T1": {"answerability":"ANSWERABLE","expectedAnswer":"仍是签收次日起 7 个自然日内；环保包装和礼品卡没有修改退货期。","requiredFacts":["7 个自然日"],"requiredConditions":[],"forbiddenFacts":["3 年礼品卡期限等于退货期"],"sourceDocumentIds":["comm-returns-t0"]},
+        "T2": {"answerability":"ANSWERABLE","expectedAnswer":"签收次日起 15 个自然日内。","requiredFacts":["15 个自然日"],"requiredConditions":["普通实物商品"],"forbiddenFacts":["仍是 7 天"],"sourceDocumentIds":["comm-returns-t2"]},
+        "T3": {"answerability":"ANSWERABLE","expectedAnswer":"仍是签收次日起 15 个自然日内；注册资料分歧不影响退货。","requiredFacts":["15 个自然日"],"requiredConditions":[],"forbiddenFacts":["因 T3 无法判断退货期"],"sourceDocumentIds":["comm-returns-t2"]}
+      }
+    },
+    {
+      "id": "EV-COMM-002",
+      "domain": "commerce-operations",
+      "category": "affected",
+      "question": "手机包装已拆，但设备从未激活且配件完整，能否无理由退货？",
+      "goldByTimeline": {
+        "T0": {"answerability":"ANSWERABLE","expectedAnswer":"不能。T0 要求数码产品包装未拆封且未激活。","requiredFacts":["拆封后不适用无理由退货"],"requiredConditions":["不讨论质量问题"],"forbiddenFacts":["扣 10% 即可退"],"sourceDocumentIds":["comm-returns-t0"]},
+        "T1": {"answerability":"ANSWERABLE","expectedAnswer":"仍不能，T1 没有修改数码退货条件。","requiredFacts":["拆封后不能无理由退"],"requiredConditions":[],"forbiddenFacts":["礼品卡规则允许退货"],"sourceDocumentIds":["comm-returns-t0"]},
+        "T2": {"answerability":"ANSWERABLE","expectedAnswer":"可以在 15 日内申请，但退款金额扣除成交价 10% 的检测与折旧费用。","requiredFacts":["可以申请","扣除 10%"],"requiredConditions":["从未激活","序列号一致","配件完整","15 日内"],"forbiddenFacts":["全额无条件退款"],"sourceDocumentIds":["comm-returns-t2"]},
+        "T3": {"answerability":"ANSWERABLE","expectedAnswer":"仍可在满足未激活等条件时退货并扣 10%。","requiredFacts":["可退","扣 10%"],"requiredConditions":["未激活且配件完整"],"forbiddenFacts":[],"sourceDocumentIds":["comm-returns-t2"]}
+      }
+    },
+    {
+      "id": "EV-COMM-003",
+      "domain": "commerce-operations",
+      "category": "affected",
+      "question": "仓库确认退款条件后，Harbor Market 最晚多久提交退款指令？这是否等于资金到账？",
+      "goldByTimeline": {
+        "T0": {"answerability":"ANSWERABLE","expectedAnswer":"三个工作日内提交退款指令；不等于资金到账，到账时间由支付渠道决定。","requiredFacts":["三个工作日","处理不等于到账"],"requiredConditions":["仓库已确认符合条件"],"forbiddenFacts":["三个工作日内保证到账"],"sourceDocumentIds":["comm-returns-t0"]},
+        "T1": {"answerability":"ANSWERABLE","expectedAnswer":"仍是三个工作日内提交，且不承诺到账时间。","requiredFacts":["三个工作日","不等于到账"],"requiredConditions":[],"forbiddenFacts":[],"sourceDocumentIds":["comm-returns-t0"]},
+        "T2": {"answerability":"ANSWERABLE","expectedAnswer":"二十四小时内提交退款指令；仍不等于资金到账。","requiredFacts":["24 小时","不等于到账"],"requiredConditions":["仓库已确认"],"forbiddenFacts":["24 小时到账"],"sourceDocumentIds":["comm-returns-t2"]},
+        "T3": {"answerability":"ANSWERABLE","expectedAnswer":"仍是二十四小时内提交指令，不承诺实际到账时间。","requiredFacts":["24 小时","渠道到账另计"],"requiredConditions":[],"forbiddenFacts":[],"sourceDocumentIds":["comm-returns-t2"]}
+      }
+    },
+    {
+      "id": "EV-COMM-004",
+      "domain": "commerce-operations",
+      "category": "affected",
+      "question": "不考虑配送费和促销，同一商品在北美站点是否仍比大陆基础标价高 5%？",
+      "goldByTimeline": {
+        "T0": {"answerability":"ANSWERABLE","expectedAnswer":"是，北美商品标价统一在大陆基础标价上调 5%。","requiredFacts":["上调 5%"],"requiredConditions":["只比较商品标价"],"forbiddenFacts":["全球统一标价"],"sourceDocumentIds":["comm-price-t0"]},
+        "T1": {"answerability":"ANSWERABLE","expectedAnswer":"仍高 5%；T1 优惠没有取消区域标价。","requiredFacts":["上调 5%"],"requiredConditions":[],"forbiddenFacts":["环保减 2 元等于取消 5%"],"sourceDocumentIds":["comm-price-t0"]},
+        "T2": {"answerability":"ANSWERABLE","expectedAnswer":"不再高 5%，同一 SKU 采用相同基础商品标价；配送费和法定费用仍可不同。","requiredFacts":["取消北美 5% 上调","统一基础商品标价"],"requiredConditions":["不比较配送等其他费用"],"forbiddenFacts":["所有最终应付金额全球相同"],"sourceDocumentIds":["comm-price-t2"]},
+        "T3": {"answerability":"ANSWERABLE","expectedAnswer":"仍不再上调 5%；欧洲注册争议不影响定价。","requiredFacts":["统一基础商品标价"],"requiredConditions":[],"forbiddenFacts":[],"sourceDocumentIds":["comm-price-t2"]}
+      }
+    },
+    {
+      "id": "EV-COMM-005",
+      "domain": "commerce-operations",
+      "category": "unaffected",
+      "question": "黑卡会员通过 App 专属入口咨询时，十分钟 SLA 具体承诺什么？",
+      "goldByTimeline": {
+        "T0": {"answerability":"ANSWERABLE","expectedAnswer":"每日 09:00–21:00 的咨询承诺十分钟内首次人工有效回复，不承诺十分钟解决问题或到账。","requiredFacts":["十分钟首次人工回复","09:00–21:00"],"requiredConditions":["App 专属入口"],"forbiddenFacts":["十分钟完成退款"],"sourceDocumentIds":["comm-member-t0"]},
+        "T1": {"answerability":"ANSWERABLE","expectedAnswer":"仍只承诺服务时段内十分钟首次人工回复。","requiredFacts":["首次人工回复"],"requiredConditions":["服务时段和专属入口"],"forbiddenFacts":["保证解决"],"sourceDocumentIds":["comm-member-t0"]},
+        "T2": {"answerability":"ANSWERABLE","expectedAnswer":"仍只承诺十分钟首次人工回复；快速退款时限是另一项 SLA。","requiredFacts":["首次人工回复"],"requiredConditions":[],"forbiddenFacts":["把 24 小时退款指令改成十分钟"],"sourceDocumentIds":["comm-member-t0","comm-returns-t2"]},
+        "T3": {"answerability":"ANSWERABLE","expectedAnswer":"仍只承诺十分钟首次人工回复。","requiredFacts":["首次人工回复"],"requiredConditions":[],"forbiddenFacts":[],"sourceDocumentIds":["comm-member-t0"]}
+      }
+    },
+    {
+      "id": "EV-COMM-006",
+      "domain": "commerce-operations",
+      "category": "unaffected",
+      "question": "银卡会员每月免邮权益有哪些关键限制？",
+      "goldByTimeline": {
+        "T0": {"answerability":"ANSWERABLE","expectedAnswer":"每月一张，只适用于中国大陆地址的一个普通包裹标准配送，不覆盖冷链、超大件、跨境关税或加急费，不能结转。","requiredFacts":["每月一张","中国大陆标准配送","不能结转"],"requiredConditions":[],"forbiddenFacts":["全球免邮","所有包裹免邮"],"sourceDocumentIds":["comm-member-t0"]},
+        "T1": {"answerability":"ANSWERABLE","expectedAnswer":"限制不变；环保包装立减与免邮作用不同。","requiredFacts":["每月一张","大陆普通包裹"],"requiredConditions":[],"forbiddenFacts":["环保包装扩大免邮范围"],"sourceDocumentIds":["comm-member-t0","comm-eco-t1"]},
+        "T2": {"answerability":"ANSWERABLE","expectedAnswer":"限制仍不变，统一商品标价政策明确没有把免邮券扩到北美或欧洲。","requiredFacts":["大陆标准配送","每月一张"],"requiredConditions":[],"forbiddenFacts":["全球统一标价等于全球免邮"],"sourceDocumentIds":["comm-member-t0","comm-price-t2"]},
+        "T3": {"answerability":"ANSWERABLE","expectedAnswer":"限制仍不变。","requiredFacts":["每月一张","大陆标准配送"],"requiredConditions":[],"forbiddenFacts":[],"sourceDocumentIds":["comm-member-t0"]}
+      }
+    },
+    {
+      "id": "EV-COMM-007",
+      "domain": "commerce-operations",
+      "category": "unaffected",
+      "question": "生鲜食品是否因为退货期延长而获得无理由退货资格？",
+      "goldByTimeline": {
+        "T0": {"answerability":"ANSWERABLE","expectedAnswer":"没有，生鲜食品不适用七日无理由退货。","requiredFacts":["生鲜不支持无理由退货"],"requiredConditions":["不讨论质量问题"],"forbiddenFacts":["七日内可退"],"sourceDocumentIds":["comm-returns-t0"]},
+        "T1": {"answerability":"ANSWERABLE","expectedAnswer":"仍没有。","requiredFacts":["生鲜例外"],"requiredConditions":[],"forbiddenFacts":["环保包装使生鲜可退"],"sourceDocumentIds":["comm-returns-t0"]},
+        "T2": {"answerability":"ANSWERABLE","expectedAnswer":"没有。T2 明确保留生鲜例外，十五日延长不适用于生鲜。","requiredFacts":["生鲜例外被保留"],"requiredConditions":["质量问题另走售后"],"forbiddenFacts":["所有实物无条件 15 天可退"],"sourceDocumentIds":["comm-returns-t2"]},
+        "T3": {"answerability":"ANSWERABLE","expectedAnswer":"仍没有无理由退货资格。","requiredFacts":["生鲜例外"],"requiredConditions":[],"forbiddenFacts":[],"sourceDocumentIds":["comm-returns-t2"]}
+      }
+    },
+    {
+      "id": "EV-COMM-008",
+      "domain": "commerce-operations",
+      "category": "synthesis",
+      "question": "欧洲区银卡会员购买可用普通包装的衣服并选择环保包装，商品标价、平台税费、包装优惠和免邮分别怎样处理？",
+      "goldByTimeline": {
+        "T0": {"answerability":"INSUFFICIENT","expectedAnswer":"可知欧洲额外收取 15% 平台税费，银卡免邮券只适用于大陆；T0 尚无环保包装规则，无法完整回答。","requiredFacts":["欧洲 15%","银卡券不适用欧洲"],"requiredConditions":[],"forbiddenFacts":["编造环保优惠"],"sourceDocumentIds":["comm-member-t0","comm-price-t0"]},
+        "T1": {"answerability":"ANSWERABLE","expectedAnswer":"欧洲商品按旧区域规则额外收 15% 平台税费；环保包装立减 2 元；银卡大陆免邮券不适用欧洲。","requiredFacts":["15% 平台税费","立减 2 元","无银卡免邮"],"requiredConditions":["衣服符合普通包装"],"forbiddenFacts":["欧洲也免邮"],"sourceDocumentIds":["comm-member-t0","comm-price-t0","comm-eco-t1"]},
+        "T2": {"answerability":"ANSWERABLE","expectedAnswer":"商品采用全球统一基础标价，不再向用户额外收 15% 平台税费；环保包装立减 2 元；银卡免邮券仍不适用于欧洲，配送费可能存在。","requiredFacts":["统一基础标价","取消 15% 平台税费","立减 2 元","不免欧洲运费"],"requiredConditions":["其他法定费用或配送费可不同"],"forbiddenFacts":["最终订单全球完全同价"],"sourceDocumentIds":["comm-member-t0","comm-eco-t1","comm-price-t2"]},
+        "T3": {"answerability":"ANSWERABLE","expectedAnswer":"处理方式与 T2 相同；注册资料争议不改变结算规则。","requiredFacts":["统一标价","立减 2 元","欧洲不享银卡免邮"],"requiredConditions":[],"forbiddenFacts":[],"sourceDocumentIds":["comm-member-t0","comm-eco-t1","comm-price-t2"]}
+      }
+    },
+    {
+      "id": "EV-COMM-009",
+      "domain": "commerce-operations",
+      "category": "synthesis",
+      "question": "用电子礼品卡购买的普通衣服符合无理由退货条件时，退货期限和礼品卡支付部分的退款去向是什么？",
+      "goldByTimeline": {
+        "T0": {"answerability":"INSUFFICIENT","expectedAnswer":"可知普通衣服七日内可申请，但 T0 没有礼品卡退款去向，无法完整回答。","requiredFacts":["7 天申请期限"],"requiredConditions":[],"forbiddenFacts":["编造礼品卡规则"],"sourceDocumentIds":["comm-returns-t0"]},
+        "T1": {"answerability":"ANSWERABLE","expectedAnswer":"签收次日起 7 日内申请；礼品卡支付部分退回原礼品卡，原卡已到期时生成 90 天退款专用卡。","requiredFacts":["7 天","退回原礼品卡","到期时生成 90 天退款卡"],"requiredConditions":["商品符合退货条件"],"forbiddenFacts":["礼品卡退款兑换现金"],"sourceDocumentIds":["comm-returns-t0","comm-gift-t1"]},
+        "T2": {"answerability":"ANSWERABLE","expectedAnswer":"申请期限改为 15 日；礼品卡支付部分仍退回原卡，原卡已到期则生成 90 天退款专用卡。","requiredFacts":["15 天","退回原卡或退款专用卡"],"requiredConditions":[],"forbiddenFacts":["退款重新获得三年有效期"],"sourceDocumentIds":["comm-returns-t2","comm-gift-t1"]},
+        "T3": {"answerability":"ANSWERABLE","expectedAnswer":"仍是 15 日申请，礼品卡部分退回原卡或 90 天退款专用卡。","requiredFacts":["15 天","礼品卡退款去向"],"requiredConditions":[],"forbiddenFacts":[],"sourceDocumentIds":["comm-returns-t2","comm-gift-t1"]}
+      }
+    },
+    {
+      "id": "EV-COMM-010",
+      "domain": "commerce-operations",
+      "category": "dispute",
+      "question": "欧洲站注册是否已经确定必须收集账单地址和职业信息？",
+      "goldByTimeline": {
+        "T0": {"answerability":"INSUFFICIENT","expectedAnswer":"T0 没有注册资料采集规则。","requiredFacts":[],"requiredConditions":[],"forbiddenFacts":["从定价规则推导注册字段"],"sourceDocumentIds":[]},
+        "T1": {"answerability":"INSUFFICIENT","expectedAnswer":"T1 仍没有注册资料采集规则。","requiredFacts":[],"requiredConditions":[],"forbiddenFacts":[],"sourceDocumentIds":[]},
+        "T2": {"answerability":"INSUFFICIENT","expectedAnswer":"T2 的统一标价政策没有规定注册字段。","requiredFacts":[],"requiredConditions":[],"forbiddenFacts":["把收货地址定价规则当注册要求"],"sourceDocumentIds":[]},
+        "T3": {"answerability":"DISPUTED","expectedAnswer":"尚未确定。增长部要求强制收集账单地址、出生年份和职业，隐私合规部主张注册仅收邮箱、密码和同意记录；欧洲业务负责人尚未裁决。","requiredFacts":["增长部主张","合规部反对","无最终决定"],"requiredConditions":["区分注册阶段与结算阶段"],"forbiddenFacts":["宣称强制收集已生效","宣称永久禁止账单地址"],"sourceDocumentIds":["comm-privacy-t3"]}
+      }
+    },
+    {
+      "id": "EV-COMM-011",
+      "domain": "commerce-operations",
+      "category": "insufficient",
+      "question": "今年双十一是否有跨店满减，门槛和减免金额是多少？",
+      "goldByTimeline": {
+        "T0": {"answerability":"INSUFFICIENT","expectedAnswer":"材料未提供双十一跨店满减信息。","requiredFacts":[],"requiredConditions":[],"forbiddenFacts":["编造促销门槛"],"sourceDocumentIds":[]},
+        "T1": {"answerability":"INSUFFICIENT","expectedAnswer":"环保包装减 2 元不是跨店满减，材料仍不足。","requiredFacts":[],"requiredConditions":[],"forbiddenFacts":["把环保优惠当跨店满减"],"sourceDocumentIds":["comm-eco-t1"]},
+        "T2": {"answerability":"INSUFFICIENT","expectedAnswer":"材料仍未提供跨店满减。","requiredFacts":[],"requiredConditions":[],"forbiddenFacts":[],"sourceDocumentIds":[]},
+        "T3": {"answerability":"INSUFFICIENT","expectedAnswer":"材料仍未提供跨店满减。","requiredFacts":[],"requiredConditions":[],"forbiddenFacts":[],"sourceDocumentIds":[]}
+      }
+    },
+    {
+      "id": "EV-COMM-012",
+      "domain": "commerce-operations",
+      "category": "insufficient",
+      "question": "Harbor Market 会员积分会在多久后过期？",
+      "goldByTimeline": {
+        "T0": {"answerability":"INSUFFICIENT","expectedAnswer":"材料只说明会员响应和免邮权益，没有积分有效期。","requiredFacts":[],"requiredConditions":[],"forbiddenFacts":["用免邮券月末失效代替积分期限"],"sourceDocumentIds":["comm-member-t0"]},
+        "T1": {"answerability":"INSUFFICIENT","expectedAnswer":"礼品卡三年有效期不是会员积分有效期，仍无法回答。","requiredFacts":[],"requiredConditions":[],"forbiddenFacts":["回答三年"],"sourceDocumentIds":["comm-gift-t1"]},
+        "T2": {"answerability":"INSUFFICIENT","expectedAnswer":"材料仍未规定积分有效期。","requiredFacts":[],"requiredConditions":[],"forbiddenFacts":[],"sourceDocumentIds":[]},
+        "T3": {"answerability":"INSUFFICIENT","expectedAnswer":"材料仍未规定积分有效期。","requiredFacts":[],"requiredConditions":[],"forbiddenFacts":[],"sourceDocumentIds":[]}
+      }
+    },
+    {
+      "id": "EV-RES-001",
+      "domain": "research-operations",
+      "category": "affected",
+      "question": "医疗敏感数据现在能否在获批的公有云机密计算环境中处理？",
+      "goldByTimeline": {
+        "T0": {"answerability":"ANSWERABLE","expectedAnswer":"不能，T0 要求医疗敏感数据只能在物理隔离本地机房，脱敏例外也只到内网私有云。","requiredFacts":["原始医疗数据严禁上公有云"],"requiredConditions":[],"forbiddenFacts":["获批即可使用公有云"],"sourceDocumentIds":["res-data-t0"]},
+        "T1": {"answerability":"ANSWERABLE","expectedAnswer":"仍不能；外部数据引用和算力配额没有修改医疗数据位置。","requiredFacts":["仍限本地或获批私有云例外"],"requiredConditions":[],"forbiddenFacts":["校验和允许上云"],"sourceDocumentIds":["res-data-t0","res-citation-t1"]},
+        "T2": {"answerability":"ANSWERABLE","expectedAnswer":"可以，但只能使用治理委员会批准清单中的公有云机密计算环境，数据需在可信执行环境中加密处理并由实验室控制密钥；不能上传任意普通公有云。","requiredFacts":["获批机密计算环境可以使用","端到端加密和自有密钥"],"requiredConditions":["项目级审批","环境在批准清单"],"forbiddenFacts":["医疗数据可直接上传任意公有云"],"sourceDocumentIds":["res-data-t2"]},
+        "T3": {"answerability":"ANSWERABLE","expectedAnswer":"仍可在满足批准清单、加密和项目审批条件时使用机密计算环境；人脸研究争议不改变一般医疗数据计算规则。","requiredFacts":["条件化允许获批机密计算"],"requiredConditions":["项目级审批"],"forbiddenFacts":["T3 取消所有云计算"],"sourceDocumentIds":["res-data-t2"]}
+      }
+    },
+    {
+      "id": "EV-RES-002",
+      "domain": "research-operations",
+      "category": "affected",
+      "question": "通过 k-anonymity 检查的医疗数据是否仍被限定只能在内网私有云训练？",
+      "goldByTimeline": {
+        "T0": {"answerability":"ANSWERABLE","expectedAnswer":"是，获批后只能在实验室内网私有云训练，不能上公有云。","requiredFacts":["只能申请内网私有云"],"requiredConditions":["通过脱敏和风险报告审批"],"forbiddenFacts":["可自动上任意云"],"sourceDocumentIds":["res-data-t0"]},
+        "T1": {"answerability":"ANSWERABLE","expectedAnswer":"仍限定在获批内网私有云。","requiredFacts":["私有云限制"],"requiredConditions":[],"forbiddenFacts":[],"sourceDocumentIds":["res-data-t0"]},
+        "T2": {"answerability":"ANSWERABLE","expectedAnswer":"不再只限私有云，但仍必须使用获批的联邦学习或公有云机密计算模式，并保留重识别风险报告。","requiredFacts":["不再只限私有云","必须使用两种获批模式之一"],"requiredConditions":["仍需风险报告和审批"],"forbiddenFacts":["脱敏后完全不受控制"],"sourceDocumentIds":["res-data-t2"]},
+        "T3": {"answerability":"ANSWERABLE","expectedAnswer":"仍不只限私有云，但只能采用获批计算模式。","requiredFacts":["获批联邦或机密计算"],"requiredConditions":[],"forbiddenFacts":[],"sourceDocumentIds":["res-data-t2"]}
+      }
+    },
+    {
+      "id": "EV-RES-003",
+      "domain": "research-operations",
+      "category": "affected",
+      "question": "生效日后提交的分类模型报告应把哪个指标作为核心指标？",
+      "goldByTimeline": {
+        "T0": {"answerability":"ANSWERABLE","expectedAnswer":"F1-Macro。","requiredFacts":["F1-Macro"],"requiredConditions":["分类模型"],"forbiddenFacts":["F1-Micro 是核心"],"sourceDocumentIds":["res-eval-t0"]},
+        "T1": {"answerability":"ANSWERABLE","expectedAnswer":"仍以 F1-Macro 为核心。","requiredFacts":["F1-Macro"],"requiredConditions":[],"forbiddenFacts":[],"sourceDocumentIds":["res-eval-t0"]},
+        "T2": {"answerability":"ANSWERABLE","expectedAnswer":"F1-Micro 是核心指标，F1-Macro 仍作为必须报告的辅助指标。","requiredFacts":["F1-Micro 核心","F1-Macro 辅助"],"requiredConditions":["生效日后提交"],"forbiddenFacts":["不再报告 F1-Macro"],"sourceDocumentIds":["res-eval-t2"]},
+        "T3": {"answerability":"ANSWERABLE","expectedAnswer":"仍以 F1-Micro 为核心，并辅助报告 F1-Macro。","requiredFacts":["F1-Micro"],"requiredConditions":[],"forbiddenFacts":[],"sourceDocumentIds":["res-eval-t2"]}
+      }
+    },
+    {
+      "id": "EV-RES-004",
+      "domain": "research-operations",
+      "category": "affected",
+      "question": "生效日后文本生成模型的核心自动评测指标是什么，BLEU 是否完全禁止？",
+      "goldByTimeline": {
+        "T0": {"answerability":"ANSWERABLE","expectedAnswer":"核心指标是 BLEU；ROUGE-L 可以补充。","requiredFacts":["BLEU 核心"],"requiredConditions":["文本生成模型"],"forbiddenFacts":["ROUGE-L 核心"],"sourceDocumentIds":["res-eval-t0"]},
+        "T1": {"answerability":"ANSWERABLE","expectedAnswer":"仍以 BLEU 为核心。","requiredFacts":["BLEU"],"requiredConditions":[],"forbiddenFacts":[],"sourceDocumentIds":["res-eval-t0"]},
+        "T2": {"answerability":"ANSWERABLE","expectedAnswer":"核心指标改为 ROUGE-L；BLEU 没有被禁止，可以作为辅助指标，但不能单独证明达到核心门槛。","requiredFacts":["ROUGE-L 核心","BLEU 可辅助"],"requiredConditions":["生效日后"],"forbiddenFacts":["BLEU 完全禁止","BLEU 仍是核心"],"sourceDocumentIds":["res-eval-t2"]},
+        "T3": {"answerability":"ANSWERABLE","expectedAnswer":"仍是 ROUGE-L 核心、BLEU 可辅助。","requiredFacts":["ROUGE-L","BLEU 可辅助"],"requiredConditions":[],"forbiddenFacts":[],"sourceDocumentIds":["res-eval-t2"]}
+      }
+    },
+    {
+      "id": "EV-RES-005",
+      "domain": "research-operations",
+      "category": "unaffected",
+      "question": "声称有性能改进的新算法合入主干前，需要满足哪些复现门槛？",
+      "goldByTimeline": {
+        "T0": {"answerability":"ANSWERABLE","expectedAnswer":"三个不同随机种子都完成有效运行；核心指标中位数相对基线至少提高 2%，任一运行不得低于基线 1% 以上，并提交完整复现材料。","requiredFacts":["三个随机种子","中位数至少提高 2%","单次不得低于基线超过 1%"],"requiredConditions":["声称性能改进并要合入主干"],"forbiddenFacts":["只需最好种子正收益"],"sourceDocumentIds":["res-repro-t0"]},
+        "T1": {"answerability":"ANSWERABLE","expectedAnswer":"复现门槛不变；若使用外部数据，还要补数据引用与 SHA-256。","requiredFacts":["三个种子","2% 中位数门槛"],"requiredConditions":[],"forbiddenFacts":["72 小时运行等于复现通过"],"sourceDocumentIds":["res-repro-t0","res-citation-t1"]},
+        "T2": {"answerability":"ANSWERABLE","expectedAnswer":"三个种子和收益门槛不变，只是按生效后的项目核心指标计算。","requiredFacts":["三个种子","收益门槛不变"],"requiredConditions":["使用当前核心指标"],"forbiddenFacts":["指标切换取消复现"],"sourceDocumentIds":["res-repro-t0","res-eval-t2"]},
+        "T3": {"answerability":"ANSWERABLE","expectedAnswer":"复现门槛仍不变。","requiredFacts":["三个种子","2% 中位数门槛"],"requiredConditions":[],"forbiddenFacts":[],"sourceDocumentIds":["res-repro-t0"]}
+      }
+    },
+    {
+      "id": "EV-RES-006",
+      "domain": "research-operations",
+      "category": "unaffected",
+      "question": "未提前申请例外的单卡实验运行到 80 小时会怎样？",
+      "goldByTimeline": {
+        "T0": {"answerability":"INSUFFICIENT","expectedAnswer":"T0 没有单卡运行时长规定。","requiredFacts":[],"requiredConditions":[],"forbiddenFacts":["编造自动终止"],"sourceDocumentIds":[]},
+        "T1": {"answerability":"ANSWERABLE","expectedAnswer":"达到 72 小时时调度器发送终止信号，十分钟宽限后强制结束；80 小时且无预先例外不能继续运行。","requiredFacts":["72 小时终止信号","十分钟宽限"],"requiredConditions":["单卡","没有预先批准例外"],"forbiddenFacts":["默认允许 80 小时"],"sourceDocumentIds":["res-compute-t1"]},
+        "T2": {"answerability":"ANSWERABLE","expectedAnswer":"仍会在 72 小时触发终止流程；数据和指标政策没有改变算力上限。","requiredFacts":["72 小时"],"requiredConditions":["无例外"],"forbiddenFacts":[],"sourceDocumentIds":["res-compute-t1"]},
+        "T3": {"answerability":"ANSWERABLE","expectedAnswer":"仍按 72 小时上限终止。","requiredFacts":["72 小时"],"requiredConditions":[],"forbiddenFacts":[],"sourceDocumentIds":["res-compute-t1"]}
+      }
+    },
+    {
+      "id": "EV-RES-007",
+      "domain": "research-operations",
+      "category": "unaffected",
+      "question": "使用外部数据集时，附录和完整性证明至少要记录什么？",
+      "goldByTimeline": {
+        "T0": {"answerability":"INSUFFICIENT","expectedAnswer":"T0 没有外部数据集引用与校验要求。","requiredFacts":[],"requiredConditions":[],"forbiddenFacts":["编造 MD5 要求"],"sourceDocumentIds":[]},
+        "T1": {"answerability":"ANSWERABLE","expectedAnswer":"记录名称、发布者、版本或提交号、下载日期、许可证、地址，并为实际归档计算 SHA-256；MD5 不能作为唯一证明。","requiredFacts":["版本与许可证等引用字段","SHA-256"],"requiredConditions":["实际使用的外部数据"],"forbiddenFacts":["只提供 MD5 即可"],"sourceDocumentIds":["res-citation-t1"]},
+        "T2": {"answerability":"ANSWERABLE","expectedAnswer":"要求不变，仍需完整引用信息和 SHA-256。","requiredFacts":["SHA-256","数据版本与许可证"],"requiredConditions":[],"forbiddenFacts":[],"sourceDocumentIds":["res-citation-t1"]},
+        "T3": {"answerability":"ANSWERABLE","expectedAnswer":"要求仍不变。","requiredFacts":["SHA-256"],"requiredConditions":[],"forbiddenFacts":[],"sourceDocumentIds":["res-citation-t1"]}
+      }
+    },
+    {
+      "id": "EV-RES-008",
+      "domain": "research-operations",
+      "category": "synthesis",
+      "question": "研究员计划在公有云使用医疗数据和外部开源数据训练文本生成模型，提交报告前需要同时满足哪些关键要求？",
+      "goldByTimeline": {
+        "T0": {"answerability":"ANSWERABLE","expectedAnswer":"T0 不允许把医疗数据放到公有云，因此该计划不能按描述执行；若改在本地，文本生成核心指标是 BLEU。","requiredFacts":["医疗数据禁止公有云","BLEU 核心"],"requiredConditions":[],"forbiddenFacts":["直接允许公有云"],"sourceDocumentIds":["res-data-t0","res-eval-t0"]},
+        "T1": {"answerability":"ANSWERABLE","expectedAnswer":"公有云计划仍不允许；使用外部数据还需记录版本、许可证并计算 SHA-256，文本生成仍以 BLEU 为核心。","requiredFacts":["仍禁止公有云","外部数据 SHA-256","BLEU"],"requiredConditions":[],"forbiddenFacts":["校验和替代隐私审批"],"sourceDocumentIds":["res-data-t0","res-eval-t0","res-citation-t1"]},
+        "T2": {"answerability":"ANSWERABLE","expectedAnswer":"只能在批准清单中的机密计算环境或采用获批联邦模式，并完成项目审批、加密与密钥控制；外部数据需记录版本、许可证和 SHA-256；文本生成报告以 ROUGE-L 为核心，BLEU 可辅助。","requiredFacts":["获批机密计算或联邦模式","项目审批和加密","外部数据 SHA-256","ROUGE-L 核心"],"requiredConditions":["不能使用任意普通公有云"],"forbiddenFacts":["可直接上传任意云","BLEU 仍是唯一核心"],"sourceDocumentIds":["res-data-t2","res-citation-t1","res-eval-t2"]},
+        "T3": {"answerability":"ANSWERABLE","expectedAnswer":"要求与 T2 相同；人脸研究冲突只有在项目涉及真实人脸时才额外相关。","requiredFacts":["受控云计算条件","SHA-256","ROUGE-L"],"requiredConditions":["若涉及真实人脸则等待伦理裁决"],"forbiddenFacts":["T3 取消所有医疗研究"],"sourceDocumentIds":["res-data-t2","res-citation-t1","res-eval-t2","res-face-t3"]}
+      }
+    },
+    {
+      "id": "EV-RES-009",
+      "domain": "research-operations",
+      "category": "synthesis",
+      "question": "一个使用外部数据集的新算法要以性能改进名义合入主干，数据和复现材料至少包括什么？",
+      "goldByTimeline": {
+        "T0": {"answerability":"INSUFFICIENT","expectedAnswer":"可知需要三个种子、收益门槛、代码和配置等复现材料，但 T0 没有外部数据集引用细节，无法完整回答。","requiredFacts":["三个随机种子和复现材料"],"requiredConditions":[],"forbiddenFacts":["编造哈希算法"],"sourceDocumentIds":["res-repro-t0"]},
+        "T1": {"answerability":"ANSWERABLE","expectedAnswer":"外部数据附录记录名称、发布者、版本、许可证、地址并计算 SHA-256；复现材料包含代码、配置、依赖、数据版本、三个种子和原始指标，且满足收益门槛。","requiredFacts":["SHA-256 与数据引用","三个种子","完整复现材料","收益门槛"],"requiredConditions":[],"forbiddenFacts":["只给截图或 MD5"],"sourceDocumentIds":["res-citation-t1","res-repro-t0"]},
+        "T2": {"answerability":"ANSWERABLE","expectedAnswer":"材料要求不变，并使用当前正式核心指标计算收益。","requiredFacts":["数据引用与 SHA-256","三个种子","当前核心指标"],"requiredConditions":[],"forbiddenFacts":["指标切换免除历史材料"],"sourceDocumentIds":["res-citation-t1","res-repro-t0","res-eval-t2"]},
+        "T3": {"answerability":"ANSWERABLE","expectedAnswer":"仍需外部数据引用与 SHA-256、三个种子和完整复现材料。","requiredFacts":["SHA-256","三个种子"],"requiredConditions":[],"forbiddenFacts":[],"sourceDocumentIds":["res-citation-t1","res-repro-t0"]}
+      }
+    },
+    {
+      "id": "EV-RES-010",
+      "domain": "research-operations",
+      "category": "dispute",
+      "question": "真实人脸活体检测研究现在是否已经获得发布许可，或已经被永久禁止？",
+      "goldByTimeline": {
+        "T0": {"answerability":"INSUFFICIENT","expectedAnswer":"T0 没有真实人脸立项规则。","requiredFacts":[],"requiredConditions":[],"forbiddenFacts":["从医疗数据规则推导许可"],"sourceDocumentIds":[]},
+        "T1": {"answerability":"INSUFFICIENT","expectedAnswer":"T1 仍没有该立项决定。","requiredFacts":[],"requiredConditions":[],"forbiddenFacts":[],"sourceDocumentIds":[]},
+        "T2": {"answerability":"INSUFFICIENT","expectedAnswer":"数据计算与指标修订没有给出真实人脸项目的立项或发布许可。","requiredFacts":[],"requiredConditions":[],"forbiddenFacts":["机密计算批准等于人脸项目批准"],"sourceDocumentIds":[]},
+        "T3": {"answerability":"DISPUTED","expectedAnswer":"两者都不能确定。伦理委员会主张无限期冻结，安全业务线要求紧急推进；最终需要研究执行委员会裁决，目前只有暂停等待状态。","requiredFacts":["伦理冻结主张","安全推进主张","研究执行委员会未裁决"],"requiredConditions":["纪要不是批准书或正式永久禁令"],"forbiddenFacts":["宣称已经获批发布","宣称永久禁令已生效"],"sourceDocumentIds":["res-face-t3"]}
+      }
+    },
+    {
+      "id": "EV-RES-011",
+      "domain": "research-operations",
+      "category": "insufficient",
+      "question": "一次实验出现负收益会怎样影响研究员绩效和奖金？",
+      "goldByTimeline": {
+        "T0": {"answerability":"INSUFFICIENT","expectedAnswer":"研究规程明确不评价绩效，负收益的绩效或奖金影响由未提供的人事制度决定。","requiredFacts":["当前规程不评价绩效"],"requiredConditions":[],"forbiddenFacts":["负收益必然扣奖金"],"sourceDocumentIds":["res-repro-t0"]},
+        "T1": {"answerability":"INSUFFICIENT","expectedAnswer":"仍没有人事制度信息。","requiredFacts":["无法从研究规则推导绩效"],"requiredConditions":[],"forbiddenFacts":[],"sourceDocumentIds":["res-repro-t0"]},
+        "T2": {"answerability":"INSUFFICIENT","expectedAnswer":"指标修订没有规定绩效后果。","requiredFacts":[],"requiredConditions":[],"forbiddenFacts":["指标不达标必然扣奖金"],"sourceDocumentIds":["res-repro-t0"]},
+        "T3": {"answerability":"INSUFFICIENT","expectedAnswer":"材料仍不足以判断绩效和奖金。","requiredFacts":[],"requiredConditions":[],"forbiddenFacts":[],"sourceDocumentIds":["res-repro-t0"]}
+      }
+    },
+    {
+      "id": "EV-RES-012",
+      "domain": "research-operations",
+      "category": "insufficient",
+      "question": "长任务生成的检查点必须保留多少天？",
+      "goldByTimeline": {
+        "T0": {"answerability":"INSUFFICIENT","expectedAnswer":"T0 没有检查点保留期限。","requiredFacts":[],"requiredConditions":[],"forbiddenFacts":["编造天数"],"sourceDocumentIds":[]},
+        "T1": {"answerability":"INSUFFICIENT","expectedAnswer":"T1 规定超过 12 小时的任务至少每 12 小时保存检查点，但没有规定检查点保留多少天。","requiredFacts":["保存频率不等于保留期限"],"requiredConditions":[],"forbiddenFacts":["回答 12 天或 72 天"],"sourceDocumentIds":["res-compute-t1"]},
+        "T2": {"answerability":"INSUFFICIENT","expectedAnswer":"仍没有检查点保留天数。","requiredFacts":[],"requiredConditions":[],"forbiddenFacts":[],"sourceDocumentIds":["res-compute-t1"]},
+        "T3": {"answerability":"INSUFFICIENT","expectedAnswer":"仍没有检查点保留天数。","requiredFacts":[],"requiredConditions":[],"forbiddenFacts":[],"sourceDocumentIds":["res-compute-t1"]}
+      }
+    }
+  ]
+}

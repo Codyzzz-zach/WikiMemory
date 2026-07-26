@@ -15,7 +15,8 @@
 		"format": "biome format --write src",
 		"test": "vitest run",
 		"test:watch": "vitest",
-		"pilot": "tsx scripts/pilot.ts"
+		"pilot": "tsx scripts/pilot.ts",
+		"evolution:validate": "node --import tsx scripts/validate-evolution-dataset.ts"
 	},
 	"dependencies": {
 		"commander": "^13.0.0",
