@@ -113,20 +113,37 @@ describe("relation and provenance gates", () => {
 		expect(provider.relationAuditCalls).toBe(0);
 	});
 
-	it("rejects a passed Relation audit without edge-level supporting evidence", async () => {
+	it("quarantines a passed Relation audit without edge-level supporting evidence", async () => {
 		const provider = new ClaimPassRelationPassWithoutSupportProvider();
 		const claims = [claim("claim:a", "Alpha", "span:a"), claim("claim:b", "Beta", "span:b")];
 		const spans = [span("span:a", "Alpha."), span("span:b", "Beta.")];
-		await expect(
-			lintCompileResult(
-				temporaryConfig(),
-				claims,
-				[relation(claims[0] as Claim, claims[1] as Claim)],
-				[],
-				spans,
-				provider,
-			),
-		).rejects.toThrow("必须提供至少一条边级支持证据");
+		const result = await lintCompileResult(
+			temporaryConfig(),
+			claims,
+			[relation(claims[0] as Claim, claims[1] as Claim)],
+			[],
+			spans,
+			provider,
+		);
+		expect(result.canonicalRelations).toHaveLength(0);
+		expect(result.quarantinedRelations[0]?.issues[0]?.code).toBe("RELATION_AUDIT_INVALID");
+	});
+
+	it("quarantines an invalid Relation audit without blocking endpoint Claims", async () => {
+		const provider = new ClaimPassRelationInvalidProvider();
+		const claims = [claim("claim:a", "Alpha", "span:a"), claim("claim:b", "Beta", "span:b")];
+		const result = await lintCompileResult(
+			temporaryConfig(),
+			claims,
+			[relation(claims[0] as Claim, claims[1] as Claim)],
+			[],
+			[span("span:a", "Alpha."), span("span:b", "Beta.")],
+			provider,
+		);
+		expect(result.canonicalClaims).toHaveLength(2);
+		expect(result.canonicalRelations).toHaveLength(0);
+		expect(result.quarantinedRelations[0]?.issues[0]?.code).toBe("RELATION_AUDIT_INVALID");
+		expect(provider.relationAuditCalls).toBe(2);
 	});
 
 	it("rejects a FACT supported only by a user assertion", () => {
@@ -354,6 +371,41 @@ class ClaimPassRelationIdentityFailProvider implements LLMProvider {
 				anchorSpanIndex: 0,
 				failedDimensions: ["identity"],
 				supportingEvidenceSpanIndexes: [],
+			});
+		}
+		throw new Error("Unexpected audit prompt");
+	}
+
+	async chatWithThinking(options: ChatOptions): Promise<ChatResult> {
+		return this.chat(options);
+	}
+}
+
+class ClaimPassRelationInvalidProvider implements LLMProvider {
+	relationAuditCalls = 0;
+
+	async chat(options: ChatOptions): Promise<ChatResult> {
+		if (options.systemPrompt === SEMANTIC_AUDIT_SYSTEM) {
+			return auditChatResult({
+				verdict: "passed",
+				dimensions: passingDimensions(),
+				anchorSpanIndex: 0,
+				failedDimensions: [],
+			});
+		}
+		if (options.systemPrompt === RELATION_AUDIT_SYSTEM) {
+			this.relationAuditCalls++;
+			return auditChatResult({
+				verdict: "failed",
+				dimensions: Object.fromEntries(
+					["identity", "relation", "type", "direction", "conditions"].map((dimension) => [
+						dimension,
+						{ result: "pass", evidenceSpanIndexes: [0, 1] },
+					]),
+				),
+				anchorSpanIndex: 0,
+				failedDimensions: [],
+				supportingEvidenceSpanIndexes: [0, 1],
 			});
 		}
 		throw new Error("Unexpected audit prompt");

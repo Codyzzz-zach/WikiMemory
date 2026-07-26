@@ -74,6 +74,7 @@ export type IssueCode =
 	| "RELATION_EQUIVALENCE_REVIEW_REQUIRED"
 	| "HUMAN_REVIEW_REJECTED"
 	| "RELATION_SEMANTIC_FAILED"
+	| "RELATION_AUDIT_INVALID"
 	| "RELATION_IDENTITY_MISMATCH"
 	| "RELATION_TYPE_MISMATCH"
 	| "RELATION_DIRECTION_MISMATCH"
@@ -828,11 +829,22 @@ ${evidenceText}
 		}
 	}
 	if (!verdict) {
-		throw new Error(
-			`Relation 语义审计连续两次无法产生可信结果: ${
-				lastError instanceof Error ? lastError.message : String(lastError)
-			}`,
-		);
+		return {
+			issues: [
+				{
+					code: "RELATION_AUDIT_INVALID",
+					severity: "error",
+					affectedObject: relation.id,
+					detail: `Relation 语义审计连续两次无法产生可信结构化结果；仅隔离该边，不阻断已通过门禁的端点 Claim：${
+						lastError instanceof Error ? lastError.message : String(lastError)
+					}`,
+					recommendedState: "QUARANTINE",
+				},
+			],
+			evidenceSpanIds: evidenceSpans.map((span) => span.id),
+			conditionStatus: "UNVERIFIED",
+			relationAuditVersion: null,
+		};
 	}
 
 	const issueCodes: Record<RelationAuditDimensionName, IssueCode> = {
