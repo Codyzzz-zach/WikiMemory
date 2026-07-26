@@ -666,14 +666,18 @@ export async function compileCrossMaterialRelations(
 	newClaims: Claim[],
 	newConcepts: Concept[],
 	existingClaims: Claim[],
+	existingSources: Source[] = [],
 ): Promise<CrossMaterialCompileResult> {
 	const relationEligibleNewClaims = newClaims.filter(
 		(claim) => !isSourceMetadataClaim(claim.statement),
 	);
+	const explicitlyReferencedSourceIds = findExplicitlyReferencedSourceIds(source, existingSources);
 	const candidates = selectCrossMaterialCandidates(
 		relationEligibleNewClaims,
 		newConcepts,
 		existingClaims,
+		40,
+		explicitlyReferencedSourceIds,
 	);
 	if (relationEligibleNewClaims.length === 0 || candidates.length === 0) {
 		return { relations: [], candidateClaimIds: candidates.map((claim) => claim.id) };
@@ -720,6 +724,7 @@ export function selectCrossMaterialCandidates(
 	newConcepts: Concept[],
 	existingClaims: Claim[],
 	limit = 40,
+	explicitlyReferencedSourceIds: ReadonlySet<string> = new Set(),
 ): Claim[] {
 	const conceptTerms = new Set(
 		newConcepts
@@ -738,6 +743,9 @@ export function selectCrossMaterialCandidates(
 		)
 		.map((claim) => {
 			const text = normalizeClaimForDedup(claim.statement);
+			const explicitlyReferenced = [...explicitlyReferencedSourceIds].some((sourceId) =>
+				claimBelongsToSource(claim, sourceId),
+			);
 			let conceptScore = 0;
 			for (const term of conceptTerms) if (text.includes(term)) conceptScore += 4;
 			const semanticSimilarity = Math.max(
@@ -746,14 +754,39 @@ export function selectCrossMaterialCandidates(
 			);
 			return {
 				claim,
-				score: conceptScore + semanticSimilarity,
-				eligible: conceptScore > 0 || semanticSimilarity >= 0.18,
+				score: (explicitlyReferenced ? 100 : 0) + conceptScore + semanticSimilarity,
+				eligible: explicitlyReferenced || conceptScore > 0 || semanticSimilarity >= 0.18,
 			};
 		})
 		.filter((item) => item.eligible)
 		.sort((left, right) => right.score - left.score || left.claim.id.localeCompare(right.claim.id))
 		.slice(0, limit)
 		.map((item) => item.claim);
+}
+
+export function findExplicitlyReferencedSourceIds(
+	newSource: Source,
+	existingSources: Source[],
+): Set<string> {
+	const newIdentifiers = documentIdentifiers(newSource.parsedText);
+	return new Set(
+		existingSources
+			.filter((source) =>
+				[...documentIdentifiers(source.parsedText)].some((identifier) =>
+					newIdentifiers.has(identifier),
+				),
+			)
+			.map((source) => source.id),
+	);
+}
+
+function documentIdentifiers(text: string): Set<string> {
+	return new Set(text.toUpperCase().match(/\b[A-Z]{2,}(?:-[A-Z0-9]+){2,}\b/gu) ?? []);
+}
+
+function claimBelongsToSource(claim: Claim, sourceId: string): boolean {
+	const sourceKey = sourceId.replace(/^source:/u, "");
+	return claim.evidenceSpanIds.some((spanId) => spanId.startsWith(`span:${sourceKey}-`));
 }
 
 function bigramOverlap(left: string, right: string): number {

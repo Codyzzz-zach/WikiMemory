@@ -346,6 +346,7 @@ async function runCrossMaterialStage(
 		publication.claims,
 		publication.concepts,
 		existingClaims,
+		readAllSources(config).filter((item) => item.id !== source.id),
 	);
 
 	recordCompileStage(config, run, "CROSS_MATERIAL_RELATION_LINT");

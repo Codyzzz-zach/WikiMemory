@@ -16,6 +16,7 @@ import type { Claim, Source, SourceSpan } from "../types/index.js";
 import {
 	compileCrossMaterialRelations,
 	compileSource,
+	findExplicitlyReferencedSourceIds,
 	selectCrossMaterialCandidates,
 } from "./index.js";
 
@@ -191,6 +192,39 @@ describe("bounded compiler", () => {
 		);
 		expect(provider.prompt).toContain("source evidence: span:new-policy-bbb-1");
 		expect(provider.prompt).toContain("source evidence: span:old-policy-aaa-1");
+	});
+
+	it("recalls claims from a Source explicitly referenced by document identifier", async () => {
+		const newSource: Source = {
+			id: "source:new-policy-bbb",
+			hash: "bbb",
+			uri: "new-policy.md",
+			parsedText: "本政策取代《旧政策》（OLD-POLICY-2026-01）。新规则改为双人审批。",
+			sourceType: "md",
+			loaderVersion: "test",
+			createdAt: "2026-07-23T00:00:00.000Z",
+		};
+		const oldSource: Source = {
+			id: "source:old-policy-aaa",
+			hash: "aaa",
+			uri: "old-policy.md",
+			parsedText: "文件编号 OLD-POLICY-2026-01。每周日必须由风险委员会线下签字。",
+			sourceType: "md",
+			loaderVersion: "test",
+			createdAt: "2026-07-01T00:00:00.000Z",
+		};
+		const references = findExplicitlyReferencedSourceIds(newSource, [oldSource]);
+		expect([...references]).toEqual([oldSource.id]);
+		const oldClaim = compiledClaim("claim:old", "每周日必须由风险委员会线下签字");
+		oldClaim.evidenceSpanIds = ["span:old-policy-aaa-3#chars-0-20"];
+		const candidates = selectCrossMaterialCandidates(
+			[compiledClaim("claim:new", "新规则改为双人审批")],
+			[],
+			[oldClaim],
+			40,
+			references,
+		);
+		expect(candidates.map((claim) => claim.id)).toEqual([oldClaim.id]);
 	});
 });
 
