@@ -256,6 +256,33 @@ describe("relation and provenance gates", () => {
 		});
 	});
 
+	it("persists the auditor's total supersession effect independently from conditions", async () => {
+		const provider = new ClaimAndRelationPassProvider();
+		const claims = [
+			claim("claim:new", "外部 API 必须使用 TLS 1.3", "span:new"),
+			claim("claim:old", "外部 API 必须使用 TLS 1.2", "span:old"),
+		];
+		const candidate = relation(claims[0] as Claim, claims[1] as Claim);
+		candidate.type = "SUPERSEDES";
+		candidate.conditions = ["自 2026-07-10 起"];
+		const result = await lintCompileResult(
+			temporaryConfig(),
+			claims,
+			[candidate],
+			[],
+			[
+				span("span:new", "外部 API 必须使用 TLS 1.3。"),
+				span("span:old", "外部 API 必须使用 TLS 1.2。"),
+			],
+			provider,
+		);
+		expect(result.canonicalRelations[0]).toMatchObject({
+			conditionStatus: "PRESERVED",
+			supersessionEffect: "TOTAL_TO_CLAIM",
+			relationAuditVersion: RELATION_AUDIT_VERSION,
+		});
+	});
+
 	it("quarantines a passed Relation audit that selects evidence from only one endpoint", async () => {
 		const provider = new ClaimPassRelationOneSidedProvider();
 		const claims = [claim("claim:a", "Alpha", "span:a"), claim("claim:b", "Beta", "span:b")];
@@ -461,6 +488,9 @@ class ClaimAndRelationPassProvider implements LLMProvider {
 		if (options.systemPrompt === RELATION_AUDIT_SYSTEM) {
 			return auditChatResult({
 				verdict: "passed",
+				supersessionEffect: options.messages[0]?.content.includes("\nSUPERSEDES\n")
+					? "TOTAL_TO_CLAIM"
+					: "NOT_APPLICABLE",
 				dimensions: Object.fromEntries(
 					["identity", "relation", "type", "direction", "conditions"].map((dimension) => [
 						dimension,
@@ -580,6 +610,7 @@ function relation(from: Claim, to: Claim): Relation {
 		type: "SUPPORTS",
 		conditions: [],
 		conditionStatus: "UNVERIFIED",
+		supersessionEffect: null,
 		relationAuditVersion: null,
 		evidenceSpanIds: [...from.evidenceSpanIds, ...to.evidenceSpanIds],
 		derivation: "INFERRED",

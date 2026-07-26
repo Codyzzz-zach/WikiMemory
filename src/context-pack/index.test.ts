@@ -118,6 +118,7 @@ function fixture(relationType: Relation["type"] = "SUPPORTS"): AppConfig {
 		type: relationType,
 		conditions: ["仅在测试环境"],
 		conditionStatus: "PRESERVED",
+		supersessionEffect: relationType === "SUPERSEDES" ? "CONDITIONAL_TO_CLAIM" : null,
 		relationAuditVersion: RELATION_AUDIT_VERSION,
 		evidenceSpanIds: ["span:global", "span:personal"],
 		derivation: "INFERRED",

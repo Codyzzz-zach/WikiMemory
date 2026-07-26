@@ -62,8 +62,8 @@ export function planKnowledgeEvolution(
 		if (!from || !to) throw new Error(`演化 Relation 端点必须都是 Claim: ${relationId}`);
 
 		if (relation.type === "SUPERSEDES") {
-			if (relation.conditionStatus !== "EXPLICIT_NONE" || relation.conditions.length > 0) {
-				throw new Error(`有条件 SUPERSEDES 不能全局淘汰旧 Claim: ${relationId}`);
+			if (relation.supersessionEffect !== "TOTAL_TO_CLAIM") {
+				throw new Error(`非全量 SUPERSEDES 不能全局淘汰旧 Claim: ${relationId}`);
 			}
 			claimById.set(to.id, { ...to, lifecycle: "SUPERSEDED" });
 			superseded.add(to.id);

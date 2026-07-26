@@ -46,6 +46,7 @@ function relation(id: string, from: string, to: string): Relation {
 		type: "SUPPORTS",
 		conditions: [],
 		conditionStatus: "EXPLICIT_NONE",
+		supersessionEffect: null,
 		relationAuditVersion: RELATION_AUDIT_VERSION,
 		evidenceSpanIds: ["span:alpha"],
 		derivation: "INFERRED",

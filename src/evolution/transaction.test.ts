@@ -213,6 +213,7 @@ function relation(id: string, from: string, to: string, type: Relation["type"]):
 		type,
 		conditions: [],
 		conditionStatus: "EXPLICIT_NONE",
+		supersessionEffect: type === "SUPERSEDES" ? "TOTAL_TO_CLAIM" : null,
 		relationAuditVersion: RELATION_AUDIT_VERSION,
 		evidenceSpanIds: [`span:${from}`, `span:${to}`],
 		derivation: "INFERRED",

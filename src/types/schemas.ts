@@ -165,6 +165,10 @@ export type RelationAuditDimensionName = z.infer<typeof RelationAuditDimensionNa
 
 export const RelationSemanticVerdictSchema = z.object({
 	verdict: z.enum(["passed", "failed"]),
+	/** SUPERSEDES 相对整个 To Claim 的覆盖效果；其他关系必须为 NOT_APPLICABLE。 */
+	supersessionEffect: z
+		.enum(["TOTAL_TO_CLAIM", "CONDITIONAL_TO_CLAIM", "NOT_APPLICABLE"])
+		.default("NOT_APPLICABLE"),
 	dimensions: z.object({
 		identity: DimensionVerdictSchema,
 		relation: DimensionVerdictSchema,

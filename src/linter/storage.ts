@@ -351,16 +351,19 @@ function safeObjectFileName(id: string): string {
 function normalizeRelation(relation: Relation): Relation {
 	const legacy = relation as Relation & {
 		conditionStatus?: Relation["conditionStatus"];
+		supersessionEffect?: Relation["supersessionEffect"];
 		relationAuditVersion?: string | null;
 	};
 	const conditionStatus = legacy.conditionStatus ?? "UNVERIFIED";
+	const supersessionEffect = legacy.supersessionEffect ?? null;
 	const relationAuditVersion = legacy.relationAuditVersion ?? null;
 	if (conditionStatus !== "UNVERIFIED" && relationAuditVersion !== null) {
-		return { ...relation, conditionStatus, relationAuditVersion };
+		return { ...relation, conditionStatus, supersessionEffect, relationAuditVersion };
 	}
 	return {
 		...relation,
 		conditionStatus: "UNVERIFIED",
+		supersessionEffect: null,
 		relationAuditVersion: null,
 		validity: "UNRESOLVED",
 	};
@@ -637,6 +640,7 @@ export function computeKnowledgeVersion(
 				type: relation.type,
 				conditions: [...relation.conditions].sort(),
 				conditionStatus: relation.conditionStatus,
+				supersessionEffect: relation.supersessionEffect,
 				relationAuditVersion: relation.relationAuditVersion,
 				evidenceSpanIds: [...relation.evidenceSpanIds].sort(),
 				validity: relation.validity,

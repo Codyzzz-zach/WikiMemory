@@ -963,6 +963,7 @@ function buildRelations(
 			type: draft.type,
 			conditions,
 			conditionStatus: "UNVERIFIED",
+			supersessionEffect: null,
 			relationAuditVersion: null,
 			evidenceSpanIds: [
 				...new Set([...fromClaim.evidenceSpanIds, ...toClaim.evidenceSpanIds]),

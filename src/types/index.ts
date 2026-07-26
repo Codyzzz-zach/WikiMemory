@@ -128,6 +128,9 @@ export type EdgeSource =
 /** Relation 条件是否经过显式确认，避免 [] 同时表示“无条件”和“未提取”。 */
 export type RelationConditionStatus = "EXPLICIT_NONE" | "PRESERVED" | "UNVERIFIED";
 
+/** SUPERSEDES 对 To Claim 生命周期的覆盖效果；与 conditions 是否被保真正交。 */
+export type SupersessionEffect = "TOTAL_TO_CLAIM" | "CONDITIONAL_TO_CLAIM";
+
 /**
  * Source 的编译状态——与不可变 Source 及 Source manifest 分离。
  * 状态事件记录在 runs/compile-state.jsonl，按 sourceId 取最后一条为准。
@@ -214,6 +217,8 @@ export interface Relation {
 	type: RelationType;
 	conditions: string[];
 	conditionStatus: RelationConditionStatus;
+	/** 只有通过边级审计的 SUPERSEDES 才能非空；事务仅允许 TOTAL_TO_CLAIM 全局置旧。 */
+	supersessionEffect: SupersessionEffect | null;
 	/** 通过哪一版边级语义门禁；null 表示未审核，不得进入图消费。 */
 	relationAuditVersion: string | null;
 	evidenceSpanIds: string[];

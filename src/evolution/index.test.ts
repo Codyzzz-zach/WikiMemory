@@ -77,6 +77,7 @@ describe("cross-domain knowledge evolution", () => {
 			...relation("rel:conditional", newPolicy.id, oldPolicy.id, "SUPERSEDES"),
 			conditions: ["仅适用于高风险项目"],
 			conditionStatus: "PRESERVED" as const,
+			supersessionEffect: "CONDITIONAL_TO_CLAIM" as const,
 		};
 		expect(() =>
 			planKnowledgeEvolution(
@@ -84,6 +85,23 @@ describe("cross-domain knowledge evolution", () => {
 				[conditional.id],
 			),
 		).toThrow("不能全局淘汰");
+	});
+
+	it("retires the whole old Claim when audited scope is total while preserving boundaries", () => {
+		const oldPolicy = claim("claim:total-old", "外部 API 必须使用 TLS 1.2");
+		const newPolicy = claim("claim:total-new", "外部 API 必须使用 TLS 1.3");
+		const total = {
+			...relation("rel:total", newPolicy.id, oldPolicy.id, "SUPERSEDES"),
+			conditions: ["自 2026-07-10 起", "只替代外部接口章节"],
+			conditionStatus: "PRESERVED" as const,
+			supersessionEffect: "TOTAL_TO_CLAIM" as const,
+		};
+		const transition = planKnowledgeEvolution(
+			{ claims: [oldPolicy, newPolicy], relations: [total], wikiModules: [] },
+			[total.id],
+		);
+		expect(transition.impact.supersededClaimIds).toEqual([oldPolicy.id]);
+		expect(transition.next.relations[0]?.conditions).toEqual(total.conditions);
 	});
 });
 
@@ -118,6 +136,7 @@ function relation(id: string, from: string, to: string, type: Relation["type"]):
 		type,
 		conditions: [],
 		conditionStatus: "EXPLICIT_NONE",
+		supersessionEffect: type === "SUPERSEDES" ? "TOTAL_TO_CLAIM" : null,
 		relationAuditVersion: RELATION_AUDIT_VERSION,
 		evidenceSpanIds: [`span:${from}`, `span:${to}`],
 		derivation: "INFERRED",

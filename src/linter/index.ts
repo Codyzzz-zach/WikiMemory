@@ -663,6 +663,7 @@ export interface RelationSemanticCheckResult {
 	issues: LintIssue[];
 	evidenceSpanIds: string[];
 	conditionStatus: Relation["conditionStatus"];
+	supersessionEffect: Relation["supersessionEffect"];
 	relationAuditVersion: string | null;
 }
 
@@ -696,6 +697,7 @@ export async function relationSemanticCheck(
 			],
 			evidenceSpanIds: [],
 			conditionStatus: "UNVERIFIED",
+			supersessionEffect: null,
 			relationAuditVersion: null,
 		};
 	}
@@ -713,6 +715,7 @@ export async function relationSemanticCheck(
 			],
 			evidenceSpanIds: [],
 			conditionStatus: "UNVERIFIED",
+			supersessionEffect: null,
 			relationAuditVersion: null,
 		};
 	}
@@ -772,7 +775,7 @@ ${evidenceText}
 		const parsedCache = RelationSemanticVerdictSchema.safeParse(cached.verdict);
 		if (parsedCache.success) {
 			try {
-				validateRelationSemanticVerdict(parsedCache.data, evidenceSpans.length);
+				validateRelationSemanticVerdict(parsedCache.data, evidenceSpans.length, relation.type);
 				verdict = parsedCache.data;
 			} catch {
 				// Invalid generated cache is ignored and replaced.
@@ -810,7 +813,7 @@ ${evidenceText}
 		try {
 			if (result.finishReason === "length") throw new Error("Relation 审计输出被截断");
 			const candidate = parseLLMJson(result.content, RelationSemanticVerdictSchema);
-			validateRelationSemanticVerdict(candidate, evidenceSpans.length);
+			validateRelationSemanticVerdict(candidate, evidenceSpans.length, relation.type);
 			verdict = candidate;
 			if (observed && telemetryContext) {
 				recordParseResult(config, telemetryContext, observed.callId, "VALID");
@@ -843,6 +846,7 @@ ${evidenceText}
 			],
 			evidenceSpanIds: evidenceSpans.map((span) => span.id),
 			conditionStatus: "UNVERIFIED",
+			supersessionEffect: null,
 			relationAuditVersion: null,
 		};
 	}
@@ -892,6 +896,12 @@ ${evidenceText}
 		issues,
 		evidenceSpanIds: selectedEvidenceIds,
 		conditionStatus: relation.conditions.length > 0 ? "PRESERVED" : "EXPLICIT_NONE",
+		supersessionEffect:
+			relation.type === "SUPERSEDES" && verdict.verdict === "passed"
+				? verdict.supersessionEffect === "NOT_APPLICABLE"
+					? null
+					: verdict.supersessionEffect
+				: null,
 		relationAuditVersion: RELATION_AUDIT_VERSION,
 	};
 }
@@ -907,7 +917,15 @@ const RELATION_AUDIT_DIMENSIONS: RelationAuditDimensionName[] = [
 function validateRelationSemanticVerdict(
 	verdict: RelationSemanticVerdict,
 	evidenceCount: number,
+	relationType: Relation["type"],
 ): void {
+	if (
+		verdict.verdict === "passed" &&
+		((relationType === "SUPERSEDES" && verdict.supersessionEffect === "NOT_APPLICABLE") ||
+			(relationType !== "SUPERSEDES" && verdict.supersessionEffect !== "NOT_APPLICABLE"))
+	) {
+		throw new Error("Relation 审计的 supersessionEffect 与关系类型不一致");
+	}
 	const indexes = [
 		verdict.anchorSpanIndex,
 		...verdict.supportingEvidenceSpanIndexes,
@@ -1271,6 +1289,7 @@ export async function lintRelationsAgainstCanonicalClaims(
 						issues: [] as LintIssue[],
 						evidenceSpanIds: relation.evidenceSpanIds,
 						conditionStatus: "UNVERIFIED" as const,
+						supersessionEffect: null,
 						relationAuditVersion: null,
 					};
 			const allIssues = [...structIssues, ...semanticResult.issues];
@@ -1280,6 +1299,7 @@ export async function lintRelationsAgainstCanonicalClaims(
 						...relation,
 						publicationState: "QUARANTINED",
 						conditionStatus: semanticResult.conditionStatus,
+						supersessionEffect: semanticResult.supersessionEffect,
 						relationAuditVersion: semanticResult.relationAuditVersion,
 					},
 					issues: allIssues,
@@ -1293,6 +1313,7 @@ export async function lintRelationsAgainstCanonicalClaims(
 					...relation,
 					evidenceSpanIds: semanticResult.evidenceSpanIds,
 					conditionStatus: semanticResult.conditionStatus,
+					supersessionEffect: semanticResult.supersessionEffect,
 					relationAuditVersion: semanticResult.relationAuditVersion,
 					publicationState: "CANONICAL",
 					validity:
