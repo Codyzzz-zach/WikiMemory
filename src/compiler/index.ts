@@ -730,9 +730,30 @@ export async function compileCrossMaterialRelations(
 					draft.toClaimIndex === oldItem.index,
 			);
 			if (alreadyProposed) continue;
+			const concreteReplacement = indexedNew
+				.filter(
+					(item) =>
+						!isExplicitReplacementDeclaration(item.claim.statement) &&
+						!isRetainedRuleDeclaration(item.claim.statement),
+				)
+				.map((item) => ({
+					item,
+					score: bigramOverlap(
+						normalizeClaimForDedup(item.claim.statement),
+						normalizeClaimForDedup(oldItem.claim.statement),
+					),
+				}))
+				.sort(
+					(left, right) =>
+						right.score - left.score || left.item.claim.id.localeCompare(right.item.claim.id),
+				)[0];
 			const declaration = explicitDeclarations[0] as IndexedClaim;
+			const fromItem =
+				concreteReplacement && concreteReplacement.score >= 0.12
+					? concreteReplacement.item
+					: declaration;
 			drafts.push({
-				fromClaimIndex: declaration.index,
+				fromClaimIndex: fromItem.index,
 				toClaimIndex: oldItem.index,
 				type: "SUPERSEDES",
 				conditions: [...declaration.claim.conditions],
@@ -847,6 +868,12 @@ function isSupersessionContext(statement: string): boolean {
 
 function isExplicitReplacementDeclaration(statement: string): boolean {
 	return /(?:取代|替代|废止|\breplac(?:e|es|ed|ing)\b|\bsupersed(?:e|es|ed|ing)\b)/iu.test(
+		statement,
+	);
+}
+
+function isRetainedRuleDeclaration(statement: string): boolean {
+	return /(?:继续有效|仍(?:然)?有效|不在本次替代范围|未被.+取消|\bremain(?:s|ed)? in effect\b)/iu.test(
 		statement,
 	);
 }

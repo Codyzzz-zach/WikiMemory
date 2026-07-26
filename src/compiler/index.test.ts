@@ -326,6 +326,51 @@ describe("bounded compiler", () => {
 			type: "SUPERSEDES",
 		});
 	});
+
+	it("uses the closest concrete new rule as the supersession endpoint", async () => {
+		const newSource: Source = {
+			id: "source:new-security-bbb",
+			hash: "bbb",
+			uri: "new-security.md",
+			parsedText: "本通知取代旧标准 OLD-SEC-2026-01。所有外部 API 必须使用 TLS 1.3。",
+			sourceType: "md",
+			loaderVersion: "test",
+			createdAt: "2026-07-23T00:00:00.000Z",
+		};
+		const oldSource: Source = {
+			id: "source:old-security-aaa",
+			hash: "aaa",
+			uri: "old-security.md",
+			parsedText: "文件编号 OLD-SEC-2026-01。所有外部 API 必须使用 TLS 1.2。",
+			sourceType: "md",
+			loaderVersion: "test",
+			createdAt: "2026-07-01T00:00:00.000Z",
+		};
+		const declaration = compiledClaim("claim:declaration", "本通知取代旧标准 OLD-SEC-2026-01");
+		declaration.evidenceSpanIds = ["span:new-security-bbb-2#chars-0-25"];
+		const concrete = compiledClaim("claim:tls13", "所有外部 API 必须使用 TLS 1.3");
+		concrete.evidenceSpanIds = ["span:new-security-bbb-2#chars-26-48"];
+		const retained = compiledClaim("claim:retained", "旧标准的日志规则继续有效");
+		retained.evidenceSpanIds = ["span:new-security-bbb-3#chars-0-12"];
+		const oldRule = compiledClaim("claim:tls12", "所有外部 API 必须使用 TLS 1.2");
+		oldRule.evidenceSpanIds = ["span:old-security-aaa-2#chars-0-22"];
+		const result = await compileCrossMaterialRelations(
+			temporaryConfig(),
+			new RelationPromptCaptureProvider(),
+			"run:test",
+			newSource,
+			[declaration, concrete, retained],
+			[],
+			[oldRule],
+			[oldSource],
+		);
+		expect(result.relations).toHaveLength(1);
+		expect(result.relations[0]).toMatchObject({
+			from: concrete.id,
+			to: oldRule.id,
+			type: "SUPERSEDES",
+		});
+	});
 });
 
 class RelationPromptCaptureProvider implements LLMProvider {
