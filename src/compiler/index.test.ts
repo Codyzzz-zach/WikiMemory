@@ -242,6 +242,10 @@ describe("bounded compiler", () => {
 		declaration.evidenceSpanIds = ["span:new-policy-bbb-2#chars-0-30"];
 		const newRule = compiledClaim("claim:new-rule", "新规则要求双人审批");
 		newRule.evidenceSpanIds = ["span:new-policy-bbb-3#chars-31-45"];
+		const effectiveDate = compiledClaim("claim:date", "生效日期为 2026-08-01");
+		effectiveDate.evidenceSpanIds = ["span:new-policy-bbb-1#chars-0-15"];
+		const retained = compiledClaim("claim:retained", "旧政策的审计日志要求继续有效");
+		retained.evidenceSpanIds = ["span:new-policy-bbb-2#chars-31-50"];
 		const oldRule = compiledClaim("claim:old-rule", "旧规则要求单人审批");
 		oldRule.evidenceSpanIds = ["span:old-policy-aaa-4#chars-0-12"];
 		const oldSource: Source = {
@@ -258,18 +262,24 @@ describe("bounded compiler", () => {
 			provider,
 			"run:test",
 			newSource,
-			[declaration, newRule],
+			[declaration, newRule, effectiveDate, retained],
 			[],
 			[oldRule],
 			[oldSource],
 		);
 		expect(result.relations).toHaveLength(1);
 		expect(result.relations[0]?.conditions).toEqual(
-			expect.arrayContaining(["本政策取代旧政策 OLD-POLICY-2026-01"]),
+			expect.arrayContaining([
+				"本政策取代旧政策 OLD-POLICY-2026-01",
+				"生效日期为 2026-08-01",
+				"旧政策的审计日志要求继续有效",
+			]),
 		);
 		expect(result.relations[0]?.evidenceSpanIds).toEqual(
 			expect.arrayContaining([
 				"span:new-policy-bbb-2#chars-0-30",
+				"span:new-policy-bbb-1#chars-0-15",
+				"span:new-policy-bbb-2#chars-31-50",
 				"span:new-policy-bbb-3#chars-31-45",
 				"span:old-policy-aaa-4#chars-0-12",
 			]),
@@ -299,7 +309,7 @@ class SupersedesProvider implements LLMProvider {
 				relations: [
 					{
 						fromClaimIndex: 1,
-						toClaimIndex: 2,
+						toClaimIndex: 3,
 						type: "SUPERSEDES",
 						conditions: ["自生效日起"],
 						confidence: 0.9,

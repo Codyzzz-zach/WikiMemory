@@ -713,13 +713,13 @@ export async function compileCrossMaterialRelations(
 			);
 		}
 	}
-	const supersessionDeclarations = relationEligibleNewClaims.filter((claim) =>
-		isSupersessionDeclaration(claim.statement),
+	const supersessionContextClaims = newClaims.filter((claim) =>
+		isSupersessionContext(claim.statement),
 	);
-	const supersessionEvidenceSpanIds = supersessionDeclarations.flatMap(
+	const supersessionEvidenceSpanIds = supersessionContextClaims.flatMap(
 		(claim) => claim.evidenceSpanIds,
 	);
-	const supersessionConditions = supersessionDeclarations.flatMap((claim) => [
+	const supersessionConditions = supersessionContextClaims.flatMap((claim) => [
 		claim.statement,
 		...claim.conditions,
 	]);
@@ -811,8 +811,8 @@ function claimBelongsToSource(claim: Claim, sourceId: string): boolean {
 	return claim.evidenceSpanIds.some((spanId) => spanId.startsWith(`span:${sourceKey}-`));
 }
 
-function isSupersessionDeclaration(statement: string): boolean {
-	return /(?:取代|替代|废止|不再适用|\breplac(?:e|es|ed|ing)\b|\bsupersed(?:e|es|ed|ing)\b)/iu.test(
+function isSupersessionContext(statement: string): boolean {
+	return /(?:取代|替代|废止|不再适用|继续有效|仍(?:然)?有效|不在本次替代范围|未被.+取消|生效日期|无需回算|\beffective date\b|\bremain(?:s|ed)? in effect\b|\breplac(?:e|es|ed|ing)\b|\bsupersed(?:e|es|ed|ing)\b)/iu.test(
 		statement,
 	);
 }
