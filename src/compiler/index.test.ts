@@ -264,6 +264,9 @@ describe("bounded compiler", () => {
 			[oldSource],
 		);
 		expect(result.relations).toHaveLength(1);
+		expect(result.relations[0]?.conditions).toEqual(
+			expect.arrayContaining(["本政策取代旧政策 OLD-POLICY-2026-01"]),
+		);
 		expect(result.relations[0]?.evidenceSpanIds).toEqual(
 			expect.arrayContaining([
 				"span:new-policy-bbb-2#chars-0-30",

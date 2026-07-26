@@ -713,14 +713,22 @@ export async function compileCrossMaterialRelations(
 			);
 		}
 	}
-	const supersessionEvidenceSpanIds = relationEligibleNewClaims
-		.filter((claim) => isSupersessionDeclaration(claim.statement))
-		.flatMap((claim) => claim.evidenceSpanIds);
+	const supersessionDeclarations = relationEligibleNewClaims.filter((claim) =>
+		isSupersessionDeclaration(claim.statement),
+	);
+	const supersessionEvidenceSpanIds = supersessionDeclarations.flatMap(
+		(claim) => claim.evidenceSpanIds,
+	);
+	const supersessionConditions = supersessionDeclarations.flatMap((claim) => [
+		claim.statement,
+		...claim.conditions,
+	]);
 	const relations = buildRelations(source, combined, drafts, stats, "cross-material-detect").map(
 		(relation) =>
 			relation.type === "SUPERSEDES"
 				? {
 						...relation,
+						conditions: [...new Set([...relation.conditions, ...supersessionConditions])],
 						evidenceSpanIds: [
 							...new Set([...relation.evidenceSpanIds, ...supersessionEvidenceSpanIds]),
 						],

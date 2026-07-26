@@ -5,9 +5,11 @@
  */
 const SOURCE_METADATA_PREDICATES = [
 	/发布日期/u,
+	/生效日期/u,
 	/发布机构/u,
 	/(?:文件|文档|规范|政策|报告|标准)编号/u,
 	/\bpublication date\b/iu,
+	/\beffective date\b/iu,
 	/\bpublished (?:by|on)\b/iu,
 	/\bpublisher\b/iu,
 	/\b(?:document|file|report|policy|standard) (?:id|number)\b/iu,
