@@ -58,3 +58,29 @@ delivery/
 
 仓库内已经提供一套可直接运行的合成银标准：[dataset-v1](./dataset-v1/README.md)。外部生成包只有
 满足同一验证合同后，才能作为后续独立数据集加入。
+
+## 演化审批合同
+
+T2/T3 的机器审计结果只是候选，不能整批直接驱动知识状态。`--apply-audited` 必须同时提供
+`--approval-file`，且审批文件必须对每个候选 Relation 恰好做一次决定：
+
+- `approvedRelationIds`：允许驱动 SUPERSEDES/CONTRADICTS 状态演化；
+- `rejectedRelations`：必须逐边给出理由，并从 Canonical 物理移入 Quarantine；
+- 批准与拒绝在同一快照保护事务中完成，失败时一起回滚；
+- 拒绝不是“忽略这次 mutation”——错误边不得继续留在 Graph 消费链。
+
+历史 run 若在此合同落地前只阻止了 mutation，可在新 fork 中执行 `review-rejections`，根据原审批
+artifact 原子清理被拒绝边，不需要重新调用模型编译。
+
+## 当前可复现实验入口
+
+```bash
+npm run evolution:validate -- experiments/evolution/dataset-v1
+npm run evolution:experiment -- prepare --run-id <run-id> --timeline T3
+npm run evolution:answers -- run --run-id <run-id> --timeline T3
+npm run evolution:answers -- score --run-id <run-id> --timeline T3
+```
+
+回答 Pilot 使用 [pilot-v1.json](./pilot-v1.json) 冻结 15 题，覆盖三个领域和五种题型。答案组别在评分
+前隐藏，Gold 不进入回答 prompt。当前 judge 是锁定模型而非人工评审，因此报告必须标记
+`model-generated-not-human-gold`；它适合做方向判断和回归，不足以宣称统计显著或生产价值成立。
