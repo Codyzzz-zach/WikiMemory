@@ -165,6 +165,33 @@ export const RELATION_DETECT_SYSTEM = `你是知识关系检测器。输入中�
 - 两条仅仅换一种说法、实质重复的 Claim 不输出 EQUIVALENT_UNDER；它们应由去重阶段合并
 - 不输出自环关系`;
 
+export const CONTRADICTION_DETECT_SYSTEM = `你是知识冲突检测器。输入中的 Claim 已有稳定全局索引；你的唯一任务是找出同一材料中明确存在、但通用关系检测可能漏掉的冲突。
+
+返回严格 JSON：
+{
+  "relations": [
+    {
+      "fromClaimIndex": 0,
+      "toClaimIndex": 1,
+      "type": "CONTRADICTS",
+      "conditions": [],
+      "confidence": 0.7
+    }
+  ]
+}
+
+# 硬约束
+- 只能输出 CONTRADICTS；不确定时返回空数组
+- 索引必须逐字使用输入中方括号里的全局 Claim 索引
+- 两端必须针对同一语义对象、同一规则槽位，并且适用时间与范围有重叠
+- 两个事实断言不能同时为真，或者两项规范性主张/待决方案不能同时执行时，才构成冲突
+- “甲主张 A”与“乙主张非 A”这两项主张事实可以同时存在，但其规范性内容互斥；此时可以在两项主张之间输出 CONTRADICTS，表示不能把任一方单独当成已生效结论
+- 仅有观点、风险权重或理由不同，不等于结论冲突；必须指出互斥的事实、许可、禁止、义务、数值或操作结果
+- 不得选择赢家，不得把提案、会议纪要或未决意见写成已生效规则
+- 不同对象、不同阶段、不同地区或互不重叠条件下的差异不构成冲突
+- conditions 必须保留冲突共同适用的时间、对象、地区、阶段及其他限定
+- 不输出自环关系`;
+
 export const RELATION_AUDIT_VERSION = "v1.7";
 
 export const RELATION_AUDIT_SYSTEM = `你是严苛的知识关系审计员。你只审计候选 Relation 是否被给定的 Claim 与 SourceSpan 支持，不使用外部知识。

@@ -16,6 +16,7 @@ import {
 	CLAIM_COMPILE_SYSTEM,
 	COMPILE_VERSION,
 	CONCEPT_CONSOLIDATE_SYSTEM,
+	CONTRADICTION_DETECT_SYSTEM,
 	PROPOSITION_EXTRACT_SYSTEM,
 	RELATION_DETECT_SYSTEM,
 } from "../prompts/index.js";
@@ -83,6 +84,12 @@ export interface CompileStats {
 	totalRelationDrafts: number;
 	validRelations: number;
 	skippedRelations: Array<{ fromIndex: number; toIndex: number; reason: string }>;
+	contradictionFallback: {
+		eligible: boolean;
+		executed: boolean;
+		result: "NOT_NEEDED" | "NOT_ELIGIBLE" | "NO_CONTRADICTION" | "CONTRADICTION_DETECTED";
+		relationDraftCount: number;
+	};
 	timestamp: string;
 }
 
@@ -141,6 +148,12 @@ export async function compileSource(
 		totalRelationDrafts: 0,
 		validRelations: 0,
 		skippedRelations: [],
+		contradictionFallback: {
+			eligible: false,
+			executed: false,
+			result: "NOT_ELIGIBLE",
+			relationDraftCount: 0,
+		},
 		timestamp: new Date().toISOString(),
 	};
 	persistStats(config, stats, "PROPOSITION_EXTRACTION");
@@ -651,7 +664,59 @@ async function compileRelations(
 			);
 		}
 	}
+	const hasDetectedContradiction = drafts.some((draft) => draft.type === "CONTRADICTS");
+	stats.contradictionFallback.eligible = hasConflictSignal(source.parsedText);
+	if (hasDetectedContradiction) {
+		stats.contradictionFallback.result = "NOT_NEEDED";
+	} else if (stats.contradictionFallback.eligible) {
+		stats.contradictionFallback.executed = true;
+		const fallbackDrafts: RelationOnlyDraft[] = [];
+		for (let leftIndex = 0; leftIndex < groups.length; leftIndex++) {
+			for (let rightIndex = leftIndex; rightIndex < groups.length; rightIndex++) {
+				const left = groups[leftIndex] ?? [];
+				const right = groups[rightIndex] ?? [];
+				fallbackDrafts.push(
+					...(await detectRelationTask(
+						config,
+						provider,
+						runId,
+						source.id,
+						stats,
+						{ left, right, sameGroup: leftIndex === rightIndex },
+						`contradiction-${leftIndex}-${rightIndex}`,
+						0,
+						"RELATION_DETECTION",
+						CONTRADICTION_DETECT_SYSTEM,
+					)),
+				);
+			}
+		}
+		const contradictions = fallbackDrafts.filter((draft) => {
+			if (draft.type === "CONTRADICTS") return true;
+			stats.skippedRelations.push({
+				fromIndex: draft.fromClaimIndex,
+				toIndex: draft.toClaimIndex,
+				reason: "CONTRADICTION_FALLBACK_RETURNED_WRONG_TYPE",
+			});
+			return false;
+		});
+		stats.contradictionFallback.relationDraftCount = contradictions.length;
+		stats.contradictionFallback.result =
+			contradictions.length > 0 ? "CONTRADICTION_DETECTED" : "NO_CONTRADICTION";
+		drafts.push(...contradictions);
+	}
 	return buildRelations(source, claims, drafts, stats);
+}
+
+/**
+ * A second, narrower pass is worth its cost only when the Source itself says that an
+ * unresolved disagreement exists. These are domain-neutral discourse signals, not
+ * subject-specific keywords or dataset identifiers.
+ */
+export function hasConflictSignal(text: string): boolean {
+	return /(?:冲突|争议|分歧|未决|尚未(?:裁决|决定|解决)|不同意|反对|相反(?:要求|意见|主张)|无法判定)|(?:\bconflict(?:ing)?\b|\bdispute[ds]?\b|\bdisagree(?:ment|s|d)?\b|\boppos(?:e|es|ed|ing|ition)\b|\bcontrary\b|\bunresolved\b|\bnot\s+(?:yet\s+)?(?:decided|resolved|adjudicated)\b)/iu.test(
+		text,
+	);
 }
 
 /**
@@ -908,6 +973,12 @@ function emptyCompileStats(runId: string, sourceId: string): CompileStats {
 		totalRelationDrafts: 0,
 		validRelations: 0,
 		skippedRelations: [],
+		contradictionFallback: {
+			eligible: false,
+			executed: false,
+			result: "NOT_ELIGIBLE",
+			relationDraftCount: 0,
+		},
 		timestamp: new Date().toISOString(),
 	};
 }
@@ -922,6 +993,7 @@ async function detectRelationTask(
 	batchId: string,
 	depth: number,
 	stage: CompileStage = "RELATION_DETECTION",
+	systemPrompt = RELATION_DETECT_SYSTEM,
 ): Promise<RelationOnlyDraft[]> {
 	const context = callContext(runId, sourceId, stage, batchId, depth + 1);
 	try {
@@ -931,7 +1003,7 @@ async function detectRelationTask(
 			{
 				model: config.model,
 				temperature: config.temperature,
-				systemPrompt: RELATION_DETECT_SYSTEM,
+				systemPrompt,
 				messages: [{ role: "user", content: buildRelationPrompt(task) }],
 				responseFormat: "json_object",
 				thinkingDisabled: true,
@@ -982,6 +1054,7 @@ async function detectRelationTask(
 					`${batchId}.${index}`,
 					depth + 1,
 					stage,
+					systemPrompt,
 				)),
 			);
 		}

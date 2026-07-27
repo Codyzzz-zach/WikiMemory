@@ -9,6 +9,7 @@ import { resolveSpanById } from "../linter/storage.js";
 import {
 	CLAIM_COMPILE_SYSTEM,
 	CONCEPT_CONSOLIDATE_SYSTEM,
+	CONTRADICTION_DETECT_SYSTEM,
 	PROPOSITION_EXTRACT_SYSTEM,
 	RELATION_DETECT_SYSTEM,
 } from "../prompts/index.js";
@@ -17,6 +18,7 @@ import {
 	compileCrossMaterialRelations,
 	compileSource,
 	findExplicitlyReferencedSourceIds,
+	hasConflictSignal,
 	selectCrossMaterialCandidates,
 } from "./index.js";
 
@@ -27,6 +29,63 @@ afterEach(() => {
 });
 
 describe("bounded compiler", () => {
+	it("runs a contradiction-only fallback for an explicitly unresolved disagreement", async () => {
+		const config = temporaryConfig();
+		const source: Source = {
+			id: "source:unresolved-policy",
+			hash: "unresolved-policy",
+			uri: "unresolved-policy.md",
+			parsedText:
+				"委员会甲主张活动期间关闭加密。委员会乙提出相反要求，主张活动期间维持加密；最终机构尚未裁决。",
+			sourceType: "md",
+			loaderVersion: "test",
+			createdAt: "2026-07-23T00:00:00.000Z",
+		};
+		const spans: SourceSpan[] = [
+			{
+				id: "span:unresolved-0",
+				sourceId: source.id,
+				blockId: "b0",
+				charStart: 0,
+				charEnd: 16,
+				text: "委员会甲主张活动期间关闭加密。",
+			},
+			{
+				id: "span:unresolved-1",
+				sourceId: source.id,
+				blockId: "b1",
+				charStart: 16,
+				charEnd: source.parsedText.length,
+				text: "委员会乙提出相反要求，主张活动期间维持加密；最终机构尚未裁决。",
+			},
+		];
+		const provider = new ContradictionFallbackProvider();
+		const result = await compileSource(config, source, spans, provider);
+
+		expect(provider.genericRelationCalls).toBe(1);
+		expect(provider.contradictionCalls).toBe(1);
+		expect(result.relations).toEqual([
+			expect.objectContaining({
+				from: result.claims[0]?.id,
+				to: result.claims[1]?.id,
+				type: "CONTRADICTS",
+				conditions: ["活动期间"],
+			}),
+		]);
+		expect(result.compileStats.contradictionFallback).toEqual({
+			eligible: true,
+			executed: true,
+			result: "CONTRADICTION_DETECTED",
+			relationDraftCount: 1,
+		});
+	});
+
+	it("uses domain-neutral conflict signals instead of dataset-specific topics", () => {
+		expect(hasConflictSignal("两项药物剂量建议存在分歧，委员会尚未裁决。 ")).toBe(true);
+		expect(hasConflictSignal("The two accounting treatments remain unresolved.")).toBe(true);
+		expect(hasConflictSignal("本文比较两种算法的运行时间。 ")).toBe(false);
+	});
+
 	it("shrinks a length-truncated batch and emits resolvable stable evidence", async () => {
 		const config = temporaryConfig();
 		const source: Source = {
@@ -422,6 +481,84 @@ class RelationPromptCaptureProvider implements LLMProvider {
 		if (options.systemPrompt !== RELATION_DETECT_SYSTEM) throw new Error("Unexpected prompt");
 		this.prompt = options.messages.map((message) => message.content).join("\n");
 		return chatResult('{"relations":[]}');
+	}
+
+	async chatWithThinking(options: ChatOptions): Promise<ChatResult> {
+		return this.chat(options);
+	}
+}
+
+class ContradictionFallbackProvider implements LLMProvider {
+	genericRelationCalls = 0;
+	contradictionCalls = 0;
+
+	async chat(options: ChatOptions): Promise<ChatResult> {
+		if (options.systemPrompt === PROPOSITION_EXTRACT_SYSTEM) {
+			return chatResult(
+				JSON.stringify({
+					propositions: [
+						{
+							text: "委员会甲主张活动期间关闭加密",
+							exactQuote: "委员会甲主张活动期间关闭加密。",
+							blockId: "b0",
+						},
+						{
+							text: "委员会乙主张活动期间维持加密",
+							exactQuote: "委员会乙提出相反要求，主张活动期间维持加密；最终机构尚未裁决。",
+							blockId: "b1",
+						},
+					],
+				}),
+			);
+		}
+		if (options.systemPrompt === CLAIM_COMPILE_SYSTEM) {
+			return chatResult(
+				JSON.stringify({
+					claims: [
+						{
+							statement: "委员会甲主张活动期间关闭加密",
+							evidenceQuotes: ["委员会甲主张活动期间关闭加密。"],
+							blockIds: ["b0"],
+							conditions: ["活动期间"],
+							derivation: "EXTRACTED",
+							confidence: 1,
+						},
+						{
+							statement: "委员会乙主张活动期间维持加密",
+							evidenceQuotes: ["委员会乙提出相反要求，主张活动期间维持加密；最终机构尚未裁决。"],
+							blockIds: ["b1"],
+							conditions: ["活动期间"],
+							derivation: "EXTRACTED",
+							confidence: 1,
+						},
+					],
+				}),
+			);
+		}
+		if (options.systemPrompt === CONCEPT_CONSOLIDATE_SYSTEM) {
+			return chatResult('{"concepts":[]}');
+		}
+		if (options.systemPrompt === RELATION_DETECT_SYSTEM) {
+			this.genericRelationCalls++;
+			return chatResult('{"relations":[]}');
+		}
+		if (options.systemPrompt === CONTRADICTION_DETECT_SYSTEM) {
+			this.contradictionCalls++;
+			return chatResult(
+				JSON.stringify({
+					relations: [
+						{
+							fromClaimIndex: 0,
+							toClaimIndex: 1,
+							type: "CONTRADICTS",
+							conditions: ["活动期间"],
+							confidence: 0.9,
+						},
+					],
+				}),
+			);
+		}
+		throw new Error("Unexpected prompt");
 	}
 
 	async chatWithThinking(options: ChatOptions): Promise<ChatResult> {
