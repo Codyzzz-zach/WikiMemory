@@ -17,7 +17,8 @@
 		"test:watch": "vitest",
 		"pilot": "tsx scripts/pilot.ts",
 		"evolution:validate": "node --import tsx scripts/validate-evolution-dataset.ts",
-		"evolution:experiment": "node --import tsx scripts/evolution-experiment.ts"
+		"evolution:experiment": "node --import tsx scripts/evolution-experiment.ts",
+		"evolution:answers": "node --import tsx scripts/evolution-answer-pilot.ts"
 	},
 	"dependencies": {
 		"commander": "^13.0.0",

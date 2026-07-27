@@ -1,0 +1,23 @@
+{
+	"schemaVersion": "wge-evolution-pilot-selection/v1",
+	"selectionId": "cross-domain-five-category-v1",
+	"status": "FROZEN",
+	"rule": "Each of three domains contributes the first stable question ID in affected, unaffected, synthesis, dispute, and insufficient; no answer or retrieval result was used for selection.",
+	"questionIds": [
+		"EV-PLAT-001",
+		"EV-PLAT-005",
+		"EV-PLAT-008",
+		"EV-PLAT-010",
+		"EV-PLAT-011",
+		"EV-COMM-001",
+		"EV-COMM-005",
+		"EV-COMM-008",
+		"EV-COMM-010",
+		"EV-COMM-011",
+		"EV-RES-001",
+		"EV-RES-005",
+		"EV-RES-008",
+		"EV-RES-010",
+		"EV-RES-011"
+	]
+}
