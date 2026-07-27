@@ -96,6 +96,12 @@ interface ExperimentTimelineState {
 	evolutionAppliedIds: string[];
 	evolutionCoverage: EvolutionCoverage | null;
 	missingEvolutionAccepted: boolean;
+	reviewRejections?: {
+		appliedAt: string;
+		approvalArtifacts: Array<{ runId: string; timeline: "T2" | "T3"; reviewer: string }>;
+		rejectedRelationIds: string[];
+		beforeSnapshotId: string;
+	};
 }
 
 interface ExperimentState {
@@ -448,6 +454,7 @@ program
 						config,
 						approved.map((item) => item.id),
 						currentKnowledgeVersion(config),
+						{ rejectedRelations: approval.rejectedRelations },
 					);
 					appliedIds = result.impact.triggerRelationIds;
 				}
@@ -481,6 +488,76 @@ program
 			);
 		},
 	);
+
+program
+	.command("review-rejections")
+	.description("Atomically quarantine relations rejected by one or more lineage approval artifacts")
+	.requiredOption("--run-id <id>", "Experiment run ID")
+	.requiredOption("--approval-file <paths...>", "Approval artifact(s) from this run lineage")
+	.action((options: { runId: string; approvalFile: string[] }) => {
+		const runDirectory = resolveRunDirectory(options.runId);
+		const statePath = join(runDirectory, "state.json");
+		const state = readJson<ExperimentState>(statePath);
+		assertFrozenCode(state);
+		const experimentConfig = assertExperimentConfig(state);
+		assertStateWorkspace(runDirectory, state);
+		const latest = state.timelines.at(-1);
+		if (!latest) throw new Error("尚无已完成 timeline，不能应用审查拒绝");
+		const approvals = options.approvalFile.map((path) =>
+			readJson<EvolutionApproval>(resolve(path)),
+		);
+		for (const approval of approvals) {
+			if (
+				approval.schemaVersion !== "wge-evolution-approval/v1" ||
+				!approval.reviewer.trim() ||
+				!approval.reviewedAt.trim() ||
+				EVOLUTION_TIMELINES.indexOf(approval.timeline) >
+					EVOLUTION_TIMELINES.indexOf(latest.timeline)
+			) {
+				throw new Error(`无效或超前的 lineage approval: ${approval.runId}/${approval.timeline}`);
+			}
+		}
+		const rejectedRelations = approvals.flatMap((approval) => approval.rejectedRelations);
+		const rejectedIds = rejectedRelations.map((item) => item.relationId);
+		if (new Set(rejectedIds).size !== rejectedIds.length) {
+			throw new Error("多个 approval artifact 含重复拒绝 Relation");
+		}
+		const config = isolatedConfig(state.workspace, experimentConfig);
+		const transaction = applyKnowledgeEvolution(config, [], currentKnowledgeVersion(config), {
+			rejectedRelations,
+		});
+		const snapshot = createKnowledgeSnapshot(
+			config,
+			`${state.runId} ${latest.timeline} after review rejections`,
+		);
+		latest.knowledgeVersion = currentKnowledgeVersion(config);
+		latest.snapshotId = snapshot.id;
+		latest.reviewRejections = {
+			appliedAt: new Date().toISOString(),
+			approvalArtifacts: approvals.map((approval) => ({
+				runId: approval.runId,
+				timeline: approval.timeline,
+				reviewer: approval.reviewer,
+			})),
+			rejectedRelationIds: transaction.rejectedRelationIds,
+			beforeSnapshotId: transaction.snapshotId,
+		};
+		writeJsonAtomic(statePath, state);
+		console.log(
+			JSON.stringify(
+				{
+					runId: state.runId,
+					timeline: latest.timeline,
+					knowledgeVersion: latest.knowledgeVersion,
+					snapshotId: latest.snapshotId,
+					reviewRejections: latest.reviewRejections,
+					knowledge: knowledgeSummary(config),
+				},
+				null,
+				2,
+			),
+		);
+	});
 
 program
 	.command("prepare")

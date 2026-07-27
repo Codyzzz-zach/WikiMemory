@@ -24,12 +24,15 @@ export interface EvolutionTransactionResult {
 	beforeKnowledgeVersion: string;
 	afterKnowledgeVersion: string;
 	changedSourceIds: string[];
+	rejectedRelationIds: string[];
 	impact: EvolutionImpact;
 }
 
 export interface EvolutionTransactionOptions {
 	/** Test-only deterministic fault injection; production callers must omit it. */
 	failAfterPublicationWrites?: number;
+	/** Reviewed false positives to remove from canonical consumption while retaining audit evidence. */
+	rejectedRelations?: Array<{ relationId: string; reason: string }>;
 }
 
 /**
@@ -50,7 +53,18 @@ export function applyKnowledgeEvolution(
 			`知识状态已变化，拒绝演化: expected=${expectedCurrentVersion}, actual=${beforeKnowledgeVersion}`,
 		);
 	}
-	if (triggerRelationIds.length === 0) throw new Error("演化 Relation IDs 不能为空");
+	const rejectedRelations = options.rejectedRelations ?? [];
+	const rejectedIds = new Set(rejectedRelations.map((item) => item.relationId));
+	if (triggerRelationIds.length === 0 && rejectedRelations.length === 0) {
+		throw new Error("演化批准或拒绝 Relation 不能为空");
+	}
+	if (rejectedIds.size !== rejectedRelations.length) throw new Error("拒绝 Relation IDs 不能重复");
+	if (rejectedRelations.some((item) => item.reason.trim().length === 0)) {
+		throw new Error("每条拒绝 Relation 必须说明理由");
+	}
+	if (triggerRelationIds.some((id) => rejectedIds.has(id))) {
+		throw new Error("同一 Relation 不能同时批准演化和拒绝消费");
+	}
 
 	const publications = readSourcePublications(config);
 	const quarantines = readQuarantinePublications(config);
@@ -59,8 +73,12 @@ export function applyKnowledgeEvolution(
 		relations: readAllRelations(config),
 		wikiModules: readAllWikiModules(config),
 	};
+	const currentRelationIds = new Set(current.relations.map((relation) => relation.id));
+	for (const id of rejectedIds) {
+		if (!currentRelationIds.has(id)) throw new Error(`找不到待拒绝 canonical Relation: ${id}`);
+	}
 	const plan = planKnowledgeEvolution(current, triggerRelationIds);
-	if (plan.impact.beforeVersion === plan.impact.afterVersion) {
+	if (plan.impact.beforeVersion === plan.impact.afterVersion && rejectedIds.size === 0) {
 		throw new Error("演化计划没有产生状态变化，拒绝重复应用");
 	}
 
@@ -73,13 +91,18 @@ export function applyKnowledgeEvolution(
 	const changedRelationIds = new Set([
 		...plan.impact.staleRelationIds,
 		...plan.impact.triggerRelationIds,
+		...rejectedIds,
 	]);
 	const sourceIds = resolveUniqueOwners(publications, changedClaimIds, changedRelationIds);
 	const nextClaimById = new Map(plan.next.claims.map((claim) => [claim.id, claim]));
 	const nextRelationById = new Map(plan.next.relations.map((relation) => [relation.id, relation]));
 	const snapshot = createKnowledgeSnapshot(
 		config,
-		`before evolution: ${[...new Set(triggerRelationIds)].sort().join(", ")}`,
+		`before evolution: approved=${[...new Set(triggerRelationIds)].sort().join(", ")}; rejected=${[
+			...rejectedIds,
+		]
+			.sort()
+			.join(", ")}`,
 	);
 	const evolvedAt = new Date().toISOString();
 	let publicationWrites = 0;
@@ -96,18 +119,44 @@ export function applyKnowledgeEvolution(
 				claims: [],
 				relations: [],
 			};
+			const rejectedFromPublication = publication.relations.filter((relation) =>
+				rejectedIds.has(relation.id),
+			);
 			publishSourceResult(
 				config,
 				{
 					...publication,
 					claims: publication.claims.map((claim) => nextClaimById.get(claim.id) ?? claim),
-					relations: publication.relations.map(
-						(relation) => nextRelationById.get(relation.id) ?? relation,
-					),
+					relations: publication.relations
+						.filter((relation) => !rejectedIds.has(relation.id))
+						.map((relation) => nextRelationById.get(relation.id) ?? relation),
 					evolutionSnapshotId: snapshot.id,
 					evolvedAt,
 				},
-				quarantine,
+				{
+					...quarantine,
+					relations: [
+						...quarantine.relations.filter((item) => !rejectedIds.has(item.relation.id)),
+						...rejectedFromPublication.map((relation) => ({
+							relation: {
+								...relation,
+								validity: "UNRESOLVED" as const,
+								publicationState: "QUARANTINED" as const,
+							},
+							issues: [
+								{
+									code: "HUMAN_REVIEW_REJECTED",
+									severity: "error",
+									affectedObject: relation.id,
+									detail:
+										rejectedRelations.find((item) => item.relationId === relation.id)?.reason ??
+										"Rejected by human review",
+									recommendedState: "QUARANTINE",
+								},
+							],
+						})),
+					],
+				},
 			);
 			publicationWrites += 1;
 			if (options.failAfterPublicationWrites === publicationWrites) {
@@ -121,7 +170,7 @@ export function applyKnowledgeEvolution(
 			`Claim 生命周期演化要求重建 WikiModule；triggers=${plan.impact.triggerRelationIds.join(",")}`,
 			snapshot.id,
 		);
-		verifyEvolutionResult(config, plan.impact, snapshot.id);
+		verifyEvolutionResult(config, plan.impact, snapshot.id, [...rejectedIds]);
 		const afterKnowledgeVersion = currentKnowledgeVersion(config);
 		if (afterKnowledgeVersion === beforeKnowledgeVersion) {
 			throw new Error("演化事务完成后 knowledgeVersion 未变化");
@@ -131,6 +180,7 @@ export function applyKnowledgeEvolution(
 			beforeKnowledgeVersion,
 			afterKnowledgeVersion,
 			changedSourceIds: sourceIds,
+			rejectedRelationIds: [...rejectedIds].sort(),
 			impact: plan.impact,
 		};
 	} catch (error) {
@@ -174,6 +224,7 @@ function verifyEvolutionResult(
 	config: AppConfig,
 	impact: EvolutionImpact,
 	snapshotId: string,
+	rejectedRelationIds: string[],
 ): void {
 	const claimById = new Map(readAllClaims(config).map((claim) => [claim.id, claim]));
 	const relationById = new Map(readAllRelations(config).map((relation) => [relation.id, relation]));
@@ -182,6 +233,16 @@ function verifyEvolutionResult(
 	for (const id of impact.staleRelationIds) {
 		if (relationById.get(id)?.lifecycle !== "SUPERSEDED") {
 			throw new Error(`演化后 Relation 未淘汰: ${id}`);
+		}
+	}
+	const quarantinedRelationIds = new Set(
+		readQuarantinePublications(config).flatMap((publication) =>
+			publication.relations.map((item) => item.relation.id),
+		),
+	);
+	for (const id of rejectedRelationIds) {
+		if (relationById.has(id) || !quarantinedRelationIds.has(id)) {
+			throw new Error(`人工拒绝 Relation 未正确隔离: ${id}`);
 		}
 	}
 	const spans = readAllSpans(config);

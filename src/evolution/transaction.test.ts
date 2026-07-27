@@ -8,6 +8,7 @@ import {
 	readAllClaims,
 	readAllRelations,
 	readAllWikiModules,
+	readQuarantinePublications,
 	readSourcePublications,
 	readWikiModuleQuarantine,
 } from "../linter/storage.js";
@@ -24,6 +25,57 @@ afterEach(() => {
 });
 
 describe("snapshot-protected knowledge evolution transaction", () => {
+	it("supports a rejection-only lineage cleanup without mutating endpoint Claims", () => {
+		const config = fixtureConfig();
+		const first = claim("claim:first-position", "甲方要求立即发布");
+		const second = claim("claim:second-position", "乙方要求完成审计后发布");
+		const falsePositive = relation("rel:false-positive", first.id, second.id, "CONTRADICTS");
+		publish(config, "source:positions", [first, second], [falsePositive]);
+		const before = currentKnowledgeVersion(config);
+
+		const result = applyKnowledgeEvolution(config, [], before, {
+			rejectedRelations: [
+				{ relationId: falsePositive.id, reason: "完成审计可能发生在发布时间之前" },
+			],
+		});
+
+		expect(result.impact.triggerRelationIds).toEqual([]);
+		expect(result.rejectedRelationIds).toEqual([falsePositive.id]);
+		expect(readAllClaims(config).every((item) => item.validity === "SUPPORTED")).toBe(true);
+		expect(readAllRelations(config)).toEqual([]);
+		expect(result.afterKnowledgeVersion).not.toBe(before);
+	});
+
+	it("atomically applies approved edges and removes rejected false positives from consumption", () => {
+		const config = fixtureConfig();
+		const old = claim("claim:old-rule", "旧规则要求单人审批");
+		const unrelated = claim("claim:audit-log", "审计日志保留七年");
+		const replacement = claim("claim:new-rule", "新规则要求双人审批");
+		const approved = relation("rel:approved", replacement.id, old.id, "SUPERSEDES");
+		const rejected = relation("rel:rejected", replacement.id, unrelated.id, "SUPERSEDES");
+		publish(config, "source:old", [old, unrelated], []);
+		publish(config, "source:new", [replacement], [approved, rejected]);
+		const before = currentKnowledgeVersion(config);
+
+		const result = applyKnowledgeEvolution(config, [approved.id], before, {
+			rejectedRelations: [{ relationId: rejected.id, reason: "不是同一规则槽位" }],
+		});
+
+		expect(result.rejectedRelationIds).toEqual([rejected.id]);
+		expect(readAllClaims(config).find((item) => item.id === old.id)?.lifecycle).toBe("SUPERSEDED");
+		expect(readAllClaims(config).find((item) => item.id === unrelated.id)?.lifecycle).toBe(
+			"ACTIVE",
+		);
+		expect(readAllRelations(config).some((item) => item.id === rejected.id)).toBe(false);
+		const quarantined = readQuarantinePublications(config)
+			.flatMap((publication) => publication.relations)
+			.find((item) => item.relation.id === rejected.id);
+		expect(quarantined?.relation.publicationState).toBe("QUARANTINED");
+		expect(quarantined?.issues).toEqual(
+			expect.arrayContaining([expect.objectContaining({ detail: "不是同一规则槽位" })]),
+		);
+	});
+
 	it("persists a cross-source correction, retires stale edges, and fail-closes stale Wiki", () => {
 		const config = fixtureConfig();
 		const old = claim("claim:old", "通过自动化测试后可以直接发布");
