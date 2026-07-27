@@ -15,6 +15,18 @@ describe("evolution answer evaluation", () => {
 			invalid: [],
 		});
 		expect(validateAnswerCitations(answer, "## CLAIM claim:b\n内容").valid).toBe(false);
+		expect(
+			validateAnswerCitations(
+				{ ...answer, citations: ["evidence:span:abc#chars-0-5"] },
+				"## EVIDENCE span:abc#chars-0-5\n内容",
+			).valid,
+		).toBe(true);
+		expect(
+			validateAnswerCitations(
+				{ answer: "insufficient", citations: [], insufficient: true, uncertainties: [] },
+				"## KNOWN GAPS\n没有相关证据",
+			),
+		).toEqual({ valid: true, invalid: [] });
 	});
 
 	it("aggregates blinded scores by group and category", () => {

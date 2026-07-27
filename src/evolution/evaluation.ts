@@ -59,7 +59,12 @@ export function validateAnswerCitations(
 	answer: ParsedEvolutionAnswer,
 	context: string,
 ): { valid: boolean; invalid: string[] } {
-	const invalid = answer.citations.filter((citation) => !context.includes(citation));
+	if (answer.insufficient && answer.citations.length === 0) return { valid: true, invalid: [] };
+	const invalid = answer.citations.filter((citation) => {
+		if (context.includes(citation)) return false;
+		const embeddedIdentifier = citation.match(/(?:claim|rel|span|source):[^\s\],)"']+/iu)?.[0];
+		return !embeddedIdentifier || !context.includes(embeddedIdentifier);
+	});
 	return { valid: invalid.length === 0 && answer.citations.length > 0, invalid };
 }
 
