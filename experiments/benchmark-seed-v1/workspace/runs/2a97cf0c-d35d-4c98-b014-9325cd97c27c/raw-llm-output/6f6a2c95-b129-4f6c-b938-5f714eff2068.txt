@@ -1,0 +1,49 @@
+{
+  "propositions": [
+    {
+      "text": "该仓库是 ScrollPrize/vesuvius 的归档 Python 库。",
+      "exactQuote": "# ScrollPrize/vesuvius archived Python library",
+      "blockId": "history-vesuvius-github-2024-002#block-0"
+    },
+    {
+      "text": "该仓库于 2024 年 11 月 21 日被所有者归档。",
+      "exactQuote": "This repository was archived by the owner on Nov 21, 2024.",
+      "blockId": "history-vesuvius-github-2024-002#block-1"
+    },
+    {
+      "text": "该仓库现在是只读的。",
+      "exactQuote": "It is now read-only.",
+      "blockId": "history-vesuvius-github-2024-002#block-1"
+    },
+    {
+      "text": "该库现在维护在 https://github.com/ScrollPrize/villa/tree/main/vesuvius。",
+      "exactQuote": "Now maintained at https://github.com/ScrollPrize/villa/tree/main/vesuvius (this repository archived)",
+      "blockId": "history-vesuvius-github-2024-002#block-2"
+    },
+    {
+      "text": "该库来自维苏威挑战赛，是一个用于访问古代卷轴 CT 扫描的 Python 库。",
+      "exactQuote": "From Vesuvius Challenge, a Python library for accessing CT scans of ancient scrolls.",
+      "blockId": "history-vesuvius-github-2024-002#block-3"
+    },
+    {
+      "text": "vesuvius 允许直接访问卷轴数据，无需管理下载脚本或在本地存储数 TB 的 CT 扫描数据。",
+      "exactQuote": "`vesuvius` allows direct access to scroll data without managing download scripts or storing terabytes of CT scans locally.",
+      "blockId": "history-vesuvius-github-2024-002#block-4"
+    },
+    {
+      "text": "数据在后台流式传输，仅提供请求的区域。",
+      "exactQuote": "Data is streamed in the background, only serving the requested regions.",
+      "blockId": "history-vesuvius-github-2024-002#block-4"
+    },
+    {
+      "text": "vesuvius 处于测试阶段，界面可能会发生变化。",
+      "exactQuote": "`vesuvius` is in beta and the interface may change.",
+      "blockId": "history-vesuvius-github-2024-002#block-5"
+    },
+    {
+      "text": "并非所有维苏威挑战赛的数据目前都可用——数据将继续添加到库中。",
+      "exactQuote": "Not all Vesuvius Challenge data is currently available - data will continue to be added to the library.",
+      "blockId": "history-vesuvius-github-2024-002#block-5"
+    }
+  ]
+}

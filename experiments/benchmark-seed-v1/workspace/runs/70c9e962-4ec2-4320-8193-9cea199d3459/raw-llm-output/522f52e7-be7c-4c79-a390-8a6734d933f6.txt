@@ -1,0 +1,64 @@
+{
+  "concepts": [
+    {
+      "name": "Platform",
+      "aliases": ["platforms"],
+      "boundary": "Various platforms including mobile and desktop",
+      "domain": "Web accessibility"
+    },
+    {
+      "name": "Success Criterion",
+      "aliases": ["Success Criterion"],
+      "boundary": "A specific requirement in WCAG",
+      "domain": "Web accessibility"
+    },
+    {
+      "name": "Dragging Movements",
+      "aliases": ["dragging movement"],
+      "boundary": "A type of input modality involving drag gestures",
+      "domain": "Web accessibility"
+    },
+    {
+      "name": "Single Pointer",
+      "aliases": ["single pointer"],
+      "boundary": "A pointing device such as a mouse, touch, or stylus",
+      "domain": "Web accessibility"
+    },
+    {
+      "name": "Essential",
+      "aliases": ["essential"],
+      "boundary": "Exception where dragging is necessary for the functionality",
+      "domain": "Web accessibility"
+    },
+    {
+      "name": "User Agent",
+      "aliases": ["user agent"],
+      "boundary": "Software that renders web content, e.g., browser",
+      "domain": "Web accessibility"
+    },
+    {
+      "name": "Author",
+      "aliases": ["author"],
+      "boundary": "Content creator or developer",
+      "domain": "Web accessibility"
+    },
+    {
+      "name": "Input Modality",
+      "aliases": ["input modalities"],
+      "boundary": "Methods of user input such as touch, mouse, keyboard",
+      "domain": "Web accessibility"
+    },
+    {
+      "name": "Mobile Requirements",
+      "aliases": ["mobile requirements"],
+      "boundary": "Accessibility requirements specific to mobile devices",
+      "domain": "Web accessibility"
+    },
+    {
+      "name": "Desktop Content",
+      "aliases": ["desktop content"],
+      "boundary": "Web content designed for desktop platforms",
+      "domain": "Web accessibility"
+    }
+  ]
+}

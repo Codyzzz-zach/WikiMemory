@@ -1,0 +1,48 @@
+{
+  "questionId": "B-R-HIST-002",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 833,
+    "completionTokens": 520,
+    "totalTokens": 1353,
+    "promptCacheHitTokens": 256,
+    "promptCacheMissTokens": 577,
+    "reasoningTokens": 0
+  },
+  "request": {
+    "systemPrompt": "你是盲测评分员，不知道答案属于哪个实验组。只按题目、评分锚点、Gold 证据和引用预校验评价，不用外部常识修正答案。\n每个维度独立使用同一 0-4 锚点：4=完整且准确；3=大部分满足，仅轻微遗漏；2=部分满足，存在重要遗漏；1=仅有极少相关内容；0=缺失、反转或与证据冲突。\nrequiredPointCoverage 只看 requiredPoints；conditionFidelity 看条件、时间、来源角色和不确定性；evidenceGrounding 同时看关键结论是否与 Gold 证据一致以及 citationValidation；answerabilityDiscipline 看是否越界、编造或错误拒答。\ncitationValidation.valid 表示引用标识确实存在于该匿名样本收到的上下文。内部 CLAIM/SPAN/SOURCE 标识不需要出现在 Gold 文本中，不得仅因此扣分；但存在性有效不代表语义必然支持，仍需对照答案内容与 Gold。\n若反转来源归属、抹掉关键条件/时间、把提案当最终规范或编造关键事实，hardFailure=true。\n数值必须与 rationale 一致：若 rationale 说“完整覆盖且准确”，对应维度不能低于 3。\n只输出严格 JSON：{\"scores\":[{\"sampleId\":\"...\",\"requiredPointCoverage\":0,\"conditionFidelity\":0,\"evidenceGrounding\":0,\"answerabilityDiscipline\":0,\"hardFailure\":false,\"rationale\":\"...\"}]}。",
+    "userPrompt": "{\"question\":\"恢复文本使用了哪三类验证方式？\",\"answerability\":\"answerable\",\"requiredPoints\":[\"视觉确认、定量图像指标、学术审读\"],\"forbiddenClaims\":[\"不得简化为仅由 AI 自评\"],\"requiredEvidence\":[{\"sourceId\":\"history-educelab-paper-2023-001\",\"exactQuote\":\"Revealed text is verified using visual confirmation, quantitative image metrics, and scholarly review.\",\"role\":\"supports\"}],\"sourcePriorityRule\":\"P/C 决定规范、论文与实现事实；S 只能作为有归属的解释，不能推翻一手版本文本。\",\"anonymousAnswers\":[{\"sampleId\":\"sample-3efb290d-3977-4df8-ba2b-247803f9405e\",\"questionId\":\"B-R-HIST-002\",\"repetition\":1,\"answer\":\"{\\\"answer\\\":\\\"根据提供的检索上下文，未找到关于恢复文本使用的三类验证方式的信息。\\\",\\\"citations\\\":[],\\\"insufficient\\\":true,\\\"uncertainties\\\":[\\\"检索上下文未包含相关证据\\\"]}\",\"citationValidation\":{\"formatValid\":true,\"total\":0,\"valid\":0,\"invalid\":[]}},{\"sampleId\":\"sample-3654dd63-d926-4fea-9db3-c7a394da36cc\",\"questionId\":\"B-R-HIST-002\",\"repetition\":1,\"answer\":\"{\\\"answer\\\":\\\"根据提供的检索上下文，未找到关于恢复文本使用的三类验证方式的相关信息。\\\",\\\"citations\\\":[],\\\"insufficient\\\":true,\\\"uncertainties\\\":[\\\"检索上下文未包含恢复文本验证方式的相关内容\\\"]}\",\"citationValidation\":{\"formatValid\":true,\"total\":0,\"valid\":0,\"invalid\":[]}},{\"sampleId\":\"sample-890159fa-8eba-4b8b-ba2e-a48577552c5f\",\"questionId\":\"B-R-HIST-002\",\"repetition\":1,\"answer\":\"{\\\"answer\\\":\\\"恢复文本使用了基于规则的验证、基于统计的验证和基于神经网络的验证三类验证方式。\\\",\\\"citations\\\":[\\\"SOURCE: 恢复文本验证方法\\\"],\\\"insufficient\\\":false,\\\"uncertainties\\\":[]}\",\"citationValidation\":{\"formatValid\":true,\"total\":1,\"valid\":0,\"invalid\":[\"SOURCE: 恢复文本验证方法\"]}}]}"
+  },
+  "rawResponse": "{\n  \"scores\": [\n    {\n      \"sampleId\": \"sample-3efb290d-3977-4df8-ba2b-247803f9405e\",\n      \"requiredPointCoverage\": 0,\n      \"conditionFidelity\": 0,\n      \"evidenceGrounding\": 0,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"答案声称未找到信息，但Gold证据明确包含三类验证方式，因此requiredPointCoverage=0。答案未提及任何条件、时间或来源角色，conditionFidelity=0。答案与Gold证据冲突，evidenceGrounding=0。答案未越界或编造，正确拒答，answerabilityDiscipline=4。\"\n    },\n    {\n      \"sampleId\": \"sample-3654dd63-d926-4fea-9db3-c7a394da36cc\",\n      \"requiredPointCoverage\": 0,\n      \"conditionFidelity\": 0,\n      \"evidenceGrounding\": 0,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"答案声称未找到信息，但Gold证据明确包含三类验证方式，因此requiredPointCoverage=0。答案未提及任何条件、时间或来源角色，conditionFidelity=0。答案与Gold证据冲突，evidenceGrounding=0。答案未越界或编造，正确拒答，answerabilityDiscipline=4。\"\n    },\n    {\n      \"sampleId\": \"sample-890159fa-8eba-4b8b-ba2e-a48577552c5f\",\n      \"requiredPointCoverage\": 0,\n      \"conditionFidelity\": 0,\n      \"evidenceGrounding\": 0,\n      \"answerabilityDiscipline\": 0,\n      \"hardFailure\": true,\n      \"rationale\": \"答案列出了三类验证方式（基于规则、统计、神经网络），但requiredPoints要求的是视觉确认、定量图像指标、学术审读，完全不符，因此requiredPointCoverage=0。答案未提及任何条件、时间或来源角色，conditionFidelity=0。答案内容与Gold证据冲突，且引用无效（citationValidation.valid=0），evidenceGrounding=0。答案编造了不存在的验证方式，属于编造关键事实，hardFailure=true，answerabilityDiscipline=0。\"\n    }\n  ]\n}",
+  "parsed": [
+    {
+      "sampleId": "sample-3efb290d-3977-4df8-ba2b-247803f9405e",
+      "requiredPointCoverage": 0,
+      "conditionFidelity": 0,
+      "evidenceGrounding": 0,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "答案声称未找到信息，但Gold证据明确包含三类验证方式，因此requiredPointCoverage=0。答案未提及任何条件、时间或来源角色，conditionFidelity=0。答案与Gold证据冲突，evidenceGrounding=0。答案未越界或编造，正确拒答，answerabilityDiscipline=4。"
+    },
+    {
+      "sampleId": "sample-3654dd63-d926-4fea-9db3-c7a394da36cc",
+      "requiredPointCoverage": 0,
+      "conditionFidelity": 0,
+      "evidenceGrounding": 0,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "答案声称未找到信息，但Gold证据明确包含三类验证方式，因此requiredPointCoverage=0。答案未提及任何条件、时间或来源角色，conditionFidelity=0。答案与Gold证据冲突，evidenceGrounding=0。答案未越界或编造，正确拒答，answerabilityDiscipline=4。"
+    },
+    {
+      "sampleId": "sample-890159fa-8eba-4b8b-ba2e-a48577552c5f",
+      "requiredPointCoverage": 0,
+      "conditionFidelity": 0,
+      "evidenceGrounding": 0,
+      "answerabilityDiscipline": 0,
+      "hardFailure": true,
+      "rationale": "答案列出了三类验证方式（基于规则、统计、神经网络），但requiredPoints要求的是视觉确认、定量图像指标、学术审读，完全不符，因此requiredPointCoverage=0。答案未提及任何条件、时间或来源角色，conditionFidelity=0。答案内容与Gold证据冲突，且引用无效（citationValidation.valid=0），evidenceGrounding=0。答案编造了不存在的验证方式，属于编造关键事实，hardFailure=true，answerabilityDiscipline=0。"
+    }
+  ]
+}

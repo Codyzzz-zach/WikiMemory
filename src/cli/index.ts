@@ -41,6 +41,7 @@ import {
 	readSourcePublications,
 } from "../linter/storage.js";
 import type { SourcePublication } from "../linter/storage.js";
+import { recordRelationFunnelEvent } from "../observability/relation-funnel.js";
 import { RELATION_AUDIT_VERSION } from "../prompts/index.js";
 import { evaluatePublicationGate, writePublicationDiffReport } from "../publication-gate/index.js";
 import type { Source } from "../types/index.js";
@@ -364,6 +365,21 @@ async function runCrossMaterialStage(
 	const quarantinedCrossRelations = crossLint
 		.filter((result) => result.finalState === "QUARANTINED")
 		.map((result) => ({ relation: result.object, issues: result.issues }));
+	recordRelationFunnelEvent(config, {
+		stage: "LINT",
+		runId: run.runId,
+		sourceId: source.id,
+		payload: {
+			results: crossLint.map((result) => ({
+				relationId: result.object.id,
+				type: result.object.type,
+				finalState: result.finalState,
+				conditionStatus: result.object.conditionStatus,
+				issueCodes: result.issues.map((issue) => issue.code),
+				issueSeverities: result.issues.map((issue) => issue.severity),
+			})),
+		},
+	});
 
 	recordCompileStage(config, run, "CROSS_MATERIAL_RELATION_PUBLISH");
 	publishCrossMaterialRelations(
@@ -373,6 +389,17 @@ async function runCrossMaterialStage(
 		canonicalCrossRelations,
 		quarantinedCrossRelations,
 	);
+	recordRelationFunnelEvent(config, {
+		stage: "PUBLISH",
+		runId: run.runId,
+		sourceId: source.id,
+		payload: {
+			candidateClaimCount: crossCompile.candidateClaimIds.length,
+			proposedRelationCount: crossCompile.relations.length,
+			canonicalRelationIds: canonicalCrossRelations.map((relation) => relation.id),
+			quarantinedRelationIds: quarantinedCrossRelations.map(({ relation }) => relation.id),
+		},
+	});
 	return {
 		crossMaterialCandidates: crossCompile.candidateClaimIds.length,
 		canonicalCrossRelations: canonicalCrossRelations.length,

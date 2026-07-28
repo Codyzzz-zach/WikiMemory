@@ -1,0 +1,40 @@
+{
+  "schemaVersion": "pilot-publication-diff/v1",
+  "runId": "ee3fa5ee-549a-42e9-9368-b30045473843",
+  "sourceId": "source:health-who-terminology-2024-004-50fd4599b9553875",
+  "generatedAt": "2026-07-27T09:54:52.398Z",
+  "status": "PASS",
+  "acceptedReview": false,
+  "runtime": {
+    "requestedModel": "deepseek-v4-flash",
+    "temperature": 0,
+    "semanticAuditVersion": "v2.3",
+    "relationAuditVersion": "v1.7",
+    "sourceHash": "50fd4599b9553875"
+  },
+  "baseline": null,
+  "candidate": {
+    "claims": 6,
+    "concepts": 4,
+    "relations": 6,
+    "quarantinedClaims": 0,
+    "quarantinedRelations": 2,
+    "quarantineRate": 0
+  },
+  "diff": {
+    "retainedClaimIds": 0,
+    "addedClaimIds": [
+      "claim:50fd4599b9553875-2de9e0481e7c8e64",
+      "claim:50fd4599b9553875-9bb1be629366d05d",
+      "claim:50fd4599b9553875-c49634bbf6841943",
+      "claim:50fd4599b9553875-e5004be37e4a4be8",
+      "claim:50fd4599b9553875-e76415a67338b449",
+      "claim:50fd4599b9553875-e77df938b6f36c19"
+    ],
+    "removedClaimIds": [],
+    "claimRetentionRate": null,
+    "claimCountChangeRate": null,
+    "conditionsDropped": []
+  },
+  "issues": []
+}

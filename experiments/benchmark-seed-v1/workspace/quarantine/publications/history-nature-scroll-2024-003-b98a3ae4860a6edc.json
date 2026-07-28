@@ -1,0 +1,135 @@
+{
+  "schemaVersion": "v1",
+  "sourceId": "source:history-nature-scroll-2024-003-b98a3ae4860a6edc",
+  "runId": "5e7ee631-5036-4dc4-acb4-42bcf279f7df",
+  "publishedAt": "2026-07-27T09:56:24.947Z",
+  "claims": [],
+  "relations": [
+    {
+      "relation": {
+        "id": "rel:b98a3ae4860a6edc-051deb8d1361168d",
+        "from": "claim:b98a3ae4860a6edc-704f0702fd830045",
+        "to": "claim:b98a3ae4860a6edc-8283c241b4571c9c",
+        "type": "DERIVED_FROM",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:history-nature-scroll-2024-003-b98a3ae4860a6edc-2#chars-299-429",
+          "span:history-nature-scroll-2024-003-b98a3ae4860a6edc-2#chars-431-480"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:56:19.046Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:b98a3ae4860a6edc-051deb8d1361168d",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:history-nature-scroll-2024-003#block-2] “The winners of a contest called the Vesuvius Challenge trained their machine-lea”; [1:history-nature-scroll-2024-003#block-2] “unveiling a previously unknown philosophical work”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:b98a3ae4860a6edc-051deb8d1361168d",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:history-nature-scroll-2024-003#block-2] “The winners of a contest called the Vesuvius Challenge trained their machine-lea”; [1:history-nature-scroll-2024-003#block-2] “unveiling a previously unknown philosophical work”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:b98a3ae4860a6edc-6ce21ba11ef3dfad",
+        "from": "claim:b98a3ae4860a6edc-8283c241b4571c9c",
+        "to": "claim:b98a3ae4860a6edc-eb659af5a9f64d88",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:history-nature-scroll-2024-003-b98a3ae4860a6edc-2#chars-431-480",
+          "span:history-nature-scroll-2024-003-b98a3ae4860a6edc-2#chars-486-519"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:56:19.046Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:b98a3ae4860a6edc-6ce21ba11ef3dfad",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:history-nature-scroll-2024-003#block-2] “unveiling a previously unknown philosophical work”; [1:history-nature-scroll-2024-003#block-2] “discusses the senses and pleasure”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:b98a3ae4860a6edc-6ce21ba11ef3dfad",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:history-nature-scroll-2024-003#block-2] “unveiling a previously unknown philosophical work”; [1:history-nature-scroll-2024-003#block-2] “discusses the senses and pleasure”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:b98a3ae4860a6edc-c4af216f2ba9dd42",
+        "from": "claim:b98a3ae4860a6edc-fd2b496dae5aceca",
+        "to": "claim:b98a3ae4860a6edc-3c7148205b4853be",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:history-nature-scroll-2024-003-b98a3ae4860a6edc-1#chars-174-239",
+          "span:history-nature-scroll-2024-003-b98a3ae4860a6edc-1#chars-240-296"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:56:19.046Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.5,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:b98a3ae4860a6edc-c4af216f2ba9dd42",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:history-nature-scroll-2024-003#block-1] “by revealing the content of Greek writing inside a charred scroll”; [1:history-nature-scroll-2024-003#block-1] “buried 2,000 years ago by the eruption of Mount Vesuvius”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:b98a3ae4860a6edc-c4af216f2ba9dd42",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:history-nature-scroll-2024-003#block-1] “by revealing the content of Greek writing inside a charred scroll”; [1:history-nature-scroll-2024-003#block-1] “buried 2,000 years ago by the eruption of Mount Vesuvius”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    }
+  ]
+}

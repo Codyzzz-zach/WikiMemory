@@ -1,0 +1,612 @@
+{
+  "schemaVersion": "v1",
+  "sourceId": "source:health-who-terminology-2024-004-50fd4599b9553875",
+  "runId": "ee3fa5ee-549a-42e9-9368-b30045473843",
+  "publishedAt": "2026-07-27T09:55:28.358Z",
+  "claims": [
+    {
+      "id": "claim:50fd4599b9553875-2de9e0481e7c8e64",
+      "statement": "The distance of airborne transmission or inhalation depends on various factors (airflow, humidity, temperature, ventilation etc).",
+      "evidenceSpanIds": [
+        "span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-621-707"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:54:41.855Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-621-707"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-621-707"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-27T09:54:41.855Z"
+    },
+    {
+      "id": "claim:50fd4599b9553875-9bb1be629366d05d",
+      "statement": "Airborne transmission or inhalation is used for cases when IRPs are expelled into the air and inhaled by another person.",
+      "evidenceSpanIds": [
+        "span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-402-515"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:54:41.855Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-402-515"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-402-515"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-27T09:54:41.855Z"
+    },
+    {
+      "id": "claim:50fd4599b9553875-c49634bbf6841943",
+      "statement": "Direct deposition is used for cases when IRPs are expelled into the air from an infectious person, and are then directly deposited on the exposed mouth, nose or eyes of another person nearby.",
+      "evidenceSpanIds": [
+        "span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-712-896"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:54:41.855Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-712-896"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-712-896"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-27T09:54:41.855Z"
+    },
+    {
+      "id": "claim:50fd4599b9553875-e5004be37e4a4be8",
+      "statement": "Under the umbrella of 'through the air transmission', two descriptors can be used.",
+      "evidenceSpanIds": [
+        "span:health-who-terminology-2024-004-50fd4599b9553875-1#chars-315-397"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:54:41.855Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:health-who-terminology-2024-004-50fd4599b9553875-1#chars-315-397"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:health-who-terminology-2024-004-50fd4599b9553875-1#chars-315-397"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-27T09:54:41.855Z"
+    },
+    {
+      "id": "claim:50fd4599b9553875-e76415a67338b449",
+      "statement": "The descriptor 'through the air' can be used in a general way to characterize an infectious disease where the main mode of transmission involves the pathogen travelling through the air or being suspended in the air.",
+      "evidenceSpanIds": [
+        "span:health-who-terminology-2024-004-50fd4599b9553875-1#chars-99-314"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:54:41.855Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:health-who-terminology-2024-004-50fd4599b9553875-1#chars-99-314"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:health-who-terminology-2024-004-50fd4599b9553875-1#chars-99-314"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-27T09:54:41.855Z"
+    },
+    {
+      "id": "claim:50fd4599b9553875-e77df938b6f36c19",
+      "statement": "Airborne transmission or inhalation can occur at a short or long distance from the infectious person.",
+      "evidenceSpanIds": [
+        "span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-516-616"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:54:41.855Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-516-616"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-516-616"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-27T09:54:41.855Z"
+    }
+  ],
+  "concepts": [
+    {
+      "id": "concept:0ee72039574cbf03",
+      "name": "through the air transmission",
+      "aliases": [
+        "through the air"
+      ],
+      "boundary": "Umbrella term for transmission descriptors where the pathogen travels through or is suspended in the air.",
+      "domain": "infectious disease transmission"
+    },
+    {
+      "id": "concept:1f9cd28a4bcc93ab",
+      "name": "direct deposition",
+      "aliases": [],
+      "boundary": "Transmission mode where IRPs are expelled into the air and directly deposited on the exposed mouth, nose or eyes of another person nearby.",
+      "domain": "infectious disease transmission"
+    },
+    {
+      "id": "concept:562cdf26b30e28ee",
+      "name": "infectious respiratory particles",
+      "aliases": [
+        "IRPs"
+      ],
+      "boundary": "Particles expelled from an infectious person that can transmit infection.",
+      "domain": "infectious disease transmission"
+    },
+    {
+      "id": "concept:6496e1e3abd4a53f",
+      "name": "airborne transmission",
+      "aliases": [
+        "airborne transmission or inhalation"
+      ],
+      "boundary": "Transmission mode where IRPs are expelled into the air and inhaled by another person, can occur at short or long distance.",
+      "domain": "infectious disease transmission"
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel:50fd4599b9553875-704312dd470dff1c",
+      "from": "claim:50fd4599b9553875-e5004be37e4a4be8",
+      "to": "claim:50fd4599b9553875-9bb1be629366d05d",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:health-who-terminology-2024-004-50fd4599b9553875-1#chars-315-397",
+        "span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-402-515"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:54:46.436Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.9,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:50fd4599b9553875-9b5cbef50c310bf6",
+      "from": "claim:50fd4599b9553875-e5004be37e4a4be8",
+      "to": "claim:50fd4599b9553875-e77df938b6f36c19",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:health-who-terminology-2024-004-50fd4599b9553875-1#chars-315-397",
+        "span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-516-616"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:54:46.436Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.9,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:50fd4599b9553875-bc78e84be4b8b66b",
+      "from": "claim:50fd4599b9553875-e5004be37e4a4be8",
+      "to": "claim:50fd4599b9553875-c49634bbf6841943",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:health-who-terminology-2024-004-50fd4599b9553875-1#chars-315-397",
+        "span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-712-896"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:54:46.436Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.9,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:50fd4599b9553875-d0d05f614805365f",
+      "from": "claim:50fd4599b9553875-2de9e0481e7c8e64",
+      "to": "claim:50fd4599b9553875-9bb1be629366d05d",
+      "type": "RELATED_TO",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-402-515",
+        "span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-621-707"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:54:46.436Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.7,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:50fd4599b9553875-dc7633ac0e2a38be",
+      "from": "claim:50fd4599b9553875-9bb1be629366d05d",
+      "to": "claim:50fd4599b9553875-e77df938b6f36c19",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-402-515",
+        "span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-516-616"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:54:46.436Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.8,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:50fd4599b9553875-fd67d57420424a93",
+      "from": "claim:50fd4599b9553875-9bb1be629366d05d",
+      "to": "claim:50fd4599b9553875-c49634bbf6841943",
+      "type": "RELATED_TO",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-402-515",
+        "span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-712-896"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:54:46.436Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.7,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:cross-1392876f564273bb",
+      "from": "claim:50fd4599b9553875-2de9e0481e7c8e64",
+      "to": "claim:b587ec61aaf84d7d-aae2124ec2ae0b65",
+      "type": "RELATED_TO",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:health-who-march-2020-001-b587ec61aaf84d7d-1#chars-241-287",
+        "span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-621-707"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:55:05.761Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "cross-material-detect",
+      "confidence": 0.5,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:cross-22b88f73b1bfcfa2",
+      "from": "claim:50fd4599b9553875-2de9e0481e7c8e64",
+      "to": "claim:14069d5a982d18de-fb6c9ddf92a42cc2",
+      "type": "RELATED_TO",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:health-nature-airborne-2022-003-14069d5a982d18de-2#chars-340-458",
+        "span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-621-707"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:55:05.761Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "cross-material-detect",
+      "confidence": 0.5,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:cross-66637d432ae08fc7",
+      "from": "claim:50fd4599b9553875-9bb1be629366d05d",
+      "to": "claim:b587ec61aaf84d7d-ffaa41d4d0fe03ab",
+      "type": "RELATED_TO",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:health-who-march-2020-001-b587ec61aaf84d7d-1#chars-51-239",
+        "span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-402-515"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:55:05.761Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "cross-material-detect",
+      "confidence": 0.6,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:cross-7534d99eed97d79e",
+      "from": "claim:50fd4599b9553875-9bb1be629366d05d",
+      "to": "claim:b587ec61aaf84d7d-aae2124ec2ae0b65",
+      "type": "RELATED_TO",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:health-who-march-2020-001-b587ec61aaf84d7d-1#chars-241-287",
+        "span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-402-515"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:55:05.761Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "cross-material-detect",
+      "confidence": 0.5,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:cross-9827b8141d14fefd",
+      "from": "claim:50fd4599b9553875-9bb1be629366d05d",
+      "to": "claim:14069d5a982d18de-fb6c9ddf92a42cc2",
+      "type": "RELATED_TO",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:health-nature-airborne-2022-003-14069d5a982d18de-2#chars-340-458",
+        "span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-402-515"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:55:05.761Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "cross-material-detect",
+      "confidence": 0.5,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:cross-bacfe6fd469eef97",
+      "from": "claim:50fd4599b9553875-e77df938b6f36c19",
+      "to": "claim:14069d5a982d18de-fb6c9ddf92a42cc2",
+      "type": "RELATED_TO",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:health-nature-airborne-2022-003-14069d5a982d18de-2#chars-340-458",
+        "span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-516-616"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:55:05.761Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "cross-material-detect",
+      "confidence": 0.5,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:cross-f405c400769761ad",
+      "from": "claim:50fd4599b9553875-e77df938b6f36c19",
+      "to": "claim:b587ec61aaf84d7d-f9e6d8b51f46b89d",
+      "type": "RELATED_TO",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:health-who-march-2020-001-b587ec61aaf84d7d-1#chars-292-348",
+        "span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-516-616"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:55:05.761Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "cross-material-detect",
+      "confidence": 0.6,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:cross-fc7de8337e39a3aa",
+      "from": "claim:50fd4599b9553875-e76415a67338b449",
+      "to": "claim:b587ec61aaf84d7d-474d339f3670f6c4",
+      "type": "RELATED_TO",
+      "conditions": [
+        "specific circumstances and settings where procedures or support treatments that generate aerosols are performed"
+      ],
+      "conditionStatus": "PRESERVED",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:health-who-march-2020-001-b587ec61aaf84d7d-2#chars-351-534",
+        "span:health-who-terminology-2024-004-50fd4599b9553875-1#chars-99-314"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:55:05.761Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "cross-material-detect",
+      "confidence": 0.4,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:cross-fcdec587ad0d20fe",
+      "from": "claim:50fd4599b9553875-e77df938b6f36c19",
+      "to": "claim:b587ec61aaf84d7d-aae2124ec2ae0b65",
+      "type": "RELATED_TO",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:health-who-march-2020-001-b587ec61aaf84d7d-1#chars-241-287",
+        "span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-516-616"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:55:05.761Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "cross-material-detect",
+      "confidence": 0.5,
+      "consumedBy": []
+    }
+  ]
+}

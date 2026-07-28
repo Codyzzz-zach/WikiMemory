@@ -1,0 +1,37 @@
+{
+  "schemaVersion": "pilot-publication-diff/v1",
+  "runId": "31774385-abd0-4c75-b131-9bd0f25c8507",
+  "sourceId": "source:design-webaim-checklist-2024-004-b89787b6b83f3605",
+  "generatedAt": "2026-07-27T09:58:15.246Z",
+  "status": "PASS",
+  "acceptedReview": false,
+  "runtime": {
+    "requestedModel": "deepseek-v4-flash",
+    "temperature": 0,
+    "semanticAuditVersion": "v2.3",
+    "relationAuditVersion": "v1.7",
+    "sourceHash": "b89787b6b83f3605"
+  },
+  "baseline": null,
+  "candidate": {
+    "claims": 3,
+    "concepts": 3,
+    "relations": 1,
+    "quarantinedClaims": 0,
+    "quarantinedRelations": 0,
+    "quarantineRate": 0
+  },
+  "diff": {
+    "retainedClaimIds": 0,
+    "addedClaimIds": [
+      "claim:b89787b6b83f3605-2b879b185f80c3ed",
+      "claim:b89787b6b83f3605-7d429224411b6b4e",
+      "claim:b89787b6b83f3605-d524b881aa3a2622"
+    ],
+    "removedClaimIds": [],
+    "claimRetentionRate": null,
+    "claimCountChangeRate": null,
+    "conditionsDropped": []
+  },
+  "issues": []
+}

@@ -1,0 +1,175 @@
+{
+  "runId": "e4-batch-b-remaining-all-modes-2026-07-28T05-44-10-699Z",
+  "sampleId": "sample-d616e7b4-aa9f-4b3f-98eb-06ec23609a45",
+  "questionId": "B-F-HIST-001",
+  "group": "P-seed",
+  "pilotGroup": "P",
+  "graphExpansion": false,
+  "repetition": 1,
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "temperature": 0,
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 907,
+    "completionTokens": 139,
+    "totalTokens": 1046,
+    "promptCacheHitTokens": 0,
+    "promptCacheMissTokens": 907,
+    "reasoningTokens": 0
+  },
+  "latencyMs": 2156,
+  "promptHash": "sha256:48453682bf85248b696ef2971946f3b8e7e519be9465e4a3e2c28cd63f034364",
+  "contextHash": "2700da4f0923b7509d38f93945598d6fba69111442ef15257bd41af2298b1042",
+  "estimatedContextTokens": 680,
+  "estimatedInputTokens": 857,
+  "retrievedClaims": [
+    "claim:e71279e71acc04bd-1c4f658d21aa94b4",
+    "claim:e71279e71acc04bd-367243e68b140409",
+    "claim:e71279e71acc04bd-6d5b2c429c801f73",
+    "claim:e71279e71acc04bd-dc4b7534a61f85ee",
+    "claim:e71279e71acc04bd-f06d3f1ce6a9a65a"
+  ],
+  "retrievedRelations": [],
+  "retrievedSources": [
+    "source:history-educelab-paper-2023-001-e71279e71acc04bd"
+  ],
+  "droppedContext": [],
+  "retrievalTrace": {
+    "strategy": "claim-seed-only",
+    "graphDepth": 0,
+    "temporalScope": {
+      "applied": false,
+      "startMonth": null,
+      "endMonth": null,
+      "excludedClaimIds": []
+    },
+    "retrieval": {
+      "queryFeatureCount": 51,
+      "eligibleClaimCount": 67,
+      "matchedClaimCount": 5,
+      "usedEvidenceText": true,
+      "usedSourceMetadata": true,
+      "resolvedEvidenceRefCount": 67,
+      "unresolvedEvidenceRefCount": 0,
+      "candidates": [
+        {
+          "claimId": "claim:e71279e71acc04bd-1c4f658d21aa94b4",
+          "rank": 1,
+          "score": 7.534794921510614,
+          "channels": [
+            "g3",
+            "source",
+            "w"
+          ],
+          "matchedFeatureCount": 7
+        },
+        {
+          "claimId": "claim:e71279e71acc04bd-367243e68b140409",
+          "rank": 2,
+          "score": 7.534794921510614,
+          "channels": [
+            "g3",
+            "source",
+            "w"
+          ],
+          "matchedFeatureCount": 7
+        },
+        {
+          "claimId": "claim:e71279e71acc04bd-6d5b2c429c801f73",
+          "rank": 3,
+          "score": 7.534794921510614,
+          "channels": [
+            "g3",
+            "source",
+            "w"
+          ],
+          "matchedFeatureCount": 7
+        },
+        {
+          "claimId": "claim:e71279e71acc04bd-dc4b7534a61f85ee",
+          "rank": 4,
+          "score": 7.534794921510614,
+          "channels": [
+            "g3",
+            "source",
+            "w"
+          ],
+          "matchedFeatureCount": 7
+        },
+        {
+          "claimId": "claim:e71279e71acc04bd-f06d3f1ce6a9a65a",
+          "rank": 5,
+          "score": 7.534794921510614,
+          "channels": [
+            "g3",
+            "source",
+            "w"
+          ],
+          "matchedFeatureCount": 7
+        }
+      ]
+    },
+    "graph": {
+      "seedClaimIds": [
+        "claim:e71279e71acc04bd-1c4f658d21aa94b4",
+        "claim:e71279e71acc04bd-367243e68b140409",
+        "claim:e71279e71acc04bd-6d5b2c429c801f73",
+        "claim:e71279e71acc04bd-dc4b7534a61f85ee",
+        "claim:e71279e71acc04bd-f06d3f1ce6a9a65a"
+      ],
+      "expandedClaimIds": [
+        "claim:e71279e71acc04bd-1c4f658d21aa94b4",
+        "claim:e71279e71acc04bd-367243e68b140409",
+        "claim:e71279e71acc04bd-6d5b2c429c801f73",
+        "claim:e71279e71acc04bd-dc4b7534a61f85ee",
+        "claim:e71279e71acc04bd-f06d3f1ce6a9a65a"
+      ],
+      "expandedRelationIds": []
+    },
+    "budget": {
+      "selectedClaimIds": [
+        "claim:e71279e71acc04bd-1c4f658d21aa94b4",
+        "claim:e71279e71acc04bd-367243e68b140409",
+        "claim:e71279e71acc04bd-6d5b2c429c801f73",
+        "claim:e71279e71acc04bd-dc4b7534a61f85ee",
+        "claim:e71279e71acc04bd-f06d3f1ce6a9a65a"
+      ],
+      "selectedRelationIds": [],
+      "selectedEvidenceSpanIds": [
+        "span:history-educelab-paper-2023-001-e71279e71acc04bd-2#chars-439-541",
+        "span:history-educelab-paper-2023-001-e71279e71acc04bd-2#chars-336-438",
+        "span:history-educelab-paper-2023-001-e71279e71acc04bd-1#chars-208-334",
+        "span:history-educelab-paper-2023-001-e71279e71acc04bd-2#chars-542-678",
+        "span:history-educelab-paper-2023-001-e71279e71acc04bd-1#chars-88-207"
+      ],
+      "selectedWikiModuleIds": [],
+      "dropped": [],
+      "finalEstimatedTokens": 1878
+    },
+    "serializationBudget": {
+      "selectedIds": [
+        "task-map",
+        "claim:e71279e71acc04bd-1c4f658d21aa94b4",
+        "claim:e71279e71acc04bd-367243e68b140409",
+        "claim:e71279e71acc04bd-6d5b2c429c801f73",
+        "claim:e71279e71acc04bd-dc4b7534a61f85ee",
+        "claim:e71279e71acc04bd-f06d3f1ce6a9a65a",
+        "span:history-educelab-paper-2023-001-e71279e71acc04bd-2#chars-439-541",
+        "span:history-educelab-paper-2023-001-e71279e71acc04bd-2#chars-336-438",
+        "span:history-educelab-paper-2023-001-e71279e71acc04bd-1#chars-208-334",
+        "span:history-educelab-paper-2023-001-e71279e71acc04bd-2#chars-542-678",
+        "span:history-educelab-paper-2023-001-e71279e71acc04bd-1#chars-88-207",
+        "conflicts-and-conditions",
+        "known-gaps"
+      ],
+      "droppedIds": []
+    }
+  },
+  "request": {
+    "systemPrompt": "你是受证据约束的问答 Agent。只使用本次请求提供的检索上下文回答。\n要求：保留影响结论的条件、时间、例外、来源角色与不确定性；关键结论引用上下文中的 SOURCE、EVIDENCE 或 CLAIM 标识；上下文不足时明确说明，不得用外部常识补齐。\n只输出严格 JSON：{\"answer\":\"...\",\"citations\":[\"...\"],\"insufficient\":false,\"uncertainties\":[\"...\"]}。",
+    "userPrompt": "# 问题\n判断：EduceLab 论文已经证明所有密封赫库兰尼姆纸卷都能完整恢复。\n\n# 检索上下文\n## TASK MAP\n主题: 判断：EduceLab 论文已经证明所有密封赫库兰尼姆纸卷都能完整恢复。\n地图主题: the, of, and, to, in\n关键概念: User Agent, Mobile Requirements, Input Modality, Desktop Content, Single Pointer\n已知争议: 0 个\n最近变化: 5 条\n找到 5 条相关 Claim\n找到 0 条关系\n找到 5 条原文证据\n\n## CLAIM claim:e71279e71acc04bd-1c4f658d21aa94b4\nRevealed text is verified using visual confirmation, quantitative image metrics, and scholarly review.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:e71279e71acc04bd-367243e68b140409\nThe method is capable of revealing accurate lines of text on scroll fragments with known ground truth.\nConditions: on scroll fragments with known ground truth\nValidity: SUPPORTED\n\n## CLAIM claim:e71279e71acc04bd-6d5b2c429c801f73\nThe enhanced virtual unwrapping pipeline combines machine learning with a novel geometric framework linking 3D and 2D images.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:e71279e71acc04bd-dc4b7534a61f85ee\nEduceLab-Scrolls has enabled the discovery, for the first time, of hidden texts from the Herculaneum papyri.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:e71279e71acc04bd-f06d3f1ce6a9a65a\nEduceLab-Scrolls is a complete software pipeline for revealing hidden texts of the Herculaneum papyri using X-ray CT images.\nConditions: none\nValidity: SUPPORTED\n\n## EVIDENCE span:history-educelab-paper-2023-001-e71279e71acc04bd-2#chars-439-541\nRevealed text is verified using visual confirmation, quantitative image metrics, and scholarly review.\n\n## EVIDENCE span:history-educelab-paper-2023-001-e71279e71acc04bd-2#chars-336-438\nOur method is capable of revealing accurate lines of text on scroll fragments with known ground truth.\n\n## EVIDENCE span:history-educelab-paper-2023-001-e71279e71acc04bd-1#chars-208-334\nThis enhanced virtual unwrapping pipeline combines machine learning with a novel geometric framework linking 3D and 2D images.\n\n## EVIDENCE span:history-educelab-paper-2023-001-e71279e71acc04bd-2#chars-542-678\nEduceLab-Scrolls has also enabled the discovery, for the first time, of hidden texts from the Herculaneum papyri, which we present here.\n\n## EVIDENCE span:history-educelab-paper-2023-001-e71279e71acc04bd-1#chars-88-207\nWe present a complete software pipeline for revealing the hidden texts of the Herculaneum papyri using X-ray CT images.\n\n## CONFLICTS AND CONDITIONS\n📌 Claim claim:e71279e71acc04bd-367243e68b140409 适用条件: on scroll fragments with known ground truth\n\n## KNOWN GAPS\n未找到关系——Graph 可能尚未建立跨材料边"
+  },
+  "answer": "{\n  \"answer\": \"上下文未证明所有密封赫库兰尼姆纸卷都能完整恢复。EduceLab论文仅展示了在已知真实情况的碎片上揭示准确文本行，并首次发现了隐藏文本，但未声称对所有密封纸卷完整恢复。\",\n  \"citations\": [\n    \"claim:e71279e71acc04bd-367243e68b140409\",\n    \"claim:e71279e71acc04bd-dc4b7534a61f85ee\"\n  ],\n  \"insufficient\": true,\n  \"uncertainties\": [\n    \"未提供关于所有密封纸卷完整恢复的证据或声明\"\n  ]\n}",
+  "answerFormatValid": true
+}

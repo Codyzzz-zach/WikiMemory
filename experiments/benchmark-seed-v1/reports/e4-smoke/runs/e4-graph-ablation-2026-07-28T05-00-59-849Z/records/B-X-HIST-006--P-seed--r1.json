@@ -1,0 +1,259 @@
+{
+  "runId": "e4-graph-ablation-2026-07-28T05-00-59-849Z",
+  "sampleId": "sample-68293625-fb06-4198-a17d-06c387e3a45c",
+  "questionId": "B-X-HIST-006",
+  "group": "P-seed",
+  "pilotGroup": "P",
+  "graphExpansion": false,
+  "repetition": 1,
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "temperature": 0,
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 1374,
+    "completionTokens": 395,
+    "totalTokens": 1769,
+    "promptCacheHitTokens": 0,
+    "promptCacheMissTokens": 1374,
+    "reasoningTokens": 0
+  },
+  "latencyMs": 4036,
+  "promptHash": "sha256:d9ed249367c2db41efebcc18776fae88603b8a7799460024248162507277c85f",
+  "contextHash": "87ad8789a8b4a36610a6de5734f99c5d419c1a1232de0a4d18827c57c93b224d",
+  "estimatedContextTokens": 988,
+  "estimatedInputTokens": 1157,
+  "retrievedClaims": [
+    "claim:b98a3ae4860a6edc-704f0702fd830045",
+    "claim:5505a1ba1fcb1b68-35e4f1b989767484",
+    "claim:5505a1ba1fcb1b68-5b081e72929d1868",
+    "claim:5505a1ba1fcb1b68-825b50a16ede0106",
+    "claim:5505a1ba1fcb1b68-92eeebabc9812a65",
+    "claim:5505a1ba1fcb1b68-9acfc0780eb2b345",
+    "claim:5505a1ba1fcb1b68-a2289f49fcb0ff64",
+    "claim:5505a1ba1fcb1b68-a4e0bf4dcf441832",
+    "claim:5505a1ba1fcb1b68-c84e1d5fe016cb20",
+    "claim:5505a1ba1fcb1b68-d303dae0fc053d75"
+  ],
+  "retrievedRelations": [],
+  "retrievedSources": [
+    "source:history-nature-scroll-2024-003-b98a3ae4860a6edc",
+    "source:history-vesuvius-github-2024-002-5505a1ba1fcb1b68"
+  ],
+  "droppedContext": [],
+  "retrievalTrace": {
+    "strategy": "claim-seed-only",
+    "graphDepth": 0,
+    "retrieval": {
+      "queryFeatureCount": 33,
+      "eligibleClaimCount": 67,
+      "matchedClaimCount": 10,
+      "usedEvidenceText": true,
+      "usedSourceMetadata": true,
+      "resolvedEvidenceRefCount": 67,
+      "unresolvedEvidenceRefCount": 0,
+      "candidates": [
+        {
+          "claimId": "claim:b98a3ae4860a6edc-704f0702fd830045",
+          "rank": 1,
+          "score": 6.077878972699811,
+          "channels": [
+            "g3",
+            "source",
+            "w"
+          ],
+          "matchedFeatureCount": 6
+        },
+        {
+          "claimId": "claim:5505a1ba1fcb1b68-35e4f1b989767484",
+          "rank": 2,
+          "score": 5.646453642845573,
+          "channels": [
+            "g3",
+            "source",
+            "w"
+          ],
+          "matchedFeatureCount": 5
+        },
+        {
+          "claimId": "claim:5505a1ba1fcb1b68-5b081e72929d1868",
+          "rank": 3,
+          "score": 5.646453642845573,
+          "channels": [
+            "g3",
+            "source",
+            "w"
+          ],
+          "matchedFeatureCount": 5
+        },
+        {
+          "claimId": "claim:5505a1ba1fcb1b68-825b50a16ede0106",
+          "rank": 4,
+          "score": 5.646453642845573,
+          "channels": [
+            "g3",
+            "source",
+            "w"
+          ],
+          "matchedFeatureCount": 5
+        },
+        {
+          "claimId": "claim:5505a1ba1fcb1b68-92eeebabc9812a65",
+          "rank": 5,
+          "score": 5.646453642845573,
+          "channels": [
+            "g3",
+            "source",
+            "w"
+          ],
+          "matchedFeatureCount": 5
+        },
+        {
+          "claimId": "claim:5505a1ba1fcb1b68-9acfc0780eb2b345",
+          "rank": 6,
+          "score": 5.646453642845573,
+          "channels": [
+            "g3",
+            "source",
+            "w"
+          ],
+          "matchedFeatureCount": 5
+        },
+        {
+          "claimId": "claim:5505a1ba1fcb1b68-a2289f49fcb0ff64",
+          "rank": 7,
+          "score": 5.646453642845573,
+          "channels": [
+            "g3",
+            "source",
+            "w"
+          ],
+          "matchedFeatureCount": 5
+        },
+        {
+          "claimId": "claim:5505a1ba1fcb1b68-a4e0bf4dcf441832",
+          "rank": 8,
+          "score": 5.646453642845573,
+          "channels": [
+            "g3",
+            "source",
+            "w"
+          ],
+          "matchedFeatureCount": 5
+        },
+        {
+          "claimId": "claim:5505a1ba1fcb1b68-c84e1d5fe016cb20",
+          "rank": 9,
+          "score": 5.646453642845573,
+          "channels": [
+            "g3",
+            "source",
+            "w"
+          ],
+          "matchedFeatureCount": 5
+        },
+        {
+          "claimId": "claim:5505a1ba1fcb1b68-d303dae0fc053d75",
+          "rank": 10,
+          "score": 5.646453642845573,
+          "channels": [
+            "g3",
+            "source",
+            "w"
+          ],
+          "matchedFeatureCount": 5
+        }
+      ]
+    },
+    "graph": {
+      "seedClaimIds": [
+        "claim:b98a3ae4860a6edc-704f0702fd830045",
+        "claim:5505a1ba1fcb1b68-35e4f1b989767484",
+        "claim:5505a1ba1fcb1b68-5b081e72929d1868",
+        "claim:5505a1ba1fcb1b68-825b50a16ede0106",
+        "claim:5505a1ba1fcb1b68-92eeebabc9812a65",
+        "claim:5505a1ba1fcb1b68-9acfc0780eb2b345",
+        "claim:5505a1ba1fcb1b68-a2289f49fcb0ff64",
+        "claim:5505a1ba1fcb1b68-a4e0bf4dcf441832",
+        "claim:5505a1ba1fcb1b68-c84e1d5fe016cb20",
+        "claim:5505a1ba1fcb1b68-d303dae0fc053d75"
+      ],
+      "expandedClaimIds": [
+        "claim:b98a3ae4860a6edc-704f0702fd830045",
+        "claim:5505a1ba1fcb1b68-35e4f1b989767484",
+        "claim:5505a1ba1fcb1b68-5b081e72929d1868",
+        "claim:5505a1ba1fcb1b68-825b50a16ede0106",
+        "claim:5505a1ba1fcb1b68-92eeebabc9812a65",
+        "claim:5505a1ba1fcb1b68-9acfc0780eb2b345",
+        "claim:5505a1ba1fcb1b68-a2289f49fcb0ff64",
+        "claim:5505a1ba1fcb1b68-a4e0bf4dcf441832",
+        "claim:5505a1ba1fcb1b68-c84e1d5fe016cb20",
+        "claim:5505a1ba1fcb1b68-d303dae0fc053d75"
+      ],
+      "expandedRelationIds": []
+    },
+    "budget": {
+      "selectedClaimIds": [
+        "claim:b98a3ae4860a6edc-704f0702fd830045",
+        "claim:5505a1ba1fcb1b68-35e4f1b989767484",
+        "claim:5505a1ba1fcb1b68-5b081e72929d1868",
+        "claim:5505a1ba1fcb1b68-825b50a16ede0106",
+        "claim:5505a1ba1fcb1b68-92eeebabc9812a65",
+        "claim:5505a1ba1fcb1b68-9acfc0780eb2b345",
+        "claim:5505a1ba1fcb1b68-a2289f49fcb0ff64",
+        "claim:5505a1ba1fcb1b68-a4e0bf4dcf441832",
+        "claim:5505a1ba1fcb1b68-c84e1d5fe016cb20",
+        "claim:5505a1ba1fcb1b68-d303dae0fc053d75"
+      ],
+      "selectedRelationIds": [],
+      "selectedEvidenceSpanIds": [
+        "span:history-nature-scroll-2024-003-b98a3ae4860a6edc-2#chars-299-429",
+        "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-5#chars-571-674",
+        "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-3#chars-237-321",
+        "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-2#chars-135-235",
+        "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-4#chars-446-517",
+        "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-5#chars-519-570",
+        "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-1#chars-48-106",
+        "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-4#chars-323-445",
+        "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-0#chars-0-46",
+        "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-1#chars-107-127"
+      ],
+      "selectedWikiModuleIds": [],
+      "dropped": [],
+      "finalEstimatedTokens": 3334
+    },
+    "serializationBudget": {
+      "selectedIds": [
+        "task-map",
+        "claim:b98a3ae4860a6edc-704f0702fd830045",
+        "claim:5505a1ba1fcb1b68-35e4f1b989767484",
+        "claim:5505a1ba1fcb1b68-5b081e72929d1868",
+        "claim:5505a1ba1fcb1b68-825b50a16ede0106",
+        "claim:5505a1ba1fcb1b68-92eeebabc9812a65",
+        "claim:5505a1ba1fcb1b68-9acfc0780eb2b345",
+        "claim:5505a1ba1fcb1b68-a2289f49fcb0ff64",
+        "claim:5505a1ba1fcb1b68-a4e0bf4dcf441832",
+        "claim:5505a1ba1fcb1b68-c84e1d5fe016cb20",
+        "claim:5505a1ba1fcb1b68-d303dae0fc053d75",
+        "span:history-nature-scroll-2024-003-b98a3ae4860a6edc-2#chars-299-429",
+        "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-5#chars-571-674",
+        "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-3#chars-237-321",
+        "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-2#chars-135-235",
+        "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-4#chars-446-517",
+        "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-5#chars-519-570",
+        "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-1#chars-48-106",
+        "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-4#chars-323-445",
+        "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-0#chars-0-46",
+        "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-1#chars-107-127",
+        "known-gaps"
+      ],
+      "droppedIds": []
+    }
+  },
+  "request": {
+    "systemPrompt": "你是受证据约束的问答 Agent。只使用本次请求提供的检索上下文回答。\n要求：保留影响结论的条件、时间、例外、来源角色与不确定性；关键结论引用上下文中的 SOURCE、EVIDENCE 或 CLAIM 标识；上下文不足时明确说明，不得用外部常识补齐。\n只输出严格 JSON：{\"answer\":\"...\",\"citations\":[\"...\"],\"insufficient\":false,\"uncertainties\":[\"...\"]}。",
+    "userPrompt": "# 问题\n论文、GitHub 库和 Nature 报道分别能回答哪一层问题？\n\n# 检索上下文\n## TASK MAP\n主题: 论文、GitHub 库和 Nature 报道分别能回答哪一层问题？\n地图主题: the, of, and, to, in\n关键概念: User Agent, Mobile Requirements, Input Modality, Desktop Content, Single Pointer\n已知争议: 0 个\n最近变化: 5 条\n找到 10 条相关 Claim\n找到 0 条关系\n找到 10 条原文证据\n\n## CLAIM claim:b98a3ae4860a6edc-704f0702fd830045\nThe winners of a contest called the Vesuvius Challenge trained their machine-learning algorithms on scans of the rolled-up papyrus.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:5505a1ba1fcb1b68-35e4f1b989767484\n并非所有维苏威挑战赛的数据目前都可用——数据将继续添加到库中。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:5505a1ba1fcb1b68-5b081e72929d1868\n该库来自维苏威挑战赛，是一个用于访问古代卷轴 CT 扫描的 Python 库。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:5505a1ba1fcb1b68-825b50a16ede0106\n该库现在维护在 https://github.com/ScrollPrize/villa/tree/main/vesuvius。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:5505a1ba1fcb1b68-92eeebabc9812a65\n数据在后台流式传输，仅提供请求的区域。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:5505a1ba1fcb1b68-9acfc0780eb2b345\nvesuvius 处于测试阶段，界面可能会发生变化。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:5505a1ba1fcb1b68-a2289f49fcb0ff64\n该仓库于 2024 年 11 月 21 日被所有者归档。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:5505a1ba1fcb1b68-a4e0bf4dcf441832\nvesuvius 允许直接访问卷轴数据，无需管理下载脚本或在本地存储数 TB 的 CT 扫描数据。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:5505a1ba1fcb1b68-c84e1d5fe016cb20\nScrollPrize/vesuvius 是一个归档的 Python 库。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:5505a1ba1fcb1b68-d303dae0fc053d75\n该仓库现在是只读的。\nConditions: none\nValidity: SUPPORTED\n\n## EVIDENCE span:history-nature-scroll-2024-003-b98a3ae4860a6edc-2#chars-299-429\nThe winners of a contest called the Vesuvius Challenge trained their machine-learning algorithms on scans of the rolled-up papyrus\n\n## EVIDENCE span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-5#chars-571-674\nNot all Vesuvius Challenge data is currently available - data will continue to be added to the library.\n\n## EVIDENCE span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-3#chars-237-321\nFrom Vesuvius Challenge, a Python library for accessing CT scans of ancient scrolls.\n\n## EVIDENCE span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-2#chars-135-235\nNow maintained at https://github.com/ScrollPrize/villa/tree/main/vesuvius (this repository archived)\n\n## EVIDENCE span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-4#chars-446-517\nData is streamed in the background, only serving the requested regions.\n\n## EVIDENCE span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-5#chars-519-570\n`vesuvius` is in beta and the interface may change.\n\n## EVIDENCE span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-1#chars-48-106\nThis repository was archived by the owner on Nov 21, 2024.\n\n## EVIDENCE span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-4#chars-323-445\n`vesuvius` allows direct access to scroll data without managing download scripts or storing terabytes of CT scans locally.\n\n## EVIDENCE span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-0#chars-0-46\n# ScrollPrize/vesuvius archived Python library\n\n## EVIDENCE span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-1#chars-107-127\nIt is now read-only.\n\n## KNOWN GAPS\n未找到关系——Graph 可能尚未建立跨材料边"
+  },
+  "answer": "{\n  \"answer\": \"论文、GitHub 库和 Nature 报道分别能回答不同层次的问题：论文通常回答研究的方法、结果和结论等深层问题；GitHub 库（如 ScrollPrize/vesuvius）回答关于代码实现、数据访问、使用方式和维护状态等操作性问题；Nature 报道回答关于竞赛背景、成果意义和科学影响等高层问题。\",\n  \"citations\": [\n    \"claim:b98a3ae4860a6edc-704f0702fd830045\",\n    \"claim:5505a1ba1fcb1b68-35e4f1b989767484\",\n    \"claim:5505a1ba1fcb1b68-5b081e72929d1868\",\n    \"claim:5505a1ba1fcb1b68-825b50a16ede0106\",\n    \"claim:5505a1ba1fcb1b68-92eeebabc9812a65\",\n    \"claim:5505a1ba1fcb1b68-9acfc0780eb2b345\",\n    \"claim:5505a1ba1fcb1b68-a2289f49fcb0ff64\",\n    \"claim:5505a1ba1fcb1b68-a4e0bf4dcf441832\",\n    \"claim:5505a1ba1fcb1b68-c84e1d5fe016cb20\",\n    \"claim:5505a1ba1fcb1b68-d303dae0fc053d75\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": [\n    \"上下文未明确区分论文、GitHub 库和 Nature 报道各自回答的具体问题层次，仅提供了关于 GitHub 库的详细信息。\"\n  ]\n}",
+  "answerFormatValid": true
+}

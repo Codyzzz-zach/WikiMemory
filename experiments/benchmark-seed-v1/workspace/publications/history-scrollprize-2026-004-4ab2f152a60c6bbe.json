@@ -1,0 +1,409 @@
+{
+  "schemaVersion": "v1",
+  "sourceId": "source:history-scrollprize-2026-004-4ab2f152a60c6bbe",
+  "runId": "0411c94f-a4ca-4818-ad9c-5f56a706ecbd",
+  "publishedAt": "2026-07-27T09:56:51.016Z",
+  "claims": [
+    {
+      "id": "claim:4ab2f152a60c6bbe-39dbff7d3d0408e6",
+      "statement": "The Vesuvius Challenge had a Grand Prize for the first team to recover four passages of 140 characters from a Herculaneum scroll.",
+      "evidenceSpanIds": [
+        "span:history-scrollprize-2026-004-4ab2f152a60c6bbe-1#chars-81-187"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:56:32.528Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:history-scrollprize-2026-004-4ab2f152a60c6bbe-1#chars-81-187"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:history-scrollprize-2026-004-4ab2f152a60c6bbe-1#chars-81-187"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-27T09:56:32.528Z"
+    },
+    {
+      "id": "claim:4ab2f152a60c6bbe-812533cb126e5e48",
+      "statement": "Vesuvius Challenge project timeline is the title of the section.",
+      "evidenceSpanIds": [
+        "span:history-scrollprize-2026-004-4ab2f152a60c6bbe-0#chars-0-37"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:56:32.528Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:history-scrollprize-2026-004-4ab2f152a60c6bbe-0#chars-0-37"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:history-scrollprize-2026-004-4ab2f152a60c6bbe-0#chars-0-37"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-27T09:56:32.528Z"
+    },
+    {
+      "id": "claim:4ab2f152a60c6bbe-901bc3b35d2cc86e",
+      "statement": "In 2026, PHerc. 1667 became the first Herculaneum scroll to be virtually unwrapped and read end to end.",
+      "evidenceSpanIds": [
+        "span:history-scrollprize-2026-004-4ab2f152a60c6bbe-2#chars-258-361"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:56:32.528Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:history-scrollprize-2026-004-4ab2f152a60c6bbe-2#chars-258-361"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:history-scrollprize-2026-004-4ab2f152a60c6bbe-2#chars-258-361"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-27T09:56:32.528Z"
+    },
+    {
+      "id": "claim:4ab2f152a60c6bbe-a6fd9e7a1c644eed",
+      "statement": "Within a year of the launch, the prize was claimed.",
+      "evidenceSpanIds": [
+        "span:history-scrollprize-2026-004-4ab2f152a60c6bbe-1#chars-189-226"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:56:32.528Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:history-scrollprize-2026-004-4ab2f152a60c6bbe-1#chars-189-226"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:history-scrollprize-2026-004-4ab2f152a60c6bbe-1#chars-189-226"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-27T09:56:32.528Z"
+    },
+    {
+      "id": "claim:4ab2f152a60c6bbe-d83a71026c2b4d86",
+      "statement": "The challenge now moves onto its next stage: reading multiple entire scrolls.",
+      "evidenceSpanIds": [
+        "span:history-scrollprize-2026-004-4ab2f152a60c6bbe-2#chars-362-439"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:56:32.528Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:history-scrollprize-2026-004-4ab2f152a60c6bbe-2#chars-362-439"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:history-scrollprize-2026-004-4ab2f152a60c6bbe-2#chars-362-439"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-27T09:56:32.528Z"
+    },
+    {
+      "id": "claim:4ab2f152a60c6bbe-e301af57ef26e82d",
+      "statement": "Vesuvius Challenge was launched in March 2023.",
+      "evidenceSpanIds": [
+        "span:history-scrollprize-2026-004-4ab2f152a60c6bbe-1#chars-39-80"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:56:32.528Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:history-scrollprize-2026-004-4ab2f152a60c6bbe-1#chars-39-80"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:history-scrollprize-2026-004-4ab2f152a60c6bbe-1#chars-39-80"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-27T09:56:32.528Z"
+    }
+  ],
+  "concepts": [
+    {
+      "id": "concept:86570c0971b3efa7",
+      "name": "PHerc. 1667",
+      "aliases": [
+        "PHerc. 1667"
+      ],
+      "boundary": "A specific Herculaneum scroll that was virtually unwrapped and read end to end in 2026.",
+      "domain": "Archaeology"
+    },
+    {
+      "id": "concept:8df8f2a55c6da3eb",
+      "name": "Vesuvius Challenge",
+      "aliases": [
+        "Vesuvius Challenge"
+      ],
+      "boundary": "A competition launched in March 2023 to read Herculaneum scrolls.",
+      "domain": "History/Archaeology"
+    },
+    {
+      "id": "concept:ada500dd4ea41e6a",
+      "name": "Vesuvius Challenge project timeline",
+      "aliases": [
+        "Vesuvius Challenge project timeline"
+      ],
+      "boundary": "The title of a section describing the timeline of the Vesuvius Challenge.",
+      "domain": "Documentation"
+    },
+    {
+      "id": "concept:bce7c2c74e7742d9",
+      "name": "Grand Prize",
+      "aliases": [
+        "Grand Prize",
+        "prize"
+      ],
+      "boundary": "The main award for the first team to recover four passages of 140 characters from a Herculaneum scroll.",
+      "domain": "Competition"
+    },
+    {
+      "id": "concept:ca84411cd7efa26c",
+      "name": "Herculaneum scroll",
+      "aliases": [
+        "Herculaneum scroll",
+        "charred scroll",
+        "rolled-up papyrus",
+        "scroll"
+      ],
+      "boundary": "Ancient papyrus scrolls from Herculaneum, carbonized by Vesuvius eruption.",
+      "domain": "Archaeology"
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel:4ab2f152a60c6bbe-123dafd4b72f8b9e",
+      "from": "claim:4ab2f152a60c6bbe-39dbff7d3d0408e6",
+      "to": "claim:4ab2f152a60c6bbe-a6fd9e7a1c644eed",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:history-scrollprize-2026-004-4ab2f152a60c6bbe-1#chars-189-226",
+        "span:history-scrollprize-2026-004-4ab2f152a60c6bbe-1#chars-81-187"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:56:36.664Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.8,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:4ab2f152a60c6bbe-d276c0e77fb62409",
+      "from": "claim:4ab2f152a60c6bbe-e301af57ef26e82d",
+      "to": "claim:4ab2f152a60c6bbe-a6fd9e7a1c644eed",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:history-scrollprize-2026-004-4ab2f152a60c6bbe-1#chars-189-226",
+        "span:history-scrollprize-2026-004-4ab2f152a60c6bbe-1#chars-39-80"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:56:36.664Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.8,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:cross-1a5e232cdc42ca30",
+      "from": "claim:4ab2f152a60c6bbe-901bc3b35d2cc86e",
+      "to": "claim:b98a3ae4860a6edc-3c7148205b4853be",
+      "type": "RELATED_TO",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:history-nature-scroll-2024-003-b98a3ae4860a6edc-1#chars-240-296",
+        "span:history-scrollprize-2026-004-4ab2f152a60c6bbe-2#chars-258-361"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:56:47.483Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "cross-material-detect",
+      "confidence": 0.7,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:cross-3c6b8385c21665ec",
+      "from": "claim:4ab2f152a60c6bbe-39dbff7d3d0408e6",
+      "to": "claim:b98a3ae4860a6edc-95aab89f959ee2e9",
+      "type": "RELATED_TO",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:history-nature-scroll-2024-003-b98a3ae4860a6edc-1#chars-59-173",
+        "span:history-scrollprize-2026-004-4ab2f152a60c6bbe-1#chars-81-187"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:56:47.483Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "cross-material-detect",
+      "confidence": 0.6,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:cross-670f5b5bb894432c",
+      "from": "claim:4ab2f152a60c6bbe-39dbff7d3d0408e6",
+      "to": "claim:b98a3ae4860a6edc-704f0702fd830045",
+      "type": "RELATED_TO",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:history-nature-scroll-2024-003-b98a3ae4860a6edc-2#chars-299-429",
+        "span:history-scrollprize-2026-004-4ab2f152a60c6bbe-1#chars-81-187"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:56:47.483Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "cross-material-detect",
+      "confidence": 0.8,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:cross-e02014d48b936e87",
+      "from": "claim:4ab2f152a60c6bbe-901bc3b35d2cc86e",
+      "to": "claim:e71279e71acc04bd-dc4b7534a61f85ee",
+      "type": "RELATED_TO",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:history-educelab-paper-2023-001-e71279e71acc04bd-2#chars-542-678",
+        "span:history-scrollprize-2026-004-4ab2f152a60c6bbe-2#chars-258-361"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:56:47.483Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "cross-material-detect",
+      "confidence": 0.7,
+      "consumedBy": []
+    }
+  ]
+}

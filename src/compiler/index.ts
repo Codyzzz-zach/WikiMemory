@@ -12,6 +12,7 @@ import type { AppConfig } from "../config/types.js";
 import type { LLMProvider } from "../core/llm-provider.js";
 import { mapQuoteToSpan } from "../ingestor/index.js";
 import { appendJsonl, readJson, writeJsonAtomic } from "../linter/storage.js";
+import { recordRelationFunnelEvent } from "../observability/relation-funnel.js";
 import {
 	CLAIM_COMPILE_SYSTEM,
 	COMPILE_VERSION,
@@ -118,6 +119,24 @@ interface RelationTask {
 export interface CrossMaterialCompileResult {
 	relations: Relation[];
 	candidateClaimIds: string[];
+	selectionDiagnostics: CrossMaterialSelectionDiagnostics;
+}
+
+export interface CrossMaterialCandidateDiagnostic {
+	claimId: string;
+	score: number;
+	explicitlyReferenced: boolean;
+	conceptMatchCount: number;
+	semanticSimilarity: number;
+	selected: boolean;
+}
+
+export interface CrossMaterialSelectionDiagnostics {
+	existingClaimCount: number;
+	eligibleExistingClaimCount: number;
+	selectedClaimCount: number;
+	nearMissCount: number;
+	candidates: CrossMaterialCandidateDiagnostic[];
 }
 
 class TruncatedOutputError extends Error {}
@@ -737,15 +756,36 @@ export async function compileCrossMaterialRelations(
 		(claim) => !isSourceMetadataClaim(claim.statement),
 	);
 	const explicitlyReferencedSourceIds = findExplicitlyReferencedSourceIds(source, existingSources);
-	const candidates = selectCrossMaterialCandidates(
+	const selection = selectCrossMaterialCandidateResult(
 		relationEligibleNewClaims,
 		newConcepts,
 		existingClaims,
 		40,
 		explicitlyReferencedSourceIds,
 	);
+	const candidates = selection.candidates;
+	recordRelationFunnelEvent(config, {
+		stage: "CANDIDATE_SELECTION",
+		runId,
+		sourceId: source.id,
+		payload: {
+			relationEligibleNewClaimIds: relationEligibleNewClaims.map((claim) => claim.id),
+			explicitlyReferencedSourceIds: [...explicitlyReferencedSourceIds].sort(),
+			...selection.diagnostics,
+		},
+	});
 	if (relationEligibleNewClaims.length === 0 || candidates.length === 0) {
-		return { relations: [], candidateClaimIds: candidates.map((claim) => claim.id) };
+		recordRelationFunnelEvent(config, {
+			stage: "DETECTION",
+			runId,
+			sourceId: source.id,
+			payload: { proposedRelations: [], totalRelationDrafts: 0, skippedRelations: [] },
+		});
+		return {
+			relations: [],
+			candidateClaimIds: candidates.map((claim) => claim.id),
+			selectionDiagnostics: selection.diagnostics,
+		};
 	}
 	const combined = [...relationEligibleNewClaims, ...candidates];
 	const indexedNew = relationEligibleNewClaims.map((claim, index) => ({ index, claim }));
@@ -851,9 +891,27 @@ export async function compileCrossMaterialRelations(
 					}
 				: relation,
 	);
+	recordRelationFunnelEvent(config, {
+		stage: "DETECTION",
+		runId,
+		sourceId: source.id,
+		payload: {
+			totalRelationDrafts: stats.totalRelationDrafts,
+			validRelations: stats.validRelations,
+			skippedRelations: stats.skippedRelations,
+			proposedRelations: relations.map((relation) => ({
+				id: relation.id,
+				from: relation.from,
+				to: relation.to,
+				type: relation.type,
+				conditions: relation.conditions,
+			})),
+		},
+	});
 	return {
 		relations,
 		candidateClaimIds: candidates.map((claim) => claim.id),
+		selectionDiagnostics: selection.diagnostics,
 	};
 }
 
@@ -864,6 +922,22 @@ export function selectCrossMaterialCandidates(
 	limit = 40,
 	explicitlyReferencedSourceIds: ReadonlySet<string> = new Set(),
 ): Claim[] {
+	return selectCrossMaterialCandidateResult(
+		newClaims,
+		newConcepts,
+		existingClaims,
+		limit,
+		explicitlyReferencedSourceIds,
+	).candidates;
+}
+
+export function selectCrossMaterialCandidateResult(
+	newClaims: Claim[],
+	newConcepts: Concept[],
+	existingClaims: Claim[],
+	limit = 40,
+	explicitlyReferencedSourceIds: ReadonlySet<string> = new Set(),
+): { candidates: Claim[]; diagnostics: CrossMaterialSelectionDiagnostics } {
 	const conceptTerms = new Set(
 		newConcepts
 			.flatMap((concept) => [concept.name, ...concept.aliases])
@@ -871,7 +945,7 @@ export function selectCrossMaterialCandidates(
 			.filter((term) => term.length >= 2),
 	);
 	const newTexts = newClaims.map((claim) => normalizeClaimForDedup(claim.statement));
-	return existingClaims
+	const eligibleExistingClaims = existingClaims
 		.filter(
 			(claim) =>
 				claim.publicationState === "CANONICAL" &&
@@ -884,22 +958,48 @@ export function selectCrossMaterialCandidates(
 			const explicitlyReferenced = [...explicitlyReferencedSourceIds].some((sourceId) =>
 				claimBelongsToSource(claim, sourceId),
 			);
-			let conceptScore = 0;
-			for (const term of conceptTerms) if (text.includes(term)) conceptScore += 4;
+			let conceptMatchCount = 0;
+			for (const term of conceptTerms) if (text.includes(term)) conceptMatchCount++;
 			const semanticSimilarity = Math.max(
 				0,
 				...newTexts.map((newText) => bigramOverlap(text, newText)),
 			);
 			return {
 				claim,
-				score: (explicitlyReferenced ? 100 : 0) + conceptScore + semanticSimilarity,
-				eligible: explicitlyReferenced || conceptScore > 0 || semanticSimilarity >= 0.18,
+				score: (explicitlyReferenced ? 100 : 0) + conceptMatchCount * 4 + semanticSimilarity,
+				explicitlyReferenced,
+				conceptMatchCount,
+				semanticSimilarity,
+				eligible: explicitlyReferenced || conceptMatchCount > 0 || semanticSimilarity >= 0.18,
 			};
-		})
+		});
+	const rankedEligible = eligibleExistingClaims
 		.filter((item) => item.eligible)
+		.sort((left, right) => right.score - left.score || left.claim.id.localeCompare(right.claim.id));
+	const selected = rankedEligible.slice(0, limit);
+	const selectedIds = new Set(selected.map((item) => item.claim.id));
+	const diagnosticRows = eligibleExistingClaims
+		.filter((item) => item.eligible || item.semanticSimilarity >= 0.12)
 		.sort((left, right) => right.score - left.score || left.claim.id.localeCompare(right.claim.id))
-		.slice(0, limit)
-		.map((item) => item.claim);
+		.slice(0, Math.max(limit * 2, 80))
+		.map((item) => ({
+			claimId: item.claim.id,
+			score: Number(item.score.toFixed(6)),
+			explicitlyReferenced: item.explicitlyReferenced,
+			conceptMatchCount: item.conceptMatchCount,
+			semanticSimilarity: Number(item.semanticSimilarity.toFixed(6)),
+			selected: selectedIds.has(item.claim.id),
+		}));
+	return {
+		candidates: selected.map((item) => item.claim),
+		diagnostics: {
+			existingClaimCount: existingClaims.length,
+			eligibleExistingClaimCount: rankedEligible.length,
+			selectedClaimCount: selected.length,
+			nearMissCount: diagnosticRows.filter((item) => !item.selected).length,
+			candidates: diagnosticRows,
+		},
+	};
 }
 
 export function findExplicitlyReferencedSourceIds(

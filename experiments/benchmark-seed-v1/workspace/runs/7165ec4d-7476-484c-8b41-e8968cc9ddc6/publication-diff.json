@@ -1,0 +1,41 @@
+{
+  "schemaVersion": "pilot-publication-diff/v1",
+  "runId": "7165ec4d-7476-484c-8b41-e8968cc9ddc6",
+  "sourceId": "source:design-wcag22-2023-002-1da3417e06ff5435",
+  "generatedAt": "2026-07-27T09:57:35.906Z",
+  "status": "PASS",
+  "acceptedReview": false,
+  "runtime": {
+    "requestedModel": "deepseek-v4-flash",
+    "temperature": 0,
+    "semanticAuditVersion": "v2.3",
+    "relationAuditVersion": "v1.7",
+    "sourceHash": "1da3417e06ff5435"
+  },
+  "baseline": null,
+  "candidate": {
+    "claims": 7,
+    "concepts": 13,
+    "relations": 5,
+    "quarantinedClaims": 0,
+    "quarantinedRelations": 3,
+    "quarantineRate": 0
+  },
+  "diff": {
+    "retainedClaimIds": 0,
+    "addedClaimIds": [
+      "claim:1da3417e06ff5435-0131b383bb68d5d6",
+      "claim:1da3417e06ff5435-4043dbf2773f336c",
+      "claim:1da3417e06ff5435-4f47a3d28c2c5675",
+      "claim:1da3417e06ff5435-50f420b0776ab205",
+      "claim:1da3417e06ff5435-e42233e831e0f66d",
+      "claim:1da3417e06ff5435-e9295b4993a17258",
+      "claim:1da3417e06ff5435-fda7e8c14ff6f23b"
+    ],
+    "removedClaimIds": [],
+    "claimRetentionRate": null,
+    "claimCountChangeRate": null,
+    "conditionsDropped": []
+  },
+  "issues": []
+}

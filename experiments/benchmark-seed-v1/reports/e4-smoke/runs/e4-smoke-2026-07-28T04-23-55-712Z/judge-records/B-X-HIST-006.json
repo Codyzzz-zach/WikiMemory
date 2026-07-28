@@ -1,0 +1,39 @@
+{
+  "questionId": "B-X-HIST-006",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 1006,
+    "completionTokens": 308,
+    "totalTokens": 1314,
+    "promptCacheHitTokens": 0,
+    "promptCacheMissTokens": 1006,
+    "reasoningTokens": 0
+  },
+  "request": {
+    "systemPrompt": "你是盲测评分员，不知道匿名答案属于哪个实验组。只按题目、评分锚点和证据评估，不用外部常识修正答案。\n每项 0-4 分：requiredPointCoverage、conditionFidelity、evidenceGrounding、answerabilityDiscipline。\n若答案反转来源归属、抹掉关键条件/时间、把提案当最终规范、编造上下文外事实，hardFailure=true。\n只输出严格 JSON：{\"scores\":[{\"sampleId\":\"...\",\"requiredPointCoverage\":0,\"conditionFidelity\":0,\"evidenceGrounding\":0,\"answerabilityDiscipline\":0,\"hardFailure\":false,\"rationale\":\"...\"}]}。",
+    "userPrompt": "{\"question\":\"论文、GitHub 库和 Nature 报道分别能回答哪一层问题？\",\"answerability\":\"answerable\",\"requiredPoints\":[\"论文回答方法与验证\",\"GitHub 回答实现和维护状态\",\"Nature 回答报道与人文解释\"],\"forbiddenClaims\":[\"不得用二手报道替代实现版本\"],\"requiredEvidence\":[{\"sourceId\":\"history-educelab-paper-2023-001\",\"exactQuote\":\"We present a complete software pipeline for revealing the hidden texts of the Herculaneum papyri using X-ray CT images. This enhanced virtual unwrapping pipeline combines machine learning with a novel geometric framework linking 3D and 2D images.\",\"role\":\"supports\"},{\"sourceId\":\"history-vesuvius-github-2024-002\",\"exactQuote\":\"NOTE: Now maintained at https://github.com/ScrollPrize/villa/tree/main/vesuvius (this repository archived)\",\"role\":\"supports\"},{\"sourceId\":\"history-nature-scroll-2024-003\",\"exactQuote\":\"The winners of a contest called the Vesuvius Challenge trained their machine-learning algorithms on scans of the rolled-up papyrus\",\"role\":\"supports\"},{\"sourceId\":\"history-nature-scroll-2024-003\",\"exactQuote\":\"The winners of a contest called the Vesuvius Challenge trained their machine-learning algorithms on scans of the rolled-up papyrus, unveiling a previously unknown philosophical work that discusses the senses and pleasure.\",\"role\":\"supports\"}],\"sourcePriorityRule\":\"P/C 决定规范、论文与实现事实；S 只能作为有归属的解释，不能推翻一手版本文本。\",\"anonymousAnswers\":[{\"sampleId\":\"sample-ee346591-8068-427e-871e-012a5ce71ad5\",\"questionId\":\"B-X-HIST-006\",\"answer\":\"{\\n  \\\"answer\\\": \\\"论文（EduceLab-Scrolls）能回答“如何首次发现赫库兰尼姆卷轴隐藏文本”的技术方法问题；GitHub 库（ScrollPrize/vesuvius）能回答“如何访问卷轴 CT 扫描数据”的实践操作问题；Nature 报道能回答“维苏威挑战赛获胜者如何通过机器学习揭示卷轴内容”的宏观成果问题。\\\",\\n  \\\"citations\\\": [\\n    \\\"claim:e71279e71acc04bd-dc4b7534a61f85ee\\\",\\n    \\\"claim:5505a1ba1fcb1b68-a4e0bf4dcf441832\\\",\\n    \\\"claim:b98a3ae4860a6edc-704f0702fd830045\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\"},{\"sampleId\":\"sample-0a14ffc3-dd0e-4cce-b0d0-bdc692d98c40\",\"questionId\":\"B-X-HIST-006\",\"answer\":\"{\\n  \\\"answer\\\": \\\"论文、GitHub 库和 Nature 报道分别能回答不同层次的问题：GitHub 库（如 ScrollPrize/vesuvius）提供技术实现细节和代码访问，适合回答“如何操作”或“具体实现”的问题；Nature 报道通常提供研究背景、意义和权威结论，适合回答“为什么重要”或“研究结论”的问题；论文则介于两者之间，提供方法、实验和结果，适合回答“如何验证”或“具体方法”的问题。\\\",\\n  \\\"citations\\\": [\\\"SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/history-humanities/history-vesuvius-github-2024-002.md:1-12\\\"],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": [\\\"未明确区分论文、GitHub 库和 Nature 报道的具体层次，仅基于一般认知推断。\\\"]\\n}\"}]}"
+  },
+  "rawResponse": "{\n  \"scores\": [\n    {\n      \"sampleId\": \"sample-ee346591-8068-427e-871e-012a5ce71ad5\",\n      \"requiredPointCoverage\": 4,\n      \"conditionFidelity\": 4,\n      \"evidenceGrounding\": 4,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"答案明确区分了论文、GitHub和Nature报道各自回答的问题层次，覆盖所有requiredPoints。引用了证据中的具体内容，如论文的'complete software pipeline'、GitHub的'NOTE: Now maintained'、Nature的'winners...trained their machine-learning algorithms'。未反转来源归属或编造事实。\"\n    },\n    {\n      \"sampleId\": \"sample-0a14ffc3-dd0e-4cce-b0d0-bdc692d98c40\",\n      \"requiredPointCoverage\": 1,\n      \"conditionFidelity\": 2,\n      \"evidenceGrounding\": 1,\n      \"answerabilityDiscipline\": 2,\n      \"hardFailure\": false,\n      \"rationale\": \"答案未具体区分论文、GitHub和Nature报道各自回答的问题层次，仅给出一般性描述，未覆盖requiredPoints中的具体内容。引用仅来自GitHub，且未使用具体引文。存在不确定性声明，但未违反forbiddenClaims。\"\n    }\n  ]\n}",
+  "parsed": [
+    {
+      "sampleId": "sample-ee346591-8068-427e-871e-012a5ce71ad5",
+      "requiredPointCoverage": 4,
+      "conditionFidelity": 4,
+      "evidenceGrounding": 4,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "答案明确区分了论文、GitHub和Nature报道各自回答的问题层次，覆盖所有requiredPoints。引用了证据中的具体内容，如论文的'complete software pipeline'、GitHub的'NOTE: Now maintained'、Nature的'winners...trained their machine-learning algorithms'。未反转来源归属或编造事实。"
+    },
+    {
+      "sampleId": "sample-0a14ffc3-dd0e-4cce-b0d0-bdc692d98c40",
+      "requiredPointCoverage": 1,
+      "conditionFidelity": 2,
+      "evidenceGrounding": 1,
+      "answerabilityDiscipline": 2,
+      "hardFailure": false,
+      "rationale": "答案未具体区分论文、GitHub和Nature报道各自回答的问题层次，仅给出一般性描述，未覆盖requiredPoints中的具体内容。引用仅来自GitHub，且未使用具体引文。存在不确定性声明，但未违反forbiddenClaims。"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "schemaVersion": "pilot-publication-diff/v1",
+  "runId": "5e7ee631-5036-4dc4-acb4-42bcf279f7df",
+  "sourceId": "source:history-nature-scroll-2024-003-b98a3ae4860a6edc",
+  "generatedAt": "2026-07-27T09:56:24.410Z",
+  "status": "PASS",
+  "acceptedReview": false,
+  "runtime": {
+    "requestedModel": "deepseek-v4-flash",
+    "temperature": 0,
+    "semanticAuditVersion": "v2.3",
+    "relationAuditVersion": "v1.7",
+    "sourceHash": "b98a3ae4860a6edc"
+  },
+  "baseline": null,
+  "candidate": {
+    "claims": 6,
+    "concepts": 8,
+    "relations": 2,
+    "quarantinedClaims": 0,
+    "quarantinedRelations": 3,
+    "quarantineRate": 0
+  },
+  "diff": {
+    "retainedClaimIds": 0,
+    "addedClaimIds": [
+      "claim:b98a3ae4860a6edc-3c7148205b4853be",
+      "claim:b98a3ae4860a6edc-704f0702fd830045",
+      "claim:b98a3ae4860a6edc-8283c241b4571c9c",
+      "claim:b98a3ae4860a6edc-95aab89f959ee2e9",
+      "claim:b98a3ae4860a6edc-eb659af5a9f64d88",
+      "claim:b98a3ae4860a6edc-fd2b496dae5aceca"
+    ],
+    "removedClaimIds": [],
+    "claimRetentionRate": null,
+    "claimCountChangeRate": null,
+    "conditionsDropped": []
+  },
+  "issues": []
+}

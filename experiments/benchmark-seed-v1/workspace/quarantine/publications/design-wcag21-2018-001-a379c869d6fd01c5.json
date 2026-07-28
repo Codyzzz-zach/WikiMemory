@@ -1,0 +1,246 @@
+{
+  "schemaVersion": "v1",
+  "sourceId": "source:design-wcag21-2018-001-a379c869d6fd01c5",
+  "runId": "a8ac7146-befb-42d5-8198-36f9c4ac6687",
+  "publishedAt": "2026-07-27T09:57:11.061Z",
+  "claims": [],
+  "relations": [
+    {
+      "relation": {
+        "id": "rel:a379c869d6fd01c5-9902733a976752cc",
+        "from": "claim:a379c869d6fd01c5-5e7756a095157543",
+        "to": "claim:a379c869d6fd01c5-dd9dfa26cc601b87",
+        "type": "DERIVED_FROM",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:design-wcag21-2018-001-a379c869d6fd01c5-1#chars-121-180",
+          "span:design-wcag21-2018-001-a379c869d6fd01c5-1#chars-51-111"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:57:04.330Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:a379c869d6fd01c5-9902733a976752cc",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:design-wcag21-2018-001#block-1] “web pages that conform to WCAG 2.1 also conform to WCAG 2.0”; [1:design-wcag21-2018-001#block-1] “WCAG 2.1 builds on and is backwards compatible with WCAG 2.0”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:a379c869d6fd01c5-a33dd6086cab8dcd",
+        "from": "claim:a379c869d6fd01c5-04b919f4bee1dda9",
+        "to": "claim:a379c869d6fd01c5-866398fd8b6c9f1d",
+        "type": "REQUIRES",
+        "conditions": [
+          "In content implemented using markup languages"
+        ],
+        "conditionStatus": "PRESERVED",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:design-wcag21-2018-001-a379c869d6fd01c5-2#chars-183-224",
+          "span:design-wcag21-2018-001-a379c869d6fd01c5-2#chars-421-493"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:57:04.330Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:a379c869d6fd01c5-a33dd6086cab8dcd",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:design-wcag21-2018-001#block-2] “Success Criterion 4.1.1 Parsing (Level A)”; [1:design-wcag21-2018-001#block-2] “any IDs are unique, except where the specifications allow these features”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:a379c869d6fd01c5-a33dd6086cab8dcd",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:design-wcag21-2018-001#block-2] “Success Criterion 4.1.1 Parsing (Level A)”; [1:design-wcag21-2018-001#block-2] “any IDs are unique, except where the specifications allow these features”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:a379c869d6fd01c5-ce202d861abce1a9",
+        "from": "claim:a379c869d6fd01c5-04b919f4bee1dda9",
+        "to": "claim:a379c869d6fd01c5-4d6c29b01ebc3687",
+        "type": "REQUIRES",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:design-wcag21-2018-001-a379c869d6fd01c5-2#chars-183-224",
+          "span:design-wcag21-2018-001-a379c869d6fd01c5-2#chars-226-314"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:57:04.330Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:a379c869d6fd01c5-ce202d861abce1a9",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:design-wcag21-2018-001#block-2] “Success Criterion 4.1.1 Parsing (Level A)”; [1:design-wcag21-2018-001#block-2] “In content implemented using markup languages, elements have complete start and ”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:a379c869d6fd01c5-ce202d861abce1a9",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:design-wcag21-2018-001#block-2] “Success Criterion 4.1.1 Parsing (Level A)”; [1:design-wcag21-2018-001#block-2] “In content implemented using markup languages, elements have complete start and ”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:a379c869d6fd01c5-d33566fcc97ad303",
+        "from": "claim:a379c869d6fd01c5-04b919f4bee1dda9",
+        "to": "claim:a379c869d6fd01c5-c214e98e5362ef12",
+        "type": "REQUIRES",
+        "conditions": [
+          "In content implemented using markup languages"
+        ],
+        "conditionStatus": "PRESERVED",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:design-wcag21-2018-001-a379c869d6fd01c5-2#chars-183-224",
+          "span:design-wcag21-2018-001-a379c869d6fd01c5-2#chars-371-415"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:57:04.330Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:a379c869d6fd01c5-d33566fcc97ad303",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:design-wcag21-2018-001#block-2] “Success Criterion 4.1.1 Parsing (Level A)”; [1:design-wcag21-2018-001#block-2] “elements do not contain duplicate attributes”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:a379c869d6fd01c5-d33566fcc97ad303",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:design-wcag21-2018-001#block-2] “Success Criterion 4.1.1 Parsing (Level A)”; [1:design-wcag21-2018-001#block-2] “elements do not contain duplicate attributes”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_CONDITIONS_MISSING",
+          "severity": "error",
+          "affectedObject": "rel:a379c869d6fd01c5-d33566fcc97ad303",
+          "detail": "conditions：Relation 未通过边级语义审计；证据 [0:design-wcag21-2018-001#block-2] “Success Criterion 4.1.1 Parsing (Level A)”; [1:design-wcag21-2018-001#block-2] “elements do not contain duplicate attributes”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:a379c869d6fd01c5-e3b1b0641277b4ff",
+        "from": "claim:a379c869d6fd01c5-04b919f4bee1dda9",
+        "to": "claim:a379c869d6fd01c5-c0d22573fe6f8aec",
+        "type": "REQUIRES",
+        "conditions": [
+          "In content implemented using markup languages"
+        ],
+        "conditionStatus": "PRESERVED",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:design-wcag21-2018-001-a379c869d6fd01c5-2#chars-183-224",
+          "span:design-wcag21-2018-001-a379c869d6fd01c5-2#chars-316-369"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:57:04.330Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:a379c869d6fd01c5-e3b1b0641277b4ff",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:design-wcag21-2018-001#block-2] “Success Criterion 4.1.1 Parsing (Level A)”; [1:design-wcag21-2018-001#block-2] “elements are nested according to their specifications”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:a379c869d6fd01c5-e3b1b0641277b4ff",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:design-wcag21-2018-001#block-2] “Success Criterion 4.1.1 Parsing (Level A)”; [1:design-wcag21-2018-001#block-2] “elements are nested according to their specifications”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:a379c869d6fd01c5-e3b1b0641277b4ff",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:design-wcag21-2018-001#block-2] “Success Criterion 4.1.1 Parsing (Level A)”; [1:design-wcag21-2018-001#block-2] “elements are nested according to their specifications”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_DIRECTION_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:a379c869d6fd01c5-e3b1b0641277b4ff",
+          "detail": "direction：Relation 未通过边级语义审计；证据 [0:design-wcag21-2018-001#block-2] “Success Criterion 4.1.1 Parsing (Level A)”; [1:design-wcag21-2018-001#block-2] “elements are nested according to their specifications”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_CONDITIONS_MISSING",
+          "severity": "error",
+          "affectedObject": "rel:a379c869d6fd01c5-e3b1b0641277b4ff",
+          "detail": "conditions：Relation 未通过边级语义审计；证据 [0:design-wcag21-2018-001#block-2] “Success Criterion 4.1.1 Parsing (Level A)”; [1:design-wcag21-2018-001#block-2] “elements are nested according to their specifications”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    }
+  ]
+}

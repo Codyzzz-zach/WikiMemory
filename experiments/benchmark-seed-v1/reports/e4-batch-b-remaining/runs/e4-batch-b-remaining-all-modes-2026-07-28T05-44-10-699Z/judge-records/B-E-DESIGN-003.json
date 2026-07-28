@@ -1,0 +1,48 @@
+{
+  "questionId": "B-E-DESIGN-003",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 1623,
+    "completionTokens": 531,
+    "totalTokens": 2154,
+    "promptCacheHitTokens": 256,
+    "promptCacheMissTokens": 1367,
+    "reasoningTokens": 0
+  },
+  "request": {
+    "systemPrompt": "你是盲测评分员，不知道答案属于哪个实验组。只按题目、评分锚点、Gold 证据和引用预校验评价，不用外部常识修正答案。\n每个维度独立使用同一 0-4 锚点：4=完整且准确；3=大部分满足，仅轻微遗漏；2=部分满足，存在重要遗漏；1=仅有极少相关内容；0=缺失、反转或与证据冲突。\nrequiredPointCoverage 只看 requiredPoints；conditionFidelity 看条件、时间、来源角色和不确定性；evidenceGrounding 同时看关键结论是否与 Gold 证据一致以及 citationValidation；answerabilityDiscipline 看是否越界、编造或错误拒答。\ncitationValidation.valid 表示引用标识确实存在于该匿名样本收到的上下文。内部 CLAIM/SPAN/SOURCE 标识不需要出现在 Gold 文本中，不得仅因此扣分；但存在性有效不代表语义必然支持，仍需对照答案内容与 Gold。\n若反转来源归属、抹掉关键条件/时间、把提案当最终规范或编造关键事实，hardFailure=true。\n数值必须与 rationale 一致：若 rationale 说“完整覆盖且准确”，对应维度不能低于 3。\n只输出严格 JSON：{\"scores\":[{\"sampleId\":\"...\",\"requiredPointCoverage\":0,\"conditionFidelity\":0,\"evidenceGrounding\":0,\"answerabilityDiscipline\":0,\"hardFailure\":false,\"rationale\":\"...\"}]}。",
+    "userPrompt": "{\"question\":\"4.1.1 Parsing 从 WCAG 2.1 到 2.2 发生了什么变化？\",\"answerability\":\"answerable\",\"requiredPoints\":[\"2.1 中为 Level A\",\"2.2 中移除\",\"旧政策可能仍要求\"],\"forbiddenClaims\":[\"不得反向改写 2.1 历史文本\"],\"requiredEvidence\":[{\"sourceId\":\"design-wcag21-2018-001\",\"exactQuote\":\"Success Criterion 4.1.1 Parsing (Level A)\",\"role\":\"supports\"},{\"sourceId\":\"design-wcag22-2023-002\",\"exactQuote\":\"WCAG 2.2 builds on and is backwards compatible with WCAG 2.1, meaning web pages that conform to WCAG 2.2 are at least as accessible as pages that conform to WCAG 2.1. Requirements have been added that build on 2.1 and 2.0. WCAG 2.2 has removed one success criterion, 4.1.1 Parsing.\",\"role\":\"supports\"},{\"sourceId\":\"design-wcag22-2023-002\",\"exactQuote\":\"Authors that are required by policy to conform with WCAG 2.0 or 2.1 will be able to update content to WCAG 2.2, but may need to continue to test and report 4.1.1.\",\"role\":\"supports\"}],\"sourcePriorityRule\":\"P/C 决定规范、论文与实现事实；S 只能作为有归属的解释，不能推翻一手版本文本。\",\"anonymousAnswers\":[{\"sampleId\":\"sample-c28d80e3-61a1-4de1-9307-2f105cb27e9d\",\"questionId\":\"B-E-DESIGN-003\",\"repetition\":1,\"answer\":\"{\\n  \\\"answer\\\": \\\"WCAG 2.2 移除了成功标准 4.1.1 Parsing，该标准在 WCAG 2.1 中要求元素标签完整、嵌套正确、无重复属性且 ID 唯一。WCAG 2.2 与 2.1 向后兼容，但作者若需符合 2.0 或 2.1 政策，可能仍需测试和报告 4.1.1。\\\",\\n  \\\"citations\\\": [\\n    \\\"SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-wcag21-2018-001.md:1-6\\\",\\n    \\\"SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-wcag22-2023-002.md:1-16\\\",\\n    \\\"SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-webaim-checklist-2024-004.md:1-4\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\",\"citationValidation\":{\"formatValid\":true,\"total\":3,\"valid\":3,\"invalid\":[]}},{\"sampleId\":\"sample-4dd9da85-7b63-43ef-883f-a8ec754d70cf\",\"questionId\":\"B-E-DESIGN-003\",\"repetition\":1,\"answer\":\"{\\n  \\\"answer\\\": \\\"WCAG 2.2 移除了成功标准 4.1.1 Parsing（原为 Level A），该标准自 2023 年起已不再有用。WCAG 2.2 向后兼容 WCAG 2.1，并新增了 9 个成功标准。\\\",\\n  \\\"citations\\\": [\\n    \\\"design-wcag22-2023-002-1da3417e06ff5435-1#chars-274-331\\\",\\n    \\\"design-webaim-checklist-2024-004-b89787b6b83f3605-1#chars-107-145\\\",\\n    \\\"design-webaim-checklist-2024-004-b89787b6b83f3605-1#chars-27-102\\\",\\n    \\\"design-wcag21-2018-001-a379c869d6fd01c5-2#chars-183-224\\\",\\n    \\\"design-wcag22-2023-002-1da3417e06ff5435-1#chars-51-111\\\",\\n    \\\"design-wcag22-2023-002-1da3417e06ff5435-3#chars-550-892\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\",\"citationValidation\":{\"formatValid\":true,\"total\":6,\"valid\":6,\"invalid\":[]}},{\"sampleId\":\"sample-6c8896a8-2b40-40c6-b5fb-cbcb97bf5891\",\"questionId\":\"B-E-DESIGN-003\",\"repetition\":1,\"answer\":\"{\\n  \\\"answer\\\": \\\"WCAG 2.2 移除了成功标准 4.1.1 Parsing（原为 Level A），该标准自 2023 年起已从 WCAG 中移除，被认为不再有用。\\\",\\n  \\\"citations\\\": [\\n    \\\"design-wcag22-2023-002-1da3417e06ff5435-1#chars-274-331\\\",\\n    \\\"design-webaim-checklist-2024-004-b89787b6b83f3605-1#chars-107-145\\\",\\n    \\\"design-webaim-checklist-2024-004-b89787b6b83f3605-1#chars-27-102\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\",\"citationValidation\":{\"formatValid\":true,\"total\":3,\"valid\":3,\"invalid\":[]}}]}"
+  },
+  "rawResponse": "{\n  \"scores\": [\n    {\n      \"sampleId\": \"sample-c28d80e3-61a1-4de1-9307-2f105cb27e9d\",\n      \"requiredPointCoverage\": 4,\n      \"conditionFidelity\": 4,\n      \"evidenceGrounding\": 4,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"Required points: 2.1 Level A, 2.2 removed, old policy may still require. All covered. Condition fidelity: correctly states removal, backwards compatibility, and policy requirement. Evidence grounding: citations valid and support claims. Answerability discipline: no forbidden claims, no fabrication.\"\n    },\n    {\n      \"sampleId\": \"sample-4dd9da85-7b63-43ef-883f-a8ec754d70cf\",\n      \"requiredPointCoverage\": 3,\n      \"conditionFidelity\": 3,\n      \"evidenceGrounding\": 3,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"Required points: mentions 2.1 Level A and 2.2 removal, but omits 'old policy may still require' (only says 'no longer useful' which is not the same). Condition fidelity: states removal and backwards compatibility, but adds 'since 2023 no longer useful' which is not in Gold evidence (Gold says 'removed' but not 'no longer useful'). Evidence grounding: citations valid, but claim about 'no longer useful' not supported by Gold. Answerability discipline: no forbidden claims, no fabrication.\"\n    },\n    {\n      \"sampleId\": \"sample-6c8896a8-2b40-40c6-b5fb-cbcb97bf5891\",\n      \"requiredPointCoverage\": 2,\n      \"conditionFidelity\": 2,\n      \"evidenceGrounding\": 2,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"Required points: mentions 2.1 Level A and 2.2 removal, but omits 'old policy may still require'. Condition fidelity: states removal, but adds 'since 2023 no longer useful' which is not in Gold; also misses backwards compatibility and policy requirement. Evidence grounding: citations valid, but claim about 'no longer useful' not supported by Gold. Answerability discipline: no forbidden claims, no fabrication.\"\n    }\n  ]\n}",
+  "parsed": [
+    {
+      "sampleId": "sample-c28d80e3-61a1-4de1-9307-2f105cb27e9d",
+      "requiredPointCoverage": 4,
+      "conditionFidelity": 4,
+      "evidenceGrounding": 4,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "Required points: 2.1 Level A, 2.2 removed, old policy may still require. All covered. Condition fidelity: correctly states removal, backwards compatibility, and policy requirement. Evidence grounding: citations valid and support claims. Answerability discipline: no forbidden claims, no fabrication."
+    },
+    {
+      "sampleId": "sample-4dd9da85-7b63-43ef-883f-a8ec754d70cf",
+      "requiredPointCoverage": 3,
+      "conditionFidelity": 3,
+      "evidenceGrounding": 3,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "Required points: mentions 2.1 Level A and 2.2 removal, but omits 'old policy may still require' (only says 'no longer useful' which is not the same). Condition fidelity: states removal and backwards compatibility, but adds 'since 2023 no longer useful' which is not in Gold evidence (Gold says 'removed' but not 'no longer useful'). Evidence grounding: citations valid, but claim about 'no longer useful' not supported by Gold. Answerability discipline: no forbidden claims, no fabrication."
+    },
+    {
+      "sampleId": "sample-6c8896a8-2b40-40c6-b5fb-cbcb97bf5891",
+      "requiredPointCoverage": 2,
+      "conditionFidelity": 2,
+      "evidenceGrounding": 2,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "Required points: mentions 2.1 Level A and 2.2 removal, but omits 'old policy may still require'. Condition fidelity: states removal, but adds 'since 2023 no longer useful' which is not in Gold; also misses backwards compatibility and policy requirement. Evidence grounding: citations valid, but claim about 'no longer useful' not supported by Gold. Answerability discipline: no forbidden claims, no fabrication."
+    }
+  ]
+}

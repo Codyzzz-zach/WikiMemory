@@ -3,7 +3,7 @@ import type { DocumentLoader, LoadedDocument } from "./types.js";
 
 export class MarkdownLoader implements DocumentLoader {
 	readonly id = "markdown";
-	readonly version = "markdown-v1.0";
+	readonly version = "markdown-v1.2";
 
 	canLoad(filePath: string): boolean {
 		return /\.md$/i.test(filePath);
@@ -17,6 +17,7 @@ export class MarkdownLoader implements DocumentLoader {
 			loaderVersion: this.version,
 			sourceKey: parsed.fileStem,
 			title: parsed.frontmatter.title ?? parsed.fileStem,
+			metadata: parsed.frontmatter.raw,
 			parsedText: parsed.body,
 			blocks: parsed.blocks,
 		};

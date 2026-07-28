@@ -1,0 +1,83 @@
+## TASK MAP
+主题: PHerc. 1667 的作者是谁？
+地图主题: pherc, 1667
+关键概念: Herculaneum papyri, student researchers, Herculaneum scroll, PHerc. 1667
+已知争议: 0 个
+最近变化: 5 条
+找到 6 条相关 Claim
+找到 5 条关系
+找到 6 条原文证据
+
+## CLAIM claim:4ab2f152a60c6bbe-901bc3b35d2cc86e
+In 2026, PHerc. 1667 became the first Herculaneum scroll to be virtually unwrapped and read end to end.
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:b98a3ae4860a6edc-3c7148205b4853be
+The scroll was buried 2,000 years ago by the eruption of Mount Vesuvius.
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:e71279e71acc04bd-dc4b7534a61f85ee
+EduceLab-Scrolls has enabled the discovery, for the first time, of hidden texts from the Herculaneum papyri.
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:b98a3ae4860a6edc-704f0702fd830045
+The winners of a contest called the Vesuvius Challenge trained their machine-learning algorithms on scans of the rolled-up papyrus.
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:e71279e71acc04bd-f06d3f1ce6a9a65a
+EduceLab-Scrolls is a complete software pipeline for revealing hidden texts of the Herculaneum papyri using X-ray CT images.
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:4ab2f152a60c6bbe-39dbff7d3d0408e6
+The Vesuvius Challenge had a Grand Prize for the first team to recover four passages of 140 characters from a Herculaneum scroll.
+Conditions: none
+Validity: SUPPORTED
+
+## RELATION rel:cross-1a5e232cdc42ca30
+claim:4ab2f152a60c6bbe-901bc3b35d2cc86e --[RELATED_TO]--> claim:b98a3ae4860a6edc-3c7148205b4853be
+Conditions: none
+
+## RELATION rel:cross-e02014d48b936e87
+claim:4ab2f152a60c6bbe-901bc3b35d2cc86e --[RELATED_TO]--> claim:e71279e71acc04bd-dc4b7534a61f85ee
+Conditions: none
+
+## RELATION rel:b98a3ae4860a6edc-b39a43fc9bb7bc6e
+claim:b98a3ae4860a6edc-3c7148205b4853be --[RELATED_TO]--> claim:b98a3ae4860a6edc-704f0702fd830045
+Conditions: none
+
+## RELATION rel:e71279e71acc04bd-599718bf2ce73ac7
+claim:e71279e71acc04bd-f06d3f1ce6a9a65a --[SUPPORTS]--> claim:e71279e71acc04bd-dc4b7534a61f85ee
+Conditions: none
+
+## RELATION rel:cross-670f5b5bb894432c
+claim:4ab2f152a60c6bbe-39dbff7d3d0408e6 --[RELATED_TO]--> claim:b98a3ae4860a6edc-704f0702fd830045
+Conditions: none
+
+## EVIDENCE span:history-scrollprize-2026-004-4ab2f152a60c6bbe-2#chars-258-361
+In 2026, PHerc. 1667 became the first Herculaneum scroll to be virtually unwrapped and read end to end.
+
+## EVIDENCE span:history-nature-scroll-2024-003-b98a3ae4860a6edc-1#chars-240-296
+buried 2,000 years ago by the eruption of Mount Vesuvius
+
+## EVIDENCE span:history-educelab-paper-2023-001-e71279e71acc04bd-2#chars-542-678
+EduceLab-Scrolls has also enabled the discovery, for the first time, of hidden texts from the Herculaneum papyri, which we present here.
+
+## EVIDENCE span:history-nature-scroll-2024-003-b98a3ae4860a6edc-2#chars-299-429
+The winners of a contest called the Vesuvius Challenge trained their machine-learning algorithms on scans of the rolled-up papyrus
+
+## EVIDENCE span:history-educelab-paper-2023-001-e71279e71acc04bd-1#chars-88-207
+We present a complete software pipeline for revealing the hidden texts of the Herculaneum papyri using X-ray CT images.
+
+## EVIDENCE span:history-scrollprize-2026-004-4ab2f152a60c6bbe-1#chars-81-187
+with a Grand Prize for the first team to recover four passages of 140 characters from a Herculaneum scroll
+
+## CONFLICTS AND CONDITIONS
+⚠️ SUPPORTS 只表示 Claim 之间存在语义支持，不证明其来源彼此独立、同等权威或都是规范性来源；来源独立性必须依据 Source provenance 单独判断。
+🔎 Source source:history-educelab-paper-2023-001-e71279e71acc04bd provenance: uri=workbuddy-batch-b/generated/compilation-corpus/history-humanities/history-educelab-paper-2023-001.md; sourceType=md; role=unknown
+🔎 Source source:history-nature-scroll-2024-003-b98a3ae4860a6edc provenance: uri=workbuddy-batch-b/generated/compilation-corpus/history-humanities/history-nature-scroll-2024-003.md; sourceType=md; role=unknown
+🔎 Source source:history-scrollprize-2026-004-4ab2f152a60c6bbe provenance: uri=workbuddy-batch-b/generated/compilation-corpus/history-humanities/history-scrollprize-2026-004.md; sourceType=md; role=unknown

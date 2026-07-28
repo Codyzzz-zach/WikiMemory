@@ -1,0 +1,486 @@
+{
+  "schemaVersion": "v1",
+  "sourceId": "source:design-wcag22-2023-002-1da3417e06ff5435",
+  "runId": "7165ec4d-7476-484c-8b41-e8968cc9ddc6",
+  "publishedAt": "2026-07-27T09:57:39.025Z",
+  "claims": [
+    {
+      "id": "claim:1da3417e06ff5435-0131b383bb68d5d6",
+      "statement": "WCAG 2.2 builds on and is backwards compatible with WCAG 2.1.",
+      "evidenceSpanIds": [
+        "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-51-111"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:57:22.935Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-51-111"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-51-111"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-27T09:57:22.935Z"
+    },
+    {
+      "id": "claim:1da3417e06ff5435-4043dbf2773f336c",
+      "statement": "Requirements have been added that build on WCAG 2.1 and 2.0.",
+      "evidenceSpanIds": [
+        "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-218-272"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:57:22.935Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-218-272"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-218-272"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-27T09:57:22.935Z"
+    },
+    {
+      "id": "claim:1da3417e06ff5435-4f47a3d28c2c5675",
+      "statement": "Web pages that conform to WCAG 2.2 are at least as accessible as pages that conform to WCAG 2.1.",
+      "evidenceSpanIds": [
+        "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-121-216"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:57:22.935Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-121-216"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-121-216"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-27T09:57:22.935Z"
+    },
+    {
+      "id": "claim:1da3417e06ff5435-50f420b0776ab205",
+      "statement": "WCAG 2.2 has removed one success criterion, 4.1.1 Parsing.",
+      "evidenceSpanIds": [
+        "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-274-331"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:57:22.935Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-274-331"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-274-331"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-27T09:57:22.935Z"
+    },
+    {
+      "id": "claim:1da3417e06ff5435-e42233e831e0f66d",
+      "statement": "Authors that are required by policy to conform with WCAG 2.0 or 2.1 will be able to update content to WCAG 2.2.",
+      "evidenceSpanIds": [
+        "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-333-443"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:57:22.935Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-333-443"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-333-443"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-27T09:57:22.935Z"
+    },
+    {
+      "id": "claim:1da3417e06ff5435-e9295b4993a17258",
+      "statement": "Authors that are required by policy to conform with WCAG 2.0 or 2.1 may need to continue to test and report 4.1.1.",
+      "evidenceSpanIds": [
+        "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-449-494"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:57:22.935Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-449-494"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-449-494"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-27T09:57:22.935Z"
+    },
+    {
+      "id": "claim:1da3417e06ff5435-fda7e8c14ff6f23b",
+      "statement": "The following success criteria are new in WCAG 2.2: 2.4.11 Focus Not Obscured (Minimum) (AA), 2.4.12 Focus Not Obscured (Enhanced) (AAA), 2.4.13 Focus Appearance (AAA), 2.5.7 Dragging Movements (AA), 2.5.8 Target Size (Minimum) (AA), 3.2.6 Consistent Help (A), 3.3.7 Redundant Entry (A), 3.3.8 Accessible Authentication (Minimum) (AA), 3.3.9 Accessible Authentication (Enhanced) (AAA).",
+      "evidenceSpanIds": [
+        "span:design-wcag22-2023-002-1da3417e06ff5435-3#chars-550-892"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:57:22.935Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:design-wcag22-2023-002-1da3417e06ff5435-3#chars-550-892"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:design-wcag22-2023-002-1da3417e06ff5435-3#chars-550-892"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-27T09:57:22.935Z"
+    }
+  ],
+  "concepts": [
+    {
+      "id": "concept:2348ca567be04e64",
+      "name": "Success Criterion 2.5.7 Dragging Movements",
+      "aliases": [
+        "2.5.7 Dragging Movements"
+      ],
+      "boundary": "New AA-level success criterion in WCAG 2.2",
+      "domain": "Web Accessibility"
+    },
+    {
+      "id": "concept:235919dc01667c94",
+      "name": "Success Criterion 3.3.9 Accessible Authentication (Enhanced)",
+      "aliases": [
+        "3.3.9 Accessible Authentication (Enhanced)"
+      ],
+      "boundary": "New AAA-level success criterion in WCAG 2.2",
+      "domain": "Web Accessibility"
+    },
+    {
+      "id": "concept:3b414e09f79119ad",
+      "name": "WCAG 2.2",
+      "aliases": [],
+      "boundary": "Web Content Accessibility Guidelines version 2.2",
+      "domain": "Web Accessibility"
+    },
+    {
+      "id": "concept:3eea696ae63bce35",
+      "name": "Success Criterion 3.2.6 Consistent Help",
+      "aliases": [
+        "3.2.6 Consistent Help"
+      ],
+      "boundary": "New A-level success criterion in WCAG 2.2",
+      "domain": "Web Accessibility"
+    },
+    {
+      "id": "concept:5e3b8f7c6344c04c",
+      "name": "Success Criterion 2.4.13 Focus Appearance",
+      "aliases": [
+        "2.4.13 Focus Appearance"
+      ],
+      "boundary": "New AAA-level success criterion in WCAG 2.2",
+      "domain": "Web Accessibility"
+    },
+    {
+      "id": "concept:79cfadd77ad8eac5",
+      "name": "Success Criterion 2.5.8 Target Size (Minimum)",
+      "aliases": [
+        "2.5.8 Target Size (Minimum)"
+      ],
+      "boundary": "New AA-level success criterion in WCAG 2.2",
+      "domain": "Web Accessibility"
+    },
+    {
+      "id": "concept:872c8a6b7af32c89",
+      "name": "WCAG 2.1",
+      "aliases": [
+        "WCAG 2.1"
+      ],
+      "boundary": "Web Content Accessibility Guidelines version 2.1",
+      "domain": "Web accessibility"
+    },
+    {
+      "id": "concept:c8ff784dc260feb2",
+      "name": "Success Criterion 2.4.11 Focus Not Obscured (Minimum)",
+      "aliases": [
+        "2.4.11 Focus Not Obscured (Minimum)"
+      ],
+      "boundary": "New AA-level success criterion in WCAG 2.2",
+      "domain": "Web Accessibility"
+    },
+    {
+      "id": "concept:ce963afb3773c861",
+      "name": "Success Criterion 3.3.7 Redundant Entry",
+      "aliases": [
+        "3.3.7 Redundant Entry"
+      ],
+      "boundary": "New A-level success criterion in WCAG 2.2",
+      "domain": "Web Accessibility"
+    },
+    {
+      "id": "concept:df2300f5bb7139bc",
+      "name": "Success Criterion 4.1.1 Parsing",
+      "aliases": [
+        "4.1.1 Parsing",
+        "Success Criterion 4.1.1 Parsing"
+      ],
+      "boundary": "A specific success criterion in WCAG 2.0/2.1 that was removed in WCAG 2.2",
+      "domain": "Web accessibility"
+    },
+    {
+      "id": "concept:e9d998741c344438",
+      "name": "Success Criterion 3.3.8 Accessible Authentication (Minimum)",
+      "aliases": [
+        "3.3.8 Accessible Authentication (Minimum)"
+      ],
+      "boundary": "New AA-level success criterion in WCAG 2.2",
+      "domain": "Web Accessibility"
+    },
+    {
+      "id": "concept:ec9961dfa5c44296",
+      "name": "WCAG 2.0",
+      "aliases": [
+        "WCAG 2.0"
+      ],
+      "boundary": "Web Content Accessibility Guidelines version 2.0",
+      "domain": "Web accessibility"
+    },
+    {
+      "id": "concept:eec0d01b05743727",
+      "name": "Success Criterion 2.4.12 Focus Not Obscured (Enhanced)",
+      "aliases": [
+        "2.4.12 Focus Not Obscured (Enhanced)"
+      ],
+      "boundary": "New AAA-level success criterion in WCAG 2.2",
+      "domain": "Web Accessibility"
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel:1da3417e06ff5435-25905476559465e3",
+      "from": "claim:1da3417e06ff5435-0131b383bb68d5d6",
+      "to": "claim:1da3417e06ff5435-e42233e831e0f66d",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-333-443",
+        "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-51-111"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:57:29.919Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.7,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:1da3417e06ff5435-8973e1ffa670e0f5",
+      "from": "claim:1da3417e06ff5435-e42233e831e0f66d",
+      "to": "claim:1da3417e06ff5435-0131b383bb68d5d6",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-333-443",
+        "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-51-111"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:57:29.919Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.7,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:1da3417e06ff5435-9e3e1511ac30b255",
+      "from": "claim:1da3417e06ff5435-4f47a3d28c2c5675",
+      "to": "claim:1da3417e06ff5435-0131b383bb68d5d6",
+      "type": "DERIVED_FROM",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-121-216",
+        "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-51-111"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:57:29.919Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.8,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:1da3417e06ff5435-d46eb28b10eee035",
+      "from": "claim:1da3417e06ff5435-0131b383bb68d5d6",
+      "to": "claim:1da3417e06ff5435-4043dbf2773f336c",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-218-272",
+        "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-51-111"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:57:29.919Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.9,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:1da3417e06ff5435-f7779f6e157ba5c4",
+      "from": "claim:1da3417e06ff5435-4043dbf2773f336c",
+      "to": "claim:1da3417e06ff5435-0131b383bb68d5d6",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-218-272",
+        "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-51-111"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:57:29.919Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.9,
+      "consumedBy": []
+    }
+  ]
+}

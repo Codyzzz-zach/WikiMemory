@@ -1,0 +1,323 @@
+{
+  "schemaVersion": "v1",
+  "sourceId": "source:history-educelab-paper-2023-001-e71279e71acc04bd",
+  "runId": "4222e075-27b2-4e72-987f-490c096da51c",
+  "publishedAt": "2026-07-27T09:55:45.606Z",
+  "claims": [
+    {
+      "id": "claim:e71279e71acc04bd-1c4f658d21aa94b4",
+      "statement": "Revealed text is verified using visual confirmation, quantitative image metrics, and scholarly review.",
+      "evidenceSpanIds": [
+        "span:history-educelab-paper-2023-001-e71279e71acc04bd-2#chars-439-541"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:55:35.633Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:history-educelab-paper-2023-001-e71279e71acc04bd-2#chars-439-541"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:history-educelab-paper-2023-001-e71279e71acc04bd-2#chars-439-541"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-27T09:55:35.633Z"
+    },
+    {
+      "id": "claim:e71279e71acc04bd-367243e68b140409",
+      "statement": "The method is capable of revealing accurate lines of text on scroll fragments with known ground truth.",
+      "evidenceSpanIds": [
+        "span:history-educelab-paper-2023-001-e71279e71acc04bd-2#chars-336-438"
+      ],
+      "conditions": [
+        "on scroll fragments with known ground truth"
+      ],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:55:35.633Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:history-educelab-paper-2023-001-e71279e71acc04bd-2#chars-336-438"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:history-educelab-paper-2023-001-e71279e71acc04bd-2#chars-336-438"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-27T09:55:35.633Z"
+    },
+    {
+      "id": "claim:e71279e71acc04bd-6d5b2c429c801f73",
+      "statement": "The enhanced virtual unwrapping pipeline combines machine learning with a novel geometric framework linking 3D and 2D images.",
+      "evidenceSpanIds": [
+        "span:history-educelab-paper-2023-001-e71279e71acc04bd-1#chars-208-334"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:55:35.633Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:history-educelab-paper-2023-001-e71279e71acc04bd-1#chars-208-334"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:history-educelab-paper-2023-001-e71279e71acc04bd-1#chars-208-334"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-27T09:55:35.633Z"
+    },
+    {
+      "id": "claim:e71279e71acc04bd-dc4b7534a61f85ee",
+      "statement": "EduceLab-Scrolls has enabled the discovery, for the first time, of hidden texts from the Herculaneum papyri.",
+      "evidenceSpanIds": [
+        "span:history-educelab-paper-2023-001-e71279e71acc04bd-2#chars-542-678"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:55:35.633Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:history-educelab-paper-2023-001-e71279e71acc04bd-2#chars-542-678"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:history-educelab-paper-2023-001-e71279e71acc04bd-2#chars-542-678"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-27T09:55:35.633Z"
+    },
+    {
+      "id": "claim:e71279e71acc04bd-f06d3f1ce6a9a65a",
+      "statement": "EduceLab-Scrolls is a complete software pipeline for revealing hidden texts of the Herculaneum papyri using X-ray CT images.",
+      "evidenceSpanIds": [
+        "span:history-educelab-paper-2023-001-e71279e71acc04bd-1#chars-88-207"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:55:35.633Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:history-educelab-paper-2023-001-e71279e71acc04bd-1#chars-88-207"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:history-educelab-paper-2023-001-e71279e71acc04bd-1#chars-88-207"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-27T09:55:35.633Z"
+    }
+  ],
+  "concepts": [
+    {
+      "id": "concept:0a2543d49f22d487",
+      "name": "Geometric framework linking 3D and 2D images",
+      "aliases": [],
+      "boundary": "Mathematical mapping between 3D volume and 2D surface.",
+      "domain": "Computer Vision"
+    },
+    {
+      "id": "concept:0cbaa35c144ac416",
+      "name": "Quantitative image metrics",
+      "aliases": [],
+      "boundary": "Numerical measures used to assess image quality or text readability.",
+      "domain": "Image Analysis"
+    },
+    {
+      "id": "concept:13bc560d26ee925b",
+      "name": "Scroll fragments with known ground truth",
+      "aliases": [],
+      "boundary": "Fragments where the original text is known for validation.",
+      "domain": "Digital Heritage"
+    },
+    {
+      "id": "concept:13efc27f96d9fb9b",
+      "name": "Accurate lines of text",
+      "aliases": [],
+      "boundary": "Correctly revealed textual content.",
+      "domain": "Digital Heritage"
+    },
+    {
+      "id": "concept:1dd7ee946af5efe4",
+      "name": "Method",
+      "aliases": [
+        "complete software pipeline",
+        "enhanced virtual unwrapping pipeline"
+      ],
+      "boundary": "The overall process or system for revealing text.",
+      "domain": "Digital Heritage"
+    },
+    {
+      "id": "concept:4eb4dd2dec7acc40",
+      "name": "Machine learning",
+      "aliases": [],
+      "boundary": "Algorithms that learn from data.",
+      "domain": "Artificial Intelligence"
+    },
+    {
+      "id": "concept:555b97a2c053d1f6",
+      "name": "Visual confirmation",
+      "aliases": [],
+      "boundary": "Human visual inspection to verify text.",
+      "domain": "Image Analysis"
+    },
+    {
+      "id": "concept:6572a00ed08b33dc",
+      "name": "EduceLab-Scrolls",
+      "aliases": [],
+      "boundary": "The complete software pipeline for revealing hidden texts.",
+      "domain": "Digital Heritage"
+    },
+    {
+      "id": "concept:a5e0143cc8da3a62",
+      "name": "X-ray CT images",
+      "aliases": [],
+      "boundary": "Computed tomography scans using X-rays.",
+      "domain": "Imaging"
+    },
+    {
+      "id": "concept:c11ab569b3a29a9d",
+      "name": "Scholarly review",
+      "aliases": [],
+      "boundary": "Peer review or expert evaluation.",
+      "domain": "Academic Publishing"
+    },
+    {
+      "id": "concept:d559a7f8dd56839b",
+      "name": "Herculaneum papyri",
+      "aliases": [],
+      "boundary": "Ancient scrolls from Herculaneum.",
+      "domain": "Classical Studies"
+    },
+    {
+      "id": "concept:dfa40d9c91cf886d",
+      "name": "Revealed text",
+      "aliases": [
+        "hidden texts"
+      ],
+      "boundary": "Text that has been made visible or discovered through the pipeline.",
+      "domain": "Digital Heritage"
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel:e71279e71acc04bd-0c305cc4ed72d2b4",
+      "from": "claim:e71279e71acc04bd-1c4f658d21aa94b4",
+      "to": "claim:e71279e71acc04bd-367243e68b140409",
+      "type": "SUPPORTS",
+      "conditions": [
+        "on scroll fragments with known ground truth"
+      ],
+      "conditionStatus": "PRESERVED",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:history-educelab-paper-2023-001-e71279e71acc04bd-2#chars-336-438",
+        "span:history-educelab-paper-2023-001-e71279e71acc04bd-2#chars-439-541"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:55:40.923Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.8,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:e71279e71acc04bd-599718bf2ce73ac7",
+      "from": "claim:e71279e71acc04bd-f06d3f1ce6a9a65a",
+      "to": "claim:e71279e71acc04bd-dc4b7534a61f85ee",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:history-educelab-paper-2023-001-e71279e71acc04bd-1#chars-88-207",
+        "span:history-educelab-paper-2023-001-e71279e71acc04bd-2#chars-542-678"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:55:40.923Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.9,
+      "consumedBy": []
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "batch": "C",
+  "stage": "A",
+  "contractVersion": "1.0",
+  "generatedAt": "2026-07-28T14:00:00+08:00",
+  "generator": "WorkBuddy (CodeBuddy Code)",
+  "generatorModel": "Claude 4.5 Opus",
+  "status": "candidate-public-blind",
+  "domains": [
+    "psychology-reproducibility",
+    "climate-energy-policy",
+    "law-public-policy"
+  ],
+  "sourceCount": 12,
+  "questionCount": 18,
+  "questionTypes": [
+    "F",
+    "C",
+    "T",
+    "X",
+    "K",
+    "A"
+  ],
+  "multiSourceQuestionCount": 9,
+  "hashAlgorithm": "sha256",
+  "textNormalization": "UTF-8, LF line endings",
+  "stageBLocation": "../batch-c-stage-b-sealed/",
+  "stageBStatus": "sealed — do not open until explicitly requested",
+  "fileInventory": {
+    "README.md": "sha256:fdaf330ab8560e29de8d8d4feddda1175bcb232f603ec3cfb1df045a3275e325",
+    "contract-manifest.json": "self-referential, hash computed after all other files",
+    "corpus/psychology-reproducibility/c-psych-001.md": "sha256:3a2ba4bbbd580b5dea719c129a4f1022339c60d1d197c1418b722f14fa25bcfc",
+    "corpus/psychology-reproducibility/c-psych-002.md": "sha256:e6d1a651f14ba012d509055302cc3b5677dc11d565cefecef2e54198e5f56c1c",
+    "corpus/psychology-reproducibility/c-psych-003.md": "sha256:693f375f3dce1fcb2c2b56836398fbf9f9c46998bf0d95cfa3f09c42a90102e3",
+    "corpus/psychology-reproducibility/c-psych-004.md": "sha256:ab074b8f6ff52d94743a857a208b06629f1ce80531451dfd17dc8455448b24e9",
+    "corpus/climate-energy-policy/c-climate-001.md": "sha256:d70f259026831b287aee27c942231b234b3d8137cbc6159c2eab9c3e432e047e",
+    "corpus/climate-energy-policy/c-climate-002.md": "sha256:e5a5a9690cd1ab136d0bd5b3fc1e9c93b231812345ea4b75c6be5e5e32956f61",
+    "corpus/climate-energy-policy/c-climate-003.md": "sha256:8b4805c92008f4eaf731c8302f6cf4324b788bbf9bf78a75f8afeec00db1bafb",
+    "corpus/climate-energy-policy/c-climate-004.md": "sha256:f92391cb33e7d717bd00202068e60c272c3633d074e590ad45c5af0df01e7962",
+    "corpus/law-public-policy/c-law-001.md": "sha256:ce505f416e6b9b8a2fe452c63d3cb600254620928a6014783d40928b26173b7c",
+    "corpus/law-public-policy/c-law-002.md": "sha256:ab9d03147b949d50e46cc801999827e22073188726f0d2e82757057c55f0cce4",
+    "corpus/law-public-policy/c-law-003.md": "sha256:20d365e298c4d8edf0f8da83c7fca3bdf0206770109b907eb9fd13c5546f3de7",
+    "corpus/law-public-policy/c-law-004.md": "sha256:2be92b545d8e26aa7b7f5836f31d29e83b05f911d139cbdc123afb0f715221df",
+    "manifests/source-manifest.jsonl": "sha256:5296abadbb033849db15fb6ad87a2bde7ac5b2d44323095ed64dec8c8a7f289e",
+    "questions/questions-public.jsonl": "sha256:2bf691afd0330ea591daac5fa26dcd46da3bcc99766f8e020fdeb499c4eff94e",
+    "reports/coverage-matrix.md": "sha256:b8ce33cfa615b2b6474c629b30fb463a0e18b3f9a199adb3bc06993a542f07b5",
+    "reports/collection-log.md": "sha256:43cfb9993e2eb8eacc6caea91e5e6f883371270615e19a61a8bc25ed685b0746",
+    "reports/overlap-check.md": "sha256:6a3c9d94e4e286015e6ab0cbd07ebe5289744cd566564bc8f5688a31263e812d",
+    "reports/unresolved-and-access-failures.md": "sha256:05c5abc7983b46a5009ce617bb0192df1f8578f76bd11b1d800414d18937a0aa"
+  }
+}

@@ -1,0 +1,1205 @@
+{
+  "schemaVersion": "wge-e4-answer-ablation/v2",
+  "status": "DIRECTIONAL_MEASURED",
+  "runId": "e4-batch-b-remaining-all-modes-2026-07-28T05-44-10-699Z",
+  "createdAt": "2026-07-28T05:48:59.825Z",
+  "taskFileSha256": "sha256:8238d998134795451c162bbba4da4833eb75c8a015f7840a1a359388fd7bca53",
+  "answerModelRequested": "deepseek-v4-flash",
+  "answerModelReturned": "deepseek-v4-flash",
+  "judgeModelRequested": "deepseek-v4-flash",
+  "judgeModelReturned": "deepseek-v4-flash",
+  "experimentType": "B_VS_SEED_VS_GRAPH",
+  "repetitions": 1,
+  "groups": [
+    {
+      "group": "B",
+      "samples": 26,
+      "averageTotal": 10.462,
+      "standardDeviationTotal": 6.544,
+      "minimumTotal": 0,
+      "maximumTotal": 16,
+      "averageRequiredPointCoverage": 2.577,
+      "averageConditionFidelity": 2.577,
+      "averageEvidenceGrounding": 2.462,
+      "averageAnswerabilityDiscipline": 2.846,
+      "hardFailures": 3
+    },
+    {
+      "group": "P-seed",
+      "samples": 26,
+      "averageTotal": 12.5,
+      "standardDeviationTotal": 5.163,
+      "minimumTotal": 0,
+      "maximumTotal": 16,
+      "averageRequiredPointCoverage": 2.923,
+      "averageConditionFidelity": 3.038,
+      "averageEvidenceGrounding": 2.962,
+      "averageAnswerabilityDiscipline": 3.577,
+      "hardFailures": 1
+    },
+    {
+      "group": "P-graph",
+      "samples": 26,
+      "averageTotal": 13.077,
+      "standardDeviationTotal": 5.153,
+      "minimumTotal": 0,
+      "maximumTotal": 16,
+      "averageRequiredPointCoverage": 3.192,
+      "averageConditionFidelity": 3.269,
+      "averageEvidenceGrounding": 3.231,
+      "averageAnswerabilityDiscipline": 3.538,
+      "hardFailures": 2
+    }
+  ],
+  "perQuestion": [
+    {
+      "questionId": "B-F-HEALTH-001",
+      "groups": [
+        {
+          "group": "B",
+          "samples": 1,
+          "averageTotal": 13,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 13,
+          "maximumTotal": 13,
+          "averageRequiredPointCoverage": 3,
+          "averageConditionFidelity": 3,
+          "averageEvidenceGrounding": 3,
+          "averageAnswerabilityDiscipline": 4,
+          "hardFailures": 0
+        },
+        {
+          "group": "P-seed",
+          "samples": 1,
+          "averageTotal": 16,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 16,
+          "maximumTotal": 16,
+          "averageRequiredPointCoverage": 4,
+          "averageConditionFidelity": 4,
+          "averageEvidenceGrounding": 4,
+          "averageAnswerabilityDiscipline": 4,
+          "hardFailures": 0
+        },
+        {
+          "group": "P-graph",
+          "samples": 1,
+          "averageTotal": 16,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 16,
+          "maximumTotal": 16,
+          "averageRequiredPointCoverage": 4,
+          "averageConditionFidelity": 4,
+          "averageEvidenceGrounding": 4,
+          "averageAnswerabilityDiscipline": 4,
+          "hardFailures": 0
+        }
+      ]
+    },
+    {
+      "questionId": "B-T-HEALTH-003",
+      "groups": [
+        {
+          "group": "B",
+          "samples": 1,
+          "averageTotal": 4,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 4,
+          "maximumTotal": 4,
+          "averageRequiredPointCoverage": 0,
+          "averageConditionFidelity": 0,
+          "averageEvidenceGrounding": 0,
+          "averageAnswerabilityDiscipline": 4,
+          "hardFailures": 0
+        },
+        {
+          "group": "P-seed",
+          "samples": 1,
+          "averageTotal": 4,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 4,
+          "maximumTotal": 4,
+          "averageRequiredPointCoverage": 0,
+          "averageConditionFidelity": 0,
+          "averageEvidenceGrounding": 0,
+          "averageAnswerabilityDiscipline": 4,
+          "hardFailures": 0
+        },
+        {
+          "group": "P-graph",
+          "samples": 1,
+          "averageTotal": 16,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 16,
+          "maximumTotal": 16,
+          "averageRequiredPointCoverage": 4,
+          "averageConditionFidelity": 4,
+          "averageEvidenceGrounding": 4,
+          "averageAnswerabilityDiscipline": 4,
+          "hardFailures": 0
+        }
+      ]
+    },
+    {
+      "questionId": "B-K-HEALTH-004",
+      "groups": [
+        {
+          "group": "B",
+          "samples": 1,
+          "averageTotal": 16,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 16,
+          "maximumTotal": 16,
+          "averageRequiredPointCoverage": 4,
+          "averageConditionFidelity": 4,
+          "averageEvidenceGrounding": 4,
+          "averageAnswerabilityDiscipline": 4,
+          "hardFailures": 0
+        },
+        {
+          "group": "P-seed",
+          "samples": 1,
+          "averageTotal": 16,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 16,
+          "maximumTotal": 16,
+          "averageRequiredPointCoverage": 4,
+          "averageConditionFidelity": 4,
+          "averageEvidenceGrounding": 4,
+          "averageAnswerabilityDiscipline": 4,
+          "hardFailures": 0
+        },
+        {
+          "group": "P-graph",
+          "samples": 1,
+          "averageTotal": 16,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 16,
+          "maximumTotal": 16,
+          "averageRequiredPointCoverage": 4,
+          "averageConditionFidelity": 4,
+          "averageEvidenceGrounding": 4,
+          "averageAnswerabilityDiscipline": 4,
+          "hardFailures": 0
+        }
+      ]
+    },
+    {
+      "questionId": "B-X-HEALTH-006",
+      "groups": [
+        {
+          "group": "B",
+          "samples": 1,
+          "averageTotal": 16,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 16,
+          "maximumTotal": 16,
+          "averageRequiredPointCoverage": 4,
+          "averageConditionFidelity": 4,
+          "averageEvidenceGrounding": 4,
+          "averageAnswerabilityDiscipline": 4,
+          "hardFailures": 0
+        },
+        {
+          "group": "P-seed",
+          "samples": 1,
+          "averageTotal": 16,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 16,
+          "maximumTotal": 16,
+          "averageRequiredPointCoverage": 4,
+          "averageConditionFidelity": 4,
+          "averageEvidenceGrounding": 4,
+          "averageAnswerabilityDiscipline": 4,
+          "hardFailures": 0
+        },
+        {
+          "group": "P-graph",
+          "samples": 1,
+          "averageTotal": 16,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 16,
+          "maximumTotal": 16,
+          "averageRequiredPointCoverage": 4,
+          "averageConditionFidelity": 4,
+          "averageEvidenceGrounding": 4,
+          "averageAnswerabilityDiscipline": 4,
+          "hardFailures": 0
+        }
+      ]
+    },
+    {
+      "questionId": "B-R-HEALTH-007",
+      "groups": [
+        {
+          "group": "B",
+          "samples": 1,
+          "averageTotal": 16,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 16,
+          "maximumTotal": 16,
+          "averageRequiredPointCoverage": 4,
+          "averageConditionFidelity": 4,
+          "averageEvidenceGrounding": 4,
+          "averageAnswerabilityDiscipline": 4,
+          "hardFailures": 0
+        },
+        {
+          "group": "P-seed",
+          "samples": 1,
+          "averageTotal": 16,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 16,
+          "maximumTotal": 16,
+          "averageRequiredPointCoverage": 4,
+          "averageConditionFidelity": 4,
+          "averageEvidenceGrounding": 4,
+          "averageAnswerabilityDiscipline": 4,
+          "hardFailures": 0
+        },
+        {
+          "group": "P-graph",
+          "samples": 1,
+          "averageTotal": 16,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 16,
+          "maximumTotal": 16,
+          "averageRequiredPointCoverage": 4,
+          "averageConditionFidelity": 4,
+          "averageEvidenceGrounding": 4,
+          "averageAnswerabilityDiscipline": 4,
+          "hardFailures": 0
+        }
+      ]
+    },
+    {
+      "questionId": "B-A-HEALTH-008",
+      "groups": [
+        {
+          "group": "B",
+          "samples": 1,
+          "averageTotal": 16,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 16,
+          "maximumTotal": 16,
+          "averageRequiredPointCoverage": 4,
+          "averageConditionFidelity": 4,
+          "averageEvidenceGrounding": 4,
+          "averageAnswerabilityDiscipline": 4,
+          "hardFailures": 0
+        },
+        {
+          "group": "P-seed",
+          "samples": 1,
+          "averageTotal": 16,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 16,
+          "maximumTotal": 16,
+          "averageRequiredPointCoverage": 4,
+          "averageConditionFidelity": 4,
+          "averageEvidenceGrounding": 4,
+          "averageAnswerabilityDiscipline": 4,
+          "hardFailures": 0
+        },
+        {
+          "group": "P-graph",
+          "samples": 1,
+          "averageTotal": 16,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 16,
+          "maximumTotal": 16,
+          "averageRequiredPointCoverage": 4,
+          "averageConditionFidelity": 4,
+          "averageEvidenceGrounding": 4,
+          "averageAnswerabilityDiscipline": 4,
+          "hardFailures": 0
+        }
+      ]
+    },
+    {
+      "questionId": "B-U-HEALTH-009",
+      "groups": [
+        {
+          "group": "B",
+          "samples": 1,
+          "averageTotal": 2,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 2,
+          "maximumTotal": 2,
+          "averageRequiredPointCoverage": 1,
+          "averageConditionFidelity": 1,
+          "averageEvidenceGrounding": 0,
+          "averageAnswerabilityDiscipline": 0,
+          "hardFailures": 1
+        },
+        {
+          "group": "P-seed",
+          "samples": 1,
+          "averageTotal": 11,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 11,
+          "maximumTotal": 11,
+          "averageRequiredPointCoverage": 2,
+          "averageConditionFidelity": 3,
+          "averageEvidenceGrounding": 3,
+          "averageAnswerabilityDiscipline": 3,
+          "hardFailures": 0
+        },
+        {
+          "group": "P-graph",
+          "samples": 1,
+          "averageTotal": 12,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 12,
+          "maximumTotal": 12,
+          "averageRequiredPointCoverage": 3,
+          "averageConditionFidelity": 3,
+          "averageEvidenceGrounding": 3,
+          "averageAnswerabilityDiscipline": 3,
+          "hardFailures": 0
+        }
+      ]
+    },
+    {
+      "questionId": "B-F-HEALTH-010",
+      "groups": [
+        {
+          "group": "B",
+          "samples": 1,
+          "averageTotal": 16,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 16,
+          "maximumTotal": 16,
+          "averageRequiredPointCoverage": 4,
+          "averageConditionFidelity": 4,
+          "averageEvidenceGrounding": 4,
+          "averageAnswerabilityDiscipline": 4,
+          "hardFailures": 0
+        },
+        {
+          "group": "P-seed",
+          "samples": 1,
+          "averageTotal": 16,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 16,
+          "maximumTotal": 16,
+          "averageRequiredPointCoverage": 4,
+          "averageConditionFidelity": 4,
+          "averageEvidenceGrounding": 4,
+          "averageAnswerabilityDiscipline": 4,
+          "hardFailures": 0
+        },
+        {
+          "group": "P-graph",
+          "samples": 1,
+          "averageTotal": 16,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 16,
+          "maximumTotal": 16,
+          "averageRequiredPointCoverage": 4,
+          "averageConditionFidelity": 4,
+          "averageEvidenceGrounding": 4,
+          "averageAnswerabilityDiscipline": 4,
+          "hardFailures": 0
+        }
+      ]
+    },
+    {
+      "questionId": "B-R-HEALTH-011",
+      "groups": [
+        {
+          "group": "B",
+          "samples": 1,
+          "averageTotal": 14,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 14,
+          "maximumTotal": 14,
+          "averageRequiredPointCoverage": 3,
+          "averageConditionFidelity": 4,
+          "averageEvidenceGrounding": 3,
+          "averageAnswerabilityDiscipline": 4,
+          "hardFailures": 0
+        },
+        {
+          "group": "P-seed",
+          "samples": 1,
+          "averageTotal": 16,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 16,
+          "maximumTotal": 16,
+          "averageRequiredPointCoverage": 4,
+          "averageConditionFidelity": 4,
+          "averageEvidenceGrounding": 4,
+          "averageAnswerabilityDiscipline": 4,
+          "hardFailures": 0
+        },
+        {
+          "group": "P-graph",
+          "samples": 1,
+          "averageTotal": 16,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 16,
+          "maximumTotal": 16,
+          "averageRequiredPointCoverage": 4,
+          "averageConditionFidelity": 4,
+          "averageEvidenceGrounding": 4,
+          "averageAnswerabilityDiscipline": 4,
+          "hardFailures": 0
+        }
+      ]
+    },
+    {
+      "questionId": "B-F-HIST-001",
+      "groups": [
+        {
+          "group": "B",
+          "samples": 1,
+          "averageTotal": 16,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 16,
+          "maximumTotal": 16,
+          "averageRequiredPointCoverage": 4,
+          "averageConditionFidelity": 4,
+          "averageEvidenceGrounding": 4,
+          "averageAnswerabilityDiscipline": 4,
+          "hardFailures": 0
+        },
+        {
+          "group": "P-seed",
+          "samples": 1,
+          "averageTotal": 16,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 16,
+          "maximumTotal": 16,
+          "averageRequiredPointCoverage": 4,
+          "averageConditionFidelity": 4,
+          "averageEvidenceGrounding": 4,
+          "averageAnswerabilityDiscipline": 4,
+          "hardFailures": 0
+        },
+        {
+          "group": "P-graph",
+          "samples": 1,
+          "averageTotal": 16,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 16,
+          "maximumTotal": 16,
+          "averageRequiredPointCoverage": 4,
+          "averageConditionFidelity": 4,
+          "averageEvidenceGrounding": 4,
+          "averageAnswerabilityDiscipline": 4,
+          "hardFailures": 0
+        }
+      ]
+    },
+    {
+      "questionId": "B-R-HIST-002",
+      "groups": [
+        {
+          "group": "B",
+          "samples": 1,
+          "averageTotal": 0,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 0,
+          "maximumTotal": 0,
+          "averageRequiredPointCoverage": 0,
+          "averageConditionFidelity": 0,
+          "averageEvidenceGrounding": 0,
+          "averageAnswerabilityDiscipline": 0,
+          "hardFailures": 1
+        },
+        {
+          "group": "P-seed",
+          "samples": 1,
+          "averageTotal": 4,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 4,
+          "maximumTotal": 4,
+          "averageRequiredPointCoverage": 0,
+          "averageConditionFidelity": 0,
+          "averageEvidenceGrounding": 0,
+          "averageAnswerabilityDiscipline": 4,
+          "hardFailures": 0
+        },
+        {
+          "group": "P-graph",
+          "samples": 1,
+          "averageTotal": 4,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 4,
+          "maximumTotal": 4,
+          "averageRequiredPointCoverage": 0,
+          "averageConditionFidelity": 0,
+          "averageEvidenceGrounding": 0,
+          "averageAnswerabilityDiscipline": 4,
+          "hardFailures": 0
+        }
+      ]
+    },
+    {
+      "questionId": "B-K-HIST-004",
+      "groups": [
+        {
+          "group": "B",
+          "samples": 1,
+          "averageTotal": 11,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 11,
+          "maximumTotal": 11,
+          "averageRequiredPointCoverage": 3,
+          "averageConditionFidelity": 3,
+          "averageEvidenceGrounding": 2,
+          "averageAnswerabilityDiscipline": 3,
+          "hardFailures": 0
+        },
+        {
+          "group": "P-seed",
+          "samples": 1,
+          "averageTotal": 11,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 11,
+          "maximumTotal": 11,
+          "averageRequiredPointCoverage": 3,
+          "averageConditionFidelity": 3,
+          "averageEvidenceGrounding": 2,
+          "averageAnswerabilityDiscipline": 3,
+          "hardFailures": 0
+        },
+        {
+          "group": "P-graph",
+          "samples": 1,
+          "averageTotal": 12,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 12,
+          "maximumTotal": 12,
+          "averageRequiredPointCoverage": 3,
+          "averageConditionFidelity": 3,
+          "averageEvidenceGrounding": 3,
+          "averageAnswerabilityDiscipline": 3,
+          "hardFailures": 0
+        }
+      ]
+    },
+    {
+      "questionId": "B-E-HIST-005",
+      "groups": [
+        {
+          "group": "B",
+          "samples": 1,
+          "averageTotal": 16,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 16,
+          "maximumTotal": 16,
+          "averageRequiredPointCoverage": 4,
+          "averageConditionFidelity": 4,
+          "averageEvidenceGrounding": 4,
+          "averageAnswerabilityDiscipline": 4,
+          "hardFailures": 0
+        },
+        {
+          "group": "P-seed",
+          "samples": 1,
+          "averageTotal": 13,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 13,
+          "maximumTotal": 13,
+          "averageRequiredPointCoverage": 3,
+          "averageConditionFidelity": 3,
+          "averageEvidenceGrounding": 3,
+          "averageAnswerabilityDiscipline": 4,
+          "hardFailures": 0
+        },
+        {
+          "group": "P-graph",
+          "samples": 1,
+          "averageTotal": 16,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 16,
+          "maximumTotal": 16,
+          "averageRequiredPointCoverage": 4,
+          "averageConditionFidelity": 4,
+          "averageEvidenceGrounding": 4,
+          "averageAnswerabilityDiscipline": 4,
+          "hardFailures": 0
+        }
+      ]
+    },
+    {
+      "questionId": "B-A-HIST-007",
+      "groups": [
+        {
+          "group": "B",
+          "samples": 1,
+          "averageTotal": 16,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 16,
+          "maximumTotal": 16,
+          "averageRequiredPointCoverage": 4,
+          "averageConditionFidelity": 4,
+          "averageEvidenceGrounding": 4,
+          "averageAnswerabilityDiscipline": 4,
+          "hardFailures": 0
+        },
+        {
+          "group": "P-seed",
+          "samples": 1,
+          "averageTotal": 16,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 16,
+          "maximumTotal": 16,
+          "averageRequiredPointCoverage": 4,
+          "averageConditionFidelity": 4,
+          "averageEvidenceGrounding": 4,
+          "averageAnswerabilityDiscipline": 4,
+          "hardFailures": 0
+        },
+        {
+          "group": "P-graph",
+          "samples": 1,
+          "averageTotal": 16,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 16,
+          "maximumTotal": 16,
+          "averageRequiredPointCoverage": 4,
+          "averageConditionFidelity": 4,
+          "averageEvidenceGrounding": 4,
+          "averageAnswerabilityDiscipline": 4,
+          "hardFailures": 0
+        }
+      ]
+    },
+    {
+      "questionId": "B-U-HIST-008",
+      "groups": [
+        {
+          "group": "B",
+          "samples": 1,
+          "averageTotal": 0,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 0,
+          "maximumTotal": 0,
+          "averageRequiredPointCoverage": 0,
+          "averageConditionFidelity": 0,
+          "averageEvidenceGrounding": 0,
+          "averageAnswerabilityDiscipline": 0,
+          "hardFailures": 1
+        },
+        {
+          "group": "P-seed",
+          "samples": 1,
+          "averageTotal": 0,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 0,
+          "maximumTotal": 0,
+          "averageRequiredPointCoverage": 0,
+          "averageConditionFidelity": 0,
+          "averageEvidenceGrounding": 0,
+          "averageAnswerabilityDiscipline": 0,
+          "hardFailures": 1
+        },
+        {
+          "group": "P-graph",
+          "samples": 1,
+          "averageTotal": 0,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 0,
+          "maximumTotal": 0,
+          "averageRequiredPointCoverage": 0,
+          "averageConditionFidelity": 0,
+          "averageEvidenceGrounding": 0,
+          "averageAnswerabilityDiscipline": 0,
+          "hardFailures": 1
+        }
+      ]
+    },
+    {
+      "questionId": "B-T-HIST-009",
+      "groups": [
+        {
+          "group": "B",
+          "samples": 1,
+          "averageTotal": 0,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 0,
+          "maximumTotal": 0,
+          "averageRequiredPointCoverage": 0,
+          "averageConditionFidelity": 0,
+          "averageEvidenceGrounding": 0,
+          "averageAnswerabilityDiscipline": 0,
+          "hardFailures": 0
+        },
+        {
+          "group": "P-seed",
+          "samples": 1,
+          "averageTotal": 16,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 16,
+          "maximumTotal": 16,
+          "averageRequiredPointCoverage": 4,
+          "averageConditionFidelity": 4,
+          "averageEvidenceGrounding": 4,
+          "averageAnswerabilityDiscipline": 4,
+          "hardFailures": 0
+        },
+        {
+          "group": "P-graph",
+          "samples": 1,
+          "averageTotal": 16,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 16,
+          "maximumTotal": 16,
+          "averageRequiredPointCoverage": 4,
+          "averageConditionFidelity": 4,
+          "averageEvidenceGrounding": 4,
+          "averageAnswerabilityDiscipline": 4,
+          "hardFailures": 0
+        }
+      ]
+    },
+    {
+      "questionId": "B-F-HIST-010",
+      "groups": [
+        {
+          "group": "B",
+          "samples": 1,
+          "averageTotal": 7,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 7,
+          "maximumTotal": 7,
+          "averageRequiredPointCoverage": 1,
+          "averageConditionFidelity": 1,
+          "averageEvidenceGrounding": 1,
+          "averageAnswerabilityDiscipline": 4,
+          "hardFailures": 0
+        },
+        {
+          "group": "P-seed",
+          "samples": 1,
+          "averageTotal": 7,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 7,
+          "maximumTotal": 7,
+          "averageRequiredPointCoverage": 1,
+          "averageConditionFidelity": 1,
+          "averageEvidenceGrounding": 1,
+          "averageAnswerabilityDiscipline": 4,
+          "hardFailures": 0
+        },
+        {
+          "group": "P-graph",
+          "samples": 1,
+          "averageTotal": 13,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 13,
+          "maximumTotal": 13,
+          "averageRequiredPointCoverage": 3,
+          "averageConditionFidelity": 3,
+          "averageEvidenceGrounding": 3,
+          "averageAnswerabilityDiscipline": 4,
+          "hardFailures": 0
+        }
+      ]
+    },
+    {
+      "questionId": "B-F-DESIGN-001",
+      "groups": [
+        {
+          "group": "B",
+          "samples": 1,
+          "averageTotal": 16,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 16,
+          "maximumTotal": 16,
+          "averageRequiredPointCoverage": 4,
+          "averageConditionFidelity": 4,
+          "averageEvidenceGrounding": 4,
+          "averageAnswerabilityDiscipline": 4,
+          "hardFailures": 0
+        },
+        {
+          "group": "P-seed",
+          "samples": 1,
+          "averageTotal": 16,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 16,
+          "maximumTotal": 16,
+          "averageRequiredPointCoverage": 4,
+          "averageConditionFidelity": 4,
+          "averageEvidenceGrounding": 4,
+          "averageAnswerabilityDiscipline": 4,
+          "hardFailures": 0
+        },
+        {
+          "group": "P-graph",
+          "samples": 1,
+          "averageTotal": 16,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 16,
+          "maximumTotal": 16,
+          "averageRequiredPointCoverage": 4,
+          "averageConditionFidelity": 4,
+          "averageEvidenceGrounding": 4,
+          "averageAnswerabilityDiscipline": 4,
+          "hardFailures": 0
+        }
+      ]
+    },
+    {
+      "questionId": "B-E-DESIGN-003",
+      "groups": [
+        {
+          "group": "B",
+          "samples": 1,
+          "averageTotal": 16,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 16,
+          "maximumTotal": 16,
+          "averageRequiredPointCoverage": 4,
+          "averageConditionFidelity": 4,
+          "averageEvidenceGrounding": 4,
+          "averageAnswerabilityDiscipline": 4,
+          "hardFailures": 0
+        },
+        {
+          "group": "P-seed",
+          "samples": 1,
+          "averageTotal": 13,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 13,
+          "maximumTotal": 13,
+          "averageRequiredPointCoverage": 3,
+          "averageConditionFidelity": 3,
+          "averageEvidenceGrounding": 3,
+          "averageAnswerabilityDiscipline": 4,
+          "hardFailures": 0
+        },
+        {
+          "group": "P-graph",
+          "samples": 1,
+          "averageTotal": 10,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 10,
+          "maximumTotal": 10,
+          "averageRequiredPointCoverage": 2,
+          "averageConditionFidelity": 2,
+          "averageEvidenceGrounding": 2,
+          "averageAnswerabilityDiscipline": 4,
+          "hardFailures": 0
+        }
+      ]
+    },
+    {
+      "questionId": "B-K-DESIGN-004",
+      "groups": [
+        {
+          "group": "B",
+          "samples": 1,
+          "averageTotal": 0,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 0,
+          "maximumTotal": 0,
+          "averageRequiredPointCoverage": 0,
+          "averageConditionFidelity": 0,
+          "averageEvidenceGrounding": 0,
+          "averageAnswerabilityDiscipline": 0,
+          "hardFailures": 0
+        },
+        {
+          "group": "P-seed",
+          "samples": 1,
+          "averageTotal": 15,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 15,
+          "maximumTotal": 15,
+          "averageRequiredPointCoverage": 3,
+          "averageConditionFidelity": 4,
+          "averageEvidenceGrounding": 4,
+          "averageAnswerabilityDiscipline": 4,
+          "hardFailures": 0
+        },
+        {
+          "group": "P-graph",
+          "samples": 1,
+          "averageTotal": 16,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 16,
+          "maximumTotal": 16,
+          "averageRequiredPointCoverage": 4,
+          "averageConditionFidelity": 4,
+          "averageEvidenceGrounding": 4,
+          "averageAnswerabilityDiscipline": 4,
+          "hardFailures": 0
+        }
+      ]
+    },
+    {
+      "questionId": "B-R-DESIGN-006",
+      "groups": [
+        {
+          "group": "B",
+          "samples": 1,
+          "averageTotal": 16,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 16,
+          "maximumTotal": 16,
+          "averageRequiredPointCoverage": 4,
+          "averageConditionFidelity": 4,
+          "averageEvidenceGrounding": 4,
+          "averageAnswerabilityDiscipline": 4,
+          "hardFailures": 0
+        },
+        {
+          "group": "P-seed",
+          "samples": 1,
+          "averageTotal": 16,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 16,
+          "maximumTotal": 16,
+          "averageRequiredPointCoverage": 4,
+          "averageConditionFidelity": 4,
+          "averageEvidenceGrounding": 4,
+          "averageAnswerabilityDiscipline": 4,
+          "hardFailures": 0
+        },
+        {
+          "group": "P-graph",
+          "samples": 1,
+          "averageTotal": 16,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 16,
+          "maximumTotal": 16,
+          "averageRequiredPointCoverage": 4,
+          "averageConditionFidelity": 4,
+          "averageEvidenceGrounding": 4,
+          "averageAnswerabilityDiscipline": 4,
+          "hardFailures": 0
+        }
+      ]
+    },
+    {
+      "questionId": "B-F-DESIGN-007",
+      "groups": [
+        {
+          "group": "B",
+          "samples": 1,
+          "averageTotal": 16,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 16,
+          "maximumTotal": 16,
+          "averageRequiredPointCoverage": 4,
+          "averageConditionFidelity": 4,
+          "averageEvidenceGrounding": 4,
+          "averageAnswerabilityDiscipline": 4,
+          "hardFailures": 0
+        },
+        {
+          "group": "P-seed",
+          "samples": 1,
+          "averageTotal": 15,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 15,
+          "maximumTotal": 15,
+          "averageRequiredPointCoverage": 4,
+          "averageConditionFidelity": 4,
+          "averageEvidenceGrounding": 3,
+          "averageAnswerabilityDiscipline": 4,
+          "hardFailures": 0
+        },
+        {
+          "group": "P-graph",
+          "samples": 1,
+          "averageTotal": 16,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 16,
+          "maximumTotal": 16,
+          "averageRequiredPointCoverage": 4,
+          "averageConditionFidelity": 4,
+          "averageEvidenceGrounding": 4,
+          "averageAnswerabilityDiscipline": 4,
+          "hardFailures": 0
+        }
+      ]
+    },
+    {
+      "questionId": "B-U-DESIGN-008",
+      "groups": [
+        {
+          "group": "B",
+          "samples": 1,
+          "averageTotal": 9,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 9,
+          "maximumTotal": 9,
+          "averageRequiredPointCoverage": 3,
+          "averageConditionFidelity": 2,
+          "averageEvidenceGrounding": 2,
+          "averageAnswerabilityDiscipline": 2,
+          "hardFailures": 0
+        },
+        {
+          "group": "P-seed",
+          "samples": 1,
+          "averageTotal": 13,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 13,
+          "maximumTotal": 13,
+          "averageRequiredPointCoverage": 3,
+          "averageConditionFidelity": 3,
+          "averageEvidenceGrounding": 3,
+          "averageAnswerabilityDiscipline": 4,
+          "hardFailures": 0
+        },
+        {
+          "group": "P-graph",
+          "samples": 1,
+          "averageTotal": 13,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 13,
+          "maximumTotal": 13,
+          "averageRequiredPointCoverage": 3,
+          "averageConditionFidelity": 3,
+          "averageEvidenceGrounding": 3,
+          "averageAnswerabilityDiscipline": 4,
+          "hardFailures": 0
+        }
+      ]
+    },
+    {
+      "questionId": "B-A-DESIGN-009",
+      "groups": [
+        {
+          "group": "B",
+          "samples": 1,
+          "averageTotal": 8,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 8,
+          "maximumTotal": 8,
+          "averageRequiredPointCoverage": 2,
+          "averageConditionFidelity": 2,
+          "averageEvidenceGrounding": 2,
+          "averageAnswerabilityDiscipline": 2,
+          "hardFailures": 0
+        },
+        {
+          "group": "P-seed",
+          "samples": 1,
+          "averageTotal": 16,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 16,
+          "maximumTotal": 16,
+          "averageRequiredPointCoverage": 4,
+          "averageConditionFidelity": 4,
+          "averageEvidenceGrounding": 4,
+          "averageAnswerabilityDiscipline": 4,
+          "hardFailures": 0
+        },
+        {
+          "group": "P-graph",
+          "samples": 1,
+          "averageTotal": 16,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 16,
+          "maximumTotal": 16,
+          "averageRequiredPointCoverage": 4,
+          "averageConditionFidelity": 4,
+          "averageEvidenceGrounding": 4,
+          "averageAnswerabilityDiscipline": 4,
+          "hardFailures": 0
+        }
+      ]
+    },
+    {
+      "questionId": "B-C-DESIGN-010",
+      "groups": [
+        {
+          "group": "B",
+          "samples": 1,
+          "averageTotal": 0,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 0,
+          "maximumTotal": 0,
+          "averageRequiredPointCoverage": 0,
+          "averageConditionFidelity": 0,
+          "averageEvidenceGrounding": 0,
+          "averageAnswerabilityDiscipline": 0,
+          "hardFailures": 0
+        },
+        {
+          "group": "P-seed",
+          "samples": 1,
+          "averageTotal": 0,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 0,
+          "maximumTotal": 0,
+          "averageRequiredPointCoverage": 0,
+          "averageConditionFidelity": 0,
+          "averageEvidenceGrounding": 0,
+          "averageAnswerabilityDiscipline": 0,
+          "hardFailures": 0
+        },
+        {
+          "group": "P-graph",
+          "samples": 1,
+          "averageTotal": 0,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 0,
+          "maximumTotal": 0,
+          "averageRequiredPointCoverage": 0,
+          "averageConditionFidelity": 0,
+          "averageEvidenceGrounding": 0,
+          "averageAnswerabilityDiscipline": 0,
+          "hardFailures": 0
+        }
+      ]
+    },
+    {
+      "questionId": "B-K-DESIGN-011",
+      "groups": [
+        {
+          "group": "B",
+          "samples": 1,
+          "averageTotal": 12,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 12,
+          "maximumTotal": 12,
+          "averageRequiredPointCoverage": 3,
+          "averageConditionFidelity": 3,
+          "averageEvidenceGrounding": 3,
+          "averageAnswerabilityDiscipline": 3,
+          "hardFailures": 0
+        },
+        {
+          "group": "P-seed",
+          "samples": 1,
+          "averageTotal": 11,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 11,
+          "maximumTotal": 11,
+          "averageRequiredPointCoverage": 2,
+          "averageConditionFidelity": 3,
+          "averageEvidenceGrounding": 3,
+          "averageAnswerabilityDiscipline": 3,
+          "hardFailures": 0
+        },
+        {
+          "group": "P-graph",
+          "samples": 1,
+          "averageTotal": 4,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 4,
+          "maximumTotal": 4,
+          "averageRequiredPointCoverage": 1,
+          "averageConditionFidelity": 3,
+          "averageEvidenceGrounding": 2,
+          "averageAnswerabilityDiscipline": 2,
+          "hardFailures": 1
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "26 public developer-visible questions are diagnostic only and cannot support a confirmatory product claim.",
+    "The same model family generated answers and judge scores; human audit is still required.",
+    "E-min was not run because no generic Gold-independent WikiModule builder exists."
+  ]
+}

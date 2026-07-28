@@ -1,0 +1,39 @@
+{
+  "questionId": "B-C-HEALTH-002",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 647,
+    "completionTokens": 257,
+    "totalTokens": 904,
+    "promptCacheHitTokens": 0,
+    "promptCacheMissTokens": 647,
+    "reasoningTokens": 0
+  },
+  "request": {
+    "systemPrompt": "你是盲测评分员，不知道匿名答案属于哪个实验组。只按题目、评分锚点和证据评估，不用外部常识修正答案。\n每项 0-4 分：requiredPointCoverage、conditionFidelity、evidenceGrounding、answerabilityDiscipline。\n若答案反转来源归属、抹掉关键条件/时间、把提案当最终规范、编造上下文外事实，hardFailure=true。\n只输出严格 JSON：{\"scores\":[{\"sampleId\":\"...\",\"requiredPointCoverage\":0,\"conditionFidelity\":0,\"evidenceGrounding\":0,\"answerabilityDiscipline\":0,\"hardFailure\":false,\"rationale\":\"...\"}]}。",
+    "userPrompt": "{\"question\":\"2020-07 简报在什么条件下说短距离气溶胶传播不能被排除？\",\"answerability\":\"answerable\",\"requiredPoints\":[\"拥挤、通风不足、长时间与感染者共处的特定室内地点\"],\"forbiddenClaims\":[\"不得改成所有室内场景\"],\"requiredEvidence\":[{\"sourceId\":\"health-who-july-2020-002\",\"exactQuote\":\"Short-range aerosol transmission, particularly in specific indoor locations, such as crowded and inadequately ventilated spaces over a prolonged period of time with infected persons cannot be ruled out.\",\"role\":\"supports\"}],\"sourcePriorityRule\":\"P/C 决定规范、论文与实现事实；S 只能作为有归属的解释，不能推翻一手版本文本。\",\"anonymousAnswers\":[{\"sampleId\":\"sample-8c161724-f2a8-45ea-b4a9-6e7249be0688\",\"questionId\":\"B-C-HEALTH-002\",\"answer\":\"{\\n  \\\"answer\\\": \\\"在特定室内场所，如拥挤且通风不良的空间中，与感染者长时间共处时，短距离气溶胶传播不能被排除。\\\",\\n  \\\"citations\\\": [\\\"../../../workbuddy-batch-b/generated/compilation-corpus/health-biology/health-who-july-2020-002.md:1-6\\\"],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\"},{\"sampleId\":\"sample-9f6cae3d-aaa0-499f-a251-07903536ef00\",\"questionId\":\"B-C-HEALTH-002\",\"answer\":\"{\\n  \\\"answer\\\": \\\"在特定室内场所，如拥挤且通风不良的空间，与感染者长时间接触的条件下，短距离气溶胶传播不能被排除。\\\",\\n  \\\"citations\\\": [\\n    \\\"span:health-who-july-2020-002-a1c7e701eebb9dc1-2#chars-413-615\\\",\\n    \\\"span:health-who-july-2020-002-a1c7e701eebb9dc1-2#chars-447-594\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\"}]}"
+  },
+  "rawResponse": "{\n  \"scores\": [\n    {\n      \"sampleId\": \"sample-8c161724-f2a8-45ea-b4a9-6e7249be0688\",\n      \"requiredPointCoverage\": 4,\n      \"conditionFidelity\": 4,\n      \"evidenceGrounding\": 4,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"答案准确覆盖了所有requiredPoints（拥挤、通风不足、长时间与感染者共处的特定室内地点），未引入forbiddenClaims，条件与原文一致，引用证据支持，未超出可回答范围。\"\n    },\n    {\n      \"sampleId\": \"sample-9f6cae3d-aaa0-499f-a251-07903536ef00\",\n      \"requiredPointCoverage\": 4,\n      \"conditionFidelity\": 4,\n      \"evidenceGrounding\": 4,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"答案准确覆盖了所有requiredPoints，条件表述与原文一致，引用证据支持，未引入forbiddenClaims，未超出可回答范围。\"\n    }\n  ]\n}",
+  "parsed": [
+    {
+      "sampleId": "sample-8c161724-f2a8-45ea-b4a9-6e7249be0688",
+      "requiredPointCoverage": 4,
+      "conditionFidelity": 4,
+      "evidenceGrounding": 4,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "答案准确覆盖了所有requiredPoints（拥挤、通风不足、长时间与感染者共处的特定室内地点），未引入forbiddenClaims，条件与原文一致，引用证据支持，未超出可回答范围。"
+    },
+    {
+      "sampleId": "sample-9f6cae3d-aaa0-499f-a251-07903536ef00",
+      "requiredPointCoverage": 4,
+      "conditionFidelity": 4,
+      "evidenceGrounding": 4,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "答案准确覆盖了所有requiredPoints，条件表述与原文一致，引用证据支持，未引入forbiddenClaims，未超出可回答范围。"
+    }
+  ]
+}

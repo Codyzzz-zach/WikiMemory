@@ -32,6 +32,7 @@ describe("loader registry", () => {
 				loaderVersion: "fake-v1",
 				sourceKey: "book",
 				title: "Book",
+				metadata: { sourceRole: "primary", publisher: "Example Lab" },
 				parsedText: "Alpha.",
 				blocks: [
 					{
@@ -48,6 +49,10 @@ describe("loader registry", () => {
 		const result = ingestFile(config(), "book.pdf", registry);
 		expect(result.source.sourceType).toBe("pdf");
 		expect(result.source.loaderVersion).toBe("fake-v1");
+		expect(result.source.metadata).toEqual({
+			sourceRole: "primary",
+			publisher: "Example Lab",
+		});
 		expect(result.spans[0]?.text).toBe("Alpha.");
 	});
 });

@@ -1,0 +1,82 @@
+{
+  "concepts": [
+    {
+      "name": "WCAG 2.2",
+      "aliases": [],
+      "boundary": "Web Content Accessibility Guidelines version 2.2",
+      "domain": "Web Accessibility"
+    },
+    {
+      "name": "WCAG 2.1",
+      "aliases": [],
+      "boundary": "Web Content Accessibility Guidelines version 2.1",
+      "domain": "Web Accessibility"
+    },
+    {
+      "name": "WCAG 2.0",
+      "aliases": [],
+      "boundary": "Web Content Accessibility Guidelines version 2.0",
+      "domain": "Web Accessibility"
+    },
+    {
+      "name": "Success Criterion 4.1.1 Parsing",
+      "aliases": ["4.1.1 Parsing"],
+      "boundary": "A specific success criterion in WCAG 2.0/2.1 that was removed in WCAG 2.2",
+      "domain": "Web Accessibility"
+    },
+    {
+      "name": "Success Criterion 2.4.11 Focus Not Obscured (Minimum)",
+      "aliases": ["2.4.11 Focus Not Obscured (Minimum)"],
+      "boundary": "New AA-level success criterion in WCAG 2.2",
+      "domain": "Web Accessibility"
+    },
+    {
+      "name": "Success Criterion 2.4.12 Focus Not Obscured (Enhanced)",
+      "aliases": ["2.4.12 Focus Not Obscured (Enhanced)"],
+      "boundary": "New AAA-level success criterion in WCAG 2.2",
+      "domain": "Web Accessibility"
+    },
+    {
+      "name": "Success Criterion 2.4.13 Focus Appearance",
+      "aliases": ["2.4.13 Focus Appearance"],
+      "boundary": "New AAA-level success criterion in WCAG 2.2",
+      "domain": "Web Accessibility"
+    },
+    {
+      "name": "Success Criterion 2.5.7 Dragging Movements",
+      "aliases": ["2.5.7 Dragging Movements"],
+      "boundary": "New AA-level success criterion in WCAG 2.2",
+      "domain": "Web Accessibility"
+    },
+    {
+      "name": "Success Criterion 2.5.8 Target Size (Minimum)",
+      "aliases": ["2.5.8 Target Size (Minimum)"],
+      "boundary": "New AA-level success criterion in WCAG 2.2",
+      "domain": "Web Accessibility"
+    },
+    {
+      "name": "Success Criterion 3.2.6 Consistent Help",
+      "aliases": ["3.2.6 Consistent Help"],
+      "boundary": "New A-level success criterion in WCAG 2.2",
+      "domain": "Web Accessibility"
+    },
+    {
+      "name": "Success Criterion 3.3.7 Redundant Entry",
+      "aliases": ["3.3.7 Redundant Entry"],
+      "boundary": "New A-level success criterion in WCAG 2.2",
+      "domain": "Web Accessibility"
+    },
+    {
+      "name": "Success Criterion 3.3.8 Accessible Authentication (Minimum)",
+      "aliases": ["3.3.8 Accessible Authentication (Minimum)"],
+      "boundary": "New AA-level success criterion in WCAG 2.2",
+      "domain": "Web Accessibility"
+    },
+    {
+      "name": "Success Criterion 3.3.9 Accessible Authentication (Enhanced)",
+      "aliases": ["3.3.9 Accessible Authentication (Enhanced)"],
+      "boundary": "New AAA-level success criterion in WCAG 2.2",
+      "domain": "Web Accessibility"
+    }
+  ]
+}

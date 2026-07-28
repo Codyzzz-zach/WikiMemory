@@ -1,0 +1,48 @@
+{
+  "questionId": "B-K-DESIGN-004",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 1272,
+    "completionTokens": 432,
+    "totalTokens": 1704,
+    "promptCacheHitTokens": 256,
+    "promptCacheMissTokens": 1016,
+    "reasoningTokens": 0
+  },
+  "request": {
+    "systemPrompt": "你是盲测评分员，不知道答案属于哪个实验组。只按题目、评分锚点、Gold 证据和引用预校验评价，不用外部常识修正答案。\n每个维度独立使用同一 0-4 锚点：4=完整且准确；3=大部分满足，仅轻微遗漏；2=部分满足，存在重要遗漏；1=仅有极少相关内容；0=缺失、反转或与证据冲突。\nrequiredPointCoverage 只看 requiredPoints；conditionFidelity 看条件、时间、来源角色和不确定性；evidenceGrounding 同时看关键结论是否与 Gold 证据一致以及 citationValidation；answerabilityDiscipline 看是否越界、编造或错误拒答。\ncitationValidation.valid 表示引用标识确实存在于该匿名样本收到的上下文。内部 CLAIM/SPAN/SOURCE 标识不需要出现在 Gold 文本中，不得仅因此扣分；但存在性有效不代表语义必然支持，仍需对照答案内容与 Gold。\n若反转来源归属、抹掉关键条件/时间、把提案当最终规范或编造关键事实，hardFailure=true。\n数值必须与 rationale 一致：若 rationale 说“完整覆盖且准确”，对应维度不能低于 3。\n只输出严格 JSON：{\"scores\":[{\"sampleId\":\"...\",\"requiredPointCoverage\":0,\"conditionFidelity\":0,\"evidenceGrounding\":0,\"answerabilityDiscipline\":0,\"hardFailure\":false,\"rationale\":\"...\"}]}。",
+    "userPrompt": "{\"question\":\"GitHub issue #2705 的移除建议是否代表 W3C 最终决定？\",\"answerability\":\"answerable\",\"requiredPoints\":[\"不是；它是作者建议\",\"最终 2.2 仍列出 2.5.7\"],\"forbiddenClaims\":[\"不得把 issue 当规范\"],\"requiredEvidence\":[{\"sourceId\":\"design-wcag-issue-2705-003\",\"exactQuote\":\"We kindly request that the group remove this SC until research is completed for all affected input modalities.\",\"role\":\"supports\"},{\"sourceId\":\"design-wcag22-2023-002\",\"exactQuote\":\"The following success criteria are new in WCAG 2.2:\\n\\n- 2.4.11 Focus Not Obscured (Minimum) (AA)\\n- 2.4.12 Focus Not Obscured (Enhanced) (AAA)\\n- 2.4.13 Focus Appearance (AAA)\\n- 2.5.7 Dragging Movements (AA)\\n- 2.5.8 Target Size (Minimum) (AA)\\n- 3.2.6 Consistent Help (A)\\n- 3.3.7 Redundant Entry (A)\\n- 3.3.8 Accessible Authentication (Minimum) (AA)\\n- 3.3.9 Accessible Authentication (Enhanced) (AAA)\",\"role\":\"supports\"}],\"sourcePriorityRule\":\"P/C 决定规范、论文与实现事实；S 只能作为有归属的解释，不能推翻一手版本文本。\",\"anonymousAnswers\":[{\"sampleId\":\"sample-bcc97110-9d56-4426-8888-538ce0cb6b86\",\"questionId\":\"B-K-DESIGN-004\",\"repetition\":1,\"answer\":\"{\\n  \\\"answer\\\": \\\"不，GitHub issue #2705 的移除建议并不代表 W3C 最终决定。该建议来自一个小组，请求在完成对所有受影响输入模态的研究之前移除该成功标准，但并未说明该请求已被采纳或成为最终决定。\\\",\\n  \\\"citations\\\": [\\n    \\\"span:design-wcag-issue-2705-003-d40218e811ec1166-2#chars-333-443\\\",\\n    \\\"span:design-wcag-issue-2705-003-d40218e811ec1166-3#chars-445-602\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": [\\n    \\\"上下文未说明该移除建议是否被 W3C 采纳或成为最终决定。\\\"\\n  ]\\n}\",\"citationValidation\":{\"formatValid\":true,\"total\":2,\"valid\":2,\"invalid\":[]}},{\"sampleId\":\"sample-c3348b81-8c9e-4a21-a853-c881119b7a32\",\"questionId\":\"B-K-DESIGN-004\",\"repetition\":1,\"answer\":\"{\\n  \\\"answer\\\": \\\"GitHub issue #2705 的移除建议是工作组提出的请求，但上下文未说明该建议是否已被 W3C 采纳或成为最终决定。\\\",\\n  \\\"citations\\\": [\\n    \\\"claim:d40218e811ec1166-21341d7bbebecc13\\\",\\n    \\\"span:design-wcag-issue-2705-003-d40218e811ec1166-2#chars-333-443\\\"\\n  ],\\n  \\\"insufficient\\\": true,\\n  \\\"uncertainties\\\": [\\n    \\\"上下文未提供 W3C 对该移除建议的最终决定信息\\\"\\n  ]\\n}\",\"citationValidation\":{\"formatValid\":true,\"total\":2,\"valid\":2,\"invalid\":[]}},{\"sampleId\":\"sample-198d190d-4ddd-450a-9970-c543736fbd50\",\"questionId\":\"B-K-DESIGN-004\",\"repetition\":1,\"answer\":\"{\\\"answer\\\":\\\"上下文未提及 GitHub issue #2705 或 W3C 决定，无法回答。\\\",\\\"citations\\\":[],\\\"insufficient\\\":true,\\\"uncertainties\\\":[\\\"上下文未包含 GitHub issue #2705 或 W3C 决定的相关信息。\\\"]}\",\"citationValidation\":{\"formatValid\":true,\"total\":0,\"valid\":0,\"invalid\":[]}}]}"
+  },
+  "rawResponse": "{\n  \"scores\": [\n    {\n      \"sampleId\": \"sample-bcc97110-9d56-4426-8888-538ce0cb6b86\",\n      \"requiredPointCoverage\": 4,\n      \"conditionFidelity\": 4,\n      \"evidenceGrounding\": 4,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"答案明确否定issue代表最终决定，指出是小组建议，且未声称被采纳，完全覆盖requiredPoints。条件、时间、来源角色准确，不确定性表述恰当。关键结论与Gold证据一致，引用有效且支持内容。未越界或编造。\"\n    },\n    {\n      \"sampleId\": \"sample-c3348b81-8c9e-4a21-a853-c881119b7a32\",\n      \"requiredPointCoverage\": 3,\n      \"conditionFidelity\": 4,\n      \"evidenceGrounding\": 4,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"答案指出是工作组请求，未明确说不是最终决定，但隐含否定，轻微遗漏requiredPoints中'不是最终决定'的明确表述。条件、时间、来源角色准确，不确定性恰当。关键结论与Gold一致，引用有效。未越界。\"\n    },\n    {\n      \"sampleId\": \"sample-198d190d-4ddd-450a-9970-c543736fbd50\",\n      \"requiredPointCoverage\": 0,\n      \"conditionFidelity\": 0,\n      \"evidenceGrounding\": 0,\n      \"answerabilityDiscipline\": 0,\n      \"hardFailure\": false,\n      \"rationale\": \"答案声称上下文未提及issue或决定，但Gold证据包含相关引用，因此错误拒答。requiredPoints完全缺失，条件、时间、来源角色未涉及，关键结论与证据冲突（证据存在但答案说无），且未使用可用引用。\"\n    }\n  ]\n}",
+  "parsed": [
+    {
+      "sampleId": "sample-bcc97110-9d56-4426-8888-538ce0cb6b86",
+      "requiredPointCoverage": 4,
+      "conditionFidelity": 4,
+      "evidenceGrounding": 4,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "答案明确否定issue代表最终决定，指出是小组建议，且未声称被采纳，完全覆盖requiredPoints。条件、时间、来源角色准确，不确定性表述恰当。关键结论与Gold证据一致，引用有效且支持内容。未越界或编造。"
+    },
+    {
+      "sampleId": "sample-c3348b81-8c9e-4a21-a853-c881119b7a32",
+      "requiredPointCoverage": 3,
+      "conditionFidelity": 4,
+      "evidenceGrounding": 4,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "答案指出是工作组请求，未明确说不是最终决定，但隐含否定，轻微遗漏requiredPoints中'不是最终决定'的明确表述。条件、时间、来源角色准确，不确定性恰当。关键结论与Gold一致，引用有效。未越界。"
+    },
+    {
+      "sampleId": "sample-198d190d-4ddd-450a-9970-c543736fbd50",
+      "requiredPointCoverage": 0,
+      "conditionFidelity": 0,
+      "evidenceGrounding": 0,
+      "answerabilityDiscipline": 0,
+      "hardFailure": false,
+      "rationale": "答案声称上下文未提及issue或决定，但Gold证据包含相关引用，因此错误拒答。requiredPoints完全缺失，条件、时间、来源角色未涉及，关键结论与证据冲突（证据存在但答案说无），且未使用可用引用。"
+    }
+  ]
+}

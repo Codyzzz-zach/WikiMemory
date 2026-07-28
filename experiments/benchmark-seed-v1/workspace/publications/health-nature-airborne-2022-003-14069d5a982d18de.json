@@ -1,0 +1,343 @@
+{
+  "schemaVersion": "v1",
+  "sourceId": "source:health-nature-airborne-2022-003-14069d5a982d18de",
+  "runId": "01968afb-95cd-4ee8-b0a1-020352e0d222",
+  "publishedAt": "2026-07-27T09:47:42.607Z",
+  "claims": [
+    {
+      "id": "claim:14069d5a982d18de-0b2bf91f663f56a8",
+      "statement": "On 23 December, the World Health Organization (WHO) used the word 'airborne' to describe the virus SARS-CoV-2.",
+      "evidenceSpanIds": [
+        "span:health-nature-airborne-2022-003-14069d5a982d18de-1#chars-55-211"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:47:28.327Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:health-nature-airborne-2022-003-14069d5a982d18de-1#chars-55-211"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:health-nature-airborne-2022-003-14069d5a982d18de-1#chars-55-211"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-27T09:47:28.327Z"
+    },
+    {
+      "id": "claim:14069d5a982d18de-30df60c9afb3e05b",
+      "statement": "It took until 20 October 2020 for the WHO to acknowledge that aerosols can transmit the virus.",
+      "evidenceSpanIds": [
+        "span:health-nature-airborne-2022-003-14069d5a982d18de-2#chars-213-334"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:47:28.327Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:health-nature-airborne-2022-003-14069d5a982d18de-2#chars-213-334"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:health-nature-airborne-2022-003-14069d5a982d18de-2#chars-213-334"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-27T09:47:28.327Z"
+    },
+    {
+      "id": "claim:14069d5a982d18de-fb6c9ddf92a42cc2",
+      "statement": "The WHO said that aerosol transmission was a concern only in specific settings, such as indoor, crowded and inadequately ventilated spaces.",
+      "evidenceSpanIds": [
+        "span:health-nature-airborne-2022-003-14069d5a982d18de-2#chars-340-458"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:47:28.327Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:health-nature-airborne-2022-003-14069d5a982d18de-2#chars-340-458"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:health-nature-airborne-2022-003-14069d5a982d18de-2#chars-340-458"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-27T09:47:28.327Z"
+    },
+    {
+      "id": "claim:14069d5a982d18de-ff33cb8a69885a6f",
+      "statement": "Over the next six months, the WHO gradually altered its advice to say that aerosols could carry the virus for more than a metre and remain in the air.",
+      "evidenceSpanIds": [
+        "span:health-nature-airborne-2022-003-14069d5a982d18de-2#chars-459-612"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:47:28.327Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:health-nature-airborne-2022-003-14069d5a982d18de-2#chars-459-612"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:health-nature-airborne-2022-003-14069d5a982d18de-2#chars-459-612"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-27T09:47:28.327Z"
+    }
+  ],
+  "concepts": [
+    {
+      "id": "concept:19cb014b6f1c21f4",
+      "name": "World Health Organization",
+      "aliases": [
+        "WHO"
+      ],
+      "boundary": "国际公共卫生组织",
+      "domain": "健康"
+    },
+    {
+      "id": "concept:4063b72271091ab2",
+      "name": "indoor",
+      "aliases": [],
+      "boundary": "室内环境",
+      "domain": "健康"
+    },
+    {
+      "id": "concept:565aadbffb3e6ba6",
+      "name": "inadequately ventilated spaces",
+      "aliases": [],
+      "boundary": "通风不良的空间",
+      "domain": "健康"
+    },
+    {
+      "id": "concept:7a7d48d97c9c0ebc",
+      "name": "crowded",
+      "aliases": [],
+      "boundary": "拥挤的",
+      "domain": "健康"
+    },
+    {
+      "id": "concept:a884491b4ae6ae5a",
+      "name": "aerosol transmission",
+      "aliases": [],
+      "boundary": "气溶胶传播",
+      "domain": "健康"
+    },
+    {
+      "id": "concept:c303898facaf1444",
+      "name": "aerosol",
+      "aliases": [
+        "aerosols"
+      ],
+      "boundary": "气溶胶，悬浮在空气中的微小颗粒",
+      "domain": "健康"
+    },
+    {
+      "id": "concept:cecf36bb925c859f",
+      "name": "SARS-CoV-2",
+      "aliases": [
+        "virus"
+      ],
+      "boundary": "新型冠状病毒",
+      "domain": "健康"
+    },
+    {
+      "id": "concept:f3356fa3f36ba24a",
+      "name": "airborne",
+      "aliases": [],
+      "boundary": "传播方式，指通过空气传播",
+      "domain": "健康"
+    },
+    {
+      "id": "concept:f894db0a8b48d5e2",
+      "name": "metre",
+      "aliases": [],
+      "boundary": "长度单位",
+      "domain": "通用"
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel:cross-0b718daee2c1da01",
+      "from": "claim:b587ec61aaf84d7d-474d339f3670f6c4",
+      "to": "claim:14069d5a982d18de-fb6c9ddf92a42cc2",
+      "type": "SUPPORTS",
+      "conditions": [
+        "specific circumstances and settings where procedures or support treatments that generate aerosols are performed"
+      ],
+      "conditionStatus": "PRESERVED",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:health-nature-airborne-2022-003-14069d5a982d18de-2#chars-340-458",
+        "span:health-who-march-2020-001-b587ec61aaf84d7d-2#chars-351-534"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:47:39.049Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "cross-material-detect",
+      "confidence": 0.7,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:cross-17a7005384b8f913",
+      "from": "claim:14069d5a982d18de-fb6c9ddf92a42cc2",
+      "to": "claim:a1c7e701eebb9dc1-271d5603ab397f55",
+      "type": "SUPPORTS",
+      "conditions": [
+        "在特定室内场所，如拥挤且通风不良的空间，与感染者长时间接触"
+      ],
+      "conditionStatus": "PRESERVED",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:health-nature-airborne-2022-003-14069d5a982d18de-2#chars-340-458",
+        "span:health-who-july-2020-002-a1c7e701eebb9dc1-2#chars-413-615"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:47:39.049Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "cross-material-detect",
+      "confidence": 0.8,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:cross-2d8f24974b8bb808",
+      "from": "claim:14069d5a982d18de-fb6c9ddf92a42cc2",
+      "to": "claim:a1c7e701eebb9dc1-1b6548c486ad1fd5",
+      "type": "SUPPORTS",
+      "conditions": [
+        "在特定室内场所，如拥挤且通风不良的空间，与感染者长时间接触"
+      ],
+      "conditionStatus": "PRESERVED",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:health-nature-airborne-2022-003-14069d5a982d18de-2#chars-340-458",
+        "span:health-who-july-2020-002-a1c7e701eebb9dc1-2#chars-447-594"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:47:39.049Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "cross-material-detect",
+      "confidence": 0.8,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:cross-55f1591f1659895d",
+      "from": "claim:14069d5a982d18de-ff33cb8a69885a6f",
+      "to": "claim:b587ec61aaf84d7d-f9e6d8b51f46b89d",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:health-nature-airborne-2022-003-14069d5a982d18de-2#chars-459-612",
+        "span:health-who-march-2020-001-b587ec61aaf84d7d-1#chars-292-348"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:47:39.049Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "cross-material-detect",
+      "confidence": 0.7,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:cross-ea1586ebc14da71b",
+      "from": "claim:14069d5a982d18de-ff33cb8a69885a6f",
+      "to": "claim:b587ec61aaf84d7d-aae2124ec2ae0b65",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:health-nature-airborne-2022-003-14069d5a982d18de-2#chars-459-612",
+        "span:health-who-march-2020-001-b587ec61aaf84d7d-1#chars-241-287"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:47:39.049Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "cross-material-detect",
+      "confidence": 0.7,
+      "consumedBy": []
+    }
+  ]
+}

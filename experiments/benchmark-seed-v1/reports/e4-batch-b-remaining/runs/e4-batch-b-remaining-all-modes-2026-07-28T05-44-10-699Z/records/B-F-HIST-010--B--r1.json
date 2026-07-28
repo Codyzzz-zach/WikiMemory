@@ -1,0 +1,54 @@
+{
+  "runId": "e4-batch-b-remaining-all-modes-2026-07-28T05-44-10-699Z",
+  "sampleId": "sample-add02256-a292-454c-ba14-e6d09e214d18",
+  "questionId": "B-F-HIST-010",
+  "group": "B",
+  "pilotGroup": "B",
+  "graphExpansion": false,
+  "repetition": 1,
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "temperature": 0,
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 339,
+    "completionTokens": 76,
+    "totalTokens": 415,
+    "promptCacheHitTokens": 0,
+    "promptCacheMissTokens": 339,
+    "reasoningTokens": 0
+  },
+  "latencyMs": 1569,
+  "promptHash": "sha256:5bfff7b905b8831d6c371f348d0914109e87c0f42e24b17d5beb27742ff85367",
+  "contextHash": "d823ed9e027c254744f0ff0f992b031dffe4a5cb34035be91e0fd470e5ab8df9",
+  "estimatedContextTokens": 203,
+  "estimatedInputTokens": 371,
+  "retrievedClaims": [],
+  "retrievedRelations": [],
+  "retrievedSources": [
+    "../../../workbuddy-batch-b/generated/compilation-corpus/history-humanities/history-vesuvius-github-2024-002.md"
+  ],
+  "droppedContext": [],
+  "retrievalTrace": {
+    "strategy": "folder-lexical",
+    "queryFeatureCount": 17,
+    "corpusChunkCount": 12,
+    "matchedChunkCount": 1,
+    "maxFolderChunks": 16,
+    "candidates": [
+      {
+        "id": "../../../workbuddy-batch-b/generated/compilation-corpus/history-humanities/history-vesuvius-github-2024-002.md#L1-L12",
+        "rank": 1,
+        "score": 2.8718021769015913,
+        "selected": true,
+        "dropReason": null
+      }
+    ]
+  },
+  "request": {
+    "systemPrompt": "你是受证据约束的问答 Agent。只使用本次请求提供的检索上下文回答。\n要求：保留影响结论的条件、时间、例外、来源角色与不确定性；关键结论引用上下文中的 SOURCE、EVIDENCE 或 CLAIM 标识；上下文不足时明确说明，不得用外部常识补齐。\n只输出严格 JSON：{\"answer\":\"...\",\"citations\":[\"...\"],\"insufficient\":false,\"uncertainties\":[\"...\"]}。",
+    "userPrompt": "# 问题\n判断：Nature 2024 报道的是整卷从头到尾已经读完。\n\n# 检索上下文\n## SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/history-humanities/history-vesuvius-github-2024-002.md:1-12 score=2.872\n# ScrollPrize/vesuvius archived Python library\n\nThis repository was archived by the owner on Nov 21, 2024. It is now read-only.\n\nNOTE: Now maintained at https://github.com/ScrollPrize/villa/tree/main/vesuvius (this repository archived)\n\nFrom Vesuvius Challenge, a Python library for accessing CT scans of ancient scrolls.\n\n`vesuvius` allows direct access to scroll data without managing download scripts or storing terabytes of CT scans locally. Data is streamed in the background, only serving the requested regions.\n\n`vesuvius` is in beta and the interface may change. Not all Vesuvius Challenge data is currently available - data will continue to be added to the library."
+  },
+  "answer": "{\n  \"answer\": \"否，上下文未提及 Nature 2024 报道，且未提供任何关于整卷从头到尾读完的信息。\",\n  \"citations\": [],\n  \"insufficient\": true,\n  \"uncertainties\": [\"上下文未包含 Nature 2024 报道的相关内容，无法判断是否报道了整卷从头到尾读完。\"]\n}",
+  "answerFormatValid": true
+}

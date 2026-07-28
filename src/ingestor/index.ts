@@ -84,6 +84,7 @@ export function ingestLoadedDocument(config: AppConfig, loaded: LoadedDocument):
 		parsedText: loaded.parsedText,
 		sourceType: loaded.sourceType,
 		loaderVersion: loaded.loaderVersion,
+		metadata: loaded.metadata,
 		createdAt: new Date().toISOString(),
 	};
 
@@ -114,6 +115,7 @@ export function ingestLoadedDocument(config: AppConfig, loaded: LoadedDocument):
 		title: loaded.title,
 		sourceType: loaded.sourceType,
 		loaderVersion: loaded.loaderVersion,
+		metadata: loaded.metadata,
 		blockCount: spans.length,
 		createdAt: source.createdAt,
 	};

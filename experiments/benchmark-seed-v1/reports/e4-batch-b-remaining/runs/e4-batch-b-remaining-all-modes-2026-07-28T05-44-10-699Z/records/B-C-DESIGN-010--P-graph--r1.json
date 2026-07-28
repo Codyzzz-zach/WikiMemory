@@ -1,0 +1,76 @@
+{
+  "runId": "e4-batch-b-remaining-all-modes-2026-07-28T05-44-10-699Z",
+  "sampleId": "sample-a1f9f18f-b162-4e33-b84e-93792e6f8421",
+  "questionId": "B-C-DESIGN-010",
+  "group": "P-graph",
+  "pilotGroup": "P",
+  "graphExpansion": true,
+  "repetition": 1,
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "temperature": 0,
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 273,
+    "completionTokens": 74,
+    "totalTokens": 347,
+    "promptCacheHitTokens": 256,
+    "promptCacheMissTokens": 17,
+    "reasoningTokens": 0
+  },
+  "latencyMs": 1049,
+  "promptHash": "sha256:d2ba94b8fdad019006f15958aacbba9940debadbb53a7a0755318f12a52edfb9",
+  "contextHash": "d2951ba5168f4b80002e2037c7485dc76b2d8b43564b908c57e4b7ade2553757",
+  "estimatedContextTokens": 152,
+  "estimatedInputTokens": 309,
+  "retrievedClaims": [],
+  "retrievedRelations": [],
+  "retrievedSources": [],
+  "droppedContext": [],
+  "retrievalTrace": {
+    "strategy": "claim-seed-graph",
+    "graphDepth": 3,
+    "temporalScope": {
+      "applied": false,
+      "startMonth": null,
+      "endMonth": null,
+      "excludedClaimIds": []
+    },
+    "retrieval": {
+      "queryFeatureCount": 13,
+      "eligibleClaimCount": 67,
+      "matchedClaimCount": 0,
+      "usedEvidenceText": true,
+      "usedSourceMetadata": true,
+      "resolvedEvidenceRefCount": 67,
+      "unresolvedEvidenceRefCount": 0,
+      "candidates": []
+    },
+    "graph": {
+      "seedClaimIds": [],
+      "expandedClaimIds": [],
+      "expandedRelationIds": []
+    },
+    "budget": {
+      "selectedClaimIds": [],
+      "selectedRelationIds": [],
+      "selectedEvidenceSpanIds": [],
+      "selectedWikiModuleIds": [],
+      "dropped": [],
+      "finalEstimatedTokens": 224
+    },
+    "serializationBudget": {
+      "selectedIds": [
+        "task-map",
+        "known-gaps"
+      ],
+      "droppedIds": []
+    }
+  },
+  "request": {
+    "systemPrompt": "你是受证据约束的问答 Agent。只使用本次请求提供的检索上下文回答。\n要求：保留影响结论的条件、时间、例外、来源角色与不确定性；关键结论引用上下文中的 SOURCE、EVIDENCE 或 CLAIM 标识；上下文不足时明确说明，不得用外部常识补齐。\n只输出严格 JSON：{\"answer\":\"...\",\"citations\":[\"...\"],\"insufficient\":false,\"uncertainties\":[\"...\"]}。",
+    "userPrompt": "# 问题\n2.5.7 的例外条件是什么？\n\n# 检索上下文\n## TASK MAP\n主题: 2.5.7 的例外条件是什么？\n地图主题: the, of, and, to, in\n关键概念: User Agent, Mobile Requirements, Input Modality, Desktop Content, Single Pointer\n已知争议: 0 个\n最近变化: 5 条\n找到 0 条相关 Claim\n找到 0 条关系\n找到 0 条原文证据\n\n## KNOWN GAPS\nSeed Retriever 未找到可靠匹配——知识库可能未覆盖此主题，或相关原文尚未编译为 Canonical Claim\n未找到关系——Graph 可能尚未建立跨材料边"
+  },
+  "answer": "{\"answer\":\"根据提供的检索上下文，未找到关于“2.5.7 的例外条件”的任何信息。上下文显示知识库可能未覆盖此主题，或相关原文尚未编译为 Canonical Claim。\",\"citations\":[],\"insufficient\":true,\"uncertainties\":[\"知识库未覆盖此主题或相关原文未编译\"]}",
+  "answerFormatValid": true
+}

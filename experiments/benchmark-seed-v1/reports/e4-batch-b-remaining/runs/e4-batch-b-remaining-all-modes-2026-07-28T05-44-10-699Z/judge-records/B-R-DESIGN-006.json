@@ -1,0 +1,48 @@
+{
+  "questionId": "B-R-DESIGN-006",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 1193,
+    "completionTokens": 438,
+    "totalTokens": 1631,
+    "promptCacheHitTokens": 256,
+    "promptCacheMissTokens": 937,
+    "reasoningTokens": 0
+  },
+  "request": {
+    "systemPrompt": "你是盲测评分员，不知道答案属于哪个实验组。只按题目、评分锚点、Gold 证据和引用预校验评价，不用外部常识修正答案。\n每个维度独立使用同一 0-4 锚点：4=完整且准确；3=大部分满足，仅轻微遗漏；2=部分满足，存在重要遗漏；1=仅有极少相关内容；0=缺失、反转或与证据冲突。\nrequiredPointCoverage 只看 requiredPoints；conditionFidelity 看条件、时间、来源角色和不确定性；evidenceGrounding 同时看关键结论是否与 Gold 证据一致以及 citationValidation；answerabilityDiscipline 看是否越界、编造或错误拒答。\ncitationValidation.valid 表示引用标识确实存在于该匿名样本收到的上下文。内部 CLAIM/SPAN/SOURCE 标识不需要出现在 Gold 文本中，不得仅因此扣分；但存在性有效不代表语义必然支持，仍需对照答案内容与 Gold。\n若反转来源归属、抹掉关键条件/时间、把提案当最终规范或编造关键事实，hardFailure=true。\n数值必须与 rationale 一致：若 rationale 说“完整覆盖且准确”，对应维度不能低于 3。\n只输出严格 JSON：{\"scores\":[{\"sampleId\":\"...\",\"requiredPointCoverage\":0,\"conditionFidelity\":0,\"evidenceGrounding\":0,\"answerabilityDiscipline\":0,\"hardFailure\":false,\"rationale\":\"...\"}]}。",
+    "userPrompt": "{\"question\":\"WCAG 2.2 新增了多少项成功标准，2.5.7 属于哪个级别？\",\"answerability\":\"answerable\",\"requiredPoints\":[\"九项\",\"2.5.7 为 AA\"],\"forbiddenClaims\":[\"不得把 2.5.7 写成 AAA\"],\"requiredEvidence\":[{\"sourceId\":\"design-wcag22-2023-002\",\"exactQuote\":\"The following success criteria are new in WCAG 2.2:\\n\\n- 2.4.11 Focus Not Obscured (Minimum) (AA)\\n- 2.4.12 Focus Not Obscured (Enhanced) (AAA)\\n- 2.4.13 Focus Appearance (AAA)\\n- 2.5.7 Dragging Movements (AA)\\n- 2.5.8 Target Size (Minimum) (AA)\\n- 3.2.6 Consistent Help (A)\\n- 3.3.7 Redundant Entry (A)\\n- 3.3.8 Accessible Authentication (Minimum) (AA)\\n- 3.3.9 Accessible Authentication (Enhanced) (AAA)\",\"role\":\"supports\"}],\"sourcePriorityRule\":\"P/C 决定规范、论文与实现事实；S 只能作为有归属的解释，不能推翻一手版本文本。\",\"anonymousAnswers\":[{\"sampleId\":\"sample-dd9c878f-7d5d-4ca1-be82-97a24016e561\",\"questionId\":\"B-R-DESIGN-006\",\"repetition\":1,\"answer\":\"{\\n  \\\"answer\\\": \\\"WCAG 2.2 新增了 9 项成功标准。2.5.7 属于 AA 级别。\\\",\\n  \\\"citations\\\": [\\n    \\\"claim:1da3417e06ff5435-fda7e8c14ff6f23b\\\",\\n    \\\"span:design-wcag22-2023-002-1da3417e06ff5435-3#chars-550-892\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\",\"citationValidation\":{\"formatValid\":true,\"total\":2,\"valid\":2,\"invalid\":[]}},{\"sampleId\":\"sample-ed703016-bad9-47bb-8a63-26ed83d1102a\",\"questionId\":\"B-R-DESIGN-006\",\"repetition\":1,\"answer\":\"{\\n  \\\"answer\\\": \\\"WCAG 2.2 新增了 9 项成功标准，2.5.7 属于 AA 级别。\\\",\\n  \\\"citations\\\": [\\n    \\\"claim:1da3417e06ff5435-fda7e8c14ff6f23b\\\",\\n    \\\"span:design-wcag22-2023-002-1da3417e06ff5435-3#chars-550-892\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\",\"citationValidation\":{\"formatValid\":true,\"total\":2,\"valid\":2,\"invalid\":[]}},{\"sampleId\":\"sample-7892ec7a-1362-4fde-825d-0badd33f998c\",\"questionId\":\"B-R-DESIGN-006\",\"repetition\":1,\"answer\":\"{\\n  \\\"answer\\\": \\\"WCAG 2.2 新增了 9 项成功标准，2.5.7 属于 AA 级别。\\\",\\n  \\\"citations\\\": [\\n    \\\"SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-wcag22-2023-002.md:1-16\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\",\"citationValidation\":{\"formatValid\":true,\"total\":1,\"valid\":1,\"invalid\":[]}}]}"
+  },
+  "rawResponse": "{\n  \"scores\": [\n    {\n      \"sampleId\": \"sample-dd9c878f-7d5d-4ca1-be82-97a24016e561\",\n      \"requiredPointCoverage\": 4,\n      \"conditionFidelity\": 4,\n      \"evidenceGrounding\": 4,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"答案完整覆盖了requiredPoints（九项、AA），且未提及forbiddenClaims。条件、时间、来源角色均正确，无不确定性。关键结论与Gold证据一致，引用标识有效且语义支持。未越界、编造或错误拒答。\"\n    },\n    {\n      \"sampleId\": \"sample-ed703016-bad9-47bb-8a63-26ed83d1102a\",\n      \"requiredPointCoverage\": 4,\n      \"conditionFidelity\": 4,\n      \"evidenceGrounding\": 4,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"答案完整覆盖了requiredPoints（九项、AA），且未提及forbiddenClaims。条件、时间、来源角色均正确，无不确定性。关键结论与Gold证据一致，引用标识有效且语义支持。未越界、编造或错误拒答。\"\n    },\n    {\n      \"sampleId\": \"sample-7892ec7a-1362-4fde-825d-0badd33f998c\",\n      \"requiredPointCoverage\": 4,\n      \"conditionFidelity\": 4,\n      \"evidenceGrounding\": 4,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"答案完整覆盖了requiredPoints（九项、AA），且未提及forbiddenClaims。条件、时间、来源角色均正确，无不确定性。关键结论与Gold证据一致，引用标识有效且语义支持。未越界、编造或错误拒答。\"\n    }\n  ]\n}",
+  "parsed": [
+    {
+      "sampleId": "sample-dd9c878f-7d5d-4ca1-be82-97a24016e561",
+      "requiredPointCoverage": 4,
+      "conditionFidelity": 4,
+      "evidenceGrounding": 4,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "答案完整覆盖了requiredPoints（九项、AA），且未提及forbiddenClaims。条件、时间、来源角色均正确，无不确定性。关键结论与Gold证据一致，引用标识有效且语义支持。未越界、编造或错误拒答。"
+    },
+    {
+      "sampleId": "sample-ed703016-bad9-47bb-8a63-26ed83d1102a",
+      "requiredPointCoverage": 4,
+      "conditionFidelity": 4,
+      "evidenceGrounding": 4,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "答案完整覆盖了requiredPoints（九项、AA），且未提及forbiddenClaims。条件、时间、来源角色均正确，无不确定性。关键结论与Gold证据一致，引用标识有效且语义支持。未越界、编造或错误拒答。"
+    },
+    {
+      "sampleId": "sample-7892ec7a-1362-4fde-825d-0badd33f998c",
+      "requiredPointCoverage": 4,
+      "conditionFidelity": 4,
+      "evidenceGrounding": 4,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "答案完整覆盖了requiredPoints（九项、AA），且未提及forbiddenClaims。条件、时间、来源角色均正确，无不确定性。关键结论与Gold证据一致，引用标识有效且语义支持。未越界、编造或错误拒答。"
+    }
+  ]
+}

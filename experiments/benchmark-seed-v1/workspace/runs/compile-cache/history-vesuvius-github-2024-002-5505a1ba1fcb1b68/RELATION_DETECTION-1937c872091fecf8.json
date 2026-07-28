@@ -1,0 +1,6 @@
+{
+  "kind": "VALID",
+  "content": "{\n  \"relations\": [\n    {\n      \"fromClaimIndex\": 0,\n      \"toClaimIndex\": 3,\n      \"type\": \"SUPPORTS\",\n      \"conditions\": [],\n      \"confidence\": 0.8\n    },\n    {\n      \"fromClaimIndex\": 1,\n      \"toClaimIndex\": 7,\n      \"type\": \"EQUIVALENT_UNDER\",\n      \"conditions\": [\"该库来自维苏威挑战赛，是一个用于访问古代卷轴 CT 扫描的 Python 库\", \"ScrollPrize/vesuvius 是一个归档的 Python 库\"],\n      \"confidence\": 0.9\n    },\n    {\n      \"fromClaimIndex\": 2,\n      \"toClaimIndex\": 7,\n      \"type\": \"SUPPORTS\",\n      \"conditions\": [],\n      \"confidence\": 0.8\n    },\n    {\n      \"fromClaimIndex\": 5,\n      \"toClaimIndex\": 8,\n      \"type\": \"SUPPORTS\",\n      \"conditions\": [],\n      \"confidence\": 0.9\n    },\n    {\n      \"fromClaimIndex\": 6,\n      \"toClaimIndex\": 3,\n      \"type\": \"SUPPORTS\",\n      \"conditions\": [],\n      \"confidence\": 0.7\n    },\n    {\n      \"fromClaimIndex\": 7,\n      \"toClaimIndex\": 5,\n      \"type\": \"SUPPORTS\",\n      \"conditions\": [],\n      \"confidence\": 0.8\n    }\n  ]\n}",
+  "model": "deepseek-v4-flash",
+  "outputHash": "37f7fcf7b7cffbdc"
+}

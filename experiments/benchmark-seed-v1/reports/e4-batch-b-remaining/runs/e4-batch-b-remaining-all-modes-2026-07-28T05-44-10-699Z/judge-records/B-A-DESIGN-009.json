@@ -1,0 +1,48 @@
+{
+  "questionId": "B-A-DESIGN-009",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 863,
+    "completionTokens": 402,
+    "totalTokens": 1265,
+    "promptCacheHitTokens": 256,
+    "promptCacheMissTokens": 607,
+    "reasoningTokens": 0
+  },
+  "request": {
+    "systemPrompt": "你是盲测评分员，不知道答案属于哪个实验组。只按题目、评分锚点、Gold 证据和引用预校验评价，不用外部常识修正答案。\n每个维度独立使用同一 0-4 锚点：4=完整且准确；3=大部分满足，仅轻微遗漏；2=部分满足，存在重要遗漏；1=仅有极少相关内容；0=缺失、反转或与证据冲突。\nrequiredPointCoverage 只看 requiredPoints；conditionFidelity 看条件、时间、来源角色和不确定性；evidenceGrounding 同时看关键结论是否与 Gold 证据一致以及 citationValidation；answerabilityDiscipline 看是否越界、编造或错误拒答。\ncitationValidation.valid 表示引用标识确实存在于该匿名样本收到的上下文。内部 CLAIM/SPAN/SOURCE 标识不需要出现在 Gold 文本中，不得仅因此扣分；但存在性有效不代表语义必然支持，仍需对照答案内容与 Gold。\n若反转来源归属、抹掉关键条件/时间、把提案当最终规范或编造关键事实，hardFailure=true。\n数值必须与 rationale 一致：若 rationale 说“完整覆盖且准确”，对应维度不能低于 3。\n只输出严格 JSON：{\"scores\":[{\"sampleId\":\"...\",\"requiredPointCoverage\":0,\"conditionFidelity\":0,\"evidenceGrounding\":0,\"answerabilityDiscipline\":0,\"hardFailure\":false,\"rationale\":\"...\"}]}。",
+    "userPrompt": "{\"question\":\"该产品是否符合欧洲无障碍法全部要求？\",\"answerability\":\"insufficient\",\"requiredPoints\":[\"本批只有 WCAG 摘录，没有产品审计或完整法律范围\"],\"forbiddenClaims\":[\"不得给出合规保证\"],\"requiredEvidence\":[],\"sourcePriorityRule\":\"P/C 决定规范、论文与实现事实；S 只能作为有归属的解释，不能推翻一手版本文本。\",\"anonymousAnswers\":[{\"sampleId\":\"sample-0f124731-4423-4089-8ae2-79337fdd87c2\",\"questionId\":\"B-A-DESIGN-009\",\"repetition\":1,\"answer\":\"{\\\"answer\\\":\\\"根据提供的检索上下文，知识库中未包含关于该产品是否符合欧洲无障碍法全部要求的相关信息。\\\",\\\"citations\\\":[],\\\"insufficient\\\":true,\\\"uncertainties\\\":[\\\"知识库未覆盖此主题，无法判断产品是否符合欧洲无障碍法全部要求。\\\"]}\",\"citationValidation\":{\"formatValid\":true,\"total\":0,\"valid\":0,\"invalid\":[]}},{\"sampleId\":\"sample-f3cdc8af-fdfd-40fe-8c31-04ea0919cee7\",\"questionId\":\"B-A-DESIGN-009\",\"repetition\":1,\"answer\":\"{\\\"answer\\\":\\\"根据提供的检索上下文，知识库中未找到任何关于该产品是否符合欧洲无障碍法全部要求的相关信息。\\\",\\\"citations\\\":[],\\\"insufficient\\\":true,\\\"uncertainties\\\":[\\\"知识库未覆盖此主题或相关原文尚未编译为 Canonical Claim\\\"]}\",\"citationValidation\":{\"formatValid\":true,\"total\":0,\"valid\":0,\"invalid\":[]}},{\"sampleId\":\"sample-8716fa25-fd53-4f9a-8f20-c3bbfbf55bde\",\"questionId\":\"B-A-DESIGN-009\",\"repetition\":1,\"answer\":\"{\\\"answer\\\":\\\"根据上下文，产品符合欧洲无障碍法（EN 301 549）要求，但仅针对WCAG 2.1 Level AA标准，且未提及全部要求。\\\",\\\"citations\\\":[\\\"CLAIM-1\\\"],\\\"insufficient\\\":true,\\\"uncertainties\\\":[\\\"上下文未明确说明产品是否符合欧洲无障碍法的全部要求，仅提及符合WCAG 2.1 Level AA标准。\\\"]}\",\"citationValidation\":{\"formatValid\":true,\"total\":1,\"valid\":0,\"invalid\":[\"CLAIM-1\"]}}]}"
+  },
+  "rawResponse": "{\n  \"scores\": [\n    {\n      \"sampleId\": \"sample-0f124731-4423-4089-8ae2-79337fdd87c2\",\n      \"requiredPointCoverage\": 4,\n      \"conditionFidelity\": 4,\n      \"evidenceGrounding\": 4,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"答案正确识别信息不足并拒答，完全覆盖requiredPoints（本批只有WCAG摘录，没有产品审计或完整法律范围），未给出合规保证，无编造或越界。\"\n    },\n    {\n      \"sampleId\": \"sample-f3cdc8af-fdfd-40fe-8c31-04ea0919cee7\",\n      \"requiredPointCoverage\": 4,\n      \"conditionFidelity\": 4,\n      \"evidenceGrounding\": 4,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"答案正确识别信息不足并拒答，完全覆盖requiredPoints，未给出合规保证，无编造或越界。\"\n    },\n    {\n      \"sampleId\": \"sample-8716fa25-fd53-4f9a-8f20-c3bbfbf55bde\",\n      \"requiredPointCoverage\": 2,\n      \"conditionFidelity\": 2,\n      \"evidenceGrounding\": 2,\n      \"answerabilityDiscipline\": 2,\n      \"hardFailure\": false,\n      \"rationale\": \"答案声称产品符合EN 301 549但仅针对WCAG 2.1 Level AA，未覆盖requiredPoints（本批只有WCAG摘录，没有产品审计或完整法律范围），且引用CLAIM-1无效（citationValidation.valid=false），存在重要遗漏。\"\n    }\n  ]\n}",
+  "parsed": [
+    {
+      "sampleId": "sample-0f124731-4423-4089-8ae2-79337fdd87c2",
+      "requiredPointCoverage": 4,
+      "conditionFidelity": 4,
+      "evidenceGrounding": 4,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "答案正确识别信息不足并拒答，完全覆盖requiredPoints（本批只有WCAG摘录，没有产品审计或完整法律范围），未给出合规保证，无编造或越界。"
+    },
+    {
+      "sampleId": "sample-f3cdc8af-fdfd-40fe-8c31-04ea0919cee7",
+      "requiredPointCoverage": 4,
+      "conditionFidelity": 4,
+      "evidenceGrounding": 4,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "答案正确识别信息不足并拒答，完全覆盖requiredPoints，未给出合规保证，无编造或越界。"
+    },
+    {
+      "sampleId": "sample-8716fa25-fd53-4f9a-8f20-c3bbfbf55bde",
+      "requiredPointCoverage": 2,
+      "conditionFidelity": 2,
+      "evidenceGrounding": 2,
+      "answerabilityDiscipline": 2,
+      "hardFailure": false,
+      "rationale": "答案声称产品符合EN 301 549但仅针对WCAG 2.1 Level AA，未覆盖requiredPoints（本批只有WCAG摘录，没有产品审计或完整法律范围），且引用CLAIM-1无效（citationValidation.valid=false），存在重要遗漏。"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+## TASK MAP
+主题: WebAIM 与 W3C 都说 4.1.1 被移除，这是否构成两个独立规范来源？
+地图主题: 4.1.1, 移除, webaim
+关键概念: Success Criterion 4.1.1 Parsing, Success Criterion 4.1.1 Parsing, WebAIM WCAG 2 Checklist
+已知争议: 0 个
+最近变化: 5 条
+找到 6 条相关 Claim
+找到 0 条关系
+找到 6 条原文证据
+
+## CLAIM claim:b89787b6b83f3605-2b879b185f80c3ed
+Success Criterion 4.1.1 Parsing 自2023年起已从WCAG中移除。
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:b89787b6b83f3605-d524b881aa3a2622
+Success Criterion 4.1.1 Parsing 不再有用。
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:b89787b6b83f3605-7d429224411b6b4e
+WebAIM WCAG 2 Checklist 是一个文档标题。
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:1da3417e06ff5435-50f420b0776ab205
+WCAG 2.2 has removed one success criterion, 4.1.1 Parsing.
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:1da3417e06ff5435-e9295b4993a17258
+Authors that are required by policy to conform with WCAG 2.0 or 2.1 may need to continue to test and report 4.1.1.
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:a379c869d6fd01c5-04b919f4bee1dda9
+Success Criterion 4.1.1 Parsing is Level A.
+Conditions: none
+Validity: SUPPORTED
+
+## EVIDENCE span:design-webaim-checklist-2024-004-b89787b6b83f3605-1#chars-107-145
+as of 2023 has been removed from WCAG.
+
+## EVIDENCE span:design-webaim-checklist-2024-004-b89787b6b83f3605-1#chars-27-102
+Success Criterion 4.1.1 Parsing: This success criterion is no longer useful
+
+## EVIDENCE span:design-webaim-checklist-2024-004-b89787b6b83f3605-0#chars-2-25
+WebAIM WCAG 2 Checklist
+
+## EVIDENCE span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-274-331
+WCAG 2.2 has removed one success criterion, 4.1.1 Parsing
+
+## EVIDENCE span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-449-494
+may need to continue to test and report 4.1.1
+
+## EVIDENCE span:design-wcag21-2018-001-a379c869d6fd01c5-2#chars-183-224
+Success Criterion 4.1.1 Parsing (Level A)
+
+## CONFLICTS AND CONDITIONS
+🔎 Source source:design-wcag21-2018-001-a379c869d6fd01c5 provenance: uri=workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-wcag21-2018-001.md; sourceType=md; role=unknown
+🔎 Source source:design-wcag22-2023-002-1da3417e06ff5435 provenance: uri=workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-wcag22-2023-002.md; sourceType=md; role=unknown
+🔎 Source source:design-webaim-checklist-2024-004-b89787b6b83f3605 provenance: uri=workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-webaim-checklist-2024-004.md; sourceType=md; role=unknown
+
+## KNOWN GAPS
+未找到关系——Graph 可能尚未建立跨材料边

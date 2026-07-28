@@ -1,0 +1,135 @@
+{
+  "schemaVersion": "v1",
+  "sourceId": "source:design-webaim-checklist-2024-004-b89787b6b83f3605",
+  "runId": "31774385-abd0-4c75-b131-9bd0f25c8507",
+  "publishedAt": "2026-07-27T09:58:18.692Z",
+  "claims": [],
+  "relations": [
+    {
+      "relation": {
+        "id": "rel:cross-11f1da4527a8dd6c",
+        "from": "claim:b89787b6b83f3605-d524b881aa3a2622",
+        "to": "claim:1da3417e06ff5435-50f420b0776ab205",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-274-331",
+          "span:design-webaim-checklist-2024-004-b89787b6b83f3605-1#chars-27-102"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:58:16.844Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-11f1da4527a8dd6c",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:design-wcag22-2023-002#block-1] “WCAG 2.2 has removed one success criterion, 4.1.1 Parsing”; [1:design-webaim-checklist-2024-004#block-1] “Success Criterion 4.1.1 Parsing: This success criterion is no longer useful”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-11f1da4527a8dd6c",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:design-wcag22-2023-002#block-1] “WCAG 2.2 has removed one success criterion, 4.1.1 Parsing”; [1:design-webaim-checklist-2024-004#block-1] “Success Criterion 4.1.1 Parsing: This success criterion is no longer useful”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-2162c474d53bf83d",
+        "from": "claim:b89787b6b83f3605-d524b881aa3a2622",
+        "to": "claim:1da3417e06ff5435-e9295b4993a17258",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-449-494",
+          "span:design-webaim-checklist-2024-004-b89787b6b83f3605-1#chars-27-102"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:58:16.844Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-2162c474d53bf83d",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:design-wcag22-2023-002#block-1] “may need to continue to test and report 4.1.1”; [1:design-webaim-checklist-2024-004#block-1] “Success Criterion 4.1.1 Parsing: This success criterion is no longer useful”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-2162c474d53bf83d",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:design-wcag22-2023-002#block-1] “may need to continue to test and report 4.1.1”; [1:design-webaim-checklist-2024-004#block-1] “Success Criterion 4.1.1 Parsing: This success criterion is no longer useful”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-aa0329838c394a03",
+        "from": "claim:b89787b6b83f3605-2b879b185f80c3ed",
+        "to": "claim:1da3417e06ff5435-e9295b4993a17258",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-449-494",
+          "span:design-webaim-checklist-2024-004-b89787b6b83f3605-1#chars-107-145"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:58:16.844Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-aa0329838c394a03",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:design-wcag22-2023-002#block-1] “may need to continue to test and report 4.1.1”; [1:design-webaim-checklist-2024-004#block-1] “as of 2023 has been removed from WCAG.”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-aa0329838c394a03",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:design-wcag22-2023-002#block-1] “may need to continue to test and report 4.1.1”; [1:design-webaim-checklist-2024-004#block-1] “as of 2023 has been removed from WCAG.”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    }
+  ]
+}

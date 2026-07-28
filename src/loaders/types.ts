@@ -8,6 +8,8 @@ export interface LoadedDocument {
 	loaderVersion: string;
 	sourceKey: string;
 	title: string;
+	/** Loader mechanically preserves source-level metadata; semantic interpretation stays downstream. */
+	metadata?: Record<string, string>;
 	parsedText: string;
 	blocks: TextBlock[];
 }

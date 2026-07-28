@@ -1,0 +1,76 @@
+{
+  "concepts": [
+    {
+      "name": "Revealed text",
+      "aliases": ["hidden texts"],
+      "boundary": "Text that has been made visible or discovered through the pipeline.",
+      "domain": "Digital Heritage"
+    },
+    {
+      "name": "Visual confirmation",
+      "aliases": [],
+      "boundary": "Human visual inspection to verify text.",
+      "domain": "Image Analysis"
+    },
+    {
+      "name": "Quantitative image metrics",
+      "aliases": [],
+      "boundary": "Numerical measures used to assess image quality or text readability.",
+      "domain": "Image Analysis"
+    },
+    {
+      "name": "Scholarly review",
+      "aliases": [],
+      "boundary": "Peer review or expert evaluation.",
+      "domain": "Academic Publishing"
+    },
+    {
+      "name": "Method",
+      "aliases": ["enhanced virtual unwrapping pipeline", "complete software pipeline"],
+      "boundary": "The overall process or system for revealing text.",
+      "domain": "Digital Heritage"
+    },
+    {
+      "name": "Accurate lines of text",
+      "aliases": [],
+      "boundary": "Correctly revealed textual content.",
+      "domain": "Digital Heritage"
+    },
+    {
+      "name": "Scroll fragments with known ground truth",
+      "aliases": [],
+      "boundary": "Fragments where the original text is known for validation.",
+      "domain": "Digital Heritage"
+    },
+    {
+      "name": "Machine learning",
+      "aliases": [],
+      "boundary": "Algorithms that learn from data.",
+      "domain": "Artificial Intelligence"
+    },
+    {
+      "name": "Geometric framework linking 3D and 2D images",
+      "aliases": [],
+      "boundary": "Mathematical mapping between 3D volume and 2D surface.",
+      "domain": "Computer Vision"
+    },
+    {
+      "name": "EduceLab-Scrolls",
+      "aliases": [],
+      "boundary": "The complete software pipeline for revealing hidden texts.",
+      "domain": "Digital Heritage"
+    },
+    {
+      "name": "Herculaneum papyri",
+      "aliases": [],
+      "boundary": "Ancient scrolls from Herculaneum.",
+      "domain": "Classical Studies"
+    },
+    {
+      "name": "X-ray CT images",
+      "aliases": [],
+      "boundary": "Computed tomography scans using X-rays.",
+      "domain": "Imaging"
+    }
+  ]
+}

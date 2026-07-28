@@ -1,0 +1,155 @@
+{
+  "runId": "e4-batch-b-remaining-all-modes-2026-07-28T05-44-10-699Z",
+  "sampleId": "sample-21c1d547-9c67-4a8a-a40d-f5de884686b0",
+  "questionId": "B-A-HIST-007",
+  "group": "P-graph",
+  "pilotGroup": "P",
+  "graphExpansion": true,
+  "repetition": 1,
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "temperature": 0,
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 1356,
+    "completionTokens": 47,
+    "totalTokens": 1403,
+    "promptCacheHitTokens": 0,
+    "promptCacheMissTokens": 1356,
+    "reasoningTokens": 0
+  },
+  "latencyMs": 1424,
+  "promptHash": "sha256:ca6038bd294f5be881131a43df35aa310af1544e41712365353332bbbe0826b2",
+  "contextHash": "25dae31dbe927204f113253880d2c4706de1c0194be0383b73d6103e9daec97e",
+  "estimatedContextTokens": 872,
+  "estimatedInputTokens": 1028,
+  "retrievedClaims": [
+    "claim:4ab2f152a60c6bbe-901bc3b35d2cc86e",
+    "claim:b98a3ae4860a6edc-3c7148205b4853be",
+    "claim:e71279e71acc04bd-dc4b7534a61f85ee",
+    "claim:b98a3ae4860a6edc-704f0702fd830045",
+    "claim:e71279e71acc04bd-f06d3f1ce6a9a65a",
+    "claim:4ab2f152a60c6bbe-39dbff7d3d0408e6"
+  ],
+  "retrievedRelations": [
+    "rel:cross-1a5e232cdc42ca30",
+    "rel:cross-e02014d48b936e87",
+    "rel:b98a3ae4860a6edc-b39a43fc9bb7bc6e",
+    "rel:e71279e71acc04bd-599718bf2ce73ac7",
+    "rel:cross-670f5b5bb894432c"
+  ],
+  "retrievedSources": [
+    "source:history-scrollprize-2026-004-4ab2f152a60c6bbe",
+    "source:history-nature-scroll-2024-003-b98a3ae4860a6edc",
+    "source:history-educelab-paper-2023-001-e71279e71acc04bd"
+  ],
+  "droppedContext": [],
+  "retrievalTrace": {
+    "strategy": "claim-seed-graph",
+    "graphDepth": 3,
+    "temporalScope": {
+      "applied": false,
+      "startMonth": null,
+      "endMonth": null,
+      "excludedClaimIds": []
+    },
+    "retrieval": {
+      "queryFeatureCount": 12,
+      "eligibleClaimCount": 67,
+      "matchedClaimCount": 1,
+      "usedEvidenceText": true,
+      "usedSourceMetadata": true,
+      "resolvedEvidenceRefCount": 67,
+      "unresolvedEvidenceRefCount": 0,
+      "candidates": [
+        {
+          "claimId": "claim:4ab2f152a60c6bbe-901bc3b35d2cc86e",
+          "rank": 1,
+          "score": 19.052607082386537,
+          "channels": [
+            "g3",
+            "w"
+          ],
+          "matchedFeatureCount": 5
+        }
+      ]
+    },
+    "graph": {
+      "seedClaimIds": [
+        "claim:4ab2f152a60c6bbe-901bc3b35d2cc86e"
+      ],
+      "expandedClaimIds": [
+        "claim:4ab2f152a60c6bbe-901bc3b35d2cc86e",
+        "claim:b98a3ae4860a6edc-3c7148205b4853be",
+        "claim:e71279e71acc04bd-dc4b7534a61f85ee",
+        "claim:b98a3ae4860a6edc-704f0702fd830045",
+        "claim:e71279e71acc04bd-f06d3f1ce6a9a65a",
+        "claim:4ab2f152a60c6bbe-39dbff7d3d0408e6"
+      ],
+      "expandedRelationIds": [
+        "rel:cross-1a5e232cdc42ca30",
+        "rel:cross-e02014d48b936e87",
+        "rel:b98a3ae4860a6edc-b39a43fc9bb7bc6e",
+        "rel:e71279e71acc04bd-599718bf2ce73ac7",
+        "rel:cross-670f5b5bb894432c"
+      ]
+    },
+    "budget": {
+      "selectedClaimIds": [
+        "claim:4ab2f152a60c6bbe-901bc3b35d2cc86e",
+        "claim:b98a3ae4860a6edc-3c7148205b4853be",
+        "claim:e71279e71acc04bd-dc4b7534a61f85ee",
+        "claim:b98a3ae4860a6edc-704f0702fd830045",
+        "claim:e71279e71acc04bd-f06d3f1ce6a9a65a",
+        "claim:4ab2f152a60c6bbe-39dbff7d3d0408e6"
+      ],
+      "selectedRelationIds": [
+        "rel:cross-1a5e232cdc42ca30",
+        "rel:cross-e02014d48b936e87",
+        "rel:b98a3ae4860a6edc-b39a43fc9bb7bc6e",
+        "rel:e71279e71acc04bd-599718bf2ce73ac7",
+        "rel:cross-670f5b5bb894432c"
+      ],
+      "selectedEvidenceSpanIds": [
+        "span:history-scrollprize-2026-004-4ab2f152a60c6bbe-2#chars-258-361",
+        "span:history-nature-scroll-2024-003-b98a3ae4860a6edc-1#chars-240-296",
+        "span:history-educelab-paper-2023-001-e71279e71acc04bd-2#chars-542-678",
+        "span:history-nature-scroll-2024-003-b98a3ae4860a6edc-2#chars-299-429",
+        "span:history-educelab-paper-2023-001-e71279e71acc04bd-1#chars-88-207",
+        "span:history-scrollprize-2026-004-4ab2f152a60c6bbe-1#chars-81-187"
+      ],
+      "selectedWikiModuleIds": [],
+      "dropped": [],
+      "finalEstimatedTokens": 2789
+    },
+    "serializationBudget": {
+      "selectedIds": [
+        "task-map",
+        "claim:4ab2f152a60c6bbe-901bc3b35d2cc86e",
+        "claim:b98a3ae4860a6edc-3c7148205b4853be",
+        "claim:e71279e71acc04bd-dc4b7534a61f85ee",
+        "claim:b98a3ae4860a6edc-704f0702fd830045",
+        "claim:e71279e71acc04bd-f06d3f1ce6a9a65a",
+        "claim:4ab2f152a60c6bbe-39dbff7d3d0408e6",
+        "rel:cross-1a5e232cdc42ca30",
+        "rel:cross-e02014d48b936e87",
+        "rel:b98a3ae4860a6edc-b39a43fc9bb7bc6e",
+        "rel:e71279e71acc04bd-599718bf2ce73ac7",
+        "rel:cross-670f5b5bb894432c",
+        "span:history-scrollprize-2026-004-4ab2f152a60c6bbe-2#chars-258-361",
+        "span:history-nature-scroll-2024-003-b98a3ae4860a6edc-1#chars-240-296",
+        "span:history-educelab-paper-2023-001-e71279e71acc04bd-2#chars-542-678",
+        "span:history-nature-scroll-2024-003-b98a3ae4860a6edc-2#chars-299-429",
+        "span:history-educelab-paper-2023-001-e71279e71acc04bd-1#chars-88-207",
+        "span:history-scrollprize-2026-004-4ab2f152a60c6bbe-1#chars-81-187"
+      ],
+      "droppedIds": []
+    }
+  },
+  "request": {
+    "systemPrompt": "你是受证据约束的问答 Agent。只使用本次请求提供的检索上下文回答。\n要求：保留影响结论的条件、时间、例外、来源角色与不确定性；关键结论引用上下文中的 SOURCE、EVIDENCE 或 CLAIM 标识；上下文不足时明确说明，不得用外部常识补齐。\n只输出严格 JSON：{\"answer\":\"...\",\"citations\":[\"...\"],\"insufficient\":false,\"uncertainties\":[\"...\"]}。",
+    "userPrompt": "# 问题\nPHerc. 1667 的作者是谁？\n\n# 检索上下文\n## TASK MAP\n主题: PHerc. 1667 的作者是谁？\n地图主题: the, of, and, to, in\n关键概念: User Agent, Mobile Requirements, Input Modality, Desktop Content, Single Pointer\n已知争议: 0 个\n最近变化: 5 条\n找到 6 条相关 Claim\n找到 5 条关系\n找到 6 条原文证据\n\n## CLAIM claim:4ab2f152a60c6bbe-901bc3b35d2cc86e\nIn 2026, PHerc. 1667 became the first Herculaneum scroll to be virtually unwrapped and read end to end.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:b98a3ae4860a6edc-3c7148205b4853be\nThe scroll was buried 2,000 years ago by the eruption of Mount Vesuvius.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:e71279e71acc04bd-dc4b7534a61f85ee\nEduceLab-Scrolls has enabled the discovery, for the first time, of hidden texts from the Herculaneum papyri.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:b98a3ae4860a6edc-704f0702fd830045\nThe winners of a contest called the Vesuvius Challenge trained their machine-learning algorithms on scans of the rolled-up papyrus.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:e71279e71acc04bd-f06d3f1ce6a9a65a\nEduceLab-Scrolls is a complete software pipeline for revealing hidden texts of the Herculaneum papyri using X-ray CT images.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:4ab2f152a60c6bbe-39dbff7d3d0408e6\nThe Vesuvius Challenge had a Grand Prize for the first team to recover four passages of 140 characters from a Herculaneum scroll.\nConditions: none\nValidity: SUPPORTED\n\n## RELATION rel:cross-1a5e232cdc42ca30\nclaim:4ab2f152a60c6bbe-901bc3b35d2cc86e --[RELATED_TO]--> claim:b98a3ae4860a6edc-3c7148205b4853be\nConditions: none\n\n## RELATION rel:cross-e02014d48b936e87\nclaim:4ab2f152a60c6bbe-901bc3b35d2cc86e --[RELATED_TO]--> claim:e71279e71acc04bd-dc4b7534a61f85ee\nConditions: none\n\n## RELATION rel:b98a3ae4860a6edc-b39a43fc9bb7bc6e\nclaim:b98a3ae4860a6edc-3c7148205b4853be --[RELATED_TO]--> claim:b98a3ae4860a6edc-704f0702fd830045\nConditions: none\n\n## RELATION rel:e71279e71acc04bd-599718bf2ce73ac7\nclaim:e71279e71acc04bd-f06d3f1ce6a9a65a --[SUPPORTS]--> claim:e71279e71acc04bd-dc4b7534a61f85ee\nConditions: none\n\n## RELATION rel:cross-670f5b5bb894432c\nclaim:4ab2f152a60c6bbe-39dbff7d3d0408e6 --[RELATED_TO]--> claim:b98a3ae4860a6edc-704f0702fd830045\nConditions: none\n\n## EVIDENCE span:history-scrollprize-2026-004-4ab2f152a60c6bbe-2#chars-258-361\nIn 2026, PHerc. 1667 became the first Herculaneum scroll to be virtually unwrapped and read end to end.\n\n## EVIDENCE span:history-nature-scroll-2024-003-b98a3ae4860a6edc-1#chars-240-296\nburied 2,000 years ago by the eruption of Mount Vesuvius\n\n## EVIDENCE span:history-educelab-paper-2023-001-e71279e71acc04bd-2#chars-542-678\nEduceLab-Scrolls has also enabled the discovery, for the first time, of hidden texts from the Herculaneum papyri, which we present here.\n\n## EVIDENCE span:history-nature-scroll-2024-003-b98a3ae4860a6edc-2#chars-299-429\nThe winners of a contest called the Vesuvius Challenge trained their machine-learning algorithms on scans of the rolled-up papyrus\n\n## EVIDENCE span:history-educelab-paper-2023-001-e71279e71acc04bd-1#chars-88-207\nWe present a complete software pipeline for revealing the hidden texts of the Herculaneum papyri using X-ray CT images.\n\n## EVIDENCE span:history-scrollprize-2026-004-4ab2f152a60c6bbe-1#chars-81-187\nwith a Grand Prize for the first team to recover four passages of 140 characters from a Herculaneum scroll"
+  },
+  "answer": "{\n  \"answer\": \"检索上下文未提供 PHerc. 1667 的作者信息。\",\n  \"citations\": [],\n  \"insufficient\": true,\n  \"uncertainties\": [\"上下文未提及作者\"]\n}",
+  "answerFormatValid": true
+}

@@ -1,0 +1,407 @@
+{
+  "schemaVersion": "v1",
+  "sourceId": "source:history-vesuvius-github-2024-002-5505a1ba1fcb1b68",
+  "runId": "2a97cf0c-d35d-4c98-b014-9325cd97c27c",
+  "publishedAt": "2026-07-27T09:56:07.603Z",
+  "claims": [
+    {
+      "id": "claim:5505a1ba1fcb1b68-35e4f1b989767484",
+      "statement": "并非所有维苏威挑战赛的数据目前都可用——数据将继续添加到库中。",
+      "evidenceSpanIds": [
+        "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-5#chars-571-674"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:55:55.596Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-5#chars-571-674"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-5#chars-571-674"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-27T09:55:55.596Z"
+    },
+    {
+      "id": "claim:5505a1ba1fcb1b68-5b081e72929d1868",
+      "statement": "该库来自维苏威挑战赛，是一个用于访问古代卷轴 CT 扫描的 Python 库。",
+      "evidenceSpanIds": [
+        "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-3#chars-237-321"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:55:55.596Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-3#chars-237-321"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-3#chars-237-321"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-27T09:55:55.596Z"
+    },
+    {
+      "id": "claim:5505a1ba1fcb1b68-825b50a16ede0106",
+      "statement": "该库现在维护在 https://github.com/ScrollPrize/villa/tree/main/vesuvius。",
+      "evidenceSpanIds": [
+        "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-2#chars-135-235"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:55:55.596Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-2#chars-135-235"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-2#chars-135-235"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-27T09:55:55.596Z"
+    },
+    {
+      "id": "claim:5505a1ba1fcb1b68-92eeebabc9812a65",
+      "statement": "数据在后台流式传输，仅提供请求的区域。",
+      "evidenceSpanIds": [
+        "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-4#chars-446-517"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:55:55.596Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-4#chars-446-517"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-4#chars-446-517"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-27T09:55:55.596Z"
+    },
+    {
+      "id": "claim:5505a1ba1fcb1b68-9acfc0780eb2b345",
+      "statement": "vesuvius 处于测试阶段，界面可能会发生变化。",
+      "evidenceSpanIds": [
+        "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-5#chars-519-570"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:55:55.596Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-5#chars-519-570"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-5#chars-519-570"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-27T09:55:55.596Z"
+    },
+    {
+      "id": "claim:5505a1ba1fcb1b68-a2289f49fcb0ff64",
+      "statement": "该仓库于 2024 年 11 月 21 日被所有者归档。",
+      "evidenceSpanIds": [
+        "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-1#chars-48-106"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:55:55.596Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-1#chars-48-106"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-1#chars-48-106"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-27T09:55:55.596Z"
+    },
+    {
+      "id": "claim:5505a1ba1fcb1b68-a4e0bf4dcf441832",
+      "statement": "vesuvius 允许直接访问卷轴数据，无需管理下载脚本或在本地存储数 TB 的 CT 扫描数据。",
+      "evidenceSpanIds": [
+        "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-4#chars-323-445"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:55:55.596Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-4#chars-323-445"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-4#chars-323-445"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-27T09:55:55.596Z"
+    },
+    {
+      "id": "claim:5505a1ba1fcb1b68-c84e1d5fe016cb20",
+      "statement": "ScrollPrize/vesuvius 是一个归档的 Python 库。",
+      "evidenceSpanIds": [
+        "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-0#chars-0-46"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:55:55.596Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-0#chars-0-46"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-0#chars-0-46"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-27T09:55:55.596Z"
+    },
+    {
+      "id": "claim:5505a1ba1fcb1b68-d303dae0fc053d75",
+      "statement": "该仓库现在是只读的。",
+      "evidenceSpanIds": [
+        "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-1#chars-107-127"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:55:55.596Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-1#chars-107-127"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-1#chars-107-127"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-27T09:55:55.596Z"
+    }
+  ],
+  "concepts": [
+    {
+      "id": "concept:0fec75b0b59ae39a",
+      "name": "GitHub仓库",
+      "aliases": [
+        "仓库",
+        "该仓库"
+      ],
+      "boundary": "代码托管仓库",
+      "domain": "软件开发"
+    },
+    {
+      "id": "concept:4ae27afb59ba41d8",
+      "name": "古代卷轴CT扫描",
+      "aliases": [
+        "CT扫描数据",
+        "卷轴数据",
+        "古代卷轴CT扫描"
+      ],
+      "boundary": "数据资源",
+      "domain": "考古学/成像"
+    },
+    {
+      "id": "concept:604bdad46fb5dd1f",
+      "name": "维苏威挑战赛",
+      "aliases": [
+        "维苏威挑战赛"
+      ],
+      "boundary": "一个竞赛项目",
+      "domain": "考古学/计算机视觉"
+    },
+    {
+      "id": "concept:7d08118761d72e8d",
+      "name": "ScrollPrize/vesuvius",
+      "aliases": [
+        "ScrollPrize/vesuvius",
+        "vesuvius",
+        "该库"
+      ],
+      "boundary": "一个Python库",
+      "domain": "软件/数据访问"
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel:5505a1ba1fcb1b68-0cbed135f488b346",
+      "from": "claim:5505a1ba1fcb1b68-a2289f49fcb0ff64",
+      "to": "claim:5505a1ba1fcb1b68-d303dae0fc053d75",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-1#chars-107-127",
+        "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-1#chars-48-106"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:55:59.858Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.9,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:5505a1ba1fcb1b68-dab0c28a55c1972e",
+      "from": "claim:5505a1ba1fcb1b68-a4e0bf4dcf441832",
+      "to": "claim:5505a1ba1fcb1b68-92eeebabc9812a65",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-4#chars-323-445",
+        "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-4#chars-446-517"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:55:59.858Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.7,
+      "consumedBy": []
+    }
+  ]
+}

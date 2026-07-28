@@ -1,0 +1,39 @@
+{
+  "schemaVersion": "pilot-publication-diff/v1",
+  "runId": "4222e075-27b2-4e72-987f-490c096da51c",
+  "sourceId": "source:history-educelab-paper-2023-001-e71279e71acc04bd",
+  "generatedAt": "2026-07-27T09:55:44.977Z",
+  "status": "PASS",
+  "acceptedReview": false,
+  "runtime": {
+    "requestedModel": "deepseek-v4-flash",
+    "temperature": 0,
+    "semanticAuditVersion": "v2.3",
+    "relationAuditVersion": "v1.7",
+    "sourceHash": "e71279e71acc04bd"
+  },
+  "baseline": null,
+  "candidate": {
+    "claims": 5,
+    "concepts": 12,
+    "relations": 2,
+    "quarantinedClaims": 0,
+    "quarantinedRelations": 1,
+    "quarantineRate": 0
+  },
+  "diff": {
+    "retainedClaimIds": 0,
+    "addedClaimIds": [
+      "claim:e71279e71acc04bd-1c4f658d21aa94b4",
+      "claim:e71279e71acc04bd-367243e68b140409",
+      "claim:e71279e71acc04bd-6d5b2c429c801f73",
+      "claim:e71279e71acc04bd-dc4b7534a61f85ee",
+      "claim:e71279e71acc04bd-f06d3f1ce6a9a65a"
+    ],
+    "removedClaimIds": [],
+    "claimRetentionRate": null,
+    "claimCountChangeRate": null,
+    "conditionsDropped": []
+  },
+  "issues": []
+}

@@ -1,0 +1,62 @@
+{
+  "runId": "e4-batch-b-remaining-all-modes-2026-07-28T05-44-10-699Z",
+  "sampleId": "sample-c2f7b8b1-7690-4656-95e9-0d37cc1fa0d0",
+  "questionId": "B-T-HEALTH-003",
+  "group": "B",
+  "pilotGroup": "B",
+  "graphExpansion": false,
+  "repetition": 1,
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "temperature": 0,
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 527,
+    "completionTokens": 202,
+    "totalTokens": 729,
+    "promptCacheHitTokens": 0,
+    "promptCacheMissTokens": 527,
+    "reasoningTokens": 0
+  },
+  "latencyMs": 2174,
+  "promptHash": "sha256:4a5c2858dba648dc25a41695ec24611a281bb7e06779282f7eafb0f673edb064",
+  "contextHash": "4af2afd25f1263fd986f4a50aa9cd8fc4a8f53c71a41a8da6b1bcfe2f206cc02",
+  "estimatedContextTokens": 394,
+  "estimatedInputTokens": 573,
+  "retrievedClaims": [],
+  "retrievedRelations": [],
+  "retrievedSources": [
+    "../../../workbuddy-batch-b/generated/compilation-corpus/health-biology/health-nature-airborne-2022-003.md",
+    "../../../workbuddy-batch-b/generated/compilation-corpus/history-humanities/history-vesuvius-github-2024-002.md"
+  ],
+  "droppedContext": [],
+  "retrievalTrace": {
+    "strategy": "folder-lexical",
+    "queryFeatureCount": 24,
+    "corpusChunkCount": 12,
+    "matchedChunkCount": 2,
+    "maxFolderChunks": 16,
+    "candidates": [
+      {
+        "id": "../../../workbuddy-batch-b/generated/compilation-corpus/health-biology/health-nature-airborne-2022-003.md#L1-L6",
+        "rank": 1,
+        "score": 2.8718021769015913,
+        "selected": true,
+        "dropReason": null
+      },
+      {
+        "id": "../../../workbuddy-batch-b/generated/compilation-corpus/history-humanities/history-vesuvius-github-2024-002.md#L1-L12",
+        "rank": 2,
+        "score": 2.8718021769015913,
+        "selected": true,
+        "dropReason": null
+      }
+    ]
+  },
+  "request": {
+    "systemPrompt": "你是受证据约束的问答 Agent。只使用本次请求提供的检索上下文回答。\n要求：保留影响结论的条件、时间、例外、来源角色与不确定性；关键结论引用上下文中的 SOURCE、EVIDENCE 或 CLAIM 标识；上下文不足时明确说明，不得用外部常识补齐。\n只输出严格 JSON：{\"answer\":\"...\",\"citations\":[\"...\"],\"insufficient\":false,\"uncertainties\":[\"...\"]}。",
+    "userPrompt": "# 问题\n按时间排列 WHO 3 月简报、7 月更新、Nature 所述后续口径和 2024 术语框架。\n\n# 检索上下文\n## SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/health-biology/health-nature-airborne-2022-003.md:1-6 score=2.872\n# Why the WHO took two years to say COVID is airborne\n\nOn 23 December, the World Health Organization (WHO) uttered the one word it had previously seemed incapable of applying to the virus SARS-CoV-2: ‘airborne’.\n\nIt took until 20 October 2020 for the agency to acknowledge that aerosols — tiny specks of fluid — can transmit the virus, but the WHO said this was a concern only in specific settings, such as indoor, crowded and inadequately ventilated spaces. Over the next six months, the agency gradually altered its advice to say that aerosols could carry the virus for more than a metre and remain in the air.\n\n## SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/history-humanities/history-vesuvius-github-2024-002.md:1-12 score=2.872\n# ScrollPrize/vesuvius archived Python library\n\nThis repository was archived by the owner on Nov 21, 2024. It is now read-only.\n\nNOTE: Now maintained at https://github.com/ScrollPrize/villa/tree/main/vesuvius (this repository archived)\n\nFrom Vesuvius Challenge, a Python library for accessing CT scans of ancient scrolls.\n\n`vesuvius` allows direct access to scroll data without managing download scripts or storing terabytes of CT scans locally. Data is streamed in the background, only serving the requested regions.\n\n`vesuvius` is in beta and the interface may change. Not all Vesuvius Challenge data is currently available - data will continue to be added to the library."
+  },
+  "answer": "{\n  \"answer\": \"根据提供的上下文，无法按时间排列 WHO 3 月简报、7 月更新、Nature 所述后续口径和 2024 术语框架，因为上下文仅提及 WHO 在 2020 年 12 月 23 日承认 COVID-19 空气传播，以及 2020 年 10 月 20 日承认气溶胶传播但限于特定环境，未包含 3 月简报、7 月更新、Nature 后续口径或 2024 术语框架的信息。\",\n  \"citations\": [\"../../../workbuddy-batch-b/generated/compilation-corpus/health-biology/health-nature-airborne-2022-003.md:1-6\"],\n  \"insufficient\": true,\n  \"uncertainties\": [\"缺少 WHO 3 月简报、7 月更新、Nature 所述后续口径和 2024 术语框架的具体内容\"]\n}",
+  "answerFormatValid": true
+}

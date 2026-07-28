@@ -1,0 +1,58 @@
+{
+  "schemaVersion": "v1",
+  "sourceId": "source:history-educelab-paper-2023-001-e71279e71acc04bd",
+  "runId": "4222e075-27b2-4e72-987f-490c096da51c",
+  "publishedAt": "2026-07-27T09:55:45.606Z",
+  "claims": [],
+  "relations": [
+    {
+      "relation": {
+        "id": "rel:e71279e71acc04bd-b60e16bc041807e0",
+        "from": "claim:e71279e71acc04bd-6d5b2c429c801f73",
+        "to": "claim:e71279e71acc04bd-f06d3f1ce6a9a65a",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:history-educelab-paper-2023-001-e71279e71acc04bd-1#chars-208-334",
+          "span:history-educelab-paper-2023-001-e71279e71acc04bd-1#chars-88-207"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:55:40.923Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:e71279e71acc04bd-b60e16bc041807e0",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:history-educelab-paper-2023-001#block-1] “This enhanced virtual unwrapping pipeline combines machine learning with a novel”; [1:history-educelab-paper-2023-001#block-1] “We present a complete software pipeline for revealing the hidden texts of the He”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:e71279e71acc04bd-b60e16bc041807e0",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:history-educelab-paper-2023-001#block-1] “This enhanced virtual unwrapping pipeline combines machine learning with a novel”; [1:history-educelab-paper-2023-001#block-1] “We present a complete software pipeline for revealing the hidden texts of the He”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:e71279e71acc04bd-b60e16bc041807e0",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:history-educelab-paper-2023-001#block-1] “This enhanced virtual unwrapping pipeline combines machine learning with a novel”; [1:history-educelab-paper-2023-001#block-1] “We present a complete software pipeline for revealing the hidden texts of the He”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    }
+  ]
+}

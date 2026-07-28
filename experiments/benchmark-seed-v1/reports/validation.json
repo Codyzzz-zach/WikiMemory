@@ -1,0 +1,33 @@
+{
+  "schemaVersion": "wge-benchmark-seed-validation/v1",
+  "status": "VALID",
+  "suiteId": "benchmark-seed-six-domain-v1",
+  "suiteHash": "sha256:5e61ccac480729b1e415189cd5cc5c61b07c7c154a0ddd72dbc02dfafab6b271",
+  "counts": {
+    "developmentSources": 14,
+    "validationSources": 12,
+    "validationFacts": 36,
+    "validationRelations": 9,
+    "validationTasks": 32,
+    "validationEpisodes": 3
+  },
+  "splits": {
+    "developmentDomains": [
+      "ai",
+      "finance",
+      "technology"
+    ],
+    "firstRunValidationDomains": [
+      "design-accessibility",
+      "health-biology",
+      "history-humanities"
+    ],
+    "blindHoldoutDomains": []
+  },
+  "errors": [],
+  "warnings": [
+    "Batch B is public directional validation, not blind holdout or human Gold.",
+    "The first Batch B result must be preserved before any Batch B-driven tuning.",
+    "A future hidden Batch C is required for confirmatory product claims."
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "schemaVersion": "wge-e4-rescore/v2",
+  "status": "DIRECTIONAL_MEASURED",
+  "sourceRun": "/Users/mixi/Desktop/WikiMemory/experiments/benchmark-seed-v1/reports/e4-smoke/runs/e4-graph-ablation-2026-07-28T05-07-06-494Z",
+  "judgePromptHash": "sha256:729ab157c61c543f99e561cfbe1b7921aa8ec249f4552f030ee8dc186a5e5230",
+  "judgeModelRequested": "deepseek-v4-flash",
+  "judgeModelReturned": "deepseek-v4-flash",
+  "groups": [
+    {
+      "group": "P-graph",
+      "samples": 3,
+      "averageTotal": 13,
+      "standardDeviationTotal": 0,
+      "minimumTotal": 13,
+      "maximumTotal": 13,
+      "hardFailures": 0
+    },
+    {
+      "group": "P-seed",
+      "samples": 3,
+      "averageTotal": 13,
+      "standardDeviationTotal": 0,
+      "minimumTotal": 13,
+      "maximumTotal": 13,
+      "hardFailures": 0
+    }
+  ],
+  "perQuestion": [
+    {
+      "questionId": "B-E-HEALTH-005",
+      "groups": [
+        {
+          "group": "P-graph",
+          "samples": 3,
+          "averageTotal": 13,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 13,
+          "maximumTotal": 13,
+          "hardFailures": 0
+        },
+        {
+          "group": "P-seed",
+          "samples": 3,
+          "averageTotal": 13,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 13,
+          "maximumTotal": 13,
+          "hardFailures": 0
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "This remains a same-model directional judge, not human Gold adjudication.",
+    "Citation prevalidation checks identifier presence, not semantic entailment."
+  ]
+}

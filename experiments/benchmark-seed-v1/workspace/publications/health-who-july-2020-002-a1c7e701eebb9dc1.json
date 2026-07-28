@@ -1,0 +1,273 @@
+{
+  "schemaVersion": "v1",
+  "sourceId": "source:health-who-july-2020-002-a1c7e701eebb9dc1",
+  "runId": "e4c881b9-648f-4a10-91f7-f7fe114b040f",
+  "publishedAt": "2026-07-27T09:47:21.523Z",
+  "claims": [
+    {
+      "id": "claim:a1c7e701eebb9dc1-1b6548c486ad1fd5",
+      "statement": "短距离气溶胶传播在特定室内场所尤其值得关注。",
+      "evidenceSpanIds": [
+        "span:health-who-july-2020-002-a1c7e701eebb9dc1-2#chars-447-594"
+      ],
+      "conditions": [
+        "在特定室内场所，如拥挤且通风不良的空间，与感染者长时间接触"
+      ],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:47:10.083Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:health-who-july-2020-002-a1c7e701eebb9dc1-2#chars-447-594"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:health-who-july-2020-002-a1c7e701eebb9dc1-2#chars-447-594"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-27T09:47:10.083Z"
+    },
+    {
+      "id": "claim:a1c7e701eebb9dc1-271d5603ab397f55",
+      "statement": "短距离气溶胶传播不能排除。",
+      "evidenceSpanIds": [
+        "span:health-who-july-2020-002-a1c7e701eebb9dc1-2#chars-413-615"
+      ],
+      "conditions": [
+        "在特定室内场所，如拥挤且通风不良的空间，与感染者长时间接触"
+      ],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:47:10.083Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:health-who-july-2020-002-a1c7e701eebb9dc1-2#chars-413-615"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:health-who-july-2020-002-a1c7e701eebb9dc1-2#chars-413-615"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-27T09:47:10.083Z"
+    },
+    {
+      "id": "claim:a1c7e701eebb9dc1-64202515b32c05d0",
+      "statement": "该文档是对2020年3月29日发布的科学简报的更新。",
+      "evidenceSpanIds": [
+        "span:health-who-july-2020-002-a1c7e701eebb9dc1-1#chars-81-301"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:47:10.083Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:health-who-july-2020-002-a1c7e701eebb9dc1-1#chars-81-301"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:health-who-july-2020-002-a1c7e701eebb9dc1-1#chars-81-301"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-27T09:47:10.083Z"
+    },
+    {
+      "id": "claim:a1c7e701eebb9dc1-8c2b8fcbcdf52208",
+      "statement": "该更新包含了关于SARS-CoV-2传播的新科学证据。",
+      "evidenceSpanIds": [
+        "span:health-who-july-2020-002-a1c7e701eebb9dc1-1#chars-306-411"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:47:10.083Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:health-who-july-2020-002-a1c7e701eebb9dc1-1#chars-306-411"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:health-who-july-2020-002-a1c7e701eebb9dc1-1#chars-306-411"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-27T09:47:10.083Z"
+    },
+    {
+      "id": "claim:a1c7e701eebb9dc1-d1c7990108ad78ca",
+      "statement": "SARS-CoV-2是导致COVID-19的病毒。",
+      "evidenceSpanIds": [
+        "span:health-who-july-2020-002-a1c7e701eebb9dc1-1#chars-368-411"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:47:10.083Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:health-who-july-2020-002-a1c7e701eebb9dc1-1#chars-368-411"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:health-who-july-2020-002-a1c7e701eebb9dc1-1#chars-368-411"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-27T09:47:10.083Z"
+    }
+  ],
+  "concepts": [
+    {
+      "id": "concept:30afb179ca4cf34b",
+      "name": "特定室内场所",
+      "aliases": [
+        "拥挤且通风不良的空间"
+      ],
+      "boundary": "指可能导致短距离气溶胶传播的室内环境，如拥挤且通风不良的空间",
+      "domain": "环境健康"
+    },
+    {
+      "id": "concept:5e54ec5d94c26e36",
+      "name": "COVID-19",
+      "aliases": [],
+      "boundary": "由SARS-CoV-2引起的疾病",
+      "domain": "医学"
+    },
+    {
+      "id": "concept:945acb49544b84e2",
+      "name": "短距离气溶胶传播",
+      "aliases": [],
+      "boundary": "指在特定室内场所，如拥挤且通风不良的空间，与感染者长时间接触时可能发生的传播方式",
+      "domain": "流行病学"
+    },
+    {
+      "id": "concept:95bc4b8e7099f056",
+      "name": "科学简报",
+      "aliases": [],
+      "boundary": "2020年3月29日发布的关于SARS-CoV-2传播的文档",
+      "domain": "科学传播"
+    },
+    {
+      "id": "concept:d35d8e77daf70b1c",
+      "name": "SARS-CoV-2",
+      "aliases": [],
+      "boundary": "导致COVID-19的病毒",
+      "domain": "病毒学"
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel:a1c7e701eebb9dc1-6d99eba08b18ee89",
+      "from": "claim:a1c7e701eebb9dc1-1b6548c486ad1fd5",
+      "to": "claim:a1c7e701eebb9dc1-271d5603ab397f55",
+      "type": "SUPPORTS",
+      "conditions": [
+        "在特定室内场所，如拥挤且通风不良的空间，与感染者长时间接触"
+      ],
+      "conditionStatus": "PRESERVED",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:health-who-july-2020-002-a1c7e701eebb9dc1-2#chars-413-615",
+        "span:health-who-july-2020-002-a1c7e701eebb9dc1-2#chars-447-594"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:47:13.709Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.9,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:a1c7e701eebb9dc1-d6dafe5bec47b8d9",
+      "from": "claim:a1c7e701eebb9dc1-64202515b32c05d0",
+      "to": "claim:a1c7e701eebb9dc1-8c2b8fcbcdf52208",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:health-who-july-2020-002-a1c7e701eebb9dc1-1#chars-306-411",
+        "span:health-who-july-2020-002-a1c7e701eebb9dc1-1#chars-81-301"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:47:13.709Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.8,
+      "consumedBy": []
+    }
+  ]
+}

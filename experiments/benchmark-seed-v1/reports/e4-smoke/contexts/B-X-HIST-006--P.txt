@@ -1,0 +1,193 @@
+## TASK MAP
+主题: 论文、GitHub 库和 Nature 报道分别能回答哪一层问题？
+地图主题: the, of, and, to, in
+关键概念: User Agent, Mobile Requirements, Input Modality, Desktop Content, Single Pointer
+已知争议: 0 个
+最近变化: 5 条
+找到 18 条相关 Claim
+找到 10 条关系
+找到 18 条原文证据
+
+## CLAIM claim:b98a3ae4860a6edc-704f0702fd830045
+The winners of a contest called the Vesuvius Challenge trained their machine-learning algorithms on scans of the rolled-up papyrus.
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:5505a1ba1fcb1b68-35e4f1b989767484
+并非所有维苏威挑战赛的数据目前都可用——数据将继续添加到库中。
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:5505a1ba1fcb1b68-5b081e72929d1868
+该库来自维苏威挑战赛，是一个用于访问古代卷轴 CT 扫描的 Python 库。
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:5505a1ba1fcb1b68-825b50a16ede0106
+该库现在维护在 https://github.com/ScrollPrize/villa/tree/main/vesuvius。
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:5505a1ba1fcb1b68-92eeebabc9812a65
+数据在后台流式传输，仅提供请求的区域。
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:5505a1ba1fcb1b68-9acfc0780eb2b345
+vesuvius 处于测试阶段，界面可能会发生变化。
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:5505a1ba1fcb1b68-a2289f49fcb0ff64
+该仓库于 2024 年 11 月 21 日被所有者归档。
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:5505a1ba1fcb1b68-a4e0bf4dcf441832
+vesuvius 允许直接访问卷轴数据，无需管理下载脚本或在本地存储数 TB 的 CT 扫描数据。
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:5505a1ba1fcb1b68-c84e1d5fe016cb20
+ScrollPrize/vesuvius 是一个归档的 Python 库。
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:5505a1ba1fcb1b68-d303dae0fc053d75
+该仓库现在是只读的。
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:b98a3ae4860a6edc-3c7148205b4853be
+The scroll was buried 2,000 years ago by the eruption of Mount Vesuvius.
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:4ab2f152a60c6bbe-39dbff7d3d0408e6
+The Vesuvius Challenge had a Grand Prize for the first team to recover four passages of 140 characters from a Herculaneum scroll.
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:4ab2f152a60c6bbe-901bc3b35d2cc86e
+In 2026, PHerc. 1667 became the first Herculaneum scroll to be virtually unwrapped and read end to end.
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:4ab2f152a60c6bbe-a6fd9e7a1c644eed
+Within a year of the launch, the prize was claimed.
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:b98a3ae4860a6edc-95aab89f959ee2e9
+A team of student researchers has made a giant contribution to solving one of the biggest mysteries in archaeology.
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:e71279e71acc04bd-dc4b7534a61f85ee
+EduceLab-Scrolls has enabled the discovery, for the first time, of hidden texts from the Herculaneum papyri.
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:4ab2f152a60c6bbe-e301af57ef26e82d
+Vesuvius Challenge was launched in March 2023.
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:b98a3ae4860a6edc-fd2b496dae5aceca
+The contribution was made by revealing the content of Greek writing inside a charred scroll.
+Conditions: none
+Validity: SUPPORTED
+
+## RELATION rel:b98a3ae4860a6edc-b39a43fc9bb7bc6e
+claim:b98a3ae4860a6edc-3c7148205b4853be --[RELATED_TO]--> claim:b98a3ae4860a6edc-704f0702fd830045
+Conditions: none
+
+## RELATION rel:cross-670f5b5bb894432c
+claim:4ab2f152a60c6bbe-39dbff7d3d0408e6 --[RELATED_TO]--> claim:b98a3ae4860a6edc-704f0702fd830045
+Conditions: none
+
+## RELATION rel:5505a1ba1fcb1b68-dab0c28a55c1972e
+claim:5505a1ba1fcb1b68-a4e0bf4dcf441832 --[SUPPORTS]--> claim:5505a1ba1fcb1b68-92eeebabc9812a65
+Conditions: none
+
+## RELATION rel:5505a1ba1fcb1b68-0cbed135f488b346
+claim:5505a1ba1fcb1b68-a2289f49fcb0ff64 --[SUPPORTS]--> claim:5505a1ba1fcb1b68-d303dae0fc053d75
+Conditions: none
+
+## RELATION rel:cross-1a5e232cdc42ca30
+claim:4ab2f152a60c6bbe-901bc3b35d2cc86e --[RELATED_TO]--> claim:b98a3ae4860a6edc-3c7148205b4853be
+Conditions: none
+
+## RELATION rel:4ab2f152a60c6bbe-123dafd4b72f8b9e
+claim:4ab2f152a60c6bbe-39dbff7d3d0408e6 --[SUPPORTS]--> claim:4ab2f152a60c6bbe-a6fd9e7a1c644eed
+Conditions: none
+
+## RELATION rel:cross-3c6b8385c21665ec
+claim:4ab2f152a60c6bbe-39dbff7d3d0408e6 --[RELATED_TO]--> claim:b98a3ae4860a6edc-95aab89f959ee2e9
+Conditions: none
+
+## RELATION rel:cross-e02014d48b936e87
+claim:4ab2f152a60c6bbe-901bc3b35d2cc86e --[RELATED_TO]--> claim:e71279e71acc04bd-dc4b7534a61f85ee
+Conditions: none
+
+## RELATION rel:4ab2f152a60c6bbe-d276c0e77fb62409
+claim:4ab2f152a60c6bbe-e301af57ef26e82d --[SUPPORTS]--> claim:4ab2f152a60c6bbe-a6fd9e7a1c644eed
+Conditions: none
+
+## RELATION rel:b98a3ae4860a6edc-fe01487361015f30
+claim:b98a3ae4860a6edc-95aab89f959ee2e9 --[SUPPORTS]--> claim:b98a3ae4860a6edc-fd2b496dae5aceca
+Conditions: none
+
+## EVIDENCE span:history-nature-scroll-2024-003-b98a3ae4860a6edc-2#chars-299-429
+The winners of a contest called the Vesuvius Challenge trained their machine-learning algorithms on scans of the rolled-up papyrus
+
+## EVIDENCE span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-5#chars-571-674
+Not all Vesuvius Challenge data is currently available - data will continue to be added to the library.
+
+## EVIDENCE span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-3#chars-237-321
+From Vesuvius Challenge, a Python library for accessing CT scans of ancient scrolls.
+
+## EVIDENCE span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-2#chars-135-235
+Now maintained at https://github.com/ScrollPrize/villa/tree/main/vesuvius (this repository archived)
+
+## EVIDENCE span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-4#chars-446-517
+Data is streamed in the background, only serving the requested regions.
+
+## EVIDENCE span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-5#chars-519-570
+`vesuvius` is in beta and the interface may change.
+
+## EVIDENCE span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-1#chars-48-106
+This repository was archived by the owner on Nov 21, 2024.
+
+## EVIDENCE span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-4#chars-323-445
+`vesuvius` allows direct access to scroll data without managing download scripts or storing terabytes of CT scans locally.
+
+## EVIDENCE span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-0#chars-0-46
+# ScrollPrize/vesuvius archived Python library
+
+## EVIDENCE span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-1#chars-107-127
+It is now read-only.
+
+## EVIDENCE span:history-nature-scroll-2024-003-b98a3ae4860a6edc-1#chars-240-296
+buried 2,000 years ago by the eruption of Mount Vesuvius
+
+## EVIDENCE span:history-scrollprize-2026-004-4ab2f152a60c6bbe-1#chars-81-187
+with a Grand Prize for the first team to recover four passages of 140 characters from a Herculaneum scroll
+
+## EVIDENCE span:history-scrollprize-2026-004-4ab2f152a60c6bbe-2#chars-258-361
+In 2026, PHerc. 1667 became the first Herculaneum scroll to be virtually unwrapped and read end to end.
+
+## EVIDENCE span:history-scrollprize-2026-004-4ab2f152a60c6bbe-1#chars-189-226
+Within a year, the prize was claimed.
+
+## EVIDENCE span:history-nature-scroll-2024-003-b98a3ae4860a6edc-1#chars-59-173
+A team of student researchers has made a giant contribution to solving one of the biggest mysteries in archaeology
+
+## EVIDENCE span:history-educelab-paper-2023-001-e71279e71acc04bd-2#chars-542-678
+EduceLab-Scrolls has also enabled the discovery, for the first time, of hidden texts from the Herculaneum papyri, which we present here.
+
+## EVIDENCE span:history-scrollprize-2026-004-4ab2f152a60c6bbe-1#chars-39-80
+Vesuvius Challenge launched in March 2023
+
+## EVIDENCE span:history-nature-scroll-2024-003-b98a3ae4860a6edc-1#chars-174-239
+by revealing the content of Greek writing inside a charred scroll

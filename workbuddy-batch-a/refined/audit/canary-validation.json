@@ -1,0 +1,18 @@
+{
+  "schemaVersion": "wge-canary-run-contract/v1",
+  "status": "validated",
+  "knowledgeVersion": "sha256:7dcb5aac162697e959669f907ec75122407459a2603266b589559e2ff7b21d83",
+  "promptHash": null,
+  "actualTokens": null,
+  "note": "Structure-only canary: prompt/tokens are intentionally null until an answer model is run.",
+  "counts": {
+    "sources": 14,
+    "facts": 60,
+    "risks": 24,
+    "relations": 10,
+    "tasks": 62,
+    "episodes": 3,
+    "canaryCases": 12
+  },
+  "evidenceResolutionErrors": []
+}

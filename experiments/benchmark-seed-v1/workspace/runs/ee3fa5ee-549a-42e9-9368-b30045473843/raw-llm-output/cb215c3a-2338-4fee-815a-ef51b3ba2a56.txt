@@ -1,0 +1,28 @@
+{
+  "concepts": [
+    {
+      "name": "airborne transmission",
+      "aliases": ["airborne transmission or inhalation"],
+      "boundary": "Transmission mode where IRPs are expelled into the air and inhaled by another person, can occur at short or long distance.",
+      "domain": "infectious disease transmission"
+    },
+    {
+      "name": "direct deposition",
+      "aliases": [],
+      "boundary": "Transmission mode where IRPs are expelled into the air and directly deposited on the exposed mouth, nose or eyes of another person nearby.",
+      "domain": "infectious disease transmission"
+    },
+    {
+      "name": "through the air transmission",
+      "aliases": ["through the air"],
+      "boundary": "Umbrella term for transmission descriptors where the pathogen travels through or is suspended in the air.",
+      "domain": "infectious disease transmission"
+    },
+    {
+      "name": "infectious respiratory particles",
+      "aliases": ["IRPs"],
+      "boundary": "Particles expelled from an infectious person that can transmit infection.",
+      "domain": "infectious disease transmission"
+    }
+  ]
+}

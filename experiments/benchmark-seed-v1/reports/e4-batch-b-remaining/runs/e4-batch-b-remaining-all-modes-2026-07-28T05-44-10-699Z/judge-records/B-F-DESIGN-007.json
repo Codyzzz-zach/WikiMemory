@@ -1,0 +1,48 @@
+{
+  "questionId": "B-F-DESIGN-007",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 1517,
+    "completionTokens": 470,
+    "totalTokens": 1987,
+    "promptCacheHitTokens": 256,
+    "promptCacheMissTokens": 1261,
+    "reasoningTokens": 0
+  },
+  "request": {
+    "systemPrompt": "你是盲测评分员，不知道答案属于哪个实验组。只按题目、评分锚点、Gold 证据和引用预校验评价，不用外部常识修正答案。\n每个维度独立使用同一 0-4 锚点：4=完整且准确；3=大部分满足，仅轻微遗漏；2=部分满足，存在重要遗漏；1=仅有极少相关内容；0=缺失、反转或与证据冲突。\nrequiredPointCoverage 只看 requiredPoints；conditionFidelity 看条件、时间、来源角色和不确定性；evidenceGrounding 同时看关键结论是否与 Gold 证据一致以及 citationValidation；answerabilityDiscipline 看是否越界、编造或错误拒答。\ncitationValidation.valid 表示引用标识确实存在于该匿名样本收到的上下文。内部 CLAIM/SPAN/SOURCE 标识不需要出现在 Gold 文本中，不得仅因此扣分；但存在性有效不代表语义必然支持，仍需对照答案内容与 Gold。\n若反转来源归属、抹掉关键条件/时间、把提案当最终规范或编造关键事实，hardFailure=true。\n数值必须与 rationale 一致：若 rationale 说“完整覆盖且准确”，对应维度不能低于 3。\n只输出严格 JSON：{\"scores\":[{\"sampleId\":\"...\",\"requiredPointCoverage\":0,\"conditionFidelity\":0,\"evidenceGrounding\":0,\"answerabilityDiscipline\":0,\"hardFailure\":false,\"rationale\":\"...\"}]}。",
+    "userPrompt": "{\"question\":\"判断：WebAIM 的‘2023 年移除’说明 WCAG 2.1 从发布之日起就没有 4.1.1。\",\"answerability\":\"answerable\",\"requiredPoints\":[\"错误；发生时间与版本错位\"],\"forbiddenClaims\":[\"不得用新清单抹除历史规范\"],\"requiredEvidence\":[{\"sourceId\":\"design-wcag21-2018-001\",\"exactQuote\":\"Success Criterion 4.1.1 Parsing (Level A)\",\"role\":\"supports\"},{\"sourceId\":\"design-webaim-checklist-2024-004\",\"exactQuote\":\"Success Criterion 4.1.1 Parsing: This success criterion is no longer useful and as of 2023 has been removed from WCAG.\",\"role\":\"supports\"},{\"sourceId\":\"design-webaim-checklist-2024-004\",\"exactQuote\":\"Success Criterion 4.1.1 Parsing: This success criterion is no longer useful and as of 2023 has been removed from WCAG.\",\"role\":\"supports\"}],\"sourcePriorityRule\":\"P/C 决定规范、论文与实现事实；S 只能作为有归属的解释，不能推翻一手版本文本。\",\"anonymousAnswers\":[{\"sampleId\":\"sample-d2f2c17c-7027-4bf8-93c0-344428f2296f\",\"questionId\":\"B-F-DESIGN-007\",\"repetition\":1,\"answer\":\"{\\n  \\\"answer\\\": \\\"否。WebAIM 的‘2023 年移除’指的是 WCAG 2.2 移除了 4.1.1，而非 WCAG 2.1 从发布之日起就没有 4.1.1。WCAG 2.1 原本包含 4.1.1，直到 WCAG 2.2 才将其移除。\\\",\\n  \\\"citations\\\": [\\n    \\\"claim:b89787b6b83f3605-2b879b185f80c3ed\\\",\\n    \\\"claim:1da3417e06ff5435-50f420b0776ab205\\\",\\n    \\\"span:design-webaim-checklist-2024-004-b89787b6b83f3605-1#chars-107-145\\\",\\n    \\\"span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-274-331\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\",\"citationValidation\":{\"formatValid\":true,\"total\":4,\"valid\":4,\"invalid\":[]}},{\"sampleId\":\"sample-256dffe5-eeeb-4d7a-9b6b-42914168232d\",\"questionId\":\"B-F-DESIGN-007\",\"repetition\":1,\"answer\":\"{\\n  \\\"answer\\\": \\\"否。WebAIM 的‘2023 年移除’指的是 WCAG 2.2 移除了 4.1.1，而非 WCAG 2.1 从发布之日起就没有 4.1.1。WCAG 2.1 原本包含 4.1.1，直到 WCAG 2.2 才将其移除。\\\",\\n  \\\"citations\\\": [\\n    \\\"claim:b89787b6b83f3605-2b879b185f80c3ed\\\",\\n    \\\"claim:1da3417e06ff5435-50f420b0776ab205\\\",\\n    \\\"evidence:span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-274-331\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\",\"citationValidation\":{\"formatValid\":true,\"total\":3,\"valid\":2,\"invalid\":[\"evidence:span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-274-331\"]}},{\"sampleId\":\"sample-aca45e05-c301-47d0-8d2d-6029aa3b233c\",\"questionId\":\"B-F-DESIGN-007\",\"repetition\":1,\"answer\":\"{\\n  \\\"answer\\\": \\\"否。WebAIM 的‘2023 年移除’指的是 WCAG 2.2 移除了 4.1.1，而非 WCAG 2.1。WCAG 2.1 从发布之日起包含 4.1.1，该准则在 WCAG 2.2 中才被移除。\\\",\\n  \\\"citations\\\": [\\n    \\\"SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-webaim-checklist-2024-004.md:1-4\\\",\\n    \\\"SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-wcag21-2018-001.md:1-6\\\",\\n    \\\"SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-wcag22-2023-002.md:1-16\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\",\"citationValidation\":{\"formatValid\":true,\"total\":3,\"valid\":3,\"invalid\":[]}}]}"
+  },
+  "rawResponse": "{\n  \"scores\": [\n    {\n      \"sampleId\": \"sample-d2f2c17c-7027-4bf8-93c0-344428f2296f\",\n      \"requiredPointCoverage\": 4,\n      \"conditionFidelity\": 4,\n      \"evidenceGrounding\": 4,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"Required points: 答案明确指出原判断错误，并正确指出WCAG 2.1包含4.1.1，移除发生在WCAG 2.2，完全覆盖。Condition fidelity: 准确区分了版本和时间，无遗漏。Evidence grounding: 答案结论与Gold证据一致，引用均有效且支持结论。Answerability discipline: 未越界或编造，正确拒答原错误判断。\"\n    },\n    {\n      \"sampleId\": \"sample-256dffe5-eeeb-4d7a-9b6b-42914168232d\",\n      \"requiredPointCoverage\": 4,\n      \"conditionFidelity\": 4,\n      \"evidenceGrounding\": 3,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"Required points: 答案正确指出错误，覆盖关键点。Condition fidelity: 版本和时间准确。Evidence grounding: 答案结论正确，但有一个引用无效（evidence:span...），虽然不影响结论，但存在无效引用，扣1分。Answerability discipline: 未越界。\"\n    },\n    {\n      \"sampleId\": \"sample-aca45e05-c301-47d0-8d2d-6029aa3b233c\",\n      \"requiredPointCoverage\": 4,\n      \"conditionFidelity\": 4,\n      \"evidenceGrounding\": 4,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"Required points: 答案正确指出错误，覆盖关键点。Condition fidelity: 版本和时间准确。Evidence grounding: 答案结论与Gold一致，引用均有效且支持。Answerability discipline: 未越界。\"\n    }\n  ]\n}",
+  "parsed": [
+    {
+      "sampleId": "sample-d2f2c17c-7027-4bf8-93c0-344428f2296f",
+      "requiredPointCoverage": 4,
+      "conditionFidelity": 4,
+      "evidenceGrounding": 4,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "Required points: 答案明确指出原判断错误，并正确指出WCAG 2.1包含4.1.1，移除发生在WCAG 2.2，完全覆盖。Condition fidelity: 准确区分了版本和时间，无遗漏。Evidence grounding: 答案结论与Gold证据一致，引用均有效且支持结论。Answerability discipline: 未越界或编造，正确拒答原错误判断。"
+    },
+    {
+      "sampleId": "sample-256dffe5-eeeb-4d7a-9b6b-42914168232d",
+      "requiredPointCoverage": 4,
+      "conditionFidelity": 4,
+      "evidenceGrounding": 3,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "Required points: 答案正确指出错误，覆盖关键点。Condition fidelity: 版本和时间准确。Evidence grounding: 答案结论正确，但有一个引用无效（evidence:span...），虽然不影响结论，但存在无效引用，扣1分。Answerability discipline: 未越界。"
+    },
+    {
+      "sampleId": "sample-aca45e05-c301-47d0-8d2d-6029aa3b233c",
+      "requiredPointCoverage": 4,
+      "conditionFidelity": 4,
+      "evidenceGrounding": 4,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "Required points: 答案正确指出错误，覆盖关键点。Condition fidelity: 版本和时间准确。Evidence grounding: 答案结论与Gold一致，引用均有效且支持。Answerability discipline: 未越界。"
+    }
+  ]
+}

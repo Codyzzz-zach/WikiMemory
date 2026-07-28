@@ -1,0 +1,64 @@
+{
+  "concepts": [
+    {
+      "name": "Success Criterion 4.1.1 Parsing",
+      "aliases": ["Success Criterion 4.1.1 Parsing"],
+      "boundary": "WCAG 2.1 success criterion",
+      "domain": "Web accessibility"
+    },
+    {
+      "name": "Level A",
+      "aliases": ["Level A"],
+      "boundary": "Conformance level in WCAG",
+      "domain": "Web accessibility"
+    },
+    {
+      "name": "Markup languages",
+      "aliases": ["markup languages"],
+      "boundary": "Languages used to structure content on the web",
+      "domain": "Web technologies"
+    },
+    {
+      "name": "Complete start and end tags",
+      "aliases": ["complete start and end tags"],
+      "boundary": "Requirement for elements in markup languages",
+      "domain": "Web development"
+    },
+    {
+      "name": "WCAG 2.1",
+      "aliases": ["WCAG 2.1"],
+      "boundary": "Web Content Accessibility Guidelines version 2.1",
+      "domain": "Web accessibility"
+    },
+    {
+      "name": "WCAG 2.0",
+      "aliases": ["WCAG 2.0"],
+      "boundary": "Web Content Accessibility Guidelines version 2.0",
+      "domain": "Web accessibility"
+    },
+    {
+      "name": "Unique IDs",
+      "aliases": ["IDs are unique"],
+      "boundary": "Requirement for element identifiers in markup languages",
+      "domain": "Web development"
+    },
+    {
+      "name": "Nested elements",
+      "aliases": ["elements are nested"],
+      "boundary": "Requirement for element nesting according to specifications",
+      "domain": "Web development"
+    },
+    {
+      "name": "Duplicate attributes",
+      "aliases": ["duplicate attributes"],
+      "boundary": "Prohibition of duplicate attributes in elements",
+      "domain": "Web development"
+    },
+    {
+      "name": "Backwards compatible",
+      "aliases": ["backwards compatible"],
+      "boundary": "Property of WCAG 2.1 relative to WCAG 2.0",
+      "domain": "Web accessibility"
+    }
+  ]
+}

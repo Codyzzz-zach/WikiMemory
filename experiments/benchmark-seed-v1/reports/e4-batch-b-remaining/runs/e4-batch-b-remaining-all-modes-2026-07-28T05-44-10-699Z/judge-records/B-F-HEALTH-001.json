@@ -1,0 +1,48 @@
+{
+  "questionId": "B-F-HEALTH-001",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 1539,
+    "completionTokens": 429,
+    "totalTokens": 1968,
+    "promptCacheHitTokens": 256,
+    "promptCacheMissTokens": 1283,
+    "reasoningTokens": 0
+  },
+  "request": {
+    "systemPrompt": "你是盲测评分员，不知道答案属于哪个实验组。只按题目、评分锚点、Gold 证据和引用预校验评价，不用外部常识修正答案。\n每个维度独立使用同一 0-4 锚点：4=完整且准确；3=大部分满足，仅轻微遗漏；2=部分满足，存在重要遗漏；1=仅有极少相关内容；0=缺失、反转或与证据冲突。\nrequiredPointCoverage 只看 requiredPoints；conditionFidelity 看条件、时间、来源角色和不确定性；evidenceGrounding 同时看关键结论是否与 Gold 证据一致以及 citationValidation；answerabilityDiscipline 看是否越界、编造或错误拒答。\ncitationValidation.valid 表示引用标识确实存在于该匿名样本收到的上下文。内部 CLAIM/SPAN/SOURCE 标识不需要出现在 Gold 文本中，不得仅因此扣分；但存在性有效不代表语义必然支持，仍需对照答案内容与 Gold。\n若反转来源归属、抹掉关键条件/时间、把提案当最终规范或编造关键事实，hardFailure=true。\n数值必须与 rationale 一致：若 rationale 说“完整覆盖且准确”，对应维度不能低于 3。\n只输出严格 JSON：{\"scores\":[{\"sampleId\":\"...\",\"requiredPointCoverage\":0,\"conditionFidelity\":0,\"evidenceGrounding\":0,\"answerabilityDiscipline\":0,\"hardFailure\":false,\"rationale\":\"...\"}]}。",
+    "userPrompt": "{\"question\":\"判断：WHO 2020-03-29 已无条件确认 COVID-19 可在所有室内环境通过空气传播。\",\"answerability\":\"answerable\",\"requiredPoints\":[\"不忠实；原文限定产生气溶胶的特定程序或场景\"],\"forbiddenClaims\":[\"不得删除历史版本和场景条件\"],\"requiredEvidence\":[{\"sourceId\":\"health-who-march-2020-001\",\"exactQuote\":\"In the context of COVID-19, airborne transmission may be possible in specific circumstances and settings in which procedures or support treatments that generate aerosols are performed; i.e., endotracheal intubation, bronchoscopy, open suctioning, administration of nebulized treatment, manual ventilation before intubation, turning the patient to the prone position, disconnecting the patient from the ventilator, non-invasive positive-pressure ventilation, tracheostomy, and cardiopulmonary resuscitation.\",\"role\":\"supports\"}],\"sourcePriorityRule\":\"P/C 决定规范、论文与实现事实；S 只能作为有归属的解释，不能推翻一手版本文本。\",\"anonymousAnswers\":[{\"sampleId\":\"sample-25a96bb0-7080-4d13-99af-155ea38cc57f\",\"questionId\":\"B-F-HEALTH-001\",\"repetition\":1,\"answer\":\"{\\n  \\\"answer\\\": \\\"否。WHO在2020年3月29日的科学简报中并未无条件确认COVID-19可在所有室内环境通过空气传播。该简报指出，在COVID-19背景下，空气传播可能仅在特定情况和环境中发生，即进行产生气溶胶的操作或支持治疗时（claim:b587ec61aaf84d7d-474d339f3670f6c4）。2020年7月的更新进一步说明，短距离气溶胶传播在特定室内场所（如拥挤且通风不良的空间，与感染者长时间接触）不能排除（claim:a1c7e701eebb9dc1-1b6548c486ad1fd5）。直到2020年10月20日，WHO才承认气溶胶可传播病毒（claim:14069d5a982d18de-30df60c9afb3e05b）。\\\",\\n  \\\"citations\\\": [\\n    \\\"claim:b587ec61aaf84d7d-474d339f3670f6c4\\\",\\n    \\\"claim:a1c7e701eebb9dc1-1b6548c486ad1fd5\\\",\\n    \\\"claim:14069d5a982d18de-30df60c9afb3e05b\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\",\"citationValidation\":{\"formatValid\":true,\"total\":3,\"valid\":3,\"invalid\":[]}},{\"sampleId\":\"sample-9c426099-8b0c-44c7-a458-0a0e1a40eeb8\",\"questionId\":\"B-F-HEALTH-001\",\"repetition\":1,\"answer\":\"{\\n  \\\"answer\\\": \\\"否。WHO在2020年3月29日的科学简报中并未无条件确认COVID-19可在所有室内环境通过空气传播。该简报指出，在COVID-19背景下，空气传播可能仅在特定情况和环境中发生，即进行产生气溶胶的操作或支持治疗时（EVIDENCE span:health-who-march-2020-001-b587ec61aaf84d7d-2#chars-351-534）。直到2020年10月20日，WHO才承认气溶胶可以传播病毒（EVIDENCE span:health-nature-airborne-2022-003-14069d5a982d18de-2#chars-213-334）。\\\",\\n  \\\"citations\\\": [\\n    \\\"health-who-march-2020-001-b587ec61aaf84d7d-2#chars-351-534\\\",\\n    \\\"health-nature-airborne-2022-003-14069d5a982d18de-2#chars-213-334\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\",\"citationValidation\":{\"formatValid\":true,\"total\":2,\"valid\":2,\"invalid\":[]}},{\"sampleId\":\"sample-fe4f722f-976a-4aa7-bef5-5e83f8f98e23\",\"questionId\":\"B-F-HEALTH-001\",\"repetition\":1,\"answer\":\"{\\n  \\\"answer\\\": \\\"否。WHO在2020年3月29日的科学简报中并未无条件确认COVID-19可在所有室内环境通过空气传播，而是指出在特定条件下（如拥挤、通风不良的室内空间长时间接触感染者）不能排除短距离气溶胶传播的可能性。\\\",\\n  \\\"citations\\\": [\\n    \\\"SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/health-biology/health-who-july-2020-002.md:1-6\\\",\\n    \\\"SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/health-biology/health-who-march-2020-001.md:1-6\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": [\\n    \\\"WHO在2020年3月29日的简报中未明确确认所有室内环境的空气传播，仅提及特定条件下不能排除。\\\"\\n  ]\\n}\",\"citationValidation\":{\"formatValid\":true,\"total\":2,\"valid\":2,\"invalid\":[]}}]}"
+  },
+  "rawResponse": "{\n  \"scores\": [\n    {\n      \"sampleId\": \"sample-25a96bb0-7080-4d13-99af-155ea38cc57f\",\n      \"requiredPointCoverage\": 4,\n      \"conditionFidelity\": 4,\n      \"evidenceGrounding\": 4,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"答案明确否定无条件传播，并准确引用原文限定条件（产生气溶胶的程序或场景），覆盖requiredPoints；条件、时间、来源角色准确，无反转；引用有效且与Gold证据一致；未越界或编造。\"\n    },\n    {\n      \"sampleId\": \"sample-9c426099-8b0c-44c7-a458-0a0e1a40eeb8\",\n      \"requiredPointCoverage\": 4,\n      \"conditionFidelity\": 4,\n      \"evidenceGrounding\": 4,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"答案否定无条件传播，准确引用产生气溶胶的特定条件，覆盖requiredPoints；条件、时间、来源角色准确；引用有效且与Gold一致；无越界或编造。\"\n    },\n    {\n      \"sampleId\": \"sample-fe4f722f-976a-4aa7-bef5-5e83f8f98e23\",\n      \"requiredPointCoverage\": 3,\n      \"conditionFidelity\": 3,\n      \"evidenceGrounding\": 3,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"答案否定无条件传播，但提及的特定条件（拥挤、通风不良）并非2020-03-29原文内容，而是后续更新，存在轻微遗漏；条件、时间基本准确但不够精确；引用有效但部分引用与Gold不完全对应；未越界或编造。\"\n    }\n  ]\n}",
+  "parsed": [
+    {
+      "sampleId": "sample-25a96bb0-7080-4d13-99af-155ea38cc57f",
+      "requiredPointCoverage": 4,
+      "conditionFidelity": 4,
+      "evidenceGrounding": 4,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "答案明确否定无条件传播，并准确引用原文限定条件（产生气溶胶的程序或场景），覆盖requiredPoints；条件、时间、来源角色准确，无反转；引用有效且与Gold证据一致；未越界或编造。"
+    },
+    {
+      "sampleId": "sample-9c426099-8b0c-44c7-a458-0a0e1a40eeb8",
+      "requiredPointCoverage": 4,
+      "conditionFidelity": 4,
+      "evidenceGrounding": 4,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "答案否定无条件传播，准确引用产生气溶胶的特定条件，覆盖requiredPoints；条件、时间、来源角色准确；引用有效且与Gold一致；无越界或编造。"
+    },
+    {
+      "sampleId": "sample-fe4f722f-976a-4aa7-bef5-5e83f8f98e23",
+      "requiredPointCoverage": 3,
+      "conditionFidelity": 3,
+      "evidenceGrounding": 3,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "答案否定无条件传播，但提及的特定条件（拥挤、通风不良）并非2020-03-29原文内容，而是后续更新，存在轻微遗漏；条件、时间基本准确但不够精确；引用有效但部分引用与Gold不完全对应；未越界或编造。"
+    }
+  ]
+}

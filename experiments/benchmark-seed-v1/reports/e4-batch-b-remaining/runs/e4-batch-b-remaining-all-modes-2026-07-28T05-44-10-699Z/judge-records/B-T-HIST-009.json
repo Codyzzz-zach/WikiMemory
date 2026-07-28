@@ -1,0 +1,48 @@
+{
+  "questionId": "B-T-HIST-009",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 1388,
+    "completionTokens": 502,
+    "totalTokens": 1890,
+    "promptCacheHitTokens": 256,
+    "promptCacheMissTokens": 1132,
+    "reasoningTokens": 0
+  },
+  "request": {
+    "systemPrompt": "你是盲测评分员，不知道答案属于哪个实验组。只按题目、评分锚点、Gold 证据和引用预校验评价，不用外部常识修正答案。\n每个维度独立使用同一 0-4 锚点：4=完整且准确；3=大部分满足，仅轻微遗漏；2=部分满足，存在重要遗漏；1=仅有极少相关内容；0=缺失、反转或与证据冲突。\nrequiredPointCoverage 只看 requiredPoints；conditionFidelity 看条件、时间、来源角色和不确定性；evidenceGrounding 同时看关键结论是否与 Gold 证据一致以及 citationValidation；answerabilityDiscipline 看是否越界、编造或错误拒答。\ncitationValidation.valid 表示引用标识确实存在于该匿名样本收到的上下文。内部 CLAIM/SPAN/SOURCE 标识不需要出现在 Gold 文本中，不得仅因此扣分；但存在性有效不代表语义必然支持，仍需对照答案内容与 Gold。\n若反转来源归属、抹掉关键条件/时间、把提案当最终规范或编造关键事实，hardFailure=true。\n数值必须与 rationale 一致：若 rationale 说“完整覆盖且准确”，对应维度不能低于 3。\n只输出严格 JSON：{\"scores\":[{\"sampleId\":\"...\",\"requiredPointCoverage\":0,\"conditionFidelity\":0,\"evidenceGrounding\":0,\"answerabilityDiscipline\":0,\"hardFailure\":false,\"rationale\":\"...\"}]}。",
+    "userPrompt": "{\"question\":\"归档仓库与 2026 项目进展的时间关系是什么？\",\"answerability\":\"answerable\",\"requiredPoints\":[\"旧库 2024-11 归档并迁移\",\"2026 里程碑不能归因于归档仓库默认分支\"],\"forbiddenClaims\":[\"不得混淆代码维护时间与研究成果时间\"],\"requiredEvidence\":[{\"sourceId\":\"history-vesuvius-github-2024-002\",\"exactQuote\":\"This repository was archived by the owner on Nov 21, 2024. It is now read-only.\",\"role\":\"supports\"},{\"sourceId\":\"history-vesuvius-github-2024-002\",\"exactQuote\":\"NOTE: Now maintained at https://github.com/ScrollPrize/villa/tree/main/vesuvius (this repository archived)\",\"role\":\"supports\"},{\"sourceId\":\"history-scrollprize-2026-004\",\"exactQuote\":\"In 2026, PHerc. 1667 became the first Herculaneum scroll to be virtually unwrapped and read end to end.\",\"role\":\"supports\"}],\"sourcePriorityRule\":\"P/C 决定规范、论文与实现事实；S 只能作为有归属的解释，不能推翻一手版本文本。\",\"anonymousAnswers\":[{\"sampleId\":\"sample-1f107de3-f41e-4d09-95eb-eaf1e701f205\",\"questionId\":\"B-T-HIST-009\",\"repetition\":1,\"answer\":\"{\\n  \\\"answer\\\": \\\"根据上下文，2026年PHerc. 1667成为首个被完全虚拟展开并从头到尾阅读的赫库兰尼姆卷轴，而归档仓库与2026项目进展的时间关系未在上下文中提及。\\\",\\n  \\\"citations\\\": [\\\"../../../workbuddy-batch-b/generated/compilation-corpus/history-humanities/history-scrollprize-2026-004.md:1-6\\\"],\\n  \\\"insufficient\\\": true,\\n  \\\"uncertainties\\\": [\\\"上下文未提供归档仓库与2026项目进展的时间关系信息\\\"]\\n}\",\"citationValidation\":{\"formatValid\":true,\"total\":1,\"valid\":1,\"invalid\":[]}},{\"sampleId\":\"sample-ad6fb502-9cc6-4fa2-9ddc-14edfda7b568\",\"questionId\":\"B-T-HIST-009\",\"repetition\":1,\"answer\":\"{\\n  \\\"answer\\\": \\\"归档仓库于2024年11月21日被所有者归档，而2026项目（Vesuvius Challenge）的进展包括：2023年3月启动，一年内大奖被领取，2026年PHerc. 1667成为首个被虚拟展开并从头到尾阅读的卷轴。因此，归档发生在2024年，早于2026年的项目里程碑。\\\",\\n  \\\"citations\\\": [\\n    \\\"claim:5505a1ba1fcb1b68-a2289f49fcb0ff64\\\",\\n    \\\"claim:4ab2f152a60c6bbe-e301af57ef26e82d\\\",\\n    \\\"claim:4ab2f152a60c6bbe-a6fd9e7a1c644eed\\\",\\n    \\\"claim:4ab2f152a60c6bbe-901bc3b35d2cc86e\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\",\"citationValidation\":{\"formatValid\":true,\"total\":4,\"valid\":4,\"invalid\":[]}},{\"sampleId\":\"sample-085c5e7b-85ef-4f99-8e1e-03f11d83ea1a\",\"questionId\":\"B-T-HIST-009\",\"repetition\":1,\"answer\":\"{\\n  \\\"answer\\\": \\\"归档仓库于 2024 年 11 月 21 日被所有者归档，而 2026 项目（Vesuvius Challenge）中 PHerc. 1667 在 2026 年被虚拟展开并通读。两者时间关系是归档发生在 2026 项目关键事件之前，但无直接因果或依赖关系。\\\",\\n  \\\"citations\\\": [\\n    \\\"span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-1#chars-48-106\\\",\\n    \\\"span:history-scrollprize-2026-004-4ab2f152a60c6bbe-2#chars-258-361\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": [\\n    \\\"归档仓库与 2026 项目进展之间是否存在直接关联未明确说明。\\\"\\n  ]\\n}\",\"citationValidation\":{\"formatValid\":true,\"total\":2,\"valid\":2,\"invalid\":[]}}]}"
+  },
+  "rawResponse": "{\n  \"scores\": [\n    {\n      \"sampleId\": \"sample-1f107de3-f41e-4d09-95eb-eaf1e701f205\",\n      \"requiredPointCoverage\": 0,\n      \"conditionFidelity\": 0,\n      \"evidenceGrounding\": 0,\n      \"answerabilityDiscipline\": 0,\n      \"hardFailure\": false,\n      \"rationale\": \"答案声称上下文未提供时间关系，但Gold证据明确包含归档日期和2026年事件，因此requiredPointCoverage缺失两个要点；conditionFidelity未提及任何条件；evidenceGrounding与Gold证据冲突；answerabilityDiscipline错误拒答。\"\n    },\n    {\n      \"sampleId\": \"sample-ad6fb502-9cc6-4fa2-9ddc-14edfda7b568\",\n      \"requiredPointCoverage\": 4,\n      \"conditionFidelity\": 4,\n      \"evidenceGrounding\": 4,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"完整覆盖两个requiredPoints：旧库2024-11归档并迁移，2026里程碑不能归因于归档仓库默认分支（明确区分时间先后且无因果）。conditionFidelity准确：时间（2024年11月21日归档，2026年事件）、来源角色（归档仓库所有者，2026项目进展）、不确定性（无）。evidenceGrounding：关键结论与Gold证据一致，引用有效且支持。answerabilityDiscipline：未越界、编造或错误拒答。\"\n    },\n    {\n      \"sampleId\": \"sample-085c5e7b-85ef-4f99-8e1e-03f11d83ea1a\",\n      \"requiredPointCoverage\": 4,\n      \"conditionFidelity\": 4,\n      \"evidenceGrounding\": 4,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"完整覆盖两个requiredPoints：明确归档日期和2026年事件，并指出无直接因果。conditionFidelity准确：时间、来源、不确定性（无直接关联）。evidenceGrounding：关键结论与Gold证据一致，引用有效。answerabilityDiscipline：未越界、编造或错误拒答。\"\n    }\n  ]\n}",
+  "parsed": [
+    {
+      "sampleId": "sample-1f107de3-f41e-4d09-95eb-eaf1e701f205",
+      "requiredPointCoverage": 0,
+      "conditionFidelity": 0,
+      "evidenceGrounding": 0,
+      "answerabilityDiscipline": 0,
+      "hardFailure": false,
+      "rationale": "答案声称上下文未提供时间关系，但Gold证据明确包含归档日期和2026年事件，因此requiredPointCoverage缺失两个要点；conditionFidelity未提及任何条件；evidenceGrounding与Gold证据冲突；answerabilityDiscipline错误拒答。"
+    },
+    {
+      "sampleId": "sample-ad6fb502-9cc6-4fa2-9ddc-14edfda7b568",
+      "requiredPointCoverage": 4,
+      "conditionFidelity": 4,
+      "evidenceGrounding": 4,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "完整覆盖两个requiredPoints：旧库2024-11归档并迁移，2026里程碑不能归因于归档仓库默认分支（明确区分时间先后且无因果）。conditionFidelity准确：时间（2024年11月21日归档，2026年事件）、来源角色（归档仓库所有者，2026项目进展）、不确定性（无）。evidenceGrounding：关键结论与Gold证据一致，引用有效且支持。answerabilityDiscipline：未越界、编造或错误拒答。"
+    },
+    {
+      "sampleId": "sample-085c5e7b-85ef-4f99-8e1e-03f11d83ea1a",
+      "requiredPointCoverage": 4,
+      "conditionFidelity": 4,
+      "evidenceGrounding": 4,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "完整覆盖两个requiredPoints：明确归档日期和2026年事件，并指出无直接因果。conditionFidelity准确：时间、来源、不确定性（无直接关联）。evidenceGrounding：关键结论与Gold证据一致，引用有效。answerabilityDiscipline：未越界、编造或错误拒答。"
+    }
+  ]
+}

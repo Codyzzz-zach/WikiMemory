@@ -1,0 +1,75 @@
+{
+  "questionId": "B-C-HIST-003",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 2330,
+    "completionTokens": 672,
+    "totalTokens": 3002,
+    "promptCacheHitTokens": 384,
+    "promptCacheMissTokens": 1946,
+    "reasoningTokens": 0
+  },
+  "request": {
+    "systemPrompt": "你是盲测评分员，不知道匿名答案属于哪个实验组。只按题目、评分锚点和证据评估，不用外部常识修正答案。\n每项 0-4 分：requiredPointCoverage、conditionFidelity、evidenceGrounding、answerabilityDiscipline。\n若答案反转来源归属、抹掉关键条件/时间、把提案当最终规范、编造上下文外事实，hardFailure=true。\n只输出严格 JSON：{\"scores\":[{\"sampleId\":\"...\",\"requiredPointCoverage\":0,\"conditionFidelity\":0,\"evidenceGrounding\":0,\"answerabilityDiscipline\":0,\"hardFailure\":false,\"rationale\":\"...\"}]}。",
+    "userPrompt": "{\"question\":\"使用归档 vesuvius 仓库时必须保留哪些状态条件？\",\"answerability\":\"answerable\",\"requiredPoints\":[\"已归档只读\",\"后继维护位置\",\"beta 且数据覆盖不完整\"],\"forbiddenClaims\":[\"不得把归档仓库说成当前稳定 API\"],\"requiredEvidence\":[{\"sourceId\":\"history-vesuvius-github-2024-002\",\"exactQuote\":\"This repository was archived by the owner on Nov 21, 2024. It is now read-only.\",\"role\":\"supports\"},{\"sourceId\":\"history-vesuvius-github-2024-002\",\"exactQuote\":\"NOTE: Now maintained at https://github.com/ScrollPrize/villa/tree/main/vesuvius (this repository archived)\",\"role\":\"supports\"},{\"sourceId\":\"history-vesuvius-github-2024-002\",\"exactQuote\":\"`vesuvius` is in beta and the interface may change. Not all Vesuvius Challenge data is currently available - data will continue to be added to the library.\",\"role\":\"supports\"}],\"sourcePriorityRule\":\"P/C 决定规范、论文与实现事实；S 只能作为有归属的解释，不能推翻一手版本文本。\",\"anonymousAnswers\":[{\"sampleId\":\"sample-5623a2f9-e288-4394-b3c4-2c67249b50b8\",\"questionId\":\"B-C-HIST-003\",\"repetition\":1,\"answer\":\"{\\n  \\\"answer\\\": \\\"使用归档 vesuvius 仓库时必须保留的状态条件包括：仓库已被所有者归档（2024年11月21日），现在是只读的；数据在后台流式传输，仅提供请求的区域；并非所有数据当前可用，数据将继续添加；该库现在维护在 https://github.com/ScrollPrize/villa/tree/main/vesuvius。\\\",\\n  \\\"citations\\\": [\\n    \\\"claim:5505a1ba1fcb1b68-a2289f49fcb0ff64\\\",\\n    \\\"claim:5505a1ba1fcb1b68-d303dae0fc053d75\\\",\\n    \\\"claim:5505a1ba1fcb1b68-92eeebabc9812a65\\\",\\n    \\\"claim:5505a1ba1fcb1b68-35e4f1b989767484\\\",\\n    \\\"claim:5505a1ba1fcb1b68-825b50a16ede0106\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\"},{\"sampleId\":\"sample-5b8c56bb-4b21-45f0-8391-bd45840542b1\",\"questionId\":\"B-C-HIST-003\",\"repetition\":1,\"answer\":\"{\\n  \\\"answer\\\": \\\"使用归档 vesuvius 仓库时必须保留的状态条件包括：仓库已归档（2024年11月21日）、只读、数据在后台流式传输仅提供请求的区域、并非所有数据当前可用（数据将继续添加）、仓库现在维护在 https://github.com/ScrollPrize/villa/tree/main/vesuvius。\\\",\\n  \\\"citations\\\": [\\n    \\\"span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-1#chars-48-106\\\",\\n    \\\"span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-1#chars-107-127\\\",\\n    \\\"span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-4#chars-446-517\\\",\\n    \\\"span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-5#chars-571-674\\\",\\n    \\\"span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-2#chars-135-235\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\"},{\"sampleId\":\"sample-2d3b143c-e6d9-4de8-bc4f-8c04295823da\",\"questionId\":\"B-C-HIST-003\",\"repetition\":2,\"answer\":\"{\\n  \\\"answer\\\": \\\"使用归档 vesuvius 仓库时必须保留的状态条件包括：仓库已归档（2024年11月21日）、只读、数据在后台流式传输仅提供请求的区域、并非所有数据当前可用（数据将继续添加）、仓库现在维护在 https://github.com/ScrollPrize/villa/tree/main/vesuvius。\\\",\\n  \\\"citations\\\": [\\n    \\\"span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-1#chars-48-106\\\",\\n    \\\"span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-1#chars-107-127\\\",\\n    \\\"span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-4#chars-446-517\\\",\\n    \\\"span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-5#chars-571-674\\\",\\n    \\\"span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-2#chars-135-235\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\"},{\"sampleId\":\"sample-62758f5f-a625-4ebe-9e32-52c7e18168a1\",\"questionId\":\"B-C-HIST-003\",\"repetition\":2,\"answer\":\"{\\n  \\\"answer\\\": \\\"使用归档 vesuvius 仓库时必须保留的状态条件包括：仓库已由所有者于 2024 年 11 月 21 日归档，现在是只读的；数据在后台流式传输，仅提供请求的区域；并非所有维苏威挑战赛的数据目前都可用，数据将继续添加到库中。\\\",\\n  \\\"citations\\\": [\\n    \\\"claim:5505a1ba1fcb1b68-a2289f49fcb0ff64\\\",\\n    \\\"claim:5505a1ba1fcb1b68-d303dae0fc053d75\\\",\\n    \\\"claim:5505a1ba1fcb1b68-92eeebabc9812a65\\\",\\n    \\\"claim:5505a1ba1fcb1b68-35e4f1b989767484\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\"},{\"sampleId\":\"sample-038ddc09-8f7d-448c-8d35-99519a168d52\",\"questionId\":\"B-C-HIST-003\",\"repetition\":3,\"answer\":\"{\\n  \\\"answer\\\": \\\"使用归档 vesuvius 仓库时必须保留的状态条件包括：仓库已归档（2024年11月21日）、只读、数据在后台流式传输仅提供请求区域、并非所有数据当前可用（数据将继续添加）、仓库现在维护在 https://github.com/ScrollPrize/villa/tree/main/vesuvius。\\\",\\n  \\\"citations\\\": [\\n    \\\"span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-1#chars-48-106\\\",\\n    \\\"span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-1#chars-107-127\\\",\\n    \\\"span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-4#chars-446-517\\\",\\n    \\\"span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-5#chars-571-674\\\",\\n    \\\"span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-2#chars-135-235\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\"},{\"sampleId\":\"sample-ba9d4d6b-f0d6-4961-b64d-87a3041588e5\",\"questionId\":\"B-C-HIST-003\",\"repetition\":3,\"answer\":\"{\\n  \\\"answer\\\": \\\"使用归档 vesuvius 仓库时必须保留的状态条件包括：仓库已由所有者于 2024 年 11 月 21 日归档，现在是只读的；数据在后台流式传输，仅提供请求的区域；并非所有维苏威挑战赛的数据目前都可用，数据将继续添加到库中。\\\",\\n  \\\"citations\\\": [\\n    \\\"claim:5505a1ba1fcb1b68-a2289f49fcb0ff64\\\",\\n    \\\"claim:5505a1ba1fcb1b68-d303dae0fc053d75\\\",\\n    \\\"claim:5505a1ba1fcb1b68-92eeebabc9812a65\\\",\\n    \\\"claim:5505a1ba1fcb1b68-35e4f1b989767484\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\"}]}"
+  },
+  "rawResponse": "{\n  \"scores\": [\n    {\n      \"sampleId\": \"sample-5623a2f9-e288-4394-b3c4-2c67249b50b8\",\n      \"requiredPointCoverage\": 4,\n      \"conditionFidelity\": 4,\n      \"evidenceGrounding\": 4,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"答案覆盖所有必需点：已归档只读、后继维护位置、beta且数据覆盖不完整。条件准确，无反转或编造。证据引用正确。\"\n    },\n    {\n      \"sampleId\": \"sample-5b8c56bb-4b21-45f0-8391-bd45840542b1\",\n      \"requiredPointCoverage\": 4,\n      \"conditionFidelity\": 4,\n      \"evidenceGrounding\": 4,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"答案覆盖所有必需点，条件准确，证据引用精确。\"\n    },\n    {\n      \"sampleId\": \"sample-2d3b143c-e6d9-4de8-bc4f-8c04295823da\",\n      \"requiredPointCoverage\": 4,\n      \"conditionFidelity\": 4,\n      \"evidenceGrounding\": 4,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"答案覆盖所有必需点，条件准确，证据引用精确。\"\n    },\n    {\n      \"sampleId\": \"sample-62758f5f-a625-4ebe-9e32-52c7e18168a1\",\n      \"requiredPointCoverage\": 3,\n      \"conditionFidelity\": 4,\n      \"evidenceGrounding\": 4,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"答案覆盖已归档只读、beta且数据覆盖不完整，但缺少后继维护位置。条件准确，无编造。\"\n    },\n    {\n      \"sampleId\": \"sample-038ddc09-8f7d-448c-8d35-99519a168d52\",\n      \"requiredPointCoverage\": 4,\n      \"conditionFidelity\": 4,\n      \"evidenceGrounding\": 4,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"答案覆盖所有必需点，条件准确，证据引用精确。\"\n    },\n    {\n      \"sampleId\": \"sample-ba9d4d6b-f0d6-4961-b64d-87a3041588e5\",\n      \"requiredPointCoverage\": 3,\n      \"conditionFidelity\": 4,\n      \"evidenceGrounding\": 4,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"答案覆盖已归档只读、beta且数据覆盖不完整，但缺少后继维护位置。条件准确，无编造。\"\n    }\n  ]\n}",
+  "parsed": [
+    {
+      "sampleId": "sample-5623a2f9-e288-4394-b3c4-2c67249b50b8",
+      "requiredPointCoverage": 4,
+      "conditionFidelity": 4,
+      "evidenceGrounding": 4,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "答案覆盖所有必需点：已归档只读、后继维护位置、beta且数据覆盖不完整。条件准确，无反转或编造。证据引用正确。"
+    },
+    {
+      "sampleId": "sample-5b8c56bb-4b21-45f0-8391-bd45840542b1",
+      "requiredPointCoverage": 4,
+      "conditionFidelity": 4,
+      "evidenceGrounding": 4,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "答案覆盖所有必需点，条件准确，证据引用精确。"
+    },
+    {
+      "sampleId": "sample-2d3b143c-e6d9-4de8-bc4f-8c04295823da",
+      "requiredPointCoverage": 4,
+      "conditionFidelity": 4,
+      "evidenceGrounding": 4,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "答案覆盖所有必需点，条件准确，证据引用精确。"
+    },
+    {
+      "sampleId": "sample-62758f5f-a625-4ebe-9e32-52c7e18168a1",
+      "requiredPointCoverage": 3,
+      "conditionFidelity": 4,
+      "evidenceGrounding": 4,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "答案覆盖已归档只读、beta且数据覆盖不完整，但缺少后继维护位置。条件准确，无编造。"
+    },
+    {
+      "sampleId": "sample-038ddc09-8f7d-448c-8d35-99519a168d52",
+      "requiredPointCoverage": 4,
+      "conditionFidelity": 4,
+      "evidenceGrounding": 4,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "答案覆盖所有必需点，条件准确，证据引用精确。"
+    },
+    {
+      "sampleId": "sample-ba9d4d6b-f0d6-4961-b64d-87a3041588e5",
+      "requiredPointCoverage": 3,
+      "conditionFidelity": 4,
+      "evidenceGrounding": 4,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "答案覆盖已归档只读、beta且数据覆盖不完整，但缺少后继维护位置。条件准确，无编造。"
+    }
+  ]
+}

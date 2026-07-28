@@ -1,0 +1,75 @@
+{
+  "questionId": "B-X-DESIGN-005",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 2576,
+    "completionTokens": 825,
+    "totalTokens": 3401,
+    "promptCacheHitTokens": 256,
+    "promptCacheMissTokens": 2320,
+    "reasoningTokens": 0
+  },
+  "request": {
+    "systemPrompt": "你是盲测评分员，不知道答案属于哪个实验组。只按题目、评分锚点、Gold 证据和引用预校验评价，不用外部常识修正答案。\n每个维度独立使用同一 0-4 锚点：4=完整且准确；3=大部分满足，仅轻微遗漏；2=部分满足，存在重要遗漏；1=仅有极少相关内容；0=缺失、反转或与证据冲突。\nrequiredPointCoverage 只看 requiredPoints；conditionFidelity 看条件、时间、来源角色和不确定性；evidenceGrounding 同时看关键结论是否与 Gold 证据一致以及 citationValidation；answerabilityDiscipline 看是否越界、编造或错误拒答。\ncitationValidation.valid 表示引用标识确实存在于该匿名样本收到的上下文。内部 CLAIM/SPAN/SOURCE 标识不需要出现在 Gold 文本中，不得仅因此扣分；但存在性有效不代表语义必然支持，仍需对照答案内容与 Gold。\n若反转来源归属、抹掉关键条件/时间、把提案当最终规范或编造关键事实，hardFailure=true。\n数值必须与 rationale 一致：若 rationale 说“完整覆盖且准确”，对应维度不能低于 3。\n只输出严格 JSON：{\"scores\":[{\"sampleId\":\"...\",\"requiredPointCoverage\":0,\"conditionFidelity\":0,\"evidenceGrounding\":0,\"answerabilityDiscipline\":0,\"hardFailure\":false,\"rationale\":\"...\"}]}。",
+    "userPrompt": "{\"question\":\"比较 issue #2705 与最终 WCAG 2.2 对 Dragging Movements 的关系。\",\"answerability\":\"answerable\",\"requiredPoints\":[\"issue 引用草案并建议移除\",\"最终标准保留为 AA\",\"冲突是提案立场与最终结果\"],\"forbiddenClaims\":[\"不得说两份都是同等权威规范\"],\"requiredEvidence\":[{\"sourceId\":\"design-wcag-issue-2705-003\",\"exactQuote\":\"Success Criterion 2.5.7 Dragging Movements (Level AA): All functionality that uses a dragging movement for operation can be achieved by a single pointer without dragging, unless dragging is essential or the functionality is determined by the user agent and not modified by the author.\",\"role\":\"supports\"},{\"sourceId\":\"design-wcag-issue-2705-003\",\"exactQuote\":\"We kindly request that the group remove this SC until research is completed for all affected input modalities.\",\"role\":\"supports\"},{\"sourceId\":\"design-wcag22-2023-002\",\"exactQuote\":\"The following success criteria are new in WCAG 2.2:\\n\\n- 2.4.11 Focus Not Obscured (Minimum) (AA)\\n- 2.4.12 Focus Not Obscured (Enhanced) (AAA)\\n- 2.4.13 Focus Appearance (AAA)\\n- 2.5.7 Dragging Movements (AA)\\n- 2.5.8 Target Size (Minimum) (AA)\\n- 3.2.6 Consistent Help (A)\\n- 3.3.7 Redundant Entry (A)\\n- 3.3.8 Accessible Authentication (Minimum) (AA)\\n- 3.3.9 Accessible Authentication (Enhanced) (AAA)\",\"role\":\"supports\"}],\"sourcePriorityRule\":\"P/C 决定规范、论文与实现事实；S 只能作为有归属的解释，不能推翻一手版本文本。\",\"anonymousAnswers\":[{\"sampleId\":\"sample-b3cf3a6f-11b0-4237-935e-4f904ebb41c5\",\"answer\":\"{\\n  \\\"answer\\\": \\\"Issue #2705 请求在完成对所有受影响输入模态的研究之前移除成功标准 2.5.7 Dragging Movements，认为需要更多针对不同平台的考虑，且不应将所有移动端要求强加于桌面内容。最终 WCAG 2.2 保留了该成功标准，要求所有通过拖拽操作的功能均可通过单指针不拖拽的方式实现，除非拖拽是必要的或功能由用户代理决定且未被作者修改。\\\",\\n  \\\"citations\\\": [\\n    \\\"claim:d40218e811ec1166-3121f577072c04bb\\\",\\n    \\\"claim:d40218e811ec1166-09499dce953a0a91\\\",\\n    \\\"claim:d40218e811ec1166-f30bb9542bb62fad\\\",\\n    \\\"claim:d40218e811ec1166-21341d7bbebecc13\\\",\\n    \\\"claim:1da3417e06ff5435-fda7e8c14ff6f23b\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\",\"citationValidation\":{\"formatValid\":true,\"total\":5,\"valid\":5,\"invalid\":[]}},{\"sampleId\":\"sample-3dd3d168-15bb-4ea1-8217-54ce60b468ea\",\"answer\":\"{\\n  \\\"answer\\\": \\\"Issue #2705 请求在完成对所有受影响输入模态的研究之前移除 SC 2.5.7 Dragging Movements，认为需要更多平台考量，且不应将所有移动端要求强加于桌面内容。最终 WCAG 2.2 保留了该 SC，要求所有使用拖拽操作的功能可通过单指针无拖拽完成，除非拖拽是必要的或功能由用户代理决定且作者未修改。\\\",\\n  \\\"citations\\\": [\\n    \\\"claim:d40218e811ec1166-3121f577072c04bb\\\",\\n    \\\"claim:d40218e811ec1166-09499dce953a0a91\\\",\\n    \\\"claim:d40218e811ec1166-f30bb9542bb62fad\\\",\\n    \\\"claim:d40218e811ec1166-21341d7bbebecc13\\\",\\n    \\\"claim:1da3417e06ff5435-fda7e8c14ff6f23b\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\",\"citationValidation\":{\"formatValid\":true,\"total\":5,\"valid\":5,\"invalid\":[]}},{\"sampleId\":\"sample-1ae5580b-0bb0-4ed3-8dac-50c67f74fd3e\",\"answer\":\"{\\n  \\\"answer\\\": \\\"Issue #2705 请求在完成对所有受影响输入模态的研究之前移除 SC 2.5.7 Dragging Movements，认为需要更多平台考量，且不应将所有移动端要求强加于桌面内容。最终 WCAG 2.2 保留了该 SC，要求所有使用拖拽操作的功能可通过单指针无需拖拽完成，除非拖拽是必要的或功能由用户代理决定且作者未修改。\\\",\\n  \\\"citations\\\": [\\n    \\\"claim:d40218e811ec1166-3121f577072c04bb\\\",\\n    \\\"claim:d40218e811ec1166-09499dce953a0a91\\\",\\n    \\\"claim:d40218e811ec1166-f30bb9542bb62fad\\\",\\n    \\\"claim:d40218e811ec1166-21341d7bbebecc13\\\",\\n    \\\"claim:1da3417e06ff5435-fda7e8c14ff6f23b\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\",\"citationValidation\":{\"formatValid\":true,\"total\":5,\"valid\":5,\"invalid\":[]}},{\"sampleId\":\"sample-2b2dbfd9-fdae-4a5a-828f-9b86707136f0\",\"answer\":\"{\\n  \\\"answer\\\": \\\"Issue #2705 请求在完成对所有受影响输入模态的研究之前移除成功标准 2.5.7 Dragging Movements，认为需要更多平台考量，且不应将所有移动端要求强加于桌面内容。最终 WCAG 2.2 保留了该成功标准（Level AA），要求所有通过拖拽操作的功能均可通过单指针不拖拽完成，除非拖拽是必要的或功能由用户代理决定且未被作者修改。\\\",\\n  \\\"citations\\\": [\\n    \\\"claim:d40218e811ec1166-3121f577072c04bb\\\",\\n    \\\"claim:d40218e811ec1166-09499dce953a0a91\\\",\\n    \\\"claim:d40218e811ec1166-f30bb9542bb62fad\\\",\\n    \\\"claim:d40218e811ec1166-21341d7bbebecc13\\\",\\n    \\\"claim:1da3417e06ff5435-fda7e8c14ff6f23b\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\",\"citationValidation\":{\"formatValid\":true,\"total\":5,\"valid\":5,\"invalid\":[]}},{\"sampleId\":\"sample-896382bb-e90c-41b0-8f8c-ae34ded1aa12\",\"answer\":\"{\\n  \\\"answer\\\": \\\"Issue #2705 请求在完成对所有受影响输入模态的研究之前移除 SC 2.5.7 Dragging Movements，而最终 WCAG 2.2 将其作为新的 AA 级成功标准纳入，并包含例外条件（除非拖拽是必要的或功能由用户代理决定且未被作者修改）。Issue #2705 还认为不应将移动端要求强加于桌面内容，并指出需要更多平台考量。\\\",\\n  \\\"citations\\\": [\\n    \\\"claim:d40218e811ec1166-3121f577072c04bb\\\",\\n    \\\"claim:1da3417e06ff5435-fda7e8c14ff6f23b\\\",\\n    \\\"claim:d40218e811ec1166-09499dce953a0a91\\\",\\n    \\\"claim:d40218e811ec1166-f30bb9542bb62fad\\\",\\n    \\\"claim:d40218e811ec1166-21341d7bbebecc13\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\",\"citationValidation\":{\"formatValid\":true,\"total\":5,\"valid\":5,\"invalid\":[]}},{\"sampleId\":\"sample-9388d044-cea6-4908-b703-eb87bd1e2c1f\",\"answer\":\"{\\n  \\\"answer\\\": \\\"Issue #2705 请求在完成对所有受影响输入模态的研究之前移除 SC 2.5.7 Dragging Movements，认为需要更多平台考量，且不应将所有移动端要求强加于桌面内容。最终 WCAG 2.2 保留了该 SC，要求所有使用拖拽操作的功能可通过单指针无需拖拽完成，除非拖拽是必要的或功能由用户代理决定且作者未修改。\\\",\\n  \\\"citations\\\": [\\n    \\\"claim:d40218e811ec1166-3121f577072c04bb\\\",\\n    \\\"claim:d40218e811ec1166-09499dce953a0a91\\\",\\n    \\\"claim:d40218e811ec1166-f30bb9542bb62fad\\\",\\n    \\\"claim:d40218e811ec1166-21341d7bbebecc13\\\",\\n    \\\"claim:1da3417e06ff5435-fda7e8c14ff6f23b\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\",\"citationValidation\":{\"formatValid\":true,\"total\":5,\"valid\":5,\"invalid\":[]}}]}"
+  },
+  "rawResponse": "{\n  \"scores\": [\n    {\n      \"sampleId\": \"sample-b3cf3a6f-11b0-4237-935e-4f904ebb41c5\",\n      \"requiredPointCoverage\": 3,\n      \"conditionFidelity\": 3,\n      \"evidenceGrounding\": 3,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"requiredPointCoverage: 覆盖了issue建议移除、最终保留为AA、冲突是提案与最终结果，但未明确提及'草案'，轻微遗漏。conditionFidelity: 正确描述了issue的请求（移除）和最终标准（保留AA），但未提及'草案'状态，轻微遗漏。evidenceGrounding: 关键结论与Gold证据一致，引用有效且支持内容。answerabilityDiscipline: 未越界、编造或错误拒答。\"\n    },\n    {\n      \"sampleId\": \"sample-3dd3d168-15bb-4ea1-8217-54ce60b468ea\",\n      \"requiredPointCoverage\": 3,\n      \"conditionFidelity\": 3,\n      \"evidenceGrounding\": 3,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"与sample-b3cf3a6f相同，覆盖了主要点但未明确提及'草案'。\"\n    },\n    {\n      \"sampleId\": \"sample-1ae5580b-0bb0-4ed3-8dac-50c67f74fd3e\",\n      \"requiredPointCoverage\": 3,\n      \"conditionFidelity\": 3,\n      \"evidenceGrounding\": 3,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"与sample-b3cf3a6f相同。\"\n    },\n    {\n      \"sampleId\": \"sample-2b2dbfd9-fdae-4a5a-828f-9b86707136f0\",\n      \"requiredPointCoverage\": 4,\n      \"conditionFidelity\": 4,\n      \"evidenceGrounding\": 3,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"requiredPointCoverage: 完整覆盖了issue引用草案并建议移除、最终保留为AA、冲突是提案立场与最终结果。conditionFidelity: 准确描述了issue的请求（移除）和最终标准（保留AA），提及了'草案'隐含。evidenceGrounding: 关键结论与Gold证据一致，引用有效。answerabilityDiscipline: 未越界。\"\n    },\n    {\n      \"sampleId\": \"sample-896382bb-e90c-41b0-8f8c-ae34ded1aa12\",\n      \"requiredPointCoverage\": 4,\n      \"conditionFidelity\": 4,\n      \"evidenceGrounding\": 3,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"requiredPointCoverage: 完整覆盖了issue建议移除、最终保留为AA、冲突。conditionFidelity: 准确描述了issue和最终标准。evidenceGrounding: 关键结论与Gold一致，引用有效。answerabilityDiscipline: 未越界。\"\n    },\n    {\n      \"sampleId\": \"sample-9388d044-cea6-4908-b703-eb87bd1e2c1f\",\n      \"requiredPointCoverage\": 3,\n      \"conditionFidelity\": 3,\n      \"evidenceGrounding\": 3,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"与sample-b3cf3a6f相同。\"\n    }\n  ]\n}",
+  "parsed": [
+    {
+      "sampleId": "sample-b3cf3a6f-11b0-4237-935e-4f904ebb41c5",
+      "requiredPointCoverage": 3,
+      "conditionFidelity": 3,
+      "evidenceGrounding": 3,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "requiredPointCoverage: 覆盖了issue建议移除、最终保留为AA、冲突是提案与最终结果，但未明确提及'草案'，轻微遗漏。conditionFidelity: 正确描述了issue的请求（移除）和最终标准（保留AA），但未提及'草案'状态，轻微遗漏。evidenceGrounding: 关键结论与Gold证据一致，引用有效且支持内容。answerabilityDiscipline: 未越界、编造或错误拒答。"
+    },
+    {
+      "sampleId": "sample-3dd3d168-15bb-4ea1-8217-54ce60b468ea",
+      "requiredPointCoverage": 3,
+      "conditionFidelity": 3,
+      "evidenceGrounding": 3,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "与sample-b3cf3a6f相同，覆盖了主要点但未明确提及'草案'。"
+    },
+    {
+      "sampleId": "sample-1ae5580b-0bb0-4ed3-8dac-50c67f74fd3e",
+      "requiredPointCoverage": 3,
+      "conditionFidelity": 3,
+      "evidenceGrounding": 3,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "与sample-b3cf3a6f相同。"
+    },
+    {
+      "sampleId": "sample-2b2dbfd9-fdae-4a5a-828f-9b86707136f0",
+      "requiredPointCoverage": 4,
+      "conditionFidelity": 4,
+      "evidenceGrounding": 3,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "requiredPointCoverage: 完整覆盖了issue引用草案并建议移除、最终保留为AA、冲突是提案立场与最终结果。conditionFidelity: 准确描述了issue的请求（移除）和最终标准（保留AA），提及了'草案'隐含。evidenceGrounding: 关键结论与Gold证据一致，引用有效。answerabilityDiscipline: 未越界。"
+    },
+    {
+      "sampleId": "sample-896382bb-e90c-41b0-8f8c-ae34ded1aa12",
+      "requiredPointCoverage": 4,
+      "conditionFidelity": 4,
+      "evidenceGrounding": 3,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "requiredPointCoverage: 完整覆盖了issue建议移除、最终保留为AA、冲突。conditionFidelity: 准确描述了issue和最终标准。evidenceGrounding: 关键结论与Gold一致，引用有效。answerabilityDiscipline: 未越界。"
+    },
+    {
+      "sampleId": "sample-9388d044-cea6-4908-b703-eb87bd1e2c1f",
+      "requiredPointCoverage": 3,
+      "conditionFidelity": 3,
+      "evidenceGrounding": 3,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "与sample-b3cf3a6f相同。"
+    }
+  ]
+}

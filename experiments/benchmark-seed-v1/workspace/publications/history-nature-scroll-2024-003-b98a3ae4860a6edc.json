@@ -1,0 +1,338 @@
+{
+  "schemaVersion": "v1",
+  "sourceId": "source:history-nature-scroll-2024-003-b98a3ae4860a6edc",
+  "runId": "5e7ee631-5036-4dc4-acb4-42bcf279f7df",
+  "publishedAt": "2026-07-27T09:56:24.947Z",
+  "claims": [
+    {
+      "id": "claim:b98a3ae4860a6edc-3c7148205b4853be",
+      "statement": "The scroll was buried 2,000 years ago by the eruption of Mount Vesuvius.",
+      "evidenceSpanIds": [
+        "span:history-nature-scroll-2024-003-b98a3ae4860a6edc-1#chars-240-296"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:56:14.125Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:history-nature-scroll-2024-003-b98a3ae4860a6edc-1#chars-240-296"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:history-nature-scroll-2024-003-b98a3ae4860a6edc-1#chars-240-296"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-27T09:56:14.125Z"
+    },
+    {
+      "id": "claim:b98a3ae4860a6edc-704f0702fd830045",
+      "statement": "The winners of a contest called the Vesuvius Challenge trained their machine-learning algorithms on scans of the rolled-up papyrus.",
+      "evidenceSpanIds": [
+        "span:history-nature-scroll-2024-003-b98a3ae4860a6edc-2#chars-299-429"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:56:14.125Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:history-nature-scroll-2024-003-b98a3ae4860a6edc-2#chars-299-429"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:history-nature-scroll-2024-003-b98a3ae4860a6edc-2#chars-299-429"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-27T09:56:14.125Z"
+    },
+    {
+      "id": "claim:b98a3ae4860a6edc-8283c241b4571c9c",
+      "statement": "The training unveiled a previously unknown philosophical work.",
+      "evidenceSpanIds": [
+        "span:history-nature-scroll-2024-003-b98a3ae4860a6edc-2#chars-431-480"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:56:14.125Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:history-nature-scroll-2024-003-b98a3ae4860a6edc-2#chars-431-480"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:history-nature-scroll-2024-003-b98a3ae4860a6edc-2#chars-431-480"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-27T09:56:14.125Z"
+    },
+    {
+      "id": "claim:b98a3ae4860a6edc-95aab89f959ee2e9",
+      "statement": "A team of student researchers has made a giant contribution to solving one of the biggest mysteries in archaeology.",
+      "evidenceSpanIds": [
+        "span:history-nature-scroll-2024-003-b98a3ae4860a6edc-1#chars-59-173"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:56:14.125Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:history-nature-scroll-2024-003-b98a3ae4860a6edc-1#chars-59-173"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:history-nature-scroll-2024-003-b98a3ae4860a6edc-1#chars-59-173"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-27T09:56:14.125Z"
+    },
+    {
+      "id": "claim:b98a3ae4860a6edc-eb659af5a9f64d88",
+      "statement": "The philosophical work discusses the senses and pleasure.",
+      "evidenceSpanIds": [
+        "span:history-nature-scroll-2024-003-b98a3ae4860a6edc-2#chars-486-519"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:56:14.125Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:history-nature-scroll-2024-003-b98a3ae4860a6edc-2#chars-486-519"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:history-nature-scroll-2024-003-b98a3ae4860a6edc-2#chars-486-519"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-27T09:56:14.125Z"
+    },
+    {
+      "id": "claim:b98a3ae4860a6edc-fd2b496dae5aceca",
+      "statement": "The contribution was made by revealing the content of Greek writing inside a charred scroll.",
+      "evidenceSpanIds": [
+        "span:history-nature-scroll-2024-003-b98a3ae4860a6edc-1#chars-174-239"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:56:14.125Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:history-nature-scroll-2024-003-b98a3ae4860a6edc-1#chars-174-239"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:history-nature-scroll-2024-003-b98a3ae4860a6edc-1#chars-174-239"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-27T09:56:14.125Z"
+    }
+  ],
+  "concepts": [
+    {
+      "id": "concept:164ef01621f6babb",
+      "name": "Greek writing",
+      "aliases": [
+        "Greek writing"
+      ],
+      "boundary": "Text written in the Greek language.",
+      "domain": "Linguistics"
+    },
+    {
+      "id": "concept:203e8320e2b7b7fb",
+      "name": "philosophical work",
+      "aliases": [
+        "philosophical work"
+      ],
+      "boundary": "A text discussing philosophical topics, here senses and pleasure.",
+      "domain": "Philosophy"
+    },
+    {
+      "id": "concept:2ee4be7d55385df6",
+      "name": "archaeology",
+      "aliases": [
+        "archaeology"
+      ],
+      "boundary": "The study of human history through excavation and analysis of artifacts.",
+      "domain": "Science"
+    },
+    {
+      "id": "concept:9344288a171111e1",
+      "name": "student researchers",
+      "aliases": [
+        "student researchers"
+      ],
+      "boundary": "Researchers who are students, likely at a university.",
+      "domain": "Education"
+    },
+    {
+      "id": "concept:c165c4429b3ea21d",
+      "name": "machine learning",
+      "aliases": [
+        "machine-learning algorithms"
+      ],
+      "boundary": "Algorithms that learn from data to make predictions or decisions.",
+      "domain": "Computer Science"
+    },
+    {
+      "id": "concept:ca84411cd7efa26c",
+      "name": "Herculaneum scroll",
+      "aliases": [
+        "charred scroll",
+        "rolled-up papyrus",
+        "scroll"
+      ],
+      "boundary": "Ancient papyrus scrolls from Herculaneum, carbonized by Vesuvius eruption.",
+      "domain": "Archaeology"
+    },
+    {
+      "id": "concept:d1f469215c4a1174",
+      "name": "Mount Vesuvius",
+      "aliases": [
+        "Mount Vesuvius"
+      ],
+      "boundary": "Volcano that erupted in 79 AD, burying Pompeii and Herculaneum.",
+      "domain": "Geography"
+    },
+    {
+      "id": "concept:d6ed6ac1ddc4f743",
+      "name": "Vesuvius Challenge",
+      "aliases": [
+        "Vesuvius Challenge"
+      ],
+      "boundary": "A contest to read the Herculaneum scrolls using machine learning.",
+      "domain": "Competition"
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel:b98a3ae4860a6edc-b39a43fc9bb7bc6e",
+      "from": "claim:b98a3ae4860a6edc-3c7148205b4853be",
+      "to": "claim:b98a3ae4860a6edc-704f0702fd830045",
+      "type": "RELATED_TO",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:history-nature-scroll-2024-003-b98a3ae4860a6edc-1#chars-240-296",
+        "span:history-nature-scroll-2024-003-b98a3ae4860a6edc-2#chars-299-429"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:56:19.046Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.6,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:b98a3ae4860a6edc-fe01487361015f30",
+      "from": "claim:b98a3ae4860a6edc-95aab89f959ee2e9",
+      "to": "claim:b98a3ae4860a6edc-fd2b496dae5aceca",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:history-nature-scroll-2024-003-b98a3ae4860a6edc-1#chars-174-239",
+        "span:history-nature-scroll-2024-003-b98a3ae4860a6edc-1#chars-59-173"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:56:19.046Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.9,
+      "consumedBy": []
+    }
+  ]
+}

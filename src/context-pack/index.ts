@@ -23,10 +23,15 @@ import {
 	readAllClaims,
 	readAllConcepts,
 	readAllRelations,
+	readAllSources,
 	readAllSpans,
 	readAllWikiModules,
 } from "../linter/storage.js";
-import { lexicalFeatures, retrieveClaimSeeds } from "../retrieval/index.js";
+import {
+	filterClaimsByExplicitTemporalScope,
+	lexicalFeatures,
+	retrieveClaimSeeds,
+} from "../retrieval/index.js";
 import type {
 	Claim,
 	ContextPack,
@@ -54,6 +59,49 @@ export interface KnowledgeMap {
 	recentChanges: string[];
 	/** 地图生成时的 Claim 总数 */
 	totalClaims: number;
+}
+
+export interface ContextPackDiagnostics {
+	temporalScope: {
+		applied: boolean;
+		startMonth: string | null;
+		endMonth: string | null;
+		excludedClaimIds: string[];
+	};
+	retrieval: {
+		queryFeatureCount: number;
+		eligibleClaimCount: number;
+		matchedClaimCount: number;
+		usedEvidenceText: boolean;
+		usedSourceMetadata: boolean;
+		resolvedEvidenceRefCount: number;
+		unresolvedEvidenceRefCount: number;
+		candidates: Array<{
+			claimId: string;
+			rank: number;
+			score: number;
+			channels: string[];
+			matchedFeatureCount: number;
+		}>;
+	};
+	graph: {
+		seedClaimIds: string[];
+		expandedClaimIds: string[];
+		expandedRelationIds: string[];
+	};
+	budget: {
+		selectedClaimIds: string[];
+		selectedRelationIds: string[];
+		selectedEvidenceSpanIds: string[];
+		selectedWikiModuleIds: string[];
+		dropped: Array<{ id: string; reason: string }>;
+		finalEstimatedTokens: number;
+	};
+}
+
+export interface ContextPackBuildResult {
+	pack: ContextPack;
+	diagnostics: ContextPackDiagnostics;
 }
 
 /**
@@ -84,37 +132,54 @@ export function filterClaimsByScope(claims: Claim[], scope: ScopeContext): Claim
 export function buildKnowledgeMap(
 	claims: Claim[],
 	concepts: { id: string; name: string; aliases: string[] }[],
+	query = "",
 ): KnowledgeMap {
 	// 只看 Canonical + Active
 	const active = claims.filter(
 		(c) => c.publicationState === "CANONICAL" && c.lifecycle === "ACTIVE",
 	);
 
+	// 地图必须帮助当前任务定向，而不是注入全库高频词和任意 Concept。
+	// 仍然在 Seed 之前生成，但只展示和任务有明确稀疏特征交集的项目。
+	const queryFeatures = lexicalFeatures(query);
+	const relevant =
+		queryFeatures.size === 0
+			? []
+			: active.filter((claim) =>
+					[...lexicalFeatures(claim.statement)].some((feature) => queryFeatures.has(feature)),
+				);
+
 	// 主题提取：使用与 Seed Retriever 一致的 Unicode 特征，避免整句中文成为一个 token。
 	const wordFreq = new Map<string, number>();
-	for (const claim of active) {
+	for (const claim of relevant) {
 		for (const feature of lexicalFeatures(claim.statement)) {
-			if (feature.startsWith("g3:")) continue;
+			if (feature.startsWith("g3:") || !queryFeatures.has(feature)) continue;
 			wordFreq.set(feature, (wordFreq.get(feature) ?? 0) + 1);
 		}
 	}
 	const topics = [...wordFreq.entries()]
-		.filter(([, count]) => count >= 2) // 至少出现 2 次
 		.sort(([, leftCount], [, rightCount]) => rightCount - leftCount)
 		.slice(0, 10)
 		.map(([feature]) => feature.slice(feature.indexOf(":") + 1));
 
 	// 已知争议
-	const disputes = active
+	const disputes = relevant
 		.filter((c) => c.validity === "DISPUTED")
 		.slice(0, 5)
 		.map((c) => `${c.id}: ${c.statement.slice(0, 80)}`);
 
 	// 关键概念
-	const keyConcepts = concepts.slice(0, 15).map((c) => c.name);
+	const keyConcepts = concepts
+		.filter((concept) =>
+			[...lexicalFeatures([concept.name, ...concept.aliases].join(" "))].some((feature) =>
+				queryFeatures.has(feature),
+			),
+		)
+		.slice(0, 15)
+		.map((concept) => concept.name);
 
 	// 最近变化（按 createdAt/validFrom 排序）
-	const recentChanges = [...active]
+	const recentChanges = [...relevant]
 		.sort((a, b) => (b.validFrom ?? "").localeCompare(a.validFrom ?? ""))
 		.slice(0, 5)
 		.map((c) => `[${c.validFrom?.slice(0, 10) ?? "?"}] ${c.statement.slice(0, 60)}`);
@@ -136,8 +201,9 @@ function selectSeeds(
 	claims: Claim[],
 	spans: ReturnType<typeof readAllSpans>,
 	query: string,
+	sourceSearchText: ReadonlyMap<string, string>,
 ): ReturnType<typeof retrieveClaimSeeds> {
-	return retrieveClaimSeeds(claims, spans, query, 10);
+	return retrieveClaimSeeds(claims, spans, query, 10, sourceSearchText);
 }
 
 // ─── Context Pack 构建 ──────────────────────────────────────────
@@ -147,18 +213,30 @@ function selectSeeds(
  *
  * 修断点 3：流程改为 Map → Seed → Subgraph → Evidence → Pack
  */
-export function buildContextPack(
+export function buildContextPackWithDiagnostics(
 	config: AppConfig,
 	task: string,
 	budget = 12000,
 	maxDepth = 3,
 	scopeContext?: ScopeContext,
-): ContextPack {
+): ContextPackBuildResult {
 	// ── 1. 加载知识状态 ──
 	let allClaims = readAllClaims(config);
 	const allConcepts = readAllConcepts(config);
 	let allRelations = readAllRelations(config);
 	const allSpans = readAllSpans(config);
+	const allSources = readAllSources(config);
+	const sourceSearchText = new Map(
+		allSources.map(
+			(source) =>
+				[
+					source.id,
+					[source.uri, source.sourceType, ...Object.entries(source.metadata ?? {}).flat()].join(
+						"\n",
+					),
+				] as const,
+		),
+	);
 	const allWikiModules = readAllWikiModules(config);
 	const knowledgeVersion = computeKnowledgeVersion(
 		allClaims,
@@ -172,6 +250,13 @@ export function buildContextPack(
 	allClaims = scopeContext
 		? filterClaimsByScope(allClaims, scopeContext)
 		: allClaims.filter((claim) => claim.scope.type === "GLOBAL");
+	const temporalScope = filterClaimsByExplicitTemporalScope(
+		allClaims,
+		allSpans,
+		task,
+		sourceSearchText,
+	);
+	allClaims = temporalScope.claims;
 	// Relation 只保留两端 Claim 都在过滤后集合中的边，防止通过边泄露其他作用域。
 	const scopedClaimIds = new Set(allClaims.map((claim) => claim.id));
 	allRelations = allRelations.filter((relation) =>
@@ -179,13 +264,13 @@ export function buildContextPack(
 	);
 
 	// ── 2. 构建全局地图（修断点 3：map-first）──
-	const knowledgeMap = buildKnowledgeMap(allClaims, allConcepts);
+	const knowledgeMap = buildKnowledgeMap(allClaims, allConcepts, task);
 
 	// ── 3. 构建 Graph ──
 	const graph = buildGraph(allClaims, allConcepts, allRelations);
 
 	// ── 4. 选择可靠种子；Graph 只能在 Seed 之后扩展 ──
-	const retrieval = selectSeeds(graph.claims, allSpans, task);
+	const retrieval = selectSeeds(graph.claims, allSpans, task, sourceSearchText);
 	const seedResults = retrieval.candidates.map((candidate) => ({
 		claim: candidate.claim,
 		score: candidate.score,
@@ -350,6 +435,33 @@ export function buildContextPack(
 			break;
 		}
 	}
+	if (selectedRelations.some((relation) => relation.type === "SUPPORTS")) {
+		addOverhead(
+			"⚠️ SUPPORTS 只表示 Claim 之间存在语义支持，不证明其来源彼此独立、同等权威或都是规范性来源；来源独立性必须依据 Source provenance 单独判断。",
+		);
+	}
+	const evidenceSourceIds = new Set(evidenceSpans.map((span) => span.sourceId));
+	for (const source of allSources) {
+		if (!evidenceSourceIds.has(source.id)) continue;
+		const metadata = source.metadata ?? {};
+		const preferredKeys = [
+			"sourceRole",
+			"author",
+			"publisher",
+			"canonicalUrl",
+			"publishedAt",
+			"versionRef",
+		];
+		const details = preferredKeys
+			.flatMap((key) => (metadata[key] ? [`${key}=${metadata[key]}`] : []))
+			.join("; ");
+		if (
+			!addOverhead(
+				`🔎 Source ${source.id} provenance: uri=${source.uri}; sourceType=${source.sourceType}; ${details || "role=unknown"}`,
+			)
+		)
+			break;
+	}
 
 	// ── 9. 已知缺口（从 overheadBudget 剩余扣）──
 	const knownGaps: string[] = [];
@@ -403,7 +515,52 @@ export function buildContextPack(
 		selectionLog: selectionLog.slice(0, 50),
 		knownGaps,
 	};
-	return enforceContextBudget(pack, budget);
+	const finalPack = enforceContextBudget(pack, budget);
+	return {
+		pack: finalPack,
+		diagnostics: {
+			temporalScope: temporalScope.diagnostics,
+			retrieval: {
+				...retrieval.diagnostics,
+				candidates: retrieval.candidates.map((candidate, index) => ({
+					claimId: candidate.claim.id,
+					rank: index + 1,
+					score: candidate.score,
+					channels: candidate.channels,
+					matchedFeatureCount: candidate.matchedFeatures.length,
+				})),
+			},
+			graph: {
+				seedClaimIds: seedIds,
+				expandedClaimIds: subgraph.claims.map((claim) => claim.id),
+				expandedRelationIds: subgraph.relations.map((relation) => relation.id),
+			},
+			budget: {
+				selectedClaimIds: finalPack.subgraph.claims.map((claim) => claim.id),
+				selectedRelationIds: finalPack.subgraph.relations.map((relation) => relation.id),
+				selectedEvidenceSpanIds: finalPack.evidenceSpans.map((span) => span.id),
+				selectedWikiModuleIds: finalPack.wikiModules.map((module) => module.id),
+				dropped: selectionLog
+					.filter((entry) => entry.dropped)
+					.map((entry) => ({
+						id: entry.dropped ?? "unknown",
+						reason: entry.dropReason ?? "pack-budget",
+					})),
+				finalEstimatedTokens: estimateTokens(JSON.stringify(finalPack)),
+			},
+		},
+	};
+}
+
+/** Backwards-compatible production API; diagnostics stay outside the Agent payload. */
+export function buildContextPack(
+	config: AppConfig,
+	task: string,
+	budget = 12000,
+	maxDepth = 3,
+	scopeContext?: ScopeContext,
+): ContextPack {
+	return buildContextPackWithDiagnostics(config, task, budget, maxDepth, scopeContext).pack;
 }
 
 /** 最终以真实序列化载荷复核预算；裁剪时保持 Claim→Evidence 和 Relation→Endpoint 闭包。 */

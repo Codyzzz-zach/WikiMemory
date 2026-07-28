@@ -1,0 +1,48 @@
+{
+  "questionId": "B-U-DESIGN-008",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 2355,
+    "completionTokens": 711,
+    "totalTokens": 3066,
+    "promptCacheHitTokens": 256,
+    "promptCacheMissTokens": 2099,
+    "reasoningTokens": 0
+  },
+  "request": {
+    "systemPrompt": "你是盲测评分员，不知道答案属于哪个实验组。只按题目、评分锚点、Gold 证据和引用预校验评价，不用外部常识修正答案。\n每个维度独立使用同一 0-4 锚点：4=完整且准确；3=大部分满足，仅轻微遗漏；2=部分满足，存在重要遗漏；1=仅有极少相关内容；0=缺失、反转或与证据冲突。\nrequiredPointCoverage 只看 requiredPoints；conditionFidelity 看条件、时间、来源角色和不确定性；evidenceGrounding 同时看关键结论是否与 Gold 证据一致以及 citationValidation；answerabilityDiscipline 看是否越界、编造或错误拒答。\ncitationValidation.valid 表示引用标识确实存在于该匿名样本收到的上下文。内部 CLAIM/SPAN/SOURCE 标识不需要出现在 Gold 文本中，不得仅因此扣分；但存在性有效不代表语义必然支持，仍需对照答案内容与 Gold。\n若反转来源归属、抹掉关键条件/时间、把提案当最终规范或编造关键事实，hardFailure=true。\n数值必须与 rationale 一致：若 rationale 说“完整覆盖且准确”，对应维度不能低于 3。\n只输出严格 JSON：{\"scores\":[{\"sampleId\":\"...\",\"requiredPointCoverage\":0,\"conditionFidelity\":0,\"evidenceGrounding\":0,\"answerabilityDiscipline\":0,\"hardFailure\":false,\"rationale\":\"...\"}]}。",
+    "userPrompt": "{\"question\":\"为仍受 WCAG 2.1 合同约束的产品生成 2.2 升级清单。\",\"answerability\":\"partial\",\"requiredPoints\":[\"加入九项新标准\",\"保留适用合同要求的 4.1.1 测试\",\"核对政策而非自动删项\"],\"forbiddenClaims\":[\"不得输出法律合规保证\"],\"requiredEvidence\":[{\"sourceId\":\"design-wcag22-2023-002\",\"exactQuote\":\"WCAG 2.2 builds on and is backwards compatible with WCAG 2.1, meaning web pages that conform to WCAG 2.2 are at least as accessible as pages that conform to WCAG 2.1. Requirements have been added that build on 2.1 and 2.0. WCAG 2.2 has removed one success criterion, 4.1.1 Parsing.\",\"role\":\"supports\"},{\"sourceId\":\"design-wcag22-2023-002\",\"exactQuote\":\"Authors that are required by policy to conform with WCAG 2.0 or 2.1 will be able to update content to WCAG 2.2, but may need to continue to test and report 4.1.1.\",\"role\":\"supports\"},{\"sourceId\":\"design-wcag22-2023-002\",\"exactQuote\":\"The following success criteria are new in WCAG 2.2:\\n\\n- 2.4.11 Focus Not Obscured (Minimum) (AA)\\n- 2.4.12 Focus Not Obscured (Enhanced) (AAA)\\n- 2.4.13 Focus Appearance (AAA)\\n- 2.5.7 Dragging Movements (AA)\\n- 2.5.8 Target Size (Minimum) (AA)\\n- 3.2.6 Consistent Help (A)\\n- 3.3.7 Redundant Entry (A)\\n- 3.3.8 Accessible Authentication (Minimum) (AA)\\n- 3.3.9 Accessible Authentication (Enhanced) (AAA)\",\"role\":\"supports\"}],\"sourcePriorityRule\":\"P/C 决定规范、论文与实现事实；S 只能作为有归属的解释，不能推翻一手版本文本。\",\"anonymousAnswers\":[{\"sampleId\":\"sample-e1c3eceb-6584-499d-bad7-cb4d2b4a21b6\",\"questionId\":\"B-U-DESIGN-008\",\"repetition\":1,\"answer\":\"{\\n  \\\"answer\\\": \\\"对于仍受 WCAG 2.1 合同约束的产品，升级到 WCAG 2.2 的清单包括：新增 9 个成功标准（2.4.11 Focus Not Obscured (Minimum) (AA)、2.4.12 Focus Not Obscured (Enhanced) (AAA)、2.4.13 Focus Appearance (AAA)、2.5.7 Dragging Movements (AA)、2.5.8 Target Size (Minimum) (AA)、3.2.6 Consistent Help (A)、3.3.7 Redundant Entry (A)、3.3.8 Accessible Authentication (Minimum) (AA)、3.3.9 Accessible Authentication (Enhanced) (AAA)），并移除 4.1.1 Parsing。由于 WCAG 2.2 向后兼容 WCAG 2.1，符合 2.1 的内容可更新至 2.2，但若政策要求继续测试和报告 4.1.1，则需保留该标准。\\\",\\n  \\\"citations\\\": [\\n    \\\"claim:1da3417e06ff5435-0131b383bb68d5d6\\\",\\n    \\\"claim:1da3417e06ff5435-4f47a3d28c2c5675\\\",\\n    \\\"claim:1da3417e06ff5435-50f420b0776ab205\\\",\\n    \\\"claim:1da3417e06ff5435-e42233e831e0f66d\\\",\\n    \\\"claim:1da3417e06ff5435-e9295b4993a17258\\\",\\n    \\\"claim:1da3417e06ff5435-fda7e8c14ff6f23b\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": [\\n    \\\"若政策要求继续测试和报告 4.1.1，则需保留该标准，但具体政策要求未知。\\\"\\n  ]\\n}\",\"citationValidation\":{\"formatValid\":true,\"total\":6,\"valid\":6,\"invalid\":[]}},{\"sampleId\":\"sample-48151eca-85db-4197-bff1-6e72e99934b1\",\"questionId\":\"B-U-DESIGN-008\",\"repetition\":1,\"answer\":\"{\\n  \\\"answer\\\": \\\"对于仍受 WCAG 2.1 合同约束的产品，升级到 WCAG 2.2 的清单包括：新增 9 个成功标准（2.4.11 Focus Not Obscured (Minimum) (AA)、2.4.12 Focus Not Obscured (Enhanced) (AAA)、2.4.13 Focus Appearance (AAA)、2.5.7 Dragging Movements (AA)、2.5.8 Target Size (Minimum) (AA)、3.2.6 Consistent Help (A)、3.3.7 Redundant Entry (A)、3.3.8 Accessible Authentication (Minimum) (AA)、3.3.9 Accessible Authentication (Enhanced) (AAA)），并移除 4.1.1 Parsing。由于 WCAG 2.2 向后兼容 WCAG 2.1，符合 WCAG 2.1 的产品可更新至 2.2，但若政策要求继续测试和报告 4.1.1，则需保留该标准。\\\",\\n  \\\"citations\\\": [\\n    \\\"claim:1da3417e06ff5435-0131b383bb68d5d6\\\",\\n    \\\"claim:1da3417e06ff5435-4043dbf2773f336c\\\",\\n    \\\"claim:1da3417e06ff5435-4f47a3d28c2c5675\\\",\\n    \\\"claim:1da3417e06ff5435-50f420b0776ab205\\\",\\n    \\\"claim:1da3417e06ff5435-e42233e831e0f66d\\\",\\n    \\\"claim:1da3417e06ff5435-e9295b4993a17258\\\",\\n    \\\"claim:1da3417e06ff5435-fda7e8c14ff6f23b\\\",\\n    \\\"claim:b89787b6b83f3605-2b879b185f80c3ed\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": [\\n    \\\"政策是否要求继续测试和报告 4.1.1 Parsing 取决于具体合同条款。\\\"\\n  ]\\n}\",\"citationValidation\":{\"formatValid\":true,\"total\":8,\"valid\":8,\"invalid\":[]}},{\"sampleId\":\"sample-f94b4fc9-5d28-465f-8771-b935481b1318\",\"questionId\":\"B-U-DESIGN-008\",\"repetition\":1,\"answer\":\"{\\n  \\\"answer\\\": \\\"为仍受 WCAG 2.1 合同约束的产品生成 2.2 升级清单时，需注意 WCAG 2.2 与 2.1 向后兼容，但新增了以下成功标准：2.4.11 Focus Not Obscured (Minimum) (AA)、2.4.12 Focus Not Obscured (Enhanced) (AAA)、2.4.13 Focus Appearance (AAA)、2.5.7 Dragging Movements (AA)、2.5.8 Target Size (Minimum) (AA)、3.2.6 Consistent Help (A)、3.3.7 Redundant Entry (A)、3.3.8 Accessible Authentication (Minimum) (AA)、3.3.9 Accessible Authentication (Enhanced) (AAA)。同时，WCAG 2.2 移除了 4.1.1 Parsing，但若合同要求符合 WCAG 2.1，则仍需测试和报告 4.1.1。注意：2.5.7 Dragging Movements 存在草案反馈，认为应移除该标准直至研究完成。\\\",\\n  \\\"citations\\\": [\\n    \\\"SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-wcag22-2023-002.md:1-16\\\",\\n    \\\"SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-wcag-issue-2705-003.md:1-8\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": [\\n    \\\"2.5.7 Dragging Movements 可能因研究未完成而被移除，需关注最终规范。\\\"\\n  ]\\n}\",\"citationValidation\":{\"formatValid\":true,\"total\":2,\"valid\":2,\"invalid\":[]}}]}"
+  },
+  "rawResponse": "{\n  \"scores\": [\n    {\n      \"sampleId\": \"sample-e1c3eceb-6584-499d-bad7-cb4d2b4a21b6\",\n      \"requiredPointCoverage\": 3,\n      \"conditionFidelity\": 3,\n      \"evidenceGrounding\": 3,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"requiredPointCoverage: 答案列出了九项新标准，提及了保留4.1.1测试的条件，但未明确提及'核对政策而非自动删项'，而是隐含在条件中，轻微遗漏。conditionFidelity: 正确说明了向后兼容性、新增和移除，并指出了政策要求时需保留4.1.1，但未明确提及'合同约束'的具体条件，轻微遗漏。evidenceGrounding: 关键结论与Gold证据一致，引用有效且支持内容，但未直接引用所有新标准列表，整体良好。answerabilityDiscipline: 未越界、编造或错误拒答，未提供法律保证，完全符合。\"\n    },\n    {\n      \"sampleId\": \"sample-48151eca-85db-4197-bff1-6e72e99934b1\",\n      \"requiredPointCoverage\": 3,\n      \"conditionFidelity\": 3,\n      \"evidenceGrounding\": 3,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"requiredPointCoverage: 列出了九项新标准，提及了保留4.1.1的条件，但未明确提及'核对政策'，轻微遗漏。conditionFidelity: 正确说明向后兼容、新增和移除，并指出政策要求时保留4.1.1，但未强调'合同约束'，轻微遗漏。evidenceGrounding: 关键结论与Gold一致，引用有效，但未直接引用新标准列表，整体良好。answerabilityDiscipline: 未越界、编造或错误拒答，完全符合。\"\n    },\n    {\n      \"sampleId\": \"sample-f94b4fc9-5d28-465f-8771-b935481b1318\",\n      \"requiredPointCoverage\": 3,\n      \"conditionFidelity\": 2,\n      \"evidenceGrounding\": 2,\n      \"answerabilityDiscipline\": 2,\n      \"hardFailure\": false,\n      \"rationale\": \"requiredPointCoverage: 列出了九项新标准，提及了保留4.1.1的条件，但未明确提及'核对政策'，轻微遗漏。conditionFidelity: 正确说明向后兼容、新增和移除，但引入了关于2.5.7可能被移除的未证实信息，与Gold证据中该标准已列入新标准列表冲突，重要遗漏。evidenceGrounding: 关键结论部分与Gold一致，但关于2.5.7的不确定性陈述与Gold证据矛盾，且引用了额外来源（issue-2705）但该来源未在requiredEvidence中，导致证据基础不准确，重要遗漏。answerabilityDiscipline: 引入了未在requiredEvidence中支持的关于2.5.7的争议信息，可能构成编造，且未明确拒答，但未提供法律保证，部分越界。\"\n    }\n  ]\n}",
+  "parsed": [
+    {
+      "sampleId": "sample-e1c3eceb-6584-499d-bad7-cb4d2b4a21b6",
+      "requiredPointCoverage": 3,
+      "conditionFidelity": 3,
+      "evidenceGrounding": 3,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "requiredPointCoverage: 答案列出了九项新标准，提及了保留4.1.1测试的条件，但未明确提及'核对政策而非自动删项'，而是隐含在条件中，轻微遗漏。conditionFidelity: 正确说明了向后兼容性、新增和移除，并指出了政策要求时需保留4.1.1，但未明确提及'合同约束'的具体条件，轻微遗漏。evidenceGrounding: 关键结论与Gold证据一致，引用有效且支持内容，但未直接引用所有新标准列表，整体良好。answerabilityDiscipline: 未越界、编造或错误拒答，未提供法律保证，完全符合。"
+    },
+    {
+      "sampleId": "sample-48151eca-85db-4197-bff1-6e72e99934b1",
+      "requiredPointCoverage": 3,
+      "conditionFidelity": 3,
+      "evidenceGrounding": 3,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "requiredPointCoverage: 列出了九项新标准，提及了保留4.1.1的条件，但未明确提及'核对政策'，轻微遗漏。conditionFidelity: 正确说明向后兼容、新增和移除，并指出政策要求时保留4.1.1，但未强调'合同约束'，轻微遗漏。evidenceGrounding: 关键结论与Gold一致，引用有效，但未直接引用新标准列表，整体良好。answerabilityDiscipline: 未越界、编造或错误拒答，完全符合。"
+    },
+    {
+      "sampleId": "sample-f94b4fc9-5d28-465f-8771-b935481b1318",
+      "requiredPointCoverage": 3,
+      "conditionFidelity": 2,
+      "evidenceGrounding": 2,
+      "answerabilityDiscipline": 2,
+      "hardFailure": false,
+      "rationale": "requiredPointCoverage: 列出了九项新标准，提及了保留4.1.1的条件，但未明确提及'核对政策'，轻微遗漏。conditionFidelity: 正确说明向后兼容、新增和移除，但引入了关于2.5.7可能被移除的未证实信息，与Gold证据中该标准已列入新标准列表冲突，重要遗漏。evidenceGrounding: 关键结论部分与Gold一致，但关于2.5.7的不确定性陈述与Gold证据矛盾，且引用了额外来源（issue-2705）但该来源未在requiredEvidence中，导致证据基础不准确，重要遗漏。answerabilityDiscipline: 引入了未在requiredEvidence中支持的关于2.5.7的争议信息，可能构成编造，且未明确拒答，但未提供法律保证，部分越界。"
+    }
+  ]
+}

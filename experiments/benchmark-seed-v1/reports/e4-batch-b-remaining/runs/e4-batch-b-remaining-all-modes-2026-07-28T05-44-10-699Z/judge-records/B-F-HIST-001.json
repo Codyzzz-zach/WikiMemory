@@ -1,0 +1,48 @@
+{
+  "questionId": "B-F-HIST-001",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 1267,
+    "completionTokens": 468,
+    "totalTokens": 1735,
+    "promptCacheHitTokens": 256,
+    "promptCacheMissTokens": 1011,
+    "reasoningTokens": 0
+  },
+  "request": {
+    "systemPrompt": "你是盲测评分员，不知道答案属于哪个实验组。只按题目、评分锚点、Gold 证据和引用预校验评价，不用外部常识修正答案。\n每个维度独立使用同一 0-4 锚点：4=完整且准确；3=大部分满足，仅轻微遗漏；2=部分满足，存在重要遗漏；1=仅有极少相关内容；0=缺失、反转或与证据冲突。\nrequiredPointCoverage 只看 requiredPoints；conditionFidelity 看条件、时间、来源角色和不确定性；evidenceGrounding 同时看关键结论是否与 Gold 证据一致以及 citationValidation；answerabilityDiscipline 看是否越界、编造或错误拒答。\ncitationValidation.valid 表示引用标识确实存在于该匿名样本收到的上下文。内部 CLAIM/SPAN/SOURCE 标识不需要出现在 Gold 文本中，不得仅因此扣分；但存在性有效不代表语义必然支持，仍需对照答案内容与 Gold。\n若反转来源归属、抹掉关键条件/时间、把提案当最终规范或编造关键事实，hardFailure=true。\n数值必须与 rationale 一致：若 rationale 说“完整覆盖且准确”，对应维度不能低于 3。\n只输出严格 JSON：{\"scores\":[{\"sampleId\":\"...\",\"requiredPointCoverage\":0,\"conditionFidelity\":0,\"evidenceGrounding\":0,\"answerabilityDiscipline\":0,\"hardFailure\":false,\"rationale\":\"...\"}]}。",
+    "userPrompt": "{\"question\":\"判断：EduceLab 论文已经证明所有密封赫库兰尼姆纸卷都能完整恢复。\",\"answerability\":\"answerable\",\"requiredPoints\":[\"不忠实；证据明确涉及有 ground truth 的碎片\",\"验证方法不等于所有纸卷完整恢复\"],\"forbiddenClaims\":[\"不得丢失对象范围\"],\"requiredEvidence\":[{\"sourceId\":\"history-educelab-paper-2023-001\",\"exactQuote\":\"Our method is capable of revealing accurate lines of text on scroll fragments with known ground truth.\",\"role\":\"supports\"},{\"sourceId\":\"history-educelab-paper-2023-001\",\"exactQuote\":\"Revealed text is verified using visual confirmation, quantitative image metrics, and scholarly review.\",\"role\":\"supports\"}],\"sourcePriorityRule\":\"P/C 决定规范、论文与实现事实；S 只能作为有归属的解释，不能推翻一手版本文本。\",\"anonymousAnswers\":[{\"sampleId\":\"sample-94849738-839b-4921-a5e5-f7d4ae8e965a\",\"questionId\":\"B-F-HIST-001\",\"repetition\":1,\"answer\":\"{\\n  \\\"answer\\\": \\\"否。EduceLab 论文未证明所有密封赫库兰尼姆纸卷都能完整恢复。论文仅展示了在已知真实情况的碎片上揭示准确文本行的方法，并首次发现了隐藏文本，但未声称对所有密封纸卷的完整恢复。\\\",\\n  \\\"citations\\\": [\\\"SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/history-humanities/history-educelab-paper-2023-001.md:1-6\\\"],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": [\\\"论文未提及对所有密封纸卷的完整恢复，仅针对碎片和首次发现隐藏文本。\\\"]\\n}\",\"citationValidation\":{\"formatValid\":true,\"total\":1,\"valid\":1,\"invalid\":[]}},{\"sampleId\":\"sample-d616e7b4-aa9f-4b3f-98eb-06ec23609a45\",\"questionId\":\"B-F-HIST-001\",\"repetition\":1,\"answer\":\"{\\n  \\\"answer\\\": \\\"上下文未证明所有密封赫库兰尼姆纸卷都能完整恢复。EduceLab论文仅展示了在已知真实情况的碎片上揭示准确文本行，并首次发现了隐藏文本，但未声称对所有密封纸卷完整恢复。\\\",\\n  \\\"citations\\\": [\\n    \\\"claim:e71279e71acc04bd-367243e68b140409\\\",\\n    \\\"claim:e71279e71acc04bd-dc4b7534a61f85ee\\\"\\n  ],\\n  \\\"insufficient\\\": true,\\n  \\\"uncertainties\\\": [\\n    \\\"未提供关于所有密封纸卷完整恢复的证据或声明\\\"\\n  ]\\n}\",\"citationValidation\":{\"formatValid\":true,\"total\":2,\"valid\":2,\"invalid\":[]}},{\"sampleId\":\"sample-0e897c14-d827-41b2-bef6-dfe00b1982a5\",\"questionId\":\"B-F-HIST-001\",\"repetition\":1,\"answer\":\"{\\n  \\\"answer\\\": \\\"上下文未证明所有密封赫库兰尼姆纸卷都能完整恢复。EduceLab 论文展示了在已知真实情况的碎片上揭示文本的能力，并首次发现了隐藏文本，但仅提到 PHerc. 1667 在 2026 年成为第一个被完整虚拟展开和阅读的纸卷，未涉及所有密封纸卷。\\\",\\n  \\\"citations\\\": [\\n    \\\"claim:e71279e71acc04bd-367243e68b140409\\\",\\n    \\\"claim:e71279e71acc04bd-dc4b7534a61f85ee\\\",\\n    \\\"claim:4ab2f152a60c6bbe-901bc3b35d2cc86e\\\"\\n  ],\\n  \\\"insufficient\\\": true,\\n  \\\"uncertainties\\\": [\\n    \\\"未提供所有密封纸卷都能完整恢复的证据\\\",\\n    \\\"已知结果仅限于特定碎片和单个纸卷\\\"\\n  ]\\n}\",\"citationValidation\":{\"formatValid\":true,\"total\":3,\"valid\":3,\"invalid\":[]}}]}"
+  },
+  "rawResponse": "{\n  \"scores\": [\n    {\n      \"sampleId\": \"sample-94849738-839b-4921-a5e5-f7d4ae8e965a\",\n      \"requiredPointCoverage\": 4,\n      \"conditionFidelity\": 4,\n      \"evidenceGrounding\": 4,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"答案明确否定原陈述，指出论文仅展示在已知真实情况的碎片上揭示文本，未声称所有密封纸卷完整恢复，完全覆盖requiredPoints。条件、时间、来源角色准确，不确定性提及论文未提及完整恢复。关键结论与Gold证据一致，引用有效且支持。未越界或编造。\"\n    },\n    {\n      \"sampleId\": \"sample-d616e7b4-aa9f-4b3f-98eb-06ec23609a45\",\n      \"requiredPointCoverage\": 4,\n      \"conditionFidelity\": 4,\n      \"evidenceGrounding\": 4,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"答案否定原陈述，指出论文仅展示碎片上揭示文本，未声称所有纸卷完整恢复，覆盖requiredPoints。条件、时间、来源角色准确，不确定性提及未提供所有纸卷证据。关键结论与Gold一致，引用有效。未越界。\"\n    },\n    {\n      \"sampleId\": \"sample-0e897c14-d827-41b2-bef6-dfe00b1982a5\",\n      \"requiredPointCoverage\": 4,\n      \"conditionFidelity\": 4,\n      \"evidenceGrounding\": 4,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"答案否定原陈述，指出论文仅展示碎片上揭示文本，并提及PHerc. 1667在2026年完整展开，但未涉及所有密封纸卷，覆盖requiredPoints。条件、时间、来源角色准确，不确定性提及未提供所有纸卷证据。关键结论与Gold一致，引用有效。未越界。\"\n    }\n  ]\n}",
+  "parsed": [
+    {
+      "sampleId": "sample-94849738-839b-4921-a5e5-f7d4ae8e965a",
+      "requiredPointCoverage": 4,
+      "conditionFidelity": 4,
+      "evidenceGrounding": 4,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "答案明确否定原陈述，指出论文仅展示在已知真实情况的碎片上揭示文本，未声称所有密封纸卷完整恢复，完全覆盖requiredPoints。条件、时间、来源角色准确，不确定性提及论文未提及完整恢复。关键结论与Gold证据一致，引用有效且支持。未越界或编造。"
+    },
+    {
+      "sampleId": "sample-d616e7b4-aa9f-4b3f-98eb-06ec23609a45",
+      "requiredPointCoverage": 4,
+      "conditionFidelity": 4,
+      "evidenceGrounding": 4,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "答案否定原陈述，指出论文仅展示碎片上揭示文本，未声称所有纸卷完整恢复，覆盖requiredPoints。条件、时间、来源角色准确，不确定性提及未提供所有纸卷证据。关键结论与Gold一致，引用有效。未越界。"
+    },
+    {
+      "sampleId": "sample-0e897c14-d827-41b2-bef6-dfe00b1982a5",
+      "requiredPointCoverage": 4,
+      "conditionFidelity": 4,
+      "evidenceGrounding": 4,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "答案否定原陈述，指出论文仅展示碎片上揭示文本，并提及PHerc. 1667在2026年完整展开，但未涉及所有密封纸卷，覆盖requiredPoints。条件、时间、来源角色准确，不确定性提及未提供所有纸卷证据。关键结论与Gold一致，引用有效。未越界。"
+    }
+  ]
+}

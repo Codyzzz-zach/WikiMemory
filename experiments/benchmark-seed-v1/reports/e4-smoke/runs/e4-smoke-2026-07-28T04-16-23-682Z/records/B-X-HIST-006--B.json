@@ -1,0 +1,51 @@
+{
+  "runId": "e4-smoke-2026-07-28T04-16-23-682Z",
+  "sampleId": "sample-0d030f89-0689-4458-9c4f-04fe0d14fa91",
+  "questionId": "B-X-HIST-006",
+  "group": "B",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "temperature": 0,
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 340,
+    "completionTokens": 164,
+    "totalTokens": 504,
+    "promptCacheHitTokens": 0,
+    "promptCacheMissTokens": 340,
+    "reasoningTokens": 0
+  },
+  "latencyMs": 2559,
+  "promptHash": "sha256:62aa8e519b8ed62a30a81c15ed815a5c6a0b387d9e22bfb7cf4cc9a8bfb010a0",
+  "contextHash": "d823ed9e027c254744f0ff0f992b031dffe4a5cb34035be91e0fd470e5ab8df9",
+  "estimatedContextTokens": 203,
+  "estimatedInputTokens": 372,
+  "retrievedClaims": [],
+  "retrievedRelations": [],
+  "retrievedSources": [
+    "../../../workbuddy-batch-b/generated/compilation-corpus/history-humanities/history-vesuvius-github-2024-002.md"
+  ],
+  "droppedContext": [],
+  "retrievalTrace": {
+    "strategy": "folder-lexical",
+    "queryFeatureCount": 17,
+    "corpusChunkCount": 12,
+    "matchedChunkCount": 1,
+    "maxFolderChunks": 16,
+    "candidates": [
+      {
+        "id": "../../../workbuddy-batch-b/generated/compilation-corpus/history-humanities/history-vesuvius-github-2024-002.md#L1-L12",
+        "rank": 1,
+        "score": 2.8718021769015913,
+        "selected": true,
+        "dropReason": null
+      }
+    ]
+  },
+  "request": {
+    "systemPrompt": "你是受证据约束的问答 Agent。只使用本次请求提供的检索上下文回答。\n要求：保留影响结论的条件、时间、例外、来源角色与不确定性；关键结论引用上下文中的 SOURCE、EVIDENCE 或 CLAIM 标识；上下文不足时明确说明，不得用外部常识补齐。\n只输出严格 JSON：{\"answer\":\"...\",\"citations\":[\"...\"],\"insufficient\":false,\"uncertainties\":[\"...\"]}。",
+    "userPrompt": "# 问题\n论文、GitHub 库和 Nature 报道分别能回答哪一层问题？\n\n# 检索上下文\n## SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/history-humanities/history-vesuvius-github-2024-002.md:1-12 score=2.872\n# ScrollPrize/vesuvius archived Python library\n\nThis repository was archived by the owner on Nov 21, 2024. It is now read-only.\n\nNOTE: Now maintained at https://github.com/ScrollPrize/villa/tree/main/vesuvius (this repository archived)\n\nFrom Vesuvius Challenge, a Python library for accessing CT scans of ancient scrolls.\n\n`vesuvius` allows direct access to scroll data without managing download scripts or storing terabytes of CT scans locally. Data is streamed in the background, only serving the requested regions.\n\n`vesuvius` is in beta and the interface may change. Not all Vesuvius Challenge data is currently available - data will continue to be added to the library."
+  },
+  "answer": "{\n  \"answer\": \"论文、GitHub 库和 Nature 报道分别能回答不同层级的问题：论文通常回答研究的方法、结果和结论等核心科学问题；GitHub 库（如 ScrollPrize/vesuvius）主要回答代码实现、数据访问和工具使用等操作性问题；Nature 报道则回答研究背景、意义和公众关注点等宏观问题。\",\n  \"citations\": [\"SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/history-humanities/history-vesuvius-github-2024-002.md:1-12\"],\n  \"insufficient\": false,\n  \"uncertainties\": [\"具体问题层级划分可能因论文、库和报道内容而异，需结合具体实例判断。\"]\n}",
+  "answerFormatValid": true
+}

@@ -1,0 +1,54 @@
+{
+  "runId": "e4-batch-b-remaining-all-modes-2026-07-28T05-44-10-699Z",
+  "sampleId": "sample-94849738-839b-4921-a5e5-f7d4ae8e965a",
+  "questionId": "B-F-HIST-001",
+  "group": "B",
+  "pilotGroup": "B",
+  "graphExpansion": false,
+  "repetition": 1,
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "temperature": 0,
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 342,
+    "completionTokens": 142,
+    "totalTokens": 484,
+    "promptCacheHitTokens": 0,
+    "promptCacheMissTokens": 342,
+    "reasoningTokens": 0
+  },
+  "latencyMs": 1978,
+  "promptHash": "sha256:3bea4357933155928ac5e07a40afd27c72545cbe6d4f1cdccdcc23ef1a7fc986",
+  "contextHash": "cf0d5ac705bcaf606fe8e25e652d7cee06623a3dd5241efcb5cb29d27ef32a83",
+  "estimatedContextTokens": 204,
+  "estimatedInputTokens": 380,
+  "retrievedClaims": [],
+  "retrievedRelations": [],
+  "retrievedSources": [
+    "../../../workbuddy-batch-b/generated/compilation-corpus/history-humanities/history-educelab-paper-2023-001.md"
+  ],
+  "droppedContext": [],
+  "retrievalTrace": {
+    "strategy": "folder-lexical",
+    "queryFeatureCount": 25,
+    "corpusChunkCount": 12,
+    "matchedChunkCount": 1,
+    "maxFolderChunks": 16,
+    "candidates": [
+      {
+        "id": "../../../workbuddy-batch-b/generated/compilation-corpus/history-humanities/history-educelab-paper-2023-001.md#L1-L6",
+        "rank": 1,
+        "score": 2.8718021769015913,
+        "selected": true,
+        "dropReason": null
+      }
+    ]
+  },
+  "request": {
+    "systemPrompt": "你是受证据约束的问答 Agent。只使用本次请求提供的检索上下文回答。\n要求：保留影响结论的条件、时间、例外、来源角色与不确定性；关键结论引用上下文中的 SOURCE、EVIDENCE 或 CLAIM 标识；上下文不足时明确说明，不得用外部常识补齐。\n只输出严格 JSON：{\"answer\":\"...\",\"citations\":[\"...\"],\"insufficient\":false,\"uncertainties\":[\"...\"]}。",
+    "userPrompt": "# 问题\n判断：EduceLab 论文已经证明所有密封赫库兰尼姆纸卷都能完整恢复。\n\n# 检索上下文\n## SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/history-humanities/history-educelab-paper-2023-001.md:1-6 score=2.872\n# EduceLab-Scrolls: Verifiable Recovery of Text from Herculaneum Papyri using X-ray CT\n\nWe present a complete software pipeline for revealing the hidden texts of the Herculaneum papyri using X-ray CT images. This enhanced virtual unwrapping pipeline combines machine learning with a novel geometric framework linking 3D and 2D images.\n\nOur method is capable of revealing accurate lines of text on scroll fragments with known ground truth. Revealed text is verified using visual confirmation, quantitative image metrics, and scholarly review. EduceLab-Scrolls has also enabled the discovery, for the first time, of hidden texts from the Herculaneum papyri, which we present here."
+  },
+  "answer": "{\n  \"answer\": \"否。EduceLab 论文未证明所有密封赫库兰尼姆纸卷都能完整恢复。论文仅展示了在已知真实情况的碎片上揭示准确文本行的方法，并首次发现了隐藏文本，但未声称对所有密封纸卷的完整恢复。\",\n  \"citations\": [\"SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/history-humanities/history-educelab-paper-2023-001.md:1-6\"],\n  \"insufficient\": false,\n  \"uncertainties\": [\"论文未提及对所有密封纸卷的完整恢复，仅针对碎片和首次发现隐藏文本。\"]\n}",
+  "answerFormatValid": true
+}

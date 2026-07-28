@@ -1,0 +1,292 @@
+{
+  "runId": "e4-batch-b-remaining-all-modes-2026-07-28T05-44-10-699Z",
+  "sampleId": "sample-6c8896a8-2b40-40c6-b5fb-cbcb97bf5891",
+  "questionId": "B-E-DESIGN-003",
+  "group": "P-graph",
+  "pilotGroup": "P",
+  "graphExpansion": true,
+  "repetition": 1,
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "temperature": 0,
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 2418,
+    "completionTokens": 166,
+    "totalTokens": 2584,
+    "promptCacheHitTokens": 0,
+    "promptCacheMissTokens": 2418,
+    "reasoningTokens": 0
+  },
+  "latencyMs": 2333,
+  "promptHash": "sha256:77ef65618b6c8afb23890dc9ba221fa38cd33f8c8ae6e8d2dea29137305d8cd7",
+  "contextHash": "ebca336118a551999fcd935969adb0e5723b8ef0bdad2b63502c2f17b5a3a335",
+  "estimatedContextTokens": 1547,
+  "estimatedInputTokens": 1712,
+  "retrievedClaims": [
+    "claim:1da3417e06ff5435-50f420b0776ab205",
+    "claim:b89787b6b83f3605-2b879b185f80c3ed",
+    "claim:a379c869d6fd01c5-04b919f4bee1dda9",
+    "claim:b89787b6b83f3605-d524b881aa3a2622",
+    "claim:5505a1ba1fcb1b68-9acfc0780eb2b345",
+    "claim:d40218e811ec1166-3121f577072c04bb",
+    "claim:1da3417e06ff5435-fda7e8c14ff6f23b",
+    "claim:1da3417e06ff5435-0131b383bb68d5d6",
+    "claim:1da3417e06ff5435-4043dbf2773f336c",
+    "claim:1da3417e06ff5435-4f47a3d28c2c5675",
+    "claim:1da3417e06ff5435-e42233e831e0f66d"
+  ],
+  "retrievedRelations": [
+    "rel:cross-59e2e7d1788246d7",
+    "rel:b89787b6b83f3605-1f64fb64981e37c1",
+    "rel:1da3417e06ff5435-25905476559465e3",
+    "rel:1da3417e06ff5435-8973e1ffa670e0f5",
+    "rel:1da3417e06ff5435-9e3e1511ac30b255",
+    "rel:1da3417e06ff5435-d46eb28b10eee035",
+    "rel:1da3417e06ff5435-f7779f6e157ba5c4"
+  ],
+  "retrievedSources": [
+    "source:design-wcag22-2023-002-1da3417e06ff5435",
+    "source:design-webaim-checklist-2024-004-b89787b6b83f3605",
+    "source:design-wcag21-2018-001-a379c869d6fd01c5",
+    "source:history-vesuvius-github-2024-002-5505a1ba1fcb1b68",
+    "source:design-wcag-issue-2705-003-d40218e811ec1166"
+  ],
+  "droppedContext": [],
+  "retrievalTrace": {
+    "strategy": "claim-seed-graph",
+    "graphDepth": 3,
+    "temporalScope": {
+      "applied": false,
+      "startMonth": null,
+      "endMonth": null,
+      "excludedClaimIds": []
+    },
+    "retrieval": {
+      "queryFeatureCount": 18,
+      "eligibleClaimCount": 67,
+      "matchedClaimCount": 10,
+      "usedEvidenceText": true,
+      "usedSourceMetadata": true,
+      "resolvedEvidenceRefCount": 67,
+      "unresolvedEvidenceRefCount": 0,
+      "candidates": [
+        {
+          "claimId": "claim:1da3417e06ff5435-50f420b0776ab205",
+          "rank": 1,
+          "score": 14.014768144080769,
+          "channels": [
+            "g3",
+            "w"
+          ],
+          "matchedFeatureCount": 7
+        },
+        {
+          "claimId": "claim:b89787b6b83f3605-2b879b185f80c3ed",
+          "rank": 2,
+          "score": 14.014768144080769,
+          "channels": [
+            "g3",
+            "w"
+          ],
+          "matchedFeatureCount": 7
+        },
+        {
+          "claimId": "claim:a379c869d6fd01c5-04b919f4bee1dda9",
+          "rank": 3,
+          "score": 9.060646830181845,
+          "channels": [
+            "g3",
+            "w"
+          ],
+          "matchedFeatureCount": 6
+        },
+        {
+          "claimId": "claim:b89787b6b83f3605-d524b881aa3a2622",
+          "rank": 4,
+          "score": 9.060646830181845,
+          "channels": [
+            "g3",
+            "w"
+          ],
+          "matchedFeatureCount": 6
+        },
+        {
+          "claimId": "claim:5505a1ba1fcb1b68-9acfc0780eb2b345",
+          "rank": 5,
+          "score": 5.532218418975309,
+          "channels": [
+            "c2"
+          ],
+          "matchedFeatureCount": 2
+        },
+        {
+          "claimId": "claim:d40218e811ec1166-3121f577072c04bb",
+          "rank": 6,
+          "score": 4.001335685706847,
+          "channels": [
+            "g3",
+            "source",
+            "w"
+          ],
+          "matchedFeatureCount": 3
+        },
+        {
+          "claimId": "claim:1da3417e06ff5435-fda7e8c14ff6f23b",
+          "rank": 7,
+          "score": 3.273655571187258,
+          "channels": [
+            "g3",
+            "w"
+          ],
+          "matchedFeatureCount": 2
+        },
+        {
+          "claimId": "claim:1da3417e06ff5435-0131b383bb68d5d6",
+          "rank": 8,
+          "score": 2.7187988699292505,
+          "channels": [
+            "w"
+          ],
+          "matchedFeatureCount": 1
+        },
+        {
+          "claimId": "claim:1da3417e06ff5435-4043dbf2773f336c",
+          "rank": 9,
+          "score": 2.7187988699292505,
+          "channels": [
+            "w"
+          ],
+          "matchedFeatureCount": 1
+        },
+        {
+          "claimId": "claim:1da3417e06ff5435-4f47a3d28c2c5675",
+          "rank": 10,
+          "score": 2.7187988699292505,
+          "channels": [
+            "w"
+          ],
+          "matchedFeatureCount": 1
+        }
+      ]
+    },
+    "graph": {
+      "seedClaimIds": [
+        "claim:1da3417e06ff5435-50f420b0776ab205",
+        "claim:b89787b6b83f3605-2b879b185f80c3ed",
+        "claim:a379c869d6fd01c5-04b919f4bee1dda9",
+        "claim:b89787b6b83f3605-d524b881aa3a2622",
+        "claim:5505a1ba1fcb1b68-9acfc0780eb2b345",
+        "claim:d40218e811ec1166-3121f577072c04bb",
+        "claim:1da3417e06ff5435-fda7e8c14ff6f23b",
+        "claim:1da3417e06ff5435-0131b383bb68d5d6",
+        "claim:1da3417e06ff5435-4043dbf2773f336c",
+        "claim:1da3417e06ff5435-4f47a3d28c2c5675"
+      ],
+      "expandedClaimIds": [
+        "claim:1da3417e06ff5435-50f420b0776ab205",
+        "claim:b89787b6b83f3605-2b879b185f80c3ed",
+        "claim:a379c869d6fd01c5-04b919f4bee1dda9",
+        "claim:b89787b6b83f3605-d524b881aa3a2622",
+        "claim:5505a1ba1fcb1b68-9acfc0780eb2b345",
+        "claim:d40218e811ec1166-3121f577072c04bb",
+        "claim:1da3417e06ff5435-fda7e8c14ff6f23b",
+        "claim:1da3417e06ff5435-0131b383bb68d5d6",
+        "claim:1da3417e06ff5435-4043dbf2773f336c",
+        "claim:1da3417e06ff5435-4f47a3d28c2c5675",
+        "claim:1da3417e06ff5435-e42233e831e0f66d"
+      ],
+      "expandedRelationIds": [
+        "rel:cross-59e2e7d1788246d7",
+        "rel:b89787b6b83f3605-1f64fb64981e37c1",
+        "rel:1da3417e06ff5435-25905476559465e3",
+        "rel:1da3417e06ff5435-8973e1ffa670e0f5",
+        "rel:1da3417e06ff5435-9e3e1511ac30b255",
+        "rel:1da3417e06ff5435-d46eb28b10eee035",
+        "rel:1da3417e06ff5435-f7779f6e157ba5c4"
+      ]
+    },
+    "budget": {
+      "selectedClaimIds": [
+        "claim:1da3417e06ff5435-50f420b0776ab205",
+        "claim:b89787b6b83f3605-2b879b185f80c3ed",
+        "claim:a379c869d6fd01c5-04b919f4bee1dda9",
+        "claim:b89787b6b83f3605-d524b881aa3a2622",
+        "claim:5505a1ba1fcb1b68-9acfc0780eb2b345",
+        "claim:d40218e811ec1166-3121f577072c04bb",
+        "claim:1da3417e06ff5435-fda7e8c14ff6f23b",
+        "claim:1da3417e06ff5435-0131b383bb68d5d6",
+        "claim:1da3417e06ff5435-4043dbf2773f336c",
+        "claim:1da3417e06ff5435-4f47a3d28c2c5675",
+        "claim:1da3417e06ff5435-e42233e831e0f66d"
+      ],
+      "selectedRelationIds": [
+        "rel:cross-59e2e7d1788246d7",
+        "rel:b89787b6b83f3605-1f64fb64981e37c1",
+        "rel:1da3417e06ff5435-25905476559465e3",
+        "rel:1da3417e06ff5435-8973e1ffa670e0f5",
+        "rel:1da3417e06ff5435-9e3e1511ac30b255",
+        "rel:1da3417e06ff5435-d46eb28b10eee035",
+        "rel:1da3417e06ff5435-f7779f6e157ba5c4"
+      ],
+      "selectedEvidenceSpanIds": [
+        "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-274-331",
+        "span:design-webaim-checklist-2024-004-b89787b6b83f3605-1#chars-107-145",
+        "span:design-wcag21-2018-001-a379c869d6fd01c5-2#chars-183-224",
+        "span:design-webaim-checklist-2024-004-b89787b6b83f3605-1#chars-27-102",
+        "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-5#chars-519-570",
+        "span:design-wcag-issue-2705-003-d40218e811ec1166-1#chars-47-331",
+        "span:design-wcag22-2023-002-1da3417e06ff5435-3#chars-550-892",
+        "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-51-111",
+        "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-218-272",
+        "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-121-216",
+        "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-333-443"
+      ],
+      "selectedWikiModuleIds": [],
+      "dropped": [],
+      "finalEstimatedTokens": 4853
+    },
+    "serializationBudget": {
+      "selectedIds": [
+        "task-map",
+        "claim:1da3417e06ff5435-50f420b0776ab205",
+        "claim:b89787b6b83f3605-2b879b185f80c3ed",
+        "claim:a379c869d6fd01c5-04b919f4bee1dda9",
+        "claim:b89787b6b83f3605-d524b881aa3a2622",
+        "claim:5505a1ba1fcb1b68-9acfc0780eb2b345",
+        "claim:d40218e811ec1166-3121f577072c04bb",
+        "claim:1da3417e06ff5435-fda7e8c14ff6f23b",
+        "claim:1da3417e06ff5435-0131b383bb68d5d6",
+        "claim:1da3417e06ff5435-4043dbf2773f336c",
+        "claim:1da3417e06ff5435-4f47a3d28c2c5675",
+        "claim:1da3417e06ff5435-e42233e831e0f66d",
+        "rel:cross-59e2e7d1788246d7",
+        "rel:b89787b6b83f3605-1f64fb64981e37c1",
+        "rel:1da3417e06ff5435-25905476559465e3",
+        "rel:1da3417e06ff5435-8973e1ffa670e0f5",
+        "rel:1da3417e06ff5435-9e3e1511ac30b255",
+        "rel:1da3417e06ff5435-d46eb28b10eee035",
+        "rel:1da3417e06ff5435-f7779f6e157ba5c4",
+        "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-274-331",
+        "span:design-webaim-checklist-2024-004-b89787b6b83f3605-1#chars-107-145",
+        "span:design-wcag21-2018-001-a379c869d6fd01c5-2#chars-183-224",
+        "span:design-webaim-checklist-2024-004-b89787b6b83f3605-1#chars-27-102",
+        "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-5#chars-519-570",
+        "span:design-wcag-issue-2705-003-d40218e811ec1166-1#chars-47-331",
+        "span:design-wcag22-2023-002-1da3417e06ff5435-3#chars-550-892",
+        "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-51-111",
+        "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-218-272",
+        "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-121-216",
+        "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-333-443",
+        "conflicts-and-conditions"
+      ],
+      "droppedIds": []
+    }
+  },
+  "request": {
+    "systemPrompt": "你是受证据约束的问答 Agent。只使用本次请求提供的检索上下文回答。\n要求：保留影响结论的条件、时间、例外、来源角色与不确定性；关键结论引用上下文中的 SOURCE、EVIDENCE 或 CLAIM 标识；上下文不足时明确说明，不得用外部常识补齐。\n只输出严格 JSON：{\"answer\":\"...\",\"citations\":[\"...\"],\"insufficient\":false,\"uncertainties\":[\"...\"]}。",
+    "userPrompt": "# 问题\n4.1.1 Parsing 从 WCAG 2.1 到 2.2 发生了什么变化？\n\n# 检索上下文\n## TASK MAP\n主题: 4.1.1 Parsing 从 WCAG 2.1 到 2.2 发生了什么变化？\n地图主题: the, of, and, to, in\n关键概念: User Agent, Mobile Requirements, Input Modality, Desktop Content, Single Pointer\n已知争议: 0 个\n最近变化: 5 条\n找到 11 条相关 Claim\n找到 7 条关系\n找到 11 条原文证据\n\n## CLAIM claim:1da3417e06ff5435-50f420b0776ab205\nWCAG 2.2 has removed one success criterion, 4.1.1 Parsing.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:b89787b6b83f3605-2b879b185f80c3ed\nSuccess Criterion 4.1.1 Parsing 自2023年起已从WCAG中移除。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:a379c869d6fd01c5-04b919f4bee1dda9\nSuccess Criterion 4.1.1 Parsing is Level A.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:b89787b6b83f3605-d524b881aa3a2622\nSuccess Criterion 4.1.1 Parsing 不再有用。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:5505a1ba1fcb1b68-9acfc0780eb2b345\nvesuvius 处于测试阶段，界面可能会发生变化。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:d40218e811ec1166-3121f577072c04bb\nSuccess Criterion 2.5.7 Dragging Movements (Level AA) requires that all functionality using a dragging movement can be achieved by a single pointer without dragging, unless dragging is essential or the functionality is determined by the user agent and not modified by the author.\nConditions: unless dragging is essential or the functionality is determined by the user agent and not modified by the author\nValidity: SUPPORTED\n\n## CLAIM claim:1da3417e06ff5435-fda7e8c14ff6f23b\nThe following success criteria are new in WCAG 2.2: 2.4.11 Focus Not Obscured (Minimum) (AA), 2.4.12 Focus Not Obscured (Enhanced) (AAA), 2.4.13 Focus Appearance (AAA), 2.5.7 Dragging Movements (AA), 2.5.8 Target Size (Minimum) (AA), 3.2.6 Consistent Help (A), 3.3.7 Redundant Entry (A), 3.3.8 Accessible Authentication (Minimum) (AA), 3.3.9 Accessible Authentication (Enhanced) (AAA).\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:1da3417e06ff5435-0131b383bb68d5d6\nWCAG 2.2 builds on and is backwards compatible with WCAG 2.1.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:1da3417e06ff5435-4043dbf2773f336c\nRequirements have been added that build on WCAG 2.1 and 2.0.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:1da3417e06ff5435-4f47a3d28c2c5675\nWeb pages that conform to WCAG 2.2 are at least as accessible as pages that conform to WCAG 2.1.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:1da3417e06ff5435-e42233e831e0f66d\nAuthors that are required by policy to conform with WCAG 2.0 or 2.1 will be able to update content to WCAG 2.2.\nConditions: none\nValidity: SUPPORTED\n\n## RELATION rel:cross-59e2e7d1788246d7\nclaim:b89787b6b83f3605-2b879b185f80c3ed --[SUPPORTS]--> claim:1da3417e06ff5435-50f420b0776ab205\nConditions: none\n\n## RELATION rel:b89787b6b83f3605-1f64fb64981e37c1\nclaim:b89787b6b83f3605-2b879b185f80c3ed --[SUPPORTS]--> claim:b89787b6b83f3605-d524b881aa3a2622\nConditions: none\n\n## RELATION rel:1da3417e06ff5435-25905476559465e3\nclaim:1da3417e06ff5435-0131b383bb68d5d6 --[SUPPORTS]--> claim:1da3417e06ff5435-e42233e831e0f66d\nConditions: none\n\n## RELATION rel:1da3417e06ff5435-8973e1ffa670e0f5\nclaim:1da3417e06ff5435-e42233e831e0f66d --[SUPPORTS]--> claim:1da3417e06ff5435-0131b383bb68d5d6\nConditions: none\n\n## RELATION rel:1da3417e06ff5435-9e3e1511ac30b255\nclaim:1da3417e06ff5435-4f47a3d28c2c5675 --[DERIVED_FROM]--> claim:1da3417e06ff5435-0131b383bb68d5d6\nConditions: none\n\n## RELATION rel:1da3417e06ff5435-d46eb28b10eee035\nclaim:1da3417e06ff5435-0131b383bb68d5d6 --[SUPPORTS]--> claim:1da3417e06ff5435-4043dbf2773f336c\nConditions: none\n\n## RELATION rel:1da3417e06ff5435-f7779f6e157ba5c4\nclaim:1da3417e06ff5435-4043dbf2773f336c --[SUPPORTS]--> claim:1da3417e06ff5435-0131b383bb68d5d6\nConditions: none\n\n## EVIDENCE span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-274-331\nWCAG 2.2 has removed one success criterion, 4.1.1 Parsing\n\n## EVIDENCE span:design-webaim-checklist-2024-004-b89787b6b83f3605-1#chars-107-145\nas of 2023 has been removed from WCAG.\n\n## EVIDENCE span:design-wcag21-2018-001-a379c869d6fd01c5-2#chars-183-224\nSuccess Criterion 4.1.1 Parsing (Level A)\n\n## EVIDENCE span:design-webaim-checklist-2024-004-b89787b6b83f3605-1#chars-27-102\nSuccess Criterion 4.1.1 Parsing: This success criterion is no longer useful\n\n## EVIDENCE span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-5#chars-519-570\n`vesuvius` is in beta and the interface may change.\n\n## EVIDENCE span:design-wcag-issue-2705-003-d40218e811ec1166-1#chars-47-331\nSuccess Criterion 2.5.7 Dragging Movements (Level AA): All functionality that uses a dragging movement for operation can be achieved by a single pointer without dragging, unless dragging is essential or the functionality is determined by the user agent and not modified by the author.\n\n## EVIDENCE span:design-wcag22-2023-002-1da3417e06ff5435-3#chars-550-892\n- 2.4.11 Focus Not Obscured (Minimum) (AA)\n- 2.4.12 Focus Not Obscured (Enhanced) (AAA)\n- 2.4.13 Focus Appearance (AAA)\n- 2.5.7 Dragging Movements (AA)\n- 2.5.8 Target Size (Minimum) (AA)\n- 3.2.6 Consistent Help (A)\n- 3.3.7 Redundant Entry (A)\n- 3.3.8 Accessible Authentication (Minimum) (AA)\n- 3.3.9 Accessible Authentication (Enhanced) (AAA)\n\n## EVIDENCE span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-51-111\nWCAG 2.2 builds on and is backwards compatible with WCAG 2.1\n\n## EVIDENCE span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-218-272\nRequirements have been added that build on 2.1 and 2.0\n\n## EVIDENCE span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-121-216\nweb pages that conform to WCAG 2.2 are at least as accessible as pages that conform to WCAG 2.1\n\n## EVIDENCE span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-333-443\nAuthors that are required by policy to conform with WCAG 2.0 or 2.1 will be able to update content to WCAG 2.2\n\n## CONFLICTS AND CONDITIONS\n📌 Claim claim:d40218e811ec1166-3121f577072c04bb 适用条件: unless dragging is essential or the functionality is determined by the user agent and not modified by the author"
+  },
+  "answer": "{\n  \"answer\": \"WCAG 2.2 移除了成功标准 4.1.1 Parsing（原为 Level A），该标准自 2023 年起已从 WCAG 中移除，被认为不再有用。\",\n  \"citations\": [\n    \"design-wcag22-2023-002-1da3417e06ff5435-1#chars-274-331\",\n    \"design-webaim-checklist-2024-004-b89787b6b83f3605-1#chars-107-145\",\n    \"design-webaim-checklist-2024-004-b89787b6b83f3605-1#chars-27-102\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}",
+  "answerFormatValid": true
+}

@@ -1,0 +1,29 @@
+{
+  "schemaVersion": "wge-batch-validation/v1",
+  "status": "validated-candidate",
+  "knowledgeVersion": "sha256:92bf4ee056521d91714db6d5bca34cc39ee48df00909ebb9fe3a0f854aba6182",
+  "counts": {
+    "sources": 12,
+    "facts": 36,
+    "relations": 9,
+    "tasks": 32,
+    "episodes": 3
+  },
+  "taskTypes": {
+    "F": 6,
+    "R": 4,
+    "X": 3,
+    "C": 4,
+    "K": 4,
+    "T": 2,
+    "E": 3,
+    "A": 3,
+    "U": 3
+  },
+  "errors": [],
+  "warnings": [
+    "All questions are public validation candidates, not blind holdout.",
+    "Relations and episodes still require an independent semantic critic before Gold promotion.",
+    "Health materials are historical evidence snapshots and do not constitute medical advice."
+  ]
+}

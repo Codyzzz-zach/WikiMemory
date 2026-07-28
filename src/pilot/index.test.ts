@@ -31,6 +31,10 @@ describe("pilot context preparation", () => {
 		expect(first.context).toContain("Banach 空间是完备赋范空间");
 		expect(first.contextHash).toBe(second.contextHash);
 		expect(first.estimatedContextTokens).toBeLessThanOrEqual(pilot.retrieval.contextBudgetTokens);
+		expect(first.retrievalTrace).toMatchObject({
+			strategy: "folder-lexical",
+			corpusChunkCount: 2,
+		});
 	});
 });
 

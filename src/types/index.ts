@@ -154,6 +154,8 @@ export interface Source {
 	parsedText: string;
 	sourceType: "md" | "pdf" | "html";
 	loaderVersion: string;
+	/** Mechanically preserved source metadata (role, author, version, canonical URL, etc.). */
+	metadata?: Record<string, string>;
 	createdAt: string;
 }
 

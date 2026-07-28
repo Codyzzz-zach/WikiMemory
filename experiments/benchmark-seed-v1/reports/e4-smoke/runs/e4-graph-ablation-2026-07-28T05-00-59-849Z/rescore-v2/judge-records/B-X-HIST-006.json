@@ -1,0 +1,75 @@
+{
+  "questionId": "B-X-HIST-006",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 3064,
+    "completionTokens": 912,
+    "totalTokens": 3976,
+    "promptCacheHitTokens": 256,
+    "promptCacheMissTokens": 2808,
+    "reasoningTokens": 0
+  },
+  "request": {
+    "systemPrompt": "你是盲测评分员，不知道答案属于哪个实验组。只按题目、评分锚点、Gold 证据和引用预校验评价，不用外部常识修正答案。\n每个维度独立使用同一 0-4 锚点：4=完整且准确；3=大部分满足，仅轻微遗漏；2=部分满足，存在重要遗漏；1=仅有极少相关内容；0=缺失、反转或与证据冲突。\nrequiredPointCoverage 只看 requiredPoints；conditionFidelity 看条件、时间、来源角色和不确定性；evidenceGrounding 同时看关键结论是否与 Gold 证据一致以及 citationValidation；answerabilityDiscipline 看是否越界、编造或错误拒答。\ncitationValidation.valid 表示引用标识确实存在于该匿名样本收到的上下文。内部 CLAIM/SPAN/SOURCE 标识不需要出现在 Gold 文本中，不得仅因此扣分；但存在性有效不代表语义必然支持，仍需对照答案内容与 Gold。\n若反转来源归属、抹掉关键条件/时间、把提案当最终规范或编造关键事实，hardFailure=true。\n数值必须与 rationale 一致：若 rationale 说“完整覆盖且准确”，对应维度不能低于 3。\n只输出严格 JSON：{\"scores\":[{\"sampleId\":\"...\",\"requiredPointCoverage\":0,\"conditionFidelity\":0,\"evidenceGrounding\":0,\"answerabilityDiscipline\":0,\"hardFailure\":false,\"rationale\":\"...\"}]}。",
+    "userPrompt": "{\"question\":\"论文、GitHub 库和 Nature 报道分别能回答哪一层问题？\",\"answerability\":\"answerable\",\"requiredPoints\":[\"论文回答方法与验证\",\"GitHub 回答实现和维护状态\",\"Nature 回答报道与人文解释\"],\"forbiddenClaims\":[\"不得用二手报道替代实现版本\"],\"requiredEvidence\":[{\"sourceId\":\"history-educelab-paper-2023-001\",\"exactQuote\":\"We present a complete software pipeline for revealing the hidden texts of the Herculaneum papyri using X-ray CT images. This enhanced virtual unwrapping pipeline combines machine learning with a novel geometric framework linking 3D and 2D images.\",\"role\":\"supports\"},{\"sourceId\":\"history-vesuvius-github-2024-002\",\"exactQuote\":\"NOTE: Now maintained at https://github.com/ScrollPrize/villa/tree/main/vesuvius (this repository archived)\",\"role\":\"supports\"},{\"sourceId\":\"history-nature-scroll-2024-003\",\"exactQuote\":\"The winners of a contest called the Vesuvius Challenge trained their machine-learning algorithms on scans of the rolled-up papyrus\",\"role\":\"supports\"},{\"sourceId\":\"history-nature-scroll-2024-003\",\"exactQuote\":\"The winners of a contest called the Vesuvius Challenge trained their machine-learning algorithms on scans of the rolled-up papyrus, unveiling a previously unknown philosophical work that discusses the senses and pleasure.\",\"role\":\"supports\"}],\"sourcePriorityRule\":\"P/C 决定规范、论文与实现事实；S 只能作为有归属的解释，不能推翻一手版本文本。\",\"anonymousAnswers\":[{\"sampleId\":\"sample-d0fa002d-4581-4fdd-ba40-8b36c5cee4f3\",\"answer\":\"{\\n  \\\"answer\\\": \\\"论文（EduceLab-Scrolls）回答技术方法层问题，即如何通过机器学习从CT扫描中首次发现隐藏文本（claim:e71279e71acc04bd-dc4b7534a61f85ee）。GitHub库（ScrollPrize/vesuvius）回答数据访问与工具层问题，即提供Python库直接访问卷轴CT扫描数据，无需本地存储（claim:5505a1ba1fcb1b68-a4e0bf4dcf441832）。Nature报道回答背景与成果层问题，即维苏威挑战赛的获胜者利用机器学习解读碳化卷轴中的希腊文字（claim:b98a3ae4860a6edc-704f0702fd830045, claim:b98a3ae4860a6edc-fd2b496dae5aceca）。\\\",\\n  \\\"citations\\\": [\\n    \\\"claim:e71279e71acc04bd-dc4b7534a61f85ee\\\",\\n    \\\"claim:5505a1ba1fcb1b68-a4e0bf4dcf441832\\\",\\n    \\\"claim:b98a3ae4860a6edc-704f0702fd830045\\\",\\n    \\\"claim:b98a3ae4860a6edc-fd2b496dae5aceca\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\",\"citationValidation\":{\"formatValid\":true,\"total\":4,\"valid\":4,\"invalid\":[]}},{\"sampleId\":\"sample-68293625-fb06-4198-a17d-06c387e3a45c\",\"answer\":\"{\\n  \\\"answer\\\": \\\"论文、GitHub 库和 Nature 报道分别能回答不同层次的问题：论文通常回答研究的方法、结果和结论等深层问题；GitHub 库（如 ScrollPrize/vesuvius）回答关于代码实现、数据访问、使用方式和维护状态等操作性问题；Nature 报道回答关于竞赛背景、成果意义和科学影响等高层问题。\\\",\\n  \\\"citations\\\": [\\n    \\\"claim:b98a3ae4860a6edc-704f0702fd830045\\\",\\n    \\\"claim:5505a1ba1fcb1b68-35e4f1b989767484\\\",\\n    \\\"claim:5505a1ba1fcb1b68-5b081e72929d1868\\\",\\n    \\\"claim:5505a1ba1fcb1b68-825b50a16ede0106\\\",\\n    \\\"claim:5505a1ba1fcb1b68-92eeebabc9812a65\\\",\\n    \\\"claim:5505a1ba1fcb1b68-9acfc0780eb2b345\\\",\\n    \\\"claim:5505a1ba1fcb1b68-a2289f49fcb0ff64\\\",\\n    \\\"claim:5505a1ba1fcb1b68-a4e0bf4dcf441832\\\",\\n    \\\"claim:5505a1ba1fcb1b68-c84e1d5fe016cb20\\\",\\n    \\\"claim:5505a1ba1fcb1b68-d303dae0fc053d75\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": [\\n    \\\"上下文未明确区分论文、GitHub 库和 Nature 报道各自回答的具体问题层次，仅提供了关于 GitHub 库的详细信息。\\\"\\n  ]\\n}\",\"citationValidation\":{\"formatValid\":true,\"total\":10,\"valid\":10,\"invalid\":[]}},{\"sampleId\":\"sample-1603d5a9-ad3e-44d8-ba90-5a4498ab7b6b\",\"answer\":\"{\\n  \\\"answer\\\": \\\"论文、GitHub 库和 Nature 报道分别能回答不同层次的问题：论文通常回答研究的方法、结果和结论等深层问题；GitHub 库（如 ScrollPrize/vesuvius）回答关于代码实现、数据访问和工具使用等操作性问题；Nature 报道回答关于竞赛背景、成果意义等新闻性、概述性问题。\\\",\\n  \\\"citations\\\": [\\n    \\\"claim:b98a3ae4860a6edc-704f0702fd830045\\\",\\n    \\\"claim:5505a1ba1fcb1b68-35e4f1b989767484\\\",\\n    \\\"claim:5505a1ba1fcb1b68-5b081e72929d1868\\\",\\n    \\\"claim:5505a1ba1fcb1b68-825b50a16ede0106\\\",\\n    \\\"claim:5505a1ba1fcb1b68-92eeebabc9812a65\\\",\\n    \\\"claim:5505a1ba1fcb1b68-9acfc0780eb2b345\\\",\\n    \\\"claim:5505a1ba1fcb1b68-a2289f49fcb0ff64\\\",\\n    \\\"claim:5505a1ba1fcb1b68-a4e0bf4dcf441832\\\",\\n    \\\"claim:5505a1ba1fcb1b68-c84e1d5fe016cb20\\\",\\n    \\\"claim:5505a1ba1fcb1b68-d303dae0fc053d75\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": [\\n    \\\"上下文未明确区分论文、GitHub 库和 Nature 报道各自回答的具体问题层次，仅提供了关于 GitHub 库的详细信息，论文和 Nature 报道的内容未直接给出。\\\"\\n  ]\\n}\",\"citationValidation\":{\"formatValid\":true,\"total\":10,\"valid\":10,\"invalid\":[]}},{\"sampleId\":\"sample-cb603bb4-8d6b-4d10-a1c2-3d8fe3ac5b22\",\"answer\":\"{\\n  \\\"answer\\\": \\\"论文（EduceLab-Scrolls）能回答“如何首次发现赫库兰尼姆卷轴隐藏文本”的技术方法问题；GitHub 库（ScrollPrize/vesuvius）能回答“如何访问卷轴 CT 扫描数据”的操作性问题；Nature 报道能回答“维苏威挑战赛的总体背景、获奖团队及其贡献”的概述性问题。\\\",\\n  \\\"citations\\\": [\\n    \\\"claim:e71279e71acc04bd-dc4b7534a61f85ee\\\",\\n    \\\"claim:5505a1ba1fcb1b68-a4e0bf4dcf441832\\\",\\n    \\\"claim:b98a3ae4860a6edc-704f0702fd830045\\\",\\n    \\\"claim:b98a3ae4860a6edc-95aab89f959ee2e9\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\",\"citationValidation\":{\"formatValid\":true,\"total\":4,\"valid\":4,\"invalid\":[]}},{\"sampleId\":\"sample-bdaa1045-a774-4fd9-9636-d5e09158eb09\",\"answer\":\"{\\n  \\\"answer\\\": \\\"论文、GitHub 库和 Nature 报道分别能回答不同层次的问题：论文通常回答研究的方法、结果和结论等深层问题；GitHub 库（如 ScrollPrize/vesuvius）回答关于代码实现、数据访问、库状态（如归档、只读、测试阶段）等操作层问题；Nature 报道回答关于竞赛背景、获奖者方法等新闻层问题。\\\",\\n  \\\"citations\\\": [\\n    \\\"claim:b98a3ae4860a6edc-704f0702fd830045\\\",\\n    \\\"claim:5505a1ba1fcb1b68-35e4f1b989767484\\\",\\n    \\\"claim:5505a1ba1fcb1b68-5b081e72929d1868\\\",\\n    \\\"claim:5505a1ba1fcb1b68-825b50a16ede0106\\\",\\n    \\\"claim:5505a1ba1fcb1b68-92eeebabc9812a65\\\",\\n    \\\"claim:5505a1ba1fcb1b68-9acfc0780eb2b345\\\",\\n    \\\"claim:5505a1ba1fcb1b68-a2289f49fcb0ff64\\\",\\n    \\\"claim:5505a1ba1fcb1b68-a4e0bf4dcf441832\\\",\\n    \\\"claim:5505a1ba1fcb1b68-c84e1d5fe016cb20\\\",\\n    \\\"claim:5505a1ba1fcb1b68-d303dae0fc053d75\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\",\"citationValidation\":{\"formatValid\":true,\"total\":10,\"valid\":10,\"invalid\":[]}},{\"sampleId\":\"sample-6b5f33e6-36d7-4df4-9515-e50060e4811f\",\"answer\":\"{\\n  \\\"answer\\\": \\\"论文（EduceLab-Scrolls）能回答“如何首次发现赫库兰尼姆卷轴隐藏文本”的技术方法问题；GitHub 库（ScrollPrize/vesuvius）能回答“如何访问卷轴 CT 扫描数据”的操作性问题；Nature 报道能回答“维苏威挑战赛的获奖者如何通过机器学习揭示卷轴内容”的宏观成果问题。\\\",\\n  \\\"citations\\\": [\\n    \\\"claim:e71279e71acc04bd-dc4b7534a61f85ee\\\",\\n    \\\"claim:5505a1ba1fcb1b68-a4e0bf4dcf441832\\\",\\n    \\\"claim:b98a3ae4860a6edc-704f0702fd830045\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": [\\n    \\\"论文的具体技术细节未在上下文中完整提供\\\",\\n    \\\"GitHub 库的归档状态可能影响未来可用性\\\"\\n  ]\\n}\",\"citationValidation\":{\"formatValid\":true,\"total\":3,\"valid\":3,\"invalid\":[]}}]}"
+  },
+  "rawResponse": "{\n  \"scores\": [\n    {\n      \"sampleId\": \"sample-d0fa002d-4581-4fdd-ba40-8b36c5cee4f3\",\n      \"requiredPointCoverage\": 4,\n      \"conditionFidelity\": 4,\n      \"evidenceGrounding\": 4,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"答案明确区分了论文（技术方法）、GitHub（数据访问与工具）和Nature报道（背景与成果），完整覆盖requiredPoints。条件、时间、来源角色准确，无不确定性。引用均有效且与Gold证据一致，无编造或越界。\"\n    },\n    {\n      \"sampleId\": \"sample-68293625-fb06-4198-a17d-06c387e3a45c\",\n      \"requiredPointCoverage\": 3,\n      \"conditionFidelity\": 3,\n      \"evidenceGrounding\": 3,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"答案覆盖了三个requiredPoints，但描述较为泛化（如“深层问题”“操作性问题”），未具体提及论文的技术方法、GitHub的维护状态或Nature的报道内容，存在轻微遗漏。条件、时间、来源角色基本准确，但未明确区分各来源的具体角色。引用均有效，但部分引用未直接支持答案中的泛化描述。无越界或编造。\"\n    },\n    {\n      \"sampleId\": \"sample-1603d5a9-ad3e-44d8-ba90-5a4498ab7b6b\",\n      \"requiredPointCoverage\": 3,\n      \"conditionFidelity\": 3,\n      \"evidenceGrounding\": 3,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"与sample-68293625类似，覆盖了三个点但描述泛化，未具体化。条件、时间、来源角色基本准确，但未明确区分。引用均有效，但部分引用未直接支持答案。无越界或编造。\"\n    },\n    {\n      \"sampleId\": \"sample-cb603bb4-8d6b-4d10-a1c2-3d8fe3ac5b22\",\n      \"requiredPointCoverage\": 4,\n      \"conditionFidelity\": 4,\n      \"evidenceGrounding\": 4,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"答案明确区分了论文（技术方法）、GitHub（操作性问题）和Nature报道（背景与贡献），完整覆盖requiredPoints。条件、时间、来源角色准确，无不确定性。引用均有效且与Gold证据一致，无编造或越界。\"\n    },\n    {\n      \"sampleId\": \"sample-bdaa1045-a774-4fd9-9636-d5e09158eb09\",\n      \"requiredPointCoverage\": 3,\n      \"conditionFidelity\": 3,\n      \"evidenceGrounding\": 3,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"答案覆盖了三个requiredPoints，但描述泛化，未具体提及论文的技术方法、GitHub的维护状态或Nature的报道内容。条件、时间、来源角色基本准确，但未明确区分。引用均有效，但部分引用未直接支持答案。无越界或编造。\"\n    },\n    {\n      \"sampleId\": \"sample-6b5f33e6-36d7-4df4-9515-e50060e4811f\",\n      \"requiredPointCoverage\": 4,\n      \"conditionFidelity\": 4,\n      \"evidenceGrounding\": 4,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"答案明确区分了论文（技术方法）、GitHub（操作性问题）和Nature报道（宏观成果），完整覆盖requiredPoints。条件、时间、来源角色准确，无不确定性。引用均有效且与Gold证据一致，无编造或越界。\"\n    }\n  ]\n}",
+  "parsed": [
+    {
+      "sampleId": "sample-d0fa002d-4581-4fdd-ba40-8b36c5cee4f3",
+      "requiredPointCoverage": 4,
+      "conditionFidelity": 4,
+      "evidenceGrounding": 4,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "答案明确区分了论文（技术方法）、GitHub（数据访问与工具）和Nature报道（背景与成果），完整覆盖requiredPoints。条件、时间、来源角色准确，无不确定性。引用均有效且与Gold证据一致，无编造或越界。"
+    },
+    {
+      "sampleId": "sample-68293625-fb06-4198-a17d-06c387e3a45c",
+      "requiredPointCoverage": 3,
+      "conditionFidelity": 3,
+      "evidenceGrounding": 3,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "答案覆盖了三个requiredPoints，但描述较为泛化（如“深层问题”“操作性问题”），未具体提及论文的技术方法、GitHub的维护状态或Nature的报道内容，存在轻微遗漏。条件、时间、来源角色基本准确，但未明确区分各来源的具体角色。引用均有效，但部分引用未直接支持答案中的泛化描述。无越界或编造。"
+    },
+    {
+      "sampleId": "sample-1603d5a9-ad3e-44d8-ba90-5a4498ab7b6b",
+      "requiredPointCoverage": 3,
+      "conditionFidelity": 3,
+      "evidenceGrounding": 3,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "与sample-68293625类似，覆盖了三个点但描述泛化，未具体化。条件、时间、来源角色基本准确，但未明确区分。引用均有效，但部分引用未直接支持答案。无越界或编造。"
+    },
+    {
+      "sampleId": "sample-cb603bb4-8d6b-4d10-a1c2-3d8fe3ac5b22",
+      "requiredPointCoverage": 4,
+      "conditionFidelity": 4,
+      "evidenceGrounding": 4,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "答案明确区分了论文（技术方法）、GitHub（操作性问题）和Nature报道（背景与贡献），完整覆盖requiredPoints。条件、时间、来源角色准确，无不确定性。引用均有效且与Gold证据一致，无编造或越界。"
+    },
+    {
+      "sampleId": "sample-bdaa1045-a774-4fd9-9636-d5e09158eb09",
+      "requiredPointCoverage": 3,
+      "conditionFidelity": 3,
+      "evidenceGrounding": 3,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "答案覆盖了三个requiredPoints，但描述泛化，未具体提及论文的技术方法、GitHub的维护状态或Nature的报道内容。条件、时间、来源角色基本准确，但未明确区分。引用均有效，但部分引用未直接支持答案。无越界或编造。"
+    },
+    {
+      "sampleId": "sample-6b5f33e6-36d7-4df4-9515-e50060e4811f",
+      "requiredPointCoverage": 4,
+      "conditionFidelity": 4,
+      "evidenceGrounding": 4,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "答案明确区分了论文（技术方法）、GitHub（操作性问题）和Nature报道（宏观成果），完整覆盖requiredPoints。条件、时间、来源角色准确，无不确定性。引用均有效且与Gold证据一致，无编造或越界。"
+    }
+  ]
+}

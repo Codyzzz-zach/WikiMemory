@@ -1,0 +1,39 @@
+{
+  "questionId": "B-X-DESIGN-005",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 1130,
+    "completionTokens": 345,
+    "totalTokens": 1475,
+    "promptCacheHitTokens": 0,
+    "promptCacheMissTokens": 1130,
+    "reasoningTokens": 0
+  },
+  "request": {
+    "systemPrompt": "你是盲测评分员，不知道匿名答案属于哪个实验组。只按题目、评分锚点和证据评估，不用外部常识修正答案。\n每项 0-4 分：requiredPointCoverage、conditionFidelity、evidenceGrounding、answerabilityDiscipline。\n若答案反转来源归属、抹掉关键条件/时间、把提案当最终规范、编造上下文外事实，hardFailure=true。\n只输出严格 JSON：{\"scores\":[{\"sampleId\":\"...\",\"requiredPointCoverage\":0,\"conditionFidelity\":0,\"evidenceGrounding\":0,\"answerabilityDiscipline\":0,\"hardFailure\":false,\"rationale\":\"...\"}]}。",
+    "userPrompt": "{\"question\":\"比较 issue #2705 与最终 WCAG 2.2 对 Dragging Movements 的关系。\",\"answerability\":\"answerable\",\"requiredPoints\":[\"issue 引用草案并建议移除\",\"最终标准保留为 AA\",\"冲突是提案立场与最终结果\"],\"forbiddenClaims\":[\"不得说两份都是同等权威规范\"],\"requiredEvidence\":[{\"sourceId\":\"design-wcag-issue-2705-003\",\"exactQuote\":\"Success Criterion 2.5.7 Dragging Movements (Level AA): All functionality that uses a dragging movement for operation can be achieved by a single pointer without dragging, unless dragging is essential or the functionality is determined by the user agent and not modified by the author.\",\"role\":\"supports\"},{\"sourceId\":\"design-wcag-issue-2705-003\",\"exactQuote\":\"We kindly request that the group remove this SC until research is completed for all affected input modalities.\",\"role\":\"supports\"},{\"sourceId\":\"design-wcag22-2023-002\",\"exactQuote\":\"The following success criteria are new in WCAG 2.2:\\n\\n- 2.4.11 Focus Not Obscured (Minimum) (AA)\\n- 2.4.12 Focus Not Obscured (Enhanced) (AAA)\\n- 2.4.13 Focus Appearance (AAA)\\n- 2.5.7 Dragging Movements (AA)\\n- 2.5.8 Target Size (Minimum) (AA)\\n- 3.2.6 Consistent Help (A)\\n- 3.3.7 Redundant Entry (A)\\n- 3.3.8 Accessible Authentication (Minimum) (AA)\\n- 3.3.9 Accessible Authentication (Enhanced) (AAA)\",\"role\":\"supports\"}],\"sourcePriorityRule\":\"P/C 决定规范、论文与实现事实；S 只能作为有归属的解释，不能推翻一手版本文本。\",\"anonymousAnswers\":[{\"sampleId\":\"sample-90a53ca4-3b0a-4f2c-89a3-fe11fc638106\",\"questionId\":\"B-X-DESIGN-005\",\"answer\":\"{\\n  \\\"answer\\\": \\\"Issue #2705 与最终 WCAG 2.2 对 Dragging Movements 的关系是：Issue #2705 中提出的成功标准 2.5.7 Dragging Movements (Level AA) 被最终 WCAG 2.2 采纳，成为新增的 9 个成功标准之一。该标准要求所有通过拖拽操作实现的功能都可以通过单指针不拖拽的方式完成，除非拖拽是必要的或功能由用户代理决定且作者未修改。\\\",\\n  \\\"citations\\\": [\\n    \\\"claim:1da3417e06ff5435-fda7e8c14ff6f23b\\\",\\n    \\\"claim:d40218e811ec1166-3121f577072c04bb\\\",\\n    \\\"span:design-wcag22-2023-002-1da3417e06ff5435-3#chars-550-892\\\",\\n    \\\"span:design-wcag-issue-2705-003-d40218e811ec1166-1#chars-47-331\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\"},{\"sampleId\":\"sample-7c621530-2da4-44dc-b6d0-8b5a3f7a673a\",\"questionId\":\"B-X-DESIGN-005\",\"answer\":\"{\\n  \\\"answer\\\": \\\"Issue #2705 是对 WCAG 2.2 草案中成功标准 2.5.7 Dragging Movements 的反馈，要求移除该标准，直到完成对所有受影响输入模态的研究。最终 WCAG 2.2 保留了 2.5.7 Dragging Movements 作为新的 AA 级成功标准。\\\",\\n  \\\"citations\\\": [\\n    \\\"SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-wcag-issue-2705-003.md:1-8\\\",\\n    \\\"SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-wcag22-2023-002.md:1-16\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\"}]}"
+  },
+  "rawResponse": "{\n  \"scores\": [\n    {\n      \"sampleId\": \"sample-90a53ca4-3b0a-4f2c-89a3-fe11fc638106\",\n      \"requiredPointCoverage\": 2,\n      \"conditionFidelity\": 2,\n      \"evidenceGrounding\": 2,\n      \"answerabilityDiscipline\": 2,\n      \"hardFailure\": false,\n      \"rationale\": \"答案覆盖了issue引用草案和最终标准保留为AA，但未明确提及冲突是提案立场与最终结果。条件上，答案将issue中的请求移除描述为提出标准，反转了来源意图。证据上，引用了两个来源，但未准确反映issue是请求移除而非提出。可回答性上，答案未严格遵循问题要求比较关系，而是错误地陈述了issue提出标准。\"\n    },\n    {\n      \"sampleId\": \"sample-7c621530-2da4-44dc-b6d0-8b5a3f7a673a\",\n      \"requiredPointCoverage\": 3,\n      \"conditionFidelity\": 3,\n      \"evidenceGrounding\": 3,\n      \"answerabilityDiscipline\": 3,\n      \"hardFailure\": false,\n      \"rationale\": \"答案准确覆盖了所有requiredPoints：issue引用草案并建议移除，最终标准保留为AA，冲突是提案立场与最终结果。条件上，正确描述了issue是反馈要求移除，最终标准保留。证据上，引用了两个来源，引用准确。可回答性上，严格回答了问题，没有添加无关信息。\"\n    }\n  ]\n}",
+  "parsed": [
+    {
+      "sampleId": "sample-90a53ca4-3b0a-4f2c-89a3-fe11fc638106",
+      "requiredPointCoverage": 2,
+      "conditionFidelity": 2,
+      "evidenceGrounding": 2,
+      "answerabilityDiscipline": 2,
+      "hardFailure": false,
+      "rationale": "答案覆盖了issue引用草案和最终标准保留为AA，但未明确提及冲突是提案立场与最终结果。条件上，答案将issue中的请求移除描述为提出标准，反转了来源意图。证据上，引用了两个来源，但未准确反映issue是请求移除而非提出。可回答性上，答案未严格遵循问题要求比较关系，而是错误地陈述了issue提出标准。"
+    },
+    {
+      "sampleId": "sample-7c621530-2da4-44dc-b6d0-8b5a3f7a673a",
+      "requiredPointCoverage": 3,
+      "conditionFidelity": 3,
+      "evidenceGrounding": 3,
+      "answerabilityDiscipline": 3,
+      "hardFailure": false,
+      "rationale": "答案准确覆盖了所有requiredPoints：issue引用草案并建议移除，最终标准保留为AA，冲突是提案立场与最终结果。条件上，正确描述了issue是反馈要求移除，最终标准保留。证据上，引用了两个来源，引用准确。可回答性上，严格回答了问题，没有添加无关信息。"
+    }
+  ]
+}

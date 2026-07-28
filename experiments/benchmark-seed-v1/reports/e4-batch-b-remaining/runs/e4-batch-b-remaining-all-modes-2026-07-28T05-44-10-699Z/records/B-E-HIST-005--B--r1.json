@@ -1,0 +1,78 @@
+{
+  "runId": "e4-batch-b-remaining-all-modes-2026-07-28T05-44-10-699Z",
+  "sampleId": "sample-4b02f9ee-6184-4abe-bbc7-e701f2cdb853",
+  "questionId": "B-E-HIST-005",
+  "group": "B",
+  "pilotGroup": "B",
+  "graphExpansion": false,
+  "repetition": 1,
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "temperature": 0,
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 721,
+    "completionTokens": 138,
+    "totalTokens": 859,
+    "promptCacheHitTokens": 0,
+    "promptCacheMissTokens": 721,
+    "reasoningTokens": 0
+  },
+  "latencyMs": 1905,
+  "promptHash": "sha256:631f2276fed9f55801518e2ba24f2ae74030fec1e797bd67a2f223d7d33b8d57",
+  "contextHash": "70a005436a92392bd0d7166399149b971d1cfe9616927d983cf3083b7b3cbf07",
+  "estimatedContextTokens": 583,
+  "estimatedInputTokens": 753,
+  "retrievedClaims": [],
+  "retrievedRelations": [],
+  "retrievedSources": [
+    "../../../workbuddy-batch-b/generated/compilation-corpus/history-humanities/history-scrollprize-2026-004.md",
+    "../../../workbuddy-batch-b/generated/compilation-corpus/history-humanities/history-nature-scroll-2024-003.md",
+    "../../../workbuddy-batch-b/generated/compilation-corpus/history-humanities/history-vesuvius-github-2024-002.md",
+    "../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-webaim-checklist-2024-004.md"
+  ],
+  "droppedContext": [],
+  "retrievalTrace": {
+    "strategy": "folder-lexical",
+    "queryFeatureCount": 18,
+    "corpusChunkCount": 12,
+    "matchedChunkCount": 4,
+    "maxFolderChunks": 16,
+    "candidates": [
+      {
+        "id": "../../../workbuddy-batch-b/generated/compilation-corpus/history-humanities/history-scrollprize-2026-004.md#L1-L6",
+        "rank": 1,
+        "score": 9.69544923837831,
+        "selected": true,
+        "dropReason": null
+      },
+      {
+        "id": "../../../workbuddy-batch-b/generated/compilation-corpus/history-humanities/history-nature-scroll-2024-003.md#L1-L6",
+        "rank": 2,
+        "score": 4.357309992683293,
+        "selected": true,
+        "dropReason": null
+      },
+      {
+        "id": "../../../workbuddy-batch-b/generated/compilation-corpus/history-humanities/history-vesuvius-github-2024-002.md#L1-L12",
+        "rank": 3,
+        "score": 4.357309992683293,
+        "selected": true,
+        "dropReason": null
+      },
+      {
+        "id": "../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-webaim-checklist-2024-004.md#L1-L4",
+        "rank": 4,
+        "score": 2.466337068793427,
+        "selected": true,
+        "dropReason": null
+      }
+    ]
+  },
+  "request": {
+    "systemPrompt": "你是受证据约束的问答 Agent。只使用本次请求提供的检索上下文回答。\n要求：保留影响结论的条件、时间、例外、来源角色与不确定性；关键结论引用上下文中的 SOURCE、EVIDENCE 或 CLAIM 标识；上下文不足时明确说明，不得用外部常识补齐。\n只输出严格 JSON：{\"answer\":\"...\",\"citations\":[\"...\"],\"insufficient\":false,\"uncertainties\":[\"...\"]}。",
+    "userPrompt": "# 问题\nVesuvius Challenge 从 2023 大奖目标到 2026 官网里程碑如何变化？\n\n# 检索上下文\n## SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/history-humanities/history-scrollprize-2026-004.md:1-6 score=9.695\n# Vesuvius Challenge project timeline\n\nVesuvius Challenge launched in March 2023 with a Grand Prize for the first team to recover four passages of 140 characters from a Herculaneum scroll. Within a year, the prize was claimed. The quest was just beginning.\n\nIn 2026, PHerc. 1667 became the first Herculaneum scroll to be virtually unwrapped and read end to end. The challenge now moves onto its next stage: reading multiple entire scrolls.\n\n## SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/history-humanities/history-nature-scroll-2024-003.md:1-6 score=4.357\n# First passages of rolled-up Herculaneum scroll revealed\n\nA team of student researchers has made a giant contribution to solving one of the biggest mysteries in archaeology by revealing the content of Greek writing inside a charred scroll buried 2,000 years ago by the eruption of Mount Vesuvius.\n\nThe winners of a contest called the Vesuvius Challenge trained their machine-learning algorithms on scans of the rolled-up papyrus, unveiling a previously unknown philosophical work that discusses the senses and pleasure.\n\n## SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/history-humanities/history-vesuvius-github-2024-002.md:1-12 score=4.357\n# ScrollPrize/vesuvius archived Python library\n\nThis repository was archived by the owner on Nov 21, 2024. It is now read-only.\n\nNOTE: Now maintained at https://github.com/ScrollPrize/villa/tree/main/vesuvius (this repository archived)\n\nFrom Vesuvius Challenge, a Python library for accessing CT scans of ancient scrolls.\n\n`vesuvius` allows direct access to scroll data without managing download scripts or storing terabytes of CT scans locally. Data is streamed in the background, only serving the requested regions.\n\n`vesuvius` is in beta and the interface may change. Not all Vesuvius Challenge data is currently available - data will continue to be added to the library.\n\n## SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-webaim-checklist-2024-004.md:1-4 score=2.466\n# WebAIM WCAG 2 Checklist\n\nSuccess Criterion 4.1.1 Parsing: This success criterion is no longer useful and as of 2023 has been removed from WCAG."
+  },
+  "answer": "{\n  \"answer\": \"2023年3月Vesuvius Challenge启动时，大奖目标是首次从赫库兰尼姆卷轴中恢复四段140字符的文本。到2026年，里程碑变为PHerc. 1667成为首个被虚拟展开并从头到尾阅读的卷轴，挑战进入阅读多个完整卷轴的新阶段。\",\n  \"citations\": [\n    \"SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/history-humanities/history-scrollprize-2026-004.md:1-6\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}",
+  "answerFormatValid": true
+}

@@ -1,0 +1,43 @@
+{
+  "schemaVersion": "pilot-publication-diff/v1",
+  "runId": "2a97cf0c-d35d-4c98-b014-9325cd97c27c",
+  "sourceId": "source:history-vesuvius-github-2024-002-5505a1ba1fcb1b68",
+  "generatedAt": "2026-07-27T09:56:06.842Z",
+  "status": "PASS",
+  "acceptedReview": false,
+  "runtime": {
+    "requestedModel": "deepseek-v4-flash",
+    "temperature": 0,
+    "semanticAuditVersion": "v2.3",
+    "relationAuditVersion": "v1.7",
+    "sourceHash": "5505a1ba1fcb1b68"
+  },
+  "baseline": null,
+  "candidate": {
+    "claims": 9,
+    "concepts": 4,
+    "relations": 2,
+    "quarantinedClaims": 0,
+    "quarantinedRelations": 4,
+    "quarantineRate": 0
+  },
+  "diff": {
+    "retainedClaimIds": 0,
+    "addedClaimIds": [
+      "claim:5505a1ba1fcb1b68-35e4f1b989767484",
+      "claim:5505a1ba1fcb1b68-5b081e72929d1868",
+      "claim:5505a1ba1fcb1b68-825b50a16ede0106",
+      "claim:5505a1ba1fcb1b68-92eeebabc9812a65",
+      "claim:5505a1ba1fcb1b68-9acfc0780eb2b345",
+      "claim:5505a1ba1fcb1b68-a2289f49fcb0ff64",
+      "claim:5505a1ba1fcb1b68-a4e0bf4dcf441832",
+      "claim:5505a1ba1fcb1b68-c84e1d5fe016cb20",
+      "claim:5505a1ba1fcb1b68-d303dae0fc053d75"
+    ],
+    "removedClaimIds": [],
+    "claimRetentionRate": null,
+    "claimCountChangeRate": null,
+    "conditionsDropped": []
+  },
+  "issues": []
+}

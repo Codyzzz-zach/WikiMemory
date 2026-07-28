@@ -1,4 +1,4 @@
-import { mkdtempSync, rmSync } from "node:fs";
+import { mkdtempSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { afterEach, describe, expect, it } from "vitest";
@@ -35,6 +35,10 @@ describe("Context Pack contract", () => {
 		);
 		expect(pack.subgraph.relations).toHaveLength(1);
 		expect(pack.conflictsAndConditions.join("\n")).toContain("仅在测试环境");
+		expect(pack.conflictsAndConditions.join("\n")).toContain(
+			"SUPPORTS 只表示 Claim 之间存在语义支持",
+		);
+		expect(pack.conflictsAndConditions.join("\n")).toContain("sourceRole=primary");
 	});
 
 	it("includes RELATED_TO for navigation without changing its non-supporting semantics", () => {
@@ -45,6 +49,17 @@ describe("Context Pack contract", () => {
 			expect.objectContaining({ id: "rel:scoped", type: "RELATED_TO" }),
 		);
 		expect(getRelationTypeSemantics("RELATED_TO").canSupportConclusion).toBe(false);
+	});
+
+	it("supports a Seed-only ablation at graph depth zero", () => {
+		const config = fixture();
+		const seedOnly = buildContextPack(config, "Alpha", 4000, 0, { principalId: "user:alice" });
+		const seedGraph = buildContextPack(config, "Alpha", 4000, 2, {
+			principalId: "user:alice",
+		});
+		expect(seedOnly.subgraph.claims.length).toBeGreaterThan(0);
+		expect(seedOnly.subgraph.relations).toHaveLength(0);
+		expect(seedGraph.subgraph.relations).toHaveLength(1);
 	});
 
 	it("enforces the serialized token budget while preserving graph/evidence closure", () => {
@@ -69,6 +84,8 @@ describe("Context Pack contract", () => {
 		expect(pack.subgraph.claims).toEqual([]);
 		expect(pack.knownGaps.join("\n")).toContain("Seed Retriever 未找到可靠匹配");
 		expect(pack.selectionLog[0]?.reason).toContain("matchedClaims=0");
+		expect(pack.taskMap).toContain("地图主题: 无");
+		expect(pack.taskMap).toContain("关键概念: 无");
 	});
 });
 
@@ -106,6 +123,20 @@ function fixture(relationType: Relation["type"] = "SUPPORTS"): AppConfig {
 		},
 	];
 	writeJsonl(join(config.sourcesDir, "test.spans.jsonl"), spans);
+	writeFileSync(
+		join(config.sourcesDir, "test.json"),
+		JSON.stringify({
+			id: "source:test",
+			hash: "test",
+			uri: "https://example.test/standard",
+			parsedText: "Alpha global. Alpha personal.",
+			sourceType: "html",
+			loaderVersion: "test",
+			metadata: { sourceRole: "primary", publisher: "Example Standards Body" },
+			createdAt: "2026-07-23T00:00:00.000Z",
+		}),
+		"utf-8",
+	);
 	const global = claim("claim:global", "Alpha global theorem", "span:global", { type: "GLOBAL" });
 	const personal = claim("claim:personal", "Alpha personal note", "span:personal", {
 		type: "PERSONAL",

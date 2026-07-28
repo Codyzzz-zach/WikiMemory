@@ -1,0 +1,38 @@
+{
+  "schemaVersion": "wge-e4-smoke-answer-ablation/v1",
+  "status": "DIRECTIONAL_MEASURED",
+  "runId": "e4-smoke-2026-07-28T04-16-23-682Z",
+  "createdAt": "2026-07-28T04:17:07.202Z",
+  "taskFileSha256": "sha256:8238d998134795451c162bbba4da4833eb75c8a015f7840a1a359388fd7bca53",
+  "answerModelRequested": "deepseek-v4-flash",
+  "answerModelReturned": "deepseek-v4-flash",
+  "judgeModelRequested": "deepseek-v4-flash",
+  "judgeModelReturned": "deepseek-v4-flash",
+  "groups": [
+    {
+      "group": "B",
+      "samples": 6,
+      "averageTotal": 13.167,
+      "averageRequiredPointCoverage": 3.167,
+      "averageConditionFidelity": 3.333,
+      "averageEvidenceGrounding": 3.167,
+      "averageAnswerabilityDiscipline": 3.5,
+      "hardFailures": 0
+    },
+    {
+      "group": "P",
+      "samples": 6,
+      "averageTotal": 8.667,
+      "averageRequiredPointCoverage": 2.167,
+      "averageConditionFidelity": 2.167,
+      "averageEvidenceGrounding": 2.167,
+      "averageAnswerabilityDiscipline": 2.167,
+      "hardFailures": 2
+    }
+  ],
+  "limitations": [
+    "Six public directional questions are insufficient for a confirmatory product claim.",
+    "The same model family generated answers and judge scores; human audit is still required.",
+    "E-min was not run because no generic Gold-independent WikiModule builder exists."
+  ]
+}

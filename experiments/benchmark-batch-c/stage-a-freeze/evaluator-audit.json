@@ -1,0 +1,464 @@
+{
+  "schemaVersion": "wge-batch-c-stage-a-audit/v1",
+  "status": "CONDITIONALLY_ACCEPTED_HASH_RESEALED",
+  "goldLeakage": "NO_GOLD_FIELDS_IN_PUBLIC_QUESTION_OBJECTS",
+  "sourceCount": 12,
+  "questionCount": 18,
+  "exactCanonicalUrlOverlapCount": 0,
+  "producerHashMismatchCount": 36,
+  "producerHashMismatches": [
+    {
+      "path": "corpus/climate-energy-policy/c-climate-001.md",
+      "kind": "frontmatter-artifact",
+      "declared": "0077f61d53951a2ee443fe2688f19b10d293c6658530f413aee04cf1dd852c01",
+      "actual": "624fd4e366e684098b500eea0b5f324ad08a3fc1d0be3d5012b9456f5ba0bdbd"
+    },
+    {
+      "path": "corpus/climate-energy-policy/c-climate-001.md",
+      "kind": "frontmatter-snapshot",
+      "declared": "f6a8d85b4f2b5a3e5f097b3692ed5f939ca9a20c97776bc140938070a89eb759",
+      "actual": "1aa8477eef047ada16bdf8d63ecf9bc14b7481183ea36f4a3a948c9e7fd9842d"
+    },
+    {
+      "path": "corpus/climate-energy-policy/c-climate-001.md",
+      "kind": "contract-inventory",
+      "declared": "d70f259026831b287aee27c942231b234b3d8137cbc6159c2eab9c3e432e047e",
+      "actual": "624fd4e366e684098b500eea0b5f324ad08a3fc1d0be3d5012b9456f5ba0bdbd"
+    },
+    {
+      "path": "corpus/climate-energy-policy/c-climate-002.md",
+      "kind": "frontmatter-artifact",
+      "declared": "f72613bd1bd2363cb686dda182bb014a303fc72d6a876d5b8f821e489757c271",
+      "actual": "e3a1aa0cff257b504bbab96174dfe63c0fafedbd48faf1283af2c37a5459e920"
+    },
+    {
+      "path": "corpus/climate-energy-policy/c-climate-002.md",
+      "kind": "frontmatter-snapshot",
+      "declared": "7326de3142749fd91b76fd4c7f08109fec9c8fe35dcbdcc5d7162904fb36abe3",
+      "actual": "5b82c58eb39c92d47d24c04b0096a9d5f9d114282a2b89a9afe4bf9eb0b6af19"
+    },
+    {
+      "path": "corpus/climate-energy-policy/c-climate-002.md",
+      "kind": "contract-inventory",
+      "declared": "e5a5a9690cd1ab136d0bd5b3fc1e9c93b231812345ea4b75c6be5e5e32956f61",
+      "actual": "e3a1aa0cff257b504bbab96174dfe63c0fafedbd48faf1283af2c37a5459e920"
+    },
+    {
+      "path": "corpus/climate-energy-policy/c-climate-003.md",
+      "kind": "frontmatter-artifact",
+      "declared": "194dd83e342eb99f88c1ee1fbf1622afcd9b1a4347d069516e444bb24cdb16c4",
+      "actual": "0b0238ea94bb5ebf6ceb62b4f9cc593a77b8e6b700a7b3c7764c7643b4393144"
+    },
+    {
+      "path": "corpus/climate-energy-policy/c-climate-003.md",
+      "kind": "frontmatter-snapshot",
+      "declared": "dc133f543aa701060671cb7872f8d760a0633c10513953b6efb4a88e105e3c74",
+      "actual": "2c5e1e335f064d6ebb20368491302b19d12e809a675cc9b7ebadc68bb0b8a278"
+    },
+    {
+      "path": "corpus/climate-energy-policy/c-climate-003.md",
+      "kind": "contract-inventory",
+      "declared": "8b4805c92008f4eaf731c8302f6cf4324b788bbf9bf78a75f8afeec00db1bafb",
+      "actual": "0b0238ea94bb5ebf6ceb62b4f9cc593a77b8e6b700a7b3c7764c7643b4393144"
+    },
+    {
+      "path": "corpus/climate-energy-policy/c-climate-004.md",
+      "kind": "frontmatter-artifact",
+      "declared": "e38aee597d08522a23a47b7aa87bbde4cc06b0ecd66efda5d38dc077e6414aef",
+      "actual": "dec1c2d91b52749e1fdd7da73e57e3bed80bf3091d7416ac8d6c7ba783cf8fa9"
+    },
+    {
+      "path": "corpus/climate-energy-policy/c-climate-004.md",
+      "kind": "frontmatter-snapshot",
+      "declared": "dd20b7ecb8aa3d10faa1968dbd15abe025170ff08c9dcd5ccaaedfcae400e8b2",
+      "actual": "f1799b80eb4e0c576d9d2282ca75322ee6c2af5dc4e43533694a96594481d061"
+    },
+    {
+      "path": "corpus/climate-energy-policy/c-climate-004.md",
+      "kind": "contract-inventory",
+      "declared": "f92391cb33e7d717bd00202068e60c272c3633d074e590ad45c5af0df01e7962",
+      "actual": "dec1c2d91b52749e1fdd7da73e57e3bed80bf3091d7416ac8d6c7ba783cf8fa9"
+    },
+    {
+      "path": "corpus/law-public-policy/c-law-001.md",
+      "kind": "frontmatter-artifact",
+      "declared": "3ef4b84eedab5721203229ba42bc385ed245904697a6e67e4df714d25ba878f4",
+      "actual": "88aae2e5dfa8deda66575beafc8dd4bb656bebc8c23222960742b38c8b1ebaa6"
+    },
+    {
+      "path": "corpus/law-public-policy/c-law-001.md",
+      "kind": "frontmatter-snapshot",
+      "declared": "2346285bf3022cc3b06066f3611137492619e2f612b9f4233f6c017625b88599",
+      "actual": "97d395d0c40c31de24eee91872c279ef95eec14228877cfd2585cdeee5e1001f"
+    },
+    {
+      "path": "corpus/law-public-policy/c-law-001.md",
+      "kind": "contract-inventory",
+      "declared": "ce505f416e6b9b8a2fe452c63d3cb600254620928a6014783d40928b26173b7c",
+      "actual": "88aae2e5dfa8deda66575beafc8dd4bb656bebc8c23222960742b38c8b1ebaa6"
+    },
+    {
+      "path": "corpus/law-public-policy/c-law-002.md",
+      "kind": "frontmatter-artifact",
+      "declared": "6518d6e64e521275b92052d2efd85a374962a2030cede0bb39b25e5b1a517825",
+      "actual": "e46ea8fbdb92d77e71a0d445970d0f17e244b756873cb903a4d94ada69452ac5"
+    },
+    {
+      "path": "corpus/law-public-policy/c-law-002.md",
+      "kind": "frontmatter-snapshot",
+      "declared": "d5a8b7993a593cca1e0a52278cdbf6d9a8f0979c0f5365c3ce966281c0d021d4",
+      "actual": "6f64eea096fdabb05e90ffb068b18d08b7576b8ebdba9f0a5d04b4f1776b7421"
+    },
+    {
+      "path": "corpus/law-public-policy/c-law-002.md",
+      "kind": "contract-inventory",
+      "declared": "ab9d03147b949d50e46cc801999827e22073188726f0d2e82757057c55f0cce4",
+      "actual": "e46ea8fbdb92d77e71a0d445970d0f17e244b756873cb903a4d94ada69452ac5"
+    },
+    {
+      "path": "corpus/law-public-policy/c-law-003.md",
+      "kind": "frontmatter-artifact",
+      "declared": "a01389582fed44d9b723d67eada017531d447fac45b5763fd88dcfed2de8374b",
+      "actual": "92100a58dfce67e41bb27f696fde8f206c95250b65300477a02ed428de24dca6"
+    },
+    {
+      "path": "corpus/law-public-policy/c-law-003.md",
+      "kind": "frontmatter-snapshot",
+      "declared": "f362ea115628fdade0554b36e9f044fb8a4163451f23049b085bcdbc13439335",
+      "actual": "12d82c5c850337812eb836ae1e40ade8e3de798ee5757a315f29393c9a6ed84a"
+    },
+    {
+      "path": "corpus/law-public-policy/c-law-003.md",
+      "kind": "contract-inventory",
+      "declared": "20d365e298c4d8edf0f8da83c7fca3bdf0206770109b907eb9fd13c5546f3de7",
+      "actual": "92100a58dfce67e41bb27f696fde8f206c95250b65300477a02ed428de24dca6"
+    },
+    {
+      "path": "corpus/law-public-policy/c-law-004.md",
+      "kind": "frontmatter-artifact",
+      "declared": "9938c960eba8d578da6fefdf1164c74c8665aadb7cb29458cb5c51fd75ba204c",
+      "actual": "a455224dce4047f22fc98f157cf5d8a8aecd40d239c30c4c963094f33a1a0a76"
+    },
+    {
+      "path": "corpus/law-public-policy/c-law-004.md",
+      "kind": "frontmatter-snapshot",
+      "declared": "23605e0b52d6a0690a80de150e89e45183b9329888ba9eda35e4ecd24af2d887",
+      "actual": "97010ee89065232c81ffc61ae24497df2774e7d1c5077bbef8df7456f55dd890"
+    },
+    {
+      "path": "corpus/law-public-policy/c-law-004.md",
+      "kind": "contract-inventory",
+      "declared": "2be92b545d8e26aa7b7f5836f31d29e83b05f911d139cbdc123afb0f715221df",
+      "actual": "a455224dce4047f22fc98f157cf5d8a8aecd40d239c30c4c963094f33a1a0a76"
+    },
+    {
+      "path": "corpus/psychology-reproducibility/c-psych-001.md",
+      "kind": "frontmatter-artifact",
+      "declared": "ca4e883f1f6b570069aa60d712b02c0dd2f315d44115346b4da07a75fd2fc38b",
+      "actual": "4245b911b24fdda979afc9efd75a18d58baacb14577878c43bc5dbf1923459c3"
+    },
+    {
+      "path": "corpus/psychology-reproducibility/c-psych-001.md",
+      "kind": "frontmatter-snapshot",
+      "declared": "48646fe3afc2e2be0560b1f28d5ff39d0f521196e21050fb91d185bdc911dec6",
+      "actual": "82520ab2da2c4ac0785ef7c30c2d2980ad04b0a96b1d9d531dc1231923d74d55"
+    },
+    {
+      "path": "corpus/psychology-reproducibility/c-psych-001.md",
+      "kind": "contract-inventory",
+      "declared": "3a2ba4bbbd580b5dea719c129a4f1022339c60d1d197c1418b722f14fa25bcfc",
+      "actual": "4245b911b24fdda979afc9efd75a18d58baacb14577878c43bc5dbf1923459c3"
+    },
+    {
+      "path": "corpus/psychology-reproducibility/c-psych-002.md",
+      "kind": "frontmatter-artifact",
+      "declared": "715662187ee20508fc2066cf0620c6a26a9916816bb969cdd060b0b365cbe6db",
+      "actual": "621868cbccf36c776880ff89371d67a55c1f53044ef8b2d417edc1bb2c331f7e"
+    },
+    {
+      "path": "corpus/psychology-reproducibility/c-psych-002.md",
+      "kind": "frontmatter-snapshot",
+      "declared": "3e625258632f4d0c128aa138fb3cbd85bde649563bd8a49e27955b8094005dd1",
+      "actual": "c7cd92a4fd79313de377fb538942cf54391f6ef4575e22bbdb2c464501607dfe"
+    },
+    {
+      "path": "corpus/psychology-reproducibility/c-psych-002.md",
+      "kind": "contract-inventory",
+      "declared": "e6d1a651f14ba012d509055302cc3b5677dc11d565cefecef2e54198e5f56c1c",
+      "actual": "621868cbccf36c776880ff89371d67a55c1f53044ef8b2d417edc1bb2c331f7e"
+    },
+    {
+      "path": "corpus/psychology-reproducibility/c-psych-003.md",
+      "kind": "frontmatter-artifact",
+      "declared": "1b83e70765c3b5b486378e7dca27dd39378ea3dd97e9c5edfa4219e6627c56d1",
+      "actual": "3cb35e50527f6e6d4bbe124d544606dadf4e424c2246c167472bb0df7ba35226"
+    },
+    {
+      "path": "corpus/psychology-reproducibility/c-psych-003.md",
+      "kind": "frontmatter-snapshot",
+      "declared": "c0a962f1e998a473308c85924dbf2b1809ca866138ceafc8a03aa10b93823fdb",
+      "actual": "77b3cb4ce1abb82684265e6cddd683fd74417530b9f6bb140ece9d11391fa45d"
+    },
+    {
+      "path": "corpus/psychology-reproducibility/c-psych-003.md",
+      "kind": "contract-inventory",
+      "declared": "693f375f3dce1fcb2c2b56836398fbf9f9c46998bf0d95cfa3f09c42a90102e3",
+      "actual": "3cb35e50527f6e6d4bbe124d544606dadf4e424c2246c167472bb0df7ba35226"
+    },
+    {
+      "path": "corpus/psychology-reproducibility/c-psych-004.md",
+      "kind": "frontmatter-artifact",
+      "declared": "9d358756ff20e8a38f4add7ce1c60d9d37efde0ceae69bcaabb1031acb2dbb45",
+      "actual": "316a56a8bb0ab4bb17f8132e6770025d2db65cc473c1ce15fd97f3ccc5bbb7fc"
+    },
+    {
+      "path": "corpus/psychology-reproducibility/c-psych-004.md",
+      "kind": "frontmatter-snapshot",
+      "declared": "54b47d177ad8132ccfe857788fc644d07df76065f73ca238ee6b9511adce7b08",
+      "actual": "2332bd682e9dc14de3f6709db0ea9eb94d3945905f54fd01b5ae747768de32cf"
+    },
+    {
+      "path": "corpus/psychology-reproducibility/c-psych-004.md",
+      "kind": "contract-inventory",
+      "declared": "ab074b8f6ff52d94743a857a208b06629f1ce80531451dfd17dc8455448b24e9",
+      "actual": "316a56a8bb0ab4bb17f8132e6770025d2db65cc473c1ce15fd97f3ccc5bbb7fc"
+    }
+  ],
+  "limitations": [
+    "Producer-declared hashes are not trusted; evaluator-computed hashes define the frozen Stage A input.",
+    "Several snapshots aggregate excerpts from more than one upstream page; source-role atomicity must be audited after Gold reveal.",
+    "Research Notes are excluded from compilation and cannot serve as evidence.",
+    "No Stage B file was read or enumerated while producing this freeze."
+  ],
+  "sources": [
+    {
+      "sourceId": "c-climate-001",
+      "domain": "climate-energy-policy",
+      "sourceRole": "P-primary",
+      "canonicalUrl": "https://www.ipcc.ch/report/ar6/syr/",
+      "accessStatus": "full",
+      "inputPath": "corpus/climate-energy-policy/c-climate-001.md",
+      "inputArtifactHash": "sha256:624fd4e366e684098b500eea0b5f324ad08a3fc1d0be3d5012b9456f5ba0bdbd",
+      "snapshotHash": "sha256:1aa8477eef047ada16bdf8d63ecf9bc14b7481183ea36f4a3a948c9e7fd9842d",
+      "compilationPath": "stage-a-freeze/compilation-corpus/climate-energy-policy/c-climate-001.md",
+      "compilationHash": "sha256:edd52568e76f50e6ed7452f10f765a2b1672d12fd3905350d4fc7802a54fff01"
+    },
+    {
+      "sourceId": "c-climate-002",
+      "domain": "climate-energy-policy",
+      "sourceRole": "P/C-implementation",
+      "canonicalUrl": "https://eur-lex.europa.eu/eli/reg/2021/1119/oj",
+      "accessStatus": "full",
+      "inputPath": "corpus/climate-energy-policy/c-climate-002.md",
+      "inputArtifactHash": "sha256:e3a1aa0cff257b504bbab96174dfe63c0fafedbd48faf1283af2c37a5459e920",
+      "snapshotHash": "sha256:5b82c58eb39c92d47d24c04b0096a9d5f9d114282a2b89a9afe4bf9eb0b6af19",
+      "compilationPath": "stage-a-freeze/compilation-corpus/climate-energy-policy/c-climate-002.md",
+      "compilationHash": "sha256:9e7cbb2dd7271d1b618a0214968b9248694f84eaa4612d37767faf66efda552f"
+    },
+    {
+      "sourceId": "c-climate-003",
+      "domain": "climate-energy-policy",
+      "sourceRole": "S-analysis",
+      "canonicalUrl": "https://www.carbonbrief.org/qa-european-commissions-proposal-to-cut-eu-emissions-90-by-2040/",
+      "accessStatus": "full",
+      "inputPath": "corpus/climate-energy-policy/c-climate-003.md",
+      "inputArtifactHash": "sha256:0b0238ea94bb5ebf6ceb62b4f9cc593a77b8e6b700a7b3c7764c7643b4393144",
+      "snapshotHash": "sha256:2c5e1e335f064d6ebb20368491302b19d12e809a675cc9b7ebadc68bb0b8a278",
+      "compilationPath": "stage-a-freeze/compilation-corpus/climate-energy-policy/c-climate-003.md",
+      "compilationHash": "sha256:64c1fd365206ab0e3f18c4ac604b879054cbe7aee159ae0e17aa69b3cd24b82a"
+    },
+    {
+      "sourceId": "c-climate-004",
+      "domain": "climate-energy-policy",
+      "sourceRole": "U/S-response",
+      "canonicalUrl": "https://www.iea.org/reports/world-energy-outlook-2023/executive-summary",
+      "accessStatus": "full",
+      "inputPath": "corpus/climate-energy-policy/c-climate-004.md",
+      "inputArtifactHash": "sha256:dec1c2d91b52749e1fdd7da73e57e3bed80bf3091d7416ac8d6c7ba783cf8fa9",
+      "snapshotHash": "sha256:f1799b80eb4e0c576d9d2282ca75322ee6c2af5dc4e43533694a96594481d061",
+      "compilationPath": "stage-a-freeze/compilation-corpus/climate-energy-policy/c-climate-004.md",
+      "compilationHash": "sha256:30dcbe4aae4355454707d4c0685d801f2792b18c9b7e2beb470e7fe3e7ac7ee1"
+    },
+    {
+      "sourceId": "c-law-001",
+      "domain": "law-public-policy",
+      "sourceRole": "P-primary",
+      "canonicalUrl": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj",
+      "accessStatus": "full",
+      "inputPath": "corpus/law-public-policy/c-law-001.md",
+      "inputArtifactHash": "sha256:88aae2e5dfa8deda66575beafc8dd4bb656bebc8c23222960742b38c8b1ebaa6",
+      "snapshotHash": "sha256:97d395d0c40c31de24eee91872c279ef95eec14228877cfd2585cdeee5e1001f",
+      "compilationPath": "stage-a-freeze/compilation-corpus/law-public-policy/c-law-001.md",
+      "compilationHash": "sha256:158aa971a0d351bba004734b376f7d8f028ad46f0a150991750fb685e9db5237"
+    },
+    {
+      "sourceId": "c-law-002",
+      "domain": "law-public-policy",
+      "sourceRole": "P/C-implementation",
+      "canonicalUrl": "https://www.edpb.europa.eu/news/news/2023/12-billion-euro-fine-facebook-result-edpb-binding-decision_en",
+      "accessStatus": "full",
+      "inputPath": "corpus/law-public-policy/c-law-002.md",
+      "inputArtifactHash": "sha256:e46ea8fbdb92d77e71a0d445970d0f17e244b756873cb903a4d94ada69452ac5",
+      "snapshotHash": "sha256:6f64eea096fdabb05e90ffb068b18d08b7576b8ebdba9f0a5d04b4f1776b7421",
+      "compilationPath": "stage-a-freeze/compilation-corpus/law-public-policy/c-law-002.md",
+      "compilationHash": "sha256:40aefb8534300c05ba69f4a4caad59b0acb38b2dfef59a43299ed3d50fd8b930"
+    },
+    {
+      "sourceId": "c-law-003",
+      "domain": "law-public-policy",
+      "sourceRole": "S-analysis",
+      "canonicalUrl": "https://gdprhub.eu/index.php?curid=5944",
+      "accessStatus": "full",
+      "inputPath": "corpus/law-public-policy/c-law-003.md",
+      "inputArtifactHash": "sha256:92100a58dfce67e41bb27f696fde8f206c95250b65300477a02ed428de24dca6",
+      "snapshotHash": "sha256:12d82c5c850337812eb836ae1e40ade8e3de798ee5757a315f29393c9a6ed84a",
+      "compilationPath": "stage-a-freeze/compilation-corpus/law-public-policy/c-law-003.md",
+      "compilationHash": "sha256:d2af8637b05e5560207a1a0af4c74bbb782e3f64a91fbd2d5d430298ea992d48"
+    },
+    {
+      "sourceId": "c-law-004",
+      "domain": "law-public-policy",
+      "sourceRole": "U/S-response",
+      "canonicalUrl": "https://about.fb.com/news/2023/05/our-response-to-the-dpc-preliminary-decision/",
+      "accessStatus": "partial",
+      "inputPath": "corpus/law-public-policy/c-law-004.md",
+      "inputArtifactHash": "sha256:a455224dce4047f22fc98f157cf5d8a8aecd40d239c30c4c963094f33a1a0a76",
+      "snapshotHash": "sha256:97010ee89065232c81ffc61ae24497df2774e7d1c5077bbef8df7456f55dd890",
+      "compilationPath": "stage-a-freeze/compilation-corpus/law-public-policy/c-law-004.md",
+      "compilationHash": "sha256:c33099b08485adc198f988baef407be7f95f6198199eaa43335d1cb8f9bf49fd"
+    },
+    {
+      "sourceId": "c-psych-001",
+      "domain": "psychology-reproducibility",
+      "sourceRole": "P-primary",
+      "canonicalUrl": "https://www.science.org/doi/10.1126/science.aac4716",
+      "accessStatus": "partial",
+      "inputPath": "corpus/psychology-reproducibility/c-psych-001.md",
+      "inputArtifactHash": "sha256:4245b911b24fdda979afc9efd75a18d58baacb14577878c43bc5dbf1923459c3",
+      "snapshotHash": "sha256:82520ab2da2c4ac0785ef7c30c2d2980ad04b0a96b1d9d531dc1231923d74d55",
+      "compilationPath": "stage-a-freeze/compilation-corpus/psychology-reproducibility/c-psych-001.md",
+      "compilationHash": "sha256:b1d96a8bf92093858262a657f756fe3e321d19a786d52a2fff79d6f132f6e162"
+    },
+    {
+      "sourceId": "c-psych-002",
+      "domain": "psychology-reproducibility",
+      "sourceRole": "P/C-implementation",
+      "canonicalUrl": "https://doi.org/10.1177/1948550614547449",
+      "accessStatus": "full",
+      "inputPath": "corpus/psychology-reproducibility/c-psych-002.md",
+      "inputArtifactHash": "sha256:621868cbccf36c776880ff89371d67a55c1f53044ef8b2d417edc1bb2c331f7e",
+      "snapshotHash": "sha256:c7cd92a4fd79313de377fb538942cf54391f6ef4575e22bbdb2c464501607dfe",
+      "compilationPath": "stage-a-freeze/compilation-corpus/psychology-reproducibility/c-psych-002.md",
+      "compilationHash": "sha256:6adf0190d6934b3130a0b09b23667f88f45c55816c0f18965e81e82876b4ff4c"
+    },
+    {
+      "sourceId": "c-psych-003",
+      "domain": "psychology-reproducibility",
+      "sourceRole": "S-analysis",
+      "canonicalUrl": "https://www.science.org/doi/10.1126/science.aad7243",
+      "accessStatus": "partial",
+      "inputPath": "corpus/psychology-reproducibility/c-psych-003.md",
+      "inputArtifactHash": "sha256:3cb35e50527f6e6d4bbe124d544606dadf4e424c2246c167472bb0df7ba35226",
+      "snapshotHash": "sha256:77b3cb4ce1abb82684265e6cddd683fd74417530b9f6bb140ece9d11391fa45d",
+      "compilationPath": "stage-a-freeze/compilation-corpus/psychology-reproducibility/c-psych-003.md",
+      "compilationHash": "sha256:4fc1ecf15850ed537edaf5b306d640bfc390f8ba585ca737b486a6bbf874cdb4"
+    },
+    {
+      "sourceId": "c-psych-004",
+      "domain": "psychology-reproducibility",
+      "sourceRole": "U/S-response",
+      "canonicalUrl": "https://www.nature.com/articles/533452a",
+      "accessStatus": "partial",
+      "inputPath": "corpus/psychology-reproducibility/c-psych-004.md",
+      "inputArtifactHash": "sha256:316a56a8bb0ab4bb17f8132e6770025d2db65cc473c1ce15fd97f3ccc5bbb7fc",
+      "snapshotHash": "sha256:2332bd682e9dc14de3f6709db0ea9eb94d3945905f54fd01b5ae747768de32cf",
+      "compilationPath": "stage-a-freeze/compilation-corpus/psychology-reproducibility/c-psych-004.md",
+      "compilationHash": "sha256:14f225d06c6d6dea1bf7f1f9f30165fe6bd95af9cfeed79da3841b01d1481cb7"
+    }
+  ],
+  "evaluatorInventory": [
+    {
+      "path": "README.md",
+      "sha256": "ed164378b517c9dcf6c6b7d4076ca78937c8d6861360e027e3a423d70c9079a2"
+    },
+    {
+      "path": "contract-manifest.json",
+      "sha256": "bf0cb02ec3804ae701746473f1fe1e7125d9325a2317c7d7cc8f3ca00a79b976"
+    },
+    {
+      "path": "corpus/climate-energy-policy/c-climate-001.md",
+      "sha256": "624fd4e366e684098b500eea0b5f324ad08a3fc1d0be3d5012b9456f5ba0bdbd"
+    },
+    {
+      "path": "corpus/climate-energy-policy/c-climate-002.md",
+      "sha256": "e3a1aa0cff257b504bbab96174dfe63c0fafedbd48faf1283af2c37a5459e920"
+    },
+    {
+      "path": "corpus/climate-energy-policy/c-climate-003.md",
+      "sha256": "0b0238ea94bb5ebf6ceb62b4f9cc593a77b8e6b700a7b3c7764c7643b4393144"
+    },
+    {
+      "path": "corpus/climate-energy-policy/c-climate-004.md",
+      "sha256": "dec1c2d91b52749e1fdd7da73e57e3bed80bf3091d7416ac8d6c7ba783cf8fa9"
+    },
+    {
+      "path": "corpus/law-public-policy/c-law-001.md",
+      "sha256": "88aae2e5dfa8deda66575beafc8dd4bb656bebc8c23222960742b38c8b1ebaa6"
+    },
+    {
+      "path": "corpus/law-public-policy/c-law-002.md",
+      "sha256": "e46ea8fbdb92d77e71a0d445970d0f17e244b756873cb903a4d94ada69452ac5"
+    },
+    {
+      "path": "corpus/law-public-policy/c-law-003.md",
+      "sha256": "92100a58dfce67e41bb27f696fde8f206c95250b65300477a02ed428de24dca6"
+    },
+    {
+      "path": "corpus/law-public-policy/c-law-004.md",
+      "sha256": "a455224dce4047f22fc98f157cf5d8a8aecd40d239c30c4c963094f33a1a0a76"
+    },
+    {
+      "path": "corpus/psychology-reproducibility/c-psych-001.md",
+      "sha256": "4245b911b24fdda979afc9efd75a18d58baacb14577878c43bc5dbf1923459c3"
+    },
+    {
+      "path": "corpus/psychology-reproducibility/c-psych-002.md",
+      "sha256": "621868cbccf36c776880ff89371d67a55c1f53044ef8b2d417edc1bb2c331f7e"
+    },
+    {
+      "path": "corpus/psychology-reproducibility/c-psych-003.md",
+      "sha256": "3cb35e50527f6e6d4bbe124d544606dadf4e424c2246c167472bb0df7ba35226"
+    },
+    {
+      "path": "corpus/psychology-reproducibility/c-psych-004.md",
+      "sha256": "316a56a8bb0ab4bb17f8132e6770025d2db65cc473c1ce15fd97f3ccc5bbb7fc"
+    },
+    {
+      "path": "manifests/source-manifest.jsonl",
+      "sha256": "e74ed5eaa1f0c2ce165148e317da3e693f9454985047557acc7fdc6966888326"
+    },
+    {
+      "path": "questions/questions-public.jsonl",
+      "sha256": "3cfe6ed87ddfb88902d35c417f27c6a8ebf806e3139e0acc37d34fa9ad11a34d"
+    },
+    {
+      "path": "reports/collection-log.md",
+      "sha256": "a3e0cee89d33346eb3a06717ba1eac7d547caa4532ba3116de55187d459ae894"
+    },
+    {
+      "path": "reports/coverage-matrix.md",
+      "sha256": "691d624720a33907f72d160666a0d0c191a3ca352612c549edc1468c574168a9"
+    },
+    {
+      "path": "reports/overlap-check.md",
+      "sha256": "409c0b336c2462ecf81fecf89fdf49cebbbf76352cc182909c525f323c8e5d77"
+    },
+    {
+      "path": "reports/unresolved-and-access-failures.md",
+      "sha256": "b8dbb947eba4f32e8116db4ff4177cd3ff7a8bf69d39e88631d3004ae30d4c28"
+    }
+  ],
+  "publicQuestionHash": "sha256:3cfe6ed87ddfb88902d35c417f27c6a8ebf806e3139e0acc37d34fa9ad11a34d",
+  "producerManifestHash": "sha256:bf0cb02ec3804ae701746473f1fe1e7125d9325a2317c7d7cc8f3ca00a79b976",
+  "createdAt": "2026-07-28T06:54:27.307Z"
+}

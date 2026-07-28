@@ -1,0 +1,101 @@
+{
+  "runId": "e4-batch-b-remaining-all-modes-2026-07-28T05-44-10-699Z",
+  "sampleId": "sample-7715197c-3819-42ea-a45b-75b6744453fa",
+  "questionId": "B-A-HIST-007",
+  "group": "P-seed",
+  "pilotGroup": "P",
+  "graphExpansion": false,
+  "repetition": 1,
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "temperature": 0,
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 376,
+    "completionTokens": 65,
+    "totalTokens": 441,
+    "promptCacheHitTokens": 0,
+    "promptCacheMissTokens": 376,
+    "reasoningTokens": 0
+  },
+  "latencyMs": 1547,
+  "promptHash": "sha256:f439d65749e0d21d525ea8d0bc0cbbbf5756f849f6d92f152caac55e5fe429ab",
+  "contextHash": "e050736aaa27073ddd3b93ccba4cf2ac5f7ff00f391d619050230ba8ea29c148",
+  "estimatedContextTokens": 205,
+  "estimatedInputTokens": 361,
+  "retrievedClaims": [
+    "claim:4ab2f152a60c6bbe-901bc3b35d2cc86e"
+  ],
+  "retrievedRelations": [],
+  "retrievedSources": [
+    "source:history-scrollprize-2026-004-4ab2f152a60c6bbe"
+  ],
+  "droppedContext": [],
+  "retrievalTrace": {
+    "strategy": "claim-seed-only",
+    "graphDepth": 0,
+    "temporalScope": {
+      "applied": false,
+      "startMonth": null,
+      "endMonth": null,
+      "excludedClaimIds": []
+    },
+    "retrieval": {
+      "queryFeatureCount": 12,
+      "eligibleClaimCount": 67,
+      "matchedClaimCount": 1,
+      "usedEvidenceText": true,
+      "usedSourceMetadata": true,
+      "resolvedEvidenceRefCount": 67,
+      "unresolvedEvidenceRefCount": 0,
+      "candidates": [
+        {
+          "claimId": "claim:4ab2f152a60c6bbe-901bc3b35d2cc86e",
+          "rank": 1,
+          "score": 19.052607082386537,
+          "channels": [
+            "g3",
+            "w"
+          ],
+          "matchedFeatureCount": 5
+        }
+      ]
+    },
+    "graph": {
+      "seedClaimIds": [
+        "claim:4ab2f152a60c6bbe-901bc3b35d2cc86e"
+      ],
+      "expandedClaimIds": [
+        "claim:4ab2f152a60c6bbe-901bc3b35d2cc86e"
+      ],
+      "expandedRelationIds": []
+    },
+    "budget": {
+      "selectedClaimIds": [
+        "claim:4ab2f152a60c6bbe-901bc3b35d2cc86e"
+      ],
+      "selectedRelationIds": [],
+      "selectedEvidenceSpanIds": [
+        "span:history-scrollprize-2026-004-4ab2f152a60c6bbe-2#chars-258-361"
+      ],
+      "selectedWikiModuleIds": [],
+      "dropped": [],
+      "finalEstimatedTokens": 498
+    },
+    "serializationBudget": {
+      "selectedIds": [
+        "task-map",
+        "claim:4ab2f152a60c6bbe-901bc3b35d2cc86e",
+        "span:history-scrollprize-2026-004-4ab2f152a60c6bbe-2#chars-258-361",
+        "known-gaps"
+      ],
+      "droppedIds": []
+    }
+  },
+  "request": {
+    "systemPrompt": "你是受证据约束的问答 Agent。只使用本次请求提供的检索上下文回答。\n要求：保留影响结论的条件、时间、例外、来源角色与不确定性；关键结论引用上下文中的 SOURCE、EVIDENCE 或 CLAIM 标识；上下文不足时明确说明，不得用外部常识补齐。\n只输出严格 JSON：{\"answer\":\"...\",\"citations\":[\"...\"],\"insufficient\":false,\"uncertainties\":[\"...\"]}。",
+    "userPrompt": "# 问题\nPHerc. 1667 的作者是谁？\n\n# 检索上下文\n## TASK MAP\n主题: PHerc. 1667 的作者是谁？\n地图主题: the, of, and, to, in\n关键概念: User Agent, Mobile Requirements, Input Modality, Desktop Content, Single Pointer\n已知争议: 0 个\n最近变化: 5 条\n找到 1 条相关 Claim\n找到 0 条关系\n找到 1 条原文证据\n\n## CLAIM claim:4ab2f152a60c6bbe-901bc3b35d2cc86e\nIn 2026, PHerc. 1667 became the first Herculaneum scroll to be virtually unwrapped and read end to end.\nConditions: none\nValidity: SUPPORTED\n\n## EVIDENCE span:history-scrollprize-2026-004-4ab2f152a60c6bbe-2#chars-258-361\nIn 2026, PHerc. 1667 became the first Herculaneum scroll to be virtually unwrapped and read end to end.\n\n## KNOWN GAPS\n未找到关系——Graph 可能尚未建立跨材料边"
+  },
+  "answer": "{\n  \"answer\": \"上下文未提供PHerc. 1667的作者信息。\",\n  \"citations\": [],\n  \"insufficient\": true,\n  \"uncertainties\": [\"上下文仅提到PHerc. 1667在2026年被虚拟展开并通读，但未提及作者。\"]\n}",
+  "answerFormatValid": true
+}

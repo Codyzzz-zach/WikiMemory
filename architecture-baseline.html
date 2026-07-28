@@ -20,8 +20,8 @@
         tertiaryColor: "#fff7e8",
         fontSize: "13px",
       },
-      flowchart: { useMaxWidth: true, htmlLabels: false, curve: "basis" },
-      sequence: { useMaxWidth: true },
+      flowchart: { useMaxWidth: true, htmlLabels: true, curve: "linear", nodeSpacing: 34, rankSpacing: 46 },
+      sequence: { useMaxWidth: true, actorMargin: 42, messageMargin: 34 },
       state: { useMaxWidth: true },
     });
   </script>
@@ -122,25 +122,52 @@
   <div class="section-head"><div class="kicker">§03 / Architecture</div><div><h2>当前端到端架构</h2></div></div>
   <div class="diagram"><div class="mermaid">
 flowchart TD
-    F["External file"] --> REG["LoaderRegistry"]
-    REG --> MD["MarkdownLoader today"]
-    REG -.-> FUT["PDF / HTML adapters later"]
-    MD --> ING["Ingestor: immutable Source + SourceSpan"]
-    ING --> RS["Compile run-state + telemetry"]
-    RS --> PC["Bounded compiler: propositions → claims → concepts → local relations"]
-    PC --> CL["Claim structure + fidelity audit"]
-    PC --> RL["Relation structure + edge-level semantic audit"]
-    CL --> PUB1["Stage 1 atomic source publication"]
-    RL --> PUB1
-    PUB1 --> XREC["Concept/keyword recall of old claims"]
-    XREC --> XREL["Cross-material detect + relation audit"]
-    XREL --> PUB2["Stage 2 atomic relation replacement"]
-    PUB2 --> DONE["CompileState COMPLETED"]
-    PUB1 -->|"stage 2 fails"| PART["RELATION_SCAN_PENDING"]
-    PUB1 --> STORE["Canonical snapshots + physical quarantine"]
-    PUB2 --> STORE
-    STORE --> GRAPH["Graph: current audit + endpoint closure"]
-    GRAPH --> PACK["Scoped Context Pack + evidence + exact budget"]
+    subgraph S1["① 材料接入：只做机械解析，不做语义判断"]
+        direction LR
+        F["外部知识文件"] --> REG["加载器注册表<br/>LoaderRegistry"]
+        REG --> MD["Markdown 加载器<br/>当前已实现"]
+        REG -. "后续按接口接入" .-> FUT["PDF / HTML / TeX<br/>未来适配器"]
+        MD --> ING["摄入器<br/>生成不可变 Source + SourceSpan"]
+    end
+
+    subgraph S2["② 有界编译：生成候选知识并分别审计"]
+        direction TB
+        ING --> RUN["编译状态机 + 全程遥测"]
+        RUN --> COMP["有界编译器<br/>命题 → Claim → Concept → 同材料 Relation"]
+        COMP --> CG["Claim 门禁<br/>结构 / 来源 / 五维忠实性"]
+        COMP --> RG["Relation 门禁<br/>端点 / 证据 / 条件 / 边级语义"]
+        CG --> PUB1["阶段一：原子发布本材料快照"]
+        RG --> PUB1
+    end
+
+    subgraph S3["③ 跨材料关系：本地发布成功后独立执行"]
+        direction LR
+        PUB1 --> RECALL["从旧 Canonical 知识中<br/>召回候选 Claim"]
+        RECALL --> CROSS["检测跨材料 Relation<br/>并再次做边级审计"]
+        CROSS --> PUB2["阶段二：原子替换<br/>本 Source 的跨材料边"]
+        PUB2 --> DONE["编译完成<br/>COMPLETED"]
+        PUB1 -- "阶段二失败；本地快照仍保留" --> PENDING["等待关系续跑<br/>RELATION_SCAN_PENDING"]
+    end
+
+    subgraph S4["④ 持久化与消费：发布时门禁一次，读取时再 fail-closed"]
+        direction LR
+        PUB1 --> STORE["Canonical 快照<br/>+ 物理 Quarantine"]
+        PUB2 --> STORE
+        STORE --> GRAPH["安全 Graph<br/>当前审计版本 + 端点闭合"]
+        GRAPH --> PACK["按任务生成 Context Pack<br/>携带证据并执行精确预算"]
+        PACK --> AGENT["Agent 消费知识并回答任务"]
+    end
+
+    classDef input fill:#eef5ff,stroke:#2f6fbd,color:#172033,stroke-width:1.5px;
+    classDef process fill:#ecf8f3,stroke:#188b64,color:#172033,stroke-width:1.5px;
+    classDef gate fill:#fff7e8,stroke:#9b6a1a,color:#172033,stroke-width:1.5px;
+    classDef store fill:#f3efff,stroke:#6656a8,color:#172033,stroke-width:1.5px;
+    classDef warning fill:#fdf5f6,stroke:#b2485a,color:#172033,stroke-width:1.5px;
+    class F,REG,MD,FUT input;
+    class ING,RUN,COMP,RECALL,CROSS process;
+    class CG,RG,GRAPH gate;
+    class PUB1,PUB2,STORE,DONE,PACK,AGENT store;
+    class PENDING warning;
   </div></div>
   <div class="grid three">
     <div class="card"><div class="label">Write path</div><h3>先候选、后门禁</h3><p>Compiler 永远产出 CANDIDATE/UNRESOLVED。只有确定性结构校验和对应语义门禁通过后才进入 Canonical。</p></div>
@@ -170,17 +197,34 @@ ingestLoadedDocument(...) → Source + SourceSpan[]</div>
   <h3>状态与阶段分离</h3>
   <div class="diagram"><div class="mermaid">
 stateDiagram-v2
-    [*] --> SOURCE_INGESTED
-    SOURCE_INGESTED --> COMPILE_RUNNING
-    COMPILE_FAILED --> COMPILE_RUNNING: retry without deleting Source
-    COMPILE_PARTIAL --> COMPILE_RUNNING: full retry
-    COMPILED --> COMPILE_RUNNING: legacy full recompile
-    COMPILE_RUNNING --> COMPILE_FAILED: before local publication
-    COMPILE_RUNNING --> COMPILE_PARTIAL: semantic lint intentionally skipped
-    COMPILE_RUNNING --> RELATION_SCAN_PENDING: local published, stage 2 failed
-    RELATION_SCAN_PENDING --> COMPILE_RUNNING: relation-only resume
-    COMPILE_RUNNING --> COMPLETED: stage 1 + stage 2 complete
-    COMPLETED --> COMPILE_RUNNING: explicit --recompile
+    state "已摄入原文<br/>SOURCE_INGESTED" as Ingested
+    state "编译运行中<br/>COMPILE_RUNNING" as Running
+    state "编译失败<br/>COMPILE_FAILED" as Failed
+    state "部分完成<br/>COMPILE_PARTIAL" as Partial
+    state "旧版已编译<br/>COMPILED" as Legacy
+    state "等待跨材料关系续跑<br/>RELATION_SCAN_PENDING" as RelationPending
+    state "全部完成<br/>COMPLETED" as Completed
+
+    [*] --> Ingested
+    Ingested --> Running: 首次编译
+    Running --> Completed: 阶段一 + 阶段二均成功
+
+    Running --> Failed: 本材料原子发布前失败
+    Failed --> Running: 保留 Source，直接重试
+
+    Running --> Partial: 主动跳过语义审计
+    Partial --> Running: 完整重试
+
+    Running --> RelationPending: 本材料已发布，但跨材料阶段失败
+    RelationPending --> Running: 只续跑跨材料关系阶段
+
+    Legacy --> Running: 旧产物完整重编
+    Completed --> Running: 显式执行 --recompile
+
+    note right of Running
+      Source 与编译状态分离：
+      失败或重跑都不删除原始证据
+    end note
   </div></div>
   <p>阶段日志覆盖 INGESTED、PROPOSITION_EXTRACTION、CLAIM_COMPILATION、CONCEPT_CONSOLIDATION、RELATION_DETECTION、LINT、PUBLISH 以及三个 CROSS_MATERIAL 阶段。状态事件是 append-only JSONL；hostname+pid 拒绝活跃并发，僵尸运行自动封存为失败。</p>
   <h3>容量与重试策略</h3>
@@ -228,16 +272,33 @@ stateDiagram-v2
 <section id="gates">
   <div class="section-head"><div class="kicker">§07 / Semantic Gates</div><div><h2>Claim 与 Relation 必须分别被审计</h2></div></div>
   <div class="diagram"><div class="mermaid">
-flowchart LR
-    C["Candidate Claim"] --> CS["Deterministic structure/provenance gate"]
-    CS --> CA["5-dimension fidelity audit"]
-    CA -->|"pass"| CC["Canonical Claim"]
-    CA -->|"hard fail"| CQ["Claim quarantine"]
-    R["Candidate Relation"] --> RS["type/endpoints/evidence/condition gate"]
-    RS --> RA["edge-level semantic audit"]
-    RA -->|"relation+type+direction+conditions pass"| RC["Canonical Relation + audit version"]
-    RA -->|"any fail"| RQ["Relation quarantine"]
-    CC -.-> RS
+flowchart TB
+    subgraph CLAIM["Claim 审计通道：判断断言是否忠实于所引原文"]
+        direction LR
+        C["候选 Claim"] --> CS["确定性结构门禁<br/>字段 / provenance / 证据可解析"]
+        CS --> CA["五维忠实性审计<br/>支持 / 添加 / 推断 / 限定 / 引用"]
+        CA -- "全部通过" --> CC["Canonical Claim<br/>允许默认消费"]
+        CA -- "任一硬失败" --> CQ["Claim Quarantine<br/>保留原因，不进入默认消费"]
+    end
+
+    subgraph RELATION["Relation 审计通道：端点正确不代表边就正确"]
+        direction LR
+        R["候选 Relation"] --> RS["确定性结构门禁<br/>类型 / 端点 / 双端证据 / 条件状态"]
+        RS --> RA["边级语义审计<br/>关系存在 / 类型 / 方向 / 条件"]
+        RA -- "四项全部通过" --> RC["Canonical Relation<br/>写入当前 audit version"]
+        RA -- "任一项失败" --> RQ["Relation Quarantine<br/>错误边从 Graph 隔离"]
+    end
+
+    CC -. "Canonical Claim 才能作为合法端点" .-> RS
+
+    classDef candidate fill:#eef5ff,stroke:#2f6fbd,color:#172033,stroke-width:1.5px;
+    classDef gate fill:#fff7e8,stroke:#9b6a1a,color:#172033,stroke-width:1.5px;
+    classDef pass fill:#ecf8f3,stroke:#188b64,color:#172033,stroke-width:1.5px;
+    classDef reject fill:#fdf5f6,stroke:#b2485a,color:#172033,stroke-width:1.5px;
+    class C,R candidate;
+    class CS,CA,RS,RA gate;
+    class CC,RC pass;
+    class CQ,RQ reject;
   </div></div>
   <h3>Claim 忠实度门禁</h3>
   <p>只回答 Claim 是否忠实于引用原文，不判断世界事实。维度为 support、addition、inference、limits、citation；固定 JSON schema、证据下标和 failedDimensions 一致性由程序验证。基础设施故障或连续非法 verdict 会让运行失败，不会伪装成“Claim 不忠实”。</p>
@@ -256,19 +317,36 @@ flowchart LR
   <div class="section-head"><div class="kicker">§08 / Two-stage Relations</div><div><h2>单材料发布与跨材料扫描是两个可恢复原子阶段</h2></div></div>
   <div class="diagram"><div class="mermaid">
 sequenceDiagram
-    participant CLI
-    participant Local as Stage 1 local compile/lint
-    participant Store as Publication store
-    participant Recall as Cross-material recall
-    participant Audit as Relation audit
-    CLI->>Local: compile Source
-    Local->>Store: atomic local Claim/Concept/Relation snapshot
-    Store-->>CLI: localPublished=true
-    CLI->>Recall: new Claims/Concepts vs existing Canonical Claims
-    Recall->>Audit: bounded candidate relation batches
-    Audit->>Store: atomically replace this Source's cross edges
-    Store-->>CLI: COMPLETED
-    Note over CLI,Store: if stage 2 fails → RELATION_SCAN_PENDING; local publication remains
+    autonumber
+    participant CLI as CLI 编排器
+    participant Local as 阶段一：本材料编译与审计
+    participant Store as 原子发布存储
+    participant Recall as 跨材料候选召回
+    participant Audit as Relation 边级审计
+
+    rect rgb(238, 248, 243)
+        Note over CLI,Store: 阶段一只负责让“本材料知识”安全可见
+        CLI->>Local: 编译一个 Source
+        Local->>Local: 生成并审计 Claim / Concept / 同材料 Relation
+        Local->>Store: 原子替换本 Source 的本地快照
+        Store-->>CLI: localPublished = true
+    end
+
+    rect rgb(238, 245, 255)
+        Note over CLI,Audit: 阶段二在本地发布成功后，独立建立跨材料连接
+        CLI->>Recall: 新 Claim / Concept 对比既有 Canonical Claim
+        Recall-->>CLI: 返回有上限的候选对及召回统计
+        CLI->>Audit: 分批检测并审计跨材料 Relation
+        Audit-->>CLI: 返回通过门禁的跨材料边
+    end
+
+    alt 召回、审计或发布任一步失败
+        Store-->>CLI: RELATION_SCAN_PENDING
+        Note over CLI,Store: 阶段一快照继续可用；之后只需续跑跨材料关系，不删除 Source
+    else 阶段二成功
+        CLI->>Store: 原子替换本 Source 拥有的跨材料边
+        Store-->>CLI: COMPLETED（两阶段均已发布）
+    end
   </div></div>
   <h3>召回边界</h3>
   <ul>

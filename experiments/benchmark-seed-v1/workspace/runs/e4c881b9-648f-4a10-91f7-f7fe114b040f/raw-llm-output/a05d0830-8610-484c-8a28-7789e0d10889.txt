@@ -1,0 +1,44 @@
+{
+  "claims": [
+    {
+      "statement": "该文档是对2020年3月29日发布的科学简报的更新。",
+      "evidenceQuotes": ["This document is an update to the scientific brief published on 29 March 2020 entitled “Modes of transmission of virus causing COVID-19: implications for infection prevention and control (IPC) precaution recommendations”"],
+      "blockIds": ["health-who-july-2020-002#block-1"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "该更新包含了关于SARS-CoV-2传播的新科学证据。",
+      "evidenceQuotes": ["includes new scientific evidence available on transmission of SARS-CoV-2, the virus that causes COVID-19."],
+      "blockIds": ["health-who-july-2020-002#block-1"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "SARS-CoV-2是导致COVID-19的病毒。",
+      "evidenceQuotes": ["SARS-CoV-2, the virus that causes COVID-19."],
+      "blockIds": ["health-who-july-2020-002#block-1"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "短距离气溶胶传播不能排除。",
+      "evidenceQuotes": ["Short-range aerosol transmission, particularly in specific indoor locations, such as crowded and inadequately ventilated spaces over a prolonged period of time with infected persons cannot be ruled out."],
+      "blockIds": ["health-who-july-2020-002#block-2"],
+      "conditions": ["在特定室内场所，如拥挤且通风不良的空间，与感染者长时间接触"],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "短距离气溶胶传播在特定室内场所尤其值得关注。",
+      "evidenceQuotes": ["particularly in specific indoor locations, such as crowded and inadequately ventilated spaces over a prolonged period of time with infected persons"],
+      "blockIds": ["health-who-july-2020-002#block-2"],
+      "conditions": ["在特定室内场所，如拥挤且通风不良的空间，与感染者长时间接触"],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    }
+  ]
+}

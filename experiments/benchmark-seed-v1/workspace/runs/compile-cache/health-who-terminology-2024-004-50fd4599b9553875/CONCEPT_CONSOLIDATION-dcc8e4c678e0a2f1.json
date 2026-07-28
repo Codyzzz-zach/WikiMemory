@@ -1,0 +1,6 @@
+{
+  "kind": "VALID",
+  "content": "{\n  \"concepts\": [\n    {\n      \"name\": \"airborne transmission\",\n      \"aliases\": [\"airborne transmission or inhalation\"],\n      \"boundary\": \"Transmission mode where IRPs are expelled into the air and inhaled by another person, can occur at short or long distance.\",\n      \"domain\": \"infectious disease transmission\"\n    },\n    {\n      \"name\": \"direct deposition\",\n      \"aliases\": [],\n      \"boundary\": \"Transmission mode where IRPs are expelled into the air and directly deposited on the exposed mouth, nose or eyes of another person nearby.\",\n      \"domain\": \"infectious disease transmission\"\n    },\n    {\n      \"name\": \"through the air transmission\",\n      \"aliases\": [\"through the air\"],\n      \"boundary\": \"Umbrella term for transmission descriptors where the pathogen travels through or is suspended in the air.\",\n      \"domain\": \"infectious disease transmission\"\n    },\n    {\n      \"name\": \"infectious respiratory particles\",\n      \"aliases\": [\"IRPs\"],\n      \"boundary\": \"Particles expelled from an infectious person that can transmit infection.\",\n      \"domain\": \"infectious disease transmission\"\n    }\n  ]\n}",
+  "model": "deepseek-v4-flash",
+  "outputHash": "b8b1564b9f186834"
+}

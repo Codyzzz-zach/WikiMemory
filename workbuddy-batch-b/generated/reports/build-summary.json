@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "wge-batch-build-summary/v1",
+  "status": "candidate-not-human-gold",
+  "counts": {
+    "sources": 12,
+    "facts": 36,
+    "relations": 9,
+    "tasks": 32,
+    "episodes": 3
+  },
+  "domainCounts": {
+    "health-biology": 4,
+    "history-humanities": 4,
+    "design-accessibility": 4
+  },
+  "splitBoundary": "Public validation candidates only. Batch B is unseen-domain material for E4, but not a blind holdout."
+}

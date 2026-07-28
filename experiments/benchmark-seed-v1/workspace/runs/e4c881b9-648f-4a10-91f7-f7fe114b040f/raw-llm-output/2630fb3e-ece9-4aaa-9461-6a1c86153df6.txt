@@ -1,0 +1,18 @@
+{
+  "relations": [
+    {
+      "fromClaimIndex": 0,
+      "toClaimIndex": 5,
+      "type": "RELATED_TO",
+      "conditions": ["特定室内场所（如拥挤且通风不良的空间）与产生气溶胶的操作或支持治疗场景不同，但都涉及气溶胶传播"],
+      "confidence": 0.6
+    },
+    {
+      "fromClaimIndex": 1,
+      "toClaimIndex": 5,
+      "type": "RELATED_TO",
+      "conditions": ["两者都讨论气溶胶传播的可能性，但具体条件不同"],
+      "confidence": 0.6
+    }
+  ]
+}

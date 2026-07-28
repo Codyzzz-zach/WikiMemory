@@ -1,0 +1,48 @@
+{
+  "questionId": "B-F-DESIGN-001",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 1520,
+    "completionTokens": 440,
+    "totalTokens": 1960,
+    "promptCacheHitTokens": 256,
+    "promptCacheMissTokens": 1264,
+    "reasoningTokens": 0
+  },
+  "request": {
+    "systemPrompt": "你是盲测评分员，不知道答案属于哪个实验组。只按题目、评分锚点、Gold 证据和引用预校验评价，不用外部常识修正答案。\n每个维度独立使用同一 0-4 锚点：4=完整且准确；3=大部分满足，仅轻微遗漏；2=部分满足，存在重要遗漏；1=仅有极少相关内容；0=缺失、反转或与证据冲突。\nrequiredPointCoverage 只看 requiredPoints；conditionFidelity 看条件、时间、来源角色和不确定性；evidenceGrounding 同时看关键结论是否与 Gold 证据一致以及 citationValidation；answerabilityDiscipline 看是否越界、编造或错误拒答。\ncitationValidation.valid 表示引用标识确实存在于该匿名样本收到的上下文。内部 CLAIM/SPAN/SOURCE 标识不需要出现在 Gold 文本中，不得仅因此扣分；但存在性有效不代表语义必然支持，仍需对照答案内容与 Gold。\n若反转来源归属、抹掉关键条件/时间、把提案当最终规范或编造关键事实，hardFailure=true。\n数值必须与 rationale 一致：若 rationale 说“完整覆盖且准确”，对应维度不能低于 3。\n只输出严格 JSON：{\"scores\":[{\"sampleId\":\"...\",\"requiredPointCoverage\":0,\"conditionFidelity\":0,\"evidenceGrounding\":0,\"answerabilityDiscipline\":0,\"hardFailure\":false,\"rationale\":\"...\"}]}。",
+    "userPrompt": "{\"question\":\"判断：WCAG 2.2 完全废弃并取代 WCAG 2.1，旧政策不再相关。\",\"answerability\":\"answerable\",\"requiredPoints\":[\"错误；2.2 声明向后兼容\",\"旧政策仍可能要求测试 4.1.1\"],\"forbiddenClaims\":[\"不得把版本升级写成法律自动替代\"],\"requiredEvidence\":[{\"sourceId\":\"design-wcag22-2023-002\",\"exactQuote\":\"WCAG 2.2 builds on and is backwards compatible with WCAG 2.1, meaning web pages that conform to WCAG 2.2 are at least as accessible as pages that conform to WCAG 2.1. Requirements have been added that build on 2.1 and 2.0. WCAG 2.2 has removed one success criterion, 4.1.1 Parsing.\",\"role\":\"supports\"},{\"sourceId\":\"design-wcag22-2023-002\",\"exactQuote\":\"Authors that are required by policy to conform with WCAG 2.0 or 2.1 will be able to update content to WCAG 2.2, but may need to continue to test and report 4.1.1.\",\"role\":\"supports\"}],\"sourcePriorityRule\":\"P/C 决定规范、论文与实现事实；S 只能作为有归属的解释，不能推翻一手版本文本。\",\"anonymousAnswers\":[{\"sampleId\":\"sample-5322152c-ac18-4732-aa1e-ca51db394c85\",\"questionId\":\"B-F-DESIGN-001\",\"repetition\":1,\"answer\":\"{\\n  \\\"answer\\\": \\\"否，WCAG 2.2 并未完全废弃并取代 WCAG 2.1。WCAG 2.2 向后兼容 WCAG 2.1，且符合 WCAG 2.2 的页面至少与符合 WCAG 2.1 的页面一样可访问，但旧政策可能仍要求符合 WCAG 2.0 或 2.1，且作者可能需要继续测试和报告已移除的 4.1.1 解析准则。\\\",\\n  \\\"citations\\\": [\\n    \\\"claim:1da3417e06ff5435-0131b383bb68d5d6\\\",\\n    \\\"claim:1da3417e06ff5435-4f47a3d28c2c5675\\\",\\n    \\\"claim:1da3417e06ff5435-e42233e831e0f66d\\\",\\n    \\\"claim:1da3417e06ff5435-e9295b4993a17258\\\",\\n    \\\"claim:1da3417e06ff5435-50f420b0776ab205\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\",\"citationValidation\":{\"formatValid\":true,\"total\":5,\"valid\":5,\"invalid\":[]}},{\"sampleId\":\"sample-cf1d99c5-b3af-4c3e-bc69-ddf899cd3fc0\",\"questionId\":\"B-F-DESIGN-001\",\"repetition\":1,\"answer\":\"{\\n  \\\"answer\\\": \\\"否，WCAG 2.2 并未完全废弃并取代 WCAG 2.1。WCAG 2.2 向后兼容 WCAG 2.1，并在此基础上新增了成功标准，但旧政策仍可能相关，例如要求符合 WCAG 2.0 或 2.1 的政策可能需要继续测试和报告已移除的 4.1.1 解析。\\\",\\n  \\\"citations\\\": [\\n    \\\"claim:1da3417e06ff5435-0131b383bb68d5d6\\\",\\n    \\\"claim:1da3417e06ff5435-4f47a3d28c2c5675\\\",\\n    \\\"claim:1da3417e06ff5435-50f420b0776ab205\\\",\\n    \\\"claim:1da3417e06ff5435-e42233e831e0f66d\\\",\\n    \\\"claim:1da3417e06ff5435-e9295b4993a17258\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\",\"citationValidation\":{\"formatValid\":true,\"total\":5,\"valid\":5,\"invalid\":[]}},{\"sampleId\":\"sample-737e176c-b019-40b7-9523-02eac131fc15\",\"questionId\":\"B-F-DESIGN-001\",\"repetition\":1,\"answer\":\"{\\n  \\\"answer\\\": \\\"错误。WCAG 2.2 向后兼容 WCAG 2.1，并未完全废弃或取代 WCAG 2.1。旧政策可能仍要求符合 WCAG 2.0 或 2.1，且需要继续测试和报告已移除的 4.1.1 Parsing。\\\",\\n  \\\"citations\\\": [\\n    \\\"SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-wcag22-2023-002.md:1-16\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\",\"citationValidation\":{\"formatValid\":true,\"total\":1,\"valid\":1,\"invalid\":[]}}]}"
+  },
+  "rawResponse": "{\n  \"scores\": [\n    {\n      \"sampleId\": \"sample-5322152c-ac18-4732-aa1e-ca51db394c85\",\n      \"requiredPointCoverage\": 4,\n      \"conditionFidelity\": 4,\n      \"evidenceGrounding\": 4,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"答案明确否定WCAG 2.2完全废弃并取代WCAG 2.1，指出向后兼容性，并提及旧政策可能仍要求测试4.1.1，完整覆盖requiredPoints。条件、时间、来源角色准确，无不确定性。关键结论与Gold证据一致，引用全部有效且语义支持。未越界、编造或错误拒答。\"\n    },\n    {\n      \"sampleId\": \"sample-cf1d99c5-b3af-4c3e-bc69-ddf899cd3fc0\",\n      \"requiredPointCoverage\": 4,\n      \"conditionFidelity\": 4,\n      \"evidenceGrounding\": 4,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"答案完整覆盖requiredPoints，指出向后兼容和旧政策可能要求测试4.1.1。条件、时间、来源角色准确。关键结论与Gold证据一致，引用有效。未越界或编造。\"\n    },\n    {\n      \"sampleId\": \"sample-737e176c-b019-40b7-9523-02eac131fc15\",\n      \"requiredPointCoverage\": 4,\n      \"conditionFidelity\": 4,\n      \"evidenceGrounding\": 4,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"答案明确否定，指出向后兼容和旧政策可能要求测试4.1.1，覆盖requiredPoints。条件、时间准确。关键结论与Gold证据一致，引用有效。未越界或编造。\"\n    }\n  ]\n}",
+  "parsed": [
+    {
+      "sampleId": "sample-5322152c-ac18-4732-aa1e-ca51db394c85",
+      "requiredPointCoverage": 4,
+      "conditionFidelity": 4,
+      "evidenceGrounding": 4,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "答案明确否定WCAG 2.2完全废弃并取代WCAG 2.1，指出向后兼容性，并提及旧政策可能仍要求测试4.1.1，完整覆盖requiredPoints。条件、时间、来源角色准确，无不确定性。关键结论与Gold证据一致，引用全部有效且语义支持。未越界、编造或错误拒答。"
+    },
+    {
+      "sampleId": "sample-cf1d99c5-b3af-4c3e-bc69-ddf899cd3fc0",
+      "requiredPointCoverage": 4,
+      "conditionFidelity": 4,
+      "evidenceGrounding": 4,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "答案完整覆盖requiredPoints，指出向后兼容和旧政策可能要求测试4.1.1。条件、时间、来源角色准确。关键结论与Gold证据一致，引用有效。未越界或编造。"
+    },
+    {
+      "sampleId": "sample-737e176c-b019-40b7-9523-02eac131fc15",
+      "requiredPointCoverage": 4,
+      "conditionFidelity": 4,
+      "evidenceGrounding": 4,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "答案明确否定，指出向后兼容和旧政策可能要求测试4.1.1，覆盖requiredPoints。条件、时间准确。关键结论与Gold证据一致，引用有效。未越界或编造。"
+    }
+  ]
+}

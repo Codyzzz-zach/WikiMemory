@@ -1,0 +1,168 @@
+## TASK MAP
+主题: 归档仓库与 2026 项目进展的时间关系是什么？
+地图主题: 仓库, 归档, 2026
+关键概念: GitHub仓库
+已知争议: 0 个
+最近变化: 4 条
+找到 14 条相关 Claim
+找到 10 条关系
+找到 14 条原文证据
+
+## CLAIM claim:5505a1ba1fcb1b68-a2289f49fcb0ff64
+该仓库于 2024 年 11 月 21 日被所有者归档。
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:4ab2f152a60c6bbe-39dbff7d3d0408e6
+The Vesuvius Challenge had a Grand Prize for the first team to recover four passages of 140 characters from a Herculaneum scroll.
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:4ab2f152a60c6bbe-812533cb126e5e48
+Vesuvius Challenge project timeline is the title of the section.
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:4ab2f152a60c6bbe-901bc3b35d2cc86e
+In 2026, PHerc. 1667 became the first Herculaneum scroll to be virtually unwrapped and read end to end.
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:4ab2f152a60c6bbe-a6fd9e7a1c644eed
+Within a year of the launch, the prize was claimed.
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:4ab2f152a60c6bbe-d83a71026c2b4d86
+The challenge now moves onto its next stage: reading multiple entire scrolls.
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:4ab2f152a60c6bbe-e301af57ef26e82d
+Vesuvius Challenge was launched in March 2023.
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:5505a1ba1fcb1b68-d303dae0fc053d75
+该仓库现在是只读的。
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:b98a3ae4860a6edc-95aab89f959ee2e9
+A team of student researchers has made a giant contribution to solving one of the biggest mysteries in archaeology.
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:b98a3ae4860a6edc-704f0702fd830045
+The winners of a contest called the Vesuvius Challenge trained their machine-learning algorithms on scans of the rolled-up papyrus.
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:b98a3ae4860a6edc-3c7148205b4853be
+The scroll was buried 2,000 years ago by the eruption of Mount Vesuvius.
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:e71279e71acc04bd-dc4b7534a61f85ee
+EduceLab-Scrolls has enabled the discovery, for the first time, of hidden texts from the Herculaneum papyri.
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:b98a3ae4860a6edc-fd2b496dae5aceca
+The contribution was made by revealing the content of Greek writing inside a charred scroll.
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:e71279e71acc04bd-f06d3f1ce6a9a65a
+EduceLab-Scrolls is a complete software pipeline for revealing hidden texts of the Herculaneum papyri using X-ray CT images.
+Conditions: none
+Validity: SUPPORTED
+
+## RELATION rel:5505a1ba1fcb1b68-0cbed135f488b346
+claim:5505a1ba1fcb1b68-a2289f49fcb0ff64 --[SUPPORTS]--> claim:5505a1ba1fcb1b68-d303dae0fc053d75
+Conditions: none
+
+## RELATION rel:4ab2f152a60c6bbe-123dafd4b72f8b9e
+claim:4ab2f152a60c6bbe-39dbff7d3d0408e6 --[SUPPORTS]--> claim:4ab2f152a60c6bbe-a6fd9e7a1c644eed
+Conditions: none
+
+## RELATION rel:cross-3c6b8385c21665ec
+claim:4ab2f152a60c6bbe-39dbff7d3d0408e6 --[RELATED_TO]--> claim:b98a3ae4860a6edc-95aab89f959ee2e9
+Conditions: none
+
+## RELATION rel:cross-670f5b5bb894432c
+claim:4ab2f152a60c6bbe-39dbff7d3d0408e6 --[RELATED_TO]--> claim:b98a3ae4860a6edc-704f0702fd830045
+Conditions: none
+
+## RELATION rel:cross-1a5e232cdc42ca30
+claim:4ab2f152a60c6bbe-901bc3b35d2cc86e --[RELATED_TO]--> claim:b98a3ae4860a6edc-3c7148205b4853be
+Conditions: none
+
+## RELATION rel:cross-e02014d48b936e87
+claim:4ab2f152a60c6bbe-901bc3b35d2cc86e --[RELATED_TO]--> claim:e71279e71acc04bd-dc4b7534a61f85ee
+Conditions: none
+
+## RELATION rel:4ab2f152a60c6bbe-d276c0e77fb62409
+claim:4ab2f152a60c6bbe-e301af57ef26e82d --[SUPPORTS]--> claim:4ab2f152a60c6bbe-a6fd9e7a1c644eed
+Conditions: none
+
+## RELATION rel:b98a3ae4860a6edc-fe01487361015f30
+claim:b98a3ae4860a6edc-95aab89f959ee2e9 --[SUPPORTS]--> claim:b98a3ae4860a6edc-fd2b496dae5aceca
+Conditions: none
+
+## RELATION rel:b98a3ae4860a6edc-b39a43fc9bb7bc6e
+claim:b98a3ae4860a6edc-3c7148205b4853be --[RELATED_TO]--> claim:b98a3ae4860a6edc-704f0702fd830045
+Conditions: none
+
+## RELATION rel:e71279e71acc04bd-599718bf2ce73ac7
+claim:e71279e71acc04bd-f06d3f1ce6a9a65a --[SUPPORTS]--> claim:e71279e71acc04bd-dc4b7534a61f85ee
+Conditions: none
+
+## EVIDENCE span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-1#chars-48-106
+This repository was archived by the owner on Nov 21, 2024.
+
+## EVIDENCE span:history-scrollprize-2026-004-4ab2f152a60c6bbe-1#chars-81-187
+with a Grand Prize for the first team to recover four passages of 140 characters from a Herculaneum scroll
+
+## EVIDENCE span:history-scrollprize-2026-004-4ab2f152a60c6bbe-0#chars-0-37
+# Vesuvius Challenge project timeline
+
+## EVIDENCE span:history-scrollprize-2026-004-4ab2f152a60c6bbe-2#chars-258-361
+In 2026, PHerc. 1667 became the first Herculaneum scroll to be virtually unwrapped and read end to end.
+
+## EVIDENCE span:history-scrollprize-2026-004-4ab2f152a60c6bbe-1#chars-189-226
+Within a year, the prize was claimed.
+
+## EVIDENCE span:history-scrollprize-2026-004-4ab2f152a60c6bbe-2#chars-362-439
+The challenge now moves onto its next stage: reading multiple entire scrolls.
+
+## EVIDENCE span:history-scrollprize-2026-004-4ab2f152a60c6bbe-1#chars-39-80
+Vesuvius Challenge launched in March 2023
+
+## EVIDENCE span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-1#chars-107-127
+It is now read-only.
+
+## EVIDENCE span:history-nature-scroll-2024-003-b98a3ae4860a6edc-1#chars-59-173
+A team of student researchers has made a giant contribution to solving one of the biggest mysteries in archaeology
+
+## EVIDENCE span:history-nature-scroll-2024-003-b98a3ae4860a6edc-2#chars-299-429
+The winners of a contest called the Vesuvius Challenge trained their machine-learning algorithms on scans of the rolled-up papyrus
+
+## EVIDENCE span:history-nature-scroll-2024-003-b98a3ae4860a6edc-1#chars-240-296
+buried 2,000 years ago by the eruption of Mount Vesuvius
+
+## EVIDENCE span:history-educelab-paper-2023-001-e71279e71acc04bd-2#chars-542-678
+EduceLab-Scrolls has also enabled the discovery, for the first time, of hidden texts from the Herculaneum papyri, which we present here.
+
+## EVIDENCE span:history-nature-scroll-2024-003-b98a3ae4860a6edc-1#chars-174-239
+by revealing the content of Greek writing inside a charred scroll
+
+## EVIDENCE span:history-educelab-paper-2023-001-e71279e71acc04bd-1#chars-88-207
+We present a complete software pipeline for revealing the hidden texts of the Herculaneum papyri using X-ray CT images.
+
+## CONFLICTS AND CONDITIONS
+⚠️ SUPPORTS 只表示 Claim 之间存在语义支持，不证明其来源彼此独立、同等权威或都是规范性来源；来源独立性必须依据 Source provenance 单独判断。
+🔎 Source source:history-educelab-paper-2023-001-e71279e71acc04bd provenance: uri=workbuddy-batch-b/generated/compilation-corpus/history-humanities/history-educelab-paper-2023-001.md; sourceType=md; role=unknown
+🔎 Source source:history-nature-scroll-2024-003-b98a3ae4860a6edc provenance: uri=workbuddy-batch-b/generated/compilation-corpus/history-humanities/history-nature-scroll-2024-003.md; sourceType=md; role=unknown
+🔎 Source source:history-scrollprize-2026-004-4ab2f152a60c6bbe provenance: uri=workbuddy-batch-b/generated/compilation-corpus/history-humanities/history-scrollprize-2026-004.md; sourceType=md; role=unknown
+🔎 Source source:history-vesuvius-github-2024-002-5505a1ba1fcb1b68 provenance: uri=workbuddy-batch-b/generated/compilation-corpus/history-humanities/history-vesuvius-github-2024-002.md; sourceType=md; role=unknown

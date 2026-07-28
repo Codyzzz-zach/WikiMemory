@@ -1,0 +1,60 @@
+{
+  "claims": [
+    {
+      "statement": "WCAG 2.1 builds on and is backwards compatible with WCAG 2.0.",
+      "evidenceQuotes": ["WCAG 2.1 builds on and is backwards compatible with WCAG 2.0"],
+      "blockIds": ["design-wcag21-2018-001#block-1"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "Web pages that conform to WCAG 2.1 also conform to WCAG 2.0.",
+      "evidenceQuotes": ["web pages that conform to WCAG 2.1 also conform to WCAG 2.0"],
+      "blockIds": ["design-wcag21-2018-001#block-1"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "Success Criterion 4.1.1 Parsing is Level A.",
+      "evidenceQuotes": ["Success Criterion 4.1.1 Parsing (Level A)"],
+      "blockIds": ["design-wcag21-2018-001#block-2"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "In content implemented using markup languages, elements have complete start and end tags.",
+      "evidenceQuotes": ["In content implemented using markup languages, elements have complete start and end tags"],
+      "blockIds": ["design-wcag21-2018-001#block-2"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "In content implemented using markup languages, elements are nested according to their specifications.",
+      "evidenceQuotes": ["elements are nested according to their specifications"],
+      "blockIds": ["design-wcag21-2018-001#block-2"],
+      "conditions": ["In content implemented using markup languages"],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "In content implemented using markup languages, elements do not contain duplicate attributes.",
+      "evidenceQuotes": ["elements do not contain duplicate attributes"],
+      "blockIds": ["design-wcag21-2018-001#block-2"],
+      "conditions": ["In content implemented using markup languages"],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "In content implemented using markup languages, any IDs are unique, except where the specifications allow these features.",
+      "evidenceQuotes": ["any IDs are unique, except where the specifications allow these features"],
+      "blockIds": ["design-wcag21-2018-001#block-2"],
+      "conditions": ["In content implemented using markup languages"],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    }
+  ]
+}

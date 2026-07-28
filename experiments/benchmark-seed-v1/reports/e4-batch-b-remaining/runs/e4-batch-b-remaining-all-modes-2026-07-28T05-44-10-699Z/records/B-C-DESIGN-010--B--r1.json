@@ -1,0 +1,44 @@
+{
+  "runId": "e4-batch-b-remaining-all-modes-2026-07-28T05-44-10-699Z",
+  "sampleId": "sample-0ab882aa-9125-45d8-90d9-5409a93fb38e",
+  "questionId": "B-C-DESIGN-010",
+  "group": "B",
+  "pilotGroup": "B",
+  "graphExpansion": false,
+  "repetition": 1,
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "temperature": 0,
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 137,
+    "completionTokens": 52,
+    "totalTokens": 189,
+    "promptCacheHitTokens": 0,
+    "promptCacheMissTokens": 137,
+    "reasoningTokens": 0
+  },
+  "latencyMs": 1025,
+  "promptHash": "sha256:241fcfa8144045b8d5bad99928dbefa0c1818c5dd240ce4a99347a044a66242b",
+  "contextHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "estimatedContextTokens": 1,
+  "estimatedInputTokens": 157,
+  "retrievedClaims": [],
+  "retrievedRelations": [],
+  "retrievedSources": [],
+  "droppedContext": [],
+  "retrievalTrace": {
+    "strategy": "folder-lexical",
+    "queryFeatureCount": 7,
+    "corpusChunkCount": 12,
+    "matchedChunkCount": 0,
+    "maxFolderChunks": 16,
+    "candidates": []
+  },
+  "request": {
+    "systemPrompt": "你是受证据约束的问答 Agent。只使用本次请求提供的检索上下文回答。\n要求：保留影响结论的条件、时间、例外、来源角色与不确定性；关键结论引用上下文中的 SOURCE、EVIDENCE 或 CLAIM 标识；上下文不足时明确说明，不得用外部常识补齐。\n只输出严格 JSON：{\"answer\":\"...\",\"citations\":[\"...\"],\"insufficient\":false,\"uncertainties\":[\"...\"]}。",
+    "userPrompt": "# 问题\n2.5.7 的例外条件是什么？\n\n# 检索上下文\n"
+  },
+  "answer": "{\"answer\":\"2.5.7 的例外条件在提供的上下文中未提及。\",\"citations\":[],\"insufficient\":true,\"uncertainties\":[\"上下文未包含 2.5.7 的例外条件信息。\"]}",
+  "answerFormatValid": true
+}

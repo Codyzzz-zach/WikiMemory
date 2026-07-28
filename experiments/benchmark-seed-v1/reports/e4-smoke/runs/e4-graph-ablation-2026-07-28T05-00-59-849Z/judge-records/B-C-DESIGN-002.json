@@ -1,0 +1,75 @@
+{
+  "questionId": "B-C-DESIGN-002",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 1436,
+    "completionTokens": 618,
+    "totalTokens": 2054,
+    "promptCacheHitTokens": 256,
+    "promptCacheMissTokens": 1180,
+    "reasoningTokens": 0
+  },
+  "request": {
+    "systemPrompt": "你是盲测评分员，不知道匿名答案属于哪个实验组。只按题目、评分锚点和证据评估，不用外部常识修正答案。\n每项 0-4 分：requiredPointCoverage、conditionFidelity、evidenceGrounding、answerabilityDiscipline。\n若答案反转来源归属、抹掉关键条件/时间、把提案当最终规范、编造上下文外事实，hardFailure=true。\n只输出严格 JSON：{\"scores\":[{\"sampleId\":\"...\",\"requiredPointCoverage\":0,\"conditionFidelity\":0,\"evidenceGrounding\":0,\"answerabilityDiscipline\":0,\"hardFailure\":false,\"rationale\":\"...\"}]}。",
+    "userPrompt": "{\"question\":\"在什么条件下采用 WCAG 2.2 后仍可能需要报告 4.1.1？\",\"answerability\":\"answerable\",\"requiredPoints\":[\"适用政策仍要求符合 WCAG 2.0 或 2.1\"],\"forbiddenClaims\":[\"不得无条件删除旧测试\"],\"requiredEvidence\":[{\"sourceId\":\"design-wcag22-2023-002\",\"exactQuote\":\"Authors that are required by policy to conform with WCAG 2.0 or 2.1 will be able to update content to WCAG 2.2, but may need to continue to test and report 4.1.1.\",\"role\":\"supports\"}],\"sourcePriorityRule\":\"P/C 决定规范、论文与实现事实；S 只能作为有归属的解释，不能推翻一手版本文本。\",\"anonymousAnswers\":[{\"sampleId\":\"sample-2d2f6293-421b-4a2a-9aab-ee49a98c709d\",\"questionId\":\"B-C-DESIGN-002\",\"repetition\":1,\"answer\":\"{\\n  \\\"answer\\\": \\\"当政策要求符合 WCAG 2.0 或 2.1 时，采用 WCAG 2.2 后仍可能需要继续测试和报告 4.1.1。\\\",\\n  \\\"citations\\\": [\\n    \\\"claim:1da3417e06ff5435-e9295b4993a17258\\\",\\n    \\\"claim:1da3417e06ff5435-50f420b0776ab205\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\"},{\"sampleId\":\"sample-307731f5-e5a0-4b66-af02-867e4f7619dd\",\"questionId\":\"B-C-DESIGN-002\",\"repetition\":1,\"answer\":\"{\\n  \\\"answer\\\": \\\"当政策要求符合 WCAG 2.0 或 2.1 时，采用 WCAG 2.2 后仍可能需要继续测试和报告 4.1.1。\\\",\\n  \\\"citations\\\": [\\n    \\\"claim:1da3417e06ff5435-e9295b4993a17258\\\",\\n    \\\"claim:1da3417e06ff5435-50f420b0776ab205\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\"},{\"sampleId\":\"sample-141351d0-d267-42b5-9b01-da0ac7698f96\",\"questionId\":\"B-C-DESIGN-002\",\"repetition\":2,\"answer\":\"{\\n  \\\"answer\\\": \\\"当政策要求符合 WCAG 2.0 或 2.1 时，采用 WCAG 2.2 后仍可能需要继续测试和报告 4.1.1。\\\",\\n  \\\"citations\\\": [\\n    \\\"claim:1da3417e06ff5435-e9295b4993a17258\\\",\\n    \\\"span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-449-494\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\"},{\"sampleId\":\"sample-efd6a097-8e12-41c2-bf15-2b8f744d373c\",\"questionId\":\"B-C-DESIGN-002\",\"repetition\":2,\"answer\":\"{\\n  \\\"answer\\\": \\\"当政策要求符合 WCAG 2.0 或 2.1 时，采用 WCAG 2.2 后仍可能需要继续测试和报告 4.1.1。\\\",\\n  \\\"citations\\\": [\\n    \\\"claim:1da3417e06ff5435-e9295b4993a17258\\\",\\n    \\\"claim:1da3417e06ff5435-50f420b0776ab205\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\"},{\"sampleId\":\"sample-9e4c2835-1788-46b1-9cfd-c10c976328a0\",\"questionId\":\"B-C-DESIGN-002\",\"repetition\":3,\"answer\":\"{\\n  \\\"answer\\\": \\\"当政策要求符合 WCAG 2.0 或 2.1 时，采用 WCAG 2.2 后仍可能需要继续测试和报告 4.1.1。\\\",\\n  \\\"citations\\\": [\\n    \\\"claim:1da3417e06ff5435-e9295b4993a17258\\\",\\n    \\\"claim:1da3417e06ff5435-50f420b0776ab205\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\"},{\"sampleId\":\"sample-18ab6495-acf2-4332-8957-8478972dcc04\",\"questionId\":\"B-C-DESIGN-002\",\"repetition\":3,\"answer\":\"{\\n  \\\"answer\\\": \\\"当政策要求符合 WCAG 2.0 或 2.1 时，采用 WCAG 2.2 后仍可能需要继续测试和报告 4.1.1。\\\",\\n  \\\"citations\\\": [\\n    \\\"claim:1da3417e06ff5435-e9295b4993a17258\\\",\\n    \\\"claim:1da3417e06ff5435-50f420b0776ab205\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\"}]}"
+  },
+  "rawResponse": "{\n  \"scores\": [\n    {\n      \"sampleId\": \"sample-2d2f6293-421b-4a2a-9aab-ee49a98c709d\",\n      \"requiredPointCoverage\": 4,\n      \"conditionFidelity\": 4,\n      \"evidenceGrounding\": 4,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"答案准确覆盖了requiredPoints中的条件，未添加或遗漏关键信息。引用了支持性证据，未反转来源或编造事实。\"\n    },\n    {\n      \"sampleId\": \"sample-307731f5-e5a0-4b66-af02-867e4f7619dd\",\n      \"requiredPointCoverage\": 4,\n      \"conditionFidelity\": 4,\n      \"evidenceGrounding\": 4,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"与第一个答案相同，完全符合要求。\"\n    },\n    {\n      \"sampleId\": \"sample-141351d0-d267-42b5-9b01-da0ac7698f96\",\n      \"requiredPointCoverage\": 4,\n      \"conditionFidelity\": 4,\n      \"evidenceGrounding\": 4,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"答案正确，引用了span形式的证据，但内容一致。\"\n    },\n    {\n      \"sampleId\": \"sample-efd6a097-8e12-41c2-bf15-2b8f744d373c\",\n      \"requiredPointCoverage\": 4,\n      \"conditionFidelity\": 4,\n      \"evidenceGrounding\": 4,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"与第一个答案相同，完全符合要求。\"\n    },\n    {\n      \"sampleId\": \"sample-9e4c2835-1788-46b1-9cfd-c10c976328a0\",\n      \"requiredPointCoverage\": 4,\n      \"conditionFidelity\": 4,\n      \"evidenceGrounding\": 4,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"与第一个答案相同，完全符合要求。\"\n    },\n    {\n      \"sampleId\": \"sample-18ab6495-acf2-4332-8957-8478972dcc04\",\n      \"requiredPointCoverage\": 4,\n      \"conditionFidelity\": 4,\n      \"evidenceGrounding\": 4,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"与第一个答案相同，完全符合要求。\"\n    }\n  ]\n}",
+  "parsed": [
+    {
+      "sampleId": "sample-2d2f6293-421b-4a2a-9aab-ee49a98c709d",
+      "requiredPointCoverage": 4,
+      "conditionFidelity": 4,
+      "evidenceGrounding": 4,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "答案准确覆盖了requiredPoints中的条件，未添加或遗漏关键信息。引用了支持性证据，未反转来源或编造事实。"
+    },
+    {
+      "sampleId": "sample-307731f5-e5a0-4b66-af02-867e4f7619dd",
+      "requiredPointCoverage": 4,
+      "conditionFidelity": 4,
+      "evidenceGrounding": 4,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "与第一个答案相同，完全符合要求。"
+    },
+    {
+      "sampleId": "sample-141351d0-d267-42b5-9b01-da0ac7698f96",
+      "requiredPointCoverage": 4,
+      "conditionFidelity": 4,
+      "evidenceGrounding": 4,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "答案正确，引用了span形式的证据，但内容一致。"
+    },
+    {
+      "sampleId": "sample-efd6a097-8e12-41c2-bf15-2b8f744d373c",
+      "requiredPointCoverage": 4,
+      "conditionFidelity": 4,
+      "evidenceGrounding": 4,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "与第一个答案相同，完全符合要求。"
+    },
+    {
+      "sampleId": "sample-9e4c2835-1788-46b1-9cfd-c10c976328a0",
+      "requiredPointCoverage": 4,
+      "conditionFidelity": 4,
+      "evidenceGrounding": 4,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "与第一个答案相同，完全符合要求。"
+    },
+    {
+      "sampleId": "sample-18ab6495-acf2-4332-8957-8478972dcc04",
+      "requiredPointCoverage": 4,
+      "conditionFidelity": 4,
+      "evidenceGrounding": 4,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "与第一个答案相同，完全符合要求。"
+    }
+  ]
+}

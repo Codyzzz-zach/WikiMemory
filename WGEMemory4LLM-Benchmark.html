@@ -3,536 +3,368 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>WGEMemory4LLM · Benchmark & Experiment Design v1.0</title>
+  <title>WGEMemory4LLM · 可进化测试数据与实验手册 v2.0</title>
   <script type="module">
     import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
-    mermaid.initialize({startOnLoad:true,theme:"base",securityLevel:"loose",themeVariables:{fontFamily:"Noto Sans CJK SC, Inter, ui-sans-serif, system-ui, sans-serif",primaryColor:"#fff4de",primaryTextColor:"#172033",primaryBorderColor:"#b8832f",lineColor:"#657a91",secondaryColor:"#ecf8f3",tertiaryColor:"#eef5ff",fontSize:"13px"},flowchart:{useMaxWidth:true,htmlLabels:false,curve:"basis"},sequence:{useMaxWidth:true},state:{useMaxWidth:true},xyChart:{useMaxWidth:true}});
+    mermaid.initialize({startOnLoad:true,theme:"base",securityLevel:"loose",themeVariables:{fontFamily:"Noto Sans CJK SC, Inter, ui-sans-serif, system-ui, sans-serif",primaryColor:"#eef7ff",primaryTextColor:"#172033",primaryBorderColor:"#3c72a8",lineColor:"#64778c",secondaryColor:"#ecf8f3",tertiaryColor:"#fff4de",fontSize:"14px"},flowchart:{useMaxWidth:true,htmlLabels:true,curve:"basis"}});
   </script>
   <style>
-    :root{--ink:#172033;--muted:#617087;--paper:#fbfcfe;--white:#fff;--soft:#eef3f8;--line:#d7e0ea;--brand:#956116;--brand2:#0c6b4a;--blue:#2f6fbd;--rose:#ae4355;--violet:#6553a7;--code:#172235;--shadow:0 16px 44px rgba(32,50,72,.1)}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:"Noto Sans CJK SC",Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:linear-gradient(180deg,#fff5e3 0,#fbfcfe 34rem);line-height:1.72}a{color:var(--blue);text-underline-offset:.18em}.page{max-width:1240px;margin:auto;padding:0 24px 72px}
-    header{padding:68px 0 38px}.eyebrow{display:flex;align-items:center;gap:10px;color:var(--brand);font-size:.82rem;font-weight:820;letter-spacing:.09em;text-transform:uppercase}.eyebrow:before{content:"";width:36px;height:2px;background:var(--brand)}h1{max-width:1020px;margin:14px 0 0;font-size:clamp(2.25rem,5.2vw,4.15rem);line-height:1.04;letter-spacing:-.035em}.subtitle{max-width:960px;margin:24px 0 0;color:#34445a;font-size:clamp(1rem,2vw,1.25rem);line-height:1.76}.hero{margin:28px 0 0;padding:24px 28px;background:#4b3616;color:#fffaf0;border-radius:12px;box-shadow:var(--shadow);font-size:1.06rem}.hero b{color:#ffd985}
-    .meta{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}.chip{padding:7px 12px;border:1px solid #dfd1b9;border-radius:999px;background:rgba(255,255,255,.78);font-size:.86rem}.chip b{color:var(--brand)}nav{display:flex;flex-wrap:wrap;gap:9px;margin:28px 0 0}nav a{padding:7px 12px;border:1px solid var(--line);border-radius:999px;background:#fff;color:#2b3a50;text-decoration:none;font-size:.88rem;font-weight:650}nav a:first-child{border-color:var(--brand);color:var(--brand)}
-    main{display:grid;gap:8px}section{padding:46px 0;border-top:1px solid var(--line)}.section-head{display:grid;grid-template-columns:minmax(150px,.38fr) minmax(0,1fr);gap:34px;align-items:start;margin-bottom:28px}.kicker{color:var(--brand);font-size:.79rem;font-weight:820;letter-spacing:.09em;text-transform:uppercase}h2{margin:0;font-size:clamp(1.65rem,3vw,2.55rem);line-height:1.15}h3{margin:28px 0 10px;font-size:1.27rem;line-height:1.3}h4{margin:18px 0 8px;font-size:1.05rem;color:#2d3f56}p{margin:0 0 16px}.lead{color:#33455d;font-size:1.06rem;line-height:1.82}ul,ol{padding-left:24px;margin:10px 0 18px}li{margin:6px 0}.tight li{margin:3px 0}
-    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}.card{padding:22px 24px;border:1px solid var(--line);border-radius:10px;background:#fff;box-shadow:0 8px 24px rgba(32,50,72,.06)}.card h3,.card h4{margin-top:0}.label{color:var(--brand);font-size:.76rem;font-weight:820;letter-spacing:.08em;text-transform:uppercase}
-    .callout{margin:20px 0;padding:20px 24px;border:1px solid #c5daef;border-radius:9px;background:#f4f9fe}.callout.good{border-color:#b8d9cd;background:#f2fbf7}.callout.warn{border-color:#ead5a4;background:#fffaf0}.callout.danger{border-color:#e7c3c9;background:#fdf5f6}.callout b:first-child{color:#102c45}
-    table{width:100%;border-collapse:collapse;margin:22px 0;background:#fff;border:1px solid var(--line);box-shadow:0 8px 24px rgba(32,50,72,.05)}th,td{padding:11px 14px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;font-size:.89rem}th{background:#fff4df;color:#4f3918;font-size:.77rem;letter-spacing:.045em;text-transform:uppercase}tr:last-child td{border-bottom:0}.wide{overflow-x:auto;margin:22px 0}.wide table{min-width:960px;margin:0}
-    .diagram{margin:24px 0;padding:22px;background:#fff;border:1px solid var(--line);border-radius:10px;overflow:auto;box-shadow:0 8px 24px rgba(32,50,72,.06)}.mermaid{min-width:650px;text-align:center}
-    .hyp{margin:20px 0;padding:22px 24px;background:#fff;border-left:5px solid var(--brand);border-radius:0 9px 9px 0;box-shadow:0 8px 24px rgba(32,50,72,.06)}.hyp h3{margin:0 0 8px}.badge{display:inline-block;padding:3px 9px;border-radius:999px;font-size:.75rem;font-weight:790}.primary{background:#fae1e5;color:#8d3040}.secondary{background:#fff0cc;color:#76500e}.gate{background:#dff4ea;color:#176143}.status{background:#e1eefc;color:#275f9f}
-    code{font-family:"SFMono-Regular",Consolas,monospace;font-size:.87em;background:var(--soft);padding:2px 5px;border-radius:4px}.schema{padding:18px 20px;background:var(--code);color:#eef7ff;border-radius:9px;overflow:auto;font:13px/1.65 "SFMono-Regular",Consolas,monospace;white-space:pre-wrap}.formula{padding:16px 18px;background:#f6f8fb;border:1px solid var(--line);border-radius:8px;font-family:"SFMono-Regular",Consolas,monospace;font-size:.9rem}.small{font-size:.85rem;color:var(--muted)}footer{padding:32px 0;color:var(--muted);font-size:.88rem}
-    @media(max-width:860px){.section-head,.grid,.grid.three{grid-template-columns:1fr}.mermaid{min-width:560px}}@media print{body{background:#fff}.page{max-width:none}nav{display:none}.card,.hyp,.diagram,table,.hero{box-shadow:none}.diagram,.card,.hyp{break-inside:avoid}}
+    :root{--ink:#172033;--muted:#607086;--paper:#fbfcfe;--white:#fff;--soft:#eef3f8;--line:#d7e0ea;--brand:#245f98;--green:#176b4d;--amber:#94621c;--red:#a23d50;--violet:#6755a8;--code:#172235;--shadow:0 14px 38px rgba(31,50,72,.09)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:"Noto Sans CJK SC",Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:linear-gradient(180deg,#eaf4ff 0,#fbfcfe 38rem);line-height:1.72}.page{max-width:1240px;margin:auto;padding:0 24px 72px}a{color:var(--brand);text-underline-offset:.18em}
+    header{padding:68px 0 38px}.eyebrow{display:flex;align-items:center;gap:10px;color:var(--brand);font-size:.82rem;font-weight:820;letter-spacing:.09em;text-transform:uppercase}.eyebrow:before{content:"";width:36px;height:2px;background:var(--brand)}h1{max-width:1040px;margin:14px 0 0;font-size:clamp(2.3rem,5.2vw,4.2rem);line-height:1.04;letter-spacing:-.035em}.subtitle{max-width:1000px;margin:24px 0 0;color:#34455b;font-size:clamp(1rem,2vw,1.22rem);line-height:1.78}.hero{margin:28px 0 0;padding:24px 28px;background:#173451;color:#f7fbff;border-radius:12px;box-shadow:var(--shadow);font-size:1.06rem}.hero b{color:#8edbc0}.meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}.chip{padding:7px 12px;border:1px solid #c8d8e8;border-radius:999px;background:rgba(255,255,255,.82);font-size:.86rem}.chip b{color:var(--brand)}nav{display:flex;flex-wrap:wrap;gap:8px;margin:28px 0 0}nav a{padding:7px 12px;border:1px solid var(--line);border-radius:999px;background:#fff;color:#2b3b50;text-decoration:none;font-size:.87rem;font-weight:650}
+    main{display:grid;gap:8px}section{padding:46px 0;border-top:1px solid var(--line)}.section-head{display:grid;grid-template-columns:minmax(150px,.35fr) minmax(0,1fr);gap:34px;align-items:start;margin-bottom:26px}.kicker{color:var(--brand);font-size:.78rem;font-weight:820;letter-spacing:.09em;text-transform:uppercase}h2{margin:0;font-size:clamp(1.65rem,3vw,2.55rem);line-height:1.15}h3{margin:28px 0 10px;font-size:1.25rem;line-height:1.3}h4{margin:18px 0 8px;font-size:1.04rem;color:#2c4057}p{margin:0 0 16px}.lead{color:#33465e;font-size:1.06rem;line-height:1.84}ul,ol{padding-left:24px;margin:10px 0 18px}li{margin:6px 0}.tight li{margin:3px 0}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}.card{padding:22px 24px;border:1px solid var(--line);border-radius:10px;background:#fff;box-shadow:0 8px 24px rgba(32,50,72,.055)}.card h3,.card h4{margin-top:0}.label{color:var(--brand);font-size:.76rem;font-weight:820;letter-spacing:.08em;text-transform:uppercase}
+    .callout{margin:20px 0;padding:20px 24px;border:1px solid #c5daef;border-radius:9px;background:#f4f9fe}.callout.good{border-color:#b8d9cd;background:#f2fbf7}.callout.warn{border-color:#ead5a4;background:#fffaf0}.callout.danger{border-color:#e7c3c9;background:#fdf5f6}.callout b:first-child{color:#102c45}.badge{display:inline-block;padding:3px 9px;border-radius:999px;font-size:.75rem;font-weight:790}.b-dev{background:#e2eefb;color:#285f98}.b-freeze{background:#e1f3ea;color:#176143}.b-blind{background:#f8e4e8;color:#8d3040}.b-cost{background:#fff0cc;color:#76500e}
+    table{width:100%;border-collapse:collapse;margin:22px 0;background:#fff;border:1px solid var(--line);box-shadow:0 8px 24px rgba(32,50,72,.045)}th,td{padding:11px 14px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;font-size:.89rem}th{background:#edf5fc;color:#244b70;font-size:.77rem;letter-spacing:.045em;text-transform:uppercase}tr:last-child td{border-bottom:0}.wide{overflow-x:auto;margin:22px 0}.wide table{min-width:980px;margin:0}.diagram{margin:24px 0;padding:22px;background:#fff;border:1px solid var(--line);border-radius:10px;overflow:auto;box-shadow:0 8px 24px rgba(32,50,72,.055)}.mermaid{min-width:700px;text-align:center}
+    code{font-family:"SFMono-Regular",Consolas,monospace;font-size:.87em;background:var(--soft);padding:2px 5px;border-radius:4px}.schema{padding:18px 20px;background:var(--code);color:#eef7ff;border-radius:9px;overflow:auto;font:13px/1.65 "SFMono-Regular",Consolas,monospace;white-space:pre-wrap}.prompt{padding:20px 22px;border-left:4px solid var(--violet);background:#f7f5ff;border-radius:0 9px 9px 0;white-space:pre-wrap;font:13px/1.68 "SFMono-Regular",Consolas,monospace}.small{font-size:.85rem;color:var(--muted)}footer{padding:32px 0;color:var(--muted);font-size:.88rem}
+    @media(max-width:860px){.section-head,.grid,.grid.three{grid-template-columns:1fr}.mermaid{min-width:580px}}@media print{body{background:#fff}.page{max-width:none}nav{display:none}.card,.diagram,table,.hero{box-shadow:none}.diagram,.card{break-inside:avoid}}
   </style>
 </head>
 <body>
 <div class="page">
 <header id="top">
-  <div class="eyebrow">WGEMemory4LLM · Benchmark <span class="badge gate">v1.0</span></div>
-  <h1>如何用实验说明它真的有用</h1>
-  <p class="subtitle">Benchmark 不负责证明“Graph 是好技术”，也不把编译准确率包装成产品成功。它要分别回答两个问题：WGEMemory4LLM 是否让 Agent 在真实跨材料任务中优于文件夹搜索；Typed Graph 是否在 Wiki 已经存在时仍提供可重复的额外增益。</p>
-  <div class="hero"><b>核心原则：</b>同模型、同提示合同、同工具预算、同知识版本，逐层消融 Wiki、链接、类型化 Graph 与证据回填；题集在系统构建前冻结，输出盲评，纠错材料按时间注入。只有当后续任务行为真实改善，才能称为“知识进化”。</div>
-  <div class="meta"><span class="chip"><b>语料</b> 20 篇数学材料</span><span class="chip"><b>规模</b> 14,042 词 / 144,165 bytes</span><span class="chip"><b>显式跨章引用</b> 131 处</span><span class="chip"><b>主问题集</b> 80 题</span><span class="chip"><b>系统组</b> A–E</span><span class="chip"><b>日期</b> 2026-07-21</span></div>
-  <nav aria-label="目录"><a href="#claims">待证明命题</a><a href="#corpus">语料与金标</a><a href="#systems">对照组</a><a href="#questions">80 题蓝图</a><a href="#evolution">进化实验</a><a href="#metrics">指标</a><a href="#protocol">实验协议</a><a href="#analysis">统计分析</a><a href="#gates">决策门禁</a><a href="#report">报告模板</a></nav>
+  <div class="eyebrow">WGEMemory4LLM · Benchmark Operating Manual <span class="badge b-freeze">v2.0</span></div>
+  <h1>如何搭建一套真正能驱动系统进化的测试数据</h1>
+  <p class="subtitle">这不是一份固定题库，也不是要求你一次造完“完美 Benchmark”。它是一套持续生长的测试资产协议：把科技媒体、官方文档、GitHub、B 站、X、Reddit、微信公众号等杂乱材料，组织成可追溯、可分层、可冻结、可低成本循环的进化燃料。</p>
+  <div class="hero"><b>下一阶段的合理目标：</b>先建立一个覆盖 6 个领域、24 份真实材料、约 120 道分层测试题和 12 组时间演化事件的 Benchmark Seed。它足以驱动工程修正和早期产品判断；不要求立刻达到 30 天、100 个真实任务的最终产品门槛。</div>
+  <div class="meta"><span class="chip"><b>材料起步</b> 24 份</span><span class="chip"><b>领域起步</b> 6 个</span><span class="chip"><b>题目起步</b> 约 120 道</span><span class="chip"><b>演化序列</b> 12 组</span><span class="chip"><b>日常循环</b> 12–40 题</span><span class="chip"><b>全量</b> 仅里程碑运行</span></div>
+  <nav aria-label="目录"><a href="#principles">核心设计</a><a href="#matrix">材料矩阵</a><a href="#production">制作流程</a><a href="#cases">题型体系</a><a href="#schema">数据格式</a><a href="#splits">切分防泄漏</a><a href="#goal">Goal 循环</a><a href="#tiers">分层运行</a><a href="#experiments">实验设计</a><a href="#action">你现在要做什么</a></nav>
 </header>
 
 <main>
-<section id="claims">
-  <div class="section-head"><div class="kicker">01 / Claims</div><div><h2>先拆开产品命题、架构命题与安全命题</h2></div></div>
-  <div class="diagram"><div class="mermaid">
-flowchart TD
-    P["产品命题：E 是否优于文件夹搜索 B"] --> U["真实任务更完整 更少复发错误"]
-    A["架构命题：E 是否优于 Wiki-only C"] --> G["Graph 对多跳 条件 更新有额外增益"]
-    S["安全命题：自治写入是否可控"] --> H["硬失败不增加 且可回滚"]
-    U --> D["决定产品方向"]
-    G --> D
-    H --> D
-  </div></div>
-
-  <article class="hyp"><span class="badge primary">Primary</span><h3>H1 · 产品价值</h3><p>在相同模型、相同最终上下文预算与相同原始语料下，<b>Typed Graph + Wiki + Evidence 回填</b>（E）在多跳、条件、冲突和全局结构题上的任务质量，稳定优于<b>文件夹 + Agent 搜索</b>（B），且无依据断言不增加。</p></article>
-  <article class="hyp"><span class="badge primary">Primary</span><h3>H2 · 演化价值</h3><p>在注入纠错材料后，E 能正确识别受影响知识、局部重编译并在后续问题中停止复发旧错误；B 需要在每次任务中重新发现纠正，或更容易漏用。</p></article>
-  <article class="hyp"><span class="badge secondary">Secondary</span><h3>H3 · Typed Graph 的独立增益</h3><p>相对 Wiki-only（C）和无类型双向链接（D），E 在三跳以上路径完整度、条件保留、冲突发现与更新影响分析上更好；单文档直接题不明显退化。</p></article>
-  <article class="hyp"><span class="badge secondary">Secondary</span><h3>H4 · 编译没有以压缩换失真</h3><p>相对全量原文上下文的信息上限组（A），E 在单跳和事实题上基本持平，在成本标准化轨道中使用更少上下文完成更复杂任务。</p></article>
-  <article class="hyp"><span class="badge gate">Safety gate</span><h3>H5 · 自治知识状态不放大硬失败</h3><p>E 不得增加三类失败：无依据断言、已纠正错误复发、已知冲突被静默压成单一确定答案。任何一项明显恶化，都优先否决“效果提升”。</p></article>
-
-  <h3>证据阶梯</h3>
-  <table>
-    <thead><tr><th>等级</th><th>能证明什么</th><th>本轮是否覆盖</th></tr></thead>
-    <tbody>
-      <tr><td>L0 · 结构正确</td><td>schema、引用、边和 Git 版本能工作</td><td>覆盖，但不能宣称产品有用。</td></tr>
-      <tr><td>L1 · 编译忠实</td><td>Claim、条件与关系来自原文</td><td>覆盖，是进入任务实验的门槛。</td></tr>
-      <tr><td>L2 · 离线任务增益</td><td>在冻结题集上优于基线</td><td>本 Benchmark 的主证据。</td></tr>
-      <tr><td>L3 · 纵向进化</td><td>新证据改变后续行为并停止错误复发</td><td>通过分批摄入与纠错注入覆盖。</td></tr>
-      <tr><td>L4 · 真实长期用户价值</td><td>真实学习质量、重复解释和查证成本持续改善</td><td>需后续 30 天真实使用，不由数学离线集单独证明。</td></tr>
-    </tbody>
-  </table>
-</section>
-
-<section id="corpus">
-  <div class="section-head"><div class="kicker">02 / Corpus & Gold</div><div><h2>为什么这 20 篇数学材料适合做第一轮实验</h2></div></div>
-  <p class="lead">语料表面按 1–20 章线性排列，真实知识拓扑却跨越分析、代数、几何、概率、逻辑与计算。它同时包含显式跨章引用、隐含依赖链和若干“缺少条件就会错”的表述，因此可以把“搜到局部答案”与“恢复可用知识网络”分开测试。</p>
-  <div class="grid three">
-    <article class="card"><div class="label">Controlled</div><h3>规模可控</h3><p>共 14,042 词、144,165 bytes。既能让全量上下文成为信息上限，又足以制造跨文档任务。</p></article>
-    <article class="card"><div class="label">Connected</div><h3>关系密集</h3><p>正文有 131 处显式跨章引用，另有 Fourier–Hilbert–谱、概率–测度–积分等隐含长链。</p></article>
-    <article class="card"><div class="label">Falsifiable</div><h3>有条件陷阱</h3><p>例如 L²/L¹ 包含关系、一致收敛与可导性，能测试 Graph 是否把有条件结论错误绝对化。</p></article>
-  </div>
-  <div class="diagram"><div class="mermaid">
-flowchart TD
-    M1["方程"] --> M2["域扩张"]
-    M2 --> M3["Galois 群"]
-    M3 --> M4["可解群"]
-    F1["Fourier 变换"] --> F2["L² 空间"]
-    F2 --> F3["Hilbert 投影"]
-    F3 --> F4["谱分解"]
-    P1["概率空间"] --> P2["测度空间"]
-    P2 --> P3["可测函数"]
-    P3 --> P4["期望与积分"]
-  </div></div>
-
-  <h3>冻结版本与数据切分</h3>
-  <table>
-    <thead><tr><th>数据块</th><th>内容</th><th>用途</th><th>系统是否提前看到</th></tr></thead>
-    <tbody>
-      <tr><td>Corpus-v1</td><td>20 篇原始数学 Markdown</td><td>主静态 QA 与编译</td><td>所有系统可见。</td></tr>
-      <tr><td>Gold Questions</td><td>80 题、参考要点、期望证据与路径</td><td>评价</td><td>运行前不可被任何知识编译器摄入。</td></tr>
-      <tr><td>Correction-L2</td><td>补充 L²⊆L¹ 的有限测度等条件与反例</td><td>进化实验 T2</td><td>T0/T1 不可见。</td></tr>
-      <tr><td>Correction-Uniform</td><td>补充一致收敛不足以保证可导，给出必要附加条件</td><td>进化实验 T3</td><td>T0/T1/T2 不可见。</td></tr>
-      <tr><td>Human Preference Set</td><td>从真实 AI 学习任务另取 12–20 题</td><td>外部有效性小样本</td><td>静态数学实验完成后再冻结。</td></tr>
-    </tbody>
-  </table>
-
-  <h3>Gold item schema</h3>
-  <div class="schema">{
-  "id": "COND-01",
-  "question": "L² 是否总是包含于 L¹？需要什么条件？",
-  "category": "condition-counterexample",
-  "requiredClaims": ["一般情形不成立", "有限测度空间下可由 Hölder 推出"],
-  "requiredSources": ["05-functions-mappings", "10-measure-integration", "Correction-L2"],
-  "expectedPath": ["L²", "Hölder", "finite measure", "L¹"],
-  "mustMentionConditions": ["底层测度空间条件"],
-  "forbiddenClaims": ["对任意测度空间 L² 都属于 L¹"],
-  "answerabilityAt": {"T0": "detect-source-overclaim", "T2": "correct-with-counterexample"}
-}</div>
-  <div class="callout warn"><b>防泄漏：</b>Gold 问题、参考答案、预期路径、禁止断言和裁判 rubric 不得进入 WGEMemory 的 Source、Wiki、Graph、embedding 或 prompt cache。否则实验测到的是题库记忆，不是知识编译价值。</div>
-</section>
-
-<section id="systems">
-  <div class="section-head"><div class="kicker">03 / Systems</div><div><h2>五组对照逐层回答“哪一层真的有用”</h2></div></div>
+<section id="principles">
+  <div class="section-head"><div class="kicker">01 / First Principles</div><div><h2>Benchmark 不是题目数量，而是可诊断的因果装置</h2></div></div>
+  <p class="lead">系统要“自迭代”，测试必须同时告诉我们三件事：哪里错了、为什么错、改动后有没有伤害别处。单个总分只能排名，不能指导施工。</p>
   <div class="diagram"><div class="mermaid">
 flowchart LR
-    A["A 全量原文"] --> Z["同一回答模型"]
-    B["B 文件搜索"] --> Z
-    C["C Wiki-only"] --> Z
-    D["D Wiki + 无类型链接"] --> Z
-    E["E Wiki + Typed Graph + Evidence"] --> Z
-    Z --> J["匿名输出与盲评"]
+  S["真实材料库<br/>Source Packs"] --> G["可核验金标<br/>Facts / Relations"]
+  G --> Q["任务与对抗题<br/>Task Cases"]
+  S --> E["时间演化事件<br/>Evolution Episodes"]
+  Q --> R["分层测试运行"]
+  E --> R
+  R --> D["错误归因<br/>编译 / 检索 / 图 / 回答"]
+  D --> F["最小修正"]
+  F --> C["受影响回归"]
+  C -->|通过| K["冻结新基线"]
+  C -->|失败| D
   </div></div>
-  <div class="wide"><table>
-    <thead><tr><th>组</th><th>可访问资产</th><th>检索/组装</th><th>它回答的问题</th><th>预期优势</th><th>主要风险</th></tr></thead>
-    <tbody>
-      <tr><td>A · Full Context</td><td>20 篇完整原文</td><td>无检索，全部放入模型可用上下文</td><td>编译是否丢失信息？</td><td>信息上限最高</td><td>成本高、注意力稀释；不属于公平成本主比较。</td></tr>
-      <tr><td>B · Folder Search</td><td>原文文件夹</td><td>关键词/BM25，可选向量；Agent 自主多轮搜索</td><td>产品相对现实基线是否有价值？</td><td>简单、直接读原文</td><td>每次重建关系；更新影响不可复用。</td></tr>
-      <tr><td>C · Wiki-only</td><td>编译后 WikiModule + Evidence</td><td>按任务检索 Wiki，再回填原文</td><td>Wiki 的语义编译已解决多少？</td><td>连贯、压缩、可复用</td><td>跨模块路径仍需运行时发现。</td></tr>
-      <tr><td>D · Untyped Links</td><td>Wiki + 双向链接 + Evidence</td><td>沿链接扩展，不知道关系语义</td><td>“有链接”是否已经足够？</td><td>导航范围更广</td><td>弱相关与推理依赖混在一起。</td></tr>
-      <tr><td>E · Typed Graph</td><td>Wiki + 类型化条件化 Graph + Evidence</td><td>任务子图、关系过滤、原文回填</td><td>Graph 是否有独立增益？</td><td>多跳、条件、冲突、影响分析</td><td>错误边可能稳定传播。</td></tr>
-    </tbody>
-  </table></div>
-
-  <h3>主比较与消融逻辑</h3>
-  <table>
-    <thead><tr><th>比较</th><th>可归因结论</th><th>不能直接得出的结论</th></tr></thead>
-    <tbody>
-      <tr><td>E vs B</td><td>完整 WGEMemory 相对文件夹搜索的产品价值</td><td>不能单独说明是 Wiki 还是 Graph 起作用。</td></tr>
-      <tr><td>E vs C</td><td>Typed Graph 在 Wiki 已存在时的额外运行时价值</td><td>不能说明 Graph 编译成本是否值得，需结合成本。</td></tr>
-      <tr><td>E vs D</td><td>关系类型、方向、条件是否比普通链接更有用</td><td>不能说明 Wiki 本身的价值。</td></tr>
-      <tr><td>E vs A</td><td>编译压缩是否导致明显信息损失；复杂题是否有结构优势</td><td>A 使用更多上下文，不作为成本公平的主胜负。</td></tr>
-      <tr><td>C vs B</td><td>Wiki 语义编译相对原文搜索的价值</td><td>不能评估 Graph。</td></tr>
-    </tbody>
-  </table>
-
-  <h3>两条预算轨道</h3>
-  <ul>
-    <li><b>信息上限轨道：</b>A 使用完整语料；用于检查 E 是否因编译丢掉关键事实。报告实际 input tokens，不把 A 与 E 的成本混为一谈。</li>
-    <li><b>成本标准化轨道：</b>B–E 的最终 Context Pack/检索回填统一为 12k tokens（具体数值可在 pilot 后冻结），检索调用上限、总工具时间与输出上限一致。A 可另加一个确定性截断版本 A*，但不替代完整 A。</li>
-  </ul>
-  <div class="callout"><b>模型控制：</b>回答模型、system prompt、答案格式、temperature、max output、工具接口和超时完全相同。编译模型可以不同，但必须记录；若 E 使用更强模型编译，必须另做“同模型编译”敏感性实验。</div>
+  <div class="grid three">
+    <article class="card"><div class="label">资产一</div><h3>材料库不是 Gold</h3><p>材料只说明“来源说了什么”。自媒体、社区帖子、官方文档的权威性不同，但都可以成为测试对象；不能因为来源不权威就篡改其原意。</p></article>
+    <article class="card"><div class="label">资产二</div><h3>Gold 不是模型答案</h3><p>Gold 必须包含原文证据、适用时间、条件、可接受答案和禁止断言。模型可以起草候选，但不能自己生成、自己评判、再宣布自己进步。</p></article>
+    <article class="card"><div class="label">资产三</div><h3>进化不是重编一次</h3><p>真正的进化事件包含 T0 旧认识、T1 新证据、受影响对象、预期更新和回归题。只新增知识而不改旧行为，不算进化。</p></article>
+  </div>
+  <div class="callout warn"><b>不存在一次搭完的“完美测试集”。</b>完美的替代物是：覆盖矩阵清楚、证据可核验、开发集与盲测隔离、每次失败能归因、每次新增材料都能补充新的测试资产。</div>
 </section>
 
-<section id="questions">
-  <div class="section-head"><div class="kicker">04 / Question Set</div><div><h2>80 题：从局部事实到知识网络与条件反例</h2></div></div>
-  <table>
-    <thead><tr><th>类别</th><th>数量</th><th>主要能力</th><th>主要比较</th></tr></thead>
+<section id="matrix">
+  <div class="section-head"><div class="kicker">02 / Corpus Matrix</div><div><h2>你的材料很杂，这不是缺点；要把“杂”变成可控的覆盖矩阵</h2></div></div>
+  <h3>来源按角色分层，不按“是否允许摄入”分层</h3>
+  <div class="wide"><table>
+    <thead><tr><th>来源角色</th><th>常见来源</th><th>适合测试什么</th><th>必须保存的上下文</th><th>主要风险</th></tr></thead>
     <tbody>
-      <tr><td>单文档直接题 D</td><td>20</td><td>基本事实、定义、局部忠实度</td><td>A/B/C/E；Graph 不应退化。</td></tr>
-      <tr><td>两跳题 H2</td><td>25</td><td>跨两章连接、桥接概念</td><td>B/C/D/E。</td></tr>
-      <tr><td>三至四跳题 H3</td><td>20</td><td>长依赖链、路径完整性</td><td>C/D/E 是核心。</td></tr>
-      <tr><td>条件/反例题 C</td><td>10</td><td>适用条件、反例、过强概括</td><td>D/E 与 Lint。</td></tr>
-      <tr><td>全局结构题 G</td><td>5</td><td>主题地图、演化与整体组织</td><td>B/C/E。</td></tr>
+      <tr><td><b>P · 一手规范/数据</b></td><td>技术官网、官方博客、论文、监管公告、公司财报、项目文档</td><td>事实、版本、规则、API、时间变更</td><td>版本号、发布日期、适用范围、原始链接</td><td>文档更新后旧快照失效</td></tr>
+      <tr><td><b>C · 一手实现</b></td><td>GitHub 仓库、release、issue、PR、源码</td><td>代码行为、变更原因、实现与文档冲突</td><td>仓库、commit/tag、文件路径、issue 状态</td><td>默认分支漂移、issue 只是讨论</td></tr>
+      <tr><td><b>S · 二手解释</b></td><td>科技自媒体、B 站 UP、微信公众号、研究解读</td><td>观点提炼、解释质量、来源归因、遗漏条件</td><td>作者、时间、原视频时间戳或文章段落、引用来源</td><td>夸张标题、二手转述、事实与观点混合</td></tr>
+      <tr><td><b>U · 社区信号</b></td><td>Reddit、X、GitHub Discussion、评论区</td><td>争议、使用体验、早期信号、观点冲突</td><td>账号、帖子时间、线程上下文、编辑状态</td><td>匿名性、删帖、传闻、样本偏差</td></tr>
+      <tr><td><b>H · 历史/稳定文本</b></td><td>历史文献、教材、数学与人文经典</td><td>长期依赖、概念演变、解释与原文差异</td><td>版本、译者、章节、出版信息</td><td>不同版本与译文造成伪冲突</td></tr>
+    </tbody>
+  </table></div>
+  <p class="small">P/C/S/U/H 是来源角色，不是真实性分数。系统应忠实记录“谁在何时说了什么”，再根据任务决定采用、比较或保留争议。</p>
+
+  <h3>第一版不要平均铺满十个领域</h3>
+  <p>从你最常用的 6 个领域起步，每域 4 份材料；其余领域作为独立扩展集。建议第一批选择 <b>AI、科技、金融、健康/生物、历史/人文、数学/心理/设计三选一</b>。选择标准是你未来真的会反复使用，而不是为了表格好看。</p>
+  <table>
+    <thead><tr><th>每个领域的 4 份起步材料</th><th>目的</th></tr></thead>
+    <tbody>
+      <tr><td>1 份 P：官方规范、原始数据或论文</td><td>建立高可核验事实锚点。</td></tr>
+      <tr><td>1 份 C 或另一份 P：实现、release、财报或历史原件</td><td>制造“说明 vs 实现”或“前后版本”关系。</td></tr>
+      <tr><td>1 份 S：高质量长文、UP 主视频或公众号</td><td>测试解释、压缩、条件遗漏和引用链。</td></tr>
+      <tr><td>1 份 U：Reddit/X/issue 讨论，或持不同观点的 S</td><td>测试冲突、主张归属和不确定性。</td></tr>
     </tbody>
   </table>
-
-  <h3>D01–D20 · 单文档直接题</h3>
-  <div class="wide"><table>
-    <thead><tr><th>ID</th><th>问题</th><th>主来源</th></tr></thead>
-    <tbody>
-      <tr><td>D01</td><td>自然数的 Peano 公理试图刻画哪些基本结构？</td><td>01 数与数系</td></tr>
-      <tr><td>D02</td><td>度量空间与拓扑空间分别保留了什么结构？</td><td>02 空间</td></tr>
-      <tr><td>D03</td><td>逐点收敛与一致收敛的定义差别是什么？</td><td>03 数列与极限</td></tr>
-      <tr><td>D04</td><td>为什么一般五次方程不能期待统一根式公式？</td><td>04 方程</td></tr>
-      <tr><td>D05</td><td>函数、映射、变换和算子之间如何区分？</td><td>05 函数与映射</td></tr>
-      <tr><td>D06</td><td>欧氏、球面和双曲几何如何由曲率区分？</td><td>06 几何</td></tr>
-      <tr><td>D07</td><td>紧致性的开覆盖定义是什么？</td><td>07 拓扑</td></tr>
-      <tr><td>D08</td><td>群、环、域各自要求哪些运算结构？</td><td>08 群环域</td></tr>
-      <tr><td>D09</td><td>Banach 空间与 Hilbert 空间的区别是什么？</td><td>09 泛函分析</td></tr>
-      <tr><td>D10</td><td>Lebesgue 积分与 Riemann 积分的切分视角有何不同？</td><td>10 测度与积分</td></tr>
-      <tr><td>D11</td><td>π、e 和 i 在欧拉公式中如何联系？</td><td>11 常数</td></tr>
-      <tr><td>D12</td><td>微积分基本定理如何连接导数与积分？</td><td>12 微积分</td></tr>
-      <tr><td>D13</td><td>矩阵为何可以被理解为选定基后的线性变换？</td><td>13 线性代数</td></tr>
-      <tr><td>D14</td><td>随机变量为什么被定义为可测函数？</td><td>14 概率统计</td></tr>
-      <tr><td>D15</td><td>Euler 定理如何支撑 RSA 中的模幂运算？</td><td>15 数论</td></tr>
-      <tr><td>D16</td><td>生成函数如何把数列编码为幂级数？</td><td>16 组合与离散</td></tr>
-      <tr><td>D17</td><td>Gödel 第一不完备定理限制了什么？</td><td>17 逻辑与集合</td></tr>
-      <tr><td>D18</td><td>函子需要保持哪些结构？</td><td>18 范畴论</td></tr>
-      <tr><td>D19</td><td>凸优化为什么比一般非凸优化更容易得到全局保证？</td><td>19 优化</td></tr>
-      <tr><td>D20</td><td>Shannon 熵如何量化离散随机变量的不确定性？</td><td>20 信息与计算</td></tr>
-    </tbody>
-  </table></div>
-
-  <h3>H2-01–H2-25 · 两跳跨文档题</h3>
-  <div class="wide"><table>
-    <thead><tr><th>ID</th><th>问题</th><th>期望桥接路径</th></tr></thead>
-    <tbody>
-      <tr><td>H2-01</td><td>有理数如何通过完备化走向实数，而完备性又如何在度量空间中表达？</td><td>数系 → Cauchy → 完备度量空间</td></tr>
-      <tr><td>H2-02</td><td>为什么紧致性可以看作对“有限性”的拓扑推广？</td><td>空间结构 → 开覆盖 → 紧致</td></tr>
-      <tr><td>H2-03</td><td>函数列收敛方式为什么会影响积分与求导交换？</td><td>收敛方式 → 微积分操作</td></tr>
-      <tr><td>H2-04</td><td>方程根的对称性如何把求根问题转化为群论问题？</td><td>方程 → Galois 群</td></tr>
-      <tr><td>H2-05</td><td>二阶 PDE 的椭圆/抛物/双曲分类为何与二次型分类相关？</td><td>PDE → 二次型/几何</td></tr>
-      <tr><td>H2-06</td><td>Fourier 变换为何可以被视为函数空间中的坐标变换？</td><td>变换 → 向量/函数空间</td></tr>
-      <tr><td>H2-07</td><td>Lᵖ 空间如何把可测函数组织成带范数的空间？</td><td>可测函数 → Lᵖ/空间</td></tr>
-      <tr><td>H2-08</td><td>流形为什么同时需要拓扑结构和局部欧氏几何？</td><td>几何 → 拓扑</td></tr>
-      <tr><td>H2-09</td><td>基本群如何把“孔洞”转化为群的代数结构？</td><td>拓扑 → 群论</td></tr>
-      <tr><td>H2-10</td><td>为什么 L² 既是可积函数空间又是 Hilbert 空间？</td><td>测度 → 内积/完备</td></tr>
-      <tr><td>H2-11</td><td>概率空间为什么是特殊的测度空间？</td><td>概率测度 → 测度空间</td></tr>
-      <tr><td>H2-12</td><td>欧拉公式如何把指数、复数与周期现象连接起来？</td><td>常数 → Fourier/周期</td></tr>
-      <tr><td>H2-13</td><td>梯度为什么同时是微分对象和优化方向？</td><td>微积分 → 优化</td></tr>
-      <tr><td>H2-14</td><td>有限维矩阵的谱定理如何预示自伴算子的谱分解？</td><td>线性代数 → 泛函分析</td></tr>
-      <tr><td>H2-15</td><td>概率分布与 Shannon 熵如何共同描述不确定性？</td><td>概率 → 信息</td></tr>
-      <tr><td>H2-16</td><td>有限域和模算术为何适合构造密码算法？</td><td>群环域 → 数论</td></tr>
-      <tr><td>H2-17</td><td>二项式系数为什么既是组合计数也是概率分布权重？</td><td>组合 → 概率</td></tr>
-      <tr><td>H2-18</td><td>可判定性问题如何连接形式逻辑与 Turing 计算？</td><td>逻辑 → 计算</td></tr>
-      <tr><td>H2-19</td><td>基本群为什么不仅是一个群，还能被看作函子？</td><td>拓扑 → 范畴</td></tr>
-      <tr><td>H2-20</td><td>变分法如何把泛函极值问题变成 Euler–Lagrange 方程？</td><td>泛函 → 优化/微积分</td></tr>
-      <tr><td>H2-21</td><td>二次曲线分类与矩阵特征值符号有什么关系？</td><td>几何 → 线性代数</td></tr>
-      <tr><td>H2-22</td><td>为什么 Cauchy 列是否收敛由所在空间的完备性决定？</td><td>序列 → 空间</td></tr>
-      <tr><td>H2-23</td><td>Lebesgue 理论为什么比 Riemann 理论更适合处理极限过程？</td><td>测度积分 → 收敛</td></tr>
-      <tr><td>H2-24</td><td>集合论和逻辑分别怎样为数系公理化提供基础？</td><td>逻辑集合 → 数系</td></tr>
-      <tr><td>H2-25</td><td>图的邻接矩阵如何连接图论与线性代数？</td><td>离散图 → 矩阵</td></tr>
-    </tbody>
-  </table></div>
-
-  <h3>H3-01–H3-20 · 三至四跳知识路径题</h3>
-  <div class="wide"><table>
-    <thead><tr><th>ID</th><th>问题</th><th>期望路径骨架</th></tr></thead>
-    <tbody>
-      <tr><td>H3-01</td><td>一般五次方程不可根式求解，如何经由分裂域、自同构群与可解群得到解释？</td><td>方程 → 域扩张 → Galois 群 → 可解群</td></tr>
-      <tr><td>H3-02</td><td>Fourier 级数为何既是函数展开、Hilbert 空间投影，又能推广到谱分解？</td><td>函数变换 → L² → 正交投影 → 谱</td></tr>
-      <tr><td>H3-03</td><td>概率空间、随机变量、可测函数与期望之间的统一测度论链条是什么？</td><td>概率 → 测度 → 可测函数 → Lebesgue 积分</td></tr>
-      <tr><td>H3-04</td><td>基本群如何把拓扑空间变成群，并进一步成为范畴之间的函子？</td><td>孔洞 → 路径同伦 → 群 → 函子</td></tr>
-      <tr><td>H3-05</td><td>Cauchy 列、完备性、Banach 空间与泛函分析核心定理有什么依赖关系？</td><td>Cauchy → 完备 → Banach → 核心定理</td></tr>
-      <tr><td>H3-06</td><td>二阶 PDE 的系数如何经二次型和特征值符号形成几何分类？</td><td>PDE → 二次型 → 矩阵 → 特征值 → 几何</td></tr>
-      <tr><td>H3-07</td><td>梯度下降为什么建立在导数、局部线性化和方向导数之上？</td><td>导数 → 微分 → 梯度 → 优化</td></tr>
-      <tr><td>H3-08</td><td>最短路径的变分问题如何经过泛函与 Euler–Lagrange 方程变成微分方程？</td><td>几何目标 → 泛函 → 变分 → ODE</td></tr>
-      <tr><td>H3-09</td><td>Green、Stokes 与 Gauss 定理如何被微分形式和边界思想统一？</td><td>微积分 → 微分形式 → 流形/拓扑 → 边界</td></tr>
-      <tr><td>H3-10</td><td>RSA 的正确性如何连接素数、模算术、Euler 定理与算法复杂度？</td><td>素数 → 同余 → Euler → 加解密/计算</td></tr>
-      <tr><td>H3-11</td><td>中心极限定理为什么同时涉及随机变量和极限/收敛概念？</td><td>随机变量 → 和与标准化 → 分布收敛 → 正态</td></tr>
-      <tr><td>H3-12</td><td>Shannon 熵如何从概率出发，连接编码长度与通信极限？</td><td>概率 → 熵 → 编码 → 信息传输</td></tr>
-      <tr><td>H3-13</td><td>SVD 如何连接矩阵谱、最优低秩逼近与数据压缩？</td><td>矩阵 → 奇异值 → 优化 → 压缩</td></tr>
-      <tr><td>H3-14</td><td>递推关系如何通过生成函数变成代数方程并恢复数列？</td><td>递推 → 幂级数 → 代数操作 → 系数</td></tr>
-      <tr><td>H3-15</td><td>Kolmogorov 复杂度的不可计算性如何连接 Turing 机与 Gödel 式限制？</td><td>描述长度 → 可计算性 → Turing → 不完备</td></tr>
-      <tr><td>H3-16</td><td>流形为何能同时承载局部微积分、全局拓扑与曲率几何？</td><td>局部欧氏 → 微分 → 拓扑粘合 → 曲率</td></tr>
-      <tr><td>H3-17</td><td>Riesz 表示定理如何连接线性泛函、对偶空间、内积与 Hilbert 完备性？</td><td>泛函 → 对偶 → 内积 → Hilbert</td></tr>
-      <tr><td>H3-18</td><td>Heine–Borel 为什么在有限维欧氏空间成立，却不能直接推广到无限维 Banach 空间？</td><td>闭有界 → 紧致 → 维度/全有界 → Banach</td></tr>
-      <tr><td>H3-19</td><td>Bayes 更新如何连接条件概率、随机变量分布与信息变化？</td><td>条件概率 → 先验后验 → 分布 → 信息</td></tr>
-      <tr><td>H3-20</td><td>从集合、结构保持映射到函子与自然变换，抽象层级如何逐步上升？</td><td>集合 → 结构 → 映射 → 函子 → 自然变换</td></tr>
-    </tbody>
-  </table></div>
-
-  <h3>C01–C10 · 条件、反例与错误概括题</h3>
-  <div class="wide"><table>
-    <thead><tr><th>ID</th><th>问题</th><th>必须保留的边界</th></tr></thead>
-    <tbody>
-      <tr><td>C01</td><td>L² 是否总是 L¹ 的子集？</td><td>不是；需底层测度空间条件，有限测度是常见充分条件。</td></tr>
-      <tr><td>C02</td><td>一致收敛是否足以保证极限函数可导？</td><td>不足；保持连续性，但可导需要导数序列等附加条件。</td></tr>
-      <tr><td>C03</td><td>“紧致等价于闭且有界”在任意空间都成立吗？</td><td>Heine–Borel 依赖有限维欧氏/有限维范数空间等背景。</td></tr>
-      <tr><td>C04</td><td>每个连续函数都 Lebesgue 可积吗？</td><td>取决于定义域与测度、函数是否绝对可积等。</td></tr>
-      <tr><td>C05</td><td>每个 Cauchy 列都收敛吗？</td><td>只在完备空间中保证。</td></tr>
-      <tr><td>C06</td><td>所有五次方程都不能用根式求解吗？</td><td>是一般五次无统一公式；特殊五次可能可解。</td></tr>
-      <tr><td>C07</td><td>导数为零是否总能推出函数为常数？</td><td>需要在连通区间/合适定义域上应用中值定理条件。</td></tr>
-      <tr><td>C08</td><td>梯度为零是否足以保证局部最小？</td><td>通常只是可微内点的一阶必要条件，不是充分条件。</td></tr>
-      <tr><td>C09</td><td>Fourier 级数是否对所有函数都逐点收敛到原函数？</td><td>收敛模式与正则条件必须区分。</td></tr>
-      <tr><td>C10</td><td>连续双射一定是同胚吗？</td><td>一般不；紧致到 Hausdorff 等条件下成立。</td></tr>
-    </tbody>
-  </table></div>
-
-  <h3>G01–G05 · 全局结构题</h3>
-  <table>
-    <thead><tr><th>ID</th><th>问题</th><th>评价重点</th></tr></thead>
-    <tbody>
-      <tr><td>G01</td><td>为“理解 Fourier 变换为何重要”构造一条跨章节学习路径，并说明每一步的依赖。</td><td>地图质量、路径选择、证据与先修关系。</td></tr>
-      <tr><td>G02</td><td>把 20 章中的“空间抽象谱系”整理为从集合到 Hilbert 空间的结构地图。</td><td>全局覆盖、层级条件、避免错误包含。</td></tr>
-      <tr><td>G03</td><td>找出代数、拓扑和范畴论之间三条最重要的桥，并解释桥的方向。</td><td>跨领域映射与关系类型。</td></tr>
-      <tr><td>G04</td><td>哪些结论是一般定理，哪些只在特定空间或正则条件下成立？列出至少五组。</td><td>条件敏感度与反例意识。</td></tr>
-      <tr><td>G05</td><td>识别语料中最值得 Semantic Lint 的三个过强表述，并说明可能影响哪些下游主题。</td><td>全局审计、影响分析与诚实不确定性。</td></tr>
-    </tbody>
-  </table>
+  <div class="callout good"><b>24 份材料已经够启动。</b>它不是产品泛化证明，却足以暴露格式、权威、时序、冲突、跨来源合成和领域迁移问题。只有当某个错误在两个以上领域复现，才优先升级为架构问题；单领域特例优先通过数据或策略处理。</div>
 </section>
 
-<section id="evolution">
-  <div class="section-head"><div class="kicker">05 / Evolution Test</div><div><h2>真正关键的实验：系统是否会因为新证据而改变</h2></div></div>
-  <div class="diagram"><div class="mermaid">
-timeline
-    title 分批摄入与纠错注入
-    T0 : 摄入前 10 章 : 建立初始知识状态
-    T1 : 加入后 10 章 : 形成跨领域长链
-    T2 : 注入 L² 条件纠错 : 修正无条件包含关系
-    T3 : 注入一致收敛纠错 : 修正可导性过强表述
-    T4 : 周期性 Lint : 检查下游传播与回归
-  </div></div>
-  <h3>每个时间点必须记录</h3>
-  <table>
-    <thead><tr><th>时间点</th><th>输入变化</th><th>系统预期变化</th><th>重点重跑题</th></tr></thead>
-    <tbody>
-      <tr><td>T0</td><td>01–10 章</td><td>建立基础 Wiki、Graph 与初始错误/不确定状态</td><td>D01–D10、H2-01–H2-10、C01–C05</td></tr>
-      <tr><td>T1</td><td>11–20 章</td><td>新增跨领域连接；旧模块被扩展而非只新增 10 个摘要</td><td>全部 H2/H3/G</td></tr>
-      <tr><td>T2</td><td>Correction-L2</td><td>旧无条件关系进入 disputed/superseded，新条件边发布；影响函数层级、Lᵖ 与 Hilbert 相关模块</td><td>C01、H2-07、H2-10、G02、G04、G05</td></tr>
-      <tr><td>T3</td><td>Correction-Uniform</td><td>“一致收敛保持可导”被修正；连续/可积/可导分别处理</td><td>C02、H2-03、H2-23、G04、G05</td></tr>
-      <tr><td>T4</td><td>无新原文，仅周期性 Lint</td><td>发现漏改、孤立旧边、Wiki 仍残留的过强表述；局部修复后通过回归</td><td>两组纠错回归 + 随机 10 题稳定性回归</td></tr>
-    </tbody>
-  </table>
-
-  <h3>影响分析的金标</h3>
-  <p>对每条纠正，人工预先标注三层影响集合，避免系统通过“全库重写”伪装高召回。</p>
-  <ul>
-    <li><b>Direct：</b>被纠正的 Claim、直接 Relation 和对应 Wiki 段落。</li>
-    <li><b>Dependent：</b>消费该结论的 WikiModule、Graph 路径、测试问题。</li>
-    <li><b>Unaffected：</b>语义相邻但不应改变的内容，用于测量过度重编译。</li>
-  </ul>
-  <div class="formula">Impact Recall = 正确识别的 Direct + Dependent / 金标影响集合
-Impact Precision = 正确识别的影响对象 / 系统声称受影响的对象
-Over-recompile Rate = 被重编译但属于 Unaffected 的对象 / 全部重编译对象
-Correction Recurrence = 纠错后仍输出被禁止旧断言的题数 / 相关回归题数</div>
-  <div class="callout good"><b>进化成立的最低语义：</b>不是 Git 多了一个 commit，而是旧 Claim 的地位改变、依赖模块被正确更新、未受影响区域保持稳定，并且后续 Agent 行为使用了新状态。</div>
-</section>
-
-<section id="metrics">
-  <div class="section-head"><div class="kicker">06 / Metrics</div><div><h2>分别量编译、上下文、答案、进化与成本</h2></div></div>
-  <h3>主任务评分 rubric（每维 0–4）</h3>
-  <div class="wide"><table>
-    <thead><tr><th>维度</th><th>0 分</th><th>2 分</th><th>4 分</th><th>权重</th></tr></thead>
-    <tbody>
-      <tr><td>结论正确性</td><td>核心错误或答非所问</td><td>主要方向对但有实质遗漏/小错</td><td>核心与边界均正确</td><td>30%</td></tr>
-      <tr><td>跨材料完整性</td><td>未恢复必要链路</td><td>恢复部分中间步骤</td><td>关键路径完整且不冗余</td><td>20%</td></tr>
-      <tr><td>证据忠实度</td><td>无来源或来源不支持</td><td>部分 Claim 有正确证据</td><td>关键 Claim 均有精确来源</td><td>20%</td></tr>
-      <tr><td>条件与冲突</td><td>把有条件结论绝对化</td><td>提到限制但不完整</td><td>正确呈现条件、反例和冲突</td><td>15%</td></tr>
-      <tr><td>任务适配</td><td>堆砌材料，无法使用</td><td>基本回答但结构一般</td><td>围绕任务组织、可继续追问</td><td>10%</td></tr>
-      <tr><td>不确定性校准</td><td>自信编造</td><td>部分标记未知</td><td>事实、推断、缺口清晰区分</td><td>5%</td></tr>
-    </tbody>
-  </table></div>
-  <div class="formula">Task Utility Score = Σ(维度得分 / 4 × 权重) × 100
-
-注意：总分只用于主比较；所有维度、硬失败与成本必须单独报告，禁止用总分掩盖条件错误。</div>
-
-  <h3>分层指标表</h3>
-  <div class="wide"><table>
-    <thead><tr><th>层</th><th>指标</th><th>定义</th><th>为什么重要</th></tr></thead>
-    <tbody>
-      <tr><td>Compilation</td><td>Claim Evidence Coverage</td><td>有精确 SourceSpan 的关键 Claim 比例</td><td>防止 Wiki 语气掩盖无来源。</td></tr>
-      <tr><td>Compilation</td><td>Relation Precision / Recall</td><td>类型、方向、条件均正确的边；对金标边的覆盖</td><td>Graph 能否成为可信依赖层。</td></tr>
-      <tr><td>Compilation</td><td>Condition Preservation</td><td>原文条件在 Claim/Relation 中保留的比例</td><td>防止错误绝对化。</td></tr>
-      <tr><td>Retrieval</td><td>Required Claim Recall</td><td>Context Pack 包含的必需 Claim / 金标必需 Claim</td><td>判断遗漏发生在检索还是生成。</td></tr>
-      <tr><td>Retrieval</td><td>Path Completeness</td><td>恢复的必要边 / 金标路径必要边</td><td>Graph 多跳价值的主指标。</td></tr>
-      <tr><td>Retrieval</td><td>Irrelevant Context Rate</td><td>与任务无关的上下文 tokens / 总 tokens</td><td>衡量地图与子图选择质量。</td></tr>
-      <tr><td>Answer</td><td>Task Utility Score</td><td>六维盲评加权分</td><td>产品效果主指标。</td></tr>
-      <tr><td>Answer</td><td>Pairwise Preference</td><td>盲评者在 A/B 输出中选择更愿意继续学习的比例</td><td>补充体感价值。</td></tr>
-      <tr><td>Safety</td><td>Unsupported Assertion</td><td>关键断言无正确证据</td><td>硬失败。</td></tr>
-      <tr><td>Safety</td><td>Conflict Suppression</td><td>已知冲突未披露却输出单一结论</td><td>硬失败。</td></tr>
-      <tr><td>Evolution</td><td>Correction Recurrence</td><td>纠错后相关题仍输出旧错误的比例</td><td>长期记忆是否真的改变行为。</td></tr>
-      <tr><td>Evolution</td><td>Impact Precision / Recall</td><td>受影响对象定位质量</td><td>决定局部重编译可信度。</td></tr>
-      <tr><td>Cost</td><td>Tokens / Latency / Tool Calls</td><td>编译与每次任务分开统计</td><td>区分一次投资和运行时复利。</td></tr>
-      <tr><td>Stability</td><td>Run-to-run Variance</td><td>同配置多次运行的分数方差</td><td>避免单次幸运答案。</td></tr>
-    </tbody>
-  </table></div>
-
-  <h3>错误归因矩阵</h3>
-  <table>
-    <thead><tr><th>症状</th><th>优先检查</th><th>典型修复方向</th></tr></thead>
-    <tbody>
-      <tr><td>答案遗漏，但 Context Pack 也没有关键 Claim</td><td>编译/检索召回</td><td>Claim 粒度、Concept 对齐、检索种子、Graph 路径。</td></tr>
-      <tr><td>Context Pack 有关键 Claim，答案仍错</td><td>回答模型使用</td><td>上下文排序、风险标记、回答 prompt、模型能力。</td></tr>
-      <tr><td>路径完整但条件丢失</td><td>Relation schema 与 pack 序列化</td><td>条件字段、边到文本的渲染、Lint。</td></tr>
-      <tr><td>纠正写入但旧错误复发</td><td>依赖传播、快照与索引</td><td>SUPERSEDES 规则、重编译集合、缓存失效。</td></tr>
-      <tr><td>E 比 C 更差且上下文更长</td><td>Graph 扩展噪音</td><td>限制边类型/深度，或将 Graph 降级为离线层。</td></tr>
-    </tbody>
-  </table>
-</section>
-
-<section id="protocol">
-  <div class="section-head"><div class="kicker">07 / Protocol</div><div><h2>可复现、盲评、先 pilot 再锁定主实验</h2></div></div>
-  <div class="diagram"><div class="mermaid">
-flowchart TD
-    P["预注册问题 假设 阈值"] --> F["冻结语料 Gold 与代码版本"]
-    F --> I["20 题 Pilot 校准预算"]
-    I --> K["锁定系统配置与 prompt"]
-    K --> R["80 题 A-E 运行"]
-    R --> B["匿名化与随机排序"]
-    B --> J["双裁判盲评"]
-    J --> H["分歧与硬失败人工仲裁"]
-    H --> A["统计分析与消融结论"]
-    A --> D["Go Narrow Pivot Stop"]
-  </div></div>
-
-  <h3>Step-by-step</h3>
+<section id="production">
+  <div class="section-head"><div class="kicker">03 / Data Production</div><div><h2>从一条链接到可用测试资产，共六步</h2></div></div>
   <ol>
-    <li><b>预注册：</b>冻结 H1–H5、主比较、80 题分类、rubric、硬失败、死亡阈值与排除规则。</li>
-    <li><b>冻结资产：</b>记录 20 篇文件 hash、编译器 commit、模型版本、prompt 版本、索引参数和 Graph schema。</li>
-    <li><b>建立 Gold：</b>两名标注者独立写 requiredClaims、requiredSources、expectedPath、conditions、forbiddenClaims；分歧仲裁后冻结。</li>
-    <li><b>Pilot：</b>按类别抽 20 题，仅用于修复实验基础设施、确定 12k 上下文预算和工具调用上限；不得用 Pilot 输出改写 Gold 答案。</li>
-    <li><b>系统构建：</b>A–E 从同一 Corpus-v1 生成；Gold 完全隔离；为每组保存可审计 manifest。</li>
-    <li><b>运行：</b>问题顺序随机；回答模型配置一致；temperature 建议 0 或最低稳定值；主实验每题每组一次，敏感性子集 20 题运行 3 个 seeds。</li>
-    <li><b>匿名化：</b>移除系统名、路径风格和可能泄露组别的措辞；随机分配输出 ID。</li>
-    <li><b>评分：</b>两个独立裁判先按 rubric 评分，再做成对偏好；裁判看 Gold，不看系统身份；硬失败和分差大于 1 的维度交给人工仲裁。</li>
-    <li><b>进化实验：</b>按 T0–T4 顺序注入，不允许回看未来材料；每次固定知识快照并重跑指定题。</li>
-    <li><b>分析与决策：</b>报告分布、置信区间、成本与失败类型；按门禁决定保留、降级或停止组件。</li>
+    <li><b>选材：</b>围绕一个未来会真实询问的问题收集材料，不要随机囤积。每个小主题至少有两个不同来源角色。</li>
+    <li><b>冻结快照：</b>转成 Markdown，保留标题层级、代码、表格、引用、时间戳。视频使用字幕/转录并标记时间；GitHub 固定 commit；网页记录抓取日期与 content hash。</li>
+    <li><b>写 manifest：</b>记录作者、平台、URL、发布时间、抓取时间、领域、来源角色、语言、许可/仅内部使用状态。不得只留下一个无上下文 txt。</li>
+    <li><b>模型生成候选：</b>让 Gemini/Grok 等从材料生成事实、关系、条件、冲突和问题候选，但状态只能是 <code>candidate</code>。</li>
+    <li><b>核验与冻结：</b>自动检查 exact quote；人只审高价值 Gold、条件题、冲突题和演化事件。通过后升级为 <code>verified</code> 或 <code>human-reviewed</code>。</li>
+    <li><b>分配切分：</b>按作者/来源家族/主题簇整体分到 dev、validation 或 holdout，不能把同一视频的不同段落拆到不同集合。</li>
   </ol>
+  <h3>推荐目录合同</h3>
+  <div class="schema">benchmark/
+├── corpus/
+│   ├── dev/{domain}/{sourceId}.md
+│   ├── validation/{domain}/{sourceId}.md
+│   └── holdout/{domain}/{sourceId}.md
+├── manifests/source-manifest.jsonl
+├── gold/
+│   ├── facts.jsonl
+│   ├── relations.jsonl
+│   ├── tasks.jsonl
+│   └── evolution-episodes.jsonl
+├── suites/
+│   ├── smoke.json
+│   ├── regression-core.json
+│   ├── milestone.json
+│   └── domain-*.json
+└── runs/{runId}/</div>
+  <div class="callout warn"><b>版权与可复现性：</b>个人内部评测可以保存必要快照，但不要公开再发布受版权保护的整篇文章或完整视频字幕。对外分享 Benchmark 时优先发布元数据、短证据片段、hash 和合法可访问链接；遵守平台条款与原始许可。</div>
 
-  <h3>公平性锁定表</h3>
+  <h3>给 Gemini 的候选生成提示词</h3>
+  <div class="prompt">你是 WGEMemory Benchmark 的“候选标注员”，不是事实裁判。
+
+输入：一份带 sourceId、发布时间和来源角色的原始材料。
+任务：仅根据材料生成候选测试资产：
+1. 5–8 条 source-faithful 原子事实，每条附 exactQuote；
+2. 2–4 条带方向的关系候选，明确条件与证据；
+3. 2 条容易丢条件或被夸大的对抗项；
+4. 2–3 道真实用户问题，其中至少一道需要跨材料才能回答；
+5. 标出事实、作者观点、预测、传闻、经验描述，不得混写；
+6. 若材料证据不足，输出 insufficientEvidence，不得用常识补齐。
+
+输出 JSON。所有项目 status="candidate"。不得声称已人工审核，不得把 URL 当证据正文，不得生成原文不存在的 exactQuote。</div>
+</section>
+
+<section id="cases">
+  <div class="section-head"><div class="kicker">04 / Case Taxonomy</div><div><h2>题目必须覆盖知识生命周期，而不只是“问答正确率”</h2></div></div>
   <div class="wide"><table>
-    <thead><tr><th>变量</th><th>锁定规则</th><th>记录字段</th></tr></thead>
+    <thead><tr><th>类型</th><th>测什么</th><th>例子</th><th>主要归因层</th><th>Seed 建议</th></tr></thead>
     <tbody>
-      <tr><td>回答模型</td><td>所有组同一 model snapshot</td><td>provider/model/version/date</td></tr>
-      <tr><td>System prompt</td><td>相同任务规则与答案格式；仅工具说明按组变化</td><td>prompt hash</td></tr>
-      <tr><td>最终上下文预算</td><td>B–E 一致；超出必须按预定义策略裁剪</td><td>input tokens、dropped items</td></tr>
-      <tr><td>工具调用</td><td>统一最大调用数与总时间</td><td>calls、latency、timeouts</td></tr>
-      <tr><td>输出预算</td><td>相同 max output；不因组别放宽</td><td>output tokens、truncated</td></tr>
-      <tr><td>网络</td><td>主实验禁止外部网络</td><td>network=false</td></tr>
-      <tr><td>知识时间</td><td>每次回答固定 knowledgeVersion</td><td>state commit/hash</td></tr>
-      <tr><td>随机性</td><td>主实验低温固定；敏感性子集记录 seeds</td><td>temperature、seed</td></tr>
-      <tr><td>裁判</td><td>匿名、随机顺序、Gold 可见、系统身份不可见</td><td>judge version、order</td></tr>
+      <tr><td>F · 忠实性</td><td>Claim 是否忠实于引用原文</td><td>公众号把“可能”改成“必然”是否被拒绝</td><td>编译/审计</td><td>24</td></tr>
+      <tr><td>R · 检索</td><td>关键证据能否在预算内找回</td><td>从 release note 找到废弃 API 的版本</td><td>检索/Context Pack</td><td>16</td></tr>
+      <tr><td>X · 跨来源合成</td><td>能否组合两到四份材料</td><td>官方规范、源码实现和用户反馈是否一致</td><td>Concept/Relation/回答</td><td>16</td></tr>
+      <tr><td>C · 条件与范围</td><td>前提、例外、适用人群是否保留</td><td>健康建议对哪些人群不适用</td><td>Claim/Relation</td><td>12</td></tr>
+      <tr><td>K · 冲突与归属</td><td>能否保留分歧而非强行合并</td><td>公司公告与 Reddit 报告相互矛盾</td><td>provenance/Graph</td><td>12</td></tr>
+      <tr><td>T · 时间与版本</td><td>新旧事实能否按时间解释</td><td>模型价格、API 名称、监管要求发生变化</td><td>版本/检索</td><td>12</td></tr>
+      <tr><td>E · 演化</td><td>新证据是否更新旧知识和后续答案</td><td>旧预测被财报证伪后是否停止复发</td><td>Evolution/缓存</td><td>12</td></tr>
+      <tr><td>A · 不可回答</td><td>证据不足时能否克制</td><td>社区传闻没有官方确认时应保留不确定</td><td>审计/回答</td><td>8</td></tr>
+      <tr><td>U · 用户任务</td><td>知识是否降低真实任务成本</td><td>比较方案、形成决策备忘录、追踪一项变化</td><td>端到端产品</td><td>8</td></tr>
     </tbody>
   </table></div>
+  <p>约 120 题只是 Seed 配额。题目应按“能力 × 领域 × 来源角色 × 时间状态”采样，不要求每个格子都有题，但必须能看到空白在哪里。数学旧 80 题保留为 <b>Math Stress Suite</b>，用于条件与多跳回归，不再承担跨领域产品结论。</p>
+  <div class="callout danger"><b>禁止题型：</b>脱离材料即可用常识回答的百科题；只要求复述标题的题；答案由出题模型凭空写出却没有证据的题；为了让 Graph 获胜而故意把文件检索做弱的题；同一原文轻微改写出的几十道重复题。</div>
+</section>
 
-  <h3>运行记录 schema</h3>
+<section id="schema">
+  <div class="section-head"><div class="kicker">05 / Data Contract</div><div><h2>每道题要携带“诊断信息”，否则无法驱动 Goal</h2></div></div>
+  <h3>Source manifest 最小字段</h3>
   <div class="schema">{
-  "runId": "...",
-  "questionId": "H3-02",
-  "systemGroup": "E",
-  "corpusHash": "...",
-  "knowledgeVersion": "...",
-  "model": "...",
-  "promptHash": "...",
-  "retrievedClaims": ["..."],
-  "graphPath": ["..."],
-  "evidenceSpans": ["..."],
-  "droppedContext": [{"id":"...","reason":"budget"}],
-  "inputTokens": 0,
-  "outputTokens": 0,
-  "toolCalls": 0,
-  "latencyMs": 0,
-  "answer": "...",
-  "errors": []
+  "sourceId": "ai-openai-release-2026-001",
+  "title": "...",
+  "domain": "ai",
+  "sourceRole": "P | C | S | U | H",
+  "platform": "official | github | bilibili | x | reddit | wechat | ...",
+  "author": "...",
+  "canonicalUrl": "...",
+  "publishedAt": "ISO-8601 | unknown",
+  "capturedAt": "ISO-8601",
+  "versionRef": "commit/tag/version/null",
+  "contentHash": "sha256:...",
+  "mediaType": "article | docs | code | video-transcript | thread",
+  "language": "zh-CN | en | ...",
+  "usage": "internal-only | redistributable",
+  "contentPath": "corpus/dev/ai/...md"
+}</div>
+  <h3>Task Gold 最小字段</h3>
+  <div class="schema">{
+  "caseId": "X-AI-001",
+  "status": "candidate | verified | human-reviewed",
+  "split": "dev | validation | holdout",
+  "domain": ["ai", "software"],
+  "capabilities": ["cross-source", "temporal", "condition"],
+  "question": "...",
+  "timeScope": "as-of:2026-06-01",
+  "requiredPoints": ["..."],
+  "acceptableVariants": ["..."],
+  "forbiddenClaims": ["..."],
+  "requiredEvidence": [
+    {"sourceId":"...", "exactQuote":"...", "role":"supports | contradicts | scopes"}
+  ],
+  "expectedRelations": [{"from":"...", "type":"...", "to":"...", "condition":"..."}],
+  "answerability": "answerable | partial | insufficient",
+  "sourcePriorityRule": "规范事实以官方版本为准；体验结论并列展示社区证据",
+  "diagnosticOwner": "compiler | retrieval | graph | context-pack | answer",
+  "difficulty": "direct | two-source | multi-hop | adversarial",
+  "review": {"generator":"...", "reviewer":"...", "reviewedAt":"..."}
+}</div>
+  <h3>Evolution episode 最小字段</h3>
+  <div class="schema">{
+  "episodeId": "EV-FIN-001",
+  "t0Sources": ["旧预测/旧规则"],
+  "t1Sources": ["新财报/新公告/纠错材料"],
+  "changeType": "supersede | contradict | narrow | confirm | retract",
+  "oldClaimsThatMustChange": ["..."],
+  "claimsThatMustRemain": ["..."],
+  "expectedAffectedObjects": ["Claim", "Relation", "WikiModule", "Task"],
+  "preQuestions": ["..."],
+  "postQuestions": ["..."],
+  "forbiddenAfterT1": ["被新证据否定的旧断言"],
+  "maxAllowedBlastRadius": "..."
 }</div>
 </section>
 
-<section id="analysis">
-  <div class="section-head"><div class="kicker">08 / Analysis</div><div><h2>用配对分析回答“差异是否稳定”，不追逐单一平均分</h2></div></div>
-  <h3>主分析</h3>
-  <ul>
-    <li>每道题在各组间天然配对。对 E–B、E–C、E–D 的 Task Utility 差值做 <b>10,000 次题目级配对 bootstrap</b>，报告均值差与 95% CI。</li>
-    <li>按 D/H2/H3/C/G 分层报告；不允许单跳题数量稀释三跳和条件题的失败。</li>
-    <li>Pairwise Preference 用胜/平/负比例和 bootstrap CI；硬失败用配对二元差异或 McNemar/permutation 检验。</li>
-    <li>Relation/Impact precision-recall 同时报分子分母和具体错误边，避免小样本百分比误导。</li>
-    <li>成本单独画 Pareto：任务质量 vs 每题在线 tokens/延迟；编译成本摊销为第 N 次任务后的累计成本。</li>
-  </ul>
-  <h3>建议报告的切片</h3>
+<section id="splits">
+  <div class="section-head"><div class="kicker">06 / Split & Leakage</div><div><h2>开发集负责教系统，盲测集负责阻止系统自欺</h2></div></div>
   <table>
-    <thead><tr><th>切片</th><th>要回答的问题</th></tr></thead>
+    <thead><tr><th>集合</th><th>比例</th><th>用途</th><th>是否允许根据结果改代码/Prompt</th><th>运行频率</th></tr></thead>
     <tbody>
-      <tr><td>按 hop 数</td><td>Graph 增益是否随路径长度增加，还是只增加噪音？</td></tr>
-      <tr><td>按条件敏感度</td><td>类型化边是否减少绝对化，或反而放大错误边？</td></tr>
-      <tr><td>按显式/隐式链接</td><td>系统是否只复制了原文的 131 处显式引用，还是能恢复有证据的隐含关系？</td></tr>
-      <tr><td>按时间点 T0–T4</td><td>纠错后是否改善，改善是否依赖用户在当次 prompt 重新提醒？</td></tr>
-      <tr><td>按上下文预算</td><td>6k/12k/24k 下，WGE 的结构优势何时出现或消失？</td></tr>
-      <tr><td>按错误来源</td><td>失败来自编译、检索、Graph、pack 还是回答模型？</td></tr>
+      <tr><td><span class="badge b-dev">DEV</span></td><td>约 60%</td><td>定位错误、形成新 Goal、快速迭代</td><td>允许；它本来就是训练反馈面</td><td>每个 Goal</td></tr>
+      <tr><td><span class="badge b-freeze">VALIDATION</span></td><td>约 20%</td><td>判断修复是否跨题目/跨来源泛化</td><td>不能逐题适配；失败只能形成下一轮一般性假设</td><td>Goal 收尾</td></tr>
+      <tr><td><span class="badge b-blind">HOLDOUT</span></td><td>约 20%</td><td>阶段性泛化与产品方向判断</td><td>运行前不可见；运行后即“烧掉”，下一版补新盲题</td><td>里程碑/发布前</td></tr>
+      <tr><td><span class="badge b-cost">FUTURE</span></td><td>独立时间集</td><td>测试未来新材料、版本更新和知识演化</td><td>T0 不可见，按时间注入</td><td>演化里程碑</td></tr>
     </tbody>
   </table>
-  <div class="callout warn"><b>样本解释：</b>80 题足以做架构取舍与错误分析，但不应把小差异包装成普遍科学结论。若 E–B 的 CI 跨过零或优势只来自少数题，应扩大真实 AI 学习题集，而不是调整阈值迎合结果。</div>
+  <ul>
+    <li><b>按簇切分：</b>同作者、同视频系列、同仓库、同事件报道、转载链必须在同一 split。</li>
+    <li><b>按时间隔离：</b>用于 T1 的新公告不能进入 T0 的编译、题目或裁判上下文。</li>
+    <li><b>按模型隔离：</b>候选生成模型不能成为唯一裁判；至少使用不同模型，并对硬失败与 20% 样本人工复核。</li>
+    <li><b>按工作记录隔离：</b>Holdout 答案、exact quote 和评分规则不进入系统文档、Prompt、Wiki 或开发对话。</li>
+  </ul>
+  <div class="callout warn"><b>防止“reward 欺骗”的核心不是隐藏所有数据，而是明确哪些数据允许优化。</b>Dev 分数上涨是施工进展；只有 Validation 同步改善且 Holdout 没有退化，才能说获得了泛化证据。</div>
 </section>
 
-<section id="gates">
-  <div class="section-head"><div class="kicker">09 / Decision Gates</div><div><h2>预先写下何时 Go、Narrow、Pivot 或 Stop</h2></div></div>
+<section id="goal">
+  <div class="section-head"><div class="kicker">07 / Goal Loop</div><div><h2>每次自迭代只解决一个可证伪问题</h2></div></div>
   <div class="diagram"><div class="mermaid">
 flowchart TD
-    H{"硬失败是否恶化"} -->|"是"| S["Stop：先修知识治理"]
-    H -->|"否"| P{"E 是否优于 B"}
-    P -->|"否"| X["Pivot：回退轻量文件层"]
-    P -->|"是"| G{"E 是否优于 C"}
-    G -->|"否"| N["Narrow：Graph 只做 Lint 与依赖"]
-    G -->|"是"| V{"进化实验是否通过"}
-    V -->|"否"| R["Pivot：改依赖传播与状态模型"]
-    V -->|"是"| GO["Go：进入真实 AI 学习 30 天试验"]
+  O["观察失败簇"] --> H["提出单一因果假设"]
+  H --> G["冻结 Goal 合同"]
+  G --> B["运行 12 题 Canary"]
+  B -->|基础失败| X["停止并修基础设施"]
+  B -->|通过| M["运行 20–40 题 Goal Micro"]
+  M --> I["最小实现修正"]
+  I --> R["重复 Micro + 受影响回归"]
+  R --> V{"达到目标且护栏不退化"}
+  V -->|否| H
+  V -->|是| W["运行冻结 Validation"]
+  W -->|通过| F["合并基线，记录因果证据"]
+  W -->|失败| H
+  F --> Q{"是否里程碑"}
+  Q -->|否| O
+  Q -->|是| L["运行 Milestone / Holdout"]
   </div></div>
+  <h3>Goal 合同模板</h3>
+  <div class="schema">Goal: 提升“条件与适用范围”保真，不针对某一领域硬编码
 
-  <h3>预注册工程阈值（是假设门槛，不是已取得结果）</h3>
-  <div class="wide"><table>
-    <thead><tr><th>门禁</th><th>Go</th><th>Narrow / Pivot</th><th>Stop</th></tr></thead>
-    <tbody>
-      <tr><td>Safety</td><td>E 的三类硬失败均不高于 B/C，且纠错后复发 ≤5%</td><td>局部硬失败可定位并通过 Lint 修复</td><td>无依据断言或冲突抹平显著增加；已纠正错误持续复发</td></tr>
-      <tr><td>Product E vs B</td><td>复杂 55 题 Task Utility 平均提升 ≥8 分，95% CI 下界 &gt;0；盲选胜率 ≥60%</td><td>提升集中在特定题类，则收窄产品承诺</td><td>平均差 &lt;5 分且偏好接近随机，成本却更高</td></tr>
-      <tr><td>Graph E vs C</td><td>三跳以上 Path Completeness 提升 ≥15 个百分点；条件错误至少减少一半；单跳退化不超过 3 分</td><td>只有影响分析有效，则 Graph 降级为离线依赖/Lint 层</td><td>无稳定增益且引入更多无依据路径</td></tr>
-      <tr><td>Evolution</td><td>Impact precision/recall 均 ≥0.90；相关回归全部通过；过度重编译可控</td><td>召回高但 precision 低，则优化依赖粒度</td><td>只能全库重写仍漏改，或知识版本不一致</td></tr>
-      <tr><td>Compression</td><td>E 在 A 的事实质量附近，复杂题更好且在线上下文明显更少</td><td>少量事实损失可通过 Evidence 回填修复</td><td>单跳事实持续退化，说明编译损失不可接受</td></tr>
-    </tbody>
-  </table></div>
-  <div class="callout danger"><b>真正的产品死亡标准：</b>如果 E 相对 B 不能减少重复解释、不能更好处理跨材料关系与条件、也不能让纠正进入后续行为，那么应停止“自治可演化知识层”的强产品叙事；保留有效的轻量组件，但不继续用 Graph、Wiki 或 Compiler 的复杂度为方向辩护。</div>
+Baseline:
+- DEV-C 条件保真 = 72%
+- Validation-C = 70%
+- Claim precision = 96%
+
+Hypothesis:
+- 当前主引用过短，必要上下文未进入证据包，导致条件被隔离。
+
+Allowed changes:
+- 证据窗口、Claim 构造、条件字段、相关测试；不得修改 Gold 与 Holdout。
+
+Target:
+- DEV-C ≥ 88%，Validation-C ≥ 85%。
+
+Guardrails:
+- Claim precision 不下降超过 1pp；事实召回不下降；平均 Context Pack 不增长超过 15%；跨至少 3 个领域改善。
+
+Suites:
+- canary 12 + goal-condition 32 + regression-core 48；通过后才运行 validation。
+
+Budget / Stop:
+- 最多 3 个实现循环或约定的 token/时间预算；连续两轮无改善则停止并重新诊断。
+
+Artifacts:
+- before/after、失败案例、代码 diff、suite hash、run manifest、结论与剩余风险。</div>
+  <p>当你在 Codex 中明确说“建立 Goal：……，目标/护栏/预算如下”时，我才把它作为持续 Goal 执行。一个 Goal 不能同时要求“提高召回、重写 Wiki、优化 Graph、减少成本”；那是四个不同因果问题。</p>
 </section>
 
-<section id="report">
-  <div class="section-head"><div class="kicker">10 / Report Template</div><div><h2>最终报告必须允许读者复核，而不是只看冠军分数</h2></div></div>
-  <h3>一页结论应包含</h3>
-  <ol>
-    <li>语料、代码、模型、prompt、知识快照和问题集版本。</li>
-    <li>H1–H5 每项是否通过，以及对应 CI、成本和硬失败。</li>
-    <li>E vs B 的产品结论；E vs C/D 的 Graph 结论；不得混写。</li>
-    <li>按题类的胜负矩阵，特别标出 H3、C 与 Evolution。</li>
-    <li>五个最有代表性的成功案例与五个失败案例，附 Context Pack 和证据路径。</li>
-    <li>纠错注入前后 diff：旧 Claim、Relation、受影响 Wiki、回归题和最终答案。</li>
-    <li>下一步决策：Go、Narrow、Pivot 或 Stop，以及哪些产品承诺需要修改。</li>
-  </ol>
-  <h3>结果表骨架</h3>
+<section id="tiers">
+  <div class="section-head"><div class="kicker">08 / Efficient Execution</div><div><h2>不全量狂跑：用测试金字塔控制时间与额度</h2></div></div>
   <div class="wide"><table>
-    <thead><tr><th>系统</th><th>D</th><th>H2</th><th>H3</th><th>C</th><th>G</th><th>硬失败</th><th>每题 tokens</th><th>延迟</th></tr></thead>
+    <thead><tr><th>层级</th><th>规模</th><th>包含内容</th><th>触发时机</th><th>失败动作</th></tr></thead>
     <tbody>
-      <tr><td>A Full Context</td><td>待测</td><td>待测</td><td>待测</td><td>待测</td><td>待测</td><td>待测</td><td>待测</td><td>待测</td></tr>
-      <tr><td>B Folder Search</td><td>待测</td><td>待测</td><td>待测</td><td>待测</td><td>待测</td><td>待测</td><td>待测</td><td>待测</td></tr>
-      <tr><td>C Wiki-only</td><td>待测</td><td>待测</td><td>待测</td><td>待测</td><td>待测</td><td>待测</td><td>待测</td><td>待测</td></tr>
-      <tr><td>D Untyped Links</td><td>待测</td><td>待测</td><td>待测</td><td>待测</td><td>待测</td><td>待测</td><td>待测</td><td>待测</td></tr>
-      <tr><td>E Typed Graph</td><td>待测</td><td>待测</td><td>待测</td><td>待测</td><td>待测</td><td>待测</td><td>待测</td><td>待测</td></tr>
+      <tr><td>T0 · 静态/单元</td><td>秒级、无在线 LLM 或极少</td><td>schema、引用解析、账平、状态机、确定性函数</td><td>每次编辑</td><td>立即停止，不能进入在线测试</td></tr>
+      <tr><td>T1 · Canary</td><td>12 题</td><td>6 个高风险老失败 + 6 个跨域稳定样本</td><td>每次行为改动</td><td>说明基础能力破坏，回滚/修复</td></tr>
+      <tr><td>T2 · Goal Micro</td><td>20–40 题</td><td>70% 目标能力、20% 邻近能力、10% 随机哨兵</td><td>每轮实现</td><td>错误归因后继续或停止</td></tr>
+      <tr><td>T3 · Core Regression</td><td>48–80 题</td><td>各领域、来源角色、硬失败、历史回归</td><td>Goal 达标准备收尾</td><td>护栏退化则不合并基线</td></tr>
+      <tr><td>T4 · Milestone</td><td>约 120–250 题</td><td>冻结 Validation、主要消融、成本与稳定性</td><td>架构阶段完成/发布候选</td><td>决定 Go、Narrow、Pivot</td></tr>
+      <tr><td>T5 · Full / Holdout</td><td>全部资产，多 seeds</td><td>盲测、未来演化、完整 B/P/W/G 对照</td><td>重要发布或季度性判断</td><td>只能报告，不能回头改本版阈值</td></tr>
     </tbody>
   </table></div>
-  <h3>实验完成定义</h3>
+  <h3>如何自动选择 Micro Suite</h3>
   <ul>
-    <li>80 题、5 组输出完整，失败与超时未被删除。</li>
-    <li>所有 run 能关联到 corpus、knowledge、model 与 prompt 版本。</li>
-    <li>双裁判完成，硬失败与重大分歧已仲裁。</li>
-    <li>T0–T4 顺序实验无未来信息泄漏，纠错影响集可复核。</li>
-    <li>主比较、分层结果、成本和错误案例全部公开；未通过的假设不被改写。</li>
-    <li>根据预注册门禁给出组件级决策，而不是只输出“整体效果不错”。</li>
+    <li>修改 parser/ingestor：优先跑格式、offset、代码块、表格、视频时间戳和来源 manifest。</li>
+    <li>修改 compiler/linter/publication：优先跑 F/C/K、Quarantine 假阴性、原子发布和 last healthy。</li>
+    <li>修改 retrieval/context-pack：优先跑 R/X、预算裁剪、证据回填和不可回答题。</li>
+    <li>修改 graph/relation：优先跑 X/C/K、方向、条件、边证据和噪声扩展。</li>
+    <li>修改 evolution：优先跑 E/T、影响集、旧错复发、缓存失效和爆炸半径。</li>
+    <li>每个 Micro 保留 10% 固定跨域哨兵，防止只奖励当前目标。</li>
   </ul>
-  <div class="callout good"><b>从离线到真实场景：</b>数学 Benchmark 通过后，才进入 30 天 AI 行业与技术学习试验。真实试验继续保持 B/E 交叉盲测，观察重复解释次数、纠错复发、人工查证、跨文章遗漏和用户学习偏好；这一步才把“可控正确性”连接到“真实有用性”。</div>
+  <div class="callout good"><b>效率原则：</b>全量测试不是“更认真”，而是昂贵的最终确认。日常施工依赖高信息密度的小切片；只有小切片稳定达标，才购买更昂贵的泛化证据。</div>
+</section>
+
+<section id="experiments">
+  <div class="section-head"><div class="kicker">09 / Experiments</div><div><h2>四组实验分别回答四个产品问题</h2></div></div>
+  <table>
+    <thead><tr><th>实验</th><th>对照</th><th>主要问题</th><th>首轮规模</th><th>通过含义</th></tr></thead>
+    <tbody>
+      <tr><td><b>E1 · 信息守恒</b></td><td>原文 Gold vs 编译产物</td><td>事实、条件、时间、归属经过编译后保留多少？Quarantine 错杀多少？</td><td>6 域 × 每域 20 项</td><td>编译器具备跨域可信输入资格</td></tr>
+      <tr><td><b>E2 · 检索/组织消融</b></td><td>B 文件检索、P Claim、W Wiki、G Wiki+Graph</td><td>提升来自压缩、语义组织还是 Graph？</td><td>32 题 Pilot，之后 80 题</td><td>知道应该保留哪一层，而非只看总冠军</td></tr>
+      <tr><td><b>E3 · 时间进化</b></td><td>T0 旧知识 vs T1 新证据</td><td>系统能否更新受影响知识、不复发旧错且不破坏无关知识？</td><td>12 episodes</td><td>获得“会进化”的第一批直接证据</td></tr>
+      <tr><td><b>E4 · 跨域迁移</b></td><td>已调领域 vs 未调领域 Validation</td><td>修复是一般机制还是数学/AI 专用奖励？</td><td>每个 Goal 至少 3 个已见域 + 2 个未见域</td><td>获得架构级泛化证据</td></tr>
+    </tbody>
+  </table>
+  <h3>公平实验的最低合同</h3>
+  <ul>
+    <li>同一回答模型、同一任务规则、同一实际 token 档位；分别记录 1.5k/3k/6k 等预算，不用字符数假装 token。</li>
+    <li>所有系统使用相同 Corpus snapshot；Gold 不进入编译和检索索引。</li>
+    <li>回答匿名化盲评；硬失败优先于平均分；报告成功案例和失败案例。</li>
+    <li>Judge 评分用于筛选与统计，不冒充人工真理；随机抽查 20%，所有安全失败人工确认。</li>
+    <li>先报告按能力、领域、来源角色的切片，再报告总分；总分不能掩盖健康或金融领域的危险退化。</li>
+  </ul>
+  <div class="callout danger"><b>不得用测试推动错误方向：</b>如果一项改动只提高 AI/数学 Dev，而在健康、金融或未见来源上下降，它不能升级为默认架构。优先寻找跨领域重复出现的失败机制；领域特有策略必须显式标注 scope。</div>
+</section>
+
+<section id="action">
+  <div class="section-head"><div class="kicker">10 / Action Plan</div><div><h2>最终准备 24 份材料，但第一批只交 12 份</h2></div></div>
+  <h3>你的交付清单</h3>
+  <ol>
+    <li>选择你未来最常使用的 6 个领域，每域选 4 份材料，尽量覆盖 P/C/S/U/H 中至少三种角色。</li>
+    <li>每份材料提供原链接和本地 Markdown；视频提供字幕/转录与时间戳；GitHub 提供 commit/tag；网页注明发布时间和抓取日期。</li>
+    <li>每个领域额外告诉我两个真实问题：<b>你为什么收藏这些材料、未来希望 Agent 帮你完成什么任务</b>。这 12 个问题将成为用户任务种子。</li>
+    <li>每个领域最终挑 2 组“后来发生变化、出现纠错或存在争议”的材料对，共 12 组 Evolution Seed；Batch A 每域先交 1 组即可，不必一次硬凑齐。</li>
+    <li>可以让 Gemini 按本文提示词生成候选 JSON；不用替它追求完美，也不要把候选标成 Gold。我会完成结构检查、去重、证据核验抽样和测试分层。</li>
+  </ol>
+  <h3>推荐分两批，避免一次工作量过大</h3>
+  <table>
+    <thead><tr><th>批次</th><th>你提供</th><th>我完成</th><th>产出</th></tr></thead>
+    <tbody>
+      <tr><td>Batch A · 试制</td><td>3 个领域 × 4 份 = 12 份材料；6 个真实任务；每域 1 组变化材料</td><td>建立 manifest/schema、生成并清洗约 60 题、创建 smoke/micro/core suites，跑首轮 E1</td><td>验证数据生产线是否可用</td></tr>
+      <tr><td>Batch B · 泛化</td><td>另外 3 个领域 × 4 份 = 12 份；6 个真实任务；补足演化材料</td><td>冻结 split、扩到约 120 题，运行 E1/E4 和 32 题消融 Pilot</td><td>第一版 Benchmark Seed v1</td></tr>
+    </tbody>
+  </table>
+  <h3>你可以直接复制给我的启动指令</h3>
+  <div class="prompt">建立 Goal：Benchmark Seed Batch A。
+
+输入：我提供的 3 个领域、12 份 Markdown、来源链接/元数据、6 个真实任务和至少 3 组时间变化材料。
+
+目标：
+1. 建立 source manifest 与候选/verified 状态；
+2. 生成并核验证据可解析的 F/R/X/C/K/T/E/A/U 测试项；
+3. 建立 12 题 canary、约 32 题 goal micro、约 48 题 core regression；
+4. 运行信息守恒基线，按 compiler/retrieval/graph/context/answer 归因；
+5. 每次只运行受影响 suite，达到门槛后才运行冻结 validation；
+6. 不针对单个领域或单题硬编码，不修改 Holdout，不用全量运行替代诊断。
+
+完成条件：账平、证据可解析、split 无来源簇泄漏、运行 manifest 完整，并给出下一 Goal 的可证伪建议。</div>
+  <div class="callout good"><b>最终确认：</b>下一步不是继续重编五篇数学文章，也不是马上构造一个巨大终局 Benchmark。先把 Batch A 的 12 份真实杂域材料变成可靠测试生产线；生产线通过后扩成 24 份 Benchmark Seed，再让每个 Goal 在小切片上高速迭代、在冻结集上证明泛化。</div>
 </section>
 </main>
 
 <footer>
-  <p><b>WGEMemory4LLM Benchmark & Experiment Design v1.0</b> · 2026-07-21。本文档设计实验，不声称结果已经取得。所有阈值均为预注册工程假设，必须在运行前冻结，不能在看到结果后调整。</p>
-  <p class="small">建议使用现代浏览器打开；Mermaid 图通过 CDN 渲染。正文、题库、指标与决策门禁在脚本不可用时仍可阅读。</p>
+  <p><b>WGEMemory4LLM · 可进化测试数据与实验手册 v2.0</b> · 2026-07-27。本文替代“20 篇数学材料即主 Benchmark”的旧口径；数学题库继续作为专项压力测试。</p>
+  <p class="small">本文与当前 compiler、linter/publication gate、retrieval/context-pack、evolution、pilot 与 snapshot 能力对齐。文中的目录与 schema 是下一阶段数据合同；实现前可做字段兼容调整，但不得破坏证据、版本、split 和运行可追溯性。</p>
 </footer>
 </div>
 </body>

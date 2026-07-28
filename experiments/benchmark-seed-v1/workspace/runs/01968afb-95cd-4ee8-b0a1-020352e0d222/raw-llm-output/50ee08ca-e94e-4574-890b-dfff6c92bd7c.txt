@@ -1,0 +1,58 @@
+{
+  "concepts": [
+    {
+      "name": "World Health Organization",
+      "aliases": ["WHO"],
+      "boundary": "国际公共卫生组织",
+      "domain": "健康"
+    },
+    {
+      "name": "airborne",
+      "aliases": [],
+      "boundary": "传播方式，指通过空气传播",
+      "domain": "健康"
+    },
+    {
+      "name": "SARS-CoV-2",
+      "aliases": ["virus"],
+      "boundary": "新型冠状病毒",
+      "domain": "健康"
+    },
+    {
+      "name": "aerosol",
+      "aliases": ["aerosols"],
+      "boundary": "气溶胶，悬浮在空气中的微小颗粒",
+      "domain": "健康"
+    },
+    {
+      "name": "aerosol transmission",
+      "aliases": [],
+      "boundary": "气溶胶传播",
+      "domain": "健康"
+    },
+    {
+      "name": "indoor",
+      "aliases": [],
+      "boundary": "室内环境",
+      "domain": "健康"
+    },
+    {
+      "name": "crowded",
+      "aliases": [],
+      "boundary": "拥挤的",
+      "domain": "健康"
+    },
+    {
+      "name": "inadequately ventilated spaces",
+      "aliases": [],
+      "boundary": "通风不良的空间",
+      "domain": "健康"
+    },
+    {
+      "name": "metre",
+      "aliases": [],
+      "boundary": "长度单位",
+      "domain": "通用"
+    }
+  ]
+}

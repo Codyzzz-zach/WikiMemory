@@ -1,0 +1,48 @@
+{
+  "questionId": "B-X-HEALTH-006",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 1975,
+    "completionTokens": 459,
+    "totalTokens": 2434,
+    "promptCacheHitTokens": 256,
+    "promptCacheMissTokens": 1719,
+    "reasoningTokens": 0
+  },
+  "request": {
+    "systemPrompt": "你是盲测评分员，不知道答案属于哪个实验组。只按题目、评分锚点、Gold 证据和引用预校验评价，不用外部常识修正答案。\n每个维度独立使用同一 0-4 锚点：4=完整且准确；3=大部分满足，仅轻微遗漏；2=部分满足，存在重要遗漏；1=仅有极少相关内容；0=缺失、反转或与证据冲突。\nrequiredPointCoverage 只看 requiredPoints；conditionFidelity 看条件、时间、来源角色和不确定性；evidenceGrounding 同时看关键结论是否与 Gold 证据一致以及 citationValidation；answerabilityDiscipline 看是否越界、编造或错误拒答。\ncitationValidation.valid 表示引用标识确实存在于该匿名样本收到的上下文。内部 CLAIM/SPAN/SOURCE 标识不需要出现在 Gold 文本中，不得仅因此扣分；但存在性有效不代表语义必然支持，仍需对照答案内容与 Gold。\n若反转来源归属、抹掉关键条件/时间、把提案当最终规范或编造关键事实，hardFailure=true。\n数值必须与 rationale 一致：若 rationale 说“完整覆盖且准确”，对应维度不能低于 3。\n只输出严格 JSON：{\"scores\":[{\"sampleId\":\"...\",\"requiredPointCoverage\":0,\"conditionFidelity\":0,\"evidenceGrounding\":0,\"answerabilityDiscipline\":0,\"hardFailure\":false,\"rationale\":\"...\"}]}。",
+    "userPrompt": "{\"question\":\"2024 的 through the air 框架与 2020 COVID 简报是否是同一个范围的规则？\",\"answerability\":\"answerable\",\"requiredPoints\":[\"不是；2024 是跨病原体术语框架\",\"两者相关但不能简单标为直接替代\"],\"forbiddenClaims\":[\"不得把术语框架当传播占比结论\"],\"requiredEvidence\":[{\"sourceId\":\"health-who-july-2020-002\",\"exactQuote\":\"Short-range aerosol transmission, particularly in specific indoor locations, such as crowded and inadequately ventilated spaces over a prolonged period of time with infected persons cannot be ruled out.\",\"role\":\"supports\"},{\"sourceId\":\"health-who-terminology-2024-004\",\"exactQuote\":\"The descriptor ‘through the air’ can be used in a general way to characterize an infectious disease where the main mode of transmission involves the pathogen travelling through the air or being suspended in the air. Under the umbrella of ‘through the air transmission’, two descriptors can be used:\",\"role\":\"supports\"},{\"sourceId\":\"health-who-terminology-2024-004\",\"exactQuote\":\"2. Direct deposition, for cases when IRPs are expelled into the air from an infectious person, and are then directly deposited on the exposed mouth, nose or eyes of another person nearby.\",\"role\":\"supports\"}],\"sourcePriorityRule\":\"P/C 决定规范、论文与实现事实；S 只能作为有归属的解释，不能推翻一手版本文本。\",\"anonymousAnswers\":[{\"sampleId\":\"sample-831bbb76-4677-43dc-a4fd-34528608b8af\",\"questionId\":\"B-X-HEALTH-006\",\"repetition\":1,\"answer\":\"{\\n  \\\"answer\\\": \\\"不，2024年的“through the air”框架与2020年COVID简报不是同一个范围的规则。2024年的框架是WHO等机构发布的关于病原体“通过空气传播”的更新术语，涵盖了“空气传播/吸入”和“直接沉积”两种方式；而2020年的简报是WHO针对SARS-CoV-2传播的早期科学简报，当时仅承认在特定室内环境中可能存在短距离气溶胶传播，且未采用“through the air”这一统一术语。两者在时间、范围、术语定义上均不同。\\\",\\n  \\\"citations\\\": [\\n    \\\"SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/health-biology/health-who-terminology-2024-004.md:1-8\\\",\\n    \\\"SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/health-biology/health-nature-airborne-2022-003.md:1-6\\\",\\n    \\\"SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/health-biology/health-who-july-2020-002.md:1-6\\\",\\n    \\\"SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/health-biology/health-who-march-2020-001.md:1-6\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\",\"citationValidation\":{\"formatValid\":true,\"total\":4,\"valid\":4,\"invalid\":[]}},{\"sampleId\":\"sample-4a623f8c-dcb0-4444-9668-dba88389afc7\",\"questionId\":\"B-X-HEALTH-006\",\"repetition\":1,\"answer\":\"{\\n  \\\"answer\\\": \\\"否，2024年的through the air框架与2020年COVID简报不是同一个范围的规则。2024年框架是WHO关于'through the air transmission'的通用术语框架，适用于所有通过空气传播的传染病，而2020年COVID简报是针对SARS-CoV-2（COVID-19病原体）的特定科学简报，且2020年简报中关于空气传播的结论有条件限制（仅在产生气溶胶的操作或支持治疗环境中可能发生）。\\\",\\n  \\\"citations\\\": [\\n    \\\"span:health-who-terminology-2024-004-50fd4599b9553875-1#chars-315-397\\\",\\n    \\\"span:health-who-terminology-2024-004-50fd4599b9553875-1#chars-99-314\\\",\\n    \\\"span:health-who-july-2020-002-a1c7e701eebb9dc1-1#chars-81-301\\\",\\n    \\\"span:health-who-july-2020-002-a1c7e701eebb9dc1-1#chars-306-411\\\",\\n    \\\"span:health-who-march-2020-001-b587ec61aaf84d7d-2#chars-351-534\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\",\"citationValidation\":{\"formatValid\":true,\"total\":5,\"valid\":5,\"invalid\":[]}},{\"sampleId\":\"sample-8e4428f7-a62b-4b8a-8324-c87815cdaf65\",\"questionId\":\"B-X-HEALTH-006\",\"repetition\":1,\"answer\":\"{\\n  \\\"answer\\\": \\\"2024年的through the air框架与2020年COVID简报不是同一个范围的规则。2024年框架是WHO关于'through the air transmission'的通用术语框架，包含'airborne transmission/inhalation'和'direct deposition'两个描述符（claim:50fd4599b9553875-e5004be37e4a4be8, claim:50fd4599b9553875-9bb1be629366d05d, claim:50fd4599b9553875-c49634bbf6841943）。2020年COVID简报是针对SARS-CoV-2传播的特定科学简报（claim:a1c7e701eebb9dc1-64202515b32c05d0, claim:a1c7e701eebb9dc1-8c2b8fcbcdf52208），其中提到在特定条件下（如产生气溶胶的操作或拥挤通风不良的室内）可能存在空气传播（claim:b587ec61aaf84d7d-474d339f3670f6c4, claim:a1c7e701eebb9dc1-271d5603ab397f55）。两者范围不同：2024框架是通用分类，2020简报是特定病原体（COVID-19）的传播模式评估。\\\",\\n  \\\"citations\\\": [\\n    \\\"claim:50fd4599b9553875-e5004be37e4a4be8\\\",\\n    \\\"claim:50fd4599b9553875-9bb1be629366d05d\\\",\\n    \\\"claim:50fd4599b9553875-c49634bbf6841943\\\",\\n    \\\"claim:a1c7e701eebb9dc1-64202515b32c05d0\\\",\\n    \\\"claim:a1c7e701eebb9dc1-8c2b8fcbcdf52208\\\",\\n    \\\"claim:b587ec61aaf84d7d-474d339f3670f6c4\\\",\\n    \\\"claim:a1c7e701eebb9dc1-271d5603ab397f55\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\",\"citationValidation\":{\"formatValid\":true,\"total\":7,\"valid\":7,\"invalid\":[]}}]}"
+  },
+  "rawResponse": "{\n  \"scores\": [\n    {\n      \"sampleId\": \"sample-831bbb76-4677-43dc-a4fd-34528608b8af\",\n      \"requiredPointCoverage\": 4,\n      \"conditionFidelity\": 4,\n      \"evidenceGrounding\": 4,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"答案明确回答“不是”，并指出2024框架是跨病原体术语框架，2020简报是特定病原体早期简报，完整覆盖requiredPoints。条件、时间、来源角色准确，未遗漏关键条件。关键结论与Gold证据一致，引用有效且支持内容。未越界或编造。\"\n    },\n    {\n      \"sampleId\": \"sample-4a623f8c-dcb0-4444-9668-dba88389afc7\",\n      \"requiredPointCoverage\": 4,\n      \"conditionFidelity\": 4,\n      \"evidenceGrounding\": 4,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"答案明确回答“否”，指出2024框架是通用术语框架，2020简报是特定病原体简报，并提及2020简报的条件限制，完整覆盖requiredPoints。条件、时间、来源角色准确。关键结论与Gold证据一致，引用有效。未越界或编造。\"\n    },\n    {\n      \"sampleId\": \"sample-8e4428f7-a62b-4b8a-8324-c87815cdaf65\",\n      \"requiredPointCoverage\": 4,\n      \"conditionFidelity\": 4,\n      \"evidenceGrounding\": 4,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"答案明确回答“不是”，指出2024框架是通用术语框架，2020简报是特定病原体简报，并提及2020简报的条件限制，完整覆盖requiredPoints。条件、时间、来源角色准确。关键结论与Gold证据一致，引用有效。未越界或编造。\"\n    }\n  ]\n}",
+  "parsed": [
+    {
+      "sampleId": "sample-831bbb76-4677-43dc-a4fd-34528608b8af",
+      "requiredPointCoverage": 4,
+      "conditionFidelity": 4,
+      "evidenceGrounding": 4,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "答案明确回答“不是”，并指出2024框架是跨病原体术语框架，2020简报是特定病原体早期简报，完整覆盖requiredPoints。条件、时间、来源角色准确，未遗漏关键条件。关键结论与Gold证据一致，引用有效且支持内容。未越界或编造。"
+    },
+    {
+      "sampleId": "sample-4a623f8c-dcb0-4444-9668-dba88389afc7",
+      "requiredPointCoverage": 4,
+      "conditionFidelity": 4,
+      "evidenceGrounding": 4,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "答案明确回答“否”，指出2024框架是通用术语框架，2020简报是特定病原体简报，并提及2020简报的条件限制，完整覆盖requiredPoints。条件、时间、来源角色准确。关键结论与Gold证据一致，引用有效。未越界或编造。"
+    },
+    {
+      "sampleId": "sample-8e4428f7-a62b-4b8a-8324-c87815cdaf65",
+      "requiredPointCoverage": 4,
+      "conditionFidelity": 4,
+      "evidenceGrounding": 4,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "答案明确回答“不是”，指出2024框架是通用术语框架，2020简报是特定病原体简报，并提及2020简报的条件限制，完整覆盖requiredPoints。条件、时间、来源角色准确。关键结论与Gold证据一致，引用有效。未越界或编造。"
+    }
+  ]
+}

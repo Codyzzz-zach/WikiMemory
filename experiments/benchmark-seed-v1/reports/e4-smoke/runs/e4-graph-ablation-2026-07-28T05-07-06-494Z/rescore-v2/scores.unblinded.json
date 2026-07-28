@@ -1,0 +1,80 @@
+[
+  {
+    "sampleId": "sample-0ae3543b-bee5-4a7c-865a-030363e7d34c",
+    "requiredPointCoverage": 3,
+    "conditionFidelity": 3,
+    "evidenceGrounding": 3,
+    "answerabilityDiscipline": 4,
+    "hardFailure": false,
+    "rationale": "requiredPointCoverage: 答案明确提到3月文件仅限产生气溶胶的医疗操作，7月文件扩展到特定室内短距离气溶胶传播，覆盖两个requiredPoints，但未明确说7月文件是3月文件的更新，轻微遗漏。conditionFidelity: 准确描述了3月文件的条件（产生气溶胶的医疗操作）和7月文件的条件（特定室内场所，拥挤、通风不良），但未提及7月文件中的“不能排除”不确定性，轻微遗漏。evidenceGrounding: 关键结论与Gold证据一致，引用标识均有效，但答案中额外提到“气溶胶可携带病毒超过1米并长时间悬浮”，该信息未在requiredEvidence中，但未与Gold冲突，且引用有效，故不扣分。answerabilityDiscipline: 未越界、编造或错误拒答，完全符合。",
+    "questionId": "B-E-HEALTH-005",
+    "group": "P-graph",
+    "repetition": 1,
+    "total": 13
+  },
+  {
+    "sampleId": "sample-d444f091-4a44-49df-809b-b45116598b2f",
+    "requiredPointCoverage": 3,
+    "conditionFidelity": 3,
+    "evidenceGrounding": 3,
+    "answerabilityDiscipline": 4,
+    "hardFailure": false,
+    "rationale": "requiredPointCoverage: 覆盖两个requiredPoints，但未明确说7月文件更新3月文件，轻微遗漏。conditionFidelity: 准确描述条件，但未提及7月文件中的“不能排除”不确定性，轻微遗漏。evidenceGrounding: 关键结论与Gold一致，引用标识均有效，但答案中未直接引用3月文件的具体操作列表，但已概括，不扣分。answerabilityDiscipline: 符合要求。",
+    "questionId": "B-E-HEALTH-005",
+    "group": "P-seed",
+    "repetition": 1,
+    "total": 13
+  },
+  {
+    "sampleId": "sample-8bd6cba0-4617-4d2c-bda9-94b10a67d4e2",
+    "requiredPointCoverage": 3,
+    "conditionFidelity": 3,
+    "evidenceGrounding": 3,
+    "answerabilityDiscipline": 4,
+    "hardFailure": false,
+    "rationale": "与sample-0ae3543b相同，覆盖requiredPoints但未明确更新关系，条件描述准确但未提不确定性，证据一致，引用有效。",
+    "questionId": "B-E-HEALTH-005",
+    "group": "P-graph",
+    "repetition": 2,
+    "total": 13
+  },
+  {
+    "sampleId": "sample-0af545f9-5c8d-4f49-93f3-bd9306b64441",
+    "requiredPointCoverage": 3,
+    "conditionFidelity": 3,
+    "evidenceGrounding": 3,
+    "answerabilityDiscipline": 4,
+    "hardFailure": false,
+    "rationale": "与sample-d444f091相同，覆盖requiredPoints但未明确更新关系，条件描述准确但未提不确定性，证据一致，引用有效。",
+    "questionId": "B-E-HEALTH-005",
+    "group": "P-seed",
+    "repetition": 2,
+    "total": 13
+  },
+  {
+    "sampleId": "sample-8ec7c133-ab4b-4181-884b-5fed176f511e",
+    "requiredPointCoverage": 3,
+    "conditionFidelity": 3,
+    "evidenceGrounding": 3,
+    "answerabilityDiscipline": 4,
+    "hardFailure": false,
+    "rationale": "与sample-d444f091相同，覆盖requiredPoints但未明确更新关系，条件描述准确但未提不确定性，证据一致，引用有效。",
+    "questionId": "B-E-HEALTH-005",
+    "group": "P-seed",
+    "repetition": 3,
+    "total": 13
+  },
+  {
+    "sampleId": "sample-b15adae1-7c4e-4dc9-956e-8033f8ffccaa",
+    "requiredPointCoverage": 3,
+    "conditionFidelity": 3,
+    "evidenceGrounding": 3,
+    "answerabilityDiscipline": 4,
+    "hardFailure": false,
+    "rationale": "与sample-0ae3543b相同，覆盖requiredPoints但未明确更新关系，条件描述准确但未提不确定性，证据一致，引用有效。",
+    "questionId": "B-E-HEALTH-005",
+    "group": "P-graph",
+    "repetition": 3,
+    "total": 13
+  }
+]

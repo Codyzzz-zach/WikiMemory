@@ -209,7 +209,8 @@ function collectBlock(
 				(l === "" && j + 1 < lines.length && /^[-*]\s|^\d+\.\s/.test(lineAt(lines, j + 1).trim()))
 			) {
 				if (l === "") {
-					// 列表中的空行，不单独成块
+					// 列表中的空行属于当前块；必须保留，才能让 text 与原文 offset 严格对应。
+					blockLines.push(lineAt(lines, j));
 					j++;
 					continue;
 				}

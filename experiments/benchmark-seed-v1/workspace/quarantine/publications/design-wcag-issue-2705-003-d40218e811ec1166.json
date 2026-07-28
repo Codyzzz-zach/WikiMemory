@@ -1,0 +1,111 @@
+{
+  "schemaVersion": "v1",
+  "sourceId": "source:design-wcag-issue-2705-003-d40218e811ec1166",
+  "runId": "70c9e962-4ec2-4320-8193-9cea199d3459",
+  "publishedAt": "2026-07-27T09:58:05.191Z",
+  "claims": [],
+  "relations": [
+    {
+      "relation": {
+        "id": "rel:d40218e811ec1166-03c826b873778b52",
+        "from": "claim:d40218e811ec1166-21341d7bbebecc13",
+        "to": "claim:d40218e811ec1166-3121f577072c04bb",
+        "type": "RELATED_TO",
+        "conditions": [
+          "unless dragging is essential or the functionality is determined by the user agent and not modified by the author"
+        ],
+        "conditionStatus": "PRESERVED",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:design-wcag-issue-2705-003-d40218e811ec1166-1#chars-47-331",
+          "span:design-wcag-issue-2705-003-d40218e811ec1166-2#chars-333-443"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:57:49.714Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.6,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:d40218e811ec1166-03c826b873778b52",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:design-wcag-issue-2705-003#block-1] “Success Criterion 2.5.7 Dragging Movements (Level AA): All functionality that us”; [1:design-wcag-issue-2705-003#block-2] “We kindly request that the group remove this SC until research is completed for ”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:d40218e811ec1166-03c826b873778b52",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:design-wcag-issue-2705-003#block-1] “Success Criterion 2.5.7 Dragging Movements (Level AA): All functionality that us”; [1:design-wcag-issue-2705-003#block-2] “We kindly request that the group remove this SC until research is completed for ”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:d40218e811ec1166-03c826b873778b52",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:design-wcag-issue-2705-003#block-1] “Success Criterion 2.5.7 Dragging Movements (Level AA): All functionality that us”; [1:design-wcag-issue-2705-003#block-2] “We kindly request that the group remove this SC until research is completed for ”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_CONDITIONS_MISSING",
+          "severity": "error",
+          "affectedObject": "rel:d40218e811ec1166-03c826b873778b52",
+          "detail": "conditions：Relation 未通过边级语义审计；证据 [0:design-wcag-issue-2705-003#block-1] “Success Criterion 2.5.7 Dragging Movements (Level AA): All functionality that us”; [1:design-wcag-issue-2705-003#block-2] “We kindly request that the group remove this SC until research is completed for ”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-a1f84bb6a1b0a6f0",
+        "from": "claim:d40218e811ec1166-3121f577072c04bb",
+        "to": "claim:1da3417e06ff5435-fda7e8c14ff6f23b",
+        "type": "SUPPORTS",
+        "conditions": [
+          "unless dragging is essential or the functionality is determined by the user agent and not modified by the author"
+        ],
+        "conditionStatus": "PRESERVED",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:design-wcag-issue-2705-003-d40218e811ec1166-1#chars-47-331",
+          "span:design-wcag22-2023-002-1da3417e06ff5435-3#chars-550-892"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:58:03.508Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-a1f84bb6a1b0a6f0",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:design-wcag-issue-2705-003#block-1] “Success Criterion 2.5.7 Dragging Movements (Level AA): All functionality that us”; [1:design-wcag22-2023-002#block-3] “- 2.4.11 Focus Not Obscured (Minimum) (AA) - 2.4.12 Focus Not Obscured (Enhanced”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-a1f84bb6a1b0a6f0",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:design-wcag-issue-2705-003#block-1] “Success Criterion 2.5.7 Dragging Movements (Level AA): All functionality that us”; [1:design-wcag22-2023-002#block-3] “- 2.4.11 Focus Not Obscured (Minimum) (AA) - 2.4.12 Focus Not Obscured (Enhanced”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    }
+  ]
+}

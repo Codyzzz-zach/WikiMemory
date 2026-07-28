@@ -1,0 +1,39 @@
+{
+  "questionId": "B-X-DESIGN-005",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 1111,
+    "completionTokens": 251,
+    "totalTokens": 1362,
+    "promptCacheHitTokens": 0,
+    "promptCacheMissTokens": 1111,
+    "reasoningTokens": 0
+  },
+  "request": {
+    "systemPrompt": "你是盲测评分员，不知道匿名答案属于哪个实验组。只按题目、评分锚点和证据评估，不用外部常识修正答案。\n每项 0-4 分：requiredPointCoverage、conditionFidelity、evidenceGrounding、answerabilityDiscipline。\n若答案反转来源归属、抹掉关键条件/时间、把提案当最终规范、编造上下文外事实，hardFailure=true。\n只输出严格 JSON：{\"scores\":[{\"sampleId\":\"...\",\"requiredPointCoverage\":0,\"conditionFidelity\":0,\"evidenceGrounding\":0,\"answerabilityDiscipline\":0,\"hardFailure\":false,\"rationale\":\"...\"}]}。",
+    "userPrompt": "{\"question\":\"比较 issue #2705 与最终 WCAG 2.2 对 Dragging Movements 的关系。\",\"answerability\":\"answerable\",\"requiredPoints\":[\"issue 引用草案并建议移除\",\"最终标准保留为 AA\",\"冲突是提案立场与最终结果\"],\"forbiddenClaims\":[\"不得说两份都是同等权威规范\"],\"requiredEvidence\":[{\"sourceId\":\"design-wcag-issue-2705-003\",\"exactQuote\":\"Success Criterion 2.5.7 Dragging Movements (Level AA): All functionality that uses a dragging movement for operation can be achieved by a single pointer without dragging, unless dragging is essential or the functionality is determined by the user agent and not modified by the author.\",\"role\":\"supports\"},{\"sourceId\":\"design-wcag-issue-2705-003\",\"exactQuote\":\"We kindly request that the group remove this SC until research is completed for all affected input modalities.\",\"role\":\"supports\"},{\"sourceId\":\"design-wcag22-2023-002\",\"exactQuote\":\"The following success criteria are new in WCAG 2.2:\\n\\n- 2.4.11 Focus Not Obscured (Minimum) (AA)\\n- 2.4.12 Focus Not Obscured (Enhanced) (AAA)\\n- 2.4.13 Focus Appearance (AAA)\\n- 2.5.7 Dragging Movements (AA)\\n- 2.5.8 Target Size (Minimum) (AA)\\n- 3.2.6 Consistent Help (A)\\n- 3.3.7 Redundant Entry (A)\\n- 3.3.8 Accessible Authentication (Minimum) (AA)\\n- 3.3.9 Accessible Authentication (Enhanced) (AAA)\",\"role\":\"supports\"}],\"sourcePriorityRule\":\"P/C 决定规范、论文与实现事实；S 只能作为有归属的解释，不能推翻一手版本文本。\",\"anonymousAnswers\":[{\"sampleId\":\"sample-2fbc7ea1-8d56-4dbb-a682-42541bc800c0\",\"questionId\":\"B-X-DESIGN-005\",\"answer\":\"{\\n  \\\"answer\\\": \\\"Issue #2705 请求在完成对所有受影响输入模态的研究之前移除 SC 2.5.7 Dragging Movements，认为需要更多平台考量，且不应将所有移动端要求强加于桌面内容。最终 WCAG 2.2 保留了该 SC，要求所有通过拖拽操作的功能均可通过单指针无拖拽完成，除非拖拽是必要的或功能由用户代理决定且作者未修改。\\\",\\n  \\\"citations\\\": [\\n    \\\"claim:d40218e811ec1166-3121f577072c04bb\\\",\\n    \\\"claim:d40218e811ec1166-09499dce953a0a91\\\",\\n    \\\"claim:d40218e811ec1166-f30bb9542bb62fad\\\",\\n    \\\"claim:d40218e811ec1166-21341d7bbebecc13\\\",\\n    \\\"claim:1da3417e06ff5435-fda7e8c14ff6f23b\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\"},{\"sampleId\":\"sample-5acc24e2-4e2e-41bb-ade2-bd1d9985d434\",\"questionId\":\"B-X-DESIGN-005\",\"answer\":\"{\\n  \\\"answer\\\": \\\"Issue #2705 是对 WCAG 2.2 草案中成功标准 2.5.7 Dragging Movements 的反馈，要求移除该标准，直到完成对所有受影响输入模态的研究。最终 WCAG 2.2 保留了 2.5.7 Dragging Movements 作为 AA 级标准。\\\",\\n  \\\"citations\\\": [\\n    \\\"SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-wcag-issue-2705-003.md:1-8\\\",\\n    \\\"SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-wcag22-2023-002.md:1-16\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\"}]}"
+  },
+  "rawResponse": "{\n  \"scores\": [\n    {\n      \"sampleId\": \"sample-2fbc7ea1-8d56-4dbb-a682-42541bc800c0\",\n      \"requiredPointCoverage\": 4,\n      \"conditionFidelity\": 4,\n      \"evidenceGrounding\": 4,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"Covers all required points: issue requested removal, final standard retained as AA, conflict between proposal and outcome. No forbidden claims. All evidence correctly cited and used.\"\n    },\n    {\n      \"sampleId\": \"sample-5acc24e2-4e2e-41bb-ade2-bd1d9985d434\",\n      \"requiredPointCoverage\": 4,\n      \"conditionFidelity\": 4,\n      \"evidenceGrounding\": 4,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"Covers all required points: issue requested removal, final standard retained as AA, conflict between proposal and outcome. No forbidden claims. All evidence correctly cited and used.\"\n    }\n  ]\n}",
+  "parsed": [
+    {
+      "sampleId": "sample-2fbc7ea1-8d56-4dbb-a682-42541bc800c0",
+      "requiredPointCoverage": 4,
+      "conditionFidelity": 4,
+      "evidenceGrounding": 4,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "Covers all required points: issue requested removal, final standard retained as AA, conflict between proposal and outcome. No forbidden claims. All evidence correctly cited and used."
+    },
+    {
+      "sampleId": "sample-5acc24e2-4e2e-41bb-ade2-bd1d9985d434",
+      "requiredPointCoverage": 4,
+      "conditionFidelity": 4,
+      "evidenceGrounding": 4,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "Covers all required points: issue requested removal, final standard retained as AA, conflict between proposal and outcome. No forbidden claims. All evidence correctly cited and used."
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "schemaVersion": "v1",
+  "sourceId": "source:health-who-july-2020-002-a1c7e701eebb9dc1",
+  "runId": "e4c881b9-648f-4a10-91f7-f7fe114b040f",
+  "publishedAt": "2026-07-27T09:47:21.523Z",
+  "claims": [],
+  "relations": [
+    {
+      "relation": {
+        "id": "rel:cross-8cda9f3ae6f8fdee",
+        "from": "claim:a1c7e701eebb9dc1-271d5603ab397f55",
+        "to": "claim:b587ec61aaf84d7d-474d339f3670f6c4",
+        "type": "RELATED_TO",
+        "conditions": [
+          "specific circumstances and settings where procedures or support treatments that generate aerosols are performed",
+          "两者都讨论气溶胶传播的可能性，但具体条件不同",
+          "在特定室内场所，如拥挤且通风不良的空间，与感染者长时间接触"
+        ],
+        "conditionStatus": "PRESERVED",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:health-who-july-2020-002-a1c7e701eebb9dc1-2#chars-413-615",
+          "span:health-who-march-2020-001-b587ec61aaf84d7d-2#chars-351-534"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:47:19.646Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.6,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-8cda9f3ae6f8fdee",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:health-who-july-2020-002#block-2] “Short-range aerosol transmission, particularly in specific indoor locations, suc”; [1:health-who-march-2020-001#block-2] “In the context of COVID-19, airborne transmission may be possible in specific ci”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-8cda9f3ae6f8fdee",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:health-who-july-2020-002#block-2] “Short-range aerosol transmission, particularly in specific indoor locations, suc”; [1:health-who-march-2020-001#block-2] “In the context of COVID-19, airborne transmission may be possible in specific ci”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-8cda9f3ae6f8fdee",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:health-who-july-2020-002#block-2] “Short-range aerosol transmission, particularly in specific indoor locations, suc”; [1:health-who-march-2020-001#block-2] “In the context of COVID-19, airborne transmission may be possible in specific ci”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_CONDITIONS_MISSING",
+          "severity": "error",
+          "affectedObject": "rel:cross-8cda9f3ae6f8fdee",
+          "detail": "conditions：Relation 未通过边级语义审计；证据 [0:health-who-july-2020-002#block-2] “Short-range aerosol transmission, particularly in specific indoor locations, suc”; [1:health-who-march-2020-001#block-2] “In the context of COVID-19, airborne transmission may be possible in specific ci”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-b3520a408219c279",
+        "from": "claim:a1c7e701eebb9dc1-1b6548c486ad1fd5",
+        "to": "claim:b587ec61aaf84d7d-474d339f3670f6c4",
+        "type": "RELATED_TO",
+        "conditions": [
+          "specific circumstances and settings where procedures or support treatments that generate aerosols are performed",
+          "在特定室内场所，如拥挤且通风不良的空间，与感染者长时间接触",
+          "特定室内场所（如拥挤且通风不良的空间）与产生气溶胶的操作或支持治疗场景不同，但都涉及气溶胶传播"
+        ],
+        "conditionStatus": "PRESERVED",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:health-who-july-2020-002-a1c7e701eebb9dc1-2#chars-447-594",
+          "span:health-who-march-2020-001-b587ec61aaf84d7d-2#chars-351-534"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:47:19.646Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.6,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-b3520a408219c279",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:health-who-july-2020-002#block-2] “particularly in specific indoor locations, such as crowded and inadequately vent”; [1:health-who-march-2020-001#block-2] “In the context of COVID-19, airborne transmission may be possible in specific ci”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-b3520a408219c279",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:health-who-july-2020-002#block-2] “particularly in specific indoor locations, such as crowded and inadequately vent”; [1:health-who-march-2020-001#block-2] “In the context of COVID-19, airborne transmission may be possible in specific ci”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-b3520a408219c279",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:health-who-july-2020-002#block-2] “particularly in specific indoor locations, such as crowded and inadequately vent”; [1:health-who-march-2020-001#block-2] “In the context of COVID-19, airborne transmission may be possible in specific ci”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_CONDITIONS_MISSING",
+          "severity": "error",
+          "affectedObject": "rel:cross-b3520a408219c279",
+          "detail": "conditions：Relation 未通过边级语义审计；证据 [0:health-who-july-2020-002#block-2] “particularly in specific indoor locations, such as crowded and inadequately vent”; [1:health-who-march-2020-001#block-2] “In the context of COVID-19, airborne transmission may be possible in specific ci”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    }
+  ]
+}

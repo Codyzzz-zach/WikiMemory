@@ -1,0 +1,62 @@
+{
+  "runId": "e4-batch-b-remaining-all-modes-2026-07-28T05-44-10-699Z",
+  "sampleId": "sample-3c0c6f7f-0f5f-4989-a052-6e86badb6101",
+  "questionId": "B-R-HEALTH-007",
+  "group": "B",
+  "pilotGroup": "B",
+  "graphExpansion": false,
+  "repetition": 1,
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "temperature": 0,
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 546,
+    "completionTokens": 90,
+    "totalTokens": 636,
+    "promptCacheHitTokens": 0,
+    "promptCacheMissTokens": 546,
+    "reasoningTokens": 0
+  },
+  "latencyMs": 1498,
+  "promptHash": "sha256:8fbad4c579a3aa2327a0b30d68fbeb6454dff490146dfd713f4107e38fdfbab9",
+  "contextHash": "855fce2381450781e365bac54154f2a317eb0fc8d83beb12725b31919e8e94c4",
+  "estimatedContextTokens": 465,
+  "estimatedInputTokens": 632,
+  "retrievedClaims": [],
+  "retrievedRelations": [],
+  "retrievedSources": [
+    "../../../workbuddy-batch-b/generated/compilation-corpus/health-biology/health-who-terminology-2024-004.md",
+    "../../../workbuddy-batch-b/generated/compilation-corpus/history-humanities/history-vesuvius-github-2024-002.md"
+  ],
+  "droppedContext": [],
+  "retrievalTrace": {
+    "strategy": "folder-lexical",
+    "queryFeatureCount": 12,
+    "corpusChunkCount": 12,
+    "matchedChunkCount": 2,
+    "maxFolderChunks": 16,
+    "candidates": [
+      {
+        "id": "../../../workbuddy-batch-b/generated/compilation-corpus/health-biology/health-who-terminology-2024-004.md#L1-L8",
+        "rank": 1,
+        "score": 8.209941422596609,
+        "selected": true,
+        "dropReason": null
+      },
+      {
+        "id": "../../../workbuddy-batch-b/generated/compilation-corpus/history-humanities/history-vesuvius-github-2024-002.md#L1-L12",
+        "rank": 2,
+        "score": 2.466337068793427,
+        "selected": true,
+        "dropReason": null
+      }
+    ]
+  },
+  "request": {
+    "systemPrompt": "你是受证据约束的问答 Agent。只使用本次请求提供的检索上下文回答。\n要求：保留影响结论的条件、时间、例外、来源角色与不确定性；关键结论引用上下文中的 SOURCE、EVIDENCE 或 CLAIM 标识；上下文不足时明确说明，不得用外部常识补齐。\n只输出严格 JSON：{\"answer\":\"...\",\"citations\":[\"...\"],\"insufficient\":false,\"uncertainties\":[\"...\"]}。",
+    "userPrompt": "# 问题\n找出支持‘direct deposition 与 inhalation 并列’的来源。\n\n# 检索上下文\n## SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/health-biology/health-who-terminology-2024-004.md:1-8 score=8.210\n# Leading health agencies outline updated terminology for pathogens that transmit through the air\n\nThe descriptor ‘through the air’ can be used in a general way to characterize an infectious disease where the main mode of transmission involves the pathogen travelling through the air or being suspended in the air. Under the umbrella of ‘through the air transmission’, two descriptors can be used:\n\n1. Airborne transmission or inhalation, for cases when IRPs are expelled into the air and inhaled by another person. Airborne transmission or inhalation can occur at a short or long distance from the infectious person and distance depends on various factors (airflow, humidity, temperature, ventilation etc).\n\n2. Direct deposition, for cases when IRPs are expelled into the air from an infectious person, and are then directly deposited on the exposed mouth, nose or eyes of another person nearby.\n\n## SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/history-humanities/history-vesuvius-github-2024-002.md:1-12 score=2.466\n# ScrollPrize/vesuvius archived Python library\n\nThis repository was archived by the owner on Nov 21, 2024. It is now read-only.\n\nNOTE: Now maintained at https://github.com/ScrollPrize/villa/tree/main/vesuvius (this repository archived)\n\nFrom Vesuvius Challenge, a Python library for accessing CT scans of ancient scrolls.\n\n`vesuvius` allows direct access to scroll data without managing download scripts or storing terabytes of CT scans locally. Data is streamed in the background, only serving the requested regions.\n\n`vesuvius` is in beta and the interface may change. Not all Vesuvius Challenge data is currently available - data will continue to be added to the library."
+  },
+  "answer": "{\n  \"answer\": \"是的，来源中明确将 direct deposition 与 inhalation 并列作为 'through the air transmission' 下的两种描述。\",\n  \"citations\": [\"SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/health-biology/health-who-terminology-2024-004.md:1-8\"],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}",
+  "answerFormatValid": true
+}

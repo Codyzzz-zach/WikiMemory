@@ -1,0 +1,96 @@
+## SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/health-biology/health-who-terminology-2024-004.md:1-8 score=13.647
+# Leading health agencies outline updated terminology for pathogens that transmit through the air
+
+The descriptor ‘through the air’ can be used in a general way to characterize an infectious disease where the main mode of transmission involves the pathogen travelling through the air or being suspended in the air. Under the umbrella of ‘through the air transmission’, two descriptors can be used:
+
+1. Airborne transmission or inhalation, for cases when IRPs are expelled into the air and inhaled by another person. Airborne transmission or inhalation can occur at a short or long distance from the infectious person and distance depends on various factors (airflow, humidity, temperature, ventilation etc).
+
+2. Direct deposition, for cases when IRPs are expelled into the air from an infectious person, and are then directly deposited on the exposed mouth, nose or eyes of another person nearby.
+
+## SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/history-humanities/history-vesuvius-github-2024-002.md:1-12 score=6.418
+# ScrollPrize/vesuvius archived Python library
+
+This repository was archived by the owner on Nov 21, 2024. It is now read-only.
+
+NOTE: Now maintained at https://github.com/ScrollPrize/villa/tree/main/vesuvius (this repository archived)
+
+From Vesuvius Challenge, a Python library for accessing CT scans of ancient scrolls.
+
+`vesuvius` allows direct access to scroll data without managing download scripts or storing terabytes of CT scans locally. Data is streamed in the background, only serving the requested regions.
+
+`vesuvius` is in beta and the interface may change. Not all Vesuvius Challenge data is currently available - data will continue to be added to the library.
+
+## SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/health-biology/health-nature-airborne-2022-003.md:1-6 score=6.130
+# Why the WHO took two years to say COVID is airborne
+
+On 23 December, the World Health Organization (WHO) uttered the one word it had previously seemed incapable of applying to the virus SARS-CoV-2: ‘airborne’.
+
+It took until 20 October 2020 for the agency to acknowledge that aerosols — tiny specks of fluid — can transmit the virus, but the WHO said this was a concern only in specific settings, such as indoor, crowded and inadequately ventilated spaces. Over the next six months, the agency gradually altered its advice to say that aerosols could carry the virus for more than a metre and remain in the air.
+
+## SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/health-biology/health-who-march-2020-001.md:1-6 score=5.437
+# Modes of transmission of virus causing COVID-19
+
+Airborne transmission is different from droplet transmission as it refers to the presence of microbes within droplet nuclei, which are generally considered to be particles <5μm in diameter, can remain in the air for long periods of time and be transmitted to others over distances greater than 1 m.
+
+In the context of COVID-19, airborne transmission may be possible in specific circumstances and settings in which procedures or support treatments that generate aerosols are performed; i.e., endotracheal intubation, bronchoscopy, open suctioning, administration of nebulized treatment, manual ventilation before intubation, turning the patient to the prone position, disconnecting the patient from the ventilator, non-invasive positive-pressure ventilation, tracheostomy, and cardiopulmonary resuscitation.
+
+## SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/health-biology/health-who-july-2020-002.md:1-6 score=3.259
+# Transmission of SARS-CoV-2: implications for infection prevention precautions
+
+This document is an update to the scientific brief published on 29 March 2020 entitled “Modes of transmission of virus causing COVID-19: implications for infection prevention and control (IPC) precaution recommendations” and includes new scientific evidence available on transmission of SARS-CoV-2, the virus that causes COVID-19.
+
+Short-range aerosol transmission, particularly in specific indoor locations, such as crowded and inadequately ventilated spaces over a prolonged period of time with infected persons cannot be ruled out.
+
+## SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-wcag-issue-2705-003.md:1-8 score=1.080
+# WCAG 2.2 Draft Feedback: Dragging Movements
+
+Success Criterion 2.5.7 Dragging Movements (Level AA): All functionality that uses a dragging movement for operation can be achieved by a single pointer without dragging, unless dragging is essential or the functionality is determined by the user agent and not modified by the author.
+
+We kindly request that the group remove this SC until research is completed for all affected input modalities.
+
+We believe more considerations are needed for various platforms, and that there shouldn’t be an imposition of all mobile requirements on all desktop content.
+
+## SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-wcag21-2018-001.md:1-6 score=1.080
+# Web Content Accessibility Guidelines (WCAG) 2.1
+
+WCAG 2.1 builds on and is backwards compatible with WCAG 2.0, meaning web pages that conform to WCAG 2.1 also conform to WCAG 2.0.
+
+Success Criterion 4.1.1 Parsing (Level A): In content implemented using markup languages, elements have complete start and end tags, elements are nested according to their specifications, elements do not contain duplicate attributes, and any IDs are unique, except where the specifications allow these features.
+
+## SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-wcag22-2023-002.md:1-16 score=1.080
+# Web Content Accessibility Guidelines (WCAG) 2.2
+
+WCAG 2.2 builds on and is backwards compatible with WCAG 2.1, meaning web pages that conform to WCAG 2.2 are at least as accessible as pages that conform to WCAG 2.1. Requirements have been added that build on 2.1 and 2.0. WCAG 2.2 has removed one success criterion, 4.1.1 Parsing. Authors that are required by policy to conform with WCAG 2.0 or 2.1 will be able to update content to WCAG 2.2, but may need to continue to test and report 4.1.1.
+
+The following success criteria are new in WCAG 2.2:
+
+- 2.4.11 Focus Not Obscured (Minimum) (AA)
+- 2.4.12 Focus Not Obscured (Enhanced) (AAA)
+- 2.4.13 Focus Appearance (AAA)
+- 2.5.7 Dragging Movements (AA)
+- 2.5.8 Target Size (Minimum) (AA)
+- 3.2.6 Consistent Help (A)
+- 3.3.7 Redundant Entry (A)
+- 3.3.8 Accessible Authentication (Minimum) (AA)
+- 3.3.9 Accessible Authentication (Enhanced) (AAA)
+
+## SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/history-humanities/history-educelab-paper-2023-001.md:1-6 score=1.080
+# EduceLab-Scrolls: Verifiable Recovery of Text from Herculaneum Papyri using X-ray CT
+
+We present a complete software pipeline for revealing the hidden texts of the Herculaneum papyri using X-ray CT images. This enhanced virtual unwrapping pipeline combines machine learning with a novel geometric framework linking 3D and 2D images.
+
+Our method is capable of revealing accurate lines of text on scroll fragments with known ground truth. Revealed text is verified using visual confirmation, quantitative image metrics, and scholarly review. EduceLab-Scrolls has also enabled the discovery, for the first time, of hidden texts from the Herculaneum papyri, which we present here.
+
+## SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/history-humanities/history-nature-scroll-2024-003.md:1-6 score=1.080
+# First passages of rolled-up Herculaneum scroll revealed
+
+A team of student researchers has made a giant contribution to solving one of the biggest mysteries in archaeology by revealing the content of Greek writing inside a charred scroll buried 2,000 years ago by the eruption of Mount Vesuvius.
+
+The winners of a contest called the Vesuvius Challenge trained their machine-learning algorithms on scans of the rolled-up papyrus, unveiling a previously unknown philosophical work that discusses the senses and pleasure.
+
+## SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/history-humanities/history-scrollprize-2026-004.md:1-6 score=1.080
+# Vesuvius Challenge project timeline
+
+Vesuvius Challenge launched in March 2023 with a Grand Prize for the first team to recover four passages of 140 characters from a Herculaneum scroll. Within a year, the prize was claimed. The quest was just beginning.
+
+In 2026, PHerc. 1667 became the first Herculaneum scroll to be virtually unwrapped and read end to end. The challenge now moves onto its next stage: reading multiple entire scrolls.

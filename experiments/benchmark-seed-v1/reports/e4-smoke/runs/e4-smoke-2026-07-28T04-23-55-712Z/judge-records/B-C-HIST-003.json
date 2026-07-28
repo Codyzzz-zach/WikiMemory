@@ -1,0 +1,39 @@
+{
+  "questionId": "B-C-HIST-003",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 925,
+    "completionTokens": 304,
+    "totalTokens": 1229,
+    "promptCacheHitTokens": 0,
+    "promptCacheMissTokens": 925,
+    "reasoningTokens": 0
+  },
+  "request": {
+    "systemPrompt": "你是盲测评分员，不知道匿名答案属于哪个实验组。只按题目、评分锚点和证据评估，不用外部常识修正答案。\n每项 0-4 分：requiredPointCoverage、conditionFidelity、evidenceGrounding、answerabilityDiscipline。\n若答案反转来源归属、抹掉关键条件/时间、把提案当最终规范、编造上下文外事实，hardFailure=true。\n只输出严格 JSON：{\"scores\":[{\"sampleId\":\"...\",\"requiredPointCoverage\":0,\"conditionFidelity\":0,\"evidenceGrounding\":0,\"answerabilityDiscipline\":0,\"hardFailure\":false,\"rationale\":\"...\"}]}。",
+    "userPrompt": "{\"question\":\"使用归档 vesuvius 仓库时必须保留哪些状态条件？\",\"answerability\":\"answerable\",\"requiredPoints\":[\"已归档只读\",\"后继维护位置\",\"beta 且数据覆盖不完整\"],\"forbiddenClaims\":[\"不得把归档仓库说成当前稳定 API\"],\"requiredEvidence\":[{\"sourceId\":\"history-vesuvius-github-2024-002\",\"exactQuote\":\"This repository was archived by the owner on Nov 21, 2024. It is now read-only.\",\"role\":\"supports\"},{\"sourceId\":\"history-vesuvius-github-2024-002\",\"exactQuote\":\"NOTE: Now maintained at https://github.com/ScrollPrize/villa/tree/main/vesuvius (this repository archived)\",\"role\":\"supports\"},{\"sourceId\":\"history-vesuvius-github-2024-002\",\"exactQuote\":\"`vesuvius` is in beta and the interface may change. Not all Vesuvius Challenge data is currently available - data will continue to be added to the library.\",\"role\":\"supports\"}],\"sourcePriorityRule\":\"P/C 决定规范、论文与实现事实；S 只能作为有归属的解释，不能推翻一手版本文本。\",\"anonymousAnswers\":[{\"sampleId\":\"sample-c1fbd84f-9567-43af-b5ea-76a7df9d66e2\",\"questionId\":\"B-C-HIST-003\",\"answer\":\"{\\n  \\\"answer\\\": \\\"使用归档 vesuvius 仓库时必须保留的状态条件包括：仓库已归档（2024年11月21日）、只读、数据在后台流式传输仅提供请求的区域、并非所有数据当前可用（数据将继续添加）、仓库现在维护在 https://github.com/ScrollPrize/villa/tree/main/vesuvius。\\\",\\n  \\\"citations\\\": [\\n    \\\"span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-1#chars-48-106\\\",\\n    \\\"span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-1#chars-107-127\\\",\\n    \\\"span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-4#chars-446-517\\\",\\n    \\\"span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-5#chars-571-674\\\",\\n    \\\"span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-2#chars-135-235\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\"},{\"sampleId\":\"sample-bda48729-d455-4e91-a494-51fd4000c0e9\",\"questionId\":\"B-C-HIST-003\",\"answer\":\"{\\n  \\\"answer\\\": \\\"使用归档 vesuvius 仓库时必须保留只读状态，因为该仓库已被所有者归档，现在为只读。\\\",\\n  \\\"citations\\\": [\\n    \\\"SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/history-humanities/history-vesuvius-github-2024-002.md:1-12\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\"}]}"
+  },
+  "rawResponse": "{\n  \"scores\": [\n    {\n      \"sampleId\": \"sample-c1fbd84f-9567-43af-b5ea-76a7df9d66e2\",\n      \"requiredPointCoverage\": 4,\n      \"conditionFidelity\": 4,\n      \"evidenceGrounding\": 4,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"答案完整覆盖了三个必需要点：已归档只读、后继维护位置、beta且数据覆盖不完整。所有条件均忠实于证据，未添加或歪曲。引用了多个证据片段，且未提出任何禁止性主张。\"\n    },\n    {\n      \"sampleId\": \"sample-bda48729-d455-4e91-a494-51fd4000c0e9\",\n      \"requiredPointCoverage\": 1,\n      \"conditionFidelity\": 2,\n      \"evidenceGrounding\": 2,\n      \"answerabilityDiscipline\": 3,\n      \"hardFailure\": false,\n      \"rationale\": \"答案仅覆盖了'已归档只读'一个要点，缺少'后继维护位置'和'beta且数据覆盖不完整'。条件描述基本准确，但未提及维护位置和beta状态。证据引用仅指向一个来源，但未具体引用支持维护位置和beta状态的文本。未违反禁止性主张。\"\n    }\n  ]\n}",
+  "parsed": [
+    {
+      "sampleId": "sample-c1fbd84f-9567-43af-b5ea-76a7df9d66e2",
+      "requiredPointCoverage": 4,
+      "conditionFidelity": 4,
+      "evidenceGrounding": 4,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "答案完整覆盖了三个必需要点：已归档只读、后继维护位置、beta且数据覆盖不完整。所有条件均忠实于证据，未添加或歪曲。引用了多个证据片段，且未提出任何禁止性主张。"
+    },
+    {
+      "sampleId": "sample-bda48729-d455-4e91-a494-51fd4000c0e9",
+      "requiredPointCoverage": 1,
+      "conditionFidelity": 2,
+      "evidenceGrounding": 2,
+      "answerabilityDiscipline": 3,
+      "hardFailure": false,
+      "rationale": "答案仅覆盖了'已归档只读'一个要点，缺少'后继维护位置'和'beta且数据覆盖不完整'。条件描述基本准确，但未提及维护位置和beta状态。证据引用仅指向一个来源，但未具体引用支持维护位置和beta状态的文本。未违反禁止性主张。"
+    }
+  ]
+}

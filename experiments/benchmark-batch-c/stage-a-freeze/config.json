@@ -1,0 +1,50 @@
+{
+  "schemaVersion": "wge-pilot-config/v1",
+  "status": "LOCKED",
+  "corpus": [
+    "../stage-a-freeze/compilation-corpus/climate-energy-policy/c-climate-001.md",
+    "../stage-a-freeze/compilation-corpus/climate-energy-policy/c-climate-002.md",
+    "../stage-a-freeze/compilation-corpus/climate-energy-policy/c-climate-003.md",
+    "../stage-a-freeze/compilation-corpus/climate-energy-policy/c-climate-004.md",
+    "../stage-a-freeze/compilation-corpus/law-public-policy/c-law-001.md",
+    "../stage-a-freeze/compilation-corpus/law-public-policy/c-law-002.md",
+    "../stage-a-freeze/compilation-corpus/law-public-policy/c-law-003.md",
+    "../stage-a-freeze/compilation-corpus/law-public-policy/c-law-004.md",
+    "../stage-a-freeze/compilation-corpus/psychology-reproducibility/c-psych-001.md",
+    "../stage-a-freeze/compilation-corpus/psychology-reproducibility/c-psych-002.md",
+    "../stage-a-freeze/compilation-corpus/psychology-reproducibility/c-psych-003.md",
+    "../stage-a-freeze/compilation-corpus/psychology-reproducibility/c-psych-004.md"
+  ],
+  "compiler": {
+    "model": "deepseek-v4-flash",
+    "temperature": 0,
+    "thinkingDisabled": true
+  },
+  "answer": {
+    "model": "deepseek-v4-flash",
+    "temperature": 0,
+    "thinkingDisabled": true,
+    "maxOutputTokens": 1200
+  },
+  "judge": {
+    "model": "deepseek-v4-flash",
+    "temperature": 0,
+    "thinkingDisabled": true,
+    "maxOutputTokens": 1200
+  },
+  "retrieval": {
+    "contextBudgetTokens": 12000,
+    "maxGraphDepth": 3,
+    "maxFolderChunks": 16,
+    "folderChunkChars": 1800
+  },
+  "execution": {
+    "groups": [
+      "B",
+      "P"
+    ],
+    "externalRetrievalNetwork": false,
+    "maxToolCalls": 1,
+    "timeoutMs": 120000
+  }
+}

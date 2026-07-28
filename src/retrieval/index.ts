@@ -1,4 +1,5 @@
 import { getConsumptionRule } from "../linter/index.js";
+import { resolveSpanById } from "../linter/storage.js";
 import type { Claim, SourceSpan } from "../types/index.js";
 
 export interface SeedCandidate {
@@ -13,6 +14,9 @@ export interface SeedRetrievalDiagnostics {
 	eligibleClaimCount: number;
 	matchedClaimCount: number;
 	usedEvidenceText: boolean;
+	usedSourceMetadata: boolean;
+	resolvedEvidenceRefCount: number;
+	unresolvedEvidenceRefCount: number;
 }
 
 export interface SeedRetrievalResult {
@@ -20,9 +24,20 @@ export interface SeedRetrievalResult {
 	diagnostics: SeedRetrievalDiagnostics;
 }
 
+export interface TemporalScopeFilterResult {
+	claims: Claim[];
+	diagnostics: {
+		applied: boolean;
+		startMonth: string | null;
+		endMonth: string | null;
+		excludedClaimIds: string[];
+	};
+}
+
 interface IndexedClaim {
 	claim: Claim;
 	features: Set<string>;
+	sourceFeatures: Set<string>;
 	normalizedText: string;
 }
 
@@ -35,6 +50,12 @@ interface IndexedClaim {
 export function lexicalFeatures(text: string): Set<string> {
 	const normalized = normalizeNotation(text);
 	const features = new Set<string>();
+	// Standards, laws, releases and scientific taxonomies commonly use dotted numeric
+	// identifiers (for example 2.5.7 or 1.2.3). Keep the complete identifier before
+	// generic tokenization splits it into one-character runs and discards it.
+	for (const identifier of normalized.match(/\b\d+(?:\.\d+){1,}\b/g) ?? []) {
+		features.add(`id:${identifier}`);
+	}
 	for (const run of normalized.match(/[\p{L}\p{N}]+/gu) ?? []) {
 		if (/[\p{Script=Han}]/u.test(run)) {
 			const chars = [...run];
@@ -71,6 +92,44 @@ function normalizeNotation(text: string): string {
 }
 
 /**
+ * Applies only when the query states at least two explicit year-month boundaries.
+ * Claims without a precise month remain eligible; claims whose every precise month
+ * is outside the closed interval are excluded from both Seed and Graph navigation.
+ */
+export function filterClaimsByExplicitTemporalScope(
+	claims: Claim[],
+	spans: SourceSpan[],
+	query: string,
+	sourceSearchText: ReadonlyMap<string, string> = new Map(),
+): TemporalScopeFilterResult {
+	const queryMonths = extractMonths(query);
+	if (queryMonths.length < 2) {
+		return {
+			claims,
+			diagnostics: { applied: false, startMonth: null, endMonth: null, excludedClaimIds: [] },
+		};
+	}
+	const start = Math.min(...queryMonths);
+	const end = Math.max(...queryMonths);
+	const excludedClaimIds: string[] = [];
+	const filtered = claims.filter((claim) => {
+		const months = extractMonths(claimSearchText(claim, spans, sourceSearchText));
+		if (months.length === 0 || months.some((month) => month >= start && month <= end)) return true;
+		excludedClaimIds.push(claim.id);
+		return false;
+	});
+	return {
+		claims: filtered,
+		diagnostics: {
+			applied: true,
+			startMonth: formatMonth(start),
+			endMonth: formatMonth(end),
+			excludedClaimIds,
+		},
+	};
+}
+
+/**
  * 从 Canonical Claim 与其原文证据中选 Seed。
  *
  * 该层只负责找到可靠起点；Relation/Graph 只能在 Seed 之后扩展，不能拿来
@@ -81,21 +140,40 @@ export function retrieveClaimSeeds(
 	spans: SourceSpan[],
 	query: string,
 	limit = 10,
+	sourceSearchText: ReadonlyMap<string, string> = new Map(),
 ): SeedRetrievalResult {
-	const spanText = new Map(spans.map((span) => [span.id, span.text]));
+	let resolvedEvidenceRefCount = 0;
+	let unresolvedEvidenceRefCount = 0;
 	const eligible = claims.filter((claim) => {
 		const rule = getConsumptionRule(claim.publicationState, claim.lifecycle, claim.validity);
 		return rule.allowRetrieval;
 	});
 	const indexed: IndexedClaim[] = eligible.map((claim) => {
-		const evidence = claim.evidenceSpanIds
-			.map((spanId) => spanText.get(spanId) ?? "")
+		const resolvedEvidence = claim.evidenceSpanIds.flatMap((spanId) => {
+			const span = resolveSpanById(spans, spanId);
+			if (!span) {
+				unresolvedEvidenceRefCount++;
+				return [];
+			}
+			resolvedEvidenceRefCount++;
+			return [span];
+		});
+		const evidence = resolvedEvidence.map((span) => span.text).join("\n");
+		const sourceMetadata = [
+			...new Set(
+				resolvedEvidence
+					.map((span) => span.sourceId)
+					.map((sourceId) => sourceSearchText.get(sourceId) ?? "")
+					.filter(Boolean),
+			),
+		].join("\n");
+		const text = [claim.statement, claim.conditions.join(" "), evidence, sourceMetadata]
 			.filter(Boolean)
 			.join("\n");
-		const text = [claim.statement, claim.conditions.join(" "), evidence].filter(Boolean).join("\n");
 		return {
 			claim,
 			features: lexicalFeatures(text),
+			sourceFeatures: lexicalFeatures(sourceMetadata),
 			normalizedText: normalizeSearchText(text),
 		};
 	});
@@ -112,13 +190,37 @@ export function retrieveClaimSeeds(
 		.map((entry): SeedCandidate | null => {
 			const matched = [...queryFeatures].filter((feature) => entry.features.has(feature));
 			const queryWords = [...queryFeatures].filter((feature) => feature.startsWith("w:"));
+			const queryIdentifiers = [...queryFeatures].filter((feature) => feature.startsWith("id:"));
 			const matchedWords = matched.filter((feature) => feature.startsWith("w:"));
+			const matchedIdentifiers = matched.filter((feature) => feature.startsWith("id:"));
 			const matchedTrigrams = matched.filter((feature) => feature.startsWith("c3:"));
 			const matchedBigrams = matched.filter((feature) => feature.startsWith("c2:"));
-			// 查询中的拉丁/数字标识通常是实体名、版本或符号；候选若完全没有它，
-			// 不能仅凭“什么/不同/条件”等中文片段成为 Seed。
-			if (queryWords.length > 0 && matchedWords.length === 0) return null;
-			if (queryWords.length === 0 && matchedTrigrams.length === 0 && matchedBigrams.length < 2) {
+			// 查询中的拉丁/数字标识通常是实体名、版本或符号；但混合语言查询里的
+			// 日期/版本不能否决一个已经有强中文片段匹配的候选。
+			if (
+				queryWords.length > 0 &&
+				matchedWords.length === 0 &&
+				matchedIdentifiers.length === 0 &&
+				matchedTrigrams.length === 0 &&
+				matchedBigrams.length < 2
+			) {
+				return null;
+			}
+			if (
+				queryWords.length === 0 &&
+				queryIdentifiers.length > 0 &&
+				matchedIdentifiers.length === 0 &&
+				matchedTrigrams.length === 0 &&
+				matchedBigrams.length < 2
+			) {
+				return null;
+			}
+			if (
+				queryWords.length === 0 &&
+				queryIdentifiers.length === 0 &&
+				matchedTrigrams.length === 0 &&
+				matchedBigrams.length < 2
+			) {
 				return null;
 			}
 
@@ -127,16 +229,19 @@ export function retrieveClaimSeeds(
 			for (const feature of matched) {
 				const frequency = documentFrequency.get(feature) ?? 0;
 				const idf = Math.log((indexed.length + 1) / (frequency + 1)) + 1;
-				const weight = feature.startsWith("w:")
-					? 2
-					: feature.startsWith("c3:")
-						? 1.5
-						: feature.startsWith("c2:")
-							? 1
-							: 0.25;
+				const weight = feature.startsWith("id:")
+					? 4
+					: feature.startsWith("w:")
+						? 2
+						: feature.startsWith("c3:")
+							? 1.5
+							: feature.startsWith("c2:")
+								? 1
+								: 0.25;
 				score += idf * weight;
 				channels.add(feature.slice(0, feature.indexOf(":")));
 			}
+			if (matched.some((feature) => entry.sourceFeatures.has(feature))) channels.add("source");
 			const coverage = queryFeatures.size === 0 ? 0 : matched.length / queryFeatures.size;
 			score *= 0.5 + coverage;
 			if (normalizedQuery.length >= 4 && entry.normalizedText.includes(normalizedQuery)) {
@@ -160,7 +265,85 @@ export function retrieveClaimSeeds(
 			queryFeatureCount: queryFeatures.size,
 			eligibleClaimCount: eligible.length,
 			matchedClaimCount: candidates.length,
-			usedEvidenceText: spans.length > 0,
+			usedEvidenceText: resolvedEvidenceRefCount > 0,
+			usedSourceMetadata: sourceSearchText.size > 0,
+			resolvedEvidenceRefCount,
+			unresolvedEvidenceRefCount,
 		},
 	};
+}
+
+function claimSearchText(
+	claim: Claim,
+	spans: SourceSpan[],
+	sourceSearchText: ReadonlyMap<string, string>,
+): string {
+	const resolved = claim.evidenceSpanIds.flatMap((spanId) => {
+		const span = resolveSpanById(spans, spanId);
+		return span ? [span] : [];
+	});
+	const sourceMetadata = [
+		...new Set(resolved.map((span) => sourceSearchText.get(span.sourceId) ?? "").filter(Boolean)),
+	].join("\n");
+	return [
+		claim.statement,
+		claim.conditions.join(" "),
+		resolved.map((span) => span.text).join("\n"),
+		sourceMetadata,
+	]
+		.filter(Boolean)
+		.join("\n");
+}
+
+function extractMonths(value: string): number[] {
+	const normalized = value.normalize("NFKC");
+	const months = new Set<number>();
+	for (const match of normalized.matchAll(
+		/\b((?:19|20)\d{2})\s*(?:[-/.]|年)\s*(0?[1-9]|1[0-2])(?!\d)(?:月)?/g,
+	)) {
+		const year = Number(match[1]);
+		const month = Number(match[2]);
+		months.add(year * 12 + month - 1);
+	}
+	const monthNumbers = new Map(
+		[
+			"january",
+			"february",
+			"march",
+			"april",
+			"may",
+			"june",
+			"july",
+			"august",
+			"september",
+			"october",
+			"november",
+			"december",
+		].map((month, index) => [month, index] as const),
+	);
+	for (const match of normalized
+		.toLowerCase()
+		.matchAll(
+			/\b(?:\d{1,2}\s+)?(january|february|march|april|may|june|july|august|september|october|november|december)\s*,?\s*((?:19|20)\d{2})\b/g,
+		)) {
+		const month = monthNumbers.get(match[1] ?? "");
+		const year = Number(match[2]);
+		if (month !== undefined) months.add(year * 12 + month);
+	}
+	for (const match of normalized
+		.toLowerCase()
+		.matchAll(
+			/\b(january|february|march|april|may|june|july|august|september|october|november|december)\s+\d{1,2}\s*,?\s*((?:19|20)\d{2})\b/g,
+		)) {
+		const month = monthNumbers.get(match[1] ?? "");
+		const year = Number(match[2]);
+		if (month !== undefined) months.add(year * 12 + month);
+	}
+	return [...months];
+}
+
+function formatMonth(value: number): string {
+	const year = Math.floor(value / 12);
+	const month = (value % 12) + 1;
+	return `${year}-${String(month).padStart(2, "0")}`;
 }

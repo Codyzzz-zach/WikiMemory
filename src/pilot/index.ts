@@ -3,7 +3,7 @@ import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { estimateTokens } from "../compiler/telemetry.js";
 import type { AppConfig } from "../config/types.js";
-import { buildContextPack } from "../context-pack/index.js";
+import { buildContextPackWithDiagnostics } from "../context-pack/index.js";
 
 export type PilotGroup = "B" | "P" | "E-min";
 
@@ -64,6 +64,12 @@ export interface PreparedPilotContext {
 	knowledgeVersion: string | null;
 	contextHash: string;
 	toolCalls: number;
+	retrievalTrace: Record<string, unknown>;
+}
+
+export interface PilotPreparationOptions {
+	/** False isolates Seed retrieval while preserving Claim/Evidence serialization and budgets. */
+	graphExpansion?: boolean;
 }
 
 interface ContextItem {
@@ -85,9 +91,10 @@ export function preparePilotContext(
 	pilotConfig: PilotConfig,
 	question: Pick<PilotQuestion, "id" | "question">,
 	group: PilotGroup,
+	options: PilotPreparationOptions = {},
 ): PreparedPilotContext {
 	if (group === "B") return prepareFolderContext(appConfig, pilotConfig, question);
-	return prepareKnowledgeContext(appConfig, pilotConfig, question, group);
+	return prepareKnowledgeContext(appConfig, pilotConfig, question, group, options);
 }
 
 function prepareFolderContext(
@@ -109,9 +116,9 @@ function prepareFolderContext(
 			score: lexicalScore(question.question, chunk.text, documentFrequency),
 		}))
 		.filter((entry) => entry.score > 0)
-		.sort((left, right) => right.score - left.score || left.chunk.id.localeCompare(right.chunk.id))
-		.slice(0, pilotConfig.retrieval.maxFolderChunks);
-	const items = ranked.map(({ chunk, score }) => ({
+		.sort((left, right) => right.score - left.score || left.chunk.id.localeCompare(right.chunk.id));
+	const retrievalLimited = ranked.slice(0, pilotConfig.retrieval.maxFolderChunks);
+	const items = retrievalLimited.map(({ chunk, score }) => ({
 		id: chunk.id,
 		text: `## SOURCE ${chunk.source}:${chunk.lineStart}-${chunk.lineEnd} score=${score.toFixed(3)}\n${chunk.text}`,
 	}));
@@ -125,10 +132,34 @@ function prepareFolderContext(
 		retrievedRelations: [],
 		evidenceSpans: [],
 		retrievedSources: selected.selectedIds.map((id) => id.split("#L")[0] ?? id),
-		droppedContext: selected.droppedIds.map((id) => ({ id, reason: "context-token-budget" })),
+		droppedContext: [
+			...ranked
+				.slice(pilotConfig.retrieval.maxFolderChunks)
+				.map(({ chunk }) => ({ id: chunk.id, reason: "max-folder-chunks" })),
+			...selected.droppedIds.map((id) => ({ id, reason: "context-token-budget" })),
+		],
 		knowledgeVersion: null,
 		contextHash: sha256(selected.text),
 		toolCalls: 1,
+		retrievalTrace: {
+			strategy: "folder-lexical",
+			queryFeatureCount: new Set(textFeatures(question.question)).size,
+			corpusChunkCount: chunks.length,
+			matchedChunkCount: ranked.length,
+			maxFolderChunks: pilotConfig.retrieval.maxFolderChunks,
+			candidates: ranked.map(({ chunk, score }, index) => ({
+				id: chunk.id,
+				rank: index + 1,
+				score,
+				selected: selected.selectedIds.includes(chunk.id),
+				dropReason:
+					index >= pilotConfig.retrieval.maxFolderChunks
+						? "max-folder-chunks"
+						: selected.droppedIds.includes(chunk.id)
+							? "context-token-budget"
+							: null,
+			})),
+		},
 	};
 }
 
@@ -137,13 +168,16 @@ function prepareKnowledgeContext(
 	pilotConfig: PilotConfig,
 	question: Pick<PilotQuestion, "id" | "question">,
 	group: "P" | "E-min",
+	options: PilotPreparationOptions,
 ): PreparedPilotContext {
-	const pack = buildContextPack(
+	const graphDepth = options.graphExpansion === false ? 0 : pilotConfig.retrieval.maxGraphDepth;
+	const built = buildContextPackWithDiagnostics(
 		appConfig,
 		question.question,
 		pilotConfig.retrieval.contextBudgetTokens,
-		pilotConfig.retrieval.maxGraphDepth,
+		graphDepth,
 	);
+	const { pack } = built;
 	const items: ContextItem[] = [
 		{ id: "task-map", text: `## TASK MAP\n${pack.taskMap}` },
 		...pack.subgraph.claims.map((claim) => ({
@@ -206,6 +240,15 @@ function prepareKnowledgeContext(
 		knowledgeVersion: pack.knowledgeVersion,
 		contextHash: sha256(selected.text),
 		toolCalls: 1,
+		retrievalTrace: {
+			strategy: graphDepth === 0 ? "claim-seed-only" : "claim-seed-graph",
+			graphDepth,
+			...built.diagnostics,
+			serializationBudget: {
+				selectedIds: selected.selectedIds,
+				droppedIds: selected.droppedIds,
+			},
+		},
 	};
 }
 
@@ -266,10 +309,15 @@ function lexicalScore(query: string, text: string, documentFrequency: Map<string
 
 function textFeatures(value: string): string[] {
 	const normalized = value.normalize("NFKC").toLowerCase();
+	const identifiers = normalized.match(/\b\d+(?:\.\d+){1,}\b/g) ?? [];
 	const words = normalized.match(/[a-z0-9²ᵖπ]+/g) ?? [];
 	const chinese = [...normalized.replaceAll(/[^㐀-鿿]/g, "")];
 	const bigrams = chinese.slice(0, -1).map((character, index) => character + chinese[index + 1]);
-	return [...words.filter((word) => word.length > 1), ...bigrams];
+	return [
+		...identifiers.map((identifier) => `id:${identifier}`),
+		...words.filter((word) => word.length > 1),
+		...bigrams,
+	];
 }
 
 function selectWithinBudget(

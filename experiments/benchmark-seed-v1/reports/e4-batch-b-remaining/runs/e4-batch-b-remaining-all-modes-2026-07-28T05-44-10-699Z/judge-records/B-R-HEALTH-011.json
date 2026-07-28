@@ -1,0 +1,48 @@
+{
+  "questionId": "B-R-HEALTH-011",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 1261,
+    "completionTokens": 488,
+    "totalTokens": 1749,
+    "promptCacheHitTokens": 256,
+    "promptCacheMissTokens": 1005,
+    "reasoningTokens": 0
+  },
+  "request": {
+    "systemPrompt": "你是盲测评分员，不知道答案属于哪个实验组。只按题目、评分锚点、Gold 证据和引用预校验评价，不用外部常识修正答案。\n每个维度独立使用同一 0-4 锚点：4=完整且准确；3=大部分满足，仅轻微遗漏；2=部分满足，存在重要遗漏；1=仅有极少相关内容；0=缺失、反转或与证据冲突。\nrequiredPointCoverage 只看 requiredPoints；conditionFidelity 看条件、时间、来源角色和不确定性；evidenceGrounding 同时看关键结论是否与 Gold 证据一致以及 citationValidation；answerabilityDiscipline 看是否越界、编造或错误拒答。\ncitationValidation.valid 表示引用标识确实存在于该匿名样本收到的上下文。内部 CLAIM/SPAN/SOURCE 标识不需要出现在 Gold 文本中，不得仅因此扣分；但存在性有效不代表语义必然支持，仍需对照答案内容与 Gold。\n若反转来源归属、抹掉关键条件/时间、把提案当最终规范或编造关键事实，hardFailure=true。\n数值必须与 rationale 一致：若 rationale 说“完整覆盖且准确”，对应维度不能低于 3。\n只输出严格 JSON：{\"scores\":[{\"sampleId\":\"...\",\"requiredPointCoverage\":0,\"conditionFidelity\":0,\"evidenceGrounding\":0,\"answerabilityDiscipline\":0,\"hardFailure\":false,\"rationale\":\"...\"}]}。",
+    "userPrompt": "{\"question\":\"哪份材料使用了‘cannot be ruled out’，这句话的证据强度是什么？\",\"answerability\":\"answerable\",\"requiredPoints\":[\"WHO 2020-07 更新\",\"表示不能排除而非无条件证实\"],\"forbiddenClaims\":[\"不得把可能性改成必然性\"],\"requiredEvidence\":[{\"sourceId\":\"health-who-july-2020-002\",\"exactQuote\":\"Short-range aerosol transmission, particularly in specific indoor locations, such as crowded and inadequately ventilated spaces over a prolonged period of time with infected persons cannot be ruled out.\",\"role\":\"supports\"},{\"sourceId\":\"health-who-july-2020-002\",\"exactQuote\":\"Short-range aerosol transmission, particularly in specific indoor locations, such as crowded and inadequately ventilated spaces over a prolonged period of time with infected persons cannot be ruled out.\",\"role\":\"supports\"}],\"sourcePriorityRule\":\"P/C 决定规范、论文与实现事实；S 只能作为有归属的解释，不能推翻一手版本文本。\",\"anonymousAnswers\":[{\"sampleId\":\"sample-e93dd732-ebd3-49c0-874e-58e7d8f95db7\",\"questionId\":\"B-R-HEALTH-011\",\"repetition\":1,\"answer\":\"{\\n  \\\"answer\\\": \\\"材料 health-who-july-2020-002-a1c7e701eebb9dc1-2#chars-413-615 使用了 'cannot be ruled out'，该表述的证据强度为 SUPPORTED，但受条件限制：在特定室内场所，如拥挤且通风不良的空间，与感染者长时间接触。\\\",\\n  \\\"citations\\\": [\\n    \\\"health-who-july-2020-002-a1c7e701eebb9dc1-2#chars-413-615\\\",\\n    \\\"claim:a1c7e701eebb9dc1-271d5603ab397f55\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": [\\n    \\\"证据强度为 SUPPORTED，但结论受特定条件限制，不能推广到所有场景。\\\"\\n  ]\\n}\",\"citationValidation\":{\"formatValid\":true,\"total\":2,\"valid\":2,\"invalid\":[]}},{\"sampleId\":\"sample-906190b9-caeb-4099-975d-a064e58c8b1d\",\"questionId\":\"B-R-HEALTH-011\",\"repetition\":1,\"answer\":\"{\\n  \\\"answer\\\": \\\"材料 health-who-july-2020-002 使用了 'cannot be ruled out'，该短语的证据强度为 'SUPPORTED'，但受条件限制：在特定室内场所，如拥挤且通风不良的空间，与感染者长时间接触。\\\",\\n  \\\"citations\\\": [\\n    \\\"span:health-who-july-2020-002-a1c7e701eebb9dc1-2#chars-413-615\\\",\\n    \\\"claim:a1c7e701eebb9dc1-271d5603ab397f55\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\",\"citationValidation\":{\"formatValid\":true,\"total\":2,\"valid\":2,\"invalid\":[]}},{\"sampleId\":\"sample-246a50a5-b175-45a8-810d-aaabf76a8024\",\"questionId\":\"B-R-HEALTH-011\",\"repetition\":1,\"answer\":\"{\\n  \\\"answer\\\": \\\"材料 'Transmission of SARS-CoV-2: implications for infection prevention precautions' 使用了 'cannot be ruled out'，其证据强度为不确定性表述，表明短距离气溶胶传播在特定条件下（拥挤、通风不良的室内空间、长时间接触感染者）不能被排除。\\\",\\n  \\\"citations\\\": [\\\"../../../workbuddy-batch-b/generated/compilation-corpus/health-biology/health-who-july-2020-002.md:1-6\\\"],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": [\\\"证据强度为不确定性，未明确肯定或否定短距离气溶胶传播的可能性。\\\"]\\n}\",\"citationValidation\":{\"formatValid\":true,\"total\":1,\"valid\":1,\"invalid\":[]}}]}"
+  },
+  "rawResponse": "{\n  \"scores\": [\n    {\n      \"sampleId\": \"sample-e93dd732-ebd3-49c0-874e-58e7d8f95db7\",\n      \"requiredPointCoverage\": 4,\n      \"conditionFidelity\": 4,\n      \"evidenceGrounding\": 4,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"答案明确指出了材料（health-who-july-2020-002）和短语，并正确解释了证据强度为SUPPORTED但受条件限制，完整覆盖了requiredPoints。条件、时间、来源角色和不确定性均准确呈现。关键结论与Gold证据一致，引用有效且支持内容。未越界或编造。\"\n    },\n    {\n      \"sampleId\": \"sample-906190b9-caeb-4099-975d-a064e58c8b1d\",\n      \"requiredPointCoverage\": 4,\n      \"conditionFidelity\": 4,\n      \"evidenceGrounding\": 4,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"答案正确指出了材料（health-who-july-2020-002）和短语，证据强度为SUPPORTED且受条件限制，完整覆盖requiredPoints。条件、时间、来源角色和不确定性准确。关键结论与Gold证据一致，引用有效。未越界或编造。\"\n    },\n    {\n      \"sampleId\": \"sample-246a50a5-b175-45a8-810d-aaabf76a8024\",\n      \"requiredPointCoverage\": 3,\n      \"conditionFidelity\": 4,\n      \"evidenceGrounding\": 3,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"答案正确指出了材料（Transmission of SARS-CoV-2...）和短语，但未明确提及'WHO 2020-07更新'这一requiredPoint，仅轻微遗漏。条件、时间、来源角色和不确定性准确。关键结论与Gold证据一致，但引用格式为文件路径而非标准标识，虽有效但不够规范，轻微扣分。未越界或编造。\"\n    }\n  ]\n}",
+  "parsed": [
+    {
+      "sampleId": "sample-e93dd732-ebd3-49c0-874e-58e7d8f95db7",
+      "requiredPointCoverage": 4,
+      "conditionFidelity": 4,
+      "evidenceGrounding": 4,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "答案明确指出了材料（health-who-july-2020-002）和短语，并正确解释了证据强度为SUPPORTED但受条件限制，完整覆盖了requiredPoints。条件、时间、来源角色和不确定性均准确呈现。关键结论与Gold证据一致，引用有效且支持内容。未越界或编造。"
+    },
+    {
+      "sampleId": "sample-906190b9-caeb-4099-975d-a064e58c8b1d",
+      "requiredPointCoverage": 4,
+      "conditionFidelity": 4,
+      "evidenceGrounding": 4,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "答案正确指出了材料（health-who-july-2020-002）和短语，证据强度为SUPPORTED且受条件限制，完整覆盖requiredPoints。条件、时间、来源角色和不确定性准确。关键结论与Gold证据一致，引用有效。未越界或编造。"
+    },
+    {
+      "sampleId": "sample-246a50a5-b175-45a8-810d-aaabf76a8024",
+      "requiredPointCoverage": 3,
+      "conditionFidelity": 4,
+      "evidenceGrounding": 3,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "答案正确指出了材料（Transmission of SARS-CoV-2...）和短语，但未明确提及'WHO 2020-07更新'这一requiredPoint，仅轻微遗漏。条件、时间、来源角色和不确定性准确。关键结论与Gold证据一致，但引用格式为文件路径而非标准标识，虽有效但不够规范，轻微扣分。未越界或编造。"
+    }
+  ]
+}

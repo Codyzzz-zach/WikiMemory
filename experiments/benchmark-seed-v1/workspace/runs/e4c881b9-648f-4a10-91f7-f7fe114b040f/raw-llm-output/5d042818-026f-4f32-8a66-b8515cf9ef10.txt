@@ -1,0 +1,34 @@
+{
+  "concepts": [
+    {
+      "name": "短距离气溶胶传播",
+      "aliases": [],
+      "boundary": "指在特定室内场所，如拥挤且通风不良的空间，与感染者长时间接触时可能发生的传播方式",
+      "domain": "流行病学"
+    },
+    {
+      "name": "特定室内场所",
+      "aliases": ["拥挤且通风不良的空间"],
+      "boundary": "指可能导致短距离气溶胶传播的室内环境，如拥挤且通风不良的空间",
+      "domain": "环境健康"
+    },
+    {
+      "name": "SARS-CoV-2",
+      "aliases": [],
+      "boundary": "导致COVID-19的病毒",
+      "domain": "病毒学"
+    },
+    {
+      "name": "COVID-19",
+      "aliases": [],
+      "boundary": "由SARS-CoV-2引起的疾病",
+      "domain": "医学"
+    },
+    {
+      "name": "科学简报",
+      "aliases": [],
+      "boundary": "2020年3月29日发布的关于SARS-CoV-2传播的文档",
+      "domain": "科学传播"
+    }
+  ]
+}

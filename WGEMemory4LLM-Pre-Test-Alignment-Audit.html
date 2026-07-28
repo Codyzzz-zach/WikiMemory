@@ -3,351 +3,336 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>WGEMemory4LLM 测试前产品一致性审计</title>
+  <title>WGEMemory4LLM 产品一致性与下一阶段审计 · v2.0</title>
   <script type="module">
     import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
-    mermaid.initialize({ startOnLoad: true, theme: "base", securityLevel: "loose", themeVariables: {
-      primaryColor: "#e7f0ff", primaryTextColor: "#10233f", primaryBorderColor: "#6c8fc7",
-      lineColor: "#60738f", secondaryColor: "#eef8f2", tertiaryColor: "#fff7e7",
-      fontFamily: "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Microsoft YaHei, sans-serif"
-    }});
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: "base",
+      securityLevel: "loose",
+      themeVariables: {
+        primaryColor: "#e7f0ff",
+        primaryTextColor: "#10233f",
+        primaryBorderColor: "#6c8fc7",
+        lineColor: "#60738f",
+        secondaryColor: "#eef8f2",
+        tertiaryColor: "#fff7e7",
+        fontFamily: "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Microsoft YaHei, sans-serif"
+      },
+      flowchart: { useMaxWidth: true, htmlLabels: true, curve: "linear", nodeSpacing: 32, rankSpacing: 44 }
+    });
   </script>
   <style>
-    :root{--ink:#16243a;--muted:#5d6b7d;--line:#d7deea;--blue:#2b63b8;--blue-bg:#edf4ff;--green:#18794e;--green-bg:#eaf8f1;--amber:#9a5b00;--amber-bg:#fff6df;--red:#b42318;--red-bg:#fff0ee;--gray:#f5f7fa;--paper:#fff}
-    *{box-sizing:border-box} body{margin:0;background:#eef2f7;color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",sans-serif;line-height:1.72}
+    :root{--ink:#16243a;--muted:#5d6b7d;--line:#d7deea;--blue:#2b63b8;--blue-bg:#edf4ff;--green:#18794e;--green-bg:#eaf8f1;--amber:#9a5b00;--amber-bg:#fff6df;--red:#b42318;--red-bg:#fff0ee;--violet:#6656a8;--violet-bg:#f3efff;--gray:#f5f7fa;--paper:#fff}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#eef2f7;color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",sans-serif;line-height:1.72}
     .page{max-width:1180px;margin:28px auto;background:var(--paper);box-shadow:0 16px 50px rgba(27,48,82,.12);border-radius:16px;overflow:hidden}
     header{padding:58px 64px 44px;background:linear-gradient(135deg,#10294f,#204d87 58%,#2d6f82);color:#fff}
-    header h1{margin:8px 0 12px;font-size:38px;line-height:1.2;letter-spacing:-.02em} header p{max-width:900px;margin:0;color:#dfeafd;font-size:17px}
+    header h1{margin:8px 0 12px;font-size:38px;line-height:1.2;letter-spacing:-.02em}header p{max-width:950px;margin:0;color:#dfeafd;font-size:17px}
     .eyebrow{font-weight:750;letter-spacing:.09em;text-transform:uppercase;font-size:13px;color:#bcd4ff}.meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}.chip{padding:7px 11px;border:1px solid rgba(255,255,255,.25);border-radius:999px;background:rgba(255,255,255,.09);font-size:13px}
-    nav{display:flex;gap:10px;flex-wrap:wrap;padding:18px 34px;background:#f7f9fc;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}nav a{color:#31527e;text-decoration:none;padding:5px 8px;border-radius:6px;font-size:13px}nav a:hover{background:#e9f0fb}
-    main{padding:20px 64px 66px}section{padding:34px 0;border-bottom:1px solid var(--line)}section:last-child{border-bottom:0}h2{font-size:28px;margin:0 0 12px;letter-spacing:-.015em}h3{font-size:20px;margin:28px 0 10px}h4{font-size:16px;margin:22px 0 8px}p{margin:8px 0 14px}.lead{font-size:17px;color:#34445c;max-width:930px}.small{font-size:13px;color:var(--muted)}
-    .kicker{font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:800;color:var(--blue);margin-bottom:6px}.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:18px;margin:24px 0}.card{border:1px solid var(--line);border-radius:12px;padding:20px;background:#fff}.card h3{margin-top:0}.verdict{background:var(--red-bg);border-color:#f0b9b3}.good{background:var(--green-bg);border-color:#b7dfca}.warn{background:var(--amber-bg);border-color:#ead09a}.info{background:var(--blue-bg);border-color:#bfd2ef}
+    nav{display:flex;gap:9px;flex-wrap:wrap;padding:18px 34px;background:#f7f9fc;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}nav a{color:#31527e;text-decoration:none;padding:5px 8px;border-radius:6px;font-size:13px}nav a:hover{background:#e9f0fb}
+    main{padding:20px 64px 66px}section{padding:38px 0;border-bottom:1px solid var(--line)}section:last-child{border-bottom:0}h2{font-size:28px;margin:0 0 12px;letter-spacing:-.015em}h3{font-size:20px;margin:28px 0 10px}h4{font-size:16px;margin:22px 0 8px}p{margin:8px 0 14px}.lead{font-size:17px;color:#34445c;max-width:960px}.small{font-size:13px;color:var(--muted)}
+    .kicker{font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:800;color:var(--blue);margin-bottom:6px}.hero{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin:24px 0}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .card{border:1px solid var(--line);border-radius:12px;padding:20px;background:#fff}.card h3,.card h4{margin-top:0}.good{background:var(--green-bg);border-color:#b7dfca}.warn{background:var(--amber-bg);border-color:#ead09a}.danger{background:var(--red-bg);border-color:#f0b9b3}.info{background:var(--blue-bg);border-color:#bfd2ef}.violet{background:var(--violet-bg);border-color:#d4caef}
     .status{display:inline-block;padding:3px 8px;border-radius:999px;font-size:12px;font-weight:800;white-space:nowrap}.s-ready{color:var(--green);background:var(--green-bg)}.s-partial{color:var(--amber);background:var(--amber-bg)}.s-block{color:var(--red);background:var(--red-bg)}.s-decision{color:var(--blue);background:var(--blue-bg)}
     .callout{padding:16px 18px;border-left:5px solid var(--blue);background:var(--blue-bg);border-radius:8px;margin:18px 0}.callout.danger{border-color:var(--red);background:var(--red-bg)}.callout.warning{border-color:#d58a00;background:var(--amber-bg)}.callout.success{border-color:var(--green);background:var(--green-bg)}
     table{width:100%;border-collapse:separate;border-spacing:0;margin:16px 0 24px;font-size:14px;border:1px solid var(--line);border-radius:10px;overflow:hidden}th{background:#f2f5f9;text-align:left;color:#33455f;font-weight:750}th,td{padding:12px 13px;border-bottom:1px solid var(--line);vertical-align:top}tr:last-child td{border-bottom:0}td+td,th+th{border-left:1px solid var(--line)}
-    code{font-family:"SFMono-Regular",Consolas,monospace;background:#eff2f6;padding:2px 5px;border-radius:4px;font-size:.92em}.schema{font-family:"SFMono-Regular",Consolas,monospace;white-space:pre-wrap;background:#142238;color:#e8f1ff;border-radius:10px;padding:18px;overflow:auto;font-size:13px;line-height:1.58}.diagram{border:1px solid var(--line);border-radius:12px;padding:18px;background:#fbfcfe;margin:20px 0;overflow:auto}.mermaid{min-width:650px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.num{font-size:30px;font-weight:850;color:var(--red);line-height:1}.decision{border:1px solid #bcd0ed;background:#f4f8ff;border-radius:12px;padding:20px;margin:18px 0}.decision h3{margin:0 0 8px}.rec{font-weight:800;color:#174f9c}ul,ol{padding-left:24px}li{margin:5px 0}.checklist li{margin:8px 0}.source{font-size:13px;color:var(--muted)}
+    code{font-family:"SFMono-Regular",Consolas,monospace;background:#eff2f6;padding:2px 5px;border-radius:4px;font-size:.92em}.schema{font-family:"SFMono-Regular",Consolas,monospace;white-space:pre-wrap;background:#142238;color:#e8f1ff;border-radius:10px;padding:18px;overflow:auto;font-size:13px;line-height:1.58}.diagram{border:1px solid var(--line);border-radius:12px;padding:18px;background:#fbfcfe;margin:20px 0;overflow:auto}.mermaid{min-width:680px}
+    .num{font-size:30px;font-weight:850;color:var(--blue);line-height:1}.metric{font-size:28px;font-weight:850;color:var(--blue);line-height:1.15}.label{font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}.source{font-size:13px;color:var(--muted)}ul,ol{padding-left:24px}li{margin:6px 0}.checklist li{margin:9px 0}
     footer{padding:26px 64px;background:#f4f6f9;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
-    @media(max-width:820px){.page{margin:0;border-radius:0}header,main,footer{padding-left:24px;padding-right:24px}.hero,.grid{grid-template-columns:1fr}nav{position:static}.mermaid{min-width:560px}header h1{font-size:31px}}
+    @media(max-width:820px){.page{margin:0;border-radius:0}header,main,footer{padding-left:24px;padding-right:24px}.hero,.grid,.grid.three{grid-template-columns:1fr}nav{position:static}.mermaid{min-width:560px}header h1{font-size:31px}}
     @media print{body{background:#fff}.page{margin:0;box-shadow:none;max-width:none}nav{display:none}section{break-inside:auto}.card,table,.diagram,.callout{break-inside:avoid}a{color:inherit;text-decoration:none}}
   </style>
 </head>
 <body>
 <div class="page">
 <header>
-  <div class="eyebrow">Pre-test Product Alignment Audit · v0.9</div>
-  <h1>WGEMemory4LLM 测试前产品一致性审计</h1>
-  <p>以产品目标为最高约束，对齐 Product Definition、User Stories、Benchmark 与当前 Architecture Baseline。审计只讨论产品语义、信息流、状态与验证逻辑；不读取代码库，也不评价具体代码写法。</p>
+  <div class="eyebrow">Product Alignment &amp; Execution Audit · v2.0</div>
+  <h1>WGEMemory4LLM 产品一致性与下一阶段审计</h1>
+  <p>本版基于当前代码、架构基线 v1.9、五篇数学回归、三领域 24 篇受控演化实验，以及 LiteWikiagent 的真实实现与失败经验重新审计。目标不是继续证明“管道能跑”，而是建立全局路线：哪些能力应继承、哪些错误不能重犯、下一步做什么，以及产品达到什么程度才算真正可用。</p>
   <div class="meta">
-    <span class="chip">审计日期 2026-07-22</span>
-    <span class="chip">输入文档 4 份</span>
-    <span class="chip">结论：组件测试可开始</span>
-    <span class="chip">结论：产品 Benchmark 暂不可开始</span>
+    <span class="chip">更新日期 2026-07-27</span>
+    <span class="chip">当前定位：安全知识状态内核</span>
+    <span class="chip">下一主线：语义保留 + WikiModule</span>
+    <span class="chip">产品价值：尚未成立</span>
   </div>
 </header>
-<nav>
-  <a href="#verdict">结论</a><a href="#invariants">产品不变量</a><a href="#matrix">追踪矩阵</a><a href="#contradictions">关键矛盾</a><a href="#benchmark">实验对齐</a><a href="#gates">测试门禁</a><a href="#documents">文档升版</a><a href="#decisions">待确认决策</a>
+<nav aria-label="目录">
+  <a href="#verdict">结论</a><a href="#principles">第一性原理</a><a href="#heritage">旧项目经验</a>
+  <a href="#reality">当前事实</a><a href="#risks">方向风险</a><a href="#roadmap">全局路线</a>
+  <a href="#next">下一步施工</a><a href="#testing">测试纪律</a><a href="#usable">可用标准</a><a href="#statement">统一口径</a>
 </nav>
 <main>
 
 <section id="verdict">
   <div class="kicker">01 / Executive Verdict</div>
-  <h2>当前架构是合格的 Phase 0+1 技术薄切片，但不是可代表产品定义的测试对象</h2>
-  <p class="lead">Source、SourceSpan、Claim、运行时 Schema、Claim Lint、基础存储与 Context Pack 外壳已经形成了合理地基；但产品价值依赖的 Wiki 语义、跨材料关系、Concept 对齐、纠正传播、原子知识版本和真正的 map-first 选择尚未闭环。因此现在直接运行 A–E 主实验，得到的不是“WGEMemory4LLM 是否有用”，而是“一个 Claim + 关键词 + 薄 Graph 原型表现如何”。</p>
+  <h2>工程地基已建立；现在必须从“安全编译”转向“保真、组织与长期效用”</h2>
+  <p class="lead">旧版 v0.9 判断 Relation 发布、原子快照、跨材料扫描和演化链路尚未闭环；这些结论已经过期。当前系统已经具备不可变证据、有界编译、Claim/Relation 双门禁、物理隔离、两阶段原子发布、知识快照、跨材料扫描和受审批的纠正/冲突事务。新的主要矛盾不再是“能否安全写入”，而是“严格投影是否损失了太多真实语义，以及这些结构是否真的让 Agent 长期变好”。</p>
   <div class="hero">
-    <div class="card verdict">
-      <div class="num">STOP</div>
-      <h3>暂缓产品级 Benchmark</h3>
-      <p>C、D、E 三组的定义条件尚不成立；跨文档和进化题测不到产品承诺。此时的低分不可归因于产品假设，高分也可能来自回答模型或题目关键词。</p>
-    </div>
     <div class="card good">
-      <div class="num" style="color:var(--green)">GO</div>
-      <h3>立即开始契约与组件测试</h3>
-      <p>解析、去重、证据定位、Schema 拒绝、Claim 门禁、Quarantine 隔离和状态过滤都适合现在测试；这些测试还能尽早暴露状态断点。</p>
+      <div class="num" style="color:var(--green)">KEEP</div>
+      <h3>保留安全知识状态内核</h3>
+      <p>Evidence、Canonical/Quarantine、四状态轴、双门禁、原子发布、版本和回滚是错误复利场景下的必要基础，不能因为小规模原文检索暂时领先就拆掉。</p>
+    </div>
+    <div class="card warn">
+      <div class="num" style="color:var(--amber)">SHIFT</div>
+      <h3>停止继续围绕通过率优化</h3>
+      <p>接下来优先衡量信息漏失、Quarantine 假阴性、关系召回和 WikiModule 效果；现有五篇与 24 篇数据降级为 Dev/Regression，不再承担泛化结论。</p>
     </div>
   </div>
-  <div class="callout danger"><b>最高风险：</b>Architecture Baseline 描述 Relation 由 Compiler 产出为 <code>CANDIDATE</code>，随后只有 <code>lintClaims</code> 完成晋级，Relation 被直接保存；Graph 又只消费 <code>CANONICAL + ACTIVE</code>。按文档信息推导，Relation 缺少从 Candidate 到 Canonical 的发布路径，Graph 可能在结构上存在、在运行时却没有可消费边。必须用契约测试先证伪或修正这一点。</div>
+  <div class="callout danger"><b>当前最危险的自我欺骗：</b>把“原文仍在磁盘”当成“Agent 没有损失知识”，或把“错误边被隔离”当成“Graph 已经高质量”。原始证据可恢复只证明没有不可逆删除；默认消费投影是否保留了任务所需事实、条件、语境和关系，必须另行测量。</div>
 </section>
 
-<section id="invariants">
-  <div class="kicker">02 / Product Invariants</div>
-  <h2>任何架构都必须服务同一条因果链</h2>
-  <div class="diagram"><div class="mermaid">
-flowchart TD
-  G["目标：Agent 随使用持续改善"] --> B["后续任务行为改变"]
-  B --> C1["少重复解释"]
-  B --> C2["少复发已纠正错误"]
-  B --> C3["跨材料判断更完整且有依据"]
-  E["Evidence：可信锚点"] --> K["可修正知识状态"]
-  W["Wiki：完整语义"] --> K
-  R["Typed Graph：拓扑与依赖"] --> K
-  K --> P["任务化 Context Pack"]
-  P --> B
-  B --> F["新证据、纠正与任务结果"]
-  F --> K
-  </div></div>
-  <p>这条链中任何环节缺失，产品都不能用其它产物数量补偿：没有 Wiki，Agent 得到的是碎片；没有跨材料关系，Graph 不能恢复知识网络；没有版本与影响传播，系统只是追加知识；没有后续行为变化，Git commit、节点数与页面数都不构成价值。</p>
-  <table>
-    <thead><tr><th>不可被替换的层</th><th>产品责任</th><th>不能用什么伪装完成</th></tr></thead>
-    <tbody>
-      <tr><td>Evidence</td><td>让 Claim、Relation、Wiki 回到原文与来源时态</td><td>“LLM 判断可信”、相似文本或漂亮引用格式</td></tr>
-      <tr><td>Wiki</td><td>提供围绕稳定问题的完整语义与当前认识</td><td>Claim 列表、每篇文章一份摘要</td></tr>
-      <tr><td>Typed Graph</td><td>保存关系、条件、方向、冲突与影响依赖</td><td>双向链接、关键词共现、无限 BFS</td></tr>
-      <tr><td>Compiler + Lint</td><td>让新证据成为受门禁约束的知识状态 diff</td><td>只生成新文件、只检查 JSON 格式</td></tr>
-      <tr><td>Context Pack</td><td>把当前知识投影为任务相关、预算可控、风险显式的输入</td><td>把全部 Wiki 塞进上下文、检索后再补一个“地图摘要”</td></tr>
-      <tr><td>Evolution</td><td>让纠正沿依赖改变后续行为，同时保留旧证据</td><td>全库重写、删除旧结论、只在当前对话记住纠正</td></tr>
-    </tbody>
-  </table>
-</section>
-
-<section id="matrix">
-  <div class="kicker">03 / Requirements Traceability</div>
-  <h2>产品承诺—当前架构—测试资格追踪矩阵</h2>
-  <table>
-    <thead><tr><th>产品承诺</th><th>当前架构事实</th><th>对目标的真实影响</th><th>测试状态</th></tr></thead>
-    <tbody>
-      <tr><td>不可变 Evidence 与精确回链</td><td>Source hash、SourceSpan、blockId、机械 offset、exactQuote 映射已存在</td><td>地基基本成立；但匹配失败命题被跳过时需要完整记录，不能静默丢失</td><td><span class="status s-ready">可测</span></td></tr>
-      <tr><td>重复材料不重复生成知识</td><td>按正文 hash 去重，5 篇 Ingestor 测试通过</td><td>能避免同内容重复摄入；尚未覆盖“同来源新版本”与重新编译</td><td><span class="status s-ready">可测</span></td></tr>
-      <tr><td>AI 自治写入但消费前守门</td><td>Claim 有结构与语义门禁，失败可 Quarantine</td><td>只对 Claim 成立；Relation、Concept、Wiki 的发布门禁尚不完整</td><td><span class="status s-partial">部分</span></td></tr>
-      <tr><td>类型化、条件化、有证据的 Relation</td><td>Relation 类型与字段存在，但只有 intra-material 来源；未描述 Relation Lint 与晋级</td><td>Schema 存在不等于边可信；可能出现空 Graph 或未审计边</td><td><span class="status s-block">阻断</span></td></tr>
-      <tr><td>跨来源稳定 Concept</td><td>Compiler 可产出 Concept；无跨来源合并、分叉和歧义处理</td><td>跨文档图无法稳定连接，同名异义可能造成错误路径</td><td><span class="status s-block">阻断</span></td></tr>
-      <tr><td>围绕稳定问题维护 WikiModule</td><td>只有类型占位；Context Pack 中 wikiModules 为空</td><td>C、D、E 组均不符合 Benchmark 定义；Agent 缺少连贯语义层</td><td><span class="status s-block">阻断</span></td></tr>
-      <tr><td>先地图、再子图、再证据</td><td>先关键词找种子、再 Graph 扩展，最后生成 taskMap</td><td>taskMap 没有参与选择；产品哲学与运行时信息流相反</td><td><span class="status s-block">阻断</span></td></tr>
-      <tr><td>严格 Context Pack 预算</td><td>以 4 chars≈1 token 预算 Claim，之后回填 Evidence</td><td>中文下可能严重低估；Evidence 后加可能突破总预算，影响公平实验</td><td><span class="status s-partial">需修正</span></td></tr>
-      <tr><td>冲突和条件不被静默抹平</td><td>DISPUTED 与 conditions 可进入 Pack；跨材料冲突检测未调用</td><td>只能呈现已经发现的冲突，无法证明系统能发现真实跨来源冲突</td><td><span class="status s-block">阻断</span></td></tr>
-      <tr><td>纠正改变后续行为</td><td>纠正、影响传播、回归与局部重编译未实现</td><td>产品北极星之一当前不可发生</td><td><span class="status s-block">阻断</span></td></tr>
-      <tr><td>知识版本一致、可回滚</td><td>目录计划进 Git，但无原子发布、自动 commit 与健康快照</td><td>Context Pack 的 knowledgeVersion 尚不能保证对应一致的 Claim/Wiki/Graph 状态</td><td><span class="status s-block">阻断</span></td></tr>
-      <tr><td>Graph 运行时价值由实验决定</td><td>当前 Context Pack 默认构图与扩展；没有 Wiki-only 开关描述</td><td>实验前已经把 Graph 固定进主链，无法公平消融</td><td><span class="status s-partial">需开关</span></td></tr>
-      <tr><td>任意 Agent 使用稳定请求/响应合同</td><td>响应对象已有主要字段；CLI 主要接受 task/budget/depth</td><td>domain、asOf、allowedRelationTypes、证据要求与风险策略尚未成为请求合同</td><td><span class="status s-partial">部分</span></td></tr>
-      <tr><td>产品价值以行为改变衡量</td><td>当前验证证据是 typecheck 与 Ingestor 5 篇通过</td><td>证明工程地基可运行，不证明编译、跨文档回答或进化有用</td><td><span class="status s-block">尚未证明</span></td></tr>
-    </tbody>
-  </table>
-</section>
-
-<section id="contradictions">
-  <div class="kicker">04 / Logical Contradictions</div>
-  <h2>必须先处理的七个逻辑断点</h2>
-
-  <h3>1. Relation 没有被证明能进入 Canonical Graph</h3>
+<section id="principles">
+  <div class="kicker">02 / First Principles</div>
+  <h2>知识编译不是提取比赛，而是一个受约束的有损变换</h2>
   <div class="diagram"><div class="mermaid">
 flowchart LR
-  C["Compiler 产出 Relation"] --> X["CANDIDATE"]
-  X -. "文档未描述 Relation Lint / 晋级" .-> K["CANONICAL"]
-  X --> S["直接 appendRelations"]
-  K --> G["Graph 只消费 Canonical + Active"]
-  S -. "若仍是 Candidate" .-> Z["Graph 无可消费边"]
+  S["原始材料 S<br/>完整但昂贵"] --> C["编译变换 f(S)"]
+  C --> K["长期知识状态 K<br/>Claim / Relation / Wiki"]
+  K --> P["任务投影 P(K,q)<br/>Context Pack"]
+  P --> A["Agent 后续行为"]
+  A --> O["真实任务结果<br/>少重复、少复发、更完整"]
+  O -. "新材料 / 纠正 / 反馈" .-> K
+  S -. "必须始终可回溯" .-> P
   </div></div>
-  <p><b>修正原则：</b>Claim 与 Relation 必须作为同一候选 diff 受审。Relation 的端点、类型兼容、方向策略、条件、Evidence、状态和端点发布状态都通过后，才能与 Claim 一起原子发布；任何端点被隔离，依赖它的 Relation 也不能进入默认图。</p>
-
-  <h3>2. Graph 的“双向邻接”与关系方向语义没有分层</h3>
-  <p>为检索建立双向邻接是合理的，但“可从两边找到”不等于“可从两边推理”。<code>A REQUIRES B</code> 允许从 B 反向找到依赖者 A，却不能被解释成 <code>B REQUIRES A</code>。Graph 输出必须同时保留原始方向和本次遍历方向，并为每种 RelationType 定义：是否对称、是否允许反向导航、是否允许作为答案推理依据。</p>
+  <p>任何压缩都会丢信息。问题不是“能否零损失”，而是：是否丢掉了对未来任务重要的信息；是否引入了原文没有的内容；丢失后能否发现并回退到原文；新证据进入后是否能局部修正而不污染无关知识。</p>
   <table>
-    <thead><tr><th>关系示例</th><th>正向推理</th><th>反向导航</th><th>反向推理</th></tr></thead>
+    <thead><tr><th>不变量</th><th>必须保证</th><th>对应指标</th><th>不能用什么替代</th></tr></thead>
     <tbody>
-      <tr><td>REQUIRES / DERIVED_FROM / SUPERSEDES</td><td>允许，需条件与证据</td><td>允许，用于找依赖者或历史</td><td>禁止</td></tr>
-      <tr><td>SUPPORTS</td><td>允许表达支持</td><td>允许找支持来源</td><td>不能自动变成“被支持者支持来源”</td></tr>
-      <tr><td>CONTRADICTS / EQUIVALENT_UNDER</td><td>通常对称，但条件必须保留</td><td>允许</td><td>按类型语义允许</td></tr>
-      <tr><td>RELATED_TO</td><td>不能支撑结论</td><td>仅允许扩展候选检索</td><td>禁止</td></tr>
+      <tr><td><b>真实性</b></td><td>每个可消费断言和强关系都有可解析来源</td><td>错误引用率、无证据发布率、审计精度</td><td>节点数量、模型置信度</td></tr>
+      <tr><td><b>语义保留</b></td><td>事实、条件、例外、指代、表格和推导链不被原子化破坏</td><td>Source→Claim 召回、条件保真、Quarantine 假阴性</td><td>eligible block 100% 命中</td></tr>
+      <tr><td><b>任务效用</b></td><td>有限 token 下提供更相关、更完整的任务上下文</td><td>同实际 token 的回答质量、hard failure、延迟</td><td>Context Pack 看起来结构化</td></tr>
+      <tr><td><b>可演化</b></td><td>纠正、冲突和新知识改变后续行为，同时不伤害无关知识</td><td>复发率、影响发现率、无关回归、局部更新范围</td><td>生成新版本或 Git commit</td></tr>
+      <tr><td><b>可恢复</b></td><td>失败不破坏 last healthy；能回到原文和历史状态</td><td>原子性、回滚、悬空引用、恢复时间</td><td>“文件还在”</td></tr>
     </tbody>
   </table>
-
-  <h3>3. taskMap 当前是结果摘要，不是 map-first 的选择机制</h3>
-  <div class="grid">
-    <div class="card warn"><h3>当前流程</h3><p>关键词种子 → Graph 扩展 → 预算裁剪 → Evidence → 生成 taskMap</p><p class="small">地图只能解释“已经选了什么”，不能帮助系统在全局主题、争议、最近变化中决定“应该选什么”。</p></div>
-    <div class="card good"><h3>定义要求</h3><p>任务意图 → 全局导航地图 → 候选模块/概念 → 有类型子图 → Evidence → Pack</p><p class="small">地图是低成本导航索引，参与种子生成与召回诊断，而不是回答后的装饰。</p></div>
-  </div>
-
-  <h3>4. 定义文档的“两状态轴”已经落后于架构语义</h3>
-  <p>Product Definition 把 <code>ASSERTED / INFERRED / DISPUTED / SUPERSEDED</code> 放进单一 <code>epistemicStatus</code>；当前架构正确地拆成 derivation、validity、lifecycle、publicationState 四轴。应以四轴为新合同，并同步所有 Relation schema、状态图、User Story 和 Benchmark 术语。否则测试报告会把“怎么来的、是否有争议、是否仍有效、是否发布”再次混成一项。</p>
-  <div class="schema">derivation: EXTRACTED | INFERRED | HUMAN_ASSERTED
-validity: SUPPORTED | DISPUTED | UNRESOLVED
-lifecycle: ACTIVE | SUPERSEDED
-publicationState: CANDIDATE | CANONICAL | QUARANTINED</div>
-  <p>四轴不应机械套在所有对象上：Claim 与 Relation 使用完整四轴；Concept 至少需要发布/生命周期与 merge 状态；WikiModule 是派生视图，需要发布/生命周期和版本；Source/SourceSpan 则以不可变来源状态为主。</p>
-
-  <h3>5. Canonical 被当成“能否看见”，却还没有定义“能否支撑推理”</h3>
-  <p>Canonical 不等于真理，这个方向正确；但 Graph 目前只按 Canonical + Active 过滤，可能把 UNRESOLVED 当作普通边或 Claim 使用。需要冻结消费矩阵：</p>
-  <table>
-    <thead><tr><th>组合</th><th>检索/展示</th><th>可否独立支撑结论</th><th>Pack 行为</th></tr></thead>
-    <tbody>
-      <tr><td>CANONICAL + ACTIVE + SUPPORTED</td><td>默认允许</td><td>允许，仍需 Evidence</td><td>正常使用</td></tr>
-      <tr><td>CANONICAL + ACTIVE + DISPUTED</td><td>必须允许</td><td>不能作为无争议单一结论</td><td>强制进入 conflictsAndConditions</td></tr>
-      <tr><td>CANONICAL + ACTIVE + UNRESOLVED</td><td>可用于导航和缺口</td><td>禁止</td><td>进入 knownGaps，不进入必要推理链</td></tr>
-      <tr><td>CANONICAL + SUPERSEDED</td><td>仅历史/asOf 查询</td><td>当前任务禁止</td><td>显式时间请求时使用</td></tr>
-      <tr><td>CANDIDATE / QUARANTINED</td><td>诊断路径可见</td><td>禁止</td><td>默认链完全隔离</td></tr>
-    </tbody>
-  </table>
-
-  <h3>6. 原子发布与稳定身份缺失，使“进化”无法被可靠描述</h3>
-  <p>同一批材料可能同时修改 Claim、Relation、Concept、Wiki 和索引。分别追加会产生中间不一致状态；没有稳定逻辑身份，重新编译也无法区分“同一 Claim 的新版本”“新 Claim”“旧 Claim 被取代”。测试前至少需要：</p>
-  <ul>
-    <li>候选快照：一次 run 的全部派生物和删除/取代意图；</li>
-    <li>稳定逻辑 ID + 不可变版本 ID；</li>
-    <li>整体 Lint 与回归后一次性发布；</li>
-    <li>knowledgeVersion 指向同一批 Claim/Relation/Wiki/索引；</li>
-    <li>失败时继续服务 lastHealthy，而不是部分新、部分旧。</li>
-  </ul>
-
-  <h3>7. “warning 即 Canonical”过于依赖未类型化语义</h3>
-  <p>Architecture Baseline 使用“issues 文本包含‘冲突’”决定 DISPUTED，其它 warning 自动 Canonical。条件遗漏、证据不足、错误引用都可能被模型以不同措辞表达，不能依赖字符串命中。Lint issue 必须有稳定 <code>issueCode</code>、<code>severity</code>、<code>affectedObject</code> 与 <code>recommendedState</code>；只有允许发布的 minor warning 才能自动晋级。</p>
+  <div class="callout success"><b>架构判断原则：</b>安全门禁有第一性原理依据；具体 Relation 类型、检索算法、Wiki 结构和 Board 模式没有天然正确性，必须通过消融与 Held-out 结果赢得存在权。</div>
 </section>
 
-<section id="benchmark">
-  <div class="kicker">05 / Benchmark Alignment</div>
-  <h2>现有 Benchmark 的科学方向正确，但决策树把“产品价值”错误绑定在 E 组</h2>
-  <p>Product Definition 已明确：Typed Graph 是否进入在线问答主链由 E vs C 决定；即使在线无增益，Graph 仍可服务 Lint、依赖与增量重编译。因此产品价值不能只定义成 E vs B。若 C 明显优于 B、E 因 Graph 噪声低于 C，产品的 Wiki + Evidence + Compiler 价值依然成立，正确结论应是“保留产品、Graph 在线降级”，而不是直接回退文件夹。</p>
-  <div class="diagram"><div class="mermaid">
-flowchart TD
-  S{"硬失败是否恶化"} -->|"是"| STOP["Stop：先修治理"]
-  S -->|"否"| W{"C Wiki-only 是否优于 B"}
-  W -->|"否"| P["Pivot：强产品假设不成立"]
-  W -->|"是"| G{"E Typed Graph 是否优于 C"}
-  G -->|"否"| N["Narrow：在线用 C；Graph 只做离线依赖/Lint"]
-  G -->|"是"| E["在线候选选择 E"]
-  N --> V{"选定方案的进化测试是否通过"}
-  E --> V
-  V -->|"否"| R["Pivot：修正状态与影响传播"]
-  V -->|"是"| GO["Go：进入 30 天真实 AI 学习实验"]
-  </div></div>
-
-  <h3>A–E 当前可构造性</h3>
+<section id="heritage">
+  <div class="kicker">03 / LiteWikiagent Heritage</div>
+  <h2>LiteWikiagent 是经验库，不是要复制的旧架构</h2>
+  <p>旧项目真实解决过“如何让 Agent 阅读和探索知识”的问题，也真实暴露了“生成式 Wiki 如何把推断伪装成知识”的问题。后续施工必须同时继承它的产品洞察和吸收它的工程教训。</p>
+  <div class="grid three">
+    <div class="card good">
+      <div class="label">应继承</div>
+      <h3>面向 Agent 的语义组织</h3>
+      <ul>
+        <li>围绕问题与概念组织可读模块；</li>
+        <li>显式表达 Interpretation、Use For、Limits；</li>
+        <li>concept/method/case/question/insight/counter 等不同知识角色；</li>
+        <li>ask/trace/expand/compare/challenge/inspire 等任务视图；</li>
+        <li>文件、图和向量的混合检索经验；</li>
+        <li>Loader、daemon 和持续摄入的产品体验。</li>
+      </ul>
+    </div>
+    <div class="card danger">
+      <div class="label">必须拒绝</div>
+      <h3>写入先于可信边界</h3>
+      <ul>
+        <li>无证据时回退到虚假的固定引用；</li>
+        <li>生成 Interpretation 后再尝试审计；</li>
+        <li>审计异常静默、文件仍已写入；</li>
+        <li>旧节点先删除、新快照未原子完成；</li>
+        <li>关系只凭同主题或模型置信度发布；</li>
+        <li>把人类可读页面直接当作知识权威。</li>
+      </ul>
+    </div>
+    <div class="card info">
+      <div class="label">应重建</div>
+      <h3>在 Canonical 之上的 Wiki</h3>
+      <ul>
+        <li>WikiModule 只能引用 Canonical Claim；</li>
+        <li>解释文本中的每个断言可追溯 Claim；</li>
+        <li>稳定地址与内容版本分离；</li>
+        <li>Claim 失效时模块自动失效或重建；</li>
+        <li>Board 模式成为同一知识状态的运行时视图；</li>
+        <li>探索性推断必须与来源事实分层展示。</li>
+      </ul>
+    </div>
+  </div>
   <table>
-    <thead><tr><th>组</th><th>定义</th><th>当前是否能忠实构造</th><th>原因</th></tr></thead>
+    <thead><tr><th>旧经验</th><th>当前系统</th><th>下一代正确组合</th></tr></thead>
     <tbody>
-      <tr><td>A</td><td>全量原文</td><td><span class="status s-ready">基本可以</span></td><td>20 篇 Markdown 已存在；需锁定回答模型与完整上下文实际 token</td></tr>
-      <tr><td>B</td><td>文件夹 + Agent 搜索</td><td><span class="status s-partial">尚需基线检索器</span></td><td>当前 searchClaims 搜索的是编译后 Claim，不等同于原文文件搜索</td></tr>
-      <tr><td>C</td><td>Wiki-only + Evidence</td><td><span class="status s-block">不能</span></td><td>WikiModule 尚未生成</td></tr>
-      <tr><td>D</td><td>Wiki + 无类型链接 + Evidence</td><td><span class="status s-block">不能</span></td><td>Wiki 缺失；还需从同一边集确定性擦除类型，避免另建一套系统</td></tr>
-      <tr><td>E</td><td>Wiki + Typed Graph + Evidence</td><td><span class="status s-block">不能</span></td><td>Wiki、跨材料 Relation、Concept 对齐与 Relation 发布链均未闭环</td></tr>
+      <tr><td>Wiki 页面连贯、适合阅读，但容易把推断写成事实</td><td>Claim 可审计，但阅读时碎片化</td><td>Canonical Claim 是权威；WikiModule 是可重建的语义视图</td></tr>
+      <tr><td>六种 Board 提供丰富任务脚手架</td><td>单一 Context Pack 更简单可控</td><td>先冻结统一 Pack 合同，再把 Board 作为可消融的选择策略</td></tr>
+      <tr><td>混合检索召回强，但失败可静默降级</td><td>词法 Seed 可解释，但召回仍有限</td><td>统一候选日志下比较 lexical/BM25/vector/graph，不把任一路写死</td></tr>
+      <tr><td>PDF/TeX 与 watcher 体验较完整</td><td>只实现 Markdown，Loader 已解耦</td><td>产品价值成立后复用旧 Loader 经验接入，不把格式逻辑塞进 Compiler</td></tr>
     </tbody>
   </table>
+  <div class="callout warning"><b>历史经验使用规则：</b>旧项目可以提供需求、反例、测试案例和实现思路；不能直接复制其未经当前证据合同验证的节点、关系、审计分数或发布逻辑。</div>
+</section>
 
-  <h3>Benchmark v1.1 必须增加的修正</h3>
-  <ol>
-    <li><b>把当前 80 题分层：</b>公开 Dev/Pilot 与最终评估分开。当前题目已完整写入文档并参与架构设计，不应再全部称为 held-out；主报告必须单独报告未用于调参的隐藏子集。</li>
-    <li><b>Pilot 不与主结果混算：</b>用于定预算和工具上限的 20 题单独报告；剩余题或新增隐藏题承担确认性结论。</li>
-    <li><b>产品门禁改为 C vs B，再由 E vs C 决定 Graph 在线角色：</b>最终再用“被选中的 WGE 方案”与 B 做产品结论。</li>
-    <li><b>增加 Wiki 指标：</b>证据忠实度、长期问题覆盖、冲突保留、模块边界一致性、新材料更新旧模块比例；否则 C vs B 的成因无法解释。</li>
-    <li><b>加入编译漏失观测：</b>命题数量、quote 映射失败率、被跳过对象及原因、Claim/Relation 各状态数量。任何跳过不得静默。</li>
-    <li><b>严格 token 预算：</b>最终 Pack 应用模型 tokenizer 或 API usage 做硬校验，Evidence、冲突和选择日志都计入预算；超出时按预注册优先级裁剪并记录。</li>
-    <li><b>每组使用同一知识快照：</b>C/D/E 应由同一编译产物通过运行时开关消融，不能各自重新编译出不同 Wiki。</li>
-    <li><b>真实 30 天试验比较 B 与“实验选出的 WGE 运行时”：</b>不能预先固定 E。</li>
+<section id="reality">
+  <div class="kicker">04 / Current Reality</div>
+  <h2>当前已经证明什么，信息又在哪里受损</h2>
+  <div class="grid three">
+    <div class="card"><div class="label">命题映射</div><div class="metric">471 / 478</div><p>约 98.5%；但这是命题映射，不是全文事实召回。</p></div>
+    <div class="card"><div class="label">Claim 发布</div><div class="metric">375 / 401</div><p>375 Canonical、26 Quarantine；Claim 默认保留约 93.5%。</p></div>
+    <div class="card"><div class="label">Relation 发布</div><div class="metric">99 / 460</div><p>当前快照口径仅约 21.5% 候选边默认可消费，关系召回风险显著。</p></div>
+  </div>
+  <table>
+    <thead><tr><th>层</th><th>已验证能力</th><th>当前损伤或未知</th><th>裁决</th></tr></thead>
+    <tbody>
+      <tr><td>Source / Span</td><td>不可变、精确 offset、可解析回链</td><td>Markdown 外格式未实现</td><td><span class="status s-ready">地基可用</span></td></tr>
+      <tr><td>Proposition / Claim</td><td>有界提取、覆盖修复、五维审计、物理隔离</td><td>最小 exactQuote 会切断前文指代、表头和因果上下文；事实级召回未人工标定</td><td><span class="status s-partial">需保真修复</span></td></tr>
+      <tr><td>Relation / Graph</td><td>边级审计、双端证据、条件状态、版本门禁、跨材料链路</td><td>大量候选被隔离；43 条演化候选仍需人工拒绝 20 条；假阴性未知</td><td><span class="status s-block">不可无人值守</span></td></tr>
+      <tr><td>WikiModule</td><td>类型、读取、消费与失效隔离存在；主库有 2 个手工模块</td><td>自动生成、增量重建、质量门禁和受控演化库模块均未完成</td><td><span class="status s-block">产品 P0</span></td></tr>
+      <tr><td>Context Pack</td><td>作用域、Seed、Graph 扩展、Evidence 回填、预算与选择日志</td><td>多领域答案仍漏 unaffected 事实和 affected 条件</td><td><span class="status s-partial">压缩有效，质量未胜</span></td></tr>
+      <tr><td>Evolution</td><td>SUPERSEDES/CONTRADICTS 审批事务、隔离、快照和回滚</td><td>真实用户纠正、多个更新周期和 Wiki 重建尚未验证</td><td><span class="status s-partial">机制通过，产品未过</span></td></tr>
+    </tbody>
+  </table>
+  <div class="callout warning"><b>信息损伤实例：</b>原文“微分算子是无界的——这就是为什么微分方程比代数方程难得多”被切成只引用后半句的 Claim，严格审计随后正确地拒绝了这个不完整证据包。问题不在审计太严，而在证据单元先破坏了语境。下一步必须允许“最小主引用 + 必要上下文窗口/结构上下文”，而不是降低门禁。</div>
+  <p>多领域 15 题回答结果为 B=8.000、P=7.800、E-min=7.733；B 平均上下文约 6448 tokens，P/E 约 1416。可以说编译投影显示压缩潜力，不能说回答质量已经优于文件检索。E-min 与 P 的上下文相同，不能评价 Wiki 价值。</p>
+</section>
+
+<section id="risks">
+  <div class="kicker">05 / Direction &amp; Reward Risks</div>
+  <h2>没有发现直接作弊，但当前结果仍是开发集收敛</h2>
+  <table>
+    <thead><tr><th>风险</th><th>当前证据</th><th>等级</th><th>约束</th></tr></thead>
+    <tbody>
+      <tr><td>题号、领域词或 Gold 硬编码</td><td>生产检索未发现题号和材料专用规则；Gold 不进入回答 Prompt</td><td><span class="status s-ready">低</span></td><td>继续做静态泄漏扫描</td></tr>
+      <tr><td>同一题集反复调试</td><td>16 题先暴露 Seed 失败，修改检索后仍用同一题报告最终结果</td><td><span class="status s-block">高</span></td><td>现有题永久转 Dev；新 Held-out 不向施工方开放</td></tr>
+      <tr><td>同模型闭环</td><td>Compiler、Answer、Judge 均使用同一模型</td><td><span class="status s-block">高</span></td><td>独立 Judge + 分层人工抽检</td></tr>
+      <tr><td>合成 ontology 偏置</td><td>24 篇材料按日期、权威、范围、替代目标显式构造</td><td><span class="status s-block">高</span></td><td>加入真实、模糊、风格不统一的材料</td></tr>
+      <tr><td>用隔离率伪装质量</td><td>Relation 默认保留约 21.5%，但 Quarantine 假阴性未测</td><td><span class="status s-block">高</span></td><td>同时报告 precision 与 recall</td></tr>
+      <tr><td>人工审批掩盖自动精度</td><td>43 条演化候选中批准 23、拒绝 20</td><td><span class="status s-block">高</span></td><td>分别报告机器候选、人审后状态和无人值守资格</td></tr>
+      <tr><td>预算不对等</td><td>B 与 P/E 上限相同，但实际上下文相差约 4.55 倍</td><td><span class="status s-partial">中高</span></td><td>固定实际 token 做质量—成本前沿</td></tr>
+    </tbody>
+  </table>
+  <div class="callout success"><b>诚实性证据：</b>当前报告保留了 P 的早期失败、B 在多领域回答中获胜、E-min 与 P 没有处理差异、Relation 大量人工拒绝等不利结果。因此问题不是主观欺骗，而是实验设计仍不足以产生独立泛化证据。</div>
+</section>
+
+<section id="roadmap">
+  <div class="kicker">06 / Global Product Roadmap</div>
+  <h2>全局规划：从可信内核，到语义产品，再到长期自进化</h2>
+  <div class="diagram"><div class="mermaid">
+flowchart TD
+  P0["阶段 0 已完成<br/>可信知识状态内核"] --> P1["阶段 1<br/>信息保真与假阴性治理"]
+  P1 --> P2["阶段 2<br/>自动 WikiModule 最小闭环"]
+  P2 --> P3["阶段 3<br/>同资产检索 / Wiki / Graph 消融"]
+  P3 --> P4["阶段 4<br/>独立多领域 Held-out"]
+  P4 --> P5["阶段 5<br/>真实 30 天长期使用"]
+  P5 --> D{"是否减少重复解释、旧错复发<br/>并改善质量—成本前沿？"}
+  D -- "是" --> GO["产品可用<br/>扩 Loader、daemon 与生态接入"]
+  D -- "否" --> NARROW["收缩为轻量文件组织 / Agent Skill<br/>不继续堆 Graph 复杂度"]
+  </div></div>
+  <table>
+    <thead><tr><th>阶段</th><th>核心问题</th><th>主要产物</th><th>退出条件</th></tr></thead>
+    <tbody>
+      <tr><td>0 · 可信内核</td><td>错误能否被隔离、版本能否安全演化？</td><td>Evidence、双门禁、原子发布、Evolution、Snapshot</td><td>当前基本完成；强 Relation 仍保留人工审批</td></tr>
+      <tr><td>1 · 语义保真</td><td>安全投影是否误杀真实信息？</td><td>事实级 Gold、上下文证据束、Quarantine 抽检、漏失追踪</td><td>精度与召回同时达标，不靠降低门禁</td></tr>
+      <tr><td>2 · Wiki 闭环</td><td>能否把碎片组织成稳定、可更新的完整语义？</td><td>自动生成、审计、失效、重建、稳定地址</td><td>新材料/纠正能更新同一模块，且每句可回溯 Claim</td></tr>
+      <tr><td>3 · 组件消融</td><td>Wiki 和 Graph 各自贡献什么？</td><td>B / Claim-only / Wiki-only / Typed Graph 同快照实验</td><td>在线组件用增益而非理论决定</td></tr>
+      <tr><td>4 · 独立泛化</td><td>机制能否跨领域、跨文体工作？</td><td>隐藏题集、独立 Judge、人工锚点、质量—成本曲线</td><td>Held-out 达标且无领域特判</td></tr>
+      <tr><td>5 · 长期产品</td><td>同一个 Agent 是否真的随使用改善？</td><td>30 天任务日志、纠正周期、复发与重复解释统计</td><td>达到产品可用门槛</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="next">
+  <div class="kicker">07 / Confirmed Next Work</div>
+  <h2>接下来正式做三件事，按依赖顺序推进</h2>
+
+  <h3>工作包 A · 建立信息守恒审计</h3>
+  <p><b>目的：</b>知道编译到底丢了什么，而不是只知道多少对象通过门禁。</p>
+  <ol class="checklist">
+    <li>从数学、软件/平台、产品政策、研究记录中各选真实材料，人工标注事实、条件、跨句指代、表格、公式/代码和关系；现有五篇只保留为 Dev。</li>
+    <li>建立 <code>Source fact → Proposition → Claim → Canonical/Quarantine → Retrieval</code> 全链路账本。</li>
+    <li>把证据合同从“单个最小 exactQuote”扩展为“主引用 + 必要上下文”，上下文必须仍有精确 Span，不允许自由补写。</li>
+    <li>分层抽检 Claim 和 Relation Quarantine，统计 false negative；不能再只统计通过率。</li>
+    <li>分别报告正文、表格、公式、代码、标题限定和跨句因果的表现。</li>
+  </ol>
+  <div class="callout"><b>建议首轮规模：</b>4 个领域 × 5 篇文档；每域人工冻结 40 个事实单元、15 条关系和 10 个条件/语境案例。规模不追求大，先让召回指标可信。</div>
+
+  <h3>工作包 B · 自动 WikiModule 最小闭环</h3>
+  <p><b>目的：</b>恢复 LiteWikiagent 的语义组织优势，同时不恢复其“解释即权威”的风险。</p>
+  <ol class="checklist">
+    <li>从稳定问题或高价值 Concept 生成模块候选，不按“一篇文章一个摘要”生成。</li>
+    <li>模块包含 coreQuestion、currentUnderstanding、conditions、disputes、claimRefs、conceptRefs、dependencies 和内容版本。</li>
+    <li>模块正文每个陈述必须能映射到一个或多个 Canonical Claim；模型综合必须显式标记为 synthesis。</li>
+    <li>Claim 进入 SUPERSEDED/DISPUTED/QUARANTINED 后，依赖模块自动失效；事务完成后局部重建。</li>
+    <li>同一稳定地址在 T0→T3 中持续更新，而不是不断创建新页面。</li>
+    <li>建立 Wiki 忠实度、覆盖、边界一致性和更新正确性门禁。</li>
+  </ol>
+
+  <h3>工作包 C · 构建独立产品实验</h3>
+  <p><b>目的：</b>第一次产生不被当前开发过程污染的产品证据。</p>
+  <ol class="checklist">
+    <li>把五篇数学、16 题和 24 篇演化集锁定为 Dev/Regression，禁止继续作为主结论。</li>
+    <li>由产品方或独立生成方准备 Held-out；施工方只获得 schema 和训练示例，不获得题目与 Gold。</li>
+    <li>同一知识快照派生四组：原文检索 B、Claim-only P0、Wiki-only W、Wiki+Typed Graph E。</li>
+    <li>在 1.5k / 3k / 6k / 12k 实际上下文 token 档位比较质量、hard failure、延迟和成本。</li>
+    <li>回答 Judge 与编译模型分离；至少 20% 分层样本由人类复核。</li>
+    <li>实验前预注册死亡标准；看完 Held-out 后修改系统，该集合立即转为 Dev。</li>
   </ol>
 </section>
 
-<section id="gates">
-  <div class="kicker">06 / Test Entry Gates</div>
-  <h2>把“测试”拆成五道门，不再用一次大实验掩盖缺口</h2>
-  <div class="diagram"><div class="mermaid">
-flowchart TD
-  G0["Gate 0：语义合同冻结"] --> G1["Gate 1：组件与隔离测试"]
-  G1 --> G2["Gate 2：5 篇最小产品切片"]
-  G2 --> G3["Gate 3：20 篇 A–E 静态实验"]
-  G3 --> G4["Gate 4：T0–T4 进化实验"]
-  G4 --> G5["Gate 5：30 天真实 AI 学习"]
-  </div></div>
-
-  <h3>Gate 0 · 语义合同冻结</h3>
-  <ul class="checklist">
-    <li>四状态轴写回 Product Definition，所有文档不再出现旧联合轴；</li>
-    <li>冻结 Claim/Relation 的消费矩阵与 Lint issueCode；</li>
-    <li>冻结 RelationType 的方向、对称性、导航与推理资格；</li>
-    <li>确认用户纠正的权威边界；</li>
-    <li>定义稳定逻辑 ID、版本 ID、knowledgeVersion 与原子发布边界。</li>
-  </ul>
-
-  <h3>Gate 1 · 当前即可开始的组件测试</h3>
+<section id="testing">
+  <div class="kicker">08 / Scientific Testing Contract</div>
+  <h2>后续所有测试必须回答“为什么更好”，而不是只报告分数</h2>
   <table>
-    <thead><tr><th>测试</th><th>必须证明</th><th>失败时说明</th></tr></thead>
+    <thead><tr><th>测试层</th><th>主指标</th><th>反指标</th><th>必须保存</th></tr></thead>
     <tbody>
-      <tr><td>Parser / SourceSpan</td><td>字符位置、中文、Markdown、表格、公式、重复句与换行保持可定位</td><td>Evidence 地基不可信，后续全部停止</td></tr>
-      <tr><td>Hash 幂等</td><td>同内容不同文件名不重复；失败 run 可明确重新编译</td><td>知识会重复或无法恢复</td></tr>
-      <tr><td>LLM Schema</td><td>坏 JSON、坏枚举、坏引用被拒绝且有诊断</td><td>类型只存在于编译期</td></tr>
-      <tr><td>Claim Lint</td><td>无证据、条件遗漏、证据不支持被正确分流</td><td>Canonical 会放大错误</td></tr>
-      <tr><td>Relation 晋级</td><td>至少一条合格边进入 Canonical；坏边进入 Quarantine；依赖坏端点的边不进图</td><td>Graph 只是空壳或污染源</td></tr>
-      <tr><td>隔离路径</td><td>Quarantine 在搜索评分、Graph 扩展和 Pack 组装之前即被排除</td><td>“晚过滤”仍会污染选择</td></tr>
+      <tr><td>编译保真</td><td>事实召回、Claim precision、条件保真</td><td>Quarantine 假阴性、证据上下文缺失</td><td>原文、Gold、候选、审计版本、原因码</td></tr>
+      <tr><td>关系质量</td><td>强边 precision/recall、方向、条件</td><td>弱关联冒充推理、有效边误杀</td><td>候选对、召回来源、审计、人审决定</td></tr>
+      <tr><td>Wiki 质量</td><td>Claim 覆盖、连贯性、稳定地址更新正确性</td><td>无支撑综合、过期模块、模块重复</td><td>模块版本、claimRefs、依赖、失效原因</td></tr>
+      <tr><td>回答效果</td><td>完整性、条件、引用、可回答性</td><td>hard failure、旧错复发、无关退化</td><td>实际上下文、token、答案、盲化键、Judge 版本</td></tr>
+      <tr><td>长期演化</td><td>影响发现率、纠正成功率、重复解释下降</td><td>过度重编、无关知识回退、状态漂移</td><td>T0–Tn 快照、用户纠正、后续任务结果</td></tr>
     </tbody>
   </table>
-
-  <h3>Gate 2 · 5 篇最小产品切片</h3>
-  <p>不要直接冲 20 篇。先用 5 篇构造一个必须同时出现以下对象的可否证闭环：</p>
-  <ul>
-    <li>至少 2 个按长期问题组织、会被新材料更新的 WikiModule；</li>
-    <li>至少 1 个跨来源 Concept 合并案例与 1 个同名异义分叉案例；</li>
-    <li>至少 3 条跨材料关系，其中含一条有条件边、一条冲突边；</li>
-    <li>Context Pack 真正按 Map → Subgraph → Wiki → Evidence 选择；</li>
-    <li>B/C/E 可由同一资产和同一回答壳切换；</li>
-    <li>12–20 道 Dev 题包含单跳、多跳、条件、无答案与一次用户纠正；</li>
-    <li>所有 run 保存实际输入、被丢弃项、知识版本、模型与 prompt hash。</li>
-  </ul>
-  <div class="callout success"><b>Gate 2 的目的不是宣布产品成功，</b>而是确认测试对象已经具有产品定义的最小形状。若 C 仍不能超过 B，或 E 只增加噪声，就应在扩到 20 篇前调整假设。</div>
-
-  <h3>Gate 3–5 · 只有前一门通过才进入</h3>
-  <ul>
-    <li><b>Gate 3：</b>20 篇静态 A–E；冻结确认性题集与运行配置，输出盲评和错误归因。</li>
-    <li><b>Gate 4：</b>T0–T4 纠正、影响传播、局部重编译、lastHealthy、回归与过度重编译。</li>
-    <li><b>Gate 5：</b>30 天真实 AI 行业与技术学习，验证重复解释、查证成本、跨文章遗漏和纠正复发。</li>
-  </ul>
+  <div class="schema">禁止的“成功”口径
+1. eligible blocks = 100%  ⇒  不等于事实召回 100%
+2. Quarantine 很多         ⇒  不等于 precision 很高
+3. Relation 端点有效       ⇒  不等于边语义正确
+4. COMPLETED               ⇒  不等于语义稳定
+5. P 使用 token 更少       ⇒  不等于产品价值成立
+6. 模型盲评高分            ⇒  不等于人工金标准
+7. 合成多领域              ⇒  不等于真实领域泛化</div>
 </section>
 
-<section id="documents">
-  <div class="kicker">07 / Source of Truth</div>
-  <h2>四份文档需要升版，但不能让实现反向定义目标</h2>
+<section id="usable">
+  <div class="kicker">09 / Definition of Usable</div>
+  <h2>产品到什么程度才可以称为“可用”</h2>
+  <p>“可用”不是一个布尔词。必须区分工程可用、受控 Pilot 可用和真实产品可用。当前系统处于 L1 与 L2 之间：安全内核可用，但 Agent 产品尚不可用。</p>
   <table>
-    <thead><tr><th>文档</th><th>必须修改</th><th>保持不变</th></tr></thead>
+    <thead><tr><th>级别</th><th>定义</th><th>硬门槛</th><th>当前状态</th></tr></thead>
     <tbody>
-      <tr><td>Product Definition v1.1</td><td>两轴改四轴；对象适用状态；Relation 方向策略；Canonical 消费矩阵；Map-first 升为运行时 P0；原子知识版本</td><td>Agent 行为改善、W/G/E 分工、自治写入、复杂度需证明</td></tr>
-      <tr><td>User Stories v1.1</td><td>US-03 扩展到 Relation/Wiki 门禁；US-04 明确地图参与选择；US-08 区分事实纠正与用户偏好；US-12 明确 lastHealthy 原子快照</td><td>用户不维护、冲突诚实、纠正不复发、可追溯</td></tr>
-      <tr><td>Benchmark v1.1</td><td>Dev/确认集分离；C vs B 先于 E vs C；Wiki 指标；真实 token；同产物消融；选定方案进入 30 天试验</td><td>A–E 分层、同模型同预算、硬失败、盲评、T0–T4</td></tr>
-      <tr><td>Architecture Baseline v1.1</td><td>不再写“已完全对齐”；补 Relation 晋级、对象门禁、map-first、版本边界与各 Gate 状态</td><td>忠实记录当前实现事实，不把未实现写成已完成</td></tr>
+      <tr><td><b>L1 · 工程内核可用</b></td><td>开发者可以安全摄入、编译、隔离、发布、查询和回滚</td><td>悬空引用=0；失败保留 last healthy；状态和 run 可审计；默认消费 fail-closed</td><td><span class="status s-ready">基本达到</span></td></tr>
+      <tr><td><b>L2 · 受控知识库可用</b></td><td>在多个领域中，系统能保留事实与条件，并生成可更新 Wiki</td><td>独立 Gold 上 Claim precision ≥95%、事实 recall ≥90%、条件保真 ≥90%；强 Relation precision ≥90%、recall ≥70%；Quarantine 假阴性有界；Wiki 更新回归通过</td><td><span class="status s-block">未达到</span></td></tr>
+      <tr><td><b>L3 · Agent Pilot 可用</b></td><td>在相同实际 token 和独立 Held-out 上，编译知识提供可重复的质量或成本优势</td><td>质量不劣于强文件检索超过 2%；hard failure 不增加；在不降质时上下文成本下降 ≥40%，或同成本回答质量显著提升；纠正后复发率 ≤5%</td><td><span class="status s-block">未达到</span></td></tr>
+      <tr><td><b>L4 · 产品可用</b></td><td>真实用户/Agent 在持续使用中明显变得更省解释、更少复发、更完整</td><td>至少 30 天、5+领域、100+真实任务、2+纠正周期；重复解释下降 ≥30%；旧错复发 ≤5%；跨材料完整性优于基线；可恢复且维护成本可接受</td><td><span class="status s-block">尚未验证</span></td></tr>
     </tbody>
   </table>
-  <div class="diagram"><div class="mermaid">
-flowchart TD
-  P["Product Definition：为什么、必须遵守什么"] --> U["User Stories：用户必须感受到什么"]
-  P --> K["Knowledge Contract：状态与对象语义"]
-  U --> B["Benchmark：怎样证明"]
-  K --> A["Architecture Baseline：当前做到哪里"]
-  B --> A
-  A --> D{"发现定义矛盾？"}
-  D -->|"实现偏离目标"| F["修架构"]
-  D -->|"实现揭示定义语义错误"| V["显式升版文档"]
-  </div></div>
-  <p>当前四轴状态属于第二种：架构揭示并修正了原定义的语义错误，应回写定义文档；Relation 发布断点、map-after-retrieval、Wiki 缺失则属于第一种，不能通过降低产品目标来“对齐”。</p>
+  <div class="callout warning"><b>这些阈值是 v2.0 的产品验收基线。</b>它们可以在首次预注册前基于成本和样本量调整；一旦 Held-out 开始运行，不能根据结果下调门槛。L2 是内部知识库可试用线，L3 是小范围 Agent Pilot 线，只有 L4 才能对外称“持续自进化知识产品可用”。</div>
+
+  <h3>立即停止或收缩的条件</h3>
+  <ul>
+    <li>WikiModule 完成后仍无法在同预算下接近强文件检索，且没有显著 token/延迟收益；</li>
+    <li>严格门禁导致事实或关系 recall 长期低于门槛，必须靠人工逐条补救；</li>
+    <li>纠正后旧错误仍复发，或无关知识随着演化持续退化；</li>
+    <li>Graph 在 Held-out 中不增益且持续引入 hard failure——此时 Graph 退回离线影响分析，不进入在线回答主链；</li>
+    <li>文件夹 + Agent 在相同预算和长期任务上稳定达到同等效果——此时产品应收缩为轻量文件组织或 Agent Skill。</li>
+  </ul>
 </section>
 
-<section id="decisions">
-  <div class="kicker">08 / Decisions to Align</div>
-  <h2>只剩两个需要产品层确认的问题</h2>
-  <p>其它阻断项都可以直接从既有目标推出，不需要你选择字段名或技术实现。下面两项会真实改变用户体验和系统权力边界，需要明确冻结。</p>
-
-  <div class="decision">
-    <h3>决策 A · 用户纠正是否等于事实证据？</h3>
-    <p class="rec">推荐：双通道权威。</p>
-    <ul>
-      <li><b>事实性纠正：</b>保存为 HUMAN_ASSERTED；立即让旧结论进入 DISPUTED 或停止无条件输出，但新断言在获得来源前保持 UNRESOLVED，不能独立成为事实依据。</li>
-      <li><b>个人偏好、项目决策、本人任务结果：</b>用户是第一权威，可作为 SUPPORTED 的个人域 Evidence；仍保留时间、范围与来源类型。</li>
-    </ul>
-    <p>这比“用户说什么都是真理”更安全，也比“用户纠正只触发搜索、长期状态不变”更符合产品目标。</p>
-  </div>
-
-  <div class="decision">
-    <h3>决策 B · taskMap 是检索前地图，还是检索后摘要？</h3>
-    <p class="rec">推荐：检索前地图，作为 P0。</p>
-    <p>它必须用低成本方式提供候选主题、稳定问题、已知争议、最近变化与关键概念，参与 Wiki/Graph 的种子选择；Context Pack 最终仍可携带裁剪后的 taskMap。如果只做检索后摘要，应改名 selectionSummary，并删除“先地图后子图”的产品承诺。</p>
-  </div>
-
-  <div class="callout warning"><b>建议冻结结论：</b>选择“决策 A 双通道权威 + 决策 B 检索前地图”。在确认前，可以运行 Gate 1 组件测试；不应冻结 Product Definition v1.1，也不应进入 Gate 2 之后的实验。</div>
-</section>
-
-<section>
-  <div class="kicker">09 / Final Alignment Statement</div>
-  <h2>测试前的统一口径</h2>
-  <div class="callout success"><b>WGEMemory4LLM 不是 Claim 抽取器、Graph RAG 或自动 Wiki 中任意一个单点。</b>它要证明的是：系统能把新材料和纠正编译为可追溯、可版本化、可局部修正的知识状态，并通过任务化 Context Pack 改善同一个 Agent 的后续行为。测试必须先确认对象、状态和信息流使这种行为“有可能发生”，再比较它是否真的比文件夹搜索更好。</div>
-  <p class="source">审计依据：WGEMemory4LLM-Product-Definition.html、WGEMemory4LLM-User-Stories.html、WGEMemory4LLM-Benchmark.html、architecture-baseline.html。未读取代码库；所有实现判断均来自 Architecture Baseline 的明确描述或由其状态流直接推导。</p>
+<section id="statement">
+  <div class="kicker">10 / Final Alignment Statement</div>
+  <h2>后续施工与审查的统一口径</h2>
+  <div class="callout success"><b>WGEMemory4LLM 的最终产品不是一个更严格的 Claim 抽取器。</b>它应当把原始材料安全地编译为可演化知识状态，再把这些碎片组织成稳定、可读、可更新的 Wiki 语义，并在任务时以更低成本改善同一个 Agent 的后续行为。Evidence 决定它可信，Wiki 决定它可理解，Graph 决定它可传播，Evolution 决定它会成长，真实长期结果决定它是否值得存在。</div>
+  <ol>
+    <li><b>从 LiteWikiagent 学产品表达，不能继承其 fail-open 权威模型。</b></li>
+    <li><b>当前安全内核继续保留，但新的优化目标改为语义召回、Wiki 更新和 Agent 长期效用。</b></li>
+    <li><b>现有测试集只做回归；主结论必须来自独立 Held-out 与真实长期使用。</b></li>
+    <li><b>下一施工顺序固定为：信息守恒审计 → 自动 WikiModule → 同资产消融 → Held-out → 30 天真实 Pilot。</b></li>
+    <li><b>达到 L3 才允许小范围试用，达到 L4 才能称为产品可用。</b></li>
+  </ol>
+  <p class="source">事实依据：当前代码知识图谱、architecture-baseline.html v1.9、WGEMemory4LLM-Product-Definition.html、五篇数学 Pilot、三领域 24 篇演化实验、当前 publications/quarantine，以及 /Users/mixi/Desktop/LiteWikiagent/lite-llmwiki 的实际编译、Wiki、QueryBoard 与审计实现。本文区分 implemented、unit-tested、real-data-validated、model-judged 与 human-reviewed，不以其中一种冒充另一种。</p>
 </section>
 
 </main>
-<footer>WGEMemory4LLM Pre-test Product Alignment Audit · 2026-07-22 · v0.9（待两项产品决策确认后升为 v1.0）</footer>
+<footer>WGEMemory4LLM Product Alignment &amp; Execution Audit · 2026-07-27 · v2.0</footer>
 </div>
 </body>
 </html>

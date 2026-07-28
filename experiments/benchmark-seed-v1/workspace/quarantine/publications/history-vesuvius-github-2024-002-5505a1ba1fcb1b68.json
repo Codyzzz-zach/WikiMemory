@@ -1,0 +1,180 @@
+{
+  "schemaVersion": "v1",
+  "sourceId": "source:history-vesuvius-github-2024-002-5505a1ba1fcb1b68",
+  "runId": "2a97cf0c-d35d-4c98-b014-9325cd97c27c",
+  "publishedAt": "2026-07-27T09:56:07.603Z",
+  "claims": [],
+  "relations": [
+    {
+      "relation": {
+        "id": "rel:5505a1ba1fcb1b68-0e71d203bb3c2708",
+        "from": "claim:5505a1ba1fcb1b68-c84e1d5fe016cb20",
+        "to": "claim:5505a1ba1fcb1b68-a2289f49fcb0ff64",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-0#chars-0-46",
+          "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-1#chars-48-106"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:55:59.858Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:5505a1ba1fcb1b68-0e71d203bb3c2708",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:history-vesuvius-github-2024-002#block-0] “# ScrollPrize/vesuvius archived Python library”; [1:history-vesuvius-github-2024-002#block-1] “This repository was archived by the owner on Nov 21, 2024.”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:5505a1ba1fcb1b68-0e71d203bb3c2708",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:history-vesuvius-github-2024-002#block-0] “# ScrollPrize/vesuvius archived Python library”; [1:history-vesuvius-github-2024-002#block-1] “This repository was archived by the owner on Nov 21, 2024.”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:5505a1ba1fcb1b68-1647342bd142567a",
+        "from": "claim:5505a1ba1fcb1b68-825b50a16ede0106",
+        "to": "claim:5505a1ba1fcb1b68-c84e1d5fe016cb20",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-0#chars-0-46",
+          "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-2#chars-135-235"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:55:59.858Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:5505a1ba1fcb1b68-1647342bd142567a",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:history-vesuvius-github-2024-002#block-0] “# ScrollPrize/vesuvius archived Python library”; [1:history-vesuvius-github-2024-002#block-2] “Now maintained at https://github.com/ScrollPrize/villa/tree/main/vesuvius (this ”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:5505a1ba1fcb1b68-1647342bd142567a",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:history-vesuvius-github-2024-002#block-0] “# ScrollPrize/vesuvius archived Python library”; [1:history-vesuvius-github-2024-002#block-2] “Now maintained at https://github.com/ScrollPrize/villa/tree/main/vesuvius (this ”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:5505a1ba1fcb1b68-2619116879b8f260",
+        "from": "claim:5505a1ba1fcb1b68-35e4f1b989767484",
+        "to": "claim:5505a1ba1fcb1b68-92eeebabc9812a65",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-4#chars-446-517",
+          "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-5#chars-571-674"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:55:59.858Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:5505a1ba1fcb1b68-2619116879b8f260",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:history-vesuvius-github-2024-002#block-4] “Data is streamed in the background, only serving the requested regions.”; [1:history-vesuvius-github-2024-002#block-5] “Not all Vesuvius Challenge data is currently available - data will continue to b”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:5505a1ba1fcb1b68-2619116879b8f260",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:history-vesuvius-github-2024-002#block-4] “Data is streamed in the background, only serving the requested regions.”; [1:history-vesuvius-github-2024-002#block-5] “Not all Vesuvius Challenge data is currently available - data will continue to b”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:5505a1ba1fcb1b68-2619116879b8f260",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:history-vesuvius-github-2024-002#block-4] “Data is streamed in the background, only serving the requested regions.”; [1:history-vesuvius-github-2024-002#block-5] “Not all Vesuvius Challenge data is currently available - data will continue to b”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:5505a1ba1fcb1b68-e9f48fb1d079b617",
+        "from": "claim:5505a1ba1fcb1b68-5b081e72929d1868",
+        "to": "claim:5505a1ba1fcb1b68-c84e1d5fe016cb20",
+        "type": "EQUIVALENT_UNDER",
+        "conditions": [
+          "ScrollPrize/vesuvius 是一个归档的 Python 库",
+          "该库来自维苏威挑战赛，是一个用于访问古代卷轴 CT 扫描的 Python 库"
+        ],
+        "conditionStatus": "UNVERIFIED",
+        "supersessionEffect": null,
+        "relationAuditVersion": null,
+        "evidenceSpanIds": [
+          "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-0#chars-0-46",
+          "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-3#chars-237-321"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:55:59.858Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_EQUIVALENCE_REVIEW_REQUIRED",
+          "severity": "error",
+          "affectedObject": "rel:5505a1ba1fcb1b68-e9f48fb1d079b617",
+          "detail": "EQUIVALENT_UNDER 自动审计在真实抽检中 4/4 误判；独立人工复核或校准门禁完成前禁止自动晋级",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "schemaVersion": "wge-benchmark-seed-suite/v1",
+  "suiteId": "benchmark-seed-six-domain-v1",
+  "status": "LOCKED_DIRECTIONAL",
+  "lockedAt": "2026-07-27",
+  "objective": "先验证知识编译是否保真，再验证它在未参与开发的领域上是否比原文检索更有帮助；本套件不宣称是最终产品 Benchmark。",
+  "batches": {
+    "development": {
+      "id": "batch-a",
+      "domains": ["ai", "technology", "finance"],
+      "sourceManifest": "workbuddy-batch-a/refined/source-manifest.jsonl",
+      "taskFile": "workbuddy-batch-a/candidates/tasks.jsonl",
+      "canary": "workbuddy-batch-a/audit/provisional-canary.json",
+      "allowedUses": ["pipeline-smoke", "diagnosis", "mechanism-development"],
+      "forbiddenUses": ["confirmatory-product-claim"]
+    },
+    "crossDomainValidation": {
+      "id": "batch-b",
+      "domains": ["health-biology", "history-humanities", "design-accessibility"],
+      "sourceManifest": "workbuddy-batch-b/generated/source-manifest.jsonl",
+      "compilationCorpus": "workbuddy-batch-b/generated/compilation-corpus",
+      "factFile": "workbuddy-batch-b/generated/candidates/facts.jsonl",
+      "relationFile": "workbuddy-batch-b/generated/candidates/relations.jsonl",
+      "taskFile": "workbuddy-batch-b/generated/candidates/tasks.jsonl",
+      "episodeFile": "workbuddy-batch-b/generated/candidates/evolution-episodes.jsonl",
+      "validationReport": "workbuddy-batch-b/generated/reports/validation.json",
+      "exposure": "public-candidate",
+      "firstRunRule": "第一次 E1/E4 结果落盘前，不得依据 Batch B 题目修改 compiler prompt、retrieval ranking、relation policy 或 WikiModule 内容。",
+      "allowedUses": ["first-run-cross-domain-directional-validation", "post-run-diagnosis"],
+      "forbiddenUses": ["blind-holdout-claim", "human-gold-claim"]
+    }
+  },
+  "splitContract": {
+    "developmentDomains": ["ai", "technology", "finance"],
+    "firstRunValidationDomains": ["health-biology", "history-humanities", "design-accessibility"],
+    "blindHoldoutDomains": [],
+    "blindHoldoutStatus": "NOT_YET_BUILT",
+    "requiredNext": "Batch C 必须使用新来源簇、在题目与答案对开发者不可见的条件下冻结，才能承担确认性盲测。"
+  },
+  "experiments": {
+    "E1": {
+      "name": "artifact-conservation",
+      "question": "Source Snapshot 经编译后，事实、条件、时间和来源归属保留了多少？",
+      "inputs": {
+        "sources": 12,
+        "factAnchors": 36,
+        "relationAnchors": 9,
+        "evolutionEpisodes": 3
+      },
+      "metrics": [
+        "factRecall",
+        "conditionRecall",
+        "timeScopeRecall",
+        "attributionRecall",
+        "unsupportedClaimRate",
+        "relationTypeAccuracy",
+        "relationConditionRecall"
+      ],
+      "hardFailures": [
+        "brokenEvidenceSpan",
+        "sourceAttributionReversal",
+        "timeScopeReversal",
+        "unconditionalSupersession",
+        "researchNotesLeakage"
+      ]
+    },
+    "E4": {
+      "name": "same-budget-answer-ablation",
+      "question": "在同模型、同上下文预算下，编译知识是否比直接检索原文更有帮助？",
+      "groups": ["B", "P", "E-min"],
+      "stagedExecution": {
+        "E4a": {
+          "groups": ["B", "P"],
+          "status": "READY_FOR_SMOKE",
+          "questions": 6
+        },
+        "E4b": {
+          "groups": ["E-min"],
+          "status": "BLOCKED_MISSING_GENERIC_WIKIMODULE_BUILDER",
+          "antiLeakageRule": "不得依据 requiredPoints、forbiddenClaims、Gold 或题目专门编写 WikiModule。"
+        }
+      },
+      "questions": 32,
+      "pairing": "每道题三个组都运行；同一题使用相同 answer model、temperature、最大输出与上下文预算。",
+      "retrievalNetwork": false,
+      "goldExposureToAnswerer": false,
+      "primaryMetrics": [
+        "requiredPointCoverage",
+        "conditionFidelity",
+        "evidenceGrounding",
+        "answerabilityDiscipline",
+        "hardFailureRate"
+      ],
+      "interpretation": {
+        "P_gt_B": "Graph/Claim 组织已产生方向性增益，可继续构建 WikiModule。",
+        "Emin_gt_B_only": "价值主要来自问题导向的语义组织，不应把增益归给 Graph 本身。",
+        "Emin_not_gt_B": "暂停扩库，优先定位检索损失、编译损失或上下文预算失配。",
+        "Emin_worse_with_more_hard_failures": "收缩 Graph/Compiler 复杂度，不能以更多结构掩盖更差答案。"
+      }
+    }
+  },
+  "executionStages": [
+    {
+      "id": "T1",
+      "name": "structure-smoke",
+      "scope": "Batch A provisional canary 12",
+      "onlineModelCalls": false
+    },
+    {
+      "id": "T2",
+      "name": "E1-compile-conservation",
+      "scope": "Batch B 12 sources / 36 fact anchors",
+      "onlineModelCalls": true
+    },
+    {
+      "id": "T3",
+      "name": "E4-goal-micro",
+      "scope": "先 Batch B 6-question B/P smoke；E-min 等待通用 WikiModule builder，之后才扩到完整消融",
+      "onlineModelCalls": true
+    },
+    {
+      "id": "T4",
+      "name": "blind-confirmation",
+      "scope": "future Batch C",
+      "onlineModelCalls": true
+    }
+  ],
+  "stoppingRules": [
+    "T1 结构失败时不得进入在线实验。",
+    "E1 出现证据断裂、归属反转或无条件替代时，先修编译器，不运行全量 E4。",
+    "E4 先运行每域 2 题的 6 题 smoke；出现协议错误或硬失败率超过 25% 时停止扩到 32 题。",
+    "同一轮只允许依据 development 数据修正；Batch B 首次结果必须作为不可覆盖的基线保存。"
+  ]
+}
