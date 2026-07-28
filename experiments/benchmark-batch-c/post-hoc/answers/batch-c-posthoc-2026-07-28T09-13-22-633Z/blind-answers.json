@@ -1,0 +1,22 @@
+[
+  {
+    "sampleId": "sample-ec2ab5d8-e0c4-4270-a3de-45fe552fb54a",
+    "questionId": "C-C-LAW-001",
+    "answer": "{\n  \"answer\": \"EU AI Act 采用四级风险分类。不可接受风险实践的禁令于 2025 年 2 月 2 日生效。Annex III 高风险 AI 系统的规则于 2026 年 8 月 2 日生效。Annex I 产品相关高风险 AI 系统的规则于 2027 年 8 月 2 日生效。\",\n  \"citations\": [\n    \"claim:1e61c7154b59a8af-a48a3f1ae8ac6838\",\n    \"claim:1e61c7154b59a8af-73fa3ab27414cda8\",\n    \"claim:1e61c7154b59a8af-6701affdd23f4d99\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}",
+    "citationValidation": {
+      "valid": true,
+      "citationCount": 3,
+      "invalid": []
+    }
+  },
+  {
+    "sampleId": "sample-94386cae-0d48-411a-aaab-63eec035ce02",
+    "questionId": "C-C-LAW-001",
+    "answer": "{\n  \"answer\": \"EU AI Act 采用四级风险分类。不可接受风险实践的禁令于 2025 年 2 月 2 日生效。Annex III 高风险 AI 系统的规则于 2026 年 8 月 2 日生效。产品相关高风险 AI 系统（Annex I）的规则于 2027 年 8 月 2 日生效。\",\n  \"citations\": [\n    \"claim:1e61c7154b59a8af-a48a3f1ae8ac6838\",\n    \"claim:1e61c7154b59a8af-73fa3ab27414cda8\",\n    \"claim:1e61c7154b59a8af-6701affdd23f4d99\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}",
+    "citationValidation": {
+      "valid": true,
+      "citationCount": 3,
+      "invalid": []
+    }
+  }
+]

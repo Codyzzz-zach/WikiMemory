@@ -1,0 +1,97 @@
+## TASK MAP
+主题: 根据 IPCC AR6 综合报告 (2023)，全球地表温度在 2011-2020 年间相对于 1850-1900 年基准上升了多少？IPCC 用哪个词来描述人类活动对全球变暖的因果作用？
+地图主题: 全球, 2023, 人类, 报告, 变暖
+关键概念: 人类引起的气候变化, 1850-1900年, 报告, 第五次评估报告, 全球变暖
+已知争议: 0 个
+最近变化: 5 条
+找到 10 条相关 Claim
+找到 0 条关系
+找到 10 条原文证据
+
+## CLAIM claim:b26d226f500be322-f7176840d8e3309c
+2011-2020年全球地表温度比1850-1900年升高了1.1°C。
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:b26d226f500be322-bb2a4c546264d226
+人类活动，主要通过温室气体排放，已经明确导致了全球变暖。
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:b26d226f500be322-eac51b97a6e223e2
+IPCC第六次评估报告（AR6）综合报告：决策者摘要已发布。
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:b26d226f500be322-4811ce763ff3f4c8
+限制人类引起的全球变暖需要实现二氧化碳净零排放。
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:b26d226f500be322-9a57b22af6499086
+该报告的DOI为10.59327/IPCC/AR6-9789291691647。
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:b26d226f500be322-436cd349bae4b357
+该报告于2023年3月19日发布。
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:b26d226f500be322-1c266c697db26237
+2010年至2020年间，高度脆弱地区因洪水、干旱和风暴导致的人类死亡率比极低脆弱地区高出15倍。
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:0f7730e649dbc238-f327d5e045d87405
+The Reproducibility Project: Psychology began in November 2011.
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:adb285a63645fee4-5206ac18f2edd7c7
+The effects included Flag Priming (Carter, Ferguson, & Hassin, 2011).
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:b26d226f500be322-2a975af54bf3b3bd
+人类引起的气候变化已经影响到全球每个地区的许多天气和气候极端事件。
+Conditions: none
+Validity: SUPPORTED
+
+## EVIDENCE span:c-climate-001-b26d226f500be322-5#chars-635-710
+with global surface temperature reaching 1.1°C above 1850–1900 in 2011–2020
+
+## EVIDENCE span:c-climate-001-b26d226f500be322-5#chars-524-633
+Human activities, principally through emissions of greenhouse gases, have unequivocally caused global warming
+
+## EVIDENCE span:c-climate-001-b26d226f500be322-0#chars-3-80
+IPCC Sixth Assessment Report (AR6) Synthesis Report: Summary for Policymakers
+
+## EVIDENCE span:c-climate-001-b26d226f500be322-11#chars-2188-2257
+Limiting human-caused global warming requires net zero CO2 emissions.
+
+## EVIDENCE span:c-climate-001-b26d226f500be322-3#chars-419-459
+**DOI:** 10.59327/IPCC/AR6-9789291691647
+
+## EVIDENCE span:c-climate-001-b26d226f500be322-3#chars-248-332
+**Published:** 19 March 2023 (approved at IPCC 58th Session, Interlaken, Switzerland
+
+## EVIDENCE span:c-climate-001-b26d226f500be322-14#chars-2879-3049
+Between 2010 and 2020, human mortality from floods, droughts and storms was 15 times higher in highly vulnerable regions, compared to regions with very low vulnerability.
+
+## EVIDENCE span:c-psych-001-0f7730e649dbc238-12#chars-1664-1726
+The Reproducibility Project: Psychology began in November 2011
+
+## EVIDENCE span:c-psych-002-adb285a63645fee4-9#chars-1908-1955
+Flag Priming (Carter, Ferguson, & Hassin, 2011)
+
+## EVIDENCE span:c-climate-001-b26d226f500be322-7#chars-1189-1305
+Human-caused climate change is already affecting many weather and climate extremes in every region across the globe.
+
+## CONFLICTS AND CONDITIONS
+🔎 Source source:c-climate-001-b26d226f500be322 provenance: uri=experiments/benchmark-batch-c/stage-a-freeze/compilation-corpus/climate-energy-policy/c-climate-001.md; sourceType=md; sourceRole=P-primary; author=IPCC (Intergovernmental Panel on Climate Change); canonicalUrl=https://www.ipcc.ch/report/ar6/syr/; publishedAt=Sun Mar 19 2023 08:00:00 GMT+0800 (China Standard Time); versionRef=doi:10.59327/IPCC/AR6-9789291691647
+🔎 Source source:c-psych-001-0f7730e649dbc238 provenance: uri=experiments/benchmark-batch-c/stage-a-freeze/compilation-corpus/psychology-reproducibility/c-psych-001.md; sourceType=md; sourceRole=P-primary; author=Open Science Collaboration; canonicalUrl=https://www.science.org/doi/10.1126/science.aac4716; publishedAt=Fri Aug 28 2015 08:00:00 GMT+0800 (China Standard Time); versionRef=doi:10.1126/science.aac4716
+🔎 Source source:c-psych-002-adb285a63645fee4 provenance: uri=experiments/benchmark-batch-c/stage-a-freeze/compilation-corpus/psychology-reproducibility/c-psych-002.md; sourceType=md; sourceRole=P/C-implementation; author=Richard A. Klein, Kate A. Ratliff, Michelangelo Vianello, et al.; canonicalUrl=https://doi.org/10.1177/1948550614547449; publishedAt=Tue Jul 01 2014 08:00:00 GMT+0800 (China Standard Time); versionRef='doi:10.1177/1948550614547449; OSF: osf.io/wx7ck'
+
+## KNOWN GAPS
+未找到关系——Graph 可能尚未建立跨材料边

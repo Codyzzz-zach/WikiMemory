@@ -1,0 +1,51 @@
+{
+  "questionId": "C-T-LAW-001",
+  "promptHash": "3f1632c25981aa5e76a8c87d355fb579ad0d08ff1d919645956efed8c6a0bb62",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 2080,
+    "completionTokens": 2027,
+    "totalTokens": 4107,
+    "promptCacheHitTokens": 256,
+    "promptCacheMissTokens": 1824,
+    "reasoningTokens": 1613
+  },
+  "raw": "[\n  {\n    \"sampleId\": \"sample-9240d045-2b1a-4977-9fc9-c64eba2b5b58\",\n    \"requiredPointCoverage\": 2,\n    \"conditionFidelity\": 3,\n    \"evidenceGrounding\": 2,\n    \"answerabilityDiscipline\": 4,\n    \"sourceRoleTemporalDiscipline\": 3,\n    \"hardFailure\": false,\n    \"hardFailureTypes\": [],\n    \"rationale\": \"覆盖两案要点，张力描述较泛；引用间接；条件无错；回答充分；时间区分基本清晰。\"\n  },\n  {\n    \"sampleId\": \"sample-04a5e635-3ef3-4ca4-8897-c64b0b64a50b\",\n    \"requiredPointCoverage\": 4,\n    \"conditionFidelity\": 4,\n    \"evidenceGrounding\": 4,\n    \"answerabilityDiscipline\": 4,\n    \"sourceRoleTemporalDiscipline\": 4,\n    \"hardFailure\": false,\n    \"hardFailureTypes\": [],\n    \"rationale\": \"完整覆盖三点及EDPB推翻细节；准确列出条件与不确定性；引文具体支撑；正确回答无越界；清晰区分机构角色与时间。\"\n  },\n  {\n    \"sampleId\": \"sample-1a25fb1b-6833-4f1a-a614-01d940bd9043\",\n    \"requiredPointCoverage\": 0,\n    \"conditionFidelity\": 1,\n    \"evidenceGrounding\": 0,\n    \"answerabilityDiscipline\": 0,\n    \"sourceRoleTemporalDiscipline\": 0,\n    \"hardFailure\": false,\n    \"hardFailureTypes\": [],\n    \"rationale\": \"错误声称信息不足而拒答；未覆盖任何要点；引用仅涉一月份；应回答却拒答；无时间区分。\"\n  }\n]",
+  "rows": [
+    {
+      "sampleId": "sample-9240d045-2b1a-4977-9fc9-c64eba2b5b58",
+      "requiredPointCoverage": 2,
+      "conditionFidelity": 3,
+      "evidenceGrounding": 2,
+      "answerabilityDiscipline": 4,
+      "sourceRoleTemporalDiscipline": 3,
+      "hardFailure": false,
+      "hardFailureTypes": [],
+      "rationale": "覆盖两案要点，张力描述较泛；引用间接；条件无错；回答充分；时间区分基本清晰。"
+    },
+    {
+      "sampleId": "sample-04a5e635-3ef3-4ca4-8897-c64b0b64a50b",
+      "requiredPointCoverage": 4,
+      "conditionFidelity": 4,
+      "evidenceGrounding": 4,
+      "answerabilityDiscipline": 4,
+      "sourceRoleTemporalDiscipline": 4,
+      "hardFailure": false,
+      "hardFailureTypes": [],
+      "rationale": "完整覆盖三点及EDPB推翻细节；准确列出条件与不确定性；引文具体支撑；正确回答无越界；清晰区分机构角色与时间。"
+    },
+    {
+      "sampleId": "sample-1a25fb1b-6833-4f1a-a614-01d940bd9043",
+      "requiredPointCoverage": 0,
+      "conditionFidelity": 1,
+      "evidenceGrounding": 0,
+      "answerabilityDiscipline": 0,
+      "sourceRoleTemporalDiscipline": 0,
+      "hardFailure": false,
+      "hardFailureTypes": [],
+      "rationale": "错误声称信息不足而拒答；未覆盖任何要点；引用仅涉一月份；应回答却拒答；无时间区分。"
+    }
+  ]
+}

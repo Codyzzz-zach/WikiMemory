@@ -17,7 +17,10 @@ const scriptDirectory = dirname(fileURLToPath(import.meta.url));
 const projectRoot = resolve(scriptDirectory, "..");
 const experimentRoot = join(projectRoot, "experiments", "benchmark-batch-c");
 const freezeRoot = join(experimentRoot, "stage-a-freeze");
-const offlineRoot = join(experimentRoot, "blind-first-run", "offline");
+const preparationId = process.env.WGE_BATCH_C_PREP_RUN_ID;
+const offlineRoot = preparationId
+	? join(experimentRoot, "post-hoc", "preparations", preparationId)
+	: join(experimentRoot, "blind-first-run", "offline");
 const selection = readJson<JsonRecord>(join(freezeRoot, "selection.json"));
 const config = readJson<PilotConfig>(join(freezeRoot, "config.json"));
 const taskPath = resolve(experimentRoot, requireString(selection, "taskFile"));
@@ -27,9 +30,21 @@ if (sha256(taskText) !== requireString(selection, "taskFileSha256"))
 const questions = new Map(
 	readJsonl(taskPath).map((row) => [requireString(row, "caseId"), row] as const),
 );
-const questionIds = stringArray(selection.questionIds);
+const frozenQuestionIds = stringArray(selection.questionIds);
+const questionIds = process.env.WGE_BATCH_C_QUESTION_IDS
+	? process.env.WGE_BATCH_C_QUESTION_IDS.split(",").map((value) => value.trim())
+	: frozenQuestionIds;
+if (questionIds.some((questionId) => !frozenQuestionIds.includes(questionId))) {
+	throw new Error("Post-hoc question selection contains an unfrozen question");
+}
+const groups = process.env.WGE_BATCH_C_GROUPS
+	? process.env.WGE_BATCH_C_GROUPS.split(",").map((value) => value.trim())
+	: ["B", "P-seed", "P-graph"];
+if (groups.some((group) => !["B", "P-seed", "P-graph"].includes(group))) {
+	throw new Error("Unknown Batch C group");
+}
 const offline = readJson<{ rows: JsonRecord[] }>(join(offlineRoot, "context-preparation.json"));
-if (offline.rows.length !== questionIds.length * 3)
+if (offline.rows.length < questionIds.length * groups.length)
 	throw new Error("Offline preparation is incomplete");
 const baseConfig = loadConfig({
 	projectRoot: join(experimentRoot, "workspace"),
@@ -38,8 +53,10 @@ const baseConfig = loadConfig({
 });
 if (!baseConfig.apiKey) throw new Error("DEEPSEEK_API_KEY 未设置");
 const provider = createLLMProvider(baseConfig);
-const runId = `batch-c-blind-first-${new Date().toISOString().replaceAll(/[:.]/g, "-")}`;
-const runRoot = join(experimentRoot, "blind-first-run", "answers", runId);
+const runId = `batch-c-${preparationId ? "posthoc" : "blind-first"}-${new Date().toISOString().replaceAll(/[:.]/g, "-")}`;
+const runRoot = preparationId
+	? join(experimentRoot, "post-hoc", "answers", runId)
+	: join(experimentRoot, "blind-first-run", "answers", runId);
 mkdirSync(join(runRoot, "records"), { recursive: true });
 const publicAnswers: JsonRecord[] = [];
 let returnedModel: string | null = null;
@@ -47,7 +64,7 @@ for (const questionId of questionIds) {
 	const question = questions.get(questionId);
 	if (!question) throw new Error(`Missing question ${questionId}`);
 	const questionText = requireString(question, "question");
-	for (const group of orderedGroups(questionId)) {
+	for (const group of orderedGroups(questionId).filter((group) => groups.includes(group))) {
 		const row = offline.rows.find((item) => item.questionId === questionId && item.group === group);
 		if (!row) throw new Error(`Missing offline context ${questionId} ${group}`);
 		const contextPath = join(offlineRoot, "contexts", `${questionId}--${group}.txt`);
@@ -114,7 +131,7 @@ writeJson(
 );
 writeJson(join(runRoot, "manifest.json"), {
 	schemaVersion: "wge-batch-c-blind-answers/v1",
-	status: "SEALED_AWAITING_STAGE_B",
+	status: preparationId ? "SEALED_POST_HOC" : "SEALED_AWAITING_STAGE_B",
 	runId,
 	createdAt: new Date().toISOString(),
 	questionFileHash: `sha256:${sha256(taskText)}`,
@@ -126,11 +143,16 @@ writeJson(join(runRoot, "manifest.json"), {
 	contextBudgetTokens: config.retrieval.contextBudgetTokens,
 	questions: questionIds.length,
 	answers: publicAnswers.length,
-	stageBRead: false,
+	stageBRead: preparationId !== undefined,
+	preparationId: preparationId ?? null,
 });
 console.log(
 	JSON.stringify(
-		{ status: "SEALED_AWAITING_STAGE_B", runRoot, answers: publicAnswers.length },
+		{
+			status: preparationId ? "SEALED_POST_HOC" : "SEALED_AWAITING_STAGE_B",
+			runRoot,
+			answers: publicAnswers.length,
+		},
 		null,
 		2,
 	),
@@ -142,7 +164,7 @@ function orderedGroups(seed: string): string[] {
 	return [...groups.slice(offset), ...groups.slice(0, offset)];
 }
 function findGroup(sampleId: string, runRoot: string, questionId: string): string {
-	for (const group of ["B", "P-seed", "P-graph"]) {
+	for (const group of groups) {
 		const path = join(runRoot, "records", `${questionId}--${group}.json`);
 		const record = readJson<JsonRecord>(path);
 		if (record.sampleId === sampleId) return group;

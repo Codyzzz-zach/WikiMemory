@@ -1,0 +1,737 @@
+{
+  "schemaVersion": "wge-batch-c-retrieval-gold-evaluation/v1",
+  "status": "POST_REVEAL_DIAGNOSTIC",
+  "evaluationId": "blind-first-run",
+  "preparationRoot": "/Users/mixi/Desktop/WikiMemory/experiments/benchmark-batch-c/blind-first-run/offline",
+  "summary": {
+    "B": {
+      "questions": 16,
+      "requiredEvidenceItems": 28,
+      "matchedEvidenceItems": 19,
+      "evidenceItemRecall": 0.679,
+      "questionsWithAllRequiredEvidence": 9
+    },
+    "P-seed": {
+      "questions": 16,
+      "requiredEvidenceItems": 28,
+      "matchedEvidenceItems": 11,
+      "evidenceItemRecall": 0.393,
+      "questionsWithAllRequiredEvidence": 2
+    },
+    "P-graph": {
+      "questions": 16,
+      "requiredEvidenceItems": 28,
+      "matchedEvidenceItems": 12,
+      "evidenceItemRecall": 0.429,
+      "questionsWithAllRequiredEvidence": 3
+    }
+  },
+  "rows": [
+    {
+      "questionId": "C-F-PSYCH-001",
+      "group": "B",
+      "eligibility": "primary",
+      "requiredEvidenceItems": 2,
+      "matchedEvidenceItems": 0,
+      "allRequiredEvidencePresent": false,
+      "matchedQuotes": [],
+      "missingQuotes": [
+        "Ninety-seven percent of original studies had significant results (p < .05).",
+        "Thirty-six percent of replications had significant results"
+      ]
+    },
+    {
+      "questionId": "C-F-PSYCH-001",
+      "group": "P-seed",
+      "eligibility": "primary",
+      "requiredEvidenceItems": 2,
+      "matchedEvidenceItems": 1,
+      "allRequiredEvidencePresent": false,
+      "matchedQuotes": [
+        "Thirty-six percent of replications had significant results"
+      ],
+      "missingQuotes": [
+        "Ninety-seven percent of original studies had significant results (p < .05)."
+      ]
+    },
+    {
+      "questionId": "C-F-PSYCH-001",
+      "group": "P-graph",
+      "eligibility": "primary",
+      "requiredEvidenceItems": 2,
+      "matchedEvidenceItems": 2,
+      "allRequiredEvidencePresent": true,
+      "matchedQuotes": [
+        "Ninety-seven percent of original studies had significant results (p < .05).",
+        "Thirty-six percent of replications had significant results"
+      ],
+      "missingQuotes": []
+    },
+    {
+      "questionId": "C-C-PSYCH-001",
+      "group": "B",
+      "eligibility": "primary",
+      "requiredEvidenceItems": 1,
+      "matchedEvidenceItems": 0,
+      "allRequiredEvidencePresent": false,
+      "matchedQuotes": [],
+      "missingQuotes": [
+        "47% of original effect sizes were in the 95% confidence interval of the replication effect size; 39% of effects were subjectively rated to have replicated the original result; and, if no bias in original results is assumed, combining original and replication results left 68% with significant effects"
+      ]
+    },
+    {
+      "questionId": "C-C-PSYCH-001",
+      "group": "P-seed",
+      "eligibility": "primary",
+      "requiredEvidenceItems": 1,
+      "matchedEvidenceItems": 0,
+      "allRequiredEvidencePresent": false,
+      "matchedQuotes": [],
+      "missingQuotes": [
+        "47% of original effect sizes were in the 95% confidence interval of the replication effect size; 39% of effects were subjectively rated to have replicated the original result; and, if no bias in original results is assumed, combining original and replication results left 68% with significant effects"
+      ]
+    },
+    {
+      "questionId": "C-C-PSYCH-001",
+      "group": "P-graph",
+      "eligibility": "primary",
+      "requiredEvidenceItems": 1,
+      "matchedEvidenceItems": 0,
+      "allRequiredEvidencePresent": false,
+      "matchedQuotes": [],
+      "missingQuotes": [
+        "47% of original effect sizes were in the 95% confidence interval of the replication effect size; 39% of effects were subjectively rated to have replicated the original result; and, if no bias in original results is assumed, combining original and replication results left 68% with significant effects"
+      ]
+    },
+    {
+      "questionId": "C-T-PSYCH-001",
+      "group": "B",
+      "eligibility": "primary",
+      "requiredEvidenceItems": 3,
+      "matchedEvidenceItems": 3,
+      "allRequiredEvidencePresent": true,
+      "matchedQuotes": [
+        "We show that this article contains three statistical errors and provides no support for such a conclusion.",
+        "The low-fidelity replications were an astonishing four times more likely to fail.",
+        "their paper does not provide evidence for the pessimistic conclusions that most people have drawn from it"
+      ],
+      "missingQuotes": []
+    },
+    {
+      "questionId": "C-T-PSYCH-001",
+      "group": "P-seed",
+      "eligibility": "primary",
+      "requiredEvidenceItems": 3,
+      "matchedEvidenceItems": 2,
+      "allRequiredEvidencePresent": false,
+      "matchedQuotes": [
+        "We show that this article contains three statistical errors and provides no support for such a conclusion.",
+        "their paper does not provide evidence for the pessimistic conclusions that most people have drawn from it"
+      ],
+      "missingQuotes": [
+        "The low-fidelity replications were an astonishing four times more likely to fail."
+      ]
+    },
+    {
+      "questionId": "C-T-PSYCH-001",
+      "group": "P-graph",
+      "eligibility": "primary",
+      "requiredEvidenceItems": 3,
+      "matchedEvidenceItems": 2,
+      "allRequiredEvidencePresent": false,
+      "matchedQuotes": [
+        "We show that this article contains three statistical errors and provides no support for such a conclusion.",
+        "their paper does not provide evidence for the pessimistic conclusions that most people have drawn from it"
+      ],
+      "missingQuotes": [
+        "The low-fidelity replications were an astonishing four times more likely to fail."
+      ]
+    },
+    {
+      "questionId": "C-X-PSYCH-001",
+      "group": "B",
+      "eligibility": "primary",
+      "requiredEvidenceItems": 2,
+      "matchedEvidenceItems": 1,
+      "allRequiredEvidencePresent": false,
+      "matchedQuotes": [
+        "This dataset is from the Many Labs Replication Project in which 13 effects were replicated across 36 samples and over 6,000 participants."
+      ],
+      "missingQuotes": [
+        "Thirty-six percent of replications had significant results"
+      ]
+    },
+    {
+      "questionId": "C-X-PSYCH-001",
+      "group": "P-seed",
+      "eligibility": "primary",
+      "requiredEvidenceItems": 2,
+      "matchedEvidenceItems": 0,
+      "allRequiredEvidencePresent": false,
+      "matchedQuotes": [],
+      "missingQuotes": [
+        "This dataset is from the Many Labs Replication Project in which 13 effects were replicated across 36 samples and over 6,000 participants.",
+        "Thirty-six percent of replications had significant results"
+      ]
+    },
+    {
+      "questionId": "C-X-PSYCH-001",
+      "group": "P-graph",
+      "eligibility": "primary",
+      "requiredEvidenceItems": 2,
+      "matchedEvidenceItems": 0,
+      "allRequiredEvidencePresent": false,
+      "matchedQuotes": [],
+      "missingQuotes": [
+        "This dataset is from the Many Labs Replication Project in which 13 effects were replicated across 36 samples and over 6,000 participants.",
+        "Thirty-six percent of replications had significant results"
+      ]
+    },
+    {
+      "questionId": "C-K-PSYCH-001",
+      "group": "B",
+      "eligibility": "primary",
+      "requiredEvidenceItems": 2,
+      "matchedEvidenceItems": 1,
+      "allRequiredEvidencePresent": false,
+      "matchedQuotes": [
+        "52% of those surveyed agree that there is a 'significant crisis' of reproducibility"
+      ],
+      "missingQuotes": [
+        "the data are consistent with the opposite conclusion, namely, that the reproducibility of psychological science is quite high."
+      ]
+    },
+    {
+      "questionId": "C-K-PSYCH-001",
+      "group": "P-seed",
+      "eligibility": "primary",
+      "requiredEvidenceItems": 2,
+      "matchedEvidenceItems": 1,
+      "allRequiredEvidencePresent": false,
+      "matchedQuotes": [
+        "52% of those surveyed agree that there is a 'significant crisis' of reproducibility"
+      ],
+      "missingQuotes": [
+        "the data are consistent with the opposite conclusion, namely, that the reproducibility of psychological science is quite high."
+      ]
+    },
+    {
+      "questionId": "C-K-PSYCH-001",
+      "group": "P-graph",
+      "eligibility": "primary",
+      "requiredEvidenceItems": 2,
+      "matchedEvidenceItems": 1,
+      "allRequiredEvidencePresent": false,
+      "matchedQuotes": [
+        "52% of those surveyed agree that there is a 'significant crisis' of reproducibility"
+      ],
+      "missingQuotes": [
+        "the data are consistent with the opposite conclusion, namely, that the reproducibility of psychological science is quite high."
+      ]
+    },
+    {
+      "questionId": "C-A-PSYCH-001",
+      "group": "B",
+      "eligibility": "primary",
+      "requiredEvidenceItems": 1,
+      "matchedEvidenceItems": 0,
+      "allRequiredEvidencePresent": false,
+      "matchedQuotes": [],
+      "missingQuotes": [
+        "Reproducibility is a defining feature of science, but the extent to which it characterizes current research is unknown."
+      ]
+    },
+    {
+      "questionId": "C-A-PSYCH-001",
+      "group": "P-seed",
+      "eligibility": "primary",
+      "requiredEvidenceItems": 1,
+      "matchedEvidenceItems": 0,
+      "allRequiredEvidencePresent": false,
+      "matchedQuotes": [],
+      "missingQuotes": [
+        "Reproducibility is a defining feature of science, but the extent to which it characterizes current research is unknown."
+      ]
+    },
+    {
+      "questionId": "C-A-PSYCH-001",
+      "group": "P-graph",
+      "eligibility": "primary",
+      "requiredEvidenceItems": 1,
+      "matchedEvidenceItems": 0,
+      "allRequiredEvidencePresent": false,
+      "matchedQuotes": [],
+      "missingQuotes": [
+        "Reproducibility is a defining feature of science, but the extent to which it characterizes current research is unknown."
+      ]
+    },
+    {
+      "questionId": "C-F-CLIMATE-001",
+      "group": "B",
+      "eligibility": "primary",
+      "requiredEvidenceItems": 1,
+      "matchedEvidenceItems": 1,
+      "allRequiredEvidencePresent": true,
+      "matchedQuotes": [
+        "Human activities, principally through emissions of greenhouse gases, have unequivocally caused global warming, with global surface temperature reaching 1.1°C above 1850–1900 in 2011–2020. Global greenhouse gas emissions have continued to increase, with unequal historical and ongoing contributions arising from unsustainable energy use, land use and land-use change, lifestyles and patterns of consumption and production across regions, between and within countries, and among individuals (high confidence)."
+      ],
+      "missingQuotes": []
+    },
+    {
+      "questionId": "C-F-CLIMATE-001",
+      "group": "P-seed",
+      "eligibility": "primary",
+      "requiredEvidenceItems": 1,
+      "matchedEvidenceItems": 0,
+      "allRequiredEvidencePresent": false,
+      "matchedQuotes": [],
+      "missingQuotes": [
+        "Human activities, principally through emissions of greenhouse gases, have unequivocally caused global warming, with global surface temperature reaching 1.1°C above 1850–1900 in 2011–2020. Global greenhouse gas emissions have continued to increase, with unequal historical and ongoing contributions arising from unsustainable energy use, land use and land-use change, lifestyles and patterns of consumption and production across regions, between and within countries, and among individuals (high confidence)."
+      ]
+    },
+    {
+      "questionId": "C-F-CLIMATE-001",
+      "group": "P-graph",
+      "eligibility": "primary",
+      "requiredEvidenceItems": 1,
+      "matchedEvidenceItems": 0,
+      "allRequiredEvidencePresent": false,
+      "matchedQuotes": [],
+      "missingQuotes": [
+        "Human activities, principally through emissions of greenhouse gases, have unequivocally caused global warming, with global surface temperature reaching 1.1°C above 1850–1900 in 2011–2020. Global greenhouse gas emissions have continued to increase, with unequal historical and ongoing contributions arising from unsustainable energy use, land use and land-use change, lifestyles and patterns of consumption and production across regions, between and within countries, and among individuals (high confidence)."
+      ]
+    },
+    {
+      "questionId": "C-C-CLIMATE-001",
+      "group": "B",
+      "eligibility": "primary",
+      "requiredEvidenceItems": 1,
+      "matchedEvidenceItems": 1,
+      "allRequiredEvidencePresent": true,
+      "matchedQuotes": [
+        "In order to ensure that sufficient mitigation efforts are deployed up to 2030, for the purpose of this Regulation and without prejudice to the review of Union legislation referred to in paragraph 2, the contribution of net removals to the Union 2030 climate target shall be limited to 225 million tonnes of CO2 equivalent."
+      ],
+      "missingQuotes": []
+    },
+    {
+      "questionId": "C-C-CLIMATE-001",
+      "group": "P-seed",
+      "eligibility": "primary",
+      "requiredEvidenceItems": 1,
+      "matchedEvidenceItems": 0,
+      "allRequiredEvidencePresent": false,
+      "matchedQuotes": [],
+      "missingQuotes": [
+        "In order to ensure that sufficient mitigation efforts are deployed up to 2030, for the purpose of this Regulation and without prejudice to the review of Union legislation referred to in paragraph 2, the contribution of net removals to the Union 2030 climate target shall be limited to 225 million tonnes of CO2 equivalent."
+      ]
+    },
+    {
+      "questionId": "C-C-CLIMATE-001",
+      "group": "P-graph",
+      "eligibility": "primary",
+      "requiredEvidenceItems": 1,
+      "matchedEvidenceItems": 0,
+      "allRequiredEvidencePresent": false,
+      "matchedQuotes": [],
+      "missingQuotes": [
+        "In order to ensure that sufficient mitigation efforts are deployed up to 2030, for the purpose of this Regulation and without prejudice to the review of Union legislation referred to in paragraph 2, the contribution of net removals to the Union 2030 climate target shall be limited to 225 million tonnes of CO2 equivalent."
+      ]
+    },
+    {
+      "questionId": "C-T-CLIMATE-001",
+      "group": "B",
+      "eligibility": "diagnostic-only",
+      "requiredEvidenceItems": 2,
+      "matchedEvidenceItems": 0,
+      "allRequiredEvidencePresent": false,
+      "matchedQuotes": [],
+      "missingQuotes": [
+        "at the latest within six months of the first global stocktake referred to in Article 14 of the Paris Agreement, the Commission shall make a legislative proposal, as appropriate, based on a detailed impact assessment, to amend this Regulation to include the Union 2040 climate target",
+        "Italy called for the goal to be weakened and France asked for 'flexibility' to be introduced"
+      ]
+    },
+    {
+      "questionId": "C-T-CLIMATE-001",
+      "group": "P-seed",
+      "eligibility": "diagnostic-only",
+      "requiredEvidenceItems": 2,
+      "matchedEvidenceItems": 0,
+      "allRequiredEvidencePresent": false,
+      "matchedQuotes": [],
+      "missingQuotes": [
+        "at the latest within six months of the first global stocktake referred to in Article 14 of the Paris Agreement, the Commission shall make a legislative proposal, as appropriate, based on a detailed impact assessment, to amend this Regulation to include the Union 2040 climate target",
+        "Italy called for the goal to be weakened and France asked for 'flexibility' to be introduced"
+      ]
+    },
+    {
+      "questionId": "C-T-CLIMATE-001",
+      "group": "P-graph",
+      "eligibility": "diagnostic-only",
+      "requiredEvidenceItems": 2,
+      "matchedEvidenceItems": 1,
+      "allRequiredEvidencePresent": false,
+      "matchedQuotes": [
+        "Italy called for the goal to be weakened and France asked for 'flexibility' to be introduced"
+      ],
+      "missingQuotes": [
+        "at the latest within six months of the first global stocktake referred to in Article 14 of the Paris Agreement, the Commission shall make a legislative proposal, as appropriate, based on a detailed impact assessment, to amend this Regulation to include the Union 2040 climate target"
+      ]
+    },
+    {
+      "questionId": "C-X-CLIMATE-001",
+      "group": "B",
+      "eligibility": "primary",
+      "requiredEvidenceItems": 3,
+      "matchedEvidenceItems": 3,
+      "allRequiredEvidencePresent": true,
+      "matchedQuotes": [
+        "Global GHG emissions in 2030 implied by nationally determined contributions (NDCs) announced by October 2021 make it likely that warming will exceed 1.5°C during the 21st century",
+        "push up global average temperatures to around 2.4 °C in 2100",
+        "the bloc's emissions are set to fall 48% by 2030, rather than 55%"
+      ],
+      "missingQuotes": []
+    },
+    {
+      "questionId": "C-X-CLIMATE-001",
+      "group": "P-seed",
+      "eligibility": "primary",
+      "requiredEvidenceItems": 3,
+      "matchedEvidenceItems": 2,
+      "allRequiredEvidencePresent": false,
+      "matchedQuotes": [
+        "Global GHG emissions in 2030 implied by nationally determined contributions (NDCs) announced by October 2021 make it likely that warming will exceed 1.5°C during the 21st century",
+        "push up global average temperatures to around 2.4 °C in 2100"
+      ],
+      "missingQuotes": [
+        "the bloc's emissions are set to fall 48% by 2030, rather than 55%"
+      ]
+    },
+    {
+      "questionId": "C-X-CLIMATE-001",
+      "group": "P-graph",
+      "eligibility": "primary",
+      "requiredEvidenceItems": 3,
+      "matchedEvidenceItems": 2,
+      "allRequiredEvidencePresent": false,
+      "matchedQuotes": [
+        "Global GHG emissions in 2030 implied by nationally determined contributions (NDCs) announced by October 2021 make it likely that warming will exceed 1.5°C during the 21st century",
+        "push up global average temperatures to around 2.4 °C in 2100"
+      ],
+      "missingQuotes": [
+        "the bloc's emissions are set to fall 48% by 2030, rather than 55%"
+      ]
+    },
+    {
+      "questionId": "C-K-CLIMATE-001",
+      "group": "B",
+      "eligibility": "diagnostic-only",
+      "requiredEvidenceItems": 1,
+      "matchedEvidenceItems": 1,
+      "allRequiredEvidencePresent": true,
+      "matchedQuotes": [
+        "Using international carbon credits to meet this target, even partially, could undermine domestic value creation by diverting resources from the necessary transformation of the EU's economy."
+      ],
+      "missingQuotes": []
+    },
+    {
+      "questionId": "C-K-CLIMATE-001",
+      "group": "P-seed",
+      "eligibility": "diagnostic-only",
+      "requiredEvidenceItems": 1,
+      "matchedEvidenceItems": 0,
+      "allRequiredEvidencePresent": false,
+      "matchedQuotes": [],
+      "missingQuotes": [
+        "Using international carbon credits to meet this target, even partially, could undermine domestic value creation by diverting resources from the necessary transformation of the EU's economy."
+      ]
+    },
+    {
+      "questionId": "C-K-CLIMATE-001",
+      "group": "P-graph",
+      "eligibility": "diagnostic-only",
+      "requiredEvidenceItems": 1,
+      "matchedEvidenceItems": 0,
+      "allRequiredEvidencePresent": false,
+      "matchedQuotes": [],
+      "missingQuotes": [
+        "Using international carbon credits to meet this target, even partially, could undermine domestic value creation by diverting resources from the necessary transformation of the EU's economy."
+      ]
+    },
+    {
+      "questionId": "C-A-CLIMATE-001",
+      "group": "B",
+      "eligibility": "primary",
+      "requiredEvidenceItems": 2,
+      "matchedEvidenceItems": 0,
+      "allRequiredEvidencePresent": false,
+      "matchedQuotes": [],
+      "missingQuotes": [
+        "the bloc's emissions are set to fall 48% by 2030, rather than 55%",
+        "The transition to clean energy is happening worldwide and it's unstoppable. It's not a question of 'if', it's just a matter of 'how soon'"
+      ]
+    },
+    {
+      "questionId": "C-A-CLIMATE-001",
+      "group": "P-seed",
+      "eligibility": "primary",
+      "requiredEvidenceItems": 2,
+      "matchedEvidenceItems": 0,
+      "allRequiredEvidencePresent": false,
+      "matchedQuotes": [],
+      "missingQuotes": [
+        "the bloc's emissions are set to fall 48% by 2030, rather than 55%",
+        "The transition to clean energy is happening worldwide and it's unstoppable. It's not a question of 'if', it's just a matter of 'how soon'"
+      ]
+    },
+    {
+      "questionId": "C-A-CLIMATE-001",
+      "group": "P-graph",
+      "eligibility": "primary",
+      "requiredEvidenceItems": 2,
+      "matchedEvidenceItems": 0,
+      "allRequiredEvidencePresent": false,
+      "matchedQuotes": [],
+      "missingQuotes": [
+        "the bloc's emissions are set to fall 48% by 2030, rather than 55%",
+        "The transition to clean energy is happening worldwide and it's unstoppable. It's not a question of 'if', it's just a matter of 'how soon'"
+      ]
+    },
+    {
+      "questionId": "C-F-LAW-001",
+      "group": "B",
+      "eligibility": "primary",
+      "requiredEvidenceItems": 2,
+      "matchedEvidenceItems": 1,
+      "allRequiredEvidencePresent": false,
+      "matchedQuotes": [
+        "1. **Unacceptable Risk** — Prohibited practices include: subliminal techniques causing harm; exploiting vulnerabilities due to age, disability, or social/economic situation; social scoring; predictive policing based on profiling; untargeted scraping of facial images; emotion inference in workplace/education; biometric categorization of sensitive characteristics; real-time remote biometric identification for law enforcement (with narrow exceptions)."
+      ],
+      "missingQuotes": [
+        "For infringements on prohibited practices: up to €35 million or 7% of total worldwide annual turnover (whichever is higher). For other infringements: up to €15 million or 3%."
+      ]
+    },
+    {
+      "questionId": "C-F-LAW-001",
+      "group": "P-seed",
+      "eligibility": "primary",
+      "requiredEvidenceItems": 2,
+      "matchedEvidenceItems": 0,
+      "allRequiredEvidencePresent": false,
+      "matchedQuotes": [],
+      "missingQuotes": [
+        "1. **Unacceptable Risk** — Prohibited practices include: subliminal techniques causing harm; exploiting vulnerabilities due to age, disability, or social/economic situation; social scoring; predictive policing based on profiling; untargeted scraping of facial images; emotion inference in workplace/education; biometric categorization of sensitive characteristics; real-time remote biometric identification for law enforcement (with narrow exceptions).",
+        "For infringements on prohibited practices: up to €35 million or 7% of total worldwide annual turnover (whichever is higher). For other infringements: up to €15 million or 3%."
+      ]
+    },
+    {
+      "questionId": "C-F-LAW-001",
+      "group": "P-graph",
+      "eligibility": "primary",
+      "requiredEvidenceItems": 2,
+      "matchedEvidenceItems": 0,
+      "allRequiredEvidencePresent": false,
+      "matchedQuotes": [],
+      "missingQuotes": [
+        "1. **Unacceptable Risk** — Prohibited practices include: subliminal techniques causing harm; exploiting vulnerabilities due to age, disability, or social/economic situation; social scoring; predictive policing based on profiling; untargeted scraping of facial images; emotion inference in workplace/education; biometric categorization of sensitive characteristics; real-time remote biometric identification for law enforcement (with narrow exceptions).",
+        "For infringements on prohibited practices: up to €35 million or 7% of total worldwide annual turnover (whichever is higher). For other infringements: up to €15 million or 3%."
+      ]
+    },
+    {
+      "questionId": "C-C-LAW-001",
+      "group": "B",
+      "eligibility": "primary",
+      "requiredEvidenceItems": 3,
+      "matchedEvidenceItems": 3,
+      "allRequiredEvidencePresent": true,
+      "matchedQuotes": [
+        "- 2 February 2025: Prohibitions on unacceptable risk practices take effect",
+        "- 2 August 2026: Rules for high-risk AI systems (Annex III) take effect",
+        "- 2 August 2027: Rules for product-linked high-risk AI systems (Annex I) take effect"
+      ],
+      "missingQuotes": []
+    },
+    {
+      "questionId": "C-C-LAW-001",
+      "group": "P-seed",
+      "eligibility": "primary",
+      "requiredEvidenceItems": 3,
+      "matchedEvidenceItems": 2,
+      "allRequiredEvidencePresent": false,
+      "matchedQuotes": [
+        "- 2 August 2026: Rules for high-risk AI systems (Annex III) take effect",
+        "- 2 August 2027: Rules for product-linked high-risk AI systems (Annex I) take effect"
+      ],
+      "missingQuotes": [
+        "- 2 February 2025: Prohibitions on unacceptable risk practices take effect"
+      ]
+    },
+    {
+      "questionId": "C-C-LAW-001",
+      "group": "P-graph",
+      "eligibility": "primary",
+      "requiredEvidenceItems": 3,
+      "matchedEvidenceItems": 2,
+      "allRequiredEvidencePresent": false,
+      "matchedQuotes": [
+        "- 2 August 2026: Rules for high-risk AI systems (Annex III) take effect",
+        "- 2 August 2027: Rules for product-linked high-risk AI systems (Annex I) take effect"
+      ],
+      "missingQuotes": [
+        "- 2 February 2025: Prohibitions on unacceptable risk practices take effect"
+      ]
+    },
+    {
+      "questionId": "C-T-LAW-001",
+      "group": "B",
+      "eligibility": "primary",
+      "requiredEvidenceItems": 1,
+      "matchedEvidenceItems": 1,
+      "allRequiredEvidencePresent": true,
+      "matchedQuotes": [
+        "1. Administrative fine: **€1.2 billion** — the largest GDPR fine ever imposed."
+      ],
+      "missingQuotes": []
+    },
+    {
+      "questionId": "C-T-LAW-001",
+      "group": "P-seed",
+      "eligibility": "primary",
+      "requiredEvidenceItems": 1,
+      "matchedEvidenceItems": 0,
+      "allRequiredEvidencePresent": false,
+      "matchedQuotes": [],
+      "missingQuotes": [
+        "1. Administrative fine: **€1.2 billion** — the largest GDPR fine ever imposed."
+      ]
+    },
+    {
+      "questionId": "C-T-LAW-001",
+      "group": "P-graph",
+      "eligibility": "primary",
+      "requiredEvidenceItems": 1,
+      "matchedEvidenceItems": 0,
+      "allRequiredEvidencePresent": false,
+      "matchedQuotes": [],
+      "missingQuotes": [
+        "1. Administrative fine: **€1.2 billion** — the largest GDPR fine ever imposed."
+      ]
+    },
+    {
+      "questionId": "C-X-LAW-001",
+      "group": "B",
+      "eligibility": "primary",
+      "requiredEvidenceItems": 2,
+      "matchedEvidenceItems": 2,
+      "allRequiredEvidencePresent": true,
+      "matchedQuotes": [
+        "SCCs did not (and could not) address the activity of U.S. intelligence agencies or the lack of judicial remedies against such activity.",
+        "derogations under Article 49 GDPR can only be invoked for 'occasional and non-repetitive' transfers, which was clearly not the case with the Meta group"
+      ],
+      "missingQuotes": []
+    },
+    {
+      "questionId": "C-X-LAW-001",
+      "group": "P-seed",
+      "eligibility": "primary",
+      "requiredEvidenceItems": 2,
+      "matchedEvidenceItems": 1,
+      "allRequiredEvidencePresent": false,
+      "matchedQuotes": [
+        "derogations under Article 49 GDPR can only be invoked for 'occasional and non-repetitive' transfers, which was clearly not the case with the Meta group"
+      ],
+      "missingQuotes": [
+        "SCCs did not (and could not) address the activity of U.S. intelligence agencies or the lack of judicial remedies against such activity."
+      ]
+    },
+    {
+      "questionId": "C-X-LAW-001",
+      "group": "P-graph",
+      "eligibility": "primary",
+      "requiredEvidenceItems": 2,
+      "matchedEvidenceItems": 1,
+      "allRequiredEvidencePresent": false,
+      "matchedQuotes": [
+        "derogations under Article 49 GDPR can only be invoked for 'occasional and non-repetitive' transfers, which was clearly not the case with the Meta group"
+      ],
+      "missingQuotes": [
+        "SCCs did not (and could not) address the activity of U.S. intelligence agencies or the lack of judicial remedies against such activity."
+      ]
+    },
+    {
+      "questionId": "C-K-LAW-001",
+      "group": "B",
+      "eligibility": "primary",
+      "requiredEvidenceItems": 1,
+      "matchedEvidenceItems": 1,
+      "allRequiredEvidencePresent": true,
+      "matchedQuotes": [
+        "the Irish DPA found that the suspension of the transfers was already sufficient to enforce the GDPR and a fine on top of it would have been excessive."
+      ],
+      "missingQuotes": []
+    },
+    {
+      "questionId": "C-K-LAW-001",
+      "group": "P-seed",
+      "eligibility": "primary",
+      "requiredEvidenceItems": 1,
+      "matchedEvidenceItems": 1,
+      "allRequiredEvidencePresent": true,
+      "matchedQuotes": [
+        "the Irish DPA found that the suspension of the transfers was already sufficient to enforce the GDPR and a fine on top of it would have been excessive."
+      ],
+      "missingQuotes": []
+    },
+    {
+      "questionId": "C-K-LAW-001",
+      "group": "P-graph",
+      "eligibility": "primary",
+      "requiredEvidenceItems": 1,
+      "matchedEvidenceItems": 1,
+      "allRequiredEvidencePresent": true,
+      "matchedQuotes": [
+        "the Irish DPA found that the suspension of the transfers was already sufficient to enforce the GDPR and a fine on top of it would have been excessive."
+      ],
+      "missingQuotes": []
+    },
+    {
+      "questionId": "C-A-LAW-001",
+      "group": "B",
+      "eligibility": "primary",
+      "requiredEvidenceItems": 1,
+      "matchedEvidenceItems": 1,
+      "allRequiredEvidencePresent": true,
+      "matchedQuotes": [
+        "privacy advocates have signaled they may challenge this framework as well"
+      ],
+      "missingQuotes": []
+    },
+    {
+      "questionId": "C-A-LAW-001",
+      "group": "P-seed",
+      "eligibility": "primary",
+      "requiredEvidenceItems": 1,
+      "matchedEvidenceItems": 1,
+      "allRequiredEvidencePresent": true,
+      "matchedQuotes": [
+        "privacy advocates have signaled they may challenge this framework as well"
+      ],
+      "missingQuotes": []
+    },
+    {
+      "questionId": "C-A-LAW-001",
+      "group": "P-graph",
+      "eligibility": "primary",
+      "requiredEvidenceItems": 1,
+      "matchedEvidenceItems": 1,
+      "allRequiredEvidencePresent": true,
+      "matchedQuotes": [
+        "privacy advocates have signaled they may challenge this framework as well"
+      ],
+      "missingQuotes": []
+    }
+  ],
+  "limitations": [
+    "Exact-quote presence measures retrieval evidence availability, not answer correctness.",
+    "Stage B Gold was produced post-answer and is diagnostic rather than confirmatory."
+  ]
+}

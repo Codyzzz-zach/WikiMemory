@@ -26,6 +26,7 @@ import {
 	readAllSources,
 	readAllSpans,
 	readAllWikiModules,
+	resolveSpanById,
 } from "../linter/storage.js";
 import {
 	filterClaimsByExplicitTemporalScope,
@@ -271,11 +272,16 @@ export function buildContextPackWithDiagnostics(
 
 	// ── 4. 选择可靠种子；Graph 只能在 Seed 之后扩展 ──
 	const retrieval = selectSeeds(graph.claims, allSpans, task, sourceSearchText);
-	const seedResults = retrieval.candidates.map((candidate) => ({
+	const lexicalSeedResults = retrieval.candidates.map((candidate) => ({
 		claim: candidate.claim,
 		score: candidate.score,
 		source: `lexical:${candidate.channels.join("+")}`,
 	}));
+	// Claims extracted from the same source block are a bounded, evidence-local
+	// neighborhood. Completing that neighborhood is safer than guessing a semantic
+	// edge and prevents Top-K from splitting a list, table row group, or quoted clause.
+	const coEvidenceResults = selectCoEvidenceNeighbors(lexicalSeedResults, allClaims, allSpans, 8);
+	const seedResults = [...lexicalSeedResults, ...coEvidenceResults];
 	const seedIds = seedResults.map((r) => r.claim.id);
 
 	const selectionLog: SelectionLogEntry[] = [
@@ -550,6 +556,47 @@ export function buildContextPackWithDiagnostics(
 			},
 		},
 	};
+}
+
+function selectCoEvidenceNeighbors(
+	seedResults: Array<{ claim: Claim; score: number; source: string }>,
+	claims: Claim[],
+	spans: ReturnType<typeof readAllSpans>,
+	limit: number,
+): Array<{ claim: Claim; score: number; source: string }> {
+	const selectedIds = new Set(seedResults.map((result) => result.claim.id));
+	const seedByBlock = new Map<string, { claim: Claim; score: number; source: string }>();
+	for (const seed of seedResults) {
+		for (const spanId of seed.claim.evidenceSpanIds) {
+			const span = resolveSpanById(spans, spanId);
+			if (!span) continue;
+			const key = `${span.sourceId}\u0000${span.blockId}`;
+			const current = seedByBlock.get(key);
+			if (!current || seed.score > current.score) seedByBlock.set(key, seed);
+		}
+	}
+	return claims
+		.flatMap((claim) => {
+			if (selectedIds.has(claim.id)) return [];
+			const parents = claim.evidenceSpanIds.flatMap((spanId) => {
+				const span = resolveSpanById(spans, spanId);
+				if (!span) return [];
+				const parent = seedByBlock.get(`${span.sourceId}\u0000${span.blockId}`);
+				return parent ? [parent] : [];
+			});
+			if (parents.length === 0) return [];
+			const parent = parents.sort((left, right) => right.score - left.score)[0];
+			if (!parent) return [];
+			return [
+				{
+					claim,
+					score: parent.score,
+					source: `co-evidence:${parent.claim.id}`,
+				},
+			];
+		})
+		.sort((left, right) => right.score - left.score || left.claim.id.localeCompare(right.claim.id))
+		.slice(0, limit);
 }
 
 /** Backwards-compatible production API; diagnostics stay outside the Agent payload. */

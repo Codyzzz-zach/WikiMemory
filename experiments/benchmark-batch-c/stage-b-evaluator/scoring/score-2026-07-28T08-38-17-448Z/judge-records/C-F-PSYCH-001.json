@@ -1,0 +1,51 @@
+{
+  "questionId": "C-F-PSYCH-001",
+  "promptHash": "4d369469fb8859c13f1930401fc6fb6c5ae2ab195aa7d7ddc9a51327a2951342",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 1590,
+    "completionTokens": 1568,
+    "totalTokens": 3158,
+    "promptCacheHitTokens": 256,
+    "promptCacheMissTokens": 1334,
+    "reasoningTokens": 1202
+  },
+  "raw": "[\n  {\n    \"sampleId\": \"sample-dd1996d9-736c-45fb-add7-b8452c7a495d\",\n    \"requiredPointCoverage\": 0,\n    \"conditionFidelity\": 0,\n    \"evidenceGrounding\": 0,\n    \"answerabilityDiscipline\": 0,\n    \"sourceRoleTemporalDiscipline\": 0,\n    \"hardFailure\": false,\n    \"hardFailureTypes\": [],\n    \"rationale\": \"未提供任何要点，宣布无信息，拒答可答问题\"\n  },\n  {\n    \"sampleId\": \"sample-ddb1183a-3fa5-4bcd-8625-907681cc5749\",\n    \"requiredPointCoverage\": 4,\n    \"conditionFidelity\": 4,\n    \"evidenceGrounding\": 4,\n    \"answerabilityDiscipline\": 4,\n    \"sourceRoleTemporalDiscipline\": 4,\n    \"hardFailure\": false,\n    \"hardFailureTypes\": [],\n    \"rationale\": \"正确提供97%和36%，有引用，条件明确，无违规\"\n  },\n  {\n    \"sampleId\": \"sample-e84e206c-e7a4-4ac9-80c7-d2087c562c04\",\n    \"requiredPointCoverage\": 2,\n    \"conditionFidelity\": 2,\n    \"evidenceGrounding\": 2,\n    \"answerabilityDiscipline\": 1,\n    \"sourceRoleTemporalDiscipline\": 2,\n    \"hardFailure\": false,\n    \"hardFailureTypes\": [],\n    \"rationale\": \"仅正确提供复制比例，原始比例未给出且误称未知，引用部分不足\"\n  }\n]",
+  "rows": [
+    {
+      "sampleId": "sample-dd1996d9-736c-45fb-add7-b8452c7a495d",
+      "requiredPointCoverage": 0,
+      "conditionFidelity": 0,
+      "evidenceGrounding": 0,
+      "answerabilityDiscipline": 0,
+      "sourceRoleTemporalDiscipline": 0,
+      "hardFailure": false,
+      "hardFailureTypes": [],
+      "rationale": "未提供任何要点，宣布无信息，拒答可答问题"
+    },
+    {
+      "sampleId": "sample-ddb1183a-3fa5-4bcd-8625-907681cc5749",
+      "requiredPointCoverage": 4,
+      "conditionFidelity": 4,
+      "evidenceGrounding": 4,
+      "answerabilityDiscipline": 4,
+      "sourceRoleTemporalDiscipline": 4,
+      "hardFailure": false,
+      "hardFailureTypes": [],
+      "rationale": "正确提供97%和36%，有引用，条件明确，无违规"
+    },
+    {
+      "sampleId": "sample-e84e206c-e7a4-4ac9-80c7-d2087c562c04",
+      "requiredPointCoverage": 2,
+      "conditionFidelity": 2,
+      "evidenceGrounding": 2,
+      "answerabilityDiscipline": 1,
+      "sourceRoleTemporalDiscipline": 2,
+      "hardFailure": false,
+      "hardFailureTypes": [],
+      "rationale": "仅正确提供复制比例，原始比例未给出且误称未知，引用部分不足"
+    }
+  ]
+}

@@ -62,6 +62,17 @@ describe("Context Pack contract", () => {
 		expect(seedGraph.subgraph.relations).toHaveLength(1);
 	});
 
+	it("completes a bounded Claim neighborhood extracted from the same evidence block", () => {
+		const pack = buildContextPack(fixture(), "Alpha global", 4000, 0);
+		expect(pack.subgraph.claims.map((item) => item.id)).toContain("claim:sibling");
+		expect(pack.selectionLog).toContainEqual(
+			expect.objectContaining({
+				selected: "claim:sibling",
+				reason: expect.stringContaining("co-evidence:claim:global"),
+			}),
+		);
+	});
+
 	it("enforces the serialized token budget while preserving graph/evidence closure", () => {
 		const budget = 350;
 		const pack = buildContextPack(fixture(), "Alpha", budget, 2, {
@@ -114,6 +125,14 @@ function fixture(relationType: Relation["type"] = "SUPPORTS"): AppConfig {
 			text: "Alpha global.",
 		},
 		{
+			id: "span:sibling",
+			sourceId: "source:test",
+			blockId: "b0",
+			charStart: 30,
+			charEnd: 48,
+			text: "Sibling condition.",
+		},
+		{
 			id: "span:personal",
 			sourceId: "source:test",
 			blockId: "b1",
@@ -138,6 +157,9 @@ function fixture(relationType: Relation["type"] = "SUPPORTS"): AppConfig {
 		"utf-8",
 	);
 	const global = claim("claim:global", "Alpha global theorem", "span:global", { type: "GLOBAL" });
+	const sibling = claim("claim:sibling", "Sibling condition", "span:sibling", {
+		type: "GLOBAL",
+	});
 	const personal = claim("claim:personal", "Alpha personal note", "span:personal", {
 		type: "PERSONAL",
 		id: "user:alice",
@@ -170,7 +192,7 @@ function fixture(relationType: Relation["type"] = "SUPPORTS"): AppConfig {
 			sourceId: "source:test",
 			runId: "run:test",
 			publishedAt: "2026-07-23T00:00:00.000Z",
-			claims: [global, personal],
+			claims: [global, sibling, personal],
 			concepts: [],
 			relations: [relation],
 		},

@@ -1,5 +1,5 @@
 import { createHash } from "node:crypto";
-import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { loadConfig } from "../src/config/index.js";
@@ -13,7 +13,10 @@ const projectRoot = resolve(scriptDirectory, "..");
 const experimentRoot = join(projectRoot, "experiments", "benchmark-batch-c");
 const freezeRoot = join(experimentRoot, "stage-a-freeze");
 const workspaceRoot = join(experimentRoot, "workspace");
-const reportRoot = join(experimentRoot, "blind-first-run", "offline");
+const preparationId = process.env.WGE_BATCH_C_PREP_RUN_ID;
+const reportRoot = preparationId
+	? join(experimentRoot, "post-hoc", "preparations", preparationId)
+	: join(experimentRoot, "blind-first-run", "offline");
 const selection = readJson<JsonRecord>(join(freezeRoot, "selection.json"));
 const config = readJson<PilotConfig>(join(freezeRoot, "config.json"));
 const taskPath = resolve(experimentRoot, requireString(selection, "taskFile"));
@@ -30,6 +33,11 @@ const modes = [
 	{ id: "P-seed", pilotGroup: "P", graphExpansion: false },
 	{ id: "P-graph", pilotGroup: "P", graphExpansion: true },
 ] as const;
+if (!preparationId && existsSync(join(reportRoot, "context-preparation.json"))) {
+	throw new Error(
+		"Blind first-run contexts are sealed. Set WGE_BATCH_C_PREP_RUN_ID for a post-hoc preparation.",
+	);
+}
 mkdirSync(join(reportRoot, "contexts"), { recursive: true });
 const rows: JsonRecord[] = [];
 for (const questionId of questionIds) {
@@ -79,13 +87,19 @@ const summary = modes.map((mode) => {
 });
 const report = {
 	schemaVersion: "wge-batch-c-offline-preparation/v1",
-	status: "PREPARED_BLIND_NO_GOLD",
+	status: preparationId ? "PREPARED_POST_HOC" : "PREPARED_BLIND_NO_GOLD",
+	preparationId: preparationId ?? null,
 	questionFileHash: `sha256:${sha256(taskText)}`,
 	contextBudgetTokens: config.retrieval.contextBudgetTokens,
-	limitations: [
-		"No Stage B Gold or required evidence was available; this report measures retrieval shape and cost only.",
-		"Evidence recall and answer correctness cannot be computed before the sealed Gold is revealed.",
-	],
+	limitations: preparationId
+		? [
+				"This is a post-hoc retrieval preparation produced after Stage B reveal.",
+				"It must not replace or be reported as the blind first-run result.",
+			]
+		: [
+				"No Stage B Gold or required evidence was available; this report measures retrieval shape and cost only.",
+				"Evidence recall and answer correctness cannot be computed before the sealed Gold is revealed.",
+			],
 	summary,
 	rows,
 };

@@ -1,0 +1,51 @@
+{
+  "questionId": "C-T-PSYCH-001",
+  "promptHash": "f3f27255c7c785f2f7d4d9f3b877a90e6bb6993531864c316e02c9b7ed5859f0",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 3412,
+    "completionTokens": 2253,
+    "totalTokens": 5665,
+    "promptCacheHitTokens": 256,
+    "promptCacheMissTokens": 3156,
+    "reasoningTokens": 1852
+  },
+  "raw": "[\n  {\n    \"sampleId\": \"sample-bdaf4b32-b6c7-4fe7-9add-164c1e7f3d7e\",\n    \"requiredPointCoverage\": 2,\n    \"conditionFidelity\": 2,\n    \"evidenceGrounding\": 1,\n    \"answerabilityDiscipline\": 4,\n    \"sourceRoleTemporalDiscipline\": 3,\n    \"hardFailure\": false,\n    \"hardFailureTypes\": [],\n    \"rationale\": \"覆盖p3但漏p2；条件未提；引用多数无效；角色基本区分\"\n  },\n  {\n    \"sampleId\": \"sample-c59a9204-b03d-4c7f-901e-bc1dc44668ee\",\n    \"requiredPointCoverage\": 3,\n    \"conditionFidelity\": 2,\n    \"evidenceGrounding\": 4,\n    \"answerabilityDiscipline\": 4,\n    \"sourceRoleTemporalDiscipline\": 4,\n    \"hardFailure\": false,\n    \"hardFailureTypes\": [],\n    \"rationale\": \"覆盖p1、p2、p3，但p1缺低统计力；条件fidelity测量方式未提；引用有效；角色时间清楚\"\n  },\n  {\n    \"sampleId\": \"sample-70857c74-b664-402c-9ab9-4a8271e7d256\",\n    \"requiredPointCoverage\": 2,\n    \"conditionFidelity\": 1,\n    \"evidenceGrounding\": 1,\n    \"answerabilityDiscipline\": 4,\n    \"sourceRoleTemporalDiscipline\": 3,\n    \"hardFailure\": false,\n    \"hardFailureTypes\": [],\n    \"rationale\": \"覆盖p1部分和p3，缺p2；条件完全未提；引用无效；角色基本可辨\"\n  }\n]",
+  "rows": [
+    {
+      "sampleId": "sample-bdaf4b32-b6c7-4fe7-9add-164c1e7f3d7e",
+      "requiredPointCoverage": 2,
+      "conditionFidelity": 2,
+      "evidenceGrounding": 1,
+      "answerabilityDiscipline": 4,
+      "sourceRoleTemporalDiscipline": 3,
+      "hardFailure": false,
+      "hardFailureTypes": [],
+      "rationale": "覆盖p3但漏p2；条件未提；引用多数无效；角色基本区分"
+    },
+    {
+      "sampleId": "sample-c59a9204-b03d-4c7f-901e-bc1dc44668ee",
+      "requiredPointCoverage": 3,
+      "conditionFidelity": 2,
+      "evidenceGrounding": 4,
+      "answerabilityDiscipline": 4,
+      "sourceRoleTemporalDiscipline": 4,
+      "hardFailure": false,
+      "hardFailureTypes": [],
+      "rationale": "覆盖p1、p2、p3，但p1缺低统计力；条件fidelity测量方式未提；引用有效；角色时间清楚"
+    },
+    {
+      "sampleId": "sample-70857c74-b664-402c-9ab9-4a8271e7d256",
+      "requiredPointCoverage": 2,
+      "conditionFidelity": 1,
+      "evidenceGrounding": 1,
+      "answerabilityDiscipline": 4,
+      "sourceRoleTemporalDiscipline": 3,
+      "hardFailure": false,
+      "hardFailureTypes": [],
+      "rationale": "覆盖p1部分和p3，缺p2；条件完全未提；引用无效；角色基本可辨"
+    }
+  ]
+}

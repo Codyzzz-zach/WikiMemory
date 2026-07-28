@@ -1,0 +1,55 @@
+{
+  "questionId": "C-A-PSYCH-001",
+  "promptHash": "ff463c6571c61f076314c238f6af15d3e50288f89bf3b320f31c4e3a78f9b247",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 1499,
+    "completionTokens": 2681,
+    "totalTokens": 4180,
+    "promptCacheHitTokens": 256,
+    "promptCacheMissTokens": 1243,
+    "reasoningTokens": 2202
+  },
+  "raw": "[\n  {\n    \"sampleId\": \"sample-f14a3936-8b1d-40ab-b1de-8e44bf8c5fbd\",\n    \"requiredPointCoverage\": 0,\n    \"conditionFidelity\": 0,\n    \"evidenceGrounding\": 0,\n    \"answerabilityDiscipline\": 0,\n    \"sourceRoleTemporalDiscipline\": 0,\n    \"hardFailure\": true,\n    \"hardFailureTypes\": [\"claiming insufficient evidence to say ANYTHING\"],\n    \"rationale\": \"Claims materials contain no information on psychology replicability, contradicting provided sources (e.g., OSC 2015, Many Labs 1). This is a hard failure per rule: claiming insufficient evidence when materials do provide substantive evidence.\"\n  },\n  {\n    \"sampleId\": \"sample-9f4d2b72-8b3c-4991-a57d-9d4ec90765ad\",\n    \"requiredPointCoverage\": 1,\n    \"conditionFidelity\": 0,\n    \"evidenceGrounding\": 0,\n    \"answerabilityDiscipline\": 2,\n    \"sourceRoleTemporalDiscipline\": 0,\n    \"hardFailure\": false,\n    \"hardFailureTypes\": [],\n    \"rationale\": \"Correctly avoids definitive yes/no, but fails to reference specific mixed evidence (e.g., 36–39% from OSC, 77% from Many Labs) or list required gaps (e.g., no representative sample). No citations, no source role/temporal differentiation. Partial coverage of p2 only.\"\n  },\n  {\n    \"sampleId\": \"sample-c108709c-6726-4de3-8791-bde8d48d016f\",\n    \"requiredPointCoverage\": 0,\n    \"conditionFidelity\": 0,\n    \"evidenceGrounding\": 0,\n    \"answerabilityDiscipline\": 0,\n    \"sourceRoleTemporalDiscipline\": 0,\n    \"hardFailure\": true,\n    \"hardFailureTypes\": [\"claiming insufficient evidence to say ANYTHING\"],\n    \"rationale\": \"Same as sample-f14a3936: claims all retrieved content is about climate change, ignoring provided psychology replication materials. Hard failure.\"\n  }\n]",
+  "rows": [
+    {
+      "sampleId": "sample-f14a3936-8b1d-40ab-b1de-8e44bf8c5fbd",
+      "requiredPointCoverage": 0,
+      "conditionFidelity": 0,
+      "evidenceGrounding": 0,
+      "answerabilityDiscipline": 0,
+      "sourceRoleTemporalDiscipline": 0,
+      "hardFailure": true,
+      "hardFailureTypes": [
+        "claiming insufficient evidence to say ANYTHING"
+      ],
+      "rationale": "Claims materials contain no information on psychology replicability, contradicting provided sources (e.g., OSC 2015, Many Labs 1). This is a hard failure per rule: claiming insufficient evidence when materials do provide substantive evidence."
+    },
+    {
+      "sampleId": "sample-9f4d2b72-8b3c-4991-a57d-9d4ec90765ad",
+      "requiredPointCoverage": 1,
+      "conditionFidelity": 0,
+      "evidenceGrounding": 0,
+      "answerabilityDiscipline": 2,
+      "sourceRoleTemporalDiscipline": 0,
+      "hardFailure": false,
+      "hardFailureTypes": [],
+      "rationale": "Correctly avoids definitive yes/no, but fails to reference specific mixed evidence (e.g., 36–39% from OSC, 77% from Many Labs) or list required gaps (e.g., no representative sample). No citations, no source role/temporal differentiation. Partial coverage of p2 only."
+    },
+    {
+      "sampleId": "sample-c108709c-6726-4de3-8791-bde8d48d016f",
+      "requiredPointCoverage": 0,
+      "conditionFidelity": 0,
+      "evidenceGrounding": 0,
+      "answerabilityDiscipline": 0,
+      "sourceRoleTemporalDiscipline": 0,
+      "hardFailure": true,
+      "hardFailureTypes": [
+        "claiming insufficient evidence to say ANYTHING"
+      ],
+      "rationale": "Same as sample-f14a3936: claims all retrieved content is about climate change, ignoring provided psychology replication materials. Hard failure."
+    }
+  ]
+}

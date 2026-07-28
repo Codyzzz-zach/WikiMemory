@@ -1,0 +1,56 @@
+{
+  "runId": "batch-c-posthoc-2026-07-28T09-13-22-633Z",
+  "sampleId": "sample-94386cae-0d48-411a-aaab-63eec035ce02",
+  "questionId": "C-C-LAW-001",
+  "group": "P-seed",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "temperature": 0,
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 2315,
+    "completionTokens": 193,
+    "totalTokens": 2508,
+    "promptCacheHitTokens": 256,
+    "promptCacheMissTokens": 2059,
+    "reasoningTokens": 0
+  },
+  "latencyMs": 1607,
+  "promptHash": "3bf93bf4407bf3a692af5b004c41ad37ecf85af99406346ae4efd1aa55ec88dd",
+  "contextHash": "d4c9b841fc923da4fded3b72e4501f38bd58ff2cda8da19de5de668b32c12d76",
+  "estimatedContextTokens": 1793,
+  "estimatedInputTokens": 2009,
+  "retrievedClaims": [
+    "claim:1e61c7154b59a8af-037c8bf8420e807b",
+    "claim:1e61c7154b59a8af-73fa3ab27414cda8",
+    "claim:1e61c7154b59a8af-6701affdd23f4d99",
+    "claim:b26d226f500be322-6bee41025b267e1e",
+    "claim:1e61c7154b59a8af-02f4110de018fe27",
+    "claim:1e61c7154b59a8af-1a8b84d94cb7f84c",
+    "claim:1e61c7154b59a8af-1cf8a28c3d29fe57",
+    "claim:1e61c7154b59a8af-24efdd4723db224e",
+    "claim:1e61c7154b59a8af-586c0b4788cea75b",
+    "claim:1e61c7154b59a8af-5d4298ea38bc4dd6",
+    "claim:1e61c7154b59a8af-24f87359d6644586",
+    "claim:1e61c7154b59a8af-a48a3f1ae8ac6838",
+    "claim:1e61c7154b59a8af-b807fa4a3bd16e79",
+    "claim:1e61c7154b59a8af-c41cc0332d3045b4",
+    "claim:b26d226f500be322-a1e1b8d226844ba6"
+  ],
+  "retrievedRelations": [],
+  "retrievedSources": [
+    "source:c-law-001-1e61c7154b59a8af",
+    "source:c-climate-001-b26d226f500be322"
+  ],
+  "citationValidation": {
+    "valid": true,
+    "citationCount": 3,
+    "invalid": []
+  },
+  "request": {
+    "systemPrompt": "你是受证据约束的问答 Agent。只使用本次请求提供的检索上下文回答。\n要求：保留影响结论的条件、时间、例外、来源角色与不确定性；关键结论引用上下文中的 SOURCE、EVIDENCE 或 CLAIM 标识；上下文不足时明确说明，不得用外部常识补齐。\n只输出严格 JSON：{\"answer\":\"...\",\"citations\":[\"...\"],\"insufficient\":false,\"uncertainties\":[\"...\"]}。",
+    "userPrompt": "# 问题\nEU AI Act 采用了分阶段实施的策略。不同风险等级的 AI 系统的合规截止日期有何不同？不可接受风险实践的禁令何时生效？Annex III 高风险 AI 系统的规则何时生效？\n\n# 检索上下文\n## TASK MAP\n主题: EU AI Act 采用了分阶段实施的策略。不同风险等级的 AI 系统的合规截止日期有何不同？不可接受风险实践的禁令何时生效？Annex III 高风险 AI 系统的规则何时生效？\n地图主题: eu, ai, act, 系统, annex\n关键概念: 已实施政策, 不可持续的能源使用, 生态系统脆弱性, Regulation (EU) 2021/1119, EU\n已知争议: 0 个\n最近变化: 5 条\n找到 15 条相关 Claim\n找到 0 条关系\n找到 15 条原文证据\n\n## CLAIM claim:1e61c7154b59a8af-037c8bf8420e807b\nHigh-risk AI systems include those that are safety components of products (Annex I) or fall within eight specific use cases (Annex III).\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:1e61c7154b59a8af-73fa3ab27414cda8\nRules for high-risk AI systems (Annex III) take effect on 2 August 2026.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:1e61c7154b59a8af-6701affdd23f4d99\nRules for product-linked high-risk AI systems (Annex I) take effect on 2 August 2027.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:b26d226f500be322-6bee41025b267e1e\n人类和生态系统的脆弱性是相互依存的。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:1e61c7154b59a8af-02f4110de018fe27\nThe AI Act was adopted on 13 June 2024.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:1e61c7154b59a8af-1a8b84d94cb7f84c\nThe AI Act was published in the Official Journal L series on 12 July 2024.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:1e61c7154b59a8af-1cf8a28c3d29fe57\nThe AI Act adopts a four-tier risk classification.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:1e61c7154b59a8af-24efdd4723db224e\nThe AI Act is also known as the 'AI Act' or 'EU AI Act'.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:1e61c7154b59a8af-586c0b4788cea75b\nUnacceptable risk AI practices are prohibited and include: subliminal techniques causing harm; exploiting vulnerabilities due to age, disability, or social/economic situation; social scoring; predictive policing based on profiling; untargeted scraping of facial images; emotion inference in workplace/education; biometric categorization of sensitive characteristics; real-time remote biometric identification for law enforcement (with narrow exceptions).\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:1e61c7154b59a8af-5d4298ea38bc4dd6\nThe AI Act entered into force on 2 August 2024.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:1e61c7154b59a8af-24f87359d6644586\nMember states must designate competent authorities by 2 August 2025.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:1e61c7154b59a8af-a48a3f1ae8ac6838\nProhibitions on unacceptable risk practices take effect on 2 February 2025.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:1e61c7154b59a8af-b807fa4a3bd16e79\nSpecific transparency risk applies to chatbots, deepfakes, and emotion recognition systems, which must disclose their AI nature.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:1e61c7154b59a8af-c41cc0332d3045b4\nMinimal risk applies to most AI systems, with no additional obligations beyond existing law.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:b26d226f500be322-a1e1b8d226844ba6\n大约33亿至36亿人生活在高度脆弱于气候变化的环境中。\nConditions: none\nValidity: SUPPORTED\n\n## EVIDENCE span:c-law-001-1e61c7154b59a8af-8#chars-1711-2109\n**High Risk** — AI systems that are safety components of products (Annex I) or fall within eight specific use cases (Annex III), including: biometric identification; critical infrastructure management; education and vocational training; employment and worker management; access to essential services; law enforcement; migration and border control; administration of justice and democratic processes\n\n## EVIDENCE span:c-law-001-1e61c7154b59a8af-12#chars-2707-2776\n2 August 2026: Rules for high-risk AI systems (Annex III) take effect\n\n## EVIDENCE span:c-law-001-1e61c7154b59a8af-12#chars-2779-2861\n2 August 2027: Rules for product-linked high-risk AI systems (Annex I) take effect\n\n## EVIDENCE span:c-climate-001-b26d226f500be322-13#chars-2822-2875\nHuman and ecosystem vulnerability are interdependent.\n\n## EVIDENCE span:c-law-001-1e61c7154b59a8af-3#chars-206-231\n**Adopted:** 13 June 2024\n\n## EVIDENCE span:c-law-001-1e61c7154b59a8af-3#chars-270-313\n**Published in OJ:** L series, 12 July 2024\n\n## EVIDENCE span:c-law-001-1e61c7154b59a8af-7#chars-1202-1252\nThe AI Act adopts a four-tier risk classification:\n\n## EVIDENCE span:c-law-001-1e61c7154b59a8af-3#chars-314-353\n**Also known as:** \"AI Act\", \"EU AI Act\n\n## EVIDENCE span:c-law-001-1e61c7154b59a8af-8#chars-1257-1704\n**Unacceptable Risk** — Prohibited practices include: subliminal techniques causing harm; exploiting vulnerabilities due to age, disability, or social/economic situation; social scoring; predictive policing based on profiling; untargeted scraping of facial images; emotion inference in workplace/education; biometric categorization of sensitive characteristics; real-time remote biometric identification for law enforcement (with narrow exceptions\n\n## EVIDENCE span:c-law-001-1e61c7154b59a8af-3#chars-232-269\n**Entered into force:** 2 August 2024\n\n## EVIDENCE span:c-law-001-1e61c7154b59a8af-12#chars-2639-2704\n2 August 2025: Member states must designate competent authorities\n\n## EVIDENCE span:c-law-001-1e61c7154b59a8af-12#chars-2564-2636\n2 February 2025: Prohibitions on unacceptable risk practices take effect\n\n## EVIDENCE span:c-law-001-1e61c7154b59a8af-8#chars-2115-2230\n**Specific Transparency Risk** — Chatbots, deepfakes, and emotion recognition systems must disclose their AI nature\n\n## EVIDENCE span:c-law-001-1e61c7154b59a8af-8#chars-2236-2317\n**Minimal Risk** — Most AI systems; no additional obligations beyond existing law\n\n## EVIDENCE span:c-climate-001-b26d226f500be322-13#chars-2719-2821\nApproximately 3.3 to 3.6 billion people live in contexts that are highly vulnerable to climate change.\n\n## CONFLICTS AND CONDITIONS\n🔎 Source source:c-climate-001-b26d226f500be322 provenance: uri=experiments/benchmark-batch-c/stage-a-freeze/compilation-corpus/climate-energy-policy/c-climate-001.md; sourceType=md; sourceRole=P-primary; author=IPCC (Intergovernmental Panel on Climate Change); canonicalUrl=https://www.ipcc.ch/report/ar6/syr/; publishedAt=Sun Mar 19 2023 08:00:00 GMT+0800 (China Standard Time); versionRef=doi:10.59327/IPCC/AR6-9789291691647\n🔎 Source source:c-law-001-1e61c7154b59a8af provenance: uri=experiments/benchmark-batch-c/stage-a-freeze/compilation-corpus/law-public-policy/c-law-001.md; sourceType=md; sourceRole=P-primary; author=European Parliament and Council of the European Union; canonicalUrl=https://eur-lex.europa.eu/eli/reg/2024/1689/oj; publishedAt=Thu Jun 13 2024 08:00:00 GMT+0800 (China Standard Time); versionRef=CELEX:32024R1689; OJ L, 2024/1689, 12.7.2024\n\n## KNOWN GAPS\n未找到关系——Graph 可能尚未建立跨材料边"
+  },
+  "answer": "{\n  \"answer\": \"EU AI Act 采用四级风险分类。不可接受风险实践的禁令于 2025 年 2 月 2 日生效。Annex III 高风险 AI 系统的规则于 2026 年 8 月 2 日生效。产品相关高风险 AI 系统（Annex I）的规则于 2027 年 8 月 2 日生效。\",\n  \"citations\": [\n    \"claim:1e61c7154b59a8af-a48a3f1ae8ac6838\",\n    \"claim:1e61c7154b59a8af-73fa3ab27414cda8\",\n    \"claim:1e61c7154b59a8af-6701affdd23f4d99\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}",
+  "answerFormatValid": true
+}
