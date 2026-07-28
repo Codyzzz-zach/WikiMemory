@@ -1,0 +1,1111 @@
+{
+  "schemaVersion": "v1",
+  "sourceId": "source:c-psych-003-08f4f1f4eb388c06",
+  "runId": "53860ac5-4164-41aa-b2d8-839263374af7",
+  "publishedAt": "2026-07-28T07:09:16.221Z",
+  "claims": [
+    {
+      "id": "claim:08f4f1f4eb388c06-06d433cbfd18102a",
+      "statement": "All the rules about sampling and calculating error and keeping experimenters blind to the hypothesis must apply whether you are studying people or studying the replicability of a science.",
+      "evidenceSpanIds": [
+        "span:c-psych-003-08f4f1f4eb388c06-11#chars-2901-3109"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:08:26.887Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-003-08f4f1f4eb388c06-11#chars-2901-3109"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-003-08f4f1f4eb388c06-11#chars-2901-3109"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:08:26.887Z"
+    },
+    {
+      "id": "claim:08f4f1f4eb388c06-0f3133566cb643a9",
+      "statement": "Low-fidelity replications were four times more likely to fail than high-fidelity replications.",
+      "evidenceSpanIds": [
+        "span:c-psych-003-08f4f1f4eb388c06-10#chars-2549-2630"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:08:26.887Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-003-08f4f1f4eb388c06-10#chars-2549-2630"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-003-08f4f1f4eb388c06-10#chars-2549-2630"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:08:26.887Z"
+    },
+    {
+      "id": "claim:08f4f1f4eb388c06-12af1f73e66615a0",
+      "statement": "Meta-science must obey the rules of science.",
+      "evidenceSpanIds": [
+        "span:c-psych-003-08f4f1f4eb388c06-11#chars-2812-2900"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:08:26.887Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-003-08f4f1f4eb388c06-11#chars-2812-2900"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-003-08f4f1f4eb388c06-11#chars-2812-2900"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:08:26.887Z"
+    },
+    {
+      "id": "claim:08f4f1f4eb388c06-1df6220326f7a438",
+      "statement": "To estimate a parameter of a population, you must either randomly sample from that population or make statistical corrections for not doing so.",
+      "evidenceSpanIds": [
+        "span:c-psych-003-08f4f1f4eb388c06-7#chars-1171-1346"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:08:26.887Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-003-08f4f1f4eb388c06-7#chars-1171-1346"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-003-08f4f1f4eb388c06-7#chars-1171-1346"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:08:26.887Z"
+    },
+    {
+      "id": "claim:08f4f1f4eb388c06-2c77f195d121aaf4",
+      "statement": "In their response to the comment, the OSC quibbled about minor issues but conceded the major one: their paper does not provide evidence for the pessimistic conclusions most people have drawn from it.",
+      "evidenceSpanIds": [
+        "span:c-psych-003-08f4f1f4eb388c06-13#chars-3209-3464"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:08:26.887Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-003-08f4f1f4eb388c06-13#chars-3209-3464"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-003-08f4f1f4eb388c06-13#chars-3209-3464"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:08:26.887Z"
+    },
+    {
+      "id": "claim:08f4f1f4eb388c06-359db3a1c1ff5ab8",
+      "statement": "The OSC article provides no support for the conclusion that reproducibility is low.",
+      "evidenceSpanIds": [
+        "span:c-psych-003-08f4f1f4eb388c06-5#chars-843-949"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:08:26.887Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-003-08f4f1f4eb388c06-5#chars-843-949"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-003-08f4f1f4eb388c06-5#chars-843-949"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:08:26.887Z"
+    },
+    {
+      "id": "claim:08f4f1f4eb388c06-5a1eca00ccef74b9",
+      "statement": "A paper from the Open Science Collaboration attempting to replicate 100 published studies suggests that the reproducibility of psychological science is surprisingly low.",
+      "evidenceSpanIds": [
+        "span:c-psych-003-08f4f1f4eb388c06-5#chars-628-842"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:08:26.887Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-003-08f4f1f4eb388c06-5#chars-628-842"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-003-08f4f1f4eb388c06-5#chars-628-842"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:08:26.887Z"
+    },
+    {
+      "id": "claim:08f4f1f4eb388c06-65df6845dea7acf3",
+      "statement": "Meta-science is not exempt from the rules of science.",
+      "evidenceSpanIds": [
+        "span:c-psych-003-08f4f1f4eb388c06-11#chars-3110-3161"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:08:26.887Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-003-08f4f1f4eb388c06-11#chars-3110-3161"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-003-08f4f1f4eb388c06-11#chars-3110-3161"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:08:26.887Z"
+    },
+    {
+      "id": "claim:08f4f1f4eb388c06-6ef2efdb71d13a42",
+      "statement": "The OSC excluded entire classes of studies whose methods are probably among the best in science from the sample.",
+      "evidenceSpanIds": [
+        "span:c-psych-003-08f4f1f4eb388c06-8#chars-1409-1674"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:08:26.887Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-003-08f4f1f4eb388c06-8#chars-1409-1674"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-003-08f4f1f4eb388c06-8#chars-1409-1674"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:08:26.887Z"
+    },
+    {
+      "id": "claim:08f4f1f4eb388c06-6fa60fec777bce5d",
+      "statement": "该研究发表在《科学》杂志第351卷第6277期第1037页。",
+      "evidenceSpanIds": [
+        "span:c-psych-003-08f4f1f4eb388c06-3#chars-487-555"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:08:26.887Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-003-08f4f1f4eb388c06-3#chars-487-555"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-003-08f4f1f4eb388c06-3#chars-487-555"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:08:26.887Z"
+    },
+    {
+      "id": "claim:08f4f1f4eb388c06-6fb8eb7351f1558a",
+      "statement": "该研究的内容来源于PubMed摘要和哈佛公报的报道。",
+      "evidenceSpanIds": [
+        "span:c-psych-003-08f4f1f4eb388c06-2#chars-159-349"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:08:26.887Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-003-08f4f1f4eb388c06-2#chars-159-349"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-003-08f4f1f4eb388c06-2#chars-159-349"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:08:26.887Z"
+    },
+    {
+      "id": "claim:08f4f1f4eb388c06-98bbd61106afc39e",
+      "statement": "The OSC created an idiosyncratic, arbitrary list of sampling rules that excluded the majority of psychology's subfields from the sample.",
+      "evidenceSpanIds": [
+        "span:c-psych-003-08f4f1f4eb388c06-8#chars-1409-1674"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:08:26.887Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-003-08f4f1f4eb388c06-8#chars-1409-1674"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-003-08f4f1f4eb388c06-8#chars-1409-1674"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:08:26.887Z"
+    },
+    {
+      "id": "claim:08f4f1f4eb388c06-9d3d87bb413cd0f9",
+      "statement": "When the calculation was done correctly and applied to the OSC data, the number of failures observed was just about what should be expected by chance alone, even if all 100 original findings were true.",
+      "evidenceSpanIds": [
+        "span:c-psych-003-08f4f1f4eb388c06-9#chars-2037-2283"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:08:26.887Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-003-08f4f1f4eb388c06-9#chars-2037-2283"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-003-08f4f1f4eb388c06-9#chars-2037-2283"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:08:26.887Z"
+    },
+    {
+      "id": "claim:08f4f1f4eb388c06-a2c943aa0de96d3f",
+      "statement": "该研究的DOI是10.1126/science.aad7243。",
+      "evidenceSpanIds": [
+        "span:c-psych-003-08f4f1f4eb388c06-3#chars-556-588"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:08:26.887Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-003-08f4f1f4eb388c06-3#chars-556-588"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-003-08f4f1f4eb388c06-3#chars-556-588"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:08:26.887Z"
+    },
+    {
+      "id": "claim:08f4f1f4eb388c06-a6a1002ab06055f5",
+      "statement": "The OSC failed to consider that their replication studies were often quite different from the originals in many ways, and those differences are a source of statistical error.",
+      "evidenceSpanIds": [
+        "span:c-psych-003-08f4f1f4eb388c06-9#chars-1765-2036"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:08:26.887Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-003-08f4f1f4eb388c06-9#chars-1765-2036"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-003-08f4f1f4eb388c06-9#chars-1765-2036"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:08:26.887Z"
+    },
+    {
+      "id": "claim:08f4f1f4eb388c06-b7358d918b6741a7",
+      "statement": "The data are consistent with the opposite conclusion that the reproducibility of psychological science is quite high.",
+      "evidenceSpanIds": [
+        "span:c-psych-003-08f4f1f4eb388c06-5#chars-950-1084"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:08:26.887Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-003-08f4f1f4eb388c06-5#chars-950-1084"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-003-08f4f1f4eb388c06-5#chars-950-1084"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:08:26.887Z"
+    },
+    {
+      "id": "claim:08f4f1f4eb388c06-be69d5a9f5b7a2ae",
+      "statement": "该研究的作者包括Daniel T. Gilbert、Gary King、Stephen Pettigrew和Timothy D. Wilson。",
+      "evidenceSpanIds": [
+        "span:c-psych-003-08f4f1f4eb388c06-3#chars-352-486"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:08:26.887Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-003-08f4f1f4eb388c06-3#chars-352-486"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-003-08f4f1f4eb388c06-3#chars-352-486"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:08:26.887Z"
+    },
+    {
+      "id": "claim:08f4f1f4eb388c06-cb421c6ce5c6137f",
+      "statement": "该研究的科学评论需要付费才能查看。",
+      "evidenceSpanIds": [
+        "span:c-psych-003-08f4f1f4eb388c06-2#chars-120-350"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:08:26.887Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-003-08f4f1f4eb388c06-2#chars-120-350"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-003-08f4f1f4eb388c06-2#chars-120-350"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:08:26.887Z"
+    },
+    {
+      "id": "claim:08f4f1f4eb388c06-cc032c5f6d34ae62",
+      "statement": "The failure of the replication studies to match the original studies was a failure of the replications, not of the originals.",
+      "evidenceSpanIds": [
+        "span:c-psych-003-08f4f1f4eb388c06-9#chars-2284-2409"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:08:26.887Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-003-08f4f1f4eb388c06-9#chars-2284-2409"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-003-08f4f1f4eb388c06-9#chars-2284-2409"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:08:26.887Z"
+    },
+    {
+      "id": "claim:08f4f1f4eb388c06-e6a4094f6f5c1f5f",
+      "statement": "The infidelities did not just create random statistical noise; they actually biased the studies toward failure.",
+      "evidenceSpanIds": [
+        "span:c-psych-003-08f4f1f4eb388c06-10#chars-2631-2770"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:08:26.887Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-003-08f4f1f4eb388c06-10#chars-2631-2770"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-003-08f4f1f4eb388c06-10#chars-2631-2770"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:08:26.887Z"
+    },
+    {
+      "id": "claim:08f4f1f4eb388c06-f51a04a7521879df",
+      "statement": "The OSC did neither random sampling nor statistical corrections.",
+      "evidenceSpanIds": [
+        "span:c-psych-003-08f4f1f4eb388c06-7#chars-1347-1367"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:08:26.887Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-003-08f4f1f4eb388c06-7#chars-1347-1367"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-003-08f4f1f4eb388c06-7#chars-1347-1367"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:08:26.887Z"
+    }
+  ],
+  "concepts": [
+    {
+      "id": "concept:151625d905a8b4b1",
+      "name": "Open Science Collaboration (OSC)",
+      "aliases": [
+        "OSC"
+      ],
+      "boundary": "A group that conducted a large-scale replication project in psychology.",
+      "domain": "Psychology"
+    },
+    {
+      "id": "concept:1c94942fc7a8dce5",
+      "name": "reproducibility",
+      "aliases": [
+        "reproducibility"
+      ],
+      "boundary": "A defining feature of science; extent to which it characterizes current research is unknown.",
+      "domain": "Science"
+    },
+    {
+      "id": "concept:272eb124b9b98660",
+      "name": "Statistical correction",
+      "aliases": [
+        "statistical corrections"
+      ],
+      "boundary": "Adjustments made to data or analysis to account for sampling biases or other issues.",
+      "domain": "Statistics"
+    },
+    {
+      "id": "concept:32815757c016b0b1",
+      "name": "Original study",
+      "aliases": [
+        "original findings",
+        "originals"
+      ],
+      "boundary": "The initial study that is being replicated.",
+      "domain": "Research"
+    },
+    {
+      "id": "concept:45894084a3affb42",
+      "name": "Bias",
+      "aliases": [
+        "biased"
+      ],
+      "boundary": "Systematic deviation from the true value, often leading to incorrect conclusions.",
+      "domain": "Statistics"
+    },
+    {
+      "id": "concept:4905a0fb533bd170",
+      "name": "Replication",
+      "aliases": [
+        "replicability",
+        "replication studies"
+      ],
+      "boundary": "The process of repeating a study to verify its findings; includes high-fidelity and low-fidelity replications.",
+      "domain": "Science"
+    },
+    {
+      "id": "concept:4b5e4858516da0c2",
+      "name": "Chance",
+      "aliases": [
+        "by chance"
+      ],
+      "boundary": "Random variation that can lead to observed outcomes even if no real effect exists.",
+      "domain": "Statistics"
+    },
+    {
+      "id": "concept:60ee1540870200ce",
+      "name": "Psychological science",
+      "aliases": [
+        "psychology"
+      ],
+      "boundary": "The scientific study of mind and behavior.",
+      "domain": "Psychology"
+    },
+    {
+      "id": "concept:6381d3a7708ee6ee",
+      "name": "Statistical error",
+      "aliases": [
+        "statistical errors",
+        "statistical noise"
+      ],
+      "boundary": "Errors in statistical analysis or interpretation, including random noise and systematic bias.",
+      "domain": "Statistics"
+    },
+    {
+      "id": "concept:64e49211e5681b9d",
+      "name": "Sample",
+      "aliases": [],
+      "boundary": "A subset of the population selected for study.",
+      "domain": "Statistics"
+    },
+    {
+      "id": "concept:98acece2d03db3c6",
+      "name": "Failure",
+      "aliases": [
+        "failures"
+      ],
+      "boundary": "In replication, when the replication does not produce results consistent with the original.",
+      "domain": "Research"
+    },
+    {
+      "id": "concept:a31e7534c3712689",
+      "name": "Replication study",
+      "aliases": [
+        "replications"
+      ],
+      "boundary": "A study that attempts to reproduce the results of an original study.",
+      "domain": "Research"
+    },
+    {
+      "id": "concept:b9d2127b39ab8253",
+      "name": "Fidelity",
+      "aliases": [
+        "high-fidelity",
+        "low-fidelity"
+      ],
+      "boundary": "The degree to which a replication matches the original study in methods and conditions.",
+      "domain": "Research Methodology"
+    },
+    {
+      "id": "concept:bd0a7924149bd6fd",
+      "name": "Population",
+      "aliases": [],
+      "boundary": "The entire group of individuals or items of interest in a study.",
+      "domain": "Statistics"
+    },
+    {
+      "id": "concept:c79869c36917945a",
+      "name": "Experimenter blinding",
+      "aliases": [
+        "keeping experimenters blind to the hypothesis"
+      ],
+      "boundary": "A methodological procedure where experimenters are unaware of the hypothesis to prevent bias.",
+      "domain": "Research Methodology"
+    },
+    {
+      "id": "concept:c7c321f4f76d25de",
+      "name": "Sampling",
+      "aliases": [
+        "random sampling",
+        "sampling rules"
+      ],
+      "boundary": "The process of selecting a subset of individuals or studies from a population to estimate characteristics of the whole population.",
+      "domain": "Statistics"
+    },
+    {
+      "id": "concept:cfa2e819cae58255",
+      "name": "Subfield",
+      "aliases": [
+        "subfields"
+      ],
+      "boundary": "A specialized area within a broader field, such as psychology.",
+      "domain": "Science"
+    },
+    {
+      "id": "concept:e2cfaeb218e7e6df",
+      "name": "Meta-science",
+      "aliases": [],
+      "boundary": "The scientific study of science itself, including its methods and practices.",
+      "domain": "Science"
+    },
+    {
+      "id": "concept:f06433ac3c3f604d",
+      "name": "Parameter estimation",
+      "aliases": [
+        "estimate a parameter"
+      ],
+      "boundary": "The process of using sample data to estimate a population parameter.",
+      "domain": "Statistics"
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel:08f4f1f4eb388c06-0dd79916f9750075",
+      "from": "claim:08f4f1f4eb388c06-06d433cbfd18102a",
+      "to": "claim:08f4f1f4eb388c06-12af1f73e66615a0",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:c-psych-003-08f4f1f4eb388c06-11#chars-2812-2900",
+        "span:c-psych-003-08f4f1f4eb388c06-11#chars-2901-3109"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:08:38.482Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.8,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:08f4f1f4eb388c06-25b66588566cfa6c",
+      "from": "claim:08f4f1f4eb388c06-06d433cbfd18102a",
+      "to": "claim:08f4f1f4eb388c06-65df6845dea7acf3",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:c-psych-003-08f4f1f4eb388c06-11#chars-2901-3109",
+        "span:c-psych-003-08f4f1f4eb388c06-11#chars-3110-3161"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:08:38.482Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.8,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:08f4f1f4eb388c06-63b45eae9206d3e6",
+      "from": "claim:08f4f1f4eb388c06-6ef2efdb71d13a42",
+      "to": "claim:08f4f1f4eb388c06-98bbd61106afc39e",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:c-psych-003-08f4f1f4eb388c06-8#chars-1409-1674"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:08:38.482Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.8,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:08f4f1f4eb388c06-8f9c64751827ab53",
+      "from": "claim:08f4f1f4eb388c06-5a1eca00ccef74b9",
+      "to": "claim:08f4f1f4eb388c06-b7358d918b6741a7",
+      "type": "CONTRADICTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:c-psych-003-08f4f1f4eb388c06-5#chars-628-842",
+        "span:c-psych-003-08f4f1f4eb388c06-5#chars-950-1084"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:08:38.482Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.9,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:08f4f1f4eb388c06-c6738e4bb5094123",
+      "from": "claim:08f4f1f4eb388c06-9d3d87bb413cd0f9",
+      "to": "claim:08f4f1f4eb388c06-b7358d918b6741a7",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:c-psych-003-08f4f1f4eb388c06-5#chars-950-1084",
+        "span:c-psych-003-08f4f1f4eb388c06-9#chars-2037-2283"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:08:38.482Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.8,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:cross-190d575c8a32eb68",
+      "from": "claim:08f4f1f4eb388c06-5a1eca00ccef74b9",
+      "to": "claim:0f7730e649dbc238-6b8953e4a783f80b",
+      "type": "RELATED_TO",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:c-psych-001-0f7730e649dbc238-8#chars-1037-1095",
+        "span:c-psych-003-08f4f1f4eb388c06-5#chars-628-842"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:09:07.128Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "cross-material-detect",
+      "confidence": 0.7,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:cross-31f5789ef03f88f9",
+      "from": "claim:08f4f1f4eb388c06-5a1eca00ccef74b9",
+      "to": "claim:0f7730e649dbc238-a0efb89317e2d151",
+      "type": "RELATED_TO",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:c-psych-001-0f7730e649dbc238-12#chars-1783-1832",
+        "span:c-psych-003-08f4f1f4eb388c06-5#chars-628-842"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:09:07.128Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "cross-material-detect",
+      "confidence": 0.8,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:cross-a0d07d70ea4749c4",
+      "from": "claim:08f4f1f4eb388c06-5a1eca00ccef74b9",
+      "to": "claim:0f7730e649dbc238-7fd9ac05cca2b583",
+      "type": "RELATED_TO",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:c-psych-001-0f7730e649dbc238-5#chars-589-699",
+        "span:c-psych-003-08f4f1f4eb388c06-5#chars-628-842"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:09:07.128Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "cross-material-detect",
+      "confidence": 0.9,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:cross-c6c0db939ea1210c",
+      "from": "claim:08f4f1f4eb388c06-cb421c6ce5c6137f",
+      "to": "claim:0f7730e649dbc238-a2a1c24332b9f4e6",
+      "type": "RELATED_TO",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:c-psych-001-0f7730e649dbc238-2#chars-80-232",
+        "span:c-psych-003-08f4f1f4eb388c06-2#chars-120-350"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:09:07.128Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "cross-material-detect",
+      "confidence": 0.9,
+      "consumedBy": []
+    }
+  ]
+}

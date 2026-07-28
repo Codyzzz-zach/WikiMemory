@@ -1,0 +1,1249 @@
+{
+  "schemaVersion": "v1",
+  "sourceId": "source:c-psych-003-08f4f1f4eb388c06",
+  "runId": "53860ac5-4164-41aa-b2d8-839263374af7",
+  "publishedAt": "2026-07-28T07:09:16.221Z",
+  "claims": [
+    {
+      "claim": {
+        "id": "claim:08f4f1f4eb388c06-a5ed85263c0aa666",
+        "statement": "Gilbert, King, Pettigrew, and Wilson show that the OSC article contains three statistical errors.",
+        "evidenceSpanIds": [
+          "span:c-psych-003-08f4f1f4eb388c06-5#chars-843-949"
+        ],
+        "conditions": [],
+        "derivation": "EXTRACTED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:08:26.887Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "confidence": 1,
+        "claimKind": "FACT",
+        "scope": {
+          "type": "GLOBAL"
+        },
+        "provenanceRefs": [
+          {
+            "type": "SourceSpan",
+            "spanId": "span:c-psych-003-08f4f1f4eb388c06-5#chars-843-949"
+          }
+        ],
+        "supportingEvidenceRefs": [
+          {
+            "type": "SourceSpan",
+            "spanId": "span:c-psych-003-08f4f1f4eb388c06-5#chars-843-949"
+          }
+        ],
+        "knowledgeVersion": "v1",
+        "recordedAt": "2026-07-28T07:08:26.887Z"
+      },
+      "issues": [
+        {
+          "code": "SEMANTIC_SUPPORT_FAILED",
+          "severity": "error",
+          "affectedObject": "claim:08f4f1f4eb388c06-a5ed85263c0aa666",
+          "detail": "support：证据没有明确支持 Claim 的全部断言；证据 [0:c-psych-003#block-5] “We show that this article contains three statistical errors and provides no supp”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "SEMANTIC_ADDITION_MAJOR",
+          "severity": "error",
+          "affectedObject": "claim:08f4f1f4eb388c06-a5ed85263c0aa666",
+          "detail": "addition：Claim 添加了证据未表达的内容；证据 [0:c-psych-003#block-5] “We show that this article contains three statistical errors and provides no supp”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "claim": {
+        "id": "claim:08f4f1f4eb388c06-fae47434735ff63b",
+        "statement": "The OSC proceeded to violate all of their own sampling rules.",
+        "evidenceSpanIds": [
+          "span:c-psych-003-08f4f1f4eb388c06-8#chars-1675-1729"
+        ],
+        "conditions": [],
+        "derivation": "EXTRACTED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:08:26.887Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "confidence": 1,
+        "claimKind": "FACT",
+        "scope": {
+          "type": "GLOBAL"
+        },
+        "provenanceRefs": [
+          {
+            "type": "SourceSpan",
+            "spanId": "span:c-psych-003-08f4f1f4eb388c06-8#chars-1675-1729"
+          }
+        ],
+        "supportingEvidenceRefs": [
+          {
+            "type": "SourceSpan",
+            "spanId": "span:c-psych-003-08f4f1f4eb388c06-8#chars-1675-1729"
+          }
+        ],
+        "knowledgeVersion": "v1",
+        "recordedAt": "2026-07-28T07:08:26.887Z"
+      },
+      "issues": [
+        {
+          "code": "SEMANTIC_SUPPORT_FAILED",
+          "severity": "error",
+          "affectedObject": "claim:08f4f1f4eb388c06-fae47434735ff63b",
+          "detail": "support：证据没有明确支持 Claim 的全部断言；证据 [0:c-psych-003#block-8] “Then they proceeded to violate all of their own rules.”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "SEMANTIC_LIMITS_MISSING",
+          "severity": "warning",
+          "affectedObject": "claim:08f4f1f4eb388c06-fae47434735ff63b",
+          "detail": "limits：Claim 丢失了证据中的条件、例外或限定词；证据 [0:c-psych-003#block-8] “Then they proceeded to violate all of their own rules.”",
+          "recommendedState": "CANONICAL"
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "relation": {
+        "id": "rel:08f4f1f4eb388c06-001ad61efffc94cb",
+        "from": "claim:08f4f1f4eb388c06-359db3a1c1ff5ab8",
+        "to": "claim:08f4f1f4eb388c06-5a1eca00ccef74b9",
+        "type": "CONTRADICTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-psych-003-08f4f1f4eb388c06-5#chars-628-842",
+          "span:c-psych-003-08f4f1f4eb388c06-5#chars-843-949"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:08:38.482Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_CONDITIONS_MISSING",
+          "severity": "error",
+          "affectedObject": "rel:08f4f1f4eb388c06-001ad61efffc94cb",
+          "detail": "conditions：Relation 未通过边级语义审计；证据 [0:c-psych-003#block-5] “A paper from the Open Science Collaboration (Research Articles, 28 August 2015, ”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:08f4f1f4eb388c06-155f5bd5a7af6718",
+        "from": "claim:08f4f1f4eb388c06-a5ed85263c0aa666",
+        "to": "claim:08f4f1f4eb388c06-359db3a1c1ff5ab8",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "UNVERIFIED",
+        "supersessionEffect": null,
+        "relationAuditVersion": null,
+        "evidenceSpanIds": [
+          "span:c-psych-003-08f4f1f4eb388c06-5#chars-843-949"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:08:38.482Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_ENDPOINT_QUARANTINED",
+          "severity": "error",
+          "affectedObject": "rel:08f4f1f4eb388c06-155f5bd5a7af6718",
+          "detail": "from 端点未通过 Lint（Quarantined）: claim:08f4f1f4eb388c06-a5ed85263c0aa666",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:08f4f1f4eb388c06-21ee82c5042617f3",
+        "from": "claim:08f4f1f4eb388c06-359db3a1c1ff5ab8",
+        "to": "claim:08f4f1f4eb388c06-b7358d918b6741a7",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-psych-003-08f4f1f4eb388c06-5#chars-843-949",
+          "span:c-psych-003-08f4f1f4eb388c06-5#chars-950-1084"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:08:38.482Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:08f4f1f4eb388c06-21ee82c5042617f3",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-psych-003#block-5] “We show that this article contains three statistical errors and provides no supp”; [1:c-psych-003#block-5] “Indeed, the data are consistent with the opposite conclusion, namely, that the r”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:08f4f1f4eb388c06-21ee82c5042617f3",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-psych-003#block-5] “We show that this article contains three statistical errors and provides no supp”; [1:c-psych-003#block-5] “Indeed, the data are consistent with the opposite conclusion, namely, that the r”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:08f4f1f4eb388c06-5c36d90cf8a3ed85",
+        "from": "claim:08f4f1f4eb388c06-a6a1002ab06055f5",
+        "to": "claim:08f4f1f4eb388c06-cc032c5f6d34ae62",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-psych-003-08f4f1f4eb388c06-9#chars-1765-2036",
+          "span:c-psych-003-08f4f1f4eb388c06-9#chars-2284-2409"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:08:38.482Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:08f4f1f4eb388c06-5c36d90cf8a3ed85",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-psych-003#block-9] “When they did their calculations, they failed to consider the fact that their re”; [1:c-psych-003#block-9] “The failure of the replication studies to match the original studies was a failu”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:08f4f1f4eb388c06-5c36d90cf8a3ed85",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-psych-003#block-9] “When they did their calculations, they failed to consider the fact that their re”; [1:c-psych-003#block-9] “The failure of the replication studies to match the original studies was a failu”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:08f4f1f4eb388c06-cd8385f760dea8e4",
+        "from": "claim:08f4f1f4eb388c06-1df6220326f7a438",
+        "to": "claim:08f4f1f4eb388c06-f51a04a7521879df",
+        "type": "DERIVED_FROM",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-psych-003-08f4f1f4eb388c06-7#chars-1171-1346",
+          "span:c-psych-003-08f4f1f4eb388c06-7#chars-1347-1367"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:08:38.482Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:08f4f1f4eb388c06-cd8385f760dea8e4",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-psych-003#block-7] “If you want to estimate a parameter of a population, then you either have to ran”; [1:c-psych-003#block-7] “The OSC did neither.”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:08f4f1f4eb388c06-cd8385f760dea8e4",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-psych-003#block-7] “If you want to estimate a parameter of a population, then you either have to ran”; [1:c-psych-003#block-7] “The OSC did neither.”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:08f4f1f4eb388c06-cd8385f760dea8e4",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-psych-003#block-7] “If you want to estimate a parameter of a population, then you either have to ran”; [1:c-psych-003#block-7] “The OSC did neither.”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_DIRECTION_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:08f4f1f4eb388c06-cd8385f760dea8e4",
+          "detail": "direction：Relation 未通过边级语义审计；证据 [0:c-psych-003#block-7] “If you want to estimate a parameter of a population, then you either have to ran”; [1:c-psych-003#block-7] “The OSC did neither.”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_CONDITIONS_MISSING",
+          "severity": "error",
+          "affectedObject": "rel:08f4f1f4eb388c06-cd8385f760dea8e4",
+          "detail": "conditions：Relation 未通过边级语义审计；证据 [0:c-psych-003#block-7] “If you want to estimate a parameter of a population, then you either have to ran”; [1:c-psych-003#block-7] “The OSC did neither.”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:08f4f1f4eb388c06-e5c4e344dc4e480c",
+        "from": "claim:08f4f1f4eb388c06-cc032c5f6d34ae62",
+        "to": "claim:08f4f1f4eb388c06-e6a4094f6f5c1f5f",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-psych-003-08f4f1f4eb388c06-10#chars-2631-2770",
+          "span:c-psych-003-08f4f1f4eb388c06-9#chars-2284-2409"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:08:38.482Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:08f4f1f4eb388c06-e5c4e344dc4e480c",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-psych-003#block-10] “What that suggests is that the infidelities did not just create random statistic”; [1:c-psych-003#block-9] “The failure of the replication studies to match the original studies was a failu”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:08f4f1f4eb388c06-e5c4e344dc4e480c",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-psych-003#block-10] “What that suggests is that the infidelities did not just create random statistic”; [1:c-psych-003#block-9] “The failure of the replication studies to match the original studies was a failu”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:08f4f1f4eb388c06-f2c1fdb511737787",
+        "from": "claim:08f4f1f4eb388c06-12af1f73e66615a0",
+        "to": "claim:08f4f1f4eb388c06-65df6845dea7acf3",
+        "type": "EQUIVALENT_UNDER",
+        "conditions": [
+          "both claims assert that meta-science must follow scientific rules"
+        ],
+        "conditionStatus": "UNVERIFIED",
+        "supersessionEffect": null,
+        "relationAuditVersion": null,
+        "evidenceSpanIds": [
+          "span:c-psych-003-08f4f1f4eb388c06-11#chars-2812-2900",
+          "span:c-psych-003-08f4f1f4eb388c06-11#chars-3110-3161"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:08:38.482Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_EQUIVALENCE_REVIEW_REQUIRED",
+          "severity": "error",
+          "affectedObject": "rel:08f4f1f4eb388c06-f2c1fdb511737787",
+          "detail": "EQUIVALENT_UNDER 自动审计在真实抽检中 4/4 误判；独立人工复核或校准门禁完成前禁止自动晋级",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:08f4f1f4eb388c06-ffa1e87aa3009966",
+        "from": "claim:08f4f1f4eb388c06-f51a04a7521879df",
+        "to": "claim:08f4f1f4eb388c06-fae47434735ff63b",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "UNVERIFIED",
+        "supersessionEffect": null,
+        "relationAuditVersion": null,
+        "evidenceSpanIds": [
+          "span:c-psych-003-08f4f1f4eb388c06-7#chars-1347-1367",
+          "span:c-psych-003-08f4f1f4eb388c06-8#chars-1675-1729"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:08:38.482Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_ENDPOINT_QUARANTINED",
+          "severity": "error",
+          "affectedObject": "rel:08f4f1f4eb388c06-ffa1e87aa3009966",
+          "detail": "to 端点未通过 Lint（Quarantined）: claim:08f4f1f4eb388c06-fae47434735ff63b",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-00f471841523078e",
+        "from": "claim:08f4f1f4eb388c06-b7358d918b6741a7",
+        "to": "claim:0f7730e649dbc238-6b8953e4a783f80b",
+        "type": "CONTRADICTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-psych-001-0f7730e649dbc238-8#chars-1037-1095",
+          "span:c-psych-003-08f4f1f4eb388c06-5#chars-950-1084"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:09:07.128Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.6,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-00f471841523078e",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-psych-001#block-8] “Thirty-six percent of replications had significant results”; [1:c-psych-003#block-5] “Indeed, the data are consistent with the opposite conclusion, namely, that the r”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-00f471841523078e",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-psych-001#block-8] “Thirty-six percent of replications had significant results”; [1:c-psych-003#block-5] “Indeed, the data are consistent with the opposite conclusion, namely, that the r”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-090afe2dbce928b7",
+        "from": "claim:08f4f1f4eb388c06-a2c943aa0de96d3f",
+        "to": "claim:0f7730e649dbc238-79d4928647df5ef1",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-psych-001-0f7730e649dbc238-3#chars-376-408",
+          "span:c-psych-003-08f4f1f4eb388c06-3#chars-556-588"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:09:07.128Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-090afe2dbce928b7",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-psych-001#block-3] “**DOI:** 10.1126/science.aac4716”; [1:c-psych-003#block-3] “**DOI:** 10.1126/science.aad7243”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-090afe2dbce928b7",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-psych-001#block-3] “**DOI:** 10.1126/science.aac4716”; [1:c-psych-003#block-3] “**DOI:** 10.1126/science.aad7243”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-090afe2dbce928b7",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-psych-001#block-3] “**DOI:** 10.1126/science.aac4716”; [1:c-psych-003#block-3] “**DOI:** 10.1126/science.aad7243”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-3c8da4d33b4cdc37",
+        "from": "claim:08f4f1f4eb388c06-359db3a1c1ff5ab8",
+        "to": "claim:0f7730e649dbc238-6b8953e4a783f80b",
+        "type": "CONTRADICTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-psych-001-0f7730e649dbc238-8#chars-1037-1095",
+          "span:c-psych-003-08f4f1f4eb388c06-5#chars-843-949"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:09:07.128Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.6,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-3c8da4d33b4cdc37",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-psych-001#block-8] “Thirty-six percent of replications had significant results”; [1:c-psych-003#block-5] “We show that this article contains three statistical errors and provides no supp”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-3c8da4d33b4cdc37",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-psych-001#block-8] “Thirty-six percent of replications had significant results”; [1:c-psych-003#block-5] “We show that this article contains three statistical errors and provides no supp”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-3c8da4d33b4cdc37",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-psych-001#block-8] “Thirty-six percent of replications had significant results”; [1:c-psych-003#block-5] “We show that this article contains three statistical errors and provides no supp”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-40a092ae15f439b0",
+        "from": "claim:08f4f1f4eb388c06-be69d5a9f5b7a2ae",
+        "to": "claim:0f7730e649dbc238-a678d14d807db125",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-psych-001-0f7730e649dbc238-3#chars-234-293",
+          "span:c-psych-003-08f4f1f4eb388c06-3#chars-352-486"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:09:07.128Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-40a092ae15f439b0",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-psych-001#block-3] “**Authors:** Open Science Collaboration (270+ contributors)”; [1:c-psych-003#block-3] “**Authors:** Daniel T. Gilbert (Harvard), Gary King (Harvard), Stephen Pettigrew”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-40a092ae15f439b0",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-psych-001#block-3] “**Authors:** Open Science Collaboration (270+ contributors)”; [1:c-psych-003#block-3] “**Authors:** Daniel T. Gilbert (Harvard), Gary King (Harvard), Stephen Pettigrew”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-40a092ae15f439b0",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-psych-001#block-3] “**Authors:** Open Science Collaboration (270+ contributors)”; [1:c-psych-003#block-3] “**Authors:** Daniel T. Gilbert (Harvard), Gary King (Harvard), Stephen Pettigrew”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_DIRECTION_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-40a092ae15f439b0",
+          "detail": "direction：Relation 未通过边级语义审计；证据 [0:c-psych-001#block-3] “**Authors:** Open Science Collaboration (270+ contributors)”; [1:c-psych-003#block-3] “**Authors:** Daniel T. Gilbert (Harvard), Gary King (Harvard), Stephen Pettigrew”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_CONDITIONS_MISSING",
+          "severity": "error",
+          "affectedObject": "rel:cross-40a092ae15f439b0",
+          "detail": "conditions：Relation 未通过边级语义审计；证据 [0:c-psych-001#block-3] “**Authors:** Open Science Collaboration (270+ contributors)”; [1:c-psych-003#block-3] “**Authors:** Daniel T. Gilbert (Harvard), Gary King (Harvard), Stephen Pettigrew”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-4b09fddf050c0cb3",
+        "from": "claim:08f4f1f4eb388c06-a6a1002ab06055f5",
+        "to": "claim:0f7730e649dbc238-f7a129bd66662ffd",
+        "type": "CONTRADICTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-psych-001-0f7730e649dbc238-5#chars-700-764",
+          "span:c-psych-003-08f4f1f4eb388c06-9#chars-1765-2036"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:09:07.128Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.5,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-4b09fddf050c0cb3",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-psych-001#block-5] “using high-powered designs and original materials when available”; [1:c-psych-003#block-9] “When they did their calculations, they failed to consider the fact that their re”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-4b09fddf050c0cb3",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-psych-001#block-5] “using high-powered designs and original materials when available”; [1:c-psych-003#block-9] “When they did their calculations, they failed to consider the fact that their re”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-4c8ae4e89eef0120",
+        "from": "claim:08f4f1f4eb388c06-e6a4094f6f5c1f5f",
+        "to": "claim:0f7730e649dbc238-ee87d4aee780322e",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-psych-001-0f7730e649dbc238-7#chars-854-956",
+          "span:c-psych-003-08f4f1f4eb388c06-10#chars-2631-2770"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:09:07.128Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.5,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-4c8ae4e89eef0120",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-psych-001#block-7] “were half the magnitude of original effects (Mr = .403, SD = .188), representing”; [1:c-psych-003#block-10] “What that suggests is that the infidelities did not just create random statistic”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-4c8ae4e89eef0120",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-psych-001#block-7] “were half the magnitude of original effects (Mr = .403, SD = .188), representing”; [1:c-psych-003#block-10] “What that suggests is that the infidelities did not just create random statistic”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-4c8ae4e89eef0120",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-psych-001#block-7] “were half the magnitude of original effects (Mr = .403, SD = .188), representing”; [1:c-psych-003#block-10] “What that suggests is that the infidelities did not just create random statistic”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_DIRECTION_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-4c8ae4e89eef0120",
+          "detail": "direction：Relation 未通过边级语义审计；证据 [0:c-psych-001#block-7] “were half the magnitude of original effects (Mr = .403, SD = .188), representing”; [1:c-psych-003#block-10] “What that suggests is that the infidelities did not just create random statistic”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-4d6aea3ace6b72c5",
+        "from": "claim:08f4f1f4eb388c06-12af1f73e66615a0",
+        "to": "claim:0f7730e649dbc238-d8077d8950c82fdd",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-psych-001-0f7730e649dbc238-5#chars-469-517",
+          "span:c-psych-003-08f4f1f4eb388c06-11#chars-2812-2900"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:09:07.128Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.6,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-4d6aea3ace6b72c5",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-psych-001#block-5] “Reproducibility is a defining feature of science”; [1:c-psych-003#block-11] “I think the big takeaway point here is that meta-science must obey the rules of ”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-4d6aea3ace6b72c5",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-psych-001#block-5] “Reproducibility is a defining feature of science”; [1:c-psych-003#block-11] “I think the big takeaway point here is that meta-science must obey the rules of ”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-4d6aea3ace6b72c5",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-psych-001#block-5] “Reproducibility is a defining feature of science”; [1:c-psych-003#block-11] “I think the big takeaway point here is that meta-science must obey the rules of ”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-5a76f753787d98ae",
+        "from": "claim:08f4f1f4eb388c06-0f3133566cb643a9",
+        "to": "claim:0f7730e649dbc238-ee87d4aee780322e",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-psych-001-0f7730e649dbc238-7#chars-854-956",
+          "span:c-psych-003-08f4f1f4eb388c06-10#chars-2549-2630"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:09:07.128Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.6,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-5a76f753787d98ae",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-psych-001#block-7] “were half the magnitude of original effects (Mr = .403, SD = .188), representing”; [1:c-psych-003#block-10] “The low-fidelity replications were an astonishing four times more likely to fail”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-5a76f753787d98ae",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-psych-001#block-7] “were half the magnitude of original effects (Mr = .403, SD = .188), representing”; [1:c-psych-003#block-10] “The low-fidelity replications were an astonishing four times more likely to fail”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-5a76f753787d98ae",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-psych-001#block-7] “were half the magnitude of original effects (Mr = .403, SD = .188), representing”; [1:c-psych-003#block-10] “The low-fidelity replications were an astonishing four times more likely to fail”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_DIRECTION_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-5a76f753787d98ae",
+          "detail": "direction：Relation 未通过边级语义审计；证据 [0:c-psych-001#block-7] “were half the magnitude of original effects (Mr = .403, SD = .188), representing”; [1:c-psych-003#block-10] “The low-fidelity replications were an astonishing four times more likely to fail”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-62dad6a89f453410",
+        "from": "claim:08f4f1f4eb388c06-65df6845dea7acf3",
+        "to": "claim:0f7730e649dbc238-d8077d8950c82fdd",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-psych-001-0f7730e649dbc238-5#chars-469-517",
+          "span:c-psych-003-08f4f1f4eb388c06-11#chars-3110-3161"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:09:07.128Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.6,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-62dad6a89f453410",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-psych-001#block-5] “Reproducibility is a defining feature of science”; [1:c-psych-003#block-11] “Meta-science does not get a pass. It is not exempt.”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-62dad6a89f453410",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-psych-001#block-5] “Reproducibility is a defining feature of science”; [1:c-psych-003#block-11] “Meta-science does not get a pass. It is not exempt.”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-62dad6a89f453410",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-psych-001#block-5] “Reproducibility is a defining feature of science”; [1:c-psych-003#block-11] “Meta-science does not get a pass. It is not exempt.”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-7e83ef6fde37ea68",
+        "from": "claim:08f4f1f4eb388c06-6ef2efdb71d13a42",
+        "to": "claim:0f7730e649dbc238-7fd9ac05cca2b583",
+        "type": "CONTRADICTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-psych-001-0f7730e649dbc238-5#chars-589-699",
+          "span:c-psych-003-08f4f1f4eb388c06-8#chars-1409-1674"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:09:07.128Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.5,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-7e83ef6fde37ea68",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-psych-001#block-5] “We conducted replications of 100 experimental and correlational studies publishe”; [1:c-psych-003#block-8] “What they did is create an idiosyncratic, arbitrary list of sampling rules that ”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-7e83ef6fde37ea68",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-psych-001#block-5] “We conducted replications of 100 experimental and correlational studies publishe”; [1:c-psych-003#block-8] “What they did is create an idiosyncratic, arbitrary list of sampling rules that ”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-7e83ef6fde37ea68",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-psych-001#block-5] “We conducted replications of 100 experimental and correlational studies publishe”; [1:c-psych-003#block-8] “What they did is create an idiosyncratic, arbitrary list of sampling rules that ”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_DIRECTION_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-7e83ef6fde37ea68",
+          "detail": "direction：Relation 未通过边级语义审计；证据 [0:c-psych-001#block-5] “We conducted replications of 100 experimental and correlational studies publishe”; [1:c-psych-003#block-8] “What they did is create an idiosyncratic, arbitrary list of sampling rules that ”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-8721610bc8ef1c2b",
+        "from": "claim:08f4f1f4eb388c06-6fb8eb7351f1558a",
+        "to": "claim:adb285a63645fee4-bf99c4465e762307",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-psych-002-adb285a63645fee4-2#chars-100-233",
+          "span:c-psych-003-08f4f1f4eb388c06-2#chars-159-349"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:09:07.128Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-8721610bc8ef1c2b",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-psych-002#block-2] “*Content sourced from Journal of Open Psychology Data (openpsychologydata.metajn”; [1:c-psych-003#block-2] “Content sourced from PubMed abstract and Harvard Gazette coverage (https://news.”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-8721610bc8ef1c2b",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-psych-002#block-2] “*Content sourced from Journal of Open Psychology Data (openpsychologydata.metajn”; [1:c-psych-003#block-2] “Content sourced from PubMed abstract and Harvard Gazette coverage (https://news.”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-8721610bc8ef1c2b",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-psych-002#block-2] “*Content sourced from Journal of Open Psychology Data (openpsychologydata.metajn”; [1:c-psych-003#block-2] “Content sourced from PubMed abstract and Harvard Gazette coverage (https://news.”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-890f94db619f2b2b",
+        "from": "claim:08f4f1f4eb388c06-6fa60fec777bce5d",
+        "to": "claim:0f7730e649dbc238-5029d8835d37392e",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-psych-001-0f7730e649dbc238-3#chars-294-345",
+          "span:c-psych-003-08f4f1f4eb388c06-3#chars-487-555"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:09:07.128Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-890f94db619f2b2b",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-psych-001#block-3] “**Journal:** Science, Vol. 349, Issue 6251, aac4716”; [1:c-psych-003#block-3] “**Published:** Science, Vol. 351, Issue 6277, pp. 1037, 4 March 2016”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-890f94db619f2b2b",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-psych-001#block-3] “**Journal:** Science, Vol. 349, Issue 6251, aac4716”; [1:c-psych-003#block-3] “**Published:** Science, Vol. 351, Issue 6277, pp. 1037, 4 March 2016”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-890f94db619f2b2b",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-psych-001#block-3] “**Journal:** Science, Vol. 349, Issue 6251, aac4716”; [1:c-psych-003#block-3] “**Published:** Science, Vol. 351, Issue 6277, pp. 1037, 4 March 2016”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-8fa059796159cefb",
+        "from": "claim:08f4f1f4eb388c06-5a1eca00ccef74b9",
+        "to": "claim:0f7730e649dbc238-ee5064947108a810",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-psych-001-0f7730e649dbc238-8#chars-961-1035",
+          "span:c-psych-003-08f4f1f4eb388c06-5#chars-628-842"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:09:07.128Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-8fa059796159cefb",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-psych-001#block-8] “Ninety-seven percent of original studies had significant results (p < .05)”; [1:c-psych-003#block-5] “A paper from the Open Science Collaboration (Research Articles, 28 August 2015, ”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-8fa059796159cefb",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-psych-001#block-8] “Ninety-seven percent of original studies had significant results (p < .05)”; [1:c-psych-003#block-5] “A paper from the Open Science Collaboration (Research Articles, 28 August 2015, ”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-8fa059796159cefb",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-psych-001#block-8] “Ninety-seven percent of original studies had significant results (p < .05)”; [1:c-psych-003#block-5] “A paper from the Open Science Collaboration (Research Articles, 28 August 2015, ”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-9643ccaeac358c16",
+        "from": "claim:08f4f1f4eb388c06-9d3d87bb413cd0f9",
+        "to": "claim:0f7730e649dbc238-6b8953e4a783f80b",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-psych-001-0f7730e649dbc238-8#chars-1037-1095",
+          "span:c-psych-003-08f4f1f4eb388c06-9#chars-2037-2283"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:09:07.128Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.5,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-9643ccaeac358c16",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-psych-001#block-8] “Thirty-six percent of replications had significant results”; [1:c-psych-003#block-9] “So we did the calculation the right way and then applied it to their data. And g”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-9643ccaeac358c16",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-psych-001#block-8] “Thirty-six percent of replications had significant results”; [1:c-psych-003#block-9] “So we did the calculation the right way and then applied it to their data. And g”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-9643ccaeac358c16",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-psych-001#block-8] “Thirty-six percent of replications had significant results”; [1:c-psych-003#block-9] “So we did the calculation the right way and then applied it to their data. And g”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-d10a5a1b599683a1",
+        "from": "claim:08f4f1f4eb388c06-06d433cbfd18102a",
+        "to": "claim:0f7730e649dbc238-d8077d8950c82fdd",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-psych-001-0f7730e649dbc238-5#chars-469-517",
+          "span:c-psych-003-08f4f1f4eb388c06-11#chars-2901-3109"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:09:07.128Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.6,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-d10a5a1b599683a1",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-psych-001#block-5] “Reproducibility is a defining feature of science”; [1:c-psych-003#block-11] “All the rules about sampling and calculating error and keeping experimenters bli”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-d10a5a1b599683a1",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-psych-001#block-5] “Reproducibility is a defining feature of science”; [1:c-psych-003#block-11] “All the rules about sampling and calculating error and keeping experimenters bli”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-d10a5a1b599683a1",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-psych-001#block-5] “Reproducibility is a defining feature of science”; [1:c-psych-003#block-11] “All the rules about sampling and calculating error and keeping experimenters bli”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-d8bb874bb16f6fc9",
+        "from": "claim:08f4f1f4eb388c06-98bbd61106afc39e",
+        "to": "claim:0f7730e649dbc238-7fd9ac05cca2b583",
+        "type": "CONTRADICTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-psych-001-0f7730e649dbc238-5#chars-589-699",
+          "span:c-psych-003-08f4f1f4eb388c06-8#chars-1409-1674"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:09:07.128Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.5,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-d8bb874bb16f6fc9",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-psych-001#block-5] “We conducted replications of 100 experimental and correlational studies publishe”; [1:c-psych-003#block-8] “What they did is create an idiosyncratic, arbitrary list of sampling rules that ”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-d8bb874bb16f6fc9",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-psych-001#block-5] “We conducted replications of 100 experimental and correlational studies publishe”; [1:c-psych-003#block-8] “What they did is create an idiosyncratic, arbitrary list of sampling rules that ”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-d8bb874bb16f6fc9",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-psych-001#block-5] “We conducted replications of 100 experimental and correlational studies publishe”; [1:c-psych-003#block-8] “What they did is create an idiosyncratic, arbitrary list of sampling rules that ”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    }
+  ]
+}

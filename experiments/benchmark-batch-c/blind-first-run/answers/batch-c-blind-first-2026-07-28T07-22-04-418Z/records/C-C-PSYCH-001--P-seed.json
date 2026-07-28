@@ -1,0 +1,51 @@
+{
+  "runId": "batch-c-blind-first-2026-07-28T07-22-04-418Z",
+  "sampleId": "sample-3980a51d-00b8-4a24-b6e9-6fc6e780b4a2",
+  "questionId": "C-C-PSYCH-001",
+  "group": "P-seed",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "temperature": 0,
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 1581,
+    "completionTokens": 229,
+    "totalTokens": 1810,
+    "promptCacheHitTokens": 0,
+    "promptCacheMissTokens": 1581,
+    "reasoningTokens": 0
+  },
+  "latencyMs": 2480,
+  "promptHash": "f10ebde3a5c4337937c0af878ab1754971f31b70a3a01a415f424c6317c98b24",
+  "contextHash": "d9d2023e3534f0f09fa7eac562f5f5045824ce4778c84fc22675df8227624b54",
+  "estimatedContextTokens": 1181,
+  "estimatedInputTokens": 1375,
+  "retrievedClaims": [
+    "claim:08f4f1f4eb388c06-5a1eca00ccef74b9",
+    "claim:0f7730e649dbc238-4acc6ab8edfdce8d",
+    "claim:0f7730e649dbc238-5029d8835d37392e",
+    "claim:0f7730e649dbc238-6b8953e4a783f80b",
+    "claim:0f7730e649dbc238-6bd71d1ec2eb4eb0",
+    "claim:0f7730e649dbc238-79d4928647df5ef1",
+    "claim:0f7730e649dbc238-7e2cb553f3fbc767",
+    "claim:0f7730e649dbc238-7fd9ac05cca2b583",
+    "claim:0f7730e649dbc238-803bda104d1d3f61",
+    "claim:0f7730e649dbc238-824f3eafcb5aa161"
+  ],
+  "retrievedRelations": [],
+  "retrievedSources": [
+    "source:c-psych-003-08f4f1f4eb388c06",
+    "source:c-psych-001-0f7730e649dbc238"
+  ],
+  "citationValidation": {
+    "valid": true,
+    "citationCount": 2,
+    "invalid": []
+  },
+  "request": {
+    "systemPrompt": "你是受证据约束的问答 Agent。只使用本次请求提供的检索上下文回答。\n要求：保留影响结论的条件、时间、例外、来源角色与不确定性；关键结论引用上下文中的 SOURCE、EVIDENCE 或 CLAIM 标识；上下文不足时明确说明，不得用外部常识补齐。\n只输出严格 JSON：{\"answer\":\"...\",\"citations\":[\"...\"],\"insufficient\":false,\"uncertainties\":[\"...\"]}。",
+    "userPrompt": "# 问题\nOpen Science Collaboration (2015) 使用了哪五种不同的指标来评估复制成功？为什么说没有单一指标足以描述复制成功率？\n\n# 检索上下文\n## TASK MAP\n主题: Open Science Collaboration (2015) 使用了哪五种不同的指标来评估复制成功？为什么说没有单一指标足以描述复制成功率？\n地图主题: science, open, 评估, 2015, collaboration\n关键概念: 第五次评估报告, IPCC第六次评估报告, 不可持续的能源使用, Union-wide greenhouse gas emissions and removals, Regulation (EU) 2021/1119\n已知争议: 0 个\n最近变化: 5 条\n找到 10 条相关 Claim\n找到 0 条关系\n找到 10 条原文证据\n\n## CLAIM claim:08f4f1f4eb388c06-5a1eca00ccef74b9\nA paper from the Open Science Collaboration attempting to replicate 100 published studies suggests that the reproducibility of psychological science is surprisingly low.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:0f7730e649dbc238-4acc6ab8edfdce8d\nThe Reproducibility Project: Psychology finished primary data collection in December 2014.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:0f7730e649dbc238-5029d8835d37392e\nThe study was published in Science, Vol. 349, Issue 6251, article aac4716.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:0f7730e649dbc238-6b8953e4a783f80b\nThirty-six percent of replications had significant results.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:0f7730e649dbc238-6bd71d1ec2eb4eb0\nOriginal effects had a mean of 0.403 and standard deviation of 0.188.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:0f7730e649dbc238-79d4928647df5ef1\nThe DOI of the study is 10.1126/science.aac4716.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:0f7730e649dbc238-7e2cb553f3fbc767\nThe extent to which reproducibility characterizes current research is unknown.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:0f7730e649dbc238-7fd9ac05cca2b583\nThe study conducted replications of 100 experimental and correlational studies published in three psychology journals.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:0f7730e649dbc238-803bda104d1d3f61\nThe project was coordinated by the Center for Open Science.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:0f7730e649dbc238-824f3eafcb5aa161\nThe study was published on 28 August 2015.\nConditions: none\nValidity: SUPPORTED\n\n## EVIDENCE span:c-psych-003-08f4f1f4eb388c06-5#chars-628-842\nA paper from the Open Science Collaboration (Research Articles, 28 August 2015, aac4716) attempting to replicate 100 published studies suggests that the reproducibility of psychological science is surprisingly low.\n\n## EVIDENCE span:c-psych-001-0f7730e649dbc238-12#chars-1728-1777\nfinished primary data collection in December 2014\n\n## EVIDENCE span:c-psych-001-0f7730e649dbc238-3#chars-294-345\n**Journal:** Science, Vol. 349, Issue 6251, aac4716\n\n## EVIDENCE span:c-psych-001-0f7730e649dbc238-8#chars-1037-1095\nThirty-six percent of replications had significant results\n\n## EVIDENCE span:c-psych-001-0f7730e649dbc238-7#chars-881-920\noriginal effects (Mr = .403, SD = .188)\n\n## EVIDENCE span:c-psych-001-0f7730e649dbc238-3#chars-376-408\n**DOI:** 10.1126/science.aac4716\n\n## EVIDENCE span:c-psych-001-0f7730e649dbc238-5#chars-523-587\nthe extent to which it characterizes current research is unknown\n\n## EVIDENCE span:c-psych-001-0f7730e649dbc238-5#chars-589-699\nWe conducted replications of 100 experimental and correlational studies published in three psychology journals\n\n## EVIDENCE span:c-psych-001-0f7730e649dbc238-12#chars-1834-1892\nThe project was coordinated by the Center for Open Science\n\n## EVIDENCE span:c-psych-001-0f7730e649dbc238-3#chars-346-375\n**Published:** 28 August 2015\n\n## CONFLICTS AND CONDITIONS\n🔎 Source source:c-psych-001-0f7730e649dbc238 provenance: uri=experiments/benchmark-batch-c/stage-a-freeze/compilation-corpus/psychology-reproducibility/c-psych-001.md; sourceType=md; sourceRole=P-primary; author=Open Science Collaboration; canonicalUrl=https://www.science.org/doi/10.1126/science.aac4716; publishedAt=Fri Aug 28 2015 08:00:00 GMT+0800 (China Standard Time); versionRef=doi:10.1126/science.aac4716\n🔎 Source source:c-psych-003-08f4f1f4eb388c06 provenance: uri=experiments/benchmark-batch-c/stage-a-freeze/compilation-corpus/psychology-reproducibility/c-psych-003.md; sourceType=md; sourceRole=S-analysis; author=Daniel T. Gilbert, Gary King, Stephen Pettigrew, Timothy D. Wilson; canonicalUrl=https://www.science.org/doi/10.1126/science.aad7243; publishedAt=Fri Mar 04 2016 08:00:00 GMT+0800 (China Standard Time); versionRef='doi:10.1126/science.aad7243; coverage: news.harvard.edu/gazette 2016-03-03'\n\n## KNOWN GAPS\n未找到关系——Graph 可能尚未建立跨材料边"
+  },
+  "answer": "{\n  \"answer\": \"根据检索上下文，Open Science Collaboration (2015) 的研究并未明确列出五种不同的指标来评估复制成功。上下文仅提到“36%的复制研究获得了显著结果”（claim:0f7730e649dbc238-6b8953e4a783f80b）和原始效应量均值0.403、标准差0.188（claim:0f7730e649dbc238-6bd71d1ec2eb4eb0），但未提供完整的五种指标列表。因此，无法回答使用了哪五种指标，也无法解释为什么没有单一指标足以描述复制成功率。\",\n  \"citations\": [\n    \"claim:0f7730e649dbc238-6b8953e4a783f80b\",\n    \"claim:0f7730e649dbc238-6bd71d1ec2eb4eb0\"\n  ],\n  \"insufficient\": true,\n  \"uncertainties\": [\n    \"检索上下文未包含Open Science Collaboration (2015) 使用的五种不同指标的具体信息。\"\n  ]\n}",
+  "answerFormatValid": true
+}

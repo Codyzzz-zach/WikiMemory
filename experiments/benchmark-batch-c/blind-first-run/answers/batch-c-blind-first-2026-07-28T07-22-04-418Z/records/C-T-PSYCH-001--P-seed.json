@@ -1,0 +1,58 @@
+{
+  "runId": "batch-c-blind-first-2026-07-28T07-22-04-418Z",
+  "sampleId": "sample-bdaf4b32-b6c7-4fe7-9add-164c1e7f3d7e",
+  "questionId": "C-T-PSYCH-001",
+  "group": "P-seed",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "temperature": 0,
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 1762,
+    "completionTokens": 641,
+    "totalTokens": 2403,
+    "promptCacheHitTokens": 0,
+    "promptCacheMissTokens": 1762,
+    "reasoningTokens": 0
+  },
+  "latencyMs": 5348,
+  "promptHash": "6664ea4edbd415cd38cdc723de9e3585fdbfca5173a02438463186023bbbe54e",
+  "contextHash": "f7455a75647020dc02d1c92e42ed75bf67596457a4e27723dca42403943fd0fb",
+  "estimatedContextTokens": 1427,
+  "estimatedInputTokens": 1633,
+  "retrievedClaims": [
+    "claim:08f4f1f4eb388c06-2c77f195d121aaf4",
+    "claim:08f4f1f4eb388c06-359db3a1c1ff5ab8",
+    "claim:08f4f1f4eb388c06-6ef2efdb71d13a42",
+    "claim:08f4f1f4eb388c06-98bbd61106afc39e",
+    "claim:08f4f1f4eb388c06-9d3d87bb413cd0f9",
+    "claim:08f4f1f4eb388c06-a6a1002ab06055f5",
+    "claim:08f4f1f4eb388c06-f51a04a7521879df",
+    "claim:08f4f1f4eb388c06-5a1eca00ccef74b9",
+    "claim:08f4f1f4eb388c06-6fa60fec777bce5d",
+    "claim:08f4f1f4eb388c06-6fb8eb7351f1558a"
+  ],
+  "retrievedRelations": [],
+  "retrievedSources": [
+    "source:c-psych-003-08f4f1f4eb388c06"
+  ],
+  "citationValidation": {
+    "valid": false,
+    "citationCount": 14,
+    "invalid": [
+      "claim:08f4f1f4eb388c06-08f4f1f4eb388c06-2c77f195d121aaf4",
+      "evidence:span:c-psych-003-08f4f1f4eb388c06-13#chars-3209-3464",
+      "evidence:span:c-psych-003-08f4f1f4eb388c06-5#chars-843-949",
+      "evidence:span:c-psych-003-08f4f1f4eb388c06-8#chars-1409-1674",
+      "evidence:span:c-psych-003-08f4f1f4eb388c06-9#chars-2037-2283",
+      "evidence:span:c-psych-003-08f4f1f4eb388c06-9#chars-1765-2036",
+      "evidence:span:c-psych-003-08f4f1f4eb388c06-7#chars-1347-1367"
+    ]
+  },
+  "request": {
+    "systemPrompt": "你是受证据约束的问答 Agent。只使用本次请求提供的检索上下文回答。\n要求：保留影响结论的条件、时间、例外、来源角色与不确定性；关键结论引用上下文中的 SOURCE、EVIDENCE 或 CLAIM 标识；上下文不足时明确说明，不得用外部常识补齐。\n只输出严格 JSON：{\"answer\":\"...\",\"citations\":[\"...\"],\"insufficient\":false,\"uncertainties\":[\"...\"]}。",
+    "userPrompt": "# 问题\nGilbert、King、Pettigrew 和 Wilson (2016) 对 OSC (2015) 的复制研究提出了哪些具体批评？OSC 在回应中承认了什么？这如何改变了我们对原始结论的理解？\n\n# 检索上下文\n## TASK MAP\n主题: Gilbert、King、Pettigrew 和 Wilson (2016) 对 OSC (2015) 的复制研究提出了哪些具体批评？OSC 在回应中承认了什么？这如何改变了我们对原始结论的理解？\n地图主题: 研究, osc, 我们, 2015, 应中\n关键概念: Union-wide greenhouse gas emissions and removals, Paris Agreement global stocktake, Article 6 of the Paris Agreement, competent authority, Personal data\n已知争议: 0 个\n最近变化: 5 条\n找到 10 条相关 Claim\n找到 0 条关系\n找到 9 条原文证据\n\n## CLAIM claim:08f4f1f4eb388c06-2c77f195d121aaf4\nIn their response to the comment, the OSC quibbled about minor issues but conceded the major one: their paper does not provide evidence for the pessimistic conclusions most people have drawn from it.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:08f4f1f4eb388c06-359db3a1c1ff5ab8\nThe OSC article provides no support for the conclusion that reproducibility is low.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:08f4f1f4eb388c06-6ef2efdb71d13a42\nThe OSC excluded entire classes of studies whose methods are probably among the best in science from the sample.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:08f4f1f4eb388c06-98bbd61106afc39e\nThe OSC created an idiosyncratic, arbitrary list of sampling rules that excluded the majority of psychology's subfields from the sample.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:08f4f1f4eb388c06-9d3d87bb413cd0f9\nWhen the calculation was done correctly and applied to the OSC data, the number of failures observed was just about what should be expected by chance alone, even if all 100 original findings were true.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:08f4f1f4eb388c06-a6a1002ab06055f5\nThe OSC failed to consider that their replication studies were often quite different from the originals in many ways, and those differences are a source of statistical error.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:08f4f1f4eb388c06-f51a04a7521879df\nThe OSC did neither random sampling nor statistical corrections.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:08f4f1f4eb388c06-5a1eca00ccef74b9\nA paper from the Open Science Collaboration attempting to replicate 100 published studies suggests that the reproducibility of psychological science is surprisingly low.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:08f4f1f4eb388c06-6fa60fec777bce5d\n该研究发表在《科学》杂志第351卷第6277期第1037页。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:08f4f1f4eb388c06-6fb8eb7351f1558a\n该研究的内容来源于PubMed摘要和哈佛公报的报道。\nConditions: none\nValidity: SUPPORTED\n\n## EVIDENCE span:c-psych-003-08f4f1f4eb388c06-13#chars-3209-3464\nWe were glad to see that in their response to our comment, the OSC quibbled about a number of minor issues but conceded the major one, which is that their paper does not provide evidence for the pessimistic conclusions that most people have drawn from it.\n\n## EVIDENCE span:c-psych-003-08f4f1f4eb388c06-5#chars-843-949\nWe show that this article contains three statistical errors and provides no support for such a conclusion.\n\n## EVIDENCE span:c-psych-003-08f4f1f4eb388c06-8#chars-1409-1674\nWhat they did is create an idiosyncratic, arbitrary list of sampling rules that excluded the majority of psychology's subfields from the sample, that excluded entire classes of studies whose methods are probably among the best in science from the sample, and so on.\n\n## EVIDENCE span:c-psych-003-08f4f1f4eb388c06-9#chars-2037-2283\nSo we did the calculation the right way and then applied it to their data. And guess what? The number of failures they observed was just about what you should expect to observe by chance alone — even if all 100 of the original findings were true.\n\n## EVIDENCE span:c-psych-003-08f4f1f4eb388c06-9#chars-1765-2036\nWhen they did their calculations, they failed to consider the fact that their replication studies were not just new samples from the same population. They were often quite different from the originals in many ways, and those differences are a source of statistical error.\n\n## EVIDENCE span:c-psych-003-08f4f1f4eb388c06-7#chars-1347-1367\nThe OSC did neither.\n\n## EVIDENCE span:c-psych-003-08f4f1f4eb388c06-5#chars-628-842\nA paper from the Open Science Collaboration (Research Articles, 28 August 2015, aac4716) attempting to replicate 100 published studies suggests that the reproducibility of psychological science is surprisingly low.\n\n## EVIDENCE span:c-psych-003-08f4f1f4eb388c06-3#chars-487-555\n**Published:** Science, Vol. 351, Issue 6277, pp. 1037, 4 March 2016\n\n## EVIDENCE span:c-psych-003-08f4f1f4eb388c06-2#chars-159-349\nContent sourced from PubMed abstract and Harvard Gazette coverage (https://news.harvard.edu/gazette/story/2016/03/study-that-undercut-psych-research-got-it-wrong/), both publicly accessible.\n\n## CONFLICTS AND CONDITIONS\n🔎 Source source:c-psych-003-08f4f1f4eb388c06 provenance: uri=experiments/benchmark-batch-c/stage-a-freeze/compilation-corpus/psychology-reproducibility/c-psych-003.md; sourceType=md; sourceRole=S-analysis; author=Daniel T. Gilbert, Gary King, Stephen Pettigrew, Timothy D. Wilson; canonicalUrl=https://www.science.org/doi/10.1126/science.aad7243; publishedAt=Fri Mar 04 2016 08:00:00 GMT+0800 (China Standard Time); versionRef='doi:10.1126/science.aad7243; coverage: news.harvard.edu/gazette 2016-03-03'\n\n## KNOWN GAPS\n未找到关系——Graph 可能尚未建立跨材料边"
+  },
+  "answer": "{\n  \"answer\": \"Gilbert、King、Pettigrew 和 Wilson (2016) 对 OSC (2015) 的复制研究提出了三项具体批评：1) OSC 的论文包含三个统计错误，且未提供支持其悲观结论的证据；2) OSC 创建了任意且独特的抽样规则，排除了心理学大多数子领域以及方法可能最好的整类研究；3) OSC 的复制研究在多个方面与原研究不同，这些差异是统计误差的来源，且 OSC 未进行随机抽样或统计校正。当正确计算并应用于 OSC 数据时，观察到的失败数量恰好是即使所有 100 个原始发现都为真时，仅凭偶然预期会观察到的数量。OSC 在回应中承认了主要问题：他们的论文并未为大多数人从中得出的悲观结论提供证据。这改变了原始结论，表明 OSC 的研究不能支持心理学可重复性低的结论。\",\n  \"citations\": [\n    \"claim:08f4f1f4eb388c06-5a1eca00ccef74b9\",\n    \"claim:08f4f1f4eb388c06-08f4f1f4eb388c06-2c77f195d121aaf4\",\n    \"claim:08f4f1f4eb388c06-359db3a1c1ff5ab8\",\n    \"claim:08f4f1f4eb388c06-6ef2efdb71d13a42\",\n    \"claim:08f4f1f4eb388c06-98bbd61106afc39e\",\n    \"claim:08f4f1f4eb388c06-9d3d87bb413cd0f9\",\n    \"claim:08f4f1f4eb388c06-a6a1002ab06055f5\",\n    \"claim:08f4f1f4eb388c06-f51a04a7521879df\",\n    \"evidence:span:c-psych-003-08f4f1f4eb388c06-13#chars-3209-3464\",\n    \"evidence:span:c-psych-003-08f4f1f4eb388c06-5#chars-843-949\",\n    \"evidence:span:c-psych-003-08f4f1f4eb388c06-8#chars-1409-1674\",\n    \"evidence:span:c-psych-003-08f4f1f4eb388c06-9#chars-2037-2283\",\n    \"evidence:span:c-psych-003-08f4f1f4eb388c06-9#chars-1765-2036\",\n    \"evidence:span:c-psych-003-08f4f1f4eb388c06-7#chars-1347-1367\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}",
+  "answerFormatValid": true
+}

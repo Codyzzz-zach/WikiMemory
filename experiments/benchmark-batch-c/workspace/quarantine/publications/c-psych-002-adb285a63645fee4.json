@@ -1,0 +1,1241 @@
+{
+  "schemaVersion": "v1",
+  "sourceId": "source:c-psych-002-adb285a63645fee4",
+  "runId": "b2ffcdb0-5943-4724-a045-a8a3422b99c9",
+  "publishedAt": "2026-07-28T07:08:02.860Z",
+  "claims": [],
+  "relations": [
+    {
+      "relation": {
+        "id": "rel:adb285a63645fee4-07e9b6e962ae6604",
+        "from": "claim:adb285a63645fee4-db032d66b7974ee1",
+        "to": "claim:adb285a63645fee4-b92f1e7157fe8d45",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-psych-002-adb285a63645fee4-9#chars-1430-1494",
+          "span:c-psych-002-adb285a63645fee4-9#chars-1787-1832"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:07:40.561Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:adb285a63645fee4-07e9b6e962ae6604",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-psych-002#block-9] “The study materials consisted of 13 effects drawn from 12 papers”; [1:c-psych-002#block-9] “Norm of reciprocity (Hyman & Sheatsley, 1950)”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:adb285a63645fee4-07e9b6e962ae6604",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-psych-002#block-9] “The study materials consisted of 13 effects drawn from 12 papers”; [1:c-psych-002#block-9] “Norm of reciprocity (Hyman & Sheatsley, 1950)”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:adb285a63645fee4-07e9b6e962ae6604",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-psych-002#block-9] “The study materials consisted of 13 effects drawn from 12 papers”; [1:c-psych-002#block-9] “Norm of reciprocity (Hyman & Sheatsley, 1950)”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_DIRECTION_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:adb285a63645fee4-07e9b6e962ae6604",
+          "detail": "direction：Relation 未通过边级语义审计；证据 [0:c-psych-002#block-9] “The study materials consisted of 13 effects drawn from 12 papers”; [1:c-psych-002#block-9] “Norm of reciprocity (Hyman & Sheatsley, 1950)”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:adb285a63645fee4-0bd2795d98e82daa",
+        "from": "claim:adb285a63645fee4-13188dbeecc062ee",
+        "to": "claim:adb285a63645fee4-c9ef45a3fc99b848",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-psych-002-adb285a63645fee4-13#chars-2322-2382",
+          "span:c-psych-002-adb285a63645fee4-5#chars-754-939"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:07:40.561Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:adb285a63645fee4-0bd2795d98e82daa",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-psych-002#block-13] “The dataset is stored on the Open Science Framework website.”; [1:c-psych-002#block-5] “Data from the replications are included, along with demographic variables about ”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:adb285a63645fee4-0bd2795d98e82daa",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-psych-002#block-13] “The dataset is stored on the Open Science Framework website.”; [1:c-psych-002#block-5] “Data from the replications are included, along with demographic variables about ”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:adb285a63645fee4-3735161d705a6c08",
+        "from": "claim:adb285a63645fee4-267dd736bec2e232",
+        "to": "claim:adb285a63645fee4-5ed279e964d9a212",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-psych-002-adb285a63645fee4-3#chars-416-489",
+          "span:c-psych-002-adb285a63645fee4-3#chars-490-567"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:07:40.561Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:adb285a63645fee4-3735161d705a6c08",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-psych-002#block-3] “data paper in Journal of Open Psychology Data (2014), Vol. 2, Issue 1, e4”; [1:c-psych-002#block-3] “**DOI:** 10.5334/jopd.ad (data paper); 10.1177/1948550614547449 (main article”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:adb285a63645fee4-3735161d705a6c08",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-psych-002#block-3] “data paper in Journal of Open Psychology Data (2014), Vol. 2, Issue 1, e4”; [1:c-psych-002#block-3] “**DOI:** 10.5334/jopd.ad (data paper); 10.1177/1948550614547449 (main article”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:adb285a63645fee4-4d27b4a040e6f582",
+        "from": "claim:adb285a63645fee4-acef643d378c1148",
+        "to": "claim:adb285a63645fee4-b92f1e7157fe8d45",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-psych-002-adb285a63645fee4-9#chars-1430-1494",
+          "span:c-psych-002-adb285a63645fee4-9#chars-1613-1650"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:07:40.561Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:adb285a63645fee4-4d27b4a040e6f582",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-psych-002#block-9] “The study materials consisted of 13 effects drawn from 12 papers”; [1:c-psych-002#block-9] “Anchoring (Jacowitz & Kahneman, 1995)”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:adb285a63645fee4-4d27b4a040e6f582",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-psych-002#block-9] “The study materials consisted of 13 effects drawn from 12 papers”; [1:c-psych-002#block-9] “Anchoring (Jacowitz & Kahneman, 1995)”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:adb285a63645fee4-4d27b4a040e6f582",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-psych-002#block-9] “The study materials consisted of 13 effects drawn from 12 papers”; [1:c-psych-002#block-9] “Anchoring (Jacowitz & Kahneman, 1995)”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:adb285a63645fee4-54d4c2cbb9210b94",
+        "from": "claim:adb285a63645fee4-be6645291aaac3d3",
+        "to": "claim:adb285a63645fee4-603d9950c123f1ab",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-psych-002-adb285a63645fee4-3#chars-350-489",
+          "span:c-psych-002-adb285a63645fee4-3#chars-529-568"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:07:40.561Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:adb285a63645fee4-54d4c2cbb9210b94",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-psych-002#block-3] “**Published in:** Social Psychology (2014), Vol. 45, pp. 142-152; data paper in ”; [1:c-psych-002#block-3] “10.1177/1948550614547449 (main article)”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:adb285a63645fee4-54d4c2cbb9210b94",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-psych-002#block-3] “**Published in:** Social Psychology (2014), Vol. 45, pp. 142-152; data paper in ”; [1:c-psych-002#block-3] “10.1177/1948550614547449 (main article)”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:adb285a63645fee4-54d4c2cbb9210b94",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-psych-002#block-3] “**Published in:** Social Psychology (2014), Vol. 45, pp. 142-152; data paper in ”; [1:c-psych-002#block-3] “10.1177/1948550614547449 (main article)”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:adb285a63645fee4-5bbb98fd6e50016c",
+        "from": "claim:adb285a63645fee4-3b262618fcf6042e",
+        "to": "claim:adb285a63645fee4-b92f1e7157fe8d45",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-psych-002-adb285a63645fee4-9#chars-1430-1494",
+          "span:c-psych-002-adb285a63645fee4-9#chars-1507-1558"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:07:40.561Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:adb285a63645fee4-5bbb98fd6e50016c",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-psych-002#block-9] “The study materials consisted of 13 effects drawn from 12 papers”; [1:c-psych-002#block-9] “Sunk costs (Oppenheimer, Meyvis, & Davidenko, 2009)”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:adb285a63645fee4-5bbb98fd6e50016c",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-psych-002#block-9] “The study materials consisted of 13 effects drawn from 12 papers”; [1:c-psych-002#block-9] “Sunk costs (Oppenheimer, Meyvis, & Davidenko, 2009)”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:adb285a63645fee4-5bbb98fd6e50016c",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-psych-002#block-9] “The study materials consisted of 13 effects drawn from 12 papers”; [1:c-psych-002#block-9] “Sunk costs (Oppenheimer, Meyvis, & Davidenko, 2009)”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:adb285a63645fee4-5ffca446b449117c",
+        "from": "claim:adb285a63645fee4-9fe90bf5a4f463e1",
+        "to": "claim:adb285a63645fee4-13188dbeecc062ee",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-psych-002-adb285a63645fee4-13#chars-2218-2321",
+          "span:c-psych-002-adb285a63645fee4-13#chars-2322-2382"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:07:40.561Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:adb285a63645fee4-5ffca446b449117c",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-psych-002#block-13] “Data were collected in-lab and online through a standardized procedure administe”; [1:c-psych-002#block-13] “The dataset is stored on the Open Science Framework website.”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:adb285a63645fee4-5ffca446b449117c",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-psych-002#block-13] “Data were collected in-lab and online through a standardized procedure administe”; [1:c-psych-002#block-13] “The dataset is stored on the Open Science Framework website.”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:adb285a63645fee4-5ffca446b449117c",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-psych-002#block-13] “Data were collected in-lab and online through a standardized procedure administe”; [1:c-psych-002#block-13] “The dataset is stored on the Open Science Framework website.”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:adb285a63645fee4-62fb6045546b6081",
+        "from": "claim:adb285a63645fee4-34585b952514d2cc",
+        "to": "claim:adb285a63645fee4-d40d0d2aa7bb4110",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-psych-002-adb285a63645fee4-6#chars-943-1122",
+          "span:c-psych-002-adb285a63645fee4-7#chars-1126-1171"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:07:40.561Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:adb285a63645fee4-62fb6045546b6081",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-psych-002#block-6] “Our sample was comprised of 6,344 participants recruited from 36 different sourc”; [1:c-psych-002#block-7] “The aggregate sample had a mean age of 25.98.”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:adb285a63645fee4-62fb6045546b6081",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-psych-002#block-6] “Our sample was comprised of 6,344 participants recruited from 36 different sourc”; [1:c-psych-002#block-7] “The aggregate sample had a mean age of 25.98.”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:adb285a63645fee4-7cb44b2b5a29912e",
+        "from": "claim:adb285a63645fee4-43492018319a4468",
+        "to": "claim:adb285a63645fee4-d40d0d2aa7bb4110",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-psych-002-adb285a63645fee4-6#chars-943-1122",
+          "span:c-psych-002-adb285a63645fee4-7#chars-1172-1302"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:07:40.561Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:adb285a63645fee4-7cb44b2b5a29912e",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-psych-002#block-6] “Our sample was comprised of 6,344 participants recruited from 36 different sourc”; [1:c-psych-002#block-7] “Participant ethnicity was: 65.1% White, 6.7% Black or African American, 6.5% Eas”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:adb285a63645fee4-7cb44b2b5a29912e",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-psych-002#block-6] “Our sample was comprised of 6,344 participants recruited from 36 different sourc”; [1:c-psych-002#block-7] “Participant ethnicity was: 65.1% White, 6.7% Black or African American, 6.5% Eas”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:adb285a63645fee4-7d9e2176a5c1a4b6",
+        "from": "claim:adb285a63645fee4-6777ae78dbb7754f",
+        "to": "claim:adb285a63645fee4-b92f1e7157fe8d45",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-psych-002-adb285a63645fee4-9#chars-1430-1494",
+          "span:c-psych-002-adb285a63645fee4-9#chars-1866-1906"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:07:40.561Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:adb285a63645fee4-7d9e2176a5c1a4b6",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-psych-002#block-9] “The study materials consisted of 13 effects drawn from 12 papers”; [1:c-psych-002#block-9] “Quote Attribution (Lorge & Curtis, 1936)”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:adb285a63645fee4-7d9e2176a5c1a4b6",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-psych-002#block-9] “The study materials consisted of 13 effects drawn from 12 papers”; [1:c-psych-002#block-9] “Quote Attribution (Lorge & Curtis, 1936)”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:adb285a63645fee4-7d9e2176a5c1a4b6",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-psych-002#block-9] “The study materials consisted of 13 effects drawn from 12 papers”; [1:c-psych-002#block-9] “Quote Attribution (Lorge & Curtis, 1936)”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_DIRECTION_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:adb285a63645fee4-7d9e2176a5c1a4b6",
+          "detail": "direction：Relation 未通过边级语义审计；证据 [0:c-psych-002#block-9] “The study materials consisted of 13 effects drawn from 12 papers”; [1:c-psych-002#block-9] “Quote Attribution (Lorge & Curtis, 1936)”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:adb285a63645fee4-81cfe5e7ff9a5e31",
+        "from": "claim:adb285a63645fee4-ade584126b07d901",
+        "to": "claim:adb285a63645fee4-b92f1e7157fe8d45",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-psych-002-adb285a63645fee4-9#chars-1430-1494",
+          "span:c-psych-002-adb285a63645fee4-9#chars-1560-1611"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:07:40.561Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:adb285a63645fee4-81cfe5e7ff9a5e31",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-psych-002#block-9] “The study materials consisted of 13 effects drawn from 12 papers”; [1:c-psych-002#block-9] “Gain versus loss framing (Tversky & Kahneman, 1981)”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:adb285a63645fee4-81cfe5e7ff9a5e31",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-psych-002#block-9] “The study materials consisted of 13 effects drawn from 12 papers”; [1:c-psych-002#block-9] “Gain versus loss framing (Tversky & Kahneman, 1981)”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:adb285a63645fee4-81cfe5e7ff9a5e31",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-psych-002#block-9] “The study materials consisted of 13 effects drawn from 12 papers”; [1:c-psych-002#block-9] “Gain versus loss framing (Tversky & Kahneman, 1981)”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_DIRECTION_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:adb285a63645fee4-81cfe5e7ff9a5e31",
+          "detail": "direction：Relation 未通过边级语义审计；证据 [0:c-psych-002#block-9] “The study materials consisted of 13 effects drawn from 12 papers”; [1:c-psych-002#block-9] “Gain versus loss framing (Tversky & Kahneman, 1981)”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:adb285a63645fee4-904c3b4846536f64",
+        "from": "claim:adb285a63645fee4-5206ac18f2edd7c7",
+        "to": "claim:adb285a63645fee4-b92f1e7157fe8d45",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-psych-002-adb285a63645fee4-9#chars-1430-1494",
+          "span:c-psych-002-adb285a63645fee4-9#chars-1908-1955"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:07:40.561Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:adb285a63645fee4-904c3b4846536f64",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-psych-002#block-9] “The study materials consisted of 13 effects drawn from 12 papers”; [1:c-psych-002#block-9] “Flag Priming (Carter, Ferguson, & Hassin, 2011)”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:adb285a63645fee4-904c3b4846536f64",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-psych-002#block-9] “The study materials consisted of 13 effects drawn from 12 papers”; [1:c-psych-002#block-9] “Flag Priming (Carter, Ferguson, & Hassin, 2011)”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:adb285a63645fee4-904c3b4846536f64",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-psych-002#block-9] “The study materials consisted of 13 effects drawn from 12 papers”; [1:c-psych-002#block-9] “Flag Priming (Carter, Ferguson, & Hassin, 2011)”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:adb285a63645fee4-93bd36a75af74277",
+        "from": "claim:adb285a63645fee4-b92f1e7157fe8d45",
+        "to": "claim:adb285a63645fee4-b724349a870cf6d1",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-psych-002-adb285a63645fee4-5#chars-616-753",
+          "span:c-psych-002-adb285a63645fee4-9#chars-1430-1494"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:07:40.561Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:adb285a63645fee4-93bd36a75af74277",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-psych-002#block-5] “This dataset is from the Many Labs Replication Project in which 13 effects were ”; [1:c-psych-002#block-9] “The study materials consisted of 13 effects drawn from 12 papers”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:adb285a63645fee4-93bd36a75af74277",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-psych-002#block-5] “This dataset is from the Many Labs Replication Project in which 13 effects were ”; [1:c-psych-002#block-9] “The study materials consisted of 13 effects drawn from 12 papers”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:adb285a63645fee4-93bd36a75af74277",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-psych-002#block-5] “This dataset is from the Many Labs Replication Project in which 13 effects were ”; [1:c-psych-002#block-9] “The study materials consisted of 13 effects drawn from 12 papers”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:adb285a63645fee4-94721854b1fb6534",
+        "from": "claim:adb285a63645fee4-87507fa3fcd06c10",
+        "to": "claim:adb285a63645fee4-b92f1e7157fe8d45",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-psych-002-adb285a63645fee4-9#chars-1430-1494",
+          "span:c-psych-002-adb285a63645fee4-9#chars-1652-1711"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:07:40.561Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:adb285a63645fee4-94721854b1fb6534",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-psych-002#block-9] “The study materials consisted of 13 effects drawn from 12 papers”; [1:c-psych-002#block-9] “Retrospective gambler's fallacy (Oppenheimer & Monin, 2009)”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:adb285a63645fee4-94721854b1fb6534",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-psych-002#block-9] “The study materials consisted of 13 effects drawn from 12 papers”; [1:c-psych-002#block-9] “Retrospective gambler's fallacy (Oppenheimer & Monin, 2009)”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:adb285a63645fee4-94721854b1fb6534",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-psych-002#block-9] “The study materials consisted of 13 effects drawn from 12 papers”; [1:c-psych-002#block-9] “Retrospective gambler's fallacy (Oppenheimer & Monin, 2009)”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_DIRECTION_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:adb285a63645fee4-94721854b1fb6534",
+          "detail": "direction：Relation 未通过边级语义审计；证据 [0:c-psych-002#block-9] “The study materials consisted of 13 effects drawn from 12 papers”; [1:c-psych-002#block-9] “Retrospective gambler's fallacy (Oppenheimer & Monin, 2009)”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:adb285a63645fee4-a9f1deb034072217",
+        "from": "claim:adb285a63645fee4-4607fc993dc2c9fd",
+        "to": "claim:adb285a63645fee4-5ed279e964d9a212",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-psych-002-adb285a63645fee4-3#chars-235-349",
+          "span:c-psych-002-adb285a63645fee4-3#chars-416-489"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:07:40.561Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:adb285a63645fee4-a9f1deb034072217",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-psych-002#block-3] “**Authors:** Richard A. Klein, Kate A. Ratliff, Michelangelo Vianello, Reginald ”; [1:c-psych-002#block-3] “data paper in Journal of Open Psychology Data (2014), Vol. 2, Issue 1, e4”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:adb285a63645fee4-a9f1deb034072217",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-psych-002#block-3] “**Authors:** Richard A. Klein, Kate A. Ratliff, Michelangelo Vianello, Reginald ”; [1:c-psych-002#block-3] “data paper in Journal of Open Psychology Data (2014), Vol. 2, Issue 1, e4”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:adb285a63645fee4-bdeb1aedcb337fe4",
+        "from": "claim:adb285a63645fee4-78995c33a069a9ba",
+        "to": "claim:adb285a63645fee4-b92f1e7157fe8d45",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-psych-002-adb285a63645fee4-9#chars-1430-1494",
+          "span:c-psych-002-adb285a63645fee4-9#chars-1834-1864"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:07:40.561Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:adb285a63645fee4-bdeb1aedcb337fe4",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-psych-002#block-9] “The study materials consisted of 13 effects drawn from 12 papers”; [1:c-psych-002#block-9] “Allowed/Forbidden (Rugg, 1941)”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:adb285a63645fee4-bdeb1aedcb337fe4",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-psych-002#block-9] “The study materials consisted of 13 effects drawn from 12 papers”; [1:c-psych-002#block-9] “Allowed/Forbidden (Rugg, 1941)”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:adb285a63645fee4-bdeb1aedcb337fe4",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-psych-002#block-9] “The study materials consisted of 13 effects drawn from 12 papers”; [1:c-psych-002#block-9] “Allowed/Forbidden (Rugg, 1941)”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_DIRECTION_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:adb285a63645fee4-bdeb1aedcb337fe4",
+          "detail": "direction：Relation 未通过边级语义审计；证据 [0:c-psych-002#block-9] “The study materials consisted of 13 effects drawn from 12 papers”; [1:c-psych-002#block-9] “Allowed/Forbidden (Rugg, 1941)”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_CONDITIONS_MISSING",
+          "severity": "error",
+          "affectedObject": "rel:adb285a63645fee4-bdeb1aedcb337fe4",
+          "detail": "conditions：Relation 未通过边级语义审计；证据 [0:c-psych-002#block-9] “The study materials consisted of 13 effects drawn from 12 papers”; [1:c-psych-002#block-9] “Allowed/Forbidden (Rugg, 1941)”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:adb285a63645fee4-befe6a7670047401",
+        "from": "claim:adb285a63645fee4-fa555f7409c00e6f",
+        "to": "claim:adb285a63645fee4-13188dbeecc062ee",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-psych-002-adb285a63645fee4-13#chars-2322-2382",
+          "span:c-psych-002-adb285a63645fee4-13#chars-2384-2411"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:07:40.561Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:adb285a63645fee4-befe6a7670047401",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-psych-002#block-13] “The dataset is stored on the Open Science Framework website.”; [1:c-psych-002#block-13] “License: CC0 1.0 Universal.”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:adb285a63645fee4-befe6a7670047401",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-psych-002#block-13] “The dataset is stored on the Open Science Framework website.”; [1:c-psych-002#block-13] “License: CC0 1.0 Universal.”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:adb285a63645fee4-c3299a9feb4d79f0",
+        "from": "claim:adb285a63645fee4-b724349a870cf6d1",
+        "to": "claim:adb285a63645fee4-d40d0d2aa7bb4110",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-psych-002-adb285a63645fee4-5#chars-616-753",
+          "span:c-psych-002-adb285a63645fee4-6#chars-943-1122"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:07:40.561Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:adb285a63645fee4-c3299a9feb4d79f0",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-psych-002#block-5] “This dataset is from the Many Labs Replication Project in which 13 effects were ”; [1:c-psych-002#block-6] “Our sample was comprised of 6,344 participants recruited from 36 different sourc”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:adb285a63645fee4-c3299a9feb4d79f0",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-psych-002#block-5] “This dataset is from the Many Labs Replication Project in which 13 effects were ”; [1:c-psych-002#block-6] “Our sample was comprised of 6,344 participants recruited from 36 different sourc”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:adb285a63645fee4-cd6ab9c9b557c544",
+        "from": "claim:adb285a63645fee4-5ed279e964d9a212",
+        "to": "claim:adb285a63645fee4-bf99c4465e762307",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-psych-002-adb285a63645fee4-2#chars-100-233",
+          "span:c-psych-002-adb285a63645fee4-3#chars-416-489"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:07:40.561Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:adb285a63645fee4-cd6ab9c9b557c544",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-psych-002#block-2] “*Content sourced from Journal of Open Psychology Data (openpsychologydata.metajn”; [1:c-psych-002#block-3] “data paper in Journal of Open Psychology Data (2014), Vol. 2, Issue 1, e4”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:adb285a63645fee4-cd6ab9c9b557c544",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-psych-002#block-2] “*Content sourced from Journal of Open Psychology Data (openpsychologydata.metajn”; [1:c-psych-002#block-3] “data paper in Journal of Open Psychology Data (2014), Vol. 2, Issue 1, e4”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:adb285a63645fee4-cd6ab9c9b557c544",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-psych-002#block-2] “*Content sourced from Journal of Open Psychology Data (openpsychologydata.metajn”; [1:c-psych-002#block-3] “data paper in Journal of Open Psychology Data (2014), Vol. 2, Issue 1, e4”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:adb285a63645fee4-e339e2ddc42ebc9f",
+        "from": "claim:adb285a63645fee4-603d9950c123f1ab",
+        "to": "claim:adb285a63645fee4-bf99c4465e762307",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-psych-002-adb285a63645fee4-2#chars-100-233",
+          "span:c-psych-002-adb285a63645fee4-3#chars-350-489"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:07:40.561Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:adb285a63645fee4-e339e2ddc42ebc9f",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-psych-002#block-2] “*Content sourced from Journal of Open Psychology Data (openpsychologydata.metajn”; [1:c-psych-002#block-3] “**Published in:** Social Psychology (2014), Vol. 45, pp. 142-152; data paper in ”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:adb285a63645fee4-e339e2ddc42ebc9f",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-psych-002#block-2] “*Content sourced from Journal of Open Psychology Data (openpsychologydata.metajn”; [1:c-psych-002#block-3] “**Published in:** Social Psychology (2014), Vol. 45, pp. 142-152; data paper in ”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:adb285a63645fee4-e339e2ddc42ebc9f",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-psych-002#block-2] “*Content sourced from Journal of Open Psychology Data (openpsychologydata.metajn”; [1:c-psych-002#block-3] “**Published in:** Social Psychology (2014), Vol. 45, pp. 142-152; data paper in ”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_DIRECTION_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:adb285a63645fee4-e339e2ddc42ebc9f",
+          "detail": "direction：Relation 未通过边级语义审计；证据 [0:c-psych-002#block-2] “*Content sourced from Journal of Open Psychology Data (openpsychologydata.metajn”; [1:c-psych-002#block-3] “**Published in:** Social Psychology (2014), Vol. 45, pp. 142-152; data paper in ”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_CONDITIONS_MISSING",
+          "severity": "error",
+          "affectedObject": "rel:adb285a63645fee4-e339e2ddc42ebc9f",
+          "detail": "conditions：Relation 未通过边级语义审计；证据 [0:c-psych-002#block-2] “*Content sourced from Journal of Open Psychology Data (openpsychologydata.metajn”; [1:c-psych-002#block-3] “**Published in:** Social Psychology (2014), Vol. 45, pp. 142-152; data paper in ”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:adb285a63645fee4-e87928c7711eb3d7",
+        "from": "claim:adb285a63645fee4-50af184b6eca28a3",
+        "to": "claim:adb285a63645fee4-b92f1e7157fe8d45",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-psych-002-adb285a63645fee4-9#chars-1430-1494",
+          "span:c-psych-002-adb285a63645fee4-9#chars-1713-1785"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:07:40.561Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:adb285a63645fee4-e87928c7711eb3d7",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-psych-002#block-9] “The study materials consisted of 13 effects drawn from 12 papers”; [1:c-psych-002#block-9] “Low-vs.-high category scales (Schwarz, Hippler, Deutsch, & Strack, 1985)”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:adb285a63645fee4-e87928c7711eb3d7",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-psych-002#block-9] “The study materials consisted of 13 effects drawn from 12 papers”; [1:c-psych-002#block-9] “Low-vs.-high category scales (Schwarz, Hippler, Deutsch, & Strack, 1985)”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:adb285a63645fee4-e87928c7711eb3d7",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-psych-002#block-9] “The study materials consisted of 13 effects drawn from 12 papers”; [1:c-psych-002#block-9] “Low-vs.-high category scales (Schwarz, Hippler, Deutsch, & Strack, 1985)”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_DIRECTION_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:adb285a63645fee4-e87928c7711eb3d7",
+          "detail": "direction：Relation 未通过边级语义审计；证据 [0:c-psych-002#block-9] “The study materials consisted of 13 effects drawn from 12 papers”; [1:c-psych-002#block-9] “Low-vs.-high category scales (Schwarz, Hippler, Deutsch, & Strack, 1985)”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:adb285a63645fee4-f28f2433ebcc94fe",
+        "from": "claim:adb285a63645fee4-c9ef45a3fc99b848",
+        "to": "claim:adb285a63645fee4-13188dbeecc062ee",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-psych-002-adb285a63645fee4-13#chars-2322-2382",
+          "span:c-psych-002-adb285a63645fee4-5#chars-754-939"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:07:40.561Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:adb285a63645fee4-f28f2433ebcc94fe",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-psych-002#block-13] “The dataset is stored on the Open Science Framework website.”; [1:c-psych-002#block-5] “Data from the replications are included, along with demographic variables about ”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:adb285a63645fee4-f28f2433ebcc94fe",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-psych-002#block-13] “The dataset is stored on the Open Science Framework website.”; [1:c-psych-002#block-5] “Data from the replications are included, along with demographic variables about ”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:adb285a63645fee4-f75a4531ffbcdf24",
+        "from": "claim:adb285a63645fee4-80a30208abe220b2",
+        "to": "claim:adb285a63645fee4-d40d0d2aa7bb4110",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-psych-002-adb285a63645fee4-6#chars-943-1122",
+          "span:c-psych-002-adb285a63645fee4-7#chars-1303-1369"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:07:40.561Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:adb285a63645fee4-f75a4531ffbcdf24",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-psych-002#block-6] “Our sample was comprised of 6,344 participants recruited from 36 different sourc”; [1:c-psych-002#block-7] “Participant gender was 63.6% female, 29.9% male, 6.5% no response.”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:adb285a63645fee4-f75a4531ffbcdf24",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-psych-002#block-6] “Our sample was comprised of 6,344 participants recruited from 36 different sourc”; [1:c-psych-002#block-7] “Participant gender was 63.6% female, 29.9% male, 6.5% no response.”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-4a1c4e4350d5a9f8",
+        "from": "claim:adb285a63645fee4-d037e33e12360e4e",
+        "to": "claim:0f7730e649dbc238-6b8953e4a783f80b",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-psych-001-0f7730e649dbc238-8#chars-1037-1095",
+          "span:c-psych-002-adb285a63645fee4-11#chars-1986-2057"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:08:01.244Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.5,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-4a1c4e4350d5a9f8",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-psych-001#block-8] “Thirty-six percent of replications had significant results”; [1:c-psych-002#block-11] “10 of the 13 effects were successfully replicated across the 36 samples”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-4a1c4e4350d5a9f8",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-psych-001#block-8] “Thirty-six percent of replications had significant results”; [1:c-psych-002#block-11] “10 of the 13 effects were successfully replicated across the 36 samples”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-4a1c4e4350d5a9f8",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-psych-001#block-8] “Thirty-six percent of replications had significant results”; [1:c-psych-002#block-11] “10 of the 13 effects were successfully replicated across the 36 samples”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_DIRECTION_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-4a1c4e4350d5a9f8",
+          "detail": "direction：Relation 未通过边级语义审计；证据 [0:c-psych-001#block-8] “Thirty-six percent of replications had significant results”; [1:c-psych-002#block-11] “10 of the 13 effects were successfully replicated across the 36 samples”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-6f7d859307744a46",
+        "from": "claim:adb285a63645fee4-b724349a870cf6d1",
+        "to": "claim:0f7730e649dbc238-7fd9ac05cca2b583",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-psych-001-0f7730e649dbc238-5#chars-589-699",
+          "span:c-psych-002-adb285a63645fee4-5#chars-616-753"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:08:01.244Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.6,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-6f7d859307744a46",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-psych-001#block-5] “We conducted replications of 100 experimental and correlational studies publishe”; [1:c-psych-002#block-5] “This dataset is from the Many Labs Replication Project in which 13 effects were ”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-6f7d859307744a46",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-psych-001#block-5] “We conducted replications of 100 experimental and correlational studies publishe”; [1:c-psych-002#block-5] “This dataset is from the Many Labs Replication Project in which 13 effects were ”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-6f7d859307744a46",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-psych-001#block-5] “We conducted replications of 100 experimental and correlational studies publishe”; [1:c-psych-002#block-5] “This dataset is from the Many Labs Replication Project in which 13 effects were ”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    }
+  ]
+}

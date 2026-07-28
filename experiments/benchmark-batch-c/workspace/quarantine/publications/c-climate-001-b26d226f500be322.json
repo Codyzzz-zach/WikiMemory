@@ -1,0 +1,428 @@
+{
+  "schemaVersion": "v1",
+  "sourceId": "source:c-climate-001-b26d226f500be322",
+  "runId": "0faba7f3-3baa-44da-8400-fb54d1545762",
+  "publishedAt": "2026-07-28T07:10:52.086Z",
+  "claims": [
+    {
+      "claim": {
+        "id": "claim:b26d226f500be322-10eac4a79cfbd7db",
+        "statement": "内容来源于IPCC官方网站。",
+        "evidenceSpanIds": [
+          "span:c-climate-001-b26d226f500be322-2#chars-103-245"
+        ],
+        "conditions": [],
+        "derivation": "EXTRACTED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:10:14.072Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "confidence": 1,
+        "claimKind": "FACT",
+        "scope": {
+          "type": "GLOBAL"
+        },
+        "provenanceRefs": [
+          {
+            "type": "SourceSpan",
+            "spanId": "span:c-climate-001-b26d226f500be322-2#chars-103-245"
+          }
+        ],
+        "supportingEvidenceRefs": [
+          {
+            "type": "SourceSpan",
+            "spanId": "span:c-climate-001-b26d226f500be322-2#chars-103-245"
+          }
+        ],
+        "knowledgeVersion": "v1",
+        "recordedAt": "2026-07-28T07:10:14.072Z"
+      },
+      "issues": [
+        {
+          "code": "SEMANTIC_SUPPORT_FAILED",
+          "severity": "error",
+          "affectedObject": "claim:b26d226f500be322-10eac4a79cfbd7db",
+          "detail": "support：证据没有明确支持 Claim 的全部断言；证据 [0:c-climate-001#block-2] “Content sourced from official IPCC website (https://www.ipcc.ch/report/ar6/syr/)”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "SEMANTIC_CITATION_FAILED",
+          "severity": "error",
+          "affectedObject": "claim:b26d226f500be322-10eac4a79cfbd7db",
+          "detail": "citation：Claim 与所引用的证据位置不对应；证据 [0:c-climate-001#block-2] “Content sourced from official IPCC website (https://www.ipcc.ch/report/ar6/syr/)”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "relation": {
+        "id": "rel:b26d226f500be322-202a0e958b466776",
+        "from": "claim:b26d226f500be322-10eac4a79cfbd7db",
+        "to": "claim:b26d226f500be322-436cd349bae4b357",
+        "type": "RELATED_TO",
+        "conditions": [
+          "claim 0 和 claim 4 均涉及同一份 IPCC 报告"
+        ],
+        "conditionStatus": "UNVERIFIED",
+        "supersessionEffect": null,
+        "relationAuditVersion": null,
+        "evidenceSpanIds": [
+          "span:c-climate-001-b26d226f500be322-2#chars-103-245",
+          "span:c-climate-001-b26d226f500be322-3#chars-248-332"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:10:36.364Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_ENDPOINT_QUARANTINED",
+          "severity": "error",
+          "affectedObject": "rel:b26d226f500be322-202a0e958b466776",
+          "detail": "from 端点未通过 Lint（Quarantined）: claim:b26d226f500be322-10eac4a79cfbd7db",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:b26d226f500be322-284e94ae899f2887",
+        "from": "claim:b26d226f500be322-eac51b97a6e223e2",
+        "to": "claim:b26d226f500be322-58510489057c6ffa",
+        "type": "RELATED_TO",
+        "conditions": [
+          "claim 18 和 claim 6 均涉及同一份 IPCC 报告"
+        ],
+        "conditionStatus": "PRESERVED",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-climate-001-b26d226f500be322-0#chars-3-80",
+          "span:c-climate-001-b26d226f500be322-3#chars-334-417"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:10:36.364Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:b26d226f500be322-284e94ae899f2887",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-climate-001#block-0] “IPCC Sixth Assessment Report (AR6) Synthesis Report: Summary for Policymakers”; [1:c-climate-001#block-3] “**Core Writing Team:** Hoesung Lee (Chair), Katherine Calvin, Dipak Dasgupta, et”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:b26d226f500be322-284e94ae899f2887",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-climate-001#block-0] “IPCC Sixth Assessment Report (AR6) Synthesis Report: Summary for Policymakers”; [1:c-climate-001#block-3] “**Core Writing Team:** Hoesung Lee (Chair), Katherine Calvin, Dipak Dasgupta, et”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:b26d226f500be322-284e94ae899f2887",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-climate-001#block-0] “IPCC Sixth Assessment Report (AR6) Synthesis Report: Summary for Policymakers”; [1:c-climate-001#block-3] “**Core Writing Team:** Hoesung Lee (Chair), Katherine Calvin, Dipak Dasgupta, et”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_CONDITIONS_MISSING",
+          "severity": "error",
+          "affectedObject": "rel:b26d226f500be322-284e94ae899f2887",
+          "detail": "conditions：Relation 未通过边级语义审计；证据 [0:c-climate-001#block-0] “IPCC Sixth Assessment Report (AR6) Synthesis Report: Summary for Policymakers”; [1:c-climate-001#block-3] “**Core Writing Team:** Hoesung Lee (Chair), Katherine Calvin, Dipak Dasgupta, et”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:b26d226f500be322-28915818beb2f63c",
+        "from": "claim:b26d226f500be322-6bee41025b267e1e",
+        "to": "claim:b26d226f500be322-a1e1b8d226844ba6",
+        "type": "SUPPORTS",
+        "conditions": [
+          "claim 9 指出脆弱性相互依存，claim 14 提供脆弱人口数量，相互支持"
+        ],
+        "conditionStatus": "PRESERVED",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-climate-001-b26d226f500be322-13#chars-2719-2821",
+          "span:c-climate-001-b26d226f500be322-13#chars-2822-2875"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:10:36.364Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:b26d226f500be322-28915818beb2f63c",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-climate-001#block-13] “Approximately 3.3 to 3.6 billion people live in contexts that are highly vulnera”; [1:c-climate-001#block-13] “Human and ecosystem vulnerability are interdependent.”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:b26d226f500be322-28915818beb2f63c",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-climate-001#block-13] “Approximately 3.3 to 3.6 billion people live in contexts that are highly vulnera”; [1:c-climate-001#block-13] “Human and ecosystem vulnerability are interdependent.”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:b26d226f500be322-28915818beb2f63c",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-climate-001#block-13] “Approximately 3.3 to 3.6 billion people live in contexts that are highly vulnera”; [1:c-climate-001#block-13] “Human and ecosystem vulnerability are interdependent.”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:b26d226f500be322-2e821fc315ae163a",
+        "from": "claim:b26d226f500be322-10eac4a79cfbd7db",
+        "to": "claim:b26d226f500be322-9a57b22af6499086",
+        "type": "RELATED_TO",
+        "conditions": [
+          "claim 0 和 claim 13 均涉及同一份 IPCC 报告"
+        ],
+        "conditionStatus": "UNVERIFIED",
+        "supersessionEffect": null,
+        "relationAuditVersion": null,
+        "evidenceSpanIds": [
+          "span:c-climate-001-b26d226f500be322-2#chars-103-245",
+          "span:c-climate-001-b26d226f500be322-3#chars-419-459"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:10:36.364Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_ENDPOINT_QUARANTINED",
+          "severity": "error",
+          "affectedObject": "rel:b26d226f500be322-2e821fc315ae163a",
+          "detail": "from 端点未通过 Lint（Quarantined）: claim:b26d226f500be322-10eac4a79cfbd7db",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:b26d226f500be322-7e87aed1aed79b1e",
+        "from": "claim:b26d226f500be322-90253f3e2383752e",
+        "to": "claim:b26d226f500be322-e06162dbf4f90ed6",
+        "type": "SUPPORTS",
+        "conditions": [
+          "claim 11 指出政策扩展，claim 17 指出当前 NDCs 不足，形成对比"
+        ],
+        "conditionStatus": "PRESERVED",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-climate-001-b26d226f500be322-9#chars-1625-1702",
+          "span:c-climate-001-b26d226f500be322-9#chars-1703-1928"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:10:36.364Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:b26d226f500be322-7e87aed1aed79b1e",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-climate-001#block-9] “Policies and laws addressing mitigation have consistently expanded since AR5.”; [1:c-climate-001#block-9] “Global GHG emissions in 2030 implied by nationally determined contributions (NDC”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:b26d226f500be322-7e87aed1aed79b1e",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-climate-001#block-9] “Policies and laws addressing mitigation have consistently expanded since AR5.”; [1:c-climate-001#block-9] “Global GHG emissions in 2030 implied by nationally determined contributions (NDC”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_CONDITIONS_MISSING",
+          "severity": "error",
+          "affectedObject": "rel:b26d226f500be322-7e87aed1aed79b1e",
+          "detail": "conditions：Relation 未通过边级语义审计；证据 [0:c-climate-001#block-9] “Policies and laws addressing mitigation have consistently expanded since AR5.”; [1:c-climate-001#block-9] “Global GHG emissions in 2030 implied by nationally determined contributions (NDC”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:b26d226f500be322-f0399e534d969ef0",
+        "from": "claim:b26d226f500be322-10eac4a79cfbd7db",
+        "to": "claim:b26d226f500be322-eac51b97a6e223e2",
+        "type": "RELATED_TO",
+        "conditions": [
+          "claim 0 和 claim 18 均涉及同一份 IPCC 报告"
+        ],
+        "conditionStatus": "UNVERIFIED",
+        "supersessionEffect": null,
+        "relationAuditVersion": null,
+        "evidenceSpanIds": [
+          "span:c-climate-001-b26d226f500be322-0#chars-3-80",
+          "span:c-climate-001-b26d226f500be322-2#chars-103-245"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:10:36.364Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_ENDPOINT_QUARANTINED",
+          "severity": "error",
+          "affectedObject": "rel:b26d226f500be322-f0399e534d969ef0",
+          "detail": "from 端点未通过 Lint（Quarantined）: claim:b26d226f500be322-10eac4a79cfbd7db",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:b26d226f500be322-f1488bec36cbc04a",
+        "from": "claim:b26d226f500be322-1c266c697db26237",
+        "to": "claim:b26d226f500be322-a1e1b8d226844ba6",
+        "type": "SUPPORTS",
+        "conditions": [
+          "claim 1 提供具体死亡率数据，claim 14 提供脆弱人口数量，共同说明气候变化影响"
+        ],
+        "conditionStatus": "PRESERVED",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-climate-001-b26d226f500be322-13#chars-2719-2821",
+          "span:c-climate-001-b26d226f500be322-14#chars-2879-3049"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:10:36.364Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:b26d226f500be322-f1488bec36cbc04a",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-climate-001#block-13] “Approximately 3.3 to 3.6 billion people live in contexts that are highly vulnera”; [1:c-climate-001#block-14] “Between 2010 and 2020, human mortality from floods, droughts and storms was 15 t”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:b26d226f500be322-f1488bec36cbc04a",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-climate-001#block-13] “Approximately 3.3 to 3.6 billion people live in contexts that are highly vulnera”; [1:c-climate-001#block-14] “Between 2010 and 2020, human mortality from floods, droughts and storms was 15 t”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:b26d226f500be322-f1488bec36cbc04a",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-climate-001#block-13] “Approximately 3.3 to 3.6 billion people live in contexts that are highly vulnera”; [1:c-climate-001#block-14] “Between 2010 and 2020, human mortality from floods, droughts and storms was 15 t”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_CONDITIONS_MISSING",
+          "severity": "error",
+          "affectedObject": "rel:b26d226f500be322-f1488bec36cbc04a",
+          "detail": "conditions：Relation 未通过边级语义审计；证据 [0:c-climate-001#block-13] “Approximately 3.3 to 3.6 billion people live in contexts that are highly vulnera”; [1:c-climate-001#block-14] “Between 2010 and 2020, human mortality from floods, droughts and storms was 15 t”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:b26d226f500be322-f55cce7fc6800dce",
+        "from": "claim:b26d226f500be322-10eac4a79cfbd7db",
+        "to": "claim:b26d226f500be322-58510489057c6ffa",
+        "type": "RELATED_TO",
+        "conditions": [
+          "claim 0 和 claim 6 均涉及同一份 IPCC 报告"
+        ],
+        "conditionStatus": "UNVERIFIED",
+        "supersessionEffect": null,
+        "relationAuditVersion": null,
+        "evidenceSpanIds": [
+          "span:c-climate-001-b26d226f500be322-2#chars-103-245",
+          "span:c-climate-001-b26d226f500be322-3#chars-334-417"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:10:36.364Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_ENDPOINT_QUARANTINED",
+          "severity": "error",
+          "affectedObject": "rel:b26d226f500be322-f55cce7fc6800dce",
+          "detail": "from 端点未通过 Lint（Quarantined）: claim:b26d226f500be322-10eac4a79cfbd7db",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    }
+  ]
+}

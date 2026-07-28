@@ -1,0 +1,248 @@
+{
+  "schemaVersion": "v1",
+  "sourceId": "source:c-law-001-1e61c7154b59a8af",
+  "runId": "69d76b3f-0208-494e-8c31-0184c25217f8",
+  "publishedAt": "2026-07-28T07:14:41.928Z",
+  "claims": [],
+  "relations": [
+    {
+      "relation": {
+        "id": "rel:1e61c7154b59a8af-1a6bd28ffa5c3bad",
+        "from": "claim:1e61c7154b59a8af-1cf8a28c3d29fe57",
+        "to": "claim:1e61c7154b59a8af-b807fa4a3bd16e79",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-law-001-1e61c7154b59a8af-7#chars-1202-1252",
+          "span:c-law-001-1e61c7154b59a8af-8#chars-2115-2230"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:14:29.649Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:1e61c7154b59a8af-1a6bd28ffa5c3bad",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-law-001#block-7] “The AI Act adopts a four-tier risk classification:”; [1:c-law-001#block-8] “**Specific Transparency Risk** — Chatbots, deepfakes, and emotion recognition sy”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:1e61c7154b59a8af-1a6bd28ffa5c3bad",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-law-001#block-7] “The AI Act adopts a four-tier risk classification:”; [1:c-law-001#block-8] “**Specific Transparency Risk** — Chatbots, deepfakes, and emotion recognition sy”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:1e61c7154b59a8af-1a6bd28ffa5c3bad",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-law-001#block-7] “The AI Act adopts a four-tier risk classification:”; [1:c-law-001#block-8] “**Specific Transparency Risk** — Chatbots, deepfakes, and emotion recognition sy”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:1e61c7154b59a8af-4f2de87d21f4f0ea",
+        "from": "claim:1e61c7154b59a8af-586c0b4788cea75b",
+        "to": "claim:1e61c7154b59a8af-a48a3f1ae8ac6838",
+        "type": "REQUIRES",
+        "conditions": [
+          "Prohibitions on unacceptable risk practices take effect on 2 February 2025"
+        ],
+        "conditionStatus": "PRESERVED",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-law-001-1e61c7154b59a8af-12#chars-2564-2636",
+          "span:c-law-001-1e61c7154b59a8af-8#chars-1257-1704"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:14:29.649Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 1,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:1e61c7154b59a8af-4f2de87d21f4f0ea",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-law-001#block-12] “2 February 2025: Prohibitions on unacceptable risk practices take effect”; [1:c-law-001#block-8] “**Unacceptable Risk** — Prohibited practices include: subliminal techniques caus”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:1e61c7154b59a8af-4f2de87d21f4f0ea",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-law-001#block-12] “2 February 2025: Prohibitions on unacceptable risk practices take effect”; [1:c-law-001#block-8] “**Unacceptable Risk** — Prohibited practices include: subliminal techniques caus”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_CONDITIONS_MISSING",
+          "severity": "error",
+          "affectedObject": "rel:1e61c7154b59a8af-4f2de87d21f4f0ea",
+          "detail": "conditions：Relation 未通过边级语义审计；证据 [0:c-law-001#block-12] “2 February 2025: Prohibitions on unacceptable risk practices take effect”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:1e61c7154b59a8af-5cc2c336abefe422",
+        "from": "claim:1e61c7154b59a8af-24efdd4723db224e",
+        "to": "claim:1e61c7154b59a8af-c18e506bd52019e0",
+        "type": "EQUIVALENT_UNDER",
+        "conditions": [
+          "Both refer to the same regulation: the AI Act (Regulation (EU) 2024/1689)"
+        ],
+        "conditionStatus": "UNVERIFIED",
+        "supersessionEffect": null,
+        "relationAuditVersion": null,
+        "evidenceSpanIds": [
+          "span:c-law-001-1e61c7154b59a8af-0#chars-3-58",
+          "span:c-law-001-1e61c7154b59a8af-3#chars-314-353"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:14:29.649Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 1,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_EQUIVALENCE_REVIEW_REQUIRED",
+          "severity": "error",
+          "affectedObject": "rel:1e61c7154b59a8af-5cc2c336abefe422",
+          "detail": "EQUIVALENT_UNDER 自动审计在真实抽检中 4/4 误判；独立人工复核或校准门禁完成前禁止自动晋级",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:1e61c7154b59a8af-cd3164e1372b1468",
+        "from": "claim:1e61c7154b59a8af-037c8bf8420e807b",
+        "to": "claim:1e61c7154b59a8af-6701affdd23f4d99",
+        "type": "REQUIRES",
+        "conditions": [
+          "Rules for product-linked high-risk AI systems (Annex I) take effect on 2 August 2027"
+        ],
+        "conditionStatus": "PRESERVED",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-law-001-1e61c7154b59a8af-12#chars-2779-2861",
+          "span:c-law-001-1e61c7154b59a8af-8#chars-1711-2109"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:14:29.649Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 1,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:1e61c7154b59a8af-cd3164e1372b1468",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-law-001#block-12] “2 August 2027: Rules for product-linked high-risk AI systems (Annex I) take effe”; [1:c-law-001#block-8] “**High Risk** — AI systems that are safety components of products (Annex I) or f”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:1e61c7154b59a8af-cd3164e1372b1468",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-law-001#block-12] “2 August 2027: Rules for product-linked high-risk AI systems (Annex I) take effe”; [1:c-law-001#block-8] “**High Risk** — AI systems that are safety components of products (Annex I) or f”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_CONDITIONS_MISSING",
+          "severity": "error",
+          "affectedObject": "rel:1e61c7154b59a8af-cd3164e1372b1468",
+          "detail": "conditions：Relation 未通过边级语义审计；证据 [0:c-law-001#block-12] “2 August 2027: Rules for product-linked high-risk AI systems (Annex I) take effe”; [1:c-law-001#block-8] “**High Risk** — AI systems that are safety components of products (Annex I) or f”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:1e61c7154b59a8af-d338da91f781ec74",
+        "from": "claim:1e61c7154b59a8af-037c8bf8420e807b",
+        "to": "claim:1e61c7154b59a8af-73fa3ab27414cda8",
+        "type": "REQUIRES",
+        "conditions": [
+          "Rules for high-risk AI systems (Annex III) take effect on 2 August 2026"
+        ],
+        "conditionStatus": "PRESERVED",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-law-001-1e61c7154b59a8af-12#chars-2707-2776",
+          "span:c-law-001-1e61c7154b59a8af-8#chars-1711-2109"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:14:29.649Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 1,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:1e61c7154b59a8af-d338da91f781ec74",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-law-001#block-12] “2 August 2026: Rules for high-risk AI systems (Annex III) take effect”; [1:c-law-001#block-8] “**High Risk** — AI systems that are safety components of products (Annex I) or f”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:1e61c7154b59a8af-d338da91f781ec74",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-law-001#block-12] “2 August 2026: Rules for high-risk AI systems (Annex III) take effect”; [1:c-law-001#block-8] “**High Risk** — AI systems that are safety components of products (Annex I) or f”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_CONDITIONS_MISSING",
+          "severity": "error",
+          "affectedObject": "rel:1e61c7154b59a8af-d338da91f781ec74",
+          "detail": "conditions：Relation 未通过边级语义审计；证据 [0:c-law-001#block-12] “2 August 2026: Rules for high-risk AI systems (Annex III) take effect”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    }
+  ]
+}

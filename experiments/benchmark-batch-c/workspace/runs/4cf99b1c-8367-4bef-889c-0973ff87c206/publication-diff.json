@@ -1,0 +1,60 @@
+{
+  "schemaVersion": "pilot-publication-diff/v1",
+  "runId": "4cf99b1c-8367-4bef-889c-0973ff87c206",
+  "sourceId": "source:c-law-002-f1df14c75b8f61cf",
+  "generatedAt": "2026-07-28T07:15:39.332Z",
+  "status": "PASS",
+  "acceptedReview": false,
+  "runtime": {
+    "requestedModel": "deepseek-v4-flash",
+    "temperature": 0,
+    "semanticAuditVersion": "v2.3",
+    "relationAuditVersion": "v1.7",
+    "sourceHash": "f1df14c75b8f61cf"
+  },
+  "baseline": null,
+  "candidate": {
+    "claims": 26,
+    "concepts": 34,
+    "relations": 8,
+    "quarantinedClaims": 0,
+    "quarantinedRelations": 12,
+    "quarantineRate": 0
+  },
+  "diff": {
+    "retainedClaimIds": 0,
+    "addedClaimIds": [
+      "claim:f1df14c75b8f61cf-04f9905849db1610",
+      "claim:f1df14c75b8f61cf-0eb4d295f04e38b2",
+      "claim:f1df14c75b8f61cf-16ac86ad60574bb5",
+      "claim:f1df14c75b8f61cf-25cccbf010550b9b",
+      "claim:f1df14c75b8f61cf-25f1e6fc7fb40fd3",
+      "claim:f1df14c75b8f61cf-29a9ae062f2b6a6d",
+      "claim:f1df14c75b8f61cf-2e414655c8813f20",
+      "claim:f1df14c75b8f61cf-374d7088d6f22d1c",
+      "claim:f1df14c75b8f61cf-3e1641fb7a98d37e",
+      "claim:f1df14c75b8f61cf-44b7ee4e9b244013",
+      "claim:f1df14c75b8f61cf-47e52bf04686188e",
+      "claim:f1df14c75b8f61cf-50ae1c95d2ea05de",
+      "claim:f1df14c75b8f61cf-5a5f4b5714f8072f",
+      "claim:f1df14c75b8f61cf-6e313c752bdde1a7",
+      "claim:f1df14c75b8f61cf-6eed661a604a8409",
+      "claim:f1df14c75b8f61cf-82d665311e5fe83c",
+      "claim:f1df14c75b8f61cf-8465c4dba06a7f36",
+      "claim:f1df14c75b8f61cf-9d12db6a375238cf",
+      "claim:f1df14c75b8f61cf-9ffd7e1e1712346b",
+      "claim:f1df14c75b8f61cf-b7ccb516805d9322",
+      "claim:f1df14c75b8f61cf-c4eaf17fc837a886",
+      "claim:f1df14c75b8f61cf-cb4c4ee3e1fb738e",
+      "claim:f1df14c75b8f61cf-cc31b686dcee3c34",
+      "claim:f1df14c75b8f61cf-cc9562aab9253ceb",
+      "claim:f1df14c75b8f61cf-e5ad72337db6ed40",
+      "claim:f1df14c75b8f61cf-e77ddeaf086f4b0a"
+    ],
+    "removedClaimIds": [],
+    "claimRetentionRate": null,
+    "claimCountChangeRate": null,
+    "conditionsDropped": []
+  },
+  "issues": []
+}

@@ -1,0 +1,37 @@
+{
+  "runId": "batch-c-blind-first-2026-07-28T07-22-04-418Z",
+  "sampleId": "sample-9f4d2b72-8b3c-4991-a57d-9d4ec90765ad",
+  "questionId": "C-A-PSYCH-001",
+  "group": "B",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "temperature": 0,
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 161,
+    "completionTokens": 109,
+    "totalTokens": 270,
+    "promptCacheHitTokens": 0,
+    "promptCacheMissTokens": 161,
+    "reasoningTokens": 0
+  },
+  "latencyMs": 1772,
+  "promptHash": "20b2b9cb8f94b62fee64b542552b7a42418525d011329b1ac5690723c89aa856",
+  "contextHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "estimatedContextTokens": 1,
+  "estimatedInputTokens": 215,
+  "retrievedClaims": [],
+  "retrievedRelations": [],
+  "retrievedSources": [],
+  "citationValidation": {
+    "valid": true,
+    "citationCount": 0,
+    "invalid": []
+  },
+  "request": {
+    "systemPrompt": "你是受证据约束的问答 Agent。只使用本次请求提供的检索上下文回答。\n要求：保留影响结论的条件、时间、例外、来源角色与不确定性；关键结论引用上下文中的 SOURCE、EVIDENCE 或 CLAIM 标识；上下文不足时明确说明，不得用外部常识补齐。\n只输出严格 JSON：{\"answer\":\"...\",\"citations\":[\"...\"],\"insufficient\":false,\"uncertainties\":[\"...\"]}。",
+    "userPrompt": "# 问题\n基于当前材料，心理学作为一个整体学科，其可复制性究竟是低还是高？如果材料不足以给出确定性结论，请说明哪些关键信息缺失导致了这种不确定性。\n\n# 检索上下文\n"
+  },
+  "answer": "{\n  \"answer\": \"根据现有材料，无法对心理学整体学科的可复制性给出确定性结论。材料仅提及可复制性危机，但未提供系统性证据或量化数据。\",\n  \"citations\": [],\n  \"insufficient\": true,\n  \"uncertainties\": [\n    \"缺乏心理学各子领域可复制性的系统性评估数据\",\n    \"未提供可复制性危机的具体研究案例或元分析结果\",\n    \"缺少对可复制性高低判断的量化标准或比较基准\"\n  ]\n}",
+  "answerFormatValid": true
+}

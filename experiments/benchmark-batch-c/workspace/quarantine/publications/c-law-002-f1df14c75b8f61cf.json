@@ -1,0 +1,548 @@
+{
+  "schemaVersion": "v1",
+  "sourceId": "source:c-law-002-f1df14c75b8f61cf",
+  "runId": "4cf99b1c-8367-4bef-889c-0973ff87c206",
+  "publishedAt": "2026-07-28T07:15:40.354Z",
+  "claims": [],
+  "relations": [
+    {
+      "relation": {
+        "id": "rel:f1df14c75b8f61cf-20b76a4bd3d940d5",
+        "from": "claim:f1df14c75b8f61cf-cc9562aab9253ceb",
+        "to": "claim:f1df14c75b8f61cf-e5ad72337db6ed40",
+        "type": "DERIVED_FROM",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-law-002-f1df14c75b8f61cf-5#chars-577-845",
+          "span:c-law-002-f1df14c75b8f61cf-6#chars-849-1011"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:15:21.315Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:f1df14c75b8f61cf-20b76a4bd3d940d5",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-law-002#block-5] “The decision records that Meta Ireland infringed Article 46(1) GDPR when it cont”; [1:c-law-002#block-6] “While Meta Ireland effected those transfers on the basis of the updated Standard”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:f1df14c75b8f61cf-20b76a4bd3d940d5",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-law-002#block-5] “The decision records that Meta Ireland infringed Article 46(1) GDPR when it cont”; [1:c-law-002#block-6] “While Meta Ireland effected those transfers on the basis of the updated Standard”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:f1df14c75b8f61cf-25555124e22e1824",
+        "from": "claim:f1df14c75b8f61cf-9d12db6a375238cf",
+        "to": "claim:f1df14c75b8f61cf-2e414655c8813f20",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-law-002-f1df14c75b8f61cf-15#chars-2292-2426",
+          "span:c-law-002-f1df14c75b8f61cf-15#chars-2427-2523"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:15:21.315Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:f1df14c75b8f61cf-25555124e22e1824",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-law-002#block-15] “The EDPB found that Meta IE's infringement is very serious since it concerns tra”; [1:c-law-002#block-15] “Facebook has millions of users in Europe, so the volume of personal data transfe”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:f1df14c75b8f61cf-25555124e22e1824",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-law-002#block-15] “The EDPB found that Meta IE's infringement is very serious since it concerns tra”; [1:c-law-002#block-15] “Facebook has millions of users in Europe, so the volume of personal data transfe”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:f1df14c75b8f61cf-25555124e22e1824",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-law-002#block-15] “The EDPB found that Meta IE's infringement is very serious since it concerns tra”; [1:c-law-002#block-15] “Facebook has millions of users in Europe, so the volume of personal data transfe”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:f1df14c75b8f61cf-2d9823b0183e750a",
+        "from": "claim:f1df14c75b8f61cf-cc31b686dcee3c34",
+        "to": "claim:f1df14c75b8f61cf-b7ccb516805d9322",
+        "type": "CONTRADICTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-law-002-f1df14c75b8f61cf-10#chars-1515-1636",
+          "span:c-law-002-f1df14c75b8f61cf-6#chars-1012-1103"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:15:21.315Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:f1df14c75b8f61cf-2d9823b0183e750a",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-law-002#block-10] “The measures set out in Meta's record of safeguards...do not compensate for the ”; [1:c-law-002#block-6] “in conjunction with additional supplementary measures that were implemented by M”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:f1df14c75b8f61cf-2d9823b0183e750a",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-law-002#block-10] “The measures set out in Meta's record of safeguards...do not compensate for the ”; [1:c-law-002#block-6] “in conjunction with additional supplementary measures that were implemented by M”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:f1df14c75b8f61cf-2d9823b0183e750a",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-law-002#block-10] “The measures set out in Meta's record of safeguards...do not compensate for the ”; [1:c-law-002#block-6] “in conjunction with additional supplementary measures that were implemented by M”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:f1df14c75b8f61cf-66a4171220bee84e",
+        "from": "claim:f1df14c75b8f61cf-3e1641fb7a98d37e",
+        "to": "claim:f1df14c75b8f61cf-c4eaf17fc837a886",
+        "type": "DERIVED_FROM",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-law-002-f1df14c75b8f61cf-17#chars-2679-2745",
+          "span:c-law-002-f1df14c75b8f61cf-17#chars-2746-2800"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:15:21.315Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:f1df14c75b8f61cf-66a4171220bee84e",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-law-002#block-17] “The DPC initially proposed only a suspension order without a fine.”; [1:c-law-002#block-17] “Four of 47 Concerned Supervisory Authorities objected.”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:f1df14c75b8f61cf-66a4171220bee84e",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-law-002#block-17] “The DPC initially proposed only a suspension order without a fine.”; [1:c-law-002#block-17] “Four of 47 Concerned Supervisory Authorities objected.”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:f1df14c75b8f61cf-901a7254835a6413",
+        "from": "claim:f1df14c75b8f61cf-6eed661a604a8409",
+        "to": "claim:f1df14c75b8f61cf-0eb4d295f04e38b2",
+        "type": "DERIVED_FROM",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-law-002-f1df14c75b8f61cf-17#chars-2909-2965",
+          "span:c-law-002-f1df14c75b8f61cf-3#chars-410-481"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:15:21.315Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:f1df14c75b8f61cf-901a7254835a6413",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-law-002#block-17] “The DPC was bound to follow the EDPB's binding decision.”; [1:c-law-002#block-3] “**EDPB Binding Decision:** 13 April 2023 (Article 65 dispute resolution”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:f1df14c75b8f61cf-901a7254835a6413",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-law-002#block-17] “The DPC was bound to follow the EDPB's binding decision.”; [1:c-law-002#block-3] “**EDPB Binding Decision:** 13 April 2023 (Article 65 dispute resolution”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:f1df14c75b8f61cf-a0b32802df9be310",
+        "from": "claim:f1df14c75b8f61cf-2e414655c8813f20",
+        "to": "claim:f1df14c75b8f61cf-04f9905849db1610",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-law-002-f1df14c75b8f61cf-13#chars-1802-1876",
+          "span:c-law-002-f1df14c75b8f61cf-15#chars-2292-2426"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:15:21.315Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:f1df14c75b8f61cf-a0b32802df9be310",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-law-002#block-13] “Administrative fine: **€1.2 billion** — the largest GDPR fine ever imposed”; [1:c-law-002#block-15] “The EDPB found that Meta IE's infringement is very serious since it concerns tra”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:f1df14c75b8f61cf-a0b32802df9be310",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-law-002#block-13] “Administrative fine: **€1.2 billion** — the largest GDPR fine ever imposed”; [1:c-law-002#block-15] “The EDPB found that Meta IE's infringement is very serious since it concerns tra”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:f1df14c75b8f61cf-b64e2784b01c05d3",
+        "from": "claim:f1df14c75b8f61cf-e5ad72337db6ed40",
+        "to": "claim:f1df14c75b8f61cf-5a5f4b5714f8072f",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-law-002-f1df14c75b8f61cf-6#chars-849-1011",
+          "span:c-law-002-f1df14c75b8f61cf-9#chars-1403-1511"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:15:21.315Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:f1df14c75b8f61cf-b64e2784b01c05d3",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-law-002#block-6] “While Meta Ireland effected those transfers on the basis of the updated Standard”; [1:c-law-002#block-9] “Neither the 2010 SCCs, nor the 2021 SCCs, could compensate for the inadequate pr”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:f1df14c75b8f61cf-b64e2784b01c05d3",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-law-002#block-6] “While Meta Ireland effected those transfers on the basis of the updated Standard”; [1:c-law-002#block-9] “Neither the 2010 SCCs, nor the 2021 SCCs, could compensate for the inadequate pr”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:f1df14c75b8f61cf-cd69082844d693ba",
+        "from": "claim:f1df14c75b8f61cf-0eb4d295f04e38b2",
+        "to": "claim:f1df14c75b8f61cf-9ffd7e1e1712346b",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-law-002-f1df14c75b8f61cf-17#chars-2801-2908",
+          "span:c-law-002-f1df14c75b8f61cf-17#chars-2909-2965"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:15:21.315Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:f1df14c75b8f61cf-cd69082844d693ba",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-law-002#block-17] “The EDPB determined that a fine should be imposed and that Meta must also addres”; [1:c-law-002#block-17] “The DPC was bound to follow the EDPB's binding decision.”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:f1df14c75b8f61cf-cd69082844d693ba",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-law-002#block-17] “The EDPB determined that a fine should be imposed and that Meta must also addres”; [1:c-law-002#block-17] “The DPC was bound to follow the EDPB's binding decision.”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:f1df14c75b8f61cf-d83d55db6b822e6a",
+        "from": "claim:f1df14c75b8f61cf-2e414655c8813f20",
+        "to": "claim:f1df14c75b8f61cf-8465c4dba06a7f36",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-law-002-f1df14c75b8f61cf-15#chars-2292-2426",
+          "span:c-law-002-f1df14c75b8f61cf-15#chars-2524-2641"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:15:21.315Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:f1df14c75b8f61cf-d83d55db6b822e6a",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-law-002#block-15] “The EDPB found that Meta IE's infringement is very serious since it concerns tra”; [1:c-law-002#block-15] “The unprecedented fine is a strong signal to organisations that serious infringe”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:f1df14c75b8f61cf-d83d55db6b822e6a",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-law-002#block-15] “The EDPB found that Meta IE's infringement is very serious since it concerns tra”; [1:c-law-002#block-15] “The unprecedented fine is a strong signal to organisations that serious infringe”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:f1df14c75b8f61cf-d83d55db6b822e6a",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-law-002#block-15] “The EDPB found that Meta IE's infringement is very serious since it concerns tra”; [1:c-law-002#block-15] “The unprecedented fine is a strong signal to organisations that serious infringe”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:f1df14c75b8f61cf-d86b267845632a1c",
+        "from": "claim:f1df14c75b8f61cf-0eb4d295f04e38b2",
+        "to": "claim:f1df14c75b8f61cf-3e1641fb7a98d37e",
+        "type": "DERIVED_FROM",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-law-002-f1df14c75b8f61cf-17#chars-2679-2745",
+          "span:c-law-002-f1df14c75b8f61cf-17#chars-2909-2965"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:15:21.315Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:f1df14c75b8f61cf-d86b267845632a1c",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-law-002#block-17] “The DPC initially proposed only a suspension order without a fine.”; [1:c-law-002#block-17] “The DPC was bound to follow the EDPB's binding decision.”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:f1df14c75b8f61cf-d86b267845632a1c",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-law-002#block-17] “The DPC initially proposed only a suspension order without a fine.”; [1:c-law-002#block-17] “The DPC was bound to follow the EDPB's binding decision.”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:f1df14c75b8f61cf-e083ebb44eef45b1",
+        "from": "claim:f1df14c75b8f61cf-5a5f4b5714f8072f",
+        "to": "claim:f1df14c75b8f61cf-b7ccb516805d9322",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-law-002-f1df14c75b8f61cf-10#chars-1515-1636",
+          "span:c-law-002-f1df14c75b8f61cf-9#chars-1403-1511"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:15:21.315Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:f1df14c75b8f61cf-e083ebb44eef45b1",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-law-002#block-10] “The measures set out in Meta's record of safeguards...do not compensate for the ”; [1:c-law-002#block-9] “Neither the 2010 SCCs, nor the 2021 SCCs, could compensate for the inadequate pr”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:f1df14c75b8f61cf-e083ebb44eef45b1",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-law-002#block-10] “The measures set out in Meta's record of safeguards...do not compensate for the ”; [1:c-law-002#block-9] “Neither the 2010 SCCs, nor the 2021 SCCs, could compensate for the inadequate pr”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:f1df14c75b8f61cf-e083ebb44eef45b1",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-law-002#block-10] “The measures set out in Meta's record of safeguards...do not compensate for the ”; [1:c-law-002#block-9] “Neither the 2010 SCCs, nor the 2021 SCCs, could compensate for the inadequate pr”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:f1df14c75b8f61cf-e9d69d5c76a64e90",
+        "from": "claim:f1df14c75b8f61cf-c4eaf17fc837a886",
+        "to": "claim:f1df14c75b8f61cf-0eb4d295f04e38b2",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-law-002-f1df14c75b8f61cf-17#chars-2746-2800",
+          "span:c-law-002-f1df14c75b8f61cf-17#chars-2909-2965"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:15:21.315Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:f1df14c75b8f61cf-e9d69d5c76a64e90",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-law-002#block-17] “Four of 47 Concerned Supervisory Authorities objected.”; [1:c-law-002#block-17] “The DPC was bound to follow the EDPB's binding decision.”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:f1df14c75b8f61cf-e9d69d5c76a64e90",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-law-002#block-17] “Four of 47 Concerned Supervisory Authorities objected.”; [1:c-law-002#block-17] “The DPC was bound to follow the EDPB's binding decision.”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:f1df14c75b8f61cf-e9d69d5c76a64e90",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-law-002#block-17] “Four of 47 Concerned Supervisory Authorities objected.”; [1:c-law-002#block-17] “The DPC was bound to follow the EDPB's binding decision.”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    }
+  ]
+}

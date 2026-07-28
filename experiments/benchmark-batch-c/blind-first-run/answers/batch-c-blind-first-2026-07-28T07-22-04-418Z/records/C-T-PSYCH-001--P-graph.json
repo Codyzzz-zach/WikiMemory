@@ -1,0 +1,70 @@
+{
+  "runId": "batch-c-blind-first-2026-07-28T07-22-04-418Z",
+  "sampleId": "sample-70857c74-b664-402c-9ab9-4a8271e7d256",
+  "questionId": "C-T-PSYCH-001",
+  "group": "P-graph",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "temperature": 0,
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 3300,
+    "completionTokens": 671,
+    "totalTokens": 3971,
+    "promptCacheHitTokens": 0,
+    "promptCacheMissTokens": 3300,
+    "reasoningTokens": 0
+  },
+  "latencyMs": 5659,
+  "promptHash": "dcede8c8446f1a67fd36e06cb4f759a006e2590b45185905186f48da53112f41",
+  "contextHash": "6a5318606af9577efbf10f0c176c87111154a42e888dd5331e8ba623f1818b77",
+  "estimatedContextTokens": 2504,
+  "estimatedInputTokens": 2710,
+  "retrievedClaims": [
+    "claim:08f4f1f4eb388c06-2c77f195d121aaf4",
+    "claim:08f4f1f4eb388c06-359db3a1c1ff5ab8",
+    "claim:08f4f1f4eb388c06-6ef2efdb71d13a42",
+    "claim:08f4f1f4eb388c06-98bbd61106afc39e",
+    "claim:08f4f1f4eb388c06-9d3d87bb413cd0f9",
+    "claim:08f4f1f4eb388c06-a6a1002ab06055f5",
+    "claim:08f4f1f4eb388c06-f51a04a7521879df",
+    "claim:08f4f1f4eb388c06-5a1eca00ccef74b9",
+    "claim:08f4f1f4eb388c06-6fa60fec777bce5d",
+    "claim:08f4f1f4eb388c06-6fb8eb7351f1558a",
+    "claim:08f4f1f4eb388c06-b7358d918b6741a7",
+    "claim:0f7730e649dbc238-6b8953e4a783f80b",
+    "claim:0f7730e649dbc238-a0efb89317e2d151",
+    "claim:0f7730e649dbc238-7fd9ac05cca2b583",
+    "claim:0f7730e649dbc238-ee5064947108a810",
+    "claim:0f7730e649dbc238-ad224d9bcee9058e",
+    "claim:0f7730e649dbc238-f7a129bd66662ffd"
+  ],
+  "retrievedRelations": [
+    "rel:08f4f1f4eb388c06-63b45eae9206d3e6",
+    "rel:08f4f1f4eb388c06-c6738e4bb5094123",
+    "rel:08f4f1f4eb388c06-8f9c64751827ab53",
+    "rel:cross-190d575c8a32eb68",
+    "rel:cross-31f5789ef03f88f9",
+    "rel:cross-a0d07d70ea4749c4",
+    "rel:0f7730e649dbc238-95b179f99e4f1124",
+    "rel:0f7730e649dbc238-a2da186bef552142",
+    "rel:0f7730e649dbc238-d3ef99ba957d3a2c"
+  ],
+  "retrievedSources": [
+    "source:c-psych-003-08f4f1f4eb388c06",
+    "source:c-psych-001-0f7730e649dbc238"
+  ],
+  "citationValidation": {
+    "valid": false,
+    "citationCount": 8,
+    "invalid": [
+      "claim:08f4f1f4eb388c06-08f4f1f4eb388c06-13"
+    ]
+  },
+  "request": {
+    "systemPrompt": "你是受证据约束的问答 Agent。只使用本次请求提供的检索上下文回答。\n要求：保留影响结论的条件、时间、例外、来源角色与不确定性；关键结论引用上下文中的 SOURCE、EVIDENCE 或 CLAIM 标识；上下文不足时明确说明，不得用外部常识补齐。\n只输出严格 JSON：{\"answer\":\"...\",\"citations\":[\"...\"],\"insufficient\":false,\"uncertainties\":[\"...\"]}。",
+    "userPrompt": "# 问题\nGilbert、King、Pettigrew 和 Wilson (2016) 对 OSC (2015) 的复制研究提出了哪些具体批评？OSC 在回应中承认了什么？这如何改变了我们对原始结论的理解？\n\n# 检索上下文\n## TASK MAP\n主题: Gilbert、King、Pettigrew 和 Wilson (2016) 对 OSC (2015) 的复制研究提出了哪些具体批评？OSC 在回应中承认了什么？这如何改变了我们对原始结论的理解？\n地图主题: 研究, osc, 我们, 2015, 应中\n关键概念: Union-wide greenhouse gas emissions and removals, Paris Agreement global stocktake, Article 6 of the Paris Agreement, competent authority, Personal data\n已知争议: 0 个\n最近变化: 5 条\n找到 17 条相关 Claim\n找到 9 条关系\n找到 16 条原文证据\n\n## CLAIM claim:08f4f1f4eb388c06-2c77f195d121aaf4\nIn their response to the comment, the OSC quibbled about minor issues but conceded the major one: their paper does not provide evidence for the pessimistic conclusions most people have drawn from it.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:08f4f1f4eb388c06-359db3a1c1ff5ab8\nThe OSC article provides no support for the conclusion that reproducibility is low.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:08f4f1f4eb388c06-6ef2efdb71d13a42\nThe OSC excluded entire classes of studies whose methods are probably among the best in science from the sample.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:08f4f1f4eb388c06-98bbd61106afc39e\nThe OSC created an idiosyncratic, arbitrary list of sampling rules that excluded the majority of psychology's subfields from the sample.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:08f4f1f4eb388c06-9d3d87bb413cd0f9\nWhen the calculation was done correctly and applied to the OSC data, the number of failures observed was just about what should be expected by chance alone, even if all 100 original findings were true.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:08f4f1f4eb388c06-a6a1002ab06055f5\nThe OSC failed to consider that their replication studies were often quite different from the originals in many ways, and those differences are a source of statistical error.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:08f4f1f4eb388c06-f51a04a7521879df\nThe OSC did neither random sampling nor statistical corrections.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:08f4f1f4eb388c06-5a1eca00ccef74b9\nA paper from the Open Science Collaboration attempting to replicate 100 published studies suggests that the reproducibility of psychological science is surprisingly low.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:08f4f1f4eb388c06-6fa60fec777bce5d\n该研究发表在《科学》杂志第351卷第6277期第1037页。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:08f4f1f4eb388c06-6fb8eb7351f1558a\n该研究的内容来源于PubMed摘要和哈佛公报的报道。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:08f4f1f4eb388c06-b7358d918b6741a7\nThe data are consistent with the opposite conclusion that the reproducibility of psychological science is quite high.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:0f7730e649dbc238-6b8953e4a783f80b\nThirty-six percent of replications had significant results.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:0f7730e649dbc238-a0efb89317e2d151\nThe Reproducibility Project: Psychology published a summary of the results in August 2015.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:0f7730e649dbc238-7fd9ac05cca2b583\nThe study conducted replications of 100 experimental and correlational studies published in three psychology journals.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:0f7730e649dbc238-ee5064947108a810\nNinety-seven percent of original studies had significant results (p < .05).\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:0f7730e649dbc238-ad224d9bcee9058e\nThirty-nine percent of effects were subjectively rated to have replicated the original result.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:0f7730e649dbc238-f7a129bd66662ffd\nThe replications used high-powered designs and original materials when available.\nConditions: none\nValidity: SUPPORTED\n\n## RELATION rel:08f4f1f4eb388c06-63b45eae9206d3e6\nclaim:08f4f1f4eb388c06-6ef2efdb71d13a42 --[SUPPORTS]--> claim:08f4f1f4eb388c06-98bbd61106afc39e\nConditions: none\n\n## RELATION rel:08f4f1f4eb388c06-c6738e4bb5094123\nclaim:08f4f1f4eb388c06-9d3d87bb413cd0f9 --[SUPPORTS]--> claim:08f4f1f4eb388c06-b7358d918b6741a7\nConditions: none\n\n## RELATION rel:08f4f1f4eb388c06-8f9c64751827ab53\nclaim:08f4f1f4eb388c06-5a1eca00ccef74b9 --[CONTRADICTS]--> claim:08f4f1f4eb388c06-b7358d918b6741a7\nConditions: none\n\n## RELATION rel:cross-190d575c8a32eb68\nclaim:08f4f1f4eb388c06-5a1eca00ccef74b9 --[RELATED_TO]--> claim:0f7730e649dbc238-6b8953e4a783f80b\nConditions: none\n\n## RELATION rel:cross-31f5789ef03f88f9\nclaim:08f4f1f4eb388c06-5a1eca00ccef74b9 --[RELATED_TO]--> claim:0f7730e649dbc238-a0efb89317e2d151\nConditions: none\n\n## RELATION rel:cross-a0d07d70ea4749c4\nclaim:08f4f1f4eb388c06-5a1eca00ccef74b9 --[RELATED_TO]--> claim:0f7730e649dbc238-7fd9ac05cca2b583\nConditions: none\n\n## RELATION rel:0f7730e649dbc238-95b179f99e4f1124\nclaim:0f7730e649dbc238-ee5064947108a810 --[RELATED_TO]--> claim:0f7730e649dbc238-6b8953e4a783f80b\nConditions: none\n\n## RELATION rel:0f7730e649dbc238-a2da186bef552142\nclaim:0f7730e649dbc238-6b8953e4a783f80b --[RELATED_TO]--> claim:0f7730e649dbc238-ad224d9bcee9058e\nConditions: none\n\n## RELATION rel:0f7730e649dbc238-d3ef99ba957d3a2c\nclaim:0f7730e649dbc238-7fd9ac05cca2b583 --[SUPPORTS]--> claim:0f7730e649dbc238-f7a129bd66662ffd\nConditions: none\n\n## EVIDENCE span:c-psych-003-08f4f1f4eb388c06-13#chars-3209-3464\nWe were glad to see that in their response to our comment, the OSC quibbled about a number of minor issues but conceded the major one, which is that their paper does not provide evidence for the pessimistic conclusions that most people have drawn from it.\n\n## EVIDENCE span:c-psych-003-08f4f1f4eb388c06-5#chars-843-949\nWe show that this article contains three statistical errors and provides no support for such a conclusion.\n\n## EVIDENCE span:c-psych-003-08f4f1f4eb388c06-8#chars-1409-1674\nWhat they did is create an idiosyncratic, arbitrary list of sampling rules that excluded the majority of psychology's subfields from the sample, that excluded entire classes of studies whose methods are probably among the best in science from the sample, and so on.\n\n## EVIDENCE span:c-psych-003-08f4f1f4eb388c06-9#chars-2037-2283\nSo we did the calculation the right way and then applied it to their data. And guess what? The number of failures they observed was just about what you should expect to observe by chance alone — even if all 100 of the original findings were true.\n\n## EVIDENCE span:c-psych-003-08f4f1f4eb388c06-9#chars-1765-2036\nWhen they did their calculations, they failed to consider the fact that their replication studies were not just new samples from the same population. They were often quite different from the originals in many ways, and those differences are a source of statistical error.\n\n## EVIDENCE span:c-psych-003-08f4f1f4eb388c06-7#chars-1347-1367\nThe OSC did neither.\n\n## EVIDENCE span:c-psych-003-08f4f1f4eb388c06-5#chars-628-842\nA paper from the Open Science Collaboration (Research Articles, 28 August 2015, aac4716) attempting to replicate 100 published studies suggests that the reproducibility of psychological science is surprisingly low.\n\n## EVIDENCE span:c-psych-003-08f4f1f4eb388c06-3#chars-487-555\n**Published:** Science, Vol. 351, Issue 6277, pp. 1037, 4 March 2016\n\n## EVIDENCE span:c-psych-003-08f4f1f4eb388c06-2#chars-159-349\nContent sourced from PubMed abstract and Harvard Gazette coverage (https://news.harvard.edu/gazette/story/2016/03/study-that-undercut-psych-research-got-it-wrong/), both publicly accessible.\n\n## EVIDENCE span:c-psych-003-08f4f1f4eb388c06-5#chars-950-1084\nIndeed, the data are consistent with the opposite conclusion, namely, that the reproducibility of psychological science is quite high.\n\n## EVIDENCE span:c-psych-001-0f7730e649dbc238-8#chars-1037-1095\nThirty-six percent of replications had significant results\n\n## EVIDENCE span:c-psych-001-0f7730e649dbc238-12#chars-1783-1832\npublished a summary of the results in August 2015\n\n## EVIDENCE span:c-psych-001-0f7730e649dbc238-5#chars-589-699\nWe conducted replications of 100 experimental and correlational studies published in three psychology journals\n\n## EVIDENCE span:c-psych-001-0f7730e649dbc238-8#chars-961-1035\nNinety-seven percent of original studies had significant results (p < .05)\n\n## EVIDENCE span:c-psych-001-0f7730e649dbc238-8#chars-1194-1271\n39% of effects were subjectively rated to have replicated the original result\n\n## EVIDENCE span:c-psych-001-0f7730e649dbc238-5#chars-700-764\nusing high-powered designs and original materials when available\n\n## CONFLICTS AND CONDITIONS\n⚠️ SUPPORTS 只表示 Claim 之间存在语义支持，不证明其来源彼此独立、同等权威或都是规范性来源；来源独立性必须依据 Source provenance 单独判断。\n🔎 Source source:c-psych-001-0f7730e649dbc238 provenance: uri=experiments/benchmark-batch-c/stage-a-freeze/compilation-corpus/psychology-reproducibility/c-psych-001.md; sourceType=md; sourceRole=P-primary; author=Open Science Collaboration; canonicalUrl=https://www.science.org/doi/10.1126/science.aac4716; publishedAt=Fri Aug 28 2015 08:00:00 GMT+0800 (China Standard Time); versionRef=doi:10.1126/science.aac4716\n🔎 Source source:c-psych-003-08f4f1f4eb388c06 provenance: uri=experiments/benchmark-batch-c/stage-a-freeze/compilation-corpus/psychology-reproducibility/c-psych-003.md; sourceType=md; sourceRole=S-analysis; author=Daniel T. Gilbert, Gary King, Stephen Pettigrew, Timothy D. Wilson; canonicalUrl=https://www.science.org/doi/10.1126/science.aad7243; publishedAt=Fri Mar 04 2016 08:00:00 GMT+0800 (China Standard Time); versionRef='doi:10.1126/science.aad7243; coverage: news.harvard.edu/gazette 2016-03-03'"
+  },
+  "answer": "{\n  \"answer\": \"Gilbert、King、Pettigrew 和 Wilson (2016) 对 OSC (2015) 的复制研究提出了三项具体批评：1) OSC 的论文包含三个统计错误，且未提供支持其悲观结论的证据（claim:08f4f1f4eb388c06-5a1eca00ccef74b9 被 claim:08f4f1f4eb388c06-08f4f1f4eb388c06-5 反驳）；2) OSC 创建了任意且独特的抽样规则，排除了心理学大多数子领域以及方法可能最好的整类研究（claim:08f4f1f4eb388c06-6ef2efdb71d13a42 和 claim:08f4f1f4eb388c06-98bbd61106afc39e）；3) OSC 未进行随机抽样或统计校正，且其复制研究在诸多方面与原研究不同，引入了统计误差（claim:08f4f1f4eb388c06-f51a04a7521879df 和 claim:08f4f1f4eb388c06-a6a1002ab06055f5）。此外，当正确计算时，OSC 数据中观察到的失败数量恰好是即使所有 100 个原始发现都为真时偶然预期的数量（claim:08f4f1f4eb388c06-9d3d87bb413cd0f9）。OSC 在回应中承认了主要批评：他们的论文并未为大多数人从中得出的悲观结论提供证据（claim:08f4f1f4eb388c06-08f4f1f4eb388c06-13）。这改变了原始结论：数据与心理学可重复性相当高的相反结论一致（claim:08f4f1f4eb388c06-b7358d918b6741a7），而非 OSC 最初声称的“可重复性惊人地低”。\",\n  \"citations\": [\n    \"claim:08f4f1f4eb388c06-5a1eca00ccef74b9\",\n    \"claim:08f4f1f4eb388c06-6ef2efdb71d13a42\",\n    \"claim:08f4f1f4eb388c06-98bbd61106afc39e\",\n    \"claim:08f4f1f4eb388c06-f51a04a7521879df\",\n    \"claim:08f4f1f4eb388c06-a6a1002ab06055f5\",\n    \"claim:08f4f1f4eb388c06-9d3d87bb413cd0f9\",\n    \"claim:08f4f1f4eb388c06-08f4f1f4eb388c06-13\",\n    \"claim:08f4f1f4eb388c06-b7358d918b6741a7\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}",
+  "answerFormatValid": true
+}

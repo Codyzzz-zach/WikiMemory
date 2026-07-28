@@ -1,0 +1,1256 @@
+{
+  "schemaVersion": "v1",
+  "sourceId": "source:c-climate-002-83071555dd80fcef",
+  "runId": "cbd7d43c-1f76-482a-bfc7-48602417a549",
+  "publishedAt": "2026-07-28T07:11:49.126Z",
+  "claims": [],
+  "relations": [
+    {
+      "relation": {
+        "id": "rel:83071555dd80fcef-11e616c2efb53e9a",
+        "from": "claim:83071555dd80fcef-1247295254b1cb74",
+        "to": "claim:83071555dd80fcef-c3f86901254797f1",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-climate-002-83071555dd80fcef-2#chars-202-231",
+          "span:c-climate-002-83071555dd80fcef-2#chars-97-201"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:11:24.258Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:83071555dd80fcef-11e616c2efb53e9a",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-climate-002#block-2] “Full text publicly available.”; [1:c-climate-002#block-2] “Content sourced from EUR-Lex (https://eur-lex.europa.eu/eli/reg/2021/1119/oj), o”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:83071555dd80fcef-11e616c2efb53e9a",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-climate-002#block-2] “Full text publicly available.”; [1:c-climate-002#block-2] “Content sourced from EUR-Lex (https://eur-lex.europa.eu/eli/reg/2021/1119/oj), o”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:83071555dd80fcef-11e616c2efb53e9a",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-climate-002#block-2] “Full text publicly available.”; [1:c-climate-002#block-2] “Content sourced from EUR-Lex (https://eur-lex.europa.eu/eli/reg/2021/1119/oj), o”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:83071555dd80fcef-16043fa37ad9a587",
+        "from": "claim:83071555dd80fcef-691c40f9ebad4871",
+        "to": "claim:83071555dd80fcef-560aec6197357ca3",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-climate-002-83071555dd80fcef-14#chars-2685-2801",
+          "span:c-climate-002-83071555dd80fcef-14#chars-2802-2901"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:11:24.258Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:83071555dd80fcef-16043fa37ad9a587",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-climate-002#block-14] “The Advisory Board shall be composed of 15 senior scientific experts covering a ”; [1:c-climate-002#block-14] “No more than two members of the Advisory Board shall hold the nationality of the”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:83071555dd80fcef-16043fa37ad9a587",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-climate-002#block-14] “The Advisory Board shall be composed of 15 senior scientific experts covering a ”; [1:c-climate-002#block-14] “No more than two members of the Advisory Board shall hold the nationality of the”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:83071555dd80fcef-1f39c568f90ff85f",
+        "from": "claim:83071555dd80fcef-1247295254b1cb74",
+        "to": "claim:83071555dd80fcef-1643ff0387d79ccc",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-climate-002-83071555dd80fcef-2#chars-202-231",
+          "span:c-climate-002-83071555dd80fcef-3#chars-299-348"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:11:24.258Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:83071555dd80fcef-1f39c568f90ff85f",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-climate-002#block-2] “Full text publicly available.”; [1:c-climate-002#block-3] “**Published in OJ:** L 243, 9 July 2021, pp. 1-17”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:83071555dd80fcef-1f39c568f90ff85f",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-climate-002#block-2] “Full text publicly available.”; [1:c-climate-002#block-3] “**Published in OJ:** L 243, 9 July 2021, pp. 1-17”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:83071555dd80fcef-3265ec356d925d80",
+        "from": "claim:83071555dd80fcef-7d1ac070441ac1d8",
+        "to": "claim:83071555dd80fcef-1f7b87209efb19ac",
+        "type": "DERIVED_FROM",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-climate-002-83071555dd80fcef-5#chars-453-581",
+          "span:c-climate-002-83071555dd80fcef-5#chars-633-698"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:11:24.258Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:83071555dd80fcef-3265ec356d925d80",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-climate-002#block-5] “Union-wide greenhouse gas emissions and removals regulated in Union law shall be”; [1:c-climate-002#block-5] “and the Union shall aim to achieve negative emissions thereafter.”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:83071555dd80fcef-3265ec356d925d80",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-climate-002#block-5] “Union-wide greenhouse gas emissions and removals regulated in Union law shall be”; [1:c-climate-002#block-5] “and the Union shall aim to achieve negative emissions thereafter.”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:83071555dd80fcef-34962bb8c0e0bf3f",
+        "from": "claim:83071555dd80fcef-b7ee62b88dd7b1b0",
+        "to": "claim:83071555dd80fcef-6dbb0dd6b9202fac",
+        "type": "EQUIVALENT_UNDER",
+        "conditions": [
+          "same regulation"
+        ],
+        "conditionStatus": "UNVERIFIED",
+        "supersessionEffect": null,
+        "relationAuditVersion": null,
+        "evidenceSpanIds": [
+          "span:c-climate-002-83071555dd80fcef-0#chars-3-74",
+          "span:c-climate-002-83071555dd80fcef-3#chars-349-389"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:11:24.258Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_EQUIVALENCE_REVIEW_REQUIRED",
+          "severity": "error",
+          "affectedObject": "rel:83071555dd80fcef-34962bb8c0e0bf3f",
+          "detail": "EQUIVALENT_UNDER 自动审计在真实抽检中 4/4 误判；独立人工复核或校准门禁完成前禁止自动晋级",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:83071555dd80fcef-36cfd3e376afcbbe",
+        "from": "claim:83071555dd80fcef-90d8093db0a83ffd",
+        "to": "claim:83071555dd80fcef-b7ee62b88dd7b1b0",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-climate-002-83071555dd80fcef-0#chars-3-74",
+          "span:c-climate-002-83071555dd80fcef-2#chars-232-270"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:11:24.258Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:83071555dd80fcef-36cfd3e376afcbbe",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-climate-002#block-0] “Regulation (EU) 2021/1119 — European Climate Law (consolidated version)”; [1:c-climate-002#block-2] “Consolidated version as of 2026-04-07.”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:83071555dd80fcef-36cfd3e376afcbbe",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-climate-002#block-0] “Regulation (EU) 2021/1119 — European Climate Law (consolidated version)”; [1:c-climate-002#block-2] “Consolidated version as of 2026-04-07.”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:83071555dd80fcef-36cfd3e376afcbbe",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-climate-002#block-0] “Regulation (EU) 2021/1119 — European Climate Law (consolidated version)”; [1:c-climate-002#block-2] “Consolidated version as of 2026-04-07.”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:83071555dd80fcef-3a95f6763f5fcccb",
+        "from": "claim:83071555dd80fcef-888386341facea2e",
+        "to": "claim:83071555dd80fcef-8a025f5af6d8b5b6",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-climate-002-83071555dd80fcef-14#chars-2584-2684",
+          "span:c-climate-002-83071555dd80fcef-14#chars-2902-2978"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:11:24.258Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:83071555dd80fcef-3a95f6763f5fcccb",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-climate-002#block-14] “A European Scientific Advisory Board on Climate Change (the 'Advisory Board') is”; [1:c-climate-002#block-14] “The independence of the members of the Advisory Board shall be beyond doubt.”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:83071555dd80fcef-3a95f6763f5fcccb",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-climate-002#block-14] “A European Scientific Advisory Board on Climate Change (the 'Advisory Board') is”; [1:c-climate-002#block-14] “The independence of the members of the Advisory Board shall be beyond doubt.”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:83071555dd80fcef-48926cc882c2cde0",
+        "from": "claim:83071555dd80fcef-ae54bbdf4e6130cd",
+        "to": "claim:83071555dd80fcef-2c5ae34671163a9c",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-climate-002-83071555dd80fcef-6#chars-933-1081",
+          "span:c-climate-002-83071555dd80fcef-9#chars-1420-1658"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:11:24.258Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:83071555dd80fcef-48926cc882c2cde0",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-climate-002#block-6] “taking into account the importance of promoting both fairness and solidarity amo”; [1:c-climate-002#block-9] “When implementing the target referred to in the first subparagraph, the relevant”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:83071555dd80fcef-48926cc882c2cde0",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-climate-002#block-6] “taking into account the importance of promoting both fairness and solidarity amo”; [1:c-climate-002#block-9] “When implementing the target referred to in the first subparagraph, the relevant”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:83071555dd80fcef-48926cc882c2cde0",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-climate-002#block-6] “taking into account the importance of promoting both fairness and solidarity amo”; [1:c-climate-002#block-9] “When implementing the target referred to in the first subparagraph, the relevant”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:83071555dd80fcef-4c42322ae645711e",
+        "from": "claim:83071555dd80fcef-888386341facea2e",
+        "to": "claim:83071555dd80fcef-691c40f9ebad4871",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-climate-002-83071555dd80fcef-14#chars-2802-2901",
+          "span:c-climate-002-83071555dd80fcef-14#chars-2902-2978"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:11:24.258Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:83071555dd80fcef-4c42322ae645711e",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-climate-002#block-14] “No more than two members of the Advisory Board shall hold the nationality of the”; [1:c-climate-002#block-14] “The independence of the members of the Advisory Board shall be beyond doubt.”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:83071555dd80fcef-4c42322ae645711e",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-climate-002#block-14] “No more than two members of the Advisory Board shall hold the nationality of the”; [1:c-climate-002#block-14] “The independence of the members of the Advisory Board shall be beyond doubt.”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:83071555dd80fcef-5a3bef9a24bc9e1d",
+        "from": "claim:83071555dd80fcef-3ac59f7f986a6340",
+        "to": "claim:83071555dd80fcef-6dbb0dd6b9202fac",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-climate-002-83071555dd80fcef-3#chars-273-298",
+          "span:c-climate-002-83071555dd80fcef-3#chars-349-389"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:11:24.258Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:83071555dd80fcef-5a3bef9a24bc9e1d",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-climate-002#block-3] “**Adopted:** 30 June 2021”; [1:c-climate-002#block-3] “**Also known as:** \"European Climate Law”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:83071555dd80fcef-5a3bef9a24bc9e1d",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-climate-002#block-3] “**Adopted:** 30 June 2021”; [1:c-climate-002#block-3] “**Also known as:** \"European Climate Law”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:83071555dd80fcef-5b1b383416e765f9",
+        "from": "claim:83071555dd80fcef-560aec6197357ca3",
+        "to": "claim:83071555dd80fcef-691c40f9ebad4871",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-climate-002-83071555dd80fcef-14#chars-2685-2801",
+          "span:c-climate-002-83071555dd80fcef-14#chars-2802-2901"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:11:24.258Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:83071555dd80fcef-5b1b383416e765f9",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-climate-002#block-14] “The Advisory Board shall be composed of 15 senior scientific experts covering a ”; [1:c-climate-002#block-14] “No more than two members of the Advisory Board shall hold the nationality of the”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:83071555dd80fcef-5b1b383416e765f9",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-climate-002#block-14] “The Advisory Board shall be composed of 15 senior scientific experts covering a ”; [1:c-climate-002#block-14] “No more than two members of the Advisory Board shall hold the nationality of the”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:83071555dd80fcef-5ceb2dc2deb30c18",
+        "from": "claim:83071555dd80fcef-c3f86901254797f1",
+        "to": "claim:83071555dd80fcef-1247295254b1cb74",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-climate-002-83071555dd80fcef-2#chars-202-231",
+          "span:c-climate-002-83071555dd80fcef-2#chars-97-201"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:11:24.258Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:83071555dd80fcef-5ceb2dc2deb30c18",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-climate-002#block-2] “Full text publicly available.”; [1:c-climate-002#block-2] “Content sourced from EUR-Lex (https://eur-lex.europa.eu/eli/reg/2021/1119/oj), o”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:83071555dd80fcef-5ceb2dc2deb30c18",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-climate-002#block-2] “Full text publicly available.”; [1:c-climate-002#block-2] “Content sourced from EUR-Lex (https://eur-lex.europa.eu/eli/reg/2021/1119/oj), o”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:83071555dd80fcef-5ceb2dc2deb30c18",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-climate-002#block-2] “Full text publicly available.”; [1:c-climate-002#block-2] “Content sourced from EUR-Lex (https://eur-lex.europa.eu/eli/reg/2021/1119/oj), o”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:83071555dd80fcef-75f2c4f2807abce8",
+        "from": "claim:83071555dd80fcef-1643ff0387d79ccc",
+        "to": "claim:83071555dd80fcef-b7ee62b88dd7b1b0",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-climate-002-83071555dd80fcef-0#chars-3-74",
+          "span:c-climate-002-83071555dd80fcef-3#chars-299-348"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:11:24.258Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:83071555dd80fcef-75f2c4f2807abce8",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-climate-002#block-0] “Regulation (EU) 2021/1119 — European Climate Law (consolidated version)”; [1:c-climate-002#block-3] “**Published in OJ:** L 243, 9 July 2021, pp. 1-17”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:83071555dd80fcef-75f2c4f2807abce8",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-climate-002#block-0] “Regulation (EU) 2021/1119 — European Climate Law (consolidated version)”; [1:c-climate-002#block-3] “**Published in OJ:** L 243, 9 July 2021, pp. 1-17”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:83071555dd80fcef-80bbe9d936ca73da",
+        "from": "claim:83071555dd80fcef-9440ab34072d22f3",
+        "to": "claim:83071555dd80fcef-1f7b87209efb19ac",
+        "type": "EQUIVALENT_UNDER",
+        "conditions": [
+          "same regulation context"
+        ],
+        "conditionStatus": "UNVERIFIED",
+        "supersessionEffect": null,
+        "relationAuditVersion": null,
+        "evidenceSpanIds": [
+          "span:c-climate-002-83071555dd80fcef-5#chars-453-581",
+          "span:c-climate-002-83071555dd80fcef-5#chars-583-631"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:11:24.258Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_EQUIVALENCE_REVIEW_REQUIRED",
+          "severity": "error",
+          "affectedObject": "rel:83071555dd80fcef-80bbe9d936ca73da",
+          "detail": "EQUIVALENT_UNDER 自动审计在真实抽检中 4/4 误判；独立人工复核或校准门禁完成前禁止自动晋级",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:83071555dd80fcef-8b5ab077e66cbaae",
+        "from": "claim:83071555dd80fcef-1643ff0387d79ccc",
+        "to": "claim:83071555dd80fcef-3ac59f7f986a6340",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-climate-002-83071555dd80fcef-3#chars-273-298",
+          "span:c-climate-002-83071555dd80fcef-3#chars-299-348"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:11:24.258Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:83071555dd80fcef-8b5ab077e66cbaae",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-climate-002#block-3] “**Adopted:** 30 June 2021”; [1:c-climate-002#block-3] “**Published in OJ:** L 243, 9 July 2021, pp. 1-17”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:83071555dd80fcef-8b5ab077e66cbaae",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-climate-002#block-3] “**Adopted:** 30 June 2021”; [1:c-climate-002#block-3] “**Published in OJ:** L 243, 9 July 2021, pp. 1-17”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:83071555dd80fcef-a57c3e75f2ed027c",
+        "from": "claim:83071555dd80fcef-1f7b87209efb19ac",
+        "to": "claim:83071555dd80fcef-9440ab34072d22f3",
+        "type": "EQUIVALENT_UNDER",
+        "conditions": [
+          "same regulation context"
+        ],
+        "conditionStatus": "UNVERIFIED",
+        "supersessionEffect": null,
+        "relationAuditVersion": null,
+        "evidenceSpanIds": [
+          "span:c-climate-002-83071555dd80fcef-5#chars-453-581",
+          "span:c-climate-002-83071555dd80fcef-5#chars-583-631"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:11:24.258Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_EQUIVALENCE_REVIEW_REQUIRED",
+          "severity": "error",
+          "affectedObject": "rel:83071555dd80fcef-a57c3e75f2ed027c",
+          "detail": "EQUIVALENT_UNDER 自动审计在真实抽检中 4/4 误判；独立人工复核或校准门禁完成前禁止自动晋级",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:83071555dd80fcef-a688351610555988",
+        "from": "claim:83071555dd80fcef-6dbb0dd6b9202fac",
+        "to": "claim:83071555dd80fcef-b7ee62b88dd7b1b0",
+        "type": "EQUIVALENT_UNDER",
+        "conditions": [
+          "same regulation"
+        ],
+        "conditionStatus": "UNVERIFIED",
+        "supersessionEffect": null,
+        "relationAuditVersion": null,
+        "evidenceSpanIds": [
+          "span:c-climate-002-83071555dd80fcef-0#chars-3-74",
+          "span:c-climate-002-83071555dd80fcef-3#chars-349-389"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:11:24.258Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_EQUIVALENCE_REVIEW_REQUIRED",
+          "severity": "error",
+          "affectedObject": "rel:83071555dd80fcef-a688351610555988",
+          "detail": "EQUIVALENT_UNDER 自动审计在真实抽检中 4/4 误判；独立人工复核或校准门禁完成前禁止自动晋级",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:83071555dd80fcef-b7f8f3bf9653c192",
+        "from": "claim:83071555dd80fcef-560aec6197357ca3",
+        "to": "claim:83071555dd80fcef-888386341facea2e",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-climate-002-83071555dd80fcef-14#chars-2685-2801",
+          "span:c-climate-002-83071555dd80fcef-14#chars-2902-2978"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:11:24.258Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:83071555dd80fcef-b7f8f3bf9653c192",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-climate-002#block-14] “The Advisory Board shall be composed of 15 senior scientific experts covering a ”; [1:c-climate-002#block-14] “The independence of the members of the Advisory Board shall be beyond doubt.”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:83071555dd80fcef-b7f8f3bf9653c192",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-climate-002#block-14] “The Advisory Board shall be composed of 15 senior scientific experts covering a ”; [1:c-climate-002#block-14] “The independence of the members of the Advisory Board shall be beyond doubt.”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:83071555dd80fcef-bd5f5e4e7aa43c08",
+        "from": "claim:83071555dd80fcef-ae54bbdf4e6130cd",
+        "to": "claim:83071555dd80fcef-4475f205083e4201",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-climate-002-83071555dd80fcef-6#chars-705-931",
+          "span:c-climate-002-83071555dd80fcef-6#chars-933-1081"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:11:24.258Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:83071555dd80fcef-bd5f5e4e7aa43c08",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-climate-002#block-6] “The relevant Union institutions and the Member States shall take the necessary m”; [1:c-climate-002#block-6] “taking into account the importance of promoting both fairness and solidarity amo”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:83071555dd80fcef-bd5f5e4e7aa43c08",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-climate-002#block-6] “The relevant Union institutions and the Member States shall take the necessary m”; [1:c-climate-002#block-6] “taking into account the importance of promoting both fairness and solidarity amo”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:83071555dd80fcef-c6cacae59032e79c",
+        "from": "claim:83071555dd80fcef-691c40f9ebad4871",
+        "to": "claim:83071555dd80fcef-8a025f5af6d8b5b6",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-climate-002-83071555dd80fcef-14#chars-2584-2684",
+          "span:c-climate-002-83071555dd80fcef-14#chars-2802-2901"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:11:24.258Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:83071555dd80fcef-c6cacae59032e79c",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-climate-002#block-14] “A European Scientific Advisory Board on Climate Change (the 'Advisory Board') is”; [1:c-climate-002#block-14] “No more than two members of the Advisory Board shall hold the nationality of the”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:83071555dd80fcef-c6cacae59032e79c",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-climate-002#block-14] “A European Scientific Advisory Board on Climate Change (the 'Advisory Board') is”; [1:c-climate-002#block-14] “No more than two members of the Advisory Board shall hold the nationality of the”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:83071555dd80fcef-cb47512f3ba851c7",
+        "from": "claim:83071555dd80fcef-1643ff0387d79ccc",
+        "to": "claim:83071555dd80fcef-6dbb0dd6b9202fac",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-climate-002-83071555dd80fcef-3#chars-299-348",
+          "span:c-climate-002-83071555dd80fcef-3#chars-349-389"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:11:24.258Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:83071555dd80fcef-cb47512f3ba851c7",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-climate-002#block-3] “**Published in OJ:** L 243, 9 July 2021, pp. 1-17”; [1:c-climate-002#block-3] “**Also known as:** \"European Climate Law”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:83071555dd80fcef-cb47512f3ba851c7",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-climate-002#block-3] “**Published in OJ:** L 243, 9 July 2021, pp. 1-17”; [1:c-climate-002#block-3] “**Also known as:** \"European Climate Law”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:83071555dd80fcef-cfc1ce920ac36077",
+        "from": "claim:83071555dd80fcef-691c40f9ebad4871",
+        "to": "claim:83071555dd80fcef-888386341facea2e",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-climate-002-83071555dd80fcef-14#chars-2802-2901",
+          "span:c-climate-002-83071555dd80fcef-14#chars-2902-2978"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:11:24.258Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:83071555dd80fcef-cfc1ce920ac36077",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-climate-002#block-14] “No more than two members of the Advisory Board shall hold the nationality of the”; [1:c-climate-002#block-14] “The independence of the members of the Advisory Board shall be beyond doubt.”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:83071555dd80fcef-cfc1ce920ac36077",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-climate-002#block-14] “No more than two members of the Advisory Board shall hold the nationality of the”; [1:c-climate-002#block-14] “The independence of the members of the Advisory Board shall be beyond doubt.”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:83071555dd80fcef-d56e1b0be6473bbd",
+        "from": "claim:83071555dd80fcef-3ac59f7f986a6340",
+        "to": "claim:83071555dd80fcef-b7ee62b88dd7b1b0",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-climate-002-83071555dd80fcef-0#chars-3-74",
+          "span:c-climate-002-83071555dd80fcef-3#chars-273-298"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:11:24.258Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:83071555dd80fcef-d56e1b0be6473bbd",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-climate-002#block-0] “Regulation (EU) 2021/1119 — European Climate Law (consolidated version)”; [1:c-climate-002#block-3] “**Adopted:** 30 June 2021”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:83071555dd80fcef-d56e1b0be6473bbd",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-climate-002#block-0] “Regulation (EU) 2021/1119 — European Climate Law (consolidated version)”; [1:c-climate-002#block-3] “**Adopted:** 30 June 2021”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:83071555dd80fcef-d56e1b0be6473bbd",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-climate-002#block-0] “Regulation (EU) 2021/1119 — European Climate Law (consolidated version)”; [1:c-climate-002#block-3] “**Adopted:** 30 June 2021”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:83071555dd80fcef-d7d8e8f0ceaa7e70",
+        "from": "claim:83071555dd80fcef-888386341facea2e",
+        "to": "claim:83071555dd80fcef-560aec6197357ca3",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-climate-002-83071555dd80fcef-14#chars-2685-2801",
+          "span:c-climate-002-83071555dd80fcef-14#chars-2902-2978"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:11:24.258Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:83071555dd80fcef-d7d8e8f0ceaa7e70",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-climate-002#block-14] “The Advisory Board shall be composed of 15 senior scientific experts covering a ”; [1:c-climate-002#block-14] “The independence of the members of the Advisory Board shall be beyond doubt.”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:83071555dd80fcef-d7d8e8f0ceaa7e70",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-climate-002#block-14] “The Advisory Board shall be composed of 15 senior scientific experts covering a ”; [1:c-climate-002#block-14] “The independence of the members of the Advisory Board shall be beyond doubt.”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:83071555dd80fcef-e5788aacf82b278c",
+        "from": "claim:83071555dd80fcef-1247295254b1cb74",
+        "to": "claim:83071555dd80fcef-6dbb0dd6b9202fac",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-climate-002-83071555dd80fcef-2#chars-202-231",
+          "span:c-climate-002-83071555dd80fcef-3#chars-349-389"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:11:24.258Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:83071555dd80fcef-e5788aacf82b278c",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-climate-002#block-2] “Full text publicly available.”; [1:c-climate-002#block-3] “**Also known as:** \"European Climate Law”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:83071555dd80fcef-e5788aacf82b278c",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-climate-002#block-2] “Full text publicly available.”; [1:c-climate-002#block-3] “**Also known as:** \"European Climate Law”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:83071555dd80fcef-e65de423a1517a01",
+        "from": "claim:83071555dd80fcef-8a025f5af6d8b5b6",
+        "to": "claim:83071555dd80fcef-691c40f9ebad4871",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-climate-002-83071555dd80fcef-14#chars-2584-2684",
+          "span:c-climate-002-83071555dd80fcef-14#chars-2802-2901"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:11:24.258Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:83071555dd80fcef-e65de423a1517a01",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-climate-002#block-14] “A European Scientific Advisory Board on Climate Change (the 'Advisory Board') is”; [1:c-climate-002#block-14] “No more than two members of the Advisory Board shall hold the nationality of the”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:83071555dd80fcef-e65de423a1517a01",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-climate-002#block-14] “A European Scientific Advisory Board on Climate Change (the 'Advisory Board') is”; [1:c-climate-002#block-14] “No more than two members of the Advisory Board shall hold the nationality of the”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:83071555dd80fcef-f43ab20465f241c9",
+        "from": "claim:83071555dd80fcef-1247295254b1cb74",
+        "to": "claim:83071555dd80fcef-90d8093db0a83ffd",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-climate-002-83071555dd80fcef-2#chars-202-231",
+          "span:c-climate-002-83071555dd80fcef-2#chars-232-270"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:11:24.258Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:83071555dd80fcef-f43ab20465f241c9",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-climate-002#block-2] “Full text publicly available.”; [1:c-climate-002#block-2] “Consolidated version as of 2026-04-07.”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:83071555dd80fcef-f43ab20465f241c9",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-climate-002#block-2] “Full text publicly available.”; [1:c-climate-002#block-2] “Consolidated version as of 2026-04-07.”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:83071555dd80fcef-f43ab20465f241c9",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-climate-002#block-2] “Full text publicly available.”; [1:c-climate-002#block-2] “Consolidated version as of 2026-04-07.”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:83071555dd80fcef-fad00505f52072e3",
+        "from": "claim:83071555dd80fcef-1247295254b1cb74",
+        "to": "claim:83071555dd80fcef-b7ee62b88dd7b1b0",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-climate-002-83071555dd80fcef-0#chars-3-74",
+          "span:c-climate-002-83071555dd80fcef-2#chars-202-231"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:11:24.258Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:83071555dd80fcef-fad00505f52072e3",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-climate-002#block-0] “Regulation (EU) 2021/1119 — European Climate Law (consolidated version)”; [1:c-climate-002#block-2] “Full text publicly available.”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:83071555dd80fcef-fad00505f52072e3",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-climate-002#block-0] “Regulation (EU) 2021/1119 — European Climate Law (consolidated version)”; [1:c-climate-002#block-2] “Full text publicly available.”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:83071555dd80fcef-fad00505f52072e3",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-climate-002#block-0] “Regulation (EU) 2021/1119 — European Climate Law (consolidated version)”; [1:c-climate-002#block-2] “Full text publicly available.”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:83071555dd80fcef-fbd81c8322c9d180",
+        "from": "claim:83071555dd80fcef-1247295254b1cb74",
+        "to": "claim:83071555dd80fcef-3ac59f7f986a6340",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-climate-002-83071555dd80fcef-2#chars-202-231",
+          "span:c-climate-002-83071555dd80fcef-3#chars-273-298"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:11:24.258Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:83071555dd80fcef-fbd81c8322c9d180",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-climate-002#block-2] “Full text publicly available.”; [1:c-climate-002#block-3] “**Adopted:** 30 June 2021”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:83071555dd80fcef-fbd81c8322c9d180",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-climate-002#block-2] “Full text publicly available.”; [1:c-climate-002#block-3] “**Adopted:** 30 June 2021”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    }
+  ]
+}

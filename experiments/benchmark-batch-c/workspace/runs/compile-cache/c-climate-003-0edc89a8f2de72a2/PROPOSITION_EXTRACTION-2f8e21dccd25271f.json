@@ -1,0 +1,6 @@
+{
+  "kind": "VALID",
+  "content": "{\n  \"propositions\": [\n    {\n      \"text\": \"该内容来源于Carbon Brief的一篇公开文章。\",\n      \"exactQuote\": \"*Content sourced from Carbon Brief (https://www.carbonbrief.org/qa-european-commissions-proposal-to-cut-eu-emissions-90-by-2040/). Full article publicly accessible.*\",\n      \"blockId\": \"c-climate-003#block-2\"\n    },\n    {\n      \"text\": \"该文章发布于Carbon Brief，是截至2025年的更新分析。\",\n      \"exactQuote\": \"**Published:** Carbon Brief, updated analysis as of 2025\",\n      \"blockId\": \"c-climate-003#block-3\"\n    },\n    {\n      \"text\": \"该文章的作者是Carbon Brief的工作人员。\",\n      \"exactQuote\": \"**Author:** Carbon Brief staff\",\n      \"blockId\": \"c-climate-003#block-3\"\n    }\n  ]\n}",
+  "model": "deepseek-v4-flash",
+  "outputHash": "0e0012b7d10feb3f"
+}

@@ -1,0 +1,137 @@
+{
+  "relations": [
+    {
+      "fromClaimIndex": 0,
+      "toClaimIndex": 4,
+      "type": "RELATED_TO",
+      "conditions": ["claim 0 和 claim 4 均涉及同一份 IPCC 报告"],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 0,
+      "toClaimIndex": 6,
+      "type": "RELATED_TO",
+      "conditions": ["claim 0 和 claim 6 均涉及同一份 IPCC 报告"],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 0,
+      "toClaimIndex": 13,
+      "type": "RELATED_TO",
+      "conditions": ["claim 0 和 claim 13 均涉及同一份 IPCC 报告"],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 0,
+      "toClaimIndex": 18,
+      "type": "RELATED_TO",
+      "conditions": ["claim 0 和 claim 18 均涉及同一份 IPCC 报告"],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 1,
+      "toClaimIndex": 14,
+      "type": "SUPPORTS",
+      "conditions": ["claim 1 提供具体死亡率数据，claim 14 提供脆弱人口数量，共同说明气候变化影响"],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 2,
+      "toClaimIndex": 8,
+      "type": "SUPPORTS",
+      "conditions": ["claim 2 指出气候变化影响极端事件，claim 8 描述广泛变化，两者相互支持"],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 2,
+      "toClaimIndex": 12,
+      "type": "DERIVED_FROM",
+      "conditions": ["claim 12 是 claim 2 所述影响的结果"],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 3,
+      "toClaimIndex": 5,
+      "type": "SUPPORTS",
+      "conditions": ["claim 3 指出排放超预算，claim 5 提出需要净零排放，两者逻辑一致"],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 3,
+      "toClaimIndex": 10,
+      "type": "SUPPORTS",
+      "conditions": ["claim 3 和 claim 10 均涉及碳排放与温控目标的关系"],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 5,
+      "toClaimIndex": 10,
+      "type": "SUPPORTS",
+      "conditions": ["claim 5 提出净零排放必要性，claim 10 进一步阐述其与温控的关系"],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 7,
+      "toClaimIndex": 19,
+      "type": "SUPPORTS",
+      "conditions": ["claim 7 指出脆弱社区受不成比例影响，claim 19 解释排放不平等，两者共同说明不公平性"],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 9,
+      "toClaimIndex": 14,
+      "type": "SUPPORTS",
+      "conditions": ["claim 9 指出脆弱性相互依存，claim 14 提供脆弱人口数量，相互支持"],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 11,
+      "toClaimIndex": 17,
+      "type": "SUPPORTS",
+      "conditions": ["claim 11 指出政策扩展，claim 17 指出当前 NDCs 不足，形成对比"],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 15,
+      "toClaimIndex": 16,
+      "type": "SUPPORTS",
+      "conditions": ["claim 15 指出排放增加，claim 16 指出人类活动导致变暖，因果关系"],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 16,
+      "toClaimIndex": 20,
+      "type": "SUPPORTS",
+      "conditions": ["claim 16 指出人类活动导致变暖，claim 20 提供温度升高数据，证据支持"],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 17,
+      "toClaimIndex": 21,
+      "type": "SUPPORTS",
+      "conditions": ["claim 17 指出 NDCs 不足，claim 21 指出排放差距和资金不足，共同说明挑战"],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 18,
+      "toClaimIndex": 4,
+      "type": "RELATED_TO",
+      "conditions": ["claim 18 和 claim 4 均涉及同一份 IPCC 报告"],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 18,
+      "toClaimIndex": 6,
+      "type": "RELATED_TO",
+      "conditions": ["claim 18 和 claim 6 均涉及同一份 IPCC 报告"],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 18,
+      "toClaimIndex": 13,
+      "type": "RELATED_TO",
+      "conditions": ["claim 18 和 claim 13 均涉及同一份 IPCC 报告"],
+      "confidence": 0.9
+    }
+  ]
+}

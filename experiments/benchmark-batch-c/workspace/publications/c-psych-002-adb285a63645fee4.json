@@ -1,0 +1,1203 @@
+{
+  "schemaVersion": "v1",
+  "sourceId": "source:c-psych-002-adb285a63645fee4",
+  "runId": "b2ffcdb0-5943-4724-a045-a8a3422b99c9",
+  "publishedAt": "2026-07-28T07:08:02.860Z",
+  "claims": [
+    {
+      "id": "claim:adb285a63645fee4-13188dbeecc062ee",
+      "statement": "The dataset is stored on the Open Science Framework website.",
+      "evidenceSpanIds": [
+        "span:c-psych-002-adb285a63645fee4-13#chars-2322-2382"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:07:29.964Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-002-adb285a63645fee4-13#chars-2322-2382"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-002-adb285a63645fee4-13#chars-2322-2382"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:07:29.964Z"
+    },
+    {
+      "id": "claim:adb285a63645fee4-267dd736bec2e232",
+      "statement": "数据论文的 DOI 是 10.5334/jopd.ad。",
+      "evidenceSpanIds": [
+        "span:c-psych-002-adb285a63645fee4-3#chars-490-567"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:07:29.964Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-002-adb285a63645fee4-3#chars-490-567"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-002-adb285a63645fee4-3#chars-490-567"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:07:29.964Z"
+    },
+    {
+      "id": "claim:adb285a63645fee4-34585b952514d2cc",
+      "statement": "The aggregate sample had a mean age of 25.98.",
+      "evidenceSpanIds": [
+        "span:c-psych-002-adb285a63645fee4-7#chars-1126-1171"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:07:29.964Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-002-adb285a63645fee4-7#chars-1126-1171"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-002-adb285a63645fee4-7#chars-1126-1171"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:07:29.964Z"
+    },
+    {
+      "id": "claim:adb285a63645fee4-3b262618fcf6042e",
+      "statement": "The effects included Sunk costs (Oppenheimer, Meyvis, & Davidenko, 2009).",
+      "evidenceSpanIds": [
+        "span:c-psych-002-adb285a63645fee4-9#chars-1507-1558"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:07:29.964Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-002-adb285a63645fee4-9#chars-1507-1558"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-002-adb285a63645fee4-9#chars-1507-1558"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:07:29.964Z"
+    },
+    {
+      "id": "claim:adb285a63645fee4-43492018319a4468",
+      "statement": "Participant ethnicity was 65.1% White, 6.7% Black or African American, 6.5% East Asian, 4.5% South Asian, 17.2% Other or Unknown.",
+      "evidenceSpanIds": [
+        "span:c-psych-002-adb285a63645fee4-7#chars-1172-1302"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:07:29.964Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-002-adb285a63645fee4-7#chars-1172-1302"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-002-adb285a63645fee4-7#chars-1172-1302"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:07:29.964Z"
+    },
+    {
+      "id": "claim:adb285a63645fee4-4607fc993dc2c9fd",
+      "statement": "作者包括 Richard A. Klein, Kate A. Ratliff, Michelangelo Vianello, Reginald B. Adams Jr. 等 50 多位作者。",
+      "evidenceSpanIds": [
+        "span:c-psych-002-adb285a63645fee4-3#chars-235-349"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:07:29.964Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-002-adb285a63645fee4-3#chars-235-349"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-002-adb285a63645fee4-3#chars-235-349"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:07:29.964Z"
+    },
+    {
+      "id": "claim:adb285a63645fee4-50af184b6eca28a3",
+      "statement": "The effects included Low-vs.-high category scales (Schwarz, Hippler, Deutsch, & Strack, 1985).",
+      "evidenceSpanIds": [
+        "span:c-psych-002-adb285a63645fee4-9#chars-1713-1785"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:07:29.964Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-002-adb285a63645fee4-9#chars-1713-1785"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-002-adb285a63645fee4-9#chars-1713-1785"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:07:29.964Z"
+    },
+    {
+      "id": "claim:adb285a63645fee4-5206ac18f2edd7c7",
+      "statement": "The effects included Flag Priming (Carter, Ferguson, & Hassin, 2011).",
+      "evidenceSpanIds": [
+        "span:c-psych-002-adb285a63645fee4-9#chars-1908-1955"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:07:29.964Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-002-adb285a63645fee4-9#chars-1908-1955"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-002-adb285a63645fee4-9#chars-1908-1955"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:07:29.964Z"
+    },
+    {
+      "id": "claim:adb285a63645fee4-5ed279e964d9a212",
+      "statement": "数据论文发表在 Journal of Open Psychology Data (2014), Vol. 2, Issue 1, e4。",
+      "evidenceSpanIds": [
+        "span:c-psych-002-adb285a63645fee4-3#chars-416-489"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:07:29.964Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-002-adb285a63645fee4-3#chars-416-489"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-002-adb285a63645fee4-3#chars-416-489"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:07:29.964Z"
+    },
+    {
+      "id": "claim:adb285a63645fee4-603d9950c123f1ab",
+      "statement": "该研究发表在 Social Psychology (2014), Vol. 45, pp. 142-152。",
+      "evidenceSpanIds": [
+        "span:c-psych-002-adb285a63645fee4-3#chars-350-489"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:07:29.964Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-002-adb285a63645fee4-3#chars-350-489"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-002-adb285a63645fee4-3#chars-350-489"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:07:29.964Z"
+    },
+    {
+      "id": "claim:adb285a63645fee4-6777ae78dbb7754f",
+      "statement": "The effects included Quote Attribution (Lorge & Curtis, 1936).",
+      "evidenceSpanIds": [
+        "span:c-psych-002-adb285a63645fee4-9#chars-1866-1906"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:07:29.964Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-002-adb285a63645fee4-9#chars-1866-1906"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-002-adb285a63645fee4-9#chars-1866-1906"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:07:29.964Z"
+    },
+    {
+      "id": "claim:adb285a63645fee4-78995c33a069a9ba",
+      "statement": "The effects included Allowed/Forbidden (Rugg, 1941).",
+      "evidenceSpanIds": [
+        "span:c-psych-002-adb285a63645fee4-9#chars-1834-1864"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:07:29.964Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-002-adb285a63645fee4-9#chars-1834-1864"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-002-adb285a63645fee4-9#chars-1834-1864"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:07:29.964Z"
+    },
+    {
+      "id": "claim:adb285a63645fee4-80a30208abe220b2",
+      "statement": "Participant gender was 63.6% female, 29.9% male, 6.5% no response.",
+      "evidenceSpanIds": [
+        "span:c-psych-002-adb285a63645fee4-7#chars-1303-1369"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:07:29.964Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-002-adb285a63645fee4-7#chars-1303-1369"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-002-adb285a63645fee4-7#chars-1303-1369"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:07:29.964Z"
+    },
+    {
+      "id": "claim:adb285a63645fee4-87507fa3fcd06c10",
+      "statement": "The effects included Retrospective gambler's fallacy (Oppenheimer & Monin, 2009).",
+      "evidenceSpanIds": [
+        "span:c-psych-002-adb285a63645fee4-9#chars-1652-1711"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:07:29.964Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-002-adb285a63645fee4-9#chars-1652-1711"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-002-adb285a63645fee4-9#chars-1652-1711"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:07:29.964Z"
+    },
+    {
+      "id": "claim:adb285a63645fee4-9fe90bf5a4f463e1",
+      "statement": "Data were collected in-lab and online through a standardized procedure administered via an online link.",
+      "evidenceSpanIds": [
+        "span:c-psych-002-adb285a63645fee4-13#chars-2218-2321"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:07:29.964Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-002-adb285a63645fee4-13#chars-2218-2321"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-002-adb285a63645fee4-13#chars-2218-2321"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:07:29.964Z"
+    },
+    {
+      "id": "claim:adb285a63645fee4-acef643d378c1148",
+      "statement": "The effects included Anchoring (Jacowitz & Kahneman, 1995).",
+      "evidenceSpanIds": [
+        "span:c-psych-002-adb285a63645fee4-9#chars-1613-1650"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:07:29.964Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-002-adb285a63645fee4-9#chars-1613-1650"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-002-adb285a63645fee4-9#chars-1613-1650"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:07:29.964Z"
+    },
+    {
+      "id": "claim:adb285a63645fee4-ade584126b07d901",
+      "statement": "The effects included Gain versus loss framing (Tversky & Kahneman, 1981).",
+      "evidenceSpanIds": [
+        "span:c-psych-002-adb285a63645fee4-9#chars-1560-1611"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:07:29.964Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-002-adb285a63645fee4-9#chars-1560-1611"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-002-adb285a63645fee4-9#chars-1560-1611"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:07:29.964Z"
+    },
+    {
+      "id": "claim:adb285a63645fee4-b724349a870cf6d1",
+      "statement": "Many Labs Replication Project replicated 13 effects across 36 samples and over 6,000 participants.",
+      "evidenceSpanIds": [
+        "span:c-psych-002-adb285a63645fee4-5#chars-616-753"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:07:29.964Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-002-adb285a63645fee4-5#chars-616-753"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-002-adb285a63645fee4-5#chars-616-753"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:07:29.964Z"
+    },
+    {
+      "id": "claim:adb285a63645fee4-b92f1e7157fe8d45",
+      "statement": "The study materials consisted of 13 effects drawn from 12 papers.",
+      "evidenceSpanIds": [
+        "span:c-psych-002-adb285a63645fee4-9#chars-1430-1494"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:07:29.964Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-002-adb285a63645fee4-9#chars-1430-1494"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-002-adb285a63645fee4-9#chars-1430-1494"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:07:29.964Z"
+    },
+    {
+      "id": "claim:adb285a63645fee4-be6645291aaac3d3",
+      "statement": "主文章的 DOI 是 10.1177/1948550614547449。",
+      "evidenceSpanIds": [
+        "span:c-psych-002-adb285a63645fee4-3#chars-529-568"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:07:29.964Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-002-adb285a63645fee4-3#chars-529-568"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-002-adb285a63645fee4-3#chars-529-568"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:07:29.964Z"
+    },
+    {
+      "id": "claim:adb285a63645fee4-bf99c4465e762307",
+      "statement": "该内容来源于 Journal of Open Psychology Data 和 OSF 项目页面。",
+      "evidenceSpanIds": [
+        "span:c-psych-002-adb285a63645fee4-2#chars-100-233"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:07:29.964Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-002-adb285a63645fee4-2#chars-100-233"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-002-adb285a63645fee4-2#chars-100-233"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:07:29.964Z"
+    },
+    {
+      "id": "claim:adb285a63645fee4-c9ef45a3fc99b848",
+      "statement": "The dataset includes replication data, demographic variables, and contextual information.",
+      "evidenceSpanIds": [
+        "span:c-psych-002-adb285a63645fee4-5#chars-754-939"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:07:29.964Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-002-adb285a63645fee4-5#chars-754-939"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-002-adb285a63645fee4-5#chars-754-939"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:07:29.964Z"
+    },
+    {
+      "id": "claim:adb285a63645fee4-d037e33e12360e4e",
+      "statement": "10 of the 13 effects were successfully replicated across the 36 samples.",
+      "evidenceSpanIds": [
+        "span:c-psych-002-adb285a63645fee4-11#chars-1986-2057"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:07:29.964Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-002-adb285a63645fee4-11#chars-1986-2057"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-002-adb285a63645fee4-11#chars-1986-2057"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:07:29.964Z"
+    },
+    {
+      "id": "claim:adb285a63645fee4-d40d0d2aa7bb4110",
+      "statement": "The sample comprised 6,344 participants from 36 sources including university subject pools, Amazon Mechanical Turk, Project Implicit, and other sources.",
+      "evidenceSpanIds": [
+        "span:c-psych-002-adb285a63645fee4-6#chars-943-1122"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:07:29.964Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-002-adb285a63645fee4-6#chars-943-1122"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-002-adb285a63645fee4-6#chars-943-1122"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:07:29.964Z"
+    },
+    {
+      "id": "claim:adb285a63645fee4-db032d66b7974ee1",
+      "statement": "The effects included Norm of reciprocity (Hyman & Sheatsley, 1950).",
+      "evidenceSpanIds": [
+        "span:c-psych-002-adb285a63645fee4-9#chars-1787-1832"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:07:29.964Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-002-adb285a63645fee4-9#chars-1787-1832"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-002-adb285a63645fee4-9#chars-1787-1832"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:07:29.964Z"
+    },
+    {
+      "id": "claim:adb285a63645fee4-f5acd79d91c7be49",
+      "statement": "The replication demonstrated that many classic psychological findings are robust when tested with large, diverse samples and standardized protocols.",
+      "evidenceSpanIds": [
+        "span:c-psych-002-adb285a63645fee4-11#chars-2059-2192"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:07:29.964Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-002-adb285a63645fee4-11#chars-2059-2192"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-002-adb285a63645fee4-11#chars-2059-2192"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:07:29.964Z"
+    },
+    {
+      "id": "claim:adb285a63645fee4-fa555f7409c00e6f",
+      "statement": "The dataset is licensed under CC0 1.0 Universal.",
+      "evidenceSpanIds": [
+        "span:c-psych-002-adb285a63645fee4-13#chars-2384-2411"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:07:29.964Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-002-adb285a63645fee4-13#chars-2384-2411"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-002-adb285a63645fee4-13#chars-2384-2411"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:07:29.964Z"
+    }
+  ],
+  "concepts": [
+    {
+      "id": "concept:0060bb979ac9417c",
+      "name": "CC0 1.0 Universal",
+      "aliases": [],
+      "boundary": "许可证",
+      "domain": "知识产权"
+    },
+    {
+      "id": "concept:00a654871a7681e3",
+      "name": "ethnicity",
+      "aliases": [],
+      "boundary": "人口统计学变量",
+      "domain": "人口统计学"
+    },
+    {
+      "id": "concept:0edca8503d978b28",
+      "name": "Open Science Framework",
+      "aliases": [
+        "OSF"
+      ],
+      "boundary": "平台",
+      "domain": "开放科学"
+    },
+    {
+      "id": "concept:1b6f9ce3a0a58d8b",
+      "name": "Quote Attribution",
+      "aliases": [],
+      "boundary": "心理学效应",
+      "domain": "社会心理学"
+    },
+    {
+      "id": "concept:2135fa817cbcfcac",
+      "name": "Journal of Open Psychology Data",
+      "aliases": [],
+      "boundary": "期刊",
+      "domain": "学术出版"
+    },
+    {
+      "id": "concept:4ec2949205ec7f60",
+      "name": "replication",
+      "aliases": [],
+      "boundary": "方法",
+      "domain": "心理学"
+    },
+    {
+      "id": "concept:5c2c66c11dff2a7f",
+      "name": "author",
+      "aliases": [],
+      "boundary": "角色",
+      "domain": "学术出版"
+    },
+    {
+      "id": "concept:61d0553ac6736ac3",
+      "name": "gender",
+      "aliases": [],
+      "boundary": "人口统计学变量",
+      "domain": "人口统计学"
+    },
+    {
+      "id": "concept:6311656dd1117449",
+      "name": "Flag Priming",
+      "aliases": [],
+      "boundary": "心理学效应",
+      "domain": "社会心理学"
+    },
+    {
+      "id": "concept:74b046d8d3aade60",
+      "name": "Anchoring",
+      "aliases": [],
+      "boundary": "心理学效应",
+      "domain": "社会心理学"
+    },
+    {
+      "id": "concept:771707bb1411d60d",
+      "name": "sample",
+      "aliases": [],
+      "boundary": "统计概念",
+      "domain": "研究方法"
+    },
+    {
+      "id": "concept:7ce4d9048bed019a",
+      "name": "effect",
+      "aliases": [],
+      "boundary": "概念",
+      "domain": "心理学"
+    },
+    {
+      "id": "concept:82978aaf33c3c69c",
+      "name": "data collection",
+      "aliases": [],
+      "boundary": "方法",
+      "domain": "研究方法"
+    },
+    {
+      "id": "concept:8551a15f976949e9",
+      "name": "Many Labs Replication Project",
+      "aliases": [],
+      "boundary": "项目",
+      "domain": "心理学"
+    },
+    {
+      "id": "concept:8d5542678f47d4c9",
+      "name": "mean age",
+      "aliases": [],
+      "boundary": "统计量",
+      "domain": "人口统计学"
+    },
+    {
+      "id": "concept:a43eb9e7ebc7dc6b",
+      "name": "Sunk costs",
+      "aliases": [],
+      "boundary": "心理学效应",
+      "domain": "社会心理学"
+    },
+    {
+      "id": "concept:acfec57de2714297",
+      "name": "Gain versus loss framing",
+      "aliases": [],
+      "boundary": "心理学效应",
+      "domain": "社会心理学"
+    },
+    {
+      "id": "concept:ba825e609bc47621",
+      "name": "Social Psychology",
+      "aliases": [],
+      "boundary": "期刊",
+      "domain": "学术出版"
+    },
+    {
+      "id": "concept:cfafb3ea90064e56",
+      "name": "participant",
+      "aliases": [],
+      "boundary": "角色",
+      "domain": "研究方法"
+    },
+    {
+      "id": "concept:e510b5931bc83175",
+      "name": "Retrospective gambler's fallacy",
+      "aliases": [],
+      "boundary": "心理学效应",
+      "domain": "社会心理学"
+    },
+    {
+      "id": "concept:e60a7572c2fb503e",
+      "name": "dataset",
+      "aliases": [],
+      "boundary": "数据产品",
+      "domain": "数据管理"
+    },
+    {
+      "id": "concept:f046dbc7ed051d76",
+      "name": "Allowed/Forbidden",
+      "aliases": [],
+      "boundary": "心理学效应",
+      "domain": "社会心理学"
+    },
+    {
+      "id": "concept:f6b620256b2a18c5",
+      "name": "Low-vs.-high category scales",
+      "aliases": [],
+      "boundary": "心理学效应",
+      "domain": "社会心理学"
+    },
+    {
+      "id": "concept:f907fb30b2711e8b",
+      "name": "Norm of reciprocity",
+      "aliases": [],
+      "boundary": "心理学效应",
+      "domain": "社会心理学"
+    },
+    {
+      "id": "concept:fe0f95d2f5066d85",
+      "name": "DOI",
+      "aliases": [],
+      "boundary": "标识符",
+      "domain": "出版"
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel:adb285a63645fee4-0d587d6f4da43b52",
+      "from": "claim:adb285a63645fee4-f5acd79d91c7be49",
+      "to": "claim:adb285a63645fee4-d037e33e12360e4e",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:c-psych-002-adb285a63645fee4-11#chars-1986-2057",
+        "span:c-psych-002-adb285a63645fee4-11#chars-2059-2192"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:07:40.561Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.8,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:adb285a63645fee4-38b99b3420b0d8aa",
+      "from": "claim:adb285a63645fee4-b724349a870cf6d1",
+      "to": "claim:adb285a63645fee4-d037e33e12360e4e",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:c-psych-002-adb285a63645fee4-11#chars-1986-2057",
+        "span:c-psych-002-adb285a63645fee4-5#chars-616-753"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:07:40.561Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.9,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:adb285a63645fee4-ade5fa10d3818edc",
+      "from": "claim:adb285a63645fee4-d037e33e12360e4e",
+      "to": "claim:adb285a63645fee4-f5acd79d91c7be49",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:c-psych-002-adb285a63645fee4-11#chars-1986-2057",
+        "span:c-psych-002-adb285a63645fee4-11#chars-2059-2192"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:07:40.561Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.8,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:adb285a63645fee4-fdfe7a0c51ea196d",
+      "from": "claim:adb285a63645fee4-d40d0d2aa7bb4110",
+      "to": "claim:adb285a63645fee4-b724349a870cf6d1",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:c-psych-002-adb285a63645fee4-5#chars-616-753",
+        "span:c-psych-002-adb285a63645fee4-6#chars-943-1122"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:07:40.561Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.9,
+      "consumedBy": []
+    }
+  ]
+}

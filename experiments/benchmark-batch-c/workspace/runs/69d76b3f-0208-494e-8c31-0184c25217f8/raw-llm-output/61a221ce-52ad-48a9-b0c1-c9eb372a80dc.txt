@@ -1,0 +1,95 @@
+{
+  "relations": [
+    {
+      "fromClaimIndex": 0,
+      "toClaimIndex": 2,
+      "type": "RELATED_TO",
+      "conditions": [],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 0,
+      "toClaimIndex": 7,
+      "type": "RELATED_TO",
+      "conditions": [],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 2,
+      "toClaimIndex": 7,
+      "type": "RELATED_TO",
+      "conditions": [],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 3,
+      "toClaimIndex": 1,
+      "type": "RELATED_TO",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 3,
+      "toClaimIndex": 6,
+      "type": "RELATED_TO",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 3,
+      "toClaimIndex": 14,
+      "type": "RELATED_TO",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 3,
+      "toClaimIndex": 16,
+      "type": "RELATED_TO",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 4,
+      "toClaimIndex": 15,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["Both refer to the same regulation: the AI Act (Regulation (EU) 2024/1689)"],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 6,
+      "toClaimIndex": 13,
+      "type": "REQUIRES",
+      "conditions": ["Prohibitions on unacceptable risk practices take effect on 2 February 2025"],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 1,
+      "toClaimIndex": 9,
+      "type": "REQUIRES",
+      "conditions": ["Rules for product-linked high-risk AI systems (Annex I) take effect on 2 August 2027"],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 1,
+      "toClaimIndex": 11,
+      "type": "REQUIRES",
+      "conditions": ["Rules for high-risk AI systems (Annex III) take effect on 2 August 2026"],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 12,
+      "toClaimIndex": 10,
+      "type": "RELATED_TO",
+      "conditions": [],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 5,
+      "toClaimIndex": 7,
+      "type": "REQUIRES",
+      "conditions": ["The AI Act entered into force on 2 August 2024, and member states must designate competent authorities by 2 August 2025"],
+      "confidence": 1.0
+    }
+  ]
+}

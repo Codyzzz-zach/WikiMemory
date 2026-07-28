@@ -1,0 +1,75 @@
+{
+  "runId": "batch-c-blind-first-2026-07-28T07-22-04-418Z",
+  "sampleId": "sample-f35c5759-1ad4-4762-87a5-852fd32a0419",
+  "questionId": "C-C-PSYCH-001",
+  "group": "P-graph",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "temperature": 0,
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 3638,
+    "completionTokens": 413,
+    "totalTokens": 4051,
+    "promptCacheHitTokens": 0,
+    "promptCacheMissTokens": 3638,
+    "reasoningTokens": 0
+  },
+  "latencyMs": 4965,
+  "promptHash": "14fffa95d8a01155af8901038e03131198a0a0dcc909497764094a0bcfd99377",
+  "contextHash": "2b25df1257e328014c2d0513f5870988a9d2a61cc2d073f3e6e03ab8e4c0190d",
+  "estimatedContextTokens": 2596,
+  "estimatedInputTokens": 2790,
+  "retrievedClaims": [
+    "claim:08f4f1f4eb388c06-5a1eca00ccef74b9",
+    "claim:0f7730e649dbc238-4acc6ab8edfdce8d",
+    "claim:0f7730e649dbc238-5029d8835d37392e",
+    "claim:0f7730e649dbc238-6b8953e4a783f80b",
+    "claim:0f7730e649dbc238-6bd71d1ec2eb4eb0",
+    "claim:0f7730e649dbc238-79d4928647df5ef1",
+    "claim:0f7730e649dbc238-7e2cb553f3fbc767",
+    "claim:0f7730e649dbc238-7fd9ac05cca2b583",
+    "claim:0f7730e649dbc238-803bda104d1d3f61",
+    "claim:0f7730e649dbc238-824f3eafcb5aa161",
+    "claim:08f4f1f4eb388c06-b7358d918b6741a7",
+    "claim:0f7730e649dbc238-a0efb89317e2d151",
+    "claim:0f7730e649dbc238-ee5064947108a810",
+    "claim:0f7730e649dbc238-ad224d9bcee9058e",
+    "claim:0f7730e649dbc238-ee87d4aee780322e",
+    "claim:0f7730e649dbc238-d8077d8950c82fdd",
+    "claim:0f7730e649dbc238-f7a129bd66662ffd",
+    "claim:0f7730e649dbc238-a678d14d807db125",
+    "claim:08f4f1f4eb388c06-9d3d87bb413cd0f9",
+    "claim:0f7730e649dbc238-979f2ca3e1c0eba7"
+  ],
+  "retrievedRelations": [
+    "rel:08f4f1f4eb388c06-8f9c64751827ab53",
+    "rel:cross-190d575c8a32eb68",
+    "rel:cross-31f5789ef03f88f9",
+    "rel:cross-a0d07d70ea4749c4",
+    "rel:0f7730e649dbc238-50a9c0e00d8d5daa",
+    "rel:0f7730e649dbc238-95b179f99e4f1124",
+    "rel:0f7730e649dbc238-a2da186bef552142",
+    "rel:0f7730e649dbc238-35a255c4aa4225e7",
+    "rel:0f7730e649dbc238-9c6f649523f6eba9",
+    "rel:0f7730e649dbc238-d3ef99ba957d3a2c",
+    "rel:0f7730e649dbc238-a4c702aa8beb4d12",
+    "rel:08f4f1f4eb388c06-c6738e4bb5094123",
+    "rel:0f7730e649dbc238-b9280525ad88dca6"
+  ],
+  "retrievedSources": [
+    "source:c-psych-003-08f4f1f4eb388c06",
+    "source:c-psych-001-0f7730e649dbc238"
+  ],
+  "citationValidation": {
+    "valid": true,
+    "citationCount": 7,
+    "invalid": []
+  },
+  "request": {
+    "systemPrompt": "你是受证据约束的问答 Agent。只使用本次请求提供的检索上下文回答。\n要求：保留影响结论的条件、时间、例外、来源角色与不确定性；关键结论引用上下文中的 SOURCE、EVIDENCE 或 CLAIM 标识；上下文不足时明确说明，不得用外部常识补齐。\n只输出严格 JSON：{\"answer\":\"...\",\"citations\":[\"...\"],\"insufficient\":false,\"uncertainties\":[\"...\"]}。",
+    "userPrompt": "# 问题\nOpen Science Collaboration (2015) 使用了哪五种不同的指标来评估复制成功？为什么说没有单一指标足以描述复制成功率？\n\n# 检索上下文\n## TASK MAP\n主题: Open Science Collaboration (2015) 使用了哪五种不同的指标来评估复制成功？为什么说没有单一指标足以描述复制成功率？\n地图主题: science, open, 评估, 2015, collaboration\n关键概念: 第五次评估报告, IPCC第六次评估报告, 不可持续的能源使用, Union-wide greenhouse gas emissions and removals, Regulation (EU) 2021/1119\n已知争议: 0 个\n最近变化: 5 条\n找到 20 条相关 Claim\n找到 13 条关系\n找到 20 条原文证据\n\n## CLAIM claim:08f4f1f4eb388c06-5a1eca00ccef74b9\nA paper from the Open Science Collaboration attempting to replicate 100 published studies suggests that the reproducibility of psychological science is surprisingly low.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:0f7730e649dbc238-4acc6ab8edfdce8d\nThe Reproducibility Project: Psychology finished primary data collection in December 2014.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:0f7730e649dbc238-5029d8835d37392e\nThe study was published in Science, Vol. 349, Issue 6251, article aac4716.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:0f7730e649dbc238-6b8953e4a783f80b\nThirty-six percent of replications had significant results.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:0f7730e649dbc238-6bd71d1ec2eb4eb0\nOriginal effects had a mean of 0.403 and standard deviation of 0.188.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:0f7730e649dbc238-79d4928647df5ef1\nThe DOI of the study is 10.1126/science.aac4716.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:0f7730e649dbc238-7e2cb553f3fbc767\nThe extent to which reproducibility characterizes current research is unknown.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:0f7730e649dbc238-7fd9ac05cca2b583\nThe study conducted replications of 100 experimental and correlational studies published in three psychology journals.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:0f7730e649dbc238-803bda104d1d3f61\nThe project was coordinated by the Center for Open Science.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:0f7730e649dbc238-824f3eafcb5aa161\nThe study was published on 28 August 2015.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:08f4f1f4eb388c06-b7358d918b6741a7\nThe data are consistent with the opposite conclusion that the reproducibility of psychological science is quite high.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:0f7730e649dbc238-a0efb89317e2d151\nThe Reproducibility Project: Psychology published a summary of the results in August 2015.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:0f7730e649dbc238-ee5064947108a810\nNinety-seven percent of original studies had significant results (p < .05).\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:0f7730e649dbc238-ad224d9bcee9058e\nThirty-nine percent of effects were subjectively rated to have replicated the original result.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:0f7730e649dbc238-ee87d4aee780322e\nReplication effects were half the magnitude of original effects, representing a substantial decline.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:0f7730e649dbc238-d8077d8950c82fdd\nReproducibility is a defining feature of science.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:0f7730e649dbc238-f7a129bd66662ffd\nThe replications used high-powered designs and original materials when available.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:0f7730e649dbc238-a678d14d807db125\nThe authors are the Open Science Collaboration, with over 270 contributors.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:08f4f1f4eb388c06-9d3d87bb413cd0f9\nWhen the calculation was done correctly and applied to the OSC data, the number of failures observed was just about what should be expected by chance alone, even if all 100 original findings were true.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:0f7730e649dbc238-979f2ca3e1c0eba7\nReplication effects had a mean of 0.197 and standard deviation of 0.257.\nConditions: none\nValidity: SUPPORTED\n\n## RELATION rel:08f4f1f4eb388c06-8f9c64751827ab53\nclaim:08f4f1f4eb388c06-5a1eca00ccef74b9 --[CONTRADICTS]--> claim:08f4f1f4eb388c06-b7358d918b6741a7\nConditions: none\n\n## RELATION rel:cross-190d575c8a32eb68\nclaim:08f4f1f4eb388c06-5a1eca00ccef74b9 --[RELATED_TO]--> claim:0f7730e649dbc238-6b8953e4a783f80b\nConditions: none\n\n## RELATION rel:cross-31f5789ef03f88f9\nclaim:08f4f1f4eb388c06-5a1eca00ccef74b9 --[RELATED_TO]--> claim:0f7730e649dbc238-a0efb89317e2d151\nConditions: none\n\n## RELATION rel:cross-a0d07d70ea4749c4\nclaim:08f4f1f4eb388c06-5a1eca00ccef74b9 --[RELATED_TO]--> claim:0f7730e649dbc238-7fd9ac05cca2b583\nConditions: none\n\n## RELATION rel:0f7730e649dbc238-50a9c0e00d8d5daa\nclaim:0f7730e649dbc238-5029d8835d37392e --[SUPPORTS]--> claim:0f7730e649dbc238-824f3eafcb5aa161\nConditions: none\n\n## RELATION rel:0f7730e649dbc238-95b179f99e4f1124\nclaim:0f7730e649dbc238-ee5064947108a810 --[RELATED_TO]--> claim:0f7730e649dbc238-6b8953e4a783f80b\nConditions: none\n\n## RELATION rel:0f7730e649dbc238-a2da186bef552142\nclaim:0f7730e649dbc238-6b8953e4a783f80b --[RELATED_TO]--> claim:0f7730e649dbc238-ad224d9bcee9058e\nConditions: none\n\n## RELATION rel:0f7730e649dbc238-35a255c4aa4225e7\nclaim:0f7730e649dbc238-6bd71d1ec2eb4eb0 --[SUPPORTS]--> claim:0f7730e649dbc238-ee87d4aee780322e\nConditions: none\n\n## RELATION rel:0f7730e649dbc238-9c6f649523f6eba9\nclaim:0f7730e649dbc238-d8077d8950c82fdd --[RELATED_TO]--> claim:0f7730e649dbc238-7e2cb553f3fbc767\nConditions: none\n\n## RELATION rel:0f7730e649dbc238-d3ef99ba957d3a2c\nclaim:0f7730e649dbc238-7fd9ac05cca2b583 --[SUPPORTS]--> claim:0f7730e649dbc238-f7a129bd66662ffd\nConditions: none\n\n## RELATION rel:0f7730e649dbc238-a4c702aa8beb4d12\nclaim:0f7730e649dbc238-803bda104d1d3f61 --[RELATED_TO]--> claim:0f7730e649dbc238-a678d14d807db125\nConditions: none\n\n## RELATION rel:08f4f1f4eb388c06-c6738e4bb5094123\nclaim:08f4f1f4eb388c06-9d3d87bb413cd0f9 --[SUPPORTS]--> claim:08f4f1f4eb388c06-b7358d918b6741a7\nConditions: none\n\n## RELATION rel:0f7730e649dbc238-b9280525ad88dca6\nclaim:0f7730e649dbc238-979f2ca3e1c0eba7 --[SUPPORTS]--> claim:0f7730e649dbc238-ee87d4aee780322e\nConditions: none\n\n## EVIDENCE span:c-psych-003-08f4f1f4eb388c06-5#chars-628-842\nA paper from the Open Science Collaboration (Research Articles, 28 August 2015, aac4716) attempting to replicate 100 published studies suggests that the reproducibility of psychological science is surprisingly low.\n\n## EVIDENCE span:c-psych-001-0f7730e649dbc238-12#chars-1728-1777\nfinished primary data collection in December 2014\n\n## EVIDENCE span:c-psych-001-0f7730e649dbc238-3#chars-294-345\n**Journal:** Science, Vol. 349, Issue 6251, aac4716\n\n## EVIDENCE span:c-psych-001-0f7730e649dbc238-8#chars-1037-1095\nThirty-six percent of replications had significant results\n\n## EVIDENCE span:c-psych-001-0f7730e649dbc238-7#chars-881-920\noriginal effects (Mr = .403, SD = .188)\n\n## EVIDENCE span:c-psych-001-0f7730e649dbc238-3#chars-376-408\n**DOI:** 10.1126/science.aac4716\n\n## EVIDENCE span:c-psych-001-0f7730e649dbc238-5#chars-523-587\nthe extent to which it characterizes current research is unknown\n\n## EVIDENCE span:c-psych-001-0f7730e649dbc238-5#chars-589-699\nWe conducted replications of 100 experimental and correlational studies published in three psychology journals\n\n## EVIDENCE span:c-psych-001-0f7730e649dbc238-12#chars-1834-1892\nThe project was coordinated by the Center for Open Science\n\n## EVIDENCE span:c-psych-001-0f7730e649dbc238-3#chars-346-375\n**Published:** 28 August 2015\n\n## EVIDENCE span:c-psych-003-08f4f1f4eb388c06-5#chars-950-1084\nIndeed, the data are consistent with the opposite conclusion, namely, that the reproducibility of psychological science is quite high.\n\n## EVIDENCE span:c-psych-001-0f7730e649dbc238-12#chars-1783-1832\npublished a summary of the results in August 2015\n\n## EVIDENCE span:c-psych-001-0f7730e649dbc238-8#chars-961-1035\nNinety-seven percent of original studies had significant results (p < .05)\n\n## EVIDENCE span:c-psych-001-0f7730e649dbc238-8#chars-1194-1271\n39% of effects were subjectively rated to have replicated the original result\n\n## EVIDENCE span:c-psych-001-0f7730e649dbc238-7#chars-854-956\nwere half the magnitude of original effects (Mr = .403, SD = .188), representing a substantial decline\n\n## EVIDENCE span:c-psych-001-0f7730e649dbc238-5#chars-469-517\nReproducibility is a defining feature of science\n\n## EVIDENCE span:c-psych-001-0f7730e649dbc238-5#chars-700-764\nusing high-powered designs and original materials when available\n\n## EVIDENCE span:c-psych-001-0f7730e649dbc238-3#chars-234-293\n**Authors:** Open Science Collaboration (270+ contributors)\n\n## EVIDENCE span:c-psych-003-08f4f1f4eb388c06-9#chars-2037-2283\nSo we did the calculation the right way and then applied it to their data. And guess what? The number of failures they observed was just about what you should expect to observe by chance alone — even if all 100 of the original findings were true.\n\n## EVIDENCE span:c-psych-001-0f7730e649dbc238-7#chars-811-853\nReplication effects (Mr = .197, SD = .257)\n\n## CONFLICTS AND CONDITIONS\n⚠️ SUPPORTS 只表示 Claim 之间存在语义支持，不证明其来源彼此独立、同等权威或都是规范性来源；来源独立性必须依据 Source provenance 单独判断。\n🔎 Source source:c-psych-001-0f7730e649dbc238 provenance: uri=experiments/benchmark-batch-c/stage-a-freeze/compilation-corpus/psychology-reproducibility/c-psych-001.md; sourceType=md; sourceRole=P-primary; author=Open Science Collaboration; canonicalUrl=https://www.science.org/doi/10.1126/science.aac4716; publishedAt=Fri Aug 28 2015 08:00:00 GMT+0800 (China Standard Time); versionRef=doi:10.1126/science.aac4716\n🔎 Source source:c-psych-003-08f4f1f4eb388c06 provenance: uri=experiments/benchmark-batch-c/stage-a-freeze/compilation-corpus/psychology-reproducibility/c-psych-003.md; sourceType=md; sourceRole=S-analysis; author=Daniel T. Gilbert, Gary King, Stephen Pettigrew, Timothy D. Wilson; canonicalUrl=https://www.science.org/doi/10.1126/science.aad7243; publishedAt=Fri Mar 04 2016 08:00:00 GMT+0800 (China Standard Time); versionRef='doi:10.1126/science.aad7243; coverage: news.harvard.edu/gazette 2016-03-03'"
+  },
+  "answer": "{\n  \"answer\": \"Open Science Collaboration (2015) 使用了五种指标：1) 显著结果的比例（36% 的复制有显著结果）；2) 效应量均值（原始效应量均值 0.403，复制效应量均值 0.197）；3) 主观评级（39% 的效应被主观评为复制成功）；4) 原始研究显著结果比例（97% 的原始研究有显著结果）；5) 效应量下降幅度（复制效应量是原始的一半）。没有单一指标足以描述复制成功率，因为不同指标给出不同结论：显著结果比例（36%）和主观评级（39%）显示低可重复性，但效应量下降可能部分由统计原因导致，且另一分析（Gilbert 等，2016）指出失败数量与偶然预期一致，表明可重复性可能较高。因此，单一指标无法全面反映复制成功。\",\n  \"citations\": [\n    \"claim:0f7730e649dbc238-6b8953e4a783f80b\",\n    \"claim:0f7730e649dbc238-6bd71d1ec2eb4eb0\",\n    \"claim:0f7730e649dbc238-979f2ca3e1c0eba7\",\n    \"claim:0f7730e649dbc238-ad224d9bcee9058e\",\n    \"claim:0f7730e649dbc238-ee5064947108a810\",\n    \"claim:0f7730e649dbc238-ee87d4aee780322e\",\n    \"claim:08f4f1f4eb388c06-9d3d87bb413cd0f9\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": [\n    \"不同指标对复制成功的定义不同，且存在争议（如 Gilbert 等 2016 的批评）\"\n  ]\n}",
+  "answerFormatValid": true
+}

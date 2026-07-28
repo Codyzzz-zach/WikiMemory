@@ -1,0 +1,242 @@
+{
+  "relations": [
+    {
+      "fromClaimIndex": 0,
+      "toClaimIndex": 38,
+      "type": "SUPPORTS",
+      "conditions": ["Meta announced it would appeal the decision and seek a stay with the courts to pause implementation deadlines."],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 4,
+      "toClaimIndex": 38,
+      "type": "SUPPORTS",
+      "conditions": ["Meta will seek a stay with the courts to pause the implementation of applicable deadlines."],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 5,
+      "toClaimIndex": 16,
+      "type": "SUPPORTS",
+      "conditions": ["Prior major GDPR fines included Meta's separate €390 million fine (Ireland, January 2023) for GDPR violations related to personalized advertising legal basis."],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 10,
+      "toClaimIndex": 14,
+      "type": "SUPPORTS",
+      "conditions": ["The decision came amid ongoing negotiations for a new EU-US Data Privacy Framework."],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 10,
+      "toClaimIndex": 15,
+      "type": "SUPPORTS",
+      "conditions": ["The decision came amid ongoing negotiations for a new EU-US Data Privacy Framework."],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 14,
+      "toClaimIndex": 15,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["Both refer to the adoption of the EU-US Data Privacy Framework adequacy decision in July 2023."],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 16,
+      "toClaimIndex": 20,
+      "type": "SUPPORTS",
+      "conditions": ["In January 2023, the Irish DPC fined Meta Platforms Ireland Limited €390 million total."],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 18,
+      "toClaimIndex": 46,
+      "type": "SUPPORTS",
+      "conditions": ["According to enforcementtracker.com, this was the largest GDPR fine ever imposed."],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 19,
+      "toClaimIndex": 25,
+      "type": "SUPPORTS",
+      "conditions": ["The complaints that triggered both the January 2023 advertising decision and the May 2023 data transfers decision were filed by privacy activist Max Schrems and his organization noyb."],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 21,
+      "toClaimIndex": 26,
+      "type": "SUPPORTS",
+      "conditions": ["Meta has consistently argued that its data transfers were lawful under the Standard Contractual Clauses framework."],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 22,
+      "toClaimIndex": 23,
+      "type": "CONTRADICTS",
+      "conditions": ["Meta had relied on 'contractual necessity' (Article 6(1)(b)) as the legal basis."],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 23,
+      "toClaimIndex": 22,
+      "type": "CONTRADICTS",
+      "conditions": ["The EDPB determined that contractual necessity was not valid and that user consent was required."],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 24,
+      "toClaimIndex": 58,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["Both refer to the same DPC decision IN-20-8-1."],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 25,
+      "toClaimIndex": 27,
+      "type": "SUPPORTS",
+      "conditions": ["Meta Ireland infringed Article 46(1) GDPR when it continued to transfer personal data from the EU/EEA to the USA after the CJEU's judgment."],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 26,
+      "toClaimIndex": 47,
+      "type": "SUPPORTS",
+      "conditions": ["Meta Ireland effected those transfers on the basis of the updated Standard Contractual Clauses ('SCCs') adopted by the European Commission in 2021."],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 27,
+      "toClaimIndex": 39,
+      "type": "SUPPORTS",
+      "conditions": ["The Irish DPA found that Standard Contractual Clauses (SCCs) could not compensate for the lack of an equivalent level of data protection."],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 28,
+      "toClaimIndex": 30,
+      "type": "SUPPORTS",
+      "conditions": ["According to the Irish DPC, derogations under Article 49 GDPR can only be invoked for 'occasional and non-repetitive' transfers."],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 28,
+      "toClaimIndex": 33,
+      "type": "SUPPORTS",
+      "conditions": ["According to the Irish DPC, derogations under Article 49 GDPR can only be invoked for 'occasional and non-repetitive' transfers."],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 30,
+      "toClaimIndex": 33,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["Both state that Meta Ireland could not rely on derogations under Article 49 GDPR."],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 31,
+      "toClaimIndex": 35,
+      "type": "SUPPORTS",
+      "conditions": ["Meta Ireland must bring processing into compliance with Chapter V GDPR by ceasing unlawful processing, including storage, in the US within six months."],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 32,
+      "toClaimIndex": 54,
+      "type": "SUPPORTS",
+      "conditions": ["The EDPB found that Meta IE's infringement is very serious because it concerns transfers that are systematic, repetitive and continuous."],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 32,
+      "toClaimIndex": 55,
+      "type": "SUPPORTS",
+      "conditions": ["The EDPB found that Meta IE's infringement is very serious because it concerns transfers that are systematic, repetitive and continuous."],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 34,
+      "toClaimIndex": 36,
+      "type": "SUPPORTS",
+      "conditions": ["The authority is DPC (Ireland), bound by EDPB Article 65 decision."],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 36,
+      "toClaimIndex": 50,
+      "type": "SUPPORTS",
+      "conditions": ["The DPC was bound to follow the EDPB's binding decision."],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 37,
+      "toClaimIndex": 46,
+      "type": "SUPPORTS",
+      "conditions": ["The EDPB determined that a fine should be imposed and that Meta must also address already-transferred data."],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 39,
+      "toClaimIndex": 40,
+      "type": "SUPPORTS",
+      "conditions": ["US law does not provide a level of protection equivalent to that provided by EU law."],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 39,
+      "toClaimIndex": 52,
+      "type": "SUPPORTS",
+      "conditions": ["US law does not provide a level of protection equivalent to that provided by EU law."],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 40,
+      "toClaimIndex": 52,
+      "type": "SUPPORTS",
+      "conditions": ["Neither of the organisational, technical or legal measures Meta Ireland Ltd claimed to have implemented could compensate for a problem that stems from US public law."],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 41,
+      "toClaimIndex": 53,
+      "type": "SUPPORTS",
+      "conditions": ["The supervisory authority considered whether Meta Ireland implemented sufficient supplementary measures that would, in addition to SCCs, ensure an equivalent level of data protection."],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 42,
+      "toClaimIndex": 43,
+      "type": "SUPPORTS",
+      "conditions": ["The Irish DPA claimed that several complex legal issues concerning data transfers were solved for the first time before the CJEU in the Schrems II judgement."],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 46,
+      "toClaimIndex": 18,
+      "type": "SUPPORTS",
+      "conditions": ["An administrative fine of €1.2 billion was imposed, the largest GDPR fine ever."],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 49,
+      "toClaimIndex": 60,
+      "type": "SUPPORTS",
+      "conditions": ["The Irish DPA found that the suspension of the transfers was already sufficient to enforce the GDPR and a fine on top of it would have been excessive."],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 60,
+      "toClaimIndex": 61,
+      "type": "SUPPORTS",
+      "conditions": ["The DPC initially proposed only a suspension order without a fine."],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 62,
+      "toClaimIndex": 45,
+      "type": "SUPPORTS",
+      "conditions": ["The content is sourced from GDPRhub.eu (https://gdprhub.eu/index.php?curid=5944)."],
+      "confidence": 0.9
+    }
+  ]
+}

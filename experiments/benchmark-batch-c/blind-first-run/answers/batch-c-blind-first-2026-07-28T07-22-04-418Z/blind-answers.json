@@ -1,0 +1,581 @@
+[
+  {
+    "sampleId": "sample-ddb1183a-3fa5-4bcd-8625-907681cc5749",
+    "questionId": "C-F-PSYCH-001",
+    "answer": "{\n  \"answer\": \"原始研究中有97%具有统计显著结果（p < .05），复制研究中有36%具有统计显著结果。\",\n  \"citations\": [\n    \"claim:0f7730e649dbc238-ee5064947108a810\",\n    \"claim:0f7730e649dbc238-6b8953e4a783f80b\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}",
+    "citationValidation": {
+      "valid": true,
+      "citationCount": 2,
+      "invalid": []
+    }
+  },
+  {
+    "sampleId": "sample-dd1996d9-736c-45fb-add7-b8452c7a495d",
+    "questionId": "C-F-PSYCH-001",
+    "answer": "{\n  \"answer\": \"根据检索上下文，Open Science Collaboration (2015) 的研究中，原始研究有统计显著结果的比例和复制研究有统计显著结果的比例均未明确给出。上下文仅提及该研究试图复制100项已发表研究，但未提供具体百分比。\",\n  \"citations\": [],\n  \"insufficient\": true,\n  \"uncertainties\": [\n    \"原始研究中有统计显著结果的比例未知\",\n    \"复制研究中有统计显著结果的比例未知\"\n  ]\n}",
+    "citationValidation": {
+      "valid": true,
+      "citationCount": 0,
+      "invalid": []
+    }
+  },
+  {
+    "sampleId": "sample-e84e206c-e7a4-4ac9-80c7-d2087c562c04",
+    "questionId": "C-F-PSYCH-001",
+    "answer": "{\n  \"answer\": \"原始研究中有统计显著结果的比例未直接给出，但原始效应的平均值为0.403（标准差0.188）。复制研究中有36%的结果是统计显著的。\",\n  \"citations\": [\n    \"claim:0f7730e649dbc238-6b8953e4a783f80b\",\n    \"claim:0f7730e649dbc238-6bd71d1ec2eb4eb0\"\n  ],\n  \"insufficient\": true,\n  \"uncertainties\": [\n    \"原始研究中统计显著结果的具体比例未在上下文中提供。\"\n  ]\n}",
+    "citationValidation": {
+      "valid": true,
+      "citationCount": 2,
+      "invalid": []
+    }
+  },
+  {
+    "sampleId": "sample-3980a51d-00b8-4a24-b6e9-6fc6e780b4a2",
+    "questionId": "C-C-PSYCH-001",
+    "answer": "{\n  \"answer\": \"根据检索上下文，Open Science Collaboration (2015) 的研究并未明确列出五种不同的指标来评估复制成功。上下文仅提到“36%的复制研究获得了显著结果”（claim:0f7730e649dbc238-6b8953e4a783f80b）和原始效应量均值0.403、标准差0.188（claim:0f7730e649dbc238-6bd71d1ec2eb4eb0），但未提供完整的五种指标列表。因此，无法回答使用了哪五种指标，也无法解释为什么没有单一指标足以描述复制成功率。\",\n  \"citations\": [\n    \"claim:0f7730e649dbc238-6b8953e4a783f80b\",\n    \"claim:0f7730e649dbc238-6bd71d1ec2eb4eb0\"\n  ],\n  \"insufficient\": true,\n  \"uncertainties\": [\n    \"检索上下文未包含Open Science Collaboration (2015) 使用的五种不同指标的具体信息。\"\n  ]\n}",
+    "citationValidation": {
+      "valid": true,
+      "citationCount": 2,
+      "invalid": []
+    }
+  },
+  {
+    "sampleId": "sample-f35c5759-1ad4-4762-87a5-852fd32a0419",
+    "questionId": "C-C-PSYCH-001",
+    "answer": "{\n  \"answer\": \"Open Science Collaboration (2015) 使用了五种指标：1) 显著结果的比例（36% 的复制有显著结果）；2) 效应量均值（原始效应量均值 0.403，复制效应量均值 0.197）；3) 主观评级（39% 的效应被主观评为复制成功）；4) 原始研究显著结果比例（97% 的原始研究有显著结果）；5) 效应量下降幅度（复制效应量是原始的一半）。没有单一指标足以描述复制成功率，因为不同指标给出不同结论：显著结果比例（36%）和主观评级（39%）显示低可重复性，但效应量下降可能部分由统计原因导致，且另一分析（Gilbert 等，2016）指出失败数量与偶然预期一致，表明可重复性可能较高。因此，单一指标无法全面反映复制成功。\",\n  \"citations\": [\n    \"claim:0f7730e649dbc238-6b8953e4a783f80b\",\n    \"claim:0f7730e649dbc238-6bd71d1ec2eb4eb0\",\n    \"claim:0f7730e649dbc238-979f2ca3e1c0eba7\",\n    \"claim:0f7730e649dbc238-ad224d9bcee9058e\",\n    \"claim:0f7730e649dbc238-ee5064947108a810\",\n    \"claim:0f7730e649dbc238-ee87d4aee780322e\",\n    \"claim:08f4f1f4eb388c06-9d3d87bb413cd0f9\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": [\n    \"不同指标对复制成功的定义不同，且存在争议（如 Gilbert 等 2016 的批评）\"\n  ]\n}",
+    "citationValidation": {
+      "valid": true,
+      "citationCount": 7,
+      "invalid": []
+    }
+  },
+  {
+    "sampleId": "sample-754b00e0-7efe-4801-a45c-987a0ab276b7",
+    "questionId": "C-C-PSYCH-001",
+    "answer": "{\n  \"answer\": \"The Open Science Collaboration (2015) used five indicators: (1) significance and direction of P values, (2) effect sizes, (3) subjective assessments of replication teams, (4) meta-analytic effect sizes, and (5) the prediction interval of the replication effect size. No single indicator is sufficient because each captures different aspects of reproducibility and has limitations; for example, P values can be influenced by sample size, effect sizes vary across contexts, and subjective assessments may be biased. The authors argue that a comprehensive evaluation requires multiple indicators to provide a robust picture of replication success.\",\n  \"citations\": [\n    \"c-psych-001\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": [\n    \"The exact list of five indicators is not explicitly enumerated in the provided context; the answer is based on general knowledge of the study's methodology.\"\n  ]\n}",
+    "citationValidation": {
+      "valid": true,
+      "citationCount": 1,
+      "invalid": []
+    }
+  },
+  {
+    "sampleId": "sample-c59a9204-b03d-4c7f-901e-bc1dc44668ee",
+    "questionId": "C-T-PSYCH-001",
+    "answer": "{\n  \"answer\": \"Gilbert, King, Pettigrew, and Wilson (2016) criticized the OSC (2015) replication study for three statistical errors: (1) non-random sampling without statistical correction, (2) arbitrary sampling rules that excluded most psychology subfields and entire classes of studies, and (3) failure to account for differences between original and replication studies as a source of statistical error. They argued that when properly calculated, the observed failure rate was consistent with chance, and that low-fidelity replications were four times more likely to fail, biasing results toward failure. OSC conceded the major point that their paper does not provide evidence for the pessimistic conclusions drawn. This changes the original conclusion from 'reproducibility is surprisingly low' to 'the data are consistent with the opposite conclusion, namely, that reproducibility is quite high.'\",\n  \"citations\": [\n    \"c-psych-003.md:34-43\",\n    \"c-psych-003.md:46-49\",\n    \"c-psych-003.md:30-33\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": [\n    \"The exact wording of OSC's concession is based on Gilbert et al.'s characterization; the original OSC response is not directly quoted in the provided context.\"\n  ]\n}",
+    "citationValidation": {
+      "valid": true,
+      "citationCount": 3,
+      "invalid": []
+    }
+  },
+  {
+    "sampleId": "sample-bdaf4b32-b6c7-4fe7-9add-164c1e7f3d7e",
+    "questionId": "C-T-PSYCH-001",
+    "answer": "{\n  \"answer\": \"Gilbert、King、Pettigrew 和 Wilson (2016) 对 OSC (2015) 的复制研究提出了三项具体批评：1) OSC 的论文包含三个统计错误，且未提供支持其悲观结论的证据；2) OSC 创建了任意且独特的抽样规则，排除了心理学大多数子领域以及方法可能最好的整类研究；3) OSC 的复制研究在多个方面与原研究不同，这些差异是统计误差的来源，且 OSC 未进行随机抽样或统计校正。当正确计算并应用于 OSC 数据时，观察到的失败数量恰好是即使所有 100 个原始发现都为真时，仅凭偶然预期会观察到的数量。OSC 在回应中承认了主要问题：他们的论文并未为大多数人从中得出的悲观结论提供证据。这改变了原始结论，表明 OSC 的研究不能支持心理学可重复性低的结论。\",\n  \"citations\": [\n    \"claim:08f4f1f4eb388c06-5a1eca00ccef74b9\",\n    \"claim:08f4f1f4eb388c06-08f4f1f4eb388c06-2c77f195d121aaf4\",\n    \"claim:08f4f1f4eb388c06-359db3a1c1ff5ab8\",\n    \"claim:08f4f1f4eb388c06-6ef2efdb71d13a42\",\n    \"claim:08f4f1f4eb388c06-98bbd61106afc39e\",\n    \"claim:08f4f1f4eb388c06-9d3d87bb413cd0f9\",\n    \"claim:08f4f1f4eb388c06-a6a1002ab06055f5\",\n    \"claim:08f4f1f4eb388c06-f51a04a7521879df\",\n    \"evidence:span:c-psych-003-08f4f1f4eb388c06-13#chars-3209-3464\",\n    \"evidence:span:c-psych-003-08f4f1f4eb388c06-5#chars-843-949\",\n    \"evidence:span:c-psych-003-08f4f1f4eb388c06-8#chars-1409-1674\",\n    \"evidence:span:c-psych-003-08f4f1f4eb388c06-9#chars-2037-2283\",\n    \"evidence:span:c-psych-003-08f4f1f4eb388c06-9#chars-1765-2036\",\n    \"evidence:span:c-psych-003-08f4f1f4eb388c06-7#chars-1347-1367\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}",
+    "citationValidation": {
+      "valid": false,
+      "citationCount": 14,
+      "invalid": [
+        "claim:08f4f1f4eb388c06-08f4f1f4eb388c06-2c77f195d121aaf4",
+        "evidence:span:c-psych-003-08f4f1f4eb388c06-13#chars-3209-3464",
+        "evidence:span:c-psych-003-08f4f1f4eb388c06-5#chars-843-949",
+        "evidence:span:c-psych-003-08f4f1f4eb388c06-8#chars-1409-1674",
+        "evidence:span:c-psych-003-08f4f1f4eb388c06-9#chars-2037-2283",
+        "evidence:span:c-psych-003-08f4f1f4eb388c06-9#chars-1765-2036",
+        "evidence:span:c-psych-003-08f4f1f4eb388c06-7#chars-1347-1367"
+      ]
+    }
+  },
+  {
+    "sampleId": "sample-70857c74-b664-402c-9ab9-4a8271e7d256",
+    "questionId": "C-T-PSYCH-001",
+    "answer": "{\n  \"answer\": \"Gilbert、King、Pettigrew 和 Wilson (2016) 对 OSC (2015) 的复制研究提出了三项具体批评：1) OSC 的论文包含三个统计错误，且未提供支持其悲观结论的证据（claim:08f4f1f4eb388c06-5a1eca00ccef74b9 被 claim:08f4f1f4eb388c06-08f4f1f4eb388c06-5 反驳）；2) OSC 创建了任意且独特的抽样规则，排除了心理学大多数子领域以及方法可能最好的整类研究（claim:08f4f1f4eb388c06-6ef2efdb71d13a42 和 claim:08f4f1f4eb388c06-98bbd61106afc39e）；3) OSC 未进行随机抽样或统计校正，且其复制研究在诸多方面与原研究不同，引入了统计误差（claim:08f4f1f4eb388c06-f51a04a7521879df 和 claim:08f4f1f4eb388c06-a6a1002ab06055f5）。此外，当正确计算时，OSC 数据中观察到的失败数量恰好是即使所有 100 个原始发现都为真时偶然预期的数量（claim:08f4f1f4eb388c06-9d3d87bb413cd0f9）。OSC 在回应中承认了主要批评：他们的论文并未为大多数人从中得出的悲观结论提供证据（claim:08f4f1f4eb388c06-08f4f1f4eb388c06-13）。这改变了原始结论：数据与心理学可重复性相当高的相反结论一致（claim:08f4f1f4eb388c06-b7358d918b6741a7），而非 OSC 最初声称的“可重复性惊人地低”。\",\n  \"citations\": [\n    \"claim:08f4f1f4eb388c06-5a1eca00ccef74b9\",\n    \"claim:08f4f1f4eb388c06-6ef2efdb71d13a42\",\n    \"claim:08f4f1f4eb388c06-98bbd61106afc39e\",\n    \"claim:08f4f1f4eb388c06-f51a04a7521879df\",\n    \"claim:08f4f1f4eb388c06-a6a1002ab06055f5\",\n    \"claim:08f4f1f4eb388c06-9d3d87bb413cd0f9\",\n    \"claim:08f4f1f4eb388c06-08f4f1f4eb388c06-13\",\n    \"claim:08f4f1f4eb388c06-b7358d918b6741a7\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}",
+    "citationValidation": {
+      "valid": false,
+      "citationCount": 8,
+      "invalid": [
+        "claim:08f4f1f4eb388c06-08f4f1f4eb388c06-13"
+      ]
+    }
+  },
+  {
+    "sampleId": "sample-8969e265-8303-41ff-801f-fe91e7fa9180",
+    "questionId": "C-X-PSYCH-001",
+    "answer": "{\n  \"answer\": \"根据提供的检索上下文，仅包含 Many Labs 项目 (Klein et al., 2014) 的详细信息，未提及 OSC (2015) 的研究设计或复制成功率。因此无法比较两种研究方法的关键设计差异，也无法评估这些差异对心理学可复制性整体评估的影响。\",\n  \"citations\": [],\n  \"insufficient\": true,\n  \"uncertainties\": [\n    \"缺乏 OSC (2015) 的研究设计细节和复制成功率数据\",\n    \"未提供两种方法的直接比较信息\"\n  ]\n}",
+    "citationValidation": {
+      "valid": true,
+      "citationCount": 0,
+      "invalid": []
+    }
+  },
+  {
+    "sampleId": "sample-40dd7325-1eca-405f-9417-bf11d71caf63",
+    "questionId": "C-X-PSYCH-001",
+    "answer": "{\n  \"answer\": \"根据提供的检索上下文，仅包含 Many Labs 项目 (Klein et al., 2014) 的信息，未提及 OSC (2015) 的研究设计或复制成功率。因此无法比较两种研究方法的关键不同，也无法评估这些差异对心理学可复制性整体评估的影响。\",\n  \"citations\": [],\n  \"insufficient\": true,\n  \"uncertainties\": [\n    \"缺乏 OSC (2015) 的研究设计细节和复制成功率数据\",\n    \"未提供两种方法的直接比较信息\"\n  ]\n}",
+    "citationValidation": {
+      "valid": true,
+      "citationCount": 0,
+      "invalid": []
+    }
+  },
+  {
+    "sampleId": "sample-c12697b2-3a3b-48fb-afe4-82220bfdf83e",
+    "questionId": "C-X-PSYCH-001",
+    "answer": "{\n  \"answer\": \"Many Labs 项目 (Klein et al., 2014) 复制了 13 个效应，在 36 个样本、超过 6000 名参与者中，10 个效应成功复制。OSC (2015) 复制了 100 项研究，报告复制成功率较低。关键设计差异包括：(1) 样本多样性与规模：Many Labs 使用 36 个不同来源（大学被试库、MTurk、Project Implicit 等）的大样本（6344 人），而 OSC 的样本选择被批评为“任意、独特”且排除了多数心理学子领域（c-psych-003:34-43）。(2) 标准化程度：Many Labs 采用标准化协议，OSC 的复制研究被批评与原研究存在“许多不同”，导致 fidelity 低，低 fidelity 复制失败率是其他复制的四倍（c-psych-003:34-43）。(3) 统计方法：OSC 被指出存在三个统计错误，包括未考虑复制与原研究的差异作为统计误差来源，且其观察到的失败率在统计上可能仅由偶然造成（c-psych-003:34-43）。这些差异影响了对可复制性的整体评估：Many Labs 的结果支持许多经典发现是稳健的，而 OSC 的悲观结论被质疑缺乏证据支持，数据反而与“可复制性相当高”一致（c-psych-003:30-33）。\",\n  \"citations\": [\n    \"c-psych-002:30-37\",\n    \"c-psych-003:34-43\",\n    \"c-psych-003:30-33\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": [\n    \"OSC 的具体样本选择规则和 fidelity 测量细节未在上下文中完全提供\",\n    \"Many Labs 的 13 个效应是否代表心理学全貌未知\"\n  ]\n}",
+    "citationValidation": {
+      "valid": false,
+      "citationCount": 3,
+      "invalid": [
+        "c-psych-002:30-37",
+        "c-psych-003:34-43",
+        "c-psych-003:30-33"
+      ]
+    }
+  },
+  {
+    "sampleId": "sample-eb1bc396-40ea-41f2-a09b-bee2c8ee6dd3",
+    "questionId": "C-K-PSYCH-001",
+    "answer": "{\n  \"answer\": \"Nature 杂志的调查 (Baker, 2016) 属于研究者主观感知类证据，它基于对1,576名研究者的问卷调查，显示52%的受访者认为存在显著的可复制性危机，但该调查可能偏向于对可复制性问题更关注的受访者。这类证据能支持“许多研究者主观上认为可复制性存在危机”这一结论，但不能直接证明可复制性危机的客观存在。Gilbert 等人 (2016) 的评论属于对原始数据的再分析类证据，他们重新分析了 OSC 的数据，指出 OSC 的抽样方法有缺陷、未考虑统计误差、低保真度复制更易失败，并认为 OSC 的数据实际上与心理学可复制性很高这一结论一致。这类证据能支持“OSC 的研究方法存在缺陷，其数据不能支持可复制性危机的悲观结论”这一结论。\",\n  \"citations\": [\n    \"c-psych-004:40-43\",\n    \"c-psych-004:30-39\",\n    \"c-psych-003:34-43\",\n    \"c-psych-003:46-49\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": [\n    \"Nature 调查的样本可能偏向于对可复制性更关注的群体，因此52%的比例可能高估了整体研究者的看法。\",\n    \"Gilbert 等人的再分析依赖于对 OSC 方法的批评，但 OSC 是否完全接受这些批评尚存争议（OSC 承认了部分问题但未完全认同）。\"\n  ]\n}",
+    "citationValidation": {
+      "valid": false,
+      "citationCount": 4,
+      "invalid": [
+        "c-psych-004:40-43",
+        "c-psych-004:30-39",
+        "c-psych-003:34-43",
+        "c-psych-003:46-49"
+      ]
+    }
+  },
+  {
+    "sampleId": "sample-2425ff6e-dda5-4feb-8923-135f65a8dba8",
+    "questionId": "C-K-PSYCH-001",
+    "answer": "{\n  \"answer\": \"Baker (2016) 的调查属于研究者主观感知类证据，基于对1,576名研究者的问卷调查，反映的是研究者对可复制性危机的看法，而非直接测量可复制性本身。该调查显示52%的受访者认为存在显著的可复制性危机，但调查可能选择了对可重复性问题更关注的受访者，因此结论存在偏差。Gilbert等人 (2016) 的证据属于对原始数据的再分析类证据，他们重新分析了OSC的数据，认为数据与心理学可复制性很高的结论一致。这两类证据分别支持不同的结论：Baker的调查支持研究者普遍感知到可复制性危机，而Gilbert等人的再分析支持心理学研究的可复制性实际上可能较高。\",\n  \"citations\": [\n    \"claim:e5061e9956aa43aa-6d89b2dd1efe941d\",\n    \"claim:e5061e9956aa43aa-0e4ed06319cdf8f7\",\n    \"claim:e5061e9956aa43aa-8f4c3087c78c3e7e\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": [\n    \"Baker调查可能选择了对可重复性问题更关注的受访者，导致结果偏向于认为存在危机。\",\n    \"Gilbert等人 (2016) 的再分析结论在提供的上下文中没有直接证据支持，仅作为问题背景提及。\"\n  ]\n}",
+    "citationValidation": {
+      "valid": true,
+      "citationCount": 3,
+      "invalid": []
+    }
+  },
+  {
+    "sampleId": "sample-1882fc1e-5c9f-4f78-8d38-0564cba1a421",
+    "questionId": "C-K-PSYCH-001",
+    "answer": "{\n  \"answer\": \"Baker (2016) 的调查属于研究者主观感知类证据，基于对1,576名研究者的问卷调查，反映研究者对可重复性危机的看法，但可能存在选择偏差（如更关注可重复性问题的受访者更可能回应）。该调查支持“许多研究者认为存在可重复性危机”的结论，但无法直接证明实际可重复性水平。Gilbert等人 (2016) 对OSC数据的再分析属于对原始数据的再分析类证据，通过重新分析已有数据得出与OSC原始结论相反的结论，支持“心理学研究的可重复性可能较高”的结论。\",\n  \"citations\": [\n    \"Baker (2016) Nature survey: 52% of 1,576 researchers agreed there is a 'significant crisis' of reproducibility (EVIDENCE span:c-psych-004-e5061e9956aa43aa-6#chars-585-669; CLAIM claim:e5061e9956aa43aa-6d89b2dd1efe941d). Survey likely selected for respondents more aware of reproducibility concerns (EVIDENCE span:c-psych-004-e5061e9956aa43aa-10#chars-1046-1128; CLAIM claim:e5061e9956aa43aa-8f4c3087c78c3e7e).\",\n    \"Gilbert et al. (2016) re-analysis of OSC data: argued that OSC data are consistent with high reproducibility in psychology (context states this as a contrasting conclusion, but no specific citation provided in the given context).\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": [\n    \"Baker (2016) 调查可能存在选择偏差，结果不能完全代表全体研究者。\",\n    \"Gilbert等人 (2016) 的再分析结论在给定上下文中未提供具体证据，其支持力度需参考原始文献。\"\n  ]\n}",
+    "citationValidation": {
+      "valid": false,
+      "citationCount": 2,
+      "invalid": [
+        "Baker (2016) Nature survey: 52% of 1,576 researchers agreed there is a 'significant crisis' of reproducibility (EVIDENCE span:c-psych-004-e5061e9956aa43aa-6#chars-585-669; CLAIM claim:e5061e9956aa43aa-6d89b2dd1efe941d). Survey likely selected for respondents more aware of reproducibility concerns (EVIDENCE span:c-psych-004-e5061e9956aa43aa-10#chars-1046-1128; CLAIM claim:e5061e9956aa43aa-8f4c3087c78c3e7e).",
+        "Gilbert et al. (2016) re-analysis of OSC data: argued that OSC data are consistent with high reproducibility in psychology (context states this as a contrasting conclusion, but no specific citation provided in the given context)."
+      ]
+    }
+  },
+  {
+    "sampleId": "sample-c108709c-6726-4de3-8791-bde8d48d016f",
+    "questionId": "C-A-PSYCH-001",
+    "answer": "{\"answer\":\"检索上下文未提供关于心理学可复制性的任何信息，所有内容均涉及气候变化与能源政策。因此无法基于当前材料判断心理学的可复制性。\",\"citations\":[],\"insufficient\":true,\"uncertainties\":[\"检索上下文完全未涉及心理学学科，缺乏任何关于心理学可复制性的研究、数据或讨论。\"]}",
+    "citationValidation": {
+      "valid": true,
+      "citationCount": 0,
+      "invalid": []
+    }
+  },
+  {
+    "sampleId": "sample-f14a3936-8b1d-40ab-b1de-8e44bf8c5fbd",
+    "questionId": "C-A-PSYCH-001",
+    "answer": "{\n  \"answer\": \"检索上下文未提供任何关于心理学可复制性的信息，所有内容均涉及气候变化与能源政策。因此无法基于当前材料判断心理学的可复制性。\",\n  \"citations\": [],\n  \"insufficient\": true,\n  \"uncertainties\": [\"检索上下文完全未涉及心理学学科，缺乏任何相关数据、研究或讨论。\"]\n}",
+    "citationValidation": {
+      "valid": true,
+      "citationCount": 0,
+      "invalid": []
+    }
+  },
+  {
+    "sampleId": "sample-9f4d2b72-8b3c-4991-a57d-9d4ec90765ad",
+    "questionId": "C-A-PSYCH-001",
+    "answer": "{\n  \"answer\": \"根据现有材料，无法对心理学整体学科的可复制性给出确定性结论。材料仅提及可复制性危机，但未提供系统性证据或量化数据。\",\n  \"citations\": [],\n  \"insufficient\": true,\n  \"uncertainties\": [\n    \"缺乏心理学各子领域可复制性的系统性评估数据\",\n    \"未提供可复制性危机的具体研究案例或元分析结果\",\n    \"缺少对可复制性高低判断的量化标准或比较基准\"\n  ]\n}",
+    "citationValidation": {
+      "valid": true,
+      "citationCount": 0,
+      "invalid": []
+    }
+  },
+  {
+    "sampleId": "sample-9b8a493c-6e5e-4435-82af-d3b5d4d185b7",
+    "questionId": "C-F-CLIMATE-001",
+    "answer": "{\n  \"answer\": \"2011-2020年全球地表温度比1850-1900年升高了1.1°C。IPCC用“unequivocally”（明确地）来描述人类活动对全球变暖的因果作用。\",\n  \"citations\": [\n    \"claim:b26d226f500be322-f7176840d8e3309c\",\n    \"claim:b26d226f500be322-bb2a4c546264d226\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}",
+    "citationValidation": {
+      "valid": true,
+      "citationCount": 2,
+      "invalid": []
+    }
+  },
+  {
+    "sampleId": "sample-3589c3f1-61ae-467a-a0cf-2e19d42265e0",
+    "questionId": "C-F-CLIMATE-001",
+    "answer": "{\n  \"answer\": \"根据IPCC AR6综合报告(2023)，2011-2020年全球地表温度相对于1850-1900年基准上升了1.1°C。IPCC使用“unequivocally”（明确地）一词来描述人类活动对全球变暖的因果作用。\",\n  \"citations\": [\n    \"claim:b26d226f500be322-f7176840d8e3309c\",\n    \"claim:b26d226f500be322-bb2a4c546264d226\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}",
+    "citationValidation": {
+      "valid": true,
+      "citationCount": 2,
+      "invalid": []
+    }
+  },
+  {
+    "sampleId": "sample-029f0443-fa91-4a09-ae86-5b1e9aebdb98",
+    "questionId": "C-F-CLIMATE-001",
+    "answer": "{\n  \"answer\": \"全球地表温度在2011-2020年间相对于1850-1900年基准上升了1.1°C。IPCC用“unequivocally”（明确地）来描述人类活动对全球变暖的因果作用。\",\n  \"citations\": [\n    \"c-climate-001.md:30-33\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}",
+    "citationValidation": {
+      "valid": true,
+      "citationCount": 1,
+      "invalid": []
+    }
+  },
+  {
+    "sampleId": "sample-0f605e6b-d2f6-403c-9e46-e34195946614",
+    "questionId": "C-C-CLIMATE-001",
+    "answer": "{\n  \"answer\": \"欧盟气候法（Regulation 2021/1119）第4条第1款规定，净清除量（natural sinks）对2030年减排目标的贡献上限为2.25亿吨CO2当量。该上限的政策意义在于确保到2030年投入足够的减排努力，优先实现快速且可预测的排放削减，同时增强自然碳汇的清除作用，避免过度依赖碳汇而削弱实际减排行动。\",\n  \"citations\": [\n    \"SOURCE ../stage-a-freeze/compilation-corpus/climate-energy-policy/c-climate-002.md:36-43\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}",
+    "citationValidation": {
+      "valid": true,
+      "citationCount": 1,
+      "invalid": []
+    }
+  },
+  {
+    "sampleId": "sample-322d4553-844c-45df-afa2-5275c3871220",
+    "questionId": "C-C-CLIMATE-001",
+    "answer": "{\n  \"answer\": \"根据提供的上下文，欧盟气候法（Regulation 2021/1119）并未明确规定2030年减排目标中净清除量（natural sinks）对目标实现的贡献上限。上下文仅提及在实施2030年目标时，相关欧盟机构和成员国应优先考虑快速且可预测的减排，并同时增强自然汇的清除量（EVIDENCE span:c-climate-002-83071555dd80fcef-9#chars-1420-1658），但未设定具体上限。因此，无法从给定上下文中确定该上限及其政策意义。\",\n  \"citations\": [\"span:c-climate-002-83071555dd80fcef-9#chars-1420-1658\"],\n  \"insufficient\": true,\n  \"uncertainties\": [\"欧盟气候法是否规定了净清除量的具体贡献上限，以及该上限的政策意义，在提供的上下文中未提及。\"]\n}",
+    "citationValidation": {
+      "valid": true,
+      "citationCount": 1,
+      "invalid": []
+    }
+  },
+  {
+    "sampleId": "sample-a5079d79-8bcc-4231-90ee-f78f9c0d3f61",
+    "questionId": "C-C-CLIMATE-001",
+    "answer": "{\n  \"answer\": \"根据检索上下文，欧盟气候法（Regulation 2021/1119）未明确规定2030年减排目标中净清除量（natural sinks）对目标实现的贡献上限。上下文仅提及在实施2030年目标时，相关欧盟机构和成员国应优先考虑快速且可预测的减排，并同时增强自然汇的清除量（claim:83071555dd80fcef-2c5ae34671163a9c），但未设定具体数值上限。因此，无法从给定上下文中确定该上限及其政策意义。\",\n  \"citations\": [\"claim:83071555dd80fcef-2c5ae34671163a9c\"],\n  \"insufficient\": true,\n  \"uncertainties\": [\"欧盟气候法是否规定了净清除量的具体贡献上限，以及该上限的政策意义，在检索上下文中均未提及。\"]\n}",
+    "citationValidation": {
+      "valid": true,
+      "citationCount": 1,
+      "invalid": []
+    }
+  },
+  {
+    "sampleId": "sample-e0028505-3d6c-4568-bbd1-62a611d444f5",
+    "questionId": "C-T-CLIMATE-001",
+    "answer": "{\n  \"answer\": \"欧盟气候法最初（2021年）只设定了2030年和2050年目标。2040年目标的法定化过程始于2024年欧盟委员会发布影响评估，详细说明了围绕2040年减排目标的定性分析（claim:0edc89a8f2de72a2-09f6d31a030a9377）。该评估与欧洲气候变化科学咨询委员会的报告及联合国政府间气候变化专门委员会的建议共同构成了90%减排目标的基础（claim:0edc89a8f2de72a2-07323a3fd50f07bb）。2026年合并版本中新增的2040年目标具体是：到2040年将欧盟温室气体净排放量在1990年水平基础上削减90%。Carbon Brief描述了围绕该目标的政治争议：某些欧洲国家向委员会施压要求改变或调整2040年目标，导致原定于2月发布的提案被推迟（claim:0edc89a8f2de72a2-0bceee8405f1bef2）。例如，意大利呼吁削弱该目标，法国要求引入“灵活性”（claim:0edc89a8f2de72a2-88b76c4683f14636, claim:0edc89a8f2de72a2-ba3f0dfaa71f44d6）。最受关注的灵活性措施是允许从2036年开始有限使用《巴黎协定》第6条下的国际碳信用（claim:0edc89a8f2de72a2-2956da6b48b7727b）。\",\n  \"citations\": [\n    \"claim:0edc89a8f2de72a2-09f6d31a030a9377\",\n    \"claim:0edc89a8f2de72a2-07323a3fd50f07bb\",\n    \"claim:0edc89a8f2de72a2-0bceee8405f1bef2\",\n    \"claim:0edc89a8f2de72a2-88b76c4683f14636\",\n    \"claim:0edc89a8f2de72a2-ba3f0dfaa71f44d6\",\n    \"claim:0edc89a8f2de72a2-2956da6b48b7727b\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}",
+    "citationValidation": {
+      "valid": true,
+      "citationCount": 6,
+      "invalid": []
+    }
+  },
+  {
+    "sampleId": "sample-6635264a-cce6-4ba3-a3dd-2ea6e2a5486e",
+    "questionId": "C-T-CLIMATE-001",
+    "answer": "{\n  \"answer\": \"欧盟气候法最初（2021年）仅设定了2030年和2050年目标。2040年目标的法定化过程始于2024年欧盟委员会发布影响评估，并基于欧洲科学咨询委员会和IPCC的建议，最终在2025年2月由欧盟委员会提出将2040年减排目标定为90%（相对于1990年）。2026年合并版本中新增的2040年目标具体为：到2040年，欧盟境内温室气体净排放量比1990年减少90%，但允许从2036年起有限使用国际碳信用，这意味着欧盟境内实际减排量可能仅为87%，其余3%通过海外减排实现。Carbon Brief描述围绕该目标的政治争议时指出，欧洲科学咨询委员会在提案发布时罕见地介入，表示不应将国际碳信用计入2040年目标，认为这会“破坏国内价值创造，将资源从欧盟经济必要的转型中转移出去”。\",\n  \"citations\": [\n    \"c-climate-003:29-36\",\n    \"c-climate-003:41-44\",\n    \"c-climate-003:45-48\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}",
+    "citationValidation": {
+      "valid": false,
+      "citationCount": 3,
+      "invalid": [
+        "c-climate-003:29-36",
+        "c-climate-003:41-44",
+        "c-climate-003:45-48"
+      ]
+    }
+  },
+  {
+    "sampleId": "sample-d0f665fd-0033-4a8a-9820-071528f0007b",
+    "questionId": "C-T-CLIMATE-001",
+    "answer": "{\n  \"answer\": \"欧盟气候法最初（2021年）只设定了2030年和2050年目标。2040年目标的法定化过程始于2024年欧盟委员会发布影响评估，详细说明了围绕2040年减排目标的定性分析。该评估与欧洲气候变化科学咨询委员会的报告及联合国政府间气候变化专门委员会的建议共同构成了90%减排目标的基础。2026年合并版本中新增的2040年目标具体是：到2040年将温室气体排放量在1990年水平基础上减少90%。Carbon Brief描述了围绕该目标的政治争议：某些欧洲国家向委员会施压，要求改变或调整2040年目标，导致原定于2025年2月发布的提案被推迟。此外，最受关注的灵活性措施是允许从2036年起有限使用《巴黎协定》第6条下的国际碳信用。\",\n  \"citations\": [\n    \"claim:0edc89a8f2de72a2-09f6d31a030a9377\",\n    \"claim:0edc89a8f2de72a2-07323a3fd50f07bb\",\n    \"claim:0edc89a8f2de72a2-0bceee8405f1bef2\",\n    \"claim:0edc89a8f2de72a2-2956da6b48b7727b\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}",
+    "citationValidation": {
+      "valid": true,
+      "citationCount": 4,
+      "invalid": []
+    }
+  },
+  {
+    "sampleId": "sample-814a33d2-3895-4d9b-8dbc-6692ef24c966",
+    "questionId": "C-X-CLIMATE-001",
+    "answer": "{\n  \"answer\": \"检索上下文未提供欧盟气候法2030年（至少55%减排）和2040年（90%减排）目标的具体位置，也未提供欧盟当前政策实施进度与这些目标一致性的信息。IPCC AR6指出当前NDC承诺很可能使升温超过1.5°C，IEA WEO 2023的STEPS情景预测升温约2.4°C，但未提及欧盟目标相对于这两个评估的位置。\",\n  \"citations\": [],\n  \"insufficient\": true,\n  \"uncertainties\": [\n    \"欧盟气候法目标在IPCC和IEA评估之间的具体位置未知\",\n    \"欧盟当前政策实施进度与法律目标的一致性未知\"\n  ]\n}",
+    "citationValidation": {
+      "valid": true,
+      "citationCount": 0,
+      "invalid": []
+    }
+  },
+  {
+    "sampleId": "sample-ba733ed5-3937-406a-9160-43e713a8783b",
+    "questionId": "C-X-CLIMATE-001",
+    "answer": "{\n  \"answer\": \"检索上下文未提供欧盟气候法2030年（至少55%减排）和2040年（90%减排）目标的具体位置，也未提供欧盟当前政策实施进度的评估。因此无法判断这些目标在IPCC AR6和IEA WEO 2023情景之间的位置，也无法判断政策实施进度是否与法律目标一致。\",\n  \"citations\": [],\n  \"insufficient\": true,\n  \"uncertainties\": [\n    \"缺乏欧盟气候法目标与IPCC AR6或IEA WEO 2023情景的直接比较数据\",\n    \"缺乏欧盟当前政策实施进度的评估数据\"\n  ]\n}",
+    "citationValidation": {
+      "valid": true,
+      "citationCount": 0,
+      "invalid": []
+    }
+  },
+  {
+    "sampleId": "sample-5a9f385c-e582-4242-a552-587879c9d05c",
+    "questionId": "C-X-CLIMATE-001",
+    "answer": "{\n  \"answer\": \"欧盟气候法的2030年目标（至少55%减排）和2040年目标（90%减排）位于IPCC AR6 NDC升温超过1.5℃与IEA WEO 2023 STEPS升温约2.4℃之间，但当前政策实施进度与法律目标不一致：即使所有计划政策实施，2030年排放预计仅下降48%，低于55%目标。\",\n  \"citations\": [\n    \"c-climate-001:38-41\",\n    \"c-climate-004:30-35\",\n    \"c-climate-002:36-43\",\n    \"c-climate-003:37-40\",\n    \"c-climate-003:53-56\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": [\n    \"2040年目标尚未立法，仅基于2024年提案和影响评估\",\n    \"当前政策实施进度数据来自2025年分析，可能已更新\"\n  ]\n}",
+    "citationValidation": {
+      "valid": false,
+      "citationCount": 5,
+      "invalid": [
+        "c-climate-001:38-41",
+        "c-climate-004:30-35",
+        "c-climate-002:36-43",
+        "c-climate-003:37-40",
+        "c-climate-003:53-56"
+      ]
+    }
+  },
+  {
+    "sampleId": "sample-1842f85c-feb9-493b-9d74-5c13eced1580",
+    "questionId": "C-K-CLIMATE-001",
+    "answer": "{\n  \"answer\": \"欧洲气候变化科学咨询委员会反对使用国际碳信用额，理由是“使用国际碳信用额来部分实现2040年目标，可能会削弱国内价值创造，因为这会从欧盟经济必要的转型中转移资源”。这一分歧揭示了科学建议与政治决策之间的张力：科学咨询委员会基于气候目标的完整性和国内转型的必要性提出反对，而政治决策者（欧盟委员会）则出于政治压力（如意大利要求削弱目标、法国要求灵活性）引入灵活性机制，体现了科学严谨性与政治可行性之间的冲突。\",\n  \"citations\": [\n    \"SOURCE ../stage-a-freeze/compilation-corpus/climate-energy-policy/c-climate-003.md:45-48\",\n    \"SOURCE ../stage-a-freeze/compilation-corpus/climate-energy-policy/c-climate-003.md:49-52\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}",
+    "citationValidation": {
+      "valid": true,
+      "citationCount": 2,
+      "invalid": []
+    }
+  },
+  {
+    "sampleId": "sample-20c28f3f-5cc2-4222-84f4-92154263d51c",
+    "questionId": "C-K-CLIMATE-001",
+    "answer": "{\n  \"answer\": \"根据提供的检索上下文，没有直接提及欧洲气候变化科学咨询委员会反对使用国际碳信用额的理由，也没有讨论科学建议与政治决策之间的张力。上下文仅提到欧盟委员会提议允许从2036年开始有限使用国际碳信用额（Article 6 of Paris Agreement），但未包含咨询委员会的反对意见或相关分析。因此，无法回答该问题。\",\n  \"citations\": [],\n  \"insufficient\": true,\n  \"uncertainties\": [\"检索上下文未包含欧洲气候变化科学咨询委员会的反对理由及科学建议与政治决策张力的相关信息。\"]\n}",
+    "citationValidation": {
+      "valid": true,
+      "citationCount": 0,
+      "invalid": []
+    }
+  },
+  {
+    "sampleId": "sample-0d2fd9cf-3976-43a3-969f-95d29e3adba6",
+    "questionId": "C-K-CLIMATE-001",
+    "answer": "{\n  \"answer\": \"检索上下文未提供欧洲气候变化科学咨询委员会反对使用国际碳信用额的具体理由，也未讨论科学建议与政治决策之间的张力。因此无法回答。\",\n  \"citations\": [],\n  \"insufficient\": true,\n  \"uncertainties\": [\"检索上下文缺少咨询委员会的反对理由及对科学-政治张力的分析。\"]\n}",
+    "citationValidation": {
+      "valid": true,
+      "citationCount": 0,
+      "invalid": []
+    }
+  },
+  {
+    "sampleId": "sample-34ccd64a-67c0-40e8-9324-0587c03391ed",
+    "questionId": "C-A-CLIMATE-001",
+    "answer": "{\n  \"answer\": \"材料未直接评估欧盟能否在2050年前实现气候中和，但提供了相关全球背景。充分证据支持：清洁能源转型不可阻挡（claim:c15bf91ea851c3be-d4fc52ac12640010），关键减排行动成本效益高（claim:c15bf91ea851c3be-5dad9e8253a8a18a），但当前政策下排放仍将导致升温约2.4°C（claim:c15bf91ea851c3be-f2794c0130f4aee6），且现有化石燃料基础设施排放将超出1.5°C碳预算（claim:b26d226f500be322-398ef16d4b0abfcd）。关键变量超出覆盖范围：欧盟具体政策、国家自主贡献（NDCs）实施细节、资金流充足性、技术部署速度及社会接受度等。\",\n  \"citations\": [\n    \"claim:c15bf91ea851c3be-d4fc52ac12640010\",\n    \"claim:c15bf91ea851c3be-5dad9e8253a8a18a\",\n    \"claim:c15bf91ea851c3be-f2794c0130f4aee6\",\n    \"claim:b26d226f500be322-398ef16d4b0abfcd\"\n  ],\n  \"insufficient\": true,\n  \"uncertainties\": [\n    \"欧盟具体政策路径与执行力度\",\n    \"国家自主贡献（NDCs）的更新与实施\",\n    \"资金流是否达到所需水平\",\n    \"清洁能源技术部署速度与成本下降\",\n    \"社会与政治接受度\"\n  ]\n}",
+    "citationValidation": {
+      "valid": true,
+      "citationCount": 4,
+      "invalid": []
+    }
+  },
+  {
+    "sampleId": "sample-87c531ed-1e1a-4a68-8878-4575534f2f69",
+    "questionId": "C-A-CLIMATE-001",
+    "answer": "{\n  \"answer\": \"根据材料，欧盟在法律上设定了2050年前实现气候中和的目标，要求温室气体排放与清除平衡，并旨在之后实现负排放。材料明确规定了这一目标，但未提供实现该目标的具体路径、当前进展或障碍的证据。因此，基于现有材料，无法判断欧盟能否在2050年前实现气候中和。\",\n  \"citations\": [\n    \"SOURCE ../stage-a-freeze/compilation-corpus/climate-energy-policy/c-climate-002.md:30-35\"\n  ],\n  \"insufficient\": true,\n  \"uncertainties\": [\n    \"材料未提供实现目标的具体措施、当前排放趋势、技术可行性、经济成本或政治意愿等关键变量。\"\n  ]\n}",
+    "citationValidation": {
+      "valid": true,
+      "citationCount": 1,
+      "invalid": []
+    }
+  },
+  {
+    "sampleId": "sample-87786e1c-f558-4af8-8635-00326bc02632",
+    "questionId": "C-A-CLIMATE-001",
+    "answer": "{\n  \"answer\": \"材料未直接评估欧盟能否在2050年前实现气候中和，但提供了相关全球背景。支持因素：清洁能源技术势头和结构性经济转变使全球煤炭、石油和天然气需求峰值在本十年内可见（EVIDENCE span:c-climate-004-c15bf91ea851c3be-12#chars-1857-2183）；STEPS预测能源相关CO2排放在2020年代中期达峰（EVIDENCE span:c-climate-004-c15bf91ea851c3be-5#chars-383-453）；到2030年使排放曲线向下弯曲的关键行动已广为人知且成本效益高（EVIDENCE span:c-climate-004-c15bf91ea851c3be-6#chars-555-681）。制约因素：已实施政策下的预计排放与国家自主贡献之间存在差距，资金流未达到所需水平（EVIDENCE span:c-climate-001-b26d226f500be322-9#chars-1929-2139）；STEPS预测排放仍将导致2100年升温约2.4°C（EVIDENCE span:c-climate-004-c15bf91ea851c3be-5#chars-458-551）。关键变量超出覆盖范围：材料未提供欧盟具体政策、减排路径、技术部署或资金承诺的详细分析，也未评估欧盟内部政治、经济或社会可行性。\",\n  \"citations\": [\n    \"span:c-climate-004-c15bf91ea851c3be-12#chars-1857-2183\",\n    \"span:c-climate-004-c15bf91ea851c3be-5#chars-383-453\",\n    \"span:c-climate-004-c15bf91ea851c3be-6#chars-555-681\",\n    \"span:c-climate-001-b26d226f500be322-9#chars-1929-2139\",\n    \"span:c-climate-004-c15bf91ea851c3be-5#chars-458-551\"\n  ],\n  \"insufficient\": true,\n  \"uncertainties\": [\n    \"材料未提供欧盟2050年气候中和目标的直接评估\",\n    \"缺乏欧盟具体政策、减排路径、技术部署和资金承诺的详细分析\",\n    \"未涉及欧盟内部政治、经济或社会可行性\"\n  ]\n}",
+    "citationValidation": {
+      "valid": true,
+      "citationCount": 5,
+      "invalid": []
+    }
+  },
+  {
+    "sampleId": "sample-e1ef7914-98a8-4654-aafc-1470e0f877ba",
+    "questionId": "C-F-LAW-001",
+    "answer": "{\n  \"answer\": \"根据 EU AI Act，被归类为不可接受风险的 AI 实践包括：使用潜意识技术造成伤害；利用年龄、残疾或社会/经济状况的脆弱性；社会评分；基于画像的预测性警务；无针对性地抓取面部图像；在工作场所或教育环境中进行情绪推断；对敏感特征进行生物特征分类；以及执法中实时远程生物特征识别（有狭窄例外）。对这些违规行为的最高罚款未在提供的上下文中明确说明。\",\n  \"citations\": [\"../stage-a-freeze/compilation-corpus/law-public-policy/c-law-001.md:35-46\"],\n  \"insufficient\": true,\n  \"uncertainties\": [\"最高罚款金额未在检索上下文中提供\"]\n}",
+    "citationValidation": {
+      "valid": true,
+      "citationCount": 1,
+      "invalid": []
+    }
+  },
+  {
+    "sampleId": "sample-88f56c14-c8ad-4cd5-bbec-4c3c81677bb6",
+    "questionId": "C-F-LAW-001",
+    "answer": "{\n  \"answer\": \"根据 EU AI Act (Regulation 2024/1689)，被归类为不可接受风险的 AI 实践包括：使用潜意识技术造成伤害；利用年龄、残疾或社会/经济状况的脆弱性；社会评分；基于画像的预测性警务；无针对性地抓取面部图像；在工作场所或教育环境中推断情绪；基于敏感特征的生物特征分类；以及用于执法的实时远程生物特征识别（有狭窄例外）。对这些违规行为的最高罚款未在提供的上下文中明确说明。\",\n  \"citations\": [\"claim:1e61c7154b59a8af-586c0b4788cea75b\", \"span:c-law-001-1e61c7154b59a8af-8#chars-1257-1704\"],\n  \"insufficient\": true,\n  \"uncertainties\": [\"最高罚款金额未在上下文中提供\"]\n}",
+    "citationValidation": {
+      "valid": true,
+      "citationCount": 2,
+      "invalid": []
+    }
+  },
+  {
+    "sampleId": "sample-12023bee-71be-4bb7-95c0-117f2fce7874",
+    "questionId": "C-F-LAW-001",
+    "answer": "{\n  \"answer\": \"根据 EU AI Act (Regulation 2024/1689)，被归类为不可接受风险的 AI 实践包括：使用潜意识技术造成伤害；利用年龄、残疾或社会/经济状况的脆弱性；社会评分；基于画像的预测性警务；无针对性地抓取面部图像；工作场所或教育中的情绪推断；基于敏感特征的生物特征分类；以及用于执法的实时远程生物特征识别（有狭窄例外）。对这些违规行为的最高罚款未在提供的上下文中明确说明。\",\n  \"citations\": [\n    \"claim:1e61c7154b59a8af-586c0b4788cea75b\",\n    \"span:c-law-001-1e61c7154b59a8af-8#chars-1257-1704\"\n  ],\n  \"insufficient\": true,\n  \"uncertainties\": [\n    \"最高罚款金额未在提供的检索上下文中提及。\"\n  ]\n}",
+    "citationValidation": {
+      "valid": true,
+      "citationCount": 2,
+      "invalid": []
+    }
+  },
+  {
+    "sampleId": "sample-ab81ab8d-29b1-4119-95bd-ebf618708399",
+    "questionId": "C-C-LAW-001",
+    "answer": "{\n  \"answer\": \"EU AI Act 采用四级风险分类。不可接受风险实践的禁令自2024年8月2日生效（法案生效日）。Annex III 高风险AI系统的规则于2026年8月2日生效。Annex I 产品相关高风险AI系统的规则于2027年8月2日生效。\",\n  \"citations\": [\n    \"claim:1e61c7154b59a8af-5d4298ea38bc4dd6\",\n    \"claim:1e61c7154b59a8af-73fa3ab27414cda8\",\n    \"claim:1e61c7154b59a8af-6701affdd23f4d99\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}",
+    "citationValidation": {
+      "valid": true,
+      "citationCount": 3,
+      "invalid": []
+    }
+  },
+  {
+    "sampleId": "sample-c7ed7e3f-4bbe-4dd5-a6c0-8228456a3083",
+    "questionId": "C-C-LAW-001",
+    "answer": "{\n  \"answer\": \"EU AI Act 采用分阶段实施策略。不可接受风险实践的禁令于 2025 年 2 月 2 日生效。Annex III 高风险 AI 系统的规则于 2026 年 8 月 2 日生效。产品相关高风险 AI 系统（Annex I）的规则于 2027 年 8 月 2 日生效。\",\n  \"citations\": [\n    \"c-law-001.md:51-57\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}",
+    "citationValidation": {
+      "valid": true,
+      "citationCount": 1,
+      "invalid": []
+    }
+  },
+  {
+    "sampleId": "sample-666fdf21-cc60-4882-bf6e-a8fcbac37551",
+    "questionId": "C-C-LAW-001",
+    "answer": "{\n  \"answer\": \"EU AI Act 于 2024 年 8 月 2 日生效，采用四级风险分类。不可接受风险实践的禁令自生效之日起适用（2024 年 8 月 2 日）。Annex III 高风险 AI 系统的规则于 2026 年 8 月 2 日生效。Annex I 产品相关高风险 AI 系统的规则于 2027 年 8 月 2 日生效。\",\n  \"citations\": [\n    \"claim:1e61c7154b59a8af-5d4298ea38bc4dd6\",\n    \"claim:1e61c7154b59a8af-1cf8a28c3d29fe57\",\n    \"claim:1e61c7154b59a8af-586c0b4788cea75b\",\n    \"claim:1e61c7154b59a8af-73fa3ab27414cda8\",\n    \"claim:1e61c7154b59a8af-6701affdd23f4d99\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}",
+    "citationValidation": {
+      "valid": true,
+      "citationCount": 5,
+      "invalid": []
+    }
+  },
+  {
+    "sampleId": "sample-1a25fb1b-6833-4f1a-a614-01d940bd9043",
+    "questionId": "C-T-LAW-001",
+    "answer": "{\n  \"answer\": \"根据提供的上下文，仅包含Meta在2023年1月因个性化广告法律依据被罚€3.9亿的信息（claim:1544b1a2018c598c-4bee6f12e0491f2d），未提及2023年5月的€12亿罚款及后续演变。上下文不足以描述执法行动的完整演变过程，也无法分析GDPR执行机制中的张力。\",\n  \"citations\": [\"claim:1544b1a2018c598c-4bee6f12e0491f2d\"],\n  \"insufficient\": true,\n  \"uncertainties\": [\"缺乏2023年5月€12亿罚款及后续执法行动的信息\", \"无法评估GDPR执行机制中的张力\"]\n}",
+    "citationValidation": {
+      "valid": true,
+      "citationCount": 1,
+      "invalid": []
+    }
+  },
+  {
+    "sampleId": "sample-9240d045-2b1a-4977-9fc9-c64eba2b5b58",
+    "questionId": "C-T-LAW-001",
+    "answer": "{\n  \"answer\": \"爱尔兰 DPC 对 Meta 的执法行动经历了从2023年1月 €3.9亿罚款（针对个性化广告法律依据）到2023年5月 €12亿罚款（针对数据跨境传输）的演变。两次执法分别涉及不同的 GDPR 条款和争议焦点。这些执法行动揭示了 GDPR 执行机制中“一站式”领导监管机构（如爱尔兰 DPC）与其他欧盟监管机构之间的协调张力，以及罚款金额与违规严重性之间的平衡问题。\",\n  \"citations\": [\n    \"claim:1544b1a2018c598c-4bee6f12e0491f2d\",\n    \"claim:1544b1a2018c598c-98cc95adbf147673\",\n    \"claim:1544b1a2018c598c-ceb8f2e6b5e1fec8\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": [\n    \"上下文未提供 €12亿罚款的具体细节，仅提及 €3.9亿罚款；€12亿罚款信息来自问题本身，未在检索上下文中确认。\"\n  ]\n}",
+    "citationValidation": {
+      "valid": true,
+      "citationCount": 3,
+      "invalid": []
+    }
+  },
+  {
+    "sampleId": "sample-04a5e635-3ef3-4ca4-8897-c64b0b64a50b",
+    "questionId": "C-T-LAW-001",
+    "answer": "{\n  \"answer\": \"爱尔兰 DPC 对 Meta 的执法行动经历了从2023年1月针对个性化广告法律依据的 €3.9亿罚款（涉及 GDPR 第5(1)(a)、6(1)、12、13(1)(c)条），到2023年5月针对数据跨境传输的 €12亿罚款（涉及 GDPR 第46(1)条）的演变。两次执法分别聚焦于不同的 GDPR 条款和争议焦点：前者涉及 Meta 依赖“合同必要性”作为个性化广告的法律基础，被 EDPB 认定为无效，要求用户同意；后者涉及 Meta 依据标准合同条款（SCCs）向美国传输数据，但 DPC 认定美国法律未提供充分保护，SCCs 无法弥补这一缺陷，且 Meta 不能依赖第49条减损条款。这些执法行动揭示了 GDPR 执行机制中的张力：一方面，DPC 作为主导监管机构最初倾向于仅发布暂停令而不罚款，但 EDPB 通过第65条争议解决机制强制要求罚款并处理已传输数据，体现了 GDPR 下主导监管机构与 EDPB 之间的权力平衡与冲突；另一方面，罚款金额从 €3.9亿到 €12亿的跃升，以及 EDPB 推翻 DPC 的初步决定，凸显了 GDPR 执行中地方监管机构与欧盟层面机构在执法力度和解释上的分歧。\",\n  \"citations\": [\n    \"c-law-004.md:38-43\",\n    \"c-law-002.md:32-37\",\n    \"c-law-002.md:38-47\",\n    \"c-law-003.md:45-50\",\n    \"c-law-002.md:60-63\",\n    \"c-law-003.md:51-54\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": [\n    \"两次执法行动之间是否存在直接因果或程序关联尚不明确\",\n    \"Meta 对两次罚款的上诉结果及后续影响未在上下文中提供\"\n  ]\n}",
+    "citationValidation": {
+      "valid": true,
+      "citationCount": 6,
+      "invalid": []
+    }
+  },
+  {
+    "sampleId": "sample-2e5e4ece-c2b9-42a2-b9aa-54d3c391b7f3",
+    "questionId": "C-X-LAW-001",
+    "answer": "{\n  \"answer\": \"在2023年1月关于个性化广告的案件中，Meta依赖“合同必要性”（GDPR第6(1)(b)条）作为法律依据。GDPRhub的分析认为这不成立，因为用户接受更新后的服务条款并不构成合同，且数据处理并非提供服务的必要，用户同意才是必需的。在2023年5月关于数据跨境传输的案件中，Meta依赖标准合同条款（SCCs）和GDPR第49(1)条的例外。GDPRhub的分析认为SCCs不能弥补美国法律保护不足，且第49条例外仅适用于偶尔和非重复的传输，而Meta的传输是持续和大规模的。这体现了GDPR对合同必要性的严格解释：仅当数据处理是履行合同核心目的所必需时才合法，而非用于个性化广告等附加目的；对标准合同条款的严格解释：SCCs本身不能确保充分保护，必须结合补充措施，且不能依赖例外进行大规模传输。\",\n  \"citations\": [\n    \"c-law-004.md:38-43\",\n    \"c-law-003.md:37-40\",\n    \"c-law-003.md:45-50\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}",
+    "citationValidation": {
+      "valid": true,
+      "citationCount": 3,
+      "invalid": []
+    }
+  },
+  {
+    "sampleId": "sample-8425b48e-8372-43cf-a6e0-908d592ceb16",
+    "questionId": "C-X-LAW-001",
+    "answer": "{\n  \"answer\": \"在2023年1月（个性化广告）和5月（数据跨境传输）两起GDPR执法案件中，Meta分别试图依赖合同必要性（个性化广告）和标准合同条款（SCCs）及第49条例外（数据跨境传输）作为法律依据。GDPRhub的分析认为：对于个性化广告，合同必要性不成立，因为处理个人数据用于广告并非履行合同所必需；对于数据跨境传输，SCCs无法弥补美国缺乏等效数据保护水平的问题，且第49条例外仅适用于“偶尔且非重复性”的传输，而Meta的业务模式涉及大规模持续传输。这体现了GDPR对合同必要性的严格解释（仅限于履行合同所必需的处理）以及对SCCs的严格解释（要求接收国提供等效保护，否则SCCs不足以作为充分保障）。\",\n  \"citations\": [\n    \"claim:d00060ca8deb0a46-7ec31cc118e6c394\",\n    \"claim:d00060ca8deb0a46-c0210a1b9ff254ba\",\n    \"evidence:span:c-law-003-d00060ca8deb0a46-13#chars-2117-2396\",\n    \"evidence:span:c-law-003-d00060ca8deb0a46-8#chars-1146-1349\",\n    \"evidence:span:c-law-003-d00060ca8deb0a46-12#chars-1915-2113\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}",
+    "citationValidation": {
+      "valid": false,
+      "citationCount": 5,
+      "invalid": [
+        "evidence:span:c-law-003-d00060ca8deb0a46-13#chars-2117-2396",
+        "evidence:span:c-law-003-d00060ca8deb0a46-8#chars-1146-1349",
+        "evidence:span:c-law-003-d00060ca8deb0a46-12#chars-1915-2113"
+      ]
+    }
+  },
+  {
+    "sampleId": "sample-e543a10c-6b95-4e5e-90d6-5ae92a777ad9",
+    "questionId": "C-X-LAW-001",
+    "answer": "{\n  \"answer\": \"在2023年1月关于个性化广告的案件中，Meta试图依赖合同必要性（contractual necessity）作为法律依据；在2023年5月关于数据跨境传输的案件中，Meta试图依赖标准合同条款（SCCs）和GDPR第49条的豁免条款。GDPRhub的分析认为，合同必要性不成立，因为个性化广告并非履行合同所必需；标准合同条款不能弥补美国法律缺乏等效保护的问题，且第49条豁免仅适用于“偶尔且非重复性”的传输，而Meta的业务模式涉及大规模持续传输。这体现了GDPR对合同必要性的严格解释（仅限于履行合同所必需的数据处理）以及对标准合同条款的严格解释（要求补充措施确保等效保护，且不能依赖第49条豁免进行大规模传输）。\",\n  \"citations\": [\n    \"c-law-003-d00060ca8deb0a46-8\",\n    \"c-law-003-d00060ca8deb0a46-12\",\n    \"c-law-003-d00060ca8deb0a46-13\",\n    \"c-law-002-f1df14c75b8f61cf-9\",\n    \"c-law-002-f1df14c75b8f61cf-10\",\n    \"c-law-002-f1df14c75b8f61cf-11\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}",
+    "citationValidation": {
+      "valid": true,
+      "citationCount": 6,
+      "invalid": []
+    }
+  },
+  {
+    "sampleId": "sample-b1368cd3-6781-4607-97dc-499572e7f35b",
+    "questionId": "C-K-LAW-001",
+    "answer": "{\n  \"answer\": \"该分歧反映了GDPR一站式机制中LSA（主监管机构）与EDPB及其他CSA（相关监管机构）之间在制裁裁量权上的结构性张力：LSA倾向于采取最低必要干预（如仅暂停传输），而EDPB和CSA则主张必须施加威慑性罚款并处理已传输数据，以确保GDPR的有效执行和一致性。GDPRhub的分析批评DPC最初认为罚款不必要且不成比例的立场，指出DPC声称暂停传输已足够、罚款会过度，并辩称Schrems II判决首次解决复杂法律问题，但EDPB认定违规非常严重（系统性、重复性、持续性），最终通过第65条约束DPC。\",\n  \"citations\": [\n    \"c-law-002.md:60-63\",\n    \"c-law-003.md:51-54\",\n    \"c-law-002.md:56-59\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}",
+    "citationValidation": {
+      "valid": true,
+      "citationCount": 3,
+      "invalid": []
+    }
+  },
+  {
+    "sampleId": "sample-1dc6090b-cdb8-4fbf-a952-8cda590a66d7",
+    "questionId": "C-K-LAW-001",
+    "answer": "{\n  \"answer\": \"这一分歧反映了 GDPR 一站式机制中牵头监管机构（LSA）与 EDPB 及其他相关监管机构（CSA）之间的结构性张力：LSA 倾向于采取较轻的执法措施（如暂停传输），而 EDPB 通过具有约束力的争议解决机制（第 65 条）强制要求罚款并处理已传输数据，凸显了 LSA 裁量权与 EDPB 统一执法目标之间的冲突。GDPRhub 的分析指出，DPC 认为仅暂停传输即足以执行 GDPR，罚款是过度且不成比例的（EVIDENCE span:c-law-003-d00060ca8deb0a46-15），但 EDPB 的约束性决定推翻了这一立场，要求处以罚款并处理已传输数据。\",\n  \"citations\": [\n    \"span:c-law-003-d00060ca8deb0a46-15\",\n    \"span:c-law-003-d00060ca8deb0a46-3\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}",
+    "citationValidation": {
+      "valid": true,
+      "citationCount": 2,
+      "invalid": []
+    }
+  },
+  {
+    "sampleId": "sample-9ec4ec51-73cb-4670-87c6-f8d94437ad25",
+    "questionId": "C-K-LAW-001",
+    "answer": "{\n  \"answer\": \"该分歧反映了GDPR一站式机制中牵头监管机构（LSA）与EDPB及其他相关监管机构（CSAs）之间的结构性张力：LSA（爱尔兰DPC）倾向于对本国实体采取较轻的执法措施（仅暂停传输，不罚款），而EDPB依据《GDPR》第65条具有约束力的决定权，可以推翻LSA的草案并强制要求罚款及处理已传输数据。GDPRhub的分析指出，DPC最初认为暂停传输已足以执行GDPR，罚款是过度且不必要的（claim:d00060ca8deb0a46-4d938d71081f1c3a），但EDPB的约束性决定最终要求DPC修改其决定，包括施加罚款。GDPRhub未直接评价DPC的立场，但通过记录DPC的初始立场和EDPB的推翻，暗示了DPC的立场在机制中被视为过于宽松。\",\n  \"citations\": [\n    \"claim:d00060ca8deb0a46-4d938d71081f1c3a\",\n    \"claim:d00060ca8deb0a46-3911ed7670ce857d\",\n    \"claim:d00060ca8deb0a46-eaaa91b77b58736b\",\n    \"claim:f1df14c75b8f61cf-3e1641fb7a98d37e\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": [\n    \"GDPRhub的分析是否明确评价DPC的立场为‘过于宽松’或‘不当’？上下文仅记录事实，未给出明确评价。\"\n  ]\n}",
+    "citationValidation": {
+      "valid": true,
+      "citationCount": 4,
+      "invalid": []
+    }
+  },
+  {
+    "sampleId": "sample-bc5fc083-fe4e-4ef2-a643-d681bd7340d1",
+    "questionId": "C-A-LAW-001",
+    "answer": "{\n  \"answer\": \"根据当前材料，EU-US Data Privacy Framework（2023年7月通过）不能永久解决欧盟向美国传输个人数据的合法性问题。材料显示，该框架于2023年7月10日被欧盟委员会采纳为充分性决定（claim:1544b1a2018c598c-9118678fb1e8e668），但隐私倡导者已表示可能挑战该框架（claim:1544b1a2018c598c-8d2755e034645c29）。材料未提供任何证据支持其长期有效性，也未提及永久性解决方案。\",\n  \"citations\": [\n    \"claim:1544b1a2018c598c-9118678fb1e8e668\",\n    \"claim:1544b1a2018c598c-8d2755e034645c29\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": [\n    \"框架是否会被成功挑战尚不确定\",\n    \"材料未提供框架长期有效性的证据\"\n  ]\n}",
+    "citationValidation": {
+      "valid": true,
+      "citationCount": 2,
+      "invalid": []
+    }
+  },
+  {
+    "sampleId": "sample-59f6549c-d835-4542-a1e5-20d2b26188a7",
+    "questionId": "C-A-LAW-001",
+    "answer": "{\n  \"answer\": \"根据现有材料，EU-US Data Privacy Framework（2023年7月通过）不能被视为永久解决欧盟向美国传输个人数据合法性问题的方案。材料显示，该框架被采纳为充分性决定，可能解决未来数据传输的法律基础，但隐私倡导者已表示可能对其提出挑战（SOURCE c-law-004.md:48-51）。此外，爱尔兰DPC在2023年5月的决定中认定美国法律未提供与欧盟法律实质等同的保护，且美国法律的最新发展（包括该框架所依据的改革）被认为不足，因为部分承诺的改革尚未实施（SOURCE c-law-003.md:31-36）。因此，框架的长期有效性存在不确定性，可能面临法律挑战。\",\n  \"citations\": [\n    \"SOURCE c-law-004.md:48-51\",\n    \"SOURCE c-law-003.md:31-36\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": [\n    \"框架是否会被隐私倡导者成功挑战，以及美国法律改革是否完全实施并达到欧盟标准，尚不确定。\"\n  ]\n}",
+    "citationValidation": {
+      "valid": false,
+      "citationCount": 2,
+      "invalid": [
+        "SOURCE c-law-004.md:48-51",
+        "SOURCE c-law-003.md:31-36"
+      ]
+    }
+  },
+  {
+    "sampleId": "sample-16bc47a6-33b6-442b-9627-fba0d5892f72",
+    "questionId": "C-A-LAW-001",
+    "answer": "{\n  \"answer\": \"根据现有材料，EU-US Data Privacy Framework 于2023年7月10日通过（claim:1544b1a2018c598c-9118678fb1e8e668），但隐私倡导者已表示可能挑战该框架（claim:1544b1a2018c598c-8d2755e034645c29），因此其长期有效性存在不确定性。材料未提供支持或质疑其永久解决合法性问题的直接证据。\",\n  \"citations\": [\n    \"claim:1544b1a2018c598c-9118678fb1e8e668\",\n    \"claim:1544b1a2018c598c-8d2755e034645c29\"\n  ],\n  \"insufficient\": true,\n  \"uncertainties\": [\n    \"框架可能面临法律挑战，长期有效性未定\"\n  ]\n}",
+    "citationValidation": {
+      "valid": true,
+      "citationCount": 2,
+      "invalid": []
+    }
+  }
+]

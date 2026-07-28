@@ -1,0 +1,188 @@
+{
+  "claims": [
+    {
+      "statement": "The Irish DPA first ascertained whether US law guaranteed an essentially equivalent level of protection of data protection rights in light of Schrems II.",
+      "evidenceQuotes": ["First, the Irish DPA ascertained whether US law guaranteed an essentially equivalent level of protection of data protection rights in light of Schrems II."],
+      "blockIds": ["c-law-003#block-5"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "The Irish DPA excluded that US law guaranteed an essentially equivalent level of protection.",
+      "evidenceQuotes": ["This was excluded by the supervisory authority, especially due to the lack of effective judicial remedies against the violation of data subjects' fundamental rights by U.S. intelligence agencies and due to the lack of limitations imposed on the latters' investigation powers."],
+      "blockIds": ["c-law-003#block-5"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "The lack of effective judicial remedies against the violation of data subjects' fundamental rights by U.S. intelligence agencies was a reason for the exclusion.",
+      "evidenceQuotes": ["especially due to the lack of effective judicial remedies against the violation of data subjects' fundamental rights by U.S. intelligence agencies"],
+      "blockIds": ["c-law-003#block-5"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "The lack of limitations imposed on U.S. intelligence agencies' investigation powers was a reason for the exclusion.",
+      "evidenceQuotes": ["and due to the lack of limitations imposed on the latters' investigation powers."],
+      "blockIds": ["c-law-003#block-5"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "The latest developments in U.S. law were deemed insufficient by the Irish DPA.",
+      "evidenceQuotes": ["The latest developments in U.S. law (which are supposed to ensure a higher level of protection for data transferred to the U.S.) were deemed insufficient by the Irish DPA, especially since some of the promised reforms have not yet been implemented."],
+      "blockIds": ["c-law-003#block-6"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "Some of the promised reforms in U.S. law have not yet been implemented.",
+      "evidenceQuotes": ["especially since some of the promised reforms have not yet been implemented."],
+      "blockIds": ["c-law-003#block-6"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "The Irish DPA found that Standard Contractual Clauses (SCCs) pursuant to Article 46(2)(c) GDPR invoked by Meta Ireland could not compensate for the lack of an equivalent level of data protection.",
+      "evidenceQuotes": ["Second, the Irish DPA found that Standard Contractual Clauses (SCCs) pursuant to Article 46(2)(c) GDPR invoked by Meta Ireland could not compensate for the lack of an equivalent level of data protection."],
+      "blockIds": ["c-law-003#block-8"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "SCCs did not address the activity of U.S. intelligence agencies.",
+      "evidenceQuotes": ["In particular, SCCs did not (and could not) address the activity of U.S. intelligence agencies"],
+      "blockIds": ["c-law-003#block-8"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "SCCs did not address the lack of judicial remedies against the activity of U.S. intelligence agencies.",
+      "evidenceQuotes": ["or the lack of judicial remedies against such activity."],
+      "blockIds": ["c-law-003#block-8"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "The supervisory authority considered whether Meta Ireland implemented sufficient supplementary measures that would, in addition to SCCs, ensure an equivalent level of data protection.",
+      "evidenceQuotes": ["Third, the supervisory authority considered whether Meta Ireland implemented sufficient supplementary measures that would, in addition to SCCs, ensure an equivalent level of data protection."],
+      "blockIds": ["c-law-003#block-10"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "Neither of the organisational, technical or legal measures Meta Ireland Ltd claimed to have implemented could compensate for a problem that stems from US public law.",
+      "evidenceQuotes": ["Neither of the organisational, technical or legal measures Meta Ireland Ltd claimed to have implemented could compensate for a problem that stems from US public law."],
+      "blockIds": ["c-law-003#block-10"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "Meta Ireland could not rely on derogations under Article 49 GDPR.",
+      "evidenceQuotes": ["Finally, Meta Ireland could not rely on derogations under Article 49 GDPR, as derogations to fundamental rights enshrined in the European Charter of Fundamental Rights shall be interpreted strictly."],
+      "blockIds": ["c-law-003#block-12"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "Derogations to fundamental rights enshrined in the European Charter of Fundamental Rights shall be interpreted strictly.",
+      "evidenceQuotes": ["as derogations to fundamental rights enshrined in the European Charter of Fundamental Rights shall be interpreted strictly."],
+      "blockIds": ["c-law-003#block-12"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "According to the Irish DPC, derogations under Article 49 GDPR can only be invoked for 'occasional and non-repetitive' transfers.",
+      "evidenceQuotes": ["Moreover, according to the Irish DPC, derogations under Article 49 GDPR can only be invoked for 'occasional and non-repetitive' transfers, which was clearly not the case with the Meta group, whose business model is based on massive and continuous transatlantic exchanges of data."],
+      "blockIds": ["c-law-003#block-13"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "The Meta group's business model is based on massive and continuous transatlantic exchanges of data.",
+      "evidenceQuotes": ["which was clearly not the case with the Meta group, whose business model is based on massive and continuous transatlantic exchanges of data."],
+      "blockIds": ["c-law-003#block-13"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "The Irish DPA found that the suspension of the transfers was already sufficient to enforce the GDPR and a fine on top of it would have been excessive.",
+      "evidenceQuotes": ["On the one hand, the Irish DPA found that the suspension of the transfers was already sufficient to enforce the GDPR and a fine on top of it would have been excessive."],
+      "blockIds": ["c-law-003#block-15"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "The Irish DPA claimed that several complex legal issues concerning data transfers were solved for the first time before the CJEU in the Schrems II judgement.",
+      "evidenceQuotes": ["On the other hand, the Irish DPA claimed that several complex legal issues concerning data transfers were solved for the first time before the CJEU in the Schrems II judgement."],
+      "blockIds": ["c-law-003#block-15"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "The content is sourced from GDPRhub.eu (https://gdprhub.eu/index.php?curid=5944).",
+      "evidenceQuotes": ["*Content sourced from GDPRhub.eu (https://gdprhub.eu/index.php?curid=5944). Publicly accessible GDPR case law wiki.*"],
+      "blockIds": ["c-law-003#block-2"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "The content is a publicly accessible GDPR case law wiki.",
+      "evidenceQuotes": ["Publicly accessible GDPR case law wiki."],
+      "blockIds": ["c-law-003#block-2"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "The case name is DPC (Ireland) — IN-20-8-1.",
+      "evidenceQuotes": ["**Case:** DPC (Ireland) — IN-20-8-1"],
+      "blockIds": ["c-law-003#block-3"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "The authority is DPC (Ireland), bound by EDPB Article 65 decision.",
+      "evidenceQuotes": ["**Authority:** DPC (Ireland), bound by EDPB Article 65 decision"],
+      "blockIds": ["c-law-003#block-3"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "The fine is €1,200,000,000.",
+      "evidenceQuotes": ["**Fine:** €1,200,000,000"],
+      "blockIds": ["c-law-003#block-3"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "The relevant law includes Articles 45, 46, 49, 60(4), 65(1)(a) GDPR.",
+      "evidenceQuotes": ["**Relevant Law:** Articles 45, 46, 49, 60(4), 65(1)(a) GDPR"],
+      "blockIds": ["c-law-003#block-3"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    }
+  ]
+}

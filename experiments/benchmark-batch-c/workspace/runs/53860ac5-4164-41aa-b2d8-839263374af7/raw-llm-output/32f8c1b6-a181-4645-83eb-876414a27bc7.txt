@@ -1,0 +1,136 @@
+{
+  "concepts": [
+    {
+      "name": "Sampling",
+      "aliases": ["random sampling", "sampling rules"],
+      "boundary": "The process of selecting a subset of individuals or studies from a population to estimate characteristics of the whole population.",
+      "domain": "Statistics"
+    },
+    {
+      "name": "Statistical error",
+      "aliases": ["statistical errors", "statistical noise"],
+      "boundary": "Errors in statistical analysis or interpretation, including random noise and systematic bias.",
+      "domain": "Statistics"
+    },
+    {
+      "name": "Experimenter blinding",
+      "aliases": ["keeping experimenters blind to the hypothesis"],
+      "boundary": "A methodological procedure where experimenters are unaware of the hypothesis to prevent bias.",
+      "domain": "Research Methodology"
+    },
+    {
+      "name": "Replication",
+      "aliases": ["replication studies", "replicability"],
+      "boundary": "The process of repeating a study to verify its findings; includes high-fidelity and low-fidelity replications.",
+      "domain": "Science"
+    },
+    {
+      "name": "Meta-science",
+      "aliases": [],
+      "boundary": "The scientific study of science itself, including its methods and practices.",
+      "domain": "Science"
+    },
+    {
+      "name": "Parameter estimation",
+      "aliases": ["estimate a parameter"],
+      "boundary": "The process of using sample data to estimate a population parameter.",
+      "domain": "Statistics"
+    },
+    {
+      "name": "Statistical correction",
+      "aliases": ["statistical corrections"],
+      "boundary": "Adjustments made to data or analysis to account for sampling biases or other issues.",
+      "domain": "Statistics"
+    },
+    {
+      "name": "Open Science Collaboration (OSC)",
+      "aliases": ["OSC"],
+      "boundary": "A group that conducted a large-scale replication project in psychology.",
+      "domain": "Psychology"
+    },
+    {
+      "name": "Reproducibility",
+      "aliases": ["reproducibility"],
+      "boundary": "The ability to obtain consistent results using the same data and methods.",
+      "domain": "Science"
+    },
+    {
+      "name": "Psychological science",
+      "aliases": ["psychology"],
+      "boundary": "The scientific study of mind and behavior.",
+      "domain": "Psychology"
+    },
+    {
+      "name": "Fidelity",
+      "aliases": ["high-fidelity", "low-fidelity"],
+      "boundary": "The degree to which a replication matches the original study in methods and conditions.",
+      "domain": "Research Methodology"
+    },
+    {
+      "name": "Bias",
+      "aliases": ["biased"],
+      "boundary": "Systematic deviation from the true value, often leading to incorrect conclusions.",
+      "domain": "Statistics"
+    },
+    {
+      "name": "Random sampling",
+      "aliases": [],
+      "boundary": "A sampling method where each member of the population has an equal chance of being selected.",
+      "domain": "Statistics"
+    },
+    {
+      "name": "Population",
+      "aliases": [],
+      "boundary": "The entire group of individuals or items of interest in a study.",
+      "domain": "Statistics"
+    },
+    {
+      "name": "Sample",
+      "aliases": [],
+      "boundary": "A subset of the population selected for study.",
+      "domain": "Statistics"
+    },
+    {
+      "name": "Subfield",
+      "aliases": ["subfields"],
+      "boundary": "A specialized area within a broader field, such as psychology.",
+      "domain": "Science"
+    },
+    {
+      "name": "Statistical noise",
+      "aliases": [],
+      "boundary": "Random variation in data that obscures the true signal.",
+      "domain": "Statistics"
+    },
+    {
+      "name": "Original study",
+      "aliases": ["original findings", "originals"],
+      "boundary": "The initial study that is being replicated.",
+      "domain": "Research"
+    },
+    {
+      "name": "Replication study",
+      "aliases": ["replications"],
+      "boundary": "A study that attempts to reproduce the results of an original study.",
+      "domain": "Research"
+    },
+    {
+      "name": "Failure",
+      "aliases": ["failures"],
+      "boundary": "In replication, when the replication does not produce results consistent with the original.",
+      "domain": "Research"
+    },
+    {
+      "name": "Chance",
+      "aliases": ["by chance"],
+      "boundary": "Random variation that can lead to observed outcomes even if no real effect exists.",
+      "domain": "Statistics"
+    },
+    {
+      "name": "Statistical correction",
+      "aliases": [],
+      "boundary": "Adjustments made to account for biases or violations of assumptions.",
+      "domain": "Statistics"
+    }
+  ]
+}

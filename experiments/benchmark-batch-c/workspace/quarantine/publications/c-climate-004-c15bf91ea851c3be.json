@@ -1,0 +1,1465 @@
+{
+  "schemaVersion": "v1",
+  "sourceId": "source:c-climate-004-c15bf91ea851c3be",
+  "runId": "01cc0759-55c4-4e3b-9538-221af25f4627",
+  "publishedAt": "2026-07-28T07:14:02.884Z",
+  "claims": [
+    {
+      "claim": {
+        "id": "claim:c15bf91ea851c3be-3c14518277525816",
+        "statement": "太阳能光伏发电量超过整个美国电力系统目前的发电量。",
+        "evidenceSpanIds": [
+          "span:c-climate-004-c15bf91ea851c3be-9#chars-1347-1431"
+        ],
+        "conditions": [],
+        "derivation": "EXTRACTED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:13:17.778Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "confidence": 1,
+        "claimKind": "FACT",
+        "scope": {
+          "type": "GLOBAL"
+        },
+        "provenanceRefs": [
+          {
+            "type": "SourceSpan",
+            "spanId": "span:c-climate-004-c15bf91ea851c3be-9#chars-1347-1431"
+          }
+        ],
+        "supportingEvidenceRefs": [
+          {
+            "type": "SourceSpan",
+            "spanId": "span:c-climate-004-c15bf91ea851c3be-9#chars-1347-1431"
+          }
+        ],
+        "knowledgeVersion": "v1",
+        "recordedAt": "2026-07-28T07:13:17.778Z"
+      },
+      "issues": [
+        {
+          "code": "SEMANTIC_SUPPORT_FAILED",
+          "severity": "error",
+          "affectedObject": "claim:c15bf91ea851c3be-3c14518277525816",
+          "detail": "support：证据没有明确支持 Claim 的全部断言；证据 [0:c-climate-004#block-9] “solar PV generating more electricity than the entire US power system does curren”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "SEMANTIC_ADDITION_MAJOR",
+          "severity": "error",
+          "affectedObject": "claim:c15bf91ea851c3be-3c14518277525816",
+          "detail": "addition：Claim 添加了证据未表达的内容；证据 [0:c-climate-004#block-9] “solar PV generating more electricity than the entire US power system does curren”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "claim": {
+        "id": "claim:c15bf91ea851c3be-cedcb58ddf6a5602",
+        "statement": "该内容来源于国际能源署网站上的《世界能源展望2023》执行摘要。",
+        "evidenceSpanIds": [
+          "span:c-climate-004-c15bf91ea851c3be-2#chars-76-227"
+        ],
+        "conditions": [],
+        "derivation": "EXTRACTED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:13:17.778Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "confidence": 1,
+        "claimKind": "FACT",
+        "scope": {
+          "type": "GLOBAL"
+        },
+        "provenanceRefs": [
+          {
+            "type": "SourceSpan",
+            "spanId": "span:c-climate-004-c15bf91ea851c3be-2#chars-76-227"
+          }
+        ],
+        "supportingEvidenceRefs": [
+          {
+            "type": "SourceSpan",
+            "spanId": "span:c-climate-004-c15bf91ea851c3be-2#chars-76-227"
+          }
+        ],
+        "knowledgeVersion": "v1",
+        "recordedAt": "2026-07-28T07:13:17.778Z"
+      },
+      "issues": [
+        {
+          "code": "SEMANTIC_SUPPORT_FAILED",
+          "severity": "error",
+          "affectedObject": "claim:c15bf91ea851c3be-cedcb58ddf6a5602",
+          "detail": "support：证据没有明确支持 Claim 的全部断言；证据 [0:c-climate-004#block-2] “*Content sourced from IEA website (https://www.iea.org/reports/world-energy-outl”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "SEMANTIC_ADDITION_MAJOR",
+          "severity": "error",
+          "affectedObject": "claim:c15bf91ea851c3be-cedcb58ddf6a5602",
+          "detail": "addition：Claim 添加了证据未表达的内容；证据 [0:c-climate-004#block-2] “*Content sourced from IEA website (https://www.iea.org/reports/world-energy-outl”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "relation": {
+        "id": "rel:c15bf91ea851c3be-16914a0cf91c0f27",
+        "from": "claim:c15bf91ea851c3be-e62ef9df3cf2a6de",
+        "to": "claim:c15bf91ea851c3be-14966316160a1378",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-climate-004-c15bf91ea851c3be-8#chars-1065-1268",
+          "span:c-climate-004-c15bf91ea851c3be-9#chars-1432-1518"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:13:29.537Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.6,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:c15bf91ea851c3be-16914a0cf91c0f27",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-climate-004#block-8] “The phenomenal rise of clean energy technologies such as solar, wind, electric c”; [1:c-climate-004#block-9] “renewables' share of the global electricity mix nearing 50%, up from around 30% ”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:c15bf91ea851c3be-16914a0cf91c0f27",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-climate-004#block-8] “The phenomenal rise of clean energy technologies such as solar, wind, electric c”; [1:c-climate-004#block-9] “renewables' share of the global electricity mix nearing 50%, up from around 30% ”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:c15bf91ea851c3be-340717ce2301a28e",
+        "from": "claim:c15bf91ea851c3be-3c14518277525816",
+        "to": "claim:c15bf91ea851c3be-e62ef9df3cf2a6de",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "UNVERIFIED",
+        "supersessionEffect": null,
+        "relationAuditVersion": null,
+        "evidenceSpanIds": [
+          "span:c-climate-004-c15bf91ea851c3be-9#chars-1347-1431",
+          "span:c-climate-004-c15bf91ea851c3be-9#chars-1432-1518"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:13:29.537Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.6,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_ENDPOINT_QUARANTINED",
+          "severity": "error",
+          "affectedObject": "rel:c15bf91ea851c3be-340717ce2301a28e",
+          "detail": "from 端点未通过 Lint（Quarantined）: claim:c15bf91ea851c3be-3c14518277525816",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:c15bf91ea851c3be-741f53976fa16792",
+        "from": "claim:c15bf91ea851c3be-614e9c5f107ee3e1",
+        "to": "claim:c15bf91ea851c3be-14966316160a1378",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-climate-004-c15bf91ea851c3be-8#chars-1065-1268",
+          "span:c-climate-004-c15bf91ea851c3be-9#chars-1606-1726"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:13:29.537Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.6,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:c15bf91ea851c3be-741f53976fa16792",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-climate-004#block-8] “The phenomenal rise of clean energy technologies such as solar, wind, electric c”; [1:c-climate-004#block-9] “and three times as much investment going into new offshore wind projects than in”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:c15bf91ea851c3be-741f53976fa16792",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-climate-004#block-8] “The phenomenal rise of clean energy technologies such as solar, wind, electric c”; [1:c-climate-004#block-9] “and three times as much investment going into new offshore wind projects than in”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:c15bf91ea851c3be-741f53976fa16792",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-climate-004#block-8] “The phenomenal rise of clean energy technologies such as solar, wind, electric c”; [1:c-climate-004#block-9] “and three times as much investment going into new offshore wind projects than in”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:c15bf91ea851c3be-823cd6673b2fc590",
+        "from": "claim:c15bf91ea851c3be-c00b212f54c780a4",
+        "to": "claim:c15bf91ea851c3be-14966316160a1378",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-climate-004-c15bf91ea851c3be-8#chars-1065-1268",
+          "span:c-climate-004-c15bf91ea851c3be-9#chars-1272-1346"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:13:29.537Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.6,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:c15bf91ea851c3be-823cd6673b2fc590",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-climate-004#block-8] “The phenomenal rise of clean energy technologies such as solar, wind, electric c”; [1:c-climate-004#block-9] “This includes almost 10 times as many electric cars on the road worldwide;”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:c15bf91ea851c3be-823cd6673b2fc590",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-climate-004#block-8] “The phenomenal rise of clean energy technologies such as solar, wind, electric c”; [1:c-climate-004#block-9] “This includes almost 10 times as many electric cars on the road worldwide;”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-02b7267e7c93a47f",
+        "from": "claim:c15bf91ea851c3be-33ffb90d56fb69d8",
+        "to": "claim:0edc89a8f2de72a2-34ee6e8d394f4af9",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-climate-003-0edc89a8f2de72a2-9#chars-1208-1340",
+          "span:c-climate-004-c15bf91ea851c3be-6#chars-682-1011"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:13:47.464Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.6,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-02b7267e7c93a47f",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-climate-003#block-9] “The proposal would require emissions to fall to \"less than\" 850m tonnes of CO2e,”; [1:c-climate-004#block-6] “Tripling renewable energy capacity, doubling the pace of energy efficiency impro”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-02b7267e7c93a47f",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-climate-003#block-9] “The proposal would require emissions to fall to \"less than\" 850m tonnes of CO2e,”; [1:c-climate-004#block-6] “Tripling renewable energy capacity, doubling the pace of energy efficiency impro”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-02b7267e7c93a47f",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-climate-003#block-9] “The proposal would require emissions to fall to \"less than\" 850m tonnes of CO2e,”; [1:c-climate-004#block-6] “Tripling renewable energy capacity, doubling the pace of energy efficiency impro”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-14b768e127029d1a",
+        "from": "claim:c15bf91ea851c3be-33ffb90d56fb69d8",
+        "to": "claim:0edc89a8f2de72a2-a5adbb37b74a0a73",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-climate-003-0edc89a8f2de72a2-6#chars-546-705",
+          "span:c-climate-004-c15bf91ea851c3be-6#chars-682-1011"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:13:47.464Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.6,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-14b768e127029d1a",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-climate-003#block-6] “In July 2021, the European Climate Law officially entered into force, setting a ”; [1:c-climate-004#block-6] “Tripling renewable energy capacity, doubling the pace of energy efficiency impro”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-14b768e127029d1a",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-climate-003#block-6] “In July 2021, the European Climate Law officially entered into force, setting a ”; [1:c-climate-004#block-6] “Tripling renewable energy capacity, doubling the pace of energy efficiency impro”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-14b768e127029d1a",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-climate-003#block-6] “In July 2021, the European Climate Law officially entered into force, setting a ”; [1:c-climate-004#block-6] “Tripling renewable energy capacity, doubling the pace of energy efficiency impro”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-17b90510a15f7f7d",
+        "from": "claim:c15bf91ea851c3be-5dad9e8253a8a18a",
+        "to": "claim:0edc89a8f2de72a2-34ee6e8d394f4af9",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-climate-003-0edc89a8f2de72a2-9#chars-1208-1340",
+          "span:c-climate-004-c15bf91ea851c3be-6#chars-555-681"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:13:47.464Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.6,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-17b90510a15f7f7d",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-climate-003#block-9] “The proposal would require emissions to fall to \"less than\" 850m tonnes of CO2e,”; [1:c-climate-004#block-6] “The key actions required to bend the emissions curve downwards to 2030 are widel”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-17b90510a15f7f7d",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-climate-003#block-9] “The proposal would require emissions to fall to \"less than\" 850m tonnes of CO2e,”; [1:c-climate-004#block-6] “The key actions required to bend the emissions curve downwards to 2030 are widel”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-17b90510a15f7f7d",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-climate-003#block-9] “The proposal would require emissions to fall to \"less than\" 850m tonnes of CO2e,”; [1:c-climate-004#block-6] “The key actions required to bend the emissions curve downwards to 2030 are widel”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-2f99afbefd87beae",
+        "from": "claim:c15bf91ea851c3be-14966316160a1378",
+        "to": "claim:b26d226f500be322-398ef16d4b0abfcd",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-climate-001-b26d226f500be322-11#chars-2484-2653",
+          "span:c-climate-004-c15bf91ea851c3be-8#chars-1065-1268"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:13:47.464Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.6,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-2f99afbefd87beae",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-climate-001#block-11] “Projected CO2 emissions from existing fossil fuel infrastructure without additio”; [1:c-climate-004#block-8] “The phenomenal rise of clean energy technologies such as solar, wind, electric c”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-2f99afbefd87beae",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-climate-001#block-11] “Projected CO2 emissions from existing fossil fuel infrastructure without additio”; [1:c-climate-004#block-8] “The phenomenal rise of clean energy technologies such as solar, wind, electric c”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-2f99afbefd87beae",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-climate-001#block-11] “Projected CO2 emissions from existing fossil fuel infrastructure without additio”; [1:c-climate-004#block-8] “The phenomenal rise of clean energy technologies such as solar, wind, electric c”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-327dce7892aab549",
+        "from": "claim:c15bf91ea851c3be-f2794c0130f4aee6",
+        "to": "claim:0edc89a8f2de72a2-d46b5a1c037d2094",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-climate-003-0edc89a8f2de72a2-17#chars-2586-2740",
+          "span:c-climate-004-c15bf91ea851c3be-5#chars-458-551"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:13:47.464Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.6,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-327dce7892aab549",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-climate-003#block-17] “Current projections suggest that, even if all planned climate policies are imple”; [1:c-climate-004#block-5] “emissions remain high enough to push up global average temperatures to around 2.”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-327dce7892aab549",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-climate-003#block-17] “Current projections suggest that, even if all planned climate policies are imple”; [1:c-climate-004#block-5] “emissions remain high enough to push up global average temperatures to around 2.”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-327dce7892aab549",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-climate-003#block-17] “Current projections suggest that, even if all planned climate policies are imple”; [1:c-climate-004#block-5] “emissions remain high enough to push up global average temperatures to around 2.”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-40d8761974706be5",
+        "from": "claim:c15bf91ea851c3be-82569f5301dc007f",
+        "to": "claim:b26d226f500be322-e06162dbf4f90ed6",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-climate-001-b26d226f500be322-9#chars-1703-1928",
+          "span:c-climate-004-c15bf91ea851c3be-5#chars-383-453"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:13:47.464Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.6,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-40d8761974706be5",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-climate-001#block-9] “Global GHG emissions in 2030 implied by nationally determined contributions (NDC”; [1:c-climate-004#block-5] “The STEPS sees a peak in energy-related CO2 emissions in the mid-2020s”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-40d8761974706be5",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-climate-001#block-9] “Global GHG emissions in 2030 implied by nationally determined contributions (NDC”; [1:c-climate-004#block-5] “The STEPS sees a peak in energy-related CO2 emissions in the mid-2020s”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-40d8761974706be5",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-climate-001#block-9] “Global GHG emissions in 2030 implied by nationally determined contributions (NDC”; [1:c-climate-004#block-5] “The STEPS sees a peak in energy-related CO2 emissions in the mid-2020s”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-4530082afb759e74",
+        "from": "claim:c15bf91ea851c3be-5dad9e8253a8a18a",
+        "to": "claim:b26d226f500be322-af7a69e395340efb",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-climate-001-b26d226f500be322-5#chars-712-770",
+          "span:c-climate-004-c15bf91ea851c3be-6#chars-555-681"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:13:47.464Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.6,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-4530082afb759e74",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-climate-001#block-5] “Global greenhouse gas emissions have continued to increase”; [1:c-climate-004#block-6] “The key actions required to bend the emissions curve downwards to 2030 are widel”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-4530082afb759e74",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-climate-001#block-5] “Global greenhouse gas emissions have continued to increase”; [1:c-climate-004#block-6] “The key actions required to bend the emissions curve downwards to 2030 are widel”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-55dc8b1c3894174b",
+        "from": "claim:c15bf91ea851c3be-82569f5301dc007f",
+        "to": "claim:0edc89a8f2de72a2-d46b5a1c037d2094",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-climate-003-0edc89a8f2de72a2-17#chars-2586-2740",
+          "span:c-climate-004-c15bf91ea851c3be-5#chars-383-453"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:13:47.464Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.6,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-55dc8b1c3894174b",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-climate-003#block-17] “Current projections suggest that, even if all planned climate policies are imple”; [1:c-climate-004#block-5] “The STEPS sees a peak in energy-related CO2 emissions in the mid-2020s”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-55dc8b1c3894174b",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-climate-003#block-17] “Current projections suggest that, even if all planned climate policies are imple”; [1:c-climate-004#block-5] “The STEPS sees a peak in energy-related CO2 emissions in the mid-2020s”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-55dc8b1c3894174b",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-climate-003#block-17] “Current projections suggest that, even if all planned climate policies are imple”; [1:c-climate-004#block-5] “The STEPS sees a peak in energy-related CO2 emissions in the mid-2020s”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-5858eb37f93ec1e8",
+        "from": "claim:c15bf91ea851c3be-5dad9e8253a8a18a",
+        "to": "claim:0edc89a8f2de72a2-a5adbb37b74a0a73",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-climate-003-0edc89a8f2de72a2-6#chars-546-705",
+          "span:c-climate-004-c15bf91ea851c3be-6#chars-555-681"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:13:47.464Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.6,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-5858eb37f93ec1e8",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-climate-003#block-6] “In July 2021, the European Climate Law officially entered into force, setting a ”; [1:c-climate-004#block-6] “The key actions required to bend the emissions curve downwards to 2030 are widel”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-5858eb37f93ec1e8",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-climate-003#block-6] “In July 2021, the European Climate Law officially entered into force, setting a ”; [1:c-climate-004#block-6] “The key actions required to bend the emissions curve downwards to 2030 are widel”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-5858eb37f93ec1e8",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-climate-003#block-6] “In July 2021, the European Climate Law officially entered into force, setting a ”; [1:c-climate-004#block-6] “The key actions required to bend the emissions curve downwards to 2030 are widel”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-5a782c1352153f8e",
+        "from": "claim:c15bf91ea851c3be-5dad9e8253a8a18a",
+        "to": "claim:b26d226f500be322-398ef16d4b0abfcd",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-climate-001-b26d226f500be322-11#chars-2484-2653",
+          "span:c-climate-004-c15bf91ea851c3be-6#chars-555-681"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:13:47.464Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.6,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-5a782c1352153f8e",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-climate-001#block-11] “Projected CO2 emissions from existing fossil fuel infrastructure without additio”; [1:c-climate-004#block-6] “The key actions required to bend the emissions curve downwards to 2030 are widel”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-5a782c1352153f8e",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-climate-001#block-11] “Projected CO2 emissions from existing fossil fuel infrastructure without additio”; [1:c-climate-004#block-6] “The key actions required to bend the emissions curve downwards to 2030 are widel”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-5a782c1352153f8e",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-climate-001#block-11] “Projected CO2 emissions from existing fossil fuel infrastructure without additio”; [1:c-climate-004#block-6] “The key actions required to bend the emissions curve downwards to 2030 are widel”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-5cd4d89a4dfc656b",
+        "from": "claim:c15bf91ea851c3be-f2794c0130f4aee6",
+        "to": "claim:0edc89a8f2de72a2-a5adbb37b74a0a73",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-climate-003-0edc89a8f2de72a2-6#chars-546-705",
+          "span:c-climate-004-c15bf91ea851c3be-5#chars-458-551"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:13:47.464Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.6,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-5cd4d89a4dfc656b",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-climate-003#block-6] “In July 2021, the European Climate Law officially entered into force, setting a ”; [1:c-climate-004#block-5] “emissions remain high enough to push up global average temperatures to around 2.”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-5cd4d89a4dfc656b",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-climate-003#block-6] “In July 2021, the European Climate Law officially entered into force, setting a ”; [1:c-climate-004#block-5] “emissions remain high enough to push up global average temperatures to around 2.”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-5cd4d89a4dfc656b",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-climate-003#block-6] “In July 2021, the European Climate Law officially entered into force, setting a ”; [1:c-climate-004#block-5] “emissions remain high enough to push up global average temperatures to around 2.”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-6c15932f072c2129",
+        "from": "claim:c15bf91ea851c3be-82569f5301dc007f",
+        "to": "claim:b26d226f500be322-4811ce763ff3f4c8",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-climate-001-b26d226f500be322-11#chars-2188-2257",
+          "span:c-climate-004-c15bf91ea851c3be-5#chars-383-453"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:13:47.464Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.6,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-6c15932f072c2129",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-climate-001#block-11] “Limiting human-caused global warming requires net zero CO2 emissions.”; [1:c-climate-004#block-5] “The STEPS sees a peak in energy-related CO2 emissions in the mid-2020s”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-6c15932f072c2129",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-climate-001#block-11] “Limiting human-caused global warming requires net zero CO2 emissions.”; [1:c-climate-004#block-5] “The STEPS sees a peak in energy-related CO2 emissions in the mid-2020s”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-6c15932f072c2129",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-climate-001#block-11] “Limiting human-caused global warming requires net zero CO2 emissions.”; [1:c-climate-004#block-5] “The STEPS sees a peak in energy-related CO2 emissions in the mid-2020s”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-8121cfbcec28b735",
+        "from": "claim:c15bf91ea851c3be-33ffb90d56fb69d8",
+        "to": "claim:b26d226f500be322-af7a69e395340efb",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-climate-001-b26d226f500be322-5#chars-712-770",
+          "span:c-climate-004-c15bf91ea851c3be-6#chars-682-1011"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:13:47.464Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.6,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-8121cfbcec28b735",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-climate-001#block-5] “Global greenhouse gas emissions have continued to increase”; [1:c-climate-004#block-6] “Tripling renewable energy capacity, doubling the pace of energy efficiency impro”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-8121cfbcec28b735",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-climate-001#block-5] “Global greenhouse gas emissions have continued to increase”; [1:c-climate-004#block-6] “Tripling renewable energy capacity, doubling the pace of energy efficiency impro”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-8121cfbcec28b735",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-climate-001#block-5] “Global greenhouse gas emissions have continued to increase”; [1:c-climate-004#block-6] “Tripling renewable energy capacity, doubling the pace of energy efficiency impro”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-8e39fbe94f7487dc",
+        "from": "claim:c15bf91ea851c3be-f2794c0130f4aee6",
+        "to": "claim:0edc89a8f2de72a2-34ee6e8d394f4af9",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-climate-003-0edc89a8f2de72a2-9#chars-1208-1340",
+          "span:c-climate-004-c15bf91ea851c3be-5#chars-458-551"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:13:47.464Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.6,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-8e39fbe94f7487dc",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-climate-003#block-9] “The proposal would require emissions to fall to \"less than\" 850m tonnes of CO2e,”; [1:c-climate-004#block-5] “emissions remain high enough to push up global average temperatures to around 2.”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-8e39fbe94f7487dc",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-climate-003#block-9] “The proposal would require emissions to fall to \"less than\" 850m tonnes of CO2e,”; [1:c-climate-004#block-5] “emissions remain high enough to push up global average temperatures to around 2.”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-8e39fbe94f7487dc",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-climate-003#block-9] “The proposal would require emissions to fall to \"less than\" 850m tonnes of CO2e,”; [1:c-climate-004#block-5] “emissions remain high enough to push up global average temperatures to around 2.”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-932087fad8aeaf57",
+        "from": "claim:c15bf91ea851c3be-82569f5301dc007f",
+        "to": "claim:b26d226f500be322-398ef16d4b0abfcd",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-climate-001-b26d226f500be322-11#chars-2484-2653",
+          "span:c-climate-004-c15bf91ea851c3be-5#chars-383-453"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:13:47.464Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.6,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-932087fad8aeaf57",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-climate-001#block-11] “Projected CO2 emissions from existing fossil fuel infrastructure without additio”; [1:c-climate-004#block-5] “The STEPS sees a peak in energy-related CO2 emissions in the mid-2020s”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-932087fad8aeaf57",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-climate-001#block-11] “Projected CO2 emissions from existing fossil fuel infrastructure without additio”; [1:c-climate-004#block-5] “The STEPS sees a peak in energy-related CO2 emissions in the mid-2020s”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-932087fad8aeaf57",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-climate-001#block-11] “Projected CO2 emissions from existing fossil fuel infrastructure without additio”; [1:c-climate-004#block-5] “The STEPS sees a peak in energy-related CO2 emissions in the mid-2020s”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-a06016e576824431",
+        "from": "claim:c15bf91ea851c3be-82569f5301dc007f",
+        "to": "claim:0edc89a8f2de72a2-34ee6e8d394f4af9",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-climate-003-0edc89a8f2de72a2-9#chars-1208-1340",
+          "span:c-climate-004-c15bf91ea851c3be-5#chars-383-453"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:13:47.464Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.6,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-a06016e576824431",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-climate-003#block-9] “The proposal would require emissions to fall to \"less than\" 850m tonnes of CO2e,”; [1:c-climate-004#block-5] “The STEPS sees a peak in energy-related CO2 emissions in the mid-2020s”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-a06016e576824431",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-climate-003#block-9] “The proposal would require emissions to fall to \"less than\" 850m tonnes of CO2e,”; [1:c-climate-004#block-5] “The STEPS sees a peak in energy-related CO2 emissions in the mid-2020s”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-a06016e576824431",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-climate-003#block-9] “The proposal would require emissions to fall to \"less than\" 850m tonnes of CO2e,”; [1:c-climate-004#block-5] “The STEPS sees a peak in energy-related CO2 emissions in the mid-2020s”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_DIRECTION_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-a06016e576824431",
+          "detail": "direction：Relation 未通过边级语义审计；证据 [0:c-climate-003#block-9] “The proposal would require emissions to fall to \"less than\" 850m tonnes of CO2e,”; [1:c-climate-004#block-5] “The STEPS sees a peak in energy-related CO2 emissions in the mid-2020s”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_CONDITIONS_MISSING",
+          "severity": "error",
+          "affectedObject": "rel:cross-a06016e576824431",
+          "detail": "conditions：Relation 未通过边级语义审计；证据 [0:c-climate-003#block-9] “The proposal would require emissions to fall to \"less than\" 850m tonnes of CO2e,”; [1:c-climate-004#block-5] “The STEPS sees a peak in energy-related CO2 emissions in the mid-2020s”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-b3ef6d11f2856466",
+        "from": "claim:c15bf91ea851c3be-82569f5301dc007f",
+        "to": "claim:b26d226f500be322-af7a69e395340efb",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-climate-001-b26d226f500be322-5#chars-712-770",
+          "span:c-climate-004-c15bf91ea851c3be-5#chars-383-453"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:13:47.464Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.6,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-b3ef6d11f2856466",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-climate-001#block-5] “Global greenhouse gas emissions have continued to increase”; [1:c-climate-004#block-5] “The STEPS sees a peak in energy-related CO2 emissions in the mid-2020s”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-b3ef6d11f2856466",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-climate-001#block-5] “Global greenhouse gas emissions have continued to increase”; [1:c-climate-004#block-5] “The STEPS sees a peak in energy-related CO2 emissions in the mid-2020s”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-b3ef6d11f2856466",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-climate-001#block-5] “Global greenhouse gas emissions have continued to increase”; [1:c-climate-004#block-5] “The STEPS sees a peak in energy-related CO2 emissions in the mid-2020s”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-cd6e25211896d940",
+        "from": "claim:c15bf91ea851c3be-7d47377f67f1a670",
+        "to": "claim:b26d226f500be322-398ef16d4b0abfcd",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-climate-001-b26d226f500be322-11#chars-2484-2653",
+          "span:c-climate-004-c15bf91ea851c3be-13#chars-2187-2328"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:13:47.464Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.6,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-cd6e25211896d940",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-climate-001#block-11] “Projected CO2 emissions from existing fossil fuel infrastructure without additio”; [1:c-climate-004#block-13] “In this scenario, the share of fossil fuels in global energy supply, which has b”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-cd6e25211896d940",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-climate-001#block-11] “Projected CO2 emissions from existing fossil fuel infrastructure without additio”; [1:c-climate-004#block-13] “In this scenario, the share of fossil fuels in global energy supply, which has b”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-cd6e25211896d940",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-climate-001#block-11] “Projected CO2 emissions from existing fossil fuel infrastructure without additio”; [1:c-climate-004#block-13] “In this scenario, the share of fossil fuels in global energy supply, which has b”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-cdb372c302e74968",
+        "from": "claim:c15bf91ea851c3be-5dad9e8253a8a18a",
+        "to": "claim:0edc89a8f2de72a2-d46b5a1c037d2094",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-climate-003-0edc89a8f2de72a2-17#chars-2586-2740",
+          "span:c-climate-004-c15bf91ea851c3be-6#chars-555-681"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:13:47.464Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.6,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-cdb372c302e74968",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-climate-003#block-17] “Current projections suggest that, even if all planned climate policies are imple”; [1:c-climate-004#block-6] “The key actions required to bend the emissions curve downwards to 2030 are widel”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-cdb372c302e74968",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-climate-003#block-17] “Current projections suggest that, even if all planned climate policies are imple”; [1:c-climate-004#block-6] “The key actions required to bend the emissions curve downwards to 2030 are widel”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-cdb372c302e74968",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-climate-003#block-17] “Current projections suggest that, even if all planned climate policies are imple”; [1:c-climate-004#block-6] “The key actions required to bend the emissions curve downwards to 2030 are widel”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-d85609db42da5bb0",
+        "from": "claim:c15bf91ea851c3be-82569f5301dc007f",
+        "to": "claim:0edc89a8f2de72a2-a5adbb37b74a0a73",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-climate-003-0edc89a8f2de72a2-6#chars-546-705",
+          "span:c-climate-004-c15bf91ea851c3be-5#chars-383-453"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:13:47.464Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.6,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-d85609db42da5bb0",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-climate-003#block-6] “In July 2021, the European Climate Law officially entered into force, setting a ”; [1:c-climate-004#block-5] “The STEPS sees a peak in energy-related CO2 emissions in the mid-2020s”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-d85609db42da5bb0",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-climate-003#block-6] “In July 2021, the European Climate Law officially entered into force, setting a ”; [1:c-climate-004#block-5] “The STEPS sees a peak in energy-related CO2 emissions in the mid-2020s”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-d85609db42da5bb0",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-climate-003#block-6] “In July 2021, the European Climate Law officially entered into force, setting a ”; [1:c-climate-004#block-5] “The STEPS sees a peak in energy-related CO2 emissions in the mid-2020s”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-dac2560ad529adc0",
+        "from": "claim:c15bf91ea851c3be-33ffb90d56fb69d8",
+        "to": "claim:0edc89a8f2de72a2-d46b5a1c037d2094",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-climate-003-0edc89a8f2de72a2-17#chars-2586-2740",
+          "span:c-climate-004-c15bf91ea851c3be-6#chars-682-1011"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:13:47.464Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.6,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-dac2560ad529adc0",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-climate-003#block-17] “Current projections suggest that, even if all planned climate policies are imple”; [1:c-climate-004#block-6] “Tripling renewable energy capacity, doubling the pace of energy efficiency impro”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-dac2560ad529adc0",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-climate-003#block-17] “Current projections suggest that, even if all planned climate policies are imple”; [1:c-climate-004#block-6] “Tripling renewable energy capacity, doubling the pace of energy efficiency impro”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-dac2560ad529adc0",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-climate-003#block-17] “Current projections suggest that, even if all planned climate policies are imple”; [1:c-climate-004#block-6] “Tripling renewable energy capacity, doubling the pace of energy efficiency impro”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-dd2e739ead9066f8",
+        "from": "claim:c15bf91ea851c3be-03398e983c0d29f0",
+        "to": "claim:b26d226f500be322-398ef16d4b0abfcd",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-climate-001-b26d226f500be322-11#chars-2484-2653",
+          "span:c-climate-004-c15bf91ea851c3be-9#chars-1519-1605"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:13:47.464Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.6,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-dd2e739ead9066f8",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-climate-001#block-11] “Projected CO2 emissions from existing fossil fuel infrastructure without additio”; [1:c-climate-004#block-9] “heat pumps and other electric heating systems outselling fossil fuel boilers glo”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-dd2e739ead9066f8",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-climate-001#block-11] “Projected CO2 emissions from existing fossil fuel infrastructure without additio”; [1:c-climate-004#block-9] “heat pumps and other electric heating systems outselling fossil fuel boilers glo”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-dd2e739ead9066f8",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-climate-001#block-11] “Projected CO2 emissions from existing fossil fuel infrastructure without additio”; [1:c-climate-004#block-9] “heat pumps and other electric heating systems outselling fossil fuel boilers glo”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-e80a9cbdddd85406",
+        "from": "claim:c15bf91ea851c3be-33ffb90d56fb69d8",
+        "to": "claim:b26d226f500be322-4811ce763ff3f4c8",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-climate-001-b26d226f500be322-11#chars-2188-2257",
+          "span:c-climate-004-c15bf91ea851c3be-6#chars-682-1011"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:13:47.464Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.6,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-e80a9cbdddd85406",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-climate-001#block-11] “Limiting human-caused global warming requires net zero CO2 emissions.”; [1:c-climate-004#block-6] “Tripling renewable energy capacity, doubling the pace of energy efficiency impro”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-e80a9cbdddd85406",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-climate-001#block-11] “Limiting human-caused global warming requires net zero CO2 emissions.”; [1:c-climate-004#block-6] “Tripling renewable energy capacity, doubling the pace of energy efficiency impro”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-e80a9cbdddd85406",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-climate-001#block-11] “Limiting human-caused global warming requires net zero CO2 emissions.”; [1:c-climate-004#block-6] “Tripling renewable energy capacity, doubling the pace of energy efficiency impro”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-edd057b7dfe1d4fd",
+        "from": "claim:c15bf91ea851c3be-d4fc52ac12640010",
+        "to": "claim:b26d226f500be322-398ef16d4b0abfcd",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-climate-001-b26d226f500be322-11#chars-2484-2653",
+          "span:c-climate-004-c15bf91ea851c3be-15#chars-2370-2445"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:13:47.464Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.6,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-edd057b7dfe1d4fd",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-climate-001#block-11] “Projected CO2 emissions from existing fossil fuel infrastructure without additio”; [1:c-climate-004#block-15] “The transition to clean energy is happening worldwide and it's unstoppable.”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-edd057b7dfe1d4fd",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-climate-001#block-11] “Projected CO2 emissions from existing fossil fuel infrastructure without additio”; [1:c-climate-004#block-15] “The transition to clean energy is happening worldwide and it's unstoppable.”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-edd057b7dfe1d4fd",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-climate-001#block-11] “Projected CO2 emissions from existing fossil fuel infrastructure without additio”; [1:c-climate-004#block-15] “The transition to clean energy is happening worldwide and it's unstoppable.”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    }
+  ]
+}

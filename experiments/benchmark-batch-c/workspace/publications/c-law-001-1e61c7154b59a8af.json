@@ -1,0 +1,900 @@
+{
+  "schemaVersion": "v1",
+  "sourceId": "source:c-law-001-1e61c7154b59a8af",
+  "runId": "69d76b3f-0208-494e-8c31-0184c25217f8",
+  "publishedAt": "2026-07-28T07:14:41.928Z",
+  "claims": [
+    {
+      "id": "claim:1e61c7154b59a8af-02f4110de018fe27",
+      "statement": "The AI Act was adopted on 13 June 2024.",
+      "evidenceSpanIds": [
+        "span:c-law-001-1e61c7154b59a8af-3#chars-206-231"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:14:22.609Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-001-1e61c7154b59a8af-3#chars-206-231"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-001-1e61c7154b59a8af-3#chars-206-231"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:14:22.609Z"
+    },
+    {
+      "id": "claim:1e61c7154b59a8af-037c8bf8420e807b",
+      "statement": "High-risk AI systems include those that are safety components of products (Annex I) or fall within eight specific use cases (Annex III).",
+      "evidenceSpanIds": [
+        "span:c-law-001-1e61c7154b59a8af-8#chars-1711-2109"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:14:22.609Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-001-1e61c7154b59a8af-8#chars-1711-2109"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-001-1e61c7154b59a8af-8#chars-1711-2109"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:14:22.609Z"
+    },
+    {
+      "id": "claim:1e61c7154b59a8af-1a8b84d94cb7f84c",
+      "statement": "The AI Act was published in the Official Journal L series on 12 July 2024.",
+      "evidenceSpanIds": [
+        "span:c-law-001-1e61c7154b59a8af-3#chars-270-313"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:14:22.609Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-001-1e61c7154b59a8af-3#chars-270-313"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-001-1e61c7154b59a8af-3#chars-270-313"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:14:22.609Z"
+    },
+    {
+      "id": "claim:1e61c7154b59a8af-1cf8a28c3d29fe57",
+      "statement": "The AI Act adopts a four-tier risk classification.",
+      "evidenceSpanIds": [
+        "span:c-law-001-1e61c7154b59a8af-7#chars-1202-1252"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:14:22.609Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-001-1e61c7154b59a8af-7#chars-1202-1252"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-001-1e61c7154b59a8af-7#chars-1202-1252"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:14:22.609Z"
+    },
+    {
+      "id": "claim:1e61c7154b59a8af-24efdd4723db224e",
+      "statement": "The AI Act is also known as the 'AI Act' or 'EU AI Act'.",
+      "evidenceSpanIds": [
+        "span:c-law-001-1e61c7154b59a8af-3#chars-314-353"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:14:22.609Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-001-1e61c7154b59a8af-3#chars-314-353"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-001-1e61c7154b59a8af-3#chars-314-353"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:14:22.609Z"
+    },
+    {
+      "id": "claim:1e61c7154b59a8af-24f87359d6644586",
+      "statement": "Member states must designate competent authorities by 2 August 2025.",
+      "evidenceSpanIds": [
+        "span:c-law-001-1e61c7154b59a8af-12#chars-2639-2704"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:14:22.609Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-001-1e61c7154b59a8af-12#chars-2639-2704"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-001-1e61c7154b59a8af-12#chars-2639-2704"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:14:22.609Z"
+    },
+    {
+      "id": "claim:1e61c7154b59a8af-586c0b4788cea75b",
+      "statement": "Unacceptable risk AI practices are prohibited and include: subliminal techniques causing harm; exploiting vulnerabilities due to age, disability, or social/economic situation; social scoring; predictive policing based on profiling; untargeted scraping of facial images; emotion inference in workplace/education; biometric categorization of sensitive characteristics; real-time remote biometric identification for law enforcement (with narrow exceptions).",
+      "evidenceSpanIds": [
+        "span:c-law-001-1e61c7154b59a8af-8#chars-1257-1704"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:14:22.609Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-001-1e61c7154b59a8af-8#chars-1257-1704"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-001-1e61c7154b59a8af-8#chars-1257-1704"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:14:22.609Z"
+    },
+    {
+      "id": "claim:1e61c7154b59a8af-5d4298ea38bc4dd6",
+      "statement": "The AI Act entered into force on 2 August 2024.",
+      "evidenceSpanIds": [
+        "span:c-law-001-1e61c7154b59a8af-3#chars-232-269"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:14:22.609Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-001-1e61c7154b59a8af-3#chars-232-269"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-001-1e61c7154b59a8af-3#chars-232-269"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:14:22.609Z"
+    },
+    {
+      "id": "claim:1e61c7154b59a8af-60d1a615fa66813e",
+      "statement": "该内容来源于EUR-Lex网站和欧盟官方摘要。",
+      "evidenceSpanIds": [
+        "span:c-law-001-1e61c7154b59a8af-2#chars-80-204"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:14:22.609Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-001-1e61c7154b59a8af-2#chars-80-204"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-001-1e61c7154b59a8af-2#chars-80-204"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:14:22.609Z"
+    },
+    {
+      "id": "claim:1e61c7154b59a8af-6701affdd23f4d99",
+      "statement": "Rules for product-linked high-risk AI systems (Annex I) take effect on 2 August 2027.",
+      "evidenceSpanIds": [
+        "span:c-law-001-1e61c7154b59a8af-12#chars-2779-2861"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:14:22.609Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-001-1e61c7154b59a8af-12#chars-2779-2861"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-001-1e61c7154b59a8af-12#chars-2779-2861"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:14:22.609Z"
+    },
+    {
+      "id": "claim:1e61c7154b59a8af-71f81474af0d6bf3",
+      "statement": "For other infringements, penalties are up to €15 million or 3% of total worldwide annual turnover.",
+      "evidenceSpanIds": [
+        "span:c-law-001-1e61c7154b59a8af-10#chars-2487-2536"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:14:22.609Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-001-1e61c7154b59a8af-10#chars-2487-2536"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-001-1e61c7154b59a8af-10#chars-2487-2536"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:14:22.609Z"
+    },
+    {
+      "id": "claim:1e61c7154b59a8af-73fa3ab27414cda8",
+      "statement": "Rules for high-risk AI systems (Annex III) take effect on 2 August 2026.",
+      "evidenceSpanIds": [
+        "span:c-law-001-1e61c7154b59a8af-12#chars-2707-2776"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:14:22.609Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-001-1e61c7154b59a8af-12#chars-2707-2776"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-001-1e61c7154b59a8af-12#chars-2707-2776"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:14:22.609Z"
+    },
+    {
+      "id": "claim:1e61c7154b59a8af-9a9c2a479295d164",
+      "statement": "For infringements on prohibited practices, penalties are up to €35 million or 7% of total worldwide annual turnover, whichever is higher.",
+      "evidenceSpanIds": [
+        "span:c-law-001-1e61c7154b59a8af-10#chars-2362-2486"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:14:22.609Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-001-1e61c7154b59a8af-10#chars-2362-2486"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-001-1e61c7154b59a8af-10#chars-2362-2486"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:14:22.609Z"
+    },
+    {
+      "id": "claim:1e61c7154b59a8af-a48a3f1ae8ac6838",
+      "statement": "Prohibitions on unacceptable risk practices take effect on 2 February 2025.",
+      "evidenceSpanIds": [
+        "span:c-law-001-1e61c7154b59a8af-12#chars-2564-2636"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:14:22.609Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-001-1e61c7154b59a8af-12#chars-2564-2636"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-001-1e61c7154b59a8af-12#chars-2564-2636"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:14:22.609Z"
+    },
+    {
+      "id": "claim:1e61c7154b59a8af-b807fa4a3bd16e79",
+      "statement": "Specific transparency risk applies to chatbots, deepfakes, and emotion recognition systems, which must disclose their AI nature.",
+      "evidenceSpanIds": [
+        "span:c-law-001-1e61c7154b59a8af-8#chars-2115-2230"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:14:22.609Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-001-1e61c7154b59a8af-8#chars-2115-2230"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-001-1e61c7154b59a8af-8#chars-2115-2230"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:14:22.609Z"
+    },
+    {
+      "id": "claim:1e61c7154b59a8af-c18e506bd52019e0",
+      "statement": "Regulation (EU) 2024/1689 is also known as the Artificial Intelligence Act.",
+      "evidenceSpanIds": [
+        "span:c-law-001-1e61c7154b59a8af-0#chars-3-58"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:14:22.609Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-001-1e61c7154b59a8af-0#chars-3-58"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-001-1e61c7154b59a8af-0#chars-3-58"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:14:22.609Z"
+    },
+    {
+      "id": "claim:1e61c7154b59a8af-c41cc0332d3045b4",
+      "statement": "Minimal risk applies to most AI systems, with no additional obligations beyond existing law.",
+      "evidenceSpanIds": [
+        "span:c-law-001-1e61c7154b59a8af-8#chars-2236-2317"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:14:22.609Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-001-1e61c7154b59a8af-8#chars-2236-2317"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-001-1e61c7154b59a8af-8#chars-2236-2317"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:14:22.609Z"
+    },
+    {
+      "id": "claim:1e61c7154b59a8af-d4447153fcf091e1",
+      "statement": "The purpose of the AI Act is to improve the functioning of the internal market by laying down a uniform legal framework for AI systems in the Union.",
+      "evidenceSpanIds": [
+        "span:c-law-001-1e61c7154b59a8af-5#chars-415-1147"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:14:22.609Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-001-1e61c7154b59a8af-5#chars-415-1147"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-001-1e61c7154b59a8af-5#chars-415-1147"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:14:22.609Z"
+    }
+  ],
+  "concepts": [
+    {
+      "id": "concept:133b96960fc78e03",
+      "name": "competent authority",
+      "aliases": [
+        "competent authorities"
+      ],
+      "boundary": "主管机构",
+      "domain": "法律"
+    },
+    {
+      "id": "concept:2cdc534761ae12fe",
+      "name": "specific transparency risk",
+      "aliases": [],
+      "boundary": "特定透明度风险",
+      "domain": "人工智能"
+    },
+    {
+      "id": "concept:34a252df4a0f14c5",
+      "name": "unacceptable risk AI practice",
+      "aliases": [
+        "prohibited practices",
+        "unacceptable risk AI practices"
+      ],
+      "boundary": "不可接受风险的人工智能实践",
+      "domain": "人工智能"
+    },
+    {
+      "id": "concept:644259ccfe2db253",
+      "name": "internal market",
+      "aliases": [],
+      "boundary": "内部市场",
+      "domain": "经济"
+    },
+    {
+      "id": "concept:9c54c260da4132ac",
+      "name": "four-tier risk classification",
+      "aliases": [],
+      "boundary": "四层风险分类",
+      "domain": "人工智能"
+    },
+    {
+      "id": "concept:abacf2144d91714b",
+      "name": "product-linked high-risk AI system",
+      "aliases": [],
+      "boundary": "产品相关高风险人工智能系统",
+      "domain": "人工智能"
+    },
+    {
+      "id": "concept:d7c52b10876462bb",
+      "name": "AI Act",
+      "aliases": [
+        "AI Act",
+        "Artificial Intelligence Act",
+        "EU AI Act",
+        "Regulation (EU) 2024/1689"
+      ],
+      "boundary": "欧盟人工智能法规",
+      "domain": "法律"
+    },
+    {
+      "id": "concept:e56e375f0ae82f6e",
+      "name": "high-risk AI system",
+      "aliases": [
+        "high-risk AI systems"
+      ],
+      "boundary": "高风险人工智能系统",
+      "domain": "人工智能"
+    },
+    {
+      "id": "concept:e6205907174b3c5d",
+      "name": "EUR-Lex",
+      "aliases": [],
+      "boundary": "欧盟法律数据库",
+      "domain": "法律"
+    },
+    {
+      "id": "concept:e940dec6335a260d",
+      "name": "minimal risk",
+      "aliases": [],
+      "boundary": "最小风险",
+      "domain": "人工智能"
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel:1e61c7154b59a8af-35eb01c16ecb92eb",
+      "from": "claim:1e61c7154b59a8af-1cf8a28c3d29fe57",
+      "to": "claim:1e61c7154b59a8af-586c0b4788cea75b",
+      "type": "RELATED_TO",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:c-law-001-1e61c7154b59a8af-7#chars-1202-1252",
+        "span:c-law-001-1e61c7154b59a8af-8#chars-1257-1704"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:14:29.649Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.8,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:1e61c7154b59a8af-3d050785e475dc29",
+      "from": "claim:1e61c7154b59a8af-02f4110de018fe27",
+      "to": "claim:1e61c7154b59a8af-1a8b84d94cb7f84c",
+      "type": "RELATED_TO",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:c-law-001-1e61c7154b59a8af-3#chars-206-231",
+        "span:c-law-001-1e61c7154b59a8af-3#chars-270-313"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:14:29.649Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.9,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:1e61c7154b59a8af-6100747e404b8f12",
+      "from": "claim:1e61c7154b59a8af-02f4110de018fe27",
+      "to": "claim:1e61c7154b59a8af-5d4298ea38bc4dd6",
+      "type": "RELATED_TO",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:c-law-001-1e61c7154b59a8af-3#chars-206-231",
+        "span:c-law-001-1e61c7154b59a8af-3#chars-232-269"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:14:29.649Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.9,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:1e61c7154b59a8af-64660ad052b0e662",
+      "from": "claim:1e61c7154b59a8af-1cf8a28c3d29fe57",
+      "to": "claim:1e61c7154b59a8af-037c8bf8420e807b",
+      "type": "RELATED_TO",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:c-law-001-1e61c7154b59a8af-7#chars-1202-1252",
+        "span:c-law-001-1e61c7154b59a8af-8#chars-1711-2109"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:14:29.649Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.8,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:1e61c7154b59a8af-703925ba36a2fce5",
+      "from": "claim:1e61c7154b59a8af-9a9c2a479295d164",
+      "to": "claim:1e61c7154b59a8af-71f81474af0d6bf3",
+      "type": "RELATED_TO",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:c-law-001-1e61c7154b59a8af-10#chars-2362-2486",
+        "span:c-law-001-1e61c7154b59a8af-10#chars-2487-2536"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:14:29.649Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.9,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:1e61c7154b59a8af-77cd042182ff1358",
+      "from": "claim:1e61c7154b59a8af-24f87359d6644586",
+      "to": "claim:1e61c7154b59a8af-5d4298ea38bc4dd6",
+      "type": "REQUIRES",
+      "conditions": [
+        "The AI Act entered into force on 2 August 2024, and member states must designate competent authorities by 2 August 2025"
+      ],
+      "conditionStatus": "PRESERVED",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:c-law-001-1e61c7154b59a8af-12#chars-2639-2704",
+        "span:c-law-001-1e61c7154b59a8af-3#chars-232-269"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:14:29.649Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 1,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:1e61c7154b59a8af-bde4e11d36f522a2",
+      "from": "claim:1e61c7154b59a8af-1a8b84d94cb7f84c",
+      "to": "claim:1e61c7154b59a8af-5d4298ea38bc4dd6",
+      "type": "RELATED_TO",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:c-law-001-1e61c7154b59a8af-3#chars-232-269",
+        "span:c-law-001-1e61c7154b59a8af-3#chars-270-313"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:14:29.649Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.9,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:1e61c7154b59a8af-f217ae2e77d942d0",
+      "from": "claim:1e61c7154b59a8af-1cf8a28c3d29fe57",
+      "to": "claim:1e61c7154b59a8af-c41cc0332d3045b4",
+      "type": "RELATED_TO",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:c-law-001-1e61c7154b59a8af-7#chars-1202-1252",
+        "span:c-law-001-1e61c7154b59a8af-8#chars-2236-2317"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:14:29.649Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.8,
+      "consumedBy": []
+    }
+  ]
+}

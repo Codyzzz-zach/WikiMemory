@@ -1,0 +1,208 @@
+{
+  "concepts": [
+    {
+      "name": "Administrative fine",
+      "aliases": ["fine"],
+      "boundary": "Monetary penalty imposed by a supervisory authority",
+      "domain": "GDPR enforcement"
+    },
+    {
+      "name": "GDPR",
+      "aliases": ["General Data Protection Regulation"],
+      "boundary": "EU regulation on data protection and privacy",
+      "domain": "Data protection law"
+    },
+    {
+      "name": "Data Protection Commission (Ireland)",
+      "aliases": ["DPC", "DPC (Ireland)"],
+      "boundary": "Irish independent authority responsible for GDPR enforcement",
+      "domain": "Data protection authority"
+    },
+    {
+      "name": "EDPB",
+      "aliases": ["European Data Protection Board"],
+      "boundary": "EU body ensuring consistent application of GDPR",
+      "domain": "Data protection authority"
+    },
+    {
+      "name": "Binding decision",
+      "aliases": ["EDPB Binding Decision"],
+      "boundary": "Legally binding resolution under Article 65 GDPR",
+      "domain": "GDPR dispute resolution"
+    },
+    {
+      "name": "Fundamental rights and freedoms of data subjects",
+      "aliases": ["rights and freedoms of data subjects"],
+      "boundary": "Rights protected under EU Charter of Fundamental Rights",
+      "domain": "Data protection"
+    },
+    {
+      "name": "CJEU",
+      "aliases": ["Court of Justice of the European Union"],
+      "boundary": "EU's highest court",
+      "domain": "EU law"
+    },
+    {
+      "name": "US law",
+      "aliases": [],
+      "boundary": "Legal framework of the United States",
+      "domain": "International law"
+    },
+    {
+      "name": "EU law",
+      "aliases": [],
+      "boundary": "Legal framework of the European Union",
+      "domain": "EU law"
+    },
+    {
+      "name": "Meta Ireland",
+      "aliases": ["Meta Platforms Ireland Limited"],
+      "boundary": "Irish subsidiary of Meta Platforms Inc.",
+      "domain": "Company"
+    },
+    {
+      "name": "Chapter V GDPR",
+      "aliases": [],
+      "boundary": "GDPR provisions on transfers of personal data to third countries",
+      "domain": "GDPR"
+    },
+    {
+      "name": "Article 58(2)(d) GDPR",
+      "aliases": [],
+      "boundary": "Provision empowering supervisory authorities to order compliance",
+      "domain": "GDPR"
+    },
+    {
+      "name": "Article 58(2)(j) GDPR",
+      "aliases": [],
+      "boundary": "Provision empowering supervisory authorities to order suspension of data flows",
+      "domain": "GDPR"
+    },
+    {
+      "name": "Suspension order",
+      "aliases": [],
+      "boundary": "Order to stop data transfers",
+      "domain": "GDPR enforcement"
+    },
+    {
+      "name": "Personal data",
+      "aliases": [],
+      "boundary": "Any information relating to an identified or identifiable natural person",
+      "domain": "Data protection"
+    },
+    {
+      "name": "Data transfer",
+      "aliases": ["transfers", "data transfers"],
+      "boundary": "Movement of personal data to a third country",
+      "domain": "Data protection"
+    },
+    {
+      "name": "Article 49(1) GDPR",
+      "aliases": [],
+      "boundary": "Derogations for specific situations for data transfers",
+      "domain": "GDPR"
+    },
+    {
+      "name": "Standard Contractual Clauses",
+      "aliases": ["SCCs", "2010 SCCs", "2021 SCCs"],
+      "boundary": "Standard data protection clauses adopted by the European Commission",
+      "domain": "Data transfer mechanism"
+    },
+    {
+      "name": "Data Protection Commissioner v Facebook Ireland Limited and Maximillian Schrems",
+      "aliases": ["Schrems II"],
+      "boundary": "CJEU case invalidating Privacy Shield and clarifying SCCs",
+      "domain": "Case law"
+    },
+    {
+      "name": "Article 46(1) GDPR",
+      "aliases": [],
+      "boundary": "Provision on appropriate safeguards for data transfers",
+      "domain": "GDPR"
+    },
+    {
+      "name": "Concerned Supervisory Authorities",
+      "aliases": [],
+      "boundary": "Other EU/EEA data protection authorities involved in the case",
+      "domain": "Data protection authorities"
+    },
+    {
+      "name": "Supplementary measures",
+      "aliases": ["additional supplementary measures"],
+      "boundary": "Additional safeguards to compensate for inadequate protection",
+      "domain": "Data transfer"
+    },
+    {
+      "name": "Record of safeguards",
+      "aliases": [],
+      "boundary": "Documentation of measures taken by data exporter",
+      "domain": "Data protection compliance"
+    },
+    {
+      "name": "Facebook",
+      "aliases": [],
+      "boundary": "Social media platform operated by Meta",
+      "domain": "Social media"
+    },
+    {
+      "name": "Europe",
+      "aliases": ["EU/EEA"],
+      "boundary": "Geographic region including EU and EEA",
+      "domain": "Geography"
+    },
+    {
+      "name": "USA",
+      "aliases": ["US"],
+      "boundary": "United States of America",
+      "domain": "Geography"
+    },
+    {
+      "name": "Lead Supervisory Authority",
+      "aliases": [],
+      "boundary": "Main data protection authority for cross-border processing",
+      "domain": "GDPR governance"
+    },
+    {
+      "name": "Infringement",
+      "aliases": ["violation"],
+      "boundary": "Breach of GDPR provisions",
+      "domain": "GDPR enforcement"
+    },
+    {
+      "name": "Case reference IN-20-8-1",
+      "aliases": ["IN-20-8-1"],
+      "boundary": "Identifier for the DPC case",
+      "domain": "Case management"
+    },
+    {
+      "name": "Announcement date",
+      "aliases": [],
+      "boundary": "Date when decision was announced",
+      "domain": "Temporal"
+    },
+    {
+      "name": "Decision date",
+      "aliases": [],
+      "boundary": "Date when decision was made",
+      "domain": "Temporal"
+    },
+    {
+      "name": "EDPB press release",
+      "aliases": [],
+      "boundary": "Official statement from EDPB",
+      "domain": "Communication"
+    },
+    {
+      "name": "DPC announcement",
+      "aliases": [],
+      "boundary": "Official statement from DPC",
+      "domain": "Communication"
+    },
+    {
+      "name": "RegSol/GDPRhub analyses",
+      "aliases": [],
+      "boundary": "Third-party analysis of GDPR cases",
+      "domain": "Analysis"
+    }
+  ]
+}

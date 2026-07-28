@@ -1,0 +1,77 @@
+{
+  "runId": "batch-c-blind-first-2026-07-28T07-22-04-418Z",
+  "sampleId": "sample-f14a3936-8b1d-40ab-b1de-8e44bf8c5fbd",
+  "questionId": "C-A-PSYCH-001",
+  "group": "P-graph",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "temperature": 0,
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 4368,
+    "completionTokens": 79,
+    "totalTokens": 4447,
+    "promptCacheHitTokens": 0,
+    "promptCacheMissTokens": 4368,
+    "reasoningTokens": 0
+  },
+  "latencyMs": 1422,
+  "promptHash": "33210fc6b262f65524579e29f759fc66bef3945b2e331ddda52d8c33ac8432e1",
+  "contextHash": "3394354e8d1257d41329337ee9de31259e4f6a0cf1e91afd85ff78c811c85bdb",
+  "estimatedContextTokens": 3588,
+  "estimatedInputTokens": 3803,
+  "retrievedClaims": [
+    "claim:c15bf91ea851c3be-b6e639a457bef60d",
+    "claim:b26d226f500be322-984b2dd68da1b9a2",
+    "claim:b26d226f500be322-bb2a4c546264d226",
+    "claim:c15bf91ea851c3be-6eedc621985606fc",
+    "claim:c15bf91ea851c3be-d4fc52ac12640010",
+    "claim:b26d226f500be322-398ef16d4b0abfcd",
+    "claim:b26d226f500be322-2a975af54bf3b3bd",
+    "claim:b26d226f500be322-af7a69e395340efb",
+    "claim:b26d226f500be322-f7176840d8e3309c",
+    "claim:b26d226f500be322-4811ce763ff3f4c8",
+    "claim:b26d226f500be322-8852c82dd81efd55",
+    "claim:c15bf91ea851c3be-33ffb90d56fb69d8",
+    "claim:c15bf91ea851c3be-f2794c0130f4aee6",
+    "claim:b26d226f500be322-60bcb09a07cdbc6c",
+    "claim:c15bf91ea851c3be-5dad9e8253a8a18a",
+    "claim:b26d226f500be322-e06162dbf4f90ed6",
+    "claim:c15bf91ea851c3be-82569f5301dc007f"
+  ],
+  "retrievedRelations": [
+    "rel:c15bf91ea851c3be-3caafb050051f35b",
+    "rel:cross-0446588902d3b7f8",
+    "rel:b26d226f500be322-7e74e05fc4760d7d",
+    "rel:b26d226f500be322-57d95417e8250395",
+    "rel:b26d226f500be322-99a24d6bab242c82",
+    "rel:b26d226f500be322-7312454e68f4bb42",
+    "rel:b26d226f500be322-a61740594f6601c6",
+    "rel:cross-7c97b9c1b1455fbf",
+    "rel:cross-cc44e76c02d97ef6",
+    "rel:b26d226f500be322-9c3a48a61b2f2937",
+    "rel:cross-cfdfa7308227f312",
+    "rel:b26d226f500be322-f0e593c9fef28796",
+    "rel:cross-a0b6b2c67ab1ffa4",
+    "rel:cross-d1962a0992525778",
+    "rel:c15bf91ea851c3be-2efce0d3c15115e4",
+    "rel:cross-76505f654e99ab70",
+    "rel:c15bf91ea851c3be-61f3253d5062805f",
+    "rel:cross-e68ab711733dbda2"
+  ],
+  "retrievedSources": [
+    "source:c-climate-004-c15bf91ea851c3be",
+    "source:c-climate-001-b26d226f500be322"
+  ],
+  "citationValidation": {
+    "valid": true,
+    "citationCount": 0,
+    "invalid": []
+  },
+  "request": {
+    "systemPrompt": "你是受证据约束的问答 Agent。只使用本次请求提供的检索上下文回答。\n要求：保留影响结论的条件、时间、例外、来源角色与不确定性；关键结论引用上下文中的 SOURCE、EVIDENCE 或 CLAIM 标识；上下文不足时明确说明，不得用外部常识补齐。\n只输出严格 JSON：{\"answer\":\"...\",\"citations\":[\"...\"],\"insufficient\":false,\"uncertainties\":[\"...\"]}。",
+    "userPrompt": "# 问题\n基于当前材料，心理学作为一个整体学科，其可复制性究竟是低还是高？如果材料不足以给出确定性结论，请说明哪些关键信息缺失导致了这种不确定性。\n\n# 检索上下文\n## TASK MAP\n主题: 基于当前材料，心理学作为一个整体学科，其可复制性究竟是低还是高？如果材料不足以给出确定性结论，请说明哪些关键信息缺失导致了这种不确定性。\n地图主题: 当前, 导致, 致了, 导致了, 基于\n关键概念: 当前排放, 物理学家, 跨学科研究者\n已知争议: 0 个\n最近变化: 5 条\n找到 17 条相关 Claim\n找到 18 条关系\n找到 17 条原文证据\n\n## CLAIM claim:c15bf91ea851c3be-b6e639a457bef60d\n清洁能源技术日益增长的势头和全球结构性经济转变对化石燃料有重大影响，全球煤炭、石油和天然气需求峰值均在本十年内可见——这是基于当前政策设定的WEO情景中首次出现这种情况。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:b26d226f500be322-984b2dd68da1b9a2\n这导致了对自然和人类广泛的不利影响以及相关的损失和损害。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:b26d226f500be322-bb2a4c546264d226\n人类活动，主要通过温室气体排放，已经明确导致了全球变暖。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:c15bf91ea851c3be-6eedc621985606fc\n所有这些增长仅基于世界各国政府当前的政策设定。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:c15bf91ea851c3be-d4fc52ac12640010\n向清洁能源的转型正在全球范围内发生，且不可阻挡。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:b26d226f500be322-398ef16d4b0abfcd\n在没有额外减排的情况下，现有化石燃料基础设施的预计二氧化碳排放量将超过1.5°C（50%概率）的剩余碳预算。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:b26d226f500be322-2a975af54bf3b3bd\n人类引起的气候变化已经影响到全球每个地区的许多天气和气候极端事件。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:b26d226f500be322-af7a69e395340efb\n全球温室气体排放持续增加。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:b26d226f500be322-f7176840d8e3309c\n2011-2020年全球地表温度比1850-1900年升高了1.1°C。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:b26d226f500be322-4811ce763ff3f4c8\n限制人类引起的全球变暖需要实现二氧化碳净零排放。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:b26d226f500be322-8852c82dd81efd55\n到实现二氧化碳净零排放时的累积碳排放量以及这十年温室气体减排的水平在很大程度上决定了变暖能否被限制在1.5°C或2°C。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:c15bf91ea851c3be-33ffb90d56fb69d8\n将可再生能源容量增加两倍、将能效提升速度翻倍至每年4%、加速电气化以及大幅减少化石燃料运营中的甲烷排放，共同提供了到2030年使能源部门走上限制升温1.5°C路径所需的80%以上的减排量。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:c15bf91ea851c3be-f2794c0130f4aee6\nSTEPS预测排放仍然高到足以在2100年将全球平均气温推高至约2.4°C。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:b26d226f500be322-60bcb09a07cdbc6c\n大气、海洋、冰冻圈和生物圈发生了广泛而迅速的变化。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:c15bf91ea851c3be-5dad9e8253a8a18a\n到2030年使排放曲线向下弯曲所需的关键行动已广为人知，并且在大多数情况下成本效益非常高。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:b26d226f500be322-e06162dbf4f90ed6\n截至2021年10月宣布的国家自主贡献（NDCs）所隐含的2030年全球温室气体排放量使得21世纪升温超过1.5°C成为可能，并使限制升温低于2°C变得更加困难。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:c15bf91ea851c3be-82569f5301dc007f\nSTEPS预测能源相关的二氧化碳排放在2020年代中期达到峰值。\nConditions: none\nValidity: SUPPORTED\n\n## RELATION rel:c15bf91ea851c3be-3caafb050051f35b\nclaim:c15bf91ea851c3be-b6e639a457bef60d --[SUPPORTS]--> claim:c15bf91ea851c3be-d4fc52ac12640010\nConditions: none\n\n## RELATION rel:cross-0446588902d3b7f8\nclaim:c15bf91ea851c3be-b6e639a457bef60d --[RELATED_TO]--> claim:b26d226f500be322-398ef16d4b0abfcd\nConditions: none\n\n## RELATION rel:b26d226f500be322-7e74e05fc4760d7d\nclaim:b26d226f500be322-2a975af54bf3b3bd --[DERIVED_FROM]--> claim:b26d226f500be322-984b2dd68da1b9a2\nConditions: claim 12 是 claim 2 所述影响的结果\n\n## RELATION rel:b26d226f500be322-57d95417e8250395\nclaim:b26d226f500be322-af7a69e395340efb --[SUPPORTS]--> claim:b26d226f500be322-bb2a4c546264d226\nConditions: claim 15 指出排放增加，claim 16 指出人类活动导致变暖，因果关系\n\n## RELATION rel:b26d226f500be322-99a24d6bab242c82\nclaim:b26d226f500be322-bb2a4c546264d226 --[SUPPORTS]--> claim:b26d226f500be322-f7176840d8e3309c\nConditions: claim 16 指出人类活动导致变暖，claim 20 提供温度升高数据，证据支持\n\n## RELATION rel:b26d226f500be322-7312454e68f4bb42\nclaim:b26d226f500be322-398ef16d4b0abfcd --[SUPPORTS]--> claim:b26d226f500be322-4811ce763ff3f4c8\nConditions: claim 3 指出排放超预算，claim 5 提出需要净零排放，两者逻辑一致\n\n## RELATION rel:b26d226f500be322-a61740594f6601c6\nclaim:b26d226f500be322-398ef16d4b0abfcd --[SUPPORTS]--> claim:b26d226f500be322-8852c82dd81efd55\nConditions: claim 3 和 claim 10 均涉及碳排放与温控目标的关系\n\n## RELATION rel:cross-7c97b9c1b1455fbf\nclaim:c15bf91ea851c3be-33ffb90d56fb69d8 --[RELATED_TO]--> claim:b26d226f500be322-398ef16d4b0abfcd\nConditions: none\n\n## RELATION rel:cross-cc44e76c02d97ef6\nclaim:c15bf91ea851c3be-f2794c0130f4aee6 --[RELATED_TO]--> claim:b26d226f500be322-398ef16d4b0abfcd\nConditions: none\n\n## RELATION rel:b26d226f500be322-9c3a48a61b2f2937\nclaim:b26d226f500be322-2a975af54bf3b3bd --[SUPPORTS]--> claim:b26d226f500be322-60bcb09a07cdbc6c\nConditions: claim 2 指出气候变化影响极端事件，claim 8 描述广泛变化，两者相互支持\n\n## RELATION rel:cross-cfdfa7308227f312\nclaim:c15bf91ea851c3be-f2794c0130f4aee6 --[RELATED_TO]--> claim:b26d226f500be322-af7a69e395340efb\nConditions: none\n\n## RELATION rel:b26d226f500be322-f0e593c9fef28796\nclaim:b26d226f500be322-4811ce763ff3f4c8 --[SUPPORTS]--> claim:b26d226f500be322-8852c82dd81efd55\nConditions: claim 5 提出净零排放必要性，claim 10 进一步阐述其与温控的关系\n\n## RELATION rel:cross-a0b6b2c67ab1ffa4\nclaim:c15bf91ea851c3be-5dad9e8253a8a18a --[RELATED_TO]--> claim:b26d226f500be322-4811ce763ff3f4c8\nConditions: none\n\n## RELATION rel:cross-d1962a0992525778\nclaim:c15bf91ea851c3be-f2794c0130f4aee6 --[RELATED_TO]--> claim:b26d226f500be322-4811ce763ff3f4c8\nConditions: none\n\n## RELATION rel:c15bf91ea851c3be-2efce0d3c15115e4\nclaim:c15bf91ea851c3be-33ffb90d56fb69d8 --[SUPPORTS]--> claim:c15bf91ea851c3be-5dad9e8253a8a18a\nConditions: none\n\n## RELATION rel:cross-76505f654e99ab70\nclaim:c15bf91ea851c3be-33ffb90d56fb69d8 --[RELATED_TO]--> claim:b26d226f500be322-e06162dbf4f90ed6\nConditions: none\n\n## RELATION rel:c15bf91ea851c3be-61f3253d5062805f\nclaim:c15bf91ea851c3be-82569f5301dc007f --[RELATED_TO]--> claim:c15bf91ea851c3be-f2794c0130f4aee6\nConditions: none\n\n## RELATION rel:cross-e68ab711733dbda2\nclaim:c15bf91ea851c3be-f2794c0130f4aee6 --[RELATED_TO]--> claim:b26d226f500be322-e06162dbf4f90ed6\nConditions: none\n\n## EVIDENCE span:c-climate-004-c15bf91ea851c3be-12#chars-1857-2183\nThe combination of growing momentum behind clean energy technologies and structural economic shifts around the world has major implications for fossil fuels, with peaks in global demand for coal, oil and natural gas all visible this decade — the first time this has happened in a WEO scenario based on today's policy settings.\n\n## EVIDENCE span:c-climate-001-b26d226f500be322-7#chars-1306-1419\nThis has led to widespread adverse impacts and related losses and damages to nature and people (high confidence).\n\n## EVIDENCE span:c-climate-001-b26d226f500be322-5#chars-524-633\nHuman activities, principally through emissions of greenhouse gases, have unequivocally caused global warming\n\n## EVIDENCE span:c-climate-004-c15bf91ea851c3be-10#chars-1730-1831\nAll of those increases are based only on the current policy settings of governments around the world.\n\n## EVIDENCE span:c-climate-004-c15bf91ea851c3be-15#chars-2370-2445\nThe transition to clean energy is happening worldwide and it's unstoppable.\n\n## EVIDENCE span:c-climate-001-b26d226f500be322-11#chars-2484-2653\nProjected CO2 emissions from existing fossil fuel infrastructure without additional abatement would exceed the remaining carbon budget for 1.5°C (50%) (high confidence).\n\n## EVIDENCE span:c-climate-001-b26d226f500be322-7#chars-1189-1305\nHuman-caused climate change is already affecting many weather and climate extremes in every region across the globe.\n\n## EVIDENCE span:c-climate-001-b26d226f500be322-5#chars-712-770\nGlobal greenhouse gas emissions have continued to increase\n\n## EVIDENCE span:c-climate-001-b26d226f500be322-5#chars-635-710\nwith global surface temperature reaching 1.1°C above 1850–1900 in 2011–2020\n\n## EVIDENCE span:c-climate-001-b26d226f500be322-11#chars-2188-2257\nLimiting human-caused global warming requires net zero CO2 emissions.\n\n## EVIDENCE span:c-climate-001-b26d226f500be322-11#chars-2258-2483\nCumulative carbon emissions until the time of reaching net-zero CO2 emissions and the level of greenhouse gas emission reductions this decade largely determine whether warming can be limited to 1.5°C or 2°C (high confidence).\n\n## EVIDENCE span:c-climate-004-c15bf91ea851c3be-6#chars-682-1011\nTripling renewable energy capacity, doubling the pace of energy efficiency improvements to 4% per year, ramping up electrification and slashing methane emissions from fossil fuel operations together provide more than 80% of the emissions reductions needed by 2030 to put the energy sector on a pathway to limit warming to 1.5 °C.\n\n## EVIDENCE span:c-climate-004-c15bf91ea851c3be-5#chars-458-551\nemissions remain high enough to push up global average temperatures to around 2.4 °C in 2100.\n\n## EVIDENCE span:c-climate-001-b26d226f500be322-7#chars-1094-1188\nWidespread and rapid changes in the atmosphere, ocean, cryosphere and biosphere have occurred.\n\n## EVIDENCE span:c-climate-004-c15bf91ea851c3be-6#chars-555-681\nThe key actions required to bend the emissions curve downwards to 2030 are widely known and in most cases very cost effective.\n\n## EVIDENCE span:c-climate-001-b26d226f500be322-9#chars-1703-1928\nGlobal GHG emissions in 2030 implied by nationally determined contributions (NDCs) announced by October 2021 make it likely that warming will exceed 1.5°C during the 21st century and make it harder to limit warming below 2°C.\n\n## EVIDENCE span:c-climate-004-c15bf91ea851c3be-5#chars-383-453\nThe STEPS sees a peak in energy-related CO2 emissions in the mid-2020s\n\n## CONFLICTS AND CONDITIONS\n📌 Relation rel:b26d226f500be322-7e74e05fc4760d7d (DERIVED_FROM) 适用条件: claim 12 是 claim 2 所述影响的结果\n📌 Relation rel:b26d226f500be322-57d95417e8250395 (SUPPORTS) 适用条件: claim 15 指出排放增加，claim 16 指出人类活动导致变暖，因果关系\n📌 Relation rel:b26d226f500be322-99a24d6bab242c82 (SUPPORTS) 适用条件: claim 16 指出人类活动导致变暖，claim 20 提供温度升高数据，证据支持\n📌 Relation rel:b26d226f500be322-7312454e68f4bb42 (SUPPORTS) 适用条件: claim 3 指出排放超预算，claim 5 提出需要净零排放，两者逻辑一致\n📌 Relation rel:b26d226f500be322-a61740594f6601c6 (SUPPORTS) 适用条件: claim 3 和 claim 10 均涉及碳排放与温控目标的关系\n📌 Relation rel:b26d226f500be322-9c3a48a61b2f2937 (SUPPORTS) 适用条件: claim 2 指出气候变化影响极端事件，claim 8 描述广泛变化，两者相互支持\n📌 Relation rel:b26d226f500be322-f0e593c9fef28796 (SUPPORTS) 适用条件: claim 5 提出净零排放必要性，claim 10 进一步阐述其与温控的关系\n⚠️ SUPPORTS 只表示 Claim 之间存在语义支持，不证明其来源彼此独立、同等权威或都是规范性来源；来源独立性必须依据 Source provenance 单独判断。\n🔎 Source source:c-climate-001-b26d226f500be322 provenance: uri=experiments/benchmark-batch-c/stage-a-freeze/compilation-corpus/climate-energy-policy/c-climate-001.md; sourceType=md; sourceRole=P-primary; author=IPCC (Intergovernmental Panel on Climate Change); canonicalUrl=https://www.ipcc.ch/report/ar6/syr/; publishedAt=Sun Mar 19 2023 08:00:00 GMT+0800 (China Standard Time); versionRef=doi:10.59327/IPCC/AR6-9789291691647\n🔎 Source source:c-climate-004-c15bf91ea851c3be provenance: uri=experiments/benchmark-batch-c/stage-a-freeze/compilation-corpus/climate-energy-policy/c-climate-004.md; sourceType=md; sourceRole=U/S-response; author=International Energy Agency (IEA); canonicalUrl=https://www.iea.org/reports/world-energy-outlook-2023/executive-summary; publishedAt=Tue Oct 24 2023 08:00:00 GMT+0800 (China Standard Time); versionRef='null'"
+  },
+  "answer": "{\n  \"answer\": \"检索上下文未提供任何关于心理学可复制性的信息，所有内容均涉及气候变化与能源政策。因此无法基于当前材料判断心理学的可复制性。\",\n  \"citations\": [],\n  \"insufficient\": true,\n  \"uncertainties\": [\"检索上下文完全未涉及心理学学科，缺乏任何相关数据、研究或讨论。\"]\n}",
+  "answerFormatValid": true
+}

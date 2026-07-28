@@ -1,0 +1,58 @@
+{
+  "schemaVersion": "pilot-publication-diff/v1",
+  "runId": "172cc3e1-2271-478b-b8ac-e54aef9bcb27",
+  "sourceId": "source:c-psych-001-0f7730e649dbc238",
+  "generatedAt": "2026-07-28T07:04:54.853Z",
+  "status": "PASS",
+  "acceptedReview": false,
+  "runtime": {
+    "requestedModel": "deepseek-v4-flash",
+    "temperature": 0,
+    "semanticAuditVersion": "v2.3",
+    "relationAuditVersion": "v1.7",
+    "sourceHash": "0f7730e649dbc238"
+  },
+  "baseline": null,
+  "candidate": {
+    "claims": 24,
+    "concepts": 12,
+    "relations": 8,
+    "quarantinedClaims": 0,
+    "quarantinedRelations": 8,
+    "quarantineRate": 0
+  },
+  "diff": {
+    "retainedClaimIds": 0,
+    "addedClaimIds": [
+      "claim:0f7730e649dbc238-4acc6ab8edfdce8d",
+      "claim:0f7730e649dbc238-5029d8835d37392e",
+      "claim:0f7730e649dbc238-6b8953e4a783f80b",
+      "claim:0f7730e649dbc238-6bd71d1ec2eb4eb0",
+      "claim:0f7730e649dbc238-79d4928647df5ef1",
+      "claim:0f7730e649dbc238-7e2cb553f3fbc767",
+      "claim:0f7730e649dbc238-7fd9ac05cca2b583",
+      "claim:0f7730e649dbc238-803bda104d1d3f61",
+      "claim:0f7730e649dbc238-824f3eafcb5aa161",
+      "claim:0f7730e649dbc238-86406e09d4e2463b",
+      "claim:0f7730e649dbc238-8654da6e76f10775",
+      "claim:0f7730e649dbc238-979f2ca3e1c0eba7",
+      "claim:0f7730e649dbc238-a0efb89317e2d151",
+      "claim:0f7730e649dbc238-a2a1c24332b9f4e6",
+      "claim:0f7730e649dbc238-a678d14d807db125",
+      "claim:0f7730e649dbc238-ad224d9bcee9058e",
+      "claim:0f7730e649dbc238-cbf56e09f7320ce1",
+      "claim:0f7730e649dbc238-d8077d8950c82fdd",
+      "claim:0f7730e649dbc238-e20f898d70439d2e",
+      "claim:0f7730e649dbc238-ed28a79cae9d2d88",
+      "claim:0f7730e649dbc238-ee5064947108a810",
+      "claim:0f7730e649dbc238-ee87d4aee780322e",
+      "claim:0f7730e649dbc238-f327d5e045d87405",
+      "claim:0f7730e649dbc238-f7a129bd66662ffd"
+    ],
+    "removedClaimIds": [],
+    "claimRetentionRate": null,
+    "claimCountChangeRate": null,
+    "conditionsDropped": []
+  },
+  "issues": []
+}

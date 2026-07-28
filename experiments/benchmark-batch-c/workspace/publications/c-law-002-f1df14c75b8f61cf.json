@@ -1,0 +1,1362 @@
+{
+  "schemaVersion": "v1",
+  "sourceId": "source:c-law-002-f1df14c75b8f61cf",
+  "runId": "4cf99b1c-8367-4bef-889c-0973ff87c206",
+  "publishedAt": "2026-07-28T07:15:40.354Z",
+  "claims": [
+    {
+      "id": "claim:f1df14c75b8f61cf-04f9905849db1610",
+      "statement": "An administrative fine of €1.2 billion was imposed, the largest GDPR fine ever.",
+      "evidenceSpanIds": [
+        "span:c-law-002-f1df14c75b8f61cf-13#chars-1802-1876"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:15:05.803Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-002-f1df14c75b8f61cf-13#chars-1802-1876"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-002-f1df14c75b8f61cf-13#chars-1802-1876"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:15:05.803Z"
+    },
+    {
+      "id": "claim:f1df14c75b8f61cf-0eb4d295f04e38b2",
+      "statement": "The DPC was bound to follow the EDPB's binding decision.",
+      "evidenceSpanIds": [
+        "span:c-law-002-f1df14c75b8f61cf-17#chars-2909-2965"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:15:05.803Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-002-f1df14c75b8f61cf-17#chars-2909-2965"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-002-f1df14c75b8f61cf-17#chars-2909-2965"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:15:05.803Z"
+    },
+    {
+      "id": "claim:f1df14c75b8f61cf-16ac86ad60574bb5",
+      "statement": "The DPC found that these arrangements did not address the risks to the fundamental rights and freedoms of data subjects identified by the CJEU in its judgment.",
+      "evidenceSpanIds": [
+        "span:c-law-002-f1df14c75b8f61cf-6#chars-1105-1274"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:15:05.803Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-002-f1df14c75b8f61cf-6#chars-1105-1274"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-002-f1df14c75b8f61cf-6#chars-1105-1274"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:15:05.803Z"
+    },
+    {
+      "id": "claim:f1df14c75b8f61cf-25cccbf010550b9b",
+      "statement": "The announcement date is 22 May 2023.",
+      "evidenceSpanIds": [
+        "span:c-law-002-f1df14c75b8f61cf-3#chars-295-329"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:15:05.803Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-002-f1df14c75b8f61cf-3#chars-295-329"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-002-f1df14c75b8f61cf-3#chars-295-329"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:15:05.803Z"
+    },
+    {
+      "id": "claim:f1df14c75b8f61cf-25f1e6fc7fb40fd3",
+      "statement": "US law does not provide a level of protection equivalent to that provided by EU law.",
+      "evidenceSpanIds": [
+        "span:c-law-002-f1df14c75b8f61cf-8#chars-1307-1399"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:15:05.803Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-002-f1df14c75b8f61cf-8#chars-1307-1399"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-002-f1df14c75b8f61cf-8#chars-1307-1399"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:15:05.803Z"
+    },
+    {
+      "id": "claim:f1df14c75b8f61cf-29a9ae062f2b6a6d",
+      "statement": "The case reference is IN-20-8-1.",
+      "evidenceSpanIds": [
+        "span:c-law-002-f1df14c75b8f61cf-3#chars-483-512"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:15:05.803Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-002-f1df14c75b8f61cf-3#chars-483-512"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-002-f1df14c75b8f61cf-3#chars-483-512"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:15:05.803Z"
+    },
+    {
+      "id": "claim:f1df14c75b8f61cf-2e414655c8813f20",
+      "statement": "The EDPB found that Meta IE's infringement is very serious because it concerns transfers that are systematic, repetitive and continuous.",
+      "evidenceSpanIds": [
+        "span:c-law-002-f1df14c75b8f61cf-15#chars-2292-2426"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:15:05.803Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-002-f1df14c75b8f61cf-15#chars-2292-2426"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-002-f1df14c75b8f61cf-15#chars-2292-2426"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:15:05.803Z"
+    },
+    {
+      "id": "claim:f1df14c75b8f61cf-374d7088d6f22d1c",
+      "statement": "Meta Ireland must bring processing into compliance with Chapter V GDPR by ceasing unlawful processing, including storage, in the US within six months from notification under Article 58(2)(d) GDPR.",
+      "evidenceSpanIds": [
+        "span:c-law-002-f1df14c75b8f61cf-13#chars-2043-2257"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:15:05.803Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-002-f1df14c75b8f61cf-13#chars-2043-2257"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-002-f1df14c75b8f61cf-13#chars-2043-2257"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:15:05.803Z"
+    },
+    {
+      "id": "claim:f1df14c75b8f61cf-3e1641fb7a98d37e",
+      "statement": "The DPC initially proposed only a suspension order without a fine.",
+      "evidenceSpanIds": [
+        "span:c-law-002-f1df14c75b8f61cf-17#chars-2679-2745"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:15:05.803Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-002-f1df14c75b8f61cf-17#chars-2679-2745"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-002-f1df14c75b8f61cf-17#chars-2679-2745"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:15:05.803Z"
+    },
+    {
+      "id": "claim:f1df14c75b8f61cf-44b7ee4e9b244013",
+      "statement": "Meta announced it would appeal the decision and seek a stay with the courts to pause implementation deadlines.",
+      "evidenceSpanIds": [
+        "span:c-law-002-f1df14c75b8f61cf-19#chars-2988-3098"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:15:05.803Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-002-f1df14c75b8f61cf-19#chars-2988-3098"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-002-f1df14c75b8f61cf-19#chars-2988-3098"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:15:05.803Z"
+    },
+    {
+      "id": "claim:f1df14c75b8f61cf-47e52bf04686188e",
+      "statement": "Meta Ireland must suspend any future transfer of personal data to the US within five months from notification under Article 58(2)(j) GDPR.",
+      "evidenceSpanIds": [
+        "span:c-law-002-f1df14c75b8f61cf-13#chars-1882-2037"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:15:05.803Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-002-f1df14c75b8f61cf-13#chars-1882-2037"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-002-f1df14c75b8f61cf-13#chars-1882-2037"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:15:05.803Z"
+    },
+    {
+      "id": "claim:f1df14c75b8f61cf-50ae1c95d2ea05de",
+      "statement": "It is not open to Meta to rely on the derogations provided for in Article 49(1) of the GDPR when making the data transfers.",
+      "evidenceSpanIds": [
+        "span:c-law-002-f1df14c75b8f61cf-11#chars-1640-1763"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:15:05.803Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-002-f1df14c75b8f61cf-11#chars-1640-1763"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-002-f1df14c75b8f61cf-11#chars-1640-1763"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:15:05.803Z"
+    },
+    {
+      "id": "claim:f1df14c75b8f61cf-5a5f4b5714f8072f",
+      "statement": "Neither the 2010 SCCs nor the 2021 SCCs could compensate for the inadequate protection provided by US law.",
+      "evidenceSpanIds": [
+        "span:c-law-002-f1df14c75b8f61cf-9#chars-1403-1511"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:15:05.803Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-002-f1df14c75b8f61cf-9#chars-1403-1511"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-002-f1df14c75b8f61cf-9#chars-1403-1511"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:15:05.803Z"
+    },
+    {
+      "id": "claim:f1df14c75b8f61cf-6e313c752bdde1a7",
+      "statement": "The decision date is 12 May 2023.",
+      "evidenceSpanIds": [
+        "span:c-law-002-f1df14c75b8f61cf-3#chars-264-294"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:15:05.803Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-002-f1df14c75b8f61cf-3#chars-264-294"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-002-f1df14c75b8f61cf-3#chars-264-294"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:15:05.803Z"
+    },
+    {
+      "id": "claim:f1df14c75b8f61cf-6eed661a604a8409",
+      "statement": "The EDPB Binding Decision was on 13 April 2023 under Article 65 dispute resolution.",
+      "evidenceSpanIds": [
+        "span:c-law-002-f1df14c75b8f61cf-3#chars-410-481"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:15:05.803Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-002-f1df14c75b8f61cf-3#chars-410-481"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-002-f1df14c75b8f61cf-3#chars-410-481"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:15:05.803Z"
+    },
+    {
+      "id": "claim:f1df14c75b8f61cf-82d665311e5fe83c",
+      "statement": "The authority is the Data Protection Commission (Ireland), Lead Supervisory Authority.",
+      "evidenceSpanIds": [
+        "span:c-law-002-f1df14c75b8f61cf-3#chars-330-409"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:15:05.803Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-002-f1df14c75b8f61cf-3#chars-330-409"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-002-f1df14c75b8f61cf-3#chars-330-409"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:15:05.803Z"
+    },
+    {
+      "id": "claim:f1df14c75b8f61cf-8465c4dba06a7f36",
+      "statement": "The unprecedented fine is a strong signal to organisations that serious infringements have far-reaching consequences.",
+      "evidenceSpanIds": [
+        "span:c-law-002-f1df14c75b8f61cf-15#chars-2524-2641"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:15:05.803Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-002-f1df14c75b8f61cf-15#chars-2524-2641"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-002-f1df14c75b8f61cf-15#chars-2524-2641"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:15:05.803Z"
+    },
+    {
+      "id": "claim:f1df14c75b8f61cf-9d12db6a375238cf",
+      "statement": "Facebook has millions of users in Europe, so the volume of personal data transferred is massive.",
+      "evidenceSpanIds": [
+        "span:c-law-002-f1df14c75b8f61cf-15#chars-2427-2523"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:15:05.803Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-002-f1df14c75b8f61cf-15#chars-2427-2523"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-002-f1df14c75b8f61cf-15#chars-2427-2523"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:15:05.803Z"
+    },
+    {
+      "id": "claim:f1df14c75b8f61cf-9ffd7e1e1712346b",
+      "statement": "The EDPB determined that a fine should be imposed and that Meta must also address already-transferred data.",
+      "evidenceSpanIds": [
+        "span:c-law-002-f1df14c75b8f61cf-17#chars-2801-2908"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:15:05.803Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-002-f1df14c75b8f61cf-17#chars-2801-2908"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-002-f1df14c75b8f61cf-17#chars-2801-2908"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:15:05.803Z"
+    },
+    {
+      "id": "claim:f1df14c75b8f61cf-b7ccb516805d9322",
+      "statement": "The measures set out in Meta's record of safeguards do not compensate for the inadequate protection provided by US law.",
+      "evidenceSpanIds": [
+        "span:c-law-002-f1df14c75b8f61cf-10#chars-1515-1636"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:15:05.803Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-002-f1df14c75b8f61cf-10#chars-1515-1636"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-002-f1df14c75b8f61cf-10#chars-1515-1636"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:15:05.803Z"
+    },
+    {
+      "id": "claim:f1df14c75b8f61cf-c4eaf17fc837a886",
+      "statement": "Four of 47 Concerned Supervisory Authorities objected to the DPC's initial proposal.",
+      "evidenceSpanIds": [
+        "span:c-law-002-f1df14c75b8f61cf-17#chars-2746-2800"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:15:05.803Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-002-f1df14c75b8f61cf-17#chars-2746-2800"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-002-f1df14c75b8f61cf-17#chars-2746-2800"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:15:05.803Z"
+    },
+    {
+      "id": "claim:f1df14c75b8f61cf-cb4c4ee3e1fb738e",
+      "statement": "DPC (Ireland) Final Decision IN-20-8-1 concerns Meta Platforms Ireland Limited and GDPR data transfers.",
+      "evidenceSpanIds": [
+        "span:c-law-002-f1df14c75b8f61cf-0#chars-3-96"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:15:05.803Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-002-f1df14c75b8f61cf-0#chars-3-96"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-002-f1df14c75b8f61cf-0#chars-3-96"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:15:05.803Z"
+    },
+    {
+      "id": "claim:f1df14c75b8f61cf-cc31b686dcee3c34",
+      "statement": "Meta Ireland implemented additional supplementary measures.",
+      "evidenceSpanIds": [
+        "span:c-law-002-f1df14c75b8f61cf-6#chars-1012-1103"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:15:05.803Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-002-f1df14c75b8f61cf-6#chars-1012-1103"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-002-f1df14c75b8f61cf-6#chars-1012-1103"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:15:05.803Z"
+    },
+    {
+      "id": "claim:f1df14c75b8f61cf-cc9562aab9253ceb",
+      "statement": "Meta Ireland infringed Article 46(1) GDPR when it continued to transfer personal data from the EU/EEA to the USA after the CJEU's judgment in Data Protection Commissioner v Facebook Ireland Limited and Maximillian Schrems.",
+      "evidenceSpanIds": [
+        "span:c-law-002-f1df14c75b8f61cf-5#chars-577-845"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:15:05.803Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-002-f1df14c75b8f61cf-5#chars-577-845"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-002-f1df14c75b8f61cf-5#chars-577-845"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:15:05.803Z"
+    },
+    {
+      "id": "claim:f1df14c75b8f61cf-e5ad72337db6ed40",
+      "statement": "Meta Ireland effected those transfers on the basis of the updated Standard Contractual Clauses ('SCCs') adopted by the European Commission in 2021.",
+      "evidenceSpanIds": [
+        "span:c-law-002-f1df14c75b8f61cf-6#chars-849-1011"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:15:05.803Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-002-f1df14c75b8f61cf-6#chars-849-1011"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-002-f1df14c75b8f61cf-6#chars-849-1011"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:15:05.803Z"
+    },
+    {
+      "id": "claim:f1df14c75b8f61cf-e77ddeaf086f4b0a",
+      "statement": "The content is sourced from EDPB press release, DPC announcement, and RegSol/GDPRhub analyses.",
+      "evidenceSpanIds": [
+        "span:c-law-002-f1df14c75b8f61cf-2#chars-118-262"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:15:05.803Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-002-f1df14c75b8f61cf-2#chars-118-262"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-002-f1df14c75b8f61cf-2#chars-118-262"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:15:05.803Z"
+    }
+  ],
+  "concepts": [
+    {
+      "id": "concept:07cdc69a0603ced8",
+      "name": "Announcement date",
+      "aliases": [],
+      "boundary": "Date when decision was announced",
+      "domain": "Temporal"
+    },
+    {
+      "id": "concept:0edeb1da504f5256",
+      "name": "Supplementary measures",
+      "aliases": [
+        "additional supplementary measures"
+      ],
+      "boundary": "Additional safeguards to compensate for inadequate protection",
+      "domain": "Data transfer"
+    },
+    {
+      "id": "concept:165acc2a3875c80e",
+      "name": "RegSol/GDPRhub analyses",
+      "aliases": [],
+      "boundary": "Third-party analysis of GDPR cases",
+      "domain": "Analysis"
+    },
+    {
+      "id": "concept:1d545794308fae4d",
+      "name": "Binding decision",
+      "aliases": [
+        "EDPB Binding Decision"
+      ],
+      "boundary": "Legally binding resolution under Article 65 GDPR",
+      "domain": "GDPR dispute resolution"
+    },
+    {
+      "id": "concept:257531bbc1d578d3",
+      "name": "Record of safeguards",
+      "aliases": [],
+      "boundary": "Documentation of measures taken by data exporter",
+      "domain": "Data protection compliance"
+    },
+    {
+      "id": "concept:34ba8ad6c91dfa17",
+      "name": "EU law",
+      "aliases": [],
+      "boundary": "Legal framework of the European Union",
+      "domain": "EU law"
+    },
+    {
+      "id": "concept:4284fa1a04223325",
+      "name": "Administrative fine",
+      "aliases": [
+        "fine"
+      ],
+      "boundary": "Monetary penalty imposed by a supervisory authority",
+      "domain": "GDPR enforcement"
+    },
+    {
+      "id": "concept:4387b237cef49efb",
+      "name": "Europe",
+      "aliases": [
+        "EU/EEA"
+      ],
+      "boundary": "Geographic region including EU and EEA",
+      "domain": "Geography"
+    },
+    {
+      "id": "concept:4c00f4b331313df3",
+      "name": "Lead Supervisory Authority",
+      "aliases": [],
+      "boundary": "Main data protection authority for cross-border processing",
+      "domain": "GDPR governance"
+    },
+    {
+      "id": "concept:4cb8db57e0997240",
+      "name": "US law",
+      "aliases": [],
+      "boundary": "Legal framework of the United States",
+      "domain": "International law"
+    },
+    {
+      "id": "concept:6ea05695afbb5682",
+      "name": "Data Protection Commission (Ireland)",
+      "aliases": [
+        "DPC",
+        "DPC (Ireland)"
+      ],
+      "boundary": "Irish independent authority responsible for GDPR enforcement",
+      "domain": "Data protection authority"
+    },
+    {
+      "id": "concept:766b5e544caf0386",
+      "name": "Article 58(2)(j) GDPR",
+      "aliases": [],
+      "boundary": "Provision empowering supervisory authorities to order suspension of data flows",
+      "domain": "GDPR"
+    },
+    {
+      "id": "concept:7c357a3054384425",
+      "name": "Standard Contractual Clauses",
+      "aliases": [
+        "2010 SCCs",
+        "2021 SCCs",
+        "SCCs"
+      ],
+      "boundary": "Standard data protection clauses adopted by the European Commission",
+      "domain": "Data transfer mechanism"
+    },
+    {
+      "id": "concept:84be992219cf5218",
+      "name": "USA",
+      "aliases": [
+        "US"
+      ],
+      "boundary": "United States of America",
+      "domain": "Geography"
+    },
+    {
+      "id": "concept:858070265a5c5201",
+      "name": "Case reference IN-20-8-1",
+      "aliases": [
+        "IN-20-8-1"
+      ],
+      "boundary": "Identifier for the DPC case",
+      "domain": "Case management"
+    },
+    {
+      "id": "concept:877c8e1fa897f553",
+      "name": "Article 49(1) GDPR",
+      "aliases": [],
+      "boundary": "Derogations for specific situations for data transfers",
+      "domain": "GDPR"
+    },
+    {
+      "id": "concept:8789ca30cadc8144",
+      "name": "Decision date",
+      "aliases": [],
+      "boundary": "Date when decision was made",
+      "domain": "Temporal"
+    },
+    {
+      "id": "concept:94c4016e6d8a79c3",
+      "name": "Facebook",
+      "aliases": [],
+      "boundary": "Social media platform operated by Meta",
+      "domain": "Social media"
+    },
+    {
+      "id": "concept:aa2d2b9d45719fd2",
+      "name": "Fundamental rights and freedoms of data subjects",
+      "aliases": [
+        "rights and freedoms of data subjects"
+      ],
+      "boundary": "Rights protected under EU Charter of Fundamental Rights",
+      "domain": "Data protection"
+    },
+    {
+      "id": "concept:ab62e65203b84e2b",
+      "name": "EDPB press release",
+      "aliases": [],
+      "boundary": "Official statement from EDPB",
+      "domain": "Communication"
+    },
+    {
+      "id": "concept:af78cd352b46b0c2",
+      "name": "Chapter V GDPR",
+      "aliases": [],
+      "boundary": "GDPR provisions on transfers of personal data to third countries",
+      "domain": "GDPR"
+    },
+    {
+      "id": "concept:b16c42bb6a0a7b44",
+      "name": "Data transfer",
+      "aliases": [
+        "data transfers",
+        "transfers"
+      ],
+      "boundary": "Movement of personal data to a third country",
+      "domain": "Data protection"
+    },
+    {
+      "id": "concept:b22b74f5d2e87227",
+      "name": "GDPR",
+      "aliases": [
+        "General Data Protection Regulation"
+      ],
+      "boundary": "EU regulation on data protection and privacy",
+      "domain": "Data protection law"
+    },
+    {
+      "id": "concept:b3953b95c6a6da62",
+      "name": "Meta Ireland",
+      "aliases": [
+        "Meta Platforms Ireland Limited"
+      ],
+      "boundary": "Irish subsidiary of Meta Platforms Inc.",
+      "domain": "Company"
+    },
+    {
+      "id": "concept:b66cc13c21b3b480",
+      "name": "CJEU",
+      "aliases": [
+        "Court of Justice of the European Union"
+      ],
+      "boundary": "EU's highest court",
+      "domain": "EU law"
+    },
+    {
+      "id": "concept:bec0c4bdb15079ab",
+      "name": "EDPB",
+      "aliases": [
+        "European Data Protection Board"
+      ],
+      "boundary": "EU body ensuring consistent application of GDPR",
+      "domain": "Data protection authority"
+    },
+    {
+      "id": "concept:c453dbd9277fd526",
+      "name": "Personal data",
+      "aliases": [],
+      "boundary": "Any information relating to an identified or identifiable natural person",
+      "domain": "Data protection"
+    },
+    {
+      "id": "concept:ca779c414c183219",
+      "name": "DPC announcement",
+      "aliases": [],
+      "boundary": "Official statement from DPC",
+      "domain": "Communication"
+    },
+    {
+      "id": "concept:ce6a2583a4782ebd",
+      "name": "Article 58(2)(d) GDPR",
+      "aliases": [],
+      "boundary": "Provision empowering supervisory authorities to order compliance",
+      "domain": "GDPR"
+    },
+    {
+      "id": "concept:d46c436e082b6e03",
+      "name": "Concerned Supervisory Authorities",
+      "aliases": [],
+      "boundary": "Other EU/EEA data protection authorities involved in the case",
+      "domain": "Data protection authorities"
+    },
+    {
+      "id": "concept:dd734a764de85a5b",
+      "name": "Infringement",
+      "aliases": [
+        "violation"
+      ],
+      "boundary": "Breach of GDPR provisions",
+      "domain": "GDPR enforcement"
+    },
+    {
+      "id": "concept:e99cfd58fb0d02cb",
+      "name": "Article 46(1) GDPR",
+      "aliases": [],
+      "boundary": "Provision on appropriate safeguards for data transfers",
+      "domain": "GDPR"
+    },
+    {
+      "id": "concept:ef00997dcf101df6",
+      "name": "Data Protection Commissioner v Facebook Ireland Limited and Maximillian Schrems",
+      "aliases": [
+        "Schrems II"
+      ],
+      "boundary": "CJEU case invalidating Privacy Shield and clarifying SCCs",
+      "domain": "Case law"
+    },
+    {
+      "id": "concept:f910a0955f9249c0",
+      "name": "Suspension order",
+      "aliases": [],
+      "boundary": "Order to stop data transfers",
+      "domain": "GDPR enforcement"
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel:f1df14c75b8f61cf-21f6e74f4eeb511c",
+      "from": "claim:f1df14c75b8f61cf-16ac86ad60574bb5",
+      "to": "claim:f1df14c75b8f61cf-b7ccb516805d9322",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:c-law-002-f1df14c75b8f61cf-10#chars-1515-1636",
+        "span:c-law-002-f1df14c75b8f61cf-6#chars-1105-1274"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:15:21.315Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.8,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:f1df14c75b8f61cf-2a32ef3e1579a26d",
+      "from": "claim:f1df14c75b8f61cf-374d7088d6f22d1c",
+      "to": "claim:f1df14c75b8f61cf-47e52bf04686188e",
+      "type": "RELATED_TO",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:c-law-002-f1df14c75b8f61cf-13#chars-1882-2037",
+        "span:c-law-002-f1df14c75b8f61cf-13#chars-2043-2257"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:15:21.315Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.6,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:f1df14c75b8f61cf-39a7d0730c05a091",
+      "from": "claim:f1df14c75b8f61cf-25f1e6fc7fb40fd3",
+      "to": "claim:f1df14c75b8f61cf-b7ccb516805d9322",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:c-law-002-f1df14c75b8f61cf-10#chars-1515-1636",
+        "span:c-law-002-f1df14c75b8f61cf-8#chars-1307-1399"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:15:21.315Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.8,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:f1df14c75b8f61cf-51c581d5956606fa",
+      "from": "claim:f1df14c75b8f61cf-9ffd7e1e1712346b",
+      "to": "claim:f1df14c75b8f61cf-04f9905849db1610",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:c-law-002-f1df14c75b8f61cf-13#chars-1802-1876",
+        "span:c-law-002-f1df14c75b8f61cf-17#chars-2801-2908"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:15:21.315Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.7,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:f1df14c75b8f61cf-852313004677f367",
+      "from": "claim:f1df14c75b8f61cf-50ae1c95d2ea05de",
+      "to": "claim:f1df14c75b8f61cf-cc9562aab9253ceb",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:c-law-002-f1df14c75b8f61cf-11#chars-1640-1763",
+        "span:c-law-002-f1df14c75b8f61cf-5#chars-577-845"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:15:21.315Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.8,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:f1df14c75b8f61cf-c70926ee1d1763c9",
+      "from": "claim:f1df14c75b8f61cf-cb4c4ee3e1fb738e",
+      "to": "claim:f1df14c75b8f61cf-29a9ae062f2b6a6d",
+      "type": "RELATED_TO",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:c-law-002-f1df14c75b8f61cf-0#chars-3-96",
+        "span:c-law-002-f1df14c75b8f61cf-3#chars-483-512"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:15:21.315Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.9,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:f1df14c75b8f61cf-d8269cac53ab8b5b",
+      "from": "claim:f1df14c75b8f61cf-25f1e6fc7fb40fd3",
+      "to": "claim:f1df14c75b8f61cf-5a5f4b5714f8072f",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:c-law-002-f1df14c75b8f61cf-8#chars-1307-1399",
+        "span:c-law-002-f1df14c75b8f61cf-9#chars-1403-1511"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:15:21.315Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.9,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:f1df14c75b8f61cf-e13f95586c50912a",
+      "from": "claim:f1df14c75b8f61cf-04f9905849db1610",
+      "to": "claim:f1df14c75b8f61cf-8465c4dba06a7f36",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:c-law-002-f1df14c75b8f61cf-13#chars-1802-1876",
+        "span:c-law-002-f1df14c75b8f61cf-15#chars-2524-2641"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:15:21.315Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.8,
+      "consumedBy": []
+    }
+  ]
+}

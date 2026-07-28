@@ -1,0 +1,430 @@
+{
+  "schemaVersion": "v1",
+  "sourceId": "source:c-law-004-1544b1a2018c598c",
+  "runId": "303142ac-0c9e-41d9-8970-f622cc5a3007",
+  "publishedAt": "2026-07-28T07:17:45.005Z",
+  "claims": [],
+  "relations": [
+    {
+      "relation": {
+        "id": "rel:1544b1a2018c598c-64e223da4565ee0a",
+        "from": "claim:1544b1a2018c598c-81a6cc3e502c033e",
+        "to": "claim:1544b1a2018c598c-9118678fb1e8e668",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-law-004-1544b1a2018c598c-15#chars-2475-2580",
+          "span:c-law-004-1544b1a2018c598c-6#chars-870-952"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:17:14.454Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:1544b1a2018c598c-64e223da4565ee0a",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-law-004#block-15] “The European Commission adopted an adequacy decision for the EU-US Data Privacy ”; [1:c-law-004#block-6] “The decision came amid ongoing negotiations for a new EU-US Data Privacy Framewo”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:1544b1a2018c598c-64e223da4565ee0a",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-law-004#block-15] “The European Commission adopted an adequacy decision for the EU-US Data Privacy ”; [1:c-law-004#block-6] “The decision came amid ongoing negotiations for a new EU-US Data Privacy Framewo”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:1544b1a2018c598c-6572f2589091c8da",
+        "from": "claim:1544b1a2018c598c-9118678fb1e8e668",
+        "to": "claim:1544b1a2018c598c-9684515d542490d0",
+        "type": "EQUIVALENT_UNDER",
+        "conditions": [
+          "same decision and date"
+        ],
+        "conditionStatus": "UNVERIFIED",
+        "supersessionEffect": null,
+        "relationAuditVersion": null,
+        "evidenceSpanIds": [
+          "span:c-law-004-1544b1a2018c598c-15#chars-2475-2580",
+          "span:c-law-004-1544b1a2018c598c-6#chars-954-1011"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:17:14.454Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_EQUIVALENCE_REVIEW_REQUIRED",
+          "severity": "error",
+          "affectedObject": "rel:1544b1a2018c598c-6572f2589091c8da",
+          "detail": "EQUIVALENT_UNDER 自动审计在真实抽检中 4/4 误判；独立人工复核或校准门禁完成前禁止自动晋级",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:1544b1a2018c598c-a86a6a6bf636ab8f",
+        "from": "claim:1544b1a2018c598c-6ec72cf7c13736a6",
+        "to": "claim:1544b1a2018c598c-ebd3ce1e144b6708",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-law-004-1544b1a2018c598c-10#chars-1683-1762",
+          "span:c-law-004-1544b1a2018c598c-11#chars-1956-2068"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:17:14.454Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:1544b1a2018c598c-a86a6a6bf636ab8f",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-law-004#block-10] “Meta had relied on \"contractual necessity\" (Article 6(1)(b)) as the legal basis”; [1:c-law-004#block-11] “since the processing of the data would be necessary for the provision as well as”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:1544b1a2018c598c-a86a6a6bf636ab8f",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-law-004#block-10] “Meta had relied on \"contractual necessity\" (Article 6(1)(b)) as the legal basis”; [1:c-law-004#block-11] “since the processing of the data would be necessary for the provision as well as”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:1544b1a2018c598c-b9c967b6f8bab0a3",
+        "from": "claim:1544b1a2018c598c-8f672a8f437de5a0",
+        "to": "claim:1544b1a2018c598c-98cc95adbf147673",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-law-004-1544b1a2018c598c-10#chars-1419-1505",
+          "span:c-law-004-1544b1a2018c598c-10#chars-1571-1681"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:17:14.454Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:1544b1a2018c598c-b9c967b6f8bab0a3",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-law-004#block-10] “In January 2023, the Irish DPC fined Meta Platforms Ireland Limited €390 million”; [1:c-law-004#block-10] “violations related to the legal basis for personalized advertising (Articles 5(1”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:1544b1a2018c598c-b9c967b6f8bab0a3",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-law-004#block-10] “In January 2023, the Irish DPC fined Meta Platforms Ireland Limited €390 million”; [1:c-law-004#block-10] “violations related to the legal basis for personalized advertising (Articles 5(1”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:1544b1a2018c598c-b9c967b6f8bab0a3",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-law-004#block-10] “In January 2023, the Irish DPC fined Meta Platforms Ireland Limited €390 million”; [1:c-law-004#block-10] “violations related to the legal basis for personalized advertising (Articles 5(1”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:1544b1a2018c598c-c08da2230616522a",
+        "from": "claim:1544b1a2018c598c-4bee6f12e0491f2d",
+        "to": "claim:1544b1a2018c598c-98cc95adbf147673",
+        "type": "EQUIVALENT_UNDER",
+        "conditions": [
+          "same fine amount and entity"
+        ],
+        "conditionStatus": "UNVERIFIED",
+        "supersessionEffect": null,
+        "relationAuditVersion": null,
+        "evidenceSpanIds": [
+          "span:c-law-004-1544b1a2018c598c-10#chars-1419-1505",
+          "span:c-law-004-1544b1a2018c598c-8#chars-1245-1370"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:17:14.454Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_EQUIVALENCE_REVIEW_REQUIRED",
+          "severity": "error",
+          "affectedObject": "rel:1544b1a2018c598c-c08da2230616522a",
+          "detail": "EQUIVALENT_UNDER 自动审计在真实抽检中 4/4 误判；独立人工复核或校准门禁完成前禁止自动晋级",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:1544b1a2018c598c-d8d38fbf3d8e0018",
+        "from": "claim:1544b1a2018c598c-34091a7a72672588",
+        "to": "claim:1544b1a2018c598c-bda60dd74d9e50d3",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-law-004-1544b1a2018c598c-8#chars-1045-1125",
+          "span:c-law-004-1544b1a2018c598c-8#chars-1127-1199"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:17:14.454Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:1544b1a2018c598c-d8d38fbf3d8e0018",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-law-004#block-8] “According to enforcementtracker.com, this was the largest GDPR fine ever imposed”; [1:c-law-004#block-8] “Prior major GDPR fines included: Amazon (€746 million, Luxembourg, 2021)”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:1544b1a2018c598c-d8d38fbf3d8e0018",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-law-004#block-8] “According to enforcementtracker.com, this was the largest GDPR fine ever imposed”; [1:c-law-004#block-8] “Prior major GDPR fines included: Amazon (€746 million, Luxembourg, 2021)”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:1544b1a2018c598c-d8d38fbf3d8e0018",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-law-004#block-8] “According to enforcementtracker.com, this was the largest GDPR fine ever imposed”; [1:c-law-004#block-8] “Prior major GDPR fines included: Amazon (€746 million, Luxembourg, 2021)”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:1544b1a2018c598c-e0966812c0503d7d",
+        "from": "claim:1544b1a2018c598c-6ec72cf7c13736a6",
+        "to": "claim:1544b1a2018c598c-84d5b0436b575c93",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-law-004-1544b1a2018c598c-11#chars-1845-1954",
+          "span:c-law-004-1544b1a2018c598c-11#chars-1956-2068"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:17:14.454Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:1544b1a2018c598c-e0966812c0503d7d",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-law-004#block-11] “Meta assumed that the acceptance of the updated terms of use constituted a contr”; [1:c-law-004#block-11] “since the processing of the data would be necessary for the provision as well as”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:1544b1a2018c598c-e0966812c0503d7d",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-law-004#block-11] “Meta assumed that the acceptance of the updated terms of use constituted a contr”; [1:c-law-004#block-11] “since the processing of the data would be necessary for the provision as well as”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:1544b1a2018c598c-e0966812c0503d7d",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-law-004#block-11] “Meta assumed that the acceptance of the updated terms of use constituted a contr”; [1:c-law-004#block-11] “since the processing of the data would be necessary for the provision as well as”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_DIRECTION_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:1544b1a2018c598c-e0966812c0503d7d",
+          "detail": "direction：Relation 未通过边级语义审计；证据 [0:c-law-004#block-11] “Meta assumed that the acceptance of the updated terms of use constituted a contr”; [1:c-law-004#block-11] “since the processing of the data would be necessary for the provision as well as”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-6f077cdcf71aeed5",
+        "from": "claim:1544b1a2018c598c-e744685ebadf110b",
+        "to": "claim:f1df14c75b8f61cf-e5ad72337db6ed40",
+        "type": "SUPPORTS",
+        "conditions": [
+          "Meta has consistently argued that its data transfers were lawful under the Standard Contractual Clauses framework."
+        ],
+        "conditionStatus": "PRESERVED",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-law-002-f1df14c75b8f61cf-6#chars-849-1011",
+          "span:c-law-004-1544b1a2018c598c-4#chars-498-611"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:17:41.269Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-6f077cdcf71aeed5",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-law-002#block-6] “While Meta Ireland effected those transfers on the basis of the updated Standard”; [1:c-law-004#block-4] “Meta has consistently argued that its data transfers were lawful under the Stand”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-6f077cdcf71aeed5",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-law-002#block-6] “While Meta Ireland effected those transfers on the basis of the updated Standard”; [1:c-law-004#block-4] “Meta has consistently argued that its data transfers were lawful under the Stand”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-f4ddd79fe025c693",
+        "from": "claim:1544b1a2018c598c-c192f8b4753fdfb2",
+        "to": "claim:f1df14c75b8f61cf-cc9562aab9253ceb",
+        "type": "SUPPORTS",
+        "conditions": [
+          "The complaints that triggered both the January 2023 advertising decision and the May 2023 data transfers decision were filed by privacy activist Max Schrems and his organization noyb."
+        ],
+        "conditionStatus": "PRESERVED",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-law-002-f1df14c75b8f61cf-5#chars-577-845",
+          "span:c-law-004-1544b1a2018c598c-13#chars-2121-2327"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:17:41.269Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-f4ddd79fe025c693",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-law-002#block-5] “The decision records that Meta Ireland infringed Article 46(1) GDPR when it cont”; [1:c-law-004#block-13] “The complaints that triggered both the January 2023 advertising decision and the”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-f4ddd79fe025c693",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-law-002#block-5] “The decision records that Meta Ireland infringed Article 46(1) GDPR when it cont”; [1:c-law-004#block-13] “The complaints that triggered both the January 2023 advertising decision and the”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-f4ddd79fe025c693",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-law-002#block-5] “The decision records that Meta Ireland infringed Article 46(1) GDPR when it cont”; [1:c-law-004#block-13] “The complaints that triggered both the January 2023 advertising decision and the”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_DIRECTION_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-f4ddd79fe025c693",
+          "detail": "direction：Relation 未通过边级语义审计；证据 [0:c-law-002#block-5] “The decision records that Meta Ireland infringed Article 46(1) GDPR when it cont”; [1:c-law-004#block-13] “The complaints that triggered both the January 2023 advertising decision and the”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_CONDITIONS_MISSING",
+          "severity": "error",
+          "affectedObject": "rel:cross-f4ddd79fe025c693",
+          "detail": "conditions：Relation 未通过边级语义审计；证据 [0:c-law-002#block-5] “The decision records that Meta Ireland infringed Article 46(1) GDPR when it cont”; [1:c-law-004#block-13] “The complaints that triggered both the January 2023 advertising decision and the”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    }
+  ]
+}

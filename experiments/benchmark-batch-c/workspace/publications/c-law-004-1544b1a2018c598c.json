@@ -1,0 +1,1327 @@
+{
+  "schemaVersion": "v1",
+  "sourceId": "source:c-law-004-1544b1a2018c598c",
+  "runId": "303142ac-0c9e-41d9-8970-f622cc5a3007",
+  "publishedAt": "2026-07-28T07:17:45.005Z",
+  "claims": [
+    {
+      "id": "claim:1544b1a2018c598c-1ed8d79bfee36f2d",
+      "statement": "Meta Platforms Ireland Limited announced it will appeal the DPC's decision.",
+      "evidenceSpanIds": [
+        "span:c-law-004-1544b1a2018c598c-4#chars-348-407"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:17:05.097Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-004-1544b1a2018c598c-4#chars-348-407"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-004-1544b1a2018c598c-4#chars-348-407"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:17:05.097Z"
+    },
+    {
+      "id": "claim:1544b1a2018c598c-34091a7a72672588",
+      "statement": "Prior major GDPR fines included Amazon (€746 million, Luxembourg, 2021).",
+      "evidenceSpanIds": [
+        "span:c-law-004-1544b1a2018c598c-8#chars-1127-1199"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:17:05.097Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-004-1544b1a2018c598c-8#chars-1127-1199"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-004-1544b1a2018c598c-8#chars-1127-1199"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:17:05.097Z"
+    },
+    {
+      "id": "claim:1544b1a2018c598c-3af1cf9f78aa33d2",
+      "statement": "Meta is not the only company affected by the Schrems II ruling.",
+      "evidenceSpanIds": [
+        "span:c-law-004-1544b1a2018c598c-6#chars-636-698"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:17:05.097Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-004-1544b1a2018c598c-6#chars-636-698"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-004-1544b1a2018c598c-6#chars-636-698"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:17:05.097Z"
+    },
+    {
+      "id": "claim:1544b1a2018c598c-469b43c1a125ae5f",
+      "statement": "The adequacy decision potentially resolves the legal basis for transatlantic data transfers going forward.",
+      "evidenceSpanIds": [
+        "span:c-law-004-1544b1a2018c598c-15#chars-2582-2666"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:17:05.097Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-004-1544b1a2018c598c-15#chars-2582-2666"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-004-1544b1a2018c598c-15#chars-2582-2666"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:17:05.097Z"
+    },
+    {
+      "id": "claim:1544b1a2018c598c-4b2671aa4c99ee87",
+      "statement": "Meta will seek a stay with the courts to pause the implementation of applicable deadlines.",
+      "evidenceSpanIds": [
+        "span:c-law-004-1544b1a2018c598c-4#chars-412-496"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:17:05.097Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-004-1544b1a2018c598c-4#chars-412-496"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-004-1544b1a2018c598c-4#chars-412-496"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:17:05.097Z"
+    },
+    {
+      "id": "claim:1544b1a2018c598c-4bee6f12e0491f2d",
+      "statement": "Prior major GDPR fines included Meta's separate €390 million fine (Ireland, January 2023) for GDPR violations related to personalized advertising legal basis.",
+      "evidenceSpanIds": [
+        "span:c-law-004-1544b1a2018c598c-8#chars-1245-1370"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:17:05.097Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-004-1544b1a2018c598c-8#chars-1245-1370"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-004-1544b1a2018c598c-8#chars-1245-1370"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:17:05.097Z"
+    },
+    {
+      "id": "claim:1544b1a2018c598c-57e4e29c6af14570",
+      "statement": "Prior major GDPR fines included WhatsApp (€225 million, Ireland, 2021).",
+      "evidenceSpanIds": [
+        "span:c-law-004-1544b1a2018c598c-8#chars-1201-1239"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:17:05.097Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-004-1544b1a2018c598c-8#chars-1201-1239"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-004-1544b1a2018c598c-8#chars-1201-1239"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:17:05.097Z"
+    },
+    {
+      "id": "claim:1544b1a2018c598c-6a801d847871f661",
+      "statement": "Schrems has been the driving force behind the legal challenges to EU-US data transfers since 2013.",
+      "evidenceSpanIds": [
+        "span:c-law-004-1544b1a2018c598c-13#chars-2329-2426"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:17:05.097Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-004-1544b1a2018c598c-13#chars-2329-2426"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-004-1544b1a2018c598c-13#chars-2329-2426"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:17:05.097Z"
+    },
+    {
+      "id": "claim:1544b1a2018c598c-6ec72cf7c13736a6",
+      "statement": "Meta assumed that the processing of the data would be necessary for the provision as well as the improvement of the services.",
+      "evidenceSpanIds": [
+        "span:c-law-004-1544b1a2018c598c-11#chars-1956-2068"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:17:05.097Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-004-1544b1a2018c598c-11#chars-1956-2068"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-004-1544b1a2018c598c-11#chars-1956-2068"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:17:05.097Z"
+    },
+    {
+      "id": "claim:1544b1a2018c598c-7b53a99352fc77bb",
+      "statement": "The content is sourced from publicly available statements and news coverage.",
+      "evidenceSpanIds": [
+        "span:c-law-004-1544b1a2018c598c-2#chars-116-281"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:17:05.097Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-004-1544b1a2018c598c-2#chars-116-281"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-004-1544b1a2018c598c-2#chars-116-281"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:17:05.097Z"
+    },
+    {
+      "id": "claim:1544b1a2018c598c-81a6cc3e502c033e",
+      "statement": "The decision came amid ongoing negotiations for a new EU-US Data Privacy Framework.",
+      "evidenceSpanIds": [
+        "span:c-law-004-1544b1a2018c598c-6#chars-870-952"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:17:05.097Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-004-1544b1a2018c598c-6#chars-870-952"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-004-1544b1a2018c598c-6#chars-870-952"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:17:05.097Z"
+    },
+    {
+      "id": "claim:1544b1a2018c598c-84d5b0436b575c93",
+      "statement": "Meta assumed that the acceptance of the updated terms of use constituted a contract between Meta and the user.",
+      "evidenceSpanIds": [
+        "span:c-law-004-1544b1a2018c598c-11#chars-1845-1954"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:17:05.097Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-004-1544b1a2018c598c-11#chars-1845-1954"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-004-1544b1a2018c598c-11#chars-1845-1954"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:17:05.097Z"
+    },
+    {
+      "id": "claim:1544b1a2018c598c-8d2755e034645c29",
+      "statement": "Privacy advocates have signaled they may challenge this framework as well.",
+      "evidenceSpanIds": [
+        "span:c-law-004-1544b1a2018c598c-15#chars-2669-2749"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:17:05.097Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-004-1544b1a2018c598c-15#chars-2669-2749"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-004-1544b1a2018c598c-15#chars-2669-2749"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:17:05.097Z"
+    },
+    {
+      "id": "claim:1544b1a2018c598c-8f672a8f437de5a0",
+      "statement": "The violations related to the legal basis for personalized advertising (Articles 5(1)(a), 6(1), 12, 13(1)(c) GDPR).",
+      "evidenceSpanIds": [
+        "span:c-law-004-1544b1a2018c598c-10#chars-1571-1681"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:17:05.097Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-004-1544b1a2018c598c-10#chars-1571-1681"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-004-1544b1a2018c598c-10#chars-1571-1681"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:17:05.097Z"
+    },
+    {
+      "id": "claim:1544b1a2018c598c-9118678fb1e8e668",
+      "statement": "The European Commission adopted an adequacy decision for the EU-US Data Privacy Framework on 10 July 2023.",
+      "evidenceSpanIds": [
+        "span:c-law-004-1544b1a2018c598c-15#chars-2475-2580"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:17:05.097Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-004-1544b1a2018c598c-15#chars-2475-2580"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-004-1544b1a2018c598c-15#chars-2475-2580"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:17:05.097Z"
+    },
+    {
+      "id": "claim:1544b1a2018c598c-9684515d542490d0",
+      "statement": "The EU-US Data Privacy Framework was subsequently adopted as an adequacy decision in July 2023.",
+      "evidenceSpanIds": [
+        "span:c-law-004-1544b1a2018c598c-6#chars-954-1011"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:17:05.097Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-004-1544b1a2018c598c-6#chars-954-1011"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-004-1544b1a2018c598c-6#chars-954-1011"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:17:05.097Z"
+    },
+    {
+      "id": "claim:1544b1a2018c598c-98cc95adbf147673",
+      "statement": "In January 2023, the Irish DPC fined Meta Platforms Ireland Limited €390 million total.",
+      "evidenceSpanIds": [
+        "span:c-law-004-1544b1a2018c598c-10#chars-1419-1505"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:17:05.097Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-004-1544b1a2018c598c-10#chars-1419-1505"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-004-1544b1a2018c598c-10#chars-1419-1505"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:17:05.097Z"
+    },
+    {
+      "id": "claim:1544b1a2018c598c-a4ae328391d47b91",
+      "statement": "The fundamental question of whether US surveillance law provides 'essentially equivalent' protection to EU law affects all transatlantic data transfers.",
+      "evidenceSpanIds": [
+        "span:c-law-004-1544b1a2018c598c-6#chars-700-851"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:17:05.097Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-004-1544b1a2018c598c-6#chars-700-851"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-004-1544b1a2018c598c-6#chars-700-851"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:17:05.097Z"
+    },
+    {
+      "id": "claim:1544b1a2018c598c-bda60dd74d9e50d3",
+      "statement": "According to enforcementtracker.com, this was the largest GDPR fine ever imposed.",
+      "evidenceSpanIds": [
+        "span:c-law-004-1544b1a2018c598c-8#chars-1045-1125"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:17:05.097Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-004-1544b1a2018c598c-8#chars-1045-1125"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-004-1544b1a2018c598c-8#chars-1045-1125"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:17:05.097Z"
+    },
+    {
+      "id": "claim:1544b1a2018c598c-c192f8b4753fdfb2",
+      "statement": "The complaints that triggered both the January 2023 advertising decision and the May 2023 data transfers decision were filed by privacy activist Max Schrems and his organization noyb.",
+      "evidenceSpanIds": [
+        "span:c-law-004-1544b1a2018c598c-13#chars-2121-2327"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:17:05.097Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-004-1544b1a2018c598c-13#chars-2121-2327"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-004-1544b1a2018c598c-13#chars-2121-2327"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:17:05.097Z"
+    },
+    {
+      "id": "claim:1544b1a2018c598c-ceb8f2e6b5e1fec8",
+      "statement": "The €390 million fine comprised €210 million for Facebook and €180 million for Instagram.",
+      "evidenceSpanIds": [
+        "span:c-law-004-1544b1a2018c598c-10#chars-1508-1564"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:17:05.097Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-004-1544b1a2018c598c-10#chars-1508-1564"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-004-1544b1a2018c598c-10#chars-1508-1564"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:17:05.097Z"
+    },
+    {
+      "id": "claim:1544b1a2018c598c-e744685ebadf110b",
+      "statement": "Meta has consistently argued that its data transfers were lawful under the Standard Contractual Clauses framework.",
+      "evidenceSpanIds": [
+        "span:c-law-004-1544b1a2018c598c-4#chars-498-611"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:17:05.097Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-004-1544b1a2018c598c-4#chars-498-611"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-004-1544b1a2018c598c-4#chars-498-611"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:17:05.097Z"
+    },
+    {
+      "id": "claim:1544b1a2018c598c-ebd3ce1e144b6708",
+      "statement": "Meta had relied on 'contractual necessity' (Article 6(1)(b)) as the legal basis.",
+      "evidenceSpanIds": [
+        "span:c-law-004-1544b1a2018c598c-10#chars-1683-1762"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:17:05.097Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-004-1544b1a2018c598c-10#chars-1683-1762"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-004-1544b1a2018c598c-10#chars-1683-1762"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:17:05.097Z"
+    },
+    {
+      "id": "claim:1544b1a2018c598c-fb1e5795a21359a1",
+      "statement": "The EDPB determined that contractual necessity was not valid and that user consent was required.",
+      "evidenceSpanIds": [
+        "span:c-law-004-1544b1a2018c598c-10#chars-1768-1841"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:17:05.097Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-004-1544b1a2018c598c-10#chars-1768-1841"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-law-004-1544b1a2018c598c-10#chars-1768-1841"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:17:05.097Z"
+    }
+  ],
+  "concepts": [
+    {
+      "id": "concept:073cc62d206d1e29",
+      "name": "enforcementtracker.com",
+      "aliases": [],
+      "boundary": "网站/数据源",
+      "domain": "数据保护"
+    },
+    {
+      "id": "concept:14d5851615c045d1",
+      "name": "Max Schrems",
+      "aliases": [
+        "Schrems"
+      ],
+      "boundary": "个人",
+      "domain": "隐私倡导"
+    },
+    {
+      "id": "concept:2c81ab9f31cf3e6e",
+      "name": "EU-US Data Privacy Framework",
+      "aliases": [],
+      "boundary": "法律框架",
+      "domain": "数据保护/国际法"
+    },
+    {
+      "id": "concept:4264ea929005026f",
+      "name": "adequacy decision",
+      "aliases": [],
+      "boundary": "法律概念",
+      "domain": "法律/数据保护"
+    },
+    {
+      "id": "concept:49352f564763ab30",
+      "name": "US surveillance law",
+      "aliases": [],
+      "boundary": "法律",
+      "domain": "法律/国家安全"
+    },
+    {
+      "id": "concept:4e448f9659d6619c",
+      "name": "Instagram",
+      "aliases": [],
+      "boundary": "服务/品牌",
+      "domain": "科技"
+    },
+    {
+      "id": "concept:71b28b7ace315f0a",
+      "name": "DPC",
+      "aliases": [
+        "Irish DPC"
+      ],
+      "boundary": "监管机构",
+      "domain": "法律/数据保护"
+    },
+    {
+      "id": "concept:7df9220fa6643f3d",
+      "name": "WhatsApp",
+      "aliases": [],
+      "boundary": "公司实体/服务",
+      "domain": "科技/法律"
+    },
+    {
+      "id": "concept:85a98dc4255abbf1",
+      "name": "contractual necessity",
+      "aliases": [],
+      "boundary": "法律概念",
+      "domain": "数据保护/GDPR"
+    },
+    {
+      "id": "concept:86dacfb8d429d976",
+      "name": "EDPB",
+      "aliases": [],
+      "boundary": "监管机构",
+      "domain": "数据保护"
+    },
+    {
+      "id": "concept:9f22b7f1a75e4fe0",
+      "name": "EU law",
+      "aliases": [],
+      "boundary": "法律体系",
+      "domain": "法律"
+    },
+    {
+      "id": "concept:a36026c5a0d45702",
+      "name": "transatlantic data transfers",
+      "aliases": [
+        "EU-US data transfers"
+      ],
+      "boundary": "数据流动",
+      "domain": "数据保护/国际法"
+    },
+    {
+      "id": "concept:a7907f75ab163be5",
+      "name": "Meta Platforms Ireland Limited",
+      "aliases": [
+        "Meta"
+      ],
+      "boundary": "公司实体",
+      "domain": "科技/法律"
+    },
+    {
+      "id": "concept:b055408ef87ba7fa",
+      "name": "Amazon",
+      "aliases": [],
+      "boundary": "公司实体",
+      "domain": "科技/法律"
+    },
+    {
+      "id": "concept:b4aea3e67ac7e736",
+      "name": "Standard Contractual Clauses",
+      "aliases": [],
+      "boundary": "法律工具",
+      "domain": "数据保护/合同"
+    },
+    {
+      "id": "concept:c02b8b1db3f9b5d1",
+      "name": "user consent",
+      "aliases": [],
+      "boundary": "法律概念",
+      "domain": "数据保护/GDPR"
+    },
+    {
+      "id": "concept:c56e561c6c125b91",
+      "name": "European Commission",
+      "aliases": [],
+      "boundary": "机构",
+      "domain": "政治/法律"
+    },
+    {
+      "id": "concept:d65fd6d10e144e49",
+      "name": "Facebook",
+      "aliases": [],
+      "boundary": "服务/品牌",
+      "domain": "科技"
+    },
+    {
+      "id": "concept:dca25721e3b2c948",
+      "name": "noyb",
+      "aliases": [],
+      "boundary": "组织",
+      "domain": "隐私倡导"
+    },
+    {
+      "id": "concept:ea97fcd721f418ce",
+      "name": "GDPR",
+      "aliases": [],
+      "boundary": "法规",
+      "domain": "法律/数据保护"
+    },
+    {
+      "id": "concept:faf3f4573fae5479",
+      "name": "Schrems II ruling",
+      "aliases": [],
+      "boundary": "法律裁决",
+      "domain": "法律/数据保护"
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel:1544b1a2018c598c-10619d7a4ac60f84",
+      "from": "claim:1544b1a2018c598c-c192f8b4753fdfb2",
+      "to": "claim:1544b1a2018c598c-6a801d847871f661",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:c-law-004-1544b1a2018c598c-13#chars-2121-2327",
+        "span:c-law-004-1544b1a2018c598c-13#chars-2329-2426"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:17:14.454Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.8,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:1544b1a2018c598c-19bfe77235f27282",
+      "from": "claim:1544b1a2018c598c-98cc95adbf147673",
+      "to": "claim:1544b1a2018c598c-ceb8f2e6b5e1fec8",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:c-law-004-1544b1a2018c598c-10#chars-1419-1505",
+        "span:c-law-004-1544b1a2018c598c-10#chars-1508-1564"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:17:14.454Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.9,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:1544b1a2018c598c-2809df9734acc437",
+      "from": "claim:1544b1a2018c598c-34091a7a72672588",
+      "to": "claim:1544b1a2018c598c-4bee6f12e0491f2d",
+      "type": "RELATED_TO",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:c-law-004-1544b1a2018c598c-8#chars-1127-1199",
+        "span:c-law-004-1544b1a2018c598c-8#chars-1245-1370"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:17:14.454Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.8,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:1544b1a2018c598c-581e3c4ab90ac43f",
+      "from": "claim:1544b1a2018c598c-ebd3ce1e144b6708",
+      "to": "claim:1544b1a2018c598c-fb1e5795a21359a1",
+      "type": "CONTRADICTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:c-law-004-1544b1a2018c598c-10#chars-1683-1762",
+        "span:c-law-004-1544b1a2018c598c-10#chars-1768-1841"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:17:14.454Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.9,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:1544b1a2018c598c-5da5bcbd878edd43",
+      "from": "claim:1544b1a2018c598c-34091a7a72672588",
+      "to": "claim:1544b1a2018c598c-57e4e29c6af14570",
+      "type": "RELATED_TO",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:c-law-004-1544b1a2018c598c-8#chars-1127-1199",
+        "span:c-law-004-1544b1a2018c598c-8#chars-1201-1239"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:17:14.454Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.8,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:1544b1a2018c598c-82d650cf6c491b00",
+      "from": "claim:1544b1a2018c598c-1ed8d79bfee36f2d",
+      "to": "claim:1544b1a2018c598c-4b2671aa4c99ee87",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:c-law-004-1544b1a2018c598c-4#chars-348-407",
+        "span:c-law-004-1544b1a2018c598c-4#chars-412-496"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:17:14.454Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.9,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:1544b1a2018c598c-9b48328f5a5a76ca",
+      "from": "claim:1544b1a2018c598c-81a6cc3e502c033e",
+      "to": "claim:1544b1a2018c598c-9684515d542490d0",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:c-law-004-1544b1a2018c598c-6#chars-870-952",
+        "span:c-law-004-1544b1a2018c598c-6#chars-954-1011"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:17:14.454Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.8,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:1544b1a2018c598c-a21a82b974f4d08c",
+      "from": "claim:1544b1a2018c598c-4bee6f12e0491f2d",
+      "to": "claim:1544b1a2018c598c-ceb8f2e6b5e1fec8",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:c-law-004-1544b1a2018c598c-10#chars-1508-1564",
+        "span:c-law-004-1544b1a2018c598c-8#chars-1245-1370"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:17:14.454Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.8,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:1544b1a2018c598c-f5e5dab2b79d32ca",
+      "from": "claim:1544b1a2018c598c-4bee6f12e0491f2d",
+      "to": "claim:1544b1a2018c598c-57e4e29c6af14570",
+      "type": "RELATED_TO",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:c-law-004-1544b1a2018c598c-8#chars-1201-1239",
+        "span:c-law-004-1544b1a2018c598c-8#chars-1245-1370"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:17:14.454Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.8,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:1544b1a2018c598c-ff9914a24100efc6",
+      "from": "claim:1544b1a2018c598c-6a801d847871f661",
+      "to": "claim:1544b1a2018c598c-c192f8b4753fdfb2",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:c-law-004-1544b1a2018c598c-13#chars-2121-2327",
+        "span:c-law-004-1544b1a2018c598c-13#chars-2329-2426"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:17:14.454Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.8,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:cross-04af2942dde411b2",
+      "from": "claim:f1df14c75b8f61cf-04f9905849db1610",
+      "to": "claim:1544b1a2018c598c-bda60dd74d9e50d3",
+      "type": "SUPPORTS",
+      "conditions": [
+        "An administrative fine of €1.2 billion was imposed, the largest GDPR fine ever."
+      ],
+      "conditionStatus": "PRESERVED",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:c-law-002-f1df14c75b8f61cf-13#chars-1802-1876",
+        "span:c-law-004-1544b1a2018c598c-8#chars-1045-1125"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:17:41.269Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "cross-material-detect",
+      "confidence": 0.8,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:cross-0cbfa015cb6c2fdf",
+      "from": "claim:1544b1a2018c598c-4b2671aa4c99ee87",
+      "to": "claim:f1df14c75b8f61cf-44b7ee4e9b244013",
+      "type": "SUPPORTS",
+      "conditions": [
+        "Meta will seek a stay with the courts to pause the implementation of applicable deadlines."
+      ],
+      "conditionStatus": "PRESERVED",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:c-law-002-f1df14c75b8f61cf-19#chars-2988-3098",
+        "span:c-law-004-1544b1a2018c598c-4#chars-412-496"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:17:41.269Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "cross-material-detect",
+      "confidence": 0.9,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:cross-1d9a658bf535105f",
+      "from": "claim:1544b1a2018c598c-bda60dd74d9e50d3",
+      "to": "claim:f1df14c75b8f61cf-04f9905849db1610",
+      "type": "SUPPORTS",
+      "conditions": [
+        "According to enforcementtracker.com, this was the largest GDPR fine ever imposed."
+      ],
+      "conditionStatus": "PRESERVED",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:c-law-002-f1df14c75b8f61cf-13#chars-1802-1876",
+        "span:c-law-004-1544b1a2018c598c-8#chars-1045-1125"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:17:41.269Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "cross-material-detect",
+      "confidence": 0.8,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:cross-d1d53b906a718812",
+      "from": "claim:1544b1a2018c598c-1ed8d79bfee36f2d",
+      "to": "claim:f1df14c75b8f61cf-44b7ee4e9b244013",
+      "type": "SUPPORTS",
+      "conditions": [
+        "Meta announced it would appeal the decision and seek a stay with the courts to pause implementation deadlines."
+      ],
+      "conditionStatus": "PRESERVED",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:c-law-002-f1df14c75b8f61cf-19#chars-2988-3098",
+        "span:c-law-004-1544b1a2018c598c-4#chars-348-407"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:17:41.269Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "cross-material-detect",
+      "confidence": 0.9,
+      "consumedBy": []
+    }
+  ]
+}
