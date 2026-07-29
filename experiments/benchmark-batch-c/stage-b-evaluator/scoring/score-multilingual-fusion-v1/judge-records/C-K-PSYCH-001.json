@@ -1,0 +1,51 @@
+{
+  "questionId": "C-K-PSYCH-001",
+  "promptHash": "492a34bf006cefabe874a6f58f4d95027ee055d459506ebcb8675fc6c73e8e17",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 2663,
+    "completionTokens": 3611,
+    "totalTokens": 6274,
+    "promptCacheHitTokens": 256,
+    "promptCacheMissTokens": 2407,
+    "reasoningTokens": 3231
+  },
+  "raw": "[\n    {\n        \"sampleId\": \"sample-20c9956d-b4e9-4a3c-814a-cdb74e1916d6\",\n        \"requiredPointCoverage\": 3,\n        \"conditionFidelity\": 3,\n        \"evidenceGrounding\": 3,\n        \"answerabilityDiscipline\": 4,\n        \"sourceRoleTemporalDiscipline\": 4,\n        \"hardFailure\": false,\n        \"hardFailureTypes\": [],\n        \"rationale\": \"正确区分两类来源，指出各自局限；引用内部格式但支撑；缺少明确权重对比。\"\n    },\n    {\n        \"sampleId\": \"sample-eb1bc396-40ea-41f2-a09b-bee2c8ee6dd3\",\n        \"requiredPointCoverage\": 3,\n        \"conditionFidelity\": 3,\n        \"evidenceGrounding\": 1,\n        \"answerabilityDiscipline\": 4,\n        \"sourceRoleTemporalDiscipline\": 4,\n        \"hardFailure\": false,\n        \"hardFailureTypes\": [],\n        \"rationale\": \"区分来源类型正确，引用无效（合同验证失败），证据接地不足。\"\n    },\n    {\n        \"sampleId\": \"sample-7031f90e-d545-4ee9-943b-656beee4fff1\",\n        \"requiredPointCoverage\": 2,\n        \"conditionFidelity\": 2,\n        \"evidenceGrounding\": 3,\n        \"answerabilityDiscipline\": 4,\n        \"sourceRoleTemporalDiscipline\": 4,\n        \"hardFailure\": false,\n        \"hardFailureTypes\": [],\n        \"rationale\": \"区分来源类型正确但声称Gilbert支持高复制性结论，欠准确；引用有效。\"\n    }\n]",
+  "rows": [
+    {
+      "sampleId": "sample-20c9956d-b4e9-4a3c-814a-cdb74e1916d6",
+      "requiredPointCoverage": 3,
+      "conditionFidelity": 3,
+      "evidenceGrounding": 3,
+      "answerabilityDiscipline": 4,
+      "sourceRoleTemporalDiscipline": 4,
+      "hardFailure": false,
+      "hardFailureTypes": [],
+      "rationale": "正确区分两类来源，指出各自局限；引用内部格式但支撑；缺少明确权重对比。"
+    },
+    {
+      "sampleId": "sample-eb1bc396-40ea-41f2-a09b-bee2c8ee6dd3",
+      "requiredPointCoverage": 3,
+      "conditionFidelity": 3,
+      "evidenceGrounding": 1,
+      "answerabilityDiscipline": 4,
+      "sourceRoleTemporalDiscipline": 4,
+      "hardFailure": false,
+      "hardFailureTypes": [],
+      "rationale": "区分来源类型正确，引用无效（合同验证失败），证据接地不足。"
+    },
+    {
+      "sampleId": "sample-7031f90e-d545-4ee9-943b-656beee4fff1",
+      "requiredPointCoverage": 2,
+      "conditionFidelity": 2,
+      "evidenceGrounding": 3,
+      "answerabilityDiscipline": 4,
+      "sourceRoleTemporalDiscipline": 4,
+      "hardFailure": false,
+      "hardFailureTypes": [],
+      "rationale": "区分来源类型正确但声称Gilbert支持高复制性结论，欠准确；引用有效。"
+    }
+  ]
+}

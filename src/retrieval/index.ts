@@ -37,6 +37,7 @@ export interface TemporalScopeFilterResult {
 interface IndexedClaim {
 	claim: Claim;
 	features: Set<string>;
+	aliasFeatures: Set<string>;
 	sourceFeatures: Set<string>;
 	normalizedText: string;
 }
@@ -142,6 +143,41 @@ export function retrieveClaimSeeds(
 	limit = 10,
 	sourceSearchText: ReadonlyMap<string, string> = new Map(),
 ): SeedRetrievalResult {
+	const hasAliases = claims.some((claim) => (claim.retrievalAliases ?? []).length > 0);
+	if (!hasAliases) return retrieveClaimSeedsOnce(claims, spans, query, limit, sourceSearchText);
+	// Keep the complete original-language ranking, then add a small alias-only
+	// supplement. Cross-language recall must not replace evidence that was already
+	// reachable through the original statement, evidence, identifiers or metadata.
+	const baseline = retrieveClaimSeedsOnce(
+		claims.map((claim) => ({ ...claim, retrievalAliases: [] })),
+		spans,
+		query,
+		limit,
+		sourceSearchText,
+	);
+	const multilingual = retrieveClaimSeedsOnce(claims, spans, query, limit, sourceSearchText);
+	const existingIds = new Set(baseline.candidates.map((candidate) => candidate.claim.id));
+	const supplements = multilingual.candidates
+		.filter(
+			(candidate) => candidate.channels.includes("alias") && !existingIds.has(candidate.claim.id),
+		)
+		.slice(0, 4);
+	return {
+		candidates: [...baseline.candidates, ...supplements],
+		diagnostics: {
+			...multilingual.diagnostics,
+			matchedClaimCount: baseline.candidates.length + supplements.length,
+		},
+	};
+}
+
+function retrieveClaimSeedsOnce(
+	claims: Claim[],
+	spans: SourceSpan[],
+	query: string,
+	limit: number,
+	sourceSearchText: ReadonlyMap<string, string>,
+): SeedRetrievalResult {
 	let resolvedEvidenceRefCount = 0;
 	let unresolvedEvidenceRefCount = 0;
 	const eligible = claims.filter((claim) => {
@@ -167,12 +203,14 @@ export function retrieveClaimSeeds(
 					.filter(Boolean),
 			),
 		].join("\n");
-		const text = [claim.statement, claim.conditions.join(" "), evidence, sourceMetadata]
+		const aliases = (claim.retrievalAliases ?? []).join("\n");
+		const text = [claim.statement, claim.conditions.join(" "), evidence, aliases, sourceMetadata]
 			.filter(Boolean)
 			.join("\n");
 		return {
 			claim,
 			features: lexicalFeatures(text),
+			aliasFeatures: lexicalFeatures(aliases),
 			sourceFeatures: lexicalFeatures(sourceMetadata),
 			normalizedText: normalizeSearchText(text),
 		};
@@ -242,6 +280,7 @@ export function retrieveClaimSeeds(
 				channels.add(feature.slice(0, feature.indexOf(":")));
 			}
 			if (matched.some((feature) => entry.sourceFeatures.has(feature))) channels.add("source");
+			if (matched.some((feature) => entry.aliasFeatures.has(feature))) channels.add("alias");
 			const coverage = queryFeatures.size === 0 ? 0 : matched.length / queryFeatures.size;
 			score *= 0.5 + coverage;
 			if (normalizedQuery.length >= 4 && entry.normalizedText.includes(normalizedQuery)) {

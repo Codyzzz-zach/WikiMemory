@@ -17,6 +17,8 @@ import {
 	readAllRelations,
 	readAllRelationsQuarantined,
 	resolveSpanById,
+	retrievalAliasStatementHash,
+	writeRetrievalAliasProjections,
 } from "./storage.js";
 
 const temporaryRoots: string[] = [];
@@ -44,6 +46,26 @@ describe("publication storage", () => {
 		publish(config, "run-2", [second], [first]);
 		expect(readAllClaims(config).map((item) => item.id)).toEqual(["claim:second"]);
 		expect(readAllClaimsQuarantined(config).map((item) => item.id)).toEqual(["claim:first"]);
+	});
+
+	it("hydrates a matching retrieval alias overlay and ignores it after statement drift", () => {
+		const config = temporaryConfig();
+		const original = claim("claim:english", "Net removals are limited.");
+		publish(config, "run-1", [original], []);
+		writeRetrievalAliasProjections(config, [
+			{
+				claimId: original.id,
+				statementHash: retrievalAliasStatementHash(original.statement),
+				aliases: ["净移除量存在上限"],
+				model: "test",
+				promptVersion: "test-v1",
+				generatedAt: "2026-07-28T00:00:00.000Z",
+			},
+		]);
+		expect(readAllClaims(config)[0]?.retrievalAliases).toEqual(["净移除量存在上限"]);
+
+		publish(config, "run-2", [{ ...original, statement: "Net removals changed." }], []);
+		expect(readAllClaims(config)[0]?.retrievalAliases).toBeUndefined();
 	});
 
 	it("resolves deterministic quote spans from persisted base spans", () => {

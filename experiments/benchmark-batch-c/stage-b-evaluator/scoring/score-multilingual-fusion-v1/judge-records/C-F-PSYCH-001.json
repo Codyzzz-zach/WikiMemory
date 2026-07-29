@@ -1,0 +1,51 @@
+{
+  "questionId": "C-F-PSYCH-001",
+  "promptHash": "267d91012d39c1bcb812e5a788cf04d1e44d80bc69851efee9dba2e9ab6809be",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 1560,
+    "completionTokens": 1049,
+    "totalTokens": 2609,
+    "promptCacheHitTokens": 256,
+    "promptCacheMissTokens": 1304,
+    "reasoningTokens": 666
+  },
+  "raw": "[\n  {\n    \"sampleId\": \"sample-f06c27c7-a0f7-49d4-a07f-84b9c5336b29\",\n    \"requiredPointCoverage\": 4,\n    \"conditionFidelity\": 4,\n    \"evidenceGrounding\": 4,\n    \"answerabilityDiscipline\": 4,\n    \"sourceRoleTemporalDiscipline\": 4,\n    \"hardFailure\": false,\n    \"hardFailureTypes\": [],\n    \"rationale\": \"完全正确给出97%和36%，引用p<.05条件，无错误扩解释。\"\n  },\n  {\n    \"sampleId\": \"sample-f144bd0d-e7a8-449f-8ed9-62d7c02f04a1\",\n    \"requiredPointCoverage\": 4,\n    \"conditionFidelity\": 4,\n    \"evidenceGrounding\": 4,\n    \"answerabilityDiscipline\": 4,\n    \"sourceRoleTemporalDiscipline\": 4,\n    \"hardFailure\": false,\n    \"hardFailureTypes\": [],\n    \"rationale\": \"完全正确给出97%和36%，引用p<.05条件，无错误扩解释。\"\n  },\n  {\n    \"sampleId\": \"sample-dd1996d9-736c-45fb-add7-b8452c7a495d\",\n    \"requiredPointCoverage\": 0,\n    \"conditionFidelity\": 0,\n    \"evidenceGrounding\": 0,\n    \"answerabilityDiscipline\": 0,\n    \"sourceRoleTemporalDiscipline\": 0,\n    \"hardFailure\": false,\n    \"hardFailureTypes\": [],\n    \"rationale\": \"错误断定未给出具体比例，实际Gold明确提供，属不应当拒答。\"\n  }\n]",
+  "rows": [
+    {
+      "sampleId": "sample-f06c27c7-a0f7-49d4-a07f-84b9c5336b29",
+      "requiredPointCoverage": 4,
+      "conditionFidelity": 4,
+      "evidenceGrounding": 4,
+      "answerabilityDiscipline": 4,
+      "sourceRoleTemporalDiscipline": 4,
+      "hardFailure": false,
+      "hardFailureTypes": [],
+      "rationale": "完全正确给出97%和36%，引用p<.05条件，无错误扩解释。"
+    },
+    {
+      "sampleId": "sample-f144bd0d-e7a8-449f-8ed9-62d7c02f04a1",
+      "requiredPointCoverage": 4,
+      "conditionFidelity": 4,
+      "evidenceGrounding": 4,
+      "answerabilityDiscipline": 4,
+      "sourceRoleTemporalDiscipline": 4,
+      "hardFailure": false,
+      "hardFailureTypes": [],
+      "rationale": "完全正确给出97%和36%，引用p<.05条件，无错误扩解释。"
+    },
+    {
+      "sampleId": "sample-dd1996d9-736c-45fb-add7-b8452c7a495d",
+      "requiredPointCoverage": 0,
+      "conditionFidelity": 0,
+      "evidenceGrounding": 0,
+      "answerabilityDiscipline": 0,
+      "sourceRoleTemporalDiscipline": 0,
+      "hardFailure": false,
+      "hardFailureTypes": [],
+      "rationale": "错误断定未给出具体比例，实际Gold明确提供，属不应当拒答。"
+    }
+  ]
+}

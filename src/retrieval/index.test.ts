@@ -48,6 +48,22 @@ describe("domain-neutral Seed retrieval", () => {
 		expect(result.candidates[0]?.claim.id).toBe("claim:evidence");
 	});
 
+	it("retrieves English evidence through a Chinese non-evidentiary alias", () => {
+		const translated = fixture(
+			"cross-language",
+			"Net removals are limited to 225 million tonnes of CO2 equivalent.",
+		);
+		translated.retrievalAliases = ["净碳移除量上限为二亿二千五百万吨二氧化碳当量"];
+		const unrelated = fixture("unrelated", "The regulation establishes an advisory board.");
+		const result = retrieveClaimSeeds(
+			[unrelated, translated],
+			spansFor([unrelated, translated], "source:climate-law"),
+			"净碳移除量的上限是多少？",
+		);
+		expect(result.candidates[0]?.claim.id).toBe("claim:cross-language");
+		expect(result.candidates[0]?.channels).toContain("alias");
+	});
+
 	it("uses source metadata for explicit source-role questions", () => {
 		const reportClaim = fixture("report", "获奖团队训练算法并揭示了一篇哲学作品");
 		const result = retrieveClaimSeeds(

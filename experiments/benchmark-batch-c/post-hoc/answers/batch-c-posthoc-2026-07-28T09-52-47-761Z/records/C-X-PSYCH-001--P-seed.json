@@ -1,0 +1,63 @@
+{
+  "runId": "batch-c-posthoc-2026-07-28T09-52-47-761Z",
+  "sampleId": "sample-4b4e07d8-e8be-4309-bf9f-abcd2fa6dd5a",
+  "questionId": "C-X-PSYCH-001",
+  "group": "P-seed",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "temperature": 0,
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 3145,
+    "completionTokens": 428,
+    "totalTokens": 3573,
+    "promptCacheHitTokens": 0,
+    "promptCacheMissTokens": 3145,
+    "reasoningTokens": 0
+  },
+  "latencyMs": 3722,
+  "promptHash": "dc3f4582ccad2ad98315eaab89c2d372905cc10e10979e600cb47db0a734be6c",
+  "contextHash": "47605540c331d50fed42e72481cf7dc4d7a71a2c896ee4be154fc0f4e9e352bc",
+  "estimatedContextTokens": 2386,
+  "estimatedInputTokens": 2608,
+  "retrievedClaims": [
+    "claim:adb285a63645fee4-bf99c4465e762307",
+    "claim:adb285a63645fee4-603d9950c123f1ab",
+    "claim:adb285a63645fee4-13188dbeecc062ee",
+    "claim:adb285a63645fee4-267dd736bec2e232",
+    "claim:adb285a63645fee4-34585b952514d2cc",
+    "claim:adb285a63645fee4-3b262618fcf6042e",
+    "claim:adb285a63645fee4-43492018319a4468",
+    "claim:adb285a63645fee4-4607fc993dc2c9fd",
+    "claim:adb285a63645fee4-50af184b6eca28a3",
+    "claim:adb285a63645fee4-5206ac18f2edd7c7",
+    "claim:adb285a63645fee4-f5acd79d91c7be49",
+    "claim:08f4f1f4eb388c06-a6a1002ab06055f5",
+    "claim:adb285a63645fee4-d037e33e12360e4e",
+    "claim:adb285a63645fee4-b724349a870cf6d1",
+    "claim:08f4f1f4eb388c06-9d3d87bb413cd0f9",
+    "claim:08f4f1f4eb388c06-cc032c5f6d34ae62",
+    "claim:adb285a63645fee4-c9ef45a3fc99b848",
+    "claim:adb285a63645fee4-5ed279e964d9a212",
+    "claim:adb285a63645fee4-be6645291aaac3d3",
+    "claim:adb285a63645fee4-6777ae78dbb7754f",
+    "claim:adb285a63645fee4-78995c33a069a9ba",
+    "claim:adb285a63645fee4-80a30208abe220b2"
+  ],
+  "retrievedRelations": [],
+  "retrievedSources": [
+    "source:c-psych-002-adb285a63645fee4",
+    "source:c-psych-003-08f4f1f4eb388c06"
+  ],
+  "citationValidation": {
+    "valid": true,
+    "citationCount": 6,
+    "invalid": []
+  },
+  "request": {
+    "systemPrompt": "你是受证据约束的问答 Agent。只使用本次请求提供的检索上下文回答。\n要求：保留影响结论的条件、时间、例外、来源角色与不确定性；关键结论引用上下文中的 SOURCE、EVIDENCE 或 CLAIM 标识；上下文不足时明确说明，不得用外部常识补齐。\n只输出严格 JSON：{\"answer\":\"...\",\"citations\":[\"...\"],\"insufficient\":false,\"uncertainties\":[\"...\"]}。",
+    "userPrompt": "# 问题\nMany Labs 项目 (Klein et al., 2014) 的复制成功率与 OSC (2015) 的复制成功率存在显著差异。这两种研究方法在设计上有哪些关键不同？这些差异如何影响了对心理学可复制性的整体评估？\n\n# 检索上下文\n## TASK MAP\n主题: Many Labs 项目 (Klein et al., 2014) 的复制成功率与 OSC (2015) 的复制成功率存在显著差异。这两种研究方法在设计上有哪些关键不同？这些差异如何影响了对心理学可复制性的整体评估？\n地图主题: 研究, osc, 影响, 项目, 2014\n关键概念: 第五次评估报告, IPCC第六次评估报告, 不利影响, Many Labs Replication Project, Open Science Collaboration (OSC)\n已知争议: 0 个\n最近变化: 5 条\n找到 22 条相关 Claim\n找到 0 条关系\n找到 22 条原文证据\n\n## CLAIM claim:adb285a63645fee4-bf99c4465e762307\n该内容来源于 Journal of Open Psychology Data 和 OSF 项目页面。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:adb285a63645fee4-603d9950c123f1ab\n该研究发表在 Social Psychology (2014), Vol. 45, pp. 142-152。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:adb285a63645fee4-13188dbeecc062ee\nThe dataset is stored on the Open Science Framework website.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:adb285a63645fee4-267dd736bec2e232\n数据论文的 DOI 是 10.5334/jopd.ad。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:adb285a63645fee4-34585b952514d2cc\nThe aggregate sample had a mean age of 25.98.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:adb285a63645fee4-3b262618fcf6042e\nThe effects included Sunk costs (Oppenheimer, Meyvis, & Davidenko, 2009).\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:adb285a63645fee4-43492018319a4468\nParticipant ethnicity was 65.1% White, 6.7% Black or African American, 6.5% East Asian, 4.5% South Asian, 17.2% Other or Unknown.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:adb285a63645fee4-4607fc993dc2c9fd\n作者包括 Richard A. Klein, Kate A. Ratliff, Michelangelo Vianello, Reginald B. Adams Jr. 等 50 多位作者。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:adb285a63645fee4-50af184b6eca28a3\nThe effects included Low-vs.-high category scales (Schwarz, Hippler, Deutsch, & Strack, 1985).\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:adb285a63645fee4-5206ac18f2edd7c7\nThe effects included Flag Priming (Carter, Ferguson, & Hassin, 2011).\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:adb285a63645fee4-f5acd79d91c7be49\nThe replication demonstrated that many classic psychological findings are robust when tested with large, diverse samples and standardized protocols.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:08f4f1f4eb388c06-a6a1002ab06055f5\nThe OSC failed to consider that their replication studies were often quite different from the originals in many ways, and those differences are a source of statistical error.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:adb285a63645fee4-d037e33e12360e4e\n10 of the 13 effects were successfully replicated across the 36 samples.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:adb285a63645fee4-b724349a870cf6d1\nMany Labs Replication Project replicated 13 effects across 36 samples and over 6,000 participants.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:08f4f1f4eb388c06-9d3d87bb413cd0f9\nWhen the calculation was done correctly and applied to the OSC data, the number of failures observed was just about what should be expected by chance alone, even if all 100 original findings were true.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:08f4f1f4eb388c06-cc032c5f6d34ae62\nThe failure of the replication studies to match the original studies was a failure of the replications, not of the originals.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:adb285a63645fee4-c9ef45a3fc99b848\nThe dataset includes replication data, demographic variables, and contextual information.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:adb285a63645fee4-5ed279e964d9a212\n数据论文发表在 Journal of Open Psychology Data (2014), Vol. 2, Issue 1, e4。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:adb285a63645fee4-be6645291aaac3d3\n主文章的 DOI 是 10.1177/1948550614547449。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:adb285a63645fee4-6777ae78dbb7754f\nThe effects included Quote Attribution (Lorge & Curtis, 1936).\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:adb285a63645fee4-78995c33a069a9ba\nThe effects included Allowed/Forbidden (Rugg, 1941).\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:adb285a63645fee4-80a30208abe220b2\nParticipant gender was 63.6% female, 29.9% male, 6.5% no response.\nConditions: none\nValidity: SUPPORTED\n\n## EVIDENCE span:c-psych-002-adb285a63645fee4-2#chars-100-233\n*Content sourced from Journal of Open Psychology Data (openpsychologydata.metajnl.com) and OSF project page (https://osf.io/wx7ck/).*\n\n## EVIDENCE span:c-psych-002-adb285a63645fee4-3#chars-350-489\n**Published in:** Social Psychology (2014), Vol. 45, pp. 142-152; data paper in Journal of Open Psychology Data (2014), Vol. 2, Issue 1, e4\n\n## EVIDENCE span:c-psych-002-adb285a63645fee4-13#chars-2322-2382\nThe dataset is stored on the Open Science Framework website.\n\n## EVIDENCE span:c-psych-002-adb285a63645fee4-3#chars-490-567\n**DOI:** 10.5334/jopd.ad (data paper); 10.1177/1948550614547449 (main article\n\n## EVIDENCE span:c-psych-002-adb285a63645fee4-7#chars-1126-1171\nThe aggregate sample had a mean age of 25.98.\n\n## EVIDENCE span:c-psych-002-adb285a63645fee4-9#chars-1507-1558\nSunk costs (Oppenheimer, Meyvis, & Davidenko, 2009)\n\n## EVIDENCE span:c-psych-002-adb285a63645fee4-7#chars-1172-1302\nParticipant ethnicity was: 65.1% White, 6.7% Black or African American, 6.5% East Asian, 4.5% South Asian, 17.2% Other or Unknown.\n\n## EVIDENCE span:c-psych-002-adb285a63645fee4-3#chars-235-349\n**Authors:** Richard A. Klein, Kate A. Ratliff, Michelangelo Vianello, Reginald B. Adams Jr., et al. (50+ authors)\n\n## EVIDENCE span:c-psych-002-adb285a63645fee4-9#chars-1713-1785\nLow-vs.-high category scales (Schwarz, Hippler, Deutsch, & Strack, 1985)\n\n## EVIDENCE span:c-psych-002-adb285a63645fee4-9#chars-1908-1955\nFlag Priming (Carter, Ferguson, & Hassin, 2011)\n\n## EVIDENCE span:c-psych-002-adb285a63645fee4-11#chars-2059-2192\ndemonstrating that many classic psychological findings are robust when tested with large, diverse samples and standardized protocols.\n\n## EVIDENCE span:c-psych-003-08f4f1f4eb388c06-9#chars-1765-2036\nWhen they did their calculations, they failed to consider the fact that their replication studies were not just new samples from the same population. They were often quite different from the originals in many ways, and those differences are a source of statistical error.\n\n## EVIDENCE span:c-psych-002-adb285a63645fee4-11#chars-1986-2057\n10 of the 13 effects were successfully replicated across the 36 samples\n\n## EVIDENCE span:c-psych-002-adb285a63645fee4-5#chars-616-753\nThis dataset is from the Many Labs Replication Project in which 13 effects were replicated across 36 samples and over 6,000 participants.\n\n## EVIDENCE span:c-psych-003-08f4f1f4eb388c06-9#chars-2037-2283\nSo we did the calculation the right way and then applied it to their data. And guess what? The number of failures they observed was just about what you should expect to observe by chance alone — even if all 100 of the original findings were true.\n\n## EVIDENCE span:c-psych-003-08f4f1f4eb388c06-9#chars-2284-2409\nThe failure of the replication studies to match the original studies was a failure of the replications, not of the originals.\n\n## EVIDENCE span:c-psych-002-adb285a63645fee4-5#chars-754-939\nData from the replications are included, along with demographic variables about the participants and contextual information about the environment in which the replication was conducted.\n\n## EVIDENCE span:c-psych-002-adb285a63645fee4-3#chars-416-489\ndata paper in Journal of Open Psychology Data (2014), Vol. 2, Issue 1, e4\n\n## EVIDENCE span:c-psych-002-adb285a63645fee4-3#chars-529-568\n10.1177/1948550614547449 (main article)\n\n## EVIDENCE span:c-psych-002-adb285a63645fee4-9#chars-1866-1906\nQuote Attribution (Lorge & Curtis, 1936)\n\n## EVIDENCE span:c-psych-002-adb285a63645fee4-9#chars-1834-1864\nAllowed/Forbidden (Rugg, 1941)\n\n## EVIDENCE span:c-psych-002-adb285a63645fee4-7#chars-1303-1369\nParticipant gender was 63.6% female, 29.9% male, 6.5% no response.\n\n## CONFLICTS AND CONDITIONS\n🔎 Source source:c-psych-002-adb285a63645fee4 provenance: uri=experiments/benchmark-batch-c/stage-a-freeze/compilation-corpus/psychology-reproducibility/c-psych-002.md; sourceType=md; sourceRole=P/C-implementation; author=Richard A. Klein, Kate A. Ratliff, Michelangelo Vianello, et al.; canonicalUrl=https://doi.org/10.1177/1948550614547449; publishedAt=Tue Jul 01 2014 08:00:00 GMT+0800 (China Standard Time); versionRef='doi:10.1177/1948550614547449; OSF: osf.io/wx7ck'\n🔎 Source source:c-psych-003-08f4f1f4eb388c06 provenance: uri=experiments/benchmark-batch-c/stage-a-freeze/compilation-corpus/psychology-reproducibility/c-psych-003.md; sourceType=md; sourceRole=S-analysis; author=Daniel T. Gilbert, Gary King, Stephen Pettigrew, Timothy D. Wilson; canonicalUrl=https://www.science.org/doi/10.1126/science.aad7243; publishedAt=Fri Mar 04 2016 08:00:00 GMT+0800 (China Standard Time); versionRef='doi:10.1126/science.aad7243; coverage: news.harvard.edu/gazette 2016-03-03'\n\n## KNOWN GAPS\n未找到关系——Graph 可能尚未建立跨材料边"
+  },
+  "answer": "{\n  \"answer\": \"Many Labs 项目 (Klein et al., 2014) 复制了 13 个效应，涉及 36 个样本和超过 6000 名参与者，成功复制了 10 个（约 77%），表明许多经典发现在大样本、多样化样本和标准化协议下是稳健的。OSC (2015) 的复制成功率较低，但批评指出 OSC 的复制研究在多个方面与原研究存在差异，这些差异是统计误差的来源；当正确计算时，OSC 数据中观察到的失败数量仅与偶然预期相符，即使所有 100 个原发现都为真。关键设计差异包括：Many Labs 使用大规模、多样化的样本和标准化协议，而 OSC 的复制研究往往与原研究在方法上存在显著差异。这些差异影响了对心理学可复制性的整体评估：Many Labs 的结果支持许多经典效应的可复制性，而 OSC 的低成功率可能部分源于复制方法上的缺陷，而非原研究的不可复制。\",\n  \"citations\": [\n    \"claim:adb285a63645fee4-b724349a870cf6d1\",\n    \"claim:adb285a63645fee4-d037e33e12360e4e\",\n    \"claim:adb285a63645fee4-f5acd79d91c7be49\",\n    \"claim:08f4f1f4eb388c06-a6a1002ab06055f5\",\n    \"claim:08f4f1f4eb388c06-9d3d87bb413cd0f9\",\n    \"claim:08f4f1f4eb388c06-cc032c5f6d34ae62\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": [\n    \"OSC 的具体复制成功率数值未在上下文中提供，仅提及低成功率。\",\n    \"Many Labs 与 OSC 之间复制成功率的精确差异未量化。\"\n  ]\n}",
+  "answerFormatValid": true
+}

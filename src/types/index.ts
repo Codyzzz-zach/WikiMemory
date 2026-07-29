@@ -173,6 +173,8 @@ export interface SourceSpan {
 export interface Claim {
 	id: string;
 	statement: string;
+	/** 仅用于跨语检索的非证据投影；不得作为回答或审计证据。 */
+	retrievalAliases?: string[];
 	/** @deprecated v1.1：迁移到 supportingEvidenceRefs，但保留向后兼容 */
 	evidenceSpanIds: string[];
 	conditions: string[];

@@ -51,6 +51,7 @@ export type PropositionResponse = z.infer<typeof PropositionResponseSchema>;
 
 export const ClaimDraftSchema = z.object({
 	statement: z.string().min(1, "Claim 陈述不能为空"),
+	retrievalAliases: z.array(z.string()).max(3).default([]),
 	evidenceQuotes: z.array(z.string()).min(1, "至少需要一个原文引用"),
 	blockIds: z.array(z.string()).min(1, "至少需要一个 blockId"),
 	conditions: z.array(z.string()).default([]),

@@ -1,0 +1,118 @@
+{
+  "schemaVersion": "wge-batch-c-first-run-score/v1",
+  "status": "PROVISIONAL_POST_ANSWER_GOLD_DIAGNOSTIC",
+  "runId": "score-multilingual-fusion-v1",
+  "answerRunId": "batch-c-posthoc-2026-07-28T09-52-47-761Z",
+  "judgeModel": "deepseek-v4-flash",
+  "judgeTemperature": 0,
+  "goldStatus": "evaluator-reviewed-provisional-gold",
+  "primaryQuestions": 4,
+  "diagnosticOnlyQuestions": [],
+  "primary": {
+    "B": {
+      "samples": 4,
+      "averageTotal": 9.5,
+      "averageRequiredPointCoverage": 1.75,
+      "averageConditionFidelity": 1.5,
+      "averageEvidenceGrounding": 0.5,
+      "averageAnswerabilityDiscipline": 3,
+      "averageSourceRoleTemporalDiscipline": 2.75,
+      "hardFailures": 0
+    },
+    "P-seed": {
+      "samples": 4,
+      "averageTotal": 15.25,
+      "averageRequiredPointCoverage": 2.5,
+      "averageConditionFidelity": 2.25,
+      "averageEvidenceGrounding": 2.75,
+      "averageAnswerabilityDiscipline": 4,
+      "averageSourceRoleTemporalDiscipline": 3.75,
+      "hardFailures": 0
+    },
+    "P-graph": {
+      "samples": 4,
+      "averageTotal": 15.75,
+      "averageRequiredPointCoverage": 2.75,
+      "averageConditionFidelity": 2.5,
+      "averageEvidenceGrounding": 2.75,
+      "averageAnswerabilityDiscipline": 4,
+      "averageSourceRoleTemporalDiscipline": 3.75,
+      "hardFailures": 0
+    }
+  },
+  "diagnosticOnly": {
+    "B": {
+      "samples": 0,
+      "averageTotal": null,
+      "averageRequiredPointCoverage": null,
+      "averageConditionFidelity": null,
+      "averageEvidenceGrounding": null,
+      "averageAnswerabilityDiscipline": null,
+      "averageSourceRoleTemporalDiscipline": null,
+      "hardFailures": 0
+    },
+    "P-seed": {
+      "samples": 0,
+      "averageTotal": null,
+      "averageRequiredPointCoverage": null,
+      "averageConditionFidelity": null,
+      "averageEvidenceGrounding": null,
+      "averageAnswerabilityDiscipline": null,
+      "averageSourceRoleTemporalDiscipline": null,
+      "hardFailures": 0
+    },
+    "P-graph": {
+      "samples": 0,
+      "averageTotal": null,
+      "averageRequiredPointCoverage": null,
+      "averageConditionFidelity": null,
+      "averageEvidenceGrounding": null,
+      "averageAnswerabilityDiscipline": null,
+      "averageSourceRoleTemporalDiscipline": null,
+      "hardFailures": 0
+    }
+  },
+  "paired": [
+    {
+      "comparison": "P-seed-minus-B",
+      "questions": 4,
+      "averageDifference": 5.75,
+      "wins": 2,
+      "ties": 2,
+      "losses": 0
+    },
+    {
+      "comparison": "P-graph-minus-B",
+      "questions": 4,
+      "averageDifference": 6.25,
+      "wins": 3,
+      "ties": 1,
+      "losses": 0
+    }
+  ],
+  "cost": {
+    "B": {
+      "promptTokens": 10129,
+      "completionTokens": 1067,
+      "totalTokens": 11196,
+      "citationContractFailures": 3
+    },
+    "P-seed": {
+      "promptTokens": 12387,
+      "completionTokens": 1149,
+      "totalTokens": 13536,
+      "citationContractFailures": 0
+    },
+    "P-graph": {
+      "promptTokens": 20268,
+      "completionTokens": 1282,
+      "totalTokens": 21550,
+      "citationContractFailures": 0
+    }
+  },
+  "limitations": [
+    "Stage B Gold was created after answers and is suitable for diagnostic iteration, not confirmatory claims.",
+    "The judge model is from the same model family as the answer model; scores require human spot-checking.",
+    "All supplied Relation Gold was rejected, so graph relation recall/precision is not reported."
+  ]
+}

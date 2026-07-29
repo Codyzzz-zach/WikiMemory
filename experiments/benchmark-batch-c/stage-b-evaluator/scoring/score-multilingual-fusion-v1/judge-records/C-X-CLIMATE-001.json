@@ -1,0 +1,51 @@
+{
+  "questionId": "C-X-CLIMATE-001",
+  "promptHash": "ce4055661b23770e2e927752b7852448a3c69ac3b87576f04e748263141c204e",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 2463,
+    "completionTokens": 1802,
+    "totalTokens": 4265,
+    "promptCacheHitTokens": 256,
+    "promptCacheMissTokens": 2207,
+    "reasoningTokens": 1432
+  },
+  "raw": "[\n  {\n    \"sampleId\": \"sample-e5df0370-9425-4b18-bca6-29c1a6534beb\",\n    \"requiredPointCoverage\": 3,\n    \"conditionFidelity\": 1,\n    \"evidenceGrounding\": 3,\n    \"answerabilityDiscipline\": 4,\n    \"sourceRoleTemporalDiscipline\": 3,\n    \"hardFailure\": false,\n    \"hardFailureTypes\": [],\n    \"rationale\": \"覆盖要点但缺条件；证据引用有效且支撑；未违反规则。\"\n  },\n  {\n    \"sampleId\": \"sample-8a3d282d-90e9-4f6b-9827-3705d2965111\",\n    \"requiredPointCoverage\": 3,\n    \"conditionFidelity\": 1,\n    \"evidenceGrounding\": 3,\n    \"answerabilityDiscipline\": 4,\n    \"sourceRoleTemporalDiscipline\": 3,\n    \"hardFailure\": false,\n    \"hardFailureTypes\": [],\n    \"rationale\": \"覆盖要点但缺条件；多一个有效引用；未违反规则。\"\n  },\n  {\n    \"sampleId\": \"sample-5a9f385c-e582-4242-a552-587879c9d05c\",\n    \"requiredPointCoverage\": 3,\n    \"conditionFidelity\": 1,\n    \"evidenceGrounding\": 0,\n    \"answerabilityDiscipline\": 4,\n    \"sourceRoleTemporalDiscipline\": 3,\n    \"hardFailure\": false,\n    \"hardFailureTypes\": [],\n    \"rationale\": \"要点覆盖；全部引用无效，缺证据支撑；未违反规则。\"\n  }\n]",
+  "rows": [
+    {
+      "sampleId": "sample-e5df0370-9425-4b18-bca6-29c1a6534beb",
+      "requiredPointCoverage": 3,
+      "conditionFidelity": 1,
+      "evidenceGrounding": 3,
+      "answerabilityDiscipline": 4,
+      "sourceRoleTemporalDiscipline": 3,
+      "hardFailure": false,
+      "hardFailureTypes": [],
+      "rationale": "覆盖要点但缺条件；证据引用有效且支撑；未违反规则。"
+    },
+    {
+      "sampleId": "sample-8a3d282d-90e9-4f6b-9827-3705d2965111",
+      "requiredPointCoverage": 3,
+      "conditionFidelity": 1,
+      "evidenceGrounding": 3,
+      "answerabilityDiscipline": 4,
+      "sourceRoleTemporalDiscipline": 3,
+      "hardFailure": false,
+      "hardFailureTypes": [],
+      "rationale": "覆盖要点但缺条件；多一个有效引用；未违反规则。"
+    },
+    {
+      "sampleId": "sample-5a9f385c-e582-4242-a552-587879c9d05c",
+      "requiredPointCoverage": 3,
+      "conditionFidelity": 1,
+      "evidenceGrounding": 0,
+      "answerabilityDiscipline": 4,
+      "sourceRoleTemporalDiscipline": 3,
+      "hardFailure": false,
+      "hardFailureTypes": [],
+      "rationale": "要点覆盖；全部引用无效，缺证据支撑；未违反规则。"
+    }
+  ]
+}

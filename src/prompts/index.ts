@@ -48,7 +48,7 @@ export const PROPOSITION_EXTRACT_SYSTEM = `你是一个精密的知识提取器�
 
 // ─── Claim 编译 prompt（Compiler 第三步）────────────────────────
 
-export const COMPILE_VERSION = "v1.1";
+export const COMPILE_VERSION = "v1.2";
 
 export const COMPILE_SYSTEM = `你是一个知识编译器。基于原子命题和原文，编译出结构化的 Claim、Concept 和 Relation。
 
@@ -71,6 +71,7 @@ export const COMPILE_SYSTEM = `你是一个知识编译器。基于原子命题�
   "claims": [
     {
       "statement": "Claim 陈述",
+	  "retrievalAliases": ["用于中文检索的忠实短语，最多3条"],
       "evidenceQuotes": ["原文引用1", "原文引用2"],
       "blockIds": ["对应 blockId1", "blockId2"],
       "conditions": ["适用条件（如有）"],
@@ -95,6 +96,7 @@ export const COMPILE_SYSTEM = `你是一个知识编译器。基于原子命题�
 # 关键规则
 - evidenceQuotes 必须是原文中确实存在的片段（程序会用字符串匹配验证）
 - blockIds 必须来自命题列表中给出的块
+- retrievalAliases 只用于检索且不得充当证据；非中文 Claim 可提供 1-3 条忠实中文短语，不得添加事实
 - conditions 如果原文没有明确限制条件，写空数组
 - derivation：直接从原文提取用 EXTRACTED，需要推理才得出用 INFERRED
 - 不要编造原文没有的条件或限制
@@ -107,6 +109,7 @@ export const CLAIM_COMPILE_SYSTEM = `你是一个知识 Claim 编译器。基于
   "claims": [
     {
       "statement": "自包含的 Claim 陈述",
+	  "retrievalAliases": ["用于中文检索的忠实短语，最多3条"],
       "evidenceQuotes": ["命题中给出的 exactQuote 原文片段"],
       "blockIds": ["与 evidenceQuotes 同位置对应的 blockId"],
       "conditions": ["原文明示的适用条件；没有则为空数组"],
@@ -120,6 +123,8 @@ export const CLAIM_COMPILE_SYSTEM = `你是一个知识 Claim 编译器。基于
 - 只输出 claims，不输出 concepts 或 relations
 - evidenceQuotes 必须逐字复制输入中的 exactQuote，不得改写
 - blockIds 与 evidenceQuotes 必须等长并逐项对应
+- retrievalAliases 只用于检索，不是证据；当 Claim 主要为非中文时，给出 1-3 条忠实中文检索短语，保留实体名、数字、日期和否定词；不得添加 Claim 没有的信息
+- Claim 已是中文时 retrievalAliases 可为空；不要输出英文原句的机械重复
 - 不得添加原文没有的事实、判断、保证或适用范围
 - 必须保留原文的条件、例外和限定词
 - 如果一个命题不能忠实编译，可以不为它生成 Claim；不得补写信息`;

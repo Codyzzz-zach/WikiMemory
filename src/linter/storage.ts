@@ -52,6 +52,15 @@ export interface SourceQuarantinePublication {
 	relations: Array<{ relation: Relation; issues: unknown[] }>;
 }
 
+export interface RetrievalAliasProjection {
+	claimId: string;
+	statementHash: string;
+	aliases: string[];
+	model: string;
+	promptVersion: string;
+	generatedAt: string;
+}
+
 /** JSONL 读取工具 */
 export function readJsonl<T>(filePath: string): T[] {
 	if (!existsSync(filePath)) return [];
@@ -380,7 +389,36 @@ function uniqueById<T extends { id: string }>(items: T[]): T[] {
 export function readAllClaims(config: AppConfig): Claim[] {
 	const legacy = readJsonl<Claim>(join(config.projectRoot, "claims", "claims.jsonl"));
 	const published = readSourcePublications(config).flatMap((entry) => entry.claims);
-	return uniqueById([...legacy, ...published]);
+	const projections = new Map(
+		readJsonl<RetrievalAliasProjection>(join(config.indexesDir, "retrieval-aliases.jsonl")).map(
+			(projection) => [projection.claimId, projection],
+		),
+	);
+	return uniqueById([...legacy, ...published]).map((claim) => {
+		const projection = projections.get(claim.id);
+		if (!projection || projection.statementHash !== textHash(claim.statement)) return claim;
+		return {
+			...claim,
+			retrievalAliases: [
+				...new Set([...(claim.retrievalAliases ?? []), ...projection.aliases]),
+			].slice(0, 3),
+		};
+	});
+}
+
+export function writeRetrievalAliasProjections(
+	config: AppConfig,
+	projections: RetrievalAliasProjection[],
+): void {
+	writeJsonl(join(config.indexesDir, "retrieval-aliases.jsonl"), projections);
+}
+
+export function retrievalAliasStatementHash(statement: string): string {
+	return textHash(statement);
+}
+
+function textHash(value: string): string {
+	return createHash("sha256").update(value).digest("hex");
 }
 
 export function appendClaims(config: AppConfig, claims: Claim[]): void {

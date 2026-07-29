@@ -1,0 +1,63 @@
+{
+  "runId": "batch-c-posthoc-2026-07-28T09-52-47-761Z",
+  "sampleId": "sample-f06c27c7-a0f7-49d4-a07f-84b9c5336b29",
+  "questionId": "C-F-PSYCH-001",
+  "group": "P-seed",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "temperature": 0,
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 2813,
+    "completionTokens": 101,
+    "totalTokens": 2914,
+    "promptCacheHitTokens": 256,
+    "promptCacheMissTokens": 2557,
+    "reasoningTokens": 0
+  },
+  "latencyMs": 1226,
+  "promptHash": "fd89d455abb072194363550d6720dc9d0efe5b4d4a3b20c8eac10b5da89935a9",
+  "contextHash": "13060318c0b5377752ed9cbef323cffe2ad5882eb814deef7beb60da6df34a6d",
+  "estimatedContextTokens": 2165,
+  "estimatedInputTokens": 2379,
+  "retrievedClaims": [
+    "claim:08f4f1f4eb388c06-5a1eca00ccef74b9",
+    "claim:0f7730e649dbc238-4acc6ab8edfdce8d",
+    "claim:0f7730e649dbc238-5029d8835d37392e",
+    "claim:0f7730e649dbc238-6b8953e4a783f80b",
+    "claim:0f7730e649dbc238-6bd71d1ec2eb4eb0",
+    "claim:0f7730e649dbc238-79d4928647df5ef1",
+    "claim:0f7730e649dbc238-7e2cb553f3fbc767",
+    "claim:0f7730e649dbc238-7fd9ac05cca2b583",
+    "claim:0f7730e649dbc238-803bda104d1d3f61",
+    "claim:0f7730e649dbc238-824f3eafcb5aa161",
+    "claim:0f7730e649dbc238-ee5064947108a810",
+    "claim:0f7730e649dbc238-a0efb89317e2d151",
+    "claim:0f7730e649dbc238-f327d5e045d87405",
+    "claim:0f7730e649dbc238-86406e09d4e2463b",
+    "claim:0f7730e649dbc238-ad224d9bcee9058e",
+    "claim:0f7730e649dbc238-ed28a79cae9d2d88",
+    "claim:0f7730e649dbc238-8654da6e76f10775",
+    "claim:0f7730e649dbc238-e20f898d70439d2e",
+    "claim:08f4f1f4eb388c06-359db3a1c1ff5ab8",
+    "claim:08f4f1f4eb388c06-b7358d918b6741a7",
+    "claim:0f7730e649dbc238-979f2ca3e1c0eba7",
+    "claim:0f7730e649dbc238-a678d14d807db125"
+  ],
+  "retrievedRelations": [],
+  "retrievedSources": [
+    "source:c-psych-003-08f4f1f4eb388c06",
+    "source:c-psych-001-0f7730e649dbc238"
+  ],
+  "citationValidation": {
+    "valid": true,
+    "citationCount": 2,
+    "invalid": []
+  },
+  "request": {
+    "systemPrompt": "你是受证据约束的问答 Agent。只使用本次请求提供的检索上下文回答。\n要求：保留影响结论的条件、时间、例外、来源角色与不确定性；关键结论引用上下文中的 SOURCE、EVIDENCE 或 CLAIM 标识；上下文不足时明确说明，不得用外部常识补齐。\n只输出严格 JSON：{\"answer\":\"...\",\"citations\":[\"...\"],\"insufficient\":false,\"uncertainties\":[\"...\"]}。",
+    "userPrompt": "# 问题\n根据 Open Science Collaboration (2015) 的研究，在100项被复制的心理学研究中，原始研究中有统计显著结果的比例是多少？复制研究中有统计显著结果的比例是多少？\n\n# 检索上下文\n## TASK MAP\n主题: 根据 Open Science Collaboration (2015) 的研究，在100项被复制的心理学研究中，原始研究中有统计显著结果的比例是多少？复制研究中有统计显著结果的比例是多少？\n地图主题: science, 研究, 10, open, 00\n关键概念: 1850-1900年, Union-wide greenhouse gas emissions and removals, Regulation (EU) 2021/1119, Union 2040 climate target, 2030 climate target\n已知争议: 0 个\n最近变化: 5 条\n找到 22 条相关 Claim\n找到 0 条关系\n找到 22 条原文证据\n\n## CLAIM claim:08f4f1f4eb388c06-5a1eca00ccef74b9\nA paper from the Open Science Collaboration attempting to replicate 100 published studies suggests that the reproducibility of psychological science is surprisingly low.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:0f7730e649dbc238-4acc6ab8edfdce8d\nThe Reproducibility Project: Psychology finished primary data collection in December 2014.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:0f7730e649dbc238-5029d8835d37392e\nThe study was published in Science, Vol. 349, Issue 6251, article aac4716.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:0f7730e649dbc238-6b8953e4a783f80b\nThirty-six percent of replications had significant results.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:0f7730e649dbc238-6bd71d1ec2eb4eb0\nOriginal effects had a mean of 0.403 and standard deviation of 0.188.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:0f7730e649dbc238-79d4928647df5ef1\nThe DOI of the study is 10.1126/science.aac4716.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:0f7730e649dbc238-7e2cb553f3fbc767\nThe extent to which reproducibility characterizes current research is unknown.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:0f7730e649dbc238-7fd9ac05cca2b583\nThe study conducted replications of 100 experimental and correlational studies published in three psychology journals.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:0f7730e649dbc238-803bda104d1d3f61\nThe project was coordinated by the Center for Open Science.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:0f7730e649dbc238-824f3eafcb5aa161\nThe study was published on 28 August 2015.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:0f7730e649dbc238-ee5064947108a810\nNinety-seven percent of original studies had significant results (p < .05).\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:0f7730e649dbc238-a0efb89317e2d151\nThe Reproducibility Project: Psychology published a summary of the results in August 2015.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:0f7730e649dbc238-f327d5e045d87405\nThe Reproducibility Project: Psychology began in November 2011.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:0f7730e649dbc238-86406e09d4e2463b\nIf no bias in original results is assumed, combining original and replication results left 68% with significant effects.\nConditions: if no bias in original results is assumed\nValidity: SUPPORTED\n\n## CLAIM claim:0f7730e649dbc238-ad224d9bcee9058e\nThirty-nine percent of effects were subjectively rated to have replicated the original result.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:0f7730e649dbc238-ed28a79cae9d2d88\nForty-seven percent of original effect sizes were in the 95% confidence interval of the replication effect size.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:0f7730e649dbc238-8654da6e76f10775\nEighty-six others provided volunteer support.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:0f7730e649dbc238-e20f898d70439d2e\nOver 270 contributors earned authorship on the summary report.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:08f4f1f4eb388c06-359db3a1c1ff5ab8\nThe OSC article provides no support for the conclusion that reproducibility is low.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:08f4f1f4eb388c06-b7358d918b6741a7\nThe data are consistent with the opposite conclusion that the reproducibility of psychological science is quite high.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:0f7730e649dbc238-979f2ca3e1c0eba7\nReplication effects had a mean of 0.197 and standard deviation of 0.257.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:0f7730e649dbc238-a678d14d807db125\nThe authors are the Open Science Collaboration, with over 270 contributors.\nConditions: none\nValidity: SUPPORTED\n\n## EVIDENCE span:c-psych-003-08f4f1f4eb388c06-5#chars-628-842\nA paper from the Open Science Collaboration (Research Articles, 28 August 2015, aac4716) attempting to replicate 100 published studies suggests that the reproducibility of psychological science is surprisingly low.\n\n## EVIDENCE span:c-psych-001-0f7730e649dbc238-12#chars-1728-1777\nfinished primary data collection in December 2014\n\n## EVIDENCE span:c-psych-001-0f7730e649dbc238-3#chars-294-345\n**Journal:** Science, Vol. 349, Issue 6251, aac4716\n\n## EVIDENCE span:c-psych-001-0f7730e649dbc238-8#chars-1037-1095\nThirty-six percent of replications had significant results\n\n## EVIDENCE span:c-psych-001-0f7730e649dbc238-7#chars-881-920\noriginal effects (Mr = .403, SD = .188)\n\n## EVIDENCE span:c-psych-001-0f7730e649dbc238-3#chars-376-408\n**DOI:** 10.1126/science.aac4716\n\n## EVIDENCE span:c-psych-001-0f7730e649dbc238-5#chars-523-587\nthe extent to which it characterizes current research is unknown\n\n## EVIDENCE span:c-psych-001-0f7730e649dbc238-5#chars-589-699\nWe conducted replications of 100 experimental and correlational studies published in three psychology journals\n\n## EVIDENCE span:c-psych-001-0f7730e649dbc238-12#chars-1834-1892\nThe project was coordinated by the Center for Open Science\n\n## EVIDENCE span:c-psych-001-0f7730e649dbc238-3#chars-346-375\n**Published:** 28 August 2015\n\n## EVIDENCE span:c-psych-001-0f7730e649dbc238-8#chars-961-1035\nNinety-seven percent of original studies had significant results (p < .05)\n\n## EVIDENCE span:c-psych-001-0f7730e649dbc238-12#chars-1783-1832\npublished a summary of the results in August 2015\n\n## EVIDENCE span:c-psych-001-0f7730e649dbc238-12#chars-1664-1726\nThe Reproducibility Project: Psychology began in November 2011\n\n## EVIDENCE span:c-psych-001-0f7730e649dbc238-8#chars-1278-1397\nif no bias in original results is assumed, combining original and replication results left 68% with significant effects\n\n## EVIDENCE span:c-psych-001-0f7730e649dbc238-8#chars-1194-1271\n39% of effects were subjectively rated to have replicated the original result\n\n## EVIDENCE span:c-psych-001-0f7730e649dbc238-8#chars-1097-1192\n47% of original effect sizes were in the 95% confidence interval of the replication effect size\n\n## EVIDENCE span:c-psych-001-0f7730e649dbc238-12#chars-1971-2007\n86 others provided volunteer support\n\n## EVIDENCE span:c-psych-001-0f7730e649dbc238-12#chars-1905-1966\nover 270 contributors earned authorship on the summary report\n\n## EVIDENCE span:c-psych-003-08f4f1f4eb388c06-5#chars-843-949\nWe show that this article contains three statistical errors and provides no support for such a conclusion.\n\n## EVIDENCE span:c-psych-003-08f4f1f4eb388c06-5#chars-950-1084\nIndeed, the data are consistent with the opposite conclusion, namely, that the reproducibility of psychological science is quite high.\n\n## EVIDENCE span:c-psych-001-0f7730e649dbc238-7#chars-811-853\nReplication effects (Mr = .197, SD = .257)\n\n## EVIDENCE span:c-psych-001-0f7730e649dbc238-3#chars-234-293\n**Authors:** Open Science Collaboration (270+ contributors)\n\n## CONFLICTS AND CONDITIONS\n📌 Claim claim:0f7730e649dbc238-86406e09d4e2463b 适用条件: if no bias in original results is assumed\n🔎 Source source:c-psych-001-0f7730e649dbc238 provenance: uri=experiments/benchmark-batch-c/stage-a-freeze/compilation-corpus/psychology-reproducibility/c-psych-001.md; sourceType=md; sourceRole=P-primary; author=Open Science Collaboration; canonicalUrl=https://www.science.org/doi/10.1126/science.aac4716; publishedAt=Fri Aug 28 2015 08:00:00 GMT+0800 (China Standard Time); versionRef=doi:10.1126/science.aac4716\n🔎 Source source:c-psych-003-08f4f1f4eb388c06 provenance: uri=experiments/benchmark-batch-c/stage-a-freeze/compilation-corpus/psychology-reproducibility/c-psych-003.md; sourceType=md; sourceRole=S-analysis; author=Daniel T. Gilbert, Gary King, Stephen Pettigrew, Timothy D. Wilson; canonicalUrl=https://www.science.org/doi/10.1126/science.aad7243; publishedAt=Fri Mar 04 2016 08:00:00 GMT+0800 (China Standard Time); versionRef='doi:10.1126/science.aad7243; coverage: news.harvard.edu/gazette 2016-03-03'\n\n## KNOWN GAPS\n未找到关系——Graph 可能尚未建立跨材料边"
+  },
+  "answer": "{\n  \"answer\": \"原始研究中有97%具有统计显著结果（p < .05），复制研究中有36%具有统计显著结果。\",\n  \"citations\": [\n    \"claim:0f7730e649dbc238-ee5064947108a810\",\n    \"claim:0f7730e649dbc238-6b8953e4a783f80b\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}",
+  "answerFormatValid": true
+}

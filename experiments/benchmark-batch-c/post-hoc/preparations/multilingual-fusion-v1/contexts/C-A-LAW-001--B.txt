@@ -1,0 +1,146 @@
+## SOURCE ../stage-a-freeze/compilation-corpus/law-public-policy/c-law-004.md:30-33 score=18.526
+### Industry Context
+
+Meta is not the only company affected by the Schrems II ruling. The fundamental question of whether US surveillance law provides "essentially equivalent" protection to EU law affects all transatlantic data transfers, not just Meta's. The decision came amid ongoing negotiations for a new EU-US Data Privacy Framework (subsequently adopted as an adequacy decision in July 2023).
+
+## SOURCE ../stage-a-freeze/compilation-corpus/law-public-policy/c-law-004.md:48-51 score=18.526
+### EU-US Data Privacy Framework (July 2023)
+
+The European Commission adopted an adequacy decision for the EU-US Data Privacy Framework on 10 July 2023, potentially resolving the legal basis for transatlantic data transfers going forward — though privacy advocates have signaled they may challenge this framework as well.
+
+## SOURCE ../stage-a-freeze/compilation-corpus/law-public-policy/c-law-004.md:44-47 score=14.774
+### Privacy Advocate Perspective (noyb/Schrems)
+
+The complaints that triggered both the January 2023 advertising decision and the May 2023 data transfers decision were filed by privacy activist Max Schrems and his organization noyb (None Of Your Business). Schrems has been the driving force behind the legal challenges to EU-US data transfers since 2013.
+
+## SOURCE ../stage-a-freeze/compilation-corpus/law-public-policy/c-law-002.md:38-47 score=7.782
+### DPC's Specific Findings
+
+"US law does not provide a level of protection that is equivalent to that provided by EU law."
+
+"Neither the 2010 SCCs, nor the 2021 SCCs, could compensate for the inadequate protection provided by US law."
+
+"The measures set out in Meta's record of safeguards...do not compensate for the inadequate protection provided by US law."
+
+"It is not open to Meta to rely on the derogations provided for in Article 49(1) of the GDPR when making the data transfers."
+
+## SOURCE ../stage-a-freeze/compilation-corpus/law-public-policy/c-law-002.md:1-19 score=7.376
+---
+sourceId: c-law-002
+title: DPC (Ireland) Final Decision IN-20-8-1 — Meta Platforms Ireland Limited (GDPR data transfers)
+domain: law-public-policy
+sourceRole: P/C-implementation
+platform: official
+author: Data Protection Commission (Ireland)
+canonicalUrl: https://www.edpb.europa.eu/news/news/2023/12-billion-euro-fine-facebook-result-edpb-binding-decision_en
+publishedAt: Fri May 12 2023 08:00:00 GMT+0800 (China Standard Time)
+capturedAt: Tue Jul 28 2026 14:00:00 GMT+0800 (China Standard Time)
+versionRef: DPC Case IN-20-8-1; EDPB Binding Decision 13 April 2023
+mediaType: docs
+language: en
+usage: internal-only
+accessStatus: full
+evaluatorSnapshotHash: sha256:6f64eea096fdabb05e90ffb068b18d08b7576b8ebdba9f0a5d04b4f1776b7421
+evaluatorUpstreamArtifactHash: sha256:e46ea8fbdb92d77e71a0d445970d0f17e244b756873cb903a4d94ada69452ac5
+---
+
+## SOURCE ../stage-a-freeze/compilation-corpus/law-public-policy/c-law-002.md:22-31 score=7.376
+## Source Snapshot
+
+*Content sourced from EDPB press release (https://www.edpb.europa.eu/), DPC announcement, and RegSol/GDPRhub analyses. All publicly accessible.*
+
+**Decision Date:** 12 May 2023
+**Announcement Date:** 22 May 2023
+**Authority:** Data Protection Commission (Ireland), Lead Supervisory Authority
+**EDPB Binding Decision:** 13 April 2023 (Article 65 dispute resolution)
+**Case Reference:** IN-20-8-1
+
+## SOURCE ../stage-a-freeze/compilation-corpus/law-public-policy/c-law-003.md:1-19 score=7.376
+---
+sourceId: c-law-003
+title: 'GDPRhub Analysis: DPC (Ireland) — IN-20-8-1 (Meta data transfers)'
+domain: law-public-policy
+sourceRole: S-analysis
+platform: wiki
+author: GDPRhub contributors (noyb/GDPRhub project)
+canonicalUrl: https://gdprhub.eu/index.php?curid=5944
+publishedAt: Thu Jun 01 2023 08:00:00 GMT+0800 (China Standard Time)
+capturedAt: Tue Jul 28 2026 14:00:00 GMT+0800 (China Standard Time)
+versionRef: curid=5944; version as of 2023
+mediaType: article
+language: en
+usage: internal-only
+accessStatus: full
+evaluatorSnapshotHash: sha256:12d82c5c850337812eb836ae1e40ade8e3de798ee5757a315f29393c9a6ed84a
+evaluatorUpstreamArtifactHash: sha256:92100a58dfce67e41bb27f696fde8f206c95250b65300477a02ed428de24dca6
+---
+
+## SOURCE ../stage-a-freeze/compilation-corpus/law-public-policy/c-law-004.md:26-29 score=5.928
+### Meta's Official Response (verbatim from company statement)
+
+Meta announced that it will be appealing the DPC's decision and will seek a stay with the courts to pause the implementation of applicable deadlines. Meta has consistently argued that its data transfers were lawful under the Standard Contractual Clauses framework.
+
+## SOURCE ../stage-a-freeze/compilation-corpus/psychology-reproducibility/c-psych-002.md:46-49 score=5.928
+### Data Availability
+
+"Data were collected in-lab and online through a standardized procedure administered via an online link. The dataset is stored on the Open Science Framework website." License: CC0 1.0 Universal.
+
+## SOURCE ../stage-a-freeze/compilation-corpus/law-public-policy/c-law-002.md:48-55 score=5.417
+### Corrective Powers Exercised
+
+1. Administrative fine: **€1.2 billion** — the largest GDPR fine ever imposed.
+
+2. Suspension order (Article 58(2)(j) GDPR): Meta Ireland must suspend any future transfer of personal data to the US within **five months** from notification.
+
+3. Compliance order (Article 58(2)(d) GDPR): Meta Ireland must bring processing into compliance with Chapter V GDPR by ceasing unlawful processing, including storage, in the US, within **six months** from notification.
+
+## SOURCE ../stage-a-freeze/compilation-corpus/law-public-policy/c-law-003.md:31-36 score=5.417
+### Legal Analysis Summary
+
+"First, the Irish DPA ascertained whether US law guaranteed an essentially equivalent level of protection of data protection rights in light of Schrems II. This was excluded by the supervisory authority, especially due to the lack of effective judicial remedies against the violation of data subjects' fundamental rights by U.S. intelligence agencies and due to the lack of limitations imposed on the latters' investigation powers."
+
+"The latest developments in U.S. law (which are supposed to ensure a higher level of protection for data transferred to the U.S.) were deemed insufficient by the Irish DPA, especially since some of the promised reforms have not yet been implemented."
+
+## SOURCE ../stage-a-freeze/compilation-corpus/law-public-policy/c-law-003.md:41-44 score=5.417
+### On Supplementary Measures
+
+"Third, the supervisory authority considered whether Meta Ireland implemented sufficient supplementary measures that would, in addition to SCCs, ensure an equivalent level of data protection. Neither of the organisational, technical or legal measures Meta Ireland Ltd claimed to have implemented could compensate for a problem that stems from US public law."
+
+## SOURCE ../stage-a-freeze/compilation-corpus/law-public-policy/c-law-004.md:1-19 score=5.011
+---
+sourceId: c-law-004
+title: Meta Platforms Ireland Limited v Data Protection Commission — Appeal and Industry Response
+domain: law-public-policy
+sourceRole: U/S-response
+platform: corporate
+author: Meta Platforms Ireland Limited / Industry commentary
+canonicalUrl: https://about.fb.com/news/2023/05/our-response-to-the-dpc-preliminary-decision/
+publishedAt: Mon May 22 2023 08:00:00 GMT+0800 (China Standard Time)
+capturedAt: Tue Jul 28 2026 14:00:00 GMT+0800 (China Standard Time)
+versionRef: 'null'
+mediaType: article
+language: en
+usage: internal-only
+accessStatus: partial
+evaluatorSnapshotHash: sha256:97010ee89065232c81ffc61ae24497df2774e7d1c5077bbef8df7456f55dd890
+evaluatorUpstreamArtifactHash: sha256:a455224dce4047f22fc98f157cf5d8a8aecd40d239c30c4c963094f33a1a0a76
+---
+
+## SOURCE ../stage-a-freeze/compilation-corpus/law-public-policy/c-law-004.md:38-43 score=5.011
+### Other Meta GDPR Penalties (January 2023)
+
+In January 2023, the Irish DPC fined Meta Platforms Ireland Limited €390 million total — €210 million for Facebook and €180 million for Instagram — for violations related to the legal basis for personalized advertising (Articles 5(1)(a), 6(1), 12, 13(1)(c) GDPR). Meta had relied on "contractual necessity" (Article 6(1)(b)) as the legal basis, but the EDPB determined this was not valid and that user consent was required.
+
+"Meta assumed that the acceptance of the updated terms of use constituted a contract between Meta and the user, since the processing of the data would be necessary for the provision as well as the improvement of the services."
+
+## SOURCE ../stage-a-freeze/compilation-corpus/law-public-policy/c-law-002.md:32-37 score=4.541
+### Finding of Infringement (verbatim from DPC announcement)
+
+"The decision records that Meta Ireland infringed Article 46(1) GDPR when it continued to transfer personal data from the EU/EEA to the USA following the delivery of the CJEU's judgment in Data Protection Commissioner v Facebook Ireland Limited and Maximillian Schrems."
+
+"While Meta Ireland effected those transfers on the basis of the updated Standard Contractual Clauses ('SCCs') that were adopted by the European Commission in 2021 in conjunction with additional supplementary measures that were implemented by Meta Ireland, the DPC found that these arrangements did not address the risks to the fundamental rights and freedoms of data subjects that were identified by the CJEU in its judgment."
+
+## SOURCE ../stage-a-freeze/compilation-corpus/law-public-policy/c-law-001.md:31-34 score=3.752
+### Purpose and Scope (from Recital 1, verbatim extract)
+
+"The purpose of this Regulation is to improve the functioning of the internal market by laying down a uniform legal framework in particular for the development, the placing on the market, the putting into service and the use of artificial intelligence systems (AI systems) in the Union, in accordance with Union values, to promote the uptake of human centric and trustworthy artificial intelligence (AI) while ensuring a high level of protection of health, safety, fundamental rights as enshrined in the Charter of Fundamental Rights of the European Union (the 'Charter'), including democracy, the rule of law and environmental protection, to protect against the harmful effects of AI systems in the Union, and to support innovation."

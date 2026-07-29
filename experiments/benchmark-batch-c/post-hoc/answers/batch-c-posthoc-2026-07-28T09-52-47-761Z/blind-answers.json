@@ -1,0 +1,82 @@
+[
+  {
+    "sampleId": "sample-f144bd0d-e7a8-449f-8ed9-62d7c02f04a1",
+    "questionId": "C-F-PSYCH-001",
+    "answer": "{\n  \"answer\": \"原始研究中有97%具有统计显著结果（p < .05），复制研究中有36%具有统计显著结果。\",\n  \"citations\": [\n    \"claim:0f7730e649dbc238-ee5064947108a810\",\n    \"claim:0f7730e649dbc238-6b8953e4a783f80b\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}",
+    "citationValidation": {
+      "valid": true,
+      "citationCount": 2,
+      "invalid": []
+    }
+  },
+  {
+    "sampleId": "sample-f06c27c7-a0f7-49d4-a07f-84b9c5336b29",
+    "questionId": "C-F-PSYCH-001",
+    "answer": "{\n  \"answer\": \"原始研究中有97%具有统计显著结果（p < .05），复制研究中有36%具有统计显著结果。\",\n  \"citations\": [\n    \"claim:0f7730e649dbc238-ee5064947108a810\",\n    \"claim:0f7730e649dbc238-6b8953e4a783f80b\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}",
+    "citationValidation": {
+      "valid": true,
+      "citationCount": 2,
+      "invalid": []
+    }
+  },
+  {
+    "sampleId": "sample-4b4e07d8-e8be-4309-bf9f-abcd2fa6dd5a",
+    "questionId": "C-X-PSYCH-001",
+    "answer": "{\n  \"answer\": \"Many Labs 项目 (Klein et al., 2014) 复制了 13 个效应，涉及 36 个样本和超过 6000 名参与者，成功复制了 10 个（约 77%），表明许多经典发现在大样本、多样化样本和标准化协议下是稳健的。OSC (2015) 的复制成功率较低，但批评指出 OSC 的复制研究在多个方面与原研究存在差异，这些差异是统计误差的来源；当正确计算时，OSC 数据中观察到的失败数量仅与偶然预期相符，即使所有 100 个原发现都为真。关键设计差异包括：Many Labs 使用大规模、多样化的样本和标准化协议，而 OSC 的复制研究往往与原研究在方法上存在显著差异。这些差异影响了对心理学可复制性的整体评估：Many Labs 的结果支持许多经典效应的可复制性，而 OSC 的低成功率可能部分源于复制方法上的缺陷，而非原研究的不可复制。\",\n  \"citations\": [\n    \"claim:adb285a63645fee4-b724349a870cf6d1\",\n    \"claim:adb285a63645fee4-d037e33e12360e4e\",\n    \"claim:adb285a63645fee4-f5acd79d91c7be49\",\n    \"claim:08f4f1f4eb388c06-a6a1002ab06055f5\",\n    \"claim:08f4f1f4eb388c06-9d3d87bb413cd0f9\",\n    \"claim:08f4f1f4eb388c06-cc032c5f6d34ae62\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": [\n    \"OSC 的具体复制成功率数值未在上下文中提供，仅提及低成功率。\",\n    \"Many Labs 与 OSC 之间复制成功率的精确差异未量化。\"\n  ]\n}",
+    "citationValidation": {
+      "valid": true,
+      "citationCount": 6,
+      "invalid": []
+    }
+  },
+  {
+    "sampleId": "sample-169c3d32-e5b4-491b-b06d-8412803ef325",
+    "questionId": "C-X-PSYCH-001",
+    "answer": "{\n  \"answer\": \"Many Labs 项目 (Klein et al., 2014) 复制了 13 个效应，涉及 36 个样本和超过 6000 名参与者，成功复制了 10 个（约 77%），而 OSC (2015) 复制了 100 项研究，仅 36% 获得显著结果。关键设计差异包括：(1) Many Labs 使用大规模、多样化的样本和标准化协议，而 OSC 的复制研究在多个方面与原研究不同，引入了统计误差；(2) Many Labs 的复制成功率较高，表明许多经典发现是稳健的，而 OSC 的低成功率可能源于复制方法的问题，而非原研究的不可复制。这些差异影响了对心理学可复制性的整体评估：OSC 的结论认为可复制性低，但后续分析（Gilbert et al., 2016）指出，当正确计算时，OSC 的失败率与偶然预期相符，且数据支持可复制性高的相反结论。因此，评估需考虑复制方法的质量和统计分析的准确性。\",\n  \"citations\": [\n    \"claim:adb285a63645fee4-b724349a870cf6d1\",\n    \"claim:adb285a63645fee4-d037e33e12360e4e\",\n    \"claim:adb285a63645fee4-f5acd79d91c7be49\",\n    \"claim:0f7730e649dbc238-6b8953e4a783f80b\",\n    \"claim:08f4f1f4eb388c06-5a1eca00ccef74b9\",\n    \"claim:08f4f1f4eb388c06-a6a1002ab06055f5\",\n    \"claim:08f4f1f4eb388c06-9d3d87bb413cd0f9\",\n    \"claim:08f4f1f4eb388c06-b7358d918b6741a7\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": [\n    \"OSC 的复制研究具体在哪些方面与原研究不同未详细说明\",\n    \"Many Labs 的 13 个效应是否代表心理学研究的整体可复制性存在局限\"\n  ]\n}",
+    "citationValidation": {
+      "valid": true,
+      "citationCount": 8,
+      "invalid": []
+    }
+  },
+  {
+    "sampleId": "sample-7031f90e-d545-4ee9-943b-656beee4fff1",
+    "questionId": "C-K-PSYCH-001",
+    "answer": "{\n  \"answer\": \"Baker (2016) 的调查属于研究者主观感知类型，基于对1,576名研究者的问卷调查，显示52%的受访者认为存在显著的可复制性危机（SOURCE: c-psych-004-e5061e9956aa43aa, EVIDENCE: span:c-psych-004-e5061e9956aa43aa-6#chars-585-669）。该调查能支持研究者对可复制性危机的普遍担忧，但调查可能选择了对可重复性问题更关注的受访者（CLAIM: claim:e5061e9956aa43aa-8f4c3087c78c3e7e）。Gilbert 等人 (2016) 属于对原始数据的再分析类型，他们重新分析了OSC的复制数据，认为OSC的数据与心理学可复制性很高这一相反结论一致（SOURCE: c-psych-003-08f4f1f4eb388c06, EVIDENCE: span:c-psych-003-08f4f1f4eb388c06-5#chars-950-1084）。该再分析能支持心理学可复制性较高的结论，但存在争议，因为OSC原研究认为可复制性低（CLAIM: claim:08f4f1f4eb388c06-5a1eca00ccef74b9）。\",\n  \"citations\": [\n    \"c-psych-004-e5061e9956aa43aa\",\n    \"c-psych-003-08f4f1f4eb388c06\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": [\n    \"Baker调查可能因自选偏差而高估危机感知\",\n    \"Gilbert等人的再分析结论与OSC原结论相悖，存在方法争议\"\n  ]\n}",
+    "citationValidation": {
+      "valid": true,
+      "citationCount": 2,
+      "invalid": []
+    }
+  },
+  {
+    "sampleId": "sample-20c9956d-b4e9-4a3c-814a-cdb74e1916d6",
+    "questionId": "C-K-PSYCH-001",
+    "answer": "{\n  \"answer\": \"Baker (2016) 的调查属于研究者主观感知类证据，基于对1,576名研究者的问卷调查，显示52%的受访者认为存在显著的可复制性危机（claim:e5061e9956aa43aa-6d89b2dd1efe941d），但该调查可能选择了对可重复性问题更关注的受访者（claim:e5061e9956aa43aa-8f4c3087c78c3e7e）。Gilbert等人 (2016) 的评论属于对原始数据的再分析类证据，他们重新分析了OSC的数据，认为OSC存在统计错误，并指出数据与心理学可复制性很高这一结论一致（claim:08f4f1f4eb388c06-b7358d918b6741a7），且OSC文章未提供可复制性低的证据（claim:08f4f1f4eb388c06-359db3a1c1ff5ab8）。\",\n  \"citations\": [\n    \"claim:e5061e9956aa43aa-6d89b2dd1efe941d\",\n    \"claim:e5061e9956aa43aa-8f4c3087c78c3e7e\",\n    \"claim:08f4f1f4eb388c06-b7358d918b6741a7\",\n    \"claim:08f4f1f4eb388c06-359db3a1c1ff5ab8\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": [\n    \"Baker调查的受访者可能对可重复性问题更关注，因此结果可能高估了危机的普遍性。\",\n    \"Gilbert等人的再分析依赖于对OSC数据的重新计算，但OSC原始研究的设计和抽样规则存在争议。\"\n  ]\n}",
+    "citationValidation": {
+      "valid": true,
+      "citationCount": 4,
+      "invalid": []
+    }
+  },
+  {
+    "sampleId": "sample-e5df0370-9425-4b18-bca6-29c1a6534beb",
+    "questionId": "C-X-CLIMATE-001",
+    "answer": "{\n  \"answer\": \"欧盟气候法的2030年目标（至少55%减排）和2040年目标（90%减排）位于IPCC AR6 NDC升温超过1.5℃与IEA WEO 2023 STEPS升温约2.4℃之间。当前预测显示，即使实施所有计划政策，欧盟2030年排放仅下降48%，低于55%目标，因此欧盟当前政策实施进度与法律目标不一致。\",\n  \"citations\": [\n    \"claim:0edc89a8f2de72a2-a5adbb37b74a0a73\",\n    \"claim:0edc89a8f2de72a2-07323a3fd50f07bb\",\n    \"claim:0edc89a8f2de72a2-d46b5a1c037d2094\",\n    \"claim:0edc89a8f2de72a2-e37697e6e8be4c8e\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}",
+    "citationValidation": {
+      "valid": true,
+      "citationCount": 4,
+      "invalid": []
+    }
+  },
+  {
+    "sampleId": "sample-8a3d282d-90e9-4f6b-9827-3705d2965111",
+    "questionId": "C-X-CLIMATE-001",
+    "answer": "{\n  \"answer\": \"欧盟气候法的2030年目标（至少55%减排）和2040年目标（90%减排）位于IPCC AR6（2023）指出的NDC升温超过1.5°C路径与IEA WEO 2023 STEPS情景升温约2.4°C路径之间。当前预测显示，即使实施所有计划政策，欧盟2030年排放仅下降48%，低于55%目标，因此欧盟当前政策实施进度与法律目标不一致。\",\n  \"citations\": [\n    \"claim:0edc89a8f2de72a2-a5adbb37b74a0a73\",\n    \"claim:0edc89a8f2de72a2-07323a3fd50f07bb\",\n    \"claim:0edc89a8f2de72a2-d46b5a1c037d2094\",\n    \"claim:0edc89a8f2de72a2-e37697e6e8be4c8e\",\n    \"claim:b26d226f500be322-e06162dbf4f90ed6\",\n    \"claim:c15bf91ea851c3be-f2794c0130f4aee6\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}",
+    "citationValidation": {
+      "valid": true,
+      "citationCount": 6,
+      "invalid": []
+    }
+  }
+]

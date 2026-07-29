@@ -39,7 +39,7 @@ const normalizedRoot = join(
 	"stage-b-evaluator",
 	"normalized-gold",
 );
-const answerRunRoot = join(
+const blindFirstAnswerRoot = join(
 	projectRoot,
 	"experiments",
 	"benchmark-batch-c",
@@ -47,6 +47,17 @@ const answerRunRoot = join(
 	"answers",
 	"batch-c-blind-first-2026-07-28T07-22-04-418Z",
 );
+const candidateAnswerRunId = process.env.WGE_BATCH_C_CANDIDATE_ANSWER_RUN_ID;
+const answerRunRoot = candidateAnswerRunId
+	? join(
+			projectRoot,
+			"experiments",
+			"benchmark-batch-c",
+			"post-hoc",
+			"answers",
+			candidateAnswerRunId,
+		)
+	: blindFirstAnswerRoot;
 const evaluatorRoot = join(projectRoot, "experiments", "benchmark-batch-c", "stage-b-evaluator");
 const runId =
 	process.env.WGE_BATCH_C_SCORE_RUN_ID ??
@@ -59,8 +70,24 @@ const questions = new Map(
 		(question) => [requireString(question, "caseId"), question],
 	),
 );
-const blindAnswers = readJson(join(answerRunRoot, "blind-answers.json")) as unknown as JsonRecord[];
-const blindingKey = readJson(join(answerRunRoot, "blinding-key.json")) as unknown as JsonRecord[];
+let blindAnswers = readJson(join(answerRunRoot, "blind-answers.json")) as unknown as JsonRecord[];
+let blindingKey = readJson(join(answerRunRoot, "blinding-key.json")) as unknown as JsonRecord[];
+if (candidateAnswerRunId) {
+	const candidateQuestionIds = new Set(blindingKey.map((row) => requireString(row, "questionId")));
+	const baselineKey = (
+		readJson(join(blindFirstAnswerRoot, "blinding-key.json")) as JsonRecord[]
+	).filter(
+		(row) =>
+			requireString(row, "group") === "B" &&
+			candidateQuestionIds.has(requireString(row, "questionId")),
+	);
+	const baselineSampleIds = new Set(baselineKey.map((row) => requireString(row, "sampleId")));
+	const baselineAnswers = (
+		readJson(join(blindFirstAnswerRoot, "blind-answers.json")) as JsonRecord[]
+	).filter((row) => baselineSampleIds.has(requireString(row, "sampleId")));
+	blindAnswers = [...blindAnswers, ...baselineAnswers];
+	blindingKey = [...blindingKey, ...baselineKey];
+}
 const keyBySample = new Map(
 	blindingKey.map((row) => [
 		requireString(row, "sampleId"),
@@ -131,12 +158,16 @@ for (const [questionId, answers] of [...answersByQuestion.entries()].sort(([a], 
 
 const primaryRows = scored.filter((row) => row.scoreEligibility === "primary");
 const diagnosticRows = scored.filter((row) => row.scoreEligibility !== "primary");
-const answerRecords = readAnswerRecords(join(answerRunRoot, "records"), blindingKey);
+const answerRecords = readAnswerRecords(
+	join(answerRunRoot, "records"),
+	blindingKey,
+	candidateAnswerRunId ? join(blindFirstAnswerRoot, "records") : undefined,
+);
 const report = {
 	schemaVersion: "wge-batch-c-first-run-score/v1",
 	status: "PROVISIONAL_POST_ANSWER_GOLD_DIAGNOSTIC",
 	runId,
-	answerRunId: "batch-c-blind-first-2026-07-28T07-22-04-418Z",
+	answerRunId: candidateAnswerRunId ?? "batch-c-blind-first-2026-07-28T07-22-04-418Z",
 	judgeModel: config.model,
 	judgeTemperature: 0,
 	goldStatus: "evaluator-reviewed-provisional-gold",
@@ -291,12 +322,16 @@ function paired(rows: Array<JudgeRow & { questionId: string; group: Group }>) {
 	});
 }
 
-function readAnswerRecords(recordsRoot: string, key: JsonRecord[]) {
+function readAnswerRecords(recordsRoot: string, key: JsonRecord[], baselineRecordsRoot?: string) {
 	return key.map((keyRow) => {
 		const questionId = requireString(keyRow, "questionId");
 		const group = requireGroup(requireString(keyRow, "group"));
+		const primaryPath = join(recordsRoot, `${questionId}--${group}.json`);
+		const path = existsSync(primaryPath)
+			? primaryPath
+			: join(baselineRecordsRoot ?? recordsRoot, `${questionId}--${group}.json`);
 		return {
-			...asRecord(readJson(join(recordsRoot, `${questionId}--${group}.json`)), "answer record"),
+			...asRecord(readJson(path), "answer record"),
 			group,
 		};
 	});

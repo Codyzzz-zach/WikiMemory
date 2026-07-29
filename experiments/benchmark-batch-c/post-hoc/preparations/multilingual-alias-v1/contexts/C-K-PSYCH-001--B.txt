@@ -1,0 +1,115 @@
+## SOURCE ../stage-a-freeze/compilation-corpus/psychology-reproducibility/c-psych-004.md:1-19 score=11.976
+---
+sourceId: c-psych-004
+title: 1,500 scientists lift the lid on reproducibility (Nature survey)
+domain: psychology-reproducibility
+sourceRole: U/S-response
+platform: journal
+author: Monya Baker (Nature)
+canonicalUrl: https://www.nature.com/articles/533452a
+publishedAt: Wed May 25 2016 08:00:00 GMT+0800 (China Standard Time)
+capturedAt: Tue Jul 28 2026 14:00:00 GMT+0800 (China Standard Time)
+versionRef: doi:10.1038/533452a
+mediaType: article
+language: en
+usage: internal-only
+accessStatus: partial
+evaluatorSnapshotHash: sha256:2332bd682e9dc14de3f6709db0ea9eb94d3945905f54fd01b5ae747768de32cf
+evaluatorUpstreamArtifactHash: sha256:316a56a8bb0ab4bb17f8132e6770025d2db65cc473c1ce15fd97f3ccc5bbb7fc
+---
+
+## SOURCE ../stage-a-freeze/compilation-corpus/psychology-reproducibility/c-psych-004.md:22-29 score=11.976
+## Source Snapshot
+
+*Content sourced from Nature news feature (https://www.nature.com/articles/533452a) and publicly accessible summaries (sciencesprings.wordpress.com, phys.org).*
+
+**Author:** Monya Baker
+**Published:** Nature, Vol. 533, pp. 452-454, 26 May 2016
+**DOI:** 10.1038/533452a
+
+## SOURCE ../stage-a-freeze/compilation-corpus/psychology-reproducibility/c-psych-004.md:40-43 score=8.448
+### Survey Methodology
+
+The survey was emailed to Nature readers and advertised on affiliated websites and social media outlets. It sampled 1,576 researchers across disciplines. The survey likely selected for respondents more aware of reproducibility concerns.
+
+## SOURCE ../stage-a-freeze/compilation-corpus/psychology-reproducibility/c-psych-003.md:34-43 score=8.379
+### Key Arguments (verbatim from Harvard Gazette coverage)
+
+Gary King on sampling: "If you want to estimate a parameter of a population, then you either have to randomly sample from that population or make statistical corrections for the fact that you didn't. The OSC did neither."
+
+Daniel Gilbert on the sampling rules: "What they did is create an idiosyncratic, arbitrary list of sampling rules that excluded the majority of psychology's subfields from the sample, that excluded entire classes of studies whose methods are probably among the best in science from the sample, and so on. Then they proceeded to violate all of their own rules."
+
+Gary King on statistical error: "When they did their calculations, they failed to consider the fact that their replication studies were not just new samples from the same population. They were often quite different from the originals in many ways, and those differences are a source of statistical error. So we did the calculation the right way and then applied it to their data. And guess what? The number of failures they observed was just about what you should expect to observe by chance alone — even if all 100 of the original findings were true. The failure of the replication studies to match the original studies was a failure of the replications, not of the originals."
+
+Gary King on fidelity and failure rates: "We used this as a rough index of fidelity, and when we did, we discovered something important: The low-fidelity replications were an astonishing four times more likely to fail. What that suggests is that the infidelities did not just create random statistical noise — they actually biased the studies toward failure."
+
+## SOURCE ../stage-a-freeze/compilation-corpus/psychology-reproducibility/c-psych-003.md:46-49 score=8.379
+### OSC Response (acknowledged by Gilbert)
+
+"We were glad to see that in their response to our comment, the OSC quibbled about a number of minor issues but conceded the major one, which is that their paper does not provide evidence for the pessimistic conclusions that most people have drawn from it."
+
+## SOURCE ../stage-a-freeze/compilation-corpus/psychology-reproducibility/c-psych-003.md:1-19 score=7.868
+---
+sourceId: c-psych-003
+title: Comment on 'Estimating the reproducibility of psychological science' / Harvard Gazette coverage
+domain: psychology-reproducibility
+sourceRole: S-analysis
+platform: journal
+author: Daniel T. Gilbert, Gary King, Stephen Pettigrew, Timothy D. Wilson
+canonicalUrl: https://www.science.org/doi/10.1126/science.aad7243
+publishedAt: Fri Mar 04 2016 08:00:00 GMT+0800 (China Standard Time)
+capturedAt: Tue Jul 28 2026 14:00:00 GMT+0800 (China Standard Time)
+versionRef: 'doi:10.1126/science.aad7243; coverage: news.harvard.edu/gazette 2016-03-03'
+mediaType: paper
+language: en
+usage: internal-only
+accessStatus: partial
+evaluatorSnapshotHash: sha256:77b3cb4ce1abb82684265e6cddd683fd74417530b9f6bb140ece9d11391fa45d
+evaluatorUpstreamArtifactHash: sha256:3cb35e50527f6e6d4bbe124d544606dadf4e424c2246c167472bb0df7ba35226
+---
+
+## SOURCE ../stage-a-freeze/compilation-corpus/psychology-reproducibility/c-psych-003.md:22-29 score=7.868
+## Source Snapshot
+
+*Note: Science comment behind paywall. Content sourced from PubMed abstract and Harvard Gazette coverage (https://news.harvard.edu/gazette/story/2016/03/study-that-undercut-psych-research-got-it-wrong/), both publicly accessible.*
+
+**Authors:** Daniel T. Gilbert (Harvard), Gary King (Harvard), Stephen Pettigrew (Harvard), Timothy D. Wilson (University of Virginia)
+**Published:** Science, Vol. 351, Issue 6277, pp. 1037, 4 March 2016
+**DOI:** 10.1126/science.aad7243
+
+## SOURCE ../stage-a-freeze/compilation-corpus/psychology-reproducibility/c-psych-002.md:38-41 score=4.850
+### 13 Effects Tested (from the study materials listing)
+
+The study materials consisted of 13 effects drawn from 12 papers, including: Sunk costs (Oppenheimer, Meyvis, & Davidenko, 2009); Gain versus loss framing (Tversky & Kahneman, 1981); Anchoring (Jacowitz & Kahneman, 1995); Retrospective gambler's fallacy (Oppenheimer & Monin, 2009); Low-vs.-high category scales (Schwarz, Hippler, Deutsch, & Strack, 1985); Norm of reciprocity (Hyman & Sheatsley, 1950); Allowed/Forbidden (Rugg, 1941); Quote Attribution (Lorge & Curtis, 1936); Flag Priming (Carter, Ferguson, & Hassin, 2011); and others.
+
+## SOURCE ../stage-a-freeze/compilation-corpus/psychology-reproducibility/c-psych-004.md:30-39 score=4.850
+### Key Survey Findings (verbatim from public summaries)
+
+"More than 70% of researchers have tried and failed to reproduce another scientist's experiments, and more than half have failed to reproduce their own experiments."
+
+"52% of those surveyed agree that there is a 'significant crisis' of reproducibility."
+
+"73% of respondents think that at least half of the papers in their field can be trusted."
+
+"Fewer than 31% think that failure to reproduce published results means the result is probably wrong."
+
+## SOURCE ../stage-a-freeze/compilation-corpus/climate-energy-policy/c-climate-001.md:34-37 score=3.597
+### Headline Statement A.2 — Observed Changes and Impacts
+
+"Widespread and rapid changes in the atmosphere, ocean, cryosphere and biosphere have occurred. Human-caused climate change is already affecting many weather and climate extremes in every region across the globe. This has led to widespread adverse impacts and related losses and damages to nature and people (high confidence). Vulnerable communities who have historically contributed the least to current climate change are disproportionately affected (high confidence)."
+
+## SOURCE ../stage-a-freeze/compilation-corpus/law-public-policy/c-law-001.md:35-46 score=3.597
+### Risk-Based Approach (from EU official summary)
+
+The AI Act adopts a four-tier risk classification:
+
+1. **Unacceptable Risk** — Prohibited practices include: subliminal techniques causing harm; exploiting vulnerabilities due to age, disability, or social/economic situation; social scoring; predictive policing based on profiling; untargeted scraping of facial images; emotion inference in workplace/education; biometric categorization of sensitive characteristics; real-time remote biometric identification for law enforcement (with narrow exceptions).
+
+2. **High Risk** — AI systems that are safety components of products (Annex I) or fall within eight specific use cases (Annex III), including: biometric identification; critical infrastructure management; education and vocational training; employment and worker management; access to essential services; law enforcement; migration and border control; administration of justice and democratic processes.
+
+3. **Specific Transparency Risk** — Chatbots, deepfakes, and emotion recognition systems must disclose their AI nature.
+
+4. **Minimal Risk** — Most AI systems; no additional obligations beyond existing law.
+
+## SOURCE ../stage-a-freeze/compilation-corpus/psychology-reproducibility/c-psych-004.md:20-21 score=3.597
+# 1,500 scientists lift the lid on reproducibility (Nature survey)

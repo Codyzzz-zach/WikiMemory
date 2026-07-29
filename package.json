@@ -34,6 +34,7 @@
 		"benchmark:batch-c:normalize-stage-b": "node --import tsx scripts/normalize-benchmark-batch-c-stage-b.ts",
 		"benchmark:batch-c:score": "node --import tsx scripts/score-benchmark-batch-c.ts",
 		"benchmark:batch-c:evaluate-retrieval": "node --import tsx scripts/evaluate-benchmark-batch-c-retrieval.ts",
+		"retrieval:aliases:generate": "node --import tsx scripts/generate-retrieval-aliases.ts",
 		"benchmark:e4:rescore": "node --import tsx scripts/rescore-benchmark-e4-run.ts",
 		"evolution:validate": "node --import tsx scripts/validate-evolution-dataset.ts",
 		"evolution:experiment": "node --import tsx scripts/evolution-experiment.ts",

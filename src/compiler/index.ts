@@ -450,6 +450,9 @@ function buildClaims(
 		const normalizedConditions = [
 			...new Set(draft.conditions.map((item) => item.trim()).filter(Boolean)),
 		].sort();
+		const normalizedRetrievalAliases = [
+			...new Set(draft.retrievalAliases.map((item) => item.trim()).filter(Boolean)),
+		].slice(0, 3);
 		const claimKey = `${normalizeClaimForDedup(draft.statement)}\n${normalizedConditions
 			.map(normalizeClaimForDedup)
 			.join("\n")}`;
@@ -464,6 +467,9 @@ function buildClaims(
 			].sort();
 			byKey.set(claimKey, {
 				...existing,
+				retrievalAliases: [
+					...new Set([...(existing.retrievalAliases ?? []), ...normalizedRetrievalAliases]),
+				].slice(0, 3),
 				evidenceSpanIds: mergedEvidenceIds,
 				provenanceRefs: mergedEvidenceIds.map((spanId) => ({ type: "SourceSpan", spanId })),
 				supportingEvidenceRefs: mergedEvidenceIds.map((spanId) => ({
@@ -483,6 +489,7 @@ function buildClaims(
 		byKey.set(claimKey, {
 			id,
 			statement: draft.statement,
+			retrievalAliases: normalizedRetrievalAliases,
 			evidenceSpanIds: uniqueEvidenceIds,
 			conditions: normalizedConditions,
 			derivation: draft.derivation,
