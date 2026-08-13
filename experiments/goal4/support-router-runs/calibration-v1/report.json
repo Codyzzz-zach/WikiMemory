@@ -1,0 +1,143 @@
+{
+  "schemaVersion": "wge-goal4-support-router-calibration-run/v1",
+  "createdAt": "2026-08-11T15:27:54.066Z",
+  "stageBRead": false,
+  "contract": "experiments/goal4/goal4-support-preaudit-router-contract-v1.json",
+  "contractSha256": "6ed1110856d562ae4c3adf289155c9ee039efe3047f4c3749d7d5fb0c5706836",
+  "calibrationSha256": "7ab9953dbf122a06178eb55daef8b43025081de9501d90672e5d06b37eafc22a",
+  "routerVersion": "v1",
+  "model": "deepseek-v4-flash",
+  "temperature": 0,
+  "thinkingDisabled": true,
+  "labelIsolation": {
+    "labelsIncludedInModelPrompt": false,
+    "promptFields": [
+      "caseId",
+      "from",
+      "to"
+    ]
+  },
+  "metrics": {
+    "cases": 12,
+    "calls": 2,
+    "totalTokens": 2410,
+    "positiveFullAuditRecall": 1,
+    "negativeDeferredPrecision": 1
+  },
+  "gates": {
+    "positiveFullAuditRecall": true,
+    "negativeDeferredPrecision": true,
+    "objectAccountingExact": true
+  },
+  "results": [
+    {
+      "caseId": "G4-ROUTE-01",
+      "domain": "health",
+      "expectedDecision": "FULL_AUDIT",
+      "decision": "FULL_AUDIT",
+      "failureModes": [],
+      "correct": true
+    },
+    {
+      "caseId": "G4-ROUTE-02",
+      "domain": "engineering",
+      "expectedDecision": "FULL_AUDIT",
+      "decision": "FULL_AUDIT",
+      "failureModes": [],
+      "correct": true
+    },
+    {
+      "caseId": "G4-ROUTE-03",
+      "domain": "finance",
+      "expectedDecision": "FULL_AUDIT",
+      "decision": "FULL_AUDIT",
+      "failureModes": [],
+      "correct": true
+    },
+    {
+      "caseId": "G4-ROUTE-04",
+      "domain": "history",
+      "expectedDecision": "FULL_AUDIT",
+      "decision": "FULL_AUDIT",
+      "failureModes": [],
+      "correct": true
+    },
+    {
+      "caseId": "G4-ROUTE-05",
+      "domain": "software",
+      "expectedDecision": "FULL_AUDIT",
+      "decision": "FULL_AUDIT",
+      "failureModes": [],
+      "correct": true
+    },
+    {
+      "caseId": "G4-ROUTE-06",
+      "domain": "biology",
+      "expectedDecision": "FULL_AUDIT",
+      "decision": "FULL_AUDIT",
+      "failureModes": [],
+      "correct": true
+    },
+    {
+      "caseId": "G4-ROUTE-07",
+      "domain": "ai",
+      "expectedDecision": "DEFER_BY_TYPE_ROUTER",
+      "decision": "DEFER_BY_TYPE_ROUTER",
+      "failureModes": [
+        "NO_EXPLICIT_SUPPORT"
+      ],
+      "correct": true
+    },
+    {
+      "caseId": "G4-ROUTE-08",
+      "domain": "design",
+      "expectedDecision": "DEFER_BY_TYPE_ROUTER",
+      "decision": "DEFER_BY_TYPE_ROUTER",
+      "failureModes": [
+        "DEFINITION_TO_DETAIL"
+      ],
+      "correct": true
+    },
+    {
+      "caseId": "G4-ROUTE-09",
+      "domain": "policy",
+      "expectedDecision": "DEFER_BY_TYPE_ROUTER",
+      "decision": "DEFER_BY_TYPE_ROUTER",
+      "failureModes": [
+        "PARTIAL_SUPPORT"
+      ],
+      "correct": true
+    },
+    {
+      "caseId": "G4-ROUTE-10",
+      "domain": "engineering",
+      "expectedDecision": "DEFER_BY_TYPE_ROUTER",
+      "decision": "DEFER_BY_TYPE_ROUTER",
+      "failureModes": [
+        "DIRECTION_REVERSED"
+      ],
+      "correct": true
+    },
+    {
+      "caseId": "G4-ROUTE-11",
+      "domain": "biology",
+      "expectedDecision": "DEFER_BY_TYPE_ROUTER",
+      "decision": "DEFER_BY_TYPE_ROUTER",
+      "failureModes": [
+        "DIFFERENT_SUBJECT"
+      ],
+      "correct": true
+    },
+    {
+      "caseId": "G4-ROUTE-12",
+      "domain": "software",
+      "expectedDecision": "DEFER_BY_TYPE_ROUTER",
+      "decision": "DEFER_BY_TYPE_ROUTER",
+      "failureModes": [
+        "NO_EXPLICIT_SUPPORT"
+      ],
+      "correct": true
+    }
+  ],
+  "status": "PASS"
+}

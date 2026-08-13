@@ -1,0 +1,43 @@
+{
+	"schemaVersion": "wge-goal3-source-routing-breadth-freeze/v1",
+	"status": "FROZEN_BEFORE_FIRST_REPORT",
+	"frozenAt": "2026-08-04T19:12:30+08:00",
+	"contract": {
+		"path": "experiments/goal3/goal3-source-routing-breadth-contract-v1.json",
+		"sha256": "b344b1b11341fbbf5af1b0db8a978bd937d25c3994165e7fc207b87fddb5ce87"
+	},
+	"implementation": {
+		"persistentIndex": {
+			"path": "src/retrieval/persistent-index.ts",
+			"sha256": "97e311dfbe3d918e224381783a32f8eb3bd56c7c5dd61f19644d8db48508819a"
+		},
+		"sourceRouting": {
+			"path": "src/retrieval/source-routing.ts",
+			"sha256": "15caaf0586ded8850e64f0e32031ca3e5735c8443010e9a7e7b7af374ebf7b19"
+		},
+		"sourceRoutingTests": {
+			"path": "src/retrieval/source-routing.test.ts",
+			"sha256": "11a4a4674975bf398476d20fb593c2224b33a503adbde8cbe7c2bc6ab714fc9e"
+		},
+		"sourceRoutingBreadthRunner": {
+			"path": "scripts/run-goal3-source-routing-breadth.ts",
+			"sha256": "6d9554875c7952308a3f34944a0fc3f0fb4c589de4a4547495e22f7743738730"
+		}
+	},
+	"verification": {
+		"lint": "PASS: biome check src scripts (106 files)",
+		"typecheck": "PASS: tsc --noEmit and tsc --noEmit -p tsconfig.scripts.json",
+		"testFiles": 24,
+		"testsPassed": 175,
+		"testsFailed": 0,
+		"retrievalTestFiles": 4,
+		"retrievalTestsPassed": 56
+	},
+	"prohibitions": [
+		"No diagnostic Gold semantic parsing before every candidate set is constructed.",
+		"No Relation traversal, Context Pack, answer generation, model call, network access or canonical-state mutation.",
+		"No post-hoc budget or ranking change inside source-routing-breadth-v1.",
+		"No latency-based pass claim.",
+		"No overwrite of the first official report."
+	]
+}

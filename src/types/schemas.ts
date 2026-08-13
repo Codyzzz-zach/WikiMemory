@@ -114,6 +114,32 @@ export const RelationResponseSchema = z.object({
 	relations: z.array(RelationOnlyDraftSchema).default([]),
 });
 
+export const SupportRouterFailureModeSchema = z.enum([
+	"DIFFERENT_SUBJECT",
+	"CO_OCCURRENCE_ONLY",
+	"DEFINITION_TO_DETAIL",
+	"PARTIAL_SUPPORT",
+	"DIRECTION_REVERSED",
+	"NO_EXPLICIT_SUPPORT",
+	"CONDITION_MISMATCH",
+]);
+
+export const SupportRouterVerdictSchema = z.object({
+	decision: z.enum(["FULL_AUDIT", "DEFER_BY_TYPE_ROUTER"]),
+	failureModes: z.array(SupportRouterFailureModeSchema),
+});
+
+export const SupportRouterVerdictBatchSchema = z.object({
+	items: z.array(
+		z.object({
+			objectId: z.string().min(1),
+			verdict: SupportRouterVerdictSchema,
+		}),
+	),
+});
+
+export type SupportRouterVerdict = z.infer<typeof SupportRouterVerdictSchema>;
+
 // ─── 语义审计 LLM 输出（Linter）──────────────────────────────────
 //
 // v1.1 改造：5 维度改 binary verdict（pass/fail）+ 每维必带 evidence（原文片段）。
@@ -153,6 +179,22 @@ export const SemanticVerdictSchema = z.object({
 export type SemanticVerdict = z.infer<typeof SemanticVerdictSchema>;
 export type DimensionVerdict = z.infer<typeof DimensionVerdictSchema>;
 
+/**
+ * Batch envelopes keep every verdict independently addressable.  The object id is
+ * validated against the requested set before any verdict can affect publication.
+ */
+export const SemanticVerdictBatchSchema = z.object({
+	items: z
+		.array(
+			z.object({
+				objectId: z.string().min(1),
+				verdict: SemanticVerdictSchema,
+			}),
+		)
+		.min(1),
+});
+export type SemanticVerdictBatch = z.infer<typeof SemanticVerdictBatchSchema>;
+
 // ─── Relation 语义审计输出 ──────────────────────────────────────
 
 export const RelationAuditDimensionNameSchema = z.enum([
@@ -183,6 +225,73 @@ export const RelationSemanticVerdictSchema = z.object({
 	supportingEvidenceSpanIndexes: z.array(z.number().int().nonnegative()),
 });
 export type RelationSemanticVerdict = z.infer<typeof RelationSemanticVerdictSchema>;
+
+export const RelationSemanticVerdictBatchSchema = z.object({
+	items: z
+		.array(
+			z.object({
+				objectId: z.string().min(1),
+				verdict: RelationSemanticVerdictSchema,
+			}),
+		)
+		.min(1),
+});
+export type RelationSemanticVerdictBatch = z.infer<typeof RelationSemanticVerdictBatchSchema>;
+
+export const RelationCriticFailureModeSchema = z.enum([
+	"DIFFERENT_SUBJECT",
+	"CO_OCCURRENCE_ONLY",
+	"OPTIONAL_NOT_REQUIRED",
+	"DIRECTION_REVERSED",
+	"INSTANCE_TO_DEFINITION",
+	"PARTIAL_SUPPORT",
+	"INTRODUCTION_TO_DETAIL",
+	"TYPE_MISMATCH",
+	"MISSING_CONDITION",
+	"NOT_MUTUALLY_EXCLUSIVE",
+	"NO_EXPLICIT_SUPERSESSION",
+	"EQUIVALENCE_NOT_BIDIRECTIONAL",
+]);
+export type RelationCriticFailureMode = z.infer<typeof RelationCriticFailureModeSchema>;
+
+export const RelationTypeCriticVerdictSchema = z.object({
+	verdict: z.enum(["passed", "failed"]),
+	failureModes: z.array(RelationCriticFailureModeSchema),
+	evidenceSpanIndexes: z.array(z.number().int().nonnegative()).min(1),
+});
+export type RelationTypeCriticVerdict = z.infer<typeof RelationTypeCriticVerdictSchema>;
+
+export const RelationUtilityFailureModeSchema = z.enum([
+	"PROVENANCE_ONLY",
+	"SHARED_ENTITY_ONLY",
+	"MEASUREMENT_SLOT_MISMATCH",
+	"CO_OCCURRENCE_ONLY",
+	"REDUNDANT_REPHRASE",
+	"OVERBROAD_TOPIC",
+	"NO_NAVIGATION_GAIN",
+]);
+export type RelationUtilityFailureMode = z.infer<typeof RelationUtilityFailureModeSchema>;
+
+export const RelationUtilityCriticVerdictSchema = z.object({
+	verdict: z.enum(["passed", "failed"]),
+	failureModes: z.array(RelationUtilityFailureModeSchema),
+	evidenceSpanIndexes: z.array(z.number().int().nonnegative()).min(1),
+});
+export type RelationUtilityCriticVerdict = z.infer<typeof RelationUtilityCriticVerdictSchema>;
+
+export const RelationUtilityCriticVerdictBatchSchema = z.object({
+	items: z
+		.array(
+			z.object({
+				objectId: z.string().min(1),
+				verdict: RelationUtilityCriticVerdictSchema,
+			}),
+		)
+		.min(1),
+});
+export type RelationUtilityCriticVerdictBatch = z.infer<
+	typeof RelationUtilityCriticVerdictBatchSchema
+>;
 
 // ─── 矛盾检测 LLM 输出（Compiler Step 4）────────────────────────
 

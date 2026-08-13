@@ -1,7 +1,7 @@
 /**
  * WGEMemory4LLM 知识模型类型定义
  *
- * 从 docs/knowledge-contract.md 语义合同编译而来。
+ * 从 docs/specs/knowledge-contract.md 语义合同编译而来。
  * Semantics first, Types second——语义合同先定义清楚，类型从合同编译。
  *
  * 严格对齐 Product Definition §05（最小一等对象）+ §04（设计哲学）。
@@ -238,6 +238,29 @@ export interface Relation {
 	consumedBy: string[];
 }
 
+export type WikiAssertionRole = "CURRENT" | "DISPUTE";
+
+/** Wiki v1 的最小可审计语句：一个展示语句只允许由一个 Claim 确定性渲染。 */
+export interface WikiAssertion {
+	id: string;
+	role: WikiAssertionRole;
+	claimRef: ClaimRef;
+	renderedText: string;
+}
+
+/**
+ * Wiki 是 Canonical Claim 的物化视图，不是第二套事实来源。
+ * 旧模块可没有该字段，但不得进入在线消费链。
+ */
+export interface WikiMaterialization {
+	schemaVersion: "wge-wiki-materialization/v1";
+	supportContractVersion: "wge-wiki-support/v1";
+	sourceKnowledgeVersion: string;
+	supportHash: string;
+	rebuiltFromSnapshotId: string | null;
+	assertions: WikiAssertion[];
+}
+
 /** 供 Agent 阅读的完整语义单元 */
 export interface WikiModule {
 	id: string;
@@ -250,6 +273,8 @@ export interface WikiModule {
 	dependencies: string[];
 	publicationState: PublicationState;
 	updatedAt: string;
+	/** 缺失表示 legacy 模块；读取可以保留，但 Context Pack 必须 fail-closed。 */
+	materialization?: WikiMaterialization;
 }
 
 // ─── Context Pack（Agent 统一消费合同）──────────────────────────

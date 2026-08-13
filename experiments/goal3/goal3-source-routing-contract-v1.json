@@ -1,0 +1,109 @@
+{
+	"schemaVersion": "wge-goal3-source-routing-contract/v1",
+	"status": "PREREGISTERED_BEFORE_IMPLEMENTATION",
+	"createdAt": "2026-08-04T18:40:00+08:00",
+	"purpose": "Test whether bounded source diversification can discover required sources missed by top-40 Claim lexical retrieval, before adding any within-source structural completion.",
+	"interpretation": "Batch C exact-evidence Gold is already revealed. This is a post-hoc mechanism diagnostic, not blind product evidence.",
+	"causalQuestion": "Can a fixed lexical routing pool select a more useful and still-bounded set of sources than top-40 Claim ranking, without using Gold, Relation traversal, domain rules or answer-model feedback?",
+	"frozenInputs": {
+		"gitHead": "8829e408215590d39ddaf40431931dee0277e9b3",
+		"dirtyTrackedDiffExcludingLlmLogSha256": "86967c2c1482ffe65d560c9ecc272ea4500bb77aa18a488cbeaedb3824f427e6",
+		"questions": {
+			"path": "experiments/benchmark-batch-c/stage-a-freeze/questions-public.jsonl",
+			"sha256": "3cfe6ed87ddfb88902d35c417f27c6a8ebf806e3139e0acc37d34fa9ad11a34d",
+			"count": 18
+		},
+		"diagnosticGold": {
+			"path": "experiments/benchmark-batch-c/stage-b-evaluator/normalized-gold/tasks.jsonl",
+			"sha256": "0dcdab468b2d6e5ee8801bc96a77085c37d60c556df2454df1a837530eaba15d"
+		},
+		"baselineImplementation": {
+			"persistentIndexPath": "src/retrieval/persistent-index.ts",
+			"persistentIndexSha256": "d1616dc21739cb40c2b53e422f6739b0c88d244c8282ff6492b5e7bc85a8c63a",
+			"lexicalRetrievalPath": "src/retrieval/index.ts",
+			"lexicalRetrievalSha256": "db75fe644428f272d9abd38d313dab90e707803d25f0116ce8b8eeeb70db8f8f"
+		},
+		"indexes": [
+			{
+				"tier": "S12",
+				"path": "experiments/goal3/pack-runs/pack-v5/indexes/S12",
+				"pointerSha256": "fd2c3df4a945a648c65d87181f1686e2333d6c0e5bb30201b0f7a82f0b86daf0"
+			},
+			{
+				"tier": "S29",
+				"path": "experiments/goal3/pack-runs/pack-v5/indexes/S29",
+				"pointerSha256": "326fb4e2eb791a17f490437157ba06d25e952b238c419377370a29ba2b47ce76"
+			},
+			{
+				"tier": "S50",
+				"path": "experiments/goal3/pack-runs/pack-v5/indexes/S50",
+				"pointerSha256": "9fe5c5d1fb5d23f886f5fdacbbcc7b12bb3874841bcb73f0bf9fa2ee638197fa"
+			}
+		]
+	},
+	"allowedImplementation": {
+		"production": "Add a read-only source-routing API over the existing persistent lexical index. It may hydrate evidence only for the bounded lexical routing pool and must preserve scope, temporal and stale-index fail-closed behavior.",
+		"selection": "Rank sources by the first occurrence of any of their Claims in the existing deterministic lexical order. Select at most 12 sources; guarantee the highest-ranked Claim from each selected source, then fill remaining slots in original lexical order using only selected sources.",
+		"evaluation": "Add an offline fail-closed runner and tests. No Context Pack, Relation, answer model or canonical-state mutation is allowed."
+	},
+	"prohibitedSignals": [
+		"questionId or Gold sourceId/quote",
+		"domain-specific keyword lists or source allowlists",
+		"Relation traversal or Graph score",
+		"answer-model or judge feedback",
+		"post-run quota changes inside the first run"
+	],
+	"arms": [
+		{
+			"id": "L40_STRONG",
+			"routingPoolBudget": 40,
+			"sourceBudget": null,
+			"candidateBudget": 40,
+			"definition": "Top 40 persistent lexical Claim candidates; primary comparator."
+		},
+		{
+			"id": "SR12_40",
+			"routingPoolBudget": 120,
+			"sourceBudget": 12,
+			"candidateBudget": 40,
+			"definition": "Take at most 120 Claims in existing lexical order; rank sources by first Claim occurrence; select at most 12 sources; guarantee one highest-ranked Claim per selected source, then fill to at most 40 from those sources in original lexical order."
+		}
+	],
+	"fixed": {
+		"network": false,
+		"modelCalls": 0,
+		"scope": "GLOBAL_ONLY",
+		"tiers": ["S12", "S29", "S50"],
+		"questionCount": 18,
+		"primaryCandidateBudget": 40,
+		"routingPoolBudget": 120,
+		"sourceBudget": 12
+	},
+	"metrics": [
+		"requiredSourceRecall",
+		"requiredEvidenceQuoteRecall",
+		"perQuestionSourceWinsAndLossesVsL40",
+		"perQuestionQuoteWinsAndLossesVsL40",
+		"routingPoolClaimCount",
+		"discoveredSourceCount",
+		"selectedSourceCount",
+		"candidateClaimCount",
+		"candidateSourceCount",
+		"spanShardsReadForRouting",
+		"estimatedEvidenceClosureTokens",
+		"queryLatencyMilliseconds"
+	],
+	"decisionRules": {
+		"SOURCE_DISCOVERY_PASS": "At S50 SR12_40 required-source recall is >= L40_STRONG, has at least one strict per-question required-source win, zero per-question required-source losses, routing pool <=120, selected sources <=12 and final candidates <=40. Its own required-source recall may fall by no more than 0.05 from S12 to S50.",
+		"FULL_CANDIDATE_PASS": "SOURCE_DISCOVERY_PASS plus exact-quote recall >= L40_STRONG, zero per-question exact-quote losses, average evidence-closure tokens <=110% of L40, P95 latency <= max(2x L40, L40+50ms), and at least one strict cost advantage: lower average evidence-closure tokens, fewer average lexical candidate records loaded, or lower P95 latency than L40_STRONG.",
+		"SOURCE_ONLY_SIGNAL": "SOURCE_DISCOVERY_PASS passes but FULL_CANDIDATE_PASS fails. Preserve source routing as a candidate mechanism and start a separately frozen within-source completion experiment; do not integrate online.",
+		"NO_SOURCE_BENEFIT": "SR12_40 has no strict required-source win over L40_STRONG at S50.",
+		"REWORK": "Any required-source loss, budget violation, scope/time leakage, stale-index acceptance, non-determinism or first-run overwrite."
+	},
+	"stopRules": [
+		"Do not generate answers or modify Context Pack.",
+		"Do not use same-block/same-source expansion in SR12_40; isolate source discovery first.",
+		"Do not tune routingPoolBudget, sourceBudget or candidateBudget after reading the first report; create a new contract/run.",
+		"Preserve the first report directory and hash; fixes use a new run id."
+	]
+}

@@ -1,0 +1,99 @@
+{
+  "schemaVersion": "wge-goal3-structural-ablation-contract/v1",
+  "status": "PREREGISTERED_BEFORE_RUN",
+  "createdAt": "2026-08-04T00:00:00+08:00",
+  "purpose": "Test whether deterministic same-block or same-source navigation improves required-evidence localization over a stronger lexical baseline under the same 40-Claim candidate budget.",
+  "interpretation": "Revealed Batch C evaluator Gold makes this a post-hoc mechanism diagnostic, not blind product evidence.",
+  "frozenInputs": {
+    "gitHead": "8829e408215590d39ddaf40431931dee0277e9b3",
+    "dirtyTrackedDiffSha256": "cdff43cff0806a7c77b3c49e45f9c662252739e2c19e2daaf1ffdc5e8f977edc",
+    "questions": {
+      "path": "experiments/benchmark-batch-c/stage-a-freeze/questions-public.jsonl",
+      "sha256": "3cfe6ed87ddfb88902d35c417f27c6a8ebf806e3139e0acc37d34fa9ad11a34d",
+      "count": 18
+    },
+    "diagnosticGold": {
+      "path": "experiments/benchmark-batch-c/stage-b-evaluator/normalized-gold/tasks.jsonl",
+      "sha256": "0dcdab468b2d6e5ee8801bc96a77085c37d60c556df2454df1a837530eaba15d"
+    },
+    "baselineImplementation": {
+      "persistentIndexSha256": "ba597b97be77c3b59092a814e1d7abfe939425827474749f7d19cc11ba8926c9",
+      "structureTypesSha256": "330a20cad5192428b34c285d2420b30467d5877d664061f4cc07da0f39cc2044"
+    },
+    "indexes": [
+      {
+        "tier": "S12",
+        "path": "experiments/goal3/pack-runs/pack-v5/indexes/S12",
+        "pointerSha256": "fd2c3df4a945a648c65d87181f1686e2333d6c0e5bb30201b0f7a82f0b86daf0"
+      },
+      {
+        "tier": "S29",
+        "path": "experiments/goal3/pack-runs/pack-v5/indexes/S29",
+        "pointerSha256": "326fb4e2eb791a17f490437157ba06d25e952b238c419377370a29ba2b47ce76"
+      },
+      {
+        "tier": "S50",
+        "path": "experiments/goal3/pack-runs/pack-v5/indexes/S50",
+        "pointerSha256": "9fe5c5d1fb5d23f886f5fdacbbcc7b12bb3874841bcb73f0bf9fa2ee638197fa"
+      }
+    ]
+  },
+  "allowedImplementationChangeBeforeRun": "Add an explicit pathKinds filter to structural candidate discovery, applied before aggregation and budget. It must preserve the default both-path behavior and pass full regression.",
+  "arms": [
+    {
+      "id": "L10_CURRENT",
+      "candidateBudget": 10,
+      "definition": "Top 10 persistent lexical Seeds. Descriptive only; not the primary same-budget comparator."
+    },
+    {
+      "id": "L40_STRONG",
+      "candidateBudget": 40,
+      "definition": "Top 40 persistent lexical candidates. Primary same-budget comparator."
+    },
+    {
+      "id": "L10_BLOCK30",
+      "candidateBudget": 40,
+      "definition": "Top 10 lexical Seeds plus up to 30 unique SAME_EVIDENCE_BLOCK candidates."
+    },
+    {
+      "id": "L10_BLOCK20_SOURCE10",
+      "candidateBudget": 40,
+      "definition": "Top 10 lexical Seeds plus up to 20 unique SAME_EVIDENCE_BLOCK candidates, then up to 10 unique SAME_SOURCE-only candidates."
+    }
+  ],
+  "fixed": {
+    "network": false,
+    "modelCalls": 0,
+    "scope": "GLOBAL_ONLY",
+    "seedLimit": 10,
+    "primaryCandidateBudget": 40,
+    "tiers": ["S12", "S29", "S50"],
+    "questionCount": 18
+  },
+  "metrics": [
+    "requiredSourceRecall",
+    "requiredEvidenceQuoteRecall",
+    "questionsWithAllRequiredSources",
+    "perQuestionSourceWinsAndLossesVsL40",
+    "perQuestionQuoteWinsAndLossesVsL40",
+    "candidateClaimCount",
+    "candidateSourceCount",
+    "estimatedEvidenceClosureTokens",
+    "queryLatencyMilliseconds",
+    "structuralDiscoveredCandidateCount",
+    "structuralInspectedCandidateCount",
+    "structuralTruncatedCount"
+  ],
+  "decisionRules": {
+    "BLOCK_SIGNAL": "At S50 L10_BLOCK30 has required source and exact-quote recall >= L40_STRONG, at least one strict per-question source or quote win, zero per-question source and quote losses, <=40 candidates, average evidence closure tokens <=110% of L40, and P95 latency <= max(2x L40, L40+50ms).",
+    "SOURCE_MARGINAL_SIGNAL": "At S50 L10_BLOCK20_SOURCE10 satisfies the BLOCK_SIGNAL safety/cost conditions and has more matched required sources or quotes than L10_BLOCK30 with zero per-question source/quote losses versus L10_BLOCK30.",
+    "SCALE_STABILITY": "A passing structural arm at S50 loses no more than 0.05 aggregate exact-quote recall from its own S12 result.",
+    "NO_STRUCTURAL_BENEFIT": "Neither structural arm beats L40_STRONG on any required source or exact quote at S50 under the fixed budget.",
+    "REWORK": "Any apparent recall gain requires >10% average evidence closure token overhead, violates the 40-Claim budget, or introduces per-question required source/quote losses not offset by a separately reported tradeoff."
+  },
+  "stopRules": [
+    "Do not generate answers or modify Context Pack in this run.",
+    "Do not tune path quotas after reading the report; any new quota is a new contract/run.",
+    "Preserve the first report directory and hash; fixes must use a new run id."
+  ]
+}

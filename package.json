@@ -2,12 +2,20 @@
 	"name": "wge-memory",
 	"version": "0.1.0",
 	"description": "WGEMemory4LLM — Agent-native knowledge compilation and long-term memory layer",
+	"bin": {
+		"wge": "dist/index.js",
+		"wge-mcp": "dist/mcp.js",
+		"wge-worker": "dist/worker.js"
+	},
 	"type": "module",
 	"engines": {
 		"node": ">=20.0.0"
 	},
 	"scripts": {
 		"dev": "tsx src/cli/index.ts",
+		"mcp": "tsx src/transport/mcp/stdio.ts",
+		"worker": "tsx src/workers/ingest-worker.ts",
+		"economics:ingest": "node --import tsx scripts/report-ingest-economics.ts",
 		"build": "tsup",
 		"typecheck": "tsc --noEmit && tsc --noEmit -p tsconfig.scripts.json",
 		"lint": "biome check src scripts",
@@ -34,17 +42,30 @@
 		"benchmark:batch-c:normalize-stage-b": "node --import tsx scripts/normalize-benchmark-batch-c-stage-b.ts",
 		"benchmark:batch-c:score": "node --import tsx scripts/score-benchmark-batch-c.ts",
 		"benchmark:batch-c:evaluate-retrieval": "node --import tsx scripts/evaluate-benchmark-batch-c-retrieval.ts",
+		"benchmark:s200:validate-stage-a": "node --import tsx scripts/validate-benchmark-s200-stage-a.ts",
+		"benchmark:s200:freeze-stage-a": "node --import tsx scripts/freeze-benchmark-s200-stage-a.ts",
+		"benchmark:s200:compile": "node --import tsx scripts/run-goal3-s200-compile.ts",
 		"retrieval:aliases:generate": "node --import tsx scripts/generate-retrieval-aliases.ts",
 		"benchmark:e4:rescore": "node --import tsx scripts/rescore-benchmark-e4-run.ts",
 		"evolution:validate": "node --import tsx scripts/validate-evolution-dataset.ts",
 		"evolution:experiment": "node --import tsx scripts/evolution-experiment.ts",
-		"evolution:answers": "node --import tsx scripts/evolution-answer-pilot.ts"
+		"evolution:answers": "node --import tsx scripts/evolution-answer-pilot.ts",
+		"goal3:scale": "node --import tsx scripts/run-goal3-scale-retrieval.ts",
+		"goal3:index-benchmark": "node --import tsx scripts/run-goal3-index-benchmark.ts",
+		"goal3:local-closure": "node --import tsx scripts/run-goal3-local-closure.ts",
+		"goal3:pack-parity": "node --import tsx scripts/run-goal3-pack-parity.ts",
+		"goal3:pack-cost-ledger": "node --import tsx scripts/run-goal3-pack-cost-ledger.ts",
+		"goal3:structured-pack-renderer": "node --import tsx scripts/run-goal3-structured-pack-renderer.ts",
+		"goal3:context-pack-transport-parity": "node --import tsx scripts/run-goal3-context-pack-transport-parity.ts"
 	},
 	"dependencies": {
+		"@modelcontextprotocol/client": "^2.0.0",
+		"@modelcontextprotocol/server": "^2.0.0",
 		"commander": "^13.0.0",
-		"js-yaml": "^4.1.0",
+		"js-yaml": "^4.3.1",
 		"openai": "^4.77.0",
-		"zod": "^3.24.0"
+		"zod": "^3.25.76",
+		"zod4": "npm:zod@^4.4.3"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^1.9.0",

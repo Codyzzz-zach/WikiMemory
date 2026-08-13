@@ -6,8 +6,11 @@ import type { AppConfig } from "../config/types.js";
 import type { LLMProvider } from "../core/llm-provider.js";
 import type { ChatOptions, ChatResult } from "../core/types.js";
 import {
+	RELATED_TO_UTILITY_CRITIC_BATCH_SYSTEM,
+	RELATED_TO_UTILITY_CRITIC_SYSTEM,
 	RELATION_AUDIT_SYSTEM,
 	RELATION_AUDIT_VERSION,
+	RELATION_TYPE_CRITIC_SYSTEM,
 	SEMANTIC_AUDIT_SYSTEM,
 } from "../prompts/index.js";
 import type { AssertedRecord, Claim, Relation, SourceSpan } from "../types/index.js";
@@ -70,6 +73,90 @@ describe("semantic audit infrastructure failures", () => {
 	});
 });
 
+describe("bounded batch semantic audit", () => {
+	it("shares audit prompts while preserving per-object Claim and Relation verdicts", async () => {
+		const provider = new BatchPassProvider();
+		const claims = Array.from({ length: 4 }, (_, index) =>
+			claim(`claim:${index}`, `Claim ${index}`, `span:${index}`),
+		);
+		const spans = claims.map((candidate, index) =>
+			span(candidate.evidenceSpanIds[0] as string, `Claim ${index}.`),
+		);
+		const relations = [0, 1, 2].map((index) => ({
+			...relation(claims[index] as Claim, claims[index + 1] as Claim),
+			id: `rel:${index}`,
+		}));
+		const result = await lintCompileResult(
+			temporaryConfig(),
+			claims,
+			relations,
+			[],
+			spans,
+			provider,
+			{ run: { sourceId: "source:test", runId: "run:batch", model: "test-model" } },
+		);
+		expect(result.canonicalClaims).toHaveLength(4);
+		expect(result.canonicalRelations).toHaveLength(3);
+		expect(provider.claimCalls).toBe(1);
+		expect(provider.relationCalls).toBe(1);
+		expect(provider.criticCalls).toBe(3);
+	});
+
+	it("rejects an incomplete envelope and shrinks until every Claim has an independent verdict", async () => {
+		const provider = new ShrinkingBatchProvider();
+		const claims = Array.from({ length: 4 }, (_, index) =>
+			claim(`claim:${index}`, `Claim ${index}`, `span:${index}`),
+		);
+		const spans = claims.map((candidate, index) =>
+			span(candidate.evidenceSpanIds[0] as string, `Claim ${index}.`),
+		);
+		const result = await lintCompileResult(temporaryConfig(), claims, [], [], spans, provider, {
+			run: { sourceId: "source:test", runId: "run:shrink", model: "test-model" },
+		});
+		expect(result.canonicalClaims).toHaveLength(4);
+		expect(provider.claimCalls).toBe(3);
+		expect(provider.batchSizes).toEqual([4, 2, 2]);
+	});
+
+	it("shrinks an invalid RELATED_TO utility envelope and fails closed only for the bad singleton", async () => {
+		const provider = new ShrinkingUtilityBatchProvider();
+		const claims = [
+			claim("claim:0", "Northstar model family", "span:0"),
+			claim("claim:1", "Northstar uses a community license", "span:1"),
+			claim("claim:2", "Northstar supports eight languages", "span:2"),
+		];
+		const spans = claims.map((candidate, index) =>
+			span(candidate.evidenceSpanIds[0] as string, candidate.statement, `source:${index}`),
+		);
+		const relations = [1, 2].map((toIndex, index) => ({
+			...relation(claims[0] as Claim, claims[toIndex] as Claim),
+			id: `rel:utility-${index}`,
+			type: "RELATED_TO" as const,
+			source: "cross-material-detect" as const,
+		}));
+		const result = await lintCompileResult(
+			temporaryConfig(),
+			claims,
+			relations,
+			[],
+			spans,
+			provider,
+			{ run: { sourceId: "source:test", runId: "run:utility-shrink", model: "test-model" } },
+		);
+
+		expect(result.canonicalRelations.map((item) => item.id)).toEqual(["rel:utility-0"]);
+		expect(result.quarantinedRelations).toEqual([
+			expect.objectContaining({
+				relation: expect.objectContaining({ id: "rel:utility-1" }),
+				issues: expect.arrayContaining([
+					expect.objectContaining({ code: "RELATION_AUDIT_INVALID" }),
+				]),
+			}),
+		]);
+		expect(provider.utilityBatchSizes).toEqual([2, 1, 1, 1]);
+	});
+});
+
 describe("relation and provenance gates", () => {
 	it("does not promote a Relation merely because both endpoint Claims passed", async () => {
 		const provider = new ClaimPassRelationFailProvider();
@@ -109,8 +196,81 @@ describe("relation and provenance gates", () => {
 			provider,
 		);
 		expect(result.canonicalRelations).toHaveLength(0);
-		expect(result.quarantinedRelations[0]?.issues[0]?.code).toBe("RELATION_IDENTITY_MISMATCH");
+		expect(result.quarantinedRelations[0]?.issues[0]?.code).toBe("RELATION_PROVENANCE_ONLY");
 		expect(provider.relationAuditCalls).toBe(0);
+	});
+
+	it("separates semantic validity from weak-edge navigation utility", async () => {
+		const provider = new ClaimPassRelationUtilityFailProvider();
+		const claims = [
+			claim("claim:a", "Northstar 3.1 使用新的许可证", "span:a"),
+			claim("claim:b", "Northstar 3.1 支持八种语言", "span:b"),
+		];
+		const candidate = relation(claims[0] as Claim, claims[1] as Claim);
+		candidate.type = "RELATED_TO";
+		candidate.source = "cross-material-detect";
+		const result = await lintCompileResult(
+			temporaryConfig(),
+			claims,
+			[candidate],
+			[],
+			[span("span:a", claims[0]?.statement ?? ""), span("span:b", claims[1]?.statement ?? "")],
+			provider,
+		);
+		expect(result.canonicalRelations).toHaveLength(0);
+		expect(result.quarantinedRelations[0]?.issues).toEqual(
+			expect.arrayContaining([expect.objectContaining({ code: "RELATION_UTILITY_LOW" })]),
+		);
+	});
+
+	it("keeps an independently reviewed complementary RELATED_TO edge", async () => {
+		const provider = new ClaimPassRelationUtilityPassProvider();
+		const claims = [
+			claim("claim:a", "Northstar 更新许可证，允许模型输出用于改进其他模型", "span:a"),
+			claim("claim:b", "Northstar 3.1 使用 Community License 授权", "span:b"),
+		];
+		const candidate = relation(claims[0] as Claim, claims[1] as Claim);
+		candidate.type = "RELATED_TO";
+		candidate.source = "cross-material-detect";
+		const result = await lintCompileResult(
+			temporaryConfig(),
+			claims,
+			[candidate],
+			[],
+			[span("span:a", claims[0]?.statement ?? ""), span("span:b", claims[1]?.statement ?? "")],
+			provider,
+		);
+		expect(result.canonicalRelations).toEqual(
+			expect.arrayContaining([
+				expect.objectContaining({
+					type: "RELATED_TO",
+					relationAuditVersion: RELATION_AUDIT_VERSION,
+				}),
+			]),
+		);
+	});
+
+	it("quarantines a RELATED_TO edge whose shared unit measures different semantic slots", async () => {
+		const provider = new ClaimPassRelationMeasurementMismatchProvider();
+		const claims = [
+			claim("claim:a", "Northstar 的训练数据量为 15T token", "span:a"),
+			claim("claim:b", "Northstar 的上下文窗口为 128K token", "span:b"),
+		];
+		const candidate = relation(claims[0] as Claim, claims[1] as Claim);
+		candidate.type = "RELATED_TO";
+		candidate.source = "cross-material-detect";
+		const result = await lintCompileResult(
+			temporaryConfig(),
+			claims,
+			[candidate],
+			[],
+			[span("span:a", claims[0]?.statement ?? ""), span("span:b", claims[1]?.statement ?? "")],
+			provider,
+		);
+		expect(result.canonicalRelations).toHaveLength(0);
+		expect(result.quarantinedRelations[0]?.issues).toEqual(
+			expect.arrayContaining([expect.objectContaining({ code: "RELATION_UTILITY_LOW" })]),
+		);
 	});
 
 	it("quarantines a passed Relation audit without edge-level supporting evidence", async () => {
@@ -298,6 +458,33 @@ describe("relation and provenance gates", () => {
 		expect(result.canonicalRelations).toHaveLength(0);
 		expect(result.quarantinedRelations[0]?.issues[0]?.detail).toContain("未同时覆盖 FROM 与 TO");
 	});
+
+	it("requires the adversarial type critic to pass before promoting a strong edge", async () => {
+		const provider = new ClaimPassRelationCriticFailProvider();
+		const claims = [
+			claim("claim:a", "Proof D", "span:a"),
+			claim("claim:b", "Conclusion C", "span:b"),
+		];
+		const candidate = relation(claims[0] as Claim, claims[1] as Claim);
+		candidate.type = "DERIVED_FROM";
+		const result = await lintCompileResult(
+			temporaryConfig(),
+			claims,
+			[candidate],
+			[],
+			[span("span:a", "Proof D"), span("span:b", "Conclusion C")],
+			provider,
+		);
+		expect(result.canonicalRelations).toHaveLength(0);
+		expect(result.quarantinedRelations[0]?.issues).toEqual(
+			expect.arrayContaining([
+				expect.objectContaining({
+					code: "RELATION_TYPE_MISMATCH",
+					detail: expect.stringContaining("DIRECTION_REVERSED"),
+				}),
+			]),
+		);
+	});
 });
 
 class InvalidAuditProvider implements LLMProvider {
@@ -317,6 +504,124 @@ class InvalidAuditProvider implements LLMProvider {
 	async chatWithThinking(options: ChatOptions): Promise<ChatResult> {
 		return this.chat(options);
 	}
+}
+
+class BatchPassProvider implements LLMProvider {
+	claimCalls = 0;
+	relationCalls = 0;
+	criticCalls = 0;
+
+	async chat(options: ChatOptions): Promise<ChatResult> {
+		const ids = batchObjectIds(options);
+		if (options.systemPrompt.startsWith(SEMANTIC_AUDIT_SYSTEM)) {
+			this.claimCalls++;
+			return auditChatResult({
+				items: ids.map((objectId) => ({
+					objectId,
+					verdict: {
+						verdict: "passed",
+						dimensions: passingDimensions(),
+						anchorSpanIndex: 0,
+						failedDimensions: [],
+					},
+				})),
+			});
+		}
+		if (options.systemPrompt.startsWith(RELATION_AUDIT_SYSTEM)) {
+			this.relationCalls++;
+			return auditChatResult({
+				items: ids.map((objectId) => ({
+					objectId,
+					verdict: {
+						verdict: "passed",
+						supersessionEffect: "NOT_APPLICABLE",
+						dimensions: Object.fromEntries(
+							["identity", "relation", "type", "direction", "conditions"].map((dimension) => [
+								dimension,
+								{ result: "pass", evidenceSpanIndexes: [0, 1] },
+							]),
+						),
+						anchorSpanIndex: 0,
+						failedDimensions: [],
+						supportingEvidenceSpanIndexes: [0, 1],
+					},
+				})),
+			});
+		}
+		if (options.systemPrompt === RELATION_TYPE_CRITIC_SYSTEM) {
+			this.criticCalls++;
+			return auditChatResult({
+				verdict: "passed",
+				failureModes: [],
+				evidenceSpanIndexes: [0, 1],
+			});
+		}
+		throw new Error("Unexpected batch audit prompt");
+	}
+
+	async chatWithThinking(options: ChatOptions): Promise<ChatResult> {
+		return this.chat(options);
+	}
+}
+
+class ShrinkingBatchProvider extends BatchPassProvider {
+	batchSizes: number[] = [];
+
+	override async chat(options: ChatOptions): Promise<ChatResult> {
+		if (!options.systemPrompt.startsWith(SEMANTIC_AUDIT_SYSTEM)) return super.chat(options);
+		const ids = batchObjectIds(options);
+		this.claimCalls++;
+		this.batchSizes.push(ids.length);
+		const returnedIds = ids.length > 2 ? ids.slice(0, -1) : ids;
+		return auditChatResult({
+			items: returnedIds.map((objectId) => ({
+				objectId,
+				verdict: {
+					verdict: "passed",
+					dimensions: passingDimensions(),
+					anchorSpanIndex: 0,
+					failedDimensions: [],
+				},
+			})),
+		});
+	}
+}
+
+class ShrinkingUtilityBatchProvider extends BatchPassProvider {
+	utilityBatchSizes: number[] = [];
+
+	override async chat(options: ChatOptions): Promise<ChatResult> {
+		if (options.systemPrompt !== RELATED_TO_UTILITY_CRITIC_BATCH_SYSTEM) {
+			return super.chat(options);
+		}
+		const ids = batchObjectIds(options);
+		this.utilityBatchSizes.push(ids.length);
+		if (ids.length > 1) {
+			return auditChatResult({
+				items: [utilityBatchItem(ids[0] as string)],
+			});
+		}
+		if (ids[0] === "rel:utility-0") {
+			return auditChatResult({ items: [utilityBatchItem(ids[0])] });
+		}
+		return auditChatResult({ items: [] });
+	}
+}
+
+function utilityBatchItem(objectId: string) {
+	return {
+		objectId,
+		verdict: {
+			verdict: "passed",
+			failureModes: [],
+			evidenceSpanIndexes: [0, 1],
+		},
+	};
+}
+
+function batchObjectIds(options: ChatOptions): string[] {
+	const content = options.messages.map((message) => message.content).join("\n");
+	return [...content.matchAll(/^## objectId=(.+)$/gm)].map((match) => match[1] as string);
 }
 
 class StaticAuditProvider implements LLMProvider {
@@ -405,6 +710,72 @@ class ClaimPassRelationIdentityFailProvider implements LLMProvider {
 
 	async chatWithThinking(options: ChatOptions): Promise<ChatResult> {
 		return this.chat(options);
+	}
+}
+
+class ClaimPassRelationUtilityFailProvider implements LLMProvider {
+	async chat(options: ChatOptions): Promise<ChatResult> {
+		if (options.systemPrompt === SEMANTIC_AUDIT_SYSTEM) {
+			return auditChatResult({
+				verdict: "passed",
+				dimensions: passingDimensions(),
+				anchorSpanIndex: 0,
+				failedDimensions: [],
+			});
+		}
+		if (options.systemPrompt === RELATION_AUDIT_SYSTEM) {
+			return auditChatResult({
+				verdict: "passed",
+				supersessionEffect: "NOT_APPLICABLE",
+				dimensions: Object.fromEntries(
+					["identity", "relation", "type", "direction", "conditions"].map((dimension) => [
+						dimension,
+						{ result: "pass", evidenceSpanIndexes: [0, 1] },
+					]),
+				),
+				anchorSpanIndex: 0,
+				failedDimensions: [],
+				supportingEvidenceSpanIndexes: [0, 1],
+			});
+		}
+		if (options.systemPrompt === RELATED_TO_UTILITY_CRITIC_SYSTEM) {
+			return auditChatResult({
+				verdict: "failed",
+				failureModes: ["NO_NAVIGATION_GAIN"],
+				evidenceSpanIndexes: [0, 1],
+			});
+		}
+		throw new Error("Unexpected audit prompt");
+	}
+
+	async chatWithThinking(options: ChatOptions): Promise<ChatResult> {
+		return this.chat(options);
+	}
+}
+
+class ClaimPassRelationUtilityPassProvider extends ClaimPassRelationUtilityFailProvider {
+	override async chat(options: ChatOptions): Promise<ChatResult> {
+		if (options.systemPrompt === RELATED_TO_UTILITY_CRITIC_SYSTEM) {
+			return auditChatResult({
+				verdict: "passed",
+				failureModes: [],
+				evidenceSpanIndexes: [0, 1],
+			});
+		}
+		return super.chat(options);
+	}
+}
+
+class ClaimPassRelationMeasurementMismatchProvider extends ClaimPassRelationUtilityFailProvider {
+	override async chat(options: ChatOptions): Promise<ChatResult> {
+		if (options.systemPrompt === RELATED_TO_UTILITY_CRITIC_SYSTEM) {
+			return auditChatResult({
+				verdict: "failed",
+				failureModes: ["MEASUREMENT_SLOT_MISMATCH"],
+				evidenceSpanIndexes: [0, 1],
+			});
+		}
+		return super.chat(options);
 	}
 }
 
@@ -502,6 +873,13 @@ class ClaimAndRelationPassProvider implements LLMProvider {
 				supportingEvidenceSpanIndexes: [0, 1],
 			});
 		}
+		if (options.systemPrompt === RELATION_TYPE_CRITIC_SYSTEM) {
+			return auditChatResult({
+				verdict: "passed",
+				failureModes: [],
+				evidenceSpanIndexes: [0, 1],
+			});
+		}
 		throw new Error("Unexpected audit prompt");
 	}
 
@@ -534,11 +912,31 @@ class ClaimPassRelationOneSidedProvider implements LLMProvider {
 				supportingEvidenceSpanIndexes: [0],
 			});
 		}
+		if (options.systemPrompt === RELATION_TYPE_CRITIC_SYSTEM) {
+			return auditChatResult({
+				verdict: "passed",
+				failureModes: [],
+				evidenceSpanIndexes: [0, 1],
+			});
+		}
 		throw new Error("Unexpected audit prompt");
 	}
 
 	async chatWithThinking(options: ChatOptions): Promise<ChatResult> {
 		return this.chat(options);
+	}
+}
+
+class ClaimPassRelationCriticFailProvider extends ClaimAndRelationPassProvider {
+	override async chat(options: ChatOptions): Promise<ChatResult> {
+		if (options.systemPrompt === RELATION_TYPE_CRITIC_SYSTEM) {
+			return auditChatResult({
+				verdict: "failed",
+				failureModes: ["DIRECTION_REVERSED"],
+				evidenceSpanIndexes: [0, 1],
+			});
+		}
+		return super.chat(options);
 	}
 }
 

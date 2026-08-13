@@ -1,0 +1,51 @@
+{
+	"schemaVersion": "wge-goal3-evidence-preserving-source-insertion-freeze/v1",
+	"status": "FROZEN_BEFORE_FIRST_REPORT",
+	"frozenAt": "2026-08-04T20:06:00+08:00",
+	"contract": {
+		"path": "experiments/goal3/goal3-evidence-preserving-source-insertion-contract-v1.json",
+		"sha256": "69f51eb05adfe1a01a718e72cad64c2eb8a0475dfc9a415450b14d08713ce925"
+	},
+	"implementation": {
+		"selector": {
+			"path": "src/retrieval/evidence-preserving-source-insertion.ts",
+			"sha256": "acec7002e9962d203f5382200a05595d32e4cc0aa0da745429fc5285db4ae532"
+		},
+		"selectorTests": {
+			"path": "src/retrieval/evidence-preserving-source-insertion.test.ts",
+			"sha256": "133a42d43516ec38f2f277cdf3b5e60479a16b2c87d343f2b92e5dc2ccfcb2c5"
+		},
+		"persistentIndex": {
+			"path": "src/retrieval/persistent-index.ts",
+			"sha256": "97e311dfbe3d918e224381783a32f8eb3bd56c7c5dd61f19644d8db48508819a"
+		},
+		"evidenceCoverage": {
+			"path": "src/retrieval/evidence-coverage.ts",
+			"sha256": "fcf18107410d3994e9fbdbcfc71d025b2cd69dd60561bc70cb769fd6569ba3d9"
+		},
+		"evidenceCoverageTests": {
+			"path": "src/retrieval/evidence-coverage.test.ts",
+			"sha256": "4f200edaaa60dd0217ffa8cea08b223bfb242f96d5ab5fa4c65c37055f24ce22"
+		},
+		"epsiRunner": {
+			"path": "scripts/run-goal3-evidence-preserving-source-insertion.ts",
+			"sha256": "9d921974c4f6b14a64b16e031be11ff90a0bf401411511d89f913085ada61e4c"
+		}
+	},
+	"verification": {
+		"lint": "biome check src scripts: 112 files, 0 errors",
+		"typecheck": "tsc --noEmit and tsc --noEmit -p tsconfig.scripts.json passed",
+		"testFiles": 26,
+		"testsPassed": 200,
+		"testsFailed": 0,
+		"retrievalTestFiles": 2,
+		"retrievalTestsPassed": 25
+	},
+	"prohibitions": [
+		"No Gold semantic parsing before every candidate set for all 50 questions is constructed.",
+		"No Relation traversal, Context Pack, answer generation, model call, network access or canonical-state mutation.",
+		"No post-hoc budget or eviction-rule change inside evidence-preserving-source-insertion-v1.",
+		"No latency-based pass claim.",
+		"No overwrite of the first official report."
+	]
+}

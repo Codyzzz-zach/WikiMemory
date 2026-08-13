@@ -1,0 +1,80 @@
+{
+  "schemaVersion": "wge-goal3-scale-contract/v2",
+  "status": "FROZEN_AFTER_V1_ADAPTER_REPAIR_BEFORE_CANDIDATE_RUN",
+  "supersedes": "goal3-scale-contract-v1.json",
+  "purpose": "Separate CodeGraph-style bounded candidate-subgraph localization from final Prompt selection while the multi-domain knowledge base grows.",
+  "targetCorpus": "experiments/benchmark-batch-c/workspace",
+  "questions": "experiments/benchmark-batch-c/stage-a-freeze/questions-public.jsonl",
+  "diagnosticGold": "experiments/benchmark-batch-c/stage-b-evaluator/normalized-gold/tasks.jsonl",
+  "tiers": [
+    {
+      "id": "S12",
+      "roots": ["experiments/benchmark-batch-c/workspace"]
+    },
+    {
+      "id": "S29",
+      "roots": [
+        "experiments/benchmark-batch-c/workspace",
+        "experiments/benchmark-seed-v1/workspace",
+        "."
+      ]
+    },
+    {
+      "id": "S50",
+      "roots": [
+        "experiments/benchmark-batch-c/workspace",
+        "experiments/benchmark-seed-v1/workspace",
+        ".",
+        "experiments/evolution/runs/controlled-v1-lineage-v9/workspace"
+      ]
+    }
+  ],
+  "arms": ["R0", "R1"],
+  "fixed": {
+    "questionCount": 18,
+    "contextBudgetTokens": 12000,
+    "seedLimit": 10,
+    "maxGraphDepth": 2,
+    "maxCandidateNodes": 40,
+    "restartAlpha": 0.25,
+    "iterations": 25,
+    "network": false,
+    "modelCalls": 0
+  },
+  "layers": {
+    "candidate": "Primary mechanism layer: lexical Seed IDs for R0 versus bounded local-subgraph candidate IDs for R1.",
+    "prompt": "Secondary consumption layer: Claim/Evidence bundles that survive selector and token budget."
+  },
+  "primaryMetrics": [
+    "candidateRequiredSourceRecall",
+    "candidateRequiredEvidenceQuoteRecall",
+    "candidatePairedWinsAndLosses"
+  ],
+  "secondaryMetrics": [
+    "promptRequiredSourceRecall",
+    "promptRequiredEvidenceQuoteRecall",
+    "candidateToPromptConversion"
+  ],
+  "costMetrics": [
+    "averageContextTokens",
+    "averageQueryMilliseconds",
+    "p95QueryMilliseconds",
+    "eligibleClaimsScanned",
+    "relationsGateChecked",
+    "candidateGraphNodes"
+  ],
+  "decisionRules": {
+    "CANDIDATE_LOCALIZATION_SIGNAL": "At S50, R1 candidate recall has at least one paired required-source win, zero source/evidence losses, and candidate size stays <= 40.",
+    "SELECTOR_GAP": "Candidate localization wins, but final Prompt recall does not improve; redesign selection/activation without enlarging Prompt by default.",
+    "END_TO_END_RETRIEVAL_SIGNAL": "Candidate localization wins and final Prompt recall also improves without >5% average Context token increase.",
+    "NO_CANDIDATE_BENEFIT": "R1 candidate recall has no win at any tier and no loss.",
+    "REGRESSION": "R1 loses candidate required-source or required-evidence recall on any question.",
+    "ENGINEERING_SCALE_BLOCKER": "Full-corpus scan work grows with corpus size; persistent lexical/source indexes and local adjacency loading are required before production-scale claims."
+  },
+  "interpretationLimits": [
+    "Stage B Gold has already been revealed, so this is a post-hoc mechanism diagnostic, not blind product evidence.",
+    "Additional roots are real multi-domain distractors; they do not add new cross-corpus semantic edges.",
+    "A candidate localization win does not authorize default Graph content in the answer Prompt.",
+    "scale-v1 is an invalid missing-Span adapter run; scale-v2 is a valid final-Prompt baseline but did not expose candidate-subgraph recall. Neither run is overwritten."
+  ]
+}

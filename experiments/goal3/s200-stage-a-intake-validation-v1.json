@@ -1,0 +1,134 @@
+{
+  "schemaVersion": "wge-s200-stage-a-intake-validation/v1",
+  "stageRoot": "/Users/mixi/Desktop/WikiMemory/benchmark-s200-stage-a",
+  "status": "ACCEPT_WITH_REPAIRS_BLOCK_FREEZE",
+  "stageBRead": false,
+  "counts": {
+    "sources": 140,
+    "questions": 60,
+    "episodes": 20,
+    "clusters": 21
+  },
+  "distributions": {
+    "accessStatus": {
+      "full": 84,
+      "partial": 55,
+      "metadata-only": 1
+    },
+    "domains": {
+      "ai": 18,
+      "climate-energy-policy": 12,
+      "design-accessibility": 16,
+      "finance": 16,
+      "health-biology": 16,
+      "history-humanities": 13,
+      "law-public-policy": 14,
+      "psychology-reproducibility": 13,
+      "technology": 22
+    },
+    "roles": {
+      "P-primary": 62,
+      "H-historical": 2,
+      "C-implementation": 14,
+      "S-analysis": 26,
+      "U-experience": 36
+    },
+    "languages": {
+      "en": 127,
+      "zh-CN": 13
+    },
+    "questionTypes": {
+      "F": 4,
+      "T": 13,
+      "K": 11,
+      "C": 11,
+      "X": 8,
+      "A": 3,
+      "U": 6,
+      "E": 4
+    },
+    "languageSlices": {
+      "zh-question-en-evidence": 54,
+      "same-language": 6
+    }
+  },
+  "treeHash": "sha256:8c207d0483f2ab7765352648c75c192764064ffc29e81d4703d9ea7d6506bbd2",
+  "errors": [
+    {
+      "code": "DUPLICATE_CANONICAL_URL",
+      "message": "Duplicate canonical URL: ar5iv.labs.arxiv.org/html/2310.06770",
+      "refs": [
+        "s200-ai-swebench-003",
+        "s200-ai-swebench-005"
+      ]
+    },
+    {
+      "code": "DUPLICATE_STABLE_IDENTITY",
+      "message": "Duplicate source identity: arxiv:2310.06770:unversioned",
+      "refs": [
+        "s200-ai-swebench-001",
+        "s200-ai-swebench-003",
+        "s200-ai-swebench-005"
+      ]
+    },
+    {
+      "code": "EPISODE_UNKNOWN_SOURCE",
+      "message": "S200-EV-004 references missing source s200-tech-gomod-008",
+      "refs": [
+        "S200-EV-004",
+        "s200-tech-gomod-008"
+      ]
+    },
+    {
+      "code": "EPISODE_UNKNOWN_SOURCE",
+      "message": "S200-EV-005 references missing source s200-tech-k8s-009",
+      "refs": [
+        "S200-EV-005",
+        "s200-tech-k8s-009"
+      ]
+    },
+    {
+      "code": "EPISODE_UNKNOWN_SOURCE",
+      "message": "S200-EV-007 references missing source s200-fin-fed-007",
+      "refs": [
+        "S200-EV-007",
+        "s200-fin-fed-007"
+      ]
+    }
+  ],
+  "warnings": [
+    {
+      "code": "CURATOR_TEXT_INSIDE_SNAPSHOT",
+      "message": "140/140 snapshots start with curator provenance text; evaluator compilation must strip it"
+    },
+    {
+      "code": "SHORT_FULL_SNAPSHOT",
+      "message": "20 accessStatus=full snapshots contain fewer than 1,000 characters"
+    },
+    {
+      "code": "DOMAIN_PRINCIPLE_RANGE",
+      "message": "climate-energy-policy has 12 sources; principle range is 14..22"
+    },
+    {
+      "code": "DOMAIN_PRINCIPLE_RANGE",
+      "message": "history-humanities has 13 sources; principle range is 14..22"
+    },
+    {
+      "code": "DOMAIN_PRINCIPLE_RANGE",
+      "message": "psychology-reproducibility has 13 sources; principle range is 14..22"
+    },
+    {
+      "code": "SEMANTIC_OVERLAP_UNEVIDENCED",
+      "message": "All historicalOverlapEvidence arrays are empty; event/topic overlap still requires evaluator review"
+    },
+    {
+      "code": "STALE_README_COUNT",
+      "message": "README still contains final-delivery claims for 150 sources"
+    },
+    {
+      "code": "LEAKAGE_REPORT_SELF_MATCH",
+      "message": "The leakage report itself enumerates forbidden Stage B field names; payload objects are clean"
+    }
+  ],
+  "createdAt": "2026-08-10T09:13:51.943Z"
+}

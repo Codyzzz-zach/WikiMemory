@@ -1,0 +1,21 @@
+{
+	"schemaVersion": "wge-goal1-post-hoc-proxy-adjudication/v1",
+	"status": "POST_HOC_DIAGNOSTIC_NOT_FROZEN_GOLD",
+	"sourceReview": "goal1-audit-sample-v2-codex-review.json",
+	"triggerRun": "goal1-audit-sample-v6",
+	"mayBeUsedAsBlindOrHumanGold": false,
+	"adjudications": [
+		{
+			"relationId": "rel:80440e2182e5653f-50c56bc7f984bd3a",
+			"originalDecision": "accept",
+			"adjudicatedDecision": "reject",
+			"reason": "From supports only the rational-line-hole component of the composite To claim; it does not support the additional real-line-completeness component. The original proxy label conflicts with its own complete-support contract."
+		},
+		{
+			"relationId": "rel:e7ea8bc17c2cc4ab-6ab3f92fea68418a",
+			"originalDecision": "accept",
+			"adjudicatedDecision": "accept",
+			"reason": "To states the explicit convergence/applicability criterion that must hold for the conditioned sum formula in From. The shared table row establishes necessity rather than mere co-occurrence."
+		}
+	]
+}

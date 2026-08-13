@@ -1,0 +1,132 @@
+{
+  "schemaVersion": "wge-goal1-conditional-graph-answer-micro/v1",
+  "status": "POST_HOC_DEV_PROXY_SCORED",
+  "createdAt": "2026-07-29T15:37:26.265Z",
+  "preparation": "experiments/goal1/graph-experiments/goal1-v2.3-pilot-preparation-v2",
+  "preparationHash": "7cf59a2d028c498eedb06cd503768bf6ebb107a886a53ce5569bc24685ecc301",
+  "questionIds": [
+    "PILOT-H2-22",
+    "PILOT-H3-05"
+  ],
+  "groups": [
+    "B",
+    "P-seed",
+    "P-graph"
+  ],
+  "answerModelRequested": "deepseek-v4-flash",
+  "answerModelReturned": "deepseek-v4-flash",
+  "judgeModelRequested": "deepseek-v4-flash",
+  "judgeModelReturned": "deepseek-v4-flash",
+  "temperature": 0,
+  "aggregates": {
+    "B": {
+      "n": 2,
+      "averageTotal": 8,
+      "averageRequiredClaimCoverage": 2,
+      "averageConditionFidelity": 2,
+      "averageEvidenceGrounding": 2,
+      "averageAnswerabilityDiscipline": 2,
+      "hardFailures": 0,
+      "averageContextTokens": 5290
+    },
+    "P-seed": {
+      "n": 2,
+      "averageTotal": 8,
+      "averageRequiredClaimCoverage": 2,
+      "averageConditionFidelity": 2,
+      "averageEvidenceGrounding": 2,
+      "averageAnswerabilityDiscipline": 2,
+      "hardFailures": 0,
+      "averageContextTokens": 3019
+    },
+    "P-graph": {
+      "n": 2,
+      "averageTotal": 8,
+      "averageRequiredClaimCoverage": 2,
+      "averageConditionFidelity": 2,
+      "averageEvidenceGrounding": 2,
+      "averageAnswerabilityDiscipline": 2,
+      "hardFailures": 0,
+      "averageContextTokens": 3829
+    }
+  },
+  "scores": [
+    {
+      "sampleId": "sample-77f0ce15-f439-4633-b357-667aa4a9b18e",
+      "requiredClaimCoverage": 2,
+      "conditionFidelity": 2,
+      "evidenceGrounding": 2,
+      "answerabilityDiscipline": 2,
+      "hardFailure": false,
+      "rationale": "完整覆盖所有requiredClaims，提及完备性条件，未触发forbiddenClaims，引用正确，充分回答。",
+      "questionId": "PILOT-H2-22",
+      "group": "P-graph",
+      "total": 8
+    },
+    {
+      "sampleId": "sample-c15f390d-c4b0-4e77-ae3f-3f5320681a78",
+      "requiredClaimCoverage": 2,
+      "conditionFidelity": 2,
+      "evidenceGrounding": 2,
+      "answerabilityDiscipline": 2,
+      "hardFailure": false,
+      "rationale": "完整覆盖所有requiredClaims，提及完备性条件，未触发forbiddenClaims，引用正确，充分回答。",
+      "questionId": "PILOT-H2-22",
+      "group": "P-seed",
+      "total": 8
+    },
+    {
+      "sampleId": "sample-fca9aca2-e7dd-4cf9-ab2e-a556526c75b1",
+      "requiredClaimCoverage": 2,
+      "conditionFidelity": 2,
+      "evidenceGrounding": 2,
+      "answerabilityDiscipline": 2,
+      "hardFailure": false,
+      "rationale": "完整覆盖所有requiredClaims，提及完备性条件，未触发forbiddenClaims，引用正确，充分回答。",
+      "questionId": "PILOT-H2-22",
+      "group": "B",
+      "total": 8
+    },
+    {
+      "sampleId": "sample-bb8a6b44-c097-43fd-9f06-7f0f63cca82c",
+      "requiredClaimCoverage": 2,
+      "conditionFidelity": 2,
+      "evidenceGrounding": 2,
+      "answerabilityDiscipline": 2,
+      "hardFailure": false,
+      "rationale": "完整覆盖所有requiredClaims，保留mustMentionConditions，无forbiddenClaims，引用正确，充分回答。",
+      "questionId": "PILOT-H3-05",
+      "group": "P-seed",
+      "total": 8
+    },
+    {
+      "sampleId": "sample-3988f5b6-7bd2-4d78-8854-094e32ce8b7e",
+      "requiredClaimCoverage": 2,
+      "conditionFidelity": 2,
+      "evidenceGrounding": 2,
+      "answerabilityDiscipline": 2,
+      "hardFailure": false,
+      "rationale": "完整覆盖所有requiredClaims，保留mustMentionConditions，无forbiddenClaims，引用正确，充分回答。",
+      "questionId": "PILOT-H3-05",
+      "group": "B",
+      "total": 8
+    },
+    {
+      "sampleId": "sample-ee6d1c1e-c9ab-4b05-9aba-ff37cc416eb1",
+      "requiredClaimCoverage": 2,
+      "conditionFidelity": 2,
+      "evidenceGrounding": 2,
+      "answerabilityDiscipline": 2,
+      "hardFailure": false,
+      "rationale": "完整覆盖所有requiredClaims，保留mustMentionConditions，无forbiddenClaims，引用正确，充分回答。",
+      "questionId": "PILOT-H3-05",
+      "group": "P-graph",
+      "total": 8
+    }
+  ],
+  "limitations": [
+    "This is a two-question post-hoc development Micro selected because Graph actually triggered.",
+    "The judge is an AI proxy using frozen Pilot Gold; it is not a human evaluation.",
+    "The result can reject a Graph policy or justify a larger blind test, but cannot establish product value."
+  ]
+}

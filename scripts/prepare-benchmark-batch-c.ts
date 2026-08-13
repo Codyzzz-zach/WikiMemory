@@ -18,7 +18,23 @@ const reportRoot = preparationId
 	? join(experimentRoot, "post-hoc", "preparations", preparationId)
 	: join(experimentRoot, "blind-first-run", "offline");
 const selection = readJson<JsonRecord>(join(freezeRoot, "selection.json"));
-const config = readJson<PilotConfig>(join(freezeRoot, "config.json"));
+const frozenConfig = readJson<PilotConfig>(join(freezeRoot, "config.json"));
+const requestedBudget = process.env.WGE_BATCH_C_CONTEXT_BUDGET_TOKENS
+	? Number(process.env.WGE_BATCH_C_CONTEXT_BUDGET_TOKENS)
+	: null;
+if (requestedBudget !== null && !preparationId) {
+	throw new Error("A budget override is allowed only for an explicitly named post-hoc preparation");
+}
+if (requestedBudget !== null && (!Number.isSafeInteger(requestedBudget) || requestedBudget <= 0)) {
+	throw new Error(`Invalid post-hoc context budget: ${String(requestedBudget)}`);
+}
+const config: PilotConfig =
+	requestedBudget === null
+		? frozenConfig
+		: {
+				...frozenConfig,
+				retrieval: { ...frozenConfig.retrieval, contextBudgetTokens: requestedBudget },
+			};
 const taskPath = resolve(experimentRoot, requireString(selection, "taskFile"));
 const taskText = readFileSync(taskPath, "utf8");
 if (sha256(taskText) !== requireString(selection, "taskFileSha256"))
@@ -26,7 +42,21 @@ if (sha256(taskText) !== requireString(selection, "taskFileSha256"))
 const questionsById = new Map(
 	readJsonl(taskPath).map((row) => [requireString(row, "caseId"), row] as const),
 );
-const questionIds = stringArray(selection.questionIds);
+const frozenQuestionIds = stringArray(selection.questionIds);
+const requestedQuestionIds = (process.env.WGE_BATCH_C_QUESTION_IDS ?? "")
+	.split(",")
+	.map((id) => id.trim())
+	.filter(Boolean);
+if (requestedQuestionIds.length > 0 && !preparationId) {
+	throw new Error("A question subset is allowed only for an explicitly named post-hoc preparation");
+}
+const questionIds =
+	requestedQuestionIds.length === 0
+		? frozenQuestionIds
+		: requestedQuestionIds.map((id) => {
+				if (!frozenQuestionIds.includes(id)) throw new Error(`Question is outside freeze: ${id}`);
+				return id;
+			});
 const appConfig = loadConfig({ projectRoot: workspaceRoot });
 const modes = [
 	{ id: "B", pilotGroup: "B", graphExpansion: false },
@@ -60,10 +90,16 @@ for (const questionId of questionIds) {
 			question: questionText,
 			estimatedContextTokens: prepared.estimatedContextTokens,
 			contextHash: prepared.contextHash,
+			questionHash: prepared.questionHash,
+			configHash: prepared.configHash,
+			knowledgeSnapshotHash: prepared.knowledgeSnapshotHash,
+			inputSnapshotHash: prepared.inputSnapshotHash,
+			traceHash: prepared.traceHash,
 			retrievedClaims: prepared.retrievedClaims,
 			retrievedRelations: prepared.retrievedRelations,
 			retrievedSources: prepared.retrievedSources,
 			evidenceSpanCount: prepared.evidenceSpans.length,
+			toolCalls: prepared.toolCalls,
 			droppedContext: prepared.droppedContext,
 			retrievalTrace: prepared.retrievalTrace,
 		});
@@ -90,11 +126,17 @@ const report = {
 	status: preparationId ? "PREPARED_POST_HOC" : "PREPARED_BLIND_NO_GOLD",
 	preparationId: preparationId ?? null,
 	questionFileHash: `sha256:${sha256(taskText)}`,
+	selectedQuestionIds: questionIds,
 	contextBudgetTokens: config.retrieval.contextBudgetTokens,
 	limitations: preparationId
 		? [
 				"This is a post-hoc retrieval preparation produced after Stage B reveal.",
 				"It must not replace or be reported as the blind first-run result.",
+				...(requestedBudget === null
+					? []
+					: [
+							`The frozen context budget was overridden to ${requestedBudget} tokens for stress testing.`,
+						]),
 			]
 		: [
 				"No Stage B Gold or required evidence was available; this report measures retrieval shape and cost only.",

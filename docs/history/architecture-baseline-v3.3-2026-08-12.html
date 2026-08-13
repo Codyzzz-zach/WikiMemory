@@ -1,0 +1,578 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WGEMemory4LLM Architecture Baseline · v3.3 · 2026-08-12</title>
+  <script type="module">
+    import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: "base",
+      securityLevel: "loose",
+      themeVariables: {
+        fontFamily: "Noto Sans CJK SC, Inter, ui-sans-serif, system-ui, sans-serif",
+        primaryColor: "#ecf8f3",
+        primaryTextColor: "#172033",
+        primaryBorderColor: "#4b9478",
+        lineColor: "#63788f",
+        secondaryColor: "#eef5ff",
+        tertiaryColor: "#fff7e8",
+        fontSize: "13px",
+      },
+      flowchart: { useMaxWidth: true, htmlLabels: true, curve: "linear", nodeSpacing: 34, rankSpacing: 46 },
+      sequence: { useMaxWidth: true, actorMargin: 42, messageMargin: 34 },
+      state: { useMaxWidth: true },
+    });
+  </script>
+  <style>
+    :root{--ink:#172033;--muted:#617087;--paper:#fbfcfe;--white:#fff;--soft:#eef3f8;--line:#d7e0ea;--brand:#0d5c41;--brand2:#188b64;--blue:#2f6fbd;--amber:#9b6a1a;--rose:#b2485a;--violet:#6656a8;--code:#172235;--shadow:0 16px 44px rgba(32,50,72,.10)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}
+    body{margin:0;font-family:"Noto Sans CJK SC",Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:linear-gradient(180deg,#eaf7f1 0,#fbfcfe 34rem);line-height:1.72}
+    a{color:var(--blue);text-underline-offset:.18em}.page{max-width:1220px;margin:auto;padding:0 24px 72px}
+    header{padding:68px 0 38px}.eyebrow{display:flex;align-items:center;gap:10px;color:var(--brand);font-size:.82rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase}.eyebrow:before{content:"";width:36px;height:2px;background:var(--brand)}
+    h1{max-width:1040px;margin:14px 0 0;font-size:clamp(2.25rem,5.2vw,4.2rem);line-height:1.04;letter-spacing:-.035em}.subtitle{max-width:980px;margin:24px 0 0;color:#34445a;font-size:clamp(1rem,2vw,1.25rem);line-height:1.75}
+    .meta{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}.chip{padding:7px 12px;border:1px solid #c8d8d0;border-radius:999px;background:rgba(255,255,255,.75);font-size:.86rem}.chip b{color:var(--brand)}
+    nav{display:flex;flex-wrap:wrap;gap:9px;margin:28px 0 0}nav a{padding:7px 12px;border:1px solid var(--line);border-radius:999px;background:#fff;color:#2b3a50;text-decoration:none;font-size:.86rem;font-weight:650}nav a:first-child{border-color:var(--brand);color:var(--brand)}
+    main{display:grid;gap:8px}section{padding:46px 0;border-top:1px solid var(--line)}.section-head{display:grid;grid-template-columns:minmax(150px,.38fr) minmax(0,1fr);gap:34px;align-items:start;margin-bottom:28px}.kicker{color:var(--blue);font-size:.79rem;font-weight:820;letter-spacing:.09em;text-transform:uppercase}
+    h2{margin:0;font-size:clamp(1.65rem,3vw,2.55rem);line-height:1.15}h3{margin:28px 0 10px;font-size:1.27rem;line-height:1.3}h4{margin:18px 0 8px;font-size:1.05rem;color:#2d3f56}p{margin:0 0 16px}.lead{color:#33455d;font-size:1.06rem;line-height:1.82}
+    ul,ol{padding-left:24px;margin:10px 0 18px}li{margin:6px 0}.tight li{margin:3px 0}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}.card{padding:22px 24px;border:1px solid var(--line);border-radius:10px;background:var(--white);box-shadow:0 8px 24px rgba(32,50,72,.06)}.card h3,.card h4{margin-top:0}.label{color:var(--brand);font-size:.76rem;font-weight:820;letter-spacing:.08em;text-transform:uppercase}
+    .callout{margin:20px 0;padding:20px 24px;border:1px solid #c5daef;border-radius:9px;background:#f4f9fe}.callout.good{border-color:#b8d9cd;background:#f2fbf7}.callout.warn{border-color:#ead5a4;background:#fffaf0}.callout.danger{border-color:#e7c3c9;background:#fdf5f6}.callout b:first-child{color:#102c45}
+    table{width:100%;border-collapse:collapse;margin:22px 0;background:#fff;border:1px solid var(--line);box-shadow:0 8px 24px rgba(32,50,72,.05)}th,td{padding:12px 15px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;font-size:.91rem}th{background:#edf5f2;color:#1e3f34;font-size:.79rem;letter-spacing:.045em;text-transform:uppercase}tr:last-child td{border-bottom:0}
+    .diagram{margin:24px 0;padding:22px;background:#fff;border:1px solid var(--line);border-radius:10px;overflow:auto;box-shadow:0 8px 24px rgba(32,50,72,.06)}.mermaid{min-width:680px;text-align:center}
+    code{font-family:"SFMono-Regular",Consolas,monospace;font-size:.87em;background:var(--soft);padding:2px 5px;border-radius:4px}.schema{padding:18px 20px;background:var(--code);color:#eef7ff;border-radius:9px;overflow:auto;font:13px/1.65 "SFMono-Regular",Consolas,monospace;white-space:pre-wrap}
+    .status{display:inline-block;padding:2px 8px;border-radius:999px;font-size:.76rem;font-weight:760}.s-green{background:#dff4ea;color:#176143}.s-amber{background:#fff0cc;color:#76500e}.s-rose{background:#fae1e5;color:#8d3040}.s-blue{background:#e1eefc;color:#275f9f}
+    .badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:.76rem;font-weight:700;white-space:nowrap}.b-done{background:#d4edda;color:#155724}.b-pending{background:#cce5ff;color:#004085}.b-stub{background:#fdf2d0;color:#7a5e1b}.b-fixed{background:#d1e7ff;color:#084298}.b-new{background:#e7f8ee;color:#0a5c34}.b-blocked{background:#fae1e5;color:#8d3040}
+    footer{padding:32px 0;color:var(--muted);font-size:.88rem}.small{font-size:.86rem;color:var(--muted)}
+    @media(max-width:860px){.section-head,.grid,.grid.three{grid-template-columns:1fr}.mermaid{min-width:560px}}
+    @media print{body{background:#fff}.page{max-width:none}nav{display:none}.card,.diagram,table{box-shadow:none}.diagram,.card,table{break-inside:avoid}}
+  </style>
+</head>
+<body>
+<div class="page">
+<header id="top">
+  <div class="eyebrow">Architecture Baseline <span class="status s-green">v3.3 · Post H1-A</span></div>
+  <h1>WGEMemory4LLM 架构基线 v3.3</h1>
+  <p class="subtitle">
+    本版以 2026-08-12 的 M2 裁决为事实边界，同时标注<b>当前实现</b>、<b>目标架构</b>与<b>历史实验</b>，三者不得互相冒充。CodeGraph 源码审查支持“先定位入口、在有界局部图中排序、严格控制最终渲染”的机制借鉴，但其效果数字不能移植到本项目。
+    必须区分三个结论：<b>Typed Graph 是长期知识治理与演化的必要基础设施</b>；<b>在线链路是 Graph-capable，而不是 Graph-always-on，候选导航和可见关系均需按任务触发</b>；<b>G2 的首个 R1 实现被 Micro 否决，G3-B2 只证明安全来源发现、尚未证明成本收益</b>。这些结果约束实现，不否定 Graph 长期路线，也不构成产品价值已成立的证据。
+  </p>
+  <div class="meta">
+    <span class="chip"><b>静态检查</b> src + scripts 全覆盖</span>
+    <span class="chip"><b>事实日期</b> 2026-08-12</span>
+    <span class="chip"><b>现存 Claim</b> 375 canonical / 26 quarantine</span>
+    <span class="chip"><b>主状态 Relation</b> 99 stored / 0 consumable <span class="badge b-blocked">要求 audit v2.8</span></span>
+    <span class="chip"><b>Evolution</b> 512 Claim / 149 Relation records / 20 review rejects</span>
+    <span class="chip"><b>实验标签</b> 历史 B/P/E；后续 B/R0/R1/W</span>
+    <span class="chip"><b>可回滚快照</b> 12 files / 96KB <span class="badge b-new">真实创建</span></span>
+    <span class="chip"><b>演化数据</b> 3 domains / 24 docs / 144 Gold <span class="badge b-new">silver</span></span>
+    <span class="chip"><b>H1-A Wiki</b> 86 auto modules / 496 assertions <span class="badge b-new">engineering pass</span></span>
+  </div>
+  <nav aria-label="目录">
+    <a href="#truth">1·事实快照</a><a href="#target-read-path">2·目标读取链</a><a href="#review">3·历史裁决</a><a href="#overview">4·写入总览</a>
+    <a href="#ingest">4·Loader/摄入</a><a href="#compiler">5·编译状态机</a><a href="#objects">6·对象与证据</a>
+    <a href="#gates">7·双门禁</a><a href="#relations">8·跨材料关系</a><a href="#storage">9·原子存储</a>
+    <a href="#context">10·Graph/Context</a><a href="#calibration">11·校准口径</a><a href="#verification">12·验证证据</a>
+    <a href="#gaps">13·真实缺口</a><a href="#next">14·下一步验收</a>
+  </nav>
+</header>
+
+<main>
+<section id="truth">
+  <div class="section-head"><div class="kicker">§01 / Truth Snapshot</div><div><h2>当前事实快照，不把“代码存在”写成“能力已验证”</h2></div></div>
+  <table>
+    <thead><tr><th>项目</th><th>当前实测</th><th>判定</th></tr></thead>
+    <tbody>
+      <tr><td>Source / Span</td><td>6 个 Source 已机械摄入，共 382 个持久化 Span</td><td><span class="badge b-done">可用</span></td></tr>
+      <tr><td>发布快照</td><td>01、02、03、05、09 有 publication；11 仅 SOURCE_INGESTED。publication 存在不等于当前完整编排状态 COMPLETED</td><td><span class="badge b-pending">可检查但需状态迁移</span></td></tr>
+      <tr><td>Claim</td><td>375 Canonical Active；26 Quarantined；当前 Claim/Relation 证据引用全部可解析</td><td><span class="badge b-done">可消费</span></td></tr>
+      <tr><td>Concept</td><td>267 个合并后 Concept；跨来源稳定身份仍受重编漂移影响</td><td><span class="badge b-pending">身份治理待完成</span></td></tr>
+      <tr><td>Relation</td><td>主状态存有 99 条 Canonical Relation，但当前消费门禁要求 audit v2.8，CLI 实测 consumable=0；旧审计边正确 fail-closed。Goal 1 的 15 条旧代理通过边只存在于隔离实验视图，不得与主状态混写</td><td><span class="badge b-blocked">在线 Graph 冻结</span></td></tr>
+      <tr><td>CompileState</td><td>01/02/03/05/09=COMPILED；11=SOURCE_INGESTED；CLI 实测 COMPLETED=0</td><td><span class="badge b-pending">状态合同未收敛</span></td></tr>
+      <tr><td>Context Pack</td><td>Unicode 中英文与符号 Seed Retriever、受管持久索引和 generation fail-closed 已实现；R0 是默认在线选择，R1 为 opt-in 实验。<code>buildContextPackWithDiagnostics()</code> 仍承载 legacy/R0/R1 多模式与最终渲染，职责偏重</td><td><span class="badge b-pending">局部读取已落地，选择/渲染仍待拆分</span></td></tr>
+      <tr><td>产品 Pilot</td><td>16 题同预算盲测：B=6.750，P=6.875，E-min=6.813；P 硬失败 1 次、B 2 次。H2 仍落后，差距不足以宣称产品价值成立</td><td><span class="badge b-pending">方向性证据</span></td></tr>
+      <tr><td>受控演化 E2E</td><td>3 领域、24 篇、36 题；T2 批准 16 条全量 SUPERSEDES，T3 批准 7 条 CONTRADICTS；16 Claim 已替代、10 Claim 进入争议；20 条逐边拒绝 Relation 从 Canonical 原子移入 Quarantine</td><td><span class="badge b-done">受控银标准经真实管道通过</span></td></tr>
+      <tr><td>G3-A / G3-B2</td><td>持久索引在 156 组 Pack 双跑中保持 payload 等价，本机平均 172.752→41.252ms；EPSI40 在 50 题保留全部 L40 evidence-span 并集，required-source recall 0.841→0.855，但 Evidence token +1.2%、records loaded 不变</td><td><span class="badge b-pending">安全发现成立，成本收益未成立</span></td></tr>
+      <tr><td>演化知识快照</td><td>历史隔离实验记录 512 Canonical Claim、149 条 Canonical Relation；其中部分边曾满足当时的 audit v1.7。当前生产门禁已是 v2.8，这些数字只能作为历史演化证据，不能宣称当前可消费；Quarantine 含 16 Claim / 638 Relation</td><td><span class="badge b-pending">审计迁移待补</span></td></tr>
+      <tr><td>跨领域回答 Pilot</td><td>15 题覆盖 affected/unaffected/synthesis/dispute/insufficient：B=8.000、P=7.800、E-min=7.733，均 0 硬失败；B 平均 6448 context tokens，P/E 平均 1416。评分为模型盲评，不是人工金标准</td><td><span class="badge b-new">方向性产品证据</span></td></tr>
+      <tr><td>知识演化事务</td><td>只接受当前审计版 SUPERSEDES/CONTRADICTS；批准边与拒绝边在同一快照保护事务中分别驱动状态变化和物理隔离，具备唯一归属、乐观并发和失败自动回滚</td><td><span class="badge b-done">implemented + unit/E2E tested</span></td></tr>
+      <tr><td>快照/回滚</td><td>真实创建 12 文件 gzip 快照 96KB；哈希验证、并发版本前置条件、自动回滚前备份和精确恢复已单测</td><td><span class="badge b-new">实现 + 部分实测</span></td></tr>
+      <tr><td>WikiModule</td><td>主工作区仍有 2 个 legacy canonical 模块并被支持合同 fail-closed。M2 的 6 个手工 Dev 模块证明纠错生命周期；H1-A 又在隔离的 24-Source Dev 状态上自动形成 86 个模块、496 个 assertion，全部闭合到 Canonical Claim 与 Evidence。输入逆序及移除一个 22-Claim 来源时，其余 83 个模块稳定；默认 2–8 assertion，并与在线原子注入容量对齐。尚未经过新盲域 Stage B</td><td><span class="badge b-new">自动形成工程通过 / 泛化待证</span></td></tr>
+    </tbody>
+  </table>
+  <div class="callout good">
+    <b>审批语义已闭环</b>
+    “拒绝演化”不再只是阻止 Claim 状态变化：被拒绝的 Relation 会携带原因进入物理 Quarantine，并从默认 Graph 消失。v14/v15 已实测 23 条批准边全部保留可审计记录、20 条拒绝边 Canonical=0 / Quarantine=20；机器误判不会继续污染 Agent。
+  </div>
+</section>
+
+<section id="target-read-path">
+  <div class="section-head"><div class="kicker">§02 / Target Read Path</div><div><h2>候选子图负责找路，可见子图负责节制地回答</h2></div></div>
+  <div class="diagram"><div class="mermaid">
+flowchart TD
+    Q["任务 + Scope + Time + 风险偏好"] --> IDX["持久化词法 / 别名 / 元数据索引"]
+    IDX --> SEED["少量可靠 Seed<br/>分数 + 通道 + 语言投影"]
+    SEED --> TRIGGER{"是否需要关系推理、冲突/版本、影响追踪<br/>或存在可观测覆盖缺口？"}
+    TRIGGER -->|"否"| GATE
+    TRIGGER -->|"是"| CG["候选 Graph<br/>仅当前审计边 · 有界节点/深度"]
+    CG --> SCORE["结构相关性与风险排序<br/>Seed 相关 · 多信号印证 · 关系类型/条件/来源"]
+    SCORE --> GATE{"可见门禁"}
+    GATE -->|"直接事实 / Seed 已完整"| UNIT["知识单元<br/>Claim + 条件 + Provenance + Evidence"]
+    GATE -->|"关系意图"| PATH["查询锚定的最小路径"]
+    GATE -->|"安全关系"| RISK["REQUIRES / CONTRADICTS / SUPERSEDES"]
+    GATE -->|"覆盖缺口"| GAP["第二次定向扩展"]
+    PATH --> UNIT
+    RISK --> UNIT
+    GAP --> UNIT
+    UNIT --> W["可选 WikiModule"]
+    W --> TOK["模型精确 token 核验<br/>按完整单元裁剪并保持闭包"]
+    TOK --> PACK["Context Pack + Selection Trace"]
+  </div></div>
+  <div class="grid three">
+    <div class="card"><div class="label">Always offline</div><h3>治理 Graph</h3><p>所有通过门禁的关系用于冲突、替代、影响传播、Lint、增量重编译和 Evolution；它不因在线消融失败而删除。</p></div>
+    <div class="card"><div class="label">Conditional internal</div><h3>候选导航 Graph</h3><p>在可靠 Seed 之后按任务条件触发局部结构排序，候选节点不直接成为 Prompt。旧审计、UNVERIFIED、悬空或越权边完全不可见。</p></div>
+    <div class="card"><div class="label">Conditional visible</div><h3>关系内容</h3><p>只展示任务锚定路径、改变答案安全性的关系或补齐可观测缺口的邻居；<code>RELATED_TO</code> 默认只作弱导航。</p></div>
+  </div>
+  <h3>从 CodeGraph 借鉴的真实机制</h3>
+  <p>CodeGraph 的 <code>codegraph_explore</code> 先用精确符号和全文检索定位入口，再建立深度/节点有界的候选子图，使用从 Seed 出发的 Random-Walk-with-Restart 做结构相关性排序，并通过 named/central/multi-term/relevance gate 选择少量文件；主干完整呈现，旁支签名化或窗口化，最终输出有绝对上限。借鉴的是“较宽候选、严格渲染、总任务成本 A/B”，不是其项目方宣称的具体节省比例。</p>
+  <div class="callout warn"><b>当前实现差距：</b><code>buildContextPackWithDiagnostics()</code> 仍是包含 legacy、R0、R1、Graph 扩展与渲染的单体入口；G0 已补齐过程 Trace 与最终闭包，G3-A 已接入受管局部索引，但 Graph trigger、候选排序和可见渲染尚未形成稳定的独立产品合同。R1 失败实现保持 opt-in，不能写成默认 Graph 已上线。</div>
+  <h3>Token 与规模边界</h3>
+  <ul>
+    <li>编译预算、候选预算、可见 Context 预算和任务总预算分别记录；12,000 只代表历史实验上限。</li>
+    <li>知识库扩大时，单次 Prompt 不线性扩大；可增加定向检索轮次或内部候选池，但最终 Context 维持有限档位。</li>
+    <li>G3-A 已将默认 CLI/Pilot 接入受管持久索引并在 generation 不匹配时 fail-closed 重建；仍需把关系邻接、来源级索引和 evidence interval 读取继续局部化。</li>
+    <li>启发式字符/token 估算只作预裁剪，最终发送前使用目标模型 tokenizer 或供应商 usage 校验并留安全余量。</li>
+  </ul>
+</section>
+
+<section id="review">
+  <div class="section-head"><div class="kicker">§03 / Historical Review Verdict</div><div><h2>历史审查裁决：保留追溯，不再充当当前快照</h2></div></div>
+  <table>
+    <thead><tr><th>审查项</th><th>核验证据</th><th>裁决</th><th>处理</th></tr></thead>
+    <tbody>
+      <tr><td>lint 只覆盖 src</td><td><code>npm run lint</code> 原为 <code>biome check src</code>；单独检查 scripts 确有 4 类问题</td><td><b>真实问题</b>。此前“全仓 lint”措辞不准确</td><td>lint/lint:fix 改为覆盖 <code>src scripts</code>；scripts 全部纳入 typecheck</td></tr>
+      <tr><td>当前没有可用关系图</td><td>早期审查时为 189 legacy Relation、0 audit version；后续历史快照一度恢复 99 条旧版本边</td><td><b>历史事实与当时恢复均正确</b></td><td>当前门禁为 v2.8，主状态这 99 条旧边正确 fail-closed，在线可消费数为 0</td></tr>
+      <tr><td>跨材料 Relation 未真实验证</td><td>审查时 publication 中 cross-material-detect=0，只有单元测试</td><td><b>历史未验证项真实</b></td><td>现有 3 条人工复核通过的 cross RELATED_TO；错误 SUPPORTS 已显式隔离</td></tr>
+    </tbody>
+  </table>
+  <p class="small"><code>scripts/debug-compile.ts</code> 当前在 Git 中是 untracked 文件，没有提交历史，无法仅凭仓库证明由谁创建。它已被标明为旧的单次 8192-token 容量故障复现器，不是生产编译入口。</p>
+</section>
+
+<section id="overview">
+  <div class="section-head"><div class="kicker">§03 / Architecture</div><div><h2>当前端到端架构</h2></div></div>
+  <div class="diagram"><div class="mermaid">
+flowchart TD
+    subgraph S1["① 材料接入：只做机械解析，不做语义判断"]
+        direction LR
+        F["外部知识文件"] --> REG["加载器注册表<br/>LoaderRegistry"]
+        REG --> MD["Markdown 加载器<br/>当前已实现"]
+        REG -. "后续按接口接入" .-> FUT["PDF / HTML / TeX<br/>未来适配器"]
+        MD --> ING["摄入器<br/>生成不可变 Source + SourceSpan"]
+    end
+
+    subgraph S2["② 有界编译：生成候选知识并分别审计"]
+        direction TB
+        ING --> RUN["编译状态机 + 全程遥测"]
+        RUN --> COMP["有界编译器<br/>命题 → Claim → Concept → 同材料 Relation"]
+        COMP --> CG["Claim 门禁<br/>结构 / 来源 / 五维忠实性"]
+        COMP --> RG["Relation 门禁<br/>端点 / 证据 / 条件 / 边级语义"]
+        CG --> PUB1["阶段一：原子发布本材料快照"]
+        RG --> PUB1
+    end
+
+    subgraph S3["③ 跨材料关系：本地发布成功后独立执行"]
+        direction LR
+        PUB1 --> RECALL["从旧 Canonical 知识中<br/>召回候选 Claim"]
+        RECALL --> CROSS["检测跨材料 Relation<br/>并再次做边级审计"]
+        CROSS --> PUB2["阶段二：原子替换<br/>本 Source 的跨材料边"]
+        PUB2 --> DONE["编译完成<br/>COMPLETED"]
+        PUB1 -- "阶段二失败；本地快照仍保留" --> PENDING["等待关系续跑<br/>RELATION_SCAN_PENDING"]
+    end
+
+    subgraph S4["④ 持久化与消费：发布时门禁一次，读取时再 fail-closed"]
+        direction LR
+        PUB1 --> STORE["Canonical 快照<br/>+ 物理 Quarantine"]
+        PUB2 --> STORE
+        STORE --> GRAPH["安全 Graph<br/>当前审计版本 + 端点闭合"]
+        GRAPH --> PACK["按任务生成 Context Pack<br/>携带证据并执行精确预算"]
+        PACK --> AGENT["Agent 消费知识并回答任务"]
+    end
+
+    classDef input fill:#eef5ff,stroke:#2f6fbd,color:#172033,stroke-width:1.5px;
+    classDef process fill:#ecf8f3,stroke:#188b64,color:#172033,stroke-width:1.5px;
+    classDef gate fill:#fff7e8,stroke:#9b6a1a,color:#172033,stroke-width:1.5px;
+    classDef store fill:#f3efff,stroke:#6656a8,color:#172033,stroke-width:1.5px;
+    classDef warning fill:#fdf5f6,stroke:#b2485a,color:#172033,stroke-width:1.5px;
+    class F,REG,MD,FUT input;
+    class ING,RUN,COMP,RECALL,CROSS process;
+    class CG,RG,GRAPH gate;
+    class PUB1,PUB2,STORE,DONE,PACK,AGENT store;
+    class PENDING warning;
+  </div></div>
+  <div class="grid three">
+    <div class="card"><div class="label">Write path</div><h3>先候选、后门禁</h3><p>Compiler 永远产出 CANDIDATE/UNRESOLVED。只有确定性结构校验和对应语义门禁通过后才进入 Canonical。</p></div>
+    <div class="card"><div class="label">Visibility</div><h3>原子快照</h3><p>每个 Source 的 canonical 与 quarantine 分开写；canonical rename 是可见性边界，重跑替换而非追加重复。</p></div>
+    <div class="card"><div class="label">Read path</div><h3>消费端再次 fail-closed</h3><p>Graph 只接收当前 Relation 审计版本、已确认条件状态、有效端点和非 UNRESOLVED 边。</p></div>
+  </div>
+</section>
+
+<section id="ingest">
+  <div class="section-head"><div class="kicker">§04 / Loader &amp; Ingest</div><div><h2>当前只摄入 Markdown，但格式能力已经解耦</h2></div></div>
+  <p><code>DocumentLoader</code> 只负责把外部格式机械转换为统一的 <code>LoadedDocument</code>：uri、sourceType、loaderVersion、sourceKey、parsedText 和可回溯 blocks。Loader 不得生成 Claim，也不得做语义判断。</p>
+  <div class="schema">DocumentLoader.canLoad(filePath)
+DocumentLoader.load(filePath) → LoadedDocument
+LoaderRegistry.resolve(filePath) → 唯一匹配的 adapter
+ingestLoadedDocument(...) → Source + SourceSpan[]</div>
+  <ul>
+    <li>默认 registry 目前只注册 <code>MarkdownLoader</code>；PDF/HTML 未伪装成“已支持”。</li>
+    <li>第三方 Loader 可注册到同一 registry；测试已用 fake PDF loader 验证适配边界。</li>
+    <li>Ingestor 对每个 block 验证 offset、范围和 <code>parsedText.slice(start,end)===text</code>，防止不可回溯 Loader 产物进入系统。</li>
+    <li><code>readings/back-to-basics/latex/</code> 中已确认存在多文件 TeX、样式、参考文献和图片，但按当前产品决策不摄入；未来 TeX adapter 必须在 Loader 边界实现 include/bibliography/asset 解析，不能把 TeX 逻辑塞进编译器。</li>
+    <li>Source 以正文 hash 建立不可变证据载体；同 Source 重跑不会删除原文或 Span。</li>
+  </ul>
+</section>
+
+<section id="compiler">
+  <div class="section-head"><div class="kicker">§05 / Bounded Compiler</div><div><h2>有边界、可观测、可恢复的编译状态机</h2></div></div>
+  <h3>状态与阶段分离</h3>
+  <div class="diagram"><div class="mermaid">
+stateDiagram-v2
+    state "已摄入原文<br/>SOURCE_INGESTED" as Ingested
+    state "编译运行中<br/>COMPILE_RUNNING" as Running
+    state "编译失败<br/>COMPILE_FAILED" as Failed
+    state "部分完成<br/>COMPILE_PARTIAL" as Partial
+    state "旧版已编译<br/>COMPILED" as Legacy
+    state "等待跨材料关系续跑<br/>RELATION_SCAN_PENDING" as RelationPending
+    state "全部完成<br/>COMPLETED" as Completed
+
+    [*] --> Ingested
+    Ingested --> Running: 首次编译
+    Running --> Completed: 阶段一 + 阶段二均成功
+
+    Running --> Failed: 本材料原子发布前失败
+    Failed --> Running: 保留 Source，直接重试
+
+    Running --> Partial: 主动跳过语义审计
+    Partial --> Running: 完整重试
+
+    Running --> RelationPending: 本材料已发布，但跨材料阶段失败
+    RelationPending --> Running: 只续跑跨材料关系阶段
+
+    Legacy --> Running: 旧产物完整重编
+    Completed --> Running: 显式执行 --recompile
+
+    note right of Running
+      Source 与编译状态分离：
+      失败或重跑都不删除原始证据
+    end note
+  </div></div>
+  <p>阶段日志覆盖 INGESTED、PROPOSITION_EXTRACTION、CLAIM_COMPILATION、CONCEPT_CONSOLIDATION、RELATION_DETECTION、LINT、PUBLISH 以及三个 CROSS_MATERIAL 阶段。状态事件是 append-only JSONL；hostname+pid 拒绝活跃并发，僵尸运行自动封存为失败。</p>
+  <h3>容量与重试策略</h3>
+  <table>
+    <thead><tr><th>机制</th><th>当前实现</th><th>保护的失败模式</th></tr></thead>
+    <tbody>
+      <tr><td>输入预算</td><td>混合中英文保守 token 估算；按预算分命题/Claim/Concept/Relation 批次</td><td>无边界 prompt</td></tr>
+      <tr><td>截断识别</td><td>finishReason=length；近 maxTokens 的非法 JSON；截断缓存提示</td><td>不完整 JSON 被误判为普通格式错误</td></tr>
+      <tr><td>缩批</td><td>二分重试，最大深度 8，最小单元仍截断则失败</td><td>固定 maxTokens 对大材料必败</td></tr>
+      <tr><td>格式重试</td><td>非截断非法 JSON 有界重试</td><td>偶发 schema/转义错误</td></tr>
+      <tr><td>可观测</td><td>原始输出、prompt hash、usage、finishReason、batchId、attempt、parse outcome</td><td>只能看到“解析失败”而无法定位</td></tr>
+    </tbody>
+  </table>
+  <p class="small">生产入口是 <code>compileSource()</code>。<code>scripts/debug-compile.ts</code> 故意保留旧的一次性 8192-token 调用，只用于复现历史容量故障。</p>
+</section>
+
+<section id="objects">
+  <div class="section-head"><div class="kicker">§06 / Contracts</div><div><h2>对象、状态轴与 provenance 语义</h2></div></div>
+  <h3>四个正交状态轴</h3>
+  <table>
+    <thead><tr><th>轴</th><th>枚举</th><th>回答的问题</th></tr></thead>
+    <tbody>
+      <tr><td>derivation</td><td>EXTRACTED / INFERRED / HUMAN_ASSERTED</td><td>结论怎么来的？</td></tr>
+      <tr><td>validity</td><td>SUPPORTED / DISPUTED / UNRESOLVED</td><td>当前是否被支持或存在争议？</td></tr>
+      <tr><td>lifecycle</td><td>ACTIVE / SUPERSEDED</td><td>是否仍是当前知识？</td></tr>
+      <tr><td>publicationState</td><td>CANDIDATE / CANONICAL / QUARANTINED</td><td>是否进入默认消费边界？</td></tr>
+    </tbody>
+  </table>
+  <h3>Claim 证据角色不是两个重复字段</h3>
+  <div class="grid">
+    <div class="card"><div class="label">provenanceRefs</div><h3>谁在何时提出</h3><p>回答出处和血缘，不自动证明内容成立。SourceSpan、AssertedRecord、ExperimentRecord 都可以作为 provenance。</p></div>
+    <div class="card"><div class="label">supportingEvidenceRefs</div><h3>凭什么可以支持</h3><p>回答该 Claim 为什么能进入 SUPPORTED。其合法类型由 claimKind 决定。</p></div>
+  </div>
+  <table>
+    <thead><tr><th>claimKind</th><th>允许的支持依据</th><th>硬规则</th></tr></thead>
+    <tbody>
+      <tr><td>FACT</td><td>SourceSpan 或 ExperimentRecord</td><td>AssertedRecord 只能在 provenance；用户说过不等于事实已证明</td></tr>
+      <tr><td>DECISION</td><td>同 Claim、同 PROJECT scope 的有效 AssertedRecord</td><td>必须有 assertedBy/assertedAt/authorityBasis/assertionText</td></tr>
+      <tr><td>PREFERENCE</td><td>同 Claim、同 PERSONAL scope 的有效 AssertedRecord</td><td>assertedBy 必须是该 PERSONAL 主体</td></tr>
+    </tbody>
+  </table>
+  <p>材料型 FACT 中，同一个 SourceSpan 同时是“原话出自哪里”和“原文是否支持 Claim”，因此两组引用相同可以是正确语义，不应仅凭数组相等判定设计失效。</p>
+</section>
+
+<section id="gates">
+  <div class="section-head"><div class="kicker">§07 / Semantic Gates</div><div><h2>Claim 与 Relation 必须分别被审计</h2></div></div>
+  <div class="diagram"><div class="mermaid">
+flowchart TB
+    subgraph CLAIM["Claim 审计通道：判断断言是否忠实于所引原文"]
+        direction LR
+        C["候选 Claim"] --> CS["确定性结构门禁<br/>字段 / provenance / 证据可解析"]
+        CS --> CA["五维忠实性审计<br/>支持 / 添加 / 推断 / 限定 / 引用"]
+        CA -- "全部通过" --> CC["Canonical Claim<br/>允许默认消费"]
+        CA -- "任一硬失败" --> CQ["Claim Quarantine<br/>保留原因，不进入默认消费"]
+    end
+
+    subgraph RELATION["Relation 审计通道：端点正确不代表边就正确"]
+        direction LR
+        R["候选 Relation"] --> RS["确定性结构门禁<br/>类型 / 端点 / 双端证据 / 条件状态"]
+        RS --> RA["边级语义审计<br/>关系存在 / 类型 / 方向 / 条件"]
+        RA -- "四项全部通过" --> RC["Canonical Relation<br/>写入当前 audit version"]
+        RA -- "任一项失败" --> RQ["Relation Quarantine<br/>错误边从 Graph 隔离"]
+    end
+
+    CC -. "Canonical Claim 才能作为合法端点" .-> RS
+
+    classDef candidate fill:#eef5ff,stroke:#2f6fbd,color:#172033,stroke-width:1.5px;
+    classDef gate fill:#fff7e8,stroke:#9b6a1a,color:#172033,stroke-width:1.5px;
+    classDef pass fill:#ecf8f3,stroke:#188b64,color:#172033,stroke-width:1.5px;
+    classDef reject fill:#fdf5f6,stroke:#b2485a,color:#172033,stroke-width:1.5px;
+    class C,R candidate;
+    class CS,CA,RS,RA gate;
+    class CC,RC pass;
+    class CQ,RQ reject;
+  </div></div>
+  <h3>Claim 忠实度门禁</h3>
+  <p>只回答 Claim 是否忠实于引用原文，不判断世界事实。维度为 support、addition、inference、limits、citation；固定 JSON schema、证据下标和 failedDimensions 一致性由程序验证。基础设施故障或连续非法 verdict 会让运行失败，不会伪装成“Claim 不忠实”。</p>
+  <h3>Relation 边级门禁</h3>
+  <p>端点分别正确不等于边正确。Relation 独立审计 relation、type、direction、conditions 四维；通过后只保留审计器明确选择的边级证据。v1.2 进一步要求被选择的证据必须同时覆盖 FROM 与 TO，拒绝用单侧引文和模型外部知识补全另一端。真实 E2E 仍发现模型把“欧拉公式成立”误判为支持“可由 Taylor 展开推出”，证明协议正确不等于模型每次执行正确；该边已由人工否决入口隔离。</p>
+  <p>由于真实人工抽检中的 <code>EQUIVALENT_UNDER</code> 为 4/4 假阳性，该类型现由结构门禁统一标记 <code>RELATION_EQUIVALENCE_REVIEW_REQUIRED</code> 并进入 quarantine；在独立人工复核或校准 critic 完成前，不能自动晋级。</p>
+  <ul>
+    <li><code>EQUIVALENT_UNDER</code> 必须有非空 conditions，且两端在相同对象域与范围内具有相同真值条件；一般定义与具体直觉、共享术语、循环条件均不能制造等价。</li>
+    <li><code>conditionStatus</code> 区分 PRESERVED、EXPLICIT_NONE、UNVERIFIED，避免空数组同时表示“确实无条件”和“没提取到”。</li>
+    <li>跳过语义审计时，Relation 只能保持 UNRESOLVED/UNVERIFIED，不能冒充 SUPPORTED。</li>
+    <li>Graph 只接受当前审计版本，旧边自动降级；审计规则升级不会静默沿用历史边。</li>
+  </ul>
+</section>
+
+<section id="relations">
+  <div class="section-head"><div class="kicker">§08 / Two-stage Relations</div><div><h2>单材料发布与跨材料扫描是两个可恢复原子阶段</h2></div></div>
+  <div class="diagram"><div class="mermaid">
+sequenceDiagram
+    autonumber
+    participant CLI as CLI 编排器
+    participant Local as 阶段一：本材料编译与审计
+    participant Store as 原子发布存储
+    participant Recall as 跨材料候选召回
+    participant Audit as Relation 边级审计
+
+    rect rgb(238, 248, 243)
+        Note over CLI,Store: 阶段一只负责让“本材料知识”安全可见
+        CLI->>Local: 编译一个 Source
+        Local->>Local: 生成并审计 Claim / Concept / 同材料 Relation
+        Local->>Store: 原子替换本 Source 的本地快照
+        Store-->>CLI: localPublished = true
+    end
+
+    rect rgb(238, 245, 255)
+        Note over CLI,Audit: 阶段二在本地发布成功后，独立建立跨材料连接
+        CLI->>Recall: 新 Claim / Concept 对比既有 Canonical Claim
+        Recall-->>CLI: 返回有上限的候选对及召回统计
+        CLI->>Audit: 分批检测并审计跨材料 Relation
+        Audit-->>CLI: 返回通过门禁的跨材料边
+    end
+
+    alt 召回、审计或发布任一步失败
+        Store-->>CLI: RELATION_SCAN_PENDING
+        Note over CLI,Store: 阶段一快照继续可用；之后只需续跑跨材料关系，不删除 Source
+    else 阶段二成功
+        CLI->>Store: 原子替换本 Source 拥有的跨材料边
+        Store-->>CLI: COMPLETED（两阶段均已发布）
+    end
+  </div></div>
+  <h3>召回边界</h3>
+  <ul>
+    <li>只比较“新 Source Claim”与召回的旧 Claim，不做全库 O(n²) 两两检测。</li>
+    <li>召回使用 Concept 名称/别名和文本 bigram 相似度；当前上限 40 个候选，不依赖 embedding。</li>
+    <li>Concept ID 不再包含 Source hash；同名、同领域且 boundary 兼容时复用既有 ID；同名不同边界会分叉。</li>
+    <li>跨材料 Relation 的 telemetry 使用独立 CROSS_MATERIAL_RELATION_DETECTION 阶段。</li>
+    <li>Source 重编导致旧 Claim ID 消失时，不再只依赖 Graph 读时过滤：发布层会把其他 Source 拥有、但指向旧 Claim 的 cross 边连同 <code>BROKEN_RELATION_ENDPOINT</code> 原因先写入 quarantine，再移出 canonical。</li>
+    <li>Claim 去重当前只覆盖规范化 statement+conditions 的确定性重复；跨来源语义改写/同义 Claim 尚不会自动合并。</li>
+  </ul>
+  <div class="callout good"><b>当前验证边界</b> 01→02→03 已真实执行。最终 backfill 每篇均报告 40 个召回候选；机器门禁通过 4 条，人工抽检否决 1 条错误 SUPPORTS，保留 3 条 Cauchy/完备性 RELATED_TO。可以宣称正边生成、拒绝和消费链路通过；不能宣称自动审计已达到无需人工抽检的生产精度。</div>
+</section>
+
+<section id="storage">
+  <div class="section-head"><div class="kicker">§09 / Atomic Storage</div><div><h2>Source 快照替换、物理隔离与审计日志</h2></div></div>
+  <table>
+    <thead><tr><th>数据</th><th>当前路径</th><th>写入语义</th><th>默认消费</th></tr></thead>
+    <tbody>
+      <tr><td>Source</td><td>sources/&lt;source&gt;.json</td><td>内容寻址、不可变</td><td>证据根</td></tr>
+      <tr><td>SourceSpan</td><td>sources/&lt;source&gt;.spans.jsonl</td><td>机械 offset；支持确定性 #chars 子区间</td><td>可解析证据</td></tr>
+      <tr><td>Canonical publication</td><td>publications/&lt;source&gt;.json</td><td>完整快照，临时文件+rename 原子替换</td><td>readAllClaims/Concepts/Relations</td></tr>
+      <tr><td>Quarantine publication</td><td>quarantine/publications/&lt;source&gt;.json</td><td>先于 canonical 写入；与默认链物理隔离</td><td>仅显式诊断 API</td></tr>
+      <tr><td>Compile state</td><td>runs/compile-state.jsonl</td><td>append-only 运行状态事件</td><td>恢复、并发保护、status</td></tr>
+      <tr><td>LLM telemetry</td><td>runs/llm-calls.jsonl + raw output</td><td>调用/解析/截断证据</td><td>工程审计</td></tr>
+      <tr><td>Audit cache/metrics</td><td>runs/audit-cache、relation-audit-cache、audit-metrics.jsonl</td><td>版本化判定缓存和指标</td><td>回归与诊断</td></tr>
+      <tr><td>AssertedRecord</td><td>assertions/asserted-records.jsonl</td><td>按 assertionId 读取最新记录</td><td>DECISION/PREFERENCE 门禁</td></tr>
+    </tbody>
+  </table>
+  <p>阶段 2 发布只替换当前 Source 拥有的 <code>cross-material-detect</code> 边，保留阶段 1 的 Claim、Concept、同材料边及既有隔离结果。重复 backfill 不追加同 ID 重复边。Source 快照替换前会按“即将生效的全局 Claim 集”协调外来 cross 边；失效边先写 quarantine 再从 canonical 删除，因此崩溃最多造成暂时少边，不会暴露悬空边。</p>
+  <p><code>relations quarantine &lt;relationId&gt; --reason ...</code> 是人工质量复核入口：保留原 Relation 和明确否决理由，再安全移出默认消费链。它不是修改模型历史输出，而是在模型判定之上记录可审计的人类处置。</p>
+</section>
+
+<section id="context">
+  <div class="section-head"><div class="kicker">§10 / Current Read Contract</div><div><h2>候选导航与 Agent 可见内容已解耦</h2></div></div>
+  <h3>已经实现的 Graph 可见性</h3>
+  <p><code>buildGraph()</code> 只接受 Canonical+Active Claim，并进一步要求 Relation：非 UNRESOLVED、conditionStatus 已确认、relationAuditVersion 等于当前版本、from/to 端点仍存在。双向 adjacency 仅用于导航，不改变关系方向语义。</p>
+  <p><code>RELATED_TO</code> 可进入内部图遍历，但固定为 <code>canSupportConclusion=false</code>，默认只作候选导航，不能进入 Agent 可见 Prompt。安全型边 <code>REQUIRES / CONTRADICTS / SUPERSEDES / EQUIVALENT_UNDER</code> 在邻接可靠 Seed 时可单锚触发；解释型边 <code>SUPPORTS / DERIVED_FROM</code> 必须同时满足关系意图、深度上限和“两端均由 Seed 独立命中”，避免用一个宽泛锚点拖入整片邻居。</p>
+  <p><b>v1.6 Seed 边界：</b>原实现按空格切查询，会把整句中文当成一个 token。现在 Seed Retriever 独立于 Graph，使用 Unicode 词、中文二元/三元片段、英文字符片段和 IDF 评分，并把 Claim 的精确 EvidenceSpan 文本纳入索引；<code>L²</code>、<code>L^2</code> 等排版差异做最小标识规范化。查询含未覆盖专名时，不允许只凭“不同/条件/什么”等普通片段启动 Graph。Graph 只能扩展可靠 Seed，不能制造 Seed。</p>
+  <p>该规则不含题号、材料名、数学关键词表或 Gold 映射。Goal 0/1 已把 Seed 候选、Graph 路径、relation gate、可见门禁理由、完整知识单元 token、drop reason、最终闭包和 Provider usage 写入 Trace。Goal 1 的 v2 单锚实验在 16 题中触发 2 题：P-graph 相比 P-seed 平均增加 810 Context tokens（3019→3829），模型代理评分同为 8/8、0 硬失败，因此否决单锚解释扩展；v3 两锚策略下 16/16 P-seed 与 P-graph Context hash 相同。该结果证明拒绝机制，不证明 Graph 正向产品收益。</p>
+  <table>
+    <thead><tr><th>Claim 状态</th><th>可检索</th><th>可支撑推理</th><th>Context Pack 区域</th></tr></thead>
+    <tbody>
+      <tr><td>CANONICAL + ACTIVE + SUPPORTED</td><td>是</td><td>是</td><td>正文</td></tr>
+      <tr><td>CANONICAL + ACTIVE + DISPUTED</td><td>是</td><td>否</td><td>conflictsAndConditions</td></tr>
+      <tr><td>CANONICAL + ACTIVE + UNRESOLVED</td><td>是</td><td>否</td><td>knownGaps</td></tr>
+      <tr><td>SUPERSEDED / CANDIDATE / QUARANTINED</td><td>否</td><td>否</td><td>排除</td></tr>
+    </tbody>
+  </table>
+  <h3>Scope 隔离</h3>
+  <ul>
+    <li>无 ScopeContext：只允许 GLOBAL，禁止默认全选。</li>
+    <li>有 principalId：GLOBAL + 该主体 PERSONAL。</li>
+    <li>有 projectId：再叠加该 PROJECT；其他个人和项目不可通过 Relation 泄漏。</li>
+  </ul>
+  <h3>预算与证据闭包</h3>
+  <p>Context Pack 内部先做 Map→Seed→Subgraph→Evidence，再以混合中英文启发式 token 估算器对 JSON 载荷复核。Goal 0 已将 Pilot 的二次顺序截断替换为知识单元级选择：<code>Claim + conditions + provenance + 全部 Evidence</code> 作为不可拆包原子，Relation 仅在两个端点 Claim 均可见时进入最终 Prompt。v4 Contract 在 2,500-token 压力集和 12,000-token Relation 可见集上分别验证 502 次 drop 后闭包，以及 18/18 原文/知识输入快照 hash、278 个 Claim→Evidence、130 个 Relation→Endpoint 链接；12 次 DeepSeek 在线调用的真实 usage、Prompt hash、latency 与 toolCalls 均通过复核。启发式单元 token 仍用于选择，Provider usage 用于总量校验，两者不得混写为同一精度。</p>
+  <div class="callout good"><b>统一术语：</b>后续新实验使用 <code>B</code>（强原文）、<code>R0</code>（Seed-only）、<code>R1</code>（Graph-aware ranking）和 <code>W</code>（R1+Wiki）。历史 <code>P-graph</code> 是追加型 Graph 消融，不代表目标 <code>R1</code>。</div>
+</section>
+
+<section id="calibration">
+  <div class="section-head"><div class="kicker">§11 / Meta-eval</div><div><h2>审计校准的正确口径</h2></div></div>
+  <p>历史运行在 100 条校准集上得到 TPR=0.98、TNR=0.98、kappa=0.96，但这组数据由模型生成，不能写成人工金标准或“生产 Claim 98% 正确”。审计只测忠实度，不测世界事实正确性。</p>
+  <table>
+    <thead><tr><th>报告字段</th><th>当前脚本行为</th><th>目的</th></tr></thead>
+    <tbody>
+      <tr><td>auditVersion / promptHash</td><td>绑定当前审计规则与 prompt 内容</td><td>识别 criterion drift</td></tr>
+      <tr><td>datasetHash</td><td>绑定具体测试集</td><td>不同数据集结果不可混报</td></tr>
+      <tr><td>datasetLabelStatus</td><td>默认 SYNTHETIC_UNVERIFIED；显式标记后才 HUMAN_REVIEWED</td><td>不把合成标签伪装成人工标签</td></tr>
+      <tr><td>TPR95 / TNR95</td><td>Wilson 95% 区间</td><td>避免只报单点比例</td></tr>
+      <tr><td>benchmarkRole</td><td>REGRESSION</td><td>校准集用于回归，不替代独立验收集</td></tr>
+      <tr><td>thinkingMode</td><td>disabled</td><td>减少不可控推理开销和输出截断</td></tr>
+    </tbody>
+  </table>
+  <div class="callout warn"><b>口径约束</b> 五篇数学材料和 16 题只作为诊断回归，不得驱动领域特判。下一轮主实验必须加入软件工程、AI 研究和产品/项目材料，验证同一机制在不同领域的泛化与持续纠错。</div>
+</section>
+
+<section id="verification">
+  <div class="section-head"><div class="kicker">§12 / Verification</div><div><h2>本版已经验证了什么</h2></div></div>
+  <table>
+    <thead><tr><th>验证层</th><th>结果</th><th>覆盖内容</th></tr></thead>
+    <tbody>
+      <tr><td>Biome</td><td>src + scripts 全通过</td><td>格式、import、推荐 lint 规则</td></tr>
+      <tr><td>TypeScript</td><td>主代码 + scripts 全通过</td><td>严格模式、noUnused、脚本合同</td></tr>
+      <tr><td>Vitest</td><td>34 files / 253 tests；H1-A 定向 3 files / 26 tests</td><td>新增任务盲 Wiki 形成、边界/尾部重排、无关模块稳定、完整证据预算、Seed 锚定召回、按排名原子注入与预算淘汰可观测性；原有编译、Graph、Evolution、存储和回答合同全量通过</td></tr>
+      <tr><td>Build</td><td>tsup ESM + DTS 成功</td><td>CLI 构建</td></tr>
+      <tr><td>Goal 0 Contract</td><td>PASS</td><td>6 题/18 Context 离线 Micro + 4 题/12 次 DeepSeek 在线 Micro；Context/Trace/Prompt hash、Seed/Graph/gate/drop、证据闭包、usage/latency/toolCalls 全量复核；只写 post-hoc，不覆盖 blind-first</td></tr>
+      <tr><td>G3-A 持久索引</td><td>PASS_ENGINEERING</td><td>156 组 Indexed/legacy Pack 最终 payload、时序集合和预算选择一致；全组本机平均延迟 172.752→41.252ms，约 4.19×</td></tr>
+      <tr><td>G3-B2 EPSI40</td><td>SAFE_SOURCE_DISCOVERY / COST_UNPROVEN</td><td>50 题 required-source recall 0.841→0.855，source 逐题 1 胜/0 负；exact-evidence 0 胜/0 负，50/50 保留 L40 evidence-span 并集；Evidence token +1.2%，records loaded 不变</td></tr>
+      <tr><td>Goal 4 SUPPORTS 路由</td><td>组件保留 / 系统预算失败</td><td>冻结回放与在线人工复核通过；配对反事实估算节省 23,247 tokens，但四 Source 实耗 321,850&gt;300,000。路由只减少审计候选，不拥有语义审计或发布权限</td></tr>
+      <tr><td>M1 Wiki+Correction</td><td>PASS_MECHANISM_ONLY</td><td>3/3 affected 重建、3/3 old refs 清除、3/3 replacement refs 生效、3/3 quarantine copy、3/3 unaffected 字节不变，故障注入完整回滚；12/12 最终答案引用闭包。单断言 Wiki 未证明平均质量提升，平台题仍漏 3/4 required facts</td></tr>
+      <tr><td>M2 完整 Wiki</td><td>PASS_DEVELOPMENT_MECHANISM</td><td>6 个多断言模块全部证据闭包；3/3 affected 局部重建且 3/3 control 字节稳定。固定 6000 estimated-token 下受影响题 Claim 覆盖 W2=11/11、R0=6/11；12/12 首轮答案引用闭包、0 修复，人工显式事实覆盖 W2=11/11、R0=7/11。五组持平、一组平台题提升；不证明自动形成或盲域产品收益</td></tr>
+      <tr><td>H1-A 自动形成</td><td>PASS_ENGINEERING_SAFE_BASELINE</td><td>512 input Claim 中 496 个当前可消费 Claim 全部进入 86 个证据闭包模块，16 个拒绝项均为不可消费历史记录；2–8 assertion、完整证据最大 244/4000 字符，输入逆序和移除一个 22-Claim Source 时 83 个无关模块稳定。已揭示 Dev 诊断 W-auto=11/17、R0=10/17 且 0 题退化；不是盲测结论</td></tr>
+      <tr><td>真实新版 ingest</td><td>01/02/03/05/09 已执行</td><td>五 Source 冻结为 375 Claim / 99 Relation / 2 WikiModule；完整性门禁均为 0 断证据、0 悬空端点、0 未审计 canonical Relation</td></tr>
+      <tr><td>检索离线回归</td><td>通过</td><td>required source recall 57.6%→78.8%，precision 70.4%→76.5%，空包 7→1；库外题保持空包</td></tr>
+      <tr><td>同预算盲测</td><td>16题×3组完成</td><td>B=6.750 / P=6.875 / E-min=6.813；P 首次略高于 B，但 H2 和条件题仍落后，不能外推到多领域产品价值</td></tr>
+      <tr><td>演化数据合同</td><td>PASS</td><td><code>wge-controlled-evolution-v1</code>：3 领域、24 篇独立 Markdown、36 题、144 个四时点 Gold、正文 13,550 字符；数量、路径、时间引用、替代目标和泄漏规则由脚本验证</td></tr>
+      <tr><td>演化在线 E2E</td><td>T0→T3 完成</td><td>v12 T2 逐边审 34 条（16 批准/18 拒绝）；v13 T3 逐边审 9 条（7 批准/2 拒绝）；v14 将两期共 20 条拒绝边原子隔离，最终知识版本 <code>kv:777629101bff0f39973bf06a</code></td></tr>
+      <tr><td>T3 冲突召回</td><td>3/3 文档覆盖</td><td>首轮通用 Relation 漏掉平台与研究冲突；领域无关的显式争议信号触发 contradiction-only fallback，平台/研究分别产出候选并经同一 v1.7 审计与逐边复核</td></tr>
+      <tr><td>36 题检索</td><td>完成</td><td>B recall 97.9% / precision 8.6%；P/E recall 87.2% / precision 30.4%；三组空上下文均为 0</td></tr>
+      <tr><td>跨领域匿名回答</td><td>15题×3组完成</td><td>B=8.000 / P=7.800 / E-min=7.733，均 0 hard failure。B 平均上下文 6448 tokens，P/E 1416；P 与 E-min 的 15 个 contextHash 全相同，但答案仅 5/15 完全相同，说明 temperature=0 仍不是确定性保证</td></tr>
+      <tr><td>知识快照</td><td>真实创建成功</td><td><code>ks-2026-07-24T07-19-09-980Z-632d1680c050</code>，12 个托管文件、96KB gzip、knowledgeVersion=<code>kv:c1ca37825394fd06055271f8</code></td></tr>
+      <tr><td>v1.5 验证周期在线消耗</td><td>所列 8 个诊断/有效 run 合计 684 calls / 937,452 tokens，另有 88 次审计缓存命中</td><td>完整重编触发逐 Claim/Relation 审计，且 prompt 变化导致缓存失效；不能表述成“3 篇=3 次调用”</td></tr>
+    </tbody>
+  </table>
+  <p class="small">v1.6 证明 Seed 失败是静态 Pilot 的主因之一；v1.7 把演化计划接入受保护事务；v1.8 建立三领域时序银标准；v1.9 首次跑通真实 T0→T3、逐边审批和匿名回答。当前分数来自同模型盲评，Gold 是合成银标准；它能用于方向决策和回归，不能替代人工评审、统计显著性或真实生产语料验证。</p>
+</section>
+
+<section id="gaps">
+  <div class="section-head"><div class="kicker">§13 / Open Gaps</div><div><h2>剩余真实缺口与非缺口</h2></div></div>
+  <table>
+    <thead><tr><th>项目</th><th>当前状态</th><th>严重度</th><th>进入下一阶段前的要求</th></tr></thead>
+    <tbody>
+      <tr><td>主知识状态</td><td>01/02/03/05/09 为 COMPILED，11 为 SOURCE_INGESTED；375 Claim、99 stored Relation、0 条满足当前 audit v2.8 消费门禁</td><td><span class="badge b-blocked">状态/审计迁移待处理</span></td><td>不得用历史 publication 或隔离实验数字声称当前 Graph 可用；迁移前保持 fail-closed</td></tr>
+      <tr><td>Seed Retriever</td><td>通用 Unicode/IDF/Evidence 检索已实现并通过四域单测；真实 Pilot source recall 78.8%</td><td><span class="badge b-done">基线完成</span></td><td>下一轮用独立多领域 Dev/Held-out 验证泛化</td></tr>
+      <tr><td>产品效果证据</td><td>三领域 15 题中 B 质量最高；P 以约 22% 的上下文量保留 97.5% 的 B 分数，0 硬失败。样本小且由同模型评分</td><td><span class="badge b-pending">压缩价值方向成立，质量胜出未成立</span></td><td>下一轮画固定实际 token 的质量/成本前沿，并加入人工抽检；不得把“接近 B”写成“优于 B”</td></tr>
+      <tr><td>Wiki 处理独立性</td><td>历史 E-min 与 P 无处理差异；M2 已用真实 W2/R0 输入差异证明多断言消费和局部纠错，开发集显式事实覆盖 W2=11/11、R0=7/11</td><td><span class="badge b-new">Dev 机制通过 / 泛化未证</span></td><td>H1 必须在看不到题目与 Gold 时自动形成模块，再用一次性盲集检验；不得继续手工选 Claim 冒充形成能力</td></tr>
+      <tr><td>Relation 自动审计精度</td><td>T2/T3 当前模型审计后仍需拒绝 20/43 条演化候选；逐边门禁能阻止状态误变，但自动强边精度尚不足无人值守</td><td><span class="badge b-blocked">P0 质量</span></td><td>把本轮 43 条人工决定冻结成回归集，建立独立 critic；验证前不取消逐边审批</td></tr>
+      <tr><td>Relation 审计版本迁移</td><td>隔离演化快照曾有 62 条 v1.4 历史边并按当时 v1.7 门禁读取；这不是当前主状态。当前主状态统一要求 v2.8，99 stored / 0 consumable</td><td><span class="badge b-pending">可用性缺口</span></td><td>若迁移主状态，必须走增量重审并生成新 publication；不得为追求边数绕过 v2.8</td></tr>
+      <tr><td>逐对象审计成本</td><td>v1.5 所列 8 个 run 使用 684 次在线调用、937,452 tokens；prompt 变化会使大量缓存失效</td><td><span class="badge b-pending">P1 成本</span></td><td>版本化增量复用与有界批量 critic，同时保持失败可定位、不可部分发布</td></tr>
+      <tr><td>重编非确定性</td><td>同一 01 从 162 canonical Claim 漂移到 134，Concept 从 55 级别扩张到 110；02 Claim 从 89 漂移到 57</td><td><span class="badge b-blocked">P0 可靠性</span></td><td>冻结提取协议、建立重编 diff 门禁和保留旧 publication 的人工/阈值审批；禁止把 COMPLETED 等同于语义稳定</td></tr>
+      <tr><td>跨来源 Concept 对齐</td><td>当前合并后 267 Concept；数量与身份仍受重编输出显著影响</td><td><span class="badge b-pending">P1</span></td><td>完善稳定身份、同名边界冲突与 Source 重编迁移策略</td></tr>
+      <tr><td>语义重复 Claim 合并</td><td>欧氏距离同义 Claim 曾被生成两条反向 EQUIVALENT_UNDER，现已人工隔离；自动合并未实现</td><td><span class="badge b-pending">P1</span></td><td>建立语义重复审核与证据合并，不用 Relation 长期承载重复 Claim</td></tr>
+      <tr><td>Graph 在线选择</td><td>有界 R1 结构排序与 Seed 替换已作为 opt-in 实验实现；8 题 Micro 中 Claim 数与 R0 相同、可见 Relation=0，但 R1 质量 7.50&lt;7.75、hard failure 2&gt;1、provider token 多 907、平均延迟慢约 18%</td><td><span class="badge b-blocked">Goal 2 REWORK</span></td><td>R0 保持默认在线路径；保留 Graph 治理/影响分析/候选 Trace。新 R1 必须计入 Claim+Evidence 闭包成本并证明替换边际效用，另立冻结合同后重测</td></tr>
+      <tr><td>WikiModule 形成</td><td>H1-A 已实现任务盲、单 Source/Markdown 结构的确定性自动形成；每条 assertion 证据闭包、模块预算、无关来源稳定及 Seed 锚定原子消费均通过 Dev 工程门。跨章节/跨来源自动合成仍未实现</td><td><span class="badge b-pending">工程基线通过 / H1 Blind 待跑</span></td><td>按三信封合同提交新 A1 Corpus；候选模块冻结后再给 A2 Questions，首轮回答冻结后才给 B Gold。不得用现有 Dev 题继续调参后宣称泛化</td></tr>
+      <tr><td>AssertedRecord 写入入口</td><td>类型、存储、门禁存在；无用户 CLI/API 和真实授权系统</td><td><span class="badge b-stub">Phase 2a</span></td><td>实现原子 Claim+Record 创建与权限适配</td></tr>
+      <tr><td>ExperimentRecord</td><td>KnowledgeRef 类型存在，尚无持久化 schema/解析门禁</td><td><span class="badge b-stub">Phase 2a</span></td><td>在实验事实通道启用前补齐</td></tr>
+      <tr><td>confidence</td><td>LLM 值未校准，下游当前不使用</td><td><span class="badge b-stub">低风险</span></td><td>使用前先校准或删除排序语义</td></tr>
+      <tr><td>Claim 审计版本持久化</td><td>缓存和 metrics 有版本；Claim 对象本身没有独立 auditVersion</td><td><span class="badge b-pending">P1</span></td><td>周期重审/规则升级前设计迁移策略</td></tr>
+      <tr><td>版本快照与可验证回滚</td><td>内容敏感 knowledgeVersion、gzip 快照、哈希校验、并发前置条件、自动备份和恢复已实现；真实创建成功，恢复和演化中途故障在临时项目验证</td><td><span class="badge b-new">Phase 2b-0 基线</span></td><td>当前多文件事务依靠写前快照补偿恢复，不是单指针原子切换；真实数据仍需故障演练</td></tr>
+      <tr><td>Correction 写入与影响传播</td><td>受审计边可通过 CLI/代码驱动跨 Source 生命周期更新；变更前快照、唯一归属、证据复核、Wiki 隔离、结构验证和失败自动恢复均已实现</td><td><span class="badge b-new">unit-tested</span></td><td>用多领域 T0/T1/T2 数据验证 Relation 召回与回答更新；再接入候选答案回归钩子</td></tr>
+      <tr><td>Relation 安全收敛</td><td>当前门禁为 v2.8，主状态 99 条旧边继续 fail-closed；Goal 4 的 SUPPORTS 路由仅做无发布权预筛，完整语义门禁未降低</td><td><span class="badge b-pending">成本缓解，主状态未迁移</span></td><td>人工 Gold 尚缺；不得把 AI post-hoc 标签写成人工精度，也不得降低版本门禁追求边数</td></tr>
+      <tr><td>Reasonix 权限隔离</td><td>历史运行有提示词级角色约束和全局 sandbox，但没有已验证的路径 allowlist、净化 worktree、候选 hash 后 Gold 解封及 evaluator 只读边界</td><td><span class="badge b-blocked">不能标为完全盲测</span></td><td>先实现项目级 Worker/Evaluator/Adjudicator 物理隔离；此前 Reasonix 只可执行 Dev/Post-hoc 工作</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="next">
+  <div class="section-head"><div class="kicker">§14 / E2E Acceptance</div><div><h2>历史重编证据与下一轮演化验收</h2></div></div>
+  <h3>v1.5 历史重编命令（保留追溯）</h3>
+  <div class="schema">npm run dev -- ingest mathtest-material/01-number-systems.md --recompile
+npm run dev -- ingest mathtest-material/02-spaces.md --recompile
+npm run dev -- ingest mathtest-material/03-sequences-limits.md --recompile
+npm run dev -- relations backfill source:01-number-systems-80440e2182e5653f --json
+npm run dev -- relations backfill source:02-spaces-33a33396a17d4175 --json
+npm run dev -- relations backfill source:03-sequences-limits-e7ea8bc17c2cc4ab --json</div>
+  <h3>执行结果</h3>
+  <p>v1.2 完整重编 run：01=<code>cbe59a0a-c740-4c8b-bd70-e61ce31abe1d</code>，02=<code>0e3b3093-f819-4989-835f-f43f1da0d91a</code>，03=<code>1c7f1cac-3461-4f46-ac6d-e3bc0f0484db</code>。最终 cross backfill run：01=<code>f856ccd7-381d-42b9-b165-0af345d83476</code>，02=<code>06a8cb99-b3bb-405d-8e33-e5649ede8a5c</code>，03=<code>74c1f631-a487-49ae-ba6a-c7d3c3f4243d</code>。</p>
+  <h3>九项验收结论</h3>
+  <ol>
+    <li><b>当时状态通过：</b>01、02、03 最终均为 COMPLETED；该轮 05、09、11 尚为 SOURCE_INGESTED。v1.6 已另行完成 05、09。</li>
+    <li><b>账平通过：</b>01 propositions 162=159 mapped+3 skipped，Claim 150=149+1，Lint 149=134 canonical+15 quarantine；02 为 117=117、58=58、58=57+1；03 为 80=77+3、77=77、77=70+7。Relation draft 的 valid/skipped 与 canonical/quarantine 同样闭合。</li>
+    <li><b>引用通过：</b>261 Claim 与 76 Relation 的当前证据均可解析；Relation 悬空端点=0。目标 Source 重编造成的外来悬空边已有回归测试和真实修复。</li>
+    <li><b>边级结构门禁通过：</b>76/76 可消费 Relation 为 v1.2，conditionStatus 均非 UNVERIFIED；双端证据覆盖为硬门禁。</li>
+    <li><b>条件自动质量未通过：</b>人工复核否决全部 4 条 EQUIVALENT_UNDER，包括循环条件和“无”占位；当前 canonical EQUIVALENT_UNDER=0。</li>
+    <li><b>跨材料编排通过：</b>最终每篇明确报告 40 个召回候选；机器通过 4 条，人工保留 3 条 RELATED_TO、隔离 1 条错误 SUPPORTS，可区分“执行后无边”与“未执行”。</li>
+    <li><b>原子性部分通过：</b>发布前失败保留旧 publication、跨 Source 端点失效先隔离后删除已有真实/单元覆盖；发布后故障→RELATION_SCAN_PENDING 仍未做生产环境故障注入。</li>
+    <li><b>消费通过：</b>真实查询返回 15 Claims / 14 Relations，并展示全部 3 条 cross RELATED_TO；这些弱边的 <code>canSupportConclusion=false</code>。</li>
+    <li><b>质量抽检未完全通过：</b>跨边 4 抽 1 假阳性，EQUIVALENT_UNDER 4 抽 4 假阳性；人工隔离机制有效，但自动 Relation 语义精度尚未达到无人复核发布标准。</li>
+  </ol>
+  <h3>v1.9 已完成：隔离运行多领域 T0→T1→T2/T3</h3>
+  <ol>
+    <li><b>T2 纠正：</b>6/6 文档产生演化覆盖；34 候选逐边批准 16、拒绝 18；只允许 <code>TOTAL_TO_CLAIM</code> 全局淘汰，16 条旧 Claim 进入 SUPERSEDED。</li>
+    <li><b>T3 冲突：</b>通用检测首次仅覆盖 1/3；加入领域无关 contradiction fallback 后覆盖 3/3。9 候选批准 7、拒绝 2，10 条端点 Claim 进入 DISPUTED。</li>
+    <li><b>拒绝闭环：</b>发现“拒绝只阻止演化、错误边仍可消费”的 P0 后，事务升级为批准与拒绝同批原子处理；v14 实测 20 条历史拒绝边全部退出 Canonical 并保留理由。</li>
+    <li><b>检索验证：</b>36 题三组完成；B 高召回高噪声，P/E 低噪声但漏 6 个 required-document hit，0 空上下文。</li>
+    <li><b>回答验证：</b>按三领域×五题型冻结 15 题，生成 45 份匿名答案并盲评。争议题、证据不足题三组均满分且 0 硬失败；主要损失在 P/E 的 unaffected 召回和 affected 条件完整性。</li>
+  </ol>
+  <h3>v3.3 新起点：H1-A 自动形成通过，进入三信封盲域验证（2026-08-12）</h3>
+  <ol>
+    <li><b>历史门禁保持：</b>G0/G1 的 Trace、闭包和边审计继续作为回归；G2 的失败 R1 继续 opt-in；G3-A 持久索引继续作为读取基线。</li>
+    <li><b>Goal 4 结清：</b>SUPPORTS 预审路由作为无发布权的成本缓解保留；四 Source 321,850-token 全系统预算失败独立保留，不用组件相对节省冒充系统通过。</li>
+    <li><b>M1 结清：</b>Wiki assertion 证据闭包、stableAddress、纠错重建、旧副本隔离、无关模块稳定、故障回滚和真实 Context Pack 消费通过；单断言 Wiki 不构成完整知识模块。</li>
+    <li><b>M2 结清：</b>6 个多断言模块、3/3 局部纠错、稳定地址与无关断言保持、固定预算消费和 12/12 引用闭包通过。人工事实覆盖 W2=11/11、R0=7/11；只有平台题产生差异，故结论严格限定为 Dev 机制证据。</li>
+    <li><b>H1-A 结清：</b>任务盲形成器在 Dev 状态自动产出 86 模块/496 assertion；所有支持闭包、确定性、来源扰动稳定和预算门禁通过。Seed 锚定与按排名原子注入在 6 道已揭示题上得到 1 题 Claim 覆盖改善、0 题退化，只作开发信号。</li>
+    <li><b>当前 H1 Blind：</b>执行 A1 Corpus→A2 Questions→B Gold 三信封；形成器先只读 A1，模块 hash 冻结后才能答 A2，B/R0/W-auto 首轮目录 hash 冻结后才解封 B。已有 A/B/C/S200 和 Evolution 题永久只作 Dev/Regression。</li>
+    <li><b>长期 Pilot：</b>30 天、5+领域、100+真实任务、2+纠正周期，验证重复解释、旧错复发、跨材料完整性和总成本；这是产品价值门，不由离线对象数量替代。</li>
+  </ol>
+  <div class="callout warn"><b>当前决策：</b>Typed Graph 继续承担治理、影响分析和条件触发候选导航，R0 仍是默认在线检索。Wiki 不作为独立默认内容源：在线候选必须锚定可靠 Claim seed，并按排名原子占用同一预算。H1-A 只证明自动形成工程可用；下一结论必须来自新三信封盲集，任何读取题号、Gold 或人工 Claim bundle 的形成结果都直接失去盲测资格。</div>
+</section>
+</main>
+
+<footer>
+  WGEMemory4LLM Architecture Baseline v3.3 · 2026-08-12<br>
+  事实源：当前 src/ 与 scripts/、CLI status、主知识库五 Source publications、受控演化 lineage v12→v15、G0–G4 冻结报告，以及 M1/M2 的结构、回答和人工复核记录。本文明确区分 current implementation、target architecture、historical experiment、unit-tested、controlled-silver-E2E、model-judged 和 human-validated；M2 的一题 Dev 提升不冒充自动形成、盲域泛化或产品效果。
+</footer>
+</div>
+</body>
+</html>

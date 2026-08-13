@@ -1,0 +1,54 @@
+services:
+  wge-mcp:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: wikimemory:local
+    entrypoint: ["node", "dist/mcp.js"]
+    stdin_open: true
+    environment:
+      WGE_RUNTIME_ROOT: /data
+      WGE_MCP_CAPABILITIES: ${WGE_MCP_CAPABILITIES:-read}
+      WGE_MCP_PRINCIPAL_ID: ${WGE_MCP_PRINCIPAL_ID:-}
+      WGE_MCP_PROJECT_ROLES: ${WGE_MCP_PROJECT_ROLES:-}
+      WGE_PILOT_HASH_KEY: ${WGE_PILOT_HASH_KEY:-}
+      DEEPSEEK_API_KEY: ${DEEPSEEK_API_KEY:-}
+      DEEPSEEK_BASE_URL: ${DEEPSEEK_BASE_URL:-https://api.deepseek.com/v1}
+      WGE_MODEL: ${WGE_MODEL:-deepseek-v4-flash}
+      WGE_TEMPERATURE: ${WGE_TEMPERATURE:-0}
+    volumes:
+      - wge-runtime:/data
+
+  wge-worker:
+    image: wikimemory:local
+    build:
+      context: .
+      dockerfile: Dockerfile
+    entrypoint: ["node", "dist/worker.js"]
+    environment:
+      WGE_RUNTIME_ROOT: /data
+      DEEPSEEK_API_KEY: ${DEEPSEEK_API_KEY:-}
+      DEEPSEEK_BASE_URL: ${DEEPSEEK_BASE_URL:-https://api.deepseek.com/v1}
+      WGE_MODEL: ${WGE_MODEL:-deepseek-v4-flash}
+      WGE_TEMPERATURE: ${WGE_TEMPERATURE:-0}
+      WGE_WORKER_POLL_MS: ${WGE_WORKER_POLL_MS:-1000}
+    volumes:
+      - wge-runtime:/data
+
+  wge-cli:
+    image: wikimemory:local
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      WGE_RUNTIME_ROOT: /data
+      DEEPSEEK_API_KEY: ${DEEPSEEK_API_KEY:-}
+      DEEPSEEK_BASE_URL: ${DEEPSEEK_BASE_URL:-https://api.deepseek.com/v1}
+      WGE_MODEL: ${WGE_MODEL:-deepseek-v4-flash}
+      WGE_TEMPERATURE: ${WGE_TEMPERATURE:-0}
+    volumes:
+      - wge-runtime:/data
+    profiles: ["tools"]
+
+volumes:
+  wge-runtime:

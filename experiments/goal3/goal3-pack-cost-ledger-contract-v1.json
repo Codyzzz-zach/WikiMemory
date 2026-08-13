@@ -1,0 +1,121 @@
+{
+	"schemaVersion": "wge-goal3-pack-cost-ledger-contract/v1",
+	"status": "PREREGISTERED_BEFORE_MEASUREMENT",
+	"createdAt": "2026-08-10T00:00:00+08:00",
+	"purpose": "Measure where the frozen L40_STRONG and EPSI40 candidate paths spend storage-read and agent-visible payload cost, then permit exactly one mechanism-level optimization only when the baseline exposes mechanically provable redundancy.",
+	"interpretation": "This is a post-hoc Dev/Regression cost experiment over already revealed Batch C and Batch B questions. It does not establish answer quality or blind product value. It may freeze a cheaper, evidence-preserving input for Goal 3C.",
+	"causalQuestion": "For the exact 100 frozen arm rows already produced by the official EPSI run, which layer dominates cost, and can one general mechanism reduce that layer without changing candidate identity, source identity, evidence identity, scope, temporal state or answer semantics?",
+	"frozenInputs": {
+		"epsiFirstReport": {
+			"path": "experiments/goal3/evidence-preserving-source-insertion-runs/evidence-preserving-source-insertion-v1/report.json",
+			"sha256": "92acf19a2a0870c2bb577ccefcdf7455422612e0390dae56f8edde3c434e8086",
+			"rowCount": 100,
+			"questionCount": 50
+		},
+		"epsiCorrectedAggregate": {
+			"path": "experiments/goal3/epsi-aggregate-rescore-runs/epsi-aggregate-rescore-v1/report.json",
+			"sha256": "c37035a755be76c09d281688be0f1ec100e5fa983eed57edd1a1dbe1149feac9"
+		},
+		"s50IndexPointer": {
+			"path": "experiments/goal3/pack-runs/pack-v5/indexes/S50/current.json",
+			"sha256": "9fe5c5d1fb5d23f886f5fdacbbcc7b12bb3874841bcb73f0bf9fa2ee638197fa",
+			"indexVersion": "f120407a3e0cc90eb265f4392bcfae19c7e68dc752e760db7d77e023d093695d"
+		},
+		"persistentIndexImplementation": {
+			"path": "src/retrieval/persistent-index.ts",
+			"sha256": "97e311dfbe3d918e224381783a32f8eb3bd56c7c5dd61f19644d8db48508819a"
+		},
+		"knowledgeTypes": {
+			"path": "src/types/index.ts",
+			"sha256": "eed53c5c82ae68a28ca25f3a77ff7a30beb4e091d756c2ce0c79e32ae7069735"
+		}
+	},
+	"frozenPopulation": {
+		"arms": ["L40_STRONG", "EPSI40"],
+		"datasets": {
+			"batchC": 18,
+			"batchB": 32
+		},
+		"questionCount": 50,
+		"rowCount": 100,
+		"candidateBudgetPerRow": 40,
+		"candidateSetsMustComeFromFirstReport": true,
+		"rerunRetrieval": false
+	},
+	"measurementUnits": {
+		"utf8Bytes": "Exact Buffer.byteLength(value, utf8).",
+		"characters": "Exact JavaScript Unicode code-point count.",
+		"estimatedTokens": "Existing deterministic repository estimator: contiguous ASCII bytes/characters divided by four and rounded up; each non-ASCII code point counts as one. This is a cross-arm engineering estimate, not provider billing truth.",
+		"providerUsage": "NOT_MEASURED_NO_MODEL_CALL. Provider prompt token usage is intentionally not purchased until an offline candidate passes."
+	},
+	"costLayers": [
+		{
+			"id": "CLAIM_STATEMENT",
+			"definition": "Candidate claimId, statement and retrieval aliases required to identify and communicate the selected claims."
+		},
+		{
+			"id": "CONDITIONS_PROVENANCE",
+			"definition": "Conditions, provenance/supporting references, scope, validity, lifecycle and time fields needed to avoid presenting a conditional or scoped claim as unconditional global truth."
+		},
+		{
+			"id": "EVIDENCE_RAW_INTERVALS",
+			"definition": "Unique candidate evidenceSpanIds rendered independently with source, base block and character interval identity."
+		},
+		{
+			"id": "EVIDENCE_MERGED_INTERVALS",
+			"definition": "The same exact interval union, grouped by persisted base span and merged only for overlap or strict adjacency. Whitespace-only gaps are not absorbed because that would expand the character union."
+		},
+		{
+			"id": "SOURCE_METADATA",
+			"definition": "Source IDs, immutable hashes, URIs, source types, loader versions and preserved metadata for the candidate sources. Parsed full source text is excluded."
+		},
+		{
+			"id": "INDEX_READ_AMPLIFICATION",
+			"definition": "Frozen lexical candidate records, posting shards, record shards, posting rows and record rows decoded. These are copied from the immutable first report and are not remeasured as latency."
+		},
+		{
+			"id": "FINAL_OFFLINE_PACK_PROJECTION",
+			"definition": "A deterministic offline serialization of candidate claims, conditions/provenance, source metadata and evidence. It is measured in RAW and MERGED_EVIDENCE variants. It is not claimed to be the production ContextPack contract."
+		}
+	],
+	"fixedAlgorithm": [
+		"Verify every frozen file hash before parsing semantic content.",
+		"Read candidateClaimIds, candidateSpanIds, candidateSourceIds and lexical diagnostics only from the immutable EPSI first report. Never rerun retrieval and never parse benchmark Gold.",
+		"Resolve the S50 workspace from the frozen index pointer and hydrate only the frozen candidate IDs from canonical Claim, SourceSpan and Source records. Missing or duplicate IDs fail closed.",
+		"Serialize all object keys and unordered arrays in stable order. Preserve the original candidate rank in a dedicated rank field.",
+		"Build raw evidence records from the unique frozen candidateSpanIds. Build merged records from the same source-bound character-interval union. Merge only overlap or strict adjacency; merging whitespace-only gaps, source IDs or persisted base spans is forbidden.",
+		"Prove interval-union equality between raw and merged evidence for every row. Text similarity is not evidence preservation.",
+		"Compute exact UTF-8 bytes, exact code-point characters and deterministic estimated tokens for each visible layer and both pack variants.",
+		"Copy index-read diagnostics from the frozen report. Do not use elapsed time as a verdict metric.",
+		"Aggregate by arm, dataset and combined population; preserve all 100 per-row records.",
+		"Choose at most one optimization family using the predeclared decision rules. No question-specific rule or domain-specific vocabulary is permitted."
+	],
+	"optimizationFamilies": {
+		"INTERVAL_AWARE_RENDERER": {
+			"eligibleWhen": "Raw-to-merged evidence removes at least 5% of combined RAW pack estimated tokens and every row preserves exact interval union.",
+			"pass": "Combined final pack estimated tokens improve by at least 5%; every row preserves candidate claim/source/span identities and exact interval union; no row is larger than RAW; deterministic rerun hashes match."
+		},
+		"SOURCE_LEVEL_PERSISTENT_ROUTING": {
+			"eligibleWhen": "Index records/rows dominate non-visible work and a source-level route can be evaluated while producing byte-identical candidate and visible-pack hashes.",
+			"pass": "Average candidate records or decoded rows improve by at least 10%; every row's candidate and visible-pack hashes are byte-identical; no frozen source/evidence metric changes."
+		},
+		"STRUCTURED_SEMANTIC_RENDERER": {
+			"eligibleWhen": "Claim statement plus conditions/provenance account for at least 40% of RAW visible-pack estimated tokens and at least 5% of total pack tokens are mechanically duplicated labels or repeated values.",
+			"pass": "Combined final pack estimated tokens improve by at least 5%; all semantic fields remain represented; candidate/evidence/source identity is unchanged; no row is larger than RAW."
+		}
+	},
+	"decisionRules": {
+		"GO_G3C": "Exactly one eligible optimization family is implemented and passes its complete family-specific gate, with all global integrity checks passing.",
+		"NARROW_G3C": "Baseline is valid and identifies a dominant or redundant layer, but the single permitted implementation does not reach its cost threshold while preserving all zero-loss guards. Preserve the result and carry only the measured mechanism hypothesis forward.",
+		"MEASURED_NO_ACTIONABLE_REDUNDANCY": "Baseline is valid but no predeclared optimization family is eligible. Do not invent a second mechanism on the revealed 50 questions.",
+		"REWORK": "Any frozen-hash mismatch, missing canonical object, candidate/source/span drift, interval-union loss, scope/temporal mutation, nondeterminism, Gold access, retrieval rerun, Relation/ContextPack/answer use, network/model call, canonical mutation, overwrite or post-hoc threshold change."
+	},
+	"stopRules": [
+		"One baseline measurement, one selected optimization family and at most one correction for a demonstrated implementation defect.",
+		"Do not tune by caseId, dataset, domain, language, question type, Gold field or observed answer score.",
+		"Do not treat estimated tokens as provider usage or answer-quality evidence.",
+		"Do not modify the immutable EPSI reports, S50 index, S50 workspace or canonical repository state.",
+		"Do not expose Gold, Stage B or answer reports to Reasonix. Reasonix may receive only a sanitized interface contract, synthetic fixture and non-Gold implementation diff.",
+		"Preserve the first cost-ledger run and hash. Any repair or later provider-token calibration uses a new contract and run id."
+	]
+}

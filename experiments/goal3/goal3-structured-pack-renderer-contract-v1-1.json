@@ -1,0 +1,12 @@
+{
+	"schemaVersion": "wge-goal3-structured-pack-renderer-contract/v1.1",
+	"status": "PREREGISTERED_IMPLEMENTATION_DEFECT_REPAIR",
+	"createdAt": "2026-08-10T11:25:00+08:00",
+	"supersedes": {
+		"path": "experiments/goal3/goal3-structured-pack-renderer-contract-v1.json",
+		"sha256": "f54f9858defe3aa2f528923366a5d801f86f23f0b00a851e2f67e7b38fa02c95"
+	},
+	"repair": "Hoist cachedEpsiRows before top-level row evaluation. No renderer, input, threshold, decision-rule or stop-rule change.",
+	"inheritedContract": "All frozen inputs, the 17-column schema, fixed algorithm, 5% combined reduction gate, no-row-growth rule, zero-loss checks, Reasonix boundary and stop rules are inherited unchanged from v1.",
+	"requiredRunId": "structured-pack-renderer-v1-1"
+}

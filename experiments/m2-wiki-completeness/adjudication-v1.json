@@ -1,0 +1,166 @@
+{
+  "schemaVersion": "wge-m2-wiki-completeness-adjudication/v1",
+  "milestone": "M2",
+  "adjudicatedAt": "2026-08-12",
+  "verdict": "PASS_DEVELOPMENT_MECHANISM",
+  "productUpliftClaim": "LIMITED_DEVELOPMENT_EVIDENCE_ONLY",
+  "authoritativeArtifacts": {
+    "contract": {
+      "path": "experiments/m2-wiki-completeness/contract-v1.json",
+      "sha256": "c3110170e659a7e3e965603a574f6bdacf014de9f8345d39e33bb11145361053"
+    },
+    "selection": {
+      "path": "experiments/m2-wiki-completeness/selection-v1.json",
+      "sha256": "f677335404e71329c0045e5fc31d1482ac6d402f060100a370388872fb995845"
+    },
+    "structuralReport": {
+      "path": "experiments/m2-wiki-completeness/runs/m2-structural-v2-posthoc/report.json",
+      "sha256": "0c53475ff00c2e5389331f38bfa50078ffde43d0e2523e6a173a4b178da95247"
+    },
+    "sealedAnswers": {
+      "path": "experiments/m2-wiki-completeness/answer-runs/m2-answer-v1/blind-answers.json",
+      "sha256": "7f90d82bfab52e396f147393a5a9d9f00baace4f010af02b5145a377a8be52e5"
+    },
+    "strictModelScore": {
+      "path": "experiments/m2-wiki-completeness/answer-runs/m2-answer-v1/result-strict-v1.json",
+      "sha256": "c45b3034a2268717e4495beb705c3d30d4ff095963ab25dfff4325b311056be0",
+      "authority": "DIAGNOSTIC_ONLY"
+    }
+  },
+  "gateDecision": {
+    "M2-G0": "PASS",
+    "M2-G1": "PASS",
+    "M2-G2": "PASS",
+    "M2-G3": "PASS_AFTER_POST_HOC_FIXTURE_PRUNING",
+    "M2-G4": "PASS"
+  },
+  "preservedFailures": [
+    {
+      "path": "experiments/m2-wiki-completeness/runs/m2-structural-v1/report.json",
+      "originalStatus": "PASS",
+      "adjudicatedStatus": "REJECT_FALSE_PASS",
+      "reason": "EV-PLAT-001 admitted all required supporting Claims but the final fixed-budget pass evicted the selected Wiki body. The G3 contract was strengthened to require the affected module itself to remain visible."
+    }
+  ],
+  "structuralEvidence": {
+    "modules": 6,
+    "affectedModules": 3,
+    "affectedModulesRebuilt": 3,
+    "quarantineCopies": 3,
+    "allConsumable": true,
+    "stableAddressesPreserved": true,
+    "onlyAffectedAssertionsReplaced": true,
+    "unaffectedModulesByteStable": true,
+    "allAssertionsHaveActiveClaimAndEvidence": true,
+    "allPacksWithinEstimatedTokenBudget": true,
+    "estimatedVisibleTokenBudget": 6000,
+    "affectedRequiredClaimCoverage": {
+      "W2": {
+        "present": 11,
+        "required": 11
+      },
+      "R0": {
+        "present": 6,
+        "required": 11
+      }
+    }
+  },
+  "answerEvidence": {
+    "questions": 6,
+    "pairedAnswers": 12,
+    "formatClosure": "12/12",
+    "citationClosure": "12/12",
+    "citationRepairCalls": 0,
+    "oldForbiddenFactRecurrence": 0,
+    "unaffectedHardRegressions": 0,
+    "diagnosticModelScore": {
+      "R0": 7.166666666666667,
+      "W2": 8
+    },
+    "manualExplicitAudit": {
+      "authority": "AUTHORITATIVE_FOR_M2_G4",
+      "allQuestionsRequiredFacts": {
+        "R0": "7/11",
+        "W2": "11/11"
+      },
+      "affectedQuestionsRequiredFacts": {
+        "R0": "3/7",
+        "W2": "7/7"
+      },
+      "unaffectedQuestionsRequiredFacts": {
+        "R0": "4/4",
+        "W2": "4/4"
+      },
+      "requiredConditions": {
+        "R0": "5/6",
+        "W2": "6/6"
+      },
+      "questions": [
+        {
+          "questionId": "EV-PLAT-001",
+          "category": "affected",
+          "R0": {
+            "requiredFacts": "0/4",
+            "requiredConditions": "1/2",
+            "forbiddenFactsUsed": []
+          },
+          "W2": {
+            "requiredFacts": "4/4",
+            "requiredConditions": "2/2",
+            "forbiddenFactsUsed": []
+          },
+          "causalTrace": "R0 retrieved only the broad test-passed Claim and unrelated build-manifest governance, while W2 exposed the frozen module plus its exact approval, coverage, vulnerability, rollback/monitor and 24/7 release supporting Claims. The answer improvement therefore matches the preregistered treatment."
+        },
+        {
+          "questionId": "EV-COMM-001",
+          "category": "affected",
+          "R0": "1/1 required facts; 1/1 conditions; no forbidden fact",
+          "W2": "1/1 required facts; 1/1 conditions; no forbidden fact"
+        },
+        {
+          "questionId": "EV-RES-001",
+          "category": "affected",
+          "R0": "2/2 required facts; 2/2 conditions; no forbidden fact",
+          "W2": "2/2 required facts; 2/2 conditions; no forbidden fact"
+        },
+        {
+          "questionId": "EV-PLAT-005",
+          "category": "unaffected",
+          "R0": "1/1 required facts; no forbidden fact",
+          "W2": "1/1 required facts; no forbidden fact"
+        },
+        {
+          "questionId": "EV-COMM-005",
+          "category": "unaffected",
+          "R0": "1/1 required facts; no forbidden fact",
+          "W2": "1/1 required facts; no forbidden fact"
+        },
+        {
+          "questionId": "EV-RES-005",
+          "category": "unaffected",
+          "R0": "2/2 required facts; 1/1 conditions; no forbidden fact",
+          "W2": "2/2 required facts; 1/1 conditions; no forbidden fact"
+        }
+      ]
+    }
+  },
+  "provenMechanisms": [
+    "A multi-assertion Wiki module can remain evidence-closed while one superseded assertion is replaced locally and unrelated assertions retain their identity.",
+    "A real SUPERSEDES transaction discovered and rebuilt all 3 affected modules, quarantined prior copies, preserved stable addresses and left all 3 control modules byte-stable.",
+    "Under the same 6000 estimated-token budget and retrieval base, W2 kept the selected module and all required supporting Claims visible for every affected question.",
+    "On the six-question development pilot, W2 converted its unique offline coverage advantage on EV-PLAT-001 into explicit answer coverage without harming the five paired controls."
+  ],
+  "notProven": [
+    "The modules were manually frozen from known development Claims; M2 does not prove automatic Wiki formation or module-boundary discovery.",
+    "Five of six question pairs tied. One development-question improvement is causal mechanism evidence, not a general product-effect estimate.",
+    "M2 does not prove held-out generalization, long-horizon memory value, large-corpus Graph value, or production cost efficiency.",
+    "M2 does not justify question-, domain- or Gold-specific production branches."
+  ],
+  "nextMilestone": {
+    "id": "H1",
+    "name": "盲持出 Wiki 形成与消费验证",
+    "primaryQuestion": "Can the system form evidence-closed multi-assertion Wiki modules without access to held-out questions or Gold, then preserve M2's correction and coverage benefits on unseen source clusters?",
+    "requiredSeparation": "Formation may read only frozen Stage A sources and canonical knowledge. Stage B questions and Gold remain sealed until modules, packs, answers and hashes are frozen.",
+    "stopRule": "Do not claim general product uplift or expand production defaults unless H1 reproduces faithful coverage gains without hard regressions and within the preregistered budget."
+  }
+}

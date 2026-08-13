@@ -34,6 +34,27 @@ describe("domain-neutral Seed retrieval", () => {
 		expect(result.diagnostics.queryFeatureCount).toBeGreaterThan(0);
 	});
 
+	it("traces matched candidates that lose the unchanged Top-K cutoff", () => {
+		const candidates = [
+			fixture("alpha-1", "Alpha compatibility requirement"),
+			fixture("alpha-2", "Alpha compatibility condition"),
+			fixture("alpha-3", "Alpha compatibility exception"),
+		];
+		const result = retrieveClaimSeeds(
+			candidates,
+			spansFor(candidates, "source:alpha"),
+			"Alpha compatibility",
+			1,
+		);
+		expect(result.candidates).toHaveLength(1);
+		expect(result.traceCandidates).toHaveLength(3);
+		expect(result.traceCandidates.filter((candidate) => candidate.selected)).toHaveLength(1);
+		expect(result.traceCandidates.filter((candidate) => !candidate.selected)).toEqual(
+			expect.arrayContaining([expect.objectContaining({ dropReason: "seed-limit" })]),
+		);
+		expect(result.diagnostics.matchedClaimCount).toBe(3);
+	});
+
 	it("uses evidence text when the compiled statement is a shorter paraphrase", () => {
 		const short = fixture("evidence", "升级应分阶段进行");
 		const evidence: SourceSpan = {

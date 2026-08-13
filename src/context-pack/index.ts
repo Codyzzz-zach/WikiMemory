@@ -16,7 +16,9 @@
 
 import { estimateTokens } from "../compiler/telemetry.js";
 import type { AppConfig } from "../config/types.js";
-import { buildGraph, walkGraph } from "../graph/index.js";
+import { decideGraphActivation } from "../graph/activation.js";
+import { buildGraph, inspectRelationGate, walkGraph } from "../graph/index.js";
+import { type R1NodeDecision, selectClaimsWithR1 } from "../graph/ranking.js";
 import {
 	computeKnowledgeVersion,
 	findSpansByIds,
@@ -33,6 +35,11 @@ import {
 	lexicalFeatures,
 	retrieveClaimSeeds,
 } from "../retrieval/index.js";
+import {
+	ensurePersistentSeedIndexReady,
+	loadPersistentKnowledgeNeighborhood,
+	retrieveClaimSeedsFromPersistentIndex,
+} from "../retrieval/persistent-index.js";
 import type {
 	Claim,
 	ContextPack,
@@ -40,6 +47,8 @@ import type {
 	ScopeContext,
 	SelectionLogEntry,
 } from "../types/index.js";
+import { inspectWikiModuleSupport } from "../wiki/materialization.js";
+import { retrieveWikiModuleSeeds } from "../wiki/retrieval.js";
 
 // ─── Map-first：检索前地图 ──────────────────────────────────────
 
@@ -63,6 +72,13 @@ export interface KnowledgeMap {
 }
 
 export interface ContextPackDiagnostics {
+	knowledgeAccess: {
+		mode: "LEGACY" | "INDEXED";
+		indexVersion: string | null;
+		canonicalStateGeneration: string | null;
+		lifecycle: "DIRECT" | "REUSED" | "BUILT" | "LEGACY_FALLBACK";
+		fallbackReason: string | null;
+	};
 	temporalScope: {
 		applied: boolean;
 		startMonth: string | null;
@@ -83,12 +99,67 @@ export interface ContextPackDiagnostics {
 			score: number;
 			channels: string[];
 			matchedFeatureCount: number;
+			selected: boolean;
+			dropReason: "seed-limit" | "alias-supplement-limit" | null;
 		}>;
 	};
 	graph: {
+		selection: {
+			mode: ContextSelectionMode;
+			lexicalSeedClaimIds: string[];
+			primarySelectedClaimIds: string[];
+			candidateNodeIds: string[];
+			candidateRelationIds: string[];
+			removedLexicalSeedIds: string[];
+			addedGraphClaimIds: string[];
+			decisions: R1NodeDecision[];
+		};
 		seedClaimIds: string[];
 		expandedClaimIds: string[];
 		expandedRelationIds: string[];
+		activation: ReturnType<typeof decideGraphActivation>;
+		traversal: Array<{
+			relationId: string;
+			fromNodeId: string;
+			toNodeId: string;
+			depth: number;
+			navigationDirection: "forward" | "reverse";
+			pathNodeIds: string[];
+			pathRelationIds: string[];
+			triggerReason: string;
+			type: Relation["type"];
+			conditions: string[];
+			conditionStatus: Relation["conditionStatus"];
+			relationAuditVersion: string | null;
+			structureScore: null;
+			structureScoreReason: "not-computed-in-r0-bfs";
+		}>;
+		relationGates: Array<{
+			relationId: string;
+			from: string;
+			to: string;
+			type: Relation["type"];
+			conditions: string[];
+			conditionStatus: Relation["conditionStatus"];
+			relationAuditVersion: string | null;
+			accepted: boolean;
+			reason: string;
+		}>;
+	};
+	wiki: {
+		supportGates: Array<{
+			moduleId: string;
+			accepted: boolean;
+			reasons: string[];
+		}>;
+		retrieval: Array<{
+			moduleId: string;
+			score: number;
+			matchedSeedClaimIds: string[];
+			matchedCoreFeatures: string[];
+			matchedAssertionFeatures: string[];
+			supportingClaimIds: string[];
+		}>;
 	};
 	budget: {
 		selectedClaimIds: string[];
@@ -99,6 +170,39 @@ export interface ContextPackDiagnostics {
 		finalEstimatedTokens: number;
 	};
 }
+
+export type ContextSelectionMode = "LEGACY_CONDITIONAL" | "R0" | "R1";
+
+export interface ContextPackBuildOptions {
+	/**
+	 * LEGACY_CONDITIONAL preserves the Goal 1 production path.
+	 * R0 disables online Graph use. R1 uses audited Graph structure to replace,
+	 * never append, primary lexical Claim slots.
+	 */
+	selectionMode?: ContextSelectionMode;
+	/** Explicit opt-in while G3-A parity validation is running; legacy remains the default. */
+	knowledgeAccess?: "LEGACY" | "INDEXED";
+	/** Defaults to config.indexesDir/retrieval-v1. */
+	indexRoot?: string;
+	/** Paired Wiki ablation for product experiments; MATERIALIZED is the production default. */
+	wikiMode?: "DISABLED" | "MATERIALIZED";
+}
+
+export interface ManagedContextPackBuildOptions
+	extends Omit<ContextPackBuildOptions, "knowledgeAccess"> {
+	/** Safe availability fallback: never reads stale index; uses live Canonical state instead. */
+	indexFailurePolicy?: "LEGACY_FALLBACK" | "FAIL_CLOSED";
+}
+
+const R1_EDGE_WEIGHTS = {
+	REQUIRES: 1,
+	DERIVED_FROM: 0.8,
+	SUPPORTS: 0.8,
+	CONTRADICTS: 1,
+	SUPERSEDES: 1,
+	EQUIVALENT_UNDER: 1,
+	RELATED_TO: 0.25,
+} as const;
 
 export interface ContextPackBuildResult {
 	pack: ContextPack;
@@ -159,7 +263,10 @@ export function buildKnowledgeMap(
 		}
 	}
 	const topics = [...wordFreq.entries()]
-		.sort(([, leftCount], [, rightCount]) => rightCount - leftCount)
+		.sort(
+			([leftFeature, leftCount], [rightFeature, rightCount]) =>
+				rightCount - leftCount || leftFeature.localeCompare(rightFeature),
+		)
 		.slice(0, 10)
 		.map(([feature]) => feature.slice(feature.indexOf(":") + 1));
 
@@ -220,13 +327,55 @@ export function buildContextPackWithDiagnostics(
 	budget = 12000,
 	maxDepth = 3,
 	scopeContext?: ScopeContext,
+	options: ContextPackBuildOptions = {},
 ): ContextPackBuildResult {
+	const selectionMode = options.selectionMode ?? "LEGACY_CONDITIONAL";
+	const knowledgeAccess = options.knowledgeAccess ?? "LEGACY";
 	// ── 1. 加载知识状态 ──
-	let allClaims = readAllClaims(config);
 	const allConcepts = readAllConcepts(config);
-	let allRelations = readAllRelations(config);
-	const allSpans = readAllSpans(config);
-	const allSources = readAllSources(config);
+	let allWikiModules = readAllWikiModules(config);
+	let allClaims: Claim[];
+	let loadedRelations: Relation[];
+	let allRelations: Relation[];
+	let allSpans: ReturnType<typeof readAllSpans>;
+	let allSources: ReturnType<typeof readAllSources>;
+	let knowledgeVersion: string;
+	let indexedRetrieval: ReturnType<typeof retrieveClaimSeedsFromPersistentIndex> | null = null;
+	if (knowledgeAccess === "INDEXED") {
+		const indexRoot = options.indexRoot ?? `${config.indexesDir}/retrieval-v1`;
+		indexedRetrieval = retrieveClaimSeedsFromPersistentIndex(indexRoot, task, 10, {
+			scopeContext,
+		});
+		const neighborhood = loadPersistentKnowledgeNeighborhood(
+			indexRoot,
+			indexedRetrieval.result.candidates.map((candidate) => candidate.claim),
+			{
+				scopeContext,
+				maxRelationDepth: Math.min(maxDepth, 4),
+				maxClaims: 120,
+				includeEvidenceBlockSiblings: true,
+				temporalQuery: task,
+			},
+		);
+		allClaims = uniqueClaims([...indexedRetrieval.matchedClaims, ...neighborhood.claims]);
+		loadedRelations = neighborhood.relations;
+		allRelations = loadedRelations;
+		allSpans = neighborhood.spans;
+		allSources = neighborhood.sources.map((source) => ({ ...source, parsedText: "" }));
+		knowledgeVersion = indexedRetrieval.diagnostics.knowledgeVersion;
+	} else {
+		allClaims = readAllClaims(config);
+		loadedRelations = readAllRelations(config);
+		allRelations = loadedRelations;
+		allSpans = readAllSpans(config);
+		allSources = readAllSources(config);
+		knowledgeVersion = computeKnowledgeVersion(
+			allClaims,
+			allConcepts,
+			allRelations,
+			allWikiModules,
+		);
+	}
 	const sourceSearchText = new Map(
 		allSources.map(
 			(source) =>
@@ -238,50 +387,161 @@ export function buildContextPackWithDiagnostics(
 				] as const,
 		),
 	);
-	const allWikiModules = readAllWikiModules(config);
-	const knowledgeVersion = computeKnowledgeVersion(
-		allClaims,
-		allConcepts,
-		allRelations,
-		allWikiModules,
-	);
 
 	// ── 1.5 v1.1：作用域过滤（Global Base + Scoped Overlay）──
 	// 缺少 ScopeContext 时按 Global-only 处理，不能"默认全选"
 	allClaims = scopeContext
 		? filterClaimsByScope(allClaims, scopeContext)
 		: allClaims.filter((claim) => claim.scope.type === "GLOBAL");
-	const temporalScope = filterClaimsByExplicitTemporalScope(
-		allClaims,
-		allSpans,
-		task,
-		sourceSearchText,
-	);
+	const temporalScope = indexedRetrieval
+		? { claims: allClaims, diagnostics: indexedRetrieval.diagnostics.temporalScope }
+		: filterClaimsByExplicitTemporalScope(allClaims, allSpans, task, sourceSearchText);
 	allClaims = temporalScope.claims;
 	// Relation 只保留两端 Claim 都在过滤后集合中的边，防止通过边泄露其他作用域。
 	const scopedClaimIds = new Set(allClaims.map((claim) => claim.id));
 	allRelations = allRelations.filter((relation) =>
 		[relation.from as string, relation.to as string].every((id) => scopedClaimIds.has(id)),
 	);
+	const wikiSupportGates = allWikiModules.map((module) => {
+		const decision = inspectWikiModuleSupport(module, allClaims, allSpans);
+		return {
+			moduleId: module.id,
+			accepted: decision.consumable,
+			reasons: decision.reasons,
+		};
+	});
+	const supportedWikiIds = new Set(
+		wikiSupportGates.filter((decision) => decision.accepted).map((decision) => decision.moduleId),
+	);
+	allWikiModules = allWikiModules.filter((module) => supportedWikiIds.has(module.id));
 
 	// ── 2. 构建全局地图（修断点 3：map-first）──
 	const knowledgeMap = buildKnowledgeMap(allClaims, allConcepts, task);
 
 	// ── 3. 构建 Graph ──
 	const graph = buildGraph(allClaims, allConcepts, allRelations);
+	const graphRelationIds = new Set(graph.relations.map((relation) => relation.id));
+	const scopedRelationIds = new Set(allRelations.map((relation) => relation.id));
+	const graphNodeIds = new Set([
+		...graph.claims.map((claim) => claim.id),
+		...allConcepts.map((concept) => concept.id),
+	]);
+	const relationGates = loadedRelations.map((relation) => {
+		const detail = {
+			relationId: relation.id,
+			from: relation.from as string,
+			to: relation.to as string,
+			type: relation.type,
+			conditions: relation.conditions,
+			conditionStatus: relation.conditionStatus,
+			relationAuditVersion: relation.relationAuditVersion,
+		};
+		if (!scopedRelationIds.has(relation.id)) {
+			return { ...detail, accepted: false, reason: "endpoint-out-of-scope" };
+		}
+		const decision = inspectRelationGate(relation, graphNodeIds);
+		return {
+			...detail,
+			accepted: graphRelationIds.has(relation.id),
+			reason: decision.reason,
+		};
+	});
 
 	// ── 4. 选择可靠种子；Graph 只能在 Seed 之后扩展 ──
-	const retrieval = selectSeeds(graph.claims, allSpans, task, sourceSearchText);
+	const graphClaimIds = new Set(graph.claims.map((claim) => claim.id));
+	const retrieval = indexedRetrieval
+		? {
+				...indexedRetrieval.result,
+				candidates: indexedRetrieval.result.candidates.filter((candidate) =>
+					graphClaimIds.has(candidate.claim.id),
+				),
+			}
+		: selectSeeds(graph.claims, allSpans, task, sourceSearchText);
 	const lexicalSeedResults = retrieval.candidates.map((candidate) => ({
 		claim: candidate.claim,
 		score: candidate.score,
 		source: `lexical:${candidate.channels.join("+")}`,
 	}));
+	const lexicalSeedIds = lexicalSeedResults.map((result) => result.claim.id);
+	const wikiRetrievalCandidates =
+		options.wikiMode === "DISABLED"
+			? []
+			: retrieveWikiModuleSeeds(allWikiModules, task, 2, {
+					anchorClaimIds: lexicalSeedIds,
+					requireAnchor: true,
+				});
+	const r1Selection =
+		selectionMode === "R1" && lexicalSeedIds.length > 0
+			? selectClaimsWithR1(
+					graph.claims.map((claim) => {
+						const lexicalIndex = lexicalSeedIds.indexOf(claim.id);
+						return {
+							id: claim.id,
+							lexicalScore: lexicalIndex >= 0 ? (lexicalSeedResults[lexicalIndex]?.score ?? 0) : 0,
+							lexicalRank: lexicalIndex >= 0 ? lexicalIndex + 1 : null,
+						};
+					}),
+					graph.relations.map((relation) => ({
+						id: relation.id,
+						from: relation.from as string,
+						to: relation.to as string,
+						type: relation.type,
+					})),
+					lexicalSeedIds,
+					{
+						protectedLexicalSeeds: 3,
+						maxCandidateNodes: 40,
+						maxDepth: Math.min(maxDepth, 2),
+						restartAlpha: 0.25,
+						iterations: 25,
+						selectedClaimLimit: lexicalSeedIds.length,
+						edgeWeights: R1_EDGE_WEIGHTS,
+					},
+				)
+			: null;
+	const graphPrimarySeedResults = r1Selection
+		? r1Selection.selectedClaimIds.flatMap((claimId) => {
+				const claim = graph.claims.find((candidate) => candidate.id === claimId);
+				const lexical = lexicalSeedResults.find((candidate) => candidate.claim.id === claimId);
+				const decision = r1Selection.decisions.find((candidate) => candidate.id === claimId);
+				if (!claim || !decision) return [];
+				return [
+					{
+						claim,
+						score: lexical?.score ?? decision.graphScore,
+						source: lexical?.source ?? `r1-graph:${decision.reason}`,
+					},
+				];
+			})
+		: lexicalSeedResults;
+	const wikiInjection = injectWikiSupportingClaims(
+		graphPrimarySeedResults,
+		wikiRetrievalCandidates,
+		graph.claims,
+		10,
+		3,
+	);
+	const primarySeedResults = wikiInjection.results;
 	// Claims extracted from the same source block are a bounded, evidence-local
 	// neighborhood. Completing that neighborhood is safer than guessing a semantic
 	// edge and prevents Top-K from splitting a list, table row group, or quoted clause.
-	const coEvidenceResults = selectCoEvidenceNeighbors(lexicalSeedResults, allClaims, allSpans, 8);
-	const seedResults = [...lexicalSeedResults, ...coEvidenceResults];
+	const lexicalCoEvidenceResults = selectCoEvidenceNeighbors(
+		lexicalSeedResults,
+		allClaims,
+		allSpans,
+		8,
+	);
+	// R1 may replace primary Claim slots, but it cannot manufacture extra
+	// co-evidence capacity. The R0 neighborhood count is the paired ceiling.
+	const coEvidenceResults = r1Selection
+		? selectCoEvidenceNeighbors(
+				primarySeedResults,
+				allClaims,
+				allSpans,
+				lexicalCoEvidenceResults.length,
+			)
+		: lexicalCoEvidenceResults;
+	const seedResults = [...primarySeedResults, ...coEvidenceResults];
 	const seedIds = seedResults.map((r) => r.claim.id);
 
 	const selectionLog: SelectionLogEntry[] = [
@@ -294,6 +554,22 @@ export function buildContextPackWithDiagnostics(
 				`evidenceIndex=${retrieval.diagnostics.usedEvidenceText}`,
 		},
 	];
+	for (const decision of wikiSupportGates.filter((item) => !item.accepted)) {
+		selectionLog.push({
+			selected: "",
+			reason: "",
+			dropped: decision.moduleId,
+			dropReason: `Wiki 支撑门禁: ${decision.reasons.join(",")}`,
+		});
+	}
+	for (const rejection of wikiInjection.rejections) {
+		selectionLog.push({
+			selected: "",
+			reason: "",
+			dropped: rejection.moduleId,
+			dropReason: `WikiModule 原子注入拒绝: ${rejection.reason}`,
+		});
+	}
 	for (const r of seedResults) {
 		selectionLog.push({
 			selected: r.claim.id,
@@ -311,7 +587,56 @@ export function buildContextPackWithDiagnostics(
 		"EQUIVALENT_UNDER",
 		"RELATED_TO",
 	]);
-	const subgraph = walkGraph(graph, seedIds, maxDepth, allowedTypes);
+	const effectiveDepth = selectionMode === "R0" ? 0 : maxDepth;
+	const subgraph = walkGraph(graph, seedIds, effectiveDepth, allowedTypes);
+	// Goal 2 isolates Graph's ranking value. R1 relations remain auditable internal
+	// paths; they do not consume Agent-visible Prompt slots in this experiment.
+	const activationRelations = selectionMode === "R1" ? [] : subgraph.relations;
+	const activation = decideGraphActivation({
+		task,
+		requestedDepth: effectiveDepth,
+		contextBudgetTokens: budget,
+		seedClaimCount: seedIds.length,
+		candidates: activationRelations.map((relation) => {
+			const traversal = subgraph.traversalTrace.find((step) => step.relationId === relation.id);
+			return {
+				relationId: relation.id,
+				type: relation.type,
+				depth: traversal?.depth ?? effectiveDepth,
+				touchesSeed: [relation.from as string, relation.to as string].some((id) =>
+					seedIds.includes(id),
+				),
+				bothEndpointsSeed: [relation.from as string, relation.to as string].every((id) =>
+					seedIds.includes(id),
+				),
+				conditions: relation.conditions,
+				estimatedMarginalTokens: estimateGraphUnitTokens(
+					relation,
+					subgraph.claims,
+					allSpans,
+					new Set(seedIds),
+				),
+			};
+		}),
+	});
+	const visibleRelationIds = new Set(activation.visibleRelationIds);
+	const visibleGraphRelations = subgraph.relations.filter((relation) =>
+		visibleRelationIds.has(relation.id),
+	);
+	const visibleGraphClaimIds = new Set([
+		...seedIds,
+		...visibleGraphRelations.flatMap((relation) => [
+			relation.from as string,
+			relation.to as string,
+		]),
+	]);
+	const visibleGraphClaims = subgraph.claims.filter((claim) => visibleGraphClaimIds.has(claim.id));
+	const visibleGraphDisputedClaims = subgraph.disputedClaims.filter((claim) =>
+		visibleGraphClaimIds.has(claim.id),
+	);
+	const visibleGraphUnresolvedClaims = subgraph.unresolvedClaims.filter((claim) =>
+		visibleGraphClaimIds.has(claim.id),
+	);
 
 	// ── 6. 预算控制（v1.1 修复偏离 4：全部 Pack 内容计入预算）──
 	// 预算分配：Claim+Relation 占 60%，Evidence 占 25%，冲突+条件+缺口+taskMap 占 15%
@@ -325,11 +650,20 @@ export function buildContextPackWithDiagnostics(
 	const selectedRelations: Relation[] = [];
 	const selectedWikiModules: typeof allWikiModules = [];
 	const selectedSpanIds = new Set<string>();
+	const wikiReservationChars = wikiRetrievalCandidates.reduce(
+		(total, candidate) =>
+			total +
+			candidate.module.coreQuestion.length +
+			candidate.module.currentUnderstanding.length +
+			candidate.module.disputes.join(";").length,
+		0,
+	);
+	const claimSelectionBudget = Math.max(0, claimRelationBudget - wikiReservationChars);
 
 	// 6a. 选 Claim（从 claimRelationBudget 扣）
 	for (const r of seedResults) {
 		const claimChars = r.claim.statement.length;
-		if (usedChars + claimChars > claimRelationBudget) {
+		if (usedChars + claimChars > claimSelectionBudget) {
 			selectionLog.push({
 				selected: "",
 				reason: "",
@@ -347,10 +681,23 @@ export function buildContextPackWithDiagnostics(
 
 	// 6b. Graph 扩展 Claim（去重，继续从 claimRelationBudget 扣）
 	const existingIds = new Set(selectedClaims.map((c) => c.id));
-	for (const claim of subgraph.claims) {
+	for (let index = 0; index < visibleGraphClaims.length; index++) {
+		const claim = visibleGraphClaims[index];
+		if (!claim) continue;
 		if (existingIds.has(claim.id)) continue;
 		const claimChars = claim.statement.length;
-		if (usedChars + claimChars > claimRelationBudget) break;
+		if (usedChars + claimChars > claimSelectionBudget) {
+			for (const remaining of visibleGraphClaims.slice(index)) {
+				if (existingIds.has(remaining.id)) continue;
+				selectionLog.push({
+					selected: "",
+					reason: "",
+					dropped: remaining.id,
+					dropReason: "预算截止(Graph Claim 排序后缀)",
+				});
+			}
+			break;
+		}
 		selectedClaims.push(claim);
 		existingIds.add(claim.id);
 		usedChars += claimChars;
@@ -361,17 +708,40 @@ export function buildContextPackWithDiagnostics(
 
 	// 6c. Relations（从 claimRelationBudget 剩余扣，每条约 100 chars）
 	let relUsedChars = 0;
-	for (const rel of subgraph.relations) {
+	for (let index = 0; index < visibleGraphRelations.length; index++) {
+		const rel = visibleGraphRelations[index];
+		if (!rel) continue;
 		const relChars = 100;
-		if (usedChars + relUsedChars + relChars > claimRelationBudget) break;
+		if (usedChars + relUsedChars + relChars > claimSelectionBudget) {
+			for (const remaining of visibleGraphRelations.slice(index)) {
+				selectionLog.push({
+					selected: "",
+					reason: "",
+					dropped: remaining.id,
+					dropReason: "预算截止(Relation 排序后缀)",
+				});
+			}
+			break;
+		}
 		selectedRelations.push(rel);
 		relUsedChars += relChars;
 	}
 	usedChars += relUsedChars;
 
-	// 6d. 只选引用了当前 Claim 的 WikiModule；Wiki 不能脱离 Canonical Claim 独立进入 Pack。
-	for (const module of allWikiModules) {
-		if (!module.claimRefs.some((claimId) => existingIds.has(claimId as string))) continue;
+	// 6d. Wiki 是整个物化单元：全部引用必须已进入 Pack，不能只带部分支撑却展示整段文本。
+	for (const { module } of wikiRetrievalCandidates) {
+		const missingSupportingClaimIds = module.claimRefs
+			.map(String)
+			.filter((claimId) => !existingIds.has(claimId));
+		if (missingSupportingClaimIds.length > 0) {
+			selectionLog.push({
+				selected: "",
+				reason: "",
+				dropped: module.id,
+				dropReason: `WikiModule 支撑 Claim 未全部进入候选集: ${missingSupportingClaimIds.join(",")}`,
+			});
+			continue;
+		}
 		const moduleChars =
 			module.coreQuestion.length +
 			module.currentUnderstanding.length +
@@ -417,7 +787,7 @@ export function buildContextPackWithDiagnostics(
 		return true;
 	};
 
-	for (const claim of subgraph.disputedClaims) {
+	for (const claim of visibleGraphDisputedClaims) {
 		if (!addOverhead(`⚠️ Claim ${claim.id} 存在争议: ${claim.statement.slice(0, 80)}`)) break;
 	}
 	for (const claim of selectedClaims) {
@@ -473,7 +843,7 @@ export function buildContextPackWithDiagnostics(
 	const knownGaps: string[] = [];
 	let gapsUsed = 0;
 	const remainingOverhead = overheadBudget - overheadUsed;
-	for (const claim of subgraph.unresolvedClaims) {
+	for (const claim of visibleGraphUnresolvedClaims) {
 		const gapText = `❓ Claim ${claim.id} 证据未决: ${claim.statement.slice(0, 60)}`;
 		if (gapsUsed + gapText.length > remainingOverhead) break;
 		knownGaps.push(gapText);
@@ -485,7 +855,7 @@ export function buildContextPackWithDiagnostics(
 		);
 	}
 	if (selectedRelations.length === 0) {
-		knownGaps.push("未找到关系——Graph 可能尚未建立跨材料边");
+		knownGaps.push("未选择可见关系——当前任务不需要关系路径，或没有通过门禁的可消费边");
 	}
 
 	// ── 10. 裁剪后的 taskMap（地图是检索前生成的，Pack 携带裁剪版）──
@@ -509,7 +879,7 @@ export function buildContextPackWithDiagnostics(
 		[relation.from as string, relation.to as string].every((id) => evidenceBackedClaimIds.has(id)),
 	);
 	const evidenceBackedWikiModules = selectedWikiModules.filter((module) =>
-		module.claimRefs.some((claimId) => evidenceBackedClaimIds.has(claimId as string)),
+		module.claimRefs.every((claimId) => evidenceBackedClaimIds.has(claimId as string)),
 	);
 	const pack: ContextPack = {
 		knowledgeVersion,
@@ -522,36 +892,112 @@ export function buildContextPackWithDiagnostics(
 		knownGaps,
 	};
 	const finalPack = enforceContextBudget(pack, budget);
+	const finalClaimIds = new Set(finalPack.subgraph.claims.map((claim) => claim.id));
+	const finalRelationIds = new Set(finalPack.subgraph.relations.map((relation) => relation.id));
+	const finalEvidenceIds = new Set(finalPack.evidenceSpans.map((span) => span.id));
+	const finalWikiModuleIds = new Set(finalPack.wikiModules.map((module) => module.id));
+	const explicitDrops = selectionLog
+		.filter((entry) => entry.dropped)
+		.map((entry) => ({
+			id: entry.dropped ?? "unknown",
+			reason: entry.dropReason ?? "pack-budget",
+		}));
+	const explicitDropIds = new Set(explicitDrops.map((entry) => entry.id));
+	const activationDrops = activation.decisions
+		.filter((decision) => !decision.visible)
+		.map((decision) => ({
+			id: decision.relationId,
+			reason: `graph-visible-gate:${decision.dropReason ?? "not-selected"}`,
+		}));
+	for (const drop of activationDrops) explicitDropIds.add(drop.id);
+	const inferredDrops = [
+		...[...new Set([...seedIds, ...visibleGraphClaims.map((claim) => claim.id)])]
+			.filter((id) => !finalClaimIds.has(id) && !explicitDropIds.has(id))
+			.map((id) => ({ id, reason: "pack-final-budget-or-evidence-closure" })),
+		...visibleGraphRelations
+			.map((relation) => relation.id)
+			.filter((id) => !finalRelationIds.has(id) && !explicitDropIds.has(id))
+			.map((id) => ({ id, reason: "pack-final-budget-or-endpoint-closure" })),
+		...[...selectedSpanIds]
+			.filter((id) => !finalEvidenceIds.has(id) && !explicitDropIds.has(id))
+			.map((id) => ({ id, reason: "pack-evidence-budget-or-closure" })),
+		...selectedWikiModules
+			.map((module) => module.id)
+			.filter((id) => !finalWikiModuleIds.has(id) && !explicitDropIds.has(id))
+			.map((id) => ({ id, reason: "pack-final-budget-or-evidence-closure" })),
+	];
 	return {
 		pack: finalPack,
 		diagnostics: {
+			knowledgeAccess: {
+				mode: knowledgeAccess,
+				indexVersion: indexedRetrieval?.diagnostics.indexVersion ?? null,
+				canonicalStateGeneration: indexedRetrieval?.diagnostics.canonicalStateGeneration ?? null,
+				lifecycle: "DIRECT",
+				fallbackReason: null,
+			},
 			temporalScope: temporalScope.diagnostics,
 			retrieval: {
 				...retrieval.diagnostics,
-				candidates: retrieval.candidates.map((candidate, index) => ({
-					claimId: candidate.claim.id,
-					rank: index + 1,
+				candidates: retrieval.traceCandidates.map((candidate) => ({
+					claimId: candidate.claimId,
+					rank: candidate.rank,
 					score: candidate.score,
 					channels: candidate.channels,
 					matchedFeatureCount: candidate.matchedFeatures.length,
+					selected: candidate.selected,
+					dropReason: candidate.dropReason,
 				})),
 			},
 			graph: {
+				selection: {
+					mode: selectionMode,
+					lexicalSeedClaimIds: lexicalSeedIds,
+					primarySelectedClaimIds: primarySeedResults.map((result) => result.claim.id),
+					candidateNodeIds: r1Selection?.candidateNodeIds ?? lexicalSeedIds,
+					candidateRelationIds: r1Selection?.candidateRelationIds ?? [],
+					removedLexicalSeedIds: r1Selection?.removedLexicalSeedIds ?? [],
+					addedGraphClaimIds: r1Selection?.addedGraphClaimIds ?? [],
+					decisions: r1Selection?.decisions ?? [],
+				},
 				seedClaimIds: seedIds,
 				expandedClaimIds: subgraph.claims.map((claim) => claim.id),
 				expandedRelationIds: subgraph.relations.map((relation) => relation.id),
+				activation,
+				traversal: subgraph.traversalTrace.flatMap((step) => {
+					const relation = subgraph.relations.find((item) => item.id === step.relationId);
+					if (!relation) return [];
+					return [
+						{
+							...step,
+							type: relation.type,
+							conditions: relation.conditions,
+							conditionStatus: relation.conditionStatus,
+							relationAuditVersion: relation.relationAuditVersion,
+							structureScore: null,
+							structureScoreReason: "not-computed-in-r0-bfs" as const,
+						},
+					];
+				}),
+				relationGates,
+			},
+			wiki: {
+				supportGates: wikiSupportGates,
+				retrieval: wikiRetrievalCandidates.map((candidate) => ({
+					moduleId: candidate.module.id,
+					score: candidate.score,
+					matchedSeedClaimIds: candidate.matchedSeedClaimIds,
+					matchedCoreFeatures: candidate.matchedCoreFeatures,
+					matchedAssertionFeatures: candidate.matchedAssertionFeatures,
+					supportingClaimIds: candidate.module.claimRefs.map(String),
+				})),
 			},
 			budget: {
 				selectedClaimIds: finalPack.subgraph.claims.map((claim) => claim.id),
 				selectedRelationIds: finalPack.subgraph.relations.map((relation) => relation.id),
 				selectedEvidenceSpanIds: finalPack.evidenceSpans.map((span) => span.id),
 				selectedWikiModuleIds: finalPack.wikiModules.map((module) => module.id),
-				dropped: selectionLog
-					.filter((entry) => entry.dropped)
-					.map((entry) => ({
-						id: entry.dropped ?? "unknown",
-						reason: entry.dropReason ?? "pack-budget",
-					})),
+				dropped: [...activationDrops, ...explicitDrops, ...inferredDrops],
 				finalEstimatedTokens: estimateTokens(JSON.stringify(finalPack)),
 			},
 		},
@@ -599,6 +1045,104 @@ function selectCoEvidenceNeighbors(
 		.slice(0, limit);
 }
 
+function uniqueClaims(claims: Claim[]): Claim[] {
+	const byId = new Map<string, Claim>();
+	for (const claim of claims) byId.set(claim.id, claim);
+	return [...byId.values()];
+}
+
+/**
+ * Wiki does not append an unbounded second context stream. Its supporting Claims occupy the same
+ * fixed primary slots and replace only weak, unprotected lexical candidates.
+ */
+export function injectWikiSupportingClaims(
+	base: Array<{ claim: Claim; score: number; source: string }>,
+	candidates: ReturnType<typeof retrieveWikiModuleSeeds>,
+	claims: Claim[],
+	limit: number,
+	protectedLexicalCount: number,
+): {
+	results: Array<{ claim: Claim; score: number; source: string }>;
+	rejections: Array<{ moduleId: string; reason: string }>;
+} {
+	const result = base.slice(0, limit);
+	const rejections: Array<{ moduleId: string; reason: string }> = [];
+	const claimById = new Map(claims.map((claim) => [claim.id, claim]));
+	const protectedIds = new Set(
+		base.slice(0, protectedLexicalCount).map((candidate) => candidate.claim.id),
+	);
+	const wikiInsertedIds = new Set<string>();
+	for (const candidate of candidates) {
+		const refs = candidate.module.claimRefs.map(String);
+		const missingClaims = refs.filter((ref) => !claimById.has(ref));
+		if (missingClaims.length > 0) {
+			rejections.push({
+				moduleId: candidate.module.id,
+				reason: `missing-claims:${missingClaims.join(",")}`,
+			});
+			continue;
+		}
+		const missingRefs = refs.filter((ref) => !result.some((entry) => entry.claim.id === ref));
+		const removableIndexes = result.flatMap((entry, index) =>
+			!protectedIds.has(entry.claim.id) && !wikiInsertedIds.has(entry.claim.id) ? [index] : [],
+		);
+		const freeSlots = Math.max(0, limit - result.length);
+		if (missingRefs.length > freeSlots + removableIndexes.length) {
+			rejections.push({
+				moduleId: candidate.module.id,
+				reason: `insufficient-primary-slots:required=${missingRefs.length},available=${freeSlots + removableIndexes.length}`,
+			});
+			continue;
+		}
+		for (const ref of refs) {
+			if (result.some((entry) => entry.claim.id === ref)) continue;
+			const claim = claimById.get(ref);
+			if (!claim) throw new Error(`Wiki 原子注入前置检查失效: ${candidate.module.id} -> ${ref}`);
+			if (result.length >= limit) {
+				let removableIndex = -1;
+				for (let index = result.length - 1; index >= 0; index -= 1) {
+					const entry = result[index];
+					if (entry && !protectedIds.has(entry.claim.id) && !wikiInsertedIds.has(entry.claim.id)) {
+						removableIndex = index;
+						break;
+					}
+				}
+				if (removableIndex < 0) continue;
+				result.splice(removableIndex, 1);
+			}
+			result.push({ claim, score: candidate.score, source: `wiki:${candidate.module.id}` });
+			wikiInsertedIds.add(claim.id);
+		}
+		// Once a higher-ranked module is accepted, its complete closure owns those
+		// slots. A later module may share them, but may not evict an assertion that
+		// happened to originate from the base lexical result rather than this loop.
+		for (const ref of refs) wikiInsertedIds.add(ref);
+	}
+	return { results: result, rejections };
+}
+
+/** Estimate the closed marginal unit, not merely the Relation label. */
+function estimateGraphUnitTokens(
+	relation: Relation,
+	claims: Claim[],
+	spans: ReturnType<typeof readAllSpans>,
+	seedClaimIds: ReadonlySet<string>,
+): number {
+	const endpointIds = [relation.from as string, relation.to as string];
+	const addedClaims = claims.filter(
+		(claim) => endpointIds.includes(claim.id) && !seedClaimIds.has(claim.id),
+	);
+	const evidenceIds = new Set([
+		...relation.evidenceSpanIds,
+		...addedClaims.flatMap((claim) => claim.evidenceSpanIds),
+	]);
+	const evidence = [...evidenceIds].flatMap((spanId) => {
+		const span = resolveSpanById(spans, spanId);
+		return span ? [{ id: span.id, text: span.text }] : [];
+	});
+	return Math.max(1, estimateTokens(JSON.stringify({ relation, addedClaims, evidence })));
+}
+
 /** Backwards-compatible production API; diagnostics stay outside the Agent payload. */
 export function buildContextPack(
 	config: AppConfig,
@@ -606,25 +1150,105 @@ export function buildContextPack(
 	budget = 12000,
 	maxDepth = 3,
 	scopeContext?: ScopeContext,
+	options: ContextPackBuildOptions = {},
 ): ContextPack {
-	return buildContextPackWithDiagnostics(config, task, budget, maxDepth, scopeContext).pack;
+	return buildContextPackWithDiagnostics(config, task, budget, maxDepth, scopeContext, options)
+		.pack;
+}
+
+/**
+ * Production orchestration for the persistent read path.
+ *
+ * A valid generation-matched index is reused in O(1) metadata reads. Missing,
+ * stale or old-schema indexes are synchronously rebuilt. If rebuilding fails,
+ * callers may explicitly use live Canonical legacy reads; stale index data is
+ * never consumed and the fallback is recorded in diagnostics.
+ */
+export function buildManagedContextPackWithDiagnostics(
+	config: AppConfig,
+	task: string,
+	budget = 12000,
+	maxDepth = 3,
+	scopeContext?: ScopeContext,
+	options: ManagedContextPackBuildOptions = {},
+): ContextPackBuildResult {
+	const indexRoot = options.indexRoot ?? `${config.indexesDir}/retrieval-v1`;
+	const failurePolicy = options.indexFailurePolicy ?? "LEGACY_FALLBACK";
+	try {
+		const ready = ensurePersistentSeedIndexReady(config, indexRoot);
+		const result = buildContextPackWithDiagnostics(config, task, budget, maxDepth, scopeContext, {
+			selectionMode: options.selectionMode,
+			knowledgeAccess: "INDEXED",
+			indexRoot,
+		});
+		result.diagnostics.knowledgeAccess.lifecycle = ready.status;
+		return result;
+	} catch (error) {
+		if (failurePolicy === "FAIL_CLOSED") throw error;
+		const result = buildContextPackWithDiagnostics(config, task, budget, maxDepth, scopeContext, {
+			selectionMode: options.selectionMode,
+			knowledgeAccess: "LEGACY",
+		});
+		result.diagnostics.knowledgeAccess.lifecycle = "LEGACY_FALLBACK";
+		result.diagnostics.knowledgeAccess.fallbackReason = errorMessage(error);
+		return result;
+	}
+}
+
+/** Production convenience API using managed persistent access. */
+export function buildManagedContextPack(
+	config: AppConfig,
+	task: string,
+	budget = 12000,
+	maxDepth = 3,
+	scopeContext?: ScopeContext,
+	options: ManagedContextPackBuildOptions = {},
+): ContextPack {
+	return buildManagedContextPackWithDiagnostics(
+		config,
+		task,
+		budget,
+		maxDepth,
+		scopeContext,
+		options,
+	).pack;
+}
+
+function errorMessage(error: unknown): string {
+	return error instanceof Error ? error.message : String(error);
 }
 
 /** 最终以真实序列化载荷复核预算；裁剪时保持 Claim→Evidence 和 Relation→Endpoint 闭包。 */
 function enforceContextBudget(pack: ContextPack, budget: number): ContextPack {
 	if (!Number.isSafeInteger(budget) || budget <= 0)
 		throw new Error(`非法 Context budget: ${budget}`);
+	const noVisibleRelationGap = "未选择可见关系——当前任务不需要关系路径，或没有通过门禁的可消费边";
 	const fits = () => estimateTokens(JSON.stringify(pack)) <= budget;
 	const refreshDerivedClosure = () => {
 		const claimIds = new Set(pack.subgraph.claims.map((claim) => claim.id));
 		pack.subgraph.relations = pack.subgraph.relations.filter((relation) =>
 			[relation.from as string, relation.to as string].every((id) => claimIds.has(id)),
 		);
+		const relationIds = new Set(pack.subgraph.relations.map((relation) => relation.id));
 		pack.wikiModules = pack.wikiModules.filter((module) =>
-			module.claimRefs.some((claimId) => claimIds.has(claimId as string)),
+			module.claimRefs.every((claimId) => claimIds.has(claimId as string)),
 		);
 		const requiredSpanIds = new Set(pack.subgraph.claims.flatMap((claim) => claim.evidenceSpanIds));
 		pack.evidenceSpans = pack.evidenceSpans.filter((span) => requiredSpanIds.has(span.id));
+		const sourceIds = new Set(pack.evidenceSpans.map((span) => span.sourceId));
+		const hasSupports = pack.subgraph.relations.some((relation) => relation.type === "SUPPORTS");
+		pack.conflictsAndConditions = pack.conflictsAndConditions.filter((entry) => {
+			const claimId = /^(?:⚠️|📌) Claim (\S+)/u.exec(entry)?.[1];
+			if (claimId) return claimIds.has(claimId);
+			const relationId = /^(?:⚠️|📌) Relation (\S+)/u.exec(entry)?.[1];
+			if (relationId) return relationIds.has(relationId);
+			const sourceId = /^🔎 Source (\S+)/u.exec(entry)?.[1];
+			if (sourceId) return sourceIds.has(sourceId);
+			if (entry.includes("SUPPORTS 只表示 Claim")) return hasSupports;
+			return true;
+		});
+		pack.knownGaps = pack.knownGaps.filter((entry) => entry !== noVisibleRelationGap);
+		if (pack.subgraph.relations.length === 0) pack.knownGaps.push(noVisibleRelationGap);
 		pack.taskMap = pack.taskMap
 			.replace(/找到 \d+ 条相关 Claim/, `找到 ${pack.subgraph.claims.length} 条相关 Claim`)
 			.replace(/找到 \d+ 条关系/, `找到 ${pack.subgraph.relations.length} 条关系`)
@@ -632,8 +1256,32 @@ function enforceContextBudget(pack: ContextPack, budget: number): ContextPack {
 	};
 
 	while (!fits() && pack.selectionLog.length > 0) pack.selectionLog.pop();
-	while (!fits() && pack.wikiModules.length > 0) pack.wikiModules.pop();
-	while (!fits() && pack.subgraph.relations.length > 0) pack.subgraph.relations.pop();
+	while (!fits() && pack.subgraph.relations.length > 0) {
+		pack.subgraph.relations.pop();
+		refreshDerivedClosure();
+	}
+	// An activated Wiki view is useful only together with every supporting Claim. Trim optional
+	// Claim slots first; otherwise the final serializer would silently undo Wiki activation.
+	while (!fits() && pack.subgraph.claims.length > 0) {
+		const wikiClaimIds = new Set(
+			pack.wikiModules.flatMap((module) => module.claimRefs.map(String)),
+		);
+		let removableIndex = -1;
+		for (let index = pack.subgraph.claims.length - 1; index >= 0; index -= 1) {
+			const claim = pack.subgraph.claims[index];
+			if (claim && !wikiClaimIds.has(claim.id)) {
+				removableIndex = index;
+				break;
+			}
+		}
+		if (removableIndex < 0) break;
+		pack.subgraph.claims.splice(removableIndex, 1);
+		refreshDerivedClosure();
+	}
+	while (!fits() && pack.wikiModules.length > 0) {
+		pack.wikiModules.pop();
+		refreshDerivedClosure();
+	}
 	while (!fits() && pack.subgraph.claims.length > 0) {
 		pack.subgraph.claims.pop();
 		refreshDerivedClosure();

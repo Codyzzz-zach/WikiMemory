@@ -13,8 +13,13 @@ export const DEFAULT_BASE_URL = "https://api.deepseek.com/v1";
 export const DEFAULT_TEMPERATURE = 0;
 
 export interface AppConfig {
-	/** 项目根目录（含 sources/ wiki/ 等知识状态目录） */
+	/**
+	 * Legacy compatibility alias for the knowledge-state root.
+	 * New transports must use runtimeRoot and must not infer state from the code repository.
+	 */
 	projectRoot: string;
+	/** Explicit knowledge-state root mounted as the durable runtime volume. */
+	runtimeRoot?: string;
 	/** 不可变原文目录 */
 	sourcesDir: string;
 	/** Canonical WikiModule 目录 */

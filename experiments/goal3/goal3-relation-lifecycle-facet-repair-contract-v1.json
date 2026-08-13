@@ -1,0 +1,60 @@
+{
+	"schemaVersion": "wge-goal3-relation-lifecycle-facet-repair-contract/v1",
+	"status": "FROZEN_BEFORE_FACET_REPAIR_IMPLEMENTATION",
+	"stageBRead": false,
+	"failedCounterfactual": {
+		"report": "experiments/goal3/relation-lifecycle-counterfactuals/v9-unbounded-v1/report.json",
+		"reportSha256": "a2ef666860971887752591ba1a1039e5cc5f75f1837b3f7c94f06563c2e2a938",
+		"deferredReview": "experiments/goal3/relation-lifecycle-counterfactuals/v9-unbounded-v1/deferred-review.json",
+		"deferredReviewSha256": "a0f68526b3beb8c83c1e8308a253d14c681d4276c2192cd5c9b93256b22c356c",
+		"counterfactualDecisions": "experiments/goal3/relation-lifecycle-counterfactuals/v9-unbounded-v1/relation-decisions.jsonl",
+		"counterfactualDecisionsSha256": "e2be09732f5cbcf031222c6d07346c5f16f02319b2256029cf193821263ed08e"
+	},
+	"repairArm": {
+		"id": "B24_N4_COVERAGE_MMR",
+		"auditBudgetPerSource": 24,
+		"maxNewEndpointFanOut": 4,
+		"algorithm": [
+			"Keep explicit SUPERSEDES priority and one-edge coverage for every new-Source endpoint.",
+			"Allocate second through fourth edges in round-robin passes over covered new endpoints instead of globally filling one topic first.",
+			"For each additional edge, rank by Relation-type priority, detector confidence, lexical novelty against already selected opposite-endpoint statements, endpoint affinity, then stable Relation id.",
+			"Lexical novelty equals one minus the maximum domain-neutral token overlap with already selected siblings for that new endpoint.",
+			"After round-robin facet allocation, fill any remaining source budget with the same marginal-diversity ordering."
+		],
+		"forbiddenInputs": [
+			"audit verdict",
+			"quarantine issue code",
+			"counterfactual finalState",
+			"Stage B answer or gold label",
+			"benchmark question text",
+			"the three deferred counterfactual-canonical Relation ids",
+			"domain-specific facet keywords"
+		]
+	},
+	"offlineAcceptance": {
+		"candidateAccountingExact": true,
+		"selectedAtMostAuditBudget": true,
+		"maximumNewEndpointDegree": 4,
+		"minimumPressureCandidateReduction": 0.35,
+		"counterfactualCanonicalDiagnosticRecall": 1.0,
+		"maximumMeanSiblingSimilarityVersusPreviousSelector": 1.0,
+		"modelCalls": 0,
+		"deterministicDeferredSampleSize": 12,
+		"maximumApparentHighValueMissesInDeferredSample": 0,
+		"deferredConsumerExposure": 0
+	},
+	"onlineAcceptance": {
+		"sequence": [4],
+		"sourceFailures": 0,
+		"candidateAccountingExact": true,
+		"deferredConsumerExposure": 0,
+		"canonicalEvidenceAndEndpointsResolvable": true,
+		"noScaleBeyond12WithoutNewAuthorization": true
+	},
+	"interpretationLimits": [
+		"Counterfactual canonical decisions are model-audited diagnostics, not a human gold standard.",
+		"MMR only schedules candidates for audit and cannot publish or semantically approve an edge.",
+		"The repair must improve generic sibling diversity; selecting three known ids through explicit exceptions is prohibited.",
+		"A four-source canary validates production wiring on the known pressure position but does not establish unseen-domain recall."
+	]
+}

@@ -1,0 +1,31 @@
+{
+  "schemaVersion": "wge-goal2-offline-entry-proof/v1",
+  "status": "PASS_OFFLINE_ENTRY_GATE",
+  "createdAt": "2026-07-29T16:27:56.702Z",
+  "inputs": {
+    "report": {
+      "path": "/Users/mixi/Desktop/WikiMemory/experiments/goal2/runs/goal2-r1-offline-micro-v2/offline-report.json",
+      "sha256": "04276daa3035bf47408e5c0fa66373bd4024928e307f5d915e0400f7fa8d7044"
+    },
+    "review": {
+      "path": "/Users/mixi/Desktop/WikiMemory/experiments/goal2/reviews/goal2-r1-offline-micro-v2-adjudication.json",
+      "sha256": "db2d61b08c43952fbbf734088fee7ba43e505cd6783afc6660121db29c38194d"
+    }
+  },
+  "machineChecks": {
+    "sameFrozenBudget": true,
+    "primaryClaimCountNeverIncreases": true,
+    "targetHasStructuralDifference": true,
+    "closureComplete": true
+  },
+  "manualChecks": {
+    "reportHashMatches": true,
+    "controlHasNoUnrelatedGraphClaim": true,
+    "allChangedQuestionsReviewed": true
+  },
+  "decision": "ONLINE_MICRO_AUTHORIZED",
+  "limitations": [
+    "Offline passage authorizes only the frozen eight-question B/R0/R1 answer Micro.",
+    "It does not establish answer benefit, blind value or production readiness."
+  ]
+}

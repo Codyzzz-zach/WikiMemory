@@ -1,0 +1,23 @@
+{
+  "headCommit": "8829e408215590d39ddaf40431931dee0277e9b3",
+  "trackedDiffHash": "sha256:fb49a13f0b25c90d575f9cd951063d9d07972adb6e546276e978d71de03525f1",
+  "statusHash": "sha256:11618dc9ae37df1fed500cf646be5ed1e21ab072582b92995b908999222b97cc",
+  "implementation": [
+    {
+      "path": "src/retrieval/structured-pack-renderer.ts",
+      "sha256": "sha256:d40fe6fc59eb079fb953c76a2ee3dc9c2ca2be3046ce3e6f2e81a666ca806901"
+    },
+    {
+      "path": "src/context-pack/compact-transport.ts",
+      "sha256": "sha256:4c8335b0f06ecb866207ebfe79d8ae2cfca1f19f3aa5fe2ec4c88c7f0c571154"
+    },
+    {
+      "path": "src/context-pack/compact-transport.test.ts",
+      "sha256": "sha256:477e3bbfe9c71707631727bacf94922a34a70d4840962233141962feb5660f1b"
+    },
+    {
+      "path": "scripts/freeze-benchmark-s200-stage-a.ts",
+      "sha256": "sha256:c15deca58accfa16eb60cbfaf14b4f3ec2ad68161f186a6e1a72f89cbd83561d"
+    }
+  ]
+}

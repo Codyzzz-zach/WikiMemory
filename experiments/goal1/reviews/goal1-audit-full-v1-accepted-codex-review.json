@@ -1,0 +1,125 @@
+{
+	"schemaVersion": "wge-goal1-relation-review/v1",
+	"reviewedRunId": "goal1-audit-full-v1",
+	"reviewer": "Codex independent accepted-edge audit proxy",
+	"reviewerType": "AI_REVIEW_NOT_HUMAN_GOLD",
+	"goldStatus": "POST_HOC_DEV_PROXY",
+	"reviewScope": "ACCEPTED_CANDIDATES_ONLY",
+	"contract": {
+		"SUPPORTS": "From must materially support the complete To claim; a heading, lead-in, colon, co-location, or general statement does not support details introduced only by To.",
+		"REQUIRES": "From cannot be correctly asserted or applied without To as an evidence-bound prerequisite.",
+		"RELATED_TO": "The pair has substantive navigation value without claiming inferential support."
+	},
+	"reviews": [
+		{
+			"relationId": "rel:33a33396a17d4175-126d82c9056b8252",
+			"decision": "reject",
+			"reason": "The lead-in that a norm is added does not itself support the complete positive-definiteness axiom stated only in To; the following list elaborates the lead-in."
+		},
+		{
+			"relationId": "rel:33a33396a17d4175-144e150ac216bb0c",
+			"decision": "accept",
+			"reason": "From explicitly includes d(x,y)=||x-y|| and therefore directly supports To."
+		},
+		{
+			"relationId": "rel:33a33396a17d4175-35939e27ba56ac1f",
+			"decision": "accept",
+			"reason": "Both claims concern the standard inner product on R^n and provide useful weak navigation."
+		},
+		{
+			"relationId": "rel:33a33396a17d4175-5dfc8528ac64dc1a",
+			"decision": "reject",
+			"reason": "The norm lead-in does not itself support the complete triangle-inequality detail stated in the following list."
+		},
+		{
+			"relationId": "rel:7e02712717a02820-717b200e21aa71bf",
+			"decision": "accept",
+			"reason": "The position-operator example and multiplication-operator form are substantively related for navigation."
+		},
+		{
+			"relationId": "rel:80440e2182e5653f-09f20fd3510ed804",
+			"decision": "reject",
+			"reason": "The broad historical statement does not support the complete date-and-five-axiom details in To."
+		},
+		{
+			"relationId": "rel:80440e2182e5653f-144ba14d7e694eb1",
+			"decision": "accept",
+			"reason": "Closure of both N and Z under multiplication directly includes closure of Z."
+		},
+		{
+			"relationId": "rel:80440e2182e5653f-684b4bf15d213b64",
+			"decision": "accept",
+			"reason": "From directly states the complete commutative-ring identity repeated by To."
+		},
+		{
+			"relationId": "rel:80440e2182e5653f-79ebf3f0b00bba4f",
+			"decision": "accept",
+			"reason": "The stated fundamental theorem over C materially supports algebraic closure."
+		},
+		{
+			"relationId": "rel:80440e2182e5653f-7dd05bbc01da47ce",
+			"decision": "accept",
+			"reason": "From explicitly states that the real line is complete and therefore supports To."
+		},
+		{
+			"relationId": "rel:80440e2182e5653f-8fc808356fed6007",
+			"decision": "accept",
+			"reason": "From directly states Cantor's uncountability result for R."
+		},
+		{
+			"relationId": "rel:80440e2182e5653f-96cd0cc5573b323e",
+			"decision": "accept",
+			"reason": "From explicitly lists completeness as a property of R."
+		},
+		{
+			"relationId": "rel:80440e2182e5653f-986ab01e07a2da07",
+			"decision": "accept",
+			"reason": "From directly states that Q is countable."
+		},
+		{
+			"relationId": "rel:80440e2182e5653f-9a82404cf302f8db",
+			"decision": "accept",
+			"reason": "The no-hole and Cauchy-convergence formulation directly supports completeness of R."
+		},
+		{
+			"relationId": "rel:80440e2182e5653f-c78952732023c7fe",
+			"decision": "reject",
+			"reason": "The historical lead-in that Dedekind gave a definition does not support the complete partition axioms supplied only by To."
+		},
+		{
+			"relationId": "rel:80440e2182e5653f-d45ecc83e6900240",
+			"decision": "accept",
+			"reason": "From and To directly state the same addition-closure fact."
+		},
+		{
+			"relationId": "rel:9478dfc1ba6cb58f-18e7f1de980d9511",
+			"decision": "accept",
+			"reason": "From directly states the spectrum/eigenvalue generalization summarized by To."
+		},
+		{
+			"relationId": "rel:cross-3a9dd655ef80000e",
+			"decision": "accept",
+			"reason": "The real-number specialization and general completeness definition have substantive navigation value."
+		},
+		{
+			"relationId": "rel:cross-eade4b35ddd56c3c",
+			"decision": "accept",
+			"reason": "The normed-space and scalar Cauchy definitions are substantively related."
+		},
+		{
+			"relationId": "rel:e7ea8bc17c2cc4ab-6ab3f92fea68418a",
+			"decision": "accept",
+			"reason": "To states the evidence-bound convergence condition required to apply the conditioned sum formula in From."
+		},
+		{
+			"relationId": "rel:e7ea8bc17c2cc4ab-6bce5c3d93bd369d",
+			"decision": "reject",
+			"reason": "The general statement that derivatives construct a power series does not support the complete Taylor coefficient formula in To."
+		},
+		{
+			"relationId": "rel:e7ea8bc17c2cc4ab-a67212cec964cd98",
+			"decision": "accept",
+			"reason": "Defining a series through the partial-sum limit directly supports the convergence dependency stated by To."
+		}
+	]
+}

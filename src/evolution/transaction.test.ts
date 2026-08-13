@@ -76,7 +76,7 @@ describe("snapshot-protected knowledge evolution transaction", () => {
 		);
 	});
 
-	it("persists a cross-source correction, retires stale edges, and fail-closes stale Wiki", () => {
+	it("persists a cross-source correction, retires stale edges, and rebuilds stale Wiki", () => {
 		const config = fixtureConfig();
 		const old = claim("claim:old", "通过自动化测试后可以直接发布");
 		const guide = claim("claim:guide", "发布指南采用直接发布流程");
@@ -95,7 +95,13 @@ describe("snapshot-protected knowledge evolution transaction", () => {
 		expect(readAllRelations(config).find((item) => item.id === stale.id)?.lifecycle).toBe(
 			"SUPERSEDED",
 		);
-		expect(readAllWikiModules(config)).toEqual([]);
+		expect(result.rebuiltWikiModuleIds).toEqual(["wiki:deployment"]);
+		const rebuilt = readAllWikiModules(config)[0];
+		expect(rebuilt?.id).toBe("wiki:deployment");
+		expect(rebuilt?.stableAddress).toBe("project/deployment");
+		expect(rebuilt?.claimRefs.map(String)).toEqual([correction.id]);
+		expect(rebuilt?.currentUnderstanding).toContain("仍需负责人批准");
+		expect(rebuilt?.materialization?.rebuiltFromSnapshotId).toBe(result.snapshotId);
 		expect(readWikiModuleQuarantine(config).map((record) => record.module.id)).toEqual([
 			"wiki:deployment",
 		]);
@@ -111,6 +117,55 @@ describe("snapshot-protected knowledge evolution transaction", () => {
 		expect(currentKnowledgeVersion(config)).toBe(before);
 		expect(readAllClaims(config).find((item) => item.id === old.id)?.lifecycle).toBe("ACTIVE");
 		expect(readAllWikiModules(config).map((module) => module.id)).toEqual(["wiki:deployment"]);
+		expect(readWikiModuleQuarantine(config)).toEqual([]);
+	});
+
+	it("replaces only affected assertions in a multi-assertion Wiki module", () => {
+		const config = fixtureConfig();
+		const old = claim("claim:approval-old", "发布仍需三方人工批准");
+		const coverage = claim("claim:coverage", "变更覆盖率不得低于百分之八十");
+		const security = claim("claim:security", "扫描不得存在严重漏洞");
+		const replacement = claim("claim:approval-new", "发布不再需要三方人工批准");
+		const trigger = relation("rel:approval-replace", replacement.id, old.id, "SUPERSEDES");
+		publish(config, "source:policy", [old, coverage, security], []);
+		publish(config, "source:correction", [replacement], [trigger]);
+		writeJson(
+			join(config.wikiDir, "release-policy.json"),
+			wiki("wiki:release-policy", [old.id, coverage.id, security.id]),
+		);
+
+		const result = applyKnowledgeEvolution(config, [trigger.id], currentKnowledgeVersion(config));
+		const rebuilt = readAllWikiModules(config)[0];
+
+		expect(result.rebuiltWikiModuleIds).toEqual(["wiki:release-policy"]);
+		expect(rebuilt?.claimRefs.map(String)).toEqual([replacement.id, coverage.id, security.id]);
+		expect(rebuilt?.materialization?.assertions.map((assertion) => assertion.claimRef)).toEqual([
+			replacement.id,
+			coverage.id,
+			security.id,
+		]);
+		expect(rebuilt?.currentUnderstanding).toContain("不再需要三方人工批准");
+		expect(rebuilt?.currentUnderstanding).toContain("不得低于百分之八十");
+		expect(rebuilt?.currentUnderstanding).toContain("不得存在严重漏洞");
+	});
+
+	it("restores Claim, Wiki and quarantine state when a rebuilt view fails after publication", () => {
+		const config = fixtureConfig();
+		const old = claim("claim:wiki-old", "旧规则要求七天");
+		const replacement = claim("claim:wiki-new", "新规则要求十五天");
+		const trigger = relation("rel:wiki-replace", replacement.id, old.id, "SUPERSEDES");
+		publish(config, "source:wiki-old", [old], []);
+		publish(config, "source:wiki-new", [replacement], [trigger]);
+		writeJson(join(config.wikiDir, "policy.json"), wiki("wiki:policy", [old.id]));
+		const before = currentKnowledgeVersion(config);
+
+		expect(() =>
+			applyKnowledgeEvolution(config, [trigger.id], before, { failAfterWikiRebuild: true }),
+		).toThrow("已自动回滚");
+
+		expect(currentKnowledgeVersion(config)).toBe(before);
+		expect(readAllClaims(config).find((item) => item.id === old.id)?.lifecycle).toBe("ACTIVE");
+		expect(readAllWikiModules(config)[0]?.currentUnderstanding).toBe("旧理解");
 		expect(readWikiModuleQuarantine(config)).toEqual([]);
 	});
 

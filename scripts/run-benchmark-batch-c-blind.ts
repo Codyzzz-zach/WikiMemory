@@ -43,7 +43,10 @@ const groups = process.env.WGE_BATCH_C_GROUPS
 if (groups.some((group) => !["B", "P-seed", "P-graph"].includes(group))) {
 	throw new Error("Unknown Batch C group");
 }
-const offline = readJson<{ rows: JsonRecord[] }>(join(offlineRoot, "context-preparation.json"));
+const offline = readJson<{
+	contextBudgetTokens: number;
+	rows: JsonRecord[];
+}>(join(offlineRoot, "context-preparation.json"));
 if (offline.rows.length < questionIds.length * groups.length)
 	throw new Error("Offline preparation is incomplete");
 const baseConfig = loadConfig({
@@ -100,11 +103,18 @@ for (const questionId of questionIds) {
 			latencyMs: Date.now() - startedAt,
 			promptHash: sha256(`${answerSystemPrompt}\n${userPrompt}`),
 			contextHash: sha256(context),
+			questionHash: row.questionHash,
+			configHash: row.configHash,
+			knowledgeSnapshotHash: row.knowledgeSnapshotHash,
+			inputSnapshotHash: row.inputSnapshotHash,
+			traceHash: row.traceHash,
 			estimatedContextTokens: Number(row.estimatedContextTokens),
 			estimatedInputTokens: estimateTokens(`${answerSystemPrompt}\n${userPrompt}`),
+			toolCalls: Number(row.toolCalls),
 			retrievedClaims: row.retrievedClaims,
 			retrievedRelations: row.retrievedRelations,
 			retrievedSources: row.retrievedSources,
+			retrievalTrace: row.retrievalTrace,
 			citationValidation,
 			request: { systemPrompt: answerSystemPrompt, userPrompt },
 			answer: result.content,
@@ -136,11 +146,31 @@ writeJson(join(runRoot, "manifest.json"), {
 	createdAt: new Date().toISOString(),
 	questionFileHash: `sha256:${sha256(taskText)}`,
 	configHash: `sha256:${sha256(readFileSync(join(freezeRoot, "config.json"), "utf8"))}`,
+	preparationConfigHashes: [
+		...new Set(offline.rows.map((row) => requireString(row, "configHash"))),
+	],
+	knowledgeSnapshotHashes: [
+		...new Set(
+			offline.rows
+				.map((row) => row.knowledgeSnapshotHash)
+				.filter((value): value is string => typeof value === "string"),
+		),
+	],
+	inputSnapshotHashes: [
+		...new Set(offline.rows.map((row) => requireString(row, "inputSnapshotHash"))),
+	],
+	contextTraceHashes: offline.rows
+		.filter(
+			(row) =>
+				questionIds.includes(requireString(row, "questionId")) &&
+				groups.includes(requireString(row, "group")),
+		)
+		.map((row) => requireString(row, "traceHash")),
 	answerPromptHash: `sha256:${sha256(answerSystemPrompt)}`,
 	modelRequested: config.answer.model,
 	modelReturned: returnedModel,
 	temperature: config.answer.temperature,
-	contextBudgetTokens: config.retrieval.contextBudgetTokens,
+	contextBudgetTokens: offline.contextBudgetTokens,
 	questions: questionIds.length,
 	answers: publicAnswers.length,
 	stageBRead: preparationId !== undefined,

@@ -58,6 +58,8 @@ const CLAIM_MAX_OUTPUT_TOKENS = 8_192;
 const CONCEPT_MAX_OUTPUT_TOKENS = 4_096;
 const RELATION_MAX_OUTPUT_TOKENS = 8_192;
 const MAX_SPLIT_DEPTH = 8;
+export const CROSS_RELATION_AUDIT_BUDGET = 64;
+export const CROSS_RELATION_MAX_ENDPOINT_FAN_OUT = 64;
 
 export interface CompileResult {
 	claims: Claim[];
@@ -120,7 +122,34 @@ export interface CrossMaterialCompileResult {
 	relations: Relation[];
 	candidateClaimIds: string[];
 	selectionDiagnostics: CrossMaterialSelectionDiagnostics;
+	generatedRelationCount: number;
+	deferredRelationCount: number;
 }
+
+export type CrossRelationCandidateSelectionState = "SELECTED_FOR_AUDIT" | "DEFERRED_BY_BUDGET";
+
+export type CrossRelationCandidateSelectionReason =
+	| "EXPLICIT_GOVERNANCE_PRIORITY"
+	| "NEW_ENDPOINT_COVERAGE"
+	| "NEW_ENDPOINT_FACET_DIVERSITY"
+	| "WITHIN_AUDIT_BUDGET"
+	| "SOURCE_AUDIT_BUDGET"
+	| "ENDPOINT_FAN_OUT_LIMIT";
+
+export interface CrossRelationCandidateDecision {
+	relation: Relation;
+	generatedRank: number;
+	selectionState: CrossRelationCandidateSelectionState;
+	selectionReason: CrossRelationCandidateSelectionReason;
+}
+
+export interface CrossRelationAuditSelection {
+	selected: Relation[];
+	deferred: Relation[];
+	decisions: CrossRelationCandidateDecision[];
+}
+
+export type CrossRelationFanOutScope = "ALL_ENDPOINTS" | "COVERAGE_ENDPOINTS";
 
 export interface CrossMaterialCandidateDiagnostic {
 	claimId: string;
@@ -746,6 +775,238 @@ export function hasConflictSignal(text: string): boolean {
 }
 
 /**
+ * Bound expensive cross-material audits without deleting detector output.
+ *
+ * Ranking deliberately cannot see audit outcomes or benchmark labels. Deferred
+ * candidates remain recoverable in the append-only run ledger and are never
+ * equivalent to a semantic quarantine decision.
+ */
+export function selectCrossRelationsForAudit(
+	relations: Relation[],
+	auditBudget = CROSS_RELATION_AUDIT_BUDGET,
+	maxEndpointFanOut = CROSS_RELATION_MAX_ENDPOINT_FAN_OUT,
+	coverageEndpointIds: ReadonlySet<string> = new Set(),
+	endpointStatements: ReadonlyMap<string, string> = new Map(),
+	fanOutScope: CrossRelationFanOutScope = "ALL_ENDPOINTS",
+): CrossRelationAuditSelection {
+	if (
+		auditBudget !== Number.POSITIVE_INFINITY &&
+		(!Number.isSafeInteger(auditBudget) || auditBudget < 0)
+	) {
+		throw new Error(`Invalid cross Relation audit budget: ${auditBudget}`);
+	}
+	if (
+		maxEndpointFanOut !== Number.POSITIVE_INFINITY &&
+		(!Number.isSafeInteger(maxEndpointFanOut) || maxEndpointFanOut < 1)
+	) {
+		throw new Error(`Invalid cross Relation endpoint fan-out: ${maxEndpointFanOut}`);
+	}
+	const affinityById = new Map(
+		relations.map((relation) => [
+			relation.id,
+			endpointLexicalAffinity(
+				endpointStatements.get(relation.from as string) ?? "",
+				endpointStatements.get(relation.to as string) ?? "",
+			),
+		]),
+	);
+	const ranked = [...relations].sort(
+		(left, right) =>
+			governancePriority(right) - governancePriority(left) ||
+			relationTypePriority(right) - relationTypePriority(left) ||
+			right.confidence - left.confidence ||
+			(affinityById.get(right.id) ?? 0) - (affinityById.get(left.id) ?? 0) ||
+			left.id.localeCompare(right.id),
+	);
+	const endpointDegree = new Map<string, number>();
+	const selected: Relation[] = [];
+	const selectedIds = new Set<string>();
+	const selectedReasons = new Map<string, CrossRelationCandidateSelectionReason>();
+	const constrainedEndpoints = (relation: Relation): string[] =>
+		[relation.from as string, relation.to as string].filter(
+			(endpoint) => fanOutScope === "ALL_ENDPOINTS" || coverageEndpointIds.has(endpoint),
+		);
+	const canSelect = (relation: Relation): boolean =>
+		selected.length < auditBudget &&
+		constrainedEndpoints(relation).every(
+			(endpoint) => (endpointDegree.get(endpoint) ?? 0) < maxEndpointFanOut,
+		);
+	const select = (relation: Relation, reason: CrossRelationCandidateSelectionReason): boolean => {
+		if (selectedIds.has(relation.id)) return true;
+		if (!canSelect(relation)) return false;
+		selected.push(relation);
+		selectedIds.add(relation.id);
+		selectedReasons.set(relation.id, reason);
+		for (const endpoint of constrainedEndpoints(relation)) {
+			endpointDegree.set(endpoint, (endpointDegree.get(endpoint) ?? 0) + 1);
+		}
+		return true;
+	};
+
+	for (const relation of ranked) {
+		if (relation.type === "SUPERSEDES") {
+			select(relation, "EXPLICIT_GOVERNANCE_PRIORITY");
+		}
+	}
+
+	const rankById = new Map(ranked.map((relation, index) => [relation.id, index]));
+	const byCoverageEndpoint = new Map<string, Relation[]>();
+	for (const relation of ranked) {
+		for (const endpoint of [relation.from as string, relation.to as string]) {
+			if (!coverageEndpointIds.has(endpoint)) continue;
+			const candidates = byCoverageEndpoint.get(endpoint) ?? [];
+			candidates.push(relation);
+			byCoverageEndpoint.set(endpoint, candidates);
+		}
+	}
+	const coverageEntries = [...byCoverageEndpoint.entries()].sort(
+		([leftId, left], [rightId, right]) =>
+			(rankById.get(left[0]?.id ?? "") ?? Number.POSITIVE_INFINITY) -
+				(rankById.get(right[0]?.id ?? "") ?? Number.POSITIVE_INFINITY) ||
+			leftId.localeCompare(rightId),
+	);
+	for (const [endpoint, candidates] of coverageEntries) {
+		if (
+			selected.some(
+				(relation) =>
+					(relation.from as string) === endpoint || (relation.to as string) === endpoint,
+			)
+		)
+			continue;
+		for (const relation of candidates) {
+			if (select(relation, "NEW_ENDPOINT_COVERAGE")) break;
+		}
+	}
+
+	const selectedForCoverageEndpoint = (endpoint: string): Relation[] =>
+		selected.filter(
+			(relation) => (relation.from as string) === endpoint || (relation.to as string) === endpoint,
+		);
+	const marginalCandidates = (endpoint: string, candidates: Relation[]): Relation[] => {
+		const selectedSiblings = selectedForCoverageEndpoint(endpoint);
+		return candidates
+			.filter((relation) => !selectedIds.has(relation.id))
+			.sort(
+				(left, right) =>
+					relationTypePriority(right) - relationTypePriority(left) ||
+					right.confidence - left.confidence ||
+					marginalEndpointNovelty(right, endpoint, selectedSiblings, endpointStatements) -
+						marginalEndpointNovelty(left, endpoint, selectedSiblings, endpointStatements) ||
+					(affinityById.get(right.id) ?? 0) - (affinityById.get(left.id) ?? 0) ||
+					left.id.localeCompare(right.id),
+			);
+	};
+	let facetProgress = true;
+	while (facetProgress && selected.length < auditBudget) {
+		facetProgress = false;
+		for (const [endpoint, candidates] of coverageEntries) {
+			if (selectedForCoverageEndpoint(endpoint).length >= maxEndpointFanOut) continue;
+			const candidate = marginalCandidates(endpoint, candidates).find(canSelect);
+			if (!candidate) continue;
+			if (select(candidate, "NEW_ENDPOINT_FACET_DIVERSITY")) facetProgress = true;
+			if (selected.length >= auditBudget) break;
+		}
+	}
+
+	for (const relation of ranked) select(relation, "WITHIN_AUDIT_BUDGET");
+
+	const decisions: CrossRelationCandidateDecision[] = ranked.map((relation, index) => {
+		if (selectedIds.has(relation.id)) {
+			return {
+				relation,
+				generatedRank: index + 1,
+				selectionState: "SELECTED_FOR_AUDIT" as const,
+				selectionReason: selectedReasons.get(relation.id) ?? "WITHIN_AUDIT_BUDGET",
+			};
+		}
+		const fanOutReached = constrainedEndpoints(relation).some(
+			(endpoint) => (endpointDegree.get(endpoint) ?? 0) >= maxEndpointFanOut,
+		);
+		return {
+			relation,
+			generatedRank: index + 1,
+			selectionState: "DEFERRED_BY_BUDGET" as const,
+			selectionReason: fanOutReached
+				? ("ENDPOINT_FAN_OUT_LIMIT" as const)
+				: ("SOURCE_AUDIT_BUDGET" as const),
+		};
+	});
+	const deferred = decisions
+		.filter((decision) => decision.selectionState === "DEFERRED_BY_BUDGET")
+		.map((decision) => decision.relation);
+	return { selected, deferred, decisions };
+}
+
+function governancePriority(relation: Relation): number {
+	return relation.type === "SUPERSEDES" ? 1 : 0;
+}
+
+function relationTypePriority(relation: Relation): number {
+	return (
+		{
+			SUPERSEDES: 7,
+			CONTRADICTS: 6,
+			REQUIRES: 5,
+			DERIVED_FROM: 4,
+			EQUIVALENT_UNDER: 3,
+			SUPPORTS: 2,
+			RELATED_TO: 1,
+		} satisfies Record<Relation["type"], number>
+	)[relation.type];
+}
+
+/** Domain-neutral tie-breaker; this is scheduling evidence, never a semantic verdict. */
+export function endpointLexicalAffinity(left: string, right: string): number {
+	const leftTokens = lexicalAffinityTokens(left);
+	const rightTokens = lexicalAffinityTokens(right);
+	if (leftTokens.size === 0 || rightTokens.size === 0) return 0;
+	let overlap = 0;
+	for (const token of leftTokens) if (rightTokens.has(token)) overlap += 1;
+	return overlap / Math.min(leftTokens.size, rightTokens.size);
+}
+
+function marginalEndpointNovelty(
+	relation: Relation,
+	coverageEndpoint: string,
+	selectedSiblings: Relation[],
+	endpointStatements: ReadonlyMap<string, string>,
+): number {
+	if (selectedSiblings.length === 0) return 1;
+	const oppositeId = oppositeEndpoint(relation, coverageEndpoint);
+	const statement = endpointStatements.get(oppositeId) ?? "";
+	const maximumSimilarity = Math.max(
+		0,
+		...selectedSiblings.map((sibling) =>
+			endpointLexicalAffinity(
+				statement,
+				endpointStatements.get(oppositeEndpoint(sibling, coverageEndpoint)) ?? "",
+			),
+		),
+	);
+	return 1 - maximumSimilarity;
+}
+
+function oppositeEndpoint(relation: Relation, endpoint: string): string {
+	return (relation.from as string) === endpoint
+		? (relation.to as string)
+		: (relation.from as string);
+}
+
+function lexicalAffinityTokens(value: string): Set<string> {
+	const normalized = value.normalize("NFKC").toLocaleLowerCase("und");
+	const tokens = new Set(normalized.match(/[\p{Script=Latin}\p{N}]+/gu) ?? []);
+	const cjkCharacters = normalized.match(
+		/[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}\p{Script=Hangul}]/gu,
+	);
+	if (!cjkCharacters) return tokens;
+	if (cjkCharacters.length === 1) tokens.add(cjkCharacters[0] as string);
+	for (let index = 0; index < cjkCharacters.length - 1; index += 1) {
+		tokens.add(`${cjkCharacters[index]}${cjkCharacters[index + 1]}`);
+	}
+	return tokens;
+}
+
+/**
  * 阶段 2：只在新 Source 与召回的旧 Claim 之间检测关系，禁止退化成全库两两比较。
  * 召回只使用 Concept/关键词，MVP 不依赖 embedding。
  */
@@ -763,13 +1024,25 @@ export async function compileCrossMaterialRelations(
 		(claim) => !isSourceMetadataClaim(claim.statement),
 	);
 	const explicitlyReferencedSourceIds = findExplicitlyReferencedSourceIds(source, existingSources);
-	const selection = selectCrossMaterialCandidateResult(
-		relationEligibleNewClaims,
-		newConcepts,
-		existingClaims,
-		40,
-		explicitlyReferencedSourceIds,
-	);
+	const selection =
+		relationEligibleNewClaims.length > 0
+			? selectCrossMaterialCandidateResult(
+					relationEligibleNewClaims,
+					newConcepts,
+					existingClaims,
+					40,
+					explicitlyReferencedSourceIds,
+				)
+			: {
+					candidates: [],
+					diagnostics: {
+						existingClaimCount: existingClaims.length,
+						eligibleExistingClaimCount: 0,
+						selectedClaimCount: 0,
+						nearMissCount: 0,
+						candidates: [],
+					},
+				};
 	const candidates = selection.candidates;
 	recordRelationFunnelEvent(config, {
 		stage: "CANDIDATE_SELECTION",
@@ -792,6 +1065,8 @@ export async function compileCrossMaterialRelations(
 			relations: [],
 			candidateClaimIds: candidates.map((claim) => claim.id),
 			selectionDiagnostics: selection.diagnostics,
+			generatedRelationCount: 0,
+			deferredRelationCount: 0,
 		};
 	}
 	const combined = [...relationEligibleNewClaims, ...candidates];
@@ -886,18 +1161,50 @@ export async function compileCrossMaterialRelations(
 		claim.statement,
 		...claim.conditions,
 	]);
-	const relations = buildRelations(source, combined, drafts, stats, "cross-material-detect").map(
-		(relation) =>
-			relation.type === "SUPERSEDES"
-				? {
-						...relation,
-						conditions: [...new Set([...relation.conditions, ...supersessionConditions])],
-						evidenceSpanIds: [
-							...new Set([...relation.evidenceSpanIds, ...supersessionEvidenceSpanIds]),
-						],
-					}
-				: relation,
+	const generatedRelations = buildRelations(
+		source,
+		combined,
+		drafts,
+		stats,
+		"cross-material-detect",
+	).map((relation) =>
+		relation.type === "SUPERSEDES"
+			? {
+					...relation,
+					conditions: [...new Set([...relation.conditions, ...supersessionConditions])],
+					evidenceSpanIds: [
+						...new Set([...relation.evidenceSpanIds, ...supersessionEvidenceSpanIds]),
+					],
+				}
+			: relation,
 	);
+	const auditSelection = selectCrossRelationsForAudit(
+		generatedRelations,
+		CROSS_RELATION_AUDIT_BUDGET,
+		CROSS_RELATION_MAX_ENDPOINT_FAN_OUT,
+		new Set(relationEligibleNewClaims.map((claim) => claim.id)),
+		new Map(combined.map((claim) => [claim.id, claim.statement])),
+		"COVERAGE_ENDPOINTS",
+	);
+	const createdAt = new Date().toISOString();
+	if (auditSelection.decisions.length > 0) {
+		appendJsonl(
+			join(config.runsDir, "relation-candidate-ledger.jsonl"),
+			auditSelection.decisions.map((decision) => ({
+				schemaVersion: "wge-relation-candidate-ledger/v1",
+				runId,
+				sourceId: source.id,
+				relation: decision.relation,
+				generatedRank: decision.generatedRank,
+				selectionState: decision.selectionState,
+				selectionReason: decision.selectionReason,
+				auditBudget: CROSS_RELATION_AUDIT_BUDGET,
+				maxEndpointFanOut: CROSS_RELATION_MAX_ENDPOINT_FAN_OUT,
+				fanOutScope: "NEW_SOURCE_ENDPOINTS",
+				createdAt,
+			})),
+		);
+	}
 	recordRelationFunnelEvent(config, {
 		stage: "DETECTION",
 		runId,
@@ -906,19 +1213,32 @@ export async function compileCrossMaterialRelations(
 			totalRelationDrafts: stats.totalRelationDrafts,
 			validRelations: stats.validRelations,
 			skippedRelations: stats.skippedRelations,
-			proposedRelations: relations.map((relation) => ({
+			generatedRelationCount: generatedRelations.length,
+			selectedForAuditCount: auditSelection.selected.length,
+			deferredRelationCount: auditSelection.deferred.length,
+			proposedRelations: auditSelection.selected.map((relation) => ({
 				id: relation.id,
 				from: relation.from,
 				to: relation.to,
 				type: relation.type,
 				conditions: relation.conditions,
 			})),
+			deferredRelations: auditSelection.decisions
+				.filter((decision) => decision.selectionState === "DEFERRED_BY_BUDGET")
+				.map((decision) => ({
+					id: decision.relation.id,
+					type: decision.relation.type,
+					generatedRank: decision.generatedRank,
+					reason: decision.selectionReason,
+				})),
 		},
 	});
 	return {
-		relations,
+		relations: auditSelection.selected,
 		candidateClaimIds: candidates.map((claim) => claim.id),
 		selectionDiagnostics: selection.diagnostics,
+		generatedRelationCount: generatedRelations.length,
+		deferredRelationCount: auditSelection.deferred.length,
 	};
 }
 

@@ -1,0 +1,30 @@
+{
+	"schemaVersion": "wge-goal3-related-to-batch-utility-controlled-replay-contract/v1",
+	"status": "FROZEN_BEFORE_CONTROLLED_REPLAY",
+	"stageBRead": false,
+	"failedReplay": {
+		"report": "experiments/goal3/related-to-batch-runs/v9-batch-utility-v1/report.json",
+		"reportSha256": "0f42293f0c73ab0d9cfad3297c115e816b1969804d776e00315f243a4d1af8d8"
+	},
+	"control": {
+		"primaryAuditCache": "experiments/goal3/relation-lifecycle-counterfactuals/v9-unbounded-v1/runs/relation-audit-cache",
+		"primaryAuditCacheAggregateSha256": "a116d364dcc755b1e212c5c7861ac37103de63d7ecca343945c440b230b8ae65",
+		"copyUtilityCache": false,
+		"priorPerItemUtilityCalls": 26,
+		"priorPerItemUtilityTokens": 31379,
+		"purpose": "Hold the primary semantic verdicts fixed so the experiment changes only utility-critic transport."
+	},
+	"acceptance": {
+		"primaryModelCalls": 0,
+		"utilityObjectAccountingExact": true,
+		"minimumUtilityTokenReduction": 0.2,
+		"minimumPriorCanonicalDiagnosticRecall": 1.0,
+		"manualReviewAllAdditionalCanonical": true,
+		"noCanonicalPublicationWrites": true
+	},
+	"interpretationLimits": [
+		"This controlled replay evaluates transport parity and cost only; cached primary verdicts are not human gold labels.",
+		"Any extra canonical edge must be manually reviewed because batch context can change utility judgments.",
+		"The production batch path remains unaccepted until this controlled gate passes."
+	]
+}

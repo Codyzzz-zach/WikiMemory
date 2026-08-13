@@ -1,0 +1,63 @@
+{
+	"schemaVersion": "wge-goal3-evidence-coverage-rescore-contract/v1",
+	"status": "PREREGISTERED_AFTER_EVALUATOR_DEFECT_DISCOVERY",
+	"createdAt": "2026-08-04T19:20:00+08:00",
+	"purpose": "Repair an order-dependent exact-quote scoring defect without changing or rerunning either retrieval arm, then rescore the immutable Batch C and Batch B source-routing reports.",
+	"observedDefect": {
+		"caseId": "B-F-HEALTH-010",
+		"oldVerdict": "quote loss",
+		"evidence": "Both required child ranges span:health-who-terminology-2024-004-50fd4599b9553875-1#chars-99-314 and #chars-315-397 are present in both arms. The old scorer concatenates candidate spans in Claim-ranking order, so unrelated spans inserted between adjacent source ranges break exact-quote matching.",
+		"risk": "The old scorer can create false negatives when contiguous child evidence is present out of candidate order, and false positives by concatenating unrelated spans globally."
+	},
+	"frozenInputs": {
+		"batchCReport": {
+			"path": "experiments/goal3/source-routing-runs/source-routing-v1/report.json",
+			"sha256": "352e6c8284580a52e8b46347a9bda072099e9e4a14cb23870e3cc946bfb381bf"
+		},
+		"batchCGold": {
+			"path": "experiments/benchmark-batch-c/stage-b-evaluator/normalized-gold/tasks.jsonl",
+			"sha256": "0dcdab468b2d6e5ee8801bc96a77085c37d60c556df2454df1a837530eaba15d"
+		},
+		"batchBReport": {
+			"path": "experiments/goal3/source-routing-breadth-runs/source-routing-breadth-v1/report.json",
+			"sha256": "5032684f1f2ad735df5b4f5edb0ef5d9064f95850d1ea0df77db0a6daf6e714d"
+		},
+		"batchBGold": {
+			"path": "experiments/goal3/source-routing-breadth-v1/diagnostic-gold.jsonl",
+			"sha256": "fc23d7b46a5c066e0e10b0410dbec57f3e75408f6ccba59166e2bebef42af0e2"
+		},
+		"spanCorpus": {
+			"path": "experiments/goal3/runs/scale-v5/workspaces/S50/sources",
+			"filePattern": "*.spans.jsonl",
+			"fileCount": 50,
+			"shellManifestSha256": "a14ce5358e69e4ca2afac8b66d55f08f7f46539c51466fdeb9c5cc004bf13f0c"
+		}
+	},
+	"fixedAlgorithm": [
+		"A required evidence item is the pair (required sourceId, normalized exactQuote); quote text from a different source cannot satisfy it.",
+		"Resolve each candidate evidenceSpanId to its persisted base span and char interval.",
+		"Group candidate intervals by base span, sort by source character position, and merge only overlapping intervals or intervals separated exclusively by whitespace in the persisted base text.",
+		"Reconstruct each merged segment from the persisted base span text, not from candidate Claim order.",
+		"A requirement matches only when one reconstructed segment from a matching source contains the normalized exactQuote.",
+		"Do not concatenate non-contiguous ranges, different base spans or different sources."
+	],
+	"requiredTests": [
+		"Adjacent child ranges match regardless of candidate order.",
+		"Whitespace-only gaps may bridge; non-whitespace gaps may not.",
+		"Identical quote text in the wrong source does not match.",
+		"A full persisted span matches normally.",
+		"Candidate order does not change the result."
+	],
+	"prohibitions": [
+		"Do not modify either immutable v1 report.",
+		"Do not rerun retrieval or alter candidateClaimIds/candidateSpanIds.",
+		"Do not change L40_STRONG or SR12_40 budgets or ranking.",
+		"Do not use answer-model feedback, Relation, Context Pack, network or model calls.",
+		"Do not treat rescoring as blind product evidence."
+	],
+	"decisionRules": {
+		"EVALUATOR_ARTIFACT_CONFIRMED": "At least one old quote loss becomes a tie because both arms already contained source-correct contiguous evidence ranges, with all source metrics and candidate sets unchanged.",
+		"TRUE_QUOTE_RISK_REMAINS": "At least one SR exact-evidence loss remains under source-bound interval reconstruction.",
+		"REWORK": "Any frozen hash mismatch, candidate-set mutation, unmatched report/Gold question, span corpus drift, non-determinism or overwrite."
+	}
+}

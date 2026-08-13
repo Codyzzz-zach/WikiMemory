@@ -1,0 +1,51 @@
+---
+sourceId: s200-law-dma-007
+title: "Hacker News thread: Y Combinator urges the White House to support Europe's Digital Markets Act (item 43357739)"
+domain: law-public-policy
+clusterId: cluster-law-dma-01
+sourceRole: U-experience
+platform: hackernews
+author: "submitter + commenters"
+canonicalUrl: "https://news.ycombinator.com/item?id=43357739"
+publishedAt: "2025-03-13T22:12:31Z"
+capturedAt: "2026-08-10T15:10:00+08:00"
+versionRef: null
+mediaType: thread
+language: en
+usage: internal-only
+accessStatus: partial
+snapshotHash: "sha256:66e56707676f97178f028ad3d9ad5e236594358c1ef93e473046e6e936f60b6c"
+collectionMethod: public-api
+licenseOrUsageNote: "Hacker News 公开评论（经 Algolia Items API 获取）；用户生成内容，internal use only。"
+collectionNotes: "504 分线程（2025-03-13）；链接 TechCrunch。"
+---
+
+# Hacker News thread: Y Combinator urges the White House to support Europe's Digital Markets Act (item 43357739)
+
+## Source Snapshot
+
+
+### Story
+
+> Title: Y Combinator urges the White House to support Europe's Digital Markets Act
+> URL: https://techcrunch.com/2025/03/13/y-combinator-urges-the-white-house-to-support-europes-digital-markets-act/
+> Created: 2025-03-13T22:12:31Z
+> Points: 504
+
+### Selected comments (verbatim)
+
+**callc**:
+
+> > The DMA designates six tech companies as "gatekeepers" to the internet — Alphabet, Amazon, Apple, ByteDance, Meta, and Microsoft — and limits these technol...
+
+**econ**:
+
+> What worries me is the way big tech is forced to build some kind of law book (they call their TOS) some kind of detective apparatus, some kind of kangaroo court...
+
+## Research Notes
+> Curator provenance: Verbatim from Hacker News item 43357739 via Algolia Items API (captured 2026-08-10). HTML entities decoded.（本行为 curator 添加的采集说明，非上游文本。）
+
+- 来源角色 U-experience：2025 年 YC 支持 DMA 的社区反应（504 分）——DMA 执行阶段（T3）的跨大西洋政策争论。
+- callc 复述 DMA 六家守门人名单（与 s200-law-dma-003 一致）——社区转述 vs 官方指定的一致性测试。
+- 与 s200-law-dma-002（2022 通过时）形成"立法→执行→国际政治化"的时间线。
+- 只证明"谁在何时说了什么"。

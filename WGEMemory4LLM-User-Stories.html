@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>WGEMemory4LLM · User Stories v1.1</title>
+  <title>WGEMemory4LLM · User Stories v1.5</title>
   <script type="module">
     import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
     mermaid.initialize({startOnLoad:true,theme:"base",securityLevel:"loose",themeVariables:{fontFamily:"Noto Sans CJK SC, Inter, ui-sans-serif, system-ui, sans-serif",primaryColor:"#eef5ff",primaryTextColor:"#172033",primaryBorderColor:"#5a8fc7",lineColor:"#657a91",secondaryColor:"#ecf8f3",tertiaryColor:"#fff7e8",fontSize:"13px"},flowchart:{useMaxWidth:true,htmlLabels:false,curve:"basis"},sequence:{useMaxWidth:true},state:{useMaxWidth:true}});
@@ -26,11 +26,11 @@
 <body>
 <div class="page">
 <header id="top">
-  <div class="eyebrow">WGEMemory4LLM · User Stories <span class="badge principle">v1.1</span></div>
+  <div class="eyebrow">WGEMemory4LLM · User Stories <span class="badge principle">v1.5</span></div>
   <h1>从“一篇新文章”到“一个真正进步的 Agent”</h1>
   <p class="subtitle">这份文档不是描述后台能生成多少文件，而是定义用户在长期学习中应该感受到什么：不维护 Wiki、不重复解释、不被陈旧结论拖回原点，同时能追问“为什么”“从哪里来”“这次和上次哪里不同”。</p>
-  <div class="hero"><b>总用户故事：</b>作为持续学习 AI 行业与技术知识的用户，我希望把文章、讨论与纠正交给我的通用 Agent 后，它能自动形成并维护可追溯的长期知识状态；当我提出新问题时，它能复用跨材料关系、说明冲突与变化，并随真实使用不断给出更成熟的建议，而不要求我人工维护知识库。</div>
-  <div class="meta"><span class="chip"><b>主受益者</b> 个人知识学习者</span><span class="chip"><b>主消费者</b> 通用 Agent</span><span class="chip"><b>核心旅程</b> 摄入 → 问答 → 纠正 → 进化</span><span class="chip"><b>完成口径</b> 行为改变而非文件生成</span><span class="chip"><b>日期</b> 2026-07-21</span></div>
+  <div class="hero"><b>总用户故事：</b>作为持续学习科技、AI、金融、历史、健康、人文等混合知识的单用户，我希望把文章、讨论、项目记录与纠正交给通用 Agent 后，它能自动形成并维护可追溯的长期知识状态；当我提出新问题时，它能复用跨材料关系、说明冲突与变化，并随真实使用不断给出更成熟的判断，而不要求我人工维护知识库。</div>
+  <div class="meta"><span class="chip"><b>主受益者</b> 单用户 · 多领域知识学习者</span><span class="chip"><b>主消费者</b> 通用 Agent</span><span class="chip"><b>核心旅程</b> 摄入 → 问答 → 纠正 → 进化</span><span class="chip"><b>完成口径</b> 行为改变而非文件生成</span><span class="chip"><b>日期</b> 2026-08-12</span></div>
   <nav aria-label="目录"><a href="#actors">角色</a><a href="#map">故事地图</a><a href="#journey">主旅程</a><a href="#stories">P0/P1 故事</a><a href="#exceptions">异常旅程</a><a href="#contracts">Context Pack</a><a href="#nfr">体验与非功能</a><a href="#trace">哲学追踪</a></nav>
 </header>
 
@@ -38,7 +38,7 @@
 <section id="actors">
   <div class="section-head"><div class="kicker">01 / Actors</div><div><h2>谁在使用，谁在消费，谁在后台负责</h2></div></div>
   <div class="grid three">
-    <article class="card"><div class="label">Primary beneficiary</div><h3>知识学习者</h3><p>持续阅读 AI 行业、技术和产品实践，关心形成全局认识、发现冲突、复用历史学习，而不是管理知识库结构。</p><p><b>成功感受：</b>Agent 记得已经讨论和纠正过什么，能用新材料改进旧认识。</p></article>
+    <article class="card"><div class="label">Primary beneficiary</div><h3>多领域知识学习者</h3><p>持续阅读科技、AI、金融、历史、数学、人文、心理、健康、生物与设计等混合材料，关心形成全局认识、发现冲突、复用历史学习，而不是管理知识库结构。</p><p><b>成功感受：</b>Agent 记得已经讨论和纠正过什么，能用新材料改进旧认识。</p></article>
     <article class="card"><div class="label">Primary consumer</div><h3>通用 Agent</h3><p>接收任务化 Context Pack，并据此回答、比较、解释或给出建议。它不需要理解底层文件布局，但必须遵守证据、状态和风险标记。</p><p><b>成功感受：</b>在有限上下文内拿到完整且任务相关的知识。</p></article>
     <article class="card"><div class="label">Internal responsibilities</div><h3>知识系统角色</h3><p>Ingestor 负责来源；Compiler/Librarian 维护知识状态；Linter 在消费前守门并定期修缮。这些是系统职责，不是三个人工岗位。</p><p><b>成功感受：</b>自动运行、可解释失败、可恢复。</p></article>
   </div>
@@ -79,7 +79,7 @@ journey
   <table>
     <thead><tr><th>活动主干</th><th>用户想完成的工作</th><th>P0 故事</th><th>P1/P2 扩展</th></tr></thead>
     <tbody>
-      <tr><td>建立学习域</td><td>让 Agent 理解材料边界与长期问题</td><td>US-01 初始化与投递</td><td>多领域隔离、组织空间</td></tr>
+      <tr><td>建立长期知识状态</td><td>让 Agent 理解材料主题、项目作用域与长期问题</td><td>US-01 初始化与投递</td><td>主题 domain 用于检索；GLOBAL/PERSONAL/PROJECT scope 用于适用范围与权限</td></tr>
       <tr><td>持续摄入</td><td>添加文章但不做人工整理</td><td>US-02 自动编译；US-03 消费前门禁</td><td>批量订阅、来源信誉策略</td></tr>
       <tr><td>跨材料学习</td><td>获得全局、关系化、有依据的解释</td><td>US-04 任务化问答；US-05 多跳；US-06 引用追溯</td><td>个性化学习路径</td></tr>
       <tr><td>处理变化</td><td>让新证据和纠正改变旧认知</td><td>US-07 冲突；US-08 用户纠正；US-09 取代与时态</td><td>自动关注领域变化</td></tr>
@@ -131,8 +131,8 @@ sequenceDiagram
   <article class="story" id="us01">
     <div class="story-head"><span class="badge p0">P0</span><span class="badge actor">用户</span><span class="badge principle">证据不可变</span></div>
     <h3>US-01 · 投递材料，不做人工知识整理</h3>
-    <p><b>作为</b>知识学习者，<b>我希望</b>把 PDF、Markdown 或网页正文交给 Agent，<b>从而</b>让系统自行吸收，而无需选择切片、标签、页面或关系。</p>
-    <div class="criteria"><b>验收：</b>系统返回稳定 Source ID、内容哈希、解析状态和是否重复；相同内容重复投递不生成重复知识；解析失败只进入失败队列，不生成伪 Claim。</div>
+    <p><b>作为</b>知识学习者，<b>我希望</b>先把 Markdown 正文交给 Agent，<b>从而</b>让系统自行吸收，而无需选择切片、标签、页面或关系；未来增加 PDF、网页或 TeX 时不改变知识编译合同。</p>
+    <div class="criteria"><b>验收：</b>当前 Markdown Loader 返回稳定 Source ID、内容哈希、解析状态和是否重复；相同内容重复投递不生成重复知识；解析失败只进入失败队列，不生成伪 Claim。格式扩展必须通过统一 <code>DocumentLoader → LoadedDocument → Source/Span</code> 边界，不能把格式逻辑塞进 Compiler。</div>
     <div class="gherkin"><span class="kw">Given</span> 同一篇文章已经成功摄入
 <span class="kw">When</span> 用户再次提交相同内容但文件名不同
 <span class="kw">Then</span> 系统识别内容哈希重复，不重复创建 Source、Claim、Relation 或 WikiModule
@@ -219,26 +219,26 @@ flowchart TD
   </div></div>
   </article>
 
-  <article class=”story” id=”us08”>
-    <div class=”story-head”><span class=”badge p0”>P0</span><span class=”badge actor”>用户</span><span class=”badge principle”>纠正进入闭环</span><span class=”badge principle”>v1.1 双通道</span></div>
+  <article class="story" id="us08">
+    <div class="story-head"><span class="badge p0">P0</span><span class="badge actor">用户</span><span class="badge principle">纠正进入闭环</span><span class="badge principle">v1.1 双通道</span></div>
     <h3>US-08 · 用户纠正会改变后续行为，而不是停在当前对话</h3>
     <p><b>作为</b>用户，<b>我希望</b>指出”这个结论不对，因为忽略了有限测度条件”后，系统能修正长期状态，<b>从而</b>以后不再重复同一错误。</p>
-    <div class=”criteria”><b>验收：</b>纠正分双通道处理。<b>事实通道</b>：旧 Claim → DISPUTED；新 Claim → HUMAN_ASSERTED + UNRESOLVED + CANDIDATE（不自动证明为真）；建 CONTRADICTS；获得来源后才 SUPPORTED。<b>决策/偏好通道</b>：绑定 AssertedRecord + 作用域校验后可直接 SUPPORTED + CANONICAL。分三阶段实现（2a-1 Claim 状态闭环 → 2a-2 WikiModule → 2b 派生层闭环）。<b>只有完成派生层重编译及”不复发”回归后才算产品闭环闭合。</b></div>
-    <div class=”gherkin”><span class=”kw”>Given</span> Canonical 中存在无条件的 “L² 属于 L¹”
-<span class=”kw”>When</span> 用户补充”仅在有限测度空间等条件下成立”
-<span class=”kw”>Then</span> 旧 Claim 进入 DISPUTED，停止无条件消费
-<span class=”kw”>And</span> 新 Claim 为 HUMAN_ASSERTED + UNRESOLVED + CANDIDATE（不自动成真）
-<span class=”kw”>And</span> 建立 CONTRADICTS 边
-<span class=”kw”>And</span> Context Pack 表达”原结论受到挑战，目前待核实”（而非自动相信用户说法）
-<span class=”kw”>And</span> <b>v1.1</b>：纠正产生 KnowledgeStateChanged 事件，驱动后续 Wiki 重编译</div>
-    <div class=”callout”><b>v1.1 非对称原则：</b>用户的纠正足以让系统立即停止无条件相信旧结论，但不足以自动证明用户的新结论为真。项目决策/偏好例外——绑定 AssertedRecord + 作用域校验后可直接生效。</div>
+    <div class="criteria"><b>验收：</b>纠正分双通道处理。<b>事实通道</b>：旧 Claim → DISPUTED；新 Claim → HUMAN_ASSERTED + UNRESOLVED + CANDIDATE（不自动证明为真）；建 CONTRADICTS；获得来源后才 SUPPORTED。<b>决策/偏好通道</b>：绑定 AssertedRecord + 作用域校验后可直接 SUPPORTED + CANONICAL。分三阶段实现（2a-1 Claim 状态闭环 → 2a-2 WikiModule → 2b 派生层闭环）。<b>只有完成派生层重编译及“不复发”回归后才算产品闭环闭合。</b></div>
+    <div class="gherkin"><span class="kw">Given</span> Canonical 中存在无条件的 “L² 属于 L¹”
+<span class="kw">When</span> 用户补充“仅在有限测度空间等条件下成立”
+<span class="kw">Then</span> 旧 Claim 进入 DISPUTED，停止无条件消费
+<span class="kw">And</span> 新 Claim 为 HUMAN_ASSERTED + UNRESOLVED + CANDIDATE（不自动成真）
+<span class="kw">And</span> 建立 CONTRADICTS 边
+<span class="kw">And</span> Context Pack 表达“原结论受到挑战，目前待核实”（而非自动相信用户说法）
+<span class="kw">And</span> <b>v1.1</b>：纠正产生 KnowledgeStateChanged 事件，驱动后续 Wiki 重编译</div>
+    <div class="callout"><b>v1.1 非对称原则：</b>用户的纠正足以让系统立即停止无条件相信旧结论，但不足以自动证明用户的新结论为真。项目决策/偏好例外——绑定 AssertedRecord + 作用域校验后可直接生效。</div>
   </article>
 
   <article class="story" id="us09">
     <div class="story-head"><span class="badge p0">P0</span><span class="badge actor">Agent</span><span class="badge principle">时态与取代</span></div>
     <h3>US-09 · 区分“曾经正确”和“当前有效”</h3>
-    <p><b>作为</b>通用 Agent，<b>我希望</b>知道某个观点何时生效、何时被取代，<b>从而</b>回答历史问题时保留旧版本，回答当前问题时默认使用最新有效状态。</p>
-    <div class="criteria"><b>验收：</b>Claim/Relation 可标 <code>validFrom</code>、<code>validTo</code>、<code>SUPERSEDES</code>；旧内容不被删除；问题包含时间时选择对应快照；无时间时优先当前 Canonical。</div>
+    <p><b>作为</b>通用 Agent，<b>我希望</b>知道系统在某个知识版本中认可什么，以及某个明确版本何时被取代，<b>从而</b>回答历史知识快照或旧版本问题时保留旧对象，回答当前问题时默认使用最新 ACTIVE 状态。</p>
+    <div class="criteria"><b>验收：</b>完整支持 <code>knowledgeVersion</code> / <code>recordedAt</code> / <code>knowledgeAsOf</code>；由明确来源版本和受审计 <code>SUPERSEDES</code> 支持当前/历史选择；旧对象不删除。<code>validFrom</code>/<code>validTo</code> 可保存来源中的时间条件，但 MVP 不宣称已经支持任意现实世界 <code>validAt</code> 区间推理。</div>
   </article>
 
   <article class="story" id="us10">
@@ -270,10 +270,10 @@ flowchart LR
   </article>
 
   <article class="story" id="us12">
-    <div class="story-head"><span class="badge p0">P0</span><span class="badge actor">用户</span><span class="badge principle">可逆性</span><span class="badge principle">v1.1 未实现</span></div>
-    <h3>US-12 · 错误编译后恢复到最近健康状态 <span class="status s-amber">Phase 2b</span></h3>
+    <div class="story-head"><span class="badge p0">P0</span><span class="badge actor">用户</span><span class="badge principle">可逆性</span><span class="badge principle">工程基线已实现</span></div>
+    <h3>US-12 · 错误编译后恢复到最近健康状态</h3>
     <p><b>作为</b>用户，<b>我希望</b>在一批错误更新污染知识时回滚，<b>从而</b>快速恢复使用，同时保留故障材料供后续修复。</p>
-    <div class="criteria"><b>"健康"分两层（v1.1）：</b><code>systemHealthySnapshot</code>（系统自动：原子发布 + 硬门禁 + 回归通过 + 快照完整）和 <code>userTrustedCheckpoint</code>（用户主动标记满意版本）。回滚优先 userTrusted 再 systemHealthy。"不要求逐条审批"≠"不能标记满意版本"——用户只是不需要审核每个 Claim。<b>自动演化开启前必须具备</b>：候选快照、整体 Lint、原子发布、版本指针、可验证回滚。<b>当前版本未实现版本快照/回滚，仅有 Quarantine 对象级隔离。</b></div>
+    <div class="criteria"><b>"健康"分两层：</b><code>systemHealthySnapshot</code>（系统自动：原子发布 + 硬门禁 + 回归通过 + 快照完整）和 <code>userTrustedCheckpoint</code>（用户主动标记满意版本）。候选快照、哈希验证、并发前置条件、写前备份和失败恢复已有工程基线；下一步验收真实长期使用中的 checkpoint 选择、索引一致恢复和维护成本。</div>
     <div class="gherkin"><span class="kw">Given</span> 当前版本未通过语义回归
 <span class="kw">When</span> 用户选择最近一个健康版本回滚
 <span class="kw">Then</span> Wiki、Graph 与索引恢复为同一知识快照
@@ -282,10 +282,10 @@ flowchart LR
   </article>
 
   <article class="story" id="us13">
-    <div class="story-head"><span class="badge p1">P1</span><span class="badge actor">Agent</span><span class="badge principle">稳定合同</span></div>
+    <div class="story-head"><span class="badge p0">P0</span><span class="badge actor">Agent</span><span class="badge principle">稳定合同</span></div>
     <h3>US-13 · 不同 Agent 通过统一 Context Pack 消费知识</h3>
     <p><b>作为</b>通用 Agent，<b>我希望</b>通过稳定 schema 请求任务上下文，<b>从而</b>不用依赖 WGEMemory 的文件结构、具体数据库或编译模型。</p>
-    <div class="criteria"><b>验收：</b>请求包含任务、域、时间范围、预算、允许关系与风险偏好<b>、ScopeContext（principalId + 可选 projectId）</b>；响应包含知识版本、选择理由、证据、冲突、缺口和截断信息；未知字段可向前兼容。<b>缺少 ScopeContext 时按 Global-only 处理。</b></div>
+    <div class="criteria"><b>验收：</b>Agent 至少可通过 MCP 完成 <code>ingest_material</code>、<code>get_ingest_status</code>、<code>query_context</code> 与 <code>trace_knowledge</code>；请求包含任务、时间、预算、风险偏好和 <b>ScopeContext（principalId + 可选 projectId）</b>；响应包含知识版本、选择理由、证据、冲突、缺口、截断信息与 traceId。MCP、HTTP 和 CLI 必须调用同一 Application Service，payload 语义一致；缺少 ScopeContext 时按 Global-only 处理。</div>
   </article>
 
   <article class="story" id="us14">
@@ -298,8 +298,43 @@ flowchart LR
   <article class="story" id="us15">
     <div class="story-head"><span class="badge p1">P1</span><span class="badge actor">产品验证者</span><span class="badge principle">增益证明</span></div>
     <h3>US-15 · 为真实 Benchmark 记录可复现实验</h3>
-    <p><b>作为</b>产品验证者，<b>我希望</b>每次回答记录系统组别、模型、提示、上下文、Graph 路径、token、耗时与知识版本，<b>从而</b>判断增益来自 WGE，而不是随机性或上下文不公平。</p>
-    <div class="criteria"><b>验收：</b>同一 run 可复现；答案与系统身份分离供盲评；所有组在同预算下运行；失败与超时也被记录。</div>
+    <p><b>作为</b>产品验证者，<b>我希望</b>每次回答分别记录 Seed、Graph 候选、结构排序、可见门禁、Evidence 闭包、模型、提示、实际 token、工具调用、耗时与知识版本，<b>从而</b>根据过程信号定位增益或退化来自哪一层。</p>
+    <div class="criteria"><b>验收：</b>同一 run 的 commit/config/data/prompt/hash 可复现；答案与系统身份分离供盲评；同时报告同预算和自然总成本；失败、超时与被裁剪对象也被记录；首轮结果不可覆盖。</div>
+  </article>
+
+  <article class="story" id="us16">
+    <div class="story-head"><span class="badge p0">P0</span><span class="badge actor">Agent</span><span class="badge principle">Graph 透明路由</span></div>
+    <h3>US-16 · Graph 帮助找到必要知识，但不把遍历结果倾倒给 Agent</h3>
+    <p><b>作为</b>通用 Agent，<b>我希望</b>系统用受审计 Graph 找到依赖、冲突和版本路径，同时只给我完成任务真正需要的知识，<b>从而</b>避免 Graph 带来无关上下文和更高总成本。</p>
+    <div class="criteria"><b>验收：</b>候选子图与可见子图分离；在线链路必须 Graph-capable，但只有关系意图、版本/影响任务、安全风险或可观测 Seed 覆盖缺口触发时才进入有界 Graph 导航；关系路径满足可见门禁后才展示；<code>RELATED_TO</code> 不得支撑结论；每个可见 Claim 保持条件、provenance 与必要 Evidence 闭包。</div>
+  </article>
+
+  <article class="story" id="us17">
+    <div class="story-head"><span class="badge p0">P0</span><span class="badge actor">产品验证者</span><span class="badge principle">单目标 Loop</span></div>
+    <h3>US-17 · 每轮只修一个可证伪机制，并在盲域证明泛化</h3>
+    <p><b>作为</b>产品负责人，<b>我希望</b>系统按 Freeze→Observe→Diagnose→Change→Evaluate→Archive 迭代，<b>从而</b>知道代码变化为什么有效，而不是在同一题集上不断调到高分。</p>
+    <div class="criteria"><b>验收：</b>一个 Goal 只有一个主要责任层；先跑 Contract/Micro，再跑 Dev Core，最后才运行冻结 Held-out；看过 Gold 的集合永久转为 Dev；连续两轮无改善停止；领域名、题号、Gold 映射和单材料奖励捷径禁止进入生产逻辑。</div>
+  </article>
+
+  <article class="story" id="us18">
+    <div class="story-head"><span class="badge p0">P0</span><span class="badge actor">架构维护者</span><span class="badge principle">Graph 长期复利</span><span class="badge principle">历史回归可复用</span></div>
+    <h3>US-18 · 架构大改后重跑全部历史资产，但不伪装成新盲测</h3>
+    <p><b>作为</b>架构维护者，<b>我希望</b>在 Graph、Compiler 或 Context Pack 大改后重编历史材料并重跑全部旧题，<b>从而</b>验证迁移、回归、规模和成本，而不丢失过去暴露的失败。</p>
+    <div class="criteria"><b>验收：</b>原始 Source 可重新编译；旧 publication、首轮答案和评分只读；新架构使用新 runId、知识快照、配置与处理标签；A/B/C 和已揭示 Held-out 永久为 Dev/Regression；日常只跑 Micro，候选里程碑才跑全量历史回归；泛化结论仍来自新封存 Held-out。</div>
+  </article>
+
+  <article class="story" id="us19">
+    <div class="story-head"><span class="badge p0">P0</span><span class="badge actor">产品验证者</span><span class="badge principle">权限硬隔离</span></div>
+    <h3>US-19 · Worker、Evaluator 与裁决者不能共享未冻结的答案权</h3>
+    <p><b>作为</b>产品验证者，<b>我希望</b>写候选算法的 Worker 无法读取 Gold 或覆盖首轮结果，<b>从而</b>让“没有针对答案调参”成为技术事实，而不是 Prompt 承诺。</p>
+    <div class="criteria"><b>验收：</b>Reasonix 等 Worker 运行在脱敏任务包和受限 worktree，只能读合同/接口/合成 fixture、只能写白名单文件；Gold、Blind、评分与裁决目录通过 <code>forbid_read</code> 或物理分离不可见。候选代码与结果先冻结 hash，Evaluator 只读候选与 Gold 且不得修改候选，Codex/人工负责最终裁决和不可覆盖归档。</div>
+  </article>
+
+  <article class="story" id="us20">
+    <div class="story-head"><span class="badge p0">P0</span><span class="badge actor">架构维护者</span><span class="badge principle">规模与时间复利</span></div>
+    <h3>US-20 · Graph 在知识增长和多轮更新中保持局部、准确、可解释</h3>
+    <p><b>作为</b>架构维护者，<b>我希望</b>在 S50→S200→S1000 与 T0→Tn 中验证路径和影响传播，<b>从而</b>判断 Graph 是否真的减少全库扫描、恢复跨来源依赖并正确更新受影响知识。</p>
+    <div class="criteria"><b>验收：</b>S50 用于机制回归，S200 使用真实多领域材料作为第一产品规模门槛，S1000 用真实冻结材料和真实干扰来源做压力测试；不得用无意义生成文本声称质量。分别报告必要路径召回/精度、affected-set recall、unaffected false positive、旧错复发、索引更新范围、读取对象数、p95 延迟和最终固定 Context 预算。</div>
   </article>
 </section>
 
@@ -337,9 +372,8 @@ stateDiagram-v2
   "task": "比较 Graph RAG 与运行时搜索的适用边界",
   "domain": "agent-memory-context-engineering",
   "asOf": "current",
-  "contextBudgetTokens": 12000,
-  "maxGraphDepth": 4,
-  "allowedRelationTypes": ["REQUIRES", "SUPPORTS", "CONTRADICTS", "SUPERSEDES"],
+  "contextBudgetTokens": 6000,
+  "relationVisibilityPolicy": "intent-risk-gap",
   "mustIncludeEvidence": true,
   "uncertaintyPolicy": "surface"
 }</div>
@@ -349,7 +383,7 @@ stateDiagram-v2
     <tbody>
       <tr><td><code>knowledgeVersion</code></td><td>固定回答使用的知识快照</td><td>可解释答案为何变化，可复现。</td></tr>
       <tr><td><code>taskMap</code></td><td>先了解主题、争议、关键路径和最近变化</td><td>获得全局视野而不加载全库。</td></tr>
-      <tr><td><code>subgraph</code></td><td>恢复多跳中间步骤与关系类型</td><td>减少跨材料遗漏。</td></tr>
+      <tr><td><code>subgraph</code></td><td>只读取通过可见门禁的最小必要 Claim 与关系路径；候选子图不在此字段倾倒</td><td>减少跨材料遗漏，同时控制无关 Graph 开销。</td></tr>
       <tr><td><code>wikiModules</code></td><td>读取连贯语义与当前认识</td><td>避免只拼接碎片。</td></tr>
       <tr><td><code>evidenceSpans</code></td><td>验证关键 Claim、生成引用</td><td>建立信任与查证能力。</td></tr>
       <tr><td><code>conflictsAndConditions</code></td><td>避免输出单一无条件答案</td><td>保护边界与不确定性。</td></tr>
@@ -359,9 +393,12 @@ stateDiagram-v2
   </table>
   <div class="diagram"><div class="mermaid">
 flowchart LR
-    T["Task"] --> M["Map"]
-    M --> S["Subgraph"]
-    S --> W["Wiki modules"]
+    T["Task"] --> S["Seed"]
+    S --> T{"Graph 触发?"}
+    T -->|"否"| M["Visible Context Gate"]
+    T -->|"是"| G["Audited Candidate Graph"]
+    G --> M
+    M --> W["Optional Wiki / Path"]
     W --> E["Evidence"]
     E --> C["Conflicts Conditions Gaps"]
     C --> B["Budgeted Context Pack"]
@@ -382,7 +419,7 @@ flowchart LR
     <tbody>
       <tr><td>材料接收</td><td>秒级确认接收、hash 与格式支持</td><td>异步编译，不让用户等待完整处理。</td></tr>
       <tr><td>单篇材料编译</td><td>分钟级完成；运行可观察</td><td>失败继续提供上一健康快照。</td></tr>
-      <tr><td>Context Pack</td><td>交互级返回；严格上下文预算</td><td>Graph 路不可用时回退 Wiki + 搜索并明确降级。</td></tr>
+      <tr><td>Context Pack</td><td>交互级返回；严格上下文预算</td><td>Graph 路不可用时回退 R0 Seed/原文搜索；Wiki 可用时作为独立受审计视图加入，并明确降级。</td></tr>
       <tr><td>回滚</td><td>恢复到健康快照后可立即查询</td><td>索引异步重建时使用快照内可用索引或只读降级。</td></tr>
       <tr><td>周期性 Lint</td><td>不阻塞在线任务</td><td>新版本未发布前，在线请求固定旧快照。</td></tr>
     </tbody>
@@ -400,8 +437,9 @@ flowchart LR
       <tr><td>自治写入与分级发布</td><td>US-03、US-11</td><td>无需逐条审批，失败内容不进入默认消费链。</td></tr>
       <tr><td>类型化且带条件的关系</td><td>US-05、US-07、US-08</td><td>多跳路径可解释，弱相关不冒充推理依据。</td></tr>
       <tr><td>任务化 Context Pack</td><td>US-04、US-13</td><td>同一知识状态对不同任务生成不同上下文。</td></tr>
-      <tr><td>模型黑盒、产品责任白盒</td><td>US-13、US-14、US-15</td><td>稳定 schema、失败可观察、实验可复现。</td></tr>
-      <tr><td>复杂度必须被证明</td><td>US-15</td><td>Wiki-only、无类型链接、Typed Graph 可消融比较。</td></tr>
+      <tr><td>模型黑盒、产品责任白盒</td><td>US-13、US-14、US-15、US-17、US-19</td><td>稳定 schema、失败可观察、实验可复现、生成与评价权限硬隔离。</td></tr>
+      <tr><td>Graph 候选与可见内容分离</td><td>US-05、US-13、US-16、US-20</td><td>在线 Graph 条件触发；只有任务必要路径进入 Context，离线治理与影响传播始终存在。</td></tr>
+      <tr><td>复杂度必须被证明</td><td>US-15、US-17、US-18、US-20</td><td>用 B/R0/Graph/W 消融、过程 trace、S50/S200/S1000、T0→Tn、历史回归与盲域结果优化具体实现；不以小样本否定治理 Graph，也不强迫 Graph-always-on。</td></tr>
     </tbody>
   </table>
   <div class="callout danger"><b>故事死亡标准：</b>如果用户仍需手动整理 Wiki、反复解释已经纠正的背景，或无法理解答案为何随时间变化，那么即使后台成功生成了 Claim、Graph 和 Git commit，用户故事仍然失败。</div>
@@ -409,7 +447,7 @@ flowchart LR
 </main>
 
 <footer>
-  <p><b>WGEMemory4LLM User Stories v1.1</b> · 2026-07-23。v1.1 更新：US-03 扩展到物理隔离 + Relation 门禁；US-08 双通道纠正（事实/决策）+ 分阶段实现；US-12 健康/回滚两层定义 + 标注 Phase 2b 未实现。本文档把 Product Definition 的目标与哲学转化为可观察行为、异常路径和验收标准；具体对照实验、题集与统计口径见 Benchmark 文档。</p>
+  <p><b>WGEMemory4LLM User Stories v1.5</b> · 2026-08-12。v1.5 将 Agent 稳定接口提升为 P0，并对齐 MCP 优先、同一 Application Service、多协议语义一致、本地持久运行和容器恢复。Graph-capable、有限时间语义、跨域 Benchmark 与权限硬隔离要求继续有效；当前差距见 <code>docs/status/implementation-status.md</code>，施工门见 <code>WGEMemory4LLM-Iteration-Operating-Plan.md</code>。</p>
   <p class="small">建议使用现代浏览器打开；Mermaid 图通过 CDN 渲染。正文、表格与验收标准在脚本不可用时仍可阅读。</p>
 </footer>
 </div>

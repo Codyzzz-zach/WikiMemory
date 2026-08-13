@@ -1,0 +1,44 @@
+{
+	"schemaVersion": "wge-goal3-context-pack-transport-parity-contract/v1",
+	"status": "PREREGISTERED_BEFORE_RUN",
+	"purpose": "Integrate the frozen 17-column Claim table as an optional Agent-visible Context Pack transport and verify fail-closed decode parity on real S50 production packs before any S200 compilation or Stage B access.",
+	"interpretation": "Revealed Dev/Regression engineering evidence only; this run cannot establish answer quality or Blind generalization.",
+	"frozenInputs": {
+		"s50IndexPointer": {
+			"path": "experiments/goal3/pack-runs/pack-v5/indexes/S50/current.json",
+			"sha256": "9fe5c5d1fb5d23f886f5fdacbbcc7b12bb3874841bcb73f0bf9fa2ee638197fa"
+		},
+		"questionFile": {
+			"path": "experiments/benchmark-batch-c/stage-a-freeze/questions-public.jsonl",
+			"sha256": "3cfe6ed87ddfb88902d35c417f27c6a8ebf806e3139e0acc37d34fa9ad11a34d",
+			"questionCount": 18
+		},
+		"compactTransport": {
+			"path": "src/context-pack/compact-transport.ts",
+			"sha256": "4c8335b0f06ecb866207ebfe79d8ae2cfca1f19f3aa5fe2ec4c88c7f0c571154"
+		},
+		"structuredClaimTable": {
+			"path": "src/retrieval/structured-pack-renderer.ts",
+			"sha256": "d40fe6fc59eb079fb953c76a2ee3dc9c2ca2be3046ce3e6f2e81a666ca806901"
+		}
+	},
+	"fixedRun": {
+		"selectionModes": ["R0", "LEGACY_CONDITIONAL"],
+		"contextBudgetTokens": 4000,
+		"maxGraphDepth": 2,
+		"network": false,
+		"modelCalls": 0,
+		"stageBRead": false
+	},
+	"passGate": {
+		"decodedProjectionParity": "36/36",
+		"deterministicEncoding": "36/36",
+		"minimumCombinedEstimatedTokenReduction": 0.05,
+		"rowsAllowedToGrow": 0
+	},
+	"decisionRules": {
+		"PASS_OFFLINE_INTEGRATION": "All parity and determinism guards pass, no row grows and combined estimated-token reduction is at least 5%.",
+		"NARROW": "All zero-loss guards pass but cost gate fails; preserve compact transport as an offline mechanism only.",
+		"REWORK": "Any field hash mismatch, nondeterminism, input hash drift, overwrite, model/network use or Stage B access."
+	}
+}

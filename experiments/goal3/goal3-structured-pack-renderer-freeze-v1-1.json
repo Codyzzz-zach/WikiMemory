@@ -1,0 +1,41 @@
+{
+	"schemaVersion": "wge-goal3-structured-pack-renderer-freeze/v1.1",
+	"status": "FROZEN_BEFORE_REPAIRED_FIRST_REPORT",
+	"frozenAt": "2026-08-10T11:27:00+08:00",
+	"contract": {
+		"path": "experiments/goal3/goal3-structured-pack-renderer-contract-v1.json",
+		"sha256": "f54f9858defe3aa2f528923366a5d801f86f23f0b00a851e2f67e7b38fa02c95"
+	},
+	"repairContract": {
+		"path": "experiments/goal3/goal3-structured-pack-renderer-contract-v1-1.json",
+		"sha256": "86715bb8de43b340fc4a9c2fb7a69b8f1688b4551593cee80b237cb7f3311c5e"
+	},
+	"implementation": {
+		"baselineLedger": {
+			"path": "src/retrieval/pack-cost-ledger.ts",
+			"sha256": "f2959732b752bca72c4421433448162c4ce9d97dfa65ac2bcf46fb67cf42f3c5"
+		},
+		"renderer": {
+			"path": "src/retrieval/structured-pack-renderer.ts",
+			"sha256": "4904090b039292c23b3be0b9a7a2240627cc7e783dc07ea63f1896a07cd7b2bb"
+		},
+		"rendererTests": {
+			"path": "src/retrieval/structured-pack-renderer.test.ts",
+			"sha256": "79e482ecd1704afd62736179d57d8b77eb3fba34a0e1aa6d4e3bf68d6f919479"
+		},
+		"runner": {
+			"path": "scripts/run-goal3-structured-pack-renderer.ts",
+			"sha256": "067e2a8d299ab1f873df08a1eec38f9c8501a95c02ab19d762bd2b945a4db2b9"
+		}
+	},
+	"repairScope": {
+		"changed": "Hoisted one module cache declaration before top-level evaluation.",
+		"unchanged": "17-column renderer, frozen inputs, 5% threshold, no-row-growth rule, zero-loss checks and Reasonix boundary."
+	},
+	"verificationBeforeFreeze": {
+		"targetedTests": "2 files, 9/9 passed",
+		"mainTypecheck": "tsc --noEmit passed",
+		"scriptsTypecheck": "tsc --noEmit -p tsconfig.scripts.json passed",
+		"targetedLint": "3 files, 0 errors"
+	}
+}

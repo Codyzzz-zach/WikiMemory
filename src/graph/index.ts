@@ -93,6 +93,52 @@ export interface GraphData {
 	adjacency: Map<string, Relation[]>;
 }
 
+export interface GraphTraversalStep {
+	relationId: string;
+	fromNodeId: string;
+	toNodeId: string;
+	depth: number;
+	navigationDirection: "forward" | "reverse";
+	pathNodeIds: string[];
+	pathRelationIds: string[];
+	triggerReason: "reachable-from-seed-bfs";
+}
+
+export type RelationGateReason =
+	| "accepted"
+	| "not-canonical"
+	| "not-active"
+	| "unresolved"
+	| "condition-unverified"
+	| "audit-version-mismatch"
+	| "missing-or-ineligible-endpoint";
+
+/**
+ * Explain the exact fail-closed decision used by buildGraph.
+ * This is observability only: buildGraph consumes the same decision, so Trace cannot
+ * silently drift away from the production gate.
+ */
+export function inspectRelationGate(
+	relation: Relation,
+	activeNodeIds: ReadonlySet<string>,
+): { accepted: boolean; reason: RelationGateReason } {
+	if (relation.publicationState !== "CANONICAL") {
+		return { accepted: false, reason: "not-canonical" };
+	}
+	if (relation.lifecycle !== "ACTIVE") return { accepted: false, reason: "not-active" };
+	if (relation.validity === "UNRESOLVED") return { accepted: false, reason: "unresolved" };
+	if (relation.conditionStatus === "UNVERIFIED") {
+		return { accepted: false, reason: "condition-unverified" };
+	}
+	if (relation.relationAuditVersion !== RELATION_AUDIT_VERSION) {
+		return { accepted: false, reason: "audit-version-mismatch" };
+	}
+	if (!activeNodeIds.has(relation.from as string) || !activeNodeIds.has(relation.to as string)) {
+		return { accepted: false, reason: "missing-or-ineligible-endpoint" };
+	}
+	return { accepted: true, reason: "accepted" };
+}
+
 /**
  * 从 Canonical Claim/Concept/Relation 构建图。
  *
@@ -113,14 +159,7 @@ export function buildGraph(claims: Claim[], concepts: Concept[], relations: Rela
 		...concepts.map((concept) => concept.id),
 	]);
 	const activeRelations = relations.filter(
-		(r) =>
-			r.publicationState === "CANONICAL" &&
-			r.lifecycle === "ACTIVE" &&
-			r.validity !== "UNRESOLVED" &&
-			r.conditionStatus !== "UNVERIFIED" &&
-			r.relationAuditVersion === RELATION_AUDIT_VERSION &&
-			activeNodeIds.has(r.from as string) &&
-			activeNodeIds.has(r.to as string),
+		(relation) => inspectRelationGate(relation, activeNodeIds).accepted,
 	);
 
 	// 构建双向邻接 Map（导航用——修断点 2：双向是导航，不是推理）
@@ -168,6 +207,7 @@ export function walkGraph(
 ): {
 	claims: Claim[];
 	relations: Relation[];
+	traversalTrace: GraphTraversalStep[];
 	/** 需要进入 conflictsAndConditions 的 Claim */
 	disputedClaims: Claim[];
 	/** 只能导航不能推理的 Claim */
@@ -179,6 +219,10 @@ export function walkGraph(
 	const resultRelations: Relation[] = [];
 	const disputedClaims: Claim[] = [];
 	const unresolvedClaims: Claim[] = [];
+	const traversalTrace: GraphTraversalStep[] = [];
+	const pathByNode = new Map<string, { nodeIds: string[]; relationIds: string[] }>(
+		seedIds.map((seedId) => [seedId, { nodeIds: [seedId], relationIds: [] }]),
+	);
 
 	const claimMap = new Map(graph.claims.map((c) => [c.id, c]));
 
@@ -224,6 +268,18 @@ export function walkGraph(
 				if (!visitedRels.has(edge.id)) {
 					visitedRels.add(edge.id);
 					resultRelations.push(edge);
+					const basePath = pathByNode.get(nodeId) ?? { nodeIds: [nodeId], relationIds: [] };
+					const otherId = isFromSeed ? edge.to : edge.from;
+					traversalTrace.push({
+						relationId: edge.id,
+						fromNodeId: nodeId,
+						toNodeId: otherId as string,
+						depth: depth + 1,
+						navigationDirection: isFromSeed ? "forward" : "reverse",
+						pathNodeIds: [...basePath.nodeIds, otherId as string],
+						pathRelationIds: [...basePath.relationIds, edge.id],
+						triggerReason: "reachable-from-seed-bfs",
+					});
 				}
 
 				// 加入对端节点
@@ -231,6 +287,11 @@ export function walkGraph(
 				if (!visitedNodes.has(otherId)) {
 					visitedNodes.add(otherId);
 					nextFrontier.push(otherId);
+					const basePath = pathByNode.get(nodeId) ?? { nodeIds: [nodeId], relationIds: [] };
+					pathByNode.set(otherId, {
+						nodeIds: [...basePath.nodeIds, otherId as string],
+						relationIds: [...basePath.relationIds, edge.id],
+					});
 
 					// 如果对端是 Claim，按消费矩阵分类
 					const otherClaim = claimMap.get(otherId);
@@ -258,7 +319,13 @@ export function walkGraph(
 		frontier = nextFrontier;
 	}
 
-	return { claims: resultClaims, relations: resultRelations, disputedClaims, unresolvedClaims };
+	return {
+		claims: resultClaims,
+		relations: resultRelations,
+		traversalTrace,
+		disputedClaims,
+		unresolvedClaims,
+	};
 }
 
 /**

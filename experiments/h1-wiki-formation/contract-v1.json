@@ -1,0 +1,38 @@
+{
+  "schemaVersion": "wge-h1a-wiki-formation-contract/v1",
+  "status": "PREREGISTERED_DEV",
+  "goal": "Establish a deterministic, evidence-closed Wiki formation layer that cannot read evaluation questions or Gold before consuming a new held-out Stage A.",
+  "allowedFormationInputs": [
+    "canonical active Claim fields",
+    "resolvable SourceSpan text and document structure",
+    "current consumable Relation fields",
+    "formation configuration"
+  ],
+  "forbiddenFormationInputs": [
+    "question text or question identifiers",
+    "requiredFacts, requiredConditions or forbiddenFacts",
+    "Gold answers or answer scores",
+    "manual Claim bundles selected for a known evaluation question",
+    "domain-specific keyword rules"
+  ],
+  "v1Boundary": {
+    "formationSignal": "Nearest structural Markdown heading plus bounded evidence position within one Source.",
+    "defaultModuleClaimLimit": 8,
+    "consumerAlignment": "A module must fit the online atomic-injection contract: ten primary slots, three protected lexical seeds, and at least one seed already contained in the module.",
+    "relationRole": "Current audited Relations may be recorded as dependencies but cannot merge unrelated structural sections.",
+    "crossSourceSynthesis": "OUT_OF_SCOPE_FOR_V1",
+    "modelCalls": 0
+  },
+  "gates": [
+    { "id": "H1A-G0", "pass": "Formation API has no task, question or Gold parameter; the frozen run input manifest contains no evaluation path." },
+    { "id": "H1A-G1", "pass": "Repeated runs and reversed input order produce byte-identical seeds and stableAddress values." },
+    { "id": "H1A-G2", "pass": "Every formed assertion materializes to one canonical active Claim and all of its Evidence resolves; invalid claims are rejected with reason codes." },
+    { "id": "H1A-G3", "pass": "Module size and evidence cost are bounded; no domain-, question- or Gold-specific production branch exists." },
+    { "id": "H1A-G4", "pass": "Only after formation artifacts are frozen may a separate Dev evaluator inspect known questions to diagnose formation recall. That diagnostic cannot rewrite the first artifact." }
+  ],
+  "stopRules": [
+    "Do not request a new held-out Stage A until H1A-G0 through G3 pass on revealed multi-domain Dev data.",
+    "Do not claim automatic cross-source synthesis from same-section grouping.",
+    "Do not tune formation with revealed question IDs or Gold strings."
+  ]
+}

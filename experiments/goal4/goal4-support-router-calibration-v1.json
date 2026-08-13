@@ -1,0 +1,104 @@
+{
+	"schemaVersion": "wge-goal4-support-router-calibration/v1",
+	"status": "FROZEN_BEFORE_ROUTER_IMPLEMENTATION",
+	"stageBRead": false,
+	"instructions": "Every pair is presented to the router as a proposed From SUPPORTS To edge. expectedDecision and rationale must never enter the model prompt.",
+	"cases": [
+		{
+			"caseId": "G4-ROUTE-01",
+			"domain": "health",
+			"from": "A preregistered randomized trial found an 8 mmHg larger systolic-blood-pressure reduction than placebo in the studied population.",
+			"to": "The intervention lowers systolic blood pressure compared with placebo in the studied population.",
+			"expectedDecision": "FULL_AUDIT",
+			"rationale": "Direct controlled evidence supports the complete bounded claim."
+		},
+		{
+			"caseId": "G4-ROUTE-02",
+			"domain": "engineering",
+			"from": "Five independent validation runs measured positioning error between 0.8% and 1.2%.",
+			"to": "The system remains below the specified 2% positioning-error threshold in the validation setup.",
+			"expectedDecision": "FULL_AUDIT",
+			"rationale": "The measurements substantively support the threshold conclusion."
+		},
+		{
+			"caseId": "G4-ROUTE-03",
+			"domain": "finance",
+			"from": "The audited statements report 2025 revenue of $4.2 billion.",
+			"to": "The company recorded $4.2 billion in revenue for 2025.",
+			"expectedDecision": "FULL_AUDIT",
+			"rationale": "The audited record is direct evidence for the complete factual claim."
+		},
+		{
+			"caseId": "G4-ROUTE-04",
+			"domain": "history",
+			"from": "The ship's signed muster roll lists Elena Ruiz among the crew on 3 May 1912.",
+			"to": "Elena Ruiz served aboard the ship on 3 May 1912.",
+			"expectedDecision": "FULL_AUDIT",
+			"rationale": "The primary record directly supports the bounded historical claim."
+		},
+		{
+			"caseId": "G4-ROUTE-05",
+			"domain": "software",
+			"from": "The frozen benchmark log records p95 latency of 84 ms under the specified 500-request-per-second workload.",
+			"to": "The service meets the p95-latency target of less than 100 ms under the specified workload.",
+			"expectedDecision": "FULL_AUDIT",
+			"rationale": "The logged measurement supports the full threshold claim under matching conditions."
+		},
+		{
+			"caseId": "G4-ROUTE-06",
+			"domain": "biology",
+			"from": "In the assay, treated cultures showed 62% lower enzyme activity than matched untreated controls.",
+			"to": "The treatment inhibits the enzyme in the stated assay conditions.",
+			"expectedDecision": "FULL_AUDIT",
+			"rationale": "The comparative assay result provides substantive evidence for inhibition."
+		},
+		{
+			"caseId": "G4-ROUTE-07",
+			"domain": "ai",
+			"from": "Orion 2 names the vendor's collection of model weights, inference code and training utilities.",
+			"to": "Orion 2 supports a 128k-token context window.",
+			"expectedDecision": "DEFER_BY_TYPE_ROUTER",
+			"rationale": "An identity definition does not establish the capability detail."
+		},
+		{
+			"caseId": "G4-ROUTE-08",
+			"domain": "design",
+			"from": "The introduction says that the next section defines the spacing scale.",
+			"to": "The spacing scale contains 4, 8, 12, 16 and 24 pixel steps.",
+			"expectedDecision": "DEFER_BY_TYPE_ROUTER",
+			"rationale": "An introduction does not support numerical details that appear only later."
+		},
+		{
+			"caseId": "G4-ROUTE-09",
+			"domain": "policy",
+			"from": "The policy permits research use and internal evaluation.",
+			"to": "The policy permits research use, internal evaluation and unrestricted commercial redistribution.",
+			"expectedDecision": "DEFER_BY_TYPE_ROUTER",
+			"rationale": "From supports only part of To and does not establish unrestricted redistribution."
+		},
+		{
+			"caseId": "G4-ROUTE-10",
+			"domain": "engineering",
+			"from": "The bridge satisfies the load requirement.",
+			"to": "Strain-gauge measurements remained below the specified limit throughout the load test.",
+			"expectedDecision": "DEFER_BY_TYPE_ROUTER",
+			"rationale": "The conclusion does not serve as evidence for the underlying measurements; the support direction is reversed."
+		},
+		{
+			"caseId": "G4-ROUTE-11",
+			"domain": "biology",
+			"from": "Protein A contains 312 amino-acid residues.",
+			"to": "Protein B contains 312 amino-acid residues.",
+			"expectedDecision": "DEFER_BY_TYPE_ROUTER",
+			"rationale": "A shared value across different subjects provides no support."
+		},
+		{
+			"caseId": "G4-ROUTE-12",
+			"domain": "software",
+			"from": "Atlas uses a capability-based security architecture.",
+			"to": "Atlas publishes official documentation in three languages.",
+			"expectedDecision": "DEFER_BY_TYPE_ROUTER",
+			"rationale": "Same-product co-occurrence is not evidential support."
+		}
+	]
+}

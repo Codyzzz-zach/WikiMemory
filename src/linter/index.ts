@@ -15,17 +15,20 @@
 import { createHash } from "node:crypto";
 import { join } from "node:path";
 import type { CompileRunHandle } from "../compiler/run-state.js";
-import { observedChat, recordParseResult } from "../compiler/telemetry.js";
+import { estimateTokens, observedChat, recordParseResult } from "../compiler/telemetry.js";
 import type { AppConfig } from "../config/types.js";
 import type { LLMProvider } from "../core/llm-provider.js";
 import type { ChatOptions } from "../core/types.js";
 import {
+	RELATED_TO_UTILITY_CRITIC_BATCH_SYSTEM,
+	RELATED_TO_UTILITY_CRITIC_SYSTEM,
 	RELATION_AUDIT_SYSTEM,
 	RELATION_AUDIT_VERSION,
+	RELATION_TYPE_CRITIC_SYSTEM,
 	SEMANTIC_AUDIT_SYSTEM,
 	SEMANTIC_AUDIT_VERSION,
 } from "../prompts/index.js";
-import { isSourceMetadataClaim } from "../relations/semantics.js";
+import { classifySourceMetadataClaim, isSourceMetadataClaim } from "../relations/semantics.js";
 import type {
 	AssertedRecord,
 	Claim,
@@ -35,7 +38,12 @@ import type {
 	SourceSpan,
 } from "../types/index.js";
 import {
+	RelationSemanticVerdictBatchSchema,
 	RelationSemanticVerdictSchema,
+	RelationTypeCriticVerdictSchema,
+	RelationUtilityCriticVerdictBatchSchema,
+	RelationUtilityCriticVerdictSchema,
+	SemanticVerdictBatchSchema,
 	SemanticVerdictSchema,
 	parseLLMJson,
 } from "../types/schemas.js";
@@ -43,6 +51,8 @@ import type {
 	AuditDimensionName,
 	RelationAuditDimensionName,
 	RelationSemanticVerdict,
+	RelationTypeCriticVerdict,
+	RelationUtilityCriticVerdict,
 	SemanticVerdict,
 } from "../types/schemas.js";
 import {
@@ -79,6 +89,8 @@ export type IssueCode =
 	| "RELATION_TYPE_MISMATCH"
 	| "RELATION_DIRECTION_MISMATCH"
 	| "RELATION_CONDITIONS_MISSING"
+	| "RELATION_PROVENANCE_ONLY"
+	| "RELATION_UTILITY_LOW"
 	| "SEMANTIC_SUPPORT_FAILED"
 	| "SEMANTIC_ADDITION_MAJOR"
 	| "SEMANTIC_INFERENCE_WRONG"
@@ -130,6 +142,26 @@ export interface CompileLintResult {
 }
 
 const SEMANTIC_AUDIT_CONCURRENCY = 4;
+const AUDIT_BATCH_CONCURRENCY = 2;
+const AUDIT_BATCH_INPUT_TOKEN_BUDGET = 18_000;
+const CLAIM_AUDIT_BATCH_MAX_ITEMS = 12;
+const RELATION_AUDIT_BATCH_MAX_ITEMS = 8;
+const RELATION_UTILITY_BATCH_MAX_ITEMS = 8;
+const RELATION_UTILITY_BATCH_INPUT_TOKEN_BUDGET = 24_000;
+
+const SEMANTIC_AUDIT_BATCH_SYSTEM = `${SEMANTIC_AUDIT_SYSTEM}
+
+# 批处理封装（本调用优先遵守）
+- 输入包含多个互相独立的对象；逐对象审计，禁止在对象之间共享证据或结论。
+- 返回且仅返回 JSON：{"items":[{"objectId":"输入原样 ID","verdict":{单对象合同的完整结果}}]}。
+- 每个输入 objectId 必须且只能出现一次；verdict 内的证据下标只在该对象内部有效。`;
+
+const RELATION_AUDIT_BATCH_SYSTEM = `${RELATION_AUDIT_SYSTEM}
+
+# 批处理封装（本调用优先遵守）
+- 输入包含多个互相独立的 Relation；逐边审计，禁止在边之间共享证据或结论。
+- 返回且仅返回 JSON：{"items":[{"objectId":"输入原样 ID","verdict":{单边合同的完整结果}}]}。
+- 每个输入 objectId 必须且只能出现一次；verdict 内的证据下标只在该 Relation 内部有效。`;
 
 // ─── 确定性硬门禁 ────────────────────────────────────────────────
 
@@ -476,31 +508,22 @@ export function checkRelationStructure(
  * - 每次审计记录 model 快照（pin 版本，防 criterion drift）
  * - 按维度分桶统计（meta-eval 校准用）
  */
-export async function semanticCheck(
+interface PreparedClaimAudit {
+	claim: Claim;
+	evidenceSpans: SourceSpan[];
+	prompt: string;
+	cachePath: string;
+}
+
+function prepareClaimAudit(
 	config: AppConfig,
 	claim: Claim,
 	spans: SourceSpan[],
-	provider: LLMProvider,
-	run?: CompileRunHandle,
-): Promise<LintIssue[]> {
-	const evidenceSpans = spans.filter((s) => claim.evidenceSpanIds.includes(s.id));
+): PreparedClaimAudit {
+	const evidenceSpans = findSpansByIds(spans, claim.evidenceSpanIds);
 	const evidenceText = evidenceSpans
 		.map((span, index) => `[证据 ${index}][block=${span.blockId}][span=${span.id}]\n${span.text}`)
 		.join("\n\n");
-
-	if (!evidenceText) {
-		recordAuditMetric(config, claim.id, "skipped", "no-evidence");
-		return [
-			{
-				code: "SEMANTIC_CITATION_FAILED",
-				severity: "error",
-				affectedObject: claim.id,
-				detail: "无法获取证据原文",
-				recommendedState: "QUARANTINE",
-			},
-		];
-	}
-
 	const prompt = `请审计以下 Claim 是否忠实于原文证据。
 
 # Claim
@@ -513,6 +536,36 @@ ${claim.conditions.length > 0 ? claim.conditions.join("; ") : "无"}
 ${evidenceText}
 
 按系统指令的 5 维度对照检查。只能用上面的证据编号返回严格 JSON。`;
+	return {
+		claim,
+		evidenceSpans,
+		prompt,
+		cachePath: semanticAuditCachePath(config, claim, prompt),
+	};
+}
+
+export async function semanticCheck(
+	config: AppConfig,
+	claim: Claim,
+	spans: SourceSpan[],
+	provider: LLMProvider,
+	run?: CompileRunHandle,
+): Promise<LintIssue[]> {
+	const prepared = prepareClaimAudit(config, claim, spans);
+	const { evidenceSpans, prompt, cachePath } = prepared;
+
+	if (evidenceSpans.length === 0) {
+		recordAuditMetric(config, claim.id, "skipped", "no-evidence");
+		return [
+			{
+				code: "SEMANTIC_CITATION_FAILED",
+				severity: "error",
+				affectedObject: claim.id,
+				detail: "无法获取证据原文",
+				recommendedState: "QUARANTINE",
+			},
+		];
+	}
 
 	const baseChatOptions: ChatOptions = {
 		model: config.model,
@@ -525,7 +578,6 @@ ${evidenceText}
 	};
 	let parsed: SemanticVerdict | null = null;
 	let lastAuditError: unknown = null;
-	const cachePath = semanticAuditCachePath(config, claim, prompt);
 	const cached = readJson<{
 		auditVersion: string;
 		model: string;
@@ -619,8 +671,15 @@ ${evidenceText}
 			}`,
 		);
 	}
-	const verdict: SemanticVerdict = parsed;
+	return semanticIssuesFromVerdict(config, claim, evidenceSpans, parsed);
+}
 
+function semanticIssuesFromVerdict(
+	config: AppConfig,
+	claim: Claim,
+	evidenceSpans: SourceSpan[],
+	verdict: SemanticVerdict,
+): LintIssue[] {
 	const issues: LintIssue[] = [];
 	const dims = verdict.dimensions;
 
@@ -667,59 +726,24 @@ export interface RelationSemanticCheckResult {
 	relationAuditVersion: string | null;
 }
 
-/**
- * 审计“边”而不是重复审计两个端点。端点各自为真并不能推出 Relation 成立。
- * 通过时只保留审计器明确选中的边级证据；任何维度失败都隔离该边。
- */
-export async function relationSemanticCheck(
+interface PreparedRelationAudit {
+	relation: Relation;
+	fromClaim: Claim;
+	toClaim: Claim;
+	evidenceSpans: SourceSpan[];
+	evidenceText: string;
+	prompt: string;
+	cachePath: string;
+}
+
+function prepareRelationAudit(
 	config: AppConfig,
 	relation: Relation,
 	fromClaim: Claim,
 	toClaim: Claim,
 	spans: SourceSpan[],
-	provider: LLMProvider,
-	run?: CompileRunHandle,
-): Promise<RelationSemanticCheckResult> {
-	if (
-		relation.source === "cross-material-detect" &&
-		(isSourceMetadataClaim(fromClaim.statement) || isSourceMetadataClaim(toClaim.statement))
-	) {
-		return {
-			issues: [
-				{
-					code: "RELATION_IDENTITY_MISMATCH",
-					severity: "error",
-					affectedObject: relation.id,
-					detail:
-						"跨材料 Relation 端点包含 Source 自身的发布日期、发布机构或文档编号；该信息属于 provenance 层，不进入 Claim 语义图",
-					recommendedState: "QUARANTINE",
-				},
-			],
-			evidenceSpanIds: [],
-			conditionStatus: "UNVERIFIED",
-			supersessionEffect: null,
-			relationAuditVersion: null,
-		};
-	}
+): PreparedRelationAudit {
 	const evidenceSpans = findSpansByIds(spans, relation.evidenceSpanIds);
-	if (evidenceSpans.length === 0) {
-		return {
-			issues: [
-				{
-					code: "MISSING_EVIDENCE",
-					severity: "error",
-					affectedObject: relation.id,
-					detail: "无法获取 Relation 的候选证据原文",
-					recommendedState: "QUARANTINE",
-				},
-			],
-			evidenceSpanIds: [],
-			conditionStatus: "UNVERIFIED",
-			supersessionEffect: null,
-			relationAuditVersion: null,
-		};
-	}
-
 	const fromEvidenceIds = new Set(fromClaim.evidenceSpanIds);
 	const toEvidenceIds = new Set(toClaim.evidenceSpanIds);
 	const evidenceText = evidenceSpans
@@ -749,6 +773,72 @@ ${toClaim.statement}
 ${evidenceText}
 
 只能使用以上证据编号，按系统指令返回严格 JSON。`;
+	return {
+		relation,
+		fromClaim,
+		toClaim,
+		evidenceSpans,
+		evidenceText,
+		prompt,
+		cachePath: relationAuditCachePath(config, relation, prompt),
+	};
+}
+
+/**
+ * 审计“边”而不是重复审计两个端点。端点各自为真并不能推出 Relation 成立。
+ * 通过时只保留审计器明确选中的边级证据；任何维度失败都隔离该边。
+ */
+export async function relationSemanticCheck(
+	config: AppConfig,
+	relation: Relation,
+	fromClaim: Claim,
+	toClaim: Claim,
+	spans: SourceSpan[],
+	provider: LLMProvider,
+	run?: CompileRunHandle,
+): Promise<RelationSemanticCheckResult> {
+	if (
+		relation.source === "cross-material-detect" &&
+		(isSourceMetadataClaim(fromClaim.statement) || isSourceMetadataClaim(toClaim.statement))
+	) {
+		const metadataKind =
+			classifySourceMetadataClaim(fromClaim.statement) ??
+			classifySourceMetadataClaim(toClaim.statement);
+		return {
+			issues: [
+				{
+					code: "RELATION_PROVENANCE_ONLY",
+					severity: "error",
+					affectedObject: relation.id,
+					detail: `跨材料 Relation 端点仅表达 Source/provenance 管理事实（${metadataKind ?? "UNKNOWN"}）；原 Claim 保留可检索，但不进入领域 Claim 语义图`,
+					recommendedState: "QUARANTINE",
+				},
+			],
+			evidenceSpanIds: [],
+			conditionStatus: "UNVERIFIED",
+			supersessionEffect: null,
+			relationAuditVersion: null,
+		};
+	}
+	const prepared = prepareRelationAudit(config, relation, fromClaim, toClaim, spans);
+	const { evidenceSpans, evidenceText, prompt, cachePath } = prepared;
+	if (evidenceSpans.length === 0) {
+		return {
+			issues: [
+				{
+					code: "MISSING_EVIDENCE",
+					severity: "error",
+					affectedObject: relation.id,
+					detail: "无法获取 Relation 的候选证据原文",
+					recommendedState: "QUARANTINE",
+				},
+			],
+			evidenceSpanIds: [],
+			conditionStatus: "UNVERIFIED",
+			supersessionEffect: null,
+			relationAuditVersion: null,
+		};
+	}
 
 	const baseChatOptions: ChatOptions = {
 		model: config.model,
@@ -759,7 +849,6 @@ ${evidenceText}
 		thinkingDisabled: true,
 		maxTokens: 4096,
 	};
-	const cachePath = relationAuditCachePath(config, relation, prompt);
 	const cached = readJson<{
 		auditVersion: string;
 		model: string;
@@ -851,6 +940,65 @@ ${evidenceText}
 		};
 	}
 
+	let criticVerdict: RelationTypeCriticVerdict | null = null;
+	let criticError: unknown = null;
+	let utilityVerdict: RelationUtilityCriticVerdict | null = null;
+	let utilityError: unknown = null;
+	if (verdict.verdict === "passed" && relation.type !== "RELATED_TO") {
+		try {
+			criticVerdict = await relationTypeCriticCheck(
+				config,
+				relation,
+				fromClaim,
+				toClaim,
+				evidenceSpans,
+				evidenceText,
+				provider,
+				run,
+			);
+		} catch (error) {
+			criticError = error;
+		}
+	} else if (verdict.verdict === "passed") {
+		try {
+			utilityVerdict = await relatedToUtilityCriticCheck(
+				config,
+				relation,
+				fromClaim,
+				toClaim,
+				evidenceSpans,
+				evidenceText,
+				provider,
+				run,
+			);
+		} catch (error) {
+			utilityError = error;
+		}
+	}
+	return relationResultFromVerdicts(
+		relation,
+		fromClaim,
+		toClaim,
+		evidenceSpans,
+		verdict,
+		criticVerdict,
+		criticError,
+		utilityVerdict,
+		utilityError,
+	);
+}
+
+function relationResultFromVerdicts(
+	relation: Relation,
+	fromClaim: Claim,
+	toClaim: Claim,
+	evidenceSpans: SourceSpan[],
+	verdict: RelationSemanticVerdict,
+	criticVerdict: RelationTypeCriticVerdict | null,
+	criticError: unknown,
+	utilityVerdict: RelationUtilityCriticVerdict | null,
+	utilityError: unknown,
+): RelationSemanticCheckResult {
 	const issueCodes: Record<RelationAuditDimensionName, IssueCode> = {
 		identity: "RELATION_IDENTITY_MISMATCH",
 		relation: "RELATION_SEMANTIC_FAILED",
@@ -875,6 +1023,54 @@ ${evidenceText}
 			});
 		}
 	}
+	if (criticError) {
+		issues.push({
+			code: "RELATION_AUDIT_INVALID",
+			severity: "error",
+			affectedObject: relation.id,
+			detail: `强关系类型 critic 无法产生可信结构化结果：${
+				criticError instanceof Error ? criticError.message : String(criticError)
+			}`,
+			recommendedState: "QUARANTINE",
+		});
+	}
+	if (criticVerdict?.verdict === "failed") {
+		issues.push({
+			code: "RELATION_TYPE_MISMATCH",
+			severity: "error",
+			affectedObject: relation.id,
+			detail: `强关系类型 critic 拒绝候选：${criticVerdict.failureModes.join(", ")}；证据 ${formatEvidenceReferences(
+				criticVerdict.evidenceSpanIndexes,
+				evidenceSpans,
+			)}`,
+			recommendedState: "QUARANTINE",
+		});
+	}
+	if (utilityError) {
+		issues.push({
+			code: "RELATION_AUDIT_INVALID",
+			severity: "error",
+			affectedObject: relation.id,
+			detail: `RELATED_TO 效用 critic 无法产生可信结构化结果：${
+				utilityError instanceof Error ? utilityError.message : String(utilityError)
+			}`,
+			recommendedState: "QUARANTINE",
+		});
+	}
+	if (utilityVerdict?.verdict === "failed") {
+		issues.push({
+			code: "RELATION_UTILITY_LOW",
+			severity: "error",
+			affectedObject: relation.id,
+			detail: `RELATED_TO 不满足长期候选导航效用：${utilityVerdict.failureModes.join(", ")}；证据 ${formatEvidenceReferences(
+				utilityVerdict.evidenceSpanIndexes,
+				evidenceSpans,
+			)}`,
+			recommendedState: "QUARANTINE",
+		});
+	}
+	const fromEvidenceIds = new Set(fromClaim.evidenceSpanIds);
+	const toEvidenceIds = new Set(toClaim.evidenceSpanIds);
 	const selectedEvidenceIds = verdict.supportingEvidenceSpanIndexes.map(
 		(index) => (evidenceSpans[index] as SourceSpan).id,
 	);
@@ -904,6 +1100,272 @@ ${evidenceText}
 				: null,
 		relationAuditVersion: RELATION_AUDIT_VERSION,
 	};
+}
+
+interface PreparedRelationCritic {
+	relation: Relation;
+	evidenceSpans: SourceSpan[];
+	prompt: string;
+	cachePath: string;
+}
+
+function prepareRelationCritic(
+	config: AppConfig,
+	relation: Relation,
+	fromClaim: Claim,
+	toClaim: Claim,
+	evidenceSpans: SourceSpan[],
+	evidenceText: string,
+): PreparedRelationCritic {
+	const prompt = `请对抗式复核以下强 Relation。\n\n# From Claim\n${fromClaim.statement}\n条件：${fromClaim.conditions.join("; ") || "无"}\n\n# Relation\n${relation.type}\n条件：${relation.conditions.join("; ") || "无"}\n\n# To Claim\n${toClaim.statement}\n条件：${toClaim.conditions.join("; ") || "无"}\n\n# 候选原文证据\n${evidenceText}\n\n主动寻找类型、方向、强度、同一对象或条件方面的失败模式，只输出严格 JSON。`;
+	return {
+		relation,
+		evidenceSpans,
+		prompt,
+		cachePath: relationCriticCachePath(config, relation, prompt),
+	};
+}
+
+async function relationTypeCriticCheck(
+	config: AppConfig,
+	relation: Relation,
+	fromClaim: Claim,
+	toClaim: Claim,
+	evidenceSpans: SourceSpan[],
+	evidenceText: string,
+	provider: LLMProvider,
+	run?: CompileRunHandle,
+): Promise<RelationTypeCriticVerdict> {
+	const prepared = prepareRelationCritic(
+		config,
+		relation,
+		fromClaim,
+		toClaim,
+		evidenceSpans,
+		evidenceText,
+	);
+	const { prompt, cachePath } = prepared;
+	const baseChatOptions: ChatOptions = {
+		model: config.model,
+		temperature: config.temperature,
+		systemPrompt: RELATION_TYPE_CRITIC_SYSTEM,
+		messages: [{ role: "user", content: prompt }],
+		responseFormat: "json_object",
+		maxTokens: 2048,
+	};
+	const cached = readJson<{
+		auditVersion: string;
+		model: string;
+		temperature?: number;
+		verdict: unknown;
+	}>(cachePath);
+	if (
+		cached?.auditVersion === RELATION_AUDIT_VERSION &&
+		cached.model === config.model &&
+		cached.temperature === config.temperature
+	) {
+		const parsed = RelationTypeCriticVerdictSchema.safeParse(cached.verdict);
+		if (parsed.success) {
+			validateRelationTypeCriticVerdict(parsed.data, evidenceSpans.length);
+			return parsed.data;
+		}
+	}
+
+	let lastError: unknown = null;
+	for (let attempt = 1; attempt <= 2; attempt++) {
+		const chatOptions: ChatOptions = {
+			...baseChatOptions,
+			messages: [
+				{
+					role: "user",
+					content:
+						attempt === 1
+							? prompt
+							: `${prompt}\n\n机器协议重试：failureModes 只能使用枚举；无失败模式时必须是空数组。`,
+				},
+			],
+		};
+		const telemetryContext = run
+			? {
+					runId: run.runId,
+					sourceId: run.sourceId,
+					stage: "LINT" as const,
+					batchId: `relation-type-critic-${relation.id}`,
+					attempt,
+				}
+			: null;
+		const observed = telemetryContext
+			? await observedChat(config, provider, chatOptions, telemetryContext)
+			: null;
+		const result = observed ? observed.result : await provider.chat(chatOptions);
+		try {
+			if (result.finishReason === "length") throw new Error("Relation critic 输出被截断");
+			const verdict = parseLLMJson(result.content, RelationTypeCriticVerdictSchema);
+			validateRelationTypeCriticVerdict(verdict, evidenceSpans.length);
+			if (observed && telemetryContext) {
+				recordParseResult(config, telemetryContext, observed.callId, "VALID");
+			}
+			writeJsonAtomic(cachePath, {
+				auditVersion: RELATION_AUDIT_VERSION,
+				model: config.model,
+				temperature: config.temperature,
+				verdict,
+			});
+			return verdict;
+		} catch (error) {
+			lastError = error;
+			if (observed && telemetryContext) {
+				recordParseResult(config, telemetryContext, observed.callId, "INVALID", error);
+			}
+		}
+	}
+	throw lastError instanceof Error ? lastError : new Error(String(lastError));
+}
+
+async function relatedToUtilityCriticCheck(
+	config: AppConfig,
+	relation: Relation,
+	fromClaim: Claim,
+	toClaim: Claim,
+	evidenceSpans: SourceSpan[],
+	evidenceText: string,
+	provider: LLMProvider,
+	run?: CompileRunHandle,
+): Promise<RelationUtilityCriticVerdict> {
+	const prompt = relatedToUtilityPrompt(fromClaim, toClaim, evidenceText);
+	const cachePath = relationUtilityCriticCachePath(config, relation, prompt);
+	const cached = readRelationUtilityCriticCache(
+		config,
+		relation,
+		fromClaim,
+		toClaim,
+		evidenceSpans,
+		prompt,
+	);
+	if (cached) return cached;
+
+	let lastError: unknown = null;
+	for (let attempt = 1; attempt <= 2; attempt++) {
+		const telemetryContext = run
+			? {
+					runId: run.runId,
+					sourceId: run.sourceId,
+					stage: "LINT" as const,
+					batchId: `related-to-utility-critic-${relation.id}`,
+					attempt,
+				}
+			: null;
+		const chatOptions: ChatOptions = {
+			model: config.model,
+			temperature: config.temperature,
+			systemPrompt: RELATED_TO_UTILITY_CRITIC_SYSTEM,
+			messages: [
+				{
+					role: "user",
+					content:
+						attempt === 1
+							? prompt
+							: `${prompt}\n\n机器协议重试：failureModes 只能使用枚举；无失败模式时必须是空数组。`,
+				},
+			],
+			responseFormat: "json_object",
+			thinkingDisabled: true,
+			maxTokens: 1_024,
+		};
+		const observed = telemetryContext
+			? await observedChat(config, provider, chatOptions, telemetryContext)
+			: null;
+		const result = observed ? observed.result : await provider.chat(chatOptions);
+		try {
+			if (result.finishReason === "length") throw new Error("RELATED_TO 效用 critic 输出被截断");
+			const verdict = parseLLMJson(result.content, RelationUtilityCriticVerdictSchema);
+			validateRelationUtilityCriticVerdict(verdict, evidenceSpans, fromClaim, toClaim);
+			if (observed && telemetryContext) {
+				recordParseResult(config, telemetryContext, observed.callId, "VALID");
+			}
+			writeJsonAtomic(cachePath, {
+				auditVersion: RELATION_AUDIT_VERSION,
+				model: config.model,
+				temperature: config.temperature,
+				verdict,
+			});
+			return verdict;
+		} catch (error) {
+			lastError = error;
+			if (observed && telemetryContext) {
+				recordParseResult(config, telemetryContext, observed.callId, "INVALID", error);
+			}
+		}
+	}
+	throw lastError instanceof Error ? lastError : new Error(String(lastError));
+}
+
+function relatedToUtilityPrompt(fromClaim: Claim, toClaim: Claim, evidenceText: string): string {
+	return `请独立复核以下 RELATED_TO 是否具有长期候选导航效用。\n\n# From Claim\n${fromClaim.statement}\n条件：${fromClaim.conditions.join("; ") || "无"}\n\n# Relation\nRELATED_TO\n\n# To Claim\n${toClaim.statement}\n条件：${toClaim.conditions.join("; ") || "无"}\n\n# 候选原文证据\n${evidenceText}\n\n只判断导航效用，只输出严格 JSON。`;
+}
+
+function readRelationUtilityCriticCache(
+	config: AppConfig,
+	relation: Relation,
+	fromClaim: Claim,
+	toClaim: Claim,
+	evidenceSpans: SourceSpan[],
+	prompt: string,
+): RelationUtilityCriticVerdict | null {
+	const cached = readJson<{
+		auditVersion: string;
+		model: string;
+		temperature?: number;
+		verdict: unknown;
+	}>(relationUtilityCriticCachePath(config, relation, prompt));
+	if (
+		cached?.auditVersion !== RELATION_AUDIT_VERSION ||
+		cached.model !== config.model ||
+		cached.temperature !== config.temperature
+	) {
+		return null;
+	}
+	const parsed = RelationUtilityCriticVerdictSchema.safeParse(cached.verdict);
+	if (!parsed.success) return null;
+	try {
+		validateRelationUtilityCriticVerdict(parsed.data, evidenceSpans, fromClaim, toClaim);
+		return parsed.data;
+	} catch {
+		return null;
+	}
+}
+
+/**
+ * Reuse the production RELATED_TO utility contract without rerunning the primary
+ * semantic audit. This is used by frozen-primary evaluation and future migration:
+ * callers must supply a Relation that has already passed the current primary gate.
+ */
+export async function reviewRelatedToUtility(
+	config: AppConfig,
+	relation: Relation,
+	fromClaim: Claim,
+	toClaim: Claim,
+	spans: SourceSpan[],
+	provider: LLMProvider,
+	run?: CompileRunHandle,
+): Promise<RelationUtilityCriticVerdict> {
+	if (relation.type !== "RELATED_TO") {
+		throw new Error(`RELATED_TO utility review cannot audit ${relation.type}`);
+	}
+	const prepared = prepareRelationAudit(config, relation, fromClaim, toClaim, spans);
+	if (prepared.evidenceSpans.length === 0) {
+		throw new Error("RELATED_TO utility review cannot resolve relation evidence");
+	}
+	return relatedToUtilityCriticCheck(
+		config,
+		relation,
+		fromClaim,
+		toClaim,
+		prepared.evidenceSpans,
+		prepared.evidenceText,
+		provider,
+		run,
+	);
 }
 
 const RELATION_AUDIT_DIMENSIONS: RelationAuditDimensionName[] = [
@@ -968,6 +1430,87 @@ function relationAuditCachePath(config: AppConfig, relation: Relation, prompt: s
 		)
 		.digest("hex");
 	return join(config.runsDir, "relation-audit-cache", `${hash}.json`);
+}
+
+function relationCriticCachePath(config: AppConfig, relation: Relation, prompt: string): string {
+	const hash = createHash("sha256")
+		.update(
+			JSON.stringify({
+				auditVersion: RELATION_AUDIT_VERSION,
+				model: config.model,
+				temperature: config.temperature,
+				relationId: relation.id,
+				systemPrompt: RELATION_TYPE_CRITIC_SYSTEM,
+				prompt,
+			}),
+		)
+		.digest("hex");
+	return join(config.runsDir, "relation-critic-cache", `${hash}.json`);
+}
+
+function relationUtilityCriticCachePath(
+	config: AppConfig,
+	relation: Relation,
+	prompt: string,
+): string {
+	const hash = createHash("sha256")
+		.update(
+			JSON.stringify({
+				auditVersion: RELATION_AUDIT_VERSION,
+				model: config.model,
+				temperature: config.temperature,
+				relationId: relation.id,
+				systemPrompt: RELATED_TO_UTILITY_CRITIC_SYSTEM,
+				prompt,
+			}),
+		)
+		.digest("hex");
+	return join(config.runsDir, "relation-utility-cache", `${hash}.json`);
+}
+
+function validateRelationTypeCriticVerdict(
+	verdict: RelationTypeCriticVerdict,
+	evidenceCount: number,
+): void {
+	const invalid = verdict.evidenceSpanIndexes.find(
+		(index) => !Number.isInteger(index) || index < 0 || index >= evidenceCount,
+	);
+	if (invalid !== undefined) throw new Error(`Relation critic 引用了不存在的证据下标: ${invalid}`);
+	const expected = verdict.failureModes.length === 0 ? "passed" : "failed";
+	if (verdict.verdict !== expected) {
+		throw new Error(
+			`Relation critic verdict 与 failureModes 不一致: expected=${expected} actual=${verdict.verdict}`,
+		);
+	}
+}
+
+function validateRelationUtilityCriticVerdict(
+	verdict: RelationUtilityCriticVerdict,
+	evidenceSpans: SourceSpan[],
+	fromClaim: Claim,
+	toClaim: Claim,
+): void {
+	const invalid = verdict.evidenceSpanIndexes.find(
+		(index) => !Number.isInteger(index) || index < 0 || index >= evidenceSpans.length,
+	);
+	if (invalid !== undefined) {
+		throw new Error(`RELATED_TO 效用 critic 引用了不存在的证据下标: ${invalid}`);
+	}
+	const expected = verdict.failureModes.length === 0 ? "passed" : "failed";
+	if (verdict.verdict !== expected) {
+		throw new Error(
+			`RELATED_TO 效用 critic verdict 与 failureModes 不一致: expected=${expected} actual=${verdict.verdict}`,
+		);
+	}
+	const selectedIds = verdict.evidenceSpanIndexes.map(
+		(index) => (evidenceSpans[index] as SourceSpan).id,
+	);
+	if (
+		!selectedIds.some((id) => fromClaim.evidenceSpanIds.includes(id)) ||
+		!selectedIds.some((id) => toClaim.evidenceSpanIds.includes(id))
+	) {
+		throw new Error("RELATED_TO 效用 critic 的证据必须同时覆盖 FROM 与 TO 端点");
+	}
 }
 
 const AUDIT_DIMENSIONS: AuditDimensionName[] = [
@@ -1122,7 +1665,7 @@ export function isQuoteInText(quote: string, text: string): boolean {
  *    - 当前覆盖：数学数集符号（基于实际语料分析）
  *    - 扩展方式：往 LATEX_COMMAND_MAP / UNICODE_MAP 加条目即可
  *
- * 数据依据：readings/ 论文集与 mathtest-material/ 的 LaTeX 命令频率分析。
+ * 数据依据：references/readings/ 论文集与 mathtest-material/ 的 LaTeX 命令频率分析。
  * 两领域共用 \frac \mathbb \text \theta；论文特有 \mathcal \mathbf \hat \tilde。
  */
 function normalizeForMatching(s: string): string {
@@ -1208,6 +1751,662 @@ function bigrams(s: string): string[] {
 	return grams;
 }
 
+function partitionAuditItems<T>(
+	items: T[],
+	render: (item: T) => string,
+	maxItems: number,
+	systemPrompt: string,
+	inputTokenBudget = AUDIT_BATCH_INPUT_TOKEN_BUDGET,
+): T[][] {
+	const budget = Math.max(inputTokenBudget - estimateTokens(systemPrompt), 1_000);
+	const batches: T[][] = [];
+	let current: T[] = [];
+	let currentTokens = 0;
+	for (const item of items) {
+		const itemTokens = estimateTokens(render(item));
+		if (current.length > 0 && (current.length >= maxItems || currentTokens + itemTokens > budget)) {
+			batches.push(current);
+			current = [];
+			currentTokens = 0;
+		}
+		current.push(item);
+		currentTokens += itemTokens;
+	}
+	if (current.length > 0) batches.push(current);
+	return batches;
+}
+
+function validateBatchObjectIds(
+	requestedIds: string[],
+	returnedItems: Array<{ objectId: string }>,
+): void {
+	const requested = new Set(requestedIds);
+	const returned = new Set<string>();
+	for (const item of returnedItems) {
+		if (!requested.has(item.objectId)) {
+			throw new Error(`批量审计返回了未请求的 objectId: ${item.objectId}`);
+		}
+		if (returned.has(item.objectId)) {
+			throw new Error(`批量审计重复返回 objectId: ${item.objectId}`);
+		}
+		returned.add(item.objectId);
+	}
+	const missing = requestedIds.filter((id) => !returned.has(id));
+	if (missing.length > 0) throw new Error(`批量审计缺少 objectId: ${missing.join(", ")}`);
+}
+
+function auditBatchId(prefix: string, ids: string[]): string {
+	const digest = createHash("sha256").update(ids.join("\n")).digest("hex").slice(0, 12);
+	return `${prefix}-${ids.length}-${digest}`;
+}
+
+function readSemanticAuditCache(
+	config: AppConfig,
+	prepared: PreparedClaimAudit,
+): SemanticVerdict | null {
+	const cached = readJson<{
+		auditVersion: string;
+		model: string;
+		temperature?: number;
+		verdict: unknown;
+	}>(prepared.cachePath);
+	if (
+		cached?.auditVersion !== SEMANTIC_AUDIT_VERSION ||
+		cached.model !== config.model ||
+		cached.temperature !== config.temperature
+	) {
+		return null;
+	}
+	const parsed = SemanticVerdictSchema.safeParse(cached.verdict);
+	if (!parsed.success) return null;
+	try {
+		validateSemanticVerdict(parsed.data, prepared.evidenceSpans.length);
+		return parsed.data;
+	} catch {
+		return null;
+	}
+}
+
+function writeSemanticAuditCache(
+	config: AppConfig,
+	prepared: PreparedClaimAudit,
+	verdict: SemanticVerdict,
+): void {
+	writeJsonAtomic(prepared.cachePath, {
+		auditVersion: SEMANTIC_AUDIT_VERSION,
+		model: config.model,
+		temperature: config.temperature,
+		verdict,
+	});
+}
+
+async function auditClaimBatchGroup(
+	config: AppConfig,
+	items: PreparedClaimAudit[],
+	provider: LLMProvider,
+	run: CompileRunHandle,
+	attempt = 1,
+): Promise<Map<string, SemanticVerdict>> {
+	const ids = items.map((item) => item.claim.id);
+	const prompt = `独立审计以下 ${items.length} 个 Claim。每个对象的证据下标从 0 重新开始。\n\n${items
+		.map((item) => `## objectId=${item.claim.id}\n${item.prompt}`)
+		.join("\n\n---\n\n")}\n\n只输出批处理 JSON envelope。`;
+	const context = {
+		runId: run.runId,
+		sourceId: run.sourceId,
+		stage: "LINT" as const,
+		batchId: auditBatchId("claim-audit-batch", ids),
+		attempt,
+	};
+	const observed = await observedChat(
+		config,
+		provider,
+		{
+			model: config.model,
+			temperature: config.temperature,
+			systemPrompt: SEMANTIC_AUDIT_BATCH_SYSTEM,
+			messages: [
+				{
+					role: "user",
+					content:
+						attempt === 1
+							? prompt
+							: `${prompt}\n\n机器协议重试：items 数量和 objectId 必须与输入精确一致。`,
+				},
+			],
+			responseFormat: "json_object",
+			thinkingDisabled: true,
+			maxTokens: Math.min(16_384, Math.max(4_096, items.length * 900)),
+		},
+		context,
+	);
+	try {
+		if (observed.result.finishReason === "length") throw new Error("Claim 批量审计输出被截断");
+		const parsed = parseLLMJson(observed.result.content, SemanticVerdictBatchSchema);
+		validateBatchObjectIds(ids, parsed.items);
+		const verdicts = new Map<string, SemanticVerdict>();
+		for (const returned of parsed.items) {
+			const prepared = items.find((item) => item.claim.id === returned.objectId);
+			if (!prepared) throw new Error(`无法解析 Claim 批量审计对象: ${returned.objectId}`);
+			validateSemanticVerdict(returned.verdict, prepared.evidenceSpans.length);
+			verdicts.set(returned.objectId, returned.verdict);
+		}
+		recordParseResult(config, context, observed.callId, "VALID");
+		for (const prepared of items) {
+			const verdict = verdicts.get(prepared.claim.id);
+			if (verdict) writeSemanticAuditCache(config, prepared, verdict);
+		}
+		return verdicts;
+	} catch (error) {
+		recordParseResult(config, context, observed.callId, "INVALID", error);
+		if (items.length > 1) {
+			const middle = Math.ceil(items.length / 2);
+			const [left, right] = await Promise.all([
+				auditClaimBatchGroup(config, items.slice(0, middle), provider, run),
+				auditClaimBatchGroup(config, items.slice(middle), provider, run),
+			]);
+			return new Map([...left, ...right]);
+		}
+		if (attempt < 2) return auditClaimBatchGroup(config, items, provider, run, attempt + 1);
+		throw new Error(
+			`Claim ${ids[0] ?? "UNKNOWN"} 批量缩批后仍无法产生可信结构化结果: ${
+				error instanceof Error ? error.message : String(error)
+			}`,
+		);
+	}
+}
+
+async function semanticChecksBatch(
+	config: AppConfig,
+	claims: Claim[],
+	spans: SourceSpan[],
+	provider: LLMProvider,
+	run: CompileRunHandle,
+): Promise<Map<string, LintIssue[]>> {
+	const issuesById = new Map<string, LintIssue[]>();
+	const misses: PreparedClaimAudit[] = [];
+	for (const claim of claims) {
+		const prepared = prepareClaimAudit(config, claim, spans);
+		if (prepared.evidenceSpans.length === 0) {
+			recordAuditMetric(config, claim.id, "skipped", "no-evidence");
+			issuesById.set(claim.id, [
+				{
+					code: "SEMANTIC_CITATION_FAILED",
+					severity: "error",
+					affectedObject: claim.id,
+					detail: "无法获取证据原文",
+					recommendedState: "QUARANTINE",
+				},
+			]);
+			continue;
+		}
+		const cached = readSemanticAuditCache(config, prepared);
+		if (cached) {
+			issuesById.set(
+				claim.id,
+				semanticIssuesFromVerdict(config, claim, prepared.evidenceSpans, cached),
+			);
+			continue;
+		}
+		misses.push(prepared);
+	}
+	const groups = partitionAuditItems(
+		misses,
+		(item) => item.prompt,
+		CLAIM_AUDIT_BATCH_MAX_ITEMS,
+		SEMANTIC_AUDIT_BATCH_SYSTEM,
+	);
+	const groupVerdicts = await mapWithConcurrency(groups, AUDIT_BATCH_CONCURRENCY, (group) =>
+		auditClaimBatchGroup(config, group, provider, run),
+	);
+	for (let index = 0; index < groups.length; index++) {
+		const group = groups[index] ?? [];
+		const verdicts = groupVerdicts[index] ?? new Map<string, SemanticVerdict>();
+		for (const prepared of group) {
+			const verdict = verdicts.get(prepared.claim.id);
+			if (!verdict) throw new Error(`Claim 批量审计账不平: ${prepared.claim.id}`);
+			issuesById.set(
+				prepared.claim.id,
+				semanticIssuesFromVerdict(config, prepared.claim, prepared.evidenceSpans, verdict),
+			);
+		}
+	}
+	return issuesById;
+}
+
+type RelationAuditOutcome =
+	| { verdict: RelationSemanticVerdict; error?: never }
+	| { verdict?: never; error: unknown };
+type RelationCriticOutcome =
+	| { verdict: RelationTypeCriticVerdict; error?: never }
+	| { verdict?: never; error: unknown };
+type RelationUtilityOutcome =
+	| { verdict: RelationUtilityCriticVerdict; error?: never }
+	| { verdict?: never; error: unknown };
+
+function readRelationAuditCache(
+	config: AppConfig,
+	prepared: PreparedRelationAudit,
+): RelationSemanticVerdict | null {
+	const cached = readJson<{
+		auditVersion: string;
+		model: string;
+		temperature?: number;
+		verdict: unknown;
+	}>(prepared.cachePath);
+	if (
+		cached?.auditVersion !== RELATION_AUDIT_VERSION ||
+		cached.model !== config.model ||
+		cached.temperature !== config.temperature
+	) {
+		return null;
+	}
+	const parsed = RelationSemanticVerdictSchema.safeParse(cached.verdict);
+	if (!parsed.success) return null;
+	try {
+		validateRelationSemanticVerdict(
+			parsed.data,
+			prepared.evidenceSpans.length,
+			prepared.relation.type,
+		);
+		return parsed.data;
+	} catch {
+		return null;
+	}
+}
+
+function writeRelationAuditCache(
+	config: AppConfig,
+	prepared: PreparedRelationAudit,
+	verdict: RelationSemanticVerdict,
+): void {
+	writeJsonAtomic(prepared.cachePath, {
+		auditVersion: RELATION_AUDIT_VERSION,
+		model: config.model,
+		temperature: config.temperature,
+		verdict,
+	});
+}
+
+async function auditRelationBatchGroup(
+	config: AppConfig,
+	items: PreparedRelationAudit[],
+	provider: LLMProvider,
+	run: CompileRunHandle,
+	attempt = 1,
+): Promise<Map<string, RelationAuditOutcome>> {
+	const ids = items.map((item) => item.relation.id);
+	const prompt = `独立审计以下 ${items.length} 条候选 Relation。每条边的证据下标从 0 重新开始。\n\n${items
+		.map((item) => `## objectId=${item.relation.id}\n${item.prompt}`)
+		.join("\n\n---\n\n")}\n\n只输出批处理 JSON envelope。`;
+	const context = {
+		runId: run.runId,
+		sourceId: run.sourceId,
+		stage: "LINT" as const,
+		batchId: auditBatchId("relation-audit-batch", ids),
+		attempt,
+	};
+	const observed = await observedChat(
+		config,
+		provider,
+		{
+			model: config.model,
+			temperature: config.temperature,
+			systemPrompt: RELATION_AUDIT_BATCH_SYSTEM,
+			messages: [
+				{
+					role: "user",
+					content:
+						attempt === 1
+							? prompt
+							: `${prompt}\n\n机器协议重试：items 数量和 objectId 必须与输入精确一致。`,
+				},
+			],
+			responseFormat: "json_object",
+			thinkingDisabled: true,
+			maxTokens: Math.min(16_384, Math.max(4_096, items.length * 1_100)),
+		},
+		context,
+	);
+	try {
+		if (observed.result.finishReason === "length") {
+			throw new Error("Relation 批量审计输出被截断");
+		}
+		const parsed = parseLLMJson(observed.result.content, RelationSemanticVerdictBatchSchema);
+		validateBatchObjectIds(ids, parsed.items);
+		const outcomes = new Map<string, RelationAuditOutcome>();
+		for (const returned of parsed.items) {
+			const prepared = items.find((item) => item.relation.id === returned.objectId);
+			if (!prepared) throw new Error(`无法解析 Relation 批量审计对象: ${returned.objectId}`);
+			validateRelationSemanticVerdict(
+				returned.verdict,
+				prepared.evidenceSpans.length,
+				prepared.relation.type,
+			);
+			outcomes.set(returned.objectId, { verdict: returned.verdict });
+		}
+		recordParseResult(config, context, observed.callId, "VALID");
+		for (const prepared of items) {
+			const verdict = outcomes.get(prepared.relation.id)?.verdict;
+			if (verdict) writeRelationAuditCache(config, prepared, verdict);
+		}
+		return outcomes;
+	} catch (error) {
+		recordParseResult(config, context, observed.callId, "INVALID", error);
+		if (items.length > 1) {
+			const middle = Math.ceil(items.length / 2);
+			const [left, right] = await Promise.all([
+				auditRelationBatchGroup(config, items.slice(0, middle), provider, run),
+				auditRelationBatchGroup(config, items.slice(middle), provider, run),
+			]);
+			return new Map([...left, ...right]);
+		}
+		if (attempt < 2) return auditRelationBatchGroup(config, items, provider, run, attempt + 1);
+		return new Map([[ids[0] ?? "UNKNOWN", { error }]]);
+	}
+}
+
+async function auditRelationUtilityBatchGroup(
+	config: AppConfig,
+	items: PreparedRelationAudit[],
+	provider: LLMProvider,
+	run: CompileRunHandle,
+	attempt = 1,
+): Promise<Map<string, RelationUtilityOutcome>> {
+	const ids = items.map((item) => item.relation.id);
+	const prompt = `独立复核以下 ${items.length} 条 RELATED_TO 候选的长期导航效用。每条边的证据下标从 0 重新开始。\n\n${items
+		.map(
+			(item) =>
+				`## objectId=${item.relation.id}\n${relatedToUtilityPrompt(
+					item.fromClaim,
+					item.toClaim,
+					item.evidenceText,
+				)}`,
+		)
+		.join("\n\n---\n\n")}\n\n只输出批处理 JSON envelope。`;
+	const context = {
+		runId: run.runId,
+		sourceId: run.sourceId,
+		stage: "LINT" as const,
+		batchId: auditBatchId("related-to-utility-batch", ids),
+		attempt,
+	};
+	const observed = await observedChat(
+		config,
+		provider,
+		{
+			model: config.model,
+			temperature: config.temperature,
+			systemPrompt: RELATED_TO_UTILITY_CRITIC_BATCH_SYSTEM,
+			messages: [
+				{
+					role: "user",
+					content:
+						attempt === 1
+							? prompt
+							: `${prompt}\n\n机器协议重试：items 数量和 objectId 必须与输入精确一致。`,
+				},
+			],
+			responseFormat: "json_object",
+			thinkingDisabled: true,
+			maxTokens: Math.min(8_192, Math.max(2_048, items.length * 500)),
+		},
+		context,
+	);
+	try {
+		if (observed.result.finishReason === "length") {
+			throw new Error("RELATED_TO 效用批量审计输出被截断");
+		}
+		const parsed = parseLLMJson(observed.result.content, RelationUtilityCriticVerdictBatchSchema);
+		validateBatchObjectIds(ids, parsed.items);
+		const outcomes = new Map<string, RelationUtilityOutcome>();
+		for (const returned of parsed.items) {
+			const prepared = items.find((item) => item.relation.id === returned.objectId);
+			if (!prepared) throw new Error(`无法解析 RELATED_TO 批量效用对象: ${returned.objectId}`);
+			validateRelationUtilityCriticVerdict(
+				returned.verdict,
+				prepared.evidenceSpans,
+				prepared.fromClaim,
+				prepared.toClaim,
+			);
+			outcomes.set(returned.objectId, { verdict: returned.verdict });
+			const itemPrompt = relatedToUtilityPrompt(
+				prepared.fromClaim,
+				prepared.toClaim,
+				prepared.evidenceText,
+			);
+			writeJsonAtomic(relationUtilityCriticCachePath(config, prepared.relation, itemPrompt), {
+				auditVersion: RELATION_AUDIT_VERSION,
+				model: config.model,
+				temperature: config.temperature,
+				verdict: returned.verdict,
+			});
+		}
+		recordParseResult(config, context, observed.callId, "VALID");
+		return outcomes;
+	} catch (error) {
+		recordParseResult(config, context, observed.callId, "INVALID", error);
+		if (items.length > 1) {
+			const middle = Math.ceil(items.length / 2);
+			const [left, right] = await Promise.all([
+				auditRelationUtilityBatchGroup(config, items.slice(0, middle), provider, run),
+				auditRelationUtilityBatchGroup(config, items.slice(middle), provider, run),
+			]);
+			return new Map([...left, ...right]);
+		}
+		if (attempt < 2) {
+			return auditRelationUtilityBatchGroup(config, items, provider, run, attempt + 1);
+		}
+		return new Map([[ids[0] ?? "UNKNOWN", { error }]]);
+	}
+}
+
+function invalidRelationAuditResult(
+	prepared: PreparedRelationAudit,
+	error: unknown,
+): RelationSemanticCheckResult {
+	return {
+		issues: [
+			{
+				code: "RELATION_AUDIT_INVALID",
+				severity: "error",
+				affectedObject: prepared.relation.id,
+				detail: `Relation 语义审计缩批后仍无法产生可信结构化结果；仅隔离该边，不阻断已通过门禁的端点 Claim：${
+					error instanceof Error ? error.message : String(error)
+				}`,
+				recommendedState: "QUARANTINE",
+			},
+		],
+		evidenceSpanIds: prepared.evidenceSpans.map((span) => span.id),
+		conditionStatus: "UNVERIFIED",
+		supersessionEffect: null,
+		relationAuditVersion: null,
+	};
+}
+
+async function relationSemanticChecksBatch(
+	config: AppConfig,
+	inputs: Array<{ relation: Relation; fromClaim: Claim; toClaim: Claim }>,
+	spans: SourceSpan[],
+	provider: LLMProvider,
+	run: CompileRunHandle,
+): Promise<Map<string, RelationSemanticCheckResult>> {
+	const results = new Map<string, RelationSemanticCheckResult>();
+	const preparedById = new Map<string, PreparedRelationAudit>();
+	const primaryOutcomes = new Map<string, RelationAuditOutcome>();
+	const primaryMisses: PreparedRelationAudit[] = [];
+	for (const input of inputs) {
+		if (
+			input.relation.source === "cross-material-detect" &&
+			(isSourceMetadataClaim(input.fromClaim.statement) ||
+				isSourceMetadataClaim(input.toClaim.statement))
+		) {
+			const metadataKind =
+				classifySourceMetadataClaim(input.fromClaim.statement) ??
+				classifySourceMetadataClaim(input.toClaim.statement);
+			results.set(input.relation.id, {
+				issues: [
+					{
+						code: "RELATION_PROVENANCE_ONLY",
+						severity: "error",
+						affectedObject: input.relation.id,
+						detail: `跨材料 Relation 端点仅表达 Source/provenance 管理事实（${metadataKind ?? "UNKNOWN"}）；原 Claim 保留可检索，但不进入领域 Claim 语义图`,
+						recommendedState: "QUARANTINE",
+					},
+				],
+				evidenceSpanIds: [],
+				conditionStatus: "UNVERIFIED",
+				supersessionEffect: null,
+				relationAuditVersion: null,
+			});
+			continue;
+		}
+		const prepared = prepareRelationAudit(
+			config,
+			input.relation,
+			input.fromClaim,
+			input.toClaim,
+			spans,
+		);
+		preparedById.set(input.relation.id, prepared);
+		if (prepared.evidenceSpans.length === 0) {
+			results.set(input.relation.id, {
+				issues: [
+					{
+						code: "MISSING_EVIDENCE",
+						severity: "error",
+						affectedObject: input.relation.id,
+						detail: "无法获取 Relation 的候选证据原文",
+						recommendedState: "QUARANTINE",
+					},
+				],
+				evidenceSpanIds: [],
+				conditionStatus: "UNVERIFIED",
+				supersessionEffect: null,
+				relationAuditVersion: null,
+			});
+			continue;
+		}
+		const cached = readRelationAuditCache(config, prepared);
+		if (cached) primaryOutcomes.set(input.relation.id, { verdict: cached });
+		else primaryMisses.push(prepared);
+	}
+	const primaryGroups = partitionAuditItems(
+		primaryMisses,
+		(item) => item.prompt,
+		RELATION_AUDIT_BATCH_MAX_ITEMS,
+		RELATION_AUDIT_BATCH_SYSTEM,
+	);
+	const primaryGroupOutcomes = await mapWithConcurrency(
+		primaryGroups,
+		AUDIT_BATCH_CONCURRENCY,
+		(group) => auditRelationBatchGroup(config, group, provider, run),
+	);
+	for (const outcomes of primaryGroupOutcomes) {
+		for (const [id, outcome] of outcomes) primaryOutcomes.set(id, outcome);
+	}
+
+	const criticInputs: Array<{ id: string; prepared: PreparedRelationAudit }> = [];
+	for (const [id, outcome] of primaryOutcomes) {
+		const prepared = preparedById.get(id);
+		if (!prepared || !outcome.verdict) continue;
+		if (outcome.verdict.verdict !== "passed" || prepared.relation.type === "RELATED_TO") continue;
+		criticInputs.push({ id, prepared });
+	}
+	const criticEntries = await mapWithConcurrency(
+		criticInputs,
+		AUDIT_BATCH_CONCURRENCY,
+		async ({ id, prepared }): Promise<[string, RelationCriticOutcome]> => {
+			try {
+				const verdict = await relationTypeCriticCheck(
+					config,
+					prepared.relation,
+					prepared.fromClaim,
+					prepared.toClaim,
+					prepared.evidenceSpans,
+					prepared.evidenceText,
+					provider,
+					run,
+				);
+				return [id, { verdict }];
+			} catch (error) {
+				return [id, { error }];
+			}
+		},
+	);
+	const criticOutcomes = new Map<string, RelationCriticOutcome>(criticEntries);
+	const utilityOutcomes = new Map<string, RelationUtilityOutcome>();
+	const utilityMisses: PreparedRelationAudit[] = [];
+	for (const [id, outcome] of primaryOutcomes) {
+		const prepared = preparedById.get(id);
+		if (
+			!prepared ||
+			!outcome.verdict ||
+			outcome.verdict.verdict !== "passed" ||
+			prepared.relation.type !== "RELATED_TO"
+		) {
+			continue;
+		}
+		const utilityPrompt = relatedToUtilityPrompt(
+			prepared.fromClaim,
+			prepared.toClaim,
+			prepared.evidenceText,
+		);
+		const cached = readRelationUtilityCriticCache(
+			config,
+			prepared.relation,
+			prepared.fromClaim,
+			prepared.toClaim,
+			prepared.evidenceSpans,
+			utilityPrompt,
+		);
+		if (cached) utilityOutcomes.set(id, { verdict: cached });
+		else utilityMisses.push(prepared);
+	}
+	const utilityGroups = partitionAuditItems(
+		utilityMisses,
+		(prepared) =>
+			relatedToUtilityPrompt(prepared.fromClaim, prepared.toClaim, prepared.evidenceText),
+		RELATION_UTILITY_BATCH_MAX_ITEMS,
+		RELATED_TO_UTILITY_CRITIC_BATCH_SYSTEM,
+		RELATION_UTILITY_BATCH_INPUT_TOKEN_BUDGET,
+	);
+	const utilityGroupOutcomes = await mapWithConcurrency(
+		utilityGroups,
+		AUDIT_BATCH_CONCURRENCY,
+		(group) => auditRelationUtilityBatchGroup(config, group, provider, run),
+	);
+	for (const outcomes of utilityGroupOutcomes) {
+		for (const [id, outcome] of outcomes) utilityOutcomes.set(id, outcome);
+	}
+
+	for (const [id, prepared] of preparedById) {
+		if (results.has(id)) continue;
+		const primary = primaryOutcomes.get(id);
+		if (!primary?.verdict) {
+			results.set(id, invalidRelationAuditResult(prepared, primary?.error ?? "missing outcome"));
+			continue;
+		}
+		const critic = criticOutcomes.get(id);
+		const utility = utilityOutcomes.get(id);
+		results.set(
+			id,
+			relationResultFromVerdicts(
+				prepared.relation,
+				prepared.fromClaim,
+				prepared.toClaim,
+				prepared.evidenceSpans,
+				primary.verdict,
+				critic?.verdict ?? null,
+				critic?.error ?? null,
+				utility?.verdict ?? null,
+				utility?.error ?? null,
+			),
+		);
+	}
+	return results;
+}
+
 async function mapWithConcurrency<T, R>(
 	items: T[],
 	concurrency: number,
@@ -1252,16 +2451,38 @@ export async function lintRelationsAgainstCanonicalClaims(
 	);
 	const canonicalClaimIds = new Set(eligibleClaims.map((claim) => claim.id));
 	const canonicalClaimsById = new Map(eligibleClaims.map((claim) => [claim.id, claim]));
+	const structureIssuesById = new Map(
+		relations.map((relation) => [
+			relation.id,
+			checkRelationStructure(relation, canonicalClaimIds, allKnownClaimIds, allSpans),
+		]),
+	);
+	const semanticWasRun = !options?.skipSemantic && provider !== null;
+	let batchedSemanticResults: Map<string, RelationSemanticCheckResult> | null = null;
+	if (semanticWasRun && provider && options?.run) {
+		const eligibleInputs = relations.flatMap((relation) => {
+			const structIssues = structureIssuesById.get(relation.id) ?? [];
+			if (structIssues.some((issue) => issue.severity === "error")) return [];
+			const fromClaim = canonicalClaimsById.get(relation.from as string);
+			const toClaim = canonicalClaimsById.get(relation.to as string);
+			if (!fromClaim || !toClaim) {
+				throw new Error(`Relation ${relation.id} 通过结构检查后仍无法解析 Canonical 端点`);
+			}
+			return [{ relation, fromClaim, toClaim }];
+		});
+		batchedSemanticResults = await relationSemanticChecksBatch(
+			config,
+			eligibleInputs,
+			allSpans,
+			provider,
+			options.run,
+		);
+	}
 	return mapWithConcurrency(
 		relations,
 		SEMANTIC_AUDIT_CONCURRENCY,
 		async (relation): Promise<ObjectLintResult<Relation>> => {
-			const structIssues = checkRelationStructure(
-				relation,
-				canonicalClaimIds,
-				allKnownClaimIds,
-				allSpans,
-			);
+			const structIssues = structureIssuesById.get(relation.id) ?? [];
 			if (structIssues.some((issue) => issue.severity === "error")) {
 				return {
 					object: { ...relation, publicationState: "QUARANTINED" },
@@ -1274,17 +2495,21 @@ export async function lintRelationsAgainstCanonicalClaims(
 			if (!fromClaim || !toClaim) {
 				throw new Error(`Relation ${relation.id} 通过结构检查后仍无法解析 Canonical 端点`);
 			}
-			const semanticWasRun = !options?.skipSemantic && provider !== null;
 			const semanticResult = semanticWasRun
-				? await relationSemanticCheck(
-						config,
-						relation,
-						fromClaim,
-						toClaim,
-						allSpans,
-						provider,
-						options?.run,
-					)
+				? batchedSemanticResults
+					? (batchedSemanticResults.get(relation.id) ??
+						(() => {
+							throw new Error(`Relation 批量审计账不平: ${relation.id}`);
+						})())
+					: await relationSemanticCheck(
+							config,
+							relation,
+							fromClaim,
+							toClaim,
+							allSpans,
+							provider as LLMProvider,
+							options?.run,
+						)
 				: {
 						issues: [] as LintIssue[],
 						evidenceSpanIds: relation.evidenceSpanIds,
@@ -1354,6 +2579,24 @@ export async function lintCompileResult(
 ): Promise<CompileLintResult> {
 	const allClaimIds = new Set(claims.map((c) => c.id));
 	const assertedRecords = readAllAssertedRecords(config);
+	const structureIssuesById = new Map(
+		claims.map((claim) => [claim.id, checkClaimStructure(claim, allSpans, assertedRecords)]),
+	);
+	let batchedSemanticIssues: Map<string, LintIssue[]> | null = null;
+	if (!options?.skipSemantic && provider && options?.run) {
+		const eligibleFacts = claims.filter(
+			(claim) =>
+				claim.claimKind === "FACT" &&
+				!(structureIssuesById.get(claim.id) ?? []).some((issue) => issue.severity === "error"),
+		);
+		batchedSemanticIssues = await semanticChecksBatch(
+			config,
+			eligibleFacts,
+			allSpans,
+			provider,
+			options.run,
+		);
+	}
 
 	// ── Phase 1: Claim Lint ──
 	const claimResults = await mapWithConcurrency(
@@ -1361,7 +2604,7 @@ export async function lintCompileResult(
 		SEMANTIC_AUDIT_CONCURRENCY,
 		async (claim): Promise<ObjectLintResult<Claim>> => {
 			// 结构性硬门禁
-			const structIssues = checkClaimStructure(claim, allSpans, assertedRecords);
+			const structIssues = structureIssuesById.get(claim.id) ?? [];
 
 			// 如果结构失败，直接 Quarantine（不跑语义）
 			if (structIssues.some((i) => i.severity === "error")) {
@@ -1375,8 +2618,14 @@ export async function lintCompileResult(
 			// 语义门禁（可选跳过）
 			let semIssues: LintIssue[] = [];
 			if (claim.claimKind === "FACT" && !options?.skipSemantic && provider) {
-				const claimSpans = findSpansByIds(allSpans, claim.evidenceSpanIds);
-				semIssues = await semanticCheck(config, claim, claimSpans, provider, options?.run);
+				if (batchedSemanticIssues) {
+					const batched = batchedSemanticIssues.get(claim.id);
+					if (!batched) throw new Error(`Claim 批量审计账不平: ${claim.id}`);
+					semIssues = batched;
+				} else {
+					const claimSpans = findSpansByIds(allSpans, claim.evidenceSpanIds);
+					semIssues = await semanticCheck(config, claim, claimSpans, provider, options?.run);
+				}
 			}
 
 			const allIssues = [...structIssues, ...semIssues];

@@ -1,0 +1,34 @@
+{
+  "schemaVersion": "wge-s200-evaluator-normalization-audit/v1",
+  "policy": "Only three predeclared curator annotations are normalized; factual body text, source identity and raw hashes remain frozen and auditable.",
+  "changes": [
+    {
+      "sourceId": "s200-ai-pytorch-002",
+      "ruleId": "RELEASE_BODY_CURATOR_HEADING",
+      "occurrences": 1,
+      "from": "### Highlights (verbatim from release body)",
+      "to": "### Highlights"
+    },
+    {
+      "sourceId": "s200-ai-pytorch-003",
+      "ruleId": "RELEASE_BODY_CURATOR_HEADING",
+      "occurrences": 1,
+      "from": "### Highlights (verbatim from release body)",
+      "to": "### Highlights"
+    },
+    {
+      "sourceId": "s200-ai-pytorch-003",
+      "ruleId": "RELEASE_ASSET_CURATOR_HEADING",
+      "occurrences": 1,
+      "from": "### Asset (verbatim from release assets)",
+      "to": "### Asset"
+    },
+    {
+      "sourceId": "s200-ai-swebench-006",
+      "ruleId": "SWE_BENCH_CURATOR_BANNER_SUFFIX",
+      "occurrences": 1,
+      "from": "Check out the other projects that are part of the SWE-bench ecosystem! (SWE-agent, SWE-smith, SWE-rex, CodeClash, SWE-bench CLI, mini-swe — banners omitted)",
+      "to": "Check out the other projects that are part of the SWE-bench ecosystem!"
+    }
+  ]
+}

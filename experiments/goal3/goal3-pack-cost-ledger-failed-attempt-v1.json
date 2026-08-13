@@ -1,0 +1,14 @@
+{
+	"schemaVersion": "wge-goal3-pack-cost-ledger-failed-attempt/v1",
+	"attemptedAt": "2026-08-10T11:02:00+08:00",
+	"runId": "pack-cost-ledger-v1",
+	"reportWritten": false,
+	"failureClass": "PREREGISTERED_INPUT_CONTRACT_DEFECT",
+	"error": "Candidate budget drift for C-A-PSYCH-001/L40_STRONG",
+	"cause": "The v1 contract incorrectly encoded the historical selector ceiling of 40 as an exact per-row count of 40. The immutable first report contains 3 to 40 candidates per row, average 29.94; 56 of 100 rows contain exactly 40.",
+	"repairPolicy": "Preserve the v1 contract and freeze. Create a v1.1 amendment and a new run id. Do not change candidate identities, cost definitions, optimization thresholds or stop rules.",
+	"frozenArtifacts": {
+		"contractSha256": "424b64bc763ea7c1137ef11f308240a43045cdb8333f32a21c162499246e8b28",
+		"runnerSha256": "9a0a48108619c18d9f2b275bc5e40231ff5bafeca2eb92ba91782f3adc19b5a2"
+	}
+}

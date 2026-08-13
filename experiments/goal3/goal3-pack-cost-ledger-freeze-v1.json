@@ -1,0 +1,37 @@
+{
+	"schemaVersion": "wge-goal3-pack-cost-ledger-freeze/v1",
+	"status": "FROZEN_BEFORE_FIRST_REPORT",
+	"frozenAt": "2026-08-10T11:00:00+08:00",
+	"contract": {
+		"path": "experiments/goal3/goal3-pack-cost-ledger-contract-v1.json",
+		"sha256": "424b64bc763ea7c1137ef11f308240a43045cdb8333f32a21c162499246e8b28"
+	},
+	"implementation": {
+		"ledger": {
+			"path": "src/retrieval/pack-cost-ledger.ts",
+			"sha256": "f2959732b752bca72c4421433448162c4ce9d97dfa65ac2bcf46fb67cf42f3c5"
+		},
+		"ledgerTests": {
+			"path": "src/retrieval/pack-cost-ledger.test.ts",
+			"sha256": "15325f5baef1a891ba48205fc256cf3e181623fdf47c113c79340b1185278d76"
+		},
+		"runner": {
+			"path": "scripts/run-goal3-pack-cost-ledger.ts",
+			"sha256": "9a0a48108619c18d9f2b275bc5e40231ff5bafeca2eb92ba91782f3adc19b5a2"
+		}
+	},
+	"verificationBeforeFreeze": {
+		"targetedTests": "src/retrieval/pack-cost-ledger.test.ts: 5/5 passed",
+		"mainTypecheck": "tsc --noEmit passed",
+		"scriptsTypecheck": "tsc --noEmit -p tsconfig.scripts.json passed",
+		"targetedLint": "3 files, 0 errors"
+	},
+	"prohibitions": [
+		"No Gold or Stage B read.",
+		"No retrieval rerun, Relation traversal, production ContextPack build or answer generation.",
+		"No network or model call.",
+		"No canonical-state mutation.",
+		"No overwrite of the first report.",
+		"No post-hoc threshold change inside v1."
+	]
+}

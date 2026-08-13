@@ -1,0 +1,14 @@
+{
+	"schemaVersion": "wge-goal3-structured-pack-renderer-failed-attempt/v1",
+	"attemptedAt": "2026-08-10T11:24:00+08:00",
+	"runId": "structured-pack-renderer-v1",
+	"reportWritten": false,
+	"failureClass": "IMPLEMENTATION_DEFECT",
+	"error": "ReferenceError: Cannot access 'cachedEpsiRows' before initialization",
+	"cause": "The module-level cache declaration appeared after top-level evaluation invoked getEpsiRows, triggering the JavaScript temporal dead zone.",
+	"repairPolicy": "Hoist only the cache declaration; preserve the renderer schema, candidate identities, input hashes, 5% threshold and all zero-loss gates. Use a v1.1 contract/freeze and new run id.",
+	"frozenArtifacts": {
+		"contractSha256": "f54f9858defe3aa2f528923366a5d801f86f23f0b00a851e2f67e7b38fa02c95",
+		"runnerSha256": "e2c1dcf97ebc29da8b973f67f9615e4ea61be0b84bde58bfdc36cf8f7f5891c3"
+	}
+}

@@ -1,0 +1,98 @@
+{
+  "schemaVersion": "wge-m2-wiki-selection/v1",
+  "datasetClass": "SYNTHETIC_SILVER_DEVELOPMENT",
+  "formationAuthority": "POST_HOC_DEV_CLAIM_BUNDLE",
+  "interpretation": "These manually frozen Claim bundles test the value and consumption contract of a complete multi-assertion module. They do not prove automatic Wiki formation.",
+  "episodes": [
+    {
+      "domain": "commerce-operations",
+      "affectedQuestionId": "EV-COMM-001",
+      "affectedQuestion": "普通衣服没有质量问题，签收后最晚多久可以申请无理由退货？",
+      "moduleId": "wiki:m2:commerce-operations:affected",
+      "stableAddress": "m2/commerce-operations/returns-deadline",
+      "oldClaimId": "claim:c37706bd82032a13-d5b02410a10adbfa",
+      "newClaimId": "claim:316dbc8cdd88019f-8541960500c8d50a",
+      "triggerRelationId": "rel:cross-48d36ccae6315835",
+      "claimIds": [
+        "claim:316dbc8cdd88019f-8541960500c8d50a",
+        "claim:316dbc8cdd88019f-441c6ae77fe84ba7",
+        "claim:316dbc8cdd88019f-473de43e8391e0e9"
+      ],
+      "requiredClaimIds": [
+        "claim:316dbc8cdd88019f-8541960500c8d50a"
+      ],
+      "unaffectedQuestionId": "EV-COMM-005",
+      "unaffectedQuestion": "黑卡会员通过 App 专属入口咨询时，十分钟 SLA 具体承诺什么？",
+      "unaffectedModuleId": "wiki:m2:commerce-operations:unaffected",
+      "unaffectedClaimIds": [
+        "claim:87efe7de4bfc7b99-4e1c5d4b2cd2143b",
+        "claim:87efe7de4bfc7b99-1de7c8ac676988f5"
+      ]
+    },
+    {
+      "domain": "platform-engineering",
+      "affectedQuestionId": "EV-PLAT-001",
+      "affectedQuestion": "一个非 P0 生产服务已经通过测试，现在还需要哪些批准，何时可以发布？",
+      "moduleId": "wiki:m2:platform-engineering:affected",
+      "stableAddress": "m2/platform-engineering/non-p0-release",
+      "oldClaimId": "claim:64fed77ca832e02c-0717e9642441daaf",
+      "newClaimId": "claim:674a8aeeebc511a6-008ebbacdbf23400",
+      "triggerRelationId": "rel:cross-3b73cf563a981df5",
+      "claimIds": [
+        "claim:674a8aeeebc511a6-008ebbacdbf23400",
+        "claim:674a8aeeebc511a6-badf248366e456be",
+        "claim:674a8aeeebc511a6-d853e1a3f0badae4",
+        "claim:674a8aeeebc511a6-18a6b88907b91004",
+        "claim:674a8aeeebc511a6-9768d7193a2c2dbb",
+        "claim:674a8aeeebc511a6-e61bc7c516e84917"
+      ],
+      "requiredClaimIds": [
+        "claim:674a8aeeebc511a6-008ebbacdbf23400",
+        "claim:674a8aeeebc511a6-badf248366e456be",
+        "claim:674a8aeeebc511a6-d853e1a3f0badae4",
+        "claim:674a8aeeebc511a6-18a6b88907b91004",
+        "claim:674a8aeeebc511a6-9768d7193a2c2dbb"
+      ],
+      "unaffectedQuestionId": "EV-PLAT-005",
+      "unaffectedQuestion": "对外开放的 API 下线前需要提前多久发布正式弃用公告？",
+      "unaffectedModuleId": "wiki:m2:platform-engineering:unaffected",
+      "unaffectedClaimIds": [
+        "claim:56ecc1cabeb423a1-8dd57004f3b9b521"
+      ]
+    },
+    {
+      "domain": "research-operations",
+      "affectedQuestionId": "EV-RES-001",
+      "affectedQuestion": "医疗敏感数据现在能否在获批的公有云机密计算环境中处理？",
+      "moduleId": "wiki:m2:research-operations:affected",
+      "stableAddress": "m2/research-operations/confidential-compute",
+      "oldClaimId": "claim:7be8350189499981-d7fca5218b36ad40",
+      "newClaimId": "claim:1f9be41b63ec8bde-c9a7e1b5fd58d181",
+      "triggerRelationId": "rel:cross-a247bfe26d070a90",
+      "claimIds": [
+        "claim:1f9be41b63ec8bde-045afc1144f03260",
+        "claim:1f9be41b63ec8bde-9500f6d257c56672",
+        "claim:1f9be41b63ec8bde-9ad2e21b208bc717",
+        "claim:1f9be41b63ec8bde-0f9ebdc40a375ab0",
+        "claim:1f9be41b63ec8bde-9f1e7dd3211cb8c0",
+        "claim:1f9be41b63ec8bde-7a1c18fc063caaff",
+        "claim:1f9be41b63ec8bde-c9a7e1b5fd58d181"
+      ],
+      "requiredClaimIds": [
+        "claim:1f9be41b63ec8bde-045afc1144f03260",
+        "claim:1f9be41b63ec8bde-9500f6d257c56672",
+        "claim:1f9be41b63ec8bde-9ad2e21b208bc717",
+        "claim:1f9be41b63ec8bde-0f9ebdc40a375ab0",
+        "claim:1f9be41b63ec8bde-9f1e7dd3211cb8c0"
+      ],
+      "unaffectedQuestionId": "EV-RES-005",
+      "unaffectedQuestion": "声称有性能改进的新算法合入主干前，需要满足哪些复现门槛？",
+      "unaffectedModuleId": "wiki:m2:research-operations:unaffected",
+      "unaffectedClaimIds": [
+        "claim:8f33cc0f406f07f3-1a47c17a72a9bfeb",
+        "claim:8f33cc0f406f07f3-0ff9498318da211c",
+        "claim:8f33cc0f406f07f3-f29fe8b56057f88f"
+      ]
+    }
+  ]
+}

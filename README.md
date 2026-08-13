@@ -1,58 +1,63 @@
-# WGEMemory4LLM
+# WikiMemory
 
-WGEMemory4LLM 是面向通用 Agent 的知识编译与长期记忆原型。它把 Markdown 材料机械摄入为不可变 `Source` / `SourceSpan`，再编译为带证据与条件的 Claim、Concept 和 Relation，经过结构与语义门禁后，以任务相关的 Context Pack 提供给 Agent。
+WikiMemory 是面向通用 Agent 的可演化知识与长期记忆层。它把多领域材料、对话中的权威声明、纠正和任务结果转化为可追溯、可版本化、可撤销的知识状态，并按任务生成有预算、保留证据闭包的 Context Pack。
 
-当前仓库是 **Demo v0.1.0** 的正式基线。它证明知识编译、隔离、跨材料导航和 Context Pack 组装链路能够工作；尚未证明 Agent 使用后一定优于文件夹搜索。下一阶段将通过同模型、同预算的产品效果 Pilot 验证这一点。
+它不是一个给人维护页面的 Wiki，也不是把 Graph 遍历结果全部塞进 Prompt 的 RAG 包装器。长期目标和当前实现必须分开阅读：
 
-## 当前 Demo 快照
+如果你只想弄清“这个目录里每一类东西是什么”，先看 [仓库地图](docs/repository-map.md)。
 
-- 6 个已摄入 Source，382 个持久化 Span
-- 01 / 02 / 03 已完成编译，05 / 09 / 11 保持 `SOURCE_INGESTED`
-- 261 条 canonical Claim，23 条 quarantined Claim
-- 76 条可消费 Relation，全部通过 relation audit v1.2；悬空端点和坏证据均为 0
-- 3 条人工复核通过的跨材料 `RELATED_TO`
-- `EQUIVALENT_UNDER` 在独立校准前默认 fail-closed
-- 9 个测试文件，43 个测试通过
+- [产品定义](WGEMemory4LLM-Product-Definition.html)：为什么存在、什么结果才算成功；
+- [目标架构](architecture-baseline.html)：理想 WikiMemory 的模块、数据、接口、权限与部署边界；
+- [知识语义合同](docs/specs/knowledge-contract.md)：Claim、Relation、scope、状态与时间语义；
+- [实施状态](docs/status/implementation-status.md)：代码目前真实做到了什么；
+- [集成迭代合同](WGEMemory4LLM-Iteration-Operating-Plan.md)：I0–I3 施工顺序、Eval 与停止规则；
+- [Benchmark 手册](WGEMemory4LLM-Benchmark.html)：如何构造开发、回归、盲测和长期产品证据。
+- [Pilot 操作合同](docs/operations/pilot-runbook.md)：如何执行一周双臂真实任务 Micro 并留下可比较证据。
 
-完整事实、验收证据和已知缺口见 [架构基线](architecture-baseline.html) 与 [Demo Release 清单](docs/demo-v0.1.0.md)。
+## 当前裁决
 
-## 项目结构
+当前内核是 **integration-ready，尚非 Product-MVP**：Markdown 摄入、有界编译、门禁、原子发布、检索、Graph、Context Pack、Wiki 机制与 Evolution 事务已形成基线。I0 应用边界、本地容器恢复和 I1 本地协议闭环已经实现；I2 工程链已覆盖自然语言到 typed proposal 的受限解析、PERSONAL 偏好、PROJECT 决策、FACT 争议、作用域权限、幂等提交、受影响 Wiki 重建与受控回滚。FACT 不由用户断言直接确真：新材料必须先编译成有物质证据的 FACT，并经审计版 <code>SUPERSEDES</code>/<code>CONTRADICTS</code> Relation 才能进入快照保护的演化事务。I3 已有隐私保护的双臂观测底座；仍未完成的是真实 Agent 的长期不复发与相对基线增益证明。
+
+下一阶段不再无限延长内部 Goal，而按以下顺序推进：
+
+1. **I0**：Application Service、runtime root、单写者、Docker 与恢复；
+2. **I1**：MCP `ingest_material / get_ingest_status / query_context / trace_knowledge`；
+3. **I2**：纠正 proposal、权威分流、受控 commit、局部重建和回滚；
+4. **I3**：30 天多领域真实 Agent Pilot。
+
+## 仓库结构
 
 ```text
 .
-├── src/
-│   ├── cli/             # ingest / relations / query / status 命令
-│   ├── loaders/         # 可插拔文档 Loader；当前生产只注册 Markdown
-│   ├── ingestor/        # Source、SourceSpan 与摄入幂等
-│   ├── compiler/        # 有界分批编译、状态恢复与 telemetry
-│   ├── linter/          # Claim / Relation 门禁、发布与 quarantine
-│   ├── graph/           # 类型化 Graph 与消费语义
-│   ├── context-pack/    # Map → Seed → Subgraph → Evidence
-│   ├── core/            # LLM Provider 与客户端
-│   ├── parser/          # Markdown 机械解析
-│   ├── prompts/         # 版本化编译、审计协议
-│   └── types/           # 一等对象与运行时 schema
-├── mathtest-material/   # 20 篇受控数学 Markdown 语料
-├── sources/             # 不可变 Source / Span 证据根
-├── publications/        # 按 Source 原子替换的 canonical 快照
-├── quarantine/          # 默认消费链不可见的隔离产物
-├── runs/                # 状态、统计、调用记录、缓存和原始模型输出
-├── tests/               # Dev / held-out / evolution 题集合同
-├── scripts/             # Meta-eval 与故障复现脚本
-├── docs/                # 知识合同与版本说明
-└── *.html               # 产品定义、用户故事、Benchmark 与架构基线
+├── src/                         # 当前知识内核；单元/集成测试与实现并置
+├── scripts/                     # 历史实验、审计、迁移和诊断入口；不是产品 API
+├── docs/
+│   ├── specs/                   # 稳定语义与接口合同
+│   ├── status/                  # 当前实现事实
+│   ├── operations/              # 可执行 Runbook
+│   ├── verification/            # 有日期的验证证据
+│   ├── benchmarks/              # 数据采集与密封合同
+│   └── history/                 # 被取代的方向/架构/计划快照
+├── benchmarks/                  # 新 Benchmark 命名入口与历史问题集索引
+├── experiments/                 # 已揭示实验结果；只作历史和回归
+├── references/                  # 外部论文与参考仓库，不属于产品代码
+├── sources/ publications/       # 当前 legacy 知识状态
+├── quarantine/ versions/ wiki/  # 隔离、版本和物化视图
+├── runs/ indexes/               # 历史运行与可重建索引
+└── mathtest-material/、batch-*/、workbuddy-*/、benchmark-s200-*/
+                                  # hash 冻结的 legacy 数据路径，待兼容迁移后归位
 ```
 
-`readings/` 是外部论文集合，不属于当前 Markdown Demo 的知识状态，已被 Git 忽略。`indexes/` 是可重建索引，也不进入版本库。
+为什么仍保留若干根目录数据集：历史脚本、manifest 与密封合同记录了这些路径和 hash。当前整理优先修正责任边界，不为了目录整齐破坏复现。新实验统一进入 `benchmarks/`；外部参考已进入 `references/`。
 
-## 快速开始
+## 本地验证
 
 要求 Node.js 20 或更高版本。
 
 ```bash
 npm install
 cp .env.example .env
-# 在 .env 中配置 DEEPSEEK_API_KEY
+# 配置 DEEPSEEK_API_KEY；不要提交 .env
 
 npm run typecheck
 npm run lint
@@ -60,52 +65,66 @@ npm test
 npm run build
 ```
 
-查看当前知识状态：
+本地 Agent 接入使用 MCP stdio。运行根必须先显式初始化；默认 MCP 仅注册读取工具，摄入能力必须明确开启：
 
 ```bash
+npm run dev -- --runtime-root ./runtime-data init
+WGE_RUNTIME_ROOT=./runtime-data npm run mcp
+
+# 需要提交材料时才给该 MCP 进程摄入能力；耗时编译由独立 Worker 执行
+WGE_RUNTIME_ROOT=./runtime-data WGE_MCP_CAPABILITIES=read,ingest npm run mcp
+WGE_RUNTIME_ROOT=./runtime-data npm run worker
+
+# 纠正能力还要求在进程边界注入身份与项目角色；工具参数不能自报 principal
+WGE_RUNTIME_ROOT=./runtime-data \
+WGE_MCP_CAPABILITIES=read,correct \
+WGE_MCP_PRINCIPAL_ID=mixi \
+WGE_MCP_PROJECT_ROLES='{"wikimemory":"owner"}' \
+npm run mcp
+
+# 真实长期 Pilot：只有显式 pilot capability 才保存 HMAC 化查询收据和结果信号
+WGE_RUNTIME_ROOT=./runtime-data \
+WGE_MCP_CAPABILITIES=read,pilot \
+WGE_MCP_PRINCIPAL_ID=mixi \
+WGE_PILOT_HASH_KEY='replace-with-a-random-local-secret' \
+npm run mcp
+```
+
+`ingest_material` 接收用户明确投递的 Markdown 内容，只做不可变 Source/Span 落盘和 Job 排队，不读取任意本地路径，也不承诺调用返回时已经编译完成。Agent 应使用 `get_ingest_status` 查询 Job 与编译阶段。
+
+`query_context` 只返回紧凑 Agent Context Pack，不返回内部检索/Graph diagnostics；响应同时给出请求预算和实际序列化 token。PERSONAL 偏好作为有界的 `standingInstructions` 注入本人作用域，并随附 AssertedRecord。纠正工具只有 `correct` capability 且进程已注入主体身份时才注册。自然语言解析只生成草案，权限由确定性策略决定，并要求调用者确认解析出的类型后才可提交；无目标 FACT 进入 `NEEDS_EVIDENCE`，针对既有 FACT 的纠正先把旧结论置为 `DISPUTED`。后续调用 `resolve_fact_correction` 时必须指定已审计、含物质证据的替代/冲突 Relation；`rollback_fact_resolution` 只在其后没有知识变更时允许恢复，避免抹掉后来摄入的材料。
+
+`pilot` 是独立 opt-in 观测写 capability，并强制同时启用 `read`、注入 principal 与本地 HMAC 密钥。启用后 `query_context` 会写查询收据，因此 MCP 元数据不再把它标成纯只读或幂等；它仍不改变 Canonical 知识。`register_pilot_baseline` 为同任务、同上下文预算的外部文件夹 Agent 运行登记 BASELINE 臂，不向该臂提供 WikiMemory Context；WikiMemory 查询自动登记另一臂。两臂都通过 `record_pilot_outcome` 保存回答 HMAC、成功/失败、重复解释、纠错复发、硬失败和用户接受信号，原始任务与回答不落盘。`get_pilot_status` 按臂聚合并报告已配对任务/结果，`mark_trusted_checkpoint` 只记录信任标记而不改变知识。模型、工具权限和总提示预算仍需 Pilot 执行者按实验合同保持一致，当前协议只能验证 WikiMemory 可见上下文预算。
+
+当前 CLI 仍是兼容/运维入口，不是最终 Agent 合同：
+
+```bash
+npm run dev -- --runtime-root ./runtime-data init
+npm run dev -- --runtime-root ./runtime-data status --json
+npm run dev -- --runtime-root ./runtime-data ingest-status
 npm run dev -- status
-```
-
-生成只读 Context Pack：
-
-```bash
-npm run dev -- query "Cauchy 列、实数完备性与完备空间之间的关系" --budget 12000 --depth 3 --json
-```
-
-摄入或重编 Markdown：
-
-```bash
 npm run dev -- ingest mathtest-material/01-number-systems.md --recompile --json
+npm run dev -- query "Cauchy 列、实数完备性与完备空间之间的关系" --budget 12000 --depth 3 --json
+npm run dev -- trace claim:example
 ```
 
-跨材料 Relation 维护：
+Docker Compose 已定义同镜像的 MCP、Worker 与运维 CLI，并共享命名卷。2026-08-13 已在隔离 Compose project 中实测：镜像可构建、运行用户为非 root UID 1000、镜像只含 dist/package/生产依赖、生产依赖审计为 0 漏洞；通过真实 MCP 提交 PENDING ingest Job 后删除并重建容器，相同 Source、Job ID、状态与 knowledgeVersion 可从命名卷恢复；另一次隔离验证通过真实 MCP + Worker + DeepSeek 完成 Markdown 摄入、语义门禁、查询和 SourceSpan 追溯，总 usage 4,032 tokens。细节见 [Docker 在线集成验证](docs/verification/docker-online-e2e-2026-08-13.md)：
 
 ```bash
-npm run dev -- relations backfill source:01-number-systems-80440e2182e5653f --json
-npm run dev -- relations quarantine <relationId> --reason "人工复核原因"
+docker compose build
+docker compose --profile tools run --rm wge-cli init
+docker compose up wge-worker
+docker compose run --rm wge-cli status --json
 ```
 
-## 版本化数据边界
+## 不变量
 
-- `.env`、构建目录、外部论文和可重建索引不提交。
-- `sources/`、`publications/`、`quarantine/`、`runs/` 有意提交：它们共同构成可审计的知识状态和真实 E2E 证据。
-- Gold 问题、预期路径和禁止断言不得进入 Source、Graph、prompt cache 或编译输入。
-- 完整重编会产生候选知识迁移；下一阶段在扩大语料前先增加 publication diff 门禁。
+- Source / SourceSpan 是不可变证据根；Claim、Relation、Wiki 和索引均为派生状态。
+- Graph 是长期治理基础设施，在线仅按任务条件参与候选导航；候选遍历不自动进入 Prompt。
+- Quarantine、旧审计版本和越权 scope 默认 fail-closed。
+- MCP、HTTP 与 CLI 必须调用同一 Application Service，不得复制业务规则。
+- Benchmark/Gold、密钥、实验日志、外部参考和用户知识状态不得进入生产镜像。
+- 历史数据可以重跑作回归，但已揭示集合永远不能重新命名为 Blind。
+- 产品成功只由 Agent 长期行为改善证明，不由 Claim、Relation、Wiki 数量或一次 Dev 分数证明。
 
-## 当前已知边界
-
-- 生产 Loader 当前仅支持 Markdown；TeX/PDF/HTML 适配器尚未实现。
-- WikiModule 有读取与消费合同，但自动生成和发布门禁尚未闭环。
-- 现有 3 条跨材料边均为导航用 `RELATED_TO`，不可支撑结论；可信跨材料强边仍缺少正样本。
-- LLM 自动 Relation 审计不能替代人工质量抽检。
-- 当前 CLI 生成 Context Pack，但尚没有统一的 Agent 回答与 B/P/E 盲测运行器。
-
-## 关键文档
-
-- [产品定义](WGEMemory4LLM-Product-Definition.html)
-- [用户故事](WGEMemory4LLM-User-Stories.html)
-- [Benchmark](WGEMemory4LLM-Benchmark.html)
-- [测试前一致性审计](WGEMemory4LLM-Pre-Test-Alignment-Audit.html)
-- [架构基线 v1.5](architecture-baseline.html)
-- [知识合同](docs/knowledge-contract.md)
-
+完整当前数字、测试资产使用情况和已知风险见 [实施状态](docs/status/implementation-status.md)。

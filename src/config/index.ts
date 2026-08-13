@@ -64,7 +64,8 @@ export function loadApiKey(): string {
  * @param overrides - 可选覆盖（如 CLI --project-root）
  */
 export function loadConfig(overrides?: Partial<AppConfig>): AppConfig {
-	const projectRoot = overrides?.projectRoot ?? findProjectRoot();
+	const legacyRoot = overrides?.projectRoot ?? findProjectRoot();
+	const runtimeRoot = resolve(overrides?.runtimeRoot ?? process.env.WGE_RUNTIME_ROOT ?? legacyRoot);
 	const environmentTemperature = process.env.WGE_TEMPERATURE;
 	const temperature =
 		overrides?.temperature ??
@@ -76,12 +77,14 @@ export function loadConfig(overrides?: Partial<AppConfig>): AppConfig {
 	}
 
 	return {
-		projectRoot,
-		sourcesDir: join(projectRoot, "sources"),
-		wikiDir: join(projectRoot, "wiki"),
-		quarantineDir: join(projectRoot, "quarantine"),
-		indexesDir: join(projectRoot, "indexes"),
-		runsDir: join(projectRoot, "runs"),
+		// Keep projectRoot as a compatibility alias until legacy scripts migrate.
+		projectRoot: runtimeRoot,
+		runtimeRoot,
+		sourcesDir: join(runtimeRoot, "sources"),
+		wikiDir: join(runtimeRoot, "wiki"),
+		quarantineDir: join(runtimeRoot, "quarantine"),
+		indexesDir: join(runtimeRoot, "indexes"),
+		runsDir: join(runtimeRoot, "runs"),
 		apiKey: overrides?.apiKey ?? loadApiKey(),
 		baseUrl: overrides?.baseUrl ?? process.env.DEEPSEEK_BASE_URL ?? DEFAULT_BASE_URL,
 		model: overrides?.model ?? process.env.WGE_MODEL ?? DEFAULT_MODEL,

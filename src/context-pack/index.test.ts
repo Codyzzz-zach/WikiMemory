@@ -5,11 +5,25 @@ import { afterEach, describe, expect, it } from "vitest";
 import { estimateTokens } from "../compiler/telemetry.js";
 import type { AppConfig } from "../config/types.js";
 import { getRelationTypeSemantics } from "../graph/index.js";
-import { publishSourceResult, writeJsonl } from "../linter/storage.js";
+import {
+	publishSourceResult,
+	readAllClaims,
+	readAllSpans,
+	upsertWikiModules,
+	writeJsonl,
+} from "../linter/storage.js";
 import { RELATION_AUDIT_VERSION } from "../prompts/index.js";
+import { buildPersistentSeedIndex } from "../retrieval/persistent-index.js";
 import type { Claim, Relation, SourceSpan } from "../types/index.js";
 import { claimRef } from "../types/index.js";
-import { buildContextPack } from "./index.js";
+import { materializeWikiModule } from "../wiki/materialization.js";
+import type { WikiRetrievalCandidate } from "../wiki/retrieval.js";
+import {
+	buildContextPack,
+	buildContextPackWithDiagnostics,
+	buildManagedContextPackWithDiagnostics,
+	injectWikiSupportingClaims,
+} from "./index.js";
 
 const roots: string[] = [];
 
@@ -29,7 +43,9 @@ describe("Context Pack contract", () => {
 	});
 
 	it("surfaces Relation conditions when the scoped endpoint is allowed", () => {
-		const pack = buildContextPack(fixture(), "Alpha", 4000, 2, { principalId: "user:alice" });
+		const pack = buildContextPack(fixture(), "为什么 personal Alpha 支持 global Alpha？", 4000, 2, {
+			principalId: "user:alice",
+		});
 		expect(pack.subgraph.claims.map((claim) => claim.id)).toEqual(
 			expect.arrayContaining(["claim:global", "claim:personal"]),
 		);
@@ -41,20 +57,66 @@ describe("Context Pack contract", () => {
 		expect(pack.conflictsAndConditions.join("\n")).toContain("sourceRole=primary");
 	});
 
-	it("includes RELATED_TO for navigation without changing its non-supporting semantics", () => {
-		const pack = buildContextPack(fixture("RELATED_TO"), "Alpha", 4000, 2, {
+	it("traces the production Relation gate decision without changing traversal", () => {
+		const built = buildContextPackWithDiagnostics(fixture(), "Alpha", 4000, 2, {
 			principalId: "user:alice",
 		});
-		expect(pack.subgraph.relations).toContainEqual(
-			expect.objectContaining({ id: "rel:scoped", type: "RELATED_TO" }),
+		expect(built.diagnostics.graph.relationGates).toContainEqual(
+			expect.objectContaining({
+				relationId: "rel:scoped",
+				accepted: true,
+				reason: "accepted",
+			}),
+		);
+		expect(built.diagnostics.graph.expandedRelationIds).toContain("rel:scoped");
+		expect(built.diagnostics.graph.traversal).toContainEqual(
+			expect.objectContaining({
+				relationId: "rel:scoped",
+				type: "SUPPORTS",
+				navigationDirection: expect.stringMatching(/forward|reverse/),
+				triggerReason: "reachable-from-seed-bfs",
+				structureScore: null,
+				structureScoreReason: "not-computed-in-r0-bfs",
+			}),
+		);
+	});
+
+	it("keeps RELATED_TO in candidate navigation without making it visible", () => {
+		const config = fixture("RELATED_TO");
+		const seedOnly = buildContextPack(config, "Alpha", 4000, 0, { principalId: "user:alice" });
+		const built = buildContextPackWithDiagnostics(config, "Alpha", 4000, 2, {
+			principalId: "user:alice",
+		});
+		expect(built.pack).toEqual(seedOnly);
+		expect(built.pack.subgraph.relations).toEqual([]);
+		expect(built.diagnostics.graph.expandedRelationIds).toContain("rel:scoped");
+		expect(built.diagnostics.graph.activation.decisions).toContainEqual(
+			expect.objectContaining({
+				relationId: "rel:scoped",
+				visible: false,
+				dropReason: "weak-navigation-only",
+			}),
 		);
 		expect(getRelationTypeSemantics("RELATED_TO").canSupportConclusion).toBe(false);
 	});
 
+	it("keeps visible Graph units inside the fixed context and marginal budgets", () => {
+		const budget = 4000;
+		const built = buildContextPackWithDiagnostics(fixture("REQUIRES"), "Alpha", budget, 2, {
+			principalId: "user:alice",
+		});
+		expect(built.diagnostics.graph.activation.mode).toBe("VISIBLE");
+		expect(built.diagnostics.graph.activation.selectedMarginalTokens).toBeLessThanOrEqual(
+			built.diagnostics.graph.activation.marginalBudgetTokens,
+		);
+		expect(estimateTokens(JSON.stringify(built.pack))).toBeLessThanOrEqual(budget);
+	});
+
 	it("supports a Seed-only ablation at graph depth zero", () => {
 		const config = fixture();
-		const seedOnly = buildContextPack(config, "Alpha", 4000, 0, { principalId: "user:alice" });
-		const seedGraph = buildContextPack(config, "Alpha", 4000, 2, {
+		const task = "为什么 personal Alpha 支持 global Alpha？";
+		const seedOnly = buildContextPack(config, task, 4000, 0, { principalId: "user:alice" });
+		const seedGraph = buildContextPack(config, task, 4000, 2, {
 			principalId: "user:alice",
 		});
 		expect(seedOnly.subgraph.claims.length).toBeGreaterThan(0);
@@ -73,6 +135,74 @@ describe("Context Pack contract", () => {
 		);
 	});
 
+	it("keeps opt-in indexed R0 Pack identical to legacy for scoped graph and evidence closure", () => {
+		const config = fixture();
+		buildPersistentSeedIndex(config);
+		const task = "为什么 personal Alpha 支持 global Alpha？";
+		const scope = { principalId: "user:alice" };
+		const legacy = buildContextPackWithDiagnostics(config, task, 4000, 2, scope, {
+			selectionMode: "R0",
+		});
+		const indexed = buildContextPackWithDiagnostics(config, task, 4000, 2, scope, {
+			selectionMode: "R0",
+			knowledgeAccess: "INDEXED",
+		});
+		expect(indexed.pack).toEqual(legacy.pack);
+		expect(indexed.diagnostics.knowledgeAccess).toMatchObject({
+			mode: "INDEXED",
+			indexVersion: expect.any(String),
+			canonicalStateGeneration: expect.any(String),
+		});
+	});
+
+	it("builds then reuses the managed persistent index without changing the Pack", () => {
+		const config = fixture();
+		const legacy = buildContextPack(config, "Alpha global", 4000, 0);
+		const first = buildManagedContextPackWithDiagnostics(config, "Alpha global", 4000, 0);
+		const second = buildManagedContextPackWithDiagnostics(config, "Alpha global", 4000, 0);
+		expect(first.pack).toEqual(legacy);
+		expect(second.pack).toEqual(legacy);
+		expect(first.diagnostics.knowledgeAccess).toMatchObject({
+			mode: "INDEXED",
+			lifecycle: "BUILT",
+			fallbackReason: null,
+		});
+		expect(second.diagnostics.knowledgeAccess).toMatchObject({
+			mode: "INDEXED",
+			lifecycle: "REUSED",
+			fallbackReason: null,
+		});
+	});
+
+	it("falls back explicitly to live Canonical reads when index rebuild cannot be written", () => {
+		const config = fixture();
+		const blockedIndexRoot = join(config.projectRoot, "blocked-index");
+		writeFileSync(blockedIndexRoot, "not-a-directory", "utf8");
+		const legacy = buildContextPack(config, "Alpha global", 4000, 0);
+		const managed = buildManagedContextPackWithDiagnostics(
+			config,
+			"Alpha global",
+			4000,
+			0,
+			undefined,
+			{
+				indexRoot: blockedIndexRoot,
+			},
+		);
+		expect(managed.pack).toEqual(legacy);
+		expect(managed.diagnostics.knowledgeAccess).toMatchObject({
+			mode: "LEGACY",
+			lifecycle: "LEGACY_FALLBACK",
+			fallbackReason: expect.any(String),
+		});
+		expect(() =>
+			buildManagedContextPackWithDiagnostics(config, "Alpha global", 4000, 0, undefined, {
+				indexRoot: blockedIndexRoot,
+				indexFailurePolicy: "FAIL_CLOSED",
+			}),
+		).toThrow();
+	});
+
 	it("enforces the serialized token budget while preserving graph/evidence closure", () => {
 		const budget = 350;
 		const pack = buildContextPack(fixture(), "Alpha", budget, 2, {
@@ -88,6 +218,10 @@ describe("Context Pack contract", () => {
 			expect(claimIds.has(relation.from as string)).toBe(true);
 			expect(claimIds.has(relation.to as string)).toBe(true);
 		}
+		for (const entry of pack.conflictsAndConditions) {
+			const claimId = /^(?:⚠️|📌) Claim (\S+)/u.exec(entry)?.[1];
+			if (claimId) expect(claimIds.has(claimId)).toBe(true);
+		}
 	});
 
 	it("keeps an uncovered named topic empty instead of expanding from generic words", () => {
@@ -98,7 +232,253 @@ describe("Context Pack contract", () => {
 		expect(pack.taskMap).toContain("地图主题: 无");
 		expect(pack.taskMap).toContain("关键概念: 无");
 	});
+
+	it("fails closed for legacy Wiki prose and admits a fully supported materialized view", () => {
+		const config = fixture();
+		upsertWikiModules(config, [
+			{
+				id: "wiki:alpha",
+				stableAddress: "alpha/current",
+				coreQuestion: "Alpha 的当前结论是什么？",
+				currentUnderstanding: "未经逐句支撑的旧摘要",
+				disputes: [],
+				claimRefs: [claimRef("claim:global"), claimRef("claim:sibling")],
+				conceptRefs: [],
+				dependencies: [],
+				publicationState: "CANONICAL",
+				updatedAt: "2026-08-12T00:00:00.000Z",
+			},
+		]);
+		const legacy = buildContextPackWithDiagnostics(config, "Alpha global", 4000, 0);
+		expect(legacy.pack.wikiModules).toEqual([]);
+		expect(legacy.diagnostics.wiki.supportGates).toContainEqual(
+			expect.objectContaining({
+				moduleId: "wiki:alpha",
+				accepted: false,
+				reasons: ["missing-materialization-contract"],
+			}),
+		);
+
+		const materialized = materializeWikiModule(
+			{
+				id: "wiki:alpha",
+				stableAddress: "alpha/current",
+				coreQuestion: "Alpha 的当前结论是什么？",
+				claimRefs: ["claim:global", "claim:sibling"],
+			},
+			readAllClaims(config),
+			readAllSpans(config),
+			{
+				sourceKnowledgeVersion: legacy.pack.knowledgeVersion,
+				rebuiltFromSnapshotId: null,
+				updatedAt: "2026-08-12T00:00:00.000Z",
+			},
+		);
+		upsertWikiModules(config, [materialized]);
+		const current = buildContextPackWithDiagnostics(config, "Alpha global", 4000, 0);
+		expect(current.pack.wikiModules.map((module) => module.id)).toEqual(["wiki:alpha"]);
+		expect(current.diagnostics.wiki.supportGates).toContainEqual(
+			expect.objectContaining({ moduleId: "wiki:alpha", accepted: true, reasons: [] }),
+		);
+		const disabled = buildContextPackWithDiagnostics(config, "Alpha global", 4000, 0, undefined, {
+			wikiMode: "DISABLED",
+		});
+		expect(disabled.pack.wikiModules).toEqual([]);
+		expect(disabled.diagnostics.wiki.retrieval).toEqual([]);
+	});
+
+	it("records when a retrieved Wiki is removed by the final closed-budget pass", () => {
+		const config = fixture();
+		const materialized = materializeWikiModule(
+			{
+				id: "wiki:alpha",
+				stableAddress: "alpha/current",
+				coreQuestion: "Alpha 的当前结论是什么？",
+				claimRefs: ["claim:global", "claim:sibling"],
+			},
+			readAllClaims(config),
+			readAllSpans(config),
+			{
+				sourceKnowledgeVersion: "kv:test",
+				rebuiltFromSnapshotId: null,
+				updatedAt: "2026-08-12T00:00:00.000Z",
+			},
+		);
+		upsertWikiModules(config, [materialized]);
+		const result = buildContextPackWithDiagnostics(config, "Alpha global", 200, 0);
+
+		expect(result.pack.wikiModules).toEqual([]);
+		expect(result.diagnostics.budget.dropped).toContainEqual(
+			expect.objectContaining({
+				id: "wiki:alpha",
+				reason: "pack-final-budget-or-evidence-closure",
+			}),
+		);
+	});
+
+	it("does not let a lower-ranked Wiki evict the closure of an accepted module", () => {
+		const claims = Array.from({ length: 16 }, (_, index) =>
+			claim(`claim:${index}`, `Alpha fact ${index}`, "span:global", { type: "GLOBAL" }),
+		);
+		const base = claims.slice(0, 10).map((item, index) => ({
+			claim: item,
+			score: 100 - index,
+			source: "lexical:test",
+		}));
+		const higher = wikiCandidate("wiki:higher", [0, 3, 4, 10, 11, 12, 13], claims, 20);
+		const lower = wikiCandidate("wiki:lower", [3, 4, 14, 15], claims, 10);
+		const result = injectWikiSupportingClaims(base, [higher, lower], claims, 10, 3);
+
+		expect(result.results.map((entry) => entry.claim.id)).toEqual(
+			expect.arrayContaining(higher.module.claimRefs.map(String)),
+		);
+		expect(result.rejections).toContainEqual({
+			moduleId: "wiki:lower",
+			reason: "insufficient-primary-slots:required=2,available=1",
+		});
+	});
+
+	it("keeps R0 unchanged when no audited graph candidate exists", () => {
+		const config = fixture();
+		const task = "Alpha global";
+		const r0 = buildContextPackWithDiagnostics(config, task, 4000, 2, undefined, {
+			selectionMode: "R0",
+		});
+		const r1 = buildContextPackWithDiagnostics(config, task, 4000, 2, undefined, {
+			selectionMode: "R1",
+		});
+		expect(r1.pack).toEqual(r0.pack);
+		expect(r1.diagnostics.graph.selection).toMatchObject({
+			mode: "R1",
+			addedGraphClaimIds: [],
+			removedLexicalSeedIds: [],
+		});
+	});
+
+	it("lets R1 replace a weak lexical slot with a two-anchor graph candidate", () => {
+		const config = r1Fixture();
+		const r0 = buildContextPackWithDiagnostics(config, "Alpha framework", 4000, 2, undefined, {
+			selectionMode: "R0",
+		});
+		const r1 = buildContextPackWithDiagnostics(config, "Alpha framework", 4000, 2, undefined, {
+			selectionMode: "R1",
+		});
+		const r0Primary = r0.diagnostics.graph.selection.primarySelectedClaimIds;
+		const r1Primary = r1.diagnostics.graph.selection.primarySelectedClaimIds;
+		expect(r1Primary).toHaveLength(r0Primary.length);
+		expect(r1.diagnostics.graph.selection.addedGraphClaimIds).toEqual(["claim:bridge"]);
+		expect(r1.diagnostics.graph.selection.removedLexicalSeedIds).toHaveLength(1);
+		expect(r1Primary).toContain("claim:bridge");
+		expect(estimateTokens(JSON.stringify(r1.pack))).toBeLessThanOrEqual(4000);
+		const claimIds = new Set(r1.pack.subgraph.claims.map((claim) => claim.id));
+		const evidenceIds = new Set(r1.pack.evidenceSpans.map((span) => span.id));
+		for (const claim of r1.pack.subgraph.claims) {
+			expect(claim.evidenceSpanIds.every((spanId) => evidenceIds.has(spanId))).toBe(true);
+		}
+		for (const relation of r1.pack.subgraph.relations) {
+			expect(claimIds.has(relation.from as string)).toBe(true);
+			expect(claimIds.has(relation.to as string)).toBe(true);
+		}
+	});
 });
+
+function r1Fixture(): AppConfig {
+	const projectRoot = mkdtempSync(join(tmpdir(), "wge-context-r1-"));
+	roots.push(projectRoot);
+	const config: AppConfig = {
+		projectRoot,
+		sourcesDir: join(projectRoot, "sources"),
+		wikiDir: join(projectRoot, "wiki"),
+		quarantineDir: join(projectRoot, "quarantine"),
+		indexesDir: join(projectRoot, "indexes"),
+		runsDir: join(projectRoot, "runs"),
+		apiKey: "test",
+		baseUrl: "http://localhost",
+		model: "test-model",
+		temperature: 0,
+	};
+	const ids = ["a", "b", "c", "d", "bridge"];
+	const spans: SourceSpan[] = ids.map((id, index) => ({
+		id: `span:${id}`,
+		sourceId: "source:r1",
+		blockId: `b${index}`,
+		charStart: index * 20,
+		charEnd: index * 20 + 15,
+		text: id === "bridge" ? "Structural bridge evidence" : `Alpha evidence ${id}`,
+	}));
+	writeJsonl(join(config.sourcesDir, "r1.spans.jsonl"), spans);
+	writeFileSync(
+		join(config.sourcesDir, "r1.json"),
+		JSON.stringify({
+			id: "source:r1",
+			hash: "r1",
+			uri: "https://example.test/r1",
+			parsedText: spans.map((span) => span.text).join("\n"),
+			sourceType: "html",
+			loaderVersion: "test",
+			metadata: { sourceRole: "primary" },
+			createdAt: "2026-07-29T00:00:00.000Z",
+		}),
+		"utf-8",
+	);
+	const claims = ids.map((id) =>
+		claim(
+			`claim:${id}`,
+			id === "bridge"
+				? "Structural bridge conclusion"
+				: id === "d"
+					? "Alpha d conclusion applies to this framework"
+					: `Alpha framework ${id} conclusion`,
+			`span:${id}`,
+			{ type: "GLOBAL" },
+		),
+	);
+	const relation = (id: string, from: string, to: string): Relation => ({
+		id,
+		from: claimRef(from),
+		to: claimRef(to),
+		type: "SUPPORTS",
+		conditions: [],
+		conditionStatus: "EXPLICIT_NONE",
+		supersessionEffect: null,
+		relationAuditVersion: RELATION_AUDIT_VERSION,
+		evidenceSpanIds: [`span:${from.slice("claim:".length)}`, `span:${to.slice("claim:".length)}`],
+		derivation: "INFERRED",
+		validity: "SUPPORTED",
+		lifecycle: "ACTIVE",
+		publicationState: "CANONICAL",
+		validFrom: null,
+		validTo: null,
+		compilerVersion: "test",
+		source: "cross-material-detect",
+		confidence: 1,
+		consumedBy: [],
+	});
+	publishSourceResult(
+		config,
+		{
+			schemaVersion: "v1",
+			sourceId: "source:r1",
+			runId: "run:r1",
+			publishedAt: "2026-07-29T00:00:00.000Z",
+			claims,
+			concepts: [],
+			relations: [
+				relation("rel:a-bridge", "claim:a", "claim:bridge"),
+				relation("rel:b-bridge", "claim:b", "claim:bridge"),
+			],
+		},
+		{
+			schemaVersion: "v1",
+			sourceId: "source:r1",
+			runId: "run:r1",
+			publishedAt: "2026-07-29T00:00:00.000Z",
+			claims: [],
+			relations: [],
+		},
+	);
+	return config;
+}
 
 function fixture(relationType: Relation["type"] = "SUPPORTS"): AppConfig {
 	const projectRoot = mkdtempSync(join(tmpdir(), "wge-context-"));
@@ -228,5 +608,36 @@ function claim(id: string, statement: string, spanId: string, scope: Claim["scop
 		supportingEvidenceRefs: [{ type: "SourceSpan", spanId }],
 		knowledgeVersion: "test",
 		recordedAt: "2026-07-23T00:00:00.000Z",
+	};
+}
+
+function wikiCandidate(
+	id: string,
+	claimIndexes: number[],
+	claims: Claim[],
+	score: number,
+): WikiRetrievalCandidate {
+	const refs = claimIndexes.map((index) => {
+		const item = claims[index];
+		if (!item) throw new Error(`missing test claim ${index}`);
+		return claimRef(item.id);
+	});
+	return {
+		module: {
+			id,
+			stableAddress: id,
+			coreQuestion: "Alpha current facts",
+			currentUnderstanding: "Alpha",
+			disputes: [],
+			claimRefs: refs,
+			conceptRefs: [],
+			dependencies: [],
+			publicationState: "CANONICAL",
+			updatedAt: "2026-08-12T00:00:00.000Z",
+		},
+		score,
+		matchedSeedClaimIds: refs.slice(0, 2).map(String),
+		matchedCoreFeatures: ["w:alpha"],
+		matchedAssertionFeatures: [],
 	};
 }

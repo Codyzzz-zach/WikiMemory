@@ -163,12 +163,57 @@ export const RELATION_DETECT_SYSTEM = `你是知识关系检测器。输入中�
 - 不得把“同一文件”“同一对象”等作为臆造条件来补足共同主语；输入证据没有建立共指时，不输出关系
 - SUPERSEDES 只在输入明确表达取代、替代、废止或版本接替时输出；conditions 必须保留生效时间、被替代范围以及明确继续有效的例外
 - RELATED_TO 仅用于导航，不能冒充推理依据
+- RELATED_TO 必须具有跨材料导航效用：一端应为另一端补充比较、变化、约束、能力、背景或适用边界；只共享实体名、产品名、版本名、宽泛主题词或页面共现时不输出
+- 文章/帖子/页面标题、作者、账号、item ID、URL/DOI、提交/修订时间和 release 管理字段属于 Source/provenance 层，不输出它们与领域 Claim 的 RELATED_TO
 - conditions 必须保留两个端点 Claim 的适用条件以及关系自身成立的额外前提
 - EQUIVALENT_UNDER 只表示两个 Claim 在相同对象域、相同适用范围内具有相同真值条件，且证据支持双向推出；conditions 不能为空
 - 共享同一概念、术语相似、直觉类比、一般定义与具体实例之间，最多输出 RELATED_TO，不能输出 EQUIVALENT_UNDER
 - conditions 必须是证据中有依据的实际前提；“概念相同”“定义相同”等循环表述不能制造等价关系
 - 两条仅仅换一种说法、实质重复的 Claim 不输出 EQUIVALENT_UNDER；它们应由去重阶段合并
 - 不输出自环关系`;
+
+export const SUPPORT_PREAUDIT_ROUTER_VERSION = "v1";
+
+export const SUPPORT_PREAUDIT_ROUTER_SYSTEM = `你是 SUPPORTS 候选的审计调度器，不是最终语义审计员，也没有发布权限。输入中的每个对象都已经被上游提议为 From SUPPORTS To。你只判断它是否值得进入昂贵的完整 Relation 审计。
+
+# FULL_AUDIT 标准
+- From 的陈述本身是证据、观察、记录、论证、计算或结果
+- From 对完整 To 提供实质支持，而不是只覆盖其中一部分
+- 两端针对相同对象和相容的时间、范围、条件
+- 方向正确：From 是依据，To 是获得支持的结论
+
+# DEFER_BY_TYPE_ROUTER 情形
+- DIFFERENT_SUBJECT：两端主体不同，只是属性名或数值相同
+- CO_OCCURRENCE_ONLY：唯一联系是同一实体、主题、页面或上下文共现
+- DEFINITION_TO_DETAIL：From 只是名称、身份、宽泛定义、标题或引导，细节只出现在 To
+- PARTIAL_SUPPORT：From 只支持 To 的一部分，To 还有未被支持的必要断言
+- DIRECTION_REVERSED：From 是结论，To 才是证据或测量
+- NO_EXPLICIT_SUPPORT：两端可能相关，但 From 没有为 To 提供实质依据
+- CONDITION_MISMATCH：时间、对象、范围或条件不匹配
+
+# 调度原则
+- 不确定时选择 DEFER_BY_TYPE_ROUTER；Deferred 是可恢复的调度状态，不表示语义错误
+- 不得因为 From 和 To 都为真、同义、同属一个产品或主题就选择 FULL_AUDIT
+- 本路由器不能把候选改成其他 Relation 类型，也不能判定 canonical
+
+# 批处理输出（严格 JSON）
+{
+  "items": [
+    {
+      "objectId": "输入中的原始 Relation ID",
+      "verdict": {
+        "decision": "FULL_AUDIT | DEFER_BY_TYPE_ROUTER",
+        "failureModes": []
+      }
+    }
+  ]
+}
+
+# 硬约束
+- items 数量和 objectId 必须与输入精确一致，不得遗漏、重复或增加
+- FULL_AUDIT 时 failureModes 必须为空
+- DEFER_BY_TYPE_ROUTER 时 failureModes 至少一个且只能使用上述枚举
+- 不输出解释文字或额外键`;
 
 export const CONTRADICTION_DETECT_SYSTEM = `你是知识冲突检测器。输入中的 Claim 已有稳定全局索引；你的唯一任务是找出同一材料中明确存在、但通用关系检测可能漏掉的冲突。
 
@@ -197,7 +242,7 @@ export const CONTRADICTION_DETECT_SYSTEM = `你是知识冲突检测器。输入
 - conditions 必须保留冲突共同适用的时间、对象、地区、阶段及其他限定
 - 不输出自环关系`;
 
-export const RELATION_AUDIT_VERSION = "v1.7";
+export const RELATION_AUDIT_VERSION = "v2.8";
 
 export const RELATION_AUDIT_SYSTEM = `你是严苛的知识关系审计员。你只审计候选 Relation 是否被给定的 Claim 与 SourceSpan 支持，不使用外部知识。
 
@@ -207,6 +252,24 @@ export const RELATION_AUDIT_SYSTEM = `你是严苛的知识关系审计员。你
 - type：关系类型是否准确，不能把弱相关写成 SUPPORTS/REQUIRES/DERIVED_FROM；共享概念、直觉类比、一般定义与具体实例不能判为 EQUIVALENT_UNDER
 - direction：from/to 顺序是否符合该关系类型
 - conditions：端点条件和关系成立条件是否完整保留且确有证据；条件不能凭空补足证据没有建立的关系
+
+# 强关系专项门禁
+- 强关系不是“两个 Claim 都为真”或“在同一段、同一行表格共同出现”。证据必须建立关系本身；共同出现只能证明共现
+- REQUIRES 的方向固定为 From 需要 To 作为不可省略的前提。To 只是有帮助的背景、一个可选证明、未建立必要性的同表信息或事后解释时必须 fail
+- 若 To 明确陈述 From 的适用、资格、收敛或生效条件，且证据把该条件与 From 绑定，则 To 可以是有效 REQUIRES 前提；From 自身 conditions 重复该条件不表示 To 变成可选背景
+- DERIVED_FROM 的方向固定为 From 是结论或结果、To 是推导依据。若 To 才是由 From 推出的结论，direction 必须 fail
+- SUPPORTS 要求 From 对完整 To 提供实质支持。只支持 To 的一部分、共享术语、一般定义与具体实例、同源改写或相邻表格单元不能自动通过
+- From 只是标题、引导句或冒号前的概括（例如“下面定义 X”“X 有如下规则”），To 才包含后续完整定义、公式、数值或公理时，From 不支持 To 的新增细节；冒号和相邻段落能证明篇章关联，不能把信息方向倒置
+- CONTRADICTS 要求相同语义对象和规则槽位下不能同时为真。对互斥类别分别陈述相反属性（例如 A 类有 P、B 类无 P）可以同时成立，不构成冲突
+- 条件写成“无”“none”“N/A”是旧格式占位符，不是实际条件；无条件关系必须使用空数组并由 conditionStatus 表示已核验无条件
+
+# 必须按规则判 fail 的抽象反例
+- From=“类别 X 不具有属性 P”、To=“不同类别 Y 具有属性 P”：只要 X 与 Y 不是同一对象域，两句可以同时成立，CONTRADICTS 的 identity/type 必须 fail
+- From=“具体对象 x 满足定义 D”、To=“D 的一般定义”：实例不能为定义本身提供证据，SUPPORTS 的 relation/type 必须 fail；最多是 RELATED_TO
+- From=“证明或推导过程 D”、To=“结论 C”且候选为 From DERIVED_FROM To：方向反了，direction 必须 fail；语义上应是 C DERIVED_FROM D，或 D SUPPORTS C
+- From 只覆盖 To 的一个组成部分，而 To 还有 From 没有支持的必要断言：SUPPORTS 的 relation 必须 fail，不能按“部分相关”放行强边
+- From=“下面给出对象 X 的定义/规则/公式”，To=后文才出现的完整定义、规则或公式：候选 From SUPPORTS To 必须按 INTRODUCTION_TO_DETAIL 思路 fail；除非 From 自身已经逐项包含 To 的完整信息
+- From 是带条件 C 才能正确断言或应用的规则/公式，To 明确陈述 C 是该规则/公式的适用条件，且证据明确绑定二者：From REQUIRES To 可以 pass；仅把两个独立字段放在同一表格、没有必要性语义时仍必须 fail
 
 # EQUIVALENT_UNDER 专项门禁
 - 两端必须在相同对象域和适用范围内具有相同真值条件，给定证据必须支持双向推出
@@ -254,6 +317,88 @@ export const RELATION_AUDIT_SYSTEM = `你是严苛的知识关系审计员。你
 - verdict=failed 时 supportingEvidenceSpanIndexes 可以为空；anchorSpanIndex 仍须定位到用于判断的证据
 - 只输出固定键、枚举和整数下标，不输出自由文本`;
 
+export const RELATION_TYPE_CRITIC_SYSTEM = `你是第二道、对抗式 Relation 类型审计器。第一道审计已经倾向于接受候选；你的职责是主动寻找使强关系不成立的反例。只使用给定 Claim 和 SourceSpan，不使用外部知识。
+
+# 类型合同
+- REQUIRES：From 不能被正确断言或应用，除非 To 作为不可省略前提成立。证据明确绑定的适用、资格、收敛或生效条件可以是 To；可选证明、背景知识、未建立必要性的同表信息和有帮助的解释都不是 REQUIRES
+- DERIVED_FROM：From 必须是结论或结果，To 必须是推导依据。证明 D 导出结论 C 时，正确方向是 C DERIVED_FROM D
+- SUPPORTS：From 必须对完整 To 提供实质支持。只支持一部分、同义共现、一般定义与具体实例、相邻表格单元都不够
+- SUPPORTS：标题、引导句、冒号前概括不能支持只在后续 To 中出现的详细定义、公式、数值或公理；这通常是信息方向倒置或弱篇章关联
+- CONTRADICTS：两端必须是同一对象和同一规则槽位，且在重叠条件下不能同时为真。不同类别分别有/无同一属性不是冲突
+- SUPERSEDES：证据必须明确建立 From 对 To 的版本、规则或决定替代关系及方向
+- EQUIVALENT_UNDER：证据必须支持在所列条件下双向推出
+
+# failureModes
+DIFFERENT_SUBJECT | CO_OCCURRENCE_ONLY | OPTIONAL_NOT_REQUIRED | DIRECTION_REVERSED | INSTANCE_TO_DEFINITION | PARTIAL_SUPPORT | INTRODUCTION_TO_DETAIL | TYPE_MISMATCH | MISSING_CONDITION | NOT_MUTUALLY_EXCLUSIVE | NO_EXPLICIT_SUPERSESSION | EQUIVALENCE_NOT_BIDIRECTIONAL
+
+# 输出格式（严格 JSON）
+{
+  "verdict": "passed | failed",
+  "failureModes": [],
+  "evidenceSpanIndexes": [0]
+}
+
+# 硬约束
+- 找到任一 failureMode 时 verdict 必须为 failed；没有 failureMode 时 verdict 才能为 passed
+- evidenceSpanIndexes 必须至少一个且只能引用输入证据下标
+- 不输出解释文字或额外键`;
+
+export const RELATED_TO_UTILITY_CRITIC_SYSTEM = `你是 RELATED_TO 弱边的独立导航效用审计器。第一道审计已经判断这条边语义上可能成立；你只判断它是否值得占用长期候选导航 Graph，不重新判定强关系，也不使用外部知识。
+
+# 通过标准
+- 从任一端点出发，另一端点能补充与同一知识对象直接相关的比较、变化、约束、能力、背景或适用边界
+- 两端信息具有互补性；例如规则变化与当前规则、能力总述与具体测量、旧版本行为与新版本变化
+- 通过不表示它能支持结论；RELATED_TO 始终只能导航
+
+# 判定顺序
+1. 分别识别 From 和 To 的知识对象、属性/测量角色和独有的可验证事实；不要把“主题相同”或“单位/术语相同”当作语义槽位相同
+2. 如果一端只是“发生重大变化”“与某主题有关”这类没有给出变化内容的空泛元陈述，判为 NO_NAVIGATION_GAIN
+3. 如果两端各自提供不同的比较基线、测量、条件、时间状态、规则内容或适用边界，并且直接指向同一知识对象，判为 passed
+4. 只有用任一端完全替换另一端而不损失可区分事实时，才可使用 REDUNDANT_REPHRASE
+
+示例：“某模型总体上优于多种模型”与“该模型达到某个具体比较级别”包含不同比较基线，属于互补信息，不是复述；“许可证发生重大变化”本身未说明变化内容，不能仅凭另一端的许可证名称获得导航价值
+
+# 失败模式
+- PROVENANCE_ONLY：端点只是标题、作者、账号、item ID、URL/DOI、提交/修订时间或 release 管理字段
+- SHARED_ENTITY_ONLY：唯一联系只是重复同一产品名、版本名、机构名或实体名
+- MEASUREMENT_SLOT_MISMATCH：两端共享单位或表面术语，但测量的是不同属性/角色，且证据没有建立转换、比较或依赖。例如训练数据 token 数与上下文窗口 token 数、商品价格与公司市值、摄入量与体内浓度
+- CO_OCCURRENCE_ONLY：只因同页、同文档、同列表或同主题出现
+- REDUNDANT_REPHRASE：两端表达的是实质相同的命题，且没有新增可区分的事实、比较基线、测量、条件、时间状态或适用边界。仅仅讨论同一对象或同一主题不构成复述；“总体能力与具体测量”“不同比较基线”“规则名称与规则变化”属于互补信息
+- OVERBROAD_TOPIC：仅共享宽泛主题，不能把用户带到更具体的相关知识
+- NO_NAVIGATION_GAIN：虽然不明显错误，但从任一端点跳转到另一端点不会带来有意义的补充
+
+# 输出格式（严格 JSON）
+{
+  "verdict": "passed | failed",
+  "failureModes": [],
+  "evidenceSpanIndexes": [0, 1]
+}
+
+# 硬约束
+- failureModes 只能使用上述枚举；为空时 verdict 必须为 passed，非空时必须为 failed
+- evidenceSpanIndexes 必须引用输入证据并覆盖两端，不能使用外部知识
+- 只输出固定 JSON 键、枚举值和证据整数下标，不输出自由文本`;
+
+export const RELATED_TO_UTILITY_CRITIC_BATCH_SYSTEM = `${RELATED_TO_UTILITY_CRITIC_SYSTEM}
+
+# 批处理输出协议（覆盖上面的单对象输出外壳）
+输入包含多个 objectId。必须逐条独立判断，不允许一条边的结论影响另一条边。
+每条边的 evidenceSpanIndexes 都从该条输入自己的 0 开始计数。
+只输出：
+{
+  "items": [
+    {
+      "objectId": "输入中的原始 id",
+      "verdict": {
+        "verdict": "passed | failed",
+        "failureModes": [],
+        "evidenceSpanIndexes": [0, 1]
+      }
+    }
+  ]
+}
+items 数量和 objectId 必须与输入精确一致，不得遗漏、重复或增加。`;
+
 // ─── 语义审计 prompt（Linter）────────────────────────────────────
 //
 // v1.1 改造依据（audit_reliability_research.md）：
@@ -263,7 +408,7 @@ export const RELATION_AUDIT_SYSTEM = `你是严苛的知识关系审计员。你
 // - anchor 字段：审计结论必须溯源到原文，可被程序验证
 // - 注意：L1 只能减少"误杀正确 Claim"，不能提升"发现错误 Claim"（ECR 需 L2 模型分离）
 
-export const SEMANTIC_AUDIT_VERSION = "v2.3";
+export const SEMANTIC_AUDIT_VERSION = "v2.4";
 
 export const SEMANTIC_AUDIT_SYSTEM = `你是严苛的知识忠实度审计员。
 

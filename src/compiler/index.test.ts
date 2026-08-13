@@ -1,11 +1,11 @@
-import { mkdtempSync, rmSync } from "node:fs";
+import { mkdtempSync, readFileSync, rmSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { afterEach, describe, expect, it } from "vitest";
 import type { AppConfig } from "../config/types.js";
 import type { LLMProvider } from "../core/llm-provider.js";
 import type { ChatOptions, ChatResult } from "../core/types.js";
-import { resolveSpanById } from "../linter/storage.js";
+import { readAllRelations, resolveSpanById } from "../linter/storage.js";
 import {
 	CLAIM_COMPILE_SYSTEM,
 	CONCEPT_CONSOLIDATE_SYSTEM,
@@ -13,13 +13,17 @@ import {
 	PROPOSITION_EXTRACT_SYSTEM,
 	RELATION_DETECT_SYSTEM,
 } from "../prompts/index.js";
-import type { Claim, Source, SourceSpan } from "../types/index.js";
+import type { Claim, Relation, Source, SourceSpan } from "../types/index.js";
+import { claimRef } from "../types/index.js";
 import {
+	CROSS_RELATION_AUDIT_BUDGET,
 	compileCrossMaterialRelations,
 	compileSource,
+	endpointLexicalAffinity,
 	findExplicitlyReferencedSourceIds,
 	hasConflictSignal,
 	selectCrossMaterialCandidates,
+	selectCrossRelationsForAudit,
 } from "./index.js";
 
 const temporaryRoots: string[] = [];
@@ -215,6 +219,208 @@ describe("bounded compiler", () => {
 			[compiledClaim("claim:old", "另一文档发布日期为 1 月 7 日")],
 		);
 		expect(candidates).toEqual([]);
+	});
+
+	it("keeps page titles and platform item identifiers out of cross-material detection", async () => {
+		const provider = new RelationPromptCaptureProvider();
+		const source: Source = {
+			id: "source:new-post-bbb",
+			hash: "bbb",
+			uri: "new-post.md",
+			parsedText: "帖子标题与 item ID",
+			sourceType: "md",
+			loaderVersion: "test",
+			createdAt: "2026-07-23T00:00:00.000Z",
+		};
+		const result = await compileCrossMaterialRelations(
+			temporaryConfig(),
+			provider,
+			"run:test",
+			source,
+			[
+				compiledClaim("claim:title", "该帖子的标题是 'Northstar 3.1'"),
+				compiledClaim("claim:item", "站点上有一个相关帖子，其 item ID 为 41046540"),
+			],
+			[{ id: "concept:northstar", name: "Northstar", aliases: [], boundary: "", domain: "" }],
+			[compiledClaim("claim:old", "Northstar 3.1 使用新的许可证")],
+		);
+		expect(result.relations).toEqual([]);
+		expect(result.candidateClaimIds).toEqual([]);
+		expect(provider.prompt).toBe("");
+	});
+
+	it("persists cross Relation candidate decisions without exposing the operational ledger", async () => {
+		const config = temporaryConfig();
+		const source: Source = {
+			id: "source:new-northstar",
+			hash: "northstar",
+			uri: "northstar.md",
+			parsedText: "Northstar capability",
+			sourceType: "md",
+			loaderVersion: "test",
+			createdAt: "2026-07-23T00:00:00.000Z",
+		};
+		const result = await compileCrossMaterialRelations(
+			config,
+			new FanOutRelationProvider(),
+			"run:deferred",
+			source,
+			[compiledClaim("claim:new", "Northstar capability")],
+			[{ id: "concept:northstar", name: "Northstar", aliases: [], boundary: "", domain: "" }],
+			Array.from({ length: 6 }, (_, index) =>
+				compiledClaim(`claim:old-${index}`, `Northstar detail ${index}`),
+			),
+		);
+		expect(result.generatedRelationCount).toBe(6);
+		expect(result.relations).toHaveLength(6);
+		expect(result.deferredRelationCount).toBe(0);
+		const ledger = readFileSync(join(config.runsDir, "relation-candidate-ledger.jsonl"), "utf8")
+			.trim()
+			.split("\n")
+			.map((row) => JSON.parse(row) as { selectionState: string });
+		expect(ledger).toHaveLength(6);
+		expect(ledger.filter((row) => row.selectionState === "SELECTED_FOR_AUDIT")).toHaveLength(6);
+		expect(ledger.filter((row) => row.selectionState === "DEFERRED_BY_BUDGET")).toHaveLength(0);
+		// Candidate/Deferred is operational memory only: canonical consumers do not read this ledger.
+		expect(readAllRelations(config)).toEqual([]);
+	});
+
+	it("uses a bounded stable ranking without reading audit outcomes", () => {
+		const ordinary = Array.from({ length: CROSS_RELATION_AUDIT_BUDGET + 6 }, (_, index) =>
+			candidateRelation(
+				`rel:${String(index).padStart(2, "0")}`,
+				`claim:from-${index}`,
+				`claim:to-${index}`,
+				"RELATED_TO",
+				0.9 - index / 100,
+			),
+		);
+		const supersedes = candidateRelation(
+			"rel:governance",
+			"claim:new-rule",
+			"claim:old-rule",
+			"SUPERSEDES",
+			0.1,
+		);
+		const selection = selectCrossRelationsForAudit([...ordinary, supersedes]);
+		expect(selection.selected).toHaveLength(CROSS_RELATION_AUDIT_BUDGET);
+		expect(selection.deferred).toHaveLength(7);
+		expect(selection.selected[0]?.id).toBe(supersedes.id);
+		expect(selection.decisions).toHaveLength(ordinary.length + 1);
+	});
+
+	it("covers distinct new Claim endpoints before assigning a second edge to one topic", () => {
+		const relations = [
+			candidateRelation("rel:a-1", "claim:new-a", "claim:old-1", "RELATED_TO", 0.9),
+			candidateRelation("rel:a-2", "claim:new-a", "claim:old-2", "RELATED_TO", 0.8),
+			candidateRelation("rel:b-1", "claim:new-b", "claim:old-3", "RELATED_TO", 0.7),
+		];
+		const selection = selectCrossRelationsForAudit(
+			relations,
+			2,
+			4,
+			new Set(["claim:new-a", "claim:new-b"]),
+		);
+		expect(selection.selected.map((relation) => relation.id)).toEqual(["rel:a-1", "rel:b-1"]);
+		expect(
+			selection.decisions.find((decision) => decision.relation.id === "rel:b-1")?.selectionReason,
+		).toBe("NEW_ENDPOINT_COVERAGE");
+	});
+
+	it("does not let a shared old canonical anchor starve distinct new topics", () => {
+		const relations = Array.from({ length: 6 }, (_, index) =>
+			candidateRelation(
+				`rel:new-${index}`,
+				`claim:new-${index}`,
+				"claim:old-hub",
+				"RELATED_TO",
+				0.7,
+			),
+		);
+		const coverageIds = new Set(relations.map((relation) => relation.from as string));
+		const selection = selectCrossRelationsForAudit(
+			relations,
+			6,
+			1,
+			coverageIds,
+			new Map(),
+			"COVERAGE_ENDPOINTS",
+		);
+		expect(selection.selected).toHaveLength(6);
+		expect(selection.deferred).toHaveLength(0);
+	});
+
+	it("uses multilingual lexical affinity only as a stable same-confidence tie-breaker", () => {
+		const generic = candidateRelation(
+			"rel:generic",
+			"claim:new",
+			"claim:generic",
+			"RELATED_TO",
+			0.6,
+		);
+		const specific = candidateRelation(
+			"rel:specific",
+			"claim:new",
+			"claim:specific",
+			"RELATED_TO",
+			0.6,
+		);
+		const statements = new Map([
+			["claim:new", "组件用于安全风险与推理时缓解措施"],
+			["claim:generic", "本文对模型进行了广泛评估"],
+			["claim:specific", "安全模型用于输入输出风险缓解"],
+		]);
+		const selection = selectCrossRelationsForAudit(
+			[generic, specific],
+			1,
+			4,
+			new Set(["claim:new"]),
+			statements,
+			"COVERAGE_ENDPOINTS",
+		);
+		expect(
+			endpointLexicalAffinity(
+				statements.get("claim:new") ?? "",
+				statements.get("claim:specific") ?? "",
+			),
+		).toBeGreaterThan(
+			endpointLexicalAffinity(
+				statements.get("claim:new") ?? "",
+				statements.get("claim:generic") ?? "",
+			),
+		);
+		expect(selection.selected.map((relation) => relation.id)).toEqual(["rel:specific"]);
+	});
+
+	it("diversifies additional siblings instead of filling one facet with near-duplicates", () => {
+		const relations = [
+			candidateRelation("rel:a-developer", "claim:new", "claim:developer", "RELATED_TO", 0.9),
+			candidateRelation("rel:b-small", "claim:new", "claim:small", "RELATED_TO", 0.9),
+			candidateRelation("rel:c-medium", "claim:new", "claim:medium", "RELATED_TO", 0.9),
+			candidateRelation("rel:d-large", "claim:new", "claim:large", "RELATED_TO", 0.9),
+			candidateRelation("rel:z-license", "claim:new", "claim:license", "RELATED_TO", 0.9),
+		];
+		const statements = new Map([
+			["claim:new", "平台发行物包含模型、权重、软件和配套材料"],
+			["claim:developer", "该平台发行物由组织甲开发"],
+			["claim:small", "该平台的小型模型包含八十亿参数"],
+			["claim:medium", "该平台的中型模型包含七百亿参数"],
+			["claim:large", "该平台的大型模型包含四千亿参数"],
+			["claim:license", "该平台发行物按照社区商业许可证授权"],
+		]);
+		const selection = selectCrossRelationsForAudit(
+			relations,
+			4,
+			4,
+			new Set(["claim:new"]),
+			statements,
+			"COVERAGE_ENDPOINTS",
+		);
+		const selectedIds = selection.selected.map((relation) => relation.id);
+		expect(selectedIds).toContain("rel:z-license");
+		expect(
+			selectedIds.filter((id) => ["rel:b-small", "rel:c-medium", "rel:d-large"].includes(id)),
+		).toHaveLength(2);
 	});
 
 	it("shows endpoint source evidence to cross-material relation detection", async () => {
@@ -481,6 +687,27 @@ class RelationPromptCaptureProvider implements LLMProvider {
 		if (options.systemPrompt !== RELATION_DETECT_SYSTEM) throw new Error("Unexpected prompt");
 		this.prompt = options.messages.map((message) => message.content).join("\n");
 		return chatResult('{"relations":[]}');
+	}
+
+	async chatWithThinking(options: ChatOptions): Promise<ChatResult> {
+		return this.chat(options);
+	}
+}
+
+class FanOutRelationProvider implements LLMProvider {
+	async chat(options: ChatOptions): Promise<ChatResult> {
+		if (options.systemPrompt !== RELATION_DETECT_SYSTEM) throw new Error("Unexpected prompt");
+		return chatResult(
+			JSON.stringify({
+				relations: Array.from({ length: 6 }, (_, index) => ({
+					fromClaimIndex: 0,
+					toClaimIndex: index + 1,
+					type: "RELATED_TO",
+					conditions: [],
+					confidence: 0.9 - index / 100,
+				})),
+			}),
+		);
 	}
 
 	async chatWithThinking(options: ChatOptions): Promise<ChatResult> {
@@ -764,6 +991,36 @@ function compiledClaim(id: string, statement: string): Claim {
 		supportingEvidenceRefs: [{ type: "SourceSpan", spanId: `span:${id}` }],
 		knowledgeVersion: "v1",
 		recordedAt: "2026-07-23T00:00:00.000Z",
+	};
+}
+
+function candidateRelation(
+	id: string,
+	from: string,
+	to: string,
+	type: Relation["type"],
+	confidence: number,
+): Relation {
+	return {
+		id,
+		from: claimRef(from),
+		to: claimRef(to),
+		type,
+		conditions: [],
+		conditionStatus: "UNVERIFIED",
+		supersessionEffect: null,
+		relationAuditVersion: null,
+		evidenceSpanIds: [`span:${from}`, `span:${to}`],
+		derivation: "INFERRED",
+		validity: "UNRESOLVED",
+		lifecycle: "ACTIVE",
+		publicationState: "CANDIDATE",
+		validFrom: null,
+		validTo: null,
+		compilerVersion: "test",
+		source: "cross-material-detect",
+		confidence,
+		consumedBy: [],
 	};
 }
 

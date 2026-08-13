@@ -1,0 +1,44 @@
+{
+	"schemaVersion": "wge-goal4-support-router-online-counterfactual-contract/v1",
+	"status": "FROZEN_AFTER_FAILED_CANARY_BEFORE_COUNTERFACTUAL",
+	"createdAt": "2026-08-12T00:10:00+08:00",
+	"stageBRead": false,
+	"purpose": "Diagnose whether the online canary's absolute 300k-token failure was caused or mitigated by the router, using the exact 40 deferred SUPPORTS candidates from the immutable canary ledger.",
+	"doesNotOverwriteFirstRun": true,
+	"doesNotChangeCanaryThreshold": true,
+	"inputs": {
+		"candidateLedgerPath": "experiments/goal3/s200-runs/compile-v11-support-router-4source/workspace/runs/relation-candidate-ledger.jsonl",
+		"candidateLedgerSha256": "f6085a4e48a89a3dffa7a8bae3098d93140a043110db73d2bc644db4e63b6d68",
+		"canaryValidationSha256": "7302054364d8d3b51d26a43c369b82b9cab75df8675fd64983746894b6737c3a",
+		"canaryManualReviewSha256": "5b8d9ea984f65fabf19f7a69438d31be9e241258f621e8993b397b5fd832fe0a",
+		"deferredSourceId": "source:s200-ai-llama-003-095ca9ccaaea22c6",
+		"deferredSupportCandidates": 40,
+		"humanFalseSupportCandidates": 40
+	},
+	"runtime": {
+		"model": "deepseek-v4-flash",
+		"temperature": 0,
+		"thinkingDisabled": true,
+		"mode": "ZERO_PUBLICATION_FULL_SEMANTIC_AUDIT_REPLAY"
+	},
+	"frozenObservedCanaryCost": {
+		"totalTokens": 321850,
+		"allRouterTokens": 9178,
+		"absoluteCanaryBudget": 300000
+	},
+	"acceptance": {
+		"allFortyCandidatesUseUnchangedSemanticAudit": true,
+		"maximumCanonicalSupportEdges": 0,
+		"publicationWrites": 0,
+		"minimumAttributableRouterTokenReduction": 0.3
+	},
+	"formulas": {
+		"estimatedNoRouterTotal": "observedCanaryTotal - allRouterTokens + deferredFullAuditTokens",
+		"attributableRouterReduction": "(deferredFullAuditTokens - allRouterTokens) / deferredFullAuditTokens"
+	},
+	"interpretation": [
+		"The original canary remains failed against its frozen absolute budget regardless of this result.",
+		"If the paired no-router estimate is more expensive, the absolute budget is a valid system warning but not causal evidence against the router.",
+		"This post-hoc replay may justify a corrected future contract; it cannot retroactively turn the failed canary into a pass."
+	]
+}

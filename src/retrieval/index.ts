@@ -21,6 +21,15 @@ export interface SeedRetrievalDiagnostics {
 
 export interface SeedRetrievalResult {
 	candidates: SeedCandidate[];
+	traceCandidates: Array<{
+		claimId: string;
+		rank: number;
+		score: number;
+		channels: string[];
+		matchedFeatures: string[];
+		selected: boolean;
+		dropReason: "seed-limit" | "alias-supplement-limit" | null;
+	}>;
 	diagnostics: SeedRetrievalDiagnostics;
 }
 
@@ -34,12 +43,24 @@ export interface TemporalScopeFilterResult {
 	};
 }
 
-interface IndexedClaim {
+export interface SeedSearchDocument {
 	claim: Claim;
-	features: Set<string>;
+	baseFeatures: Set<string>;
+	totalFeatures: Set<string>;
 	aliasFeatures: Set<string>;
 	sourceFeatures: Set<string>;
-	normalizedText: string;
+	normalizedBaseText: string;
+	normalizedTotalText: string;
+	temporalMonths: number[];
+}
+
+export interface SeedSearchCorpus {
+	documents: SeedSearchDocument[];
+	/** Full eligible corpus size; persistent queries may hydrate only matched documents. */
+	totalDocumentCount: number;
+	baseDocumentFrequency: Map<string, number>;
+	totalDocumentFrequency: Map<string, number>;
+	diagnostics: Omit<SeedRetrievalDiagnostics, "queryFeatureCount" | "matchedClaimCount">;
 }
 
 /**
@@ -103,7 +124,7 @@ export function filterClaimsByExplicitTemporalScope(
 	query: string,
 	sourceSearchText: ReadonlyMap<string, string> = new Map(),
 ): TemporalScopeFilterResult {
-	const queryMonths = extractMonths(query);
+	const queryMonths = extractTemporalMonths(query);
 	if (queryMonths.length < 2) {
 		return {
 			claims,
@@ -114,7 +135,7 @@ export function filterClaimsByExplicitTemporalScope(
 	const end = Math.max(...queryMonths);
 	const excludedClaimIds: string[] = [];
 	const filtered = claims.filter((claim) => {
-		const months = extractMonths(claimSearchText(claim, spans, sourceSearchText));
+		const months = extractTemporalMonths(claimSearchText(claim, spans, sourceSearchText));
 		if (months.length === 0 || months.some((month) => month >= start && month <= end)) return true;
 		excludedClaimIds.push(claim.id);
 		return false;
@@ -143,48 +164,26 @@ export function retrieveClaimSeeds(
 	limit = 10,
 	sourceSearchText: ReadonlyMap<string, string> = new Map(),
 ): SeedRetrievalResult {
-	const hasAliases = claims.some((claim) => (claim.retrievalAliases ?? []).length > 0);
-	if (!hasAliases) return retrieveClaimSeedsOnce(claims, spans, query, limit, sourceSearchText);
-	// Keep the complete original-language ranking, then add a small alias-only
-	// supplement. Cross-language recall must not replace evidence that was already
-	// reachable through the original statement, evidence, identifiers or metadata.
-	const baseline = retrieveClaimSeedsOnce(
-		claims.map((claim) => ({ ...claim, retrievalAliases: [] })),
-		spans,
+	return retrieveClaimSeedsFromCorpus(
+		buildSeedSearchCorpus(claims, spans, sourceSearchText),
 		query,
 		limit,
-		sourceSearchText,
 	);
-	const multilingual = retrieveClaimSeedsOnce(claims, spans, query, limit, sourceSearchText);
-	const existingIds = new Set(baseline.candidates.map((candidate) => candidate.claim.id));
-	const supplements = multilingual.candidates
-		.filter(
-			(candidate) => candidate.channels.includes("alias") && !existingIds.has(candidate.claim.id),
-		)
-		.slice(0, 4);
-	return {
-		candidates: [...baseline.candidates, ...supplements],
-		diagnostics: {
-			...multilingual.diagnostics,
-			matchedClaimCount: baseline.candidates.length + supplements.length,
-		},
-	};
 }
 
-function retrieveClaimSeedsOnce(
+/** Build the deterministic searchable projection once; it may then be persisted as a rebuildable index. */
+export function buildSeedSearchCorpus(
 	claims: Claim[],
 	spans: SourceSpan[],
-	query: string,
-	limit: number,
-	sourceSearchText: ReadonlyMap<string, string>,
-): SeedRetrievalResult {
+	sourceSearchText: ReadonlyMap<string, string> = new Map(),
+): SeedSearchCorpus {
 	let resolvedEvidenceRefCount = 0;
 	let unresolvedEvidenceRefCount = 0;
 	const eligible = claims.filter((claim) => {
 		const rule = getConsumptionRule(claim.publicationState, claim.lifecycle, claim.validity);
 		return rule.allowRetrieval;
 	});
-	const indexed: IndexedClaim[] = eligible.map((claim) => {
+	const documents = eligible.map((claim): SeedSearchDocument => {
 		const resolvedEvidence = claim.evidenceSpanIds.flatMap((spanId) => {
 			const span = resolveSpanById(spans, spanId);
 			if (!span) {
@@ -204,29 +203,93 @@ function retrieveClaimSeedsOnce(
 			),
 		].join("\n");
 		const aliases = (claim.retrievalAliases ?? []).join("\n");
-		const text = [claim.statement, claim.conditions.join(" "), evidence, aliases, sourceMetadata]
+		const baseText = [claim.statement, claim.conditions.join(" "), evidence, sourceMetadata]
 			.filter(Boolean)
 			.join("\n");
+		const totalText = [baseText, aliases].filter(Boolean).join("\n");
 		return {
 			claim,
-			features: lexicalFeatures(text),
+			baseFeatures: lexicalFeatures(baseText),
+			totalFeatures: lexicalFeatures(totalText),
 			aliasFeatures: lexicalFeatures(aliases),
 			sourceFeatures: lexicalFeatures(sourceMetadata),
-			normalizedText: normalizeSearchText(text),
+			normalizedBaseText: normalizeSearchText(baseText),
+			normalizedTotalText: normalizeSearchText(totalText),
+			temporalMonths: extractTemporalMonths(baseText),
 		};
 	});
+	return {
+		documents,
+		totalDocumentCount: documents.length,
+		baseDocumentFrequency: documentFrequency(documents.map((entry) => entry.baseFeatures)),
+		totalDocumentFrequency: documentFrequency(documents.map((entry) => entry.totalFeatures)),
+		diagnostics: {
+			eligibleClaimCount: eligible.length,
+			usedEvidenceText: resolvedEvidenceRefCount > 0,
+			usedSourceMetadata: sourceSearchText.size > 0,
+			resolvedEvidenceRefCount,
+			unresolvedEvidenceRefCount,
+		},
+	};
+}
+
+/** Retrieve from an in-memory or rehydrated persistent projection with identical ranking semantics. */
+export function retrieveClaimSeedsFromCorpus(
+	corpus: SeedSearchCorpus,
+	query: string,
+	limit = 10,
+): SeedRetrievalResult {
+	const hasAliases = corpus.documents.some(
+		(document) => (document.claim.retrievalAliases ?? []).length > 0,
+	);
+	if (!hasAliases) return rankSeedSearchCorpus(corpus, query, limit, "base");
+	// Keep the complete original-language ranking, then add a small alias-only
+	// supplement. Cross-language recall must not replace evidence that was already
+	// reachable through the original statement, evidence, identifiers or metadata.
+	const baseline = rankSeedSearchCorpus(corpus, query, limit, "base");
+	const multilingual = rankSeedSearchCorpus(corpus, query, limit, "total");
+	const existingIds = new Set(baseline.candidates.map((candidate) => candidate.claim.id));
+	const supplements = multilingual.candidates
+		.filter(
+			(candidate) => candidate.channels.includes("alias") && !existingIds.has(candidate.claim.id),
+		)
+		.slice(0, 4);
+	const candidates = [...baseline.candidates, ...supplements];
+	const selectedIds = new Set(candidates.map((candidate) => candidate.claim.id));
+	return {
+		candidates,
+		traceCandidates: multilingual.traceCandidates.map((candidate) => ({
+			...candidate,
+			selected: selectedIds.has(candidate.claimId),
+			dropReason: selectedIds.has(candidate.claimId)
+				? null
+				: candidate.channels.includes("alias")
+					? "alias-supplement-limit"
+					: "seed-limit",
+		})),
+		diagnostics: {
+			...multilingual.diagnostics,
+		},
+	};
+}
+
+function rankSeedSearchCorpus(
+	corpus: SeedSearchCorpus,
+	query: string,
+	limit: number,
+	mode: "base" | "total",
+): SeedRetrievalResult {
+	const indexed = corpus.documents;
 	const queryFeatures = lexicalFeatures(query);
 	const normalizedQuery = normalizeSearchText(query);
-	const documentFrequency = new Map<string, number>();
-	for (const entry of indexed) {
-		for (const feature of entry.features) {
-			documentFrequency.set(feature, (documentFrequency.get(feature) ?? 0) + 1);
-		}
-	}
+	const frequencies =
+		mode === "base" ? corpus.baseDocumentFrequency : corpus.totalDocumentFrequency;
 
-	const candidates = indexed
+	const rankedCandidates = indexed
 		.map((entry): SeedCandidate | null => {
-			const matched = [...queryFeatures].filter((feature) => entry.features.has(feature));
+			const features = mode === "base" ? entry.baseFeatures : entry.totalFeatures;
+			const normalizedText = mode === "base" ? entry.normalizedBaseText : entry.normalizedTotalText;
+			const matched = [...queryFeatures].filter((feature) => features.has(feature));
 			const queryWords = [...queryFeatures].filter((feature) => feature.startsWith("w:"));
 			const queryIdentifiers = [...queryFeatures].filter((feature) => feature.startsWith("id:"));
 			const matchedWords = matched.filter((feature) => feature.startsWith("w:"));
@@ -265,8 +328,8 @@ function retrieveClaimSeedsOnce(
 			let score = 0;
 			const channels = new Set<string>();
 			for (const feature of matched) {
-				const frequency = documentFrequency.get(feature) ?? 0;
-				const idf = Math.log((indexed.length + 1) / (frequency + 1)) + 1;
+				const frequency = frequencies.get(feature) ?? 0;
+				const idf = Math.log((corpus.totalDocumentCount + 1) / (frequency + 1)) + 1;
 				const weight = feature.startsWith("id:")
 					? 4
 					: feature.startsWith("w:")
@@ -283,7 +346,7 @@ function retrieveClaimSeedsOnce(
 			if (matched.some((feature) => entry.aliasFeatures.has(feature))) channels.add("alias");
 			const coverage = queryFeatures.size === 0 ? 0 : matched.length / queryFeatures.size;
 			score *= 0.5 + coverage;
-			if (normalizedQuery.length >= 4 && entry.normalizedText.includes(normalizedQuery)) {
+			if (normalizedQuery.length >= 4 && normalizedText.includes(normalizedQuery)) {
 				score += 8;
 				channels.add("exact");
 			}
@@ -295,21 +358,40 @@ function retrieveClaimSeedsOnce(
 			};
 		})
 		.filter((candidate): candidate is SeedCandidate => candidate !== null)
-		.sort((left, right) => right.score - left.score || left.claim.id.localeCompare(right.claim.id))
-		.slice(0, limit);
+		.sort((left, right) => right.score - left.score || left.claim.id.localeCompare(right.claim.id));
+	const candidates = rankedCandidates.slice(0, limit);
 
 	return {
 		candidates,
+		traceCandidates: rankedCandidates.map((candidate, index) => ({
+			claimId: candidate.claim.id,
+			rank: index + 1,
+			score: candidate.score,
+			channels: candidate.channels,
+			matchedFeatures: candidate.matchedFeatures,
+			selected: index < limit,
+			dropReason: index < limit ? null : "seed-limit",
+		})),
 		diagnostics: {
 			queryFeatureCount: queryFeatures.size,
-			eligibleClaimCount: eligible.length,
-			matchedClaimCount: candidates.length,
-			usedEvidenceText: resolvedEvidenceRefCount > 0,
-			usedSourceMetadata: sourceSearchText.size > 0,
-			resolvedEvidenceRefCount,
-			unresolvedEvidenceRefCount,
+			eligibleClaimCount: corpus.diagnostics.eligibleClaimCount,
+			matchedClaimCount: rankedCandidates.length,
+			usedEvidenceText: corpus.diagnostics.usedEvidenceText,
+			usedSourceMetadata: corpus.diagnostics.usedSourceMetadata,
+			resolvedEvidenceRefCount: corpus.diagnostics.resolvedEvidenceRefCount,
+			unresolvedEvidenceRefCount: corpus.diagnostics.unresolvedEvidenceRefCount,
 		},
 	};
+}
+
+function documentFrequency(featureSets: Set<string>[]): Map<string, number> {
+	const frequencies = new Map<string, number>();
+	for (const features of featureSets) {
+		for (const feature of features) {
+			frequencies.set(feature, (frequencies.get(feature) ?? 0) + 1);
+		}
+	}
+	return frequencies;
 }
 
 function claimSearchText(
@@ -334,7 +416,7 @@ function claimSearchText(
 		.join("\n");
 }
 
-function extractMonths(value: string): number[] {
+export function extractTemporalMonths(value: string): number[] {
 	const normalized = value.normalize("NFKC");
 	const months = new Set<number>();
 	for (const match of normalized.matchAll(
@@ -379,6 +461,14 @@ function extractMonths(value: string): number[] {
 		if (month !== undefined) months.add(year * 12 + month);
 	}
 	return [...months];
+}
+
+export function extractExplicitTemporalMonthRange(
+	value: string,
+): { start: number; end: number } | null {
+	const months = extractTemporalMonths(value);
+	if (months.length < 2) return null;
+	return { start: Math.min(...months), end: Math.max(...months) };
 }
 
 function formatMonth(value: number): string {

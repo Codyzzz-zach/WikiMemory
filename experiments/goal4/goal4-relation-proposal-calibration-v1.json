@@ -1,0 +1,88 @@
+{
+	"schemaVersion": "wge-goal4-relation-proposal-calibration/v1",
+	"status": "FROZEN_BEFORE_PROMPT_CHANGE",
+	"stageBRead": false,
+	"instructions": "Each case is evaluated independently. Labels and rationales must never be included in the model prompt.",
+	"cases": [
+		{
+			"caseId": "G4-CAL-01",
+			"domain": "health",
+			"from": "In a preregistered randomized trial, the intervention lowered mean systolic blood pressure by 8 mmHg versus placebo.",
+			"to": "The intervention lowers systolic blood pressure compared with placebo in the studied population.",
+			"expectedType": "SUPPORTS",
+			"rationale": "The reported controlled result supplies direct evidence for the complete bounded conclusion."
+		},
+		{
+			"caseId": "G4-CAL-02",
+			"domain": "engineering",
+			"from": "Across five independent validation runs, positioning error remained below 1.2%.",
+			"to": "The system satisfies the specified positioning-error target of less than 2% in the validation setup.",
+			"expectedType": "SUPPORTS",
+			"rationale": "Measurements directly support the complete threshold claim under the stated setup."
+		},
+		{
+			"caseId": "G4-CAL-03",
+			"domain": "mathematics",
+			"from": "The convergence theorem is asserted for this iteration scheme.",
+			"to": "The step size satisfies 0 < η < 2/L, which the theorem states is necessary for its convergence conclusion.",
+			"expectedType": "REQUIRES",
+			"rationale": "The conclusion-bearing claim requires the explicitly bound prerequisite."
+		},
+		{
+			"caseId": "G4-CAL-04",
+			"domain": "finance",
+			"from": "The portfolio's duration is 4.1 years after applying the weighted-cash-flow calculation.",
+			"to": "The weighted cash flows and discount factors listed in the calculation produce a duration of 4.1 years.",
+			"expectedType": "DERIVED_FROM",
+			"rationale": "The result is derived from the stated calculation basis."
+		},
+		{
+			"caseId": "G4-CAL-05",
+			"domain": "policy",
+			"from": "Policy version 3 explicitly replaces version 2 for requests submitted on or after 1 July.",
+			"to": "Policy version 2 governs requests submitted on or after 1 July.",
+			"expectedType": "SUPERSEDES",
+			"rationale": "The replacement declaration and scope are explicit."
+		},
+		{
+			"caseId": "G4-CAL-06",
+			"domain": "history",
+			"from": "The archive records the treaty as signed on 12 March 1848.",
+			"to": "The same archive and treaty record gives the signing date as 18 March 1848.",
+			"expectedType": "CONTRADICTS",
+			"rationale": "The same object and date slot receive mutually incompatible values."
+		},
+		{
+			"caseId": "G4-CAL-07",
+			"domain": "ai",
+			"from": "Orion 2 is the vendor's family of model weights, inference code and training utilities.",
+			"to": "Orion 2 supports a 128k-token context window.",
+			"expectedType": "RELATED_TO",
+			"rationale": "A family definition does not support a later capability detail, though the pair can be navigationally related."
+		},
+		{
+			"caseId": "G4-CAL-08",
+			"domain": "software",
+			"from": "The Atlas runtime uses a capability-based security architecture.",
+			"to": "Atlas provides official documentation in English, Japanese and Spanish.",
+			"expectedType": "RELATED_TO",
+			"rationale": "The claims concern the same product but neither supports or requires the other."
+		},
+		{
+			"caseId": "G4-CAL-09",
+			"domain": "biology",
+			"from": "Protein A contains 312 amino-acid residues.",
+			"to": "Protein B contains 312 amino-acid residues.",
+			"expectedType": "NONE",
+			"rationale": "A shared attribute value across different subjects establishes no relation."
+		},
+		{
+			"caseId": "G4-CAL-10",
+			"domain": "design",
+			"from": "The introduction states that the following section defines the spacing scale.",
+			"to": "The spacing scale uses 4, 8, 12, 16 and 24 pixel steps.",
+			"expectedType": "RELATED_TO",
+			"rationale": "An introduction points to the detail but does not substantively support the numerical contents."
+		}
+	]
+}

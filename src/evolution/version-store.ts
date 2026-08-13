@@ -11,8 +11,10 @@ import {
 import { basename, dirname, join, relative, resolve, sep } from "node:path";
 import { gunzipSync, gzipSync } from "node:zlib";
 import type { AppConfig } from "../config/types.js";
+import { withRuntimeWriteLease } from "../infrastructure/runtime-write-lock.js";
 import {
 	computeKnowledgeVersion,
+	markCanonicalStateChanged,
 	readAllAssertedRecords,
 	readAllClaims,
 	readAllConcepts,
@@ -49,13 +51,24 @@ const MANAGED_LOCATIONS: Array<{
 	{ directory: "quarantine", names: ["claims.jsonl", "relations.jsonl"] },
 	{ directory: "wiki", extensions: [".json", ".jsonl"] },
 	{ directory: "quarantine/wiki", extensions: [".json"] },
-	{ directory: "assertions", names: ["asserted-records.jsonl"] },
+	{
+		directory: "assertions",
+		names: ["asserted-records.jsonl", "correction-publications.jsonl"],
+	},
+	{ directory: "assertions/correction-proposals", extensions: [".json"] },
+	{ directory: "assertions/fact-resolutions", extensions: [".json"] },
 ];
 
 /**
  * 冻结全部可变派生知识；Source/Span 是不可变证据，不重复复制。
  */
 export function createKnowledgeSnapshot(config: AppConfig, label: string): KnowledgeSnapshot {
+	return withRuntimeWriteLease(config, "create-knowledge-snapshot", () =>
+		createKnowledgeSnapshotUnlocked(config, label),
+	);
+}
+
+function createKnowledgeSnapshotUnlocked(config: AppConfig, label: string): KnowledgeSnapshot {
 	if (!label.trim()) throw new Error("知识快照 label 不能为空");
 	const files = readManagedFiles(config.projectRoot);
 	const filesHash = hashFiles(files);
@@ -108,6 +121,16 @@ export function restoreKnowledgeSnapshot(
 	snapshotId: string,
 	expectedCurrentVersion: string,
 ): KnowledgeSnapshot {
+	return withRuntimeWriteLease(config, `restore-knowledge-snapshot:${snapshotId}`, () =>
+		restoreKnowledgeSnapshotUnlocked(config, snapshotId, expectedCurrentVersion),
+	);
+}
+
+function restoreKnowledgeSnapshotUnlocked(
+	config: AppConfig,
+	snapshotId: string,
+	expectedCurrentVersion: string,
+): KnowledgeSnapshot {
 	const actualCurrentVersion = currentKnowledgeVersion(config);
 	if (actualCurrentVersion !== expectedCurrentVersion) {
 		throw new Error(
@@ -116,6 +139,7 @@ export function restoreKnowledgeSnapshot(
 	}
 	const snapshot = readKnowledgeSnapshot(config, snapshotId);
 	createKnowledgeSnapshot(config, `automatic pre-rollback backup for ${snapshotId}`);
+	markCanonicalStateChanged(config, `restore-snapshot:${snapshotId}`);
 	const snapshotPaths = new Set(snapshot.files.map((file) => file.path));
 	for (const current of readManagedFiles(config.projectRoot)) {
 		if (!snapshotPaths.has(current.path)) {

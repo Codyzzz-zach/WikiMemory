@@ -1,0 +1,67 @@
+{
+	"schemaVersion": "wge-goal4-strong-relation-proposal-diagnostic/v1",
+	"status": "FROZEN_BASELINE_DIAGNOSIS",
+	"createdAt": "2026-08-11T00:00:00+08:00",
+	"stageBRead": false,
+	"baseline": {
+		"run": "experiments/goal3/s200-runs/compile-v10-post-audit-compaction-4source",
+		"sourceId": "source:s200-ai-llama-004-0c1360ce9e6039ce",
+		"candidateLedgerSha256": "62a8f3135063c8c5168ea6d4cc82e2f0e1617421dd4f31c6cb14d2b0a1012310",
+		"relationFunnelSha256": "0567a8858da5d619c6ac763492ac25a0c2aa85c90b4af70fd5e4892276631f7e",
+		"llmCallsSha256": "5d24de7f2b49e55c26e909cd2999bd32797106ad613a7fee5d26d33cbfbf9c92"
+	},
+	"observed": {
+		"generatedCrossRelations": 40,
+		"generatedByType": {
+			"SUPPORTS": 23,
+			"RELATED_TO": 17
+		},
+		"canonicalCrossRelations": 0,
+		"quarantinedCrossRelations": 40,
+		"sourceTotalTokens": 73546,
+		"crossDetectionTokens": 7883,
+		"relationAuditTokens": 50732,
+		"supportConfidenceDistribution": {
+			"0.6": 2,
+			"0.7": 7,
+			"0.8": 13,
+			"0.9": 1
+		},
+		"supportAuditIssueCounts": {
+			"RELATION_SEMANTIC_FAILED": 23,
+			"RELATION_TYPE_MISMATCH": 23,
+			"RELATION_IDENTITY_MISMATCH": 15,
+			"RELATION_DIRECTION_MISMATCH": 8,
+			"RELATION_CONDITIONS_MISSING": 16
+		}
+	},
+	"manualReview": {
+		"reviewedSupportCandidates": 23,
+		"trueSupportCandidates": 0,
+		"falseSupportCandidates": 23,
+		"dominantFamilies": [
+			{
+				"family": "DEFINITION_OR_INTRODUCTION_TO_DETAIL",
+				"count": 17,
+				"description": "A broad definition of Llama materials was used as From for architecture, language, size, training and benchmark details that the definition did not establish."
+			},
+			{
+				"family": "POLICY_COOCCURRENCE_OR_SCOPE_MISMATCH",
+				"count": 6,
+				"description": "Warranty, acceptance, naming or distribution clauses were treated as support for separate model-card permissions or restrictions."
+			}
+		],
+		"verdict": "No reviewed candidate satisfies the contract that From must provide substantive support for the complete To claim. Some pairs may be weakly navigable as RELATED_TO, but none should be promoted as SUPPORTS."
+	},
+	"rootCauseHypothesis": {
+		"codeObservation": "RELATION_DETECT_SYSTEM names Relation enums but does not define SUPPORTS, REQUIRES or DERIVED_FROM. Their strict directional and completeness contracts first appear in RELATION_AUDIT_SYSTEM and RELATION_TYPE_CRITIC_SYSTEM.",
+		"hypothesis": "The detector interprets shared entity scope and descriptive containment as SUPPORTS, while the downstream auditor correctly applies the stricter type contract.",
+		"proven": false,
+		"requiredTest": "Replay the same frozen claims with domain-neutral type contracts added to detection, then audit every returned candidate without publication writes."
+	},
+	"safetyInterpretation": {
+		"graphCorruptionObserved": false,
+		"reason": "The fail-closed semantic gate rejected all 23 false strong proposals.",
+		"remainingImpact": "avoidable model calls, tokens and latency before quarantine"
+	}
+}

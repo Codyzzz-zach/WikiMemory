@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import { RELATION_AUDIT_VERSION } from "../prompts/index.js";
 import type { Claim, Relation } from "../types/index.js";
 import { claimRef } from "../types/index.js";
-import { buildGraph } from "./index.js";
+import { buildGraph, inspectRelationGate } from "./index.js";
 
 describe("graph publication boundary", () => {
 	it("rejects an audited cross-material edge when either endpoint became stale", () => {
@@ -12,6 +12,24 @@ describe("graph publication boundary", () => {
 		const dangling = relation("rel:dangling", first.id, "claim:removed-by-recompile");
 		const graph = buildGraph([first, second], [], [valid, dangling]);
 		expect(graph.relations.map((edge) => edge.id)).toEqual(["rel:valid"]);
+		expect(inspectRelationGate(dangling, new Set([first.id, second.id]))).toEqual({
+			accepted: false,
+			reason: "missing-or-ineligible-endpoint",
+		});
+	});
+
+	it("exposes the same fail-closed audit reason used by graph publication", () => {
+		const first = claim("claim:first");
+		const second = claim("claim:second");
+		const unaudited = {
+			...relation("rel:legacy", first.id, second.id),
+			relationAuditVersion: null,
+		};
+		expect(inspectRelationGate(unaudited, new Set([first.id, second.id]))).toEqual({
+			accepted: false,
+			reason: "audit-version-mismatch",
+		});
+		expect(buildGraph([first, second], [], [unaudited]).relations).toEqual([]);
 	});
 });
 

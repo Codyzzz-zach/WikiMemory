@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>WGEMemory4LLM · 可进化测试数据与实验手册 v2.0</title>
+  <title>WGEMemory4LLM · 可进化测试数据与实验手册 v3.1</title>
   <script type="module">
     import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
     mermaid.initialize({startOnLoad:true,theme:"base",securityLevel:"loose",themeVariables:{fontFamily:"Noto Sans CJK SC, Inter, ui-sans-serif, system-ui, sans-serif",primaryColor:"#eef7ff",primaryTextColor:"#172033",primaryBorderColor:"#3c72a8",lineColor:"#64778c",secondaryColor:"#ecf8f3",tertiaryColor:"#fff4de",fontSize:"14px"},flowchart:{useMaxWidth:true,htmlLabels:true,curve:"basis"}});
@@ -23,11 +23,11 @@
 <body>
 <div class="page">
 <header id="top">
-  <div class="eyebrow">WGEMemory4LLM · Benchmark Operating Manual <span class="badge b-freeze">v2.0</span></div>
+  <div class="eyebrow">WGEMemory4LLM · Benchmark Operating Manual <span class="badge b-freeze">v3.1</span></div>
   <h1>如何搭建一套真正能驱动系统进化的测试数据</h1>
   <p class="subtitle">这不是一份固定题库，也不是要求你一次造完“完美 Benchmark”。它是一套持续生长的测试资产协议：把科技媒体、官方文档、GitHub、B 站、X、Reddit、微信公众号等杂乱材料，组织成可追溯、可分层、可冻结、可低成本循环的进化燃料。</p>
-  <div class="hero"><b>下一阶段的合理目标：</b>先建立一个覆盖 6 个领域、24 份真实材料、约 120 道分层测试题和 12 组时间演化事件的 Benchmark Seed。它足以驱动工程修正和早期产品判断；不要求立刻达到 30 天、100 个真实任务的最终产品门槛。</div>
-  <div class="meta"><span class="chip"><b>材料起步</b> 24 份</span><span class="chip"><b>领域起步</b> 6 个</span><span class="chip"><b>题目起步</b> 约 120 道</span><span class="chip"><b>演化序列</b> 12 组</span><span class="chip"><b>日常循环</b> 12–40 题</span><span class="chip"><b>全量</b> 仅里程碑运行</span></div>
+  <div class="hero"><b>下一阶段的合理目标：</b>现有 Batch A/B/C、数学、Evolution 与 S200 子集均为 Dev/Regression。知识内核现在先进入 I0–I2 产品集成门：运行边界与 Docker、MCP 读取闭环、纠正闭环。已有资产负责接口 parity、故障恢复、跨域哨兵和作用域回归；新的大型 Blind 暂不阻塞集成。只有候选产品链路冻结后，才为 I3 长期 Pilot 采集新的真实任务证据。</div>
+  <div class="meta"><span class="chip"><b>现有 A/B/C</b> Dev 资产</span><span class="chip"><b>新处理组</b> B / R0 / R1 / W</span><span class="chip"><b>日常循环</b> Contract + 4–8 Micro</span><span class="chip"><b>Dev Core</b> 候选版本运行</span><span class="chip"><b>Blind</b> 仅里程碑运行</span><span class="chip"><b>总成本</b> Context + 输出 + 工具 + 重试</span></div>
   <nav aria-label="目录"><a href="#principles">核心设计</a><a href="#matrix">材料矩阵</a><a href="#production">制作流程</a><a href="#cases">题型体系</a><a href="#schema">数据格式</a><a href="#splits">切分防泄漏</a><a href="#goal">Goal 循环</a><a href="#tiers">分层运行</a><a href="#experiments">实验设计</a><a href="#action">你现在要做什么</a></nav>
 </header>
 
@@ -82,7 +82,7 @@ flowchart LR
       <tr><td>1 份 U：Reddit/X/issue 讨论，或持不同观点的 S</td><td>测试冲突、主张归属和不确定性。</td></tr>
     </tbody>
   </table>
-  <div class="callout good"><b>24 份材料已经够启动。</b>它不是产品泛化证明，却足以暴露格式、权威、时序、冲突、跨来源合成和领域迁移问题。只有当某个错误在两个以上领域复现，才优先升级为架构问题；单领域特例优先通过数据或策略处理。</div>
+  <div class="callout good"><b>24 份材料足够启动机制验证，但不足以证明 Graph 的规模复利。</b>它能暴露格式、权威、时序、冲突、跨来源合成和领域迁移问题；S200 才是首个真实多领域产品规模门，S1000 只承担索引/延迟/预算压力。只有当某个错误在两个以上领域复现，才优先升级为架构问题；单领域特例优先通过数据或显式 scope 策略处理。</div>
 </section>
 
 <section id="production">
@@ -230,24 +230,35 @@ flowchart LR
 
 <section id="goal">
   <div class="section-head"><div class="kicker">07 / Goal Loop</div><div><h2>每次自迭代只解决一个可证伪问题</h2></div></div>
+  <div class="callout good"><b>Graph 口径：</b>Eval 不再决定 Typed Graph 是否存在。Graph 已冻结为长期治理与在线可选候选导航能力；是否在某次查询运行由关系意图、冲突/版本/影响任务或可观测覆盖缺口触发。Benchmark 负责优化审计质量、trigger、ranking、可见路径、规模收益和总成本，并阻止错误实现进入默认消费。</div>
   <div class="diagram"><div class="mermaid">
 flowchart TD
-  O["观察失败簇"] --> H["提出单一因果假设"]
-  H --> G["冻结 Goal 合同"]
-  G --> B["运行 12 题 Canary"]
-  B -->|基础失败| X["停止并修基础设施"]
-  B -->|通过| M["运行 20–40 题 Goal Micro"]
-  M --> I["最小实现修正"]
-  I --> R["重复 Micro + 受影响回归"]
-  R --> V{"达到目标且护栏不退化"}
-  V -->|否| H
-  V -->|是| W["运行冻结 Validation"]
-  W -->|通过| F["合并基线，记录因果证据"]
-  W -->|失败| H
-  F --> Q{"是否里程碑"}
-  Q -->|否| O
-  Q -->|是| L["运行 Milestone / Holdout"]
+  F["Freeze<br/>假设 配置 数据 Hash 预算"] --> O["Observe<br/>保存 Seed Graph Gate Token Trace"]
+  O --> D["Diagnose<br/>归因到一个主要责任层"]
+  D --> C["Change<br/>最小通用修正"]
+  C --> M["Contract + 4–8 Micro"]
+  M -->|失败| D
+  M -->|通过| R["Dev Core + 护栏"]
+  R -->|退化| D
+  R -->|通过| H{"里程碑且 Held-out 未揭示?"}
+  H -->|否| A["Archive run 与决定"]
+  H -->|是| B["一次冻结 Blind Held-out"]
+  B --> A
   </div></div>
+  <h3>历史 Goal 与新依赖路径</h3>
+  <table>
+    <thead><tr><th>Goal</th><th>要证明什么</th><th>主要数据</th><th>通过后才进入</th></tr></thead>
+    <tbody>
+      <tr><td>G0 · Trace/闭包</td><td>测试信号可归因，最终知识单元不断证据</td><td>4–8 Micro</td><td>G1</td></tr>
+      <tr><td>G1 · Graph 底座</td><td>工程拒绝门槛通过；AI 代理强边 precision=1.00、recall=0.769，正向产品收益未建立</td><td>隔离可信边视图 + Relation 代理回归</td><td>G2</td></tr>
+      <tr><td>G2 · R1 选择器</td><td>已实现有界替换，但首轮 Micro 被 R0 支配，状态 REWORK</td><td>8 题 B/R0/R1 Dev Micro；Dev Core 按停止规则未运行</td><td>新的 G2-Rework 合同</td></tr>
+      <tr><td>G3-B3 · 成本账本</td><td>真实 Pack 的主成本能否被定位，且压缩不损失 source/evidence</td><td>冻结 L40/EPSI 50 题，不运行回答模型</td><td>时间盒结束后进入 G3-C，不无限调参</td></tr>
+      <tr><td>G3-C · 规模/时间</td><td>总库增长时局部工作仍局部；知识变化时 affected 正确改变、unaffected 不退化</td><td>S50 / 真实 S200 / S1000 压测 + T0→Tn</td><td>最小 Wiki+Correction</td></tr>
+      <tr><td>M1 · Wiki+Correction</td><td>稳定语义组织成为独立处理，纠正一次能改变未来行为</td><td>R* vs W；affected/unaffected episodes</td><td>冻结候选实现</td></tr>
+      <tr><td>H1 · Blind 泛化</td><td>候选机制迁移到新领域、新来源和跨语言</td><td>新 Stage A/B Held-out</td><td>长期 Pilot</td></tr>
+      <tr><td>P1 · 长期 Pilot</td><td>真实用户更少重复解释、更少复发、更完整</td><td>30 天、5+领域、100+任务、2+纠正周期</td><td>产品可用判断</td></tr>
+    </tbody>
+  </table>
   <h3>Goal 合同模板</h3>
   <div class="schema">Goal: 提升“条件与适用范围”保真，不针对某一领域硬编码
 
@@ -275,7 +286,9 @@ Budget / Stop:
 - 最多 3 个实现循环或约定的 token/时间预算；连续两轮无改善则停止并重新诊断。
 
 Artifacts:
-- before/after、失败案例、代码 diff、suite hash、run manifest、结论与剩余风险。</div>
+- before/after、失败案例、代码 diff、suite hash、run manifest、结论与剩余风险；
+- Seed 候选/分数/通道、Graph 候选边/审计版本/结构分数、visible gate、drop reason、闭包状态；
+- knowledge/context/prompt hash、模型实际 usage、工具调用、延迟、答案引用与 Judge 版本。</div>
   <p>当你在 Codex 中明确说“建立 Goal：……，目标/护栏/预算如下”时，我才把它作为持续 Goal 执行。一个 Goal 不能同时要求“提高召回、重写 Wiki、优化 Graph、减少成本”；那是四个不同因果问题。</p>
 </section>
 
@@ -285,11 +298,11 @@ Artifacts:
     <thead><tr><th>层级</th><th>规模</th><th>包含内容</th><th>触发时机</th><th>失败动作</th></tr></thead>
     <tbody>
       <tr><td>T0 · 静态/单元</td><td>秒级、无在线 LLM 或极少</td><td>schema、引用解析、账平、状态机、确定性函数</td><td>每次编辑</td><td>立即停止，不能进入在线测试</td></tr>
-      <tr><td>T1 · Canary</td><td>12 题</td><td>6 个高风险老失败 + 6 个跨域稳定样本</td><td>每次行为改动</td><td>说明基础能力破坏，回滚/修复</td></tr>
-      <tr><td>T2 · Goal Micro</td><td>20–40 题</td><td>70% 目标能力、20% 邻近能力、10% 随机哨兵</td><td>每轮实现</td><td>错误归因后继续或停止</td></tr>
+      <tr><td>T1 · Goal Micro</td><td>4–8 题</td><td>目标失败 + 相邻风险 + 至少一个无关跨域控制；保存完整过程 trace</td><td>每轮实现</td><td>错误归因后继续或停止</td></tr>
+      <tr><td>T2 · Extended Micro</td><td>12–24 题</td><td>70% 目标能力、20% 邻近能力、10% 随机哨兵</td><td>机制首次通过后</td><td>检查机制是否只对单簇有效</td></tr>
       <tr><td>T3 · Core Regression</td><td>48–80 题</td><td>各领域、来源角色、硬失败、历史回归</td><td>Goal 达标准备收尾</td><td>护栏退化则不合并基线</td></tr>
       <tr><td>T4 · Milestone</td><td>约 120–250 题</td><td>冻结 Validation、主要消融、成本与稳定性</td><td>架构阶段完成/发布候选</td><td>决定 Go、Narrow、Pivot</td></tr>
-      <tr><td>T5 · Full / Holdout</td><td>全部资产，多 seeds</td><td>盲测、未来演化、完整 B/P/W/G 对照</td><td>重要发布或季度性判断</td><td>只能报告，不能回头改本版阈值</td></tr>
+      <tr><td>T5 · Full / Holdout</td><td>全部资产，多 seeds</td><td>盲测、未来演化、完整 B/R0/R1/W 对照</td><td>重要发布或季度性判断</td><td>只能报告；揭示后永久转 Dev</td></tr>
     </tbody>
   </table></div>
   <h3>如何自动选择 Micro Suite</h3>
@@ -310,61 +323,83 @@ Artifacts:
     <thead><tr><th>实验</th><th>对照</th><th>主要问题</th><th>首轮规模</th><th>通过含义</th></tr></thead>
     <tbody>
       <tr><td><b>E1 · 信息守恒</b></td><td>原文 Gold vs 编译产物</td><td>事实、条件、时间、归属经过编译后保留多少？Quarantine 错杀多少？</td><td>6 域 × 每域 20 项</td><td>编译器具备跨域可信输入资格</td></tr>
-      <tr><td><b>E2 · 检索/组织消融</b></td><td>B 文件检索、P Claim、W Wiki、G Wiki+Graph</td><td>提升来自压缩、语义组织还是 Graph？</td><td>32 题 Pilot，之后 80 题</td><td>知道应该保留哪一层，而非只看总冠军</td></tr>
+      <tr><td><b>E2 · 检索/组织消融</b></td><td>B 强原文、R0 Seed-only、条件触发 R1、W=当时最佳 R*+Wiki</td><td>提升来自编译投影、结构排序还是稳定语义组织？</td><td>4–8 Micro→Dev Core→新 Blind</td><td>知道哪一层贡献质量/总成本，而非奖励追加更多内容</td></tr>
       <tr><td><b>E3 · 时间进化</b></td><td>T0 旧知识 vs T1 新证据</td><td>系统能否更新受影响知识、不复发旧错且不破坏无关知识？</td><td>12 episodes</td><td>获得“会进化”的第一批直接证据</td></tr>
       <tr><td><b>E4 · 跨域迁移</b></td><td>已调领域 vs 未调领域 Validation</td><td>修复是一般机制还是数学/AI 专用奖励？</td><td>每个 Goal 至少 3 个已见域 + 2 个未见域</td><td>获得架构级泛化证据</td></tr>
     </tbody>
   </table>
   <h3>公平实验的最低合同</h3>
   <ul>
-    <li>同一回答模型、同一任务规则、同一实际 token 档位；分别记录 1.5k/3k/6k 等预算，不用字符数假装 token。</li>
+    <li>同一回答模型、同一任务规则、同一实际 token 档位；分别记录预算实验，并另报自然运行的总 token/工具调用/延迟，不用字符数假装 token。</li>
     <li>所有系统使用相同 Corpus snapshot；Gold 不进入编译和检索索引。</li>
     <li>回答匿名化盲评；硬失败优先于平均分；报告成功案例和失败案例。</li>
     <li>Judge 评分用于筛选与统计，不冒充人工真理；随机抽查 20%，所有安全失败人工确认。</li>
     <li>先报告按能力、领域、来源角色的切片，再报告总分；总分不能掩盖健康或金融领域的危险退化。</li>
   </ul>
   <div class="callout danger"><b>不得用测试推动错误方向：</b>如果一项改动只提高 AI/数学 Dev，而在健康、金融或未见来源上下降，它不能升级为默认架构。优先寻找跨领域重复出现的失败机制；领域特有策略必须显式标注 scope。</div>
+  <h3>Graph 规模与时间双轴合同</h3>
+  <table>
+    <thead><tr><th>层级</th><th>材料要求</th><th>主要证明</th><th>不能证明</th></tr></thead>
+    <tbody>
+      <tr><td><b>S50</b></td><td>现有已揭示多领域 Dev 资产</td><td>快速回归、失败归因、候选与成本账本</td><td>独立泛化或真实产品规模</td></tr>
+      <tr><td><b>S200</b></td><td>真实来源快照，6–10 域、15–25 个来源簇、跨语言与来源角色混合</td><td>首个产品规模门：局部读取、Graph trigger、跨来源定位、固定 Context</td><td>长期纠正收益</td></tr>
+      <tr><td><b>S1000</b></td><td>冻结真实核心 + 可追溯真实干扰源；允许受控复制结构但必须标注</td><td>索引大小、延迟、读取量、候选上限和 Prompt 非线性增长</td><td>用合成填充物证明回答质量</td></tr>
+      <tr><td><b>T0→Tn</b></td><td>12–20 个新增/纠正/替代/冲突 episode，包含 affected 与 unaffected</td><td>影响发现、局部更新、旧错复发、无关退化和恢复</td><td>仅靠 Source 数量替代时间演化</td></tr>
+    </tbody>
+  </table>
+  <p>Graph-native 任务必须包含跨来源依赖、冲突/替代、版本链、影响追踪和“为什么答案改变”；直接事实、不可回答和单来源条件题作为控制组。Graph 的成功标准是必要任务上的边际质量/成本与长期治理价值，不是启用率或返回边数。</p>
+  <h3>Worker / Evaluator / Adjudicator 硬隔离</h3>
+  <ol>
+    <li>Worker 只能读取冻结代码、Stage A、允许的知识快照和运行配置，并写入新的候选目录；必须在净化 worktree 或等价路径 allowlist 中执行。</li>
+    <li>首轮候选完成后冻结目录 hash，答案不得覆盖。此时才允许 Evaluator 读取 Stage B/Gold。</li>
+    <li>Evaluator 对候选和 Gold 只读，只写评分、差异和失败分类；不得修改代码、Prompt 或候选答案。</li>
+    <li>Codex 与人类完成最终归因和产品裁决。模型生成标签只能叫 silver/AI proxy，不能叫人工 Gold。</li>
+  </ol>
+  <div class="callout warn"><b>Reasonix 当前边界：</b>如果只有提示词约束、全局 sandbox 或“请勿读取 Gold”，而没有路径级隔离和候选 hash 后解封，该 run 只能记为 Dev/Post-hoc，不能标为 Blind。</div>
 </section>
 
 <section id="action">
-  <div class="section-head"><div class="kicker">10 / Action Plan</div><div><h2>最终准备 24 份材料，但第一批只交 12 份</h2></div></div>
-  <h3>你的交付清单</h3>
+  <div class="section-head"><div class="kicker">10 / Action Plan</div><div><h2>现有数据做快速诊断；新数据分别承担规模、时间与独立泛化</h2></div></div>
+  <div class="callout warn"><b>资产状态：</b>Batch A/B/C、五篇数学材料和现有 Evolution 题已经参与开发、审查或结果揭示，全部属于 Dev/回归资产。S200/T0→Tn 新材料用于规模和演化开发门，不天然是 Blind；真正 Held-out 必须另行 Stage A/B 密封，并在候选实现冻结后才运行。</div>
+  <h3>你现在需要交付的材料</h3>
   <ol>
-    <li>选择你未来最常使用的 6 个领域，每域选 4 份材料，尽量覆盖 P/C/S/U/H 中至少三种角色。</li>
+    <li>为 S200 选择你未来最常使用的 6–10 个领域，累计补到约 200 份真实 Source；每域尽量覆盖 P/C/S/U/H 中至少三种角色，并保留 15–25 个可形成关系的来源簇。</li>
     <li>每份材料提供原链接和本地 Markdown；视频提供字幕/转录与时间戳；GitHub 提供 commit/tag；网页注明发布时间和抓取日期。</li>
     <li>每个领域额外告诉我两个真实问题：<b>你为什么收藏这些材料、未来希望 Agent 帮你完成什么任务</b>。这 12 个问题将成为用户任务种子。</li>
-    <li>每个领域最终挑 2 组“后来发生变化、出现纠错或存在争议”的材料对，共 12 组 Evolution Seed；Batch A 每域先交 1 组即可，不必一次硬凑齐。</li>
+    <li>准备 12–20 组“后来发生变化、出现纠错、替代或争议”的 T0→Tn 材料链；每组标注预期 affected 与至少一个 unaffected 控制，不必一次凑齐。</li>
     <li>可以让 Gemini 按本文提示词生成候选 JSON；不用替它追求完美，也不要把候选标成 Gold。我会完成结构检查、去重、证据核验抽样和测试分层。</li>
   </ol>
-  <h3>推荐分两批，避免一次工作量过大</h3>
+  <h3>推荐按四个阶段推进</h3>
   <table>
     <thead><tr><th>批次</th><th>你提供</th><th>我完成</th><th>产出</th></tr></thead>
     <tbody>
-      <tr><td>Batch A · 试制</td><td>3 个领域 × 4 份 = 12 份材料；6 个真实任务；每域 1 组变化材料</td><td>建立 manifest/schema、生成并清洗约 60 题、创建 smoke/micro/core suites，跑首轮 E1</td><td>验证数据生产线是否可用</td></tr>
-      <tr><td>Batch B · 泛化</td><td>另外 3 个领域 × 4 份 = 12 份；6 个真实任务；补足演化材料</td><td>冻结 split、扩到约 120 题，运行 E1/E4 和 32 题消融 Pilot</td><td>第一版 Benchmark Seed v1</td></tr>
+      <tr><td>已完成 · G3-B3</td><td>S50 与历史题作为 Dev/Regression</td><td>100 行成本账本账平；结构化 Claim 表离线省 20.36%，零 source/evidence/语义损失</td><td><code>GO_G3C / PRODUCTION_NOT_APPROVED</code></td></tr>
+      <tr><td>当前 · I0/I1</td><td>无需新增大数据；复用 Batch B/C、Evolution 与 S200 canary</td><td>验证 Application/MCP payload parity、Docker 持久恢复、权限和 Context 闭包</td><td>真实 Agent 可调用的读取产品闭环</td></tr>
+      <tr><td>随后 · I2</td><td>少量真实偏好、项目决策、事实纠正 episode</td><td>验证权威分流、affected/unaffected、不复发和回滚</td><td>可控的短知识飞轮</td></tr>
+      <tr><td>里程碑 · I3 Pilot</td><td>30 天真实任务与纠正日志；必要时另建延迟揭示盲集</td><td>同 Agent 基线、硬权限隔离、首轮不可覆盖</td><td>独立产品价值证据</td></tr>
     </tbody>
   </table>
-  <h3>你可以直接复制给我的启动指令</h3>
-  <div class="prompt">建立 Goal：Benchmark Seed Batch A。
+  <h3>下一轮执行指令</h3>
+  <div class="prompt">执行 I0/I1 产品集成验证。
 
-输入：我提供的 3 个领域、12 份 Markdown、来源链接/元数据、6 个真实任务和至少 3 组时间变化材料。
+输入：当前知识内核、Batch B/C 跨域哨兵、Evolution affected/unaffected 对、S200 canary；不读取新的密封 Gold。
 
 目标：
-1. 建立 source manifest 与候选/verified 状态；
-2. 生成并核验证据可解析的 F/R/X/C/K/T/E/A/U 测试项；
-3. 建立 12 题 canary、约 32 题 goal micro、约 48 题 core regression；
-4. 运行信息守恒基线，按 compiler/retrieval/graph/context/answer 归因；
-5. 每次只运行受影响 suite，达到门槛后才运行冻结 validation；
-6. 不针对单个领域或单题硬编码，不修改 Holdout，不用全量运行替代诊断。
+1. 先建立 Application Service、runtime root、单写者和 Docker 持久卷；
+2. 再接 MCP ingest/status/query/trace 四工具，协议层不得复制内核逻辑；
+3. 对直接 Application、CLI facade 和 MCP 做逐字段 payload parity；
+4. 故障注入验证上一健康版本、Job 恢复和 generation 原子性；
+5. 记录 MCP 序列化、Context、模型和任务总成本；
+6. 真实 Agent 完成一次摄入—问答—证据追踪。
 
-完成条件：账平、证据可解析、split 无来源簇泄漏、运行 manifest 完整，并给出下一 Goal 的可证伪建议。</div>
-  <div class="callout good"><b>最终确认：</b>下一步不是继续重编五篇数学文章，也不是马上构造一个巨大终局 Benchmark。先把 Batch A 的 12 份真实杂域材料变成可靠测试生产线；生产线通过后扩成 24 份 Benchmark Seed，再让每个 Goal 在小切片上高速迭代、在冻结集上证明泛化。</div>
+完成条件：接口不泄露目录实现，镜像不含实验/Gold/密钥，重启不丢状态，跨域哨兵不退化。随后进入 I2 纠正闭环。</div>
+  <div class="callout good"><b>当前结论：</b>Graph、compact transport、Wiki 和 Evolution 的历史结论全部保留为内核与回归资产，但不再无限延长内部 Goal。下一阶段先证明 Agent 可以安全、稳定地使用这些能力，再由真实纠正和长期任务判断产品价值。</div>
 </section>
 </main>
 
 <footer>
-  <p><b>WGEMemory4LLM · 可进化测试数据与实验手册 v2.0</b> · 2026-07-27。本文替代“20 篇数学材料即主 Benchmark”的旧口径；数学题库继续作为专项压力测试。</p>
-  <p class="small">本文与当前 compiler、linter/publication gate、retrieval/context-pack、evolution、pilot 与 snapshot 能力对齐。文中的目录与 schema 是下一阶段数据合同；实现前可做字段兼容调整，但不得破坏证据、版本、split 和运行可追溯性。</p>
+  <p><b>WGEMemory4LLM · 可进化测试数据与实验手册 v3.1</b> · 2026-08-12。v3.1 保留 S50/S200/S1000、T0→Tn、Graph 条件触发和硬权限隔离方法，但把当前验证对象切换为 I0–I2 产品集成闭环；新大型 Blind 不再阻塞 MCP 和纠正入口。</p>
+  <p class="small">目标架构见 <code>architecture-baseline.html</code>，当前事实见 <code>docs/status/implementation-status.md</code>，日常执行以 <code>WGEMemory4LLM-Iteration-Operating-Plan.md</code> 为统一 Loop 合同。本文只定义证据如何产生，不定义产品或架构。</p>
 </footer>
 </div>
 </body>

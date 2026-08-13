@@ -2,6 +2,7 @@ import { randomUUID } from "node:crypto";
 import { hostname } from "node:os";
 import { join } from "node:path";
 import type { AppConfig } from "../config/types.js";
+import { withRuntimeWriteLease } from "../infrastructure/runtime-write-lock.js";
 import { appendJsonl, readJsonl } from "../linter/storage.js";
 import { RELATION_AUDIT_VERSION } from "../prompts/index.js";
 import type { CompileState } from "../types/index.js";
@@ -76,6 +77,16 @@ export function beginCompileRun(
 	sourceId: string,
 	model: string,
 ): CompileRunHandle {
+	return withRuntimeWriteLease(config, `begin-compile-run:${sourceId}`, () =>
+		beginCompileRunUnlocked(config, sourceId, model),
+	);
+}
+
+function beginCompileRunUnlocked(
+	config: AppConfig,
+	sourceId: string,
+	model: string,
+): CompileRunHandle {
 	const latest = getLatestCompileEvent(config, sourceId);
 	if (latest?.state === "COMPILE_RUNNING") {
 		if (latest.hostname !== hostname()) {
@@ -106,8 +117,10 @@ export function recordCompileStage(
 	handle: CompileRunHandle,
 	stage: CompileStage,
 ): void {
-	assertActiveRun(config, handle);
-	appendEvent(config, eventFor(handle, "COMPILE_RUNNING", stage));
+	withRuntimeWriteLease(config, `record-compile-stage:${handle.sourceId}`, () => {
+		assertActiveRun(config, handle);
+		appendEvent(config, eventFor(handle, "COMPILE_RUNNING", stage));
+	});
 }
 
 export function finishCompileRun(
@@ -117,8 +130,10 @@ export function finishCompileRun(
 	stage: CompileStage,
 	error?: string,
 ): void {
-	assertActiveRun(config, handle);
-	appendEvent(config, eventFor(handle, state, stage, error));
+	withRuntimeWriteLease(config, `finish-compile-run:${handle.sourceId}`, () => {
+		assertActiveRun(config, handle);
+		appendEvent(config, eventFor(handle, state, stage, error));
+	});
 }
 
 function assertActiveRun(config: AppConfig, handle: CompileRunHandle): void {

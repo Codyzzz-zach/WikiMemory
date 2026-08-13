@@ -1,0 +1,37 @@
+{
+  "schemaVersion": "wge-m1-wiki-selection/v1",
+  "datasetId": "wge-controlled-evolution-v1",
+  "datasetClass": "SYNTHETIC_SILVER_DEVELOPMENT",
+  "timelines": ["T0", "T2"],
+  "episodes": [
+    {
+      "domain": "commerce-operations",
+      "affectedQuestionId": "EV-COMM-001",
+      "unaffectedQuestionId": "EV-COMM-005",
+      "baselineDocumentId": "comm-returns-t0",
+      "correctionDocumentId": "comm-returns-t2",
+      "unaffectedDocumentId": "comm-member-t0"
+    },
+    {
+      "domain": "platform-engineering",
+      "affectedQuestionId": "EV-PLAT-001",
+      "unaffectedQuestionId": "EV-PLAT-005",
+      "baselineDocumentId": "plat-release-t0",
+      "correctionDocumentId": "plat-release-t2",
+      "unaffectedDocumentId": "plat-lifecycle-t0"
+    },
+    {
+      "domain": "research-operations",
+      "affectedQuestionId": "EV-RES-001",
+      "unaffectedQuestionId": "EV-RES-005",
+      "baselineDocumentId": "res-data-t0",
+      "correctionDocumentId": "res-data-t2",
+      "unaffectedDocumentId": "res-repro-t0"
+    }
+  ],
+  "sealedDataPolicy": {
+    "stageBReadableDuringDevelopment": false,
+    "goldUsedForDevelopmentOnly": true,
+    "claimOfBlindness": false
+  }
+}

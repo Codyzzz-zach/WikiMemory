@@ -1,0 +1,100 @@
+{
+	"schemaVersion": "wge-goal3-structured-pack-renderer-contract/v1",
+	"status": "PREREGISTERED_AFTER_BASELINE_BEFORE_IMPLEMENTATION",
+	"createdAt": "2026-08-10T11:15:00+08:00",
+	"purpose": "Test one generic columnar Claim renderer after the frozen cost ledger showed that Claim statement plus conditions/provenance dominate agent-visible payload cost while evidence interval merging was ineligible.",
+	"interpretation": "Post-hoc Dev/Regression mechanism evidence only. A pass authorizes this renderer as a frozen G3-C candidate, not production rollout or answer-quality claims.",
+	"frozenInputs": {
+		"baseCostContract": {
+			"path": "experiments/goal3/goal3-pack-cost-ledger-contract-v1.json",
+			"sha256": "424b64bc763ea7c1137ef11f308240a43045cdb8333f32a21c162499246e8b28"
+		},
+		"repairAmendment": {
+			"path": "experiments/goal3/goal3-pack-cost-ledger-contract-v1-1.json",
+			"sha256": "a0569e4d4c7d4e3488c0f1e945ddaaf75d485a4e32978a0f7e57b9b2bbd60d7c"
+		},
+		"costBaselineReport": {
+			"path": "experiments/goal3/pack-cost-ledger-runs/pack-cost-ledger-v1-1/report.json",
+			"sha256": "b82439411f6b29795a54f716098130694a5f236c22bb87c133de486cb5f99f63",
+			"rowCount": 100
+		},
+		"epsiFirstReport": {
+			"path": "experiments/goal3/evidence-preserving-source-insertion-runs/evidence-preserving-source-insertion-v1/report.json",
+			"sha256": "92acf19a2a0870c2bb577ccefcdf7455422612e0390dae56f8edde3c434e8086"
+		},
+		"s50IndexPointer": {
+			"path": "experiments/goal3/pack-runs/pack-v5/indexes/S50/current.json",
+			"sha256": "9fe5c5d1fb5d23f886f5fdacbbcc7b12bb3874841bcb73f0bf9fa2ee638197fa",
+			"indexVersion": "f120407a3e0cc90eb265f4392bcfae19c7e68dc752e760db7d77e023d093695d"
+		},
+		"baselineLedgerImplementation": {
+			"path": "src/retrieval/pack-cost-ledger.ts",
+			"sha256": "f2959732b752bca72c4421433448162c4ce9d97dfa65ac2bcf46fb67cf42f3c5"
+		}
+	},
+	"baselineSignal": {
+		"averageRawPackEstimatedTokens": 10156.44,
+		"averageClaimStatementEstimatedTokens": 1867,
+		"averageConditionsProvenanceEstimatedTokens": 4192.27,
+		"claimAndSemanticShare": 0.5966,
+		"rawToMergedEvidencePackSavings": 0.005707,
+		"evidenceRendererEligibilityThreshold": 0.05,
+		"evidenceRendererRejected": true
+	},
+	"fixedRenderer": {
+		"family": "STRUCTURED_SEMANTIC_RENDERER",
+		"schema": "wge-structured-claim-table/v1",
+		"columns": [
+			"rank",
+			"claimId",
+			"statement",
+			"retrievalAliases",
+			"conditions",
+			"claimKind",
+			"scope",
+			"derivation",
+			"validity",
+			"lifecycle",
+			"publicationState",
+			"validFrom",
+			"validTo",
+			"provenanceRefs",
+			"supportingEvidenceRefs",
+			"knowledgeVersion",
+			"recordedAt"
+		],
+		"algorithm": [
+			"Keep candidate rank and candidate order unchanged.",
+			"Emit the fixed column names once and one positional row per Claim.",
+			"Represent every legacy Claim communication and semantic field exactly once; claimId must no longer be duplicated between two object arrays.",
+			"Sort retrieval aliases, conditions and knowledge references exactly as the frozen baseline projection does.",
+			"Do not dictionary-encode values, abbreviate field values, remove nulls, summarize text or use domain-specific rules in v1.",
+			"Decode every structured row back into the two frozen baseline projections and require byte-identical stable hashes.",
+			"Keep source metadata and RAW evidence interval rendering byte-identical to the frozen baseline; do not combine this test with interval merging."
+		]
+	},
+	"passGate": {
+		"combinedRawPackEstimatedTokenReductionAtLeast": 0.05,
+		"perRowIncreaseAllowed": false,
+		"candidateClaimSourceSpanIdentityMustMatch": true,
+		"decodedClaimSemanticHashMustMatch": true,
+		"sourceAndEvidencePayloadHashMustMatch": true,
+		"deterministicRerunHashMustMatch": true
+	},
+	"decisionRules": {
+		"GO_G3C": "All 100 rows pass every identity and semantic reconstruction guard, no row grows, deterministic hashes match and combined estimated-token reduction is at least 5%.",
+		"NARROW_G3C": "All zero-loss guards pass but combined reduction is below 5% or any row grows. Preserve the result; do not try a second renderer on these revealed questions.",
+		"REWORK": "Any hash mismatch, missing field, identity drift, source/evidence payload change, nondeterminism, Gold/retrieval/Relation/production ContextPack/model/network/canonical-state use, overwrite or threshold change."
+	},
+	"reasonixBoundary": {
+		"delegation": "NOT_AUTHORIZED_UNDER_CURRENT_GLOBAL_WORKSPACE_SANDBOX",
+		"reason": "Reasonix doctor reports the entire WikiMemory repository as a write root and enabled networked plugins. --dir changes the project root but does not prove path-level read isolation from Stage B/Gold.",
+		"permittedUse": "After Codex implements and freezes the candidate, Reasonix may review a pasted, self-contained pure-function diff with tools disabled; it may not explore this repository or execute benchmark commands."
+	},
+	"stopRules": [
+		"This is the single optimization implementation permitted after the cost baseline.",
+		"At most one new run plus one implementation-defect repair; no threshold or schema tuning after results.",
+		"Do not expose Gold, Stage B, answer reports or case-level quality metrics to the renderer or Reasonix.",
+		"Preserve the first renderer report and completion proof."
+	]
+}

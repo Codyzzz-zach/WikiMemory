@@ -1,0 +1,108 @@
+{
+	"schemaVersion": "wge-goal3-evidence-preserving-source-insertion-contract/v1",
+	"status": "PREREGISTERED_BEFORE_IMPLEMENTATION",
+	"createdAt": "2026-08-04T21:10:00+08:00",
+	"purpose": "Test whether sources discovered beyond the strong lexical top-40 cutoff can enter a fixed 40-Claim candidate set without removing any evidence span already covered by L40_STRONG.",
+	"interpretation": "Batch C and Batch B Gold have already been revealed. This is a post-hoc Dev/Regression mechanism test, not blind product evidence. It may approve a mechanism for later held-out validation but cannot establish product value.",
+	"causalQuestion": "Starting from L40_STRONG, can a bounded top-120 source-discovery pool add at least one required source while preserving the complete L40 evidence-span union, exact-evidence recall and fixed candidate budget?",
+	"frozenInputs": {
+		"batchCQuestions": {
+			"path": "experiments/benchmark-batch-c/stage-a-freeze/questions-public.jsonl",
+			"sha256": "3cfe6ed87ddfb88902d35c417f27c6a8ebf806e3139e0acc37d34fa9ad11a34d",
+			"count": 18
+		},
+		"batchCGold": {
+			"path": "experiments/benchmark-batch-c/stage-b-evaluator/normalized-gold/tasks.jsonl",
+			"sha256": "0dcdab468b2d6e5ee8801bc96a77085c37d60c556df2454df1a837530eaba15d",
+			"count": 18
+		},
+		"batchBQuestions": {
+			"path": "experiments/goal3/source-routing-breadth-v1/questions-public.jsonl",
+			"sha256": "f38648e7b96bb877efc2c8abda9d0c2322538255d70880871e048816dd357d76",
+			"count": 32
+		},
+		"batchBGold": {
+			"path": "experiments/goal3/source-routing-breadth-v1/diagnostic-gold.jsonl",
+			"sha256": "fc23d7b46a5c066e0e10b0410dbec57f3e75408f6ccba59166e2bebef42af0e2",
+			"count": 32
+		},
+		"s50Index": {
+			"path": "experiments/goal3/pack-runs/pack-v5/indexes/S50",
+			"pointerSha256": "9fe5c5d1fb5d23f886f5fdacbbcc7b12bb3874841bcb73f0bf9fa2ee638197fa"
+		},
+		"correctedScorerContract": {
+			"path": "experiments/goal3/goal3-evidence-coverage-rescore-contract-v1.json",
+			"sha256": "ff08e91a236549a3a6d600758a0ee7f8ae2662981c759eebe6b288a7983b8f7d"
+		},
+		"correctedRescoreReport": {
+			"path": "experiments/goal3/evidence-coverage-rescore-runs/evidence-coverage-rescore-v1/report.json",
+			"sha256": "94764d515f5a0b88a693135512b67e9dcf8e5d6247958d9ef093a6c65f28cabe"
+		}
+	},
+	"arms": [
+		{
+			"id": "L40_STRONG",
+			"routingPoolBudget": 40,
+			"sourceBudget": null,
+			"candidateBudget": 40,
+			"definition": "The first 40 Claims in the existing deterministic persistent lexical order."
+		},
+		{
+			"id": "EPSI40",
+			"routingPoolBudget": 120,
+			"sourceBudget": 12,
+			"candidateBudget": 40,
+			"definition": "Evidence-Preserving Source Insertion: start from L40, inspect at most top-120 lexical Claims, and insert a representative of a source absent from L40 only by evicting a lower-ranked L40 Claim whose every evidenceSpanId remains referenced by another selected Claim."
+		}
+	],
+	"fixedAlgorithm": [
+		"Construct L40_STRONG before any Gold is parsed.",
+		"Inspect no more than the first 120 deterministic lexical Claims and discover source IDs only through persisted evidence spans.",
+		"A novel source is a source absent from the current selected candidate set. Consider novel sources by their first lexical rank, then sourceId as deterministic tie-break; inspect at most 12 novel sources.",
+		"For each novel source, consider its highest-ranked Claim not already selected.",
+		"An existing candidate is safely evictable only when it has at least one evidenceSpanId and every one of its evidenceSpanIds is still referenced by another currently selected Claim. Exact persisted span identity is required; semantic similarity, overlapping text and Gold are not permitted as proof of redundancy.",
+		"Choose the safely evictable candidate with the worst lexical rank, then claimId as deterministic tie-break. Insert the novel source representative and update evidence reference counts before considering the next source.",
+		"If no safely evictable candidate exists, reject that insertion. Never grow beyond 40 candidates and never remove a unique L40 evidenceSpanId.",
+		"A candidate with unresolved or empty evidence is not eligible for insertion or eviction; unresolved evidence fails closed in the persistent wrapper."
+	],
+	"fixed": {
+		"network": false,
+		"modelCalls": 0,
+		"retrievalTier": "S50",
+		"scope": "GLOBAL_ONLY",
+		"routingPoolBudget": 120,
+		"novelSourceInspectionBudget": 12,
+		"candidateBudget": 40,
+		"questionCount": 50,
+		"expectedRowCount": 100,
+		"latencyIsDecisionMetric": false,
+		"goldParsedAfterAllCandidateSets": true
+	},
+	"metrics": [
+		"requiredSourceRecall",
+		"sourceBoundExactEvidenceRecall",
+		"perQuestionSourceWinsAndLossesVsL40",
+		"perQuestionExactEvidenceWinsAndLossesVsL40",
+		"baselineEvidenceSpanUnionPreserved",
+		"novelSourcesConsidered",
+		"acceptedInsertions",
+		"rejectedNoSafeEviction",
+		"candidateCount",
+		"estimatedEvidenceClosureTokens",
+		"lexicalCandidateRecordsLoaded",
+		"descriptiveLatency"
+	],
+	"decisionRules": {
+		"FULL_PASS": "Across Batch C and Batch B combined: at least one strict per-question required-source win, zero required-source losses, zero source-bound exact-evidence losses, every L40 evidenceSpanId remains in EPSI40, all budgets pass, average evidence tokens are <=110% of L40, and at least one non-latency cost metric strictly improves.",
+		"SAFE_DISCOVERY_COST_UNPROVEN": "At least one strict source win, zero source and exact-evidence losses, complete L40 evidence-span preservation and all ceilings pass, but no non-latency cost metric strictly improves.",
+		"SAFE_BUT_NO_DISCOVERY": "Evidence preservation and all ceilings pass but there is no strict required-source win.",
+		"REWORK": "Any source loss, exact-evidence loss, missing L40 evidenceSpanId, candidate count over 40, token ratio over 1.10, unresolved evidence accepted, scope/temporal leakage, non-determinism, frozen-hash mismatch, Gold access before all candidates, overwrite or network/model/Context-Pack/Relation use."
+	},
+	"stopRules": [
+		"Do not tune budgets, source rules or eviction rules on Batch C or Batch B outcomes after the first report.",
+		"Do not use caseId, domain labels, required source IDs, exact quotes, question type or any Gold field in retrieval or ranking.",
+		"Do not weaken exact evidence identity to semantic similarity in order to create an eviction slot.",
+		"Do not generate answers, traverse Relation, build Context Pack, call a model, access the network or mutate canonical state.",
+		"Preserve the first report directory and hash; any evaluator or implementation repair must use a new contract and run id."
+	]
+}

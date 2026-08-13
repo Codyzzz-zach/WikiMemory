@@ -1,0 +1,74 @@
+{
+  "schemaVersion": "wge-h1a-adjudication/v1",
+  "adjudicatedAt": "2026-08-12T18:45:00+08:00",
+  "verdict": "PASS_ENGINEERING_SAFE_BASELINE",
+  "productClaim": "NOT_YET_HELD_OUT_VALIDATED",
+  "authoritativeFormationRun": "h1a-dev-v6-final",
+  "authoritativeDevDiagnostic": "h1a-diagnostic-v9-final",
+  "authoritativeArtifacts": {
+    "contract": {
+      "path": "experiments/h1-wiki-formation/contract-v1.json",
+      "sha256": "6deedf37546e570655a8d1088917fd293361c02fbe86a77ddfa6b827fe299a94"
+    },
+    "heldoutContract": {
+      "path": "experiments/h1-wiki-formation/heldout-contract-v1.json",
+      "sha256": "da6aba738fbfb14e72c15385610c5a90fec290e589f3a2ef1ea63f5cda2283ab"
+    },
+    "formationReport": {
+      "path": "experiments/h1-wiki-formation/runs/h1a-dev-v6-final/report.json",
+      "sha256": "800fea608c9f2446272ef2bb2b5114dc39887cbc9dafbfe2208221e9d6452ea1"
+    },
+    "formedModules": {
+      "path": "experiments/h1-wiki-formation/runs/h1a-dev-v6-final/modules.json",
+      "sha256": "68bea7e821852a3f33372c6a617695e2869262dd7945194973132c33154ac298"
+    },
+    "devDiagnosticReport": {
+      "path": "experiments/h1-wiki-formation/dev-diagnostics/h1a-diagnostic-v9-final/report.json",
+      "sha256": "020ec5a8d4a7789d94a9d8697685acd3a3cda96e32522ccb075301dca71e6595"
+    },
+    "devDiagnosticRows": {
+      "path": "experiments/h1-wiki-formation/dev-diagnostics/h1a-diagnostic-v9-final/rows.json",
+      "sha256": "e818b6986a29c4cae7892a04474e0024f93a9712fecd611f347324cb719fa95e"
+    }
+  },
+  "gates": {
+    "H1A-G0": {
+      "status": "PASS",
+      "evidence": "Formation API accepts only Claim, Relation, SourceSpan and configuration; the run reports no forbidden formation imports or question-like CLI inputs."
+    },
+    "H1A-G1": {
+      "status": "PASS",
+      "evidence": "Reversing every input collection produces byte-identical seeds; removing one complete 22-Claim Source leaves all 83 unrelated modules byte-identical; a unit test also preserves an unrelated module across a local addition."
+    },
+    "H1A-G2": {
+      "status": "PASS",
+      "evidence": "496/496 consumable Dev Claims formed into 86 materialized modules; all modules pass assertion-to-Claim-to-Evidence support inspection. Sixteen rejected Claims are all non-consumable lifecycle/publication records."
+    },
+    "H1A-G3": {
+      "status": "PASS",
+      "evidence": "Each module contains 2-8 assertions; complete deduplicated EvidenceSpan text is bounded by 4000 characters (observed maximum 244). Oversized single-Claim evidence is rejected explicitly."
+    },
+    "H1A-G4": {
+      "status": "PASS",
+      "evidence": "Known questions are read only by a separate post-hoc diagnostic after the formation directory exists; every run is immutable and earlier failed/misleading runs remain preserved."
+    }
+  },
+  "devSignal": {
+    "authority": "REVEALED_DEVELOPMENT_DIAGNOSTIC_ONLY",
+    "questions": 6,
+    "requiredClaimCoverage": {
+      "R0": "10/17",
+      "W_AUTO": "11/17"
+    },
+    "perQuestionRegressions": 0,
+    "perQuestionImprovements": 1,
+    "interpretation": "Seed-anchored Wiki navigation and ranked atomic injection removed the observed stale-module overwrite and recovered one additional required Claim. This is mechanism evidence, not blind answer-quality evidence."
+  },
+  "preservedLearning": [
+    "h1a-dev-v1 silently lost singleton tails and is retained as a failed first design.",
+    "h1a-diagnostic-v6 showed a lower-ranked module evicting an already accepted higher-ranked closure; it is retained and fixed by ranked atomic ownership.",
+    "Wiki navigation is activated by reliable Claim seeds; it is not an independent default content stream.",
+    "The eight-assertion default aligns formation output with the ten-slot online consumer contract instead of optimizing a revealed question."
+  ],
+  "nextDecision": "Run one new H1 held-out cycle under heldout-contract-v1.json. Do not tune on its questions or Gold, and do not claim product value before Stage B adjudication."
+}

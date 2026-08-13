@@ -16,6 +16,7 @@ import { createHash } from "node:crypto";
 import { appendFileSync, existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import type { AppConfig } from "../config/types.js";
+import { withRuntimeWriteLease } from "../infrastructure/runtime-write-lock.js";
 import { createDefaultLoaderRegistry } from "../loaders/registry.js";
 import type { LoadedDocument, LoaderRegistry } from "../loaders/types.js";
 import type { Source, SourceSpan } from "../types/index.js";
@@ -52,6 +53,12 @@ export function ingestMarkdownFile(config: AppConfig, filePath: string): IngestR
 }
 
 export function ingestLoadedDocument(config: AppConfig, loaded: LoadedDocument): IngestResult {
+	return withRuntimeWriteLease(config, `ingest-evidence:${loaded.sourceKey}`, () =>
+		ingestLoadedDocumentUnlocked(config, loaded),
+	);
+}
+
+function ingestLoadedDocumentUnlocked(config: AppConfig, loaded: LoadedDocument): IngestResult {
 	validateLoadedDocument(loaded);
 	const fileStem = loaded.sourceKey;
 

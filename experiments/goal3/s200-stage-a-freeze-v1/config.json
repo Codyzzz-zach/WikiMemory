@@ -1,0 +1,34 @@
+{
+  "schemaVersion": "wge-s200-g3c-config/v1",
+  "status": "LOCKED_STAGE_A_DEV_SCALE",
+  "interpretation": "S200 is a Stage-A-frozen Dev/scale gate, not a Blind result. Stage B remains unread until candidate outputs are sealed.",
+  "compiler": {
+    "model": "deepseek-v4-flash",
+    "temperature": 0,
+    "thinkingDisabled": true
+  },
+  "answer": {
+    "model": "deepseek-v4-flash",
+    "temperature": 0,
+    "thinkingDisabled": true,
+    "maxOutputTokens": 1600
+  },
+  "retrieval": {
+    "contextBudgetTokens": 12000,
+    "maxGraphDepth": 3,
+    "maxFolderChunks": 16,
+    "folderChunkChars": 1800
+  },
+  "arms": [
+    "B",
+    "R0",
+    "R1"
+  ],
+  "contextTransports": [
+    "LEGACY",
+    "COMPACT_V1"
+  ],
+  "externalRetrievalNetwork": false,
+  "maxToolCalls": 1,
+  "stageBRead": false
+}

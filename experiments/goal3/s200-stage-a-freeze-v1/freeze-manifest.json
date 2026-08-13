@@ -1,0 +1,604 @@
+{
+  "schemaVersion": "wge-s200-stage-a-freeze/v1",
+  "status": "ACCEPTED_STAGE_A_DEV_SCALE",
+  "stageBRead": false,
+  "sourceCount": 140,
+  "questionCount": 60,
+  "episodeCount": 20,
+  "questionFileSha256": "sha256:8ac9fa1ccc1c18cf06412a3725ec524037795d5357321527177c5fd360a60cc3",
+  "episodeFileSha256": "sha256:41d8e19dc57e4107ad4b0dd5de3bf2a2510180343c2081a082cc04aeab6bec14",
+  "producerTreeHash": "sha256:bc340ae793862214ab7d69e9e1a92c0ae1ffb8da744bfc1839446b777cf37c2e",
+  "evaluatorTreeHashExcludingManifest": "sha256:65ef54e1afb330874e5a37d2f3911e1f960dc9c43cf9c4fb5fec1cdfaed0e20e",
+  "normalizationCount": 4,
+  "fileInventoryExcludingManifest": [
+    {
+      "path": "FREEZE_READY",
+      "sha256": "sha256:815684ef9731190ecf2c517c1ce8cf6da01b574c0f500c082a62fcb2a44329e2"
+    },
+    {
+      "path": "compilation-corpus/ai/s200-ai-llama-001.md",
+      "sha256": "sha256:7d129229c5b172765207c46725a617dcdd52eef39c614fcc22b574ff18eba990"
+    },
+    {
+      "path": "compilation-corpus/ai/s200-ai-llama-002.md",
+      "sha256": "sha256:6868689f25b52068ddd59fddbefaf0a96b1f2e203db261f0e73e8a1edf10a125"
+    },
+    {
+      "path": "compilation-corpus/ai/s200-ai-llama-003.md",
+      "sha256": "sha256:1f7f91d48a9be77e591e38f0f4a4ae5ceb4cfc116afb8ed3ed95fcf862005a25"
+    },
+    {
+      "path": "compilation-corpus/ai/s200-ai-llama-004.md",
+      "sha256": "sha256:b4e0cd12040bcd21b3e5077a848d7989ce5399dcf2fe89ac5a699a95fef5d691"
+    },
+    {
+      "path": "compilation-corpus/ai/s200-ai-llama-005.md",
+      "sha256": "sha256:d8e8b7a468eb050127bc55f1855e62b6abfb4447696b415b5422d79924efde8b"
+    },
+    {
+      "path": "compilation-corpus/ai/s200-ai-llama-006.md",
+      "sha256": "sha256:9069d97e7205f06566e239805900f7b78c91d444a5612e710c5d17ee3148d257"
+    },
+    {
+      "path": "compilation-corpus/ai/s200-ai-llama-007.md",
+      "sha256": "sha256:32bb1fdd9a4d87868df6fa79b8bfc022f51bf923e7a3f07088b68df649bcae18"
+    },
+    {
+      "path": "compilation-corpus/ai/s200-ai-pytorch-001.md",
+      "sha256": "sha256:255b38b026b465551620c5691855d3f00c07350608c5b071efcdf0ec2ef74882"
+    },
+    {
+      "path": "compilation-corpus/ai/s200-ai-pytorch-002.md",
+      "sha256": "sha256:079cda9765b2ad04a7300cea58728da4d473b9d4b124fa19c6ef571c3559c22b"
+    },
+    {
+      "path": "compilation-corpus/ai/s200-ai-pytorch-003.md",
+      "sha256": "sha256:9686a04626d10e52f3991331435d67e97ff6df35f0f5effb47f38409d95226b3"
+    },
+    {
+      "path": "compilation-corpus/ai/s200-ai-pytorch-004.md",
+      "sha256": "sha256:b9641c08574a917b4b8722d9115fd95ec5b0784276c9f666acf60f7934e4eb3b"
+    },
+    {
+      "path": "compilation-corpus/ai/s200-ai-pytorch-005.md",
+      "sha256": "sha256:fe8d238d672603a0f269d34b11cd16ad12f49698f9aa50f8571f5503f94fe1b4"
+    },
+    {
+      "path": "compilation-corpus/ai/s200-ai-pytorch-006.md",
+      "sha256": "sha256:48d49e11df626dfd4e56f593060c1752941268d18c5a17fd4cd68f4eea95025d"
+    },
+    {
+      "path": "compilation-corpus/ai/s200-ai-swebench-001.md",
+      "sha256": "sha256:52a6b56f8fa042ccf39c06b71380551354bb9803040f8eef86bbe94a02203cbf"
+    },
+    {
+      "path": "compilation-corpus/ai/s200-ai-swebench-002.md",
+      "sha256": "sha256:1b7bd8de2b26d30285ecff5053641fbab77d4dc57cdb8feaef93ce3de37a83f4"
+    },
+    {
+      "path": "compilation-corpus/ai/s200-ai-swebench-003.md",
+      "sha256": "sha256:c6389ca3948b6817f16e035eff067ae7bbd9708976bf508b1f0d0344babf741c"
+    },
+    {
+      "path": "compilation-corpus/ai/s200-ai-swebench-004.md",
+      "sha256": "sha256:1b2c7c638799de2df3c3390dabad46c45267118a3103accd57756d84b1305d8a"
+    },
+    {
+      "path": "compilation-corpus/ai/s200-ai-swebench-006.md",
+      "sha256": "sha256:3805f801c2d5263506ab92f97266406cd5fd60ec977c1d9141dcb74493093c5d"
+    },
+    {
+      "path": "compilation-corpus/climate-energy-policy/s200-climate-cbam-001.md",
+      "sha256": "sha256:d6edcdc2db767c62f2482cb92bb8639af6804fcefe3371538803b428d5506981"
+    },
+    {
+      "path": "compilation-corpus/climate-energy-policy/s200-climate-cbam-002.md",
+      "sha256": "sha256:9c7259358b435f5fbb2fab2892fc4100863d9c397ba06017d85f104addd349a9"
+    },
+    {
+      "path": "compilation-corpus/climate-energy-policy/s200-climate-cbam-003.md",
+      "sha256": "sha256:5d89b966476ad6d0ef82d5563021b74a0a560dfe781e3d88e1c8d48a5fd8b8e1"
+    },
+    {
+      "path": "compilation-corpus/climate-energy-policy/s200-climate-cbam-004.md",
+      "sha256": "sha256:89130af6df007c6e0e060bbac3bde7f538314141906d9bfcdaec595f4f52777e"
+    },
+    {
+      "path": "compilation-corpus/climate-energy-policy/s200-climate-cbam-005.md",
+      "sha256": "sha256:b774091f33129ab16d295bb93a6565f86c3132750cd9ba867508692934af943d"
+    },
+    {
+      "path": "compilation-corpus/climate-energy-policy/s200-climate-nuclear-001.md",
+      "sha256": "sha256:eca99d38958f091a2ca799da640c2fe969b224408dca4b4691d62dd4676ba851"
+    },
+    {
+      "path": "compilation-corpus/climate-energy-policy/s200-climate-nuclear-002.md",
+      "sha256": "sha256:55be9e3a21095c2540992dabab0cff52c625dfafa2369f89178bb92cdcc3c32c"
+    },
+    {
+      "path": "compilation-corpus/climate-energy-policy/s200-climate-nuclear-003.md",
+      "sha256": "sha256:7c80e02d213e954e175bbc9daee2e2b9782f625a2347534372ccba3637400cba"
+    },
+    {
+      "path": "compilation-corpus/climate-energy-policy/s200-climate-nuclear-004.md",
+      "sha256": "sha256:4ea868abb1582b5c229097cee78a47241431d34f356a724a97ed6b99560b20f4"
+    },
+    {
+      "path": "compilation-corpus/climate-energy-policy/s200-climate-nuclear-005.md",
+      "sha256": "sha256:bd6922e43c8419f8ed0d49b9535ee18617d5121d3b1ac9247d3afc35b241d8c6"
+    },
+    {
+      "path": "compilation-corpus/climate-energy-policy/s200-climate-nuclear-006.md",
+      "sha256": "sha256:375c39b9bcf6208d07ec6256b085670cf7ffb08860b1ffa2c0ac7506564d3208"
+    },
+    {
+      "path": "compilation-corpus/climate-energy-policy/s200-climate-nuclear-007.md",
+      "sha256": "sha256:56f97b6e32042f7b09bf4edc9e38b47bf295c08ce40340d0f18d40ef1d984b20"
+    },
+    {
+      "path": "compilation-corpus/design-accessibility/s200-design-apca-001.md",
+      "sha256": "sha256:b02a2cb56e69d51b3586dcae9064202d49a31e6725bf992af8812a11e603bf4c"
+    },
+    {
+      "path": "compilation-corpus/design-accessibility/s200-design-apca-002.md",
+      "sha256": "sha256:d7a0fd2f64ffc224846bee16e4ba5b81957e779486d5439dac080eae4e821ee4"
+    },
+    {
+      "path": "compilation-corpus/design-accessibility/s200-design-apca-004.md",
+      "sha256": "sha256:913d2c72d7bde65a316e6c87b64d7851581e7ed3f25cf23976cd737341c31293"
+    },
+    {
+      "path": "compilation-corpus/design-accessibility/s200-design-apca-005.md",
+      "sha256": "sha256:ad5e80099a0792e7e48a146147bbc713c995373b43f0f6931e5abbb2f10fdc8a"
+    },
+    {
+      "path": "compilation-corpus/design-accessibility/s200-design-apca-006.md",
+      "sha256": "sha256:f4c091e793bdb709e95aa96e31e1905bd2b78ad5ed3748a7297bea4b6b1f1466"
+    },
+    {
+      "path": "compilation-corpus/design-accessibility/s200-design-apca-007.md",
+      "sha256": "sha256:1ea2741197fa0770ed965c5699fddfa78fd2503f8d91ed01782050a24c62d126"
+    },
+    {
+      "path": "compilation-corpus/design-accessibility/s200-design-apca-008.md",
+      "sha256": "sha256:4a122a18d8efad3e8ba46ff68dc61b3f12ba42e4dfc8c7a1c81bcb9db9c189de"
+    },
+    {
+      "path": "compilation-corpus/design-accessibility/s200-design-apca-009.md",
+      "sha256": "sha256:3fc9b055d95f7af1c437c1e3e45c36aef8ff2085a4af4a7cc4111134bd884bf3"
+    },
+    {
+      "path": "compilation-corpus/design-accessibility/s200-design-aria-001.md",
+      "sha256": "sha256:5a2d91cd81c390243506221fd44b32ea85f12bb265b0d18dbd1297e85fb1016f"
+    },
+    {
+      "path": "compilation-corpus/design-accessibility/s200-design-aria-002.md",
+      "sha256": "sha256:0b5142c0d97fa9930c9b6611210ee5b0c9faab90bf10e43e7ef20db6735864d4"
+    },
+    {
+      "path": "compilation-corpus/design-accessibility/s200-design-aria-003.md",
+      "sha256": "sha256:42ccce25dc0054dbe096bd332a1f56a26f31474b29eb33a13e2903901e85c043"
+    },
+    {
+      "path": "compilation-corpus/design-accessibility/s200-design-aria-004.md",
+      "sha256": "sha256:47b48bf890d62a86654ac7cfdaa8e3d1315781865a35aa7fc1a6f985465c17cb"
+    },
+    {
+      "path": "compilation-corpus/design-accessibility/s200-design-aria-005.md",
+      "sha256": "sha256:fbbf3445ec951ce56c1e9d0a466d6f4431ee3d3cd942920366a3422216d2cacb"
+    },
+    {
+      "path": "compilation-corpus/design-accessibility/s200-design-aria-006.md",
+      "sha256": "sha256:51ed164aa541331a984503b5e7076107b824c1bb5d3a7a8b2d4ca26ecaa864eb"
+    },
+    {
+      "path": "compilation-corpus/design-accessibility/s200-design-aria-007.md",
+      "sha256": "sha256:7c83f8d3190ede0421b1f8b372eecb07033ee5c78b497faf70845fda1305979a"
+    },
+    {
+      "path": "compilation-corpus/design-accessibility/s200-design-aria-008.md",
+      "sha256": "sha256:434cb884ab3a87d5fb7f156651749d8023aeccf2d3d8764e632d3a2e6eed7100"
+    },
+    {
+      "path": "compilation-corpus/finance/s200-fin-asml-001.md",
+      "sha256": "sha256:159e40864f35ab06622ee5840a8063deff1ddffc85aad0c1cd5f82c9f2927fdf"
+    },
+    {
+      "path": "compilation-corpus/finance/s200-fin-asml-002.md",
+      "sha256": "sha256:ceb0c997d13439d730fdec29cf3ee72326a2637f1d09ed3bd82cba73dc791bf2"
+    },
+    {
+      "path": "compilation-corpus/finance/s200-fin-asml-003.md",
+      "sha256": "sha256:256f784ba122496d2a6424c016b1f6d79b1f5b15169c78e17aee5066554ff29c"
+    },
+    {
+      "path": "compilation-corpus/finance/s200-fin-asml-004.md",
+      "sha256": "sha256:1a41d9f5ba53e5be52807076bdc88bec79e9b402de9c5b481137a4d085550c3c"
+    },
+    {
+      "path": "compilation-corpus/finance/s200-fin-asml-005.md",
+      "sha256": "sha256:5edd6d705c5620c9ab578efcdcd95f804d772a4b9cf3df599453af968cdec6d9"
+    },
+    {
+      "path": "compilation-corpus/finance/s200-fin-asml-006.md",
+      "sha256": "sha256:fe79c339b5f8782e5e2669e584375a986a55feb8b50f0b1f8c9f6175598ba53d"
+    },
+    {
+      "path": "compilation-corpus/finance/s200-fin-asml-007.md",
+      "sha256": "sha256:495d97188e75dfcdf3a42d751144affc0750d4a19cdae68ff891416686c4964a"
+    },
+    {
+      "path": "compilation-corpus/finance/s200-fin-asml-008.md",
+      "sha256": "sha256:87aebd18cf426e8791712494c091196b42b44bb1dc6c7d5d0fce1ee9a674cf0c"
+    },
+    {
+      "path": "compilation-corpus/finance/s200-fin-fed-001.md",
+      "sha256": "sha256:bd3022e74be16f17fc83960a78cd17fb74630f63cf827171e56710240b61369c"
+    },
+    {
+      "path": "compilation-corpus/finance/s200-fin-fed-002.md",
+      "sha256": "sha256:d54c8d2d86b3f2df26e26b167c2baaf6f8b82bdb19a991fc4bf7e9b8de27b53a"
+    },
+    {
+      "path": "compilation-corpus/finance/s200-fin-fed-003.md",
+      "sha256": "sha256:df275265e1b70a9cc71a478e5af8a70f64b89f97c7dd909de21217fef1784489"
+    },
+    {
+      "path": "compilation-corpus/finance/s200-fin-fed-004.md",
+      "sha256": "sha256:93cac1dcc71d416a3b3da49ccae3d9abedbadf21b9da87c648a6fc6a1afc5915"
+    },
+    {
+      "path": "compilation-corpus/finance/s200-fin-fed-006.md",
+      "sha256": "sha256:34e31bc6be0ea887552bbb07849c2a938d254ecb38868c4ba68c3258d7cc82f5"
+    },
+    {
+      "path": "compilation-corpus/finance/s200-fin-fed-008.md",
+      "sha256": "sha256:e3690107f47fc885b0cbbb8c3078d82fe14f3e19ae6db85c107a4e898483fb1c"
+    },
+    {
+      "path": "compilation-corpus/finance/s200-fin-fed-009.md",
+      "sha256": "sha256:8a3d60bc09a64e07cd01c1e20f40eec4f0550e2a62820f41373c63f9894d9f33"
+    },
+    {
+      "path": "compilation-corpus/finance/s200-fin-fed-010.md",
+      "sha256": "sha256:7a418fa226be16e06e41e29cd506ea42a365e0e475e6551c841d5f47211e6604"
+    },
+    {
+      "path": "compilation-corpus/health-biology/s200-health-hpv-001.md",
+      "sha256": "sha256:99328c1d876aaca5212a856143a3a93a483f7ab1eb887f9ee921d96dadd141dc"
+    },
+    {
+      "path": "compilation-corpus/health-biology/s200-health-hpv-002.md",
+      "sha256": "sha256:c37aba437a8caca03ee550aaf09fb1824d91b0ccca7f3286e727fab3b9145c9b"
+    },
+    {
+      "path": "compilation-corpus/health-biology/s200-health-hpv-003.md",
+      "sha256": "sha256:09bb53dd6c560b581e2d35b092df326c06375a4e13a78a4b887f4fe13d279dee"
+    },
+    {
+      "path": "compilation-corpus/health-biology/s200-health-hpv-004.md",
+      "sha256": "sha256:290981b6671d08e5eb46b230f9865bf4657d26f17c88506c32cd80fa49989c30"
+    },
+    {
+      "path": "compilation-corpus/health-biology/s200-health-hpv-005.md",
+      "sha256": "sha256:10a653d5a7401910816f5accff12dbc199b0231940c177a329c71b99ffbb4719"
+    },
+    {
+      "path": "compilation-corpus/health-biology/s200-health-mpox-001.md",
+      "sha256": "sha256:aa3eccea6127dfdd447df99864b44a4830a43bcfd6da009838995599d5b67a30"
+    },
+    {
+      "path": "compilation-corpus/health-biology/s200-health-mpox-002.md",
+      "sha256": "sha256:21ffa54719daeef6aa967f660abf8c4e5dd22b0579c1435252193d039a3edcdf"
+    },
+    {
+      "path": "compilation-corpus/health-biology/s200-health-mpox-005.md",
+      "sha256": "sha256:bd49e421d5fa81a8cc26e18ff24dc21ed0b3aa8635f099477508bc1c5f61fb37"
+    },
+    {
+      "path": "compilation-corpus/health-biology/s200-health-mpox-006.md",
+      "sha256": "sha256:33ec79b5c3a5c559c6318e497e6e4a7a052e7e974607153c99374e1c971f5bb1"
+    },
+    {
+      "path": "compilation-corpus/health-biology/s200-health-mpox-007.md",
+      "sha256": "sha256:98eec69b1f9188f7912f4b1ec5b10b35a6322d94b1d09bc518bea46c8a97555c"
+    },
+    {
+      "path": "compilation-corpus/health-biology/s200-health-sugar-001.md",
+      "sha256": "sha256:17e99d6665b60eea9302d8e187edb8719b8b0f880f615dbe5023c2bbf0041640"
+    },
+    {
+      "path": "compilation-corpus/health-biology/s200-health-sugar-002.md",
+      "sha256": "sha256:66f3b113d6aa789400bc32a90e9b1d2ddff4a862c8063f8a06887bc48aeda9b2"
+    },
+    {
+      "path": "compilation-corpus/health-biology/s200-health-sugar-003.md",
+      "sha256": "sha256:e33de243c3549b59938576a2700f96562c5b4c93bf83eeb5a291018c78988800"
+    },
+    {
+      "path": "compilation-corpus/health-biology/s200-health-sugar-004.md",
+      "sha256": "sha256:54318dd554e113c907d6a6b7d5129d58d0a9d785f8a794da542d52d3f6c30cb0"
+    },
+    {
+      "path": "compilation-corpus/health-biology/s200-health-sugar-005.md",
+      "sha256": "sha256:30e6115bf4e6546be0ac3ad129bf614338eb850c886d013a0cd1e9b59b424383"
+    },
+    {
+      "path": "compilation-corpus/health-biology/s200-health-sugar-006.md",
+      "sha256": "sha256:980a923f7f80114f6870eb7271271f46dd1b857fe81d5dd63694ae2b61d27368"
+    },
+    {
+      "path": "compilation-corpus/history-humanities/s200-hist-hobbit-001.md",
+      "sha256": "sha256:6446db1d0eaa6f49d1396ca972ccd704822fc5200cee847639d65b7230c1e570"
+    },
+    {
+      "path": "compilation-corpus/history-humanities/s200-hist-hobbit-002.md",
+      "sha256": "sha256:fe2ae6f6f2ff060f75f58d6c769d54254be91df4532c2a94af0585968f0563d8"
+    },
+    {
+      "path": "compilation-corpus/history-humanities/s200-hist-hobbit-003.md",
+      "sha256": "sha256:cd3d39384f46ff0d248c35753e390d14ee398a779bbe2c2eb42f41f30f9491bf"
+    },
+    {
+      "path": "compilation-corpus/history-humanities/s200-hist-hobbit-004.md",
+      "sha256": "sha256:b5ed8f8290b8d8c670b891c9557d47c6bace78d0f50c102e08d57057df0cb136"
+    },
+    {
+      "path": "compilation-corpus/history-humanities/s200-hist-hobbit-005.md",
+      "sha256": "sha256:91dbeb09fd055ce571415c4cb9625a7e36c71299dd8dbccf32ee0af8ca027440"
+    },
+    {
+      "path": "compilation-corpus/history-humanities/s200-hist-hobbit-006.md",
+      "sha256": "sha256:3479fe209590bba6842b45634e11c81cb4b3bd4d26227480f8501e89504bc99c"
+    },
+    {
+      "path": "compilation-corpus/history-humanities/s200-hist-hobbit-007.md",
+      "sha256": "sha256:e0bfaed324cd5dd3a23ab0e19621493fbb096b867c637a38471c1d2494ccf582"
+    },
+    {
+      "path": "compilation-corpus/history-humanities/s200-hist-hobbit-008.md",
+      "sha256": "sha256:a9be3ec303aa397a53c8dba2177bf9025d7340e8d5dd55b11b5da531ed92d347"
+    },
+    {
+      "path": "compilation-corpus/history-humanities/s200-hist-rosetta-001.md",
+      "sha256": "sha256:1cd55e4d4c2859ca5df21be10bdc2b453fe5d814c8f496551ac4d88a9250ab97"
+    },
+    {
+      "path": "compilation-corpus/history-humanities/s200-hist-rosetta-002.md",
+      "sha256": "sha256:9d117ec442b5d041d2e84d784e0500980db80d2511420b5ba09d25c3a7943861"
+    },
+    {
+      "path": "compilation-corpus/history-humanities/s200-hist-rosetta-003.md",
+      "sha256": "sha256:be2404970edf6039a970ed73816daf8a0038f41444684f2d5e8375e276468126"
+    },
+    {
+      "path": "compilation-corpus/history-humanities/s200-hist-rosetta-004.md",
+      "sha256": "sha256:665012527cc19328deb30e8cfc3735701b9fa8274fd0bf6801d22a9eabbac591"
+    },
+    {
+      "path": "compilation-corpus/history-humanities/s200-hist-rosetta-005.md",
+      "sha256": "sha256:f7202dac954848ddde64c5a01bfaef39f2b691a3b94f99c0798685014eef5b05"
+    },
+    {
+      "path": "compilation-corpus/law-public-policy/s200-law-chinaai-001.md",
+      "sha256": "sha256:3e015a980efbec2c2e1b415a38a0965456bcacd8092aea6ef6f3fcef8bfa8f13"
+    },
+    {
+      "path": "compilation-corpus/law-public-policy/s200-law-chinaai-002.md",
+      "sha256": "sha256:676b87bf6bc0517fb3e7962213b4318a2bdf6932845318221b7869db3933af7d"
+    },
+    {
+      "path": "compilation-corpus/law-public-policy/s200-law-chinaai-003.md",
+      "sha256": "sha256:8b0c513fab294cf72013a74393d761880e1ebed4cbd7b3fda86d8aab8ded2f4c"
+    },
+    {
+      "path": "compilation-corpus/law-public-policy/s200-law-chinaai-004.md",
+      "sha256": "sha256:039f7f13bd6f3a46a9e48238563e1b7a799577125bc8090ddef05eae971d7b36"
+    },
+    {
+      "path": "compilation-corpus/law-public-policy/s200-law-chinaai-005.md",
+      "sha256": "sha256:000a73745822bef3a060f3abdb6b8bd0a1999ee44111759e328bc51b75fbd13f"
+    },
+    {
+      "path": "compilation-corpus/law-public-policy/s200-law-chinaai-006.md",
+      "sha256": "sha256:ed3fddd7c09eec40a666525a65d80e40c5595d0e3330c17edd51ade336fff5ec"
+    },
+    {
+      "path": "compilation-corpus/law-public-policy/s200-law-chinaai-007.md",
+      "sha256": "sha256:b9f9621f002530f4e00bca7c714fa5e915cb9bde2727116b063265e7f37a4431"
+    },
+    {
+      "path": "compilation-corpus/law-public-policy/s200-law-dma-001.md",
+      "sha256": "sha256:63d5ef28e252636d7fdc91ab62840529070fb687908f8ae0b66d6b47eb122662"
+    },
+    {
+      "path": "compilation-corpus/law-public-policy/s200-law-dma-002.md",
+      "sha256": "sha256:c4708f0294d18dbe2fc255885018677ee28bb2504a92dda2bfa8d5a0940ad42d"
+    },
+    {
+      "path": "compilation-corpus/law-public-policy/s200-law-dma-003.md",
+      "sha256": "sha256:0d9dbc4cce6eaa133688fa7c74a6cdb28901b91f475eab63a731160fa8fdfff9"
+    },
+    {
+      "path": "compilation-corpus/law-public-policy/s200-law-dma-004.md",
+      "sha256": "sha256:75e0c22c559c2ca518a98cc91c3699b31248a6d18ac78cf5f4c47d53900f5cbe"
+    },
+    {
+      "path": "compilation-corpus/law-public-policy/s200-law-dma-005.md",
+      "sha256": "sha256:0c5de11403ffbb3e37be3f70461a6628498d0cb4be6b5dbb77fec12491f13b3f"
+    },
+    {
+      "path": "compilation-corpus/law-public-policy/s200-law-dma-006.md",
+      "sha256": "sha256:6641fb6256cfdf972e8542b468c0d7e138b3c7e67ada08ed75f8c72ab691e199"
+    },
+    {
+      "path": "compilation-corpus/law-public-policy/s200-law-dma-007.md",
+      "sha256": "sha256:e6150f43239bfe9a0f68dbc3ab02cd2b58780064d0cb03a06dda311466c5ac32"
+    },
+    {
+      "path": "compilation-corpus/psychology-reproducibility/s200-psych-nudge-001.md",
+      "sha256": "sha256:dcfe4d6101b5d1ad155d8b9ab068135935c63375defdea0fe389e413d3c449ef"
+    },
+    {
+      "path": "compilation-corpus/psychology-reproducibility/s200-psych-nudge-002.md",
+      "sha256": "sha256:5ebe863bef86aa01976532eddf430c263e479a12ebc5f4119fe8a0ed50ac1189"
+    },
+    {
+      "path": "compilation-corpus/psychology-reproducibility/s200-psych-nudge-003.md",
+      "sha256": "sha256:3cf7712763a4f28f40405431566c4ce6c22b3c66bce41cc405cfa1a700dd66a1"
+    },
+    {
+      "path": "compilation-corpus/psychology-reproducibility/s200-psych-nudge-004.md",
+      "sha256": "sha256:50611e2b7a207c721c975aee7a5612ec4f852d8c65e8d4196ae2a8778971bb52"
+    },
+    {
+      "path": "compilation-corpus/psychology-reproducibility/s200-psych-nudge-005.md",
+      "sha256": "sha256:efb48f9921d2590fbae44cce707e48b624f771e56d24d4ae7df4a3be76e8b055"
+    },
+    {
+      "path": "compilation-corpus/psychology-reproducibility/s200-psych-prereg-001.md",
+      "sha256": "sha256:97cbe8236c4893446ef7085b126985771d09bdf73d57d66c9fd7dd7a93ca870e"
+    },
+    {
+      "path": "compilation-corpus/psychology-reproducibility/s200-psych-prereg-002.md",
+      "sha256": "sha256:10e2e39f75079b5d42769655ca143d0ad59f63b43efc28e759f6f996ef5f5ab8"
+    },
+    {
+      "path": "compilation-corpus/psychology-reproducibility/s200-psych-prereg-003.md",
+      "sha256": "sha256:036bd832a071290544bacc8a111df1cfff57201111c6f975c2aa272d7d074562"
+    },
+    {
+      "path": "compilation-corpus/psychology-reproducibility/s200-psych-prereg-004.md",
+      "sha256": "sha256:e9523928ef4ae4cee975ce095b7525b9adf82b300b560e8edded87455412e684"
+    },
+    {
+      "path": "compilation-corpus/psychology-reproducibility/s200-psych-prereg-005.md",
+      "sha256": "sha256:73ba63105cffb988b671b5d06e29144040d404d878abe05ad49b801cadaa0751"
+    },
+    {
+      "path": "compilation-corpus/psychology-reproducibility/s200-psych-prereg-006.md",
+      "sha256": "sha256:4dbec59272af5c2a960c07055fa2c75db7ad308f021cd668fcb0b71d614b9182"
+    },
+    {
+      "path": "compilation-corpus/psychology-reproducibility/s200-psych-prereg-007.md",
+      "sha256": "sha256:3394779605cccdb208aaafd8ded2d14a8ae057a45855df5e9b09300b9011596c"
+    },
+    {
+      "path": "compilation-corpus/psychology-reproducibility/s200-psych-prereg-008.md",
+      "sha256": "sha256:be27061dd9ab69d2b0b5625934e2b0bc770f4e09149340e45387f79999ceb7b7"
+    },
+    {
+      "path": "compilation-corpus/technology/s200-tech-gomod-001.md",
+      "sha256": "sha256:bf3d29b58672618d9baa198080859286c2928544f4dc249c87f0050875e00f05"
+    },
+    {
+      "path": "compilation-corpus/technology/s200-tech-gomod-002.md",
+      "sha256": "sha256:4b5246146d0d463726824bfdbab3566822ad833707c4b33254403d4378a3167a"
+    },
+    {
+      "path": "compilation-corpus/technology/s200-tech-gomod-003.md",
+      "sha256": "sha256:ee4682d7d039c95f2722a45ce5a20689860d6e0e0a73087ddea295ed2a3706bc"
+    },
+    {
+      "path": "compilation-corpus/technology/s200-tech-gomod-004.md",
+      "sha256": "sha256:fd7aa9178e873357d57c40993eef266d9814460122e9c7cdb95bf33e567a7b71"
+    },
+    {
+      "path": "compilation-corpus/technology/s200-tech-gomod-005.md",
+      "sha256": "sha256:33c6a6bba28370aa0064e08803bd32a7f835968308dd005e2a346361eea9c0a1"
+    },
+    {
+      "path": "compilation-corpus/technology/s200-tech-gomod-006.md",
+      "sha256": "sha256:1924521283293d2800d8353c5954865a2578999693cdfc351c6dae6a903c70b2"
+    },
+    {
+      "path": "compilation-corpus/technology/s200-tech-gomod-007.md",
+      "sha256": "sha256:1a32369e267a16a022e1bcf77e8c4d91edbc0ba335ac0ce3f9bdce9a0b05a92b"
+    },
+    {
+      "path": "compilation-corpus/technology/s200-tech-http3-001.md",
+      "sha256": "sha256:5ab8508f7ffc963012a987c2bd0a28996d42d318e9ee4fd1fd268ba5c2583e6a"
+    },
+    {
+      "path": "compilation-corpus/technology/s200-tech-http3-002.md",
+      "sha256": "sha256:72953d84222bdfb3db1a318438cfcf2d80cff9b7e81d9a0d817e01062baab408"
+    },
+    {
+      "path": "compilation-corpus/technology/s200-tech-http3-003.md",
+      "sha256": "sha256:6989004fae7233dfd54323b63c665df53d3207e08775107606e61ccbb3fc9fde"
+    },
+    {
+      "path": "compilation-corpus/technology/s200-tech-http3-004.md",
+      "sha256": "sha256:43357c05d09a816b0e2cf49a6cdbff31d355924743f8c130d0a209b20a910fe9"
+    },
+    {
+      "path": "compilation-corpus/technology/s200-tech-http3-005.md",
+      "sha256": "sha256:aa36155c2005d5540d459954e36a38c15fd9376b2b4f05b86aca27b431a6d8e2"
+    },
+    {
+      "path": "compilation-corpus/technology/s200-tech-http3-006.md",
+      "sha256": "sha256:f6a6ba2b9929d8b1a8e121916155c19e7dbbed0880e171a899c2224fafc9e867"
+    },
+    {
+      "path": "compilation-corpus/technology/s200-tech-http3-007.md",
+      "sha256": "sha256:44694b2cd70db048e26f23c8a191a7a06c7740d4f467be05c1261dad647dda15"
+    },
+    {
+      "path": "compilation-corpus/technology/s200-tech-http3-008.md",
+      "sha256": "sha256:c43f1c1370be45c3c84c5a7ae463817e713984be8630e0089b4708bc5aa3f23c"
+    },
+    {
+      "path": "compilation-corpus/technology/s200-tech-k8s-001.md",
+      "sha256": "sha256:183dde0f11af7a35706682032bc32f82ccdbe943c583e17aaced26af29ccdb41"
+    },
+    {
+      "path": "compilation-corpus/technology/s200-tech-k8s-002.md",
+      "sha256": "sha256:f24c4afc2e73fc45ac33fd2113afff1b4b5ede2d555c7246dda53674bf8ce0e0"
+    },
+    {
+      "path": "compilation-corpus/technology/s200-tech-k8s-003.md",
+      "sha256": "sha256:00c0006e8c42a6fa8b6143257d8180847e6d45bb14fe923b33b0ee1a0d7e5043"
+    },
+    {
+      "path": "compilation-corpus/technology/s200-tech-k8s-005.md",
+      "sha256": "sha256:243f27b4b45be8749e323583186ea2c0879185175f755e825bc68a31f61cbeb5"
+    },
+    {
+      "path": "compilation-corpus/technology/s200-tech-k8s-006.md",
+      "sha256": "sha256:60f7475302260c2cf6831cd4a818b1c3266d04ee91132b7706142dda26d74b0f"
+    },
+    {
+      "path": "compilation-corpus/technology/s200-tech-k8s-007.md",
+      "sha256": "sha256:dfbdb3657eea7cb9fe7a8e3a814980a334374c73a6bdf28bc76a6274ce02c3e0"
+    },
+    {
+      "path": "compilation-corpus/technology/s200-tech-k8s-008.md",
+      "sha256": "sha256:ad27a6f5e30dffda06a611627ed71ca59baeee0c255c02686e54bbb0ab92f5d4"
+    },
+    {
+      "path": "config.json",
+      "sha256": "sha256:ef21f848397d1b0363cda8721328d54ad4bf8b6a82afcde7e0f32bc46526b4d5"
+    },
+    {
+      "path": "episodes-public.jsonl",
+      "sha256": "sha256:41d8e19dc57e4107ad4b0dd5de3bf2a2510180343c2081a082cc04aeab6bec14"
+    },
+    {
+      "path": "normalization-audit.json",
+      "sha256": "sha256:ec5c9c8b85475d59314afafd467428aea0893c32bcaf7220944e86c87391b9af"
+    },
+    {
+      "path": "pre-freeze-git.json",
+      "sha256": "sha256:a1bfeb0c08eebfb7de1136e4710fb19f9a715d87649dfe544a36c23fd1b092eb"
+    },
+    {
+      "path": "questions-public.jsonl",
+      "sha256": "sha256:8ac9fa1ccc1c18cf06412a3725ec524037795d5357321527177c5fd360a60cc3"
+    },
+    {
+      "path": "source-audit.json",
+      "sha256": "sha256:b821dcf03bab2f9c78029def00d467883231690e8adc21bc8fcadfe9d2e38a61"
+    }
+  ],
+  "createdAt": "2026-08-10T16:49:11.155Z"
+}

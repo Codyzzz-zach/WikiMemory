@@ -8,7 +8,7 @@
  * 每个一等对象一行 JSON，追加写入、流式读取、git diff 友好。
  */
 
-import { createHash } from "node:crypto";
+import { createHash, randomUUID } from "node:crypto";
 import {
 	appendFileSync,
 	existsSync,
@@ -20,6 +20,7 @@ import {
 } from "node:fs";
 import { join } from "node:path";
 import type { AppConfig } from "../config/types.js";
+import { withRuntimeWriteLease } from "../infrastructure/runtime-write-lock.js";
 import type {
 	AssertedRecord,
 	Claim,
@@ -40,6 +41,12 @@ export interface SourcePublication {
 	relations: Relation[];
 	/** 最近一次生命周期演化事务；不改变原编译 run 的归属。 */
 	evolutionSnapshotId?: string;
+	/** 调用演化事务的业务操作标识；用于崩溃后的幂等恢复。 */
+	evolutionOperationId?: string;
+	/** 该事务完成时的精确知识版本；不得用恢复时的“当前版本”替代。 */
+	evolutionKnowledgeVersion?: string;
+	/** 该事务实际重建的派生 Wiki 视图。 */
+	evolutionRebuiltWikiModuleIds?: string[];
 	evolvedAt?: string;
 }
 
@@ -59,6 +66,66 @@ export interface RetrievalAliasProjection {
 	model: string;
 	promptVersion: string;
 	generatedAt: string;
+}
+
+export interface CorrectionPublication {
+	schemaVersion: "wge-correction-publication/v1";
+	proposalId: string;
+	commitIdempotencyKey: string;
+	committedAt: string;
+	beforeKnowledgeVersion: string;
+	/** Exact semantic version produced by this commit; absent legacy records cannot safely roll back. */
+	committedKnowledgeVersion?: string;
+	rollbackSnapshotId: string;
+	assertedRecord: AssertedRecord;
+	claim: Claim | null;
+	replacedClaimId: string | null;
+	disputedClaimId?: string | null;
+	rebuiltWikiModuleIds?: string[];
+}
+
+interface CanonicalStateGenerationRecord {
+	schemaVersion: "wge-canonical-state-generation/v1";
+	token: string;
+	changedAt: string;
+	reason: string;
+}
+
+const UNTRACKED_CANONICAL_GENERATION = "untracked";
+
+/** Small consistency token used by rebuildable indexes; reading it never scans Canonical data. */
+export function readCanonicalStateGeneration(config: AppConfig): string {
+	return (
+		readJson<CanonicalStateGenerationRecord>(canonicalGenerationPath(config))?.token ??
+		UNTRACKED_CANONICAL_GENERATION
+	);
+}
+
+/** Initialize generation tracking once without claiming that Canonical content changed. */
+export function ensureCanonicalStateGeneration(config: AppConfig): string {
+	return withRuntimeWriteLease(config, "initialize-generation-tracking", () => {
+		const current = readCanonicalStateGeneration(config);
+		if (current !== UNTRACKED_CANONICAL_GENERATION) return current;
+		return markCanonicalStateChanged(config, "initialize-generation-tracking");
+	});
+}
+
+/** Mark every derived index stale before the first Canonical write becomes visible. */
+export function markCanonicalStateChanged(config: AppConfig, reason: string): string {
+	return withRuntimeWriteLease(config, `mark-canonical-state:${reason}`, () => {
+		const record: CanonicalStateGenerationRecord = {
+			schemaVersion: "wge-canonical-state-generation/v1",
+			token: randomUUID(),
+			changedAt: new Date().toISOString(),
+			reason,
+		};
+		writeJsonAtomic(canonicalGenerationPath(config), record);
+		return record.token;
+	});
+}
+
+function canonicalGenerationPath(config: AppConfig): string {
+	return join(config.indexesDir, "canonical-state-generation.json");
 }
 
 /** JSONL 读取工具 */
@@ -115,8 +182,19 @@ export function publishSourceResult(
 	publication: SourcePublication,
 	quarantine: SourceQuarantinePublication,
 ): void {
+	withRuntimeWriteLease(config, `publish-source:${publication.sourceId}`, () =>
+		publishSourceResultUnlocked(config, publication, quarantine),
+	);
+}
+
+function publishSourceResultUnlocked(
+	config: AppConfig,
+	publication: SourcePublication,
+	quarantine: SourceQuarantinePublication,
+): void {
 	const fileName = `${safeSourceFileName(publication.sourceId)}.json`;
 	const reconciled = reconcileDanglingCrossRelations(config, publication, quarantine);
+	markCanonicalStateChanged(config, `publish-source:${publication.sourceId}`);
 
 	// Foreign snapshots are made safe before the target Source loses its old Claims.
 	// A crash can therefore hide an edge temporarily, but can never expose a dangling edge.
@@ -293,6 +371,17 @@ export function quarantineWikiModules(
 	reason: string,
 	evolutionSnapshotId: string,
 ): WikiModule[] {
+	return withRuntimeWriteLease(config, "quarantine-wiki-modules", () =>
+		quarantineWikiModulesUnlocked(config, moduleIds, reason, evolutionSnapshotId),
+	);
+}
+
+function quarantineWikiModulesUnlocked(
+	config: AppConfig,
+	moduleIds: string[],
+	reason: string,
+	evolutionSnapshotId: string,
+): WikiModule[] {
 	const targets = new Set(moduleIds);
 	if (targets.size === 0) return [];
 	const found = new Map<string, WikiModule>();
@@ -317,6 +406,7 @@ export function quarantineWikiModules(
 
 	const missing = [...targets].filter((id) => !found.has(id));
 	if (missing.length > 0) throw new Error(`找不到待隔离 WikiModule: ${missing.join(", ")}`);
+	markCanonicalStateChanged(config, `quarantine-wiki:${[...targets].sort().join(",")}`);
 	for (const rewrite of rewrites) {
 		if (rewrite.jsonl) writeJsonlAtomic(rewrite.path, rewrite.modules);
 		else writeJsonAtomic(rewrite.path, rewrite.modules[0]);
@@ -342,7 +432,61 @@ export function readWikiModuleQuarantine(config: AppConfig): WikiModuleQuarantin
 	return readPublicationFiles<WikiModuleQuarantineRecord>(join(config.quarantineDir, "wiki"));
 }
 
-function writeJsonlAtomic<T>(filePath: string, items: T[]): void {
+/**
+ * Publish rebuilt Wiki materialized views without changing their stable identity.
+ * Existing module slots are replaced in place; new modules use one auditable JSON file each.
+ */
+export function upsertWikiModules(config: AppConfig, modules: WikiModule[]): void {
+	withRuntimeWriteLease(config, "upsert-wiki-modules", () =>
+		upsertWikiModulesUnlocked(config, modules),
+	);
+}
+
+function upsertWikiModulesUnlocked(config: AppConfig, modules: WikiModule[]): void {
+	const replacements = new Map<string, WikiModule>();
+	for (const module of modules) {
+		if (replacements.has(module.id)) throw new Error(`待发布 WikiModule ID 重复: ${module.id}`);
+		if (module.publicationState !== "CANONICAL") {
+			throw new Error(`只能发布 Canonical WikiModule: ${module.id}`);
+		}
+		replacements.set(module.id, module);
+	}
+	if (replacements.size === 0) return;
+
+	const found = new Set<string>();
+	const rewrites: Array<{ path: string; jsonl: boolean; modules: WikiModule[] }> = [];
+	if (existsSync(config.wikiDir)) {
+		for (const file of readdirSync(config.wikiDir).sort()) {
+			if (!file.endsWith(".json") && !file.endsWith(".jsonl")) continue;
+			const path = join(config.wikiDir, file);
+			const current = file.endsWith(".json")
+				? [readJson<WikiModule>(path)].filter((item): item is WikiModule => item !== null)
+				: readJsonl<WikiModule>(path);
+			let changed = false;
+			const next = current.map((module) => {
+				const replacement = replacements.get(module.id);
+				if (!replacement) return module;
+				if (found.has(module.id)) throw new Error(`WikiModule 重复归属: ${module.id}`);
+				found.add(module.id);
+				changed = true;
+				return replacement;
+			});
+			if (changed) rewrites.push({ path, jsonl: file.endsWith(".jsonl"), modules: next });
+		}
+	}
+
+	markCanonicalStateChanged(config, `upsert-wiki:${[...replacements.keys()].sort().join(",")}`);
+	for (const rewrite of rewrites) {
+		if (rewrite.jsonl) writeJsonlAtomic(rewrite.path, rewrite.modules);
+		else writeJsonAtomic(rewrite.path, rewrite.modules[0]);
+	}
+	for (const [id, module] of replacements) {
+		if (found.has(id)) continue;
+		writeJsonAtomic(join(config.wikiDir, `${safeObjectFileName(id)}.json`), module);
+	}
+}
+
+export function writeJsonlAtomic<T>(filePath: string, items: T[]): void {
 	mkdirSync(join(filePath, ".."), { recursive: true });
 	const temporaryPath = `${filePath}.tmp-${process.pid}-${Date.now()}`;
 	const lines = items.map((item) => JSON.stringify(item)).join("\n");
@@ -389,18 +533,53 @@ function uniqueById<T extends { id: string }>(items: T[]): T[] {
 export function readAllClaims(config: AppConfig): Claim[] {
 	const legacy = readJsonl<Claim>(join(config.projectRoot, "claims", "claims.jsonl"));
 	const published = readSourcePublications(config).flatMap((entry) => entry.claims);
+	const corrections = readCorrectionPublications(config);
+	const replacedClaimIds = new Set(
+		corrections.flatMap((publication) =>
+			publication.replacedClaimId ? [publication.replacedClaimId] : [],
+		),
+	);
+	const disputedClaimIds = new Set(
+		corrections.flatMap((publication) =>
+			publication.disputedClaimId ? [publication.disputedClaimId] : [],
+		),
+	);
 	const projections = new Map(
 		readJsonl<RetrievalAliasProjection>(join(config.indexesDir, "retrieval-aliases.jsonl")).map(
 			(projection) => [projection.claimId, projection],
 		),
 	);
-	return uniqueById([...legacy, ...published]).map((claim) => {
-		const projection = projections.get(claim.id);
-		if (!projection || projection.statementHash !== textHash(claim.statement)) return claim;
+	return uniqueById([
+		...legacy,
+		...published,
+		...corrections.flatMap((item) => (item.claim ? [item.claim] : [])),
+	]).map((claim) => {
+		const disputePublications = corrections.filter(
+			(publication) => publication.disputedClaimId === claim.id,
+		);
+		const lifecycleClaim = replacedClaimIds.has(claim.id)
+			? { ...claim, lifecycle: "SUPERSEDED" as const }
+			: disputedClaimIds.has(claim.id)
+				? {
+						...claim,
+						validity: "DISPUTED" as const,
+						provenanceRefs: [
+							...claim.provenanceRefs,
+							...disputePublications.map((publication) => ({
+								type: "AssertedRecord" as const,
+								assertionId: publication.assertedRecord.assertionId,
+							})),
+						],
+					}
+				: claim;
+		const projection = projections.get(lifecycleClaim.id);
+		if (!projection || projection.statementHash !== textHash(lifecycleClaim.statement)) {
+			return lifecycleClaim;
+		}
 		return {
-			...claim,
+			...lifecycleClaim,
 			retrievalAliases: [
-				...new Set([...(claim.retrievalAliases ?? []), ...projection.aliases]),
+				...new Set([...(lifecycleClaim.retrievalAliases ?? []), ...projection.aliases]),
 			].slice(0, 3),
 		};
 	});
@@ -410,7 +589,10 @@ export function writeRetrievalAliasProjections(
 	config: AppConfig,
 	projections: RetrievalAliasProjection[],
 ): void {
-	writeJsonl(join(config.indexesDir, "retrieval-aliases.jsonl"), projections);
+	withRuntimeWriteLease(config, "write-retrieval-alias-projections", () => {
+		markCanonicalStateChanged(config, "write-retrieval-alias-projections");
+		writeJsonl(join(config.indexesDir, "retrieval-aliases.jsonl"), projections);
+	});
 }
 
 export function retrievalAliasStatementHash(statement: string): string {
@@ -422,7 +604,10 @@ function textHash(value: string): string {
 }
 
 export function appendClaims(config: AppConfig, claims: Claim[]): void {
-	appendJsonl(join(config.projectRoot, "claims", "claims.jsonl"), claims);
+	withRuntimeWriteLease(config, "append-legacy-claims", () => {
+		markCanonicalStateChanged(config, "append-legacy-claims");
+		appendJsonl(join(config.projectRoot, "claims", "claims.jsonl"), claims);
+	});
 }
 
 /**
@@ -435,7 +620,9 @@ export function appendClaims(config: AppConfig, claims: Claim[]): void {
  * 诊断/审计用 readAllClaimsQuarantined 显式读取。
  */
 export function appendClaimsQuarantined(config: AppConfig, claims: Claim[]): void {
-	appendJsonl(join(config.quarantineDir, "claims.jsonl"), claims);
+	withRuntimeWriteLease(config, "append-quarantined-claims", () =>
+		appendJsonl(join(config.quarantineDir, "claims.jsonl"), claims),
+	);
 }
 
 /** 读取 Quarantined Claim（仅诊断/审计用，默认消费路径不调用） */
@@ -470,7 +657,10 @@ export function readAllConcepts(config: AppConfig): Concept[] {
 }
 
 export function appendConcepts(config: AppConfig, concepts: Concept[]): void {
-	appendJsonl(join(config.projectRoot, "concepts", "concepts.jsonl"), concepts);
+	withRuntimeWriteLease(config, "append-legacy-concepts", () => {
+		markCanonicalStateChanged(config, "append-legacy-concepts");
+		appendJsonl(join(config.projectRoot, "concepts", "concepts.jsonl"), concepts);
+	});
 }
 
 // ─── AssertedRecord 存储 ────────────────────────────────────────
@@ -482,11 +672,41 @@ export function readAllAssertedRecords(config: AppConfig): AssertedRecord[] {
 	)) {
 		byId.set(record.assertionId, record);
 	}
+	for (const publication of readCorrectionPublications(config)) {
+		byId.set(publication.assertedRecord.assertionId, publication.assertedRecord);
+	}
 	return [...byId.values()];
 }
 
+export function readCorrectionPublications(config: AppConfig): CorrectionPublication[] {
+	return readJsonl<CorrectionPublication>(
+		join(config.projectRoot, "assertions", "correction-publications.jsonl"),
+	);
+}
+
+export function publishCorrectionPublication(
+	config: AppConfig,
+	publication: CorrectionPublication,
+): void {
+	withRuntimeWriteLease(config, `publish-correction:${publication.proposalId}`, () => {
+		const publications = readCorrectionPublications(config).filter(
+			(item) => item.proposalId !== publication.proposalId,
+		);
+		markCanonicalStateChanged(config, `publish-correction:${publication.proposalId}`);
+		writeJsonlAtomic(
+			join(config.projectRoot, "assertions", "correction-publications.jsonl"),
+			[...publications, publication].sort((left, right) =>
+				left.proposalId.localeCompare(right.proposalId),
+			),
+		);
+	});
+}
+
 export function appendAssertedRecords(config: AppConfig, records: AssertedRecord[]): void {
-	appendJsonl(join(config.projectRoot, "assertions", "asserted-records.jsonl"), records);
+	withRuntimeWriteLease(config, "append-asserted-records", () => {
+		markCanonicalStateChanged(config, "append-asserted-records");
+		appendJsonl(join(config.projectRoot, "assertions", "asserted-records.jsonl"), records);
+	});
 }
 
 // ─── Relation 存储 ───────────────────────────────────────────────
@@ -495,12 +715,47 @@ export function readAllRelations(config: AppConfig): Relation[] {
 	const legacy = readJsonl<Relation>(join(config.projectRoot, "relations", "edges.jsonl")).map(
 		normalizeRelation,
 	);
-	const published = readSourcePublications(config).flatMap((entry) => entry.relations);
-	return uniqueById([...legacy, ...published]);
+	const published = readSourcePublications(config)
+		.flatMap((entry) => entry.relations)
+		.map(normalizeRelation);
+	const disputedClaimIds = new Set(
+		readCorrectionPublications(config).flatMap((publication) =>
+			publication.disputedClaimId ? [publication.disputedClaimId] : [],
+		),
+	);
+	return uniqueById([...legacy, ...published]).map((relation) =>
+		(disputedClaimIds.has(relation.from as string) ||
+			disputedClaimIds.has(relation.to as string)) &&
+		!isFactResolutionRelation(relation)
+			? { ...relation, validity: "UNRESOLVED" as const }
+			: relation,
+	);
+}
+
+function isFactResolutionRelation(relation: Relation): boolean {
+	return relation.type === "SUPERSEDES" || relation.type === "CONTRADICTS";
 }
 
 /** 将某个 Source 的阶段 2 跨材料边原子替换，不触碰阶段 1 的 Claim/Concept/同材料边。 */
 export function publishCrossMaterialRelations(
+	config: AppConfig,
+	sourceId: string,
+	runId: string,
+	canonicalRelations: Relation[],
+	quarantinedRelations: Array<{ relation: Relation; issues: unknown[] }>,
+): void {
+	withRuntimeWriteLease(config, `publish-cross-material-relations:${sourceId}`, () =>
+		publishCrossMaterialRelationsUnlocked(
+			config,
+			sourceId,
+			runId,
+			canonicalRelations,
+			quarantinedRelations,
+		),
+	);
+}
+
+function publishCrossMaterialRelationsUnlocked(
 	config: AppConfig,
 	sourceId: string,
 	runId: string,
@@ -542,6 +797,16 @@ export function publishCrossMaterialRelations(
 
 /** Human review override: remove one canonical Relation and retain it with an explicit reason. */
 export function quarantineCanonicalRelation(
+	config: AppConfig,
+	relationId: string,
+	reason: string,
+): void {
+	withRuntimeWriteLease(config, `quarantine-canonical-relation:${relationId}`, () =>
+		quarantineCanonicalRelationUnlocked(config, relationId, reason),
+	);
+}
+
+function quarantineCanonicalRelationUnlocked(
 	config: AppConfig,
 	relationId: string,
 	reason: string,
@@ -588,17 +853,23 @@ export function quarantineCanonicalRelation(
 		relations: publication.relations.filter((item) => item.id !== relationId),
 	};
 	// Fail closed: make the audit trail durable before removing the canonical edge.
+	markCanonicalStateChanged(config, `quarantine-relation:${relationId}`);
 	writeJsonAtomic(join(config.quarantineDir, "publications", fileName), nextQuarantine);
 	writeJsonAtomic(join(config.projectRoot, "publications", fileName), nextPublication);
 }
 
 export function appendRelations(config: AppConfig, relations: Relation[]): void {
-	appendJsonl(join(config.projectRoot, "relations", "edges.jsonl"), relations);
+	withRuntimeWriteLease(config, "append-legacy-relations", () => {
+		markCanonicalStateChanged(config, "append-legacy-relations");
+		appendJsonl(join(config.projectRoot, "relations", "edges.jsonl"), relations);
+	});
 }
 
 /** 物理隔离：Quarantined Relation 写到 quarantine/（同 appendClaimsQuarantined） */
 export function appendRelationsQuarantined(config: AppConfig, relations: Relation[]): void {
-	appendJsonl(join(config.quarantineDir, "relations.jsonl"), relations);
+	withRuntimeWriteLease(config, "append-quarantined-relations", () =>
+		appendJsonl(join(config.quarantineDir, "relations.jsonl"), relations),
+	);
 }
 
 /** 读取 Quarantined Relation（仅诊断/审计用） */

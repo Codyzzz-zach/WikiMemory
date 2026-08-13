@@ -1,0 +1,48 @@
+{
+	"schemaVersion": "wge-goal3-post-audit-compaction-canary-contract/v1",
+	"status": "FROZEN_BEFORE_ONLINE_CANARY",
+	"createdAt": "2026-08-11T00:00:00+08:00",
+	"stageBRead": false,
+	"implementationContract": {
+		"path": "experiments/goal3/goal3-related-to-post-audit-compaction-contract-v1.json",
+		"sha256": "8a483317a3793e463dd2b8305b9519de26c175573f2bab522744702c20b703ed"
+	},
+	"frozenOfflineReplay": {
+		"report": "experiments/goal3/post-audit-compaction-runs/v9-controlled-v1/report.json",
+		"reportSha256": "2fc4618c66e3018c4b70f21b8d1e188058c21e2c712829fad3e38a188422a287",
+		"review": "experiments/goal3/post-audit-compaction-runs/v9-controlled-v1/review.json",
+		"reviewSha256": "538bceb184f9c729fdb88cf13e99a2b7e1f624e11c354d042ec2f0c96c6c670a"
+	},
+	"run": {
+		"name": "compile-v10-post-audit-compaction-4source",
+		"sourceCount": 4,
+		"model": "deepseek-v4-flash",
+		"temperature": 0,
+		"thinkingDisabled": true,
+		"maximumTotalTokens": 450000,
+		"noScaleBeyondSourceCountWithoutNewDecision": true
+	},
+	"acceptance": {
+		"sourceFailures": 0,
+		"preAuditAccountingExact": "generated = selectedForAudit + deferredByAuditBudget",
+		"semanticAuditAccountingExact": "selectedForAudit = quarantinedAfterAudit + auditedPassed",
+		"postAuditAccountingExact": "auditedPassed = canonicalPublished + deferredByGraphDiversity",
+		"utilityBatchMaximumItems": 8,
+		"utilityBatchObjectIdsExact": true,
+		"strongRelationsBypassRelatedToCompaction": true,
+		"deferredPublicationState": "CANDIDATE",
+		"deferredConsumerExposure": 0,
+		"canonicalEndpointsAndEvidenceResolvable": true,
+		"minimumSourcesWithCompactionStageExecuted": 1,
+		"pressureInterpretation": {
+			"ifDeferredByGraphDiversityIsPositive": "REAL_PRESSURE_PASS_PENDING_MANUAL_CANONICAL_SET_REVIEW",
+			"ifDeferredByGraphDiversityIsZero": "PASS_WITHOUT_POST_AUDIT_PRESSURE"
+		}
+	},
+	"interpretationLimits": [
+		"This canary validates orchestration, accounting, isolation and bounded publication on real model output; it does not prove answer-level Graph utility.",
+		"Model verdicts are not human gold labels.",
+		"A zero-deferred run proves execution only, not compaction behavior under pressure.",
+		"No Stage B labels may be read or used."
+	]
+}

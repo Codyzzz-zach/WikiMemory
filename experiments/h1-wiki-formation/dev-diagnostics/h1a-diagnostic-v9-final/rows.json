@@ -1,0 +1,629 @@
+[
+  {
+    "questionId": "EV-COMM-001",
+    "category": "affected",
+    "requiredClaimIds": [
+      "claim:316dbc8cdd88019f-8541960500c8d50a"
+    ],
+    "present": [
+      "claim:316dbc8cdd88019f-8541960500c8d50a"
+    ],
+    "missing": [],
+    "baselinePresent": [
+      "claim:316dbc8cdd88019f-8541960500c8d50a"
+    ],
+    "baselineMissing": [],
+    "wikiModuleIds": [
+      "wiki:auto:346e632632797e4ad72bea20"
+    ],
+    "wikiStableAddresses": [
+      "auto/extended-returns/新期限与数码产品条件/1"
+    ],
+    "wikiRetrieval": [
+      {
+        "moduleId": "wiki:auto:346e632632797e4ad72bea20",
+        "score": 20,
+        "matchedSeedClaimIds": [
+          "claim:316dbc8cdd88019f-587178ca587fec81",
+          "claim:316dbc8cdd88019f-8541960500c8d50a",
+          "claim:316dbc8cdd88019f-869a5f0c59e2da6f",
+          "claim:316dbc8cdd88019f-9fad048489730765",
+          "claim:316dbc8cdd88019f-dbd0b86f0005a251"
+        ],
+        "matchedCoreFeatures": [],
+        "matchedAssertionFeatures": [
+          "c2:可以",
+          "c2:无理",
+          "c2:普通",
+          "c2:没有",
+          "c2:理由",
+          "c2:由退",
+          "c2:申请",
+          "c2:签收",
+          "c2:请无",
+          "c2:质量",
+          "c2:退货",
+          "c2:量问",
+          "c2:问题",
+          "c3:无理由",
+          "c3:理由退",
+          "c3:由退货",
+          "c3:申请无",
+          "c3:请无理",
+          "c3:质量问",
+          "c3:量问题"
+        ],
+        "supportingClaimIds": [
+          "claim:316dbc8cdd88019f-8541960500c8d50a",
+          "claim:316dbc8cdd88019f-587178ca587fec81",
+          "claim:316dbc8cdd88019f-869a5f0c59e2da6f",
+          "claim:316dbc8cdd88019f-dbd0b86f0005a251",
+          "claim:316dbc8cdd88019f-473de43e8391e0e9",
+          "claim:316dbc8cdd88019f-9fad048489730765",
+          "claim:316dbc8cdd88019f-441c6ae77fe84ba7"
+        ]
+      },
+      {
+        "moduleId": "wiki:auto:485cd444b5b54e0e74d59f8b",
+        "score": 35,
+        "matchedSeedClaimIds": [
+          "claim:c37706bd82032a13-6f25303e9acb9142",
+          "claim:c37706bd82032a13-8a2cbb0a72691129",
+          "claim:c37706bd82032a13-deac2fa08389eca8",
+          "claim:c37706bd82032a13-efa163cd253db613"
+        ],
+        "matchedCoreFeatures": [
+          "c2:无理",
+          "c2:理由",
+          "c2:由退",
+          "c2:退货",
+          "c3:无理由",
+          "c3:理由退",
+          "c3:由退货"
+        ],
+        "matchedAssertionFeatures": [
+          "c2:可以",
+          "c2:无理",
+          "c2:理由",
+          "c2:由退",
+          "c2:申请",
+          "c2:质量",
+          "c2:退货",
+          "c2:量问",
+          "c2:问题",
+          "c3:无理由",
+          "c3:理由退",
+          "c3:由退货",
+          "c3:质量问",
+          "c3:量问题"
+        ],
+        "supportingClaimIds": [
+          "claim:c37706bd82032a13-c65489766f8dbbb8",
+          "claim:c37706bd82032a13-8902c0cd49dba22c",
+          "claim:c37706bd82032a13-6f25303e9acb9142",
+          "claim:c37706bd82032a13-8a2cbb0a72691129",
+          "claim:c37706bd82032a13-ae8b988ea6a4a9dc",
+          "claim:c37706bd82032a13-efa163cd253db613",
+          "claim:c37706bd82032a13-deac2fa08389eca8"
+        ]
+      }
+    ],
+    "wikiDrops": [
+      {
+        "id": "wiki:auto:485cd444b5b54e0e74d59f8b",
+        "reason": "WikiModule 原子注入拒绝: insufficient-primary-slots:required=5,available=1"
+      },
+      {
+        "id": "wiki:auto:485cd444b5b54e0e74d59f8b",
+        "reason": "WikiModule 支撑 Claim 未全部进入候选集: claim:c37706bd82032a13-c65489766f8dbbb8,claim:c37706bd82032a13-8902c0cd49dba22c,claim:c37706bd82032a13-6f25303e9acb9142,claim:c37706bd82032a13-8a2cbb0a72691129"
+      }
+    ],
+    "estimatedTokens": 5996,
+    "baselineEstimatedTokens": 5171
+  },
+  {
+    "questionId": "EV-COMM-005",
+    "category": "unaffected",
+    "requiredClaimIds": [
+      "claim:87efe7de4bfc7b99-4e1c5d4b2cd2143b",
+      "claim:87efe7de4bfc7b99-1de7c8ac676988f5"
+    ],
+    "present": [
+      "claim:87efe7de4bfc7b99-4e1c5d4b2cd2143b",
+      "claim:87efe7de4bfc7b99-1de7c8ac676988f5"
+    ],
+    "missing": [],
+    "baselinePresent": [
+      "claim:87efe7de4bfc7b99-4e1c5d4b2cd2143b",
+      "claim:87efe7de4bfc7b99-1de7c8ac676988f5"
+    ],
+    "baselineMissing": [],
+    "wikiModuleIds": [
+      "wiki:auto:9eb7c07ee48e5f9948c99e46"
+    ],
+    "wikiStableAddresses": [
+      "auto/membership-service-levels/harbor-market-会员权益与客服响应标准/1"
+    ],
+    "wikiRetrieval": [
+      {
+        "moduleId": "wiki:auto:9eb7c07ee48e5f9948c99e46",
+        "score": 24,
+        "matchedSeedClaimIds": [
+          "claim:87efe7de4bfc7b99-1de7c8ac676988f5",
+          "claim:87efe7de4bfc7b99-4e1c5d4b2cd2143b",
+          "claim:87efe7de4bfc7b99-63e3cbc46d4142de"
+        ],
+        "matchedCoreFeatures": [
+          "c2:什么",
+          "c2:会员"
+        ],
+        "matchedAssertionFeatures": [
+          "c2:专属",
+          "c2:会员",
+          "c2:入口",
+          "c2:分钟",
+          "c2:十分",
+          "c2:卡会",
+          "c2:咨询",
+          "c2:属入",
+          "c2:承诺",
+          "c2:询时",
+          "c2:通过",
+          "c2:黑卡",
+          "c3:专属入",
+          "c3:十分钟",
+          "c3:卡会员",
+          "c3:咨询时",
+          "c3:属入口",
+          "c3:黑卡会"
+        ],
+        "supportingClaimIds": [
+          "claim:87efe7de4bfc7b99-ff6f6af396be7f14",
+          "claim:87efe7de4bfc7b99-fa38992d874c93de",
+          "claim:87efe7de4bfc7b99-a39c8b64f576be10",
+          "claim:87efe7de4bfc7b99-e39c3059fca950cc",
+          "claim:87efe7de4bfc7b99-4e1c5d4b2cd2143b",
+          "claim:87efe7de4bfc7b99-1de7c8ac676988f5",
+          "claim:87efe7de4bfc7b99-93023594708809de",
+          "claim:87efe7de4bfc7b99-63e3cbc46d4142de"
+        ]
+      },
+      {
+        "moduleId": "wiki:auto:01d35ca0640a8b21633c3a45",
+        "score": 11,
+        "matchedSeedClaimIds": [
+          "claim:87efe7de4bfc7b99-1acf92454964a22c",
+          "claim:87efe7de4bfc7b99-c45db9e4c4d201fc"
+        ],
+        "matchedCoreFeatures": [
+          "c2:什么",
+          "c2:会员"
+        ],
+        "matchedAssertionFeatures": [
+          "c2:会员",
+          "c2:卡会",
+          "c2:黑卡",
+          "c3:卡会员",
+          "c3:黑卡会"
+        ],
+        "supportingClaimIds": [
+          "claim:87efe7de4bfc7b99-c45db9e4c4d201fc",
+          "claim:87efe7de4bfc7b99-043f80317ab89773",
+          "claim:87efe7de4bfc7b99-cb3d74d26f9b41c2",
+          "claim:87efe7de4bfc7b99-7f809f202b7d71a6",
+          "claim:87efe7de4bfc7b99-1acf92454964a22c",
+          "claim:87efe7de4bfc7b99-3920d6808c7485af",
+          "claim:87efe7de4bfc7b99-e20639b04c6978dc"
+        ]
+      }
+    ],
+    "wikiDrops": [
+      {
+        "id": "wiki:auto:01d35ca0640a8b21633c3a45",
+        "reason": "WikiModule 原子注入拒绝: insufficient-primary-slots:required=6,available=2"
+      },
+      {
+        "id": "wiki:auto:01d35ca0640a8b21633c3a45",
+        "reason": "WikiModule 支撑 Claim 未全部进入候选集: claim:87efe7de4bfc7b99-c45db9e4c4d201fc,claim:87efe7de4bfc7b99-cb3d74d26f9b41c2"
+      }
+    ],
+    "estimatedTokens": 5838,
+    "baselineEstimatedTokens": 5681
+  },
+  {
+    "questionId": "EV-PLAT-001",
+    "category": "affected",
+    "requiredClaimIds": [
+      "claim:674a8aeeebc511a6-008ebbacdbf23400",
+      "claim:674a8aeeebc511a6-badf248366e456be",
+      "claim:674a8aeeebc511a6-d853e1a3f0badae4",
+      "claim:674a8aeeebc511a6-18a6b88907b91004",
+      "claim:674a8aeeebc511a6-9768d7193a2c2dbb"
+    ],
+    "present": [],
+    "missing": [
+      "claim:674a8aeeebc511a6-008ebbacdbf23400",
+      "claim:674a8aeeebc511a6-badf248366e456be",
+      "claim:674a8aeeebc511a6-d853e1a3f0badae4",
+      "claim:674a8aeeebc511a6-18a6b88907b91004",
+      "claim:674a8aeeebc511a6-9768d7193a2c2dbb"
+    ],
+    "baselinePresent": [],
+    "baselineMissing": [
+      "claim:674a8aeeebc511a6-008ebbacdbf23400",
+      "claim:674a8aeeebc511a6-badf248366e456be",
+      "claim:674a8aeeebc511a6-d853e1a3f0badae4",
+      "claim:674a8aeeebc511a6-18a6b88907b91004",
+      "claim:674a8aeeebc511a6-9768d7193a2c2dbb"
+    ],
+    "wikiModuleIds": [],
+    "wikiStableAddresses": [],
+    "wikiRetrieval": [
+      {
+        "moduleId": "wiki:auto:29d2e3d7ddb3440ffba128dd",
+        "score": 11,
+        "matchedSeedClaimIds": [
+          "claim:674a8aeeebc511a6-95afe8f814db9d52",
+          "claim:674a8aeeebc511a6-bce0771607dbcba2"
+        ],
+        "matchedCoreFeatures": [
+          "c2:服务",
+          "w:p0"
+        ],
+        "matchedAssertionFeatures": [
+          "c2:批准",
+          "c2:服务",
+          "c2:通过",
+          "c2:需要",
+          "w:p0"
+        ],
+        "supportingClaimIds": [
+          "claim:674a8aeeebc511a6-95afe8f814db9d52",
+          "claim:674a8aeeebc511a6-6da107ddc9fb8dfc",
+          "claim:674a8aeeebc511a6-bce0771607dbcba2",
+          "claim:674a8aeeebc511a6-b76b1f19027fb5a4",
+          "claim:674a8aeeebc511a6-3ab50f90bbe085ee",
+          "claim:674a8aeeebc511a6-5cd9d541935bc8bb"
+        ]
+      },
+      {
+        "moduleId": "wiki:auto:720c1844e5b752d85a33f9b7",
+        "score": 6,
+        "matchedSeedClaimIds": [
+          "claim:64fed77ca832e02c-305eefeaecfa3c8e",
+          "claim:64fed77ca832e02c-3ccdb23ddade2609"
+        ],
+        "matchedCoreFeatures": [],
+        "matchedAssertionFeatures": [
+          "c2:产服",
+          "c2:发布",
+          "c2:服务",
+          "c2:生产",
+          "c3:产服务",
+          "c3:生产服"
+        ],
+        "supportingClaimIds": [
+          "claim:64fed77ca832e02c-305eefeaecfa3c8e",
+          "claim:64fed77ca832e02c-3ccdb23ddade2609",
+          "claim:64fed77ca832e02c-03e8a4a04b835bea",
+          "claim:64fed77ca832e02c-b162ccb437220899",
+          "claim:64fed77ca832e02c-272e822437242b11"
+        ]
+      }
+    ],
+    "wikiDrops": [
+      {
+        "id": "wiki:auto:29d2e3d7ddb3440ffba128dd",
+        "reason": "WikiModule 支撑 Claim 未全部进入候选集: claim:674a8aeeebc511a6-95afe8f814db9d52,claim:674a8aeeebc511a6-bce0771607dbcba2"
+      },
+      {
+        "id": "wiki:auto:720c1844e5b752d85a33f9b7",
+        "reason": "WikiModule 支撑 Claim 未全部进入候选集: claim:64fed77ca832e02c-3ccdb23ddade2609"
+      }
+    ],
+    "estimatedTokens": 5960,
+    "baselineEstimatedTokens": 5970
+  },
+  {
+    "questionId": "EV-PLAT-005",
+    "category": "unaffected",
+    "requiredClaimIds": [
+      "claim:56ecc1cabeb423a1-8dd57004f3b9b521"
+    ],
+    "present": [
+      "claim:56ecc1cabeb423a1-8dd57004f3b9b521"
+    ],
+    "missing": [],
+    "baselinePresent": [
+      "claim:56ecc1cabeb423a1-8dd57004f3b9b521"
+    ],
+    "baselineMissing": [],
+    "wikiModuleIds": [],
+    "wikiStableAddresses": [],
+    "wikiRetrieval": [
+      {
+        "moduleId": "wiki:auto:810d7719c925a77513137434",
+        "score": 20,
+        "matchedSeedClaimIds": [
+          "claim:56ecc1cabeb423a1-0224bd3f355fc52e",
+          "claim:56ecc1cabeb423a1-75b09a29c0345143",
+          "claim:56ecc1cabeb423a1-8dd57004f3b9b521",
+          "claim:56ecc1cabeb423a1-b1929da6e12b4d1e"
+        ],
+        "matchedCoreFeatures": [
+          "c2:弃用",
+          "w:api"
+        ],
+        "matchedAssertionFeatures": [
+          "c2:下线",
+          "c2:公告",
+          "c2:发布",
+          "c2:开放",
+          "c2:弃用",
+          "c2:提前",
+          "c2:放的",
+          "c2:正式",
+          "c2:用公",
+          "c2:需要",
+          "c3:开放的",
+          "c3:弃用公",
+          "c3:用公告",
+          "w:api"
+        ],
+        "supportingClaimIds": [
+          "claim:56ecc1cabeb423a1-8dd57004f3b9b521",
+          "claim:56ecc1cabeb423a1-0224bd3f355fc52e",
+          "claim:56ecc1cabeb423a1-b1929da6e12b4d1e",
+          "claim:56ecc1cabeb423a1-75b09a29c0345143",
+          "claim:56ecc1cabeb423a1-c313a637f40565c9",
+          "claim:56ecc1cabeb423a1-13d018d10e9f012b",
+          "claim:56ecc1cabeb423a1-8468b62a3c4f050d"
+        ]
+      },
+      {
+        "moduleId": "wiki:auto:67e17a511f5afb4ea4a8f072",
+        "score": 8,
+        "matchedSeedClaimIds": [
+          "claim:56ecc1cabeb423a1-e4a9e6f93b79e161"
+        ],
+        "matchedCoreFeatures": [
+          "c2:弃用",
+          "w:api"
+        ],
+        "matchedAssertionFeatures": [
+          "c2:弃用",
+          "w:api"
+        ],
+        "supportingClaimIds": [
+          "claim:56ecc1cabeb423a1-e4a9e6f93b79e161",
+          "claim:56ecc1cabeb423a1-b378c6550805ada7"
+        ]
+      }
+    ],
+    "wikiDrops": [
+      {
+        "id": "wiki:auto:810d7719c925a77513137434",
+        "reason": "WikiModule 支撑 Claim 未全部进入候选集: claim:56ecc1cabeb423a1-b1929da6e12b4d1e"
+      },
+      {
+        "id": "wiki:auto:67e17a511f5afb4ea4a8f072",
+        "reason": "WikiModule 支撑 Claim 未全部进入候选集: claim:56ecc1cabeb423a1-e4a9e6f93b79e161"
+      }
+    ],
+    "estimatedTokens": 5977,
+    "baselineEstimatedTokens": 5965
+  },
+  {
+    "questionId": "EV-RES-001",
+    "category": "affected",
+    "requiredClaimIds": [
+      "claim:1f9be41b63ec8bde-045afc1144f03260",
+      "claim:1f9be41b63ec8bde-9500f6d257c56672",
+      "claim:1f9be41b63ec8bde-9ad2e21b208bc717",
+      "claim:1f9be41b63ec8bde-0f9ebdc40a375ab0",
+      "claim:1f9be41b63ec8bde-9f1e7dd3211cb8c0"
+    ],
+    "present": [
+      "claim:1f9be41b63ec8bde-045afc1144f03260",
+      "claim:1f9be41b63ec8bde-9500f6d257c56672",
+      "claim:1f9be41b63ec8bde-9ad2e21b208bc717",
+      "claim:1f9be41b63ec8bde-0f9ebdc40a375ab0",
+      "claim:1f9be41b63ec8bde-9f1e7dd3211cb8c0"
+    ],
+    "missing": [],
+    "baselinePresent": [
+      "claim:1f9be41b63ec8bde-045afc1144f03260",
+      "claim:1f9be41b63ec8bde-9500f6d257c56672",
+      "claim:1f9be41b63ec8bde-9ad2e21b208bc717",
+      "claim:1f9be41b63ec8bde-0f9ebdc40a375ab0",
+      "claim:1f9be41b63ec8bde-9f1e7dd3211cb8c0"
+    ],
+    "baselineMissing": [],
+    "wikiModuleIds": [
+      "wiki:auto:c77a0615b56d6c1e51396893"
+    ],
+    "wikiStableAddresses": [
+      "auto/confidential-compute-policy/两种获批计算模式/1"
+    ],
+    "wikiRetrieval": [
+      {
+        "moduleId": "wiki:auto:c77a0615b56d6c1e51396893",
+        "score": 25,
+        "matchedSeedClaimIds": [
+          "claim:1f9be41b63ec8bde-045afc1144f03260",
+          "claim:1f9be41b63ec8bde-9f1e7dd3211cb8c0"
+        ],
+        "matchedCoreFeatures": [
+          "c2:获批",
+          "c2:计算"
+        ],
+        "matchedAssertionFeatures": [
+          "c2:云机",
+          "c2:公有",
+          "c2:医疗",
+          "c2:密计",
+          "c2:数据",
+          "c2:有云",
+          "c2:机密",
+          "c2:环境",
+          "c2:的公",
+          "c2:算环",
+          "c2:计算",
+          "c3:云机密",
+          "c3:公有云",
+          "c3:密计算",
+          "c3:有云机",
+          "c3:机密计",
+          "c3:的公有",
+          "c3:算环境",
+          "c3:计算环"
+        ],
+        "supportingClaimIds": [
+          "claim:1f9be41b63ec8bde-93f149b845895f44",
+          "claim:1f9be41b63ec8bde-317ef3b8d6692fdf",
+          "claim:1f9be41b63ec8bde-8a2d37cd8452c4c0",
+          "claim:1f9be41b63ec8bde-045afc1144f03260",
+          "claim:1f9be41b63ec8bde-9500f6d257c56672",
+          "claim:1f9be41b63ec8bde-9ad2e21b208bc717",
+          "claim:1f9be41b63ec8bde-0efed72c8f9d63ab",
+          "claim:1f9be41b63ec8bde-9f1e7dd3211cb8c0"
+        ]
+      },
+      {
+        "moduleId": "wiki:auto:3334f948fa14d7190a6de83a",
+        "score": 9,
+        "matchedSeedClaimIds": [
+          "claim:1f9be41b63ec8bde-38b307df9b652bb4"
+        ],
+        "matchedCoreFeatures": [
+          "c2:医疗",
+          "c2:计算"
+        ],
+        "matchedAssertionFeatures": [
+          "c2:医疗",
+          "c2:数据",
+          "c2:计算"
+        ],
+        "supportingClaimIds": [
+          "claim:1f9be41b63ec8bde-38b307df9b652bb4",
+          "claim:1f9be41b63ec8bde-b63625d1e184296b",
+          "claim:1f9be41b63ec8bde-c8409544fd4a9e4d",
+          "claim:1f9be41b63ec8bde-c627670310c942ed",
+          "claim:1f9be41b63ec8bde-1ee5bd747cf31212"
+        ]
+      }
+    ],
+    "wikiDrops": [
+      {
+        "id": "wiki:auto:3334f948fa14d7190a6de83a",
+        "reason": "WikiModule 原子注入拒绝: insufficient-primary-slots:required=5,available=1"
+      },
+      {
+        "id": "wiki:auto:3334f948fa14d7190a6de83a",
+        "reason": "WikiModule 支撑 Claim 未全部进入候选集: claim:1f9be41b63ec8bde-38b307df9b652bb4,claim:1f9be41b63ec8bde-b63625d1e184296b,claim:1f9be41b63ec8bde-c8409544fd4a9e4d,claim:1f9be41b63ec8bde-c627670310c942ed,claim:1f9be41b63ec8bde-1ee5bd747cf31212"
+      }
+    ],
+    "estimatedTokens": 5994,
+    "baselineEstimatedTokens": 5980
+  },
+  {
+    "questionId": "EV-RES-005",
+    "category": "unaffected",
+    "requiredClaimIds": [
+      "claim:8f33cc0f406f07f3-1a47c17a72a9bfeb",
+      "claim:8f33cc0f406f07f3-0ff9498318da211c",
+      "claim:8f33cc0f406f07f3-f29fe8b56057f88f"
+    ],
+    "present": [
+      "claim:8f33cc0f406f07f3-1a47c17a72a9bfeb",
+      "claim:8f33cc0f406f07f3-0ff9498318da211c"
+    ],
+    "missing": [
+      "claim:8f33cc0f406f07f3-f29fe8b56057f88f"
+    ],
+    "baselinePresent": [
+      "claim:8f33cc0f406f07f3-1a47c17a72a9bfeb"
+    ],
+    "baselineMissing": [
+      "claim:8f33cc0f406f07f3-0ff9498318da211c",
+      "claim:8f33cc0f406f07f3-f29fe8b56057f88f"
+    ],
+    "wikiModuleIds": [
+      "wiki:auto:68954153ba7288149df8b8bc",
+      "wiki:auto:2c96a24ec9df2e8e7d5681e8"
+    ],
+    "wikiStableAddresses": [
+      "auto/external-dataset-citation/aster-lab-外部数据集引用与完整性规范/3",
+      "auto/reproducibility/aster-lab-算法结论复现与主干合入标准/1"
+    ],
+    "wikiRetrieval": [
+      {
+        "moduleId": "wiki:auto:68954153ba7288149df8b8bc",
+        "score": 10,
+        "matchedSeedClaimIds": [
+          "claim:2174c435172ef2e4-200b61cb541a6230",
+          "claim:2174c435172ef2e4-3af0c927448f480b"
+        ],
+        "matchedCoreFeatures": [],
+        "matchedAssertionFeatures": [
+          "c2:主干",
+          "c2:入主",
+          "c2:合入",
+          "c2:复现",
+          "c2:现门",
+          "c2:门槛",
+          "c3:入主干",
+          "c3:合入主",
+          "c3:复现门",
+          "c3:现门槛"
+        ],
+        "supportingClaimIds": [
+          "claim:2174c435172ef2e4-3af0c927448f480b",
+          "claim:2174c435172ef2e4-200b61cb541a6230"
+        ]
+      },
+      {
+        "moduleId": "wiki:auto:2c96a24ec9df2e8e7d5681e8",
+        "score": 26,
+        "matchedSeedClaimIds": [
+          "claim:8f33cc0f406f07f3-1a47c17a72a9bfeb"
+        ],
+        "matchedCoreFeatures": [
+          "c2:主干",
+          "c2:合入",
+          "c2:复现",
+          "c2:算法"
+        ],
+        "matchedAssertionFeatures": [
+          "c2:主干",
+          "c2:合入",
+          "c2:声称",
+          "c2:复现",
+          "c2:干前",
+          "c2:性能",
+          "c2:改进",
+          "c2:算法",
+          "c2:能改",
+          "c2:进的",
+          "c3:主干前",
+          "c3:性能改",
+          "c3:改进的",
+          "c3:能改进"
+        ],
+        "supportingClaimIds": [
+          "claim:8f33cc0f406f07f3-797c99f70f204132",
+          "claim:8f33cc0f406f07f3-a37ba0760688ecf1",
+          "claim:8f33cc0f406f07f3-a71462d28127a846",
+          "claim:8f33cc0f406f07f3-b5496f7a75cd6510",
+          "claim:8f33cc0f406f07f3-1a47c17a72a9bfeb",
+          "claim:8f33cc0f406f07f3-603af98f3c3475cf",
+          "claim:8f33cc0f406f07f3-f8912370932ed611",
+          "claim:8f33cc0f406f07f3-0ff9498318da211c"
+        ]
+      }
+    ],
+    "wikiDrops": [],
+    "estimatedTokens": 5919,
+    "baselineEstimatedTokens": 5165
+  }
+]

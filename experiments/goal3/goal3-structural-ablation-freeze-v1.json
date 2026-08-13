@@ -1,0 +1,39 @@
+{
+  "schemaVersion": "wge-goal3-structural-ablation-freeze/v1",
+  "status": "FROZEN_BEFORE_FIRST_REPORT",
+  "frozenAt": "2026-08-04T17:05:00+08:00",
+  "contract": {
+    "path": "experiments/goal3/goal3-structural-ablation-contract-v1.json",
+    "sha256": "fff294020ef4b7db1613babaa90ed11a5db06eb6357d86e802cfbd7a6d7edb63"
+  },
+  "implementation": {
+    "persistentIndex": {
+      "path": "src/retrieval/persistent-index.ts",
+      "sha256": "d1616dc21739cb40c2b53e422f6739b0c88d244c8282ff6492b5e7bc85a8c63a"
+    },
+    "structureTypes": {
+      "path": "src/retrieval/structure.ts",
+      "sha256": "3715a79ac867c8bd0ada53816e08e272019cd10ee76d15e261d727802573601d"
+    },
+    "structureTests": {
+      "path": "src/retrieval/structure.test.ts",
+      "sha256": "1040d0128129b4a89f20193696b5e05439fa0f384b766a5e1ef8cea562dcdbf6"
+    },
+    "ablationScript": {
+      "path": "scripts/run-goal3-structural-ablation.ts",
+      "sha256": "a157ad4e95047ee1e03f0d3d1ed969c868c785f94c7862ee506009d77a6a3af0"
+    }
+  },
+  "verification": {
+    "lint": "PASS",
+    "typecheck": "PASS",
+    "testFiles": 23,
+    "testsPassed": 160,
+    "testsFailed": 0
+  },
+  "prohibitions": [
+    "Do not modify the contract, frozen questions, diagnostic Gold, path quotas or decision thresholds before the first report is written.",
+    "Do not call an answer model or serialize structural candidates into Context Pack.",
+    "Do not overwrite the first run directory."
+  ]
+}

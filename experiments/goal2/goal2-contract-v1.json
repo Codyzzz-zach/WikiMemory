@@ -1,0 +1,95 @@
+{
+	"schemaVersion": "wge-goal2-contract/v1",
+	"status": "FROZEN_DEV",
+	"frozenAt": "2026-07-29",
+	"goal": "Turn Graph from an append-only expander into an R1 structural selector under the same visible budget.",
+	"evidenceAuthority": {
+		"questions": "EXISTING_REVEALED_DEV_REGRESSION",
+		"relations": "AI_POST_HOC_DEV_PROXY_NOT_HUMAN_GOLD",
+		"claim": "This Goal may select or reject an R1 mechanism; it cannot establish blind product value."
+	},
+	"hypothesis": {
+		"statement": "Weighted random-walk-with-restart over a bounded audited relation subgraph can replace low-value lexical Seeds while preserving strong textual anchors, improving evidence coverage or reducing total context cost without hard regressions.",
+		"borrowedFromCodeGraph": [
+			"Text matches define restart Seeds.",
+			"RWR is computed only on an already bounded relevant subgraph.",
+			"A relevance gate prevents the budget ceiling from becoming a fill target.",
+			"Explicit high-confidence entry points are protected from structural demotion."
+		],
+		"wgeSpecificConstraints": [
+			"Only current relationAuditVersion edges may participate.",
+			"Relation type and conditions affect edge eligibility/weight.",
+			"Non-safety expansion requires at least two independent lexical anchors.",
+			"Every selected Claim remains an indivisible Claim+conditions+provenance+Evidence unit."
+		]
+	},
+	"frozenSelectorConfig": {
+		"lexicalSeedLimit": 10,
+		"protectedLexicalSeeds": 3,
+		"maxCandidateNodes": 40,
+		"maxDepth": 2,
+		"restartAlpha": 0.25,
+		"iterations": 25,
+		"selectedClaimLimit": 10,
+		"edgeWeights": {
+			"REQUIRES": 1,
+			"CONTRADICTS": 1,
+			"SUPERSEDES": 1,
+			"EQUIVALENT_UNDER": 1,
+			"DERIVED_FROM": 0.8,
+			"SUPPORTS": 0.8,
+			"RELATED_TO": 0.25
+		},
+		"visibleBudgetPolicy": "R1 receives no budget beyond R0; Graph must rank or replace, not append."
+	},
+	"micro": {
+		"questionSet": "experiments/pilot/questions.json",
+		"gold": "experiments/pilot/gold-rubric.json",
+		"questionIds": [
+			"PILOT-H2-01",
+			"PILOT-H2-22",
+			"PILOT-H3-05",
+			"PILOT-C02",
+			"PILOT-D01",
+			"PILOT-D03",
+			"PILOT-C05",
+			"PILOT-INS-D10"
+		],
+		"targetQuestionIds": ["PILOT-H2-01", "PILOT-H2-22", "PILOT-H3-05", "PILOT-C02"],
+		"controlQuestionIds": ["PILOT-D01", "PILOT-D03", "PILOT-C05", "PILOT-INS-D10"],
+		"groups": ["B", "R0", "R1"]
+	},
+	"offlineEntryGate": [
+		"R1 and R0 use the same corpus, question, Claim limit and visible token budget.",
+		"R1 differs from R0 on at least one target question for an auditable structural reason.",
+		"Direct-fact and insufficient controls do not gain unrelated Claims.",
+		"All selected Claims retain complete Evidence closure and all visible Relations retain both endpoints.",
+		"No benchmark ID, source filename, domain keyword list or Gold field is read by the selector."
+	],
+	"answerGate": {
+		"required": [
+			"No additional hard failure relative to R0.",
+			"R1 is Pareto-nondominated by R0 on paired answer quality and actual total cost.",
+			"At least one target case has a traceable benefit caused by replacement/ranking rather than extra context."
+		],
+		"reportOnly": [
+			"AI proxy judge score",
+			"estimated and provider token usage",
+			"latency",
+			"evidence recall",
+			"replacement decisions and RWR scores"
+		]
+	},
+	"stopRules": {
+		"maximumImplementationLoopsBeforeRediagnosis": 3,
+		"doNotRunOnlineAnswersUntilOfflineEntryGatePasses": true,
+		"doNotRunDevCoreUntilMicroAnswerGatePasses": true,
+		"neverModifyFrozenQuestionsOrGold": true,
+		"neverOverwritePriorRuns": true
+	},
+	"possibleDecisions": {
+		"GO": "Micro establishes an explainable Pareto improvement; proceed to A/B/C Dev Core.",
+		"NARROW": "Only a typed query/edge slice benefits; keep R1 scoped to that slice.",
+		"REWORK": "No reliable benefit; preserve offline Graph governance and return to ranking/edge-substrate diagnosis."
+	}
+}

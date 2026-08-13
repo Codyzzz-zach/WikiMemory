@@ -1,0 +1,76 @@
+{
+  "schemaVersion": "wge-s200-stage-a-intake-validation/v1",
+  "stageRoot": "/Users/mixi/Desktop/WikiMemory/benchmark-s200-stage-a-v1.1-candidate",
+  "status": "ACCEPT",
+  "stageBRead": false,
+  "counts": {
+    "sources": 140,
+    "questions": 60,
+    "episodes": 20,
+    "clusters": 21
+  },
+  "distributions": {
+    "accessStatus": {
+      "full": 84,
+      "partial": 55,
+      "metadata-only": 1
+    },
+    "domains": {
+      "ai": 18,
+      "climate-energy-policy": 12,
+      "design-accessibility": 16,
+      "finance": 16,
+      "health-biology": 16,
+      "history-humanities": 13,
+      "law-public-policy": 14,
+      "psychology-reproducibility": 13,
+      "technology": 22
+    },
+    "roles": {
+      "P-primary": 61,
+      "H-historical": 2,
+      "C-implementation": 15,
+      "S-analysis": 26,
+      "U-experience": 36
+    },
+    "languages": {
+      "en": 127,
+      "zh-CN": 13
+    },
+    "questionTypes": {
+      "F": 4,
+      "T": 13,
+      "K": 11,
+      "C": 11,
+      "X": 8,
+      "A": 3,
+      "U": 6,
+      "E": 4
+    },
+    "languageSlices": {
+      "zh-question-en-evidence": 54,
+      "same-language": 6
+    }
+  },
+  "treeHash": "sha256:bc340ae793862214ab7d69e9e1a92c0ae1ffb8da744bfc1839446b777cf37c2e",
+  "errors": [],
+  "warnings": [
+    {
+      "code": "SHORT_FULL_SNAPSHOT",
+      "message": "30 accessStatus=full snapshots contain fewer than 1,000 characters"
+    },
+    {
+      "code": "DOMAIN_PRINCIPLE_RANGE",
+      "message": "climate-energy-policy has 12 sources; principle range is 14..22"
+    },
+    {
+      "code": "DOMAIN_PRINCIPLE_RANGE",
+      "message": "history-humanities has 13 sources; principle range is 14..22"
+    },
+    {
+      "code": "DOMAIN_PRINCIPLE_RANGE",
+      "message": "psychology-reproducibility has 13 sources; principle range is 14..22"
+    }
+  ],
+  "createdAt": "2026-08-10T16:49:10.851Z"
+}

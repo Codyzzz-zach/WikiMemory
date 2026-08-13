@@ -1,4 +1,5 @@
 import type { AppConfig } from "../config/types.js";
+import { withRuntimeWriteLease } from "../infrastructure/runtime-write-lock.js";
 import {
 	publishSourceResult,
 	quarantineWikiModules,
@@ -10,8 +11,13 @@ import {
 	readSourcePublications,
 	readWikiModuleQuarantine,
 	resolveSpanById,
+	upsertWikiModules,
 } from "../linter/storage.js";
 import type { Claim, Relation } from "../types/index.js";
+import {
+	inspectWikiModuleSupport,
+	rebuildWikiModulesAfterEvolution,
+} from "../wiki/materialization.js";
 import { type EvolutionImpact, planKnowledgeEvolution } from "./index.js";
 import {
 	createKnowledgeSnapshot,
@@ -25,14 +31,19 @@ export interface EvolutionTransactionResult {
 	afterKnowledgeVersion: string;
 	changedSourceIds: string[];
 	rejectedRelationIds: string[];
+	rebuiltWikiModuleIds: string[];
 	impact: EvolutionImpact;
 }
 
 export interface EvolutionTransactionOptions {
+	/** Durable business-operation identity used to recover a committed transaction after a crash. */
+	operationId?: string;
 	/** Test-only deterministic fault injection; production callers must omit it. */
 	failAfterPublicationWrites?: number;
 	/** Reviewed false positives to remove from canonical consumption while retaining audit evidence. */
 	rejectedRelations?: Array<{ relationId: string; reason: string }>;
+	/** Test-only deterministic fault injection after rebuilt Wiki views are published. */
+	failAfterWikiRebuild?: boolean;
 }
 
 /**
@@ -47,6 +58,17 @@ export function applyKnowledgeEvolution(
 	expectedCurrentVersion: string,
 	options: EvolutionTransactionOptions = {},
 ): EvolutionTransactionResult {
+	return withRuntimeWriteLease(config, "apply-knowledge-evolution", () =>
+		applyKnowledgeEvolutionUnlocked(config, triggerRelationIds, expectedCurrentVersion, options),
+	);
+}
+
+function applyKnowledgeEvolutionUnlocked(
+	config: AppConfig,
+	triggerRelationIds: string[],
+	expectedCurrentVersion: string,
+	options: EvolutionTransactionOptions,
+): EvolutionTransactionResult {
 	const beforeKnowledgeVersion = currentKnowledgeVersion(config);
 	if (beforeKnowledgeVersion !== expectedCurrentVersion) {
 		throw new Error(
@@ -54,6 +76,10 @@ export function applyKnowledgeEvolution(
 		);
 	}
 	const rejectedRelations = options.rejectedRelations ?? [];
+	const operationId = options.operationId?.trim() || null;
+	if (options.operationId !== undefined && !operationId) {
+		throw new Error("演化 operationId 不能为空");
+	}
 	const rejectedIds = new Set(rejectedRelations.map((item) => item.relationId));
 	if (triggerRelationIds.length === 0 && rejectedRelations.length === 0) {
 		throw new Error("演化批准或拒绝 Relation 不能为空");
@@ -67,6 +93,16 @@ export function applyKnowledgeEvolution(
 	}
 
 	const publications = readSourcePublications(config);
+	if (
+		operationId &&
+		publications.some(
+			(publication) =>
+				publication.evolutionOperationId === operationId &&
+				!publication.relations.some((relation) => triggerRelationIds.includes(relation.id)),
+		)
+	) {
+		throw new Error(`演化 operationId 已被其他事务占用: ${operationId}`);
+	}
 	const quarantines = readQuarantinePublications(config);
 	const current = {
 		claims: readAllClaims(config),
@@ -131,6 +167,7 @@ export function applyKnowledgeEvolution(
 						.filter((relation) => !rejectedIds.has(relation.id))
 						.map((relation) => nextRelationById.get(relation.id) ?? relation),
 					evolutionSnapshotId: snapshot.id,
+					...(operationId ? { evolutionOperationId: operationId } : {}),
 					evolvedAt,
 				},
 				{
@@ -164,16 +201,68 @@ export function applyKnowledgeEvolution(
 			}
 		}
 
-		quarantineWikiModules(
+		const quarantinedWikiModules = quarantineWikiModules(
 			config,
 			plan.impact.affectedWikiModuleIds,
 			`Claim 生命周期演化要求重建 WikiModule；triggers=${plan.impact.triggerRelationIds.join(",")}`,
 			snapshot.id,
 		);
-		verifyEvolutionResult(config, plan.impact, snapshot.id, [...rejectedIds]);
+		const triggerRelations = readAllRelations(config).filter((relation) =>
+			plan.impact.triggerRelationIds.includes(relation.id),
+		);
+		const rebuiltWikiModules = rebuildWikiModulesAfterEvolution(
+			quarantinedWikiModules,
+			readAllClaims(config),
+			triggerRelations,
+			readAllSpans(config),
+			{
+				sourceKnowledgeVersion: currentKnowledgeVersion(config),
+				rebuiltFromSnapshotId: snapshot.id,
+				updatedAt: evolvedAt,
+			},
+		);
+		upsertWikiModules(config, rebuiltWikiModules);
+		if (options.failAfterWikiRebuild && rebuiltWikiModules.length > 0) {
+			throw new Error("故障注入: wiki rebuild");
+		}
+		verifyEvolutionResult(
+			config,
+			plan.impact,
+			snapshot.id,
+			[...rejectedIds],
+			rebuiltWikiModules.map((module) => module.id),
+		);
 		const afterKnowledgeVersion = currentKnowledgeVersion(config);
 		if (afterKnowledgeVersion === beforeKnowledgeVersion) {
 			throw new Error("演化事务完成后 knowledgeVersion 未变化");
+		}
+		if (operationId) {
+			const completedPublications = readSourcePublications(config);
+			const completedQuarantines = readQuarantinePublications(config);
+			for (const sourceId of sourceIds) {
+				const publication = completedPublications.find((item) => item.sourceId === sourceId);
+				if (!publication) throw new Error(`找不到演化完成后的 Source: ${sourceId}`);
+				const quarantine = completedQuarantines.find((item) => item.sourceId === sourceId) ?? {
+					schemaVersion: "v1" as const,
+					sourceId,
+					runId: publication.runId,
+					publishedAt: publication.publishedAt,
+					claims: [],
+					relations: [],
+				};
+				publishSourceResult(
+					config,
+					{
+						...publication,
+						evolutionKnowledgeVersion: afterKnowledgeVersion,
+						evolutionRebuiltWikiModuleIds: rebuiltWikiModules.map((module) => module.id).sort(),
+					},
+					quarantine,
+				);
+			}
+			if (currentKnowledgeVersion(config) !== afterKnowledgeVersion) {
+				throw new Error("写入演化恢复收据意外改变了 knowledgeVersion");
+			}
 		}
 		return {
 			snapshotId: snapshot.id,
@@ -181,6 +270,7 @@ export function applyKnowledgeEvolution(
 			afterKnowledgeVersion,
 			changedSourceIds: sourceIds,
 			rejectedRelationIds: [...rejectedIds].sort(),
+			rebuiltWikiModuleIds: rebuiltWikiModules.map((module) => module.id).sort(),
 			impact: plan.impact,
 		};
 	} catch (error) {
@@ -225,6 +315,7 @@ function verifyEvolutionResult(
 	impact: EvolutionImpact,
 	snapshotId: string,
 	rejectedRelationIds: string[],
+	rebuiltWikiModuleIds: string[],
 ): void {
 	const claimById = new Map(readAllClaims(config).map((claim) => [claim.id, claim]));
 	const relationById = new Map(readAllRelations(config).map((relation) => [relation.id, relation]));
@@ -259,15 +350,26 @@ function verifyEvolutionResult(
 			}
 		}
 	}
-	const canonicalWikiIds = new Set(readAllWikiModules(config).map((module) => module.id));
+	const canonicalWiki = readAllWikiModules(config);
+	const canonicalWikiIds = new Set(canonicalWiki.map((module) => module.id));
+	const rebuiltIds = new Set(rebuiltWikiModuleIds);
 	const quarantinedWiki = new Set(
 		readWikiModuleQuarantine(config)
 			.filter((record) => record.evolutionSnapshotId === snapshotId)
 			.map((record) => record.module.id),
 	);
 	for (const id of impact.affectedWikiModuleIds) {
-		if (canonicalWikiIds.has(id) || !quarantinedWiki.has(id)) {
-			throw new Error(`受影响 WikiModule 未正确隔离: ${id}`);
+		if (!quarantinedWiki.has(id)) {
+			throw new Error(`受影响 WikiModule 未保留隔离副本: ${id}`);
+		}
+		if (!rebuiltIds.has(id) || !canonicalWikiIds.has(id)) {
+			throw new Error(`受影响 WikiModule 未完成重建: ${id}`);
+		}
+	}
+	for (const module of canonicalWiki.filter((item) => rebuiltIds.has(item.id))) {
+		const support = inspectWikiModuleSupport(module, [...claimById.values()], spans);
+		if (!support.consumable) {
+			throw new Error(`重建 WikiModule 未通过支撑门禁: ${module.id}: ${support.reasons.join(",")}`);
 		}
 	}
 }

@@ -1,0 +1,75 @@
+{
+  "schemaVersion": "wge-goal1-proof/v1",
+  "status": "PASS_ENGINEERING_GATE_NO_PRODUCT_GAIN",
+  "createdAt": "2026-07-29T15:45:43.745Z",
+  "inputs": {
+    "relationScore": {
+      "path": "/Users/mixi/Desktop/WikiMemory/experiments/goal1/runs/goal1-calibration-v2.3-v1/score-goal1-v2.3-composite-review.json",
+      "sha256": "b8b2553c48fe3553d855ff7c5674d671ed3d79fa76a0cfacc42eecc865bd5468"
+    },
+    "before": {
+      "path": "/Users/mixi/Desktop/WikiMemory/experiments/goal1/graph-experiments/goal1-v2.3-pilot-preparation-v1/context-preparation.json",
+      "sha256": "7fd7b4223aeb155cfef20315266bcee672ed4ab0c50c1999d26844e62a545505"
+    },
+    "experiment": {
+      "path": "/Users/mixi/Desktop/WikiMemory/experiments/goal1/graph-experiments/goal1-v2.3-pilot-preparation-v2/context-preparation.json",
+      "sha256": "7cf59a2d028c498eedb06cd503768bf6ebb107a886a53ce5569bc24685ecc301"
+    },
+    "answers": {
+      "path": "/Users/mixi/Desktop/WikiMemory/experiments/goal1/graph-experiments/goal1-v2.3-answer-micro-v1/score-report.json",
+      "sha256": "82c663f14e54011f5ef54845f316628f4b2af25db174c82c6eb0f397e62d3d07"
+    },
+    "final": {
+      "path": "/Users/mixi/Desktop/WikiMemory/experiments/goal1/graph-experiments/goal1-v2.3-pilot-preparation-v3/context-preparation.json",
+      "sha256": "309e4e93d80bf837beb8f0d2178a38da3dbc5cb015d1cfef6cea0131c700c567"
+    }
+  },
+  "relationTrust": {
+    "status": "PASS_DEV_PROXY_GATE",
+    "strongPrecision": 1,
+    "strongRecall": 0.7692307692307693,
+    "labelAuthority": "AI_POST_HOC_DEV_PROXY_NOT_HUMAN_GOLD"
+  },
+  "marginalExperiment": {
+    "questionIds": [
+      "PILOT-H2-22",
+      "PILOT-H3-05"
+    ],
+    "triggeredQuestionIds": [
+      "PILOT-H2-22",
+      "PILOT-H3-05"
+    ],
+    "seedAverageScore": 8,
+    "graphAverageScore": 8,
+    "qualityDelta": 0,
+    "seedAverageContextTokens": 3019,
+    "graphAverageContextTokens": 3829,
+    "tokenDelta": 810,
+    "decision": "REJECT_ONE_ANCHOR_EXPLANATORY_EXPANSION"
+  },
+  "finalPolicy": {
+    "policy": "EXPLANATORY_EDGES_REQUIRE_BOTH_ENDPOINTS_AS_INDEPENDENT_SEEDS",
+    "safetyEdgeException": "REQUIRES/CONTRADICTS/SUPERSEDES/EQUIVALENT_UNDER may expand from one seed",
+    "questionCount": 16,
+    "visibleGraphQuestions": 0,
+    "seedGraphIdenticalContexts": 16
+  },
+  "invariants": {
+    "relationProxyGatePassed": true,
+    "strongPrecisionAtLeast090": true,
+    "strongRecallAtLeast070": true,
+    "uncalibratedUtilityBlockedAllGraph": true,
+    "experimentActuallyTriggeredGraph": true,
+    "experimentObservedNoQualityGain": true,
+    "experimentObservedPositiveTokenCost": true,
+    "finalPolicyRemovedUnhelpfulExpansion": true,
+    "finalCandidateOnlyContextsStable": true
+  },
+  "failures": [],
+  "conclusion": "Goal 1 establishes a trustworthy conditional Graph gate and rejects the tested costly policy. It does not establish positive Graph product value.",
+  "limitations": [
+    "Relation labels and answer scores are AI proxy evidence, not human Gold.",
+    "The marginal answer experiment contains two post-hoc triggered questions.",
+    "A future positive Graph claim requires blind questions whose independently retrieved endpoints are connected by trusted edges."
+  ]
+}

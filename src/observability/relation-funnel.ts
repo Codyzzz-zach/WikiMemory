@@ -2,7 +2,13 @@ import { join } from "node:path";
 import type { AppConfig } from "../config/types.js";
 import { appendJsonl } from "../linter/storage.js";
 
-export type RelationFunnelStage = "CANDIDATE_SELECTION" | "DETECTION" | "LINT" | "PUBLISH";
+export type RelationFunnelStage =
+	| "CANDIDATE_SELECTION"
+	| "DETECTION"
+	| "TYPE_ROUTING"
+	| "LINT"
+	| "COMPACTION"
+	| "PUBLISH";
 
 export interface RelationFunnelEvent {
 	schemaVersion: "wge-relation-funnel/v1";

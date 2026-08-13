@@ -1,0 +1,61 @@
+{
+  "schemaVersion": "wge-h1-heldout-contract/v1",
+  "status": "PREREGISTERED_BEFORE_NEW_DATA",
+  "purpose": "Test whether task-blind automatic Wiki formation generalizes to unseen domains and sources without weakening a strong raw-source or Claim-retrieval baseline.",
+  "candidateFreeze": {
+    "gitBaseCommit": "8829e408215590d39ddaf40431931dee0277e9b3",
+    "note": "The worktree contains intentional uncommitted project history; candidate identity is therefore the following content-hash tuple, not the Git commit alone.",
+    "formationContractSha256": "6deedf37546e570655a8d1088917fd293361c02fbe86a77ddfa6b827fe299a94",
+    "formationImplementationSha256": "3e3996e0bd82d8d5f40189a595bcde478fd24287c3b9c70a8d777084414cf3f0",
+    "wikiRetrievalImplementationSha256": "346a3c39ae08991a1c0cd279f896a3c4ec3335fab9aa4caf3f4948bac1cc757b",
+    "contextPackImplementationSha256": "51e9d19b3f393cd4255a65b5cd7fef3d84bbaa55c009bc977d1c961c6817585e",
+    "packageLockSha256": "8879ed0b511451e0cbd2dd4a83f80d480d6a9366ae01190c15c7b0415d76d57d"
+  },
+  "formationConfig": {
+    "minClaimsPerModule": 2,
+    "maxClaimsPerModule": 8,
+    "maxEvidenceCharsPerModule": 4000,
+    "modelCalls": 0,
+    "temperature": 0
+  },
+  "threeEnvelopeProtocol": {
+    "A1_CORPUS": "New source snapshots and metadata only. Formation Worker can read this envelope and frozen code/config, but cannot read A2 or B.",
+    "A2_QUESTIONS": "Public neutral Chinese task text only. It is mounted only after A1 modules and hashes are frozen; Answer Worker may read A1, A2 and frozen candidate outputs, but not B.",
+    "B_GOLD": "Required facts, conditions, evidence quotations, forbidden claims, answerability and scoring rubric. Evaluator receives it only after all B/R0/W-auto first answers and their directory hash are frozen."
+  },
+  "minimumDataset": {
+    "domains": 4,
+    "newSourceClustersPerDomain": 2,
+    "sourceSnapshots": 12,
+    "questions": 18,
+    "chineseQuestionEnglishEvidence": 6,
+    "multiFactOrConditionalQuestions": 8,
+    "insufficientOrConflictControls": 4,
+    "historicalOverlap": "No URL, content hash, repository/version, DOI/version or event cluster overlap with revealed A/B/C/S200/Evolution assets."
+  },
+  "treatments": {
+    "B": "Strong bounded raw-source retrieval.",
+    "R0": "Bounded canonical Claim retrieval with Wiki and online Graph disabled.",
+    "W_AUTO": "The same R0 seeds and budget with seed-anchored automatic Wiki modules; Graph contribution, if any, must be reported separately and cannot be bundled into the Wiki effect."
+  },
+  "fairness": [
+    "Same answer model, temperature, visible context budget, task instruction and retry policy across treatments.",
+    "First answers are immutable; format repair is separately logged and bounded.",
+    "Provider input/output/cache tokens, latency, selected Claims, Wiki activation, injection rejection and final budget drops are retained per question.",
+    "Formation may not branch on domain labels, question text, case IDs, Gold strings or hand-selected Claim bundles."
+  ],
+  "primaryGates": [
+    "Every visible Wiki assertion resolves to one canonical active Claim and all supporting EvidenceSpan records.",
+    "W_AUTO hard failures do not exceed R0 or B.",
+    "W_AUTO required-fact and required-condition coverage is not lower than R0 beyond the preregistered per-question tolerance of one non-critical item, and aggregate coverage is not lower.",
+    "W_AUTO either improves aggregate required coverage over R0 or reduces measured provider context tokens by at least 15% without an aggregate quality loss.",
+    "Against B, W_AUTO remains within 0.5 points on a 10-point blinded answer score and introduces no unsupported high-risk claim.",
+    "At least 20% of questions, including every hard failure and every claimed win, receive human evidence-faithfulness review."
+  ],
+  "stopRules": [
+    "A failure after A2 is revealed permanently converts this dataset to Dev; repairs use a post-hoc run and never replace first answers.",
+    "Do not lower a gate, add a domain keyword or edit module membership after seeing A2 or B.",
+    "If W_AUTO loses because formation misses necessary cross-section composition, record wiki-formation as the failure layer; do not blame Graph or answer generation without trace evidence.",
+    "If W_AUTO has no benefit, keep Wiki as offline governance unless a new independent held-out cycle later establishes online marginal value."
+  ]
+}

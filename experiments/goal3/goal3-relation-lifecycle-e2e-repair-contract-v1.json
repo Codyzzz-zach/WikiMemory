@@ -1,0 +1,41 @@
+{
+	"schemaVersion": "wge-goal3-relation-lifecycle-e2e-repair-contract/v1",
+	"status": "FROZEN_BEFORE_COUNTERFACTUAL_REPLAY",
+	"stageBRead": false,
+	"supersedesOnly": "The global candidate-reduction formula in goal3-relation-lifecycle-contract-v1.json endToEndAcceptance.",
+	"failedValidation": {
+		"path": "experiments/goal3/s200-runs/compile-v9-relation-lifecycle-12source/validation-old-contract.json",
+		"sha256": "a13d6f64fd566fa3b359bb7ebf26368a2d5464a1f3bdf58cd1b78f6fc4a4d1cc",
+		"completionSha256": "4ebd2082e83f8d93e42089d7731e66ab5f0c60fdaeecedd15a30bab5a73bb266",
+		"candidateLedgerSha256": "0b1ecd9a9cf79cdbc552b7fbb24606d648419fbd20e2750ff9299e84c790f73e"
+	},
+	"reason": "A source-wide hard budget cannot promise a fixed global compression ratio when most sources generate fewer candidates than the budget. The product invariant is bounded work under pressure without discarding low-volume candidates merely to improve a percentage.",
+	"pressureDefinition": "A source is under pressure when generated cross candidates exceed the configured source audit budget of 24.",
+	"counterfactual": {
+		"input": "All 42 generated candidates from the only pressure source in the frozen v9 candidate ledger.",
+		"arm": "UNBOUNDED_AUDIT_REPLAY",
+		"model": "deepseek-v4-flash",
+		"temperature": 0,
+		"thinkingDisabled": true,
+		"writesCanonicalPublication": false,
+		"comparison": "Compare the actual v9 selected-candidate audit tokens for that source with the isolated all-42 unbounded replay tokens."
+	},
+	"acceptance": {
+		"sourceFailures": 0,
+		"candidateAccountingExact": true,
+		"allPressureSourcesSelectedAtMostBudget": true,
+		"minimumCandidateReductionWithinPressureSources": 0.35,
+		"minimumRelationAuditTokenReductionAgainstSameRunUnboundedReplay": 0.2,
+		"canonicalEvidenceAndEndpointsResolvable": true,
+		"deferredConsumerExposure": 0,
+		"deterministicOnlineDeferredSampleSize": 12,
+		"maximumApparentHighValueMissesInOnlineDeferredSample": 0,
+		"noScaleBeyond12WithoutNewAuthorization": true
+	},
+	"interpretationLimits": [
+		"Global candidate reduction remains a descriptive metric and is not allowed to penalize low-volume sources.",
+		"The counterfactual replay measures audit cost only; it cannot publish or change the v9 canonical snapshot.",
+		"A pass establishes bounded Relation-audit work on this frozen pressure case, not unseen-domain recall.",
+		"The inverse duplicate canonical RELATED_TO pair is recorded as a separate graph-normalization gap and cannot be hidden by this lifecycle result."
+	]
+}
