@@ -25,6 +25,7 @@ import type {
 	AssertedRecord,
 	Claim,
 	Concept,
+	QuestionFrame,
 	Relation,
 	Source,
 	SourceSpan,
@@ -917,6 +918,7 @@ export function computeKnowledgeVersion(
 	relations: Relation[],
 	wikiModules: WikiModule[] = [],
 	assertedRecords: AssertedRecord[] = [],
+	questionFrames: QuestionFrame[] = [],
 ): string {
 	const snapshot = {
 		claims: claims
@@ -976,6 +978,29 @@ export function computeKnowledgeVersion(
 				supportingSourceIds: [...(record.supportingSourceIds ?? [])].sort(),
 			}))
 			.sort((left, right) => left.assertionId.localeCompare(right.assertionId)),
+		...(questionFrames.length > 0
+			? {
+					questionFrames: questionFrames
+						.map((frame) => ({
+							id: String(frame.id),
+							stableAddress: frame.stableAddress,
+							canonicalQuestion: frame.canonicalQuestion,
+							aliases: [...frame.aliases].sort(),
+							domain: frame.domain,
+							scope: frame.scope,
+							boundaries: [...frame.boundaries].sort(),
+							lifecycle: frame.lifecycle,
+							parentQuestionRefs: frame.parentQuestionRefs.map(String).sort(),
+							childQuestionRefs: frame.childQuestionRefs.map(String).sort(),
+							mergedInto: frame.mergedInto ? String(frame.mergedInto) : null,
+							formationSignals: frame.formationSignals,
+							publicationState: frame.publicationState,
+							createdAtKnowledgeVersion: frame.createdAtKnowledgeVersion,
+							updatedAtKnowledgeVersion: frame.updatedAtKnowledgeVersion,
+						}))
+						.sort((left, right) => left.id.localeCompare(right.id)),
+				}
+			: {}),
 	};
 	return `kv:${createHash("sha256").update(JSON.stringify(snapshot)).digest("hex").slice(0, 24)}`;
 }

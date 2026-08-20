@@ -1,8 +1,9 @@
 import { describe, expect, it } from "vitest";
-import type { Claim, Relation, SourceSpan } from "../types/index.js";
-import { claimRef } from "../types/index.js";
+import type { Claim, QuestionFrame, Relation, SourceSpan } from "../types/index.js";
+import { claimRef, questionRef } from "../types/index.js";
 import {
 	inspectWikiModuleSupport,
+	materializeQuestionWikiModule,
 	materializeWikiModule,
 	rebuildWikiModulesAfterEvolution,
 	renderWikiAssertion,
@@ -82,6 +83,82 @@ describe("evidence-grounded Wiki materialization", () => {
 		expect(
 			inspectWikiModuleSupport(rebuilt, [first, second], [span(first), span(second)]).consumable,
 		).toBe(true);
+	});
+
+	it("materializes question-centered current, conditional, dispute and gap states separately", () => {
+		const current = claim("claim:current", "默认至少投递一次");
+		const conditional = claim("claim:conditional", "事务日志可实现恰好一次效果", ["单写者"]);
+		const disputed = claim("claim:disputed", "网络分区时仍保证恰好一次");
+		disputed.validity = "DISPUTED";
+		const unresolved = claim("claim:unresolved", "跨区域故障下保证保持不变");
+		unresolved.validity = "UNRESOLVED";
+		const claims = [current, conditional, disputed, unresolved];
+		const spans = claims.map(span);
+		const frame = questionFrame(claims.map((item) => item.id));
+
+		const module = materializeQuestionWikiModule(frame, claims, [], spans, context(null));
+		expect(module.materialization?.schemaVersion).toBe("wge-wiki-materialization/v2");
+		expect(module.materialization?.assertions.map((assertion) => assertion.role)).toEqual([
+			"CONDITIONAL",
+			"CURRENT",
+			"DISPUTE",
+			"UNRESOLVED",
+		]);
+		expect(module.conditionalBranches).toHaveLength(1);
+		expect(module.disputes).toEqual(["网络分区时仍保证恰好一次"]);
+		expect(module.knownGaps?.[0]?.kind).toBe("EVIDENCE");
+		expect(
+			inspectWikiModuleSupport(module, claims, spans, {
+				relations: [],
+				questionFrames: [frame],
+				expectedKnowledgeVersion: "kv:test",
+			}),
+		).toEqual({ consumable: true, reasons: [] });
+	});
+
+	it("fails closed when a v2 module loses its QuestionFrame or changes a derived gap", () => {
+		const unresolved = claim("claim:unresolved", "材料尚未覆盖跨区域故障");
+		unresolved.validity = "UNRESOLVED";
+		const frame = questionFrame([unresolved.id]);
+		const module = materializeQuestionWikiModule(
+			frame,
+			[unresolved],
+			[],
+			[span(unresolved)],
+			context(null),
+		);
+		const firstGap = module.knownGaps?.[0];
+		if (!firstGap) throw new Error("expected materialized gap");
+		const tampered = {
+			...module,
+			knownGaps: [{ ...firstGap, description: "已有答案" }],
+		};
+		const withoutFrame = inspectWikiModuleSupport(module, [unresolved], [span(unresolved)]);
+		expect(withoutFrame.reasons).toContain(`missing-question-frame:${frame.id}`);
+		const changed = inspectWikiModuleSupport(tampered, [unresolved], [span(unresolved)], {
+			relations: [],
+			questionFrames: [frame],
+			expectedKnowledgeVersion: "kv:test",
+		});
+		expect(changed.consumable).toBe(false);
+		expect(changed.reasons).toEqual(
+			expect.arrayContaining(["known-gaps-mismatch", "support-hash-mismatch"]),
+		);
+	});
+
+	it("refuses to materialize a Question Wiki larger than the atomic 24-Claim bound", () => {
+		const claims = Array.from({ length: 25 }, (_, index) =>
+			claim(`claim:${index}`, `statement ${index}`),
+		);
+		expect(() =>
+			materializeQuestionWikiModule(
+				questionFrame(claims.map((item) => item.id)),
+				claims,
+				[],
+				claims.map(span),
+				context(null),
+			),
+		).toThrow(/超过 WikiModule Claim 上限/);
 	});
 });
 
@@ -165,5 +242,36 @@ function relation(
 		source: "cross-material-detect",
 		confidence: 1,
 		consumedBy: [],
+	};
+}
+
+function questionFrame(claimIds: string[]): QuestionFrame {
+	return {
+		id: questionRef("question:delivery-semantics"),
+		stableAddress: "question/distributed-systems/delivery-semantics",
+		canonicalQuestion: "消息系统能提供哪些投递语义？",
+		aliases: ["投递保证"],
+		domain: "distributed-systems",
+		scope: { type: "GLOBAL" },
+		boundaries: ["只讨论消息系统语义"],
+		lifecycle: "ACTIVE",
+		parentQuestionRefs: [],
+		childQuestionRefs: [],
+		mergedInto: null,
+		formationSignals: [
+			{
+				type: "CLAIM_CLUSTER",
+				sourceIds: ["source:test"],
+				claimRefs: claimIds.map(claimRef),
+				relationIds: [],
+				conceptRefs: [],
+				reason: "长期稳定问题",
+			},
+		],
+		publicationState: "CANONICAL",
+		createdAtKnowledgeVersion: "kv:test",
+		updatedAtKnowledgeVersion: "kv:test",
+		createdAt: "2026-08-12T00:00:00.000Z",
+		updatedAt: "2026-08-12T00:00:00.000Z",
 	};
 }

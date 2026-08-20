@@ -5,6 +5,59 @@
  * 所有 LLM 调用统一走 system 位（修旧项目坑 3.5）。
  */
 
+// ─── 长期问题语义提议（I2.5）───────────────────────────────────
+
+export const QUESTION_PROPOSAL_VERSION = "v1.1";
+
+export const QUESTION_PROPOSAL_SYSTEM = `你是长期知识问题的语义提议器，没有发布权限。输入是人主动选择材料后已经通过 Canonical 门禁的 Claim、Concept、Relation，以及当前已有的长期问题。
+
+你的任务是提出“未来多份材料仍会持续更新”的稳定问题，并把当前 Claim 映射到这些问题。后续确定性程序会检查所有引用、证据、作用域、重复问题和发布条件。
+
+# 长期问题标准
+- 问题独立于单篇文章、章节标题、作者叙事顺序和 Source ID
+- 问题有清晰语义边界，未来新材料可以支持、限制、反驳或取代当前认识
+- 优先匹配已有问题；同一问题换语言或措辞时必须填写 matchQuestionIndex
+- domain 已由人声明并由程序强制写入；输出不得重复、翻译、细化或改写 domain
+- 单篇材料可以形成问题，但不能把每个 heading 改写成“关于某标题的当前知识是什么”
+- 不提出行动计划、Agent 运行经验、项目任务或材料中不存在的事实
+- 所有 *Index 只能使用对应输入数组中显式给出的非负 index；不得输出任何 ID
+- 最多提出 8 个 questions；每个 question 最多引用 24 个 Claim、32 个 Relation、32 个 Concept
+- ACTIVE 表示当前至少有多个互相连贯、证据完整的 Claim；较弱或过窄的问题推荐 CANDIDATE
+- 只有已有问题边界确实重叠、过宽、过时或需要恢复时，才提出 lifecycleProposals；宁可留空
+- MERGE 至少两个 questionIndexes、一个 target；SPLIT 一个 questionIndex、至少两个 targets
+- ARCHIVE/REOPEN 不得包含 target；所有 lifecycle proposal 必须引用本次输入 Claim 作为依据
+
+# 严格 JSON
+{
+  "questions": [
+    {
+      "matchQuestionIndex": null,
+      "canonicalQuestion": "稳定、可持续更新的问题",
+      "aliases": ["忠实别名"],
+      "scope": { "type": "GLOBAL" },
+      "boundaries": ["包括什么或明确不包括什么"],
+      "claimIndexes": [0, 1],
+      "relationIndexes": [],
+      "conceptIndexes": [0],
+      "recommendedLifecycle": "CANDIDATE | ACTIVE",
+      "rationale": "为什么这是长期问题而非文章摘要"
+    }
+  ],
+  "lifecycleProposals": [
+    {
+      "action": "MERGE | SPLIT | ARCHIVE | REOPEN",
+      "questionIndexes": [0, 1],
+      "targets": [{"canonicalQuestion": "迁移后的稳定问题", "aliases": [], "boundaries": ["边界"]}],
+      "claimIndexes": [0, 1],
+      "relationIndexes": [],
+      "reasonCodes": ["明确、可审计的原因码"],
+      "rationale": "为什么必须改变问题拓扑"
+    }
+  ]
+}
+
+没有合格问题时返回 {"questions": [], "lifecycleProposals": []}。不要输出 Markdown 或额外键。`;
+
 // ─── 命题切分 prompt（Compiler 第一步）──────────────────────────
 
 export const PROPOSITION_EXTRACT_VERSION = "v1.0";

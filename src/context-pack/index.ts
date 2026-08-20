@@ -48,7 +48,11 @@ import type {
 	SelectionLogEntry,
 } from "../types/index.js";
 import { inspectWikiModuleSupport } from "../wiki/materialization.js";
+import { QUESTION_WIKI_CLAIM_LIMIT } from "../wiki/question-model.js";
+import { readAllQuestionFrames } from "../wiki/question-storage.js";
 import { retrieveWikiModuleSeeds } from "../wiki/retrieval.js";
+
+const WIKI_PROTECTED_LEXICAL_COUNT = 3;
 
 // ─── Map-first：检索前地图 ──────────────────────────────────────
 
@@ -334,6 +338,7 @@ export function buildContextPackWithDiagnostics(
 	// ── 1. 加载知识状态 ──
 	const allConcepts = readAllConcepts(config);
 	let allWikiModules = readAllWikiModules(config);
+	const allQuestionFrames = readAllQuestionFrames(config);
 	let allClaims: Claim[];
 	let loadedRelations: Relation[];
 	let allRelations: Relation[];
@@ -374,6 +379,8 @@ export function buildContextPackWithDiagnostics(
 			allConcepts,
 			allRelations,
 			allWikiModules,
+			[],
+			allQuestionFrames,
 		);
 	}
 	const sourceSearchText = new Map(
@@ -402,8 +409,29 @@ export function buildContextPackWithDiagnostics(
 	allRelations = allRelations.filter((relation) =>
 		[relation.from as string, relation.to as string].every((id) => scopedClaimIds.has(id)),
 	);
+	const scopedQuestionFrames = allQuestionFrames.filter((frame) => {
+		if (frame.scope.type === "GLOBAL") return true;
+		if (!scopeContext) return false;
+		if (frame.scope.type === "PERSONAL") return frame.scope.id === scopeContext.principalId;
+		return Boolean(scopeContext.projectId) && frame.scope.id === scopeContext.projectId;
+	});
+	// Wiki support is an authority/grounding check over the complete current scope,
+	// not a retrieval decision. Task-temporal and indexed-neighborhood pruning must
+	// not make a valid module look as if its Claim/Span/Relation closure disappeared.
+	const supportClaims = scopeContext
+		? filterClaimsByScope(readAllClaims(config), scopeContext)
+		: readAllClaims(config).filter((claim) => claim.scope.type === "GLOBAL");
+	const supportClaimIds = new Set(supportClaims.map((claim) => claim.id));
+	const supportRelations = readAllRelations(config).filter((relation) =>
+		[relation.from as string, relation.to as string].every((id) => supportClaimIds.has(id)),
+	);
+	const supportSpans = readAllSpans(config);
+	const supportSources = readAllSources(config);
 	const wikiSupportGates = allWikiModules.map((module) => {
-		const decision = inspectWikiModuleSupport(module, allClaims, allSpans);
+		const decision = inspectWikiModuleSupport(module, supportClaims, supportSpans, {
+			relations: supportRelations,
+			questionFrames: scopedQuestionFrames,
+		});
 		return {
 			moduleId: module.id,
 			accepted: decision.consumable,
@@ -517,9 +545,9 @@ export function buildContextPackWithDiagnostics(
 	const wikiInjection = injectWikiSupportingClaims(
 		graphPrimarySeedResults,
 		wikiRetrievalCandidates,
-		graph.claims,
-		10,
-		3,
+		supportClaims,
+		QUESTION_WIKI_CLAIM_LIMIT + WIKI_PROTECTED_LEXICAL_COUNT,
+		WIKI_PROTECTED_LEXICAL_COUNT,
 	);
 	const primarySeedResults = wikiInjection.results;
 	// Claims extracted from the same source block are a bounded, evidence-local
@@ -541,7 +569,11 @@ export function buildContextPackWithDiagnostics(
 				lexicalCoEvidenceResults.length,
 			)
 		: lexicalCoEvidenceResults;
-	const seedResults = [...primarySeedResults, ...coEvidenceResults];
+	const seedResults = [
+		...new Map(
+			[...primarySeedResults, ...coEvidenceResults].map((result) => [result.claim.id, result]),
+		).values(),
+	];
 	const seedIds = seedResults.map((r) => r.claim.id);
 
 	const selectionLog: SelectionLogEntry[] = [
@@ -762,9 +794,26 @@ export function buildContextPackWithDiagnostics(
 	// ── 7. 回填原文证据（从 evidenceBudget 扣，超限裁剪）──
 	let evidenceUsedChars = 0;
 	const evidenceSpans: typeof allSpans = [];
-	for (const span of findSpansByIds(allSpans, [...selectedSpanIds])) {
+	// A WikiModule is an atomic supported view, so its Claim evidence must be
+	// considered before ordinary retrieval evidence. The 25% evidence share is a
+	// soft allocation for ordinary Claims; a Wiki closure may borrow from the
+	// remaining pack budget and the final serialized-budget pass will trim optional
+	// Claims first or reject the whole module if the closed unit still cannot fit.
+	const selectedClaimById = new Map(selectedClaims.map((claim) => [claim.id, claim]));
+	const wikiEvidenceSpanIds = new Set(
+		selectedWikiModules.flatMap((module) =>
+			module.claimRefs.flatMap(
+				(claimId) => selectedClaimById.get(String(claimId))?.evidenceSpanIds ?? [],
+			),
+		),
+	);
+	const orderedSpanIds = [
+		...wikiEvidenceSpanIds,
+		...[...selectedSpanIds].filter((spanId) => !wikiEvidenceSpanIds.has(spanId)),
+	];
+	for (const span of findSpansByIds(supportSpans, orderedSpanIds)) {
 		const spanChars = span.text.length + 30; // +30 for blockId 包装
-		if (evidenceUsedChars + spanChars > evidenceBudget) {
+		if (!wikiEvidenceSpanIds.has(span.id) && evidenceUsedChars + spanChars > evidenceBudget) {
 			selectionLog.push({
 				selected: "",
 				reason: "",
@@ -817,7 +866,7 @@ export function buildContextPackWithDiagnostics(
 		);
 	}
 	const evidenceSourceIds = new Set(evidenceSpans.map((span) => span.sourceId));
-	for (const source of allSources) {
+	for (const source of supportSources) {
 		if (!evidenceSourceIds.has(source.id)) continue;
 		const metadata = source.metadata ?? {};
 		const preferredKeys = [
@@ -843,6 +892,14 @@ export function buildContextPackWithDiagnostics(
 	const knownGaps: string[] = [];
 	let gapsUsed = 0;
 	const remainingOverhead = overheadBudget - overheadUsed;
+	for (const { module, gap } of selectedWikiModules.flatMap((module) =>
+		(module.knownGaps ?? []).map((gap) => ({ module, gap })),
+	)) {
+		const gapText = `❓ Wiki ${module.questionRef ?? module.id} ${gap.kind} 缺口: ${gap.description}`;
+		if (gapsUsed + gapText.length > remainingOverhead) break;
+		knownGaps.push(gapText);
+		gapsUsed += gapText.length;
+	}
 	for (const claim of visibleGraphUnresolvedClaims) {
 		const gapText = `❓ Claim ${claim.id} 证据未决: ${claim.statement.slice(0, 60)}`;
 		if (gapsUsed + gapText.length > remainingOverhead) break;
@@ -867,6 +924,7 @@ export function buildContextPackWithDiagnostics(
 		`最近变化: ${knowledgeMap.recentChanges.length} 条`,
 		`找到 ${selectedClaims.length} 条相关 Claim`,
 		`找到 ${selectedRelations.length} 条关系`,
+		`找到 ${selectedWikiModules.length} 个长期问题 WikiModule`,
 		`找到 ${evidenceSpans.length} 条原文证据`,
 	].join("\n");
 
@@ -1252,7 +1310,29 @@ function enforceContextBudget(pack: ContextPack, budget: number): ContextPack {
 		pack.taskMap = pack.taskMap
 			.replace(/找到 \d+ 条相关 Claim/, `找到 ${pack.subgraph.claims.length} 条相关 Claim`)
 			.replace(/找到 \d+ 条关系/, `找到 ${pack.subgraph.relations.length} 条关系`)
+			.replace(
+				/找到 \d+ 个长期问题 WikiModule/,
+				`找到 ${pack.wikiModules.length} 个长期问题 WikiModule`,
+			)
 			.replace(/找到 \d+ 条原文证据/, `找到 ${pack.evidenceSpans.length} 条原文证据`);
+	};
+	const trimOptionalClaims = () => {
+		while (!fits() && pack.subgraph.claims.length > 0) {
+			const wikiClaimIds = new Set(
+				pack.wikiModules.flatMap((module) => module.claimRefs.map(String)),
+			);
+			let removableIndex = -1;
+			for (let index = pack.subgraph.claims.length - 1; index >= 0; index -= 1) {
+				const claim = pack.subgraph.claims[index];
+				if (claim && !wikiClaimIds.has(claim.id)) {
+					removableIndex = index;
+					break;
+				}
+			}
+			if (removableIndex < 0) break;
+			pack.subgraph.claims.splice(removableIndex, 1);
+			refreshDerivedClosure();
+		}
 	};
 
 	while (!fits() && pack.selectionLog.length > 0) pack.selectionLog.pop();
@@ -1262,25 +1342,13 @@ function enforceContextBudget(pack: ContextPack, budget: number): ContextPack {
 	}
 	// An activated Wiki view is useful only together with every supporting Claim. Trim optional
 	// Claim slots first; otherwise the final serializer would silently undo Wiki activation.
-	while (!fits() && pack.subgraph.claims.length > 0) {
-		const wikiClaimIds = new Set(
-			pack.wikiModules.flatMap((module) => module.claimRefs.map(String)),
-		);
-		let removableIndex = -1;
-		for (let index = pack.subgraph.claims.length - 1; index >= 0; index -= 1) {
-			const claim = pack.subgraph.claims[index];
-			if (claim && !wikiClaimIds.has(claim.id)) {
-				removableIndex = index;
-				break;
-			}
-		}
-		if (removableIndex < 0) break;
-		pack.subgraph.claims.splice(removableIndex, 1);
-		refreshDerivedClosure();
-	}
+	trimOptionalClaims();
 	while (!fits() && pack.wikiModules.length > 0) {
 		pack.wikiModules.pop();
 		refreshDerivedClosure();
+		// Claims that were protected only by the rejected lower-ranked module are
+		// optional again. Reclaim them before considering rejection of the next Wiki.
+		trimOptionalClaims();
 	}
 	while (!fits() && pack.subgraph.claims.length > 0) {
 		pack.subgraph.claims.pop();

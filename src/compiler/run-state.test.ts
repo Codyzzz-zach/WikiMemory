@@ -34,7 +34,11 @@ describe("compile run state", () => {
 		expect(getCompileState(config, sourceId)).toBe("RELATION_SCAN_PENDING");
 
 		const relationRetry = beginCompileRun(config, sourceId, "test-model");
-		finishCompileRun(config, relationRetry, "COMPLETED", "COMPLETE");
+		finishCompileRun(config, relationRetry, "QUESTION_UPDATE_PENDING", "QUESTION_PUBLISH");
+		expect(getCompileState(config, sourceId)).toBe("QUESTION_UPDATE_PENDING");
+
+		const questionRetry = beginCompileRun(config, sourceId, "test-model");
+		finishCompileRun(config, questionRetry, "COMPLETED", "COMPLETE");
 		expect(getCompileState(config, sourceId)).toBe("COMPLETED");
 	});
 

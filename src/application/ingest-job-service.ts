@@ -86,6 +86,7 @@ export class IngestJobApplicationService {
 					semantic: normalized.semantic,
 					recompile: normalized.recompile,
 					acceptPublicationDiff: normalized.acceptPublicationDiff,
+					domain: normalized.domain ?? undefined,
 					createdAt: timestamp,
 					updatedAt: timestamp,
 					attempts: 0,
@@ -131,6 +132,7 @@ export class IngestJobApplicationService {
 				semantic: job.semantic,
 				recompile: job.recompile,
 				acceptPublicationDiff: job.acceptPublicationDiff,
+				domain: job.domain,
 			});
 			return { processed: true, job: this.finishJob(job.jobId, "COMPLETED", result, null) };
 		} catch (error) {
@@ -245,12 +247,21 @@ function normalizeSubmission(request: SubmitMaterialRequest) {
 	if (!idempotencyKey || idempotencyKey.length > 200) {
 		throw new Error("idempotencyKey must be 1-200 characters");
 	}
+	const metadataDomain = request.metadata?.domain?.trim() || null;
+	const explicitDomain = request.domain?.trim() || null;
+	if (metadataDomain && explicitDomain && metadataDomain !== explicitDomain) {
+		throw new Error(
+			`Question domain conflict: request=${explicitDomain}, metadata.domain=${metadataDomain}`,
+		);
+	}
+	const domain = explicitDomain ?? metadataDomain;
 	return {
 		sourceKey,
 		title,
 		content,
 		uri: request.uri?.trim() || `memory://${sourceKey}`,
-		metadata: request.metadata ?? {},
+		metadata: { ...(request.metadata ?? {}), ...(domain ? { domain } : {}) },
+		domain,
 		idempotencyKey,
 		semantic: request.semantic ?? true,
 		recompile: request.recompile ?? false,
@@ -267,6 +278,7 @@ function hashSubmission(request: ReturnType<typeof normalizeSubmission>): string
 				content: request.content,
 				uri: request.uri,
 				metadata: Object.fromEntries(Object.entries(request.metadata).sort()),
+				domain: request.domain,
 				semantic: request.semantic,
 				recompile: request.recompile,
 				acceptPublicationDiff: request.acceptPublicationDiff,

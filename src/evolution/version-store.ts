@@ -21,6 +21,7 @@ import {
 	readAllRelations,
 	readAllWikiModules,
 } from "../linter/storage.js";
+import { readAllQuestionFrames } from "../wiki/question-storage.js";
 
 export interface SnapshotFile {
 	path: string;
@@ -51,6 +52,7 @@ const MANAGED_LOCATIONS: Array<{
 	{ directory: "quarantine", names: ["claims.jsonl", "relations.jsonl"] },
 	{ directory: "wiki", extensions: [".json", ".jsonl"] },
 	{ directory: "quarantine/wiki", extensions: [".json"] },
+	{ directory: "questions", names: ["state.json"] },
 	{
 		directory: "assertions",
 		names: ["asserted-records.jsonl", "correction-publications.jsonl"],
@@ -165,6 +167,19 @@ export function currentKnowledgeVersion(config: AppConfig): string {
 		readAllRelations(config),
 		readAllWikiModules(config),
 		readAllAssertedRecords(config),
+		readAllQuestionFrames(config),
+	);
+}
+
+/** Canonical evidence version excludes rebuildable Question/Wiki views and avoids a version cycle. */
+export function currentCanonicalEvidenceVersion(config: AppConfig): string {
+	return computeKnowledgeVersion(
+		readAllClaims(config),
+		readAllConcepts(config),
+		readAllRelations(config),
+		[],
+		readAllAssertedRecords(config),
+		[],
 	);
 }
 

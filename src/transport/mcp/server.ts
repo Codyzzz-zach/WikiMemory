@@ -165,6 +165,7 @@ export function createWikiMemoryMcpServer(options: WikiMemoryMcpOptions = {}): M
 					content: z.string().min(1).max(maxIngestChars),
 					uri: z.string().trim().min(1).max(2048).optional(),
 					metadata: z.record(z.string(), z.string()).optional(),
+					domain: z.string().trim().min(1).max(200).optional(),
 					idempotencyKey: z.string().trim().min(1).max(200),
 					semantic: z.boolean().optional(),
 					recompile: z.boolean().optional(),

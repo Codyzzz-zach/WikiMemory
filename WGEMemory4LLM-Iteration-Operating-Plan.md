@@ -1,7 +1,7 @@
 # WikiMemory 集成迭代合同 v2.0
 
 > 生效日期：2026-08-12
-> 当前路线：I0 运行边界 → I1 MCP 读取闭环 → I2 纠正闭环 → I3 长期 Pilot
+> 当前路线：I0 运行边界 → I1 MCP 读取闭环 → I2 纠正闭环 → I2.5 长期问题 Memory → I3 长期 Pilot
 > 历史计划：`docs/history/WGEMemory4LLM-Iteration-Operating-Plan-v1.5-2026-08-12.md`
 
 ## 1. 为什么切换路线
@@ -110,7 +110,36 @@ typed 与自然语言 Proposal、PERSONAL/PROJECT 权威分流、FACT 争议、�
 - 下一次相关任务不复发旧错，所有无关对照保持稳定；
 - 失败或回滚后索引与知识版本一致。
 
-## 6. I3 · 真实长期 Pilot
+## 6. I2.5 · Question-Centered Memory
+
+### 目标
+
+在长期 Pilot 前完成 Product Definition PD-05：从人主动选择的材料中自动形成并持续维护围绕
+长期问题的 WikiModule，使跨材料新增、条件、冲突、取代和 Gap 更新同一个稳定问题，而不是按
+输入文章生成摘要模块。
+
+### 施工合同
+
+以 `docs/specs/question-centered-memory-contract.md` 和 ADR 0002 为准，按 Q0–Q6 推进。
+Question evolution 位于跨材料 Relation 审计发布后、ingest COMPLETE 前；形成模型只有提议权，
+确定性门禁与原子发布拥有 Canonical 派生视图写入权。
+
+### 验收
+
+- A1–A10 硬门禁全部通过，不使用加权平均豁免失败；
+- 第一篇材料可形成稳定问题，后续材料更新同一身份；
+- 条件、争议、UNRESOLVED、Gap 与 SUPERSEDED 保持不同语义；
+- 所有可见断言保持 Claim → Evidence 闭包；
+- 无关模块 hash 稳定，失败可恢复，merge/split 可解释、可回滚；
+- Context Pack 只消费 ACTIVE 且 support contract 与 knowledgeVersion 有效的模块。
+
+### 停止规则
+
+若实现要求摄入 Agent run、让 Wiki 文本成为证据、重启 R1 竞赛或同时重写 Compiler/Graph，立即
+退回责任边界。若小型真实使用显示长期问题视图不优于 Claim-only 阅读，则在 I3 前收缩 formation
+或 Wiki consumption，不以模块数量续命。
+
+## 7. I3 · 真实长期 Pilot
 
 ### 目标
 
@@ -139,14 +168,14 @@ MCP 已增加独立 `pilot` 观测写 capability。启用时，每次 `query_con
 
 若文件夹 + Agent 长期稳定等效，收缩在线组件或产品范围；不得用 Claim、Relation 或 Wiki 数量为产品续命。
 
-## 7. 数据与权限
+## 8. 数据与权限
 
 - 当前不需要再搜一批大 Benchmark 才能开始 I0/I1；现有资产足够做接口和回归。
 - I2 需要用户提供少量真实纠正/决定/偏好 episode，尤其是作用域边界样本。
 - I3 必须来自用户真实任务日志；模型生成题只能作为 Dev/Silver。
 - Blind 候选生成者、Evaluator 与最终裁决者必须在文件与工具权限上隔离；提示词承诺不算权限隔离。
 
-## 8. 文档与裁决纪律
+## 9. 文档与裁决纪律
 
 - Product Definition：为什么存在、必须达成什么；
 - Architecture Baseline：理想系统的模块与不变量；

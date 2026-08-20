@@ -68,6 +68,7 @@ program
 	.argument("<file>", "Path to .md file")
 	.option("--no-semantic", "Skip semantic lint (structure only)")
 	.option("--recompile", "Recompile and atomically replace an already compiled Source")
+	.option("--domain <domain>", "Declare the long-term question domain for this material")
 	.option(
 		"--accept-publication-diff",
 		"Acknowledge a REVIEW_REQUIRED recompile diff; hard integrity failures still block",
@@ -80,6 +81,7 @@ program
 				semantic: boolean;
 				recompile?: boolean;
 				acceptPublicationDiff?: boolean;
+				domain?: string;
 				json?: boolean;
 			},
 		) => {
@@ -92,6 +94,7 @@ program
 				semantic: options.semantic,
 				recompile: options.recompile,
 				acceptPublicationDiff: options.acceptPublicationDiff,
+				domain: options.domain,
 			});
 			if (options.json) console.log(JSON.stringify(result, null, 2));
 			else console.error(`✅ Ingest state: ${result.compileState}`);
@@ -120,12 +123,13 @@ relationsCommand
 	.command("backfill")
 	.description("Run/re-run stage-2 cross-material relation detection")
 	.argument("[sourceId]", "Optional source:... ID; defaults to every published Source")
+	.option("--domain <domain>", "Declare the long-term question domain for the selected Source")
 	.option("--json", "Output JSON result")
-	.action(async (sourceId: string | undefined, options: { json?: boolean }) => {
+	.action(async (sourceId: string | undefined, options: { domain?: string; json?: boolean }) => {
 		const config = loadCliConfig();
 		const result = await new IngestApplicationService(config, {
 			onProgress: options.json ? undefined : renderIngestProgress,
-		}).backfillRelations({ ...(sourceId ? { sourceId } : {}) });
+		}).backfillRelations({ ...(sourceId ? { sourceId } : {}), domain: options.domain });
 		if (options.json) console.log(JSON.stringify(result, null, 2));
 		else
 			for (const item of result.items)

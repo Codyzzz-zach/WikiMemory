@@ -1,11 +1,11 @@
 # WikiMemory 实施状态
 
-> 更新时间：2026-08-13
+> 更新时间：2026-08-20
 > 文档职责：只记录当前代码和数据真实做到了什么，不定义理想架构。目标架构以根目录 `architecture-baseline.html` 为准；历史 v3.3 快照见 `docs/history/architecture-baseline-v3.3-2026-08-12.html`。
 
 ## 当前裁决
 
-WikiMemory 已达到 **Integration-ready knowledge kernel + local Agent integration boundary**。I0 的 Application/runtime/单写者/Job/Worker、容器镜像与单机卷恢复边界已完成，I1 的 MCP stdio 四工具已由官方客户端真实握手并完成一次容器内在线编译/查询/Trace；I2 工程链已覆盖自然语言受限解析、Proposal、权限分流、偏好常驻指令、幂等提交、FACT 争议、物质证据升级、关联边演化、Wiki 局部重建和受控回滚；I3 已具备 BASELINE/WIKIMEMORY 双臂隐私观测底座。当前尚未达到 Product-MVP：长期真实不复发、无关任务稳定与相对基线增益仍待验证。
+WikiMemory 已达到 **Integration-ready knowledge kernel + question-centered derived memory**。I0 的 Application/runtime/单写者/Job/Worker、容器镜像与单机卷恢复边界已完成，I1 的 MCP stdio 已通过真实协议验证；I2 工程链已覆盖自然语言纠正、权限分流、FACT 补证据、关联边演化和受控回滚；I2.5 已加入稳定 QuestionFrame、语义提议与确定性门控、WikiModule V2、merge/split/archive/reopen、ingest pending/retry、崩溃重放收据、Context Pack/Trace 与 Material Impact Report。I3 观测底座仍保留，但当前尚未达到 Product-MVP：真实材料上的长期问题质量、长期不复发和相对 Claim-only 增益仍待小型真实使用验证。
 
 ## 代码基线
 
@@ -16,10 +16,10 @@ WikiMemory 已达到 **Integration-ready knowledge kernel + local Agent integrat
 | Publication | Canonical/Quarantine 物理隔离、原子替换、generation | 工程基线成立 |
 | Retrieval | Unicode/别名 Seed、持久局部索引、generation fail-closed | R0 可作为读取默认 |
 | Graph | 类型语义、审计门禁、候选导航和历史 R1 实验存在 | 治理底座保留；在线策略未获生产批准 |
-| Context Pack | 预算、证据闭包、选择 Trace、compact transport；偏好作为作用域常驻指令并携带 AssertedRecord；MCP 核验完整可见负载 token | Agent DTO 不暴露内部 diagnostics |
-| Wiki | M1/M2/H1-A 证明纠错与自动形成机制 | 单 Source/章节工程基线；跨来源长期主题未完成 |
+| Context Pack | 预算、证据闭包、选择 Trace、compact transport；ACTIVE QuestionFrame 对应的 WikiModule V2 只有在 Question/Claim/Relation/局部支撑闭包全部一致时才可见，结构化 Gap 进入 knownGaps；indexed 模式会为已命中模块回填索引邻域外的完整支撑证据 | 工程闭包成立；多模块同时消费仍服从最终 token budget |
+| Wiki | 稳定 QuestionFrame 与 Source/heading 身份分离；同问题更新、候选晋升、merge/split/archive/reopen、条件/争议/未决/Gap 分态物化、局部稳定哨兵与 Material Impact Report 已实现 | 工程机制闭合；语义形成质量尚非真实产品证明 |
 | Evolution | 自然语言解析与提交分权；typed Proposal；PERSONAL/PROJECT 权限分流；幂等 commit；FACT 争议不自动确真；新证据必须编译成物质证据 FACT，并经审计版 SUPERSEDES/CONTRADICTS 接入快照事务；Wiki 局部重建；崩溃恢复收据；禁止旧快照覆盖后续知识 | 工程链闭合；真实 Agent 长期不复发尚未验证 |
-| Application | query/status/trace 与完整 ingest/cross-material 状态机均在 Application；CLI/MCP 不复制业务规则 | 文件存储尚未抽成完整 Repository ports |
+| Application | query/status/trace 与 ingest/cross-material/question/wiki 状态机均在 Application；Question/Wiki 失败进入 `QUESTION_UPDATE_PENDING`，同步失败补偿回滚，进程中断由持久收据幂等重放 | 文件存储尚未抽成完整 Repository ports |
 | MCP / HTTP | 官方 TypeScript SDK v2 stdio；I1 四工具 + capability-gated typed/natural-language correction、FACT 证据演化、两类受控回滚，以及 opt-in Pilot outcome/status/checkpoint；身份由进程注入，工具不能自报 principal；真实子进程 E2E | HTTP 未实现；MCP 当前为单用户本地入口 |
 | Pilot observation | 查询收据保存 task/context HMAC、knowledgeVersion、选中对象和 visible token；反馈保存 answer HMAC、结果、重复解释、纠错复发、硬失败和用户接受；原文不落盘、principal 隔离 | 观测底座完成；尚无真实 30 天数据，不能计算产品增益 |
 | Runtime / Lock | `WGE_RUNTIME_ROOT`、显式 `init`、layout v2、v1 显式迁移、Canonical 单写者、durable Job、Worker abandoned-job 恢复 | 跨主机只按 heartbeat 超时恢复；无分布式租约 |
@@ -39,11 +39,13 @@ WikiMemory 已达到 **Integration-ready knowledge kernel + local Agent integrat
 
 ## 自动化验证
 
-- Vitest：45 files / 300 tests；
+- Vitest：51 files / 330 tests；
 - TypeScript：`src` 与 `scripts` 严格 typecheck；
 - Biome：`src` 与 `scripts` 全量检查；
 - I0/I1 新增覆盖：Application 与生产核心语义 parity、完整 ingest 状态机、持久 Job 幂等与失败、abandoned Worker 恢复、runtime v1→v2 显式迁移、MCP 官方客户端握手、默认只读/显式 ingest capability、MCP durable submission、Docker allowlist/Compose 合同；
-- 当前缺口：HTTP、远程/多主机运行、长期不复发回归和真实 Agent 人工验收。自然语言解析和 FACT 新证据升级已完成工程测试，但不能写成真实使用已验证。
+- I2.5 新增覆盖：输入顺序身份稳定、跨材料命中既有问题、候选/晋升、条件/争议/未决/Gap 分态、merge/split 身份迁移、无关哨兵 byte-stable、同步回滚、进程中断重放、Context Pack fail-closed 与 Question Trace；
+- 2026-08-20 已用 4 篇数学材料完成一次开发验收：首篇形成、无关材料隔离、三个跨材料问题更新、26/26 模块局部支撑闭包以及 indexed Context 消费通过；详见 `docs/verification/question-centered-memory-real-material-acceptance-2026-08-20.md`。
+- 当前缺口：HTTP、远程/多主机运行、更多领域与长期材料上的语义质量、长期不复发和相对 Claim-only 的产品增益。本次开发验收不等于盲测或产品价值证明。
 
 ## 历史 Goal 结算
 
@@ -83,10 +85,10 @@ WikiMemory 已达到 **Integration-ready knowledge kernel + local Agent integrat
 
 ## 下一阶段
 
-当前进入 I2 的真实使用验收，再准备 I3：
+当前进入 I2.5 Q6 小型真实使用门禁，再决定是否进入 I3：
 
-1. 以显式 `read,pilot` capability 开启本地主体 Pilot，先运行一周小样本，检查反馈覆盖率、隐私日志和硬失败分类是否可用；
-2. 收集少量真实偏好、项目决策和 FACT 争议 episode，使用已经落地的自然语言 Proposal 与 FACT 补证据工具，验证相关任务改变、无关任务稳定与回滚；
-3. 满足观测完整性后再扩大到 30 天/5+领域/100+真实任务；解析 LLM 始终没有提交权。
+1. 只提交人主动选择的少量真实知识材料，并显式声明 domain；逐份审阅形成、更新、拒绝和 lifecycle Material Impact Report；
+2. 比较长期问题 WikiModule 与 Claim-only 阅读在边界质量、跨材料连贯、Gap 诚实度和上下文压缩上的实际差异；不先启动昂贵大规模 Blind；
+3. 固化发现的最小失败 Episode。若真实使用没有出现稳定增益，则收缩 formation/consumption 范围；若通过，再开启 I3 一周小样本与后续 30 天观测。
 
 旧 Goal 不再无限延长；历史资产用于回归，新产品证据来自真实 Agent 闭环。

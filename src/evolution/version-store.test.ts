@@ -5,6 +5,8 @@ import { afterEach, describe, expect, it } from "vitest";
 import type { AppConfig } from "../config/types.js";
 import { publishSourceResult, readAllClaims } from "../linter/storage.js";
 import type { Claim } from "../types/index.js";
+import { questionRef } from "../types/index.js";
+import { publishQuestionEvolution, readAllQuestionFrames } from "../wiki/question-storage.js";
 import {
 	createKnowledgeSnapshot,
 	currentKnowledgeVersion,
@@ -58,6 +60,28 @@ describe("knowledge snapshot and rollback", () => {
 		expect(() => restoreKnowledgeSnapshot(config, snapshot.id, "kv:stale")).toThrow(
 			"知识状态已变化",
 		);
+	});
+
+	it("versions and restores QuestionFrame state with the knowledge snapshot", () => {
+		const config = fixtureConfig();
+		publish(config, "run:t0", [claim("claim:t0", "初始规则")]);
+		publishQuestionEvolution(config, {
+			frames: [questionFrame("初始长期问题", "kv:question-1")],
+			decisions: [questionDecision("create", "CREATE", "kv:question-1")],
+		});
+		const snapshot = createKnowledgeSnapshot(config, "before question update");
+		const beforeFrame = readAllQuestionFrames(config)[0];
+
+		publishQuestionEvolution(config, {
+			frames: [questionFrame("更新后的长期问题", "kv:question-2")],
+			decisions: [questionDecision("update", "UPDATE", "kv:question-2")],
+		});
+		const changedVersion = currentKnowledgeVersion(config);
+		expect(changedVersion).not.toBe(snapshot.knowledgeVersion);
+
+		restoreKnowledgeSnapshot(config, snapshot.id, changedVersion);
+		expect(readAllQuestionFrames(config)[0]).toEqual(beforeFrame);
+		expect(currentKnowledgeVersion(config)).toBe(snapshot.knowledgeVersion);
 	});
 });
 
@@ -129,4 +153,52 @@ function claim(id: string, statement: string): Claim {
 function writeJson(path: string, value: unknown): void {
 	mkdirSync(dirname(path), { recursive: true });
 	writeFileSync(path, JSON.stringify(value), "utf-8");
+}
+
+function questionFrame(canonicalQuestion: string, knowledgeVersion: string) {
+	return {
+		id: questionRef("question:release-policy"),
+		stableAddress: "question/release/policy",
+		canonicalQuestion,
+		aliases: [],
+		domain: "release",
+		scope: { type: "GLOBAL" as const },
+		boundaries: ["只讨论发布规则"],
+		lifecycle: "ACTIVE" as const,
+		parentQuestionRefs: [],
+		childQuestionRefs: [],
+		mergedInto: null,
+		formationSignals: [
+			{
+				type: "CLAIM_CLUSTER" as const,
+				sourceIds: ["source:test"],
+				claimRefs: [],
+				relationIds: [],
+				conceptRefs: [],
+				reason: "稳定问题",
+			},
+		],
+		publicationState: "CANONICAL" as const,
+		createdAtKnowledgeVersion: "kv:question-1",
+		updatedAtKnowledgeVersion: knowledgeVersion,
+		createdAt: "2026-08-20T00:00:00.000Z",
+		updatedAt: "2026-08-20T00:00:00.000Z",
+	};
+}
+
+function questionDecision(suffix: string, action: "CREATE" | "UPDATE", knowledgeVersion: string) {
+	return {
+		id: `question-decision:${suffix}`,
+		knowledgeVersion,
+		sourceId: "source:test",
+		action,
+		questionRefs: [questionRef("question:release-policy")],
+		affectedClaimRefs: [],
+		affectedRelationIds: [],
+		reasonCodes: [action],
+		beforeHash: action === "CREATE" ? null : "before",
+		afterHash: "after",
+		formationVersion: "wge-question-formation/v1",
+		createdAt: action === "CREATE" ? "2026-08-20T00:00:00.000Z" : "2026-08-20T00:01:00.000Z",
+	};
 }

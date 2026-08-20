@@ -4,6 +4,7 @@ import { join } from "node:path";
 import { afterEach, describe, expect, it } from "vitest";
 import { estimateTokens } from "../compiler/telemetry.js";
 import type { AppConfig } from "../config/types.js";
+import { currentCanonicalEvidenceVersion } from "../evolution/version-store.js";
 import { getRelationTypeSemantics } from "../graph/index.js";
 import {
 	publishSourceResult,
@@ -14,9 +15,10 @@ import {
 } from "../linter/storage.js";
 import { RELATION_AUDIT_VERSION } from "../prompts/index.js";
 import { buildPersistentSeedIndex } from "../retrieval/persistent-index.js";
-import type { Claim, Relation, SourceSpan } from "../types/index.js";
-import { claimRef } from "../types/index.js";
-import { materializeWikiModule } from "../wiki/materialization.js";
+import type { Claim, QuestionFrame, Relation, SourceSpan } from "../types/index.js";
+import { claimRef, questionRef } from "../types/index.js";
+import { materializeQuestionWikiModule, materializeWikiModule } from "../wiki/materialization.js";
+import { publishQuestionEvolution } from "../wiki/question-storage.js";
 import type { WikiRetrievalCandidate } from "../wiki/retrieval.js";
 import {
 	buildContextPack,
@@ -269,7 +271,9 @@ describe("Context Pack contract", () => {
 			readAllClaims(config),
 			readAllSpans(config),
 			{
-				sourceKnowledgeVersion: legacy.pack.knowledgeVersion,
+				// An unrelated later material may advance the global knowledge version without
+				// invalidating this module's locally audited Claim/Span support closure.
+				sourceKnowledgeVersion: "kv:previous-unrelated-state",
 				rebuiltFromSnapshotId: null,
 				updatedAt: "2026-08-12T00:00:00.000Z",
 			},
@@ -314,6 +318,124 @@ describe("Context Pack contract", () => {
 				reason: "pack-final-budget-or-evidence-closure",
 			}),
 		);
+	});
+
+	it("consumes a Question-centered WikiModule only with its current QuestionFrame", () => {
+		const config = fixture();
+		const claims = readAllClaims(config).filter((item) =>
+			["claim:global", "claim:sibling"].includes(item.id),
+		);
+		const evidenceVersion = currentCanonicalEvidenceVersion(config);
+		const frame = questionFrameForContext(evidenceVersion);
+		publishQuestionEvolution(config, {
+			frames: [frame],
+			decisions: [
+				{
+					id: "question-decision:alpha",
+					knowledgeVersion: evidenceVersion,
+					sourceId: "source:test",
+					action: "CREATE",
+					questionRefs: [frame.id],
+					affectedClaimRefs: claims.map((claim) => claimRef(claim.id)),
+					affectedRelationIds: [],
+					reasonCodes: ["CREATE"],
+					beforeHash: null,
+					afterHash: "alpha",
+					formationVersion: "wge-question-formation/v1",
+					createdAt: "2026-08-20T00:00:00.000Z",
+				},
+			],
+		});
+		upsertWikiModules(config, [
+			materializeQuestionWikiModule(frame, claims, [], readAllSpans(config), {
+				sourceKnowledgeVersion: evidenceVersion,
+				rebuiltFromSnapshotId: null,
+				updatedAt: "2026-08-20T00:00:00.000Z",
+				questionEvolutionDecisionId: "question-decision:alpha",
+			}),
+		]);
+
+		const result = buildContextPackWithDiagnostics(config, "Alpha 当前结论", 4000, 0);
+		expect(result.pack.wikiModules[0]).toMatchObject({
+			questionRef: frame.id,
+			coreQuestion: frame.canonicalQuestion,
+		});
+		expect(result.pack.taskMap).toContain("1 个长期问题 WikiModule");
+		expect(result.diagnostics.wiki.supportGates).toContainEqual(
+			expect.objectContaining({ accepted: true, reasons: [] }),
+		);
+	});
+
+	it("loads the complete Wiki evidence closure beyond an indexed task neighborhood", () => {
+		const config = fixture();
+		const detachedSpan: SourceSpan = {
+			id: "span:detached",
+			sourceId: "source:detached",
+			blockId: "detached-block",
+			charStart: 0,
+			charEnd: 33,
+			text: "Detached supporting detail for the Wiki.",
+		};
+		writeJsonl(join(config.sourcesDir, "detached.spans.jsonl"), [detachedSpan]);
+		writeFileSync(
+			join(config.sourcesDir, "detached.json"),
+			JSON.stringify({
+				id: "source:detached",
+				hash: "detached",
+				uri: "https://example.test/detached",
+				parsedText: detachedSpan.text,
+				sourceType: "html",
+				loaderVersion: "test",
+				metadata: { sourceRole: "primary" },
+				createdAt: "2026-08-20T00:00:00.000Z",
+			}),
+			"utf-8",
+		);
+		publishSourceResult(
+			config,
+			{
+				schemaVersion: "v1",
+				sourceId: "source:detached",
+				runId: "run:detached",
+				publishedAt: "2026-08-20T00:00:00.000Z",
+				claims: [
+					claim("claim:detached", "Detached supporting detail", detachedSpan.id, {
+						type: "GLOBAL",
+					}),
+				],
+				concepts: [],
+				relations: [],
+			},
+			{
+				schemaVersion: "v1",
+				sourceId: "source:detached",
+				runId: "run:detached",
+				publishedAt: "2026-08-20T00:00:00.000Z",
+				claims: [],
+				relations: [],
+			},
+		);
+		upsertWikiModules(config, [
+			materializeWikiModule(
+				{
+					id: "wiki:indexed-closure",
+					stableAddress: "wiki/test/indexed-closure",
+					coreQuestion: "Alpha 的完整支撑闭包是什么？",
+					claimRefs: ["claim:global", "claim:detached"],
+				},
+				readAllClaims(config),
+				readAllSpans(config),
+				{
+					sourceKnowledgeVersion: currentCanonicalEvidenceVersion(config),
+					rebuiltFromSnapshotId: null,
+					updatedAt: "2026-08-20T00:00:00.000Z",
+				},
+			),
+		]);
+
+		const result = buildManagedContextPackWithDiagnostics(config, "Alpha global", 4000, 0);
+		expect(result.pack.wikiModules.map((module) => module.id)).toContain("wiki:indexed-closure");
+		expect(result.pack.evidenceSpans.map((span) => span.id)).toContain(detachedSpan.id);
 	});
 
 	it("does not let a lower-ranked Wiki evict the closure of an accepted module", () => {
@@ -608,6 +730,37 @@ function claim(id: string, statement: string, spanId: string, scope: Claim["scop
 		supportingEvidenceRefs: [{ type: "SourceSpan", spanId }],
 		knowledgeVersion: "test",
 		recordedAt: "2026-07-23T00:00:00.000Z",
+	};
+}
+
+function questionFrameForContext(knowledgeVersion: string): QuestionFrame {
+	return {
+		id: questionRef("question:alpha-current"),
+		stableAddress: "question/test/alpha-current",
+		canonicalQuestion: "Alpha 的当前结论是什么？",
+		aliases: ["Alpha current"],
+		domain: "test",
+		scope: { type: "GLOBAL" },
+		boundaries: ["仅讨论 Alpha"],
+		lifecycle: "ACTIVE",
+		parentQuestionRefs: [],
+		childQuestionRefs: [],
+		mergedInto: null,
+		formationSignals: [
+			{
+				type: "CLAIM_CLUSTER",
+				sourceIds: ["source:test"],
+				claimRefs: [claimRef("claim:global"), claimRef("claim:sibling")],
+				relationIds: [],
+				conceptRefs: [],
+				reason: "可由后续材料持续更新的长期问题",
+			},
+		],
+		publicationState: "CANONICAL",
+		createdAtKnowledgeVersion: knowledgeVersion,
+		updatedAtKnowledgeVersion: knowledgeVersion,
+		createdAt: "2026-08-20T00:00:00.000Z",
+		updatedAt: "2026-08-20T00:00:00.000Z",
 	};
 }
 

@@ -19,6 +19,11 @@ export type CompileStage =
 	| "CROSS_MATERIAL_RELATION_DETECTION"
 	| "CROSS_MATERIAL_RELATION_LINT"
 	| "CROSS_MATERIAL_RELATION_PUBLISH"
+	| "QUESTION_PROPOSAL"
+	| "QUESTION_GATE"
+	| "QUESTION_PUBLISH"
+	| "WIKI_MATERIALIZATION"
+	| "WIKI_PUBLICATION_GATE"
 	| "COMPLETE";
 
 export interface CompileRunEvent {
@@ -64,7 +69,7 @@ export function getCompileState(config: AppConfig, sourceId: string): CompileSta
 	const latest = getLatestCompileEvent(config, sourceId);
 	if (!latest) return "SOURCE_INGESTED";
 	if (
-		(latest.state === "COMPLETED" || latest.state === "RELATION_SCAN_PENDING") &&
+		["COMPLETED", "RELATION_SCAN_PENDING", "QUESTION_UPDATE_PENDING"].includes(latest.state) &&
 		latest.relationAuditVersion !== RELATION_AUDIT_VERSION
 	) {
 		return "COMPILED";
@@ -126,7 +131,13 @@ export function recordCompileStage(
 export function finishCompileRun(
 	config: AppConfig,
 	handle: CompileRunHandle,
-	state: "COMPILE_FAILED" | "COMPILE_PARTIAL" | "RELATION_SCAN_PENDING" | "COMPLETED" | "COMPILED",
+	state:
+		| "COMPILE_FAILED"
+		| "COMPILE_PARTIAL"
+		| "RELATION_SCAN_PENDING"
+		| "QUESTION_UPDATE_PENDING"
+		| "COMPLETED"
+		| "COMPILED",
 	stage: CompileStage,
 	error?: string,
 ): void {
@@ -161,7 +172,7 @@ function eventFor(
 		timestamp: new Date().toISOString(),
 		hostname: hostname(),
 		pid: process.pid,
-		...(state === "COMPLETED" || state === "RELATION_SCAN_PENDING"
+		...(["COMPLETED", "RELATION_SCAN_PENDING", "QUESTION_UPDATE_PENDING"].includes(state)
 			? { relationAuditVersion: RELATION_AUDIT_VERSION }
 			: {}),
 		...(error ? { error } : {}),

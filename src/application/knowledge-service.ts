@@ -13,6 +13,7 @@ import {
 	buildManagedContextPackWithDiagnostics,
 	filterClaimsByScope,
 } from "../context-pack/index.js";
+import { currentCanonicalEvidenceVersion } from "../evolution/version-store.js";
 import { inspectRelationGate } from "../graph/index.js";
 import {
 	readAllAssertedRecords,
@@ -31,12 +32,15 @@ import type {
 	Claim,
 	CompileState,
 	Concept,
+	QuestionEvolutionDecision,
+	QuestionFrame,
 	Relation,
 	Source,
 	SourceSpan,
 	WikiModule,
 } from "../types/index.js";
 import { inspectWikiModuleSupport } from "../wiki/materialization.js";
+import { readAllQuestionFrames, readQuestionEvolutionDecisions } from "../wiki/question-storage.js";
 import type {
 	AgentQueryContextResponse,
 	AgentStandingInstruction,
@@ -61,6 +65,9 @@ export interface KnowledgeApplicationDependencies {
 	readSources(config: AppConfig): Source[];
 	readSpans(config: AppConfig): SourceSpan[];
 	readWikiModules(config: AppConfig): WikiModule[];
+	readQuestionFrames(config: AppConfig): QuestionFrame[];
+	readQuestionDecisions(config: AppConfig): QuestionEvolutionDecision[];
+	currentCanonicalEvidenceVersion(config: AppConfig): string;
 	getCompileState(config: AppConfig, sourceId: string): CompileState;
 	getLatestCompileEvent(config: AppConfig, sourceId: string): CompileRunEvent | null;
 	observeAgentQuery?(config: AppConfig, task: string, response: AgentQueryContextResponse): void;
@@ -93,6 +100,9 @@ const defaultDependencies: KnowledgeApplicationDependencies = {
 	readSources: readAllSources,
 	readSpans: readAllSpans,
 	readWikiModules: readAllWikiModules,
+	readQuestionFrames: readAllQuestionFrames,
+	readQuestionDecisions: readQuestionEvolutionDecisions,
+	currentCanonicalEvidenceVersion,
 	getCompileState,
 	getLatestCompileEvent,
 };
@@ -252,17 +262,35 @@ export class KnowledgeApplicationService {
 		const relations = this.dependencies
 			.readRelations(this.config)
 			.filter((relation) => inspectRelationGate(relation, visibleNodeIds).accepted);
-		const wikiModules = this.dependencies
-			.readWikiModules(this.config)
-			.filter((module) => inspectWikiModuleSupport(module, claims, allSpans).consumable);
+		const questionFrames = this.dependencies.readQuestionFrames(this.config).filter((frame) => {
+			if (frame.publicationState !== "CANONICAL" || frame.lifecycle !== "ACTIVE") return false;
+			if (frame.scope.type === "GLOBAL") return true;
+			if (frame.scope.type === "PERSONAL") return frame.scope.id === scopeContext.principalId;
+			return Boolean(scopeContext.projectId) && frame.scope.id === scopeContext.projectId;
+		});
+		const wikiModules = this.dependencies.readWikiModules(this.config).filter(
+			(module) =>
+				inspectWikiModuleSupport(module, claims, allSpans, {
+					relations,
+					questionFrames,
+				}).consumable,
+		);
 		const allSources = this.dependencies.readSources(this.config);
 		const allAssertedRecords = this.dependencies.readAssertedRecords(this.config);
 		const claim = claims.find((item) => item.id === objectId) ?? null;
 		const relation = relations.find((item) => item.id === objectId) ?? null;
 		const wikiModule = wikiModules.find((item) => item.id === objectId) ?? null;
-		if (!claim && !relation && !wikiModule) {
+		const questionFrame =
+			questionFrames.find((item) => String(item.id) === objectId) ??
+			(wikiModule?.questionRef
+				? (questionFrames.find((item) => item.id === wikiModule.questionRef) ?? null)
+				: null);
+		if (!claim && !relation && !wikiModule && !questionFrame) {
 			throw new Error(`Knowledge object not found: ${objectId}`);
 		}
+		const questionClaimRefs = questionFrame
+			? questionFrame.formationSignals.flatMap((signal) => signal.claimRefs.map(String))
+			: [];
 		const evidenceSpanIds = claim
 			? claimEvidenceSpanIds(claim)
 			: relation
@@ -272,7 +300,10 @@ export class KnowledgeApplicationService {
 							const supportingClaim = claims.find((item) => item.id === ref);
 							return supportingClaim ? claimEvidenceSpanIds(supportingClaim) : [];
 						})
-					: [];
+					: questionClaimRefs.flatMap((ref) => {
+							const supportingClaim = claims.find((item) => item.id === ref);
+							return supportingClaim ? claimEvidenceSpanIds(supportingClaim) : [];
+						});
 		const evidenceSpans: SourceSpan[] = [];
 		const assertedRecordIds = new Set(
 			(claim
@@ -284,7 +315,12 @@ export class KnowledgeApplicationService {
 								? [...supportingClaim.provenanceRefs, ...supportingClaim.supportingEvidenceRefs]
 								: [];
 						})
-					: []
+					: questionClaimRefs.flatMap((ref) => {
+							const supportingClaim = claims.find((item) => item.id === ref);
+							return supportingClaim
+								? [...supportingClaim.provenanceRefs, ...supportingClaim.supportingEvidenceRefs]
+								: [];
+						})
 			).flatMap((reference) =>
 				reference.type === "AssertedRecord" ? [reference.assertionId] : [],
 			),
@@ -300,10 +336,16 @@ export class KnowledgeApplicationService {
 		}
 		const sourceIds = new Set(evidenceSpans.map((span) => span.sourceId));
 		return {
-			objectType: claim ? "CLAIM" : relation ? "RELATION" : "WIKI",
+			objectType: claim ? "CLAIM" : relation ? "RELATION" : wikiModule ? "WIKI" : "QUESTION",
 			objectId,
 			claim,
 			relation,
+			questionFrame,
+			questionEvolutionDecisions: questionFrame
+				? this.dependencies
+						.readQuestionDecisions(this.config)
+						.filter((decision) => decision.questionRefs.includes(questionFrame.id))
+				: [],
 			wikiModule,
 			evidenceSpans,
 			assertedRecords: allAssertedRecords.filter((record) =>

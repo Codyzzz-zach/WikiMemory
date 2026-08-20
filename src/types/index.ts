@@ -32,6 +32,7 @@ export type PublicationState = "CANDIDATE" | "CANONICAL" | "QUARANTINED";
 export type ClaimRef = string & { readonly __brand: "ClaimRef" };
 export type ConceptRef = string & { readonly __brand: "ConceptRef" };
 export type WikiRef = string & { readonly __brand: "WikiRef" };
+export type QuestionRef = string & { readonly __brand: "QuestionRef" };
 export type NodeRef = ClaimRef | ConceptRef | WikiRef;
 
 /** 创建 ClaimRef 的唯一安全方式 */
@@ -43,6 +44,9 @@ export function conceptRef(id: string): ConceptRef {
 }
 export function wikiRef(id: string): WikiRef {
 	return id as WikiRef;
+}
+export function questionRef(id: string): QuestionRef {
+	return id as QuestionRef;
 }
 
 // ─── Claim 语义元数据（v1.1：非状态轴，不参与"是否消费"判断）─────
@@ -141,6 +145,7 @@ export type CompileState =
 	| "COMPILE_FAILED" // 编译失败（可重试）
 	| "COMPILE_PARTIAL" // 部分阶段完成但未发布
 	| "RELATION_SCAN_PENDING" // 单材料已发布，跨材料扫描待完成/重试
+	| "QUESTION_UPDATE_PENDING" // Canonical evidence 已完成，Question/Wiki 派生视图待完成/重试
 	| "COMPLETED" // 单材料与跨材料两个阶段都已完成
 	| "COMPILED"; // v1.1 遗留状态：缺少当前 Relation 审计证明，必须完整重编
 
@@ -238,7 +243,98 @@ export interface Relation {
 	consumedBy: string[];
 }
 
-export type WikiAssertionRole = "CURRENT" | "DISPUTE";
+// ─── 长期问题与 Wiki v2 派生视图 ────────────────────────────────
+
+/** 长期问题的派生生命周期；与知识对象 publicationState 正交。 */
+export type QuestionLifecycle = "CANDIDATE" | "ACTIVE" | "MERGED" | "SPLIT" | "ARCHIVED";
+
+/** 自动形成只能从这些已授权知识信号提出问题，不能读取 Agent 运行历史。 */
+export type QuestionFormationSignalType =
+	| "DECLARED_DOMAIN"
+	| "STABLE_CONCEPT"
+	| "CLAIM_CLUSTER"
+	| "CROSS_MATERIAL_RELATION"
+	| "CONTRADICTION"
+	| "SUPERSESSION"
+	| "SOURCE_STRUCTURE";
+
+export interface QuestionFormationSignal {
+	type: QuestionFormationSignalType;
+	sourceIds: string[];
+	claimRefs: ClaimRef[];
+	relationIds: string[];
+	conceptRefs: ConceptRef[];
+	reason: string;
+}
+
+/**
+ * 长期问题的稳定派生身份。它可以持久化和重建，但不是 Claim 的证据来源。
+ * stableAddress 不得以 Source ID 或 heading 作为身份根。
+ */
+export interface QuestionFrame {
+	id: QuestionRef;
+	stableAddress: string;
+	canonicalQuestion: string;
+	aliases: string[];
+	domain: string;
+	scope: Scope;
+	boundaries: string[];
+	lifecycle: QuestionLifecycle;
+	parentQuestionRefs: QuestionRef[];
+	childQuestionRefs: QuestionRef[];
+	mergedInto: QuestionRef | null;
+	formationSignals: QuestionFormationSignal[];
+	publicationState: PublicationState;
+	createdAtKnowledgeVersion: string;
+	updatedAtKnowledgeVersion: string;
+	createdAt: string;
+	updatedAt: string;
+}
+
+export type QuestionEvolutionAction =
+	| "CREATE"
+	| "UPDATE"
+	| "PROMOTE"
+	| "MERGE"
+	| "SPLIT"
+	| "ARCHIVE"
+	| "REOPEN"
+	| "NO_CHANGE";
+
+/** 追加式派生决策记录；只用于解释、重放和回滚，不属于 Canonical Knowledge。 */
+export interface QuestionEvolutionDecision {
+	id: string;
+	knowledgeVersion: string;
+	sourceId: string;
+	action: QuestionEvolutionAction;
+	questionRefs: QuestionRef[];
+	affectedClaimRefs: ClaimRef[];
+	affectedRelationIds: string[];
+	reasonCodes: string[];
+	beforeHash: string | null;
+	afterHash: string | null;
+	formationVersion: string;
+	createdAt: string;
+}
+
+export type WikiGapKind = "RELATION" | "EVIDENCE" | "SCOPE" | "NORMATIVE";
+
+export interface WikiKnownGap {
+	id: string;
+	kind: WikiGapKind;
+	description: string;
+	claimRefs: ClaimRef[];
+	relationIds: string[];
+}
+
+export interface WikiConditionalBranch {
+	id: string;
+	conditions: string[];
+	claimRefs: ClaimRef[];
+	renderedText: string;
+}
+
+export type WikiAssertionRole = "CURRENT" | "CONDITIONAL" | "DISPUTE" | "UNRESOLVED" | "SUPERSEDED";
 
 /** Wiki v1 的最小可审计语句：一个展示语句只允许由一个 Claim 确定性渲染。 */
 export interface WikiAssertion {
@@ -252,7 +348,7 @@ export interface WikiAssertion {
  * Wiki 是 Canonical Claim 的物化视图，不是第二套事实来源。
  * 旧模块可没有该字段，但不得进入在线消费链。
  */
-export interface WikiMaterialization {
+export interface WikiMaterializationV1 {
 	schemaVersion: "wge-wiki-materialization/v1";
 	supportContractVersion: "wge-wiki-support/v1";
 	sourceKnowledgeVersion: string;
@@ -260,6 +356,23 @@ export interface WikiMaterialization {
 	rebuiltFromSnapshotId: string | null;
 	assertions: WikiAssertion[];
 }
+
+export interface WikiMaterializationV2 {
+	schemaVersion: "wge-wiki-materialization/v2";
+	supportContractVersion: "wge-wiki-support/v2";
+	sourceKnowledgeVersion: string;
+	supportHash: string;
+	rebuiltFromSnapshotId: string | null;
+	questionRef: QuestionRef;
+	questionUpdatedAtKnowledgeVersion: string;
+	questionEvolutionDecisionId: string | null;
+	assertions: WikiAssertion[];
+	relationIds: string[];
+	conditionalBranches: WikiConditionalBranch[];
+	knownGaps: WikiKnownGap[];
+}
+
+export type WikiMaterialization = WikiMaterializationV1 | WikiMaterializationV2;
 
 /** 供 Agent 阅读的完整语义单元 */
 export interface WikiModule {
@@ -273,6 +386,14 @@ export interface WikiModule {
 	dependencies: string[];
 	publicationState: PublicationState;
 	updatedAt: string;
+	/** v2 中必填；缺失表示 legacy/v1 模块。 */
+	questionRef?: QuestionRef;
+	/** v2 结构化条件分支；currentUnderstanding 只是兼容渲染。 */
+	conditionalBranches?: WikiConditionalBranch[];
+	/** v2 结构化 Gap；不得用无来源文本补齐。 */
+	knownGaps?: WikiKnownGap[];
+	/** v2 显式依赖的 Relation；弱 RELATED_TO 不得成为断言依据。 */
+	relationRefs?: string[];
 	/** 缺失表示 legacy 模块；读取可以保留，但 Context Pack 必须 fail-closed。 */
 	materialization?: WikiMaterialization;
 }

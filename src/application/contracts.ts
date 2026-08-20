@@ -5,6 +5,8 @@ import type {
 	AssertedRecord,
 	Claim,
 	CompileState,
+	QuestionEvolutionDecision,
+	QuestionFrame,
 	Relation,
 	ScopeContext,
 	Source,
@@ -68,6 +70,8 @@ export interface GetIngestStatusResponse {
 
 export interface IngestMaterialRequest {
 	filePath: string;
+	/** Human-declared knowledge domain used to bound long-term question formation. */
+	domain?: string;
 	semantic?: boolean;
 	recompile?: boolean;
 	acceptPublicationDiff?: boolean;
@@ -75,6 +79,7 @@ export interface IngestMaterialRequest {
 
 export interface CompileIngestedSourceRequest {
 	sourceId: string;
+	domain?: string;
 	semantic?: boolean;
 	recompile?: boolean;
 	acceptPublicationDiff?: boolean;
@@ -86,6 +91,7 @@ export interface SubmitMaterialRequest {
 	content: string;
 	uri?: string;
 	metadata?: Record<string, string>;
+	domain?: string;
 	idempotencyKey: string;
 	semantic?: boolean;
 	recompile?: boolean;
@@ -104,6 +110,7 @@ export interface IngestJob {
 	semantic: boolean;
 	recompile: boolean;
 	acceptPublicationDiff: boolean;
+	domain?: string;
 	createdAt: string;
 	updatedAt: string;
 	attempts: number;
@@ -154,6 +161,7 @@ export type IngestProgressStage =
 	| "PUBLICATION_GATE"
 	| "PUBLISH"
 	| "CROSS_MATERIAL"
+	| "QUESTION_MAINTENANCE"
 	| "COMPLETE";
 
 export interface IngestProgressEvent {
@@ -173,12 +181,14 @@ export interface IngestMaterialResponse {
 
 export interface BackfillRelationsRequest {
 	sourceId?: string;
+	domain?: string;
 }
 
 export interface BackfillRelationsItem {
 	sourceId: string;
 	runId: string;
 	summary: CrossMaterialSummary;
+	questionMaintenance: QuestionMaintenanceSummary;
 }
 
 export interface BackfillRelationsResponse {
@@ -197,6 +207,28 @@ export interface CrossMaterialSummary {
 	quarantinedCrossRelations: number;
 }
 
+export interface QuestionMaintenanceSummary {
+	status: "SKIPPED" | "NO_CHANGE" | "UPDATED";
+	reason: string | null;
+	declaredDomain: string | null;
+	proposedQuestions: number;
+	acceptedQuestions: number;
+	rejectedQuestions: number;
+	createdQuestions: number;
+	updatedQuestions: number;
+	promotedQuestions: number;
+	candidateQuestions: number;
+	mergedQuestions: number;
+	splitQuestions: number;
+	archivedQuestions: number;
+	reopenedQuestions: number;
+	publishedQuestionRefs: string[];
+	publishedWikiModuleIds: string[];
+	canonicalEvidenceVersion: string | null;
+	rollbackSnapshotId: string | null;
+	materialImpactReportPath: string | null;
+}
+
 export interface KnowledgeStatusResponse {
 	sourceSpans: number;
 	totalClaims: number;
@@ -212,7 +244,7 @@ export interface KnowledgeStatusResponse {
 	incompleteSources: SourceCompileStatus[];
 }
 
-export type TraceKnowledgeObjectType = "CLAIM" | "RELATION" | "WIKI";
+export type TraceKnowledgeObjectType = "CLAIM" | "RELATION" | "QUESTION" | "WIKI";
 
 export interface TraceKnowledgeRequest {
 	objectId: string;
@@ -226,6 +258,8 @@ export interface TraceKnowledgeResponse {
 	objectId: string;
 	claim: Claim | null;
 	relation: Relation | null;
+	questionFrame: QuestionFrame | null;
+	questionEvolutionDecisions: QuestionEvolutionDecision[];
 	wikiModule: WikiModule | null;
 	evidenceSpans: SourceSpan[];
 	assertedRecords: AssertedRecord[];

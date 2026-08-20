@@ -10,7 +10,8 @@ import {
 	buildManagedContextPackWithDiagnostics,
 } from "../context-pack/index.js";
 import { RELATION_AUDIT_VERSION } from "../prompts/index.js";
-import type { Claim, Concept, Relation, Source } from "../types/index.js";
+import type { Claim, Concept, QuestionFrame, Relation, Source } from "../types/index.js";
+import { claimRef, questionRef } from "../types/index.js";
 import { KnowledgeApplicationService } from "./knowledge-service.js";
 import { initializeRuntime } from "./runtime.js";
 
@@ -178,11 +179,29 @@ describe("KnowledgeApplicationService", () => {
 			scope: { type: "PERSONAL", id: "alice" },
 		});
 		const edge = relation("rel:visible", global.id, personal.id);
+		const question = questionFrame(global.id);
 		const service = new KnowledgeApplicationService(config(), {
 			readClaims: () => [global, personal],
 			readRelations: () => [edge],
 			readConcepts: () => [],
 			readWikiModules: () => [],
+			readQuestionFrames: () => [question],
+			readQuestionDecisions: () => [
+				{
+					id: "question-decision:trace",
+					knowledgeVersion: "kv:test",
+					sourceId: "source:global",
+					action: "CREATE",
+					questionRefs: [question.id],
+					affectedClaimRefs: [claimRef(global.id)],
+					affectedRelationIds: [],
+					reasonCodes: ["CREATE"],
+					beforeHash: null,
+					afterHash: "trace",
+					formationVersion: "wge-question-formation/v1",
+					createdAt: "2026-08-20T00:00:00.000Z",
+				},
+			],
 			readSpans: () => [
 				{
 					id: "span:global",
@@ -217,6 +236,14 @@ describe("KnowledgeApplicationService", () => {
 		expect(() => service.traceKnowledge({ objectId: personal.id })).toThrow("not found");
 		expect(() => service.traceKnowledge({ objectId: edge.id })).toThrow("not found");
 		expect(() => service.traceKnowledge({ objectId: "span:global" })).toThrow("not found");
+		expect(service.traceKnowledge({ objectId: String(question.id) })).toEqual(
+			expect.objectContaining({
+				objectType: "QUESTION",
+				questionFrame: question,
+				questionEvolutionDecisions: [expect.objectContaining({ action: "CREATE" })],
+				evidenceSpans: [expect.objectContaining({ id: "span:global" })],
+			}),
+		);
 		expect(
 			service.traceKnowledge({
 				objectId: edge.id,
@@ -312,6 +339,37 @@ function claim(id: string, overrides: Partial<Claim> = {}): Claim {
 		knowledgeVersion: "kv:test",
 		recordedAt: "2026-08-13T00:00:00.000Z",
 		...overrides,
+	};
+}
+
+function questionFrame(claimId: string): QuestionFrame {
+	return {
+		id: questionRef("question:trace"),
+		stableAddress: "question/test/trace",
+		canonicalQuestion: "全局规则是什么？",
+		aliases: [],
+		domain: "test",
+		scope: { type: "GLOBAL" },
+		boundaries: ["仅讨论测试规则"],
+		lifecycle: "ACTIVE",
+		parentQuestionRefs: [],
+		childQuestionRefs: [],
+		mergedInto: null,
+		formationSignals: [
+			{
+				type: "CLAIM_CLUSTER",
+				sourceIds: ["source:global"],
+				claimRefs: [claimRef(claimId)],
+				relationIds: [],
+				conceptRefs: [],
+				reason: "长期追踪规则",
+			},
+		],
+		publicationState: "CANONICAL",
+		createdAtKnowledgeVersion: "kv:test",
+		updatedAtKnowledgeVersion: "kv:test",
+		createdAt: "2026-08-20T00:00:00.000Z",
+		updatedAt: "2026-08-20T00:00:00.000Z",
 	};
 }
 

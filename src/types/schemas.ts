@@ -24,6 +24,56 @@ export const RelationTypeSchema = z.enum([
 	"RELATED_TO",
 ]);
 
+export const ScopeSchema = z
+	.object({
+		type: z.enum(["GLOBAL", "PERSONAL", "PROJECT"]),
+		id: z.string().min(1).optional(),
+	})
+	.superRefine((scope, context) => {
+		if (scope.type === "PROJECT" && !scope.id) {
+			context.addIssue({ code: z.ZodIssueCode.custom, message: "PROJECT scope 必须提供 id" });
+		}
+	});
+
+// ─── 长期问题语义提议（只有提议权，后续必须过确定性 Gate）─────
+
+export const QuestionCandidateDraftSchema = z.object({
+	matchQuestionIndex: z.number().int().nonnegative().nullable().default(null),
+	canonicalQuestion: z.string().min(1),
+	aliases: z.array(z.string().min(1)).max(6).default([]),
+	scope: ScopeSchema,
+	boundaries: z.array(z.string().min(1)).min(1).max(8),
+	claimIndexes: z.array(z.number().int().nonnegative()).min(1).max(24),
+	relationIndexes: z.array(z.number().int().nonnegative()).max(32).default([]),
+	conceptIndexes: z.array(z.number().int().nonnegative()).max(32).default([]),
+	recommendedLifecycle: z.enum(["CANDIDATE", "ACTIVE"]),
+	rationale: z.string().min(1),
+});
+
+export const QuestionLifecycleTargetDraftSchema = z.object({
+	canonicalQuestion: z.string().min(1),
+	aliases: z.array(z.string().min(1)).max(6).default([]),
+	boundaries: z.array(z.string().min(1)).min(1).max(8),
+});
+
+export const QuestionLifecycleDraftSchema = z.object({
+	action: z.enum(["MERGE", "SPLIT", "ARCHIVE", "REOPEN"]),
+	questionIndexes: z.array(z.number().int().nonnegative()).min(1).max(8),
+	targets: z.array(QuestionLifecycleTargetDraftSchema).max(8).default([]),
+	claimIndexes: z.array(z.number().int().nonnegative()).min(1).max(24),
+	relationIndexes: z.array(z.number().int().nonnegative()).max(32).default([]),
+	reasonCodes: z.array(z.string().min(1)).min(1).max(8),
+	rationale: z.string().min(1),
+});
+
+export const QuestionProposalResponseSchema = z.object({
+	questions: z.array(QuestionCandidateDraftSchema).max(8).default([]),
+	lifecycleProposals: z.array(QuestionLifecycleDraftSchema).max(4).default([]),
+});
+
+export type QuestionCandidateDraft = z.infer<typeof QuestionCandidateDraftSchema>;
+export type QuestionProposalResponse = z.infer<typeof QuestionProposalResponseSchema>;
+
 // ─── 命题切分 LLM 输出（Compiler 第一步）────────────────────────
 
 export const PropositionItemSchema = z.object({

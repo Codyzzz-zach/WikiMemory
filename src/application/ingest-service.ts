@@ -43,6 +43,7 @@ import type {
 	IngestMaterialResponse,
 	IngestProgressEvent,
 } from "./contracts.js";
+import { QuestionMaintenanceApplicationService } from "./question-maintenance-service.js";
 
 export interface IngestApplicationOptions {
 	providerFactory?: (config: AppConfig) => LLMProvider;
@@ -112,30 +113,38 @@ export class IngestApplicationService {
 		const run = beginCompileRun(this.config, ingestResult.source.id, this.config.model);
 		const relationOnlyResume =
 			ingestResult.isDuplicate && !request.recompile && compileState === "RELATION_SCAN_PENDING";
-		let localPublished = relationOnlyResume;
+		const questionOnlyResume =
+			ingestResult.isDuplicate && !request.recompile && compileState === "QUESTION_UPDATE_PENDING";
+		const resumedFromPublishedStage1 = relationOnlyResume || questionOnlyResume;
+		let localPublished = resumedFromPublishedStage1;
+		let canonicalEvidenceComplete = questionOnlyResume;
 		let localSummary: Record<string, unknown> = {
-			resumedFromPublishedStage1: relationOnlyResume,
+			resumedFromPublishedStage1,
+			resumedFromQuestionUpdate: questionOnlyResume,
 		};
 		try {
-			if (relationOnlyResume && !semantic) {
+			if (resumedFromPublishedStage1 && !semantic) {
+				const pendingState = questionOnlyResume
+					? "QUESTION_UPDATE_PENDING"
+					: "RELATION_SCAN_PENDING";
 				finishCompileRun(
 					this.config,
 					run,
-					"RELATION_SCAN_PENDING",
-					"CROSS_MATERIAL_RELATION_LINT",
-					"跨材料 Relation 必须经过语义门禁；semantic=false 不能完成阶段 2",
+					pendingState,
+					questionOnlyResume ? "QUESTION_PROPOSAL" : "CROSS_MATERIAL_RELATION_LINT",
+					"Relation 与 Question 维护必须经过语义门禁；semantic=false 不能完成后续阶段",
 				);
 				return {
 					runId: run.runId,
 					sourceId: ingestResult.source.id,
 					duplicate: ingestResult.isDuplicate,
 					skipped: false,
-					compileState: "RELATION_SCAN_PENDING",
+					compileState: pendingState,
 					summary: localSummary,
 				};
 			}
 
-			if (!relationOnlyResume) {
+			if (!resumedFromPublishedStage1) {
 				this.progress("COMPILE", "Compiling source", { runId: run.runId });
 				const compileResult = await compileSource(
 					this.config,
@@ -247,15 +256,29 @@ export class IngestApplicationService {
 				(entry) => entry.sourceId === ingestResult.source.id,
 			);
 			if (!publication) throw new Error("阶段 1 发布后无法读取 Source publication");
-			this.progress("CROSS_MATERIAL", "Running cross-material relation stage");
-			const crossSummary = await this.runCrossMaterialStage(
+			let crossSummary: Partial<CrossMaterialSummary> = {};
+			if (!questionOnlyResume) {
+				this.progress("CROSS_MATERIAL", "Running cross-material relation stage");
+				crossSummary = await this.runCrossMaterialStage(
+					provider,
+					run,
+					ingestResult.source,
+					publication,
+				);
+				canonicalEvidenceComplete = true;
+			}
+			this.progress("QUESTION_MAINTENANCE", "Maintaining long-term questions and WikiModules");
+			const questionMaintenance = await new QuestionMaintenanceApplicationService(
+				this.config,
+			).maintain({
 				provider,
 				run,
-				ingestResult.source,
+				source: ingestResult.source,
 				publication,
-			);
+				declaredDomain: request.domain,
+			});
 			finishCompileRun(this.config, run, "COMPLETED", "COMPLETE");
-			const summary = { ...localSummary, ...crossSummary };
+			const summary = { ...localSummary, ...crossSummary, questionMaintenance };
 			this.progress("COMPLETE", "Ingest completed", summary);
 			return {
 				runId: run.runId,
@@ -271,7 +294,11 @@ export class IngestApplicationService {
 				finishCompileRun(
 					this.config,
 					run,
-					localPublished ? "RELATION_SCAN_PENDING" : "COMPILE_FAILED",
+					canonicalEvidenceComplete
+						? "QUESTION_UPDATE_PENDING"
+						: localPublished
+							? "RELATION_SCAN_PENDING"
+							: "COMPILE_FAILED",
 					latest?.runId === run.runId ? latest.stage : "COMPLETE",
 					error instanceof Error ? error.message : String(error),
 				);
@@ -311,16 +338,27 @@ export class IngestApplicationService {
 				);
 			}
 			const run = beginCompileRun(this.config, source.id, this.config.model);
+			let crossMaterialComplete = false;
 			try {
 				const summary = await this.runCrossMaterialStage(provider, run, source, publication);
+				crossMaterialComplete = true;
+				const questionMaintenance = await new QuestionMaintenanceApplicationService(
+					this.config,
+				).maintain({
+					provider,
+					run,
+					source,
+					publication,
+					declaredDomain: request.domain,
+				});
 				finishCompileRun(this.config, run, "COMPLETED", "COMPLETE");
-				items.push({ sourceId: source.id, runId: run.runId, summary });
+				items.push({ sourceId: source.id, runId: run.runId, summary, questionMaintenance });
 			} catch (error) {
 				const latest = getLatestCompileEvent(this.config, source.id);
 				finishCompileRun(
 					this.config,
 					run,
-					"RELATION_SCAN_PENDING",
+					crossMaterialComplete ? "QUESTION_UPDATE_PENDING" : "RELATION_SCAN_PENDING",
 					latest?.runId === run.runId ? latest.stage : "CROSS_MATERIAL_RELATION_DETECTION",
 					error instanceof Error ? error.message : String(error),
 				);

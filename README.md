@@ -1,6 +1,6 @@
 # WikiMemory
 
-WikiMemory 是面向通用 Agent 的可演化知识与长期记忆层。它把多领域材料、对话中的权威声明、纠正和任务结果转化为可追溯、可版本化、可撤销的知识状态，并按任务生成有预算、保留证据闭包的 Context Pack。
+WikiMemory 是面向通用 Agent 的可演化知识与长期记忆层。它把人主动选择的多领域知识材料，以及经显式权限合同提交的权威声明与纠正，转化为可追溯、可版本化、可撤销的知识状态，并按任务生成有预算、保留证据闭包的 Context Pack。Agent 运行、工具日志、任务结果和一般对话不会自动成为知识输入。
 
 它不是一个给人维护页面的 Wiki，也不是把 Graph 遍历结果全部塞进 Prompt 的 RAG 包装器。长期目标和当前实现必须分开阅读：
 
@@ -16,14 +16,15 @@ WikiMemory 是面向通用 Agent 的可演化知识与长期记忆层。它把�
 
 ## 当前裁决
 
-当前内核是 **integration-ready，尚非 Product-MVP**：Markdown 摄入、有界编译、门禁、原子发布、检索、Graph、Context Pack、Wiki 机制与 Evolution 事务已形成基线。I0 应用边界、本地容器恢复和 I1 本地协议闭环已经实现；I2 工程链已覆盖自然语言到 typed proposal 的受限解析、PERSONAL 偏好、PROJECT 决策、FACT 争议、作用域权限、幂等提交、受影响 Wiki 重建与受控回滚。FACT 不由用户断言直接确真：新材料必须先编译成有物质证据的 FACT，并经审计版 <code>SUPERSEDES</code>/<code>CONTRADICTS</code> Relation 才能进入快照保护的演化事务。I3 已有隐私保护的双臂观测底座；仍未完成的是真实 Agent 的长期不复发与相对基线增益证明。
+当前内核是 **integration-ready，尚非 Product-MVP**：I0–I2 的应用、协议、纠正和演化工程链已闭合；I2.5 已实现围绕长期问题自动形成并持续维护 WikiModule，包括稳定 QuestionFrame、语义提议/确定性门控、结构化 WikiModule V2、问题拓扑演化、pending/retry、崩溃重放、Context Pack/Trace 和 Material Impact Report。FACT 不由用户断言或 Wiki 文本反向确真。仍未完成的是真实材料上的问题形成质量、长期不复发与相对 Claim-only 增益证明。
 
 下一阶段不再无限延长内部 Goal，而按以下顺序推进：
 
 1. **I0**：Application Service、runtime root、单写者、Docker 与恢复；
 2. **I1**：MCP `ingest_material / get_ingest_status / query_context / trace_knowledge`；
 3. **I2**：纠正 proposal、权威分流、受控 commit、局部重建和回滚；
-4. **I3**：30 天多领域真实 Agent Pilot。
+4. **I2.5**：长期问题 QuestionFrame 与持续维护的 WikiModule；
+5. **I3**：通过小型真实使用门禁后，再进入 30 天多领域真实 Agent Pilot。
 
 ## 仓库结构
 
@@ -90,7 +91,7 @@ WGE_PILOT_HASH_KEY='replace-with-a-random-local-secret' \
 npm run mcp
 ```
 
-`ingest_material` 接收用户明确投递的 Markdown 内容，只做不可变 Source/Span 落盘和 Job 排队，不读取任意本地路径，也不承诺调用返回时已经编译完成。Agent 应使用 `get_ingest_status` 查询 Job 与编译阶段。
+`ingest_material` 接收用户明确投递的 Markdown 内容，只做不可变 Source/Span 落盘和 Job 排队，不读取任意本地路径，也不承诺调用返回时已经编译完成。建议显式传入 `domain`（也可放在 `metadata.domain`）；只有声明 domain 的材料才进入长期问题形成，未声明时 Claim/Relation 编译仍可完成但 Question 维护会明确跳过。Agent 应使用 `get_ingest_status` 查询 Job 与编译阶段。
 
 `query_context` 只返回紧凑 Agent Context Pack，不返回内部检索/Graph diagnostics；响应同时给出请求预算和实际序列化 token。PERSONAL 偏好作为有界的 `standingInstructions` 注入本人作用域，并随附 AssertedRecord。纠正工具只有 `correct` capability 且进程已注入主体身份时才注册。自然语言解析只生成草案，权限由确定性策略决定，并要求调用者确认解析出的类型后才可提交；无目标 FACT 进入 `NEEDS_EVIDENCE`，针对既有 FACT 的纠正先把旧结论置为 `DISPUTED`。后续调用 `resolve_fact_correction` 时必须指定已审计、含物质证据的替代/冲突 Relation；`rollback_fact_resolution` 只在其后没有知识变更时允许恢复，避免抹掉后来摄入的材料。
 
@@ -103,7 +104,7 @@ npm run dev -- --runtime-root ./runtime-data init
 npm run dev -- --runtime-root ./runtime-data status --json
 npm run dev -- --runtime-root ./runtime-data ingest-status
 npm run dev -- status
-npm run dev -- ingest mathtest-material/01-number-systems.md --recompile --json
+npm run dev -- ingest mathtest-material/01-number-systems.md --domain mathematics --recompile --json
 npm run dev -- query "Cauchy 列、实数完备性与完备空间之间的关系" --budget 12000 --depth 3 --json
 npm run dev -- trace claim:example
 ```
@@ -120,6 +121,7 @@ docker compose run --rm wge-cli status --json
 ## 不变量
 
 - Source / SourceSpan 是不可变证据根；Claim、Relation、Wiki 和索引均为派生状态。
+- 只有人主动选择的知识材料或显式授权的断言/纠正可以进入编译；Agent run 和 Pilot outcome 只承担运行与评估作用。
 - Graph 是长期治理基础设施，在线仅按任务条件参与候选导航；候选遍历不自动进入 Prompt。
 - Quarantine、旧审计版本和越权 scope 默认 fail-closed。
 - MCP、HTTP 与 CLI 必须调用同一 Application Service，不得复制业务规则。
