@@ -10,6 +10,13 @@
 - 调试脚本必须声明非生产入口；
 - 新的 I0–I3 验收脚本使用 `scripts/integration-*` 前缀，避免继续扩展 Goal 编号。
 
+当前集成 Gate：
+
+- `npm run i3:sim:gate -- verify`：验证 I3-Sim 的 Stage A 冻结引用、三领域切片、自然任务和 Stage B 隔离；
+- `npm run i3:sim:gate -- prepare --runtime-root <absolute-path>`：创建绑定当前 clean commit 的隔离会话；
+- `npm run i3:sim:gate -- run-next --runtime-root <absolute-path>`：每次最多摄入一个冻结 Source，并在扩大前执行成本与结构门禁；
+- `npm run i3:sim:gate -- status --runtime-root <absolute-path>`：读取当前 cursor 和不可覆盖的 iteration receipts。
+
 当前仍有大量 legacy `goal*` / `benchmark*` 脚本。它们是历史实验的可复现入口，不是新项目结构的
 范例；在对应工件路径和 hash 迁移有兼容证明前不做纯视觉移动。
 
