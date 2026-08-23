@@ -160,6 +160,7 @@ export interface ContextPackDiagnostics {
 			moduleId: string;
 			score: number;
 			matchedSeedClaimIds: string[];
+			matchedClusterIds: string[];
 			matchedCoreFeatures: string[];
 			matchedAssertionFeatures: string[];
 			supportingClaimIds: string[];
@@ -491,11 +492,23 @@ export function buildContextPackWithDiagnostics(
 		source: `lexical:${candidate.channels.join("+")}`,
 	}));
 	const lexicalSeedIds = lexicalSeedResults.map((result) => result.claim.id);
-	const wikiRetrievalCandidates =
+	const clusterIdsByClaimId = buildClaimClusterIndex(supportClaims, supportSpans, supportSources);
+	const directWikiRetrievalCandidates =
 		options.wikiMode === "DISABLED"
 			? []
 			: retrieveWikiModuleSeeds(allWikiModules, task, 2, {
 					anchorClaimIds: lexicalSeedIds,
+					requireAnchor: true,
+				});
+	const dominantClusterIds = selectDominantSeedClusters(lexicalSeedIds, clusterIdsByClaimId);
+	const wikiRetrievalCandidates =
+		directWikiRetrievalCandidates.length > 0 || dominantClusterIds.length === 0
+			? directWikiRetrievalCandidates
+			: retrieveWikiModuleSeeds(allWikiModules, task, 2, {
+					anchorClaimIds: lexicalSeedIds,
+					anchorClusterIds: dominantClusterIds,
+					clusterIdsByClaimId,
+					allowClusterFallback: true,
 					requireAnchor: true,
 				});
 	const r1Selection =
@@ -1045,6 +1058,7 @@ export function buildContextPackWithDiagnostics(
 					moduleId: candidate.module.id,
 					score: candidate.score,
 					matchedSeedClaimIds: candidate.matchedSeedClaimIds,
+					matchedClusterIds: candidate.matchedClusterIds,
 					matchedCoreFeatures: candidate.matchedCoreFeatures,
 					matchedAssertionFeatures: candidate.matchedAssertionFeatures,
 					supportingClaimIds: candidate.module.claimRefs.map(String),
@@ -1060,6 +1074,61 @@ export function buildContextPackWithDiagnostics(
 			},
 		},
 	};
+}
+
+export function selectDominantSeedClusters(
+	seedClaimIds: string[],
+	clusterIdsByClaimId: ReadonlyMap<string, ReadonlySet<string>>,
+	minimumSupport = 2,
+	minimumShare = 0.6,
+): string[] {
+	const counts = new Map<string, number>();
+	let clusteredSeeds = 0;
+	for (const claimId of seedClaimIds) {
+		const clusters = clusterIdsByClaimId.get(claimId);
+		if (!clusters || clusters.size === 0) continue;
+		clusteredSeeds++;
+		for (const clusterId of clusters) counts.set(clusterId, (counts.get(clusterId) ?? 0) + 1);
+	}
+	const strongest = Math.max(0, ...counts.values());
+	if (
+		strongest < minimumSupport ||
+		clusteredSeeds === 0 ||
+		strongest / clusteredSeeds < minimumShare
+	) {
+		return [];
+	}
+	return [...counts.entries()]
+		.filter(([, count]) => count === strongest)
+		.map(([clusterId]) => clusterId)
+		.sort();
+}
+
+function buildClaimClusterIndex(
+	claims: Claim[],
+	spans: ReturnType<typeof readAllSpans>,
+	sources: ReturnType<typeof readAllSources>,
+): Map<string, ReadonlySet<string>> {
+	const clusterBySourceId = new Map(
+		sources.flatMap((source) => {
+			const clusterId = source.metadata?.clusterId;
+			return typeof clusterId === "string" && clusterId.trim()
+				? [[source.id, clusterId.trim()] as const]
+				: [];
+		}),
+	);
+	return new Map(
+		claims.map((claim) => {
+			const clusters = new Set(
+				claim.evidenceSpanIds.flatMap((spanId) => {
+					const span = resolveSpanById(spans, spanId);
+					const clusterId = span ? clusterBySourceId.get(span.sourceId) : undefined;
+					return clusterId ? [clusterId] : [];
+				}),
+			);
+			return [claim.id, clusters] as const;
+		}),
+	);
 }
 
 function selectCoEvidenceNeighbors(

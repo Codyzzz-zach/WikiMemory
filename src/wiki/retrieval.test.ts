@@ -42,6 +42,35 @@ describe("Wiki materialized-view retrieval", () => {
 		expect(result.map((candidate) => candidate.module.id)).toEqual(["wiki:current"]);
 		expect(result[0]?.matchedSeedClaimIds).toEqual([currentClaimId]);
 	});
+
+	it("uses an explicit human-curated cluster only as an opted-in cross-language fallback", () => {
+		const lawModule = module(
+			"wiki:dma",
+			"What criteria designate an undertaking as a gatekeeper?",
+			"The undertaking may rebut the quantitative presumption.",
+		);
+		const claimId = String(lawModule.claimRefs[0]);
+		const clusterIdsByClaimId = new Map([[claimId, new Set(["cluster-law-dma-01"])]]);
+		const task = "欧盟 DMA 的守门人认定条件是什么？";
+
+		expect(
+			retrieveWikiModuleSeeds([lawModule], task, 2, {
+				anchorClusterIds: ["cluster-law-dma-01"],
+				clusterIdsByClaimId,
+				requireAnchor: true,
+			}),
+		).toEqual([]);
+
+		const result = retrieveWikiModuleSeeds([lawModule], task, 2, {
+			anchorClusterIds: ["cluster-law-dma-01"],
+			clusterIdsByClaimId,
+			allowClusterFallback: true,
+			requireAnchor: true,
+		});
+		expect(result.map((candidate) => candidate.module.id)).toEqual(["wiki:dma"]);
+		expect(result[0]?.matchedClusterIds).toEqual(["cluster-law-dma-01"]);
+		expect(result[0]?.matchedSeedClaimIds).toEqual([]);
+	});
 });
 
 function module(id: string, coreQuestion: string, renderedText: string): WikiModule {

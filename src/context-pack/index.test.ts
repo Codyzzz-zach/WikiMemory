@@ -25,6 +25,7 @@ import {
 	buildContextPackWithDiagnostics,
 	buildManagedContextPackWithDiagnostics,
 	injectWikiSupportingClaims,
+	selectDominantSeedClusters,
 } from "./index.js";
 
 const roots: string[] = [];
@@ -34,6 +35,20 @@ afterEach(() => {
 });
 
 describe("Context Pack contract", () => {
+	it("requires a clear seed majority before using a human-curated cluster bridge", () => {
+		const clusters = new Map<string, ReadonlySet<string>>([
+			["claim:1", new Set(["cluster:dma"])],
+			["claim:2", new Set(["cluster:dma"])],
+			["claim:3", new Set(["cluster:dma"])],
+			["claim:4", new Set(["cluster:other"])],
+		]);
+		expect(
+			selectDominantSeedClusters(["claim:1", "claim:2", "claim:3", "claim:4"], clusters),
+		).toEqual(["cluster:dma"]);
+		expect(selectDominantSeedClusters(["claim:1", "claim:4"], clusters)).toEqual([]);
+		expect(selectDominantSeedClusters(["claim:1"], clusters)).toEqual([]);
+	});
+
 	it("returns Claim nodes, stable knowledge version, and Global-only data without scope context", () => {
 		const config = fixture();
 		const first = buildContextPack(config, "Alpha", 4000, 2);
@@ -790,6 +805,7 @@ function wikiCandidate(
 		},
 		score,
 		matchedSeedClaimIds: refs.slice(0, 2).map(String),
+		matchedClusterIds: [],
 		matchedCoreFeatures: ["w:alpha"],
 		matchedAssertionFeatures: [],
 	};
