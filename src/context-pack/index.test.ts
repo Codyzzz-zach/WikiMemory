@@ -299,6 +299,26 @@ describe("Context Pack contract", () => {
 		expect(current.diagnostics.wiki.supportGates).toContainEqual(
 			expect.objectContaining({ moduleId: "wiki:alpha", accepted: true, reasons: [] }),
 		);
+		// A human-curated material cluster enables the cross-language Wiki bridge.
+		// DISABLED must gate that fallback too, not only direct Wiki retrieval.
+		writeFileSync(
+			join(config.sourcesDir, "test.json"),
+			JSON.stringify({
+				id: "source:test",
+				hash: "test",
+				uri: "https://example.test/standard",
+				parsedText: "Alpha global. Alpha personal.",
+				sourceType: "html",
+				loaderVersion: "test",
+				metadata: {
+					sourceRole: "primary",
+					publisher: "Example Standards Body",
+					clusterId: "cluster:alpha",
+				},
+				createdAt: "2026-07-23T00:00:00.000Z",
+			}),
+			"utf-8",
+		);
 		const disabled = buildContextPackWithDiagnostics(config, "Alpha global", 4000, 0, undefined, {
 			wikiMode: "DISABLED",
 		});

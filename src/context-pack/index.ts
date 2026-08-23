@@ -493,16 +493,17 @@ export function buildContextPackWithDiagnostics(
 	}));
 	const lexicalSeedIds = lexicalSeedResults.map((result) => result.claim.id);
 	const clusterIdsByClaimId = buildClaimClusterIndex(supportClaims, supportSpans, supportSources);
-	const directWikiRetrievalCandidates =
-		options.wikiMode === "DISABLED"
-			? []
-			: retrieveWikiModuleSeeds(allWikiModules, task, 2, {
-					anchorClaimIds: lexicalSeedIds,
-					requireAnchor: true,
-				});
+	const wikiDisabled = options.wikiMode === "DISABLED";
+	const directWikiRetrievalCandidates = wikiDisabled
+		? []
+		: retrieveWikiModuleSeeds(allWikiModules, task, 2, {
+				anchorClaimIds: lexicalSeedIds,
+				requireAnchor: true,
+			});
 	const dominantClusterIds = selectDominantSeedClusters(lexicalSeedIds, clusterIdsByClaimId);
-	const wikiRetrievalCandidates =
-		directWikiRetrievalCandidates.length > 0 || dominantClusterIds.length === 0
+	const wikiRetrievalCandidates = wikiDisabled
+		? []
+		: directWikiRetrievalCandidates.length > 0 || dominantClusterIds.length === 0
 			? directWikiRetrievalCandidates
 			: retrieveWikiModuleSeeds(allWikiModules, task, 2, {
 					anchorClaimIds: lexicalSeedIds,
