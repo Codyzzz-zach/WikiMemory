@@ -44,3 +44,5 @@ npm run i3:sim:gate -- resume --runtime-root /absolute/path/to/i3-sim-runtime --
 ## 验收解释
 
 Gate 的自动化结果只回答“机制是否值得进入下一小步”。Episode 的语义迁移仍需按 manifest 中的 `targetTransitions` 做人工裁决。三个 Episode 全部通过后，才允许进入 7 天真实任务 Micro Pilot；本切片不能替代真实用户价值验收。
+
+2026-08-24 的完整运行与配对裁决为 **NO-GO**：结构运行完成，但 causal wins、winning domains、hard failure tolerance 和三个 Episode 的目标迁移均未达到冻结门槛。证据与下一轮最小迭代见 `docs/verification/i3-sim-gate-result-2026-08-24.md`。
