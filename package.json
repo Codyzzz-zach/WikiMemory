@@ -25,6 +25,7 @@
 		"test:watch": "vitest",
 		"pilot": "tsx scripts/pilot.ts",
 		"i3:sim:gate": "node --import tsx scripts/integration-i3-sim-gate.ts",
+		"i3:sim:paired": "node --import tsx scripts/integration-i3-sim-paired-review.ts",
 		"benchmark:refine": "node --import tsx scripts/refine-benchmark-batch-a.ts",
 		"benchmark:canary": "node --import tsx scripts/validate-benchmark-canary.ts",
 		"benchmark:batch-b:build": "node --import tsx scripts/build-benchmark-batch-b.ts",

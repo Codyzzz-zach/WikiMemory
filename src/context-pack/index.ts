@@ -1307,6 +1307,7 @@ export function buildManagedContextPackWithDiagnostics(
 			selectionMode: options.selectionMode,
 			knowledgeAccess: "INDEXED",
 			indexRoot,
+			wikiMode: options.wikiMode,
 		});
 		result.diagnostics.knowledgeAccess.lifecycle = ready.status;
 		return result;
@@ -1315,6 +1316,7 @@ export function buildManagedContextPackWithDiagnostics(
 		const result = buildContextPackWithDiagnostics(config, task, budget, maxDepth, scopeContext, {
 			selectionMode: options.selectionMode,
 			knowledgeAccess: "LEGACY",
+			wikiMode: options.wikiMode,
 		});
 		result.diagnostics.knowledgeAccess.lifecycle = "LEGACY_FALLBACK";
 		result.diagnostics.knowledgeAccess.fallbackReason = errorMessage(error);

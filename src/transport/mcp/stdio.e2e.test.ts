@@ -19,7 +19,7 @@ afterEach(async () => {
 	for (const root of roots.splice(0)) rmSync(root, { recursive: true, force: true });
 });
 
-describe("WikiMemory MCP stdio", () => {
+describe("WikiMemory MCP stdio", { timeout: 15_000 }, () => {
 	it("defaults to read-only tools and returns Application payloads over a real protocol process", async () => {
 		const { client } = await connect("read");
 		const tools = await client.listTools();

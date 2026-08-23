@@ -304,6 +304,16 @@ describe("Context Pack contract", () => {
 		});
 		expect(disabled.pack.wikiModules).toEqual([]);
 		expect(disabled.diagnostics.wiki.retrieval).toEqual([]);
+		const managedDisabled = buildManagedContextPackWithDiagnostics(
+			config,
+			"Alpha global",
+			4000,
+			0,
+			undefined,
+			{ wikiMode: "DISABLED" },
+		);
+		expect(managedDisabled.pack.wikiModules).toEqual([]);
+		expect(managedDisabled.diagnostics.wiki.retrieval).toEqual([]);
 	});
 
 	it("records when a retrieved Wiki is removed by the final closed-budget pass", () => {
