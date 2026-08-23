@@ -15,6 +15,7 @@
 - `npm run i3:sim:gate -- verify`：验证 I3-Sim 的 Stage A 冻结引用、三领域切片、自然任务和 Stage B 隔离；
 - `npm run i3:sim:gate -- prepare --runtime-root <absolute-path>`：创建绑定当前 clean commit 的隔离会话；
 - `npm run i3:sim:gate -- run-next --runtime-root <absolute-path>`：每次最多摄入一个冻结 Source，并在扩大前执行成本与结构门禁；
+- `npm run i3:sim:gate -- resume --runtime-root <absolute-path> --reason <text>`：只对已复核的编译瞬时故障恢复同一 Source，不跳过失败输入；
 - `npm run i3:sim:gate -- status --runtime-root <absolute-path>`：读取当前 cursor 和不可覆盖的 iteration receipts。
 
 当前仍有大量 legacy `goal*` / `benchmark*` 脚本。它们是历史实验的可复现入口，不是新项目结构的

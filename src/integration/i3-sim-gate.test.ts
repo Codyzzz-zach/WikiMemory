@@ -4,6 +4,7 @@ import { fileURLToPath } from "node:url";
 import { describe, expect, it } from "vitest";
 import {
 	type I3SimContract,
+	cursorAfterAttempt,
 	loadAndValidateGate,
 	validateGateContract,
 } from "../../scripts/integration-i3-sim-gate.js";
@@ -62,6 +63,18 @@ describe("I3-Sim Gate", () => {
 		expect(() => validateGateContract(projectRoot, contract, manifestPath)).toThrow(
 			"Task copied public question",
 		);
+	});
+
+	it("keeps the failed Source cursor and advances only after a completed compile", () => {
+		const contract = readContract();
+		const failedCursor = { episodeIndex: 0, timepointIndex: 1, sourceIndex: 0 };
+
+		expect(cursorAfterAttempt(contract, failedCursor, ["COMPILE_FAILED"])).toEqual(failedCursor);
+		expect(cursorAfterAttempt(contract, failedCursor, [])).toEqual({
+			episodeIndex: 0,
+			timepointIndex: 1,
+			sourceIndex: 1,
+		});
 	});
 });
 

@@ -166,6 +166,7 @@ interface GateSession {
 	cursor: Cursor;
 	completedIterations: number;
 	stopReasons: string[];
+	resumeCount?: number;
 }
 
 interface StateSnapshot {
@@ -410,6 +411,7 @@ async function prepare(runtimeRootInput: string): Promise<void> {
 		cursor: { episodeIndex: 0, timepointIndex: 0, sourceIndex: 0 },
 		completedIterations: 0,
 		stopReasons: [],
+		resumeCount: 0,
 	};
 	writeFileSync(sessionPath, `${JSON.stringify(session, null, 2)}\n`, { flag: "wx" });
 	console.log(JSON.stringify({ reused: false, session, gate: gate.report }, null, 2));
@@ -479,7 +481,7 @@ async function runNext(runtimeRootInput: string): Promise<void> {
 	if (timepointComplete && consumption.every((item) => item.wikiModuleIds.length === 0)) {
 		stopReasons.push("NO_WIKI_CONSUMPTION_AT_TIMEPOINT");
 	}
-	const nextCursor = advanceCursor(gate.contract, session.cursor);
+	const nextCursor = cursorAfterAttempt(gate.contract, session.cursor, stopReasons);
 	const nextStatus = stopReasons.length > 0 ? "STOP_REVIEW" : nextCursor ? "READY" : "COMPLETE";
 	const iterationNumber = session.completedIterations + 1;
 	const receipt = {
@@ -517,6 +519,59 @@ async function runNext(runtimeRootInput: string): Promise<void> {
 	};
 	writeJsonAtomic(sessionPath, updated);
 	console.log(JSON.stringify({ session: updated, receipt }, null, 2));
+}
+
+function resumeSession(runtimeRootInput: string, reasonInput: string): void {
+	const gate = loadAndValidateGate();
+	assertCleanWorktree();
+	const runtimeRoot = validateRuntimeRoot(runtimeRootInput);
+	const sessionPath = getSessionPath(runtimeRoot);
+	assert(existsSync(sessionPath), "I3-Sim session is not prepared");
+	const session = parseSession(readJson(sessionPath));
+	assert(session.status === "STOP_REVIEW", `Session cannot resume from status ${session.status}`);
+	const reason = reasonInput.trim();
+	assert(reason.length >= 12, "Resume reason must contain at least 12 characters");
+	const resumableStopReasons = new Set(["COMPILE_FAILED", "COMPILE_NOT_COMPLETED"]);
+	assert(
+		session.stopReasons.every((item) => resumableStopReasons.has(item)),
+		`Stop reasons require product review, not retry: ${session.stopReasons.join(",")}`,
+	);
+	assert(session.completedIterations > 0, "Stopped session has no failed iteration");
+	const receiptPath = join(
+		dirname(sessionPath),
+		`iteration-${String(session.completedIterations).padStart(3, "0")}.json`,
+	);
+	const failedReceipt = readJson(receiptPath);
+	const failedCursor = findCursorForReceipt(gate.contract, failedReceipt);
+	const currentCommit = git(["rev-parse", "HEAD"]);
+	const resumeNumber = (session.resumeCount ?? 0) + 1;
+	const resumeReceipt = {
+		schemaVersion: "wge-i3-sim-resume/v1",
+		resumeNumber,
+		failedIteration: session.completedIterations,
+		fromCommit: session.codeCommit,
+		toCommit: currentCommit,
+		previousStopReasons: session.stopReasons,
+		cursor: failedCursor,
+		reason,
+		resumedAt: new Date().toISOString(),
+	};
+	writeFileSync(
+		join(dirname(sessionPath), `resume-${String(resumeNumber).padStart(3, "0")}.json`),
+		`${JSON.stringify(resumeReceipt, null, 2)}\n`,
+		{ flag: "wx" },
+	);
+	const updated: GateSession = {
+		...session,
+		status: "READY",
+		updatedAt: new Date().toISOString(),
+		codeCommit: currentCommit,
+		cursor: failedCursor,
+		stopReasons: [],
+		resumeCount: resumeNumber,
+	};
+	writeJsonAtomic(sessionPath, updated);
+	console.log(JSON.stringify({ session: updated, resume: resumeReceipt }, null, 2));
 }
 
 function inspectConsumption(
@@ -628,6 +683,34 @@ function advanceCursor(contract: I3SimContract, cursor: Cursor): Cursor | null {
 		return { episodeIndex: cursor.episodeIndex + 1, timepointIndex: 0, sourceIndex: 0 };
 	}
 	return null;
+}
+
+export function cursorAfterAttempt(
+	contract: I3SimContract,
+	cursor: Cursor,
+	stopReasons: string[],
+): Cursor | null {
+	if (stopReasons.includes("COMPILE_FAILED") || stopReasons.includes("COMPILE_NOT_COMPLETED")) {
+		return cursor;
+	}
+	return advanceCursor(contract, cursor);
+}
+
+function findCursorForReceipt(contract: I3SimContract, receipt: JsonRecord): Cursor {
+	const episodeId = requireString(receipt, "episodeId");
+	const timepointName = requireString(receipt, "timepoint");
+	const sourceId = requireString(receipt, "sourceId");
+	for (const [episodeIndex, episode] of contract.slice.episodes.entries()) {
+		if (episode.episodeId !== episodeId) continue;
+		for (const [timepointIndex, timepoint] of episode.timepoints.entries()) {
+			if (timepoint.timepoint !== timepointName) continue;
+			const sourceIndex = timepoint.sourceIds.indexOf(sourceId);
+			if (sourceIndex >= 0) return { episodeIndex, timepointIndex, sourceIndex };
+		}
+	}
+	throw new Error(
+		`Failed receipt is outside the frozen Gate: ${episodeId}/${timepointName}/${sourceId}`,
+	);
 }
 
 function parseContract(value: unknown): I3SimContract {
@@ -825,6 +908,13 @@ async function main(): Promise<void> {
 		.command("run-next")
 		.requiredOption("--runtime-root <absolute-path>")
 		.action((options: { runtimeRoot: string }) => runNext(options.runtimeRoot));
+	program
+		.command("resume")
+		.requiredOption("--runtime-root <absolute-path>")
+		.requiredOption("--reason <text>")
+		.action((options: { runtimeRoot: string; reason: string }) =>
+			resumeSession(options.runtimeRoot, options.reason),
+		);
 	program
 		.command("status")
 		.requiredOption("--runtime-root <absolute-path>")

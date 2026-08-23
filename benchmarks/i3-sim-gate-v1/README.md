@@ -31,6 +31,14 @@ npm run i3:sim:gate -- run-next --runtime-root /absolute/path/to/i3-sim-runtime
 npm run i3:sim:gate -- status --runtime-root /absolute/path/to/i3-sim-runtime
 ```
 
+若在线编译因连接等瞬时故障进入 `STOP_REVIEW`，先检查 receipt；只有 stop reasons 全部属于编译失败且工作树已经形成新的 clean commit 时，才允许显式恢复失败 Source：
+
+```bash
+npm run i3:sim:gate -- resume --runtime-root /absolute/path/to/i3-sim-runtime --reason "reviewed transient provider connection failure"
+```
+
+`resume` 会从最后一个失败 receipt 重建 cursor，不允许跳到下一个 Source，并追加不可覆盖的恢复收据。Wiki support、无 Wiki 消费或成本超限等产品/经济性停止原因不能用该命令绕过。
+
 每个 Source 后记录 provider token、Question/Wiki 状态变化和编译状态。每个 timepoint 结束后才做无模型的 Context Pack 消费检查。编译失败、Wiki support gate 拒绝、timepoint 结束仍无 WikiModule 消费，或单 Source provider token 超过软上限时，会话进入 `STOP_REVIEW`，不会自动扩大。
 
 ## 验收解释
