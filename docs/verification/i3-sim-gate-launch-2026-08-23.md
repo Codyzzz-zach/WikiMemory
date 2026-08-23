@@ -19,7 +19,7 @@
 以下任一条件发生后，会话进入 `STOP_REVIEW`，不自动扩大：
 
 - Source 未完成完整编译；
-- Wiki support gate 出现拒绝；
+- 被 Wiki support gate 拒绝的模块仍泄漏进 Context Pack；正常 fail-closed rejection 只记录诊断；
 - timepoint 结束后所有自然任务均没有消费 WikiModule；
 - 单 Source provider token 超过 80,000 的软上限；
 - Gate manifest、冻结输入、代码 commit 或工作树状态发生漂移。

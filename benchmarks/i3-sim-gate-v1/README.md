@@ -39,7 +39,7 @@ npm run i3:sim:gate -- resume --runtime-root /absolute/path/to/i3-sim-runtime --
 
 `resume` 会从最后一个失败 receipt 重建 cursor，不允许跳到下一个 Source，并追加不可覆盖的恢复收据。Wiki support、无 Wiki 消费或成本超限等产品/经济性停止原因不能用该命令绕过。
 
-每个 Source 后记录 provider token、Question/Wiki 状态变化和编译状态。每个 timepoint 结束后才做无模型的 Context Pack 消费检查。编译失败、Wiki support gate 拒绝、timepoint 结束仍无 WikiModule 消费，或单 Source provider token 超过软上限时，会话进入 `STOP_REVIEW`，不会自动扩大。
+每个 Source 后记录 provider token、Question/Wiki 状态变化和编译状态。每个 timepoint 结束后才做无模型的 Context Pack 消费检查。编译失败、被 support gate 拒绝的 WikiModule 仍泄漏进 Context Pack、timepoint 结束仍无 WikiModule 消费，或单 Source provider token 超过软上限时，会话进入 `STOP_REVIEW`，不会自动扩大。正常的 fail-closed rejection 作为诊断信号保留，不计为硬失败。
 
 ## 验收解释
 

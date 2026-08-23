@@ -4,6 +4,7 @@ import { fileURLToPath } from "node:url";
 import { describe, expect, it } from "vitest";
 import {
 	type I3SimContract,
+	countSupportLeaks,
 	cursorAfterAttempt,
 	loadAndValidateGate,
 	validateGateContract,
@@ -75,6 +76,16 @@ describe("I3-Sim Gate", () => {
 			timepointIndex: 1,
 			sourceIndex: 1,
 		});
+	});
+
+	it("treats rejected stale modules as fail-closed unless they remain visible", () => {
+		const gates = [
+			{ moduleId: "wiki:active", accepted: true },
+			{ moduleId: "wiki:stale", accepted: false },
+		];
+
+		expect(countSupportLeaks(gates, ["wiki:active"])).toBe(0);
+		expect(countSupportLeaks(gates, ["wiki:active", "wiki:stale"])).toBe(1);
 	});
 });
 

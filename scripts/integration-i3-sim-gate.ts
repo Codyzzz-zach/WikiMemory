@@ -475,8 +475,8 @@ async function runNext(runtimeRootInput: string): Promise<void> {
 	if (usage.totalTokens > gate.contract.budgets.providerTokenSoftLimitPerSource) {
 		stopReasons.push("PROVIDER_TOKEN_SOFT_LIMIT");
 	}
-	if (consumption.some((item) => item.supportRejections > 0)) {
-		stopReasons.push("WIKI_SUPPORT_GATE_REJECTION");
+	if (consumption.some((item) => item.supportLeakCount > 0)) {
+		stopReasons.push("WIKI_SUPPORT_FAIL_OPEN");
 	}
 	if (timepointComplete && consumption.every((item) => item.wikiModuleIds.length === 0)) {
 		stopReasons.push("NO_WIKI_CONSUMPTION_AT_TIMEPOINT");
@@ -531,18 +531,40 @@ function resumeSession(runtimeRootInput: string, reasonInput: string): void {
 	assert(session.status === "STOP_REVIEW", `Session cannot resume from status ${session.status}`);
 	const reason = reasonInput.trim();
 	assert(reason.length >= 12, "Resume reason must contain at least 12 characters");
-	const resumableStopReasons = new Set(["COMPILE_FAILED", "COMPILE_NOT_COMPLETED"]);
-	assert(
-		session.stopReasons.every((item) => resumableStopReasons.has(item)),
-		`Stop reasons require product review, not retry: ${session.stopReasons.join(",")}`,
-	);
 	assert(session.completedIterations > 0, "Stopped session has no failed iteration");
 	const receiptPath = join(
 		dirname(sessionPath),
 		`iteration-${String(session.completedIterations).padStart(3, "0")}.json`,
 	);
 	const failedReceipt = readJson(receiptPath);
-	const failedCursor = findCursorForReceipt(gate.contract, failedReceipt);
+	const compileFailureReasons = new Set(["COMPILE_FAILED", "COMPILE_NOT_COMPLETED"]);
+	const isCompileFailure = session.stopReasons.every((item) => compileFailureReasons.has(item));
+	const isLegacyFailClosedStop =
+		session.stopReasons.length === 1 && session.stopReasons[0] === "WIKI_SUPPORT_GATE_REJECTION";
+	assert(
+		isCompileFailure || isLegacyFailClosedStop,
+		`Stop reasons require product review, not retry: ${session.stopReasons.join(",")}`,
+	);
+	let reviewEvidence: ReturnType<typeof inspectConsumption> | null = null;
+	let resumeCursor: Cursor;
+	if (isCompileFailure) {
+		resumeCursor = findCursorForReceipt(gate.contract, failedReceipt);
+	} else {
+		const episodeId = requireString(failedReceipt, "episodeId");
+		const episode = gate.contract.slice.episodes.find((item) => item.episodeId === episodeId);
+		assert(episode, `Failed receipt episode is outside Gate: ${episodeId}`);
+		const config = loadConfig({ runtimeRoot });
+		reviewEvidence = inspectConsumption(
+			config,
+			episode,
+			gate.contract.budgets.contextTokensPerTask,
+		);
+		assert(
+			reviewEvidence.every((item) => item.supportLeakCount === 0),
+			"Rejected WikiModule remained visible; fail-open cannot be resumed",
+		);
+		resumeCursor = session.cursor;
+	}
 	const currentCommit = git(["rev-parse", "HEAD"]);
 	const resumeNumber = (session.resumeCount ?? 0) + 1;
 	const resumeReceipt = {
@@ -552,7 +574,8 @@ function resumeSession(runtimeRootInput: string, reasonInput: string): void {
 		fromCommit: session.codeCommit,
 		toCommit: currentCommit,
 		previousStopReasons: session.stopReasons,
-		cursor: failedCursor,
+		cursor: resumeCursor,
+		reviewEvidence,
 		reason,
 		resumedAt: new Date().toISOString(),
 	};
@@ -566,7 +589,7 @@ function resumeSession(runtimeRootInput: string, reasonInput: string): void {
 		status: "READY",
 		updatedAt: new Date().toISOString(),
 		codeCommit: currentCommit,
-		cursor: failedCursor,
+		cursor: resumeCursor,
 		stopReasons: [],
 		resumeCount: resumeNumber,
 	};
@@ -584,6 +607,8 @@ function inspectConsumption(
 	relationCount: number;
 	wikiModuleIds: string[];
 	supportRejections: number;
+	rejectedModuleIds: string[];
+	supportLeakCount: number;
 	estimatedTokens: number;
 }> {
 	const service = new KnowledgeApplicationService(config);
@@ -595,16 +620,30 @@ function inspectConsumption(
 			knowledgeAccess: "MANAGED",
 			indexFailurePolicy: "LEGACY_FALLBACK",
 		});
+		const wikiModuleIds = response.pack.wikiModules.map((module) => module.id).sort();
+		const rejectedModuleIds = response.diagnostics.wiki.supportGates
+			.filter((gate) => !gate.accepted)
+			.map((gate) => gate.moduleId)
+			.sort();
 		return {
 			taskId: task.taskId,
 			claimCount: response.pack.subgraph.claims.length,
 			relationCount: response.pack.subgraph.relations.length,
-			wikiModuleIds: response.pack.wikiModules.map((module) => module.id).sort(),
-			supportRejections: response.diagnostics.wiki.supportGates.filter((gate) => !gate.accepted)
-				.length,
+			wikiModuleIds,
+			supportRejections: rejectedModuleIds.length,
+			rejectedModuleIds,
+			supportLeakCount: countSupportLeaks(response.diagnostics.wiki.supportGates, wikiModuleIds),
 			estimatedTokens: response.diagnostics.budget.finalEstimatedTokens,
 		};
 	});
+}
+
+export function countSupportLeaks(
+	gates: Array<{ moduleId: string; accepted: boolean }>,
+	visibleModuleIds: string[],
+): number {
+	const rejected = new Set(gates.filter((gate) => !gate.accepted).map((gate) => gate.moduleId));
+	return visibleModuleIds.filter((moduleId) => rejected.has(moduleId)).length;
 }
 
 function snapshotState(config: ReturnType<typeof loadConfig>): StateSnapshot {
