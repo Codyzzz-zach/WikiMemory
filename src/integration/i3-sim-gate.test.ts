@@ -4,6 +4,7 @@ import { fileURLToPath } from "node:url";
 import { describe, expect, it } from "vitest";
 import {
 	type I3SimContract,
+	consumptionGapResolved,
 	countSupportLeaks,
 	cursorAfterAttempt,
 	loadAndValidateGate,
@@ -86,6 +87,19 @@ describe("I3-Sim Gate", () => {
 
 		expect(countSupportLeaks(gates, ["wiki:active"])).toBe(0);
 		expect(countSupportLeaks(gates, ["wiki:active", "wiki:stale"])).toBe(1);
+	});
+
+	it("resumes a consumption gap only after deterministic consumption without support leaks", () => {
+		expect(
+			consumptionGapResolved([
+				{ wikiModuleIds: ["wiki:dma"], supportLeakCount: 0 },
+				{ wikiModuleIds: [], supportLeakCount: 0 },
+			]),
+		).toBe(true);
+		expect(consumptionGapResolved([{ wikiModuleIds: [], supportLeakCount: 0 }])).toBe(false);
+		expect(consumptionGapResolved([{ wikiModuleIds: ["wiki:dma"], supportLeakCount: 1 }])).toBe(
+			false,
+		);
 	});
 });
 

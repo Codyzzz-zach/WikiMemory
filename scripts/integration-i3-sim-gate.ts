@@ -541,8 +541,11 @@ function resumeSession(runtimeRootInput: string, reasonInput: string): void {
 	const isCompileFailure = session.stopReasons.every((item) => compileFailureReasons.has(item));
 	const isLegacyFailClosedStop =
 		session.stopReasons.length === 1 && session.stopReasons[0] === "WIKI_SUPPORT_GATE_REJECTION";
+	const isConsumptionGapStop =
+		session.stopReasons.length === 1 &&
+		session.stopReasons[0] === "NO_WIKI_CONSUMPTION_AT_TIMEPOINT";
 	assert(
-		isCompileFailure || isLegacyFailClosedStop,
+		isCompileFailure || isLegacyFailClosedStop || isConsumptionGapStop,
 		`Stop reasons require product review, not retry: ${session.stopReasons.join(",")}`,
 	);
 	let reviewEvidence: ReturnType<typeof inspectConsumption> | null = null;
@@ -563,6 +566,12 @@ function resumeSession(runtimeRootInput: string, reasonInput: string): void {
 			reviewEvidence.every((item) => item.supportLeakCount === 0),
 			"Rejected WikiModule remained visible; fail-open cannot be resumed",
 		);
+		if (isConsumptionGapStop) {
+			assert(
+				consumptionGapResolved(reviewEvidence),
+				"No WikiModule is consumed after product review; consumption gap cannot be resumed",
+			);
+		}
 		resumeCursor = session.cursor;
 	}
 	const currentCommit = git(["rev-parse", "HEAD"]);
@@ -644,6 +653,16 @@ export function countSupportLeaks(
 ): number {
 	const rejected = new Set(gates.filter((gate) => !gate.accepted).map((gate) => gate.moduleId));
 	return visibleModuleIds.filter((moduleId) => rejected.has(moduleId)).length;
+}
+
+export function consumptionGapResolved(
+	items: Array<{ wikiModuleIds: string[]; supportLeakCount: number }>,
+): boolean {
+	return (
+		items.length > 0 &&
+		items.some((item) => item.wikiModuleIds.length > 0) &&
+		items.every((item) => item.supportLeakCount === 0)
+	);
 }
 
 function snapshotState(config: ReturnType<typeof loadConfig>): StateSnapshot {
