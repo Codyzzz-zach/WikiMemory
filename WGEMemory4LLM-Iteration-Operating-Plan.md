@@ -1,8 +1,8 @@
-# WikiMemory 收敛迭代合同 v3.0
+# WikiMemory 收敛迭代合同 v3.1
 
-> 生效日期：2026-08-24
+> 生效日期：2026-08-25
 >
-> 当前路线：C0 Convergence Baseline → C1 Weighted Question State → C2 Budgeted Information Flow → C3 Longitudinal Use
+> 当前路线：C0 Convergence Baseline → C1 Weighted Question State → C1.5 Question Hypothesis Persistence → C2 Budgeted Information Flow → C3 Longitudinal Use
 >
 > 当前状态：C0 已闭合；C1 仅允许起草和评审阶段合同，尚未授权实现或新的付费模型实验
 >
@@ -12,7 +12,9 @@
 
 ## 1. 为什么切换到收敛路线
 
-I0–I2.5 已经形成可作为后续前提的 Evidence Kernel、Agent Runtime 和 Long-Question Identity。
+I0–I2.5 已经形成可作为后续前提的 Evidence Kernel、Agent Runtime 和 Question Identity
+Mechanism。QuestionFrame 能被提出、持久化、演化、恢复和消费，但问题假设是否具有跨来源、
+跨时间的稳定语义身份仍未证明。
 I3-Sim 又证明当前系统能稳定地产生可追溯 WikiModule，但真实冻结材料没有充分触发争议/取代，
 条件表达和跨版本关系也存在缺口。因此同一轮继续追加补丁只会改变验收对象，无法证明产品命题。
 
@@ -26,7 +28,8 @@ I3-Sim 又证明当前系统能稳定地产生可追溯 WikiModule，但真实�
 |---|---|---|
 | K0 · Evidence Kernel | 已形成稳定基础 | 作为硬不变量；不重做来源、Claim、引用、版本与证据闭包 |
 | K1 · Agent Runtime | 已形成稳定基础 | 作为硬不变量；复用 Application/MCP、隔离、重放、审计和 Context Pack |
-| K2 · Long-Question Identity | I2.5 机制已闭合 | 复用 QuestionFrame、WikiModule V2、pending/retry、merge/split 与消费链 |
+| K2-M · Question Identity Mechanism | I2.5 机制已闭合 | 复用 QuestionFrame、WikiModule V2、pending/retry、merge/split 与消费链 |
+| K2-S · Question Identity Semantics | 未证明 | C1.5 独立验证问题假设的持续身份；不塞入 C1 |
 | K3 · Weighted Semantic Flow | 未完成 | C1 唯一主变量 |
 | K4 · Budgeted Task Value | 部分具备 | C2 才统一处理确定性复用与歧义调用预算 |
 | K5 · Longitudinal Product Value | 未证明 | C3 才进入真实跨时间使用 |
@@ -89,7 +92,7 @@ AcceptanceVector(r) = (
 | Primary Variable | 唯一允许主动改变的核心变量 |
 | Input Slice | 冻结材料、历史产物、Episode 与 hash |
 | Acceptance Vector | 必须报告的质量、成本、不确定性和可解释性维度 |
-| Hard Invariants | K0–K2 中不得回退的能力 |
+| Hard Invariants | K0–K2-M 中不得回退的能力 |
 | Cost Budget | Token、调用、人工审阅和时间上限 |
 | Non-goals | 本阶段明确不做的相邻问题 |
 | Stop Conditions | 何时停止继续调用、补样例或改代码 |
@@ -121,6 +124,9 @@ AcceptanceVector(r) = (
 
 同一长期问题下，新旧证据如何形成可解释的领先、争议、限域、取代、未决和历史分支？
 
+本阶段使用冻结的 QuestionFrame 集合。“同一长期问题”是输入假设，不是 C1 要证明的结果。
+Question proposal、semantic match、promotion、merge、split、archive 和 reopen 不得作为主动变量。
+
 ### 建议冻结输入切片
 
 优先复用，不新增大 Benchmark：
@@ -150,13 +156,68 @@ C1 先验证可解释的权重向量或序位，不预设统一概率：
 - 不改 UI、远程 Transport 或 Pilot 协议；
 - 不把 MCTS 类比实现成访问计数、自博弈或收敛概率；
 - 不同时解决 Context Pack 的全局预算优化。
+- 不修改问题形成、语义匹配、身份成熟或 lifecycle policy。
 
 ### 开始条件
 
 C1 阶段合同必须补齐精确输入 hash、样本清单、接受阈值、调用/Token/人工预算和停止线，并经产品
 负责人接受。当前文档不授权实现。
 
-## 8. C2 · Budgeted Information Flow
+## 8. C1.5 · Question Hypothesis Persistence
+
+### 只允许回答的问题
+
+从人主动选择的材料中形成的问题假设，如何通过跨来源、跨时间的证据获得复用、重叠、分裂、
+合并或长期稳定身份？
+
+### Primary Variable
+
+只允许改变问题身份评估策略：attention boundary、evidence basin、update semantics、recurrence、
+separability、软关系与身份成熟判断。C1 的加权问题状态作为冻结输入，不在本阶段继续调优。
+
+### 最小实现假设
+
+- 人类提供材料选择和可选 domain/scope，不要求预写标准问题；
+- AI 只提出 `QuestionHypothesis` 与身份关系候选，没有直接发布或硬归并权；
+- “当前可消费”与“长期身份成熟度”分离，现有 `ACTIVE/CANONICAL` 不直接代表后者；
+- 优先建立追加式 `QuestionIdentityAssessment` 与软关系 shadow，不直接扩充高扇入的
+  `QuestionFrame` 核心 schema；
+- 无法判断时保留 `UNRESOLVED`、重叠或 split/merge candidate，不强制唯一目录。
+
+### 建议冻结输入切片
+
+1. I2.5 数学材料：同问题跨来源复用、条件边界与无关材料隔离；
+2. Evolution：早期形成、后期更新、纠正与取代后的身份持续性；
+3. I3-Sim：三个领域中已经形成的问题及失败 Episode；
+4. 每个 Episode 使用时间留出、输入顺序/标题扰动和单来源移除，不新增大规模 Blind；
+5. 只对确定性候选召回无法裁决的高价值问题对调用模型。
+
+### 验收方向
+
+```text
+QUESTION_IDENTITY_ACCEPT(r) =
+  InputBoundary(r)
+  AND GroundedIdentityDecisions(r)
+  AND TemporalRouting(r)
+  AND SourceAblationStability(r)
+  AND NoSilentOvermerge(r)
+  AND AmbiguityPreservation(r)
+  AND IdentityMigration(r)
+  AND Replay(r)
+  AND CostWithinBudget(r)
+```
+
+具体样本、阈值、调用/Token/人工预算和停止线必须在 C1 闭合后冻结。当前文档只接受方向，
+不授权 C1.5 实现或付费模型实验。
+
+### Non-goals
+
+- 不扩大知识输入到 Agent run、一般对话、工具轨迹或任务结果；
+- 不重新优化 C1 的分支权重；
+- 不同时改 Loader、Relation audit、Retrieval、Context budget、UI 或 Pilot；
+- 不把 embedding、主题模型、单一 identity score 或一次 LLM 判断当作身份真值。
+
+## 9. C2 · Budgeted Information Flow
 
 只解决：在质量、成本和不确定性之间，如何为具体任务选择更有价值的信息。
 
@@ -166,9 +227,9 @@ C1 阶段合同必须补齐精确输入 hash、样本清单、接受阈值、调
 - 报告质量—成本前沿和模型调用的边际价值，不追求统一低 Token；
 - C1 的语义质量不得因省 Token 回退。
 
-## 9. C3 · Longitudinal Use
+## 10. C3 · Longitudinal Use
 
-C1/C2 稳定后，才设计真实跨时间使用。周期、领域数、任务数和改善阈值根据真实使用条件在阶段
+C1/C1.5/C2 稳定后，才设计真实跨时间使用。周期、领域数、任务数和改善阈值根据真实使用条件在阶段
 开始前冻结，不自动继承旧 v2.0 的“30 天、100 任务、30%/5%”设想。
 
 C3 仍须保持：
@@ -179,7 +240,7 @@ C3 仍须保持：
 - 任务与回答不默认落入知识，只保存经授权的评测收据；
 - 用户愿意继续使用是证据之一，不是为了交付日期强制制造的结论。
 
-## 10. 材料与 Benchmark 的使用纪律
+## 11. 材料与 Benchmark 的使用纪律
 
 - 现有 Batch A/B/C、WorkBuddy、S200、数学、Evolution、I2.5 与 I3-Sim 资产首先充当机制回归、
   输入切片、跨域哨兵和成本对照；
@@ -189,7 +250,7 @@ C3 仍须保持：
 - Benchmark 失败首先用于责任层归因，不直接改变 North Star；
 - 生成者、Evaluator 和最终裁决者继续在文件与工具权限上隔离。
 
-## 11. 文档与裁决纪律
+## 12. 文档与裁决纪律
 
 - Product Definition：为什么存在、必须达成什么；
 - User Stories：用户可观察行为；

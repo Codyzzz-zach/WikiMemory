@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>WGEMemory4LLM · User Stories v1.6</title>
+  <title>WGEMemory4LLM · User Stories v1.7</title>
   <script type="module">
     import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
     mermaid.initialize({startOnLoad:true,theme:"base",securityLevel:"loose",themeVariables:{fontFamily:"Noto Sans CJK SC, Inter, ui-sans-serif, system-ui, sans-serif",primaryColor:"#eef5ff",primaryTextColor:"#172033",primaryBorderColor:"#5a8fc7",lineColor:"#657a91",secondaryColor:"#ecf8f3",tertiaryColor:"#fff7e8",fontSize:"13px"},flowchart:{useMaxWidth:true,htmlLabels:false,curve:"basis"},sequence:{useMaxWidth:true},state:{useMaxWidth:true}});
@@ -26,11 +26,11 @@
 <body>
 <div class="page">
 <header id="top">
-  <div class="eyebrow">WGEMemory4LLM · User Stories <span class="badge principle">v1.6</span></div>
+  <div class="eyebrow">WGEMemory4LLM · User Stories <span class="badge principle">v1.7</span></div>
   <h1>从“一篇新文章”到“一个真正进步的 Agent”</h1>
   <p class="subtitle">这份文档不是描述后台能生成多少文件，而是定义用户在长期学习中应该感受到什么：不维护 Wiki、不重复解释、不被陈旧结论拖回原点，同时能追问“为什么”“从哪里来”“这次和上次哪里不同”。</p>
-  <div class="hero"><b>总用户故事：</b>作为持续学习科技、AI、金融、历史、健康、人文等混合知识的单用户，我希望把主动选择的文章、讨论记录、项目材料与纠正交给通用 Agent 后，它能围绕长期问题自动形成并维护可追溯的加权证据拓扑；当我提出新问题时，它能复用跨材料关系、说明当前领先分支、冲突、条件与变化，并随新材料持续修订判断，而不要求我人工维护知识库。</div>
-  <div class="meta"><span class="chip"><b>主受益者</b> 单用户 · 多领域知识学习者</span><span class="chip"><b>主消费者</b> 通用 Agent</span><span class="chip"><b>核心旅程</b> 选择材料 → 编译 → 问答 → 纠正 → 进化</span><span class="chip"><b>完成口径</b> 行为改变而非文件生成</span><span class="chip"><b>日期</b> 2026-08-24</span></div>
+  <div class="hero"><b>总用户故事：</b>作为持续学习科技、AI、金融、历史、健康、人文等混合知识的单用户，我希望只需主动选择值得学习的文章、讨论记录、项目材料与纠正，而不必预先穷尽或维护长期问题目录；通用 Agent 能从材料中提出问题假设、维护可追溯的加权证据拓扑，并让部分问题在后续材料中逐渐获得稳定身份。当我提出新问题时，它能复用跨材料关系、说明当前领先分支、冲突、条件与变化，并随新材料持续修订判断。</div>
+  <div class="meta"><span class="chip"><b>主受益者</b> 单用户 · 多领域知识学习者</span><span class="chip"><b>主消费者</b> 通用 Agent</span><span class="chip"><b>核心旅程</b> 选择材料 → 形成假设 → 编译 → 问答 → 纠正 → 进化</span><span class="chip"><b>完成口径</b> 行为改变而非文件生成</span><span class="chip"><b>日期</b> 2026-08-25</span></div>
   <nav aria-label="目录"><a href="#actors">角色</a><a href="#map">故事地图</a><a href="#journey">主旅程</a><a href="#stories">P0/P1 故事</a><a href="#exceptions">异常旅程</a><a href="#contracts">Context Pack</a><a href="#nfr">体验与非功能</a><a href="#trace">哲学追踪</a></nav>
 </header>
 
@@ -447,7 +447,7 @@ flowchart LR
 </main>
 
 <footer>
-  <p><b>WGEMemory4LLM User Stories v1.6</b> · 2026-08-24。v1.6 固定人类选择材料的知识输入边界，把长期问题下的当前认识改为可解释的加权分支投影，并明确新材料不自动覆盖旧证据。Graph-capable、有限时间语义、跨域 Benchmark 与权限硬隔离要求继续有效；当前能力账本与收敛路线见 <code>docs/specs/wikimemory-convergence-baseline-v1.md</code>，当前事实见 <code>docs/status/implementation-status.md</code>。</p>
+  <p><b>WGEMemory4LLM User Stories v1.7</b> · 2026-08-25。v1.7 明确人类负责选择材料而不必预先穷尽长期问题，AI 形成的是问题假设；当前可消费与长期身份成熟度分离，问题通过跨来源、跨时间证据逐渐获得稳定身份。v1.6 的加权分支投影、知识输入边界、Graph-capable、有限时间语义、跨域 Benchmark 与权限硬隔离要求继续有效；当前能力账本与收敛路线见 <code>docs/specs/wikimemory-convergence-baseline-v1.md</code>，当前事实见 <code>docs/status/implementation-status.md</code>。</p>
   <p class="small">建议使用现代浏览器打开；Mermaid 图通过 CDN 渲染。正文、表格与验收标准在脚本不可用时仍可阅读。</p>
 </footer>
 </div>

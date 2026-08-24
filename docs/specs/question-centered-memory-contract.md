@@ -1,7 +1,7 @@
-# WikiMemory 长期问题记忆合同 v1.1
+# WikiMemory 长期问题记忆合同 v1.2
 
-> 状态：Accepted；I2.5 机制基线，C1 加权语义上位合同
-> 生效日期：2026-08-24
+> 状态：Accepted；I2.5 机制基线，C1 加权状态与 C1.5 问题身份持续性上位合同
+> 生效日期：2026-08-25
 > 产品授权：用户确认自动形成并持续维护围绕长期问题的 WikiModule
 > 上位约束：`WGEMemory4LLM-Product-Definition.html`、`WGEMemory4LLM-User-Stories.html`、`docs/specs/knowledge-contract.md`、`docs/specs/wikimemory-convergence-baseline-v1.md`
 
@@ -17,8 +17,9 @@ Evidence 与 Authority 合同编译；运行事件本身不跨越知识输入边
 
 ### 2.1 QuestionFrame
 
-`QuestionFrame` 是长期问题的稳定、持久化、可重建派生身份。它不是真理来源，不得反向
-支持 Claim。
+`QuestionFrame` 是问题假设的稳定地址、持久化载体和可重建派生身份。它不是真理来源，不得
+反向支持 Claim。地址稳定表示系统能够持续引用和演化这个假设，不等于该问题已经获得长期
+语义身份。
 
 它至少表达：
 
@@ -59,16 +60,34 @@ Evidence 与 Authority 合同编译；运行事件本身不跨越知识输入边
 
 它只用于解释、重放、局部重建、回滚和回归，不属于 Canonical Knowledge。
 
+### 2.4 QuestionHypothesis 与身份成熟度
+
+人类选择材料、声明 domain/scope 或提供纠正，构成问题发现的注意力边界；人类不需要预先
+穷尽或精确表述全部长期问题。LLM 可以提出规范问题、别名、边界、已有问题匹配和生命周期
+建议，但这些输出首先是 `QuestionHypothesis`，不是已经成立的长期问题。
+
+问题身份由以下四类信息共同约束：
+
+- attention boundary：哪些经授权材料、domain 和 scope 属于候选范围；
+- evidence basin：哪些 Claim、Relation、Concept 和 SourceSpan 会共同更新该问题；
+- update semantics：什么样的新证据会改变其分支、范围或答案状态；
+- evolution history：rename、复用、重叠、merge、split、archive 与 reopen 的可追溯历史。
+
+“当前可消费”与“长期身份成熟度”是两个独立维度。现有 schema 尚未独立表达身份成熟度，
+因此 `ACTIVE`、`CANONICAL` 或模块可见性不得被解释为长期稳定证明。具体持久化表示由 C1.5
+阶段合同决定，本合同不预设新的枚举或统一概率。
+
 ## 3. 形成与维护原则
 
 1. 形成采用“语义提议 + 确定性门禁”；LLM 没有发布权。
 2. 形成输入只允许 Canonical Claim/Relation/Concept、SourceSpan、已有 QuestionFrame、
    显式 domain/scope 和配置。
-3. 单篇材料可以形成 ACTIVE 问题，但必须通过问题稳定性、语义边界、证据闭包和非文章
-   特有性门禁；否则保持 CANDIDATE。
+3. 单篇材料可以形成有证据、当前有用的问题假设或模块，但单一来源不能独自证明长期身份；
+   当前实现仍可按工程 lifecycle 形成 `ACTIVE`，该状态不得被产品层解释为身份成熟。
 4. 新材料优先匹配并更新已有问题，不因标题或语言变化复制模块。
-5. merge、split、archive 和 reopen 可以自动发生，但必须有 reason code、before/after hash、
-   身份迁移和可回滚记录。
+5. merge、split、archive 和 reopen 可以由模型提出，但一次模型输出没有直接发布权；硬动作必须
+   通过确定性门禁，并保留 reason code、before/after hash、身份迁移和可回滚记录。证据不足时
+   应先保留可解释的重叠、父子、merge/split 候选，而不是制造确定归并。
 6. 问题仍重要但没有当前答案时继续存在，并显式表达 Evidence Gap；不得为了完整性编造答案。
 7. 只重建受新增/变化 Claim、Relation、Concept 或 QuestionFrame 影响的模块；无关模块必须
    byte/hash stable。
@@ -112,6 +131,8 @@ ACCEPT(r) =
 - 同一长期问题的跨来源更新命中已有 QuestionFrame；
 - rename 不改变 ID；merge/split 保留可解析的身份迁移；
 - stable address 不包含 Source ID 或结构 heading 作为身份根。
+- `ACTIVE`、`CANONICAL` 或一次跨来源匹配不单独构成长期身份成熟证明；
+- 无法可靠判断同一性时保留歧义或软关系，不得静默过度合并。
 
 ### A4 · StateSemantics
 
@@ -203,8 +224,12 @@ QUALITY = (
 - 失败必须归因到责任层，并固化为最小回归 Episode；只保存 trace 而未改变合同/实现不算学习。
 - 若继续讨论的预期决策改善低于实现一个可逆 shadow slice 的成本，停止讨论并进入 shadow。
 - 若新能力要求摄入 Agent run 或让 Wiki 文本成为证据，立即停止并回到产品边界。
-- I2.5 已作为 Long-Question Identity 机制阶段闭合；C1 只能改变“加权问题状态”的最小表达与
-  判定，不同时扩展 loader、检索、UI、知识来源或真实 Pilot。
+- I2.5 已作为 `K2-M` Question Identity Mechanism 阶段闭合；`K2-S` Question Identity Semantics
+  尚未证明，不回写或降格 I2.5 的机制证据。
+- C1 只能改变“加权问题状态”的最小表达与判定，冻结 QuestionFrame 集合和 formation/lifecycle
+  行为，不同时扩展 loader、检索、UI、知识来源或真实 Pilot。
+- C1.5 才能把问题发现、语义复用、身份成熟、软关系和 merge/split 判定设为主变量；在 C1
+  闭合前不得偷跑实现或付费实验。
 - 若长期问题模块在冻结输入切片中不优于 Claim-only 阅读，或加权语义的边际价值不足以覆盖
   模型成本，则以 `NARROW`、`STOP` 或 `NO-GO` 闭合，不以模块数量或继续追加调用为价值证明。
 - 新发现默认进入 Discovery Backlog；只有显式的人类决策才能改变 North Star 或当前阶段主变量。

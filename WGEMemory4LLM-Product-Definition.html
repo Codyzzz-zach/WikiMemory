@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>WGEMemory4LLM · Product Definition v1.6</title>
+  <title>WGEMemory4LLM · Product Definition v1.7</title>
   <script type="module">
     import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
     mermaid.initialize({
@@ -53,14 +53,14 @@
 <body>
 <div class="page">
 <header id="top">
-  <div class="eyebrow">WGEMemory4LLM · Product Definition <span class="status s-green">v1.6</span></div>
+  <div class="eyebrow">WGEMemory4LLM · Product Definition <span class="status s-green">v1.7</span></div>
   <h1>让 Agent 的多领域认知随使用持续进化</h1>
-  <p class="subtitle">这不是一个给人浏览的 AI Wiki，也不是把更多文件塞进上下文的检索工具。WGEMemory4LLM 是外挂于通用 Agent 的自治知识编译与长期记忆层：它把人主动选择的材料，以及经显式权限合同提交的权威声明与纠正，编译为围绕长期问题、可验证、可演化、可被任务直接消费的知识状态。Agent 运行轨迹、工具日志、任务结果和一般对话不会自动成为知识。</p>
-  <div class="definition"><b>产品定义：</b>WGEMemory4LLM 持续把人类选择的多领域知识资产编译为围绕长期问题的加权证据拓扑；在任务发生时，以检索入口、受审计的局部 Graph 导航和证据闭包生成有预算的 Context Pack，使通用 Agent 能跨文档、跨语言、跨会话积累认知，并以可解释、可修订而非伪确定的方式更新分支。</div>
+  <p class="subtitle">这不是一个给人浏览的 AI Wiki，也不是把更多文件塞进上下文的检索工具。WGEMemory4LLM 是外挂于通用 Agent 的自治知识编译与长期记忆层：它从人主动选择的材料，以及经显式权限合同提交的权威声明与纠正中形成问题假设、证据拓扑与可消费知识状态；部分问题在跨来源、跨时间更新中逐渐获得稳定身份。Agent 运行轨迹、工具日志、任务结果和一般对话不会自动成为知识。</p>
+  <div class="definition"><b>产品定义：</b>WGEMemory4LLM 持续把人类选择的多领域知识资产编译为围绕问题假设的加权证据拓扑；AI 可以提出问题，人类不需要预先穷尽定义，但长期身份必须由后续证据、边界、更新语义和演化历史逐渐赢得。在任务发生时，系统以检索入口、受审计的局部 Graph 导航和证据闭包生成有预算的 Context Pack，使通用 Agent 能跨文档、跨语言、跨会话积累认知，并以可解释、可修订而非伪确定的方式更新分支。</div>
   <div class="meta">
     <span class="chip"><b>首要消费者</b> 通用 Agent</span><span class="chip"><b>MVP 场景</b> 单用户 · 多领域长期学习与项目记忆</span>
     <span class="chip"><b>核心结果</b> Agent 任务效果改善</span><span class="chip"><b>对照基线</b> 文件夹 + Coding Agent 搜索</span>
-    <span class="chip"><b>知识治理</b> AI 自治写入 + 语义 Lint + 可验证回滚</span><span class="chip"><b>v1.6 变更</b> 加权证据流 · 知识输入边界 · 收敛阶段</span><span class="chip"><b>日期</b> 2026-08-24</span>
+    <span class="chip"><b>知识治理</b> AI 自治写入 + 语义 Lint + 可验证回滚</span><span class="chip"><b>v1.7 变更</b> 问题假设 · 持续身份 · 可消费/成熟度分离</span><span class="chip"><b>日期</b> 2026-08-25</span>
   </div>
   <nav aria-label="目录">
     <a href="#goal">目标</a><a href="#operating-contract">运行合同</a><a href="#problem">原始问题</a><a href="#boundaries">边界</a><a href="#philosophy">设计哲学</a>
@@ -253,7 +253,7 @@ flowchart TD
 <section id="model">
   <div class="section-head"><div class="kicker">05 / Knowledge Model</div><div><h2>WGE：语义、拓扑与可信度三层共同构成 Memory</h2></div></div>
   <div class="grid three">
-    <article class="card"><div class="label">Wiki · 物化派生视图</div><h3>完整语义</h3><p>围绕稳定主题、概念或长期问题组织的可寻址模块。它吸收多份来源，给 Agent 连贯解释，不等于某篇输入文章的摘要。<b>认识论上是派生视图</b>（可丢弃、可重编译），<b>工程上持久化、版本化、增量更新</b>——内容可积累结构与表达质量，但知识权威不可独立积累。</p></article>
+    <article class="card"><div class="label">Wiki · 物化派生视图</div><h3>完整语义</h3><p>围绕主题、概念或逐步稳定的问题假设组织的可寻址模块。它吸收多份来源，给 Agent 连贯解释，不等于某篇输入文章的摘要。<b>认识论上是派生视图</b>（可丢弃、可重编译），<b>工程上持久化、版本化、增量更新</b>——稳定地址保证可持续引用，不等于长期身份已经成熟；内容可积累结构与表达质量，但知识权威不可独立积累。</p></article>
     <article class="card"><div class="label">Graph</div><h3>关系、治理与候选导航</h3><p>保存概念、Claim 和模块之间的类型化、条件化、可追溯关系。离线用于冲突、影响和增量重编译；在线默认只在有界候选池中参与排序，只有最小必要路径进入 Context。</p></article>
     <article class="card"><div class="label">Evidence</div><h3>事实锚点</h3><p>不可变原文及定位信息。它回答“作者究竟说了什么”，约束 Wiki 与 Graph 不能独立成为没有出处的真理。</p></article>
   </div>
@@ -495,7 +495,7 @@ stateDiagram-v2
 
 <section id="architecture">
   <div class="section-head"><div class="kicker">06 / Architecture</div><div><h2>逻辑架构：编译时形成复利，运行时形成任务相关性</h2></div></div>
-  <div class="callout good"><b>详细架构权威：</b>本节只保留产品级逻辑视图。Transport、Application、Domain、Worker、Persistence、Projection 的完整职责、MCP/API 合同、权限模型与 Docker 运行边界统一见 <code>architecture-baseline.html</code> Architecture 1.1。</div>
+  <div class="callout good"><b>详细架构权威：</b>本节只保留产品级逻辑视图。Transport、Application、Domain、Worker、Persistence、Projection 的完整职责、MCP/API 合同、权限模型与 Docker 运行边界统一见 <code>architecture-baseline.html</code> Architecture 1.2。</div>
   <div class="diagram"><div class="mermaid">
 flowchart TD
     S["不可变 Sources"] --> I["Ingestor：解析 规范化 哈希"]
@@ -615,7 +615,7 @@ flowchart TD
       <tr><td>PD-02</td><td>P0</td><td>从材料生成带证据的 Claim</td><td>每条 Claim 至少一个 SourceSpan；无法支持的内容标为推断或隔离。</td></tr>
       <tr><td>PD-03</td><td>P0</td><td>维护跨来源 Concept 身份</td><td>别名可合并；同名异义可分叉；任何合并可回滚。</td></tr>
       <tr><td>PD-04</td><td>P0</td><td>维护类型化、条件化 Relation</td><td>关系有方向、来源、条件、状态；弱相关不能支撑结论。</td></tr>
-      <tr><td>PD-05</td><td>P0 <span class="status s-amber">K2 已完成 / K3 完善中</span></td><td>按长期问题维护 WikiModule（<b>物化派生视图</b>）</td><td>按稳定问题组织（非一文一个）；聚合多 Claim；显示领先分支、条件、争议、未决、历史与引用；新材料可解释地改变分支权重、可见性、优先级或范围；能被 Context Pack 消费。<code>CURRENT</code> 仅表示给定知识版本、适用范围与任务下当前证据支持更强的分支，不表示真理。每个断言必须由 Canonical Claim 支撑；争议/取代的加权语义仍在完善。</td></tr>
+      <tr><td>PD-05</td><td>P0 <span class="status s-amber">K2-M 已完成 / K2-S、K3 待验</span></td><td>围绕问题假设维护 WikiModule（<b>物化派生视图</b>）</td><td>从人选择的材料中自动提出并维护问题假设（非一文一个），通过跨来源、跨时间证据逐渐获得复用、重叠、分裂、合并或长期稳定身份；聚合多 Claim；显示领先分支、条件、争议、未决、历史与引用；新材料可解释地改变分支权重、可见性、优先级或范围；能被 Context Pack 消费。当前可消费与长期身份成熟度必须分离，<code>ACTIVE/CANONICAL</code> 不等于长期稳定；<code>CURRENT</code> 仅表示给定知识版本、适用范围与任务下当前证据支持更强的分支，不表示真理。每个断言必须由 Canonical Claim 支撑；问题身份持续性和争议/取代的加权语义仍待独立验证。</td></tr>
       <tr><td>PD-06</td><td>P0</td><td>写入时 Lint 与消费前隔离</td><td>失败内容不进入默认索引、Graph 扩展和 Context Pack。</td></tr>
       <tr><td>PD-07</td><td>P0</td><td>按任务生成有预算、保持证据闭包的 Context Pack</td><td>候选子图与可见子图分离；Claim、条件、provenance 与必要 Evidence 作为完整单元选择；关系路径按意图、安全风险或覆盖缺口触发；最终发送前核验实际 token。</td></tr>
       <tr><td>PD-08</td><td>P0 <span class="status s-amber">工程链已实现 / 产品待验</span></td><td>自然语言纠正与影响传播</td><td>分三阶段实现：<b>2a-1</b> 纠正接入与 Claim 状态闭环 → <b>2a-2</b> WikiModule 初始生成 → <b>2b</b> 派生层闭环。当前代码已实现自然语言受限解析、偏好/决策权威分流、FACT 先争议后补证据、审计 SUPERSEDES/CONTRADICTS 演化、Wiki 重建、幂等与安全回滚；但<b>只有真实 Agent 后续任务证明旧错不复发且无关任务不退化，才算产品 MVP 的最小纠正闭环真正闭合</b>。</td></tr>
@@ -685,7 +685,8 @@ flowchart TD
     <li>Git 提供版本与回滚，语义 CI 提供正确性门禁；二者不可互相替代。</li>
     <li>产品面向人类泛化知识资产与通用 Agent；任何单一领域只可作为诊断切片，不能定义架构。</li>
     <li>产品知识输入限于人主动选择的材料，以及经显式权限合同提交的权威声明与纠正；运行日志和任务结果不自动成为知识。</li>
-    <li>长期问题的知识状态是加权证据拓扑；<code>CURRENT</code> 是有版本、范围和任务条件的领先投影，争议与取代不是百分之百确定的终局真值。</li>
+    <li>AI 形成的是问题假设；人类提供材料选择和治理边界，不必预先穷尽问题。问题的长期身份由跨来源、跨时间证据逐渐赢得，<code>ACTIVE/CANONICAL</code> 不等于身份成熟。</li>
+    <li>问题假设的知识状态是加权证据拓扑；<code>CURRENT</code> 是有版本、范围和任务条件的领先投影，争议与取代不是百分之百确定的终局真值。</li>
     <li>新发现默认进入 Discovery Backlog；只有人类可以改变 North Star 或当前阶段主变量。阶段可用 PASS、NARROW、REWORK、STOP 或 NO-GO 闭合。</li>
   </ul>
   <h3>由实验决定、当前不应拍脑袋冻结</h3>
@@ -705,7 +706,8 @@ flowchart TD
     <tbody>
       <tr><td>WGEMemory4LLM</td><td>面向通用 Agent 的自治知识编译与长期记忆层；由 Wiki、Graph、Evidence 共同构成可演化知识状态。</td></tr>
       <tr><td>Knowledge State</td><td>某一知识版本、适用范围与任务语境下，可被 Agent 消费的 Canonical 证据拓扑及其当前投影；不等于唯一真相。</td></tr>
-      <tr><td>Weighted Evidence Topology</td><td>围绕长期问题保存证据、Claim、关系、条件、历史分支与多维权重的结构；权重可以是可解释序位或理由，不要求伪精确概率。</td></tr>
+      <tr><td>QuestionHypothesis</td><td>由人类选择材料限定注意力边界、由 AI 提出的候选问题；其稳定地址便于持续更新，但长期身份仍需由 evidence basin、更新语义与演化历史逐渐证明。</td></tr>
+      <tr><td>Weighted Evidence Topology</td><td>围绕问题假设保存证据、Claim、关系、条件、历史分支与多维权重的结构；权重可以是可解释序位或理由，不要求伪精确概率。</td></tr>
       <tr><td>Knowledge Evolution</td><td>新证据导致已有 Claim/Relation/Module 的权重、可见性、优先级、条件或范围改变，并在保留历史分支的同时影响后续任务。</td></tr>
       <tr><td>Semantic Lint / Semantic CI</td><td>对证据支持、冲突、条件、时态、依赖、过期和回归问题进行的自动检查；不仅检查格式。</td></tr>
       <tr><td>Context Pack</td><td>知识状态针对某个任务、在明确预算内生成的运行时投影，包含地图、子图、Wiki 解释、证据与风险。</td></tr>
@@ -719,7 +721,7 @@ flowchart TD
 </main>
 
 <footer>
-  <p><b>WGEMemory4LLM Product Definition v1.6</b> · 2026-08-24。本文档是产品目标与不变量的最高约束；User Stories 定义可观察行为；Architecture Baseline 定义目标架构；Knowledge Contract 定义对象语义；Convergence Baseline 定义当前能力账本、收敛阶段与闭合规则；Implementation Status 记录当前事实；Benchmark 定义如何产生证据；历史审计只在其标注日期内有效；README 不产生独立决策。</p>
+  <p><b>WGEMemory4LLM Product Definition v1.7</b> · 2026-08-25。v1.7 明确 AI 形成的是问题假设，长期身份由跨来源、跨时间证据逐渐赢得，并分离当前可消费与身份成熟度。本文档是产品目标与不变量的最高约束；User Stories 定义可观察行为；Architecture Baseline 定义目标架构；Knowledge Contract 定义对象语义；Convergence Baseline 定义当前能力账本、收敛阶段与闭合规则；Implementation Status 记录当前事实；Benchmark 定义如何产生证据；历史审计只在其标注日期内有效；README 不产生独立决策。</p>
   <p class="small">建议使用现代浏览器打开；Mermaid 图通过 CDN 渲染。正文、表格与关键结论在脚本不可用时仍可阅读。</p>
 </footer>
 </div>

@@ -1,6 +1,6 @@
 # WikiMemory
 
-WikiMemory 是面向通用 Agent 的可演化知识与长期记忆层。它把人主动选择的多领域知识材料，以及经显式权限合同提交的权威声明与纠正，转化为围绕长期问题、可追溯、可版本化、可撤销的加权证据拓扑，并按任务生成有预算、保留证据闭包的 Context Pack。Agent 运行、工具日志、任务结果和一般对话不会自动成为知识输入。
+WikiMemory 是面向通用 Agent 的可演化知识与长期记忆层。它从人主动选择的多领域知识材料，以及经显式权限合同提交的权威声明与纠正中形成问题假设和加权证据拓扑；部分问题在跨来源、跨时间更新中逐渐获得稳定身份。系统按任务生成有预算、保留证据闭包的 Context Pack。Agent 运行、工具日志、任务结果和一般对话不会自动成为知识输入。
 
 它不是一个给人维护页面的 Wiki，也不是把 Graph 遍历结果全部塞进 Prompt 的 RAG 包装器。长期目标和当前实现必须分开阅读：
 
@@ -10,24 +10,25 @@ WikiMemory 是面向通用 Agent 的可演化知识与长期记忆层。它把�
 - [目标架构](architecture-baseline.html)：理想 WikiMemory 的模块、数据、接口、权限与部署边界；
 - [知识语义合同](docs/specs/knowledge-contract.md)：Claim、Relation、scope、状态与时间语义；
 - [长期问题合同](docs/specs/question-centered-memory-contract.md)：QuestionFrame、WikiModule 与加权状态语义；
-- [收敛基线](docs/specs/wikimemory-convergence-baseline-v1.md)：能力账本、C0–C3 阶段与闭合规则；
+- [收敛基线](docs/specs/wikimemory-convergence-baseline-v1.md)：能力账本、C0–C3（含 C1.5）阶段与闭合规则；
 - [实施状态](docs/status/implementation-status.md)：代码目前真实做到了什么；
-- [收敛迭代合同](WGEMemory4LLM-Iteration-Operating-Plan.md)：C0–C3 施工顺序、验收向量、预算与停止规则；
+- [收敛迭代合同](WGEMemory4LLM-Iteration-Operating-Plan.md)：C0–C3（含 C1.5）施工顺序、验收向量、预算与停止规则；
 - [Benchmark 手册](WGEMemory4LLM-Benchmark.html)：如何构造开发、回归、盲测和长期产品证据。
 - [I3-Sim 最终验收](docs/verification/i3-sim-gate-result-2026-08-24.md)：本轮 NO-GO、成本台账和下一阶段输入证据。
 
 ## 当前裁决
 
-当前内核是 **integration-ready，尚非 Product-MVP**：I0–I2 的应用、协议、纠正和演化工程链已闭合；I2.5 已完成围绕长期问题形成和维护 WikiModule 的机制，包括稳定 QuestionFrame、语义提议/确定性门控、结构化 WikiModule V2、问题拓扑演化、pending/retry、崩溃重放、Context Pack/Trace 和 Material Impact Report。FACT 不由用户断言或 Wiki 文本反向确真。
+当前内核是 **integration-ready，尚非 Product-MVP**：I0–I2 的应用、协议、纠正和演化工程链已闭合；I2.5 已完成问题假设形成和维护 WikiModule 的机制，包括稳定 QuestionFrame 地址、语义提议/确定性门控、结构化 WikiModule V2、问题拓扑演化、pending/retry、崩溃重放、Context Pack/Trace 和 Material Impact Report。它证明 K2-M 机制闭合，但不证明 AI 提出的问题已经获得 K2-S 长期语义身份。FACT 不由用户断言或 Wiki 文本反向确真。
 
 I3-Sim 已于 2026-08-24 以 **NO-GO** 闭合：结构运行和 Wiki 消费成立，但只有 2 个 causal wins / 1 个 winning domain，出现 2 个 hard failures，且争议、取代、条件和权威差异没有形成充分的产品语义。当前最核心缺口不是再做一轮 Pilot，而是 K3 Weighted Semantic Flow：让 `CURRENT` 只表示给定知识版本、适用范围和任务下可解释的领先分支，并保留争议、条件、未决与历史分支。
 
 当前使用收敛路线；每阶段都必须先冻结主变量、输入、接受向量、预算、非目标、停止条件和闭合产物：
 
 1. **C0 · Convergence Baseline**：已闭合；固定产品边界、能力账本、加权证据流与阶段纪律；
-2. **C1 · Weighted Question State**：当前仅起草合同；只处理领先、争议、限域、取代、未决和历史分支；
-3. **C2 · Budgeted Information Flow**：确定性机制优先，模型预算只用于高价值歧义；
-4. **C3 · Longitudinal Use**：C1/C2 稳定后才设计真实跨时间使用，不预承诺旧 30 天固定阈值。
+2. **C1 · Weighted Question State**：当前仅起草合同；冻结 QuestionFrame，只处理领先、争议、限域、取代、未决和历史分支；
+3. **C1.5 · Question Hypothesis Persistence**：C1 闭合后，独立验证问题假设的复用、重叠、分裂、合并与身份成熟；
+4. **C2 · Budgeted Information Flow**：确定性机制优先，模型预算只用于高价值歧义；
+5. **C3 · Longitudinal Use**：C1/C1.5/C2 稳定后才设计真实跨时间使用，不预承诺旧 30 天固定阈值。
 
 ## 仓库结构
 

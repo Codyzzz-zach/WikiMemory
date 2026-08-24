@@ -2,7 +2,7 @@
 
 > 状态：Non-normative intake
 >
-> 更新时间：2026-08-24
+> 更新时间：2026-08-25
 >
 > 职责：保存迭代中发现但不属于当前阶段主变量的问题；本页不改变 Product Definition、North Star、当前阶段合同或实现优先级。
 
@@ -29,9 +29,11 @@
 | D-009 | 多模块 Context Pack 在固定预算下的价值排序仍未证明 | I2.5/I3-Sim 观察 | Retrieval / pack builder | C2 | INTAKE |
 | D-010 | 长期真实使用的周期、任务量和价值阈值缺少真实校准 | 旧 I3 固定 30 天/100 任务无当前依据 | Product experiment design | C3 | INTAKE |
 | D-011 | HTTP、远程/多主机运行未实现 | Implementation Status | Transport / operations | 未排期；非 C1 主变量 | PARKED |
+| D-012 | AI 能提出并持久化问题，但语义同一性仍主要依赖模型匹配与规范文本 key；跨来源、跨时间的长期身份持续性未证明 | 2026-08-25 产品讨论、Question formation/lifecycle 代码复核 | Question formation / identity assessment | C1.5 | SELECTED |
+| D-013 | 当前 `ACTIVE/CANONICAL` 同时容易承载“可消费”与“长期稳定”的产品解读，身份成熟度没有独立表达 | 2026-08-25 产品讨论、QuestionFrame/Materialization 合同复核 | Question model / publication projection | C1.5 | SELECTED |
 
 ## 当前选择
 
-尚无 `SELECTED` 条目。C1 合同评审必须从 D-001/D-003/D-005/D-008 中选择能共同归属于“加权问题
-状态”这一主变量的最小集合；D-002/D-004 只有在被证明是该主变量的硬依赖时才能进入。其他条目
-保持 Intake/Parked，不得借 C1 顺手实现。
+D-012/D-013 已由产品负责人选择为 C1.5 的合同输入，但不进入当前 C1 实现。C1 合同评审仍须从
+D-001/D-003/D-005/D-008 中选择能共同归属于“加权问题状态”这一主变量的最小集合；D-002/D-004
+只有在被证明是该主变量的硬依赖时才能进入。其他条目保持 Intake/Parked，不得借 C1 顺手实现。
