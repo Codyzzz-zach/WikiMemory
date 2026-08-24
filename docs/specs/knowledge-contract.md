@@ -2,7 +2,7 @@
 
 > **文档定位**：这是知识模型的语义定义，TypeScript types 和 Zod schema 从本文档编译而来。
 > Semantics first, Types second——先把语义想清楚，再写类型约束。
-> 当前对齐日期：2026-08-12。产品不变量以 Product Definition v1.5 为最高约束，目标模块边界以 Architecture 1.0 为准，当前运行事实以 `docs/status/implementation-status.md` 与 `src/types/` 为准；本文定义知识对象语义，不得自行扩大 Loader、时间、权限或在线 Graph 能力。
+> 当前对齐日期：2026-08-24。产品不变量以 Product Definition v1.6 为最高约束，目标模块边界以 Architecture 1.1 为准，当前运行事实以 `docs/status/implementation-status.md` 与 `src/types/` 为准；本文定义知识对象语义，不得自行扩大 Loader、时间、权限或在线 Graph 能力。产品层的加权证据流与阶段边界见 `docs/specs/wikimemory-convergence-baseline-v1.md`；现有状态轴不得被直接解释为客观真理。
 
 ---
 

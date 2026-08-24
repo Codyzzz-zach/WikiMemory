@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>WGEMemory4LLM · Product Definition v1.5</title>
+  <title>WGEMemory4LLM · Product Definition v1.6</title>
   <script type="module">
     import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
     mermaid.initialize({
@@ -53,14 +53,14 @@
 <body>
 <div class="page">
 <header id="top">
-  <div class="eyebrow">WGEMemory4LLM · Product Definition <span class="status s-green">v1.5</span></div>
+  <div class="eyebrow">WGEMemory4LLM · Product Definition <span class="status s-green">v1.6</span></div>
   <h1>让 Agent 的多领域认知随使用持续进化</h1>
-  <p class="subtitle">这不是一个给人浏览的 AI Wiki，也不是把更多文件塞进上下文的检索工具。WGEMemory4LLM 是外挂于通用 Agent 的自治知识编译与长期记忆层：它把不断到来的材料、对话、纠正与任务结果，转化为可验证、可演化、可被任务直接消费的知识状态。</p>
-  <div class="definition"><b>产品定义：</b>WGEMemory4LLM 持续把人类的多领域知识资产编译为可版本化、可追溯、可纠正的知识状态；在任务发生时，以检索入口、受审计的局部 Graph 导航和证据闭包生成有预算的 Context Pack，使通用 Agent 能跨文档、跨语言、跨会话积累并正确更新认知。</div>
+  <p class="subtitle">这不是一个给人浏览的 AI Wiki，也不是把更多文件塞进上下文的检索工具。WGEMemory4LLM 是外挂于通用 Agent 的自治知识编译与长期记忆层：它把人主动选择的材料，以及经显式权限合同提交的权威声明与纠正，编译为围绕长期问题、可验证、可演化、可被任务直接消费的知识状态。Agent 运行轨迹、工具日志、任务结果和一般对话不会自动成为知识。</p>
+  <div class="definition"><b>产品定义：</b>WGEMemory4LLM 持续把人类选择的多领域知识资产编译为围绕长期问题的加权证据拓扑；在任务发生时，以检索入口、受审计的局部 Graph 导航和证据闭包生成有预算的 Context Pack，使通用 Agent 能跨文档、跨语言、跨会话积累认知，并以可解释、可修订而非伪确定的方式更新分支。</div>
   <div class="meta">
     <span class="chip"><b>首要消费者</b> 通用 Agent</span><span class="chip"><b>MVP 场景</b> 单用户 · 多领域长期学习与项目记忆</span>
     <span class="chip"><b>核心结果</b> Agent 任务效果改善</span><span class="chip"><b>对照基线</b> 文件夹 + Coding Agent 搜索</span>
-    <span class="chip"><b>知识治理</b> AI 自治写入 + 语义 Lint + 可验证回滚</span><span class="chip"><b>v1.5 变更</b> Agent 接口 P0 · 模块化运行边界 · Docker 持久化</span><span class="chip"><b>日期</b> 2026-08-12</span>
+    <span class="chip"><b>知识治理</b> AI 自治写入 + 语义 Lint + 可验证回滚</span><span class="chip"><b>v1.6 变更</b> 加权证据流 · 知识输入边界 · 收敛阶段</span><span class="chip"><b>日期</b> 2026-08-24</span>
   </div>
   <nav aria-label="目录">
     <a href="#goal">目标</a><a href="#operating-contract">运行合同</a><a href="#problem">原始问题</a><a href="#boundaries">边界</a><a href="#philosophy">设计哲学</a>
@@ -75,16 +75,16 @@
   <p class="lead">产品的北极星不是“Wiki 写得多”“Graph 边很多”或“编译准确率高”，而是：同一个 Agent 在持续吸收多领域材料后，能否比第一天更少要求用户重复解释、更少复发已纠正错误，并在跨材料、跨语言和跨时间任务中给出更完整、更有依据的判断。</p>
   <div class="diagram"><div class="mermaid">
 flowchart LR
-    A["新材料与真实任务"] --> B["编译知识状态"]
+    A["人主动选择的新材料"] --> B["编译知识状态"]
     B --> C["任务化 Context Pack"]
     C --> D["Agent 回答与行动"]
-    D --> E["纠正与任务结果"]
+    D --> E["显式提交的纠正或新材料"]
     E --> B
     B --> F["认知更完整且更少过期"]
   </div></div>
   <div class="grid three">
     <article class="card"><div class="label">Ultimate outcome</div><h3>持续改善任务结果</h3><p>系统最终为 Agent 的回答、判断与任务结果负责；Wiki、Graph、Claim 与 Lint 都只是实现该结果的机制。</p></article>
-    <article class="card"><div class="label">Compounding effect</div><h3>知识发生变化，而非文件堆积</h3><p>新证据进入后，旧认识会被增强、削弱、分叉、加条件或标记过期；后续任务使用的是“当前知识状态”。</p></article>
+    <article class="card"><div class="label">Compounding effect</div><h3>知识发生变化，而非文件堆积</h3><p>新证据进入后，旧认识会被增强、削弱、分叉、加条件或降低优先级；后续任务使用的是给定版本、范围与任务下的“当前领先投影”，而不是永恒真理。</p></article>
     <article class="card"><div class="label">Trust boundary</div><h3>进化不能以失真换取</h3><p>任何进入回答的结论，都能回到来源、适用条件、生成版本与演化历史；不确定性不得被静默抹平。</p></article>
   </div>
   <div class="callout good"><b>目标公式：</b>有效进化 = 新证据带来的认知修正 × 后续任务中的正确复用 × 可追溯与可回滚；如果只增加材料数量而任务质量没有改善，不算进化。</div>
@@ -151,7 +151,7 @@ flowchart LR
     U["人类用户"] -->|"提问 学习 纠正"| A["通用 Agent"]
     A -->|"任务描述"| W["WGEMemory4LLM"]
     W -->|"Context Pack 与证据路径"| A
-    S["文章 对话 反馈 任务结果"] --> W
+    S["被人选择的文章 记录 反馈材料"] --> W
     W --> G["Git 管理的知识状态"]
   </div></div>
   <h3>MVP 明确包含</h3>
@@ -170,6 +170,7 @@ flowchart LR
     <li>替代原始材料；原文是不可变证据，编译结果始终可被丢弃并重建。</li>
     <li>把主题 <code>domain</code> 当作权限边界；权限与适用范围由 GLOBAL/PERSONAL/PROJECT <code>scope</code> 决定，domain 仅作检索、组织和评估提示。</li>
     <li>固定依赖某个模型、向量数据库或图数据库。模型可替换，输入输出合同不可含糊。</li>
+    <li>把 Agent 全运行过程、工具日志、一般对话和任务结果默认吸收为知识；这些记录可以用于评测，只有被人明确选择为材料后才进入编译。</li>
   </ul>
   <div class="callout"><b>角色区分：</b>用户是受益者与纠正者；通用 Agent 是首要消费者；Ingestor、Compiler/Librarian、Linter 是系统内部职责，而不是要求用户扮演的人工岗位。</div>
 </section>
@@ -195,8 +196,8 @@ flowchart TD
   </article>
 
   <article class="philosophy"><div class="pnum">Philosophy 02</div><h3>积累的单位是“可修正的知识状态”，不是文件与摘要</h3>
-    <div class="chain"><div>新材料不断进入</div><span>→</span><div>旧认识必须被重新判断</div><span>→</span><div>后续任务只消费当前有效状态</div></div>
-    <p><b>必须：</b>识别支持、冲突、补充、取代和适用条件；新文章可能修改多个既有 Wiki 模块，而非机械新增一篇摘要。<b>拒绝：</b>只追加切片、只按来源建页面、只用“更新时间”假装知识已经演化。</p>
+    <div class="chain"><div>新材料不断进入</div><span>→</span><div>证据分支与权重被重新判断</div><span>→</span><div>后续任务消费有范围的当前领先投影</div></div>
+    <p><b>必须：</b>识别支持、冲突、补充、取代和适用条件，并保留历史分支；新文章可能改变多个既有 Wiki 模块的权重、可见性、优先级或范围，而非机械新增一篇摘要。<b>拒绝：</b>只追加切片、只按来源建页面、只用“更新时间”或“最新 ACTIVE”假装知识已经演化。</p>
     <p><b>验收：</b>摄入纠错材料后，系统能找到受影响的 Claim、Relation 和 WikiModule，局部重编译，并在新回答中停止复发旧错误。</p>
   </article>
 
@@ -319,11 +320,11 @@ flowchart TD
       <tr><td><code>knowledgeVersion</code></td><td>✅</td><td>知识状态的版本标识</td></tr>
       <tr><td><code>recordedAt</code></td><td>✅</td><td>系统记录这条知识的时间</td></tr>
       <tr><td><code>knowledgeAsOf</code></td><td>✅</td><td>重建系统在某个版本/时间点已记录并认可的知识状态</td></tr>
-      <tr><td>显式版本 / <code>SUPERSEDES</code></td><td>✅ 有限支持</td><td>回答当前版本时优先 ACTIVE；按明确版本或历史知识快照保留旧对象</td></tr>
+      <tr><td>显式版本 / <code>SUPERSEDES</code></td><td>✅ 工程有限支持；加权语义完善中</td><td>保存来源版本、审计关系和历史对象；当前投影还必须结合权威、条件、范围与任务，不把最新 ACTIVE 自动解释为真理</td></tr>
       <tr><td><code>validAt</code>（现实有效时间）</td><td><span class="status s-amber">Post-MVP</span></td><td>"某个事实在现实中从何时到何时成立"——MVP 不回答</td></tr>
     </tbody>
   </table>
-  <p class="small">材料中明确出现的时间条件（如“2020 年之后的方法”）必须保留在 Claim 文本或 conditions 中；只有明确版本、来源时间和受审计 <code>SUPERSEDES</code> 能驱动当前/历史选择。<code>validFrom</code>/<code>validTo</code> 字段继续保留，但不得被解释为已经实现任意现实时间区间推理。</p>
+  <p class="small">材料中明确出现的时间条件（如“2020 年之后的方法”）必须保留在 Claim 文本或 conditions 中；明确版本、来源时间和受审计 <code>SUPERSEDES</code> 为当前/历史投影提供依据，但新材料只获得“值得重新检查”的当前性先验，不自动获得更高权威。<code>validFrom</code>/<code>validTo</code> 字段继续保留，但不得被解释为已经实现任意现实时间区间推理。</p>
   <h4>非法转换规则</h4>
   <table>
     <thead><tr><th>转换</th><th>合法性</th><th>约束</th></tr></thead>
@@ -494,7 +495,7 @@ stateDiagram-v2
 
 <section id="architecture">
   <div class="section-head"><div class="kicker">06 / Architecture</div><div><h2>逻辑架构：编译时形成复利，运行时形成任务相关性</h2></div></div>
-  <div class="callout good"><b>详细架构权威：</b>本节只保留产品级逻辑视图。Transport、Application、Domain、Worker、Persistence、Projection 的完整职责、MCP/API 合同、权限模型与 Docker 运行边界统一见 <code>architecture-baseline.html</code> Architecture 1.0。</div>
+  <div class="callout good"><b>详细架构权威：</b>本节只保留产品级逻辑视图。Transport、Application、Domain、Worker、Persistence、Projection 的完整职责、MCP/API 合同、权限模型与 Docker 运行边界统一见 <code>architecture-baseline.html</code> Architecture 1.1。</div>
   <div class="diagram"><div class="mermaid">
 flowchart TD
     S["不可变 Sources"] --> I["Ingestor：解析 规范化 哈希"]
@@ -508,7 +509,7 @@ flowchart TD
     S --> R
     R --> P["Task Subgraph 与 Context Pack"]
     P --> A["通用 Agent"]
-    A --> F["纠正与任务结果"]
+    A --> F["显式提交的纠正或新材料"]
     F --> C
     G --> L2["Periodic Semantic Lint"]
     W --> L2
@@ -614,7 +615,7 @@ flowchart TD
       <tr><td>PD-02</td><td>P0</td><td>从材料生成带证据的 Claim</td><td>每条 Claim 至少一个 SourceSpan；无法支持的内容标为推断或隔离。</td></tr>
       <tr><td>PD-03</td><td>P0</td><td>维护跨来源 Concept 身份</td><td>别名可合并；同名异义可分叉；任何合并可回滚。</td></tr>
       <tr><td>PD-04</td><td>P0</td><td>维护类型化、条件化 Relation</td><td>关系有方向、来源、条件、状态；弱相关不能支撑结论。</td></tr>
-      <tr><td>PD-05</td><td>P0 <span class="status s-amber">产品 MVP</span></td><td>按长期问题维护 WikiModule（<b>物化派生视图</b>）</td><td>是<b>产品 MVP</b> 的 P0，不是当前技术基线的 P0。最小验收：按稳定问题组织（非一文一个）；聚合多 Claim；显示当前认识/条件/争议/引用；新材料可更新旧模块；能被 Context Pack 消费。每个断言必须由 Canonical Claim 支撑。</td></tr>
+      <tr><td>PD-05</td><td>P0 <span class="status s-amber">K2 已完成 / K3 完善中</span></td><td>按长期问题维护 WikiModule（<b>物化派生视图</b>）</td><td>按稳定问题组织（非一文一个）；聚合多 Claim；显示领先分支、条件、争议、未决、历史与引用；新材料可解释地改变分支权重、可见性、优先级或范围；能被 Context Pack 消费。<code>CURRENT</code> 仅表示给定知识版本、适用范围与任务下当前证据支持更强的分支，不表示真理。每个断言必须由 Canonical Claim 支撑；争议/取代的加权语义仍在完善。</td></tr>
       <tr><td>PD-06</td><td>P0</td><td>写入时 Lint 与消费前隔离</td><td>失败内容不进入默认索引、Graph 扩展和 Context Pack。</td></tr>
       <tr><td>PD-07</td><td>P0</td><td>按任务生成有预算、保持证据闭包的 Context Pack</td><td>候选子图与可见子图分离；Claim、条件、provenance 与必要 Evidence 作为完整单元选择；关系路径按意图、安全风险或覆盖缺口触发；最终发送前核验实际 token。</td></tr>
       <tr><td>PD-08</td><td>P0 <span class="status s-amber">工程链已实现 / 产品待验</span></td><td>自然语言纠正与影响传播</td><td>分三阶段实现：<b>2a-1</b> 纠正接入与 Claim 状态闭环 → <b>2a-2</b> WikiModule 初始生成 → <b>2b</b> 派生层闭环。当前代码已实现自然语言受限解析、偏好/决策权威分流、FACT 先争议后补证据、审计 SUPERSEDES/CONTRADICTS 演化、Wiki 重建、幂等与安全回滚；但<b>只有真实 Agent 后续任务证明旧错不复发且无关任务不退化，才算产品 MVP 的最小纠正闭环真正闭合</b>。</td></tr>
@@ -653,6 +654,7 @@ flowchart TD
       <tr><td>检索与组装</td><td>任务是否拿到正确知识？</td><td>路径完整度、关键 Claim 召回、无关上下文率、预算利用</td><td>不能替代答案是否正确使用知识。</td></tr>
       <tr><td>任务结果</td><td>Agent 是否真正变好？</td><td>成对偏好、事实正确、冲突处理、解释复用、人工查证次数</td><td>这是最终产品责任。</td></tr>
       <tr><td>演化能力</td><td>新证据是否改变后续行为？</td><td>影响发现率、漏改率、纠错复发率、局部重编译范围、回归通过率</td><td>不能只看 Git 提交数量。</td></tr>
+      <tr><td>质量—成本前沿</td><td>模型预算是否花在真正的歧义上？</td><td>确定性复用率、歧义调用数、边际 token、未决保留、单位成本有效关系</td><td>不能用一个综合分数掩盖质量、成本和不确定性的取舍。</td></tr>
     </tbody>
   </table>
   <div class="callout"><b>量化立场：</b>目前不伪造一个“提升 30%”的产品结论。Benchmark 会预注册架构假设和死亡标准；真实用户价值先用同模型、同预算的盲测、硬失败和长期纠错复发观察建立证据，再决定是否设商业化 KPI。</div>
@@ -682,15 +684,18 @@ flowchart TD
     <li>MVP 当前只承诺 Markdown adapter，承诺的是可替换 Loader 合同而非一次实现所有格式。</li>
     <li>Git 提供版本与回滚，语义 CI 提供正确性门禁；二者不可互相替代。</li>
     <li>产品面向人类泛化知识资产与通用 Agent；任何单一领域只可作为诊断切片，不能定义架构。</li>
+    <li>产品知识输入限于人主动选择的材料，以及经显式权限合同提交的权威声明与纠正；运行日志和任务结果不自动成为知识。</li>
+    <li>长期问题的知识状态是加权证据拓扑；<code>CURRENT</code> 是有版本、范围和任务条件的领先投影，争议与取代不是百分之百确定的终局真值。</li>
+    <li>新发现默认进入 Discovery Backlog；只有人类可以改变 North Star 或当前阶段主变量。阶段可用 PASS、NARROW、REWORK、STOP 或 NO-GO 闭合。</li>
   </ul>
   <h3>由实验决定、当前不应拍脑袋冻结</h3>
   <ul>
     <li>Graph 结构排序在什么查询、规模和更新周期下开始显现边际收益；哪些触发和最小关系路径值得进入可见 Context。</li>
-    <li>WikiModule 的最佳粒度、候选图上限和 Context Pack 的预算分配。</li>
+    <li>WikiModule 的最佳粒度、加权分支的最小可解释表示、候选图上限和 Context Pack 的预算分配。</li>
     <li>Canonical 自动晋级阈值，以及是否需要异构模型做关键关系复核。</li>
     <li>向量检索在个人规模下是否提供足够增益；它不是默认必需组件。</li>
   </ul>
-  <div class="callout danger"><b>停止方向的信号：</b>在同模型、同预算下，如果 WGEMemory4LLM 不能减少已纠正错误复发、不能更好处理跨材料关系和条件、也不能减少重复解释，那么“可演化知识层”的产品假设不成立，应回退为轻量文件组织或 Agent Skill，而不是继续堆叠架构。</div>
+  <div class="callout danger"><b>停止方向的信号：</b>在冻结阶段合同、同模型与可比预算下，如果 WGEMemory4LLM 不能更忠实地保存跨材料关系、条件与不确定性，也不能让这些结构在后续任务中产生可解释价值，则相关机制应以 NARROW、STOP 或 NO-GO 闭合，而不是为了通过而移动目标或继续堆叠架构。只有产品负责人可以据此改变 North Star。</div>
 </section>
 
 <section id="glossary">
@@ -699,8 +704,9 @@ flowchart TD
     <thead><tr><th>术语</th><th>定义</th></tr></thead>
     <tbody>
       <tr><td>WGEMemory4LLM</td><td>面向通用 Agent 的自治知识编译与长期记忆层；由 Wiki、Graph、Evidence 共同构成可演化知识状态。</td></tr>
-      <tr><td>Knowledge State</td><td>某一时间点上可被 Agent 消费的 Canonical Wiki、关系、状态与证据集合。</td></tr>
-      <tr><td>Knowledge Evolution</td><td>新证据导致已有 Claim/Relation/Module 被增强、削弱、加条件、分叉、取代或隔离，并改变后续任务行为。</td></tr>
+      <tr><td>Knowledge State</td><td>某一知识版本、适用范围与任务语境下，可被 Agent 消费的 Canonical 证据拓扑及其当前投影；不等于唯一真相。</td></tr>
+      <tr><td>Weighted Evidence Topology</td><td>围绕长期问题保存证据、Claim、关系、条件、历史分支与多维权重的结构；权重可以是可解释序位或理由，不要求伪精确概率。</td></tr>
+      <tr><td>Knowledge Evolution</td><td>新证据导致已有 Claim/Relation/Module 的权重、可见性、优先级、条件或范围改变，并在保留历史分支的同时影响后续任务。</td></tr>
       <tr><td>Semantic Lint / Semantic CI</td><td>对证据支持、冲突、条件、时态、依赖、过期和回归问题进行的自动检查；不仅检查格式。</td></tr>
       <tr><td>Context Pack</td><td>知识状态针对某个任务、在明确预算内生成的运行时投影，包含地图、子图、Wiki 解释、证据与风险。</td></tr>
       <tr><td>Task Subgraph</td><td>从任务种子概念出发、按关系类型和深度筛选出的局部 Graph；不是全图复制。</td></tr>
@@ -713,7 +719,7 @@ flowchart TD
 </main>
 
 <footer>
-  <p><b>WGEMemory4LLM Product Definition v1.5</b> · 2026-08-12。本文档是产品目标与不变量的最高约束；User Stories 定义可观察行为；Architecture Baseline 定义目标架构；Knowledge Contract 定义对象语义；Implementation Status 记录当前事实；Benchmark 定义如何产生证据；Iteration Operating Plan 定义当前集成门与停止规则；历史审计只在其标注日期内有效；README 不产生独立决策。</p>
+  <p><b>WGEMemory4LLM Product Definition v1.6</b> · 2026-08-24。本文档是产品目标与不变量的最高约束；User Stories 定义可观察行为；Architecture Baseline 定义目标架构；Knowledge Contract 定义对象语义；Convergence Baseline 定义当前能力账本、收敛阶段与闭合规则；Implementation Status 记录当前事实；Benchmark 定义如何产生证据；历史审计只在其标注日期内有效；README 不产生独立决策。</p>
   <p class="small">建议使用现代浏览器打开；Mermaid 图通过 CDN 渲染。正文、表格与关键结论在脚本不可用时仍可阅读。</p>
 </footer>
 </div>

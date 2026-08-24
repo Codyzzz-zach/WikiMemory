@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>WGEMemory4LLM · User Stories v1.5</title>
+  <title>WGEMemory4LLM · User Stories v1.6</title>
   <script type="module">
     import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
     mermaid.initialize({startOnLoad:true,theme:"base",securityLevel:"loose",themeVariables:{fontFamily:"Noto Sans CJK SC, Inter, ui-sans-serif, system-ui, sans-serif",primaryColor:"#eef5ff",primaryTextColor:"#172033",primaryBorderColor:"#5a8fc7",lineColor:"#657a91",secondaryColor:"#ecf8f3",tertiaryColor:"#fff7e8",fontSize:"13px"},flowchart:{useMaxWidth:true,htmlLabels:false,curve:"basis"},sequence:{useMaxWidth:true},state:{useMaxWidth:true}});
@@ -26,11 +26,11 @@
 <body>
 <div class="page">
 <header id="top">
-  <div class="eyebrow">WGEMemory4LLM · User Stories <span class="badge principle">v1.5</span></div>
+  <div class="eyebrow">WGEMemory4LLM · User Stories <span class="badge principle">v1.6</span></div>
   <h1>从“一篇新文章”到“一个真正进步的 Agent”</h1>
   <p class="subtitle">这份文档不是描述后台能生成多少文件，而是定义用户在长期学习中应该感受到什么：不维护 Wiki、不重复解释、不被陈旧结论拖回原点，同时能追问“为什么”“从哪里来”“这次和上次哪里不同”。</p>
-  <div class="hero"><b>总用户故事：</b>作为持续学习科技、AI、金融、历史、健康、人文等混合知识的单用户，我希望把文章、讨论、项目记录与纠正交给通用 Agent 后，它能自动形成并维护可追溯的长期知识状态；当我提出新问题时，它能复用跨材料关系、说明冲突与变化，并随真实使用不断给出更成熟的判断，而不要求我人工维护知识库。</div>
-  <div class="meta"><span class="chip"><b>主受益者</b> 单用户 · 多领域知识学习者</span><span class="chip"><b>主消费者</b> 通用 Agent</span><span class="chip"><b>核心旅程</b> 摄入 → 问答 → 纠正 → 进化</span><span class="chip"><b>完成口径</b> 行为改变而非文件生成</span><span class="chip"><b>日期</b> 2026-08-12</span></div>
+  <div class="hero"><b>总用户故事：</b>作为持续学习科技、AI、金融、历史、健康、人文等混合知识的单用户，我希望把主动选择的文章、讨论记录、项目材料与纠正交给通用 Agent 后，它能围绕长期问题自动形成并维护可追溯的加权证据拓扑；当我提出新问题时，它能复用跨材料关系、说明当前领先分支、冲突、条件与变化，并随新材料持续修订判断，而不要求我人工维护知识库。</div>
+  <div class="meta"><span class="chip"><b>主受益者</b> 单用户 · 多领域知识学习者</span><span class="chip"><b>主消费者</b> 通用 Agent</span><span class="chip"><b>核心旅程</b> 选择材料 → 编译 → 问答 → 纠正 → 进化</span><span class="chip"><b>完成口径</b> 行为改变而非文件生成</span><span class="chip"><b>日期</b> 2026-08-24</span></div>
   <nav aria-label="目录"><a href="#actors">角色</a><a href="#map">故事地图</a><a href="#journey">主旅程</a><a href="#stories">P0/P1 故事</a><a href="#exceptions">异常旅程</a><a href="#contracts">Context Pack</a><a href="#nfr">体验与非功能</a><a href="#trace">哲学追踪</a></nav>
 </header>
 
@@ -46,7 +46,7 @@
 flowchart LR
     U["用户：提问 学习 纠正"] --> A["通用 Agent：执行任务"]
     A --> M["WGEMemory：提供 Context Pack"]
-    S["材料与反馈"] --> I["Ingestor"]
+    S["用户选择的材料与反馈"] --> I["Ingestor"]
     I --> C["Compiler Librarian"]
     C --> L["Linter"]
     L --> M
@@ -119,7 +119,7 @@ sequenceDiagram
     <li><b>提问：</b>用户围绕长期问题提问；Agent 不读取整个 Wiki，而请求任务化 Context Pack。</li>
     <li><b>回答：</b>答案整合多份来源，显式说明支持、冲突、适用条件与仍未知部分。</li>
     <li><b>追溯：</b>用户问“为什么”，Agent 能展示关键 Claim → Relation → SourceSpan 路径，而非只给一串文件名。</li>
-    <li><b>纠正：</b>用户指出误解或补充真实任务结果；系统将其作为新证据/Memory 写入，触发影响分析与回归。</li>
+    <li><b>纠正：</b>用户指出误解，或明确选择并提交一份记录真实任务结果的材料；系统把该材料作为候选新证据处理，触发影响分析与回归。运行事件本身不会自动进入知识。</li>
     <li><b>复利：</b>几天后类似问题再次出现，Agent 使用修正后的状态，不要求用户重复解释，也不复发旧错误。</li>
   </ol>
   <div class="callout good"><b>真正的 done：</b>故事不是在“Wiki 文件生成”时结束，而是在新材料或纠正已经改变后续 Context Pack 和 Agent 行为时结束。</div>
@@ -143,7 +143,7 @@ sequenceDiagram
     <div class="story-head"><span class="badge p0">P0</span><span class="badge actor">Agent</span><span class="badge principle">演化优先</span></div>
     <h3>US-02 · 自动把新材料编译为知识状态 diff</h3>
     <p><b>作为</b>通用 Agent，<b>我希望</b>知道新材料对当前知识造成了什么变化，<b>从而</b>向用户说明“学到了什么”，而不是只说“已生成摘要”。</p>
-    <div class="criteria"><b>验收：</b>输出新增/修改/争议/取代/隔离的 Claim、Relation 与 WikiModule 清单；新文章优先更新稳定主题模块；每个 diff 可回到 SourceSpan。</div>
+    <div class="criteria"><b>验收：</b>输出新增/修改/争议/取代/限域/未决/隔离的 Claim、Relation 与 WikiModule 清单；新材料优先更新稳定问题模块；每个 diff 可回到 SourceSpan，并解释分支权重、可见性或适用范围为什么改变。</div>
     <div class="diagram"><div class="mermaid">
 flowchart LR
     S["新 Source"] --> C["候选 Claim"]
@@ -169,7 +169,7 @@ flowchart LR
   <article class="story" id="us04">
     <div class="story-head"><span class="badge p0">P0</span><span class="badge actor">用户 + Agent</span><span class="badge principle">任务化上下文</span></div>
     <h3>US-04 · 用跨材料全局视野回答真实学习问题</h3>
-    <p><b>作为</b>知识学习者，<b>我希望</b>问“Graph 与 RAG 的边界是什么”时，Agent 能基于多篇材料组织当前认识，<b>从而</b>得到一份有关联、有冲突、有条件的答案，而不是若干独立摘要。</p>
+    <p><b>作为</b>知识学习者，<b>我希望</b>问“Graph 与 RAG 的边界是什么”时，Agent 能基于多篇材料组织给定版本、范围与任务下的当前领先认识，<b>从而</b>得到一份有关联、有冲突、有条件、保留不确定性的答案，而不是若干独立摘要。</p>
     <div class="criteria"><b>验收：</b>Context Pack 包含任务地图、关键 WikiModule、关系路径、必要原文、冲突和条件；回答不要求用户再次说明已知背景；上下文不超过约定预算。</div>
     <div class="diagram"><div class="mermaid">
 flowchart TD
@@ -205,7 +205,7 @@ flowchart TD
     <div class="story-head"><span class="badge p0">P0</span><span class="badge actor">用户 + 系统</span><span class="badge principle">诚实冲突</span></div>
     <h3>US-07 · 新文章与旧认识冲突时，不静默选边</h3>
     <p><b>作为</b>用户，<b>我希望</b>新证据出现冲突时系统保留双方及适用条件，<b>从而</b>理解分歧来自定义、时间、场景还是事实错误。</p>
-    <div class="criteria"><b>验收：</b>创建 <code>CONTRADICTS</code> 或条件化关系；相关 WikiModule 标出争议；后续回答显式呈现分歧；若没有真实 counter，诚实返回“未发现相关反证”。</div>
+    <div class="criteria"><b>验收：</b>创建 <code>CONTRADICTS</code> 或条件化关系；相关 WikiModule 保留双方证据并标出争议；允许依据权威、当前性、适用性和关系支持给分支不同优先级，但必须解释依据，不能因展示领先分支而删除另一方；若没有真实 counter，诚实返回“未发现相关反证”。</div>
     <div class="diagram"><div class="mermaid">
 flowchart TD
     N["新 Claim"] --> X{"与旧 Claim 冲突吗"}
@@ -237,8 +237,8 @@ flowchart TD
   <article class="story" id="us09">
     <div class="story-head"><span class="badge p0">P0</span><span class="badge actor">Agent</span><span class="badge principle">时态与取代</span></div>
     <h3>US-09 · 区分“曾经正确”和“当前有效”</h3>
-    <p><b>作为</b>通用 Agent，<b>我希望</b>知道系统在某个知识版本中认可什么，以及某个明确版本何时被取代，<b>从而</b>回答历史知识快照或旧版本问题时保留旧对象，回答当前问题时默认使用最新 ACTIVE 状态。</p>
-    <div class="criteria"><b>验收：</b>完整支持 <code>knowledgeVersion</code> / <code>recordedAt</code> / <code>knowledgeAsOf</code>；由明确来源版本和受审计 <code>SUPERSEDES</code> 支持当前/历史选择；旧对象不删除。<code>validFrom</code>/<code>validTo</code> 可保存来源中的时间条件，但 MVP 不宣称已经支持任意现实世界 <code>validAt</code> 区间推理。</div>
+    <p><b>作为</b>通用 Agent，<b>我希望</b>知道系统在某个知识版本中记录了什么、某个分支为什么被降权或取代，以及这些判断适用于什么范围，<b>从而</b>回答历史知识快照或旧版本问题时保留旧对象，回答当前问题时使用可解释的领先分支而不是机械采用最新 ACTIVE。</p>
+    <div class="criteria"><b>验收：</b>完整支持 <code>knowledgeVersion</code> / <code>recordedAt</code> / <code>knowledgeAsOf</code>；明确来源版本和受审计 <code>SUPERSEDES</code> 是当前/历史选择的重要依据，但还必须保留权威、条件、适用范围和任务语境；新材料获得重新检查的当前性先验，不自动成为真理；旧对象不删除。<code>validFrom</code>/<code>validTo</code> 可保存来源中的时间条件，但 MVP 不宣称已经支持任意现实世界 <code>validAt</code> 区间推理。</div>
   </article>
 
   <article class="story" id="us10">
@@ -384,7 +384,7 @@ stateDiagram-v2
       <tr><td><code>knowledgeVersion</code></td><td>固定回答使用的知识快照</td><td>可解释答案为何变化，可复现。</td></tr>
       <tr><td><code>taskMap</code></td><td>先了解主题、争议、关键路径和最近变化</td><td>获得全局视野而不加载全库。</td></tr>
       <tr><td><code>subgraph</code></td><td>只读取通过可见门禁的最小必要 Claim 与关系路径；候选子图不在此字段倾倒</td><td>减少跨材料遗漏，同时控制无关 Graph 开销。</td></tr>
-      <tr><td><code>wikiModules</code></td><td>读取连贯语义与当前认识</td><td>避免只拼接碎片。</td></tr>
+      <tr><td><code>wikiModules</code></td><td>读取连贯语义、当前领先分支及其条件与权重理由</td><td>避免只拼接碎片，也避免把当前投影冒充真理。</td></tr>
       <tr><td><code>evidenceSpans</code></td><td>验证关键 Claim、生成引用</td><td>建立信任与查证能力。</td></tr>
       <tr><td><code>conflictsAndConditions</code></td><td>避免输出单一无条件答案</td><td>保护边界与不确定性。</td></tr>
       <tr><td><code>selectionLog</code></td><td>知道为何选入、为何裁剪</td><td>诊断上下文选择失败。</td></tr>
@@ -432,7 +432,7 @@ flowchart LR
     <thead><tr><th>设计哲学</th><th>主要用户故事</th><th>可观察行为</th></tr></thead>
     <tbody>
       <tr><td>Agent 任务结果优先</td><td>US-04、US-05、US-15</td><td>以同预算真实任务对照，不以资产数量评估。</td></tr>
-      <tr><td>演化优先于堆积</td><td>US-02、US-07、US-08、US-09</td><td>新材料产生知识 diff，并改变后续回答。</td></tr>
+      <tr><td>加权演化优先于堆积</td><td>US-02、US-07、US-08、US-09</td><td>新材料产生可解释 diff，改变分支权重、范围、可见性或优先级，并保留历史与不确定性。</td></tr>
       <tr><td>证据与可逆性</td><td>US-01、US-06、US-12</td><td>原文可定位、派生可重建、错误可回滚。</td></tr>
       <tr><td>自治写入与分级发布</td><td>US-03、US-11</td><td>无需逐条审批，失败内容不进入默认消费链。</td></tr>
       <tr><td>类型化且带条件的关系</td><td>US-05、US-07、US-08</td><td>多跳路径可解释，弱相关不冒充推理依据。</td></tr>
@@ -447,7 +447,7 @@ flowchart LR
 </main>
 
 <footer>
-  <p><b>WGEMemory4LLM User Stories v1.5</b> · 2026-08-12。v1.5 将 Agent 稳定接口提升为 P0，并对齐 MCP 优先、同一 Application Service、多协议语义一致、本地持久运行和容器恢复。Graph-capable、有限时间语义、跨域 Benchmark 与权限硬隔离要求继续有效；当前差距见 <code>docs/status/implementation-status.md</code>，施工门见 <code>WGEMemory4LLM-Iteration-Operating-Plan.md</code>。</p>
+  <p><b>WGEMemory4LLM User Stories v1.6</b> · 2026-08-24。v1.6 固定人类选择材料的知识输入边界，把长期问题下的当前认识改为可解释的加权分支投影，并明确新材料不自动覆盖旧证据。Graph-capable、有限时间语义、跨域 Benchmark 与权限硬隔离要求继续有效；当前能力账本与收敛路线见 <code>docs/specs/wikimemory-convergence-baseline-v1.md</code>，当前事实见 <code>docs/status/implementation-status.md</code>。</p>
   <p class="small">建议使用现代浏览器打开；Mermaid 图通过 CDN 渲染。正文、表格与验收标准在脚本不可用时仍可阅读。</p>
 </footer>
 </div>

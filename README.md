@@ -1,6 +1,6 @@
 # WikiMemory
 
-WikiMemory 是面向通用 Agent 的可演化知识与长期记忆层。它把人主动选择的多领域知识材料，以及经显式权限合同提交的权威声明与纠正，转化为可追溯、可版本化、可撤销的知识状态，并按任务生成有预算、保留证据闭包的 Context Pack。Agent 运行、工具日志、任务结果和一般对话不会自动成为知识输入。
+WikiMemory 是面向通用 Agent 的可演化知识与长期记忆层。它把人主动选择的多领域知识材料，以及经显式权限合同提交的权威声明与纠正，转化为围绕长期问题、可追溯、可版本化、可撤销的加权证据拓扑，并按任务生成有预算、保留证据闭包的 Context Pack。Agent 运行、工具日志、任务结果和一般对话不会自动成为知识输入。
 
 它不是一个给人维护页面的 Wiki，也不是把 Graph 遍历结果全部塞进 Prompt 的 RAG 包装器。长期目标和当前实现必须分开阅读：
 
@@ -9,22 +9,25 @@ WikiMemory 是面向通用 Agent 的可演化知识与长期记忆层。它把�
 - [产品定义](WGEMemory4LLM-Product-Definition.html)：为什么存在、什么结果才算成功；
 - [目标架构](architecture-baseline.html)：理想 WikiMemory 的模块、数据、接口、权限与部署边界；
 - [知识语义合同](docs/specs/knowledge-contract.md)：Claim、Relation、scope、状态与时间语义；
+- [长期问题合同](docs/specs/question-centered-memory-contract.md)：QuestionFrame、WikiModule 与加权状态语义；
+- [收敛基线](docs/specs/wikimemory-convergence-baseline-v1.md)：能力账本、C0–C3 阶段与闭合规则；
 - [实施状态](docs/status/implementation-status.md)：代码目前真实做到了什么；
-- [集成迭代合同](WGEMemory4LLM-Iteration-Operating-Plan.md)：I0–I3 施工顺序、Eval 与停止规则；
+- [收敛迭代合同](WGEMemory4LLM-Iteration-Operating-Plan.md)：C0–C3 施工顺序、验收向量、预算与停止规则；
 - [Benchmark 手册](WGEMemory4LLM-Benchmark.html)：如何构造开发、回归、盲测和长期产品证据。
-- [Pilot 操作合同](docs/operations/pilot-runbook.md)：如何执行一周双臂真实任务 Micro 并留下可比较证据。
+- [I3-Sim 最终验收](docs/verification/i3-sim-gate-result-2026-08-24.md)：本轮 NO-GO、成本台账和下一阶段输入证据。
 
 ## 当前裁决
 
-当前内核是 **integration-ready，尚非 Product-MVP**：I0–I2 的应用、协议、纠正和演化工程链已闭合；I2.5 已实现围绕长期问题自动形成并持续维护 WikiModule，包括稳定 QuestionFrame、语义提议/确定性门控、结构化 WikiModule V2、问题拓扑演化、pending/retry、崩溃重放、Context Pack/Trace 和 Material Impact Report。FACT 不由用户断言或 Wiki 文本反向确真。仍未完成的是真实材料上的问题形成质量、长期不复发与相对 Claim-only 增益证明。
+当前内核是 **integration-ready，尚非 Product-MVP**：I0–I2 的应用、协议、纠正和演化工程链已闭合；I2.5 已完成围绕长期问题形成和维护 WikiModule 的机制，包括稳定 QuestionFrame、语义提议/确定性门控、结构化 WikiModule V2、问题拓扑演化、pending/retry、崩溃重放、Context Pack/Trace 和 Material Impact Report。FACT 不由用户断言或 Wiki 文本反向确真。
 
-下一阶段不再无限延长内部 Goal，而按以下顺序推进：
+I3-Sim 已于 2026-08-24 以 **NO-GO** 闭合：结构运行和 Wiki 消费成立，但只有 2 个 causal wins / 1 个 winning domain，出现 2 个 hard failures，且争议、取代、条件和权威差异没有形成充分的产品语义。当前最核心缺口不是再做一轮 Pilot，而是 K3 Weighted Semantic Flow：让 `CURRENT` 只表示给定知识版本、适用范围和任务下可解释的领先分支，并保留争议、条件、未决与历史分支。
 
-1. **I0**：Application Service、runtime root、单写者、Docker 与恢复；
-2. **I1**：MCP `ingest_material / get_ingest_status / query_context / trace_knowledge`；
-3. **I2**：纠正 proposal、权威分流、受控 commit、局部重建和回滚；
-4. **I2.5**：长期问题 QuestionFrame 与持续维护的 WikiModule；
-5. **I3**：通过小型真实使用门禁后，再进入 30 天多领域真实 Agent Pilot。
+当前使用收敛路线；每阶段都必须先冻结主变量、输入、接受向量、预算、非目标、停止条件和闭合产物：
+
+1. **C0 · Convergence Baseline**：已闭合；固定产品边界、能力账本、加权证据流与阶段纪律；
+2. **C1 · Weighted Question State**：当前仅起草合同；只处理领先、争议、限域、取代、未决和历史分支；
+3. **C2 · Budgeted Information Flow**：确定性机制优先，模型预算只用于高价值歧义；
+4. **C3 · Longitudinal Use**：C1/C2 稳定后才设计真实跨时间使用，不预承诺旧 30 天固定阈值。
 
 ## 仓库结构
 
@@ -122,11 +125,12 @@ docker compose run --rm wge-cli status --json
 
 - Source / SourceSpan 是不可变证据根；Claim、Relation、Wiki 和索引均为派生状态。
 - 只有人主动选择的知识材料或显式授权的断言/纠正可以进入编译；Agent run 和 Pilot outcome 只承担运行与评估作用。
+- `CURRENT` 是给定 knowledgeVersion、scope 和 task 下的领先/证据支持更强投影，不是客观真理；新材料增加重新检查优先级但不自动覆盖旧证据。
 - Graph 是长期治理基础设施，在线仅按任务条件参与候选导航；候选遍历不自动进入 Prompt。
 - Quarantine、旧审计版本和越权 scope 默认 fail-closed。
 - MCP、HTTP 与 CLI 必须调用同一 Application Service，不得复制业务规则。
 - Benchmark/Gold、密钥、实验日志、外部参考和用户知识状态不得进入生产镜像。
 - 历史数据可以重跑作回归，但已揭示集合永远不能重新命名为 Blind。
-- 产品成功只由 Agent 长期行为改善证明，不由 Claim、Relation、Wiki 数量或一次 Dev 分数证明。
+- 产品成功最终由 Agent 长期行为改善证明；当前阶段先以不变量、加权语义与质量—成本接受向量闭合，不由 Claim、Relation、Wiki 数量、发布日期或一次 Dev 分数证明。
 
 完整当前数字、测试资产使用情况和已知风险见 [实施状态](docs/status/implementation-status.md)。

@@ -1,9 +1,9 @@
-# WikiMemory 长期问题记忆合同 v1.0
+# WikiMemory 长期问题记忆合同 v1.1
 
-> 状态：Accepted for I2.5 implementation
-> 生效日期：2026-08-20
+> 状态：Accepted；I2.5 机制基线，C1 加权语义上位合同
+> 生效日期：2026-08-24
 > 产品授权：用户确认自动形成并持续维护围绕长期问题的 WikiModule
-> 上位约束：`WGEMemory4LLM-Product-Definition.html`、`WGEMemory4LLM-User-Stories.html`、`docs/specs/knowledge-contract.md`
+> 上位约束：`WGEMemory4LLM-Product-Definition.html`、`WGEMemory4LLM-User-Stories.html`、`docs/specs/knowledge-contract.md`、`docs/specs/wikimemory-convergence-baseline-v1.md`
 
 ## 1. 产品边界
 
@@ -36,17 +36,21 @@ Evidence 与 Authority 合同编译；运行事件本身不跨越知识输入边
 `WikiModule(question, knowledgeVersion)` 是某个 QuestionFrame 在指定知识版本上的物化派生
 视图。它可以丢弃和重建，工程上持久化、版本化并增量更新。
 
-模块必须结构化区分：
+模块必须结构化区分并解释：
 
-- 当前有支持的认识；
+- 给定知识版本、适用范围和任务下当前证据支持更强的领先分支；
 - 带适用条件的分支；
 - 真实争议；
 - 未解决认识；
 - 已知 Gap；
-- 被取代但可追溯的旧认识；
+- 被降权、限域或取代但可追溯的历史分支；
 - Claim、Relation 与 Evidence 闭包。
 
 模块文本和问题身份都不得成为 Claim 的反向证据来源。
+
+`CURRENT` 不是 Claim 的新真值状态，也不承诺唯一答案。它是对证据拓扑的一次可解释投影；
+现有 `ACTIVE | SUPERSEDED`、`SUPPORTED | DISPUTED | UNRESOLVED` 等字段继续承担存储和治理
+职责，但不能单独决定产品层的领先分支。
 
 ### 2.3 QuestionEvolutionDecision
 
@@ -114,7 +118,13 @@ ACCEPT(r) =
 - SUPPORTED、DISPUTED、UNRESOLVED、条件分支和 SUPERSEDED 不被压成同一种文本状态；
 - Evidence Gap 与真实反证分离；
 - 条件性 SUPERSEDES 不得全局删除旧结论；
-- 没有当前支持结论时诚实返回 Gap。
+- 没有当前支持结论时诚实返回 Gap；
+- `CURRENT` 只表示给定 knowledgeVersion、scope 和 task 下当前领先/证据支持更强的分支，
+  不得表达为客观真理；
+- 分支投影至少能解释 grounding、authority、currentness、applicability、关系支持、任务相关性
+  与 uncertainty 中实际参与判断的维度；允许序位或理由，不强制伪精确概率；
+- 新材料增加重新检查和当前性优先级，但不自动获得高于旧证据的权威；
+- 争议、限域、降权和取代必须保留关系依据与历史分支，不能因渲染领先分支而静默删除。
 
 ### A5 · Isolation
 
@@ -156,8 +166,8 @@ ACCEPT(r) =
 
 1. 第一篇材料形成稳定问题及有证据模块；
 2. 第二篇材料跨来源更新同一问题而非创建重复模块；
-3. 反例形成争议或条件分支；
-4. 审计 TOTAL SUPERSEDES 更新当前认识并保留历史；
+3. 反例形成争议或条件分支，并解释两个分支为何保持并列或具有不同优先级；
+4. 审计 TOTAL SUPERSEDES 改变当前领先投影并保留历史；若适用范围或权威不足，不得全局淘汰旧分支；
 5. 证据不足形成 Gap，不编造答案；
 6. 问题 merge/split 后身份和引用可迁移；
 7. 无关材料不改变固定哨兵；
@@ -172,9 +182,13 @@ QUALITY = (
   long_term_question_relevance,
   boundary_quality,
   cross_material_update_coherence,
+  branch_weight_explainability,
+  authority_and_applicability_fidelity,
+  uncertainty_preservation,
   gap_honesty,
   context_compression_utility,
-  provider_tokens_and_latency
+  provider_tokens_and_latency,
+  marginal_value_per_ambiguity_call
 )
 ```
 
@@ -189,5 +203,8 @@ QUALITY = (
 - 失败必须归因到责任层，并固化为最小回归 Episode；只保存 trace 而未改变合同/实现不算学习。
 - 若继续讨论的预期决策改善低于实现一个可逆 shadow slice 的成本，停止讨论并进入 shadow。
 - 若新能力要求摄入 Agent run 或让 Wiki 文本成为证据，立即停止并回到产品边界。
-- 若长期问题模块在真实小型使用中不优于 Claim-only 阅读，则在进入 I3 前收缩 formation 或
-  Wiki 消费范围，不以模块数量为价值证明。
+- I2.5 已作为 Long-Question Identity 机制阶段闭合；C1 只能改变“加权问题状态”的最小表达与
+  判定，不同时扩展 loader、检索、UI、知识来源或真实 Pilot。
+- 若长期问题模块在冻结输入切片中不优于 Claim-only 阅读，或加权语义的边际价值不足以覆盖
+  模型成本，则以 `NARROW`、`STOP` 或 `NO-GO` 闭合，不以模块数量或继续追加调用为价值证明。
+- 新发现默认进入 Discovery Backlog；只有显式的人类决策才能改变 North Star 或当前阶段主变量。

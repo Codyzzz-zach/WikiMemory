@@ -1,6 +1,6 @@
 # ADR 0002：在 I3 前插入 Question-Centered Memory 阶段
 
-- 状态：Accepted
+- 状态：Accepted（I2.5 机制已闭合；Q6→I3 后续路线由 ADR-0003 取代）
 - 日期：2026-08-20
 
 ## 背景
@@ -39,7 +39,11 @@ I0–I2 已完成运行边界、Agent 读取、自然语言纠正和知识演化
 
 ## 结果
 
-- 当前 I3 一周/30 天 Pilot 计划在 Q1–Q5 硬门禁通过前不作为 WikiMemory Product-MVP 裁决。
+- 2026-08-20 的 I2.5 机制和真实材料开发验收已完成，作为 K2 Long-Question Identity 基线保留。
+- 2026-08-24 的 I3-Sim 以 NO-GO 闭合；它证明 K3 Weighted Semantic Flow 未完成。后续不再执行
+  Q6→旧 I3 路线，改按 C1→C3 收敛合同推进。
+- 原 I3 一周/30 天 Pilot 计划在 Q1–Q5 硬门禁通过前不作为 WikiMemory Product-MVP 裁决；
+  ADR-0003 接受后，该计划继续暂停，直至新的 C3 合同冻结。
 - Compiler、Relation audit、R0 Retrieval、MCP Transport 和 Pilot observation 不在 I2.5 主变量内。
 - 单篇材料仍可产生立即可用的 ACTIVE 问题，但 stable identity 不允许依赖 Source ID 或 heading。
 - 派生层失败不能回滚已经安全发布的 Canonical Claim；它进入显式 pending/retry，且旧模块不能
@@ -49,6 +53,7 @@ I0–I2 已完成运行边界、Agent 读取、自然语言纠正和知识演化
 
 - `WGEMemory4LLM-Product-Definition.html`：PD-05；
 - `docs/status/implementation-status.md`：Wiki 当前缺口；
+- `docs/adr/0003-weighted-evidence-flow-and-convergence-stages.md`：后续加权语义与收敛路线；
 - `experiments/h1-wiki-formation/adjudication-v1.json`：H1-A 工程基线裁决；
 - `AI-Native项目迭代闭环的故事哲学_研究更新版_2026-08`：可能性、拓扑、测量、历史、学习与治理
   的抽象方法；该文档提供迭代透镜，不产生产品输入扩张。

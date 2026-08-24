@@ -50,9 +50,12 @@ MCP / CLI
 产品目标        WGEMemory4LLM-Product-Definition.html
 理想架构        architecture-baseline.html
 知识语义        docs/specs/knowledge-contract.md
+长期问题语义    docs/specs/question-centered-memory-contract.md
+收敛基线        docs/specs/wikimemory-convergence-baseline-v1.md
 当前事实        docs/status/implementation-status.md
+发现收件箱      docs/status/discovery-backlog.md
 当前施工合同    WGEMemory4LLM-Iteration-Operating-Plan.md
-真实 Pilot      docs/operations/pilot-runbook.md
+历史 Pilot 合同 docs/operations/pilot-runbook.md
 验证证据        docs/verification/
 历史快照        docs/history/
 ```
