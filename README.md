@@ -25,7 +25,7 @@ I3-Sim 已于 2026-08-24 以 **NO-GO** 闭合：结构运行和 Wiki 消费成�
 当前使用收敛路线；每阶段都必须先冻结主变量、输入、接受向量、预算、非目标、停止条件和闭合产物：
 
 1. **C0 · Convergence Baseline**：已闭合；固定产品边界、能力账本、加权证据流与阶段纪律；
-2. **C1 · Weighted Question State**：当前仅起草合同；冻结 QuestionFrame，只处理领先、争议、限域、取代、未决和历史分支；
+2. **C1 · Weighted Question State**：阶段合同已接受，当前进入 C1-A/B Freeze 与 Contract/Micro；冻结 QuestionFrame，只处理领先、争议、限域、取代、未决和历史分支，deterministic Micro 通过前外部模型预算为 0；
 3. **C1.5 · Question Hypothesis Persistence**：C1 闭合后，独立验证问题假设的复用、重叠、分裂、合并与身份成熟；
 4. **C2 · Budgeted Information Flow**：确定性机制优先，模型预算只用于高价值歧义；
 5. **C3 · Longitudinal Use**：C1/C1.5/C2 稳定后才设计真实跨时间使用，不预承诺旧 30 天固定阈值。

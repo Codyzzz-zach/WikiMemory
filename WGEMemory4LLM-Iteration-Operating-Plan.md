@@ -4,7 +4,8 @@
 >
 > 当前路线：C0 Convergence Baseline → C1 Weighted Question State → C1.5 Question Hypothesis Persistence → C2 Budgeted Information Flow → C3 Longitudinal Use
 >
-> 当前状态：C0 已闭合；C1 仅允许起草和评审阶段合同，尚未授权实现或新的付费模型实验
+> 当前状态：C0 已闭合；C1 阶段合同已接受，当前执行 C1-A/B Freeze 与 Contract/Micro；
+> deterministic Micro 通过前外部模型预算为 0
 >
 > 上位基线：`docs/specs/wikimemory-convergence-baseline-v1.md`
 >
