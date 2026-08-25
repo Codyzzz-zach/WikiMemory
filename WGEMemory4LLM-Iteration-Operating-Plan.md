@@ -4,8 +4,8 @@
 >
 > 当前路线：C0 Convergence Baseline → C1 Weighted Question State → C1.5 Question Hypothesis Persistence → C2 Budgeted Information Flow → C3 Longitudinal Use
 >
-> 当前状态：C0 已闭合；C1 阶段合同已接受，C1-A/B Freeze 与 Contract/Micro 已通过，
-> 当前进入 C1-C Pure Shadow；deterministic Micro 通过前外部模型预算为 0
+> 当前状态：C0 已闭合；C1 阶段合同已接受，C1-A/B 与 C1-C Pure Shadow 已通过，
+> 当前进入 C1-D Semantic Slice；只把会改变冻结 Episode 裁决的剩余歧义纳入已接受预算
 >
 > 上位基线：`docs/specs/wikimemory-convergence-baseline-v1.md`
 >

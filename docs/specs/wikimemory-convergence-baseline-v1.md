@@ -204,7 +204,7 @@ WikiMemory 当前不承诺真实访问计数、收敛概率、自博弈或最优
 
 1. I3-Sim 已以 `NO-GO` 闭合；它暴露了关系召回、条件表达和跨版本语义等缺口，不继续把同一 Gate 修补成成功；
 2. 旧 I3 的“30 天 Pilot + 固定百分比”不是当前承诺，保留为历史设想；
-3. C1 阶段合同已于 2026-08-25 接受；C1-A/B Freeze 与 Contract/Micro 已通过，当前只进入 C1-C Pure Shadow，验证 sidecar 的纯函数、grounding、replay 与 isolation；deterministic Micro 通过前外部模型预算为 0；
+3. C1 阶段合同已于 2026-08-25 接受；C1-A/B 与 C1-C Pure Shadow 已通过，当前只进入 C1-D Semantic Slice，为 7 个冻结 QuestionFrames 建立 shadow adapter，并仅把会改变 Episode 裁决的剩余歧义纳入已接受预算；
 4. 产品可以明确标注“争议/取代语义仍在完善”，但不能把当前机制描述成已经完成加权语义流。
 5. I2.5 保持 `K2-M` 机制闭合；`K2-S` 是新识别并被产品负责人接受的语义未知，不以补丁方式塞入 C1，待 C1 闭合后以 C1.5 独立验收。
 
