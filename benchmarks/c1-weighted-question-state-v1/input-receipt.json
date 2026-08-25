@@ -1,0 +1,172 @@
+{
+  "schemaVersion": "wge-c1-input-receipt/v1",
+  "stage": "C1-A",
+  "status": "FROZEN",
+  "frozenOn": "2026-08-25",
+  "acceptedContract": {
+    "path": "docs/specs/c1-weighted-question-state-contract-v1.md",
+    "sha256": "18da4349f7cac0bc31adeb10cbdf2a015a1f7f6a721c7384ff4ed24d82970f71",
+    "acceptanceCommit": "b89c746b171afacca837205947381b5c234b2f48"
+  },
+  "projectionVersion": "c1-question-state-projection/v1",
+  "providerUsageAtFreeze": {
+    "calls": 0,
+    "tokens": 0,
+    "answerCalls": 0,
+    "recompilationCalls": 0
+  },
+  "identityBoundary": {
+    "questionFramesAreFrozenInputs": true,
+    "questionIdentityIsAnInputAssumption": true,
+    "forbiddenMutations": [
+      "QuestionFrame",
+      "QuestionEvolutionDecision",
+      "question-proposer",
+      "question-formation-v2",
+      "question-lifecycle"
+    ]
+  },
+  "i3Sim": {
+    "manifest": {
+      "path": "benchmarks/i3-sim-gate-v1/manifest.json",
+      "sha256": "5e1b2197318fcaccb1a938cc6253bf38ca19e5d2ad9db13aaf6aaf759aca157b"
+    },
+    "result": {
+      "path": "docs/verification/i3-sim-gate-result-2026-08-24.md",
+      "sha256": "7467a6d7cef13a3bc3d5e7611157b016db371dd98ee19f30d3578f1cfec8699c"
+    },
+    "runtime": {
+      "path": "/private/tmp/wikimemory-i3-sim-gate-v1-4998dfa",
+      "role": "FROZEN_EPHEMERAL_CACHE",
+      "verifiedOnFreezeHost": true,
+      "missingBehavior": "INPUT_REFREEZE_REQUIRED"
+    },
+    "canonicalAggregate": {
+      "directories": [
+        "claims",
+        "relations",
+        "sources",
+        "assertions",
+        "concepts",
+        "questions",
+        "wiki",
+        "publications"
+      ],
+      "fileCount": 76,
+      "method": "SHA-256 of path-sorted lines '<file-sha256>  <runtime-relative-path>\\n'",
+      "sha256": "3274bab9cb13ba1fcd9104eec7722b22b4b1450a2088246394f31e7dd1028b27"
+    },
+    "questionState": {
+      "path": "questions/state.json",
+      "fileSha256": "da1df59a5058852f6c25184c86577410ccdd53eda050043265929cbc9c12f300",
+      "internalStateHash": "eabfb6000f1b58a55b7749b16c20458f9009a2bdf172071a639cb2a5826816eb",
+      "frameCount": 34,
+      "decisionCount": 64
+    },
+    "wikiAggregate": {
+      "fileCount": 21,
+      "method": "SHA-256 of path-sorted shasum lines using absolute frozen-runtime Wiki paths",
+      "sha256": "6449ce9ba9e5eebf24c2e88496ea0e19a285586f28cd13057e352c1c781d8fb9"
+    },
+    "pairedReport": {
+      "path": "runs/i3-sim-gate/paired-review-v1/report.json",
+      "sha256": "8d699e035f4b8185ab319691e5a1a94b41d0dfb2045d8840b963620942fdc2b8",
+      "knowledgeUse": "DIAGNOSTIC_ONLY"
+    },
+    "episodes": [
+      {
+        "episodeId": "S200-EV-016",
+        "domain": "psychology",
+        "questionRefs": [
+          "question:216bff0a347664f84a379395",
+          "question:fd7afd5d18a0abcdba1c8a83"
+        ],
+        "requiredTransitions": [
+          "SAME_QUESTION_UPDATE",
+          "DISPUTE_PRESERVED",
+          "AUTHORITY_NOT_FLATTENED"
+        ]
+      },
+      {
+        "episodeId": "S200-EV-004",
+        "domain": "technology",
+        "questionRefs": [
+          "question:9461145467c7b99470b61313",
+          "question:cf8cead85caf83ea0864ad3c",
+          "question:fd46a361f2c948a98df8f9f1"
+        ],
+        "requiredTransitions": [
+          "SAME_QUESTION_UPDATE",
+          "SUPERSEDED_HISTORY_RETAINED",
+          "CONDITION_PRESERVED"
+        ]
+      },
+      {
+        "episodeId": "S200-EV-020",
+        "domain": "law-public-policy",
+        "questionRefs": [
+          "question:6374d223d73b203bbcfb1990",
+          "question:bc813fe906d1715744fb1153"
+        ],
+        "requiredTransitions": [
+          "SAME_QUESTION_UPDATE",
+          "NEW_EVIDENCE_ADDED",
+          "CONFLICT_ATTRIBUTED"
+        ]
+      }
+    ]
+  },
+  "evolutionMicro": {
+    "datasetClass": "SYNTHETIC_SILVER",
+    "manifest": {
+      "path": "experiments/evolution/dataset-v1/manifest.json",
+      "sha256": "47619fe55b5470fe537b7c9b3a665c1dfc30b2c85896d3e342cd322767624227"
+    },
+    "documents": [
+      {
+        "timeline": "T0",
+        "path": "experiments/evolution/dataset-v1/platform-engineering/t0/transport-security.md",
+        "sha256": "73b18cf4eea0199adaf06344148845062547f6fafb3cf821248113b655f59100"
+      },
+      {
+        "timeline": "T2",
+        "path": "experiments/evolution/dataset-v1/platform-engineering/t2/zero-trust-transport.md",
+        "sha256": "47a9aabe71230c81fa65d5499bdeb5982292c86b7c25ba582718c542e7a1feaf"
+      },
+      {
+        "timeline": "T3",
+        "path": "experiments/evolution/dataset-v1/platform-engineering/t3/peak-event-transport-dispute.md",
+        "sha256": "51bb68ab12e8d0ac884da3a0a72761933d076ba8867cfd7c56340420505c9159"
+      }
+    ]
+  },
+  "i25Isolation": {
+    "acceptanceReport": {
+      "path": "docs/verification/question-centered-memory-real-material-acceptance-2026-08-20.md",
+      "sha256": "72050906896d609f5f88546e534a1168abe83fafe644015bcf7854dc3fc9548d"
+    },
+    "materials": [
+      {
+        "path": "mathtest-material/03-sequences-limits.md",
+        "sha256": "67d717611e97029d1321d305bffad2550489facddd896e639edf3e909dc6fdb7"
+      },
+      {
+        "path": "mathtest-material/12-calculus.md",
+        "sha256": "d06c12e9e88ffd74611594fbab5e006abbd4320105f169d7b88e1d51d68e2c5f"
+      },
+      {
+        "path": "mathtest-material/02-spaces.md",
+        "sha256": "9473a6b37f73ce18b18bb44eded94376e285e21cd98293080b9daf1824bb4286"
+      },
+      {
+        "path": "mathtest-material/09-functional-analysis.md",
+        "sha256": "3022edf461c92f2daeec5e1e82a06658b907ee5b03105cdc0b4229fb2f35257f"
+      }
+    ],
+    "stableQuestionRefs": [
+      "question:2bd863ad3b30960f1e119c2c",
+      "question:c9932599b47f4fa86edfeff4",
+      "question:ef8d8f1bcc2827e9e20efa59"
+    ]
+  }
+}

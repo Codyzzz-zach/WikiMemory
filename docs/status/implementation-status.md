@@ -7,7 +7,7 @@
 
 WikiMemory 已达到 **Integration-ready knowledge kernel + question-centered derived memory**。I0 的 Application/runtime/单写者/Job/Worker、容器镜像与单机卷恢复边界已完成，I1 的 MCP stdio 已通过真实协议验证；I2 工程链已覆盖自然语言纠正、权限分流、FACT 补证据、关联边演化和受控回滚；I2.5 已加入稳定 QuestionFrame、语义提议与确定性门控、WikiModule V2、merge/split/archive/reopen、ingest pending/retry、崩溃重放收据、Context Pack/Trace 与 Material Impact Report。
 
-2026-08-24 的 I3-Sim 已按冻结合同以 **NO-GO** 闭合：18/18 材料完成编译、6/7 任务形成配对结果、2 个 causal wins，但只有 1 个 winning domain，出现 2 个 hard failures，且 3 个目标 Episode 均未完整成立。该结果证明可追溯 Wiki 可被 Agent 消费，也证明当前 `CURRENT/CONDITIONAL/DISPUTE/SUPERSEDED` 物化仍不能表达产品需要的加权语义流。项目当前处于 **C0 已闭合、P0 问题假设语义增补已接受、C1 合同已接受并进入 C1-A/B**；deterministic Micro 通过前外部模型预算为 0，不是 Product-MVP，也未授权真实 Pilot。I2.5 证明的是问题身份机制，不是问题假设已经获得长期语义身份。
+2026-08-24 的 I3-Sim 已按冻结合同以 **NO-GO** 闭合：18/18 材料完成编译、6/7 任务形成配对结果、2 个 causal wins，但只有 1 个 winning domain，出现 2 个 hard failures，且 3 个目标 Episode 均未完整成立。该结果证明可追溯 Wiki 可被 Agent 消费，也证明当前 `CURRENT/CONDITIONAL/DISPUTE/SUPERSEDED` 物化仍不能表达产品需要的加权语义流。项目当前处于 **C0 已闭合、P0 问题假设语义增补已接受、C1 合同已接受、C1-A/B 已通过并进入 C1-C Pure Shadow**；deterministic Micro 通过前外部模型预算为 0，不是 Product-MVP，也未授权真实 Pilot。I2.5 证明的是问题身份机制，不是问题假设已经获得长期语义身份。
 
 ### 能力账本
 
@@ -53,7 +53,7 @@ WikiMemory 已达到 **Integration-ready knowledge kernel + question-centered de
 
 ## 自动化验证
 
-- Vitest：53 files / 340 tests；
+- Vitest：54 files / 346 tests；
 - TypeScript：`src` 与 `scripts` 严格 typecheck；
 - Biome：`src` 与 `scripts` 全量检查；
 - I0/I1 新增覆盖：Application 与生产核心语义 parity、完整 ingest 状态机、持久 Job 幂等与失败、abandoned Worker 恢复、runtime v1→v2 显式迁移、MCP 官方客户端握手、默认只读/显式 ingest capability、MCP durable submission、Docker allowlist/Compose 合同；
@@ -104,14 +104,14 @@ WikiMemory 已达到 **Integration-ready knowledge kernel + question-centered de
 
 ## 下一阶段
 
-当前进入 **C1-A/B Freeze 与 Contract/Micro**，只执行确定性合同层工作：
+当前完成 **C1-A/B Freeze 与 Contract/Micro**，进入 **C1-C Pure Shadow**：
 
 1. 冻结唯一问题：同一长期问题下，新旧证据如何形成可解释的领先、争议、限域、取代、未决和历史分支；
 2. 冻结 QuestionFrame 集合；形成、匹配、promotion、merge/split/archive/reopen 不进入 C1 主变量；
 3. 优先复用 I3-Sim 三个 Episode 与六个 paired tasks、I2.5 真实材料、Evolution 纠正/取代、数学条件陷阱和跨域无关哨兵；
-4. 按已接受的 `docs/specs/c1-weighted-question-state-contract-v1.md` 冻结输入收据、projection schema、reason code、Evolution Micro 与失败样例；
+4. 输入收据、projection schema、reason code、Evolution Micro 与失败样例已冻结并通过 portable/freeze-host 校验；
 5. 不同时扩 Loader、检索、UI、知识来源或 Pilot；不继续修补 I3-Sim 来改写 NO-GO；
-6. C1-A/B 只允许最小 sidecar schema 与测试资产改动，保持 0 provider calls；只有 deterministic Micro 通过后才可按合同进入后续歧义调用决策；
+6. C1-C 只实现纯函数 sidecar projection、隔离写入、grounding、replay 与 unrelated-sentinel 校验，保持 0 provider calls；只有 deterministic Micro 通过后才可按合同进入后续歧义调用决策；
 7. C1 闭合后再冻结 C1.5 合同，独立验证 QuestionHypothesis 的复用、重叠、分裂、合并与身份成熟。
 
 权威路线见 `docs/specs/wikimemory-convergence-baseline-v1.md` 与 `WGEMemory4LLM-Iteration-Operating-Plan.md`。旧 Goal 不再无限延长，Discovery Backlog 不自动改变当前阶段。

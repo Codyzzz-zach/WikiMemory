@@ -1,0 +1,589 @@
+{
+  "schemaVersion": "wge-c1-evolution-micro/v1",
+  "datasetClass": "SYNTHETIC_SILVER",
+  "purpose": "Deterministic contract fixture for scoped supersession, history retention, and unresolved peer conflict; not evidence of real-domain generalization.",
+  "questionRef": "question:c1-micro:northstar-transport-security",
+  "questionIdentityMode": "FROZEN_INPUT_ASSUMPTION",
+  "projectionVersion": "c1-question-state-projection/v1",
+  "hashContract": {
+    "algorithm": "SHA-256",
+    "canonicalization": "Recursively sort object keys lexicographically, preserve array order, encode as compact UTF-8 JSON.",
+    "inputClosure": "Hash {questionRef, knowledgeVersion, claims, relations, evidenceSpans}; catalog entries are selected by snapshot refs and sorted by id before canonicalization."
+  },
+  "sourceDocuments": [
+    {
+      "documentId": "plat-security-t0",
+      "timeline": "T0",
+      "path": "experiments/evolution/dataset-v1/platform-engineering/t0/transport-security.md",
+      "sha256": "73b18cf4eea0199adaf06344148845062547f6fafb3cf821248113b655f59100"
+    },
+    {
+      "documentId": "plat-security-t2",
+      "timeline": "T2",
+      "path": "experiments/evolution/dataset-v1/platform-engineering/t2/zero-trust-transport.md",
+      "sha256": "47a9aabe71230c81fa65d5499bdeb5982292c86b7c25ba582718c542e7a1feaf"
+    },
+    {
+      "documentId": "plat-mtls-t3",
+      "timeline": "T3",
+      "path": "experiments/evolution/dataset-v1/platform-engineering/t3/peak-event-transport-dispute.md",
+      "sha256": "51bb68ab12e8d0ac884da3a0a72761933d076ba8867cfd7c56340420505c9159"
+    }
+  ],
+  "evidenceSpans": [
+    {
+      "id": "span:c1-micro:t0-external-interface",
+      "documentId": "plat-security-t0",
+      "locator": {"heading": "外部接口"},
+      "sourceSha256": "73b18cf4eea0199adaf06344148845062547f6fafb3cf821248113b655f59100"
+    },
+    {
+      "id": "span:c1-micro:t0-internal-communication",
+      "documentId": "plat-security-t0",
+      "locator": {"heading": "内部服务通信"},
+      "sourceSha256": "73b18cf4eea0199adaf06344148845062547f6fafb3cf821248113b655f59100"
+    },
+    {
+      "id": "span:c1-micro:t0-independent-controls",
+      "documentId": "plat-security-t0",
+      "locator": {"heading": "不受传输协议变更影响的控制"},
+      "sourceSha256": "73b18cf4eea0199adaf06344148845062547f6fafb3cf821248113b655f59100"
+    },
+    {
+      "id": "span:c1-micro:t2-replaced-sections",
+      "documentId": "plat-security-t2",
+      "locator": {"heading": "明确替代的章节"},
+      "sourceSha256": "47a9aabe71230c81fa65d5499bdeb5982292c86b7c25ba582718c542e7a1feaf"
+    },
+    {
+      "id": "span:c1-micro:t2-new-transport",
+      "documentId": "plat-security-t2",
+      "locator": {"heading": "新传输要求"},
+      "sourceSha256": "47a9aabe71230c81fa65d5499bdeb5982292c86b7c25ba582718c542e7a1feaf"
+    },
+    {
+      "id": "span:c1-micro:t2-exception-management",
+      "documentId": "plat-security-t2",
+      "locator": {"heading": "例外管理"},
+      "sourceSha256": "47a9aabe71230c81fa65d5499bdeb5982292c86b7c25ba582718c542e7a1feaf"
+    },
+    {
+      "id": "span:c1-micro:t3-disable-position",
+      "documentId": "plat-mtls-t3",
+      "locator": {"paragraphContains": "容量与性能委员会根据压力测试认为"},
+      "sourceSha256": "51bb68ab12e8d0ac884da3a0a72761933d076ba8867cfd7c56340420505c9159"
+    },
+    {
+      "id": "span:c1-micro:t3-maintain-position",
+      "documentId": "plat-mtls-t3",
+      "locator": {"paragraphContains": "安全合规委员会不同意该方案"},
+      "sourceSha256": "51bb68ab12e8d0ac884da3a0a72761933d076ba8867cfd7c56340420505c9159"
+    },
+    {
+      "id": "span:c1-micro:t3-no-decision",
+      "documentId": "plat-mtls-t3",
+      "locator": {"paragraphContains": "截至起草日，安全架构组和技术副总裁没有发布裁决"},
+      "sourceSha256": "51bb68ab12e8d0ac884da3a0a72761933d076ba8867cfd7c56340420505c9159"
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim:c1-micro:t0-external-tls12",
+      "statement": "External APIs must use TLS 1.2 and must not enable TLS 1.0 or TLS 1.1.",
+      "authority": "安全架构组",
+      "authorityClass": "POLICY_OWNER",
+      "claimStatus": "EFFECTIVE",
+      "effectiveFrom": "2026-01-20",
+      "knowledgeScope": {"type": "GLOBAL"},
+      "applicability": ["Northstar external APIs"],
+      "conditions": [],
+      "evidenceSpanIds": ["span:c1-micro:t0-external-interface"]
+    },
+    {
+      "id": "claim:c1-micro:t0-internal-http",
+      "statement": "Managed production microservices may use plaintext HTTP only inside the protected managed network.",
+      "authority": "安全架构组",
+      "authorityClass": "POLICY_OWNER",
+      "claimStatus": "EFFECTIVE",
+      "effectiveFrom": "2026-01-20",
+      "knowledgeScope": {"type": "GLOBAL"},
+      "applicability": ["Northstar managed production microservices"],
+      "conditions": [
+        "network access control is active",
+        "service identity allowlist is active",
+        "traffic does not cross public, home, or third-party cloud networks"
+      ],
+      "evidenceSpanIds": ["span:c1-micro:t0-internal-communication"]
+    },
+    {
+      "id": "claim:c1-micro:t0-independent-controls",
+      "statement": "Token rotation, Argon2id password storage, log redaction, and downgrade approval remain independent controls.",
+      "authority": "安全架构组",
+      "authorityClass": "POLICY_OWNER",
+      "claimStatus": "EFFECTIVE",
+      "effectiveFrom": "2026-01-20",
+      "knowledgeScope": {"type": "GLOBAL"},
+      "applicability": ["Northstar identity, password, logging, and downgrade controls"],
+      "conditions": [],
+      "evidenceSpanIds": ["span:c1-micro:t0-independent-controls"]
+    },
+    {
+      "id": "claim:c1-micro:t2-external-tls13",
+      "statement": "External APIs must use TLS 1.3 and must not silently fall back to TLS 1.2.",
+      "authority": "安全架构组",
+      "authorityClass": "POLICY_OWNER",
+      "claimStatus": "EFFECTIVE",
+      "effectiveFrom": "2026-07-10",
+      "knowledgeScope": {"type": "GLOBAL"},
+      "applicability": ["Northstar external APIs"],
+      "conditions": [],
+      "evidenceSpanIds": [
+        "span:c1-micro:t2-replaced-sections",
+        "span:c1-micro:t2-new-transport"
+      ]
+    },
+    {
+      "id": "claim:c1-micro:t2-internal-mtls",
+      "statement": "All production microservice calls must use mTLS, including same-cluster calls.",
+      "authority": "安全架构组",
+      "authorityClass": "POLICY_OWNER",
+      "claimStatus": "EFFECTIVE",
+      "effectiveFrom": "2026-07-10",
+      "knowledgeScope": {"type": "GLOBAL"},
+      "applicability": ["Northstar production microservice communication"],
+      "conditions": [],
+      "evidenceSpanIds": [
+        "span:c1-micro:t2-replaced-sections",
+        "span:c1-micro:t2-new-transport"
+      ]
+    },
+    {
+      "id": "claim:c1-micro:t2-independent-controls-preserved",
+      "statement": "The T2 transport replacement does not replace token, password, log redaction, or downgrade approval controls.",
+      "authority": "安全架构组",
+      "authorityClass": "POLICY_OWNER",
+      "claimStatus": "EFFECTIVE",
+      "effectiveFrom": "2026-07-10",
+      "knowledgeScope": {"type": "GLOBAL"},
+      "applicability": ["Northstar identity, password, logging, and downgrade controls"],
+      "conditions": [],
+      "evidenceSpanIds": ["span:c1-micro:t2-replaced-sections"]
+    },
+    {
+      "id": "claim:c1-micro:t3-disable-mtls-proposal",
+      "statement": "Selected read paths should disable mTLS during the peak event and use plaintext HTTP.",
+      "authority": "容量与性能委员会",
+      "authorityClass": "PEER_ADVISORY",
+      "claimStatus": "PROPOSED",
+      "effectiveFrom": null,
+      "knowledgeScope": {"type": "GLOBAL"},
+      "applicability": ["order query, recommendation, and inventory read paths during the peak event"],
+      "conditions": [
+        "2026-11-10 through 2026-11-12",
+        "requires an authorized exception before becoming effective"
+      ],
+      "evidenceSpanIds": ["span:c1-micro:t3-disable-position"]
+    },
+    {
+      "id": "claim:c1-micro:t3-maintain-mtls-position",
+      "statement": "Peak traffic does not justify disabling mTLS; service-specific approval is required for any downgrade.",
+      "authority": "安全合规委员会",
+      "authorityClass": "PEER_ADVISORY",
+      "claimStatus": "PROPOSED",
+      "effectiveFrom": null,
+      "knowledgeScope": {"type": "GLOBAL"},
+      "applicability": ["Northstar peak-event production microservice communication"],
+      "conditions": [],
+      "evidenceSpanIds": ["span:c1-micro:t3-maintain-position"]
+    },
+    {
+      "id": "claim:c1-micro:t3-no-authorized-decision",
+      "statement": "No authorized final decision or valid temporary exception list existed at the memo date.",
+      "authority": "容量与性能委员会、安全合规委员会联合备忘录",
+      "authorityClass": "FACTUAL_RECORD",
+      "claimStatus": "OBSERVED",
+      "effectiveFrom": null,
+      "knowledgeScope": {"type": "GLOBAL"},
+      "applicability": ["Northstar peak-event production microservice communication"],
+      "conditions": [],
+      "evidenceSpanIds": ["span:c1-micro:t3-no-decision"]
+    }
+  ],
+  "relations": [
+    {
+      "id": "relation:c1-micro:t2-external-supersedes-t0",
+      "from": "claim:c1-micro:t2-external-tls13",
+      "to": "claim:c1-micro:t0-external-tls12",
+      "type": "SUPERSEDES",
+      "relationStatus": "EXPLICIT",
+      "applicability": ["Northstar external APIs"],
+      "conditions": ["effective on or after 2026-07-10"],
+      "evidenceSpanIds": ["span:c1-micro:t2-replaced-sections"]
+    },
+    {
+      "id": "relation:c1-micro:t2-internal-supersedes-t0",
+      "from": "claim:c1-micro:t2-internal-mtls",
+      "to": "claim:c1-micro:t0-internal-http",
+      "type": "SUPERSEDES",
+      "relationStatus": "EXPLICIT",
+      "applicability": ["Northstar production microservice communication"],
+      "conditions": ["effective on or after 2026-07-10"],
+      "evidenceSpanIds": ["span:c1-micro:t2-replaced-sections"]
+    },
+    {
+      "id": "relation:c1-micro:t2-preserves-independent-controls",
+      "from": "claim:c1-micro:t2-independent-controls-preserved",
+      "to": "claim:c1-micro:t0-independent-controls",
+      "type": "SUPPORTS",
+      "relationStatus": "EXPLICIT",
+      "applicability": ["Northstar identity, password, logging, and downgrade controls"],
+      "conditions": [],
+      "evidenceSpanIds": ["span:c1-micro:t2-replaced-sections"]
+    },
+    {
+      "id": "relation:c1-micro:t3-peer-contradiction",
+      "from": "claim:c1-micro:t3-disable-mtls-proposal",
+      "to": "claim:c1-micro:t3-maintain-mtls-position",
+      "type": "CONTRADICTS",
+      "relationStatus": "UNRESOLVED",
+      "applicability": ["Northstar peak-event production microservice communication"],
+      "conditions": [],
+      "evidenceSpanIds": [
+        "span:c1-micro:t3-disable-position",
+        "span:c1-micro:t3-maintain-position",
+        "span:c1-micro:t3-no-decision"
+      ]
+    },
+    {
+      "id": "relation:c1-micro:t3-disable-contradicts-policy",
+      "from": "claim:c1-micro:t3-disable-mtls-proposal",
+      "to": "claim:c1-micro:t2-internal-mtls",
+      "type": "CONTRADICTS",
+      "relationStatus": "UNRESOLVED",
+      "applicability": ["selected peak-event production read paths"],
+      "conditions": ["2026-11-10 through 2026-11-12"],
+      "evidenceSpanIds": [
+        "span:c1-micro:t2-exception-management",
+        "span:c1-micro:t3-disable-position",
+        "span:c1-micro:t3-no-decision"
+      ]
+    }
+  ],
+  "snapshots": [
+    {
+      "timeline": "T0",
+      "knowledgeVersion": "c1-micro:t0",
+      "claimRefs": [
+        "claim:c1-micro:t0-external-tls12",
+        "claim:c1-micro:t0-independent-controls",
+        "claim:c1-micro:t0-internal-http"
+      ],
+      "relationIds": [],
+      "evidenceSpanIds": [
+        "span:c1-micro:t0-external-interface",
+        "span:c1-micro:t0-independent-controls",
+        "span:c1-micro:t0-internal-communication"
+      ],
+      "inputClosureHash": "71e2ef02ad602e74fc7ff911f41e35158f842e3f0d454466d1b2c8be1de16a84",
+      "expectedTransitionCodes": ["BASELINE_ESTABLISHED"],
+      "expectedBranchAssessments": [
+        {
+          "branchId": "branch:c1-micro:independent-controls",
+          "claimRefs": ["claim:c1-micro:t0-independent-controls"],
+          "standing": "LEADING",
+          "qualifiers": [],
+          "applicability": ["Northstar identity, password, logging, and downgrade controls"],
+          "conditions": [],
+          "requiredReasonCodes": ["DIRECT_EVIDENCE_PRESENT", "EFFECTIVE_BASELINE"]
+        },
+        {
+          "branchId": "branch:c1-micro:t0-external-tls12",
+          "claimRefs": ["claim:c1-micro:t0-external-tls12"],
+          "standing": "LEADING",
+          "qualifiers": [],
+          "applicability": ["Northstar external APIs"],
+          "conditions": [],
+          "requiredReasonCodes": ["DIRECT_EVIDENCE_PRESENT", "EFFECTIVE_BASELINE"]
+        },
+        {
+          "branchId": "branch:c1-micro:t0-internal-http",
+          "claimRefs": ["claim:c1-micro:t0-internal-http"],
+          "standing": "LEADING",
+          "qualifiers": ["CONDITIONAL"],
+          "applicability": ["Northstar managed production microservices"],
+          "conditions": [
+            "network access control is active",
+            "service identity allowlist is active",
+            "traffic does not cross public, home, or third-party cloud networks"
+          ],
+          "requiredReasonCodes": [
+            "DIRECT_EVIDENCE_PRESENT",
+            "EFFECTIVE_BASELINE",
+            "CONDITION_REQUIRED"
+          ]
+        }
+      ],
+      "expectedUnresolvedFactors": []
+    },
+    {
+      "timeline": "T2",
+      "knowledgeVersion": "c1-micro:t2",
+      "claimRefs": [
+        "claim:c1-micro:t0-external-tls12",
+        "claim:c1-micro:t0-independent-controls",
+        "claim:c1-micro:t0-internal-http",
+        "claim:c1-micro:t2-external-tls13",
+        "claim:c1-micro:t2-independent-controls-preserved",
+        "claim:c1-micro:t2-internal-mtls"
+      ],
+      "relationIds": [
+        "relation:c1-micro:t2-external-supersedes-t0",
+        "relation:c1-micro:t2-internal-supersedes-t0",
+        "relation:c1-micro:t2-preserves-independent-controls"
+      ],
+      "evidenceSpanIds": [
+        "span:c1-micro:t0-external-interface",
+        "span:c1-micro:t0-independent-controls",
+        "span:c1-micro:t0-internal-communication",
+        "span:c1-micro:t2-new-transport",
+        "span:c1-micro:t2-replaced-sections"
+      ],
+      "inputClosureHash": "093919cfddba2aaf30ccebee1a041e18614dd05cf81066b2fd60c08526f70065",
+      "expectedTransitionCodes": [
+        "SCOPED_SUPERSESSION",
+        "SUPERSEDED_HISTORY_RETAINED",
+        "INDEPENDENT_CONTROL_PRESERVED"
+      ],
+      "expectedBranchAssessments": [
+        {
+          "branchId": "branch:c1-micro:independent-controls",
+          "claimRefs": [
+            "claim:c1-micro:t0-independent-controls",
+            "claim:c1-micro:t2-independent-controls-preserved"
+          ],
+          "standing": "LEADING",
+          "qualifiers": [],
+          "applicability": ["Northstar identity, password, logging, and downgrade controls"],
+          "conditions": [],
+          "requiredReasonCodes": [
+            "DIRECT_EVIDENCE_PRESENT",
+            "OUTSIDE_SUPERSESSION_SCOPE"
+          ]
+        },
+        {
+          "branchId": "branch:c1-micro:t0-external-tls12",
+          "claimRefs": ["claim:c1-micro:t0-external-tls12"],
+          "standing": "HISTORICAL",
+          "qualifiers": [],
+          "applicability": ["Northstar external APIs"],
+          "conditions": [],
+          "requiredReasonCodes": [
+            "SAME_AUTHORITY_SUCCESSOR",
+            "LATER_EFFECTIVE_REPLACEMENT",
+            "EXPLICIT_SUPERSESSION"
+          ]
+        },
+        {
+          "branchId": "branch:c1-micro:t0-internal-http",
+          "claimRefs": ["claim:c1-micro:t0-internal-http"],
+          "standing": "HISTORICAL",
+          "qualifiers": ["CONDITIONAL"],
+          "applicability": ["Northstar managed production microservices"],
+          "conditions": [
+            "network access control is active",
+            "service identity allowlist is active",
+            "traffic does not cross public, home, or third-party cloud networks"
+          ],
+          "requiredReasonCodes": [
+            "SAME_AUTHORITY_SUCCESSOR",
+            "LATER_EFFECTIVE_REPLACEMENT",
+            "EXPLICIT_SUPERSESSION",
+            "CONDITION_REQUIRED"
+          ]
+        },
+        {
+          "branchId": "branch:c1-micro:t2-external-tls13",
+          "claimRefs": ["claim:c1-micro:t2-external-tls13"],
+          "standing": "LEADING",
+          "qualifiers": [],
+          "applicability": ["Northstar external APIs"],
+          "conditions": [],
+          "requiredReasonCodes": [
+            "DIRECT_EVIDENCE_PRESENT",
+            "SAME_AUTHORITY_SUCCESSOR",
+            "LATER_EFFECTIVE_REPLACEMENT",
+            "EXPLICIT_SUPERSESSION"
+          ]
+        },
+        {
+          "branchId": "branch:c1-micro:t2-internal-mtls",
+          "claimRefs": ["claim:c1-micro:t2-internal-mtls"],
+          "standing": "LEADING",
+          "qualifiers": [],
+          "applicability": ["Northstar production microservice communication"],
+          "conditions": [],
+          "requiredReasonCodes": [
+            "DIRECT_EVIDENCE_PRESENT",
+            "SAME_AUTHORITY_SUCCESSOR",
+            "LATER_EFFECTIVE_REPLACEMENT",
+            "EXPLICIT_SUPERSESSION"
+          ]
+        }
+      ],
+      "expectedUnresolvedFactors": []
+    },
+    {
+      "timeline": "T3",
+      "knowledgeVersion": "c1-micro:t3",
+      "claimRefs": [
+        "claim:c1-micro:t0-external-tls12",
+        "claim:c1-micro:t0-independent-controls",
+        "claim:c1-micro:t0-internal-http",
+        "claim:c1-micro:t2-external-tls13",
+        "claim:c1-micro:t2-independent-controls-preserved",
+        "claim:c1-micro:t2-internal-mtls",
+        "claim:c1-micro:t3-disable-mtls-proposal",
+        "claim:c1-micro:t3-maintain-mtls-position",
+        "claim:c1-micro:t3-no-authorized-decision"
+      ],
+      "relationIds": [
+        "relation:c1-micro:t2-external-supersedes-t0",
+        "relation:c1-micro:t2-internal-supersedes-t0",
+        "relation:c1-micro:t2-preserves-independent-controls",
+        "relation:c1-micro:t3-disable-contradicts-policy",
+        "relation:c1-micro:t3-peer-contradiction"
+      ],
+      "evidenceSpanIds": [
+        "span:c1-micro:t0-external-interface",
+        "span:c1-micro:t0-independent-controls",
+        "span:c1-micro:t0-internal-communication",
+        "span:c1-micro:t2-exception-management",
+        "span:c1-micro:t2-new-transport",
+        "span:c1-micro:t2-replaced-sections",
+        "span:c1-micro:t3-disable-position",
+        "span:c1-micro:t3-maintain-position",
+        "span:c1-micro:t3-no-decision"
+      ],
+      "inputClosureHash": "0b2611dabe99497c301e04c9c0b81bdbdb471b973c1e6480867c90d15eedd991",
+      "expectedTransitionCodes": [
+        "PEER_CONFLICT_PRESERVED",
+        "NO_AUTHORIZED_DECISION_PRESERVED"
+      ],
+      "expectedBranchAssessments": [
+        {
+          "branchId": "branch:c1-micro:event-disable-mtls",
+          "claimRefs": ["claim:c1-micro:t3-disable-mtls-proposal"],
+          "standing": "UNRANKED",
+          "qualifiers": ["CONDITIONAL", "CONTESTED", "UNRESOLVED"],
+          "applicability": ["order query, recommendation, and inventory read paths during the peak event"],
+          "conditions": [
+            "2026-11-10 through 2026-11-12",
+            "requires an authorized exception before becoming effective"
+          ],
+          "requiredReasonCodes": [
+            "PEER_AUTHORITIES_EQUAL",
+            "CONDITION_REQUIRED",
+            "EXPLICIT_CONTRADICTION",
+            "PEER_CONFLICT_UNRESOLVED",
+            "NO_AUTHORIZED_DECISION"
+          ]
+        },
+        {
+          "branchId": "branch:c1-micro:event-maintain-mtls",
+          "claimRefs": ["claim:c1-micro:t3-maintain-mtls-position"],
+          "standing": "UNRANKED",
+          "qualifiers": ["CONTESTED", "UNRESOLVED"],
+          "applicability": ["Northstar peak-event production microservice communication"],
+          "conditions": [],
+          "requiredReasonCodes": [
+            "PEER_AUTHORITIES_EQUAL",
+            "EXPLICIT_CONTRADICTION",
+            "PEER_CONFLICT_UNRESOLVED",
+            "NO_AUTHORIZED_DECISION"
+          ]
+        },
+        {
+          "branchId": "branch:c1-micro:independent-controls",
+          "claimRefs": [
+            "claim:c1-micro:t0-independent-controls",
+            "claim:c1-micro:t2-independent-controls-preserved"
+          ],
+          "standing": "LEADING",
+          "qualifiers": [],
+          "applicability": ["Northstar identity, password, logging, and downgrade controls"],
+          "conditions": [],
+          "requiredReasonCodes": ["OUTSIDE_SUPERSESSION_SCOPE"]
+        },
+        {
+          "branchId": "branch:c1-micro:t0-external-tls12",
+          "claimRefs": ["claim:c1-micro:t0-external-tls12"],
+          "standing": "HISTORICAL",
+          "qualifiers": [],
+          "applicability": ["Northstar external APIs"],
+          "conditions": [],
+          "requiredReasonCodes": ["LATER_EFFECTIVE_REPLACEMENT", "EXPLICIT_SUPERSESSION"]
+        },
+        {
+          "branchId": "branch:c1-micro:t0-internal-http",
+          "claimRefs": ["claim:c1-micro:t0-internal-http"],
+          "standing": "HISTORICAL",
+          "qualifiers": ["CONDITIONAL"],
+          "applicability": ["Northstar managed production microservices"],
+          "conditions": [
+            "network access control is active",
+            "service identity allowlist is active",
+            "traffic does not cross public, home, or third-party cloud networks"
+          ],
+          "requiredReasonCodes": [
+            "LATER_EFFECTIVE_REPLACEMENT",
+            "EXPLICIT_SUPERSESSION",
+            "CONDITION_REQUIRED"
+          ]
+        },
+        {
+          "branchId": "branch:c1-micro:t2-external-tls13",
+          "claimRefs": ["claim:c1-micro:t2-external-tls13"],
+          "standing": "LEADING",
+          "qualifiers": [],
+          "applicability": ["Northstar external APIs"],
+          "conditions": [],
+          "requiredReasonCodes": ["LATER_EFFECTIVE_REPLACEMENT", "EXPLICIT_SUPERSESSION"]
+        },
+        {
+          "branchId": "branch:c1-micro:t2-internal-mtls",
+          "claimRefs": ["claim:c1-micro:t2-internal-mtls"],
+          "standing": "LEADING",
+          "qualifiers": [],
+          "applicability": ["Northstar production microservice communication"],
+          "conditions": [],
+          "requiredReasonCodes": [
+            "LATER_EFFECTIVE_REPLACEMENT",
+            "EXPLICIT_SUPERSESSION",
+            "NO_AUTHORIZED_DECISION"
+          ]
+        }
+      ],
+      "expectedUnresolvedFactors": [
+        {
+          "reasonCode": "PEER_CONFLICT_UNRESOLVED",
+          "claimRefs": [
+            "claim:c1-micro:t3-disable-mtls-proposal",
+            "claim:c1-micro:t3-maintain-mtls-position"
+          ],
+          "relationIds": ["relation:c1-micro:t3-peer-contradiction"],
+          "evidenceSpanIds": [
+            "span:c1-micro:t3-disable-position",
+            "span:c1-micro:t3-maintain-position",
+            "span:c1-micro:t3-no-decision"
+          ]
+        },
+        {
+          "reasonCode": "NO_AUTHORIZED_DECISION",
+          "claimRefs": ["claim:c1-micro:t3-no-authorized-decision"],
+          "relationIds": ["relation:c1-micro:t3-disable-contradicts-policy"],
+          "evidenceSpanIds": ["span:c1-micro:t3-no-decision"]
+        }
+      ]
+    }
+  ]
+}

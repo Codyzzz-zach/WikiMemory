@@ -1,0 +1,64 @@
+{
+  "schemaVersion": "wge-c1-i3-failure-samples/v1",
+  "sourceReport": {
+    "path": "docs/verification/i3-sim-gate-result-2026-08-24.md",
+    "sha256": "7467a6d7cef13a3bc3d5e7611157b016db371dd98ee19f30d3578f1cfec8699c",
+    "knowledgeUse": "DIAGNOSTIC_ONLY"
+  },
+  "samples": [
+    {
+      "sampleId": "c1-i3-psy-conflict-flattened",
+      "episodeId": "S200-EV-016",
+      "taskIds": ["I3SIM-PSY-03"],
+      "questionRefs": [
+        "question:216bff0a347664f84a379395",
+        "question:fd7afd5d18a0abcdba1c8a83"
+      ],
+      "baselineFailureCodes": ["CONFLICT_FLATTENED"],
+      "requiredTransitions": [
+        "SAME_QUESTION_UPDATE",
+        "DISPUTE_PRESERVED",
+        "AUTHORITY_NOT_FLATTENED"
+      ],
+      "forbiddenOutcome": "A leading summary silently removes the competing positive meta-analysis or treats commentary as equivalent authority to research evidence."
+    },
+    {
+      "sampleId": "c1-i3-tec-currentness-unsupported",
+      "episodeId": "S200-EV-004",
+      "taskIds": ["I3SIM-TEC-01", "I3SIM-TEC-02"],
+      "questionRefs": [
+        "question:9461145467c7b99470b61313",
+        "question:cf8cead85caf83ea0864ad3c",
+        "question:fd46a361f2c948a98df8f9f1"
+      ],
+      "baselineFailureCodes": ["UNSUPPORTED_ASSERTION"],
+      "requiredTransitions": [
+        "SAME_QUESTION_UPDATE",
+        "SUPERSEDED_HISTORY_RETAINED",
+        "CONDITION_PRESERVED"
+      ],
+      "forbiddenOutcome": "Historical proposals are rendered as current behavior or current Go behavior is supplied from model knowledge without frozen support."
+    },
+    {
+      "sampleId": "c1-i3-law-conflict-attribution-gap",
+      "episodeId": "S200-EV-020",
+      "taskIds": ["I3SIM-LAW-01", "I3SIM-LAW-02"],
+      "questionRefs": [
+        "question:6374d223d73b203bbcfb1990",
+        "question:bc813fe906d1715744fb1153"
+      ],
+      "baselineFailureCodes": [],
+      "requiredTransitions": [
+        "SAME_QUESTION_UPDATE",
+        "NEW_EVIDENCE_ADDED",
+        "CONFLICT_ATTRIBUTED"
+      ],
+      "forbiddenOutcome": "Regulation, official action, and commentary are flattened into one unattributed state or a penalty condition loses its applicability."
+    }
+  ],
+  "historicalAnswers": {
+    "allowedUse": "FAILURE_DIAGNOSIS_ONLY",
+    "maySupportProjection": false,
+    "mayBeRescored": false
+  }
+}

@@ -34,7 +34,8 @@
 
 ## 当前选择
 
-D-001/D-003/D-005/D-008 已由接受的 C1 合同共同收束为“冻结问题内部的加权问题状态”主变量，
-当前只进入 C1-A/B 的 sidecar schema、reason code、Micro 与失败样例。D-002/D-004 只有在被证明是
+D-001/D-003/D-005/D-008 已由接受的 C1 合同共同收束为“冻结问题内部的加权问题状态”主变量。
+C1-A/B 的 sidecar schema、reason code、Micro 与失败样例已经冻结，当前只进入 C1-C Pure Shadow。
+D-002/D-004 只有在被证明是
 该主变量的硬依赖时才能进入，且需要重新评审；不得借 C1 修改 Relation audit 或回答链。
 D-012/D-013 保持为 C1.5 的合同输入，不进入当前 C1 实现。其他条目保持 Intake/Parked。
