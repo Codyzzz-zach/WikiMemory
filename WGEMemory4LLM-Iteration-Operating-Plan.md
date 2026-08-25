@@ -4,8 +4,8 @@
 >
 > 当前路线：C0 Convergence Baseline → C1 Weighted Question State → C1.5 Question Hypothesis Persistence → C2 Budgeted Information Flow → C3 Longitudinal Use
 >
-> 当前状态：C0 已闭合；C1 阶段合同已接受，C1-A/B 与 C1-C Pure Shadow 已通过，
-> 当前进入 C1-D Semantic Slice；只把会改变冻结 Episode 裁决的剩余歧义纳入已接受预算
+> 当前状态：C0 已闭合；C1-A/B 与 C1-C Pure Shadow 已通过；C1-D 在 ambiguity 调用前发现
+> 18 份 Episode Sources 只有 12 份进入冻结 QuestionFrames，按合同以 `REWORK` 闭合；下一合同未启动
 >
 > 上位基线：`docs/specs/wikimemory-convergence-baseline-v1.md`
 >
@@ -208,8 +208,9 @@ QUESTION_IDENTITY_ACCEPT(r) =
   AND CostWithinBudget(r)
 ```
 
-具体样本、阈值、调用/Token/人工预算和停止线必须在 C1 闭合后冻结。当前文档只接受方向，
-不授权 C1.5 实现或付费模型实验。
+具体样本、阈值、调用/Token/人工预算和停止线必须由新合同冻结。C1-D 已证明 Question association
+continuity 是真实加权状态闭包的硬前置，但没有自动决定先执行窄的 Question Association Bridge，还是
+完整 C1.5。当前文档只接受方向，不授权 C1.5 实现、Bridge 实现或付费模型实验。
 
 ### Non-goals
 

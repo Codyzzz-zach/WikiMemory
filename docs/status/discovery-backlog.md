@@ -31,11 +31,13 @@
 | D-011 | HTTP、远程/多主机运行未实现 | Implementation Status | Transport / operations | 未排期；非 C1 主变量 | PARKED |
 | D-012 | AI 能提出并持久化问题，但语义同一性仍主要依赖模型匹配与规范文本 key；跨来源、跨时间的长期身份持续性未证明 | 2026-08-25 产品讨论、Question formation/lifecycle 代码复核 | Question formation / identity assessment | C1.5 | SELECTED |
 | D-013 | 当前 `ACTIVE/CANONICAL` 同时容易承载“可消费”与“长期稳定”的产品解读，身份成熟度没有独立表达 | 2026-08-25 产品讨论、QuestionFrame/Materialization 合同复核 | Question model / publication projection | C1.5 | SELECTED |
+| D-014 | 6/18 I3 Episode Sources 已编译为 Canonical Knowledge，但未关联到 7 个冻结 QuestionFrames；TEC/LAW T2 association coverage 均为 0% | C1-D Semantic Slice Gate | Question association / semantic match | 新合同决策：Question Association Bridge 或 C1.5 窄切片 | INTAKE |
 
 ## 当前选择
 
-D-001/D-003/D-005/D-008 已由接受的 C1 合同共同收束为“冻结问题内部的加权问题状态”主变量。
-C1-A/B 的 sidecar schema、reason code、Micro 与失败样例已经冻结，C1-C Pure Shadow 已通过，当前只进入 C1-D Semantic Slice。
+D-001/D-003/D-005/D-008 已由 C1 合同共同收束为“冻结问题内部的加权问题状态”主变量；C1-A/B/C
+通过，但 C1-D 因 D-014 的上游 association closure 缺口以 REWORK 闭合。
 D-002/D-004 只有在被证明是
-该主变量的硬依赖时才能进入，且需要重新评审；不得借 C1 修改 Relation audit 或回答链。
-D-012/D-013 保持为 C1.5 的合同输入，不进入当前 C1 实现。其他条目保持 Intake/Parked。
+该主变量的硬依赖时才能进入，且需要重新评审；不得借后续合同修改 Relation audit 或回答链。
+D-012/D-013 保持为 C1.5 的合同输入；D-014 已证明是恢复真实加权状态切片的硬前置，但仍需产品负责人
+显式选择新合同及阶段顺序。其他条目保持 Intake/Parked。

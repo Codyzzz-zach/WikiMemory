@@ -15,6 +15,7 @@ WikiMemory 是面向通用 Agent 的可演化知识与长期记忆层。它从�
 - [收敛迭代合同](WGEMemory4LLM-Iteration-Operating-Plan.md)：C0–C3（含 C1.5）施工顺序、验收向量、预算与停止规则；
 - [Benchmark 手册](WGEMemory4LLM-Benchmark.html)：如何构造开发、回归、盲测和长期产品证据。
 - [I3-Sim 最终验收](docs/verification/i3-sim-gate-result-2026-08-24.md)：本轮 NO-GO、成本台账和下一阶段输入证据。
+- [C1-D Semantic Slice Gate](docs/verification/c1-semantic-slice-gate-result-2026-08-25.md)：真实 Episode 的问题关联闭包、零调用停止收据与 C1 `REWORK` 终局。
 
 ## 当前裁决
 
@@ -25,8 +26,8 @@ I3-Sim 已于 2026-08-24 以 **NO-GO** 闭合：结构运行和 Wiki 消费成�
 当前使用收敛路线；每阶段都必须先冻结主变量、输入、接受向量、预算、非目标、停止条件和闭合产物：
 
 1. **C0 · Convergence Baseline**：已闭合；固定产品边界、能力账本、加权证据流与阶段纪律；
-2. **C1 · Weighted Question State**：阶段合同已接受，C1-A/B 与 C1-C Pure Shadow 已通过，当前进入 C1-D Semantic Slice；冻结 QuestionFrame，只处理领先、争议、限域、取代、未决和历史分支，模型预算只用于确定性规则无法处理且会改变 Episode 裁决的歧义；
-3. **C1.5 · Question Hypothesis Persistence**：C1 闭合后，独立验证问题假设的复用、重叠、分裂、合并与身份成熟；
+2. **C1 · Weighted Question State**：C1-A/B 与 C1-C Pure Shadow 已通过；C1-D 发现 18 份 Episode 材料只有 12 份进入 7 个冻结 QuestionFrames，按合同以 `REWORK` 闭合，0 provider calls / 0 tokens；
+3. **C1.5 · Question Hypothesis Persistence（未启动）**：候选验证问题假设的复用、关联、重叠、分裂、合并与身份成熟；C1-D 暴露的 Question Association Bridge 必须先由新合同显式选定范围与顺序；
 4. **C2 · Budgeted Information Flow**：确定性机制优先，模型预算只用于高价值歧义；
 5. **C3 · Longitudinal Use**：C1/C1.5/C2 稳定后才设计真实跨时间使用，不预承诺旧 30 天固定阈值。
 

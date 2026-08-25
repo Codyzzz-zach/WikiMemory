@@ -1,0 +1,47 @@
+{
+	"schemaVersion": "wge-c1-semantic-slice-plan/v1",
+	"status": "FROZEN_BEFORE_C1_D_EXECUTION",
+	"frozenOn": "2026-08-25",
+	"contract": "docs/specs/c1-weighted-question-state-contract-v1.md",
+	"inputs": {
+		"i3Manifest": "benchmarks/i3-sim-gate-v1/manifest.json",
+		"i3ManifestSha256": "5e1b2197318fcaccb1a938cc6253bf38ca19e5d2ad9db13aaf6aaf759aca157b",
+		"canonicalRuntime": "/private/tmp/wikimemory-i3-sim-gate-v1-4998dfa",
+		"canonicalAggregateSha256": "3274bab9cb13ba1fcd9104eec7722b22b4b1450a2088246394f31e7dd1028b27",
+		"questionStateFileSha256": "da1df59a5058852f6c25184c86577410ccdd53eda050043265929cbc9c12f300",
+		"sourceMetadata": "benchmark-s200-stage-a-v1.1-candidate/manifests/source-manifest.jsonl",
+		"sourceMetadataSha256": "7c064b586d4f4da1584caab970f78ef1d9e66384b8a72c2d1cae228acd7f534a"
+	},
+	"episodes": [
+		{
+			"episodeId": "S200-EV-016",
+			"questionRefs": [
+				"question:216bff0a347664f84a379395",
+				"question:fd7afd5d18a0abcdba1c8a83"
+			]
+		},
+		{
+			"episodeId": "S200-EV-004",
+			"questionRefs": [
+				"question:9461145467c7b99470b61313",
+				"question:cf8cead85caf83ea0864ad3c",
+				"question:fd46a361f2c948a98df8f9f1"
+			]
+		},
+		{
+			"episodeId": "S200-EV-020",
+			"questionRefs": [
+				"question:6374d223d73b203bbcfb1990",
+				"question:bc813fe906d1715744fb1153"
+			]
+		}
+	],
+	"gate": {
+		"requireEveryEpisodeSourceAssociated": true,
+		"missingAssociationAction": "STOP_UPSTREAM_QUESTION_ASSOCIATION",
+		"allowSemanticMatchInsideC1": false,
+		"providerCallsBeforeReady": 0,
+		"answerCalls": 0,
+		"recompilationCalls": 0
+	}
+}

@@ -7,7 +7,7 @@
 
 WikiMemory 已达到 **Integration-ready knowledge kernel + question-centered derived memory**。I0 的 Application/runtime/单写者/Job/Worker、容器镜像与单机卷恢复边界已完成，I1 的 MCP stdio 已通过真实协议验证；I2 工程链已覆盖自然语言纠正、权限分流、FACT 补证据、关联边演化和受控回滚；I2.5 已加入稳定 QuestionFrame、语义提议与确定性门控、WikiModule V2、merge/split/archive/reopen、ingest pending/retry、崩溃重放收据、Context Pack/Trace 与 Material Impact Report。
 
-2026-08-24 的 I3-Sim 已按冻结合同以 **NO-GO** 闭合：18/18 材料完成编译、6/7 任务形成配对结果、2 个 causal wins，但只有 1 个 winning domain，出现 2 个 hard failures，且 3 个目标 Episode 均未完整成立。该结果证明可追溯 Wiki 可被 Agent 消费，也证明当前 `CURRENT/CONDITIONAL/DISPUTE/SUPERSEDED` 物化仍不能表达产品需要的加权语义流。项目当前处于 **C0 已闭合、P0 问题假设语义增补已接受、C1 合同已接受、C1-A/B 与 C1-C Pure Shadow 已通过并进入 C1-D Semantic Slice**；不是 Product-MVP，也未授权真实 Pilot。I2.5 证明的是问题身份机制，不是问题假设已经获得长期语义身份。
+2026-08-24 的 I3-Sim 已按冻结合同以 **NO-GO** 闭合：18/18 材料完成编译、6/7 任务形成配对结果、2 个 causal wins，但只有 1 个 winning domain，出现 2 个 hard failures，且 3 个目标 Episode 均未完整成立。该结果证明可追溯 Wiki 可被 Agent 消费，也证明当前 `CURRENT/CONDITIONAL/DISPUTE/SUPERSEDED` 物化仍不能表达产品需要的加权语义流。C1-A/B 与 C1-C Pure Shadow 随后通过；C1-D 在任何模型调用前发现 18 份 Episode 材料只有 12 份进入 7 个冻结 QuestionFrames，TEC 与 LAW 的 T2 均为 0% association coverage，按合同以 **REWORK** 闭合。项目不是 Product-MVP，也未授权真实 Pilot；下一阶段尚未自动启动。
 
 ### 能力账本
 
@@ -16,8 +16,8 @@ WikiMemory 已达到 **Integration-ready knowledge kernel + question-centered de
 | K0 · Evidence Kernel | 已形成稳定基础，可作为后续硬不变量 |
 | K1 · Agent Runtime | 已形成稳定基础，可作为后续硬不变量 |
 | K2-M · Question Identity Mechanism | I2.5 机制已闭合；真实材料开发验收通过 |
-| K2-S · Question Identity Semantics | 未证明；AI 匹配、长期稳定性与可消费/身份成熟分离待 C1.5 验证 |
-| K3 · Weighted Semantic Flow | 未完成；I3-Sim 暴露关系召回、条件表达、权威与跨版本分支缺口 |
+| K2-S · Question Identity Semantics | 未证明；C1-D 进一步确认 6/18 Episode Sources 未关联到冻结 QuestionFrames，association continuity 是加权状态真实闭包的硬依赖 |
+| K3 · Weighted Semantic Flow | Micro 机制通过，真实 Episode 未完成；C1-D 因上游 association closure 缺口以 REWORK 闭合 |
 | K4 · Budgeted Task Value | 部分具备；I3-Sim Wiki arm 平均总 token 比 baseline 高约 52.4%，尚未形成边际价值策略 |
 | K5 · Longitudinal Product Value | 未证明；旧 30 天 Pilot 指标不是当前承诺 |
 
@@ -53,14 +53,15 @@ WikiMemory 已达到 **Integration-ready knowledge kernel + question-centered de
 
 ## 自动化验证
 
-- Vitest：55 files / 352 tests；
+- Vitest：56 files / 356 tests；
 - TypeScript：`src` 与 `scripts` 严格 typecheck；
 - Biome：`src` 与 `scripts` 全量检查；
 - I0/I1 新增覆盖：Application 与生产核心语义 parity、完整 ingest 状态机、持久 Job 幂等与失败、abandoned Worker 恢复、runtime v1→v2 显式迁移、MCP 官方客户端握手、默认只读/显式 ingest capability、MCP durable submission、Docker allowlist/Compose 合同；
 - I2.5 新增覆盖：输入顺序身份稳定、跨材料命中既有问题、候选/晋升、条件/争议/未决/Gap 分态、merge/split 身份迁移、无关哨兵 byte-stable、同步回滚、进程中断重放、Context Pack fail-closed 与 Question Trace；这些是 K2-M 机制证据，不证明跨来源、跨时间的 K2-S 身份成熟；
 - 2026-08-20 已用 4 篇数学材料完成一次开发验收：首篇形成、无关材料隔离、三个跨材料问题更新、26/26 模块局部支撑闭包以及 indexed Context 消费通过；详见 `docs/verification/question-centered-memory-real-material-acceptance-2026-08-20.md`。
 - 2026-08-24 已完成 I3-Sim：18 Sources、201 Claims、2 Canonical Relations、21 WikiModules；6 个 paired tasks 中 2 wins / 1 winning domain / 2 hard failures，最终 NO-GO。详见 `docs/verification/i3-sim-gate-result-2026-08-24.md`。
-- 当前核心缺口：围绕冻结问题的加权语义流，以及问题假设的跨来源/跨时间持续身份；关系召回、技术域条件表达、逐断言引用覆盖与质量—成本边际价值仍是相邻缺口。HTTP、远程/多主机运行未实现，但不是 C1/C1.5 主变量。
+- 2026-08-25 已完成 C1-D association Gate：PSY 5/5、TEC 3/6、LAW 4/7，合计 12/18 Sources 已进入 7 个冻结 QuestionFrames；55 unique Claims、1 Relation，0 provider calls / 0 tokens，C1 以 REWORK 闭合。详见 `docs/verification/c1-semantic-slice-gate-result-2026-08-25.md`。
+- 当前核心缺口：新 Canonical Claims 对既有 QuestionHypothesis 的持续关联，以及关联完整后冻结问题内部的加权语义流；关系召回、技术域条件表达、逐断言引用覆盖与质量—成本边际价值仍是相邻缺口。HTTP、远程/多主机运行未实现，但不是下一窄合同的默认主变量。
 
 ## 历史 Goal 结算
 
@@ -102,16 +103,12 @@ WikiMemory 已达到 **Integration-ready knowledge kernel + question-centered de
 7. 摄入调用已有 provider usage 留痕和 `npm run economics:ingest` 只读汇总；它能回答单次 Source 编译用了多少 token、多少消耗来自失败/缩批，但没有足够真实 Pilot 数据前不得拍脑袋设统一成本上限，也尚未形成“编译成本被多少次后续任务摊销”的产品指标。
 8. 现有 schema 的 `ACTIVE/SUPERSEDED` 与 Wiki assertion role 是工程状态，不应直接展示为客观真理；`ACTIVE/CANONICAL` 也不应展示为长期身份成熟。`CURRENT` 只应表示给定知识版本、适用范围和任务下的领先投影；该投影机制尚未实现。
 
-## 下一阶段
+## 下一决策边界
 
-当前完成 **C1-A/B 与 C1-C Pure Shadow**，进入 **C1-D Semantic Slice**：
+C1 已以 **REWORK** 闭合：C1-A/B/C 的表示、Micro、replay 与 isolation 证据保留；C1-D 不继续调用模型，
+也不启动 C1-E。下一步需要新合同显式选择：先做窄的 Question Association Bridge，还是重排完整
+C1.5。候选 Bridge 只验证新 Canonical Claims 对冻结 QuestionHypothesis 的 attach/reject/uncertain 与
+理由追溯，不自动扩到 promotion、merge/split/archive/reopen、Relation audit、materialization、retrieval、
+回答或 Pilot。
 
-1. 冻结唯一问题：同一长期问题下，新旧证据如何形成可解释的领先、争议、限域、取代、未决和历史分支；
-2. 冻结 QuestionFrame 集合；形成、匹配、promotion、merge/split/archive/reopen 不进入 C1 主变量；
-3. 优先复用 I3-Sim 三个 Episode 与六个 paired tasks、I2.5 真实材料、Evolution 纠正/取代、数学条件陷阱和跨域无关哨兵；
-4. 输入收据、projection schema、reason code、Evolution Micro 与失败样例已冻结并通过 portable/freeze-host 校验；
-5. 不同时扩 Loader、检索、UI、知识来源或 Pilot；不继续修补 I3-Sim 来改写 NO-GO；
-6. C1-C 已完成纯函数 sidecar projection、隔离写入、grounding、replay 与 unrelated-sentinel 校验；C1-D 先确定性映射 7 个冻结 QuestionFrames，只把会改变 Episode 裁决的剩余歧义纳入预算；
-7. C1 闭合后再冻结 C1.5 合同，独立验证 QuestionHypothesis 的复用、重叠、分裂、合并与身份成熟。
-
-权威路线见 `docs/specs/wikimemory-convergence-baseline-v1.md` 与 `WGEMemory4LLM-Iteration-Operating-Plan.md`。旧 Goal 不再无限延长，Discovery Backlog 不自动改变当前阶段。
+权威路线见 `docs/specs/wikimemory-convergence-baseline-v1.md` 与 `WGEMemory4LLM-Iteration-Operating-Plan.md`。旧 Goal 不再无限延长，Discovery Backlog 不自动改变阶段顺序。
