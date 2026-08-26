@@ -1,0 +1,81 @@
+{
+  "schemaVersion": "wge-question-association-bridge-manifest/v1",
+  "status": "READY_FOR_ZERO_CALL_GATE",
+  "acceptedAt": "2026-08-26",
+  "authority": {
+    "knowledgeBoundary": "HUMAN_SELECTED_CANONICAL_KNOWLEDGE_ONLY",
+    "oracleProviderVisible": false,
+    "canonicalMutationAllowed": false,
+    "providerCallsMade": 0
+  },
+  "runtimeReceipt": {
+    "runtimeRoot": "/private/tmp/wikimemory-i3-sim-gate-v1-4998dfa",
+    "questionStatePath": "/private/tmp/wikimemory-i3-sim-gate-v1-4998dfa/questions/state.json",
+    "questionStateSha256": "da1df59a5058852f6c25184c86577410ccdd53eda050043265929cbc9c12f300",
+    "caseSnapshotCount": 10
+  },
+  "files": {
+    "oracle": {
+      "path": "benchmarks/question-association-bridge-v1/oracle.json",
+      "sha256": "c40fbac9be60488d737c047c3670106fbd3c176b59f3844ff5b9e28d6c22b78c",
+      "providerVisible": false
+    },
+    "input": {
+      "path": "benchmarks/question-association-bridge-v1/input.json",
+      "sha256": "85d7ee87e29e2bde331cc6c8744f4f1e5dd58a160bed389cb70b08020c6ee05c",
+      "bytes": 132364,
+      "providerVisible": false
+    },
+    "providerPayloads": [
+      {
+        "path": "benchmarks/question-association-bridge-v1/provider-payloads/law-public-policy--a0_name_card.json",
+        "sha256": "cc01bc1cd91acf892a28a0b95ca0dece4cc32b69e6a920dd06e43df4681d72fa",
+        "bytes": 7304,
+        "estimatedTokens": 1826
+      },
+      {
+        "path": "benchmarks/question-association-bridge-v1/provider-payloads/law-public-policy--a1_evidence_identity_card.json",
+        "sha256": "7e72dcd2ccdb47f8682ac9e7faef1cab9f9f68a6603acd0b9806825c9768f582",
+        "bytes": 23544,
+        "estimatedTokens": 5886
+      },
+      {
+        "path": "benchmarks/question-association-bridge-v1/provider-payloads/psychology-reproducibility--a0_name_card.json",
+        "sha256": "fba61ad04d51a6a3f9765921dbb5c59aaf77dcdb4252d470a7975f4e0a003e49",
+        "bytes": 6711,
+        "estimatedTokens": 1678
+      },
+      {
+        "path": "benchmarks/question-association-bridge-v1/provider-payloads/psychology-reproducibility--a1_evidence_identity_card.json",
+        "sha256": "e278aa01d90487bc0ea503f4a8b53ef53d90164f48304896bfa9c95abf2806b8",
+        "bytes": 21803,
+        "estimatedTokens": 5451
+      },
+      {
+        "path": "benchmarks/question-association-bridge-v1/provider-payloads/technology--a0_name_card.json",
+        "sha256": "af749bbead2ca1d66e750a2c27b6c59e0edf9e68cbc7dc5e391b6354e9669f94",
+        "bytes": 6278,
+        "estimatedTokens": 1570
+      },
+      {
+        "path": "benchmarks/question-association-bridge-v1/provider-payloads/technology--a1_evidence_identity_card.json",
+        "sha256": "72adb761353ebce38e3889ab730f95417d0ae924cd7ad7663f56fd50fd93242b",
+        "bytes": 15692,
+        "estimatedTokens": 3923
+      }
+    ]
+  },
+  "providerEnvelope": {
+    "systemPromptSha256": "c96cfca6457e5cac6d8ba56f4e683c6573f800c3cda00bdd9bd8cf9b02d24548",
+    "systemPromptBytes": 1209,
+    "payloadCount": 6,
+    "estimatedTokensBeforeResponses": 22152
+  },
+  "budget": {
+    "plannedCalls": 6,
+    "maxRepairCalls": 2,
+    "maxCalls": 8,
+    "maxProviderTokens": 90000,
+    "providerCallsBeforeExplicitSendAuthorization": 0
+  }
+}

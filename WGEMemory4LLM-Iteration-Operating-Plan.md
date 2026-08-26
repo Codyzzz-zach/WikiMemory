@@ -208,9 +208,11 @@ QUESTION_IDENTITY_ACCEPT(r) =
   AND CostWithinBudget(r)
 ```
 
-具体样本、阈值、调用/Token/人工预算和停止线必须由新合同冻结。C1-D 已证明 Question association
-continuity 是真实加权状态闭包的硬前置，但没有自动决定先执行窄的 Question Association Bridge，还是
-完整 C1.5。当前文档只接受方向，不授权 C1.5 实现、Bridge 实现或付费模型实验。
+具体样本、阈值、调用/Token/人工预算和停止线已由
+`docs/specs/question-association-bridge-contract-v1.md` 冻结并于 2026-08-26 接受。当前先执行
+C1.5-A Question Association Bridge：只验证 Claim 对事务前冻结 QuestionHypothesis 的
+`ATTACH | REJECT | UNCERTAIN`。18-pair fixture、确定性 Gate 和 6 个 A0/A1 payload 已完成零调用
+冻结；provider 数据发送仍需单独授权。完整 C1.5、生产 proposer 集成和其他付费实验仍未授权。
 
 ### Non-goals
 

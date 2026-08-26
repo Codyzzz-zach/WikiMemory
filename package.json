@@ -28,6 +28,8 @@
 		"i3:sim:paired": "node --import tsx scripts/integration-i3-sim-paired-review.ts",
 		"c1:pure-shadow": "node --import tsx scripts/run-c1-pure-shadow.ts",
 		"c1:semantic-slice-gate": "node --import tsx scripts/run-c1-semantic-slice-gate.ts",
+		"c1.5:association:prepare": "node --import tsx scripts/prepare-question-association-bridge-fixture.ts",
+		"c1.5:association:gate": "vitest run src/wiki/question-association-shadow.test.ts src/integration/question-association-bridge.test.ts",
 		"benchmark:refine": "node --import tsx scripts/refine-benchmark-batch-a.ts",
 		"benchmark:canary": "node --import tsx scripts/validate-benchmark-canary.ts",
 		"benchmark:batch-b:build": "node --import tsx scripts/build-benchmark-batch-b.ts",

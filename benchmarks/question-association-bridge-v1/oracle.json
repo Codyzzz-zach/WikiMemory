@@ -1,0 +1,156 @@
+{
+  "schemaVersion": "wge-question-association-oracle/v1",
+  "status": "FROZEN_BEFORE_PROVIDER_CALLS",
+  "acceptedAt": "2026-08-26",
+  "authority": {
+    "knowledgeBoundary": "HUMAN_SELECTED_CANONICAL_KNOWLEDGE_ONLY",
+    "providerVisible": false,
+    "sourceMembershipIsGold": false
+  },
+  "cases": [
+    {
+      "caseId": "QAB-PSY-01",
+      "domain": "psychology-reproducibility",
+      "claimRef": "claim:6d554407ab44ff34-0c8dc4245d643e17",
+      "questionRef": "question:216bff0a347664f84a379395",
+      "expectedVerdict": "ATTACH",
+      "reasonCodes": ["IN_BOUND_SUPPORT"]
+    },
+    {
+      "caseId": "QAB-PSY-02",
+      "domain": "psychology-reproducibility",
+      "claimRef": "claim:ba1c34566ae9e463-bfc65f5a6b7083c3",
+      "questionRef": "question:fd7afd5d18a0abcdba1c8a83",
+      "expectedVerdict": "ATTACH",
+      "reasonCodes": ["IN_BOUND_SUPPORT"]
+    },
+    {
+      "caseId": "QAB-PSY-03",
+      "domain": "psychology-reproducibility",
+      "claimRef": "claim:ba1c34566ae9e463-bfc65f5a6b7083c3",
+      "questionRef": "question:216bff0a347664f84a379395",
+      "expectedVerdict": "REJECT",
+      "reasonCodes": ["OUT_OF_BOUNDARY", "ADJACENT_QUESTION_ONLY"]
+    },
+    {
+      "caseId": "QAB-PSY-04",
+      "domain": "psychology-reproducibility",
+      "claimRef": "claim:077188d7915ccaf6-623c7ec174c1f376",
+      "questionRef": "question:216bff0a347664f84a379395",
+      "expectedVerdict": "REJECT",
+      "reasonCodes": ["SOURCE_METADATA_ONLY", "INSUFFICIENT_CLAIM_CONTENT"]
+    },
+    {
+      "caseId": "QAB-PSY-05",
+      "domain": "psychology-reproducibility",
+      "claimRef": "claim:077188d7915ccaf6-e6ecbd107ba7a8f2",
+      "questionRef": "question:fd7afd5d18a0abcdba1c8a83",
+      "expectedVerdict": "REJECT",
+      "reasonCodes": ["SOURCE_METADATA_ONLY", "INSUFFICIENT_CLAIM_CONTENT"]
+    },
+    {
+      "caseId": "QAB-PSY-06",
+      "domain": "psychology-reproducibility",
+      "claimRef": "claim:077188d7915ccaf6-0abcbd113352d05c",
+      "questionRef": "question:216bff0a347664f84a379395",
+      "expectedVerdict": "UNCERTAIN",
+      "reasonCodes": ["AUTHORITY_OR_APPLICABILITY_UNCLEAR", "EXPLICIT_GAP_SIGNAL"]
+    },
+    {
+      "caseId": "QAB-TEC-01",
+      "domain": "technology",
+      "claimRef": "claim:661ef155a51cdc7e-df82c6beb329bc37",
+      "questionRef": "question:9461145467c7b99470b61313",
+      "expectedVerdict": "ATTACH",
+      "reasonCodes": ["IN_BOUND_SUPPORT"]
+    },
+    {
+      "caseId": "QAB-TEC-02",
+      "domain": "technology",
+      "claimRef": "claim:661ef155a51cdc7e-2e19fd12dba9857d",
+      "questionRef": "question:9461145467c7b99470b61313",
+      "expectedVerdict": "ATTACH",
+      "reasonCodes": ["IN_BOUND_SUPPORT"]
+    },
+    {
+      "caseId": "QAB-TEC-03",
+      "domain": "technology",
+      "claimRef": "claim:ec6a188223216072-8f626dea7924fecb",
+      "questionRef": "question:fd46a361f2c948a98df8f9f1",
+      "expectedVerdict": "REJECT",
+      "reasonCodes": ["OUT_OF_BOUNDARY", "ADJACENT_QUESTION_ONLY"]
+    },
+    {
+      "caseId": "QAB-TEC-04",
+      "domain": "technology",
+      "claimRef": "claim:d32360156bddb0d4-44650e066d4eeb68",
+      "questionRef": "question:fd46a361f2c948a98df8f9f1",
+      "expectedVerdict": "REJECT",
+      "reasonCodes": ["OUT_OF_BOUNDARY", "ADJACENT_QUESTION_ONLY"]
+    },
+    {
+      "caseId": "QAB-TEC-05",
+      "domain": "technology",
+      "claimRef": "claim:d32360156bddb0d4-579f7f34ab0e22c5",
+      "questionRef": "question:fd46a361f2c948a98df8f9f1",
+      "expectedVerdict": "REJECT",
+      "reasonCodes": ["OUT_OF_BOUNDARY", "ADJACENT_QUESTION_ONLY"]
+    },
+    {
+      "caseId": "QAB-TEC-06",
+      "domain": "technology",
+      "claimRef": "claim:661ef155a51cdc7e-44d6591607d02f34",
+      "questionRef": "question:cf8cead85caf83ea0864ad3c",
+      "expectedVerdict": "UNCERTAIN",
+      "reasonCodes": ["BOUNDARY_OVERLAP", "INSUFFICIENT_CLAIM_CONTENT"]
+    },
+    {
+      "caseId": "QAB-LAW-01",
+      "domain": "law-public-policy",
+      "claimRef": "claim:0cbb0a59d7c7bc5f-a745403624af6a75",
+      "questionRef": "question:6374d223d73b203bbcfb1990",
+      "expectedVerdict": "ATTACH",
+      "reasonCodes": ["IN_BOUND_SUPPORT"]
+    },
+    {
+      "caseId": "QAB-LAW-02",
+      "domain": "law-public-policy",
+      "claimRef": "claim:f683e568138750f5-630f3d809049fa51",
+      "questionRef": "question:ef16109045a63c30da83cf06",
+      "expectedVerdict": "ATTACH",
+      "reasonCodes": ["IN_BOUND_SUPPORT"]
+    },
+    {
+      "caseId": "QAB-LAW-03",
+      "domain": "law-public-policy",
+      "claimRef": "claim:fd5e90d9512564b9-751b7c23e954de25",
+      "questionRef": "question:be6b53e7bf2a2bdff306f6a9",
+      "expectedVerdict": "ATTACH",
+      "reasonCodes": ["IN_BOUND_SUPPORT"]
+    },
+    {
+      "caseId": "QAB-LAW-04",
+      "domain": "law-public-policy",
+      "claimRef": "claim:8eb1b229ffa0652c-7e363db416ec1d1c",
+      "questionRef": "question:6374d223d73b203bbcfb1990",
+      "expectedVerdict": "REJECT",
+      "reasonCodes": ["OUT_OF_BOUNDARY", "ADJACENT_QUESTION_ONLY"]
+    },
+    {
+      "caseId": "QAB-LAW-05",
+      "domain": "law-public-policy",
+      "claimRef": "claim:f683e568138750f5-2c51784f3d0a04b7",
+      "questionRef": "question:be6b53e7bf2a2bdff306f6a9",
+      "expectedVerdict": "REJECT",
+      "reasonCodes": ["SOURCE_METADATA_ONLY", "INSUFFICIENT_CLAIM_CONTENT"]
+    },
+    {
+      "caseId": "QAB-LAW-06",
+      "domain": "law-public-policy",
+      "claimRef": "claim:fd5e90d9512564b9-751b7c23e954de25",
+      "questionRef": "question:6374d223d73b203bbcfb1990",
+      "expectedVerdict": "UNCERTAIN",
+      "reasonCodes": ["BOUNDARY_OVERLAP", "AUTHORITY_OR_APPLICABILITY_UNCLEAR"]
+    }
+  ]
+}

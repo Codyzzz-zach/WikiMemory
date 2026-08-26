@@ -106,9 +106,13 @@ WikiMemory 已达到 **Integration-ready knowledge kernel + question-centered de
 ## 下一决策边界
 
 C1 已以 **REWORK** 闭合：C1-A/B/C 的表示、Micro、replay 与 isolation 证据保留；C1-D 不继续调用模型，
-也不启动 C1-E。下一步需要新合同显式选择：先做窄的 Question Association Bridge，还是重排完整
-C1.5。候选 Bridge 只验证新 Canonical Claims 对冻结 QuestionHypothesis 的 attach/reject/uncertain 与
-理由追溯，不自动扩到 promotion、merge/split/archive/reopen、Relation audit、materialization、retrieval、
-回答或 Pilot。
+也不启动 C1-E。产品负责人已于 2026-08-26 接受 C1.5-A Question Association Bridge 合同。18 个
+Claim×Question pair、10 个事务前快照、oracle 隔离、纯函数 identity-card builder、schema/Grounding
+Gate 和 6 个 A0/A1 payload 已通过 zero-call Gate；当前 provider calls 仍为 0，等待精确数据发送授权。
+
+Bridge 只验证新 Canonical Claims 对冻结 QuestionHypothesis 的 attach/reject/uncertain 与理由追溯，
+不自动扩到 promotion、merge/split/archive/reopen、Relation audit、materialization、retrieval、回答或
+Pilot。C1-D 的 Source-level coverage 已降格为诊断信号：6 个未进入焦点问题的 Source 实际均已路由到
+其他 Question，不能被直接解释为漏接。
 
 权威路线见 `docs/specs/wikimemory-convergence-baseline-v1.md` 与 `WGEMemory4LLM-Iteration-Operating-Plan.md`。旧 Goal 不再无限延长，Discovery Backlog 不自动改变阶段顺序。
