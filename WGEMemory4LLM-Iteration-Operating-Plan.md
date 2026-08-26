@@ -212,7 +212,10 @@ QUESTION_IDENTITY_ACCEPT(r) =
 `docs/specs/question-association-bridge-contract-v1.md` 冻结并于 2026-08-26 接受。当前先执行
 C1.5-A Question Association Bridge：只验证 Claim 对事务前冻结 QuestionHypothesis 的
 `ATTACH | REJECT | UNCERTAIN`。18-pair fixture、确定性 Gate 和 6 个 A0/A1 payload 已完成零调用
-冻结；provider 数据发送仍需单独授权。完整 C1.5、生产 proposer 集成和其他付费实验仍未授权。
+冻结。2026-08-27 provider run 获得授权后，在 3 main + 2 format repair、31,547 tokens 时因
+`boundaryNotes` 稳定输出为 string 而按预算停止；剩余 3 个 main payload 未发送，oracle 未加载，
+没有形成 A0/A1 语义结论。下一步只能先冻结 v1.1 output adapter contract，把概率语义与确定性 wire
+normalization 分层；任何新增发送、完整 C1.5、生产 proposer 集成和其他付费实验仍需另行授权。
 
 ### Non-goals
 

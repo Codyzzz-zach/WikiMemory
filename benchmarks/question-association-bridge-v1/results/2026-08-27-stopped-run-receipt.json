@@ -1,0 +1,103 @@
+{
+  "schemaVersion": "wge-question-association-experiment-stopped-receipt/v1",
+  "status": "STOPPED_BEFORE_ORACLE_GATE",
+  "startedAt": "2026-08-26T18:48:25.729Z",
+  "completedAt": "2026-08-26T18:48:57.734Z",
+  "runtimeRoot": "/private/tmp/wikimemory-qab-v1-Q8TyqE",
+  "providerEnvelope": {
+    "provider": "DeepSeek",
+    "model": "deepseek-v4-flash",
+    "temperature": 0,
+    "thinkingDisabled": true,
+    "maxOutputTokens": 4096,
+    "responseFormat": "json_object",
+    "systemPromptSha256": "c96cfca6457e5cac6d8ba56f4e683c6573f800c3cda00bdd9bd8cf9b02d24548"
+  },
+  "budget": {
+    "mainCallsMade": 3,
+    "repairCallsMade": 2,
+    "totalCallsMade": 5,
+    "totalProviderTokens": 31547,
+    "maxCalls": 8,
+    "maxProviderTokens": 90000,
+    "remainingFrozenMainCallsNotSent": 3
+  },
+  "isolation": {
+    "oracleLoaded": false,
+    "oracleProviderVisible": false,
+    "canonicalStateSha256Before": "da1df59a5058852f6c25184c86577410ccdd53eda050043265929cbc9c12f300",
+    "canonicalStateSha256After": "da1df59a5058852f6c25184c86577410ccdd53eda050043265929cbc9c12f300",
+    "canonicalMutated": false
+  },
+  "failure": {
+    "stage": "STRICT_RESPONSE_SCHEMA",
+    "code": "FORMAT_REPAIR_BUDGET_EXHAUSTED",
+    "detail": "boundaryNotes must be a string array",
+    "observedMainResponses": 3,
+    "mainResponsesWithBoundaryNotesAsString": 3,
+    "decisionsWithBoundaryNotesAsString": 18,
+    "otherRequiredPluralFieldsWereArrays": true,
+    "repairsChangedSemanticFields": false,
+    "repairTransformation": "boundaryNotes: string -> [string]"
+  },
+  "calls": [
+    {
+      "callNumber": 1,
+      "kind": "MAIN",
+      "payloadPath": "benchmarks/question-association-bridge-v1/provider-payloads/law-public-policy--a0_name_card.json",
+      "responseSha256": "20cb6c7415fb2c6de0a93826fac70318206a85189551f96a541c7ed79e60b87a",
+      "finishReason": "stop",
+      "promptTokens": 2317,
+      "completionTokens": 1219,
+      "totalTokens": 3536,
+      "reasoningTokens": 0
+    },
+    {
+      "callNumber": 2,
+      "kind": "FORMAT_REPAIR",
+      "payloadPath": "benchmarks/question-association-bridge-v1/provider-payloads/law-public-policy--a0_name_card.json",
+      "responseSha256": "847f6bc4af509f202348b1a066e8b62d37ee446746ab5d23e2c92364f6b9561c",
+      "finishReason": "stop",
+      "promptTokens": 3650,
+      "completionTokens": 1225,
+      "totalTokens": 4875,
+      "reasoningTokens": 0
+    },
+    {
+      "callNumber": 3,
+      "kind": "MAIN",
+      "payloadPath": "benchmarks/question-association-bridge-v1/provider-payloads/law-public-policy--a1_evidence_identity_card.json",
+      "responseSha256": "6b6ab2d5bd5a4fa7feab68da6ec253c47d451e7581202c0f69b24dcb67492e95",
+      "finishReason": "stop",
+      "promptTokens": 8039,
+      "completionTokens": 1189,
+      "totalTokens": 9228,
+      "reasoningTokens": 0
+    },
+    {
+      "callNumber": 4,
+      "kind": "FORMAT_REPAIR",
+      "payloadPath": "benchmarks/question-association-bridge-v1/provider-payloads/law-public-policy--a1_evidence_identity_card.json",
+      "responseSha256": "0f0087d1bc2ad5657ed54682d7155bb81d5b1c9c3580f84e14d3d41bd222a472",
+      "finishReason": "stop",
+      "promptTokens": 9342,
+      "completionTokens": 1195,
+      "totalTokens": 10537,
+      "reasoningTokens": 0
+    },
+    {
+      "callNumber": 5,
+      "kind": "MAIN",
+      "payloadPath": "benchmarks/question-association-bridge-v1/provider-payloads/psychology-reproducibility--a0_name_card.json",
+      "responseSha256": "7d2aa5c79f3a5add7b3a3aea6c69484c39410ce0d20fe2c52fec3fb608e34fa5",
+      "finishReason": "stop",
+      "promptTokens": 2216,
+      "completionTokens": 1155,
+      "totalTokens": 3371,
+      "reasoningTokens": 0
+    }
+  ],
+  "semanticResult": null,
+  "resultBranch": null,
+  "nextAuthorityBoundary": "REFREEZE_OUTPUT_CONTRACT_BEFORE_ANY_ADDITIONAL_PROVIDER_CALL"
+}

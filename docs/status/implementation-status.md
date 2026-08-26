@@ -108,11 +108,18 @@ WikiMemory 已达到 **Integration-ready knowledge kernel + question-centered de
 C1 已以 **REWORK** 闭合：C1-A/B/C 的表示、Micro、replay 与 isolation 证据保留；C1-D 不继续调用模型，
 也不启动 C1-E。产品负责人已于 2026-08-26 接受 C1.5-A Question Association Bridge 合同。18 个
 Claim×Question pair、10 个事务前快照、oracle 隔离、纯函数 identity-card builder、schema/Grounding
-Gate 和 6 个 A0/A1 payload 已通过 zero-call Gate；当前 provider calls 仍为 0，等待精确数据发送授权。
+Gate 和 6 个 A0/A1 payload 已通过 zero-call Gate。2026-08-27 的授权运行在 5 calls / 31,547
+provider tokens 后按停止线中止：3/3 main responses 都把 `boundaryNotes` 返回为 string；两次纯格式
+repair 只完成 `string → [string]` 且已耗尽。剩余 3 个 main payload 未发送，oracle 未加载，Canonical
+Question state 未改变，因此当前仍无 A0/A1 语义结论，也不进入五个最终产品结果分支。
 
 Bridge 只验证新 Canonical Claims 对冻结 QuestionHypothesis 的 attach/reject/uncertain 与理由追溯，
 不自动扩到 promotion、merge/split/archive/reopen、Relation audit、materialization、retrieval、回答或
 Pilot。C1-D 的 Source-level coverage 已降格为诊断信号：6 个未进入焦点问题的 Source 实际均已路由到
 其他 Question，不能被直接解释为漏接。
+
+下一授权边界是重新冻结 v1.1 output adapter contract：把概率性的 association decision 与确定性的
+wire normalization 分层，并明确 normalization 的 receipt/budget 语义。不得对 v1 剩余 payload 隐式
+coercion 或续跑，也不得借此修改 A0/A1、oracle、三值语义或生产 proposer。
 
 权威路线见 `docs/specs/wikimemory-convergence-baseline-v1.md` 与 `WGEMemory4LLM-Iteration-Operating-Plan.md`。旧 Goal 不再无限延长，Discovery Backlog 不自动改变阶段顺序。

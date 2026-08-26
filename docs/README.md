@@ -29,7 +29,7 @@
 
 14. `../WGEMemory4LLM-Benchmark.html`：测试数据、开发回归、盲测和产品证据方法。
 15. `benchmarks/`：WorkBuddy 数据采集、修复、上传和密封合同。
-16. `verification/`：有日期的实机/在线验证证据；包括 I2.5 验收、I3-Sim NO-GO 与 C1.5-A zero-call Gate，不得升级为长期产品结论。
+16. `verification/`：有日期的实机/在线验证证据；包括 I2.5 验收、I3-Sim NO-GO、C1.5-A zero-call Gate 与 2026-08-27 provider run 的 schema 停止证据，不得升级为长期产品结论。
 17. `adr/`：架构裁决和原因；ADR-0003 固定加权证据流与收敛阶段，ADR-0004 补充问题假设与持续身份语义。
 
 ## 仓库与历史
