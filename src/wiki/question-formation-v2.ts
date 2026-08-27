@@ -322,10 +322,10 @@ function resolveLifecycle(
 	signals: QuestionFormationSignal[],
 	existing: QuestionFrame | null,
 ): "CANDIDATE" | "ACTIVE" {
+	if (existing?.lifecycle === "ACTIVE") return "ACTIVE";
 	if (proposal.recommendedLifecycle === "CANDIDATE") return "CANDIDATE";
 	if (claims.length < 2) return "CANDIDATE";
 	if (signals.every((signal) => signal.type === "SOURCE_STRUCTURE")) return "CANDIDATE";
-	if (existing?.lifecycle === "ACTIVE") return "ACTIVE";
 	return "ACTIVE";
 }
 

@@ -38,6 +38,33 @@ describe("question-centered formation gate", () => {
 		expect(result.evolutionDecisions[0]?.action).toBe("UPDATE");
 	});
 
+	it("keeps an active question consumable on a weak update recommendation", () => {
+		const created = gateQuestionProposals(input()).framesToPublish[0];
+		if (!created) throw new Error("expected frame");
+		const base = input();
+		const firstClaim = base.claims[0];
+		const firstSpan = base.spans[0];
+		if (!firstClaim || !firstSpan) throw new Error("expected one-claim fixture");
+		const result = gateQuestionProposals({
+			...base,
+			claims: [firstClaim],
+			spans: [firstSpan],
+			existingFrames: [created],
+			proposals: [
+				{
+					...proposal(),
+					matchQuestionRef: created.id,
+					claimIds: ["claim:first"],
+					recommendedLifecycle: "CANDIDATE",
+				},
+			],
+			knowledgeVersion: "kv:2",
+			sourceId: "source:second",
+		});
+		expect(result.framesToPublish[0]?.lifecycle).toBe("ACTIVE");
+		expect(result.framesToPublish[0]?.publicationState).toBe("CANONICAL");
+	});
+
 	it("keeps weak one-claim proposals as candidates", () => {
 		const base = input();
 		const firstClaim = base.claims[0];
