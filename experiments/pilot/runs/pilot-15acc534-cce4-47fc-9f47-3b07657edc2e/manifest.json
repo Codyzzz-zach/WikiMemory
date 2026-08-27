@@ -1,0 +1,86 @@
+{
+  "runId": "pilot-15acc534-cce4-47fc-9f47-3b07657edc2e",
+  "createdAt": "2026-07-24T04:54:56.400Z",
+  "snapshot": {
+    "schemaVersion": "wge-pilot-snapshot/v1",
+    "createdAt": "2026-07-24T04:52:17.954Z",
+    "codeCommit": "511f5a30162ec2a1ec7ad8eb12f1a7551a987cc9",
+    "runtimeCodeHash": "35b57b0e3c4fc0de538403117a9347b1eed485ef168592b9022887a8e98e42fa",
+    "configHash": "20e0fefb504fba7c7d96ba92143b74416ba93c33adba7e31b24cba3fc6f4b663",
+    "questionSetHash": "c8ef21ef019ae287dc724d70b2eb3c3662d1a1d17b132815e529678c3f50afbe",
+    "goldHash": "7340b6f082cc027cb3418625349f650e807c71485da2e50c6b5c3a0ebe9e39f6",
+    "corpusHash": "86268a6fbd559d17bb005c4c7bd64d3d1c91b2146010c625e9f2fc2fcb37d938",
+    "knowledgeVersion": "kv:e2f961a26664588188f91fe7",
+    "sources": [
+      {
+        "uri": "mathtest-material/01-number-systems.md",
+        "sourceId": "source:01-number-systems-80440e2182e5653f",
+        "sourceHash": "80440e2182e5653f",
+        "compileState": "COMPLETED",
+        "publicationRunId": "f856ccd7-381d-42b9-b165-0af345d83476",
+        "compilationConfigProof": "LEGACY_FROZEN_OUTPUT",
+        "claims": 134,
+        "relations": 37
+      },
+      {
+        "uri": "mathtest-material/02-spaces.md",
+        "sourceId": "source:02-spaces-33a33396a17d4175",
+        "sourceHash": "33a33396a17d4175",
+        "compileState": "COMPLETED",
+        "publicationRunId": "06a8cb99-b3bb-405d-8e33-e5649ede8a5c",
+        "compilationConfigProof": "LEGACY_FROZEN_OUTPUT",
+        "claims": 57,
+        "relations": 16
+      },
+      {
+        "uri": "mathtest-material/03-sequences-limits.md",
+        "sourceId": "source:03-sequences-limits-e7ea8bc17c2cc4ab",
+        "sourceHash": "e7ea8bc17c2cc4ab",
+        "compileState": "COMPLETED",
+        "publicationRunId": "74c1f631-a487-49ae-ba6a-c7d3c3f4243d",
+        "compilationConfigProof": "LEGACY_FROZEN_OUTPUT",
+        "claims": 70,
+        "relations": 23
+      },
+      {
+        "uri": "mathtest-material/05-functions-mappings.md",
+        "sourceId": "source:05-functions-mappings-7e02712717a02820",
+        "sourceHash": "7e02712717a02820",
+        "compileState": "COMPLETED",
+        "publicationRunId": "ece6d152-dbaf-486c-a5c2-5be35cc42909",
+        "compilationConfigProof": "LOCKED",
+        "claims": 43,
+        "relations": 7
+      },
+      {
+        "uri": "mathtest-material/09-functional-analysis.md",
+        "sourceId": "source:09-functional-analysis-9478dfc1ba6cb58f",
+        "sourceHash": "9478dfc1ba6cb58f",
+        "compileState": "COMPLETED",
+        "publicationRunId": "a4e42ea7-30ff-40e0-a58a-3e324ce08fb5",
+        "compilationConfigProof": "LOCKED",
+        "claims": 71,
+        "relations": 16
+      }
+    ],
+    "wikiModules": 2,
+    "integrity": {
+      "claimsChecked": 375,
+      "relationsChecked": 99,
+      "brokenEvidence": 0,
+      "brokenEndpoints": 0,
+      "unauditedRelations": 0,
+      "wikiModulesChecked": 2,
+      "brokenWikiRefs": 0
+    }
+  },
+  "modelReturned": "deepseek-v4-flash",
+  "questions": [
+    "PILOT-D01"
+  ],
+  "groups": [
+    "B",
+    "P",
+    "E-min"
+  ]
+}

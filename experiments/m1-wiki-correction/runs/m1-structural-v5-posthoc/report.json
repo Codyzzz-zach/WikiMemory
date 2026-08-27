@@ -1,0 +1,597 @@
+{
+  "schemaVersion": "wge-m1-wiki-correction-micro/v1",
+  "runId": "m1-structural-v5-posthoc",
+  "status": "PASS",
+  "createdAt": "2026-08-11T17:28:56.758Z",
+  "sourceWorkspace": "experiments/evolution/runs/controlled-v1-lineage-v15/workspace",
+  "datasetClass": "SYNTHETIC_SILVER_DEVELOPMENT",
+  "manualAudit": {
+    "mode": "isolated-development-fixture",
+    "relationSemanticAuthority": "pre-registered synthetic gold + exact endpoint inspection",
+    "relationAuditVersionAppliedInTemporaryWorkspace": "v2.8",
+    "oldClaimIds": [
+      "claim:64fed77ca832e02c-0717e9642441daaf",
+      "claim:7be8350189499981-d7fca5218b36ad40",
+      "claim:c37706bd82032a13-d5b02410a10adbfa"
+    ],
+    "triggerRelationIds": [
+      "rel:cross-3b73cf563a981df5",
+      "rel:cross-48d36ccae6315835",
+      "rel:cross-a247bfe26d070a90"
+    ]
+  },
+  "config": {
+    "contextBudgetTokens": 6000,
+    "maxGraphDepth": 0,
+    "selectionMode": "R0"
+  },
+  "beforeKnowledgeVersion": "kv:c5c6b9aecb50afba1cfdf052",
+  "afterKnowledgeVersion": "kv:d650d2b1e09c67f64304fb44",
+  "transaction": {
+    "snapshotId": "ks-2026-08-11T17-28-57-278Z-c9e43f2b7e1f",
+    "beforeKnowledgeVersion": "kv:c5c6b9aecb50afba1cfdf052",
+    "afterKnowledgeVersion": "kv:d650d2b1e09c67f64304fb44",
+    "changedSourceIds": [
+      "source:automated-release-gates-674a8aeeebc511a6",
+      "source:confidential-compute-policy-1f9be41b63ec8bde",
+      "source:extended-returns-316dbc8cdd88019f",
+      "source:medical-data-security-7be8350189499981",
+      "source:release-governance-64fed77ca832e02c",
+      "source:returns-and-refunds-c37706bd82032a13"
+    ],
+    "rejectedRelationIds": [],
+    "rebuiltWikiModuleIds": [
+      "wiki:m1:commerce-operations:affected",
+      "wiki:m1:platform-engineering:affected",
+      "wiki:m1:research-operations:affected"
+    ],
+    "impact": {
+      "triggerRelationIds": [
+        "rel:cross-3b73cf563a981df5",
+        "rel:cross-48d36ccae6315835",
+        "rel:cross-a247bfe26d070a90"
+      ],
+      "supersededClaimIds": [
+        "claim:64fed77ca832e02c-0717e9642441daaf",
+        "claim:7be8350189499981-d7fca5218b36ad40",
+        "claim:c37706bd82032a13-d5b02410a10adbfa"
+      ],
+      "disputedClaimIds": [],
+      "staleRelationIds": [
+        "rel:64fed77ca832e02c-67a4d4f24a2d9c42",
+        "rel:7be8350189499981-2f3e1e925bfb11cd",
+        "rel:7be8350189499981-57768a0d902e0fd3",
+        "rel:7be8350189499981-a90bcc729789669a",
+        "rel:c37706bd82032a13-ebaa3ef7338e1369"
+      ],
+      "affectedWikiModuleIds": [
+        "wiki:m1:commerce-operations:affected",
+        "wiki:m1:platform-engineering:affected",
+        "wiki:m1:research-operations:affected"
+      ],
+      "beforeVersion": "ev:eaef75986031ab5cae7f89a9",
+      "afterVersion": "ev:68debb05323b2175694b1ddb"
+    }
+  },
+  "rollbackProbe": {
+    "pass": true,
+    "checks": {
+      "rejectedByInjectedFailure": true,
+      "knowledgeVersionRestored": true,
+      "wikiRestored": true,
+      "quarantineRestored": true
+    }
+  },
+  "checks": {
+    "affectedDiscovered": true,
+    "rebuiltAll": true,
+    "stableAddressesPreserved": true,
+    "oldReferencesRemoved": true,
+    "replacementReferencesPresent": true,
+    "quarantineCopiesPresent": true,
+    "unaffectedByteStable": true,
+    "allCanonicalWikiSupported": true,
+    "affectedPacksCarryRebuiltWiki": true,
+    "unaffectedPacksCarryStableWiki": true,
+    "faultInjectionRollback": true
+  },
+  "counts": {
+    "initialWikiModules": 6,
+    "finalWikiModules": 6,
+    "quarantinedWikiCopies": 3
+  },
+  "packLedger": {
+    "EV-COMM-001": {
+      "w": {
+        "claimIds": [
+          "claim:316dbc8cdd88019f-587178ca587fec81",
+          "claim:c37706bd82032a13-deac2fa08389eca8",
+          "claim:c37706bd82032a13-efa163cd253db613",
+          "claim:316dbc8cdd88019f-8541960500c8d50a",
+          "claim:316dbc8cdd88019f-9fad048489730765",
+          "claim:057b2211d408b831-c52f92c00d8c8fed",
+          "claim:316dbc8cdd88019f-869a5f0c59e2da6f",
+          "claim:316dbc8cdd88019f-dbd0b86f0005a251",
+          "claim:c37706bd82032a13-6f25303e9acb9142",
+          "claim:c37706bd82032a13-8a2cbb0a72691129",
+          "claim:316dbc8cdd88019f-473de43e8391e0e9",
+          "claim:c37706bd82032a13-13582e49d5beca7d",
+          "claim:c37706bd82032a13-ae8b988ea6a4a9dc",
+          "claim:316dbc8cdd88019f-441c6ae77fe84ba7",
+          "claim:057b2211d408b831-3b44f2372c434eed",
+          "claim:057b2211d408b831-5bc7ad6120ea883d"
+        ],
+        "wikiModuleIds": [
+          "wiki:m1:commerce-operations:affected"
+        ],
+        "estimatedTokens": 5459
+      },
+      "r0": {
+        "claimIds": [
+          "claim:316dbc8cdd88019f-587178ca587fec81",
+          "claim:c37706bd82032a13-deac2fa08389eca8",
+          "claim:c37706bd82032a13-efa163cd253db613",
+          "claim:316dbc8cdd88019f-8541960500c8d50a",
+          "claim:316dbc8cdd88019f-9fad048489730765",
+          "claim:057b2211d408b831-c52f92c00d8c8fed",
+          "claim:316dbc8cdd88019f-869a5f0c59e2da6f",
+          "claim:316dbc8cdd88019f-dbd0b86f0005a251",
+          "claim:c37706bd82032a13-6f25303e9acb9142",
+          "claim:c37706bd82032a13-8a2cbb0a72691129",
+          "claim:316dbc8cdd88019f-473de43e8391e0e9",
+          "claim:c37706bd82032a13-13582e49d5beca7d",
+          "claim:c37706bd82032a13-ae8b988ea6a4a9dc",
+          "claim:316dbc8cdd88019f-441c6ae77fe84ba7",
+          "claim:057b2211d408b831-3b44f2372c434eed",
+          "claim:057b2211d408b831-5bc7ad6120ea883d"
+        ],
+        "wikiModuleIds": [],
+        "estimatedTokens": 5171
+      },
+      "wikiSupportGates": [
+        {
+          "moduleId": "wiki:m1:commerce-operations:affected",
+          "accepted": true,
+          "reasons": []
+        },
+        {
+          "moduleId": "wiki:m1:commerce-operations:unaffected",
+          "accepted": true,
+          "reasons": []
+        },
+        {
+          "moduleId": "wiki:m1:platform-engineering:affected",
+          "accepted": true,
+          "reasons": []
+        },
+        {
+          "moduleId": "wiki:m1:platform-engineering:unaffected",
+          "accepted": true,
+          "reasons": []
+        },
+        {
+          "moduleId": "wiki:m1:research-operations:affected",
+          "accepted": true,
+          "reasons": []
+        },
+        {
+          "moduleId": "wiki:m1:research-operations:unaffected",
+          "accepted": true,
+          "reasons": []
+        }
+      ]
+    },
+    "EV-COMM-005": {
+      "w": {
+        "claimIds": [
+          "claim:87efe7de4bfc7b99-4e1c5d4b2cd2143b",
+          "claim:87efe7de4bfc7b99-63e3cbc46d4142de",
+          "claim:87efe7de4bfc7b99-1de7c8ac676988f5",
+          "claim:87efe7de4bfc7b99-1acf92454964a22c",
+          "claim:5dbe232d11c3d7ca-52467f00df1a6718",
+          "claim:87efe7de4bfc7b99-c45db9e4c4d201fc",
+          "claim:56ecc1cabeb423a1-550a8df7849524a8",
+          "claim:56ecc1cabeb423a1-8f276e667edd37a7",
+          "claim:64fed77ca832e02c-db6d71c8eb6a5e56",
+          "claim:9e26bc258dc04be8-a58619f9e11b263d",
+          "claim:87efe7de4bfc7b99-93023594708809de",
+          "claim:87efe7de4bfc7b99-3920d6808c7485af",
+          "claim:87efe7de4bfc7b99-e20639b04c6978dc",
+          "claim:5dbe232d11c3d7ca-08e3c784ccf5a73f",
+          "claim:5dbe232d11c3d7ca-1facf560b99de915",
+          "claim:5dbe232d11c3d7ca-5c871d86d6be8879"
+        ],
+        "wikiModuleIds": [
+          "wiki:m1:commerce-operations:unaffected"
+        ],
+        "estimatedTokens": 5780
+      },
+      "r0": {
+        "claimIds": [
+          "claim:87efe7de4bfc7b99-4e1c5d4b2cd2143b",
+          "claim:87efe7de4bfc7b99-63e3cbc46d4142de",
+          "claim:87efe7de4bfc7b99-1de7c8ac676988f5",
+          "claim:87efe7de4bfc7b99-1acf92454964a22c",
+          "claim:5dbe232d11c3d7ca-52467f00df1a6718",
+          "claim:87efe7de4bfc7b99-c45db9e4c4d201fc",
+          "claim:56ecc1cabeb423a1-550a8df7849524a8",
+          "claim:56ecc1cabeb423a1-8f276e667edd37a7",
+          "claim:64fed77ca832e02c-db6d71c8eb6a5e56",
+          "claim:9e26bc258dc04be8-a58619f9e11b263d",
+          "claim:87efe7de4bfc7b99-93023594708809de",
+          "claim:87efe7de4bfc7b99-3920d6808c7485af",
+          "claim:87efe7de4bfc7b99-e20639b04c6978dc",
+          "claim:5dbe232d11c3d7ca-08e3c784ccf5a73f",
+          "claim:5dbe232d11c3d7ca-1facf560b99de915",
+          "claim:5dbe232d11c3d7ca-5c871d86d6be8879",
+          "claim:87efe7de4bfc7b99-043f80317ab89773"
+        ],
+        "wikiModuleIds": [],
+        "estimatedTokens": 5681
+      },
+      "wikiSupportGates": [
+        {
+          "moduleId": "wiki:m1:commerce-operations:affected",
+          "accepted": true,
+          "reasons": []
+        },
+        {
+          "moduleId": "wiki:m1:commerce-operations:unaffected",
+          "accepted": true,
+          "reasons": []
+        },
+        {
+          "moduleId": "wiki:m1:platform-engineering:affected",
+          "accepted": true,
+          "reasons": []
+        },
+        {
+          "moduleId": "wiki:m1:platform-engineering:unaffected",
+          "accepted": true,
+          "reasons": []
+        },
+        {
+          "moduleId": "wiki:m1:research-operations:affected",
+          "accepted": true,
+          "reasons": []
+        },
+        {
+          "moduleId": "wiki:m1:research-operations:unaffected",
+          "accepted": true,
+          "reasons": []
+        }
+      ]
+    },
+    "EV-PLAT-001": {
+      "w": {
+        "claimIds": [
+          "claim:73b18cf4eea0199a-3702628944bb236d",
+          "claim:ed0267ab8abe7125-591bd84e28289de0",
+          "claim:64fed77ca832e02c-305eefeaecfa3c8e",
+          "claim:64fed77ca832e02c-3ccdb23ddade2609",
+          "claim:674a8aeeebc511a6-c2ca9f8d759e7a7d",
+          "claim:64fed77ca832e02c-b9c4490038df3238",
+          "claim:9e26bc258dc04be8-3e02f793dd554376",
+          "claim:8992d881e04a5255-56e5a49a38cfecf7",
+          "claim:674a8aeeebc511a6-bce0771607dbcba2",
+          "claim:674a8aeeebc511a6-008ebbacdbf23400",
+          "claim:73b18cf4eea0199a-0760d6622bb50df6",
+          "claim:73b18cf4eea0199a-07846cfeed6239c2",
+          "claim:73b18cf4eea0199a-8e31064944ba9adb",
+          "claim:73b18cf4eea0199a-9aee1bf43038dd84",
+          "claim:73b18cf4eea0199a-e88bb1d6c6a0d821",
+          "claim:ed0267ab8abe7125-36177d955e5f5f27",
+          "claim:ed0267ab8abe7125-c7eaf69013397227",
+          "claim:ed0267ab8abe7125-cf6cad3f10ad1791"
+        ],
+        "wikiModuleIds": [
+          "wiki:m1:platform-engineering:affected"
+        ],
+        "estimatedTokens": 5996
+      },
+      "r0": {
+        "claimIds": [
+          "claim:73b18cf4eea0199a-3702628944bb236d",
+          "claim:ed0267ab8abe7125-591bd84e28289de0",
+          "claim:64fed77ca832e02c-305eefeaecfa3c8e",
+          "claim:64fed77ca832e02c-3ccdb23ddade2609",
+          "claim:674a8aeeebc511a6-c2ca9f8d759e7a7d",
+          "claim:64fed77ca832e02c-b9c4490038df3238",
+          "claim:9e26bc258dc04be8-3e02f793dd554376",
+          "claim:8992d881e04a5255-56e5a49a38cfecf7",
+          "claim:674a8aeeebc511a6-bce0771607dbcba2",
+          "claim:674a8aeeebc511a6-95afe8f814db9d52",
+          "claim:73b18cf4eea0199a-0760d6622bb50df6",
+          "claim:73b18cf4eea0199a-07846cfeed6239c2",
+          "claim:73b18cf4eea0199a-8e31064944ba9adb",
+          "claim:73b18cf4eea0199a-9aee1bf43038dd84",
+          "claim:73b18cf4eea0199a-e88bb1d6c6a0d821",
+          "claim:ed0267ab8abe7125-36177d955e5f5f27",
+          "claim:ed0267ab8abe7125-c7eaf69013397227",
+          "claim:ed0267ab8abe7125-cf6cad3f10ad1791"
+        ],
+        "wikiModuleIds": [],
+        "estimatedTokens": 5970
+      },
+      "wikiSupportGates": [
+        {
+          "moduleId": "wiki:m1:commerce-operations:affected",
+          "accepted": true,
+          "reasons": []
+        },
+        {
+          "moduleId": "wiki:m1:commerce-operations:unaffected",
+          "accepted": true,
+          "reasons": []
+        },
+        {
+          "moduleId": "wiki:m1:platform-engineering:affected",
+          "accepted": true,
+          "reasons": []
+        },
+        {
+          "moduleId": "wiki:m1:platform-engineering:unaffected",
+          "accepted": true,
+          "reasons": []
+        },
+        {
+          "moduleId": "wiki:m1:research-operations:affected",
+          "accepted": true,
+          "reasons": []
+        },
+        {
+          "moduleId": "wiki:m1:research-operations:unaffected",
+          "accepted": true,
+          "reasons": []
+        }
+      ]
+    },
+    "EV-PLAT-005": {
+      "w": {
+        "claimIds": [
+          "claim:56ecc1cabeb423a1-8dd57004f3b9b521",
+          "claim:56ecc1cabeb423a1-0224bd3f355fc52e",
+          "claim:0818c525160c6e0e-b93581ce28dbd8b3",
+          "claim:0818c525160c6e0e-baa3d5610902f78c",
+          "claim:56ecc1cabeb423a1-0797b56d4205fd58",
+          "claim:56ecc1cabeb423a1-e4a9e6f93b79e161",
+          "claim:56ecc1cabeb423a1-75b09a29c0345143",
+          "claim:73b18cf4eea0199a-6003e8782c7a9c60",
+          "claim:73b18cf4eea0199a-95ce5856876bb979",
+          "claim:56ecc1cabeb423a1-b1929da6e12b4d1e",
+          "claim:0818c525160c6e0e-880cdce7fe5521e7",
+          "claim:0818c525160c6e0e-1646380f6e06dca8",
+          "claim:0818c525160c6e0e-27297aad43ea5ee8",
+          "claim:0818c525160c6e0e-f82c2209e8db4fac",
+          "claim:56ecc1cabeb423a1-19dcec38b2c63e24",
+          "claim:56ecc1cabeb423a1-550a8df7849524a8",
+          "claim:56ecc1cabeb423a1-8f276e667edd37a7",
+          "claim:56ecc1cabeb423a1-e76f34ea6d41d64d"
+        ],
+        "wikiModuleIds": [
+          "wiki:m1:platform-engineering:unaffected"
+        ],
+        "estimatedTokens": 5992
+      },
+      "r0": {
+        "claimIds": [
+          "claim:56ecc1cabeb423a1-8dd57004f3b9b521",
+          "claim:56ecc1cabeb423a1-0224bd3f355fc52e",
+          "claim:0818c525160c6e0e-b93581ce28dbd8b3",
+          "claim:0818c525160c6e0e-baa3d5610902f78c",
+          "claim:56ecc1cabeb423a1-0797b56d4205fd58",
+          "claim:56ecc1cabeb423a1-e4a9e6f93b79e161",
+          "claim:56ecc1cabeb423a1-75b09a29c0345143",
+          "claim:73b18cf4eea0199a-6003e8782c7a9c60",
+          "claim:73b18cf4eea0199a-95ce5856876bb979",
+          "claim:56ecc1cabeb423a1-b1929da6e12b4d1e",
+          "claim:0818c525160c6e0e-880cdce7fe5521e7",
+          "claim:0818c525160c6e0e-1646380f6e06dca8",
+          "claim:0818c525160c6e0e-27297aad43ea5ee8",
+          "claim:0818c525160c6e0e-f82c2209e8db4fac",
+          "claim:56ecc1cabeb423a1-19dcec38b2c63e24",
+          "claim:56ecc1cabeb423a1-550a8df7849524a8",
+          "claim:56ecc1cabeb423a1-8f276e667edd37a7",
+          "claim:56ecc1cabeb423a1-e76f34ea6d41d64d"
+        ],
+        "wikiModuleIds": [],
+        "estimatedTokens": 5965
+      },
+      "wikiSupportGates": [
+        {
+          "moduleId": "wiki:m1:commerce-operations:affected",
+          "accepted": true,
+          "reasons": []
+        },
+        {
+          "moduleId": "wiki:m1:commerce-operations:unaffected",
+          "accepted": true,
+          "reasons": []
+        },
+        {
+          "moduleId": "wiki:m1:platform-engineering:affected",
+          "accepted": true,
+          "reasons": []
+        },
+        {
+          "moduleId": "wiki:m1:platform-engineering:unaffected",
+          "accepted": true,
+          "reasons": []
+        },
+        {
+          "moduleId": "wiki:m1:research-operations:affected",
+          "accepted": true,
+          "reasons": []
+        },
+        {
+          "moduleId": "wiki:m1:research-operations:unaffected",
+          "accepted": true,
+          "reasons": []
+        }
+      ]
+    },
+    "EV-RES-001": {
+      "w": {
+        "claimIds": [
+          "claim:1f9be41b63ec8bde-045afc1144f03260",
+          "claim:1f9be41b63ec8bde-9f1e7dd3211cb8c0",
+          "claim:7be8350189499981-12d8aa1b9eb0c2fe",
+          "claim:d7c9706991ff8fd5-d6348c87f319edab",
+          "claim:9e26bc258dc04be8-2cb46886895ffcab",
+          "claim:7be8350189499981-e89c4ba99294802b",
+          "claim:1f9be41b63ec8bde-c9a7e1b5fd58d181",
+          "claim:7be8350189499981-dd741ad32beff353",
+          "claim:1f9be41b63ec8bde-3a4b99f859fe76bc",
+          "claim:1f9be41b63ec8bde-38b307df9b652bb4",
+          "claim:1f9be41b63ec8bde-0efed72c8f9d63ab",
+          "claim:1f9be41b63ec8bde-317ef3b8d6692fdf",
+          "claim:1f9be41b63ec8bde-8a2d37cd8452c4c0",
+          "claim:1f9be41b63ec8bde-93f149b845895f44",
+          "claim:1f9be41b63ec8bde-9500f6d257c56672",
+          "claim:1f9be41b63ec8bde-9ad2e21b208bc717",
+          "claim:1f9be41b63ec8bde-0f9ebdc40a375ab0"
+        ],
+        "wikiModuleIds": [
+          "wiki:m1:research-operations:affected"
+        ],
+        "estimatedTokens": 5834
+      },
+      "r0": {
+        "claimIds": [
+          "claim:1f9be41b63ec8bde-045afc1144f03260",
+          "claim:1f9be41b63ec8bde-9f1e7dd3211cb8c0",
+          "claim:7be8350189499981-12d8aa1b9eb0c2fe",
+          "claim:d7c9706991ff8fd5-d6348c87f319edab",
+          "claim:9e26bc258dc04be8-2cb46886895ffcab",
+          "claim:7be8350189499981-e89c4ba99294802b",
+          "claim:1f9be41b63ec8bde-c9a7e1b5fd58d181",
+          "claim:7be8350189499981-dd741ad32beff353",
+          "claim:1f9be41b63ec8bde-3a4b99f859fe76bc",
+          "claim:1f9be41b63ec8bde-38b307df9b652bb4",
+          "claim:1f9be41b63ec8bde-0efed72c8f9d63ab",
+          "claim:1f9be41b63ec8bde-317ef3b8d6692fdf",
+          "claim:1f9be41b63ec8bde-8a2d37cd8452c4c0",
+          "claim:1f9be41b63ec8bde-93f149b845895f44",
+          "claim:1f9be41b63ec8bde-9500f6d257c56672",
+          "claim:1f9be41b63ec8bde-9ad2e21b208bc717",
+          "claim:1f9be41b63ec8bde-0f9ebdc40a375ab0",
+          "claim:1f9be41b63ec8bde-73eabb7b2463ef4a"
+        ],
+        "wikiModuleIds": [],
+        "estimatedTokens": 5980
+      },
+      "wikiSupportGates": [
+        {
+          "moduleId": "wiki:m1:commerce-operations:affected",
+          "accepted": true,
+          "reasons": []
+        },
+        {
+          "moduleId": "wiki:m1:commerce-operations:unaffected",
+          "accepted": true,
+          "reasons": []
+        },
+        {
+          "moduleId": "wiki:m1:platform-engineering:affected",
+          "accepted": true,
+          "reasons": []
+        },
+        {
+          "moduleId": "wiki:m1:platform-engineering:unaffected",
+          "accepted": true,
+          "reasons": []
+        },
+        {
+          "moduleId": "wiki:m1:research-operations:affected",
+          "accepted": true,
+          "reasons": []
+        },
+        {
+          "moduleId": "wiki:m1:research-operations:unaffected",
+          "accepted": true,
+          "reasons": []
+        }
+      ]
+    },
+    "EV-RES-005": {
+      "w": {
+        "claimIds": [
+          "claim:8f33cc0f406f07f3-1a47c17a72a9bfeb",
+          "claim:2174c435172ef2e4-200b61cb541a6230",
+          "claim:2174c435172ef2e4-3af0c927448f480b",
+          "claim:9e26bc258dc04be8-91246961da17ebab",
+          "claim:8992d881e04a5255-0f455ea36d425ae6",
+          "claim:367f77cf61ca517c-e9ef5cc1595d3ea9",
+          "claim:8f33cc0f406f07f3-d2b60b66160a5953",
+          "claim:8f33cc0f406f07f3-0ff9498318da211c",
+          "claim:8f33cc0f406f07f3-f29fe8b56057f88f",
+          "claim:8f33cc0f406f07f3-603af98f3c3475cf",
+          "claim:8f33cc0f406f07f3-f8912370932ed611",
+          "claim:9e26bc258dc04be8-2cb46886895ffcab",
+          "claim:9e26bc258dc04be8-666d5e78e71ff1d9",
+          "claim:8992d881e04a5255-5c4db46414a62bb5",
+          "claim:8992d881e04a5255-65a1f19845718d25",
+          "claim:8992d881e04a5255-c585e36d64258190",
+          "claim:8992d881e04a5255-f17ad6f4e116e2c1"
+        ],
+        "wikiModuleIds": [
+          "wiki:m1:research-operations:unaffected"
+        ],
+        "estimatedTokens": 5984
+      },
+      "r0": {
+        "claimIds": [
+          "claim:8f33cc0f406f07f3-1a47c17a72a9bfeb",
+          "claim:2174c435172ef2e4-200b61cb541a6230",
+          "claim:2174c435172ef2e4-3af0c927448f480b",
+          "claim:9e26bc258dc04be8-91246961da17ebab",
+          "claim:8992d881e04a5255-0f455ea36d425ae6",
+          "claim:367f77cf61ca517c-e9ef5cc1595d3ea9",
+          "claim:8f33cc0f406f07f3-d2b60b66160a5953",
+          "claim:8f33cc0f406f07f3-603af98f3c3475cf",
+          "claim:8f33cc0f406f07f3-f8912370932ed611",
+          "claim:9e26bc258dc04be8-2cb46886895ffcab",
+          "claim:9e26bc258dc04be8-666d5e78e71ff1d9",
+          "claim:8992d881e04a5255-5c4db46414a62bb5",
+          "claim:8992d881e04a5255-65a1f19845718d25",
+          "claim:8992d881e04a5255-c585e36d64258190",
+          "claim:8992d881e04a5255-f17ad6f4e116e2c1"
+        ],
+        "wikiModuleIds": [],
+        "estimatedTokens": 5165
+      },
+      "wikiSupportGates": [
+        {
+          "moduleId": "wiki:m1:commerce-operations:affected",
+          "accepted": true,
+          "reasons": []
+        },
+        {
+          "moduleId": "wiki:m1:commerce-operations:unaffected",
+          "accepted": true,
+          "reasons": []
+        },
+        {
+          "moduleId": "wiki:m1:platform-engineering:affected",
+          "accepted": true,
+          "reasons": []
+        },
+        {
+          "moduleId": "wiki:m1:platform-engineering:unaffected",
+          "accepted": true,
+          "reasons": []
+        },
+        {
+          "moduleId": "wiki:m1:research-operations:affected",
+          "accepted": true,
+          "reasons": []
+        },
+        {
+          "moduleId": "wiki:m1:research-operations:unaffected",
+          "accepted": true,
+          "reasons": []
+        }
+      ]
+    }
+  }
+}

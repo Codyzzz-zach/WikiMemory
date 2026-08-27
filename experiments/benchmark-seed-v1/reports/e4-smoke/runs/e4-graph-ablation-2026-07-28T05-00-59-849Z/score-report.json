@@ -1,0 +1,234 @@
+{
+  "schemaVersion": "wge-e4-smoke-answer-ablation/v1",
+  "status": "DIRECTIONAL_MEASURED",
+  "runId": "e4-graph-ablation-2026-07-28T05-00-59-849Z",
+  "createdAt": "2026-07-28T05:03:05.735Z",
+  "taskFileSha256": "sha256:8238d998134795451c162bbba4da4833eb75c8a015f7840a1a359388fd7bca53",
+  "answerModelRequested": "deepseek-v4-flash",
+  "answerModelReturned": "deepseek-v4-flash",
+  "judgeModelRequested": "deepseek-v4-flash",
+  "judgeModelReturned": "deepseek-v4-flash",
+  "experimentType": "SEED_VS_GRAPH",
+  "repetitions": 3,
+  "groups": [
+    {
+      "group": "P-seed",
+      "samples": 18,
+      "averageTotal": 13.444,
+      "standardDeviationTotal": 3.601,
+      "minimumTotal": 8,
+      "maximumTotal": 16,
+      "averageRequiredPointCoverage": 3.278,
+      "averageConditionFidelity": 3.389,
+      "averageEvidenceGrounding": 3.389,
+      "averageAnswerabilityDiscipline": 3.389,
+      "hardFailures": 0
+    },
+    {
+      "group": "P-graph",
+      "samples": 18,
+      "averageTotal": 14.667,
+      "standardDeviationTotal": 3.068,
+      "minimumTotal": 8,
+      "maximumTotal": 16,
+      "averageRequiredPointCoverage": 3.667,
+      "averageConditionFidelity": 3.667,
+      "averageEvidenceGrounding": 3.667,
+      "averageAnswerabilityDiscipline": 3.667,
+      "hardFailures": 0
+    }
+  ],
+  "perQuestion": [
+    {
+      "questionId": "B-C-HEALTH-002",
+      "groups": [
+        {
+          "group": "P-seed",
+          "samples": 3,
+          "averageTotal": 16,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 16,
+          "maximumTotal": 16,
+          "averageRequiredPointCoverage": 4,
+          "averageConditionFidelity": 4,
+          "averageEvidenceGrounding": 4,
+          "averageAnswerabilityDiscipline": 4,
+          "hardFailures": 0
+        },
+        {
+          "group": "P-graph",
+          "samples": 3,
+          "averageTotal": 16,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 16,
+          "maximumTotal": 16,
+          "averageRequiredPointCoverage": 4,
+          "averageConditionFidelity": 4,
+          "averageEvidenceGrounding": 4,
+          "averageAnswerabilityDiscipline": 4,
+          "hardFailures": 0
+        }
+      ]
+    },
+    {
+      "questionId": "B-E-HEALTH-005",
+      "groups": [
+        {
+          "group": "P-seed",
+          "samples": 3,
+          "averageTotal": 8,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 8,
+          "maximumTotal": 8,
+          "averageRequiredPointCoverage": 2,
+          "averageConditionFidelity": 2,
+          "averageEvidenceGrounding": 2,
+          "averageAnswerabilityDiscipline": 2,
+          "hardFailures": 0
+        },
+        {
+          "group": "P-graph",
+          "samples": 3,
+          "averageTotal": 8,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 8,
+          "maximumTotal": 8,
+          "averageRequiredPointCoverage": 2,
+          "averageConditionFidelity": 2,
+          "averageEvidenceGrounding": 2,
+          "averageAnswerabilityDiscipline": 2,
+          "hardFailures": 0
+        }
+      ]
+    },
+    {
+      "questionId": "B-C-HIST-003",
+      "groups": [
+        {
+          "group": "P-seed",
+          "samples": 3,
+          "averageTotal": 15.333,
+          "standardDeviationTotal": 0.577,
+          "minimumTotal": 15,
+          "maximumTotal": 16,
+          "averageRequiredPointCoverage": 3.333,
+          "averageConditionFidelity": 4,
+          "averageEvidenceGrounding": 4,
+          "averageAnswerabilityDiscipline": 4,
+          "hardFailures": 0
+        },
+        {
+          "group": "P-graph",
+          "samples": 3,
+          "averageTotal": 16,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 16,
+          "maximumTotal": 16,
+          "averageRequiredPointCoverage": 4,
+          "averageConditionFidelity": 4,
+          "averageEvidenceGrounding": 4,
+          "averageAnswerabilityDiscipline": 4,
+          "hardFailures": 0
+        }
+      ]
+    },
+    {
+      "questionId": "B-X-HIST-006",
+      "groups": [
+        {
+          "group": "P-seed",
+          "samples": 3,
+          "averageTotal": 9.333,
+          "standardDeviationTotal": 2.309,
+          "minimumTotal": 8,
+          "maximumTotal": 12,
+          "averageRequiredPointCoverage": 2.333,
+          "averageConditionFidelity": 2.333,
+          "averageEvidenceGrounding": 2.333,
+          "averageAnswerabilityDiscipline": 2.333,
+          "hardFailures": 0
+        },
+        {
+          "group": "P-graph",
+          "samples": 3,
+          "averageTotal": 16,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 16,
+          "maximumTotal": 16,
+          "averageRequiredPointCoverage": 4,
+          "averageConditionFidelity": 4,
+          "averageEvidenceGrounding": 4,
+          "averageAnswerabilityDiscipline": 4,
+          "hardFailures": 0
+        }
+      ]
+    },
+    {
+      "questionId": "B-C-DESIGN-002",
+      "groups": [
+        {
+          "group": "P-seed",
+          "samples": 3,
+          "averageTotal": 16,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 16,
+          "maximumTotal": 16,
+          "averageRequiredPointCoverage": 4,
+          "averageConditionFidelity": 4,
+          "averageEvidenceGrounding": 4,
+          "averageAnswerabilityDiscipline": 4,
+          "hardFailures": 0
+        },
+        {
+          "group": "P-graph",
+          "samples": 3,
+          "averageTotal": 16,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 16,
+          "maximumTotal": 16,
+          "averageRequiredPointCoverage": 4,
+          "averageConditionFidelity": 4,
+          "averageEvidenceGrounding": 4,
+          "averageAnswerabilityDiscipline": 4,
+          "hardFailures": 0
+        }
+      ]
+    },
+    {
+      "questionId": "B-X-DESIGN-005",
+      "groups": [
+        {
+          "group": "P-seed",
+          "samples": 3,
+          "averageTotal": 16,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 16,
+          "maximumTotal": 16,
+          "averageRequiredPointCoverage": 4,
+          "averageConditionFidelity": 4,
+          "averageEvidenceGrounding": 4,
+          "averageAnswerabilityDiscipline": 4,
+          "hardFailures": 0
+        },
+        {
+          "group": "P-graph",
+          "samples": 3,
+          "averageTotal": 16,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 16,
+          "maximumTotal": 16,
+          "averageRequiredPointCoverage": 4,
+          "averageConditionFidelity": 4,
+          "averageEvidenceGrounding": 4,
+          "averageAnswerabilityDiscipline": 4,
+          "hardFailures": 0
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Six public directional questions are insufficient for a confirmatory product claim.",
+    "The same model family generated answers and judge scores; human audit is still required.",
+    "E-min was not run because no generic Gold-independent WikiModule builder exists."
+  ]
+}

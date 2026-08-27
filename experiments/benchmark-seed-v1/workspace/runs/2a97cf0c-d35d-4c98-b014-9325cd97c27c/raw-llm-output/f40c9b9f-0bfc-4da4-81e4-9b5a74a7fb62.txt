@@ -1,0 +1,28 @@
+{
+  "concepts": [
+    {
+      "name": "维苏威挑战赛",
+      "aliases": ["维苏威挑战赛"],
+      "boundary": "一个竞赛项目",
+      "domain": "考古学/计算机视觉"
+    },
+    {
+      "name": "ScrollPrize/vesuvius",
+      "aliases": ["vesuvius", "该库", "ScrollPrize/vesuvius"],
+      "boundary": "一个Python库",
+      "domain": "软件/数据访问"
+    },
+    {
+      "name": "古代卷轴CT扫描",
+      "aliases": ["古代卷轴CT扫描", "卷轴数据", "CT扫描数据"],
+      "boundary": "数据资源",
+      "domain": "考古学/成像"
+    },
+    {
+      "name": "GitHub仓库",
+      "aliases": ["仓库", "该仓库"],
+      "boundary": "代码托管仓库",
+      "domain": "软件开发"
+    }
+  ]
+}

@@ -1,0 +1,396 @@
+{
+	"schemaVersion": "wge-goal4-support-router-online-counterfactual/v1",
+	"createdAt": "2026-08-11T15:57:38.073Z",
+	"stageBRead": false,
+	"mode": "ZERO_PUBLICATION_FULL_SEMANTIC_AUDIT_REPLAY",
+	"contract": "experiments/goal4/goal4-support-router-online-counterfactual-contract-v1.json",
+	"contractSha256": "d7b48fe85fe12427abc2aada9ec9453039086de8810afa1affb6c9dfc91475fe",
+	"inputLedgerSha256": "f6085a4e48a89a3dffa7a8bae3098d93140a043110db73d2bc644db4e63b6d68",
+	"sourceId": "source:s200-ai-llama-003-095ca9ccaaea22c6",
+	"model": "deepseek-v4-flash",
+	"temperature": 0,
+	"counts": {
+		"deferredSupportCandidates": 40,
+		"canonicalAfterUnchangedAudit": 0,
+		"quarantinedAfterUnchangedAudit": 40
+	},
+	"cost": {
+		"observedCanaryTotal": 321850,
+		"allRouterTokens": 9178,
+		"deferredFullAuditTokens": 32425,
+		"estimatedNoRouterTotal": 345097,
+		"observedRouterCanaryVersusEstimatedNoRouterSavings": 23247,
+		"attributableRouterReduction": 0.716947
+	},
+	"gates": {
+		"allFortyAudited": true,
+		"maximumCanonicalSupportEdgesZero": true,
+		"accountingExact": true,
+		"minimumThirtyPercentAttributableReduction": true,
+		"zeroPublicationWrites": true
+	},
+	"canonical": [],
+	"quarantined": [
+		{
+			"relationId": "rel:cross-8539ba3715c6f762",
+			"issueCodes": [
+				"RELATION_IDENTITY_MISMATCH",
+				"RELATION_SEMANTIC_FAILED",
+				"RELATION_TYPE_MISMATCH",
+				"RELATION_DIRECTION_MISMATCH"
+			]
+		},
+		{
+			"relationId": "rel:cross-37f69c14d90be804",
+			"issueCodes": [
+				"RELATION_IDENTITY_MISMATCH",
+				"RELATION_SEMANTIC_FAILED",
+				"RELATION_TYPE_MISMATCH",
+				"RELATION_DIRECTION_MISMATCH"
+			]
+		},
+		{
+			"relationId": "rel:cross-55b18421e26f2c3b",
+			"issueCodes": [
+				"RELATION_IDENTITY_MISMATCH",
+				"RELATION_SEMANTIC_FAILED",
+				"RELATION_TYPE_MISMATCH",
+				"RELATION_DIRECTION_MISMATCH"
+			]
+		},
+		{
+			"relationId": "rel:cross-8a5b01787b483cf0",
+			"issueCodes": [
+				"RELATION_IDENTITY_MISMATCH",
+				"RELATION_SEMANTIC_FAILED",
+				"RELATION_TYPE_MISMATCH",
+				"RELATION_DIRECTION_MISMATCH"
+			]
+		},
+		{
+			"relationId": "rel:cross-23176cf8e76ac07e",
+			"issueCodes": [
+				"RELATION_IDENTITY_MISMATCH",
+				"RELATION_SEMANTIC_FAILED",
+				"RELATION_TYPE_MISMATCH",
+				"RELATION_DIRECTION_MISMATCH"
+			]
+		},
+		{
+			"relationId": "rel:cross-515e67b827d32524",
+			"issueCodes": [
+				"RELATION_IDENTITY_MISMATCH",
+				"RELATION_SEMANTIC_FAILED",
+				"RELATION_TYPE_MISMATCH",
+				"RELATION_DIRECTION_MISMATCH"
+			]
+		},
+		{
+			"relationId": "rel:cross-c426cae74a83fedc",
+			"issueCodes": [
+				"RELATION_IDENTITY_MISMATCH",
+				"RELATION_SEMANTIC_FAILED",
+				"RELATION_TYPE_MISMATCH",
+				"RELATION_DIRECTION_MISMATCH"
+			]
+		},
+		{
+			"relationId": "rel:cross-2e324d038daef1c9",
+			"issueCodes": [
+				"RELATION_IDENTITY_MISMATCH",
+				"RELATION_SEMANTIC_FAILED",
+				"RELATION_TYPE_MISMATCH",
+				"RELATION_DIRECTION_MISMATCH"
+			]
+		},
+		{
+			"relationId": "rel:cross-d9aa47081bdd4c1e",
+			"issueCodes": [
+				"RELATION_IDENTITY_MISMATCH",
+				"RELATION_SEMANTIC_FAILED",
+				"RELATION_TYPE_MISMATCH",
+				"RELATION_DIRECTION_MISMATCH"
+			]
+		},
+		{
+			"relationId": "rel:cross-f1e1560ef0891239",
+			"issueCodes": [
+				"RELATION_IDENTITY_MISMATCH",
+				"RELATION_SEMANTIC_FAILED",
+				"RELATION_TYPE_MISMATCH",
+				"RELATION_DIRECTION_MISMATCH"
+			]
+		},
+		{
+			"relationId": "rel:cross-462bb860c08b00bf",
+			"issueCodes": [
+				"RELATION_IDENTITY_MISMATCH",
+				"RELATION_SEMANTIC_FAILED",
+				"RELATION_TYPE_MISMATCH",
+				"RELATION_DIRECTION_MISMATCH"
+			]
+		},
+		{
+			"relationId": "rel:cross-784a18cbd96cfa8c",
+			"issueCodes": [
+				"RELATION_IDENTITY_MISMATCH",
+				"RELATION_SEMANTIC_FAILED",
+				"RELATION_TYPE_MISMATCH",
+				"RELATION_DIRECTION_MISMATCH"
+			]
+		},
+		{
+			"relationId": "rel:cross-96c6045984b80e40",
+			"issueCodes": [
+				"RELATION_IDENTITY_MISMATCH",
+				"RELATION_SEMANTIC_FAILED",
+				"RELATION_TYPE_MISMATCH",
+				"RELATION_DIRECTION_MISMATCH"
+			]
+		},
+		{
+			"relationId": "rel:cross-937af7943e62d19c",
+			"issueCodes": [
+				"RELATION_IDENTITY_MISMATCH",
+				"RELATION_SEMANTIC_FAILED",
+				"RELATION_TYPE_MISMATCH",
+				"RELATION_DIRECTION_MISMATCH"
+			]
+		},
+		{
+			"relationId": "rel:cross-15077dd8cc5515dd",
+			"issueCodes": [
+				"RELATION_IDENTITY_MISMATCH",
+				"RELATION_SEMANTIC_FAILED",
+				"RELATION_TYPE_MISMATCH",
+				"RELATION_DIRECTION_MISMATCH"
+			]
+		},
+		{
+			"relationId": "rel:cross-c54e4d41d8e7aa19",
+			"issueCodes": [
+				"RELATION_IDENTITY_MISMATCH",
+				"RELATION_SEMANTIC_FAILED",
+				"RELATION_TYPE_MISMATCH",
+				"RELATION_DIRECTION_MISMATCH"
+			]
+		},
+		{
+			"relationId": "rel:cross-440aabfb6e5c3b61",
+			"issueCodes": [
+				"RELATION_IDENTITY_MISMATCH",
+				"RELATION_SEMANTIC_FAILED",
+				"RELATION_TYPE_MISMATCH",
+				"RELATION_DIRECTION_MISMATCH"
+			]
+		},
+		{
+			"relationId": "rel:cross-4d7cf62329a928f0",
+			"issueCodes": [
+				"RELATION_IDENTITY_MISMATCH",
+				"RELATION_SEMANTIC_FAILED",
+				"RELATION_TYPE_MISMATCH",
+				"RELATION_DIRECTION_MISMATCH"
+			]
+		},
+		{
+			"relationId": "rel:cross-ae59f9d0d60a120d",
+			"issueCodes": [
+				"RELATION_IDENTITY_MISMATCH",
+				"RELATION_SEMANTIC_FAILED",
+				"RELATION_TYPE_MISMATCH",
+				"RELATION_DIRECTION_MISMATCH"
+			]
+		},
+		{
+			"relationId": "rel:cross-c8a50db79d8d377d",
+			"issueCodes": [
+				"RELATION_IDENTITY_MISMATCH",
+				"RELATION_SEMANTIC_FAILED",
+				"RELATION_TYPE_MISMATCH",
+				"RELATION_DIRECTION_MISMATCH"
+			]
+		},
+		{
+			"relationId": "rel:cross-8f0f182fc70c3662",
+			"issueCodes": [
+				"RELATION_IDENTITY_MISMATCH",
+				"RELATION_SEMANTIC_FAILED",
+				"RELATION_TYPE_MISMATCH",
+				"RELATION_DIRECTION_MISMATCH"
+			]
+		},
+		{
+			"relationId": "rel:cross-c15885c40872637d",
+			"issueCodes": [
+				"RELATION_IDENTITY_MISMATCH",
+				"RELATION_SEMANTIC_FAILED",
+				"RELATION_TYPE_MISMATCH",
+				"RELATION_DIRECTION_MISMATCH"
+			]
+		},
+		{
+			"relationId": "rel:cross-f569c88f70ea782b",
+			"issueCodes": [
+				"RELATION_IDENTITY_MISMATCH",
+				"RELATION_SEMANTIC_FAILED",
+				"RELATION_TYPE_MISMATCH",
+				"RELATION_DIRECTION_MISMATCH"
+			]
+		},
+		{
+			"relationId": "rel:cross-771dc1600884b898",
+			"issueCodes": [
+				"RELATION_IDENTITY_MISMATCH",
+				"RELATION_SEMANTIC_FAILED",
+				"RELATION_TYPE_MISMATCH",
+				"RELATION_DIRECTION_MISMATCH"
+			]
+		},
+		{
+			"relationId": "rel:cross-70e09502c0249924",
+			"issueCodes": [
+				"RELATION_IDENTITY_MISMATCH",
+				"RELATION_SEMANTIC_FAILED",
+				"RELATION_TYPE_MISMATCH",
+				"RELATION_DIRECTION_MISMATCH"
+			]
+		},
+		{
+			"relationId": "rel:cross-f35fd35189abf545",
+			"issueCodes": [
+				"RELATION_IDENTITY_MISMATCH",
+				"RELATION_SEMANTIC_FAILED",
+				"RELATION_TYPE_MISMATCH",
+				"RELATION_DIRECTION_MISMATCH"
+			]
+		},
+		{
+			"relationId": "rel:cross-881ae8c05e47523b",
+			"issueCodes": [
+				"RELATION_IDENTITY_MISMATCH",
+				"RELATION_SEMANTIC_FAILED",
+				"RELATION_TYPE_MISMATCH",
+				"RELATION_DIRECTION_MISMATCH"
+			]
+		},
+		{
+			"relationId": "rel:cross-c883bbd139a20dcd",
+			"issueCodes": [
+				"RELATION_IDENTITY_MISMATCH",
+				"RELATION_SEMANTIC_FAILED",
+				"RELATION_TYPE_MISMATCH",
+				"RELATION_DIRECTION_MISMATCH"
+			]
+		},
+		{
+			"relationId": "rel:cross-271c3c09da0265f9",
+			"issueCodes": [
+				"RELATION_IDENTITY_MISMATCH",
+				"RELATION_SEMANTIC_FAILED",
+				"RELATION_TYPE_MISMATCH",
+				"RELATION_DIRECTION_MISMATCH"
+			]
+		},
+		{
+			"relationId": "rel:cross-dd16b21257c7d269",
+			"issueCodes": [
+				"RELATION_IDENTITY_MISMATCH",
+				"RELATION_SEMANTIC_FAILED",
+				"RELATION_TYPE_MISMATCH",
+				"RELATION_DIRECTION_MISMATCH"
+			]
+		},
+		{
+			"relationId": "rel:cross-26608f54999bf61f",
+			"issueCodes": [
+				"RELATION_IDENTITY_MISMATCH",
+				"RELATION_SEMANTIC_FAILED",
+				"RELATION_TYPE_MISMATCH",
+				"RELATION_DIRECTION_MISMATCH"
+			]
+		},
+		{
+			"relationId": "rel:cross-eb299ece2dd2c884",
+			"issueCodes": [
+				"RELATION_IDENTITY_MISMATCH",
+				"RELATION_SEMANTIC_FAILED",
+				"RELATION_TYPE_MISMATCH",
+				"RELATION_DIRECTION_MISMATCH"
+			]
+		},
+		{
+			"relationId": "rel:cross-a4e0e3da3bbad516",
+			"issueCodes": [
+				"RELATION_IDENTITY_MISMATCH",
+				"RELATION_SEMANTIC_FAILED",
+				"RELATION_TYPE_MISMATCH",
+				"RELATION_DIRECTION_MISMATCH"
+			]
+		},
+		{
+			"relationId": "rel:cross-f084dc12d1034ff2",
+			"issueCodes": [
+				"RELATION_IDENTITY_MISMATCH",
+				"RELATION_SEMANTIC_FAILED",
+				"RELATION_TYPE_MISMATCH",
+				"RELATION_DIRECTION_MISMATCH"
+			]
+		},
+		{
+			"relationId": "rel:cross-3744de74a9247f1f",
+			"issueCodes": [
+				"RELATION_IDENTITY_MISMATCH",
+				"RELATION_SEMANTIC_FAILED",
+				"RELATION_TYPE_MISMATCH",
+				"RELATION_DIRECTION_MISMATCH"
+			]
+		},
+		{
+			"relationId": "rel:cross-777a543c8055edb0",
+			"issueCodes": [
+				"RELATION_IDENTITY_MISMATCH",
+				"RELATION_SEMANTIC_FAILED",
+				"RELATION_TYPE_MISMATCH",
+				"RELATION_DIRECTION_MISMATCH"
+			]
+		},
+		{
+			"relationId": "rel:cross-6ecf8b8eeaf58dce",
+			"issueCodes": [
+				"RELATION_IDENTITY_MISMATCH",
+				"RELATION_SEMANTIC_FAILED",
+				"RELATION_TYPE_MISMATCH",
+				"RELATION_DIRECTION_MISMATCH"
+			]
+		},
+		{
+			"relationId": "rel:cross-fae1dac2d74e134f",
+			"issueCodes": [
+				"RELATION_IDENTITY_MISMATCH",
+				"RELATION_SEMANTIC_FAILED",
+				"RELATION_TYPE_MISMATCH",
+				"RELATION_DIRECTION_MISMATCH"
+			]
+		},
+		{
+			"relationId": "rel:cross-5784bc5d04fa3554",
+			"issueCodes": [
+				"RELATION_IDENTITY_MISMATCH",
+				"RELATION_SEMANTIC_FAILED",
+				"RELATION_TYPE_MISMATCH",
+				"RELATION_DIRECTION_MISMATCH"
+			]
+		},
+		{
+			"relationId": "rel:cross-8baf2cc7f0645148",
+			"issueCodes": [
+				"RELATION_IDENTITY_MISMATCH",
+				"RELATION_SEMANTIC_FAILED",
+				"RELATION_TYPE_MISMATCH",
+				"RELATION_DIRECTION_MISMATCH"
+			]
+		}
+	],
+	"interpretation": "The online canary remains failed against 300000 tokens. This paired replay only attributes whether the router caused or mitigated that failure."
+}

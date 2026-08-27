@@ -1,0 +1,51 @@
+{
+  "questionId": "C-K-CLIMATE-001",
+  "promptHash": "e657e92bcbed5c75fb4a68ba067f586fb9b84989e04b8c98b68a006dbd7529a6",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 1640,
+    "completionTokens": 1629,
+    "totalTokens": 3269,
+    "promptCacheHitTokens": 256,
+    "promptCacheMissTokens": 1384,
+    "reasoningTokens": 1255
+  },
+  "raw": "[\n  {\n    \"sampleId\": \"sample-20c28f3f-5cc2-4222-84f4-92154263d51c\",\n    \"requiredPointCoverage\": 0,\n    \"conditionFidelity\": 0,\n    \"evidenceGrounding\": 0,\n    \"answerabilityDiscipline\": 0,\n    \"sourceRoleTemporalDiscipline\": 0,\n    \"hardFailure\": false,\n    \"hardFailureTypes\": [],\n    \"rationale\": \"错误拒答，gold可回答并提供了足够信息，未覆盖任何要点。\"\n  },\n  {\n    \"sampleId\": \"sample-0d2fd9cf-3976-43a3-969f-95d29e3adba6\",\n    \"requiredPointCoverage\": 0,\n    \"conditionFidelity\": 0,\n    \"evidenceGrounding\": 0,\n    \"answerabilityDiscipline\": 0,\n    \"sourceRoleTemporalDiscipline\": 0,\n    \"hardFailure\": false,\n    \"hardFailureTypes\": [],\n    \"rationale\": \"错误拒答，gold明确可回答，未给出任何要点或引用。\"\n  },\n  {\n    \"sampleId\": \"sample-1842f85c-feb9-493b-9d74-5c13eced1580\",\n    \"requiredPointCoverage\": 4,\n    \"conditionFidelity\": 4,\n    \"evidenceGrounding\": 4,\n    \"answerabilityDiscipline\": 4,\n    \"sourceRoleTemporalDiscipline\": 4,\n    \"hardFailure\": false,\n    \"hardFailureTypes\": [],\n    \"rationale\": \"正确覆盖所有必要要点，引用准确，恰当回答了张力问题。\"\n  }\n]",
+  "rows": [
+    {
+      "sampleId": "sample-20c28f3f-5cc2-4222-84f4-92154263d51c",
+      "requiredPointCoverage": 0,
+      "conditionFidelity": 0,
+      "evidenceGrounding": 0,
+      "answerabilityDiscipline": 0,
+      "sourceRoleTemporalDiscipline": 0,
+      "hardFailure": false,
+      "hardFailureTypes": [],
+      "rationale": "错误拒答，gold可回答并提供了足够信息，未覆盖任何要点。"
+    },
+    {
+      "sampleId": "sample-0d2fd9cf-3976-43a3-969f-95d29e3adba6",
+      "requiredPointCoverage": 0,
+      "conditionFidelity": 0,
+      "evidenceGrounding": 0,
+      "answerabilityDiscipline": 0,
+      "sourceRoleTemporalDiscipline": 0,
+      "hardFailure": false,
+      "hardFailureTypes": [],
+      "rationale": "错误拒答，gold明确可回答，未给出任何要点或引用。"
+    },
+    {
+      "sampleId": "sample-1842f85c-feb9-493b-9d74-5c13eced1580",
+      "requiredPointCoverage": 4,
+      "conditionFidelity": 4,
+      "evidenceGrounding": 4,
+      "answerabilityDiscipline": 4,
+      "sourceRoleTemporalDiscipline": 4,
+      "hardFailure": false,
+      "hardFailureTypes": [],
+      "rationale": "正确覆盖所有必要要点，引用准确，恰当回答了张力问题。"
+    }
+  ]
+}

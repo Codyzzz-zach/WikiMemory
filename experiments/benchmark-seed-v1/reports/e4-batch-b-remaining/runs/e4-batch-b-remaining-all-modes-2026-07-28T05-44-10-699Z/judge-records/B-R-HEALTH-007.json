@@ -1,0 +1,48 @@
+{
+  "questionId": "B-R-HEALTH-007",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 1216,
+    "completionTokens": 416,
+    "totalTokens": 1632,
+    "promptCacheHitTokens": 256,
+    "promptCacheMissTokens": 960,
+    "reasoningTokens": 0
+  },
+  "request": {
+    "systemPrompt": "你是盲测评分员，不知道答案属于哪个实验组。只按题目、评分锚点、Gold 证据和引用预校验评价，不用外部常识修正答案。\n每个维度独立使用同一 0-4 锚点：4=完整且准确；3=大部分满足，仅轻微遗漏；2=部分满足，存在重要遗漏；1=仅有极少相关内容；0=缺失、反转或与证据冲突。\nrequiredPointCoverage 只看 requiredPoints；conditionFidelity 看条件、时间、来源角色和不确定性；evidenceGrounding 同时看关键结论是否与 Gold 证据一致以及 citationValidation；answerabilityDiscipline 看是否越界、编造或错误拒答。\ncitationValidation.valid 表示引用标识确实存在于该匿名样本收到的上下文。内部 CLAIM/SPAN/SOURCE 标识不需要出现在 Gold 文本中，不得仅因此扣分；但存在性有效不代表语义必然支持，仍需对照答案内容与 Gold。\n若反转来源归属、抹掉关键条件/时间、把提案当最终规范或编造关键事实，hardFailure=true。\n数值必须与 rationale 一致：若 rationale 说“完整覆盖且准确”，对应维度不能低于 3。\n只输出严格 JSON：{\"scores\":[{\"sampleId\":\"...\",\"requiredPointCoverage\":0,\"conditionFidelity\":0,\"evidenceGrounding\":0,\"answerabilityDiscipline\":0,\"hardFailure\":false,\"rationale\":\"...\"}]}。",
+    "userPrompt": "{\"question\":\"找出支持‘direct deposition 与 inhalation 并列’的来源。\",\"answerability\":\"answerable\",\"requiredPoints\":[\"WHO 2024 术语发布\"],\"forbiddenClaims\":[\"不得引用 2020 简报替代 2024 定义\"],\"requiredEvidence\":[{\"sourceId\":\"health-who-terminology-2024-004\",\"exactQuote\":\"1. Airborne transmission or inhalation, for cases when IRPs are expelled into the air and inhaled by another person. Airborne transmission or inhalation can occur at a short or long distance from the infectious person and distance depends on various factors (airflow, humidity, temperature, ventilation etc).\",\"role\":\"supports\"},{\"sourceId\":\"health-who-terminology-2024-004\",\"exactQuote\":\"2. Direct deposition, for cases when IRPs are expelled into the air from an infectious person, and are then directly deposited on the exposed mouth, nose or eyes of another person nearby.\",\"role\":\"supports\"}],\"sourcePriorityRule\":\"P/C 决定规范、论文与实现事实；S 只能作为有归属的解释，不能推翻一手版本文本。\",\"anonymousAnswers\":[{\"sampleId\":\"sample-e87515ef-397c-4b55-a24b-a63069fb42f3\",\"questionId\":\"B-R-HEALTH-007\",\"repetition\":1,\"answer\":\"{\\n  \\\"answer\\\": \\\"支持‘direct deposition 与 inhalation 并列’的来源是 WHO 2024 年术语文件，其中将‘through the air transmission’分为两个描述符：direct deposition 和 airborne transmission or inhalation。\\\",\\n  \\\"citations\\\": [\\n    \\\"span:health-who-terminology-2024-004-50fd4599b9553875-1#chars-315-397\\\",\\n    \\\"span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-712-896\\\",\\n    \\\"span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-402-515\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\",\"citationValidation\":{\"formatValid\":true,\"total\":3,\"valid\":3,\"invalid\":[]}},{\"sampleId\":\"sample-bc6e5358-5fca-44e0-86c9-25c8b7287c17\",\"questionId\":\"B-R-HEALTH-007\",\"repetition\":1,\"answer\":\"{\\n  \\\"answer\\\": \\\"支持‘direct deposition 与 inhalation 并列’的来源是 WHO 术语文档中的证据，其中将 direct deposition 和 airborne transmission or inhalation 作为并列的传播途径进行描述。\\\",\\n  \\\"citations\\\": [\\n    \\\"span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-712-896\\\",\\n    \\\"span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-402-515\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\",\"citationValidation\":{\"formatValid\":true,\"total\":2,\"valid\":2,\"invalid\":[]}},{\"sampleId\":\"sample-3c0c6f7f-0f5f-4989-a052-6e86badb6101\",\"questionId\":\"B-R-HEALTH-007\",\"repetition\":1,\"answer\":\"{\\n  \\\"answer\\\": \\\"是的，来源中明确将 direct deposition 与 inhalation 并列作为 'through the air transmission' 下的两种描述。\\\",\\n  \\\"citations\\\": [\\\"SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/health-biology/health-who-terminology-2024-004.md:1-8\\\"],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\",\"citationValidation\":{\"formatValid\":true,\"total\":1,\"valid\":1,\"invalid\":[]}}]}"
+  },
+  "rawResponse": "{\n  \"scores\": [\n    {\n      \"sampleId\": \"sample-e87515ef-397c-4b55-a24b-a63069fb42f3\",\n      \"requiredPointCoverage\": 4,\n      \"conditionFidelity\": 4,\n      \"evidenceGrounding\": 4,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"明确引用WHO 2024术语文件，指出direct deposition与airborne transmission or inhalation并列，覆盖requiredPoints。条件、时间、来源准确，无不确定性。引用有效且语义支持。未越界或编造。\"\n    },\n    {\n      \"sampleId\": \"sample-bc6e5358-5fca-44e0-86c9-25c8b7287c17\",\n      \"requiredPointCoverage\": 4,\n      \"conditionFidelity\": 4,\n      \"evidenceGrounding\": 4,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"明确引用WHO术语文档，指出direct deposition与airborne transmission or inhalation并列，覆盖requiredPoints。条件、时间、来源准确，无不确定性。引用有效且语义支持。未越界或编造。\"\n    },\n    {\n      \"sampleId\": \"sample-3c0c6f7f-0f5f-4989-a052-6e86badb6101\",\n      \"requiredPointCoverage\": 4,\n      \"conditionFidelity\": 4,\n      \"evidenceGrounding\": 4,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"明确回答来源中direct deposition与inhalation并列，覆盖requiredPoints。条件、时间、来源准确，无不确定性。引用有效（虽格式非标准span但valid），语义支持。未越界或编造。\"\n    }\n  ]\n}",
+  "parsed": [
+    {
+      "sampleId": "sample-e87515ef-397c-4b55-a24b-a63069fb42f3",
+      "requiredPointCoverage": 4,
+      "conditionFidelity": 4,
+      "evidenceGrounding": 4,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "明确引用WHO 2024术语文件，指出direct deposition与airborne transmission or inhalation并列，覆盖requiredPoints。条件、时间、来源准确，无不确定性。引用有效且语义支持。未越界或编造。"
+    },
+    {
+      "sampleId": "sample-bc6e5358-5fca-44e0-86c9-25c8b7287c17",
+      "requiredPointCoverage": 4,
+      "conditionFidelity": 4,
+      "evidenceGrounding": 4,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "明确引用WHO术语文档，指出direct deposition与airborne transmission or inhalation并列，覆盖requiredPoints。条件、时间、来源准确，无不确定性。引用有效且语义支持。未越界或编造。"
+    },
+    {
+      "sampleId": "sample-3c0c6f7f-0f5f-4989-a052-6e86badb6101",
+      "requiredPointCoverage": 4,
+      "conditionFidelity": 4,
+      "evidenceGrounding": 4,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "明确回答来源中direct deposition与inhalation并列，覆盖requiredPoints。条件、时间、来源准确，无不确定性。引用有效（虽格式非标准span但valid），语义支持。未越界或编造。"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "questionId": "B-F-HEALTH-010",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 1179,
+    "completionTokens": 365,
+    "totalTokens": 1544,
+    "promptCacheHitTokens": 256,
+    "promptCacheMissTokens": 923,
+    "reasoningTokens": 0
+  },
+  "request": {
+    "systemPrompt": "你是盲测评分员，不知道答案属于哪个实验组。只按题目、评分锚点、Gold 证据和引用预校验评价，不用外部常识修正答案。\n每个维度独立使用同一 0-4 锚点：4=完整且准确；3=大部分满足，仅轻微遗漏；2=部分满足，存在重要遗漏；1=仅有极少相关内容；0=缺失、反转或与证据冲突。\nrequiredPointCoverage 只看 requiredPoints；conditionFidelity 看条件、时间、来源角色和不确定性；evidenceGrounding 同时看关键结论是否与 Gold 证据一致以及 citationValidation；answerabilityDiscipline 看是否越界、编造或错误拒答。\ncitationValidation.valid 表示引用标识确实存在于该匿名样本收到的上下文。内部 CLAIM/SPAN/SOURCE 标识不需要出现在 Gold 文本中，不得仅因此扣分；但存在性有效不代表语义必然支持，仍需对照答案内容与 Gold。\n若反转来源归属、抹掉关键条件/时间、把提案当最终规范或编造关键事实，hardFailure=true。\n数值必须与 rationale 一致：若 rationale 说“完整覆盖且准确”，对应维度不能低于 3。\n只输出严格 JSON：{\"scores\":[{\"sampleId\":\"...\",\"requiredPointCoverage\":0,\"conditionFidelity\":0,\"evidenceGrounding\":0,\"answerabilityDiscipline\":0,\"hardFailure\":false,\"rationale\":\"...\"}]}。",
+    "userPrompt": "{\"question\":\"判断：WHO 2024 框架把 direct deposition 排除在 through the air transmission 之外。\",\"answerability\":\"answerable\",\"requiredPoints\":[\"错误；它被列为该框架下两种描述之一\"],\"forbiddenClaims\":[\"不得反转分类\"],\"requiredEvidence\":[{\"sourceId\":\"health-who-terminology-2024-004\",\"exactQuote\":\"The descriptor ‘through the air’ can be used in a general way to characterize an infectious disease where the main mode of transmission involves the pathogen travelling through the air or being suspended in the air. Under the umbrella of ‘through the air transmission’, two descriptors can be used:\",\"role\":\"supports\"},{\"sourceId\":\"health-who-terminology-2024-004\",\"exactQuote\":\"2. Direct deposition, for cases when IRPs are expelled into the air from an infectious person, and are then directly deposited on the exposed mouth, nose or eyes of another person nearby.\",\"role\":\"supports\"}],\"sourcePriorityRule\":\"P/C 决定规范、论文与实现事实；S 只能作为有归属的解释，不能推翻一手版本文本。\",\"anonymousAnswers\":[{\"sampleId\":\"sample-9830bde8-2aed-481d-b7c0-472922aa11af\",\"questionId\":\"B-F-HEALTH-010\",\"repetition\":1,\"answer\":\"{\\n  \\\"answer\\\": \\\"否。WHO 2024 框架将 direct deposition 纳入 'through the air transmission' 的范畴，作为其下的两个描述符之一。\\\",\\n  \\\"citations\\\": [\\n    \\\"span:health-who-terminology-2024-004-50fd4599b9553875-1#chars-315-397\\\",\\n    \\\"span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-712-896\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\",\"citationValidation\":{\"formatValid\":true,\"total\":2,\"valid\":2,\"invalid\":[]}},{\"sampleId\":\"sample-953e9522-5cd9-4821-b00d-0c2a3861df62\",\"questionId\":\"B-F-HEALTH-010\",\"repetition\":1,\"answer\":\"{\\n  \\\"answer\\\": \\\"否，WHO 2024 框架将 direct deposition 包含在 through the air transmission 之下。根据证据，'through the air transmission' 下有两个描述符：direct deposition 和 airborne transmission/inhalation。\\\",\\n  \\\"citations\\\": [\\n    \\\"span:health-who-terminology-2024-004-50fd4599b9553875-1#chars-315-397\\\",\\n    \\\"span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-712-896\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\",\"citationValidation\":{\"formatValid\":true,\"total\":2,\"valid\":2,\"invalid\":[]}},{\"sampleId\":\"sample-d7988b07-eb27-4383-8467-aad4c7743f22\",\"questionId\":\"B-F-HEALTH-010\",\"repetition\":1,\"answer\":\"{\\n  \\\"answer\\\": \\\"否。WHO 2024 框架将 direct deposition 包含在 through the air transmission 之下，作为其两个子类别之一。\\\",\\n  \\\"citations\\\": [\\n    \\\"SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/health-biology/health-who-terminology-2024-004.md:1-8\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\",\"citationValidation\":{\"formatValid\":true,\"total\":1,\"valid\":1,\"invalid\":[]}}]}"
+  },
+  "rawResponse": "{\n  \"scores\": [\n    {\n      \"sampleId\": \"sample-9830bde8-2aed-481d-b7c0-472922aa11af\",\n      \"requiredPointCoverage\": 4,\n      \"conditionFidelity\": 4,\n      \"evidenceGrounding\": 4,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"答案明确否定问题，指出direct deposition被纳入through the air transmission之下，与requiredPoints一致。引用了Gold证据中的两个span，内容准确。无越界或编造。\"\n    },\n    {\n      \"sampleId\": \"sample-953e9522-5cd9-4821-b00d-0c2a3861df62\",\n      \"requiredPointCoverage\": 4,\n      \"conditionFidelity\": 4,\n      \"evidenceGrounding\": 4,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"答案正确否定问题，并补充了另一个描述符airborne transmission/inhalation，但未遗漏requiredPoints。引用证据准确。无问题。\"\n    },\n    {\n      \"sampleId\": \"sample-d7988b07-eb27-4383-8467-aad4c7743f22\",\n      \"requiredPointCoverage\": 4,\n      \"conditionFidelity\": 4,\n      \"evidenceGrounding\": 4,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"答案正确否定问题，指出direct deposition是子类别之一。引用证据有效。无越界或编造。\"\n    }\n  ]\n}",
+  "parsed": [
+    {
+      "sampleId": "sample-9830bde8-2aed-481d-b7c0-472922aa11af",
+      "requiredPointCoverage": 4,
+      "conditionFidelity": 4,
+      "evidenceGrounding": 4,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "答案明确否定问题，指出direct deposition被纳入through the air transmission之下，与requiredPoints一致。引用了Gold证据中的两个span，内容准确。无越界或编造。"
+    },
+    {
+      "sampleId": "sample-953e9522-5cd9-4821-b00d-0c2a3861df62",
+      "requiredPointCoverage": 4,
+      "conditionFidelity": 4,
+      "evidenceGrounding": 4,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "答案正确否定问题，并补充了另一个描述符airborne transmission/inhalation，但未遗漏requiredPoints。引用证据准确。无问题。"
+    },
+    {
+      "sampleId": "sample-d7988b07-eb27-4383-8467-aad4c7743f22",
+      "requiredPointCoverage": 4,
+      "conditionFidelity": 4,
+      "evidenceGrounding": 4,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "答案正确否定问题，指出direct deposition是子类别之一。引用证据有效。无越界或编造。"
+    }
+  ]
+}

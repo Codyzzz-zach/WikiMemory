@@ -1,0 +1,592 @@
+{
+  "relations": [
+    {
+      "fromClaimIndex": 0,
+      "toClaimIndex": 65,
+      "type": "DERIVED_FROM",
+      "conditions": ["|r| < 1"],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 0,
+      "toClaimIndex": 44,
+      "type": "RELATED_TO",
+      "conditions": [],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 1,
+      "toClaimIndex": 45,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["无"],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 1,
+      "toClaimIndex": 47,
+      "type": "SUPPORTS",
+      "conditions": ["无"],
+      "confidence": 0.6
+    },
+    {
+      "fromClaimIndex": 2,
+      "toClaimIndex": 45,
+      "type": "DERIVED_FROM",
+      "conditions": ["无"],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 2,
+      "toClaimIndex": 59,
+      "type": "RELATED_TO",
+      "conditions": [],
+      "confidence": 0.5
+    },
+    {
+      "fromClaimIndex": 4,
+      "toClaimIndex": 52,
+      "type": "DERIVED_FROM",
+      "conditions": ["无"],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 5,
+      "toClaimIndex": 9,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["无"],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 5,
+      "toClaimIndex": 64,
+      "type": "SUPPORTS",
+      "conditions": ["无"],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 6,
+      "toClaimIndex": 19,
+      "type": "SUPPORTS",
+      "conditions": ["无"],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 7,
+      "toClaimIndex": 55,
+      "type": "SUPPORTS",
+      "conditions": ["|q|<1"],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 9,
+      "toClaimIndex": 5,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["无"],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 11,
+      "toClaimIndex": 76,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["无"],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 13,
+      "toClaimIndex": 48,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["无"],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 13,
+      "toClaimIndex": 22,
+      "type": "SUPPORTS",
+      "conditions": ["无"],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 14,
+      "toClaimIndex": 73,
+      "type": "SUPPORTS",
+      "conditions": ["无"],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 15,
+      "toClaimIndex": 40,
+      "type": "DERIVED_FROM",
+      "conditions": ["无"],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 15,
+      "toClaimIndex": 50,
+      "type": "RELATED_TO",
+      "conditions": [],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 16,
+      "toClaimIndex": 53,
+      "type": "SUPPORTS",
+      "conditions": ["无"],
+      "confidence": 0.6
+    },
+    {
+      "fromClaimIndex": 19,
+      "toClaimIndex": 6,
+      "type": "REQUIRES",
+      "conditions": ["|x|<1"],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 20,
+      "toClaimIndex": 38,
+      "type": "REQUIRES",
+      "conditions": ["函数足够光滑"],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 20,
+      "toClaimIndex": 50,
+      "type": "SUPPORTS",
+      "conditions": ["函数足够光滑"],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 21,
+      "toClaimIndex": 62,
+      "type": "RELATED_TO",
+      "conditions": [],
+      "confidence": 0.6
+    },
+    {
+      "fromClaimIndex": 22,
+      "toClaimIndex": 13,
+      "type": "SUPPORTS",
+      "conditions": ["无"],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 24,
+      "toClaimIndex": 36,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["无"],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 25,
+      "toClaimIndex": 42,
+      "type": "SUPPORTS",
+      "conditions": ["无"],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 25,
+      "toClaimIndex": 62,
+      "type": "RELATED_TO",
+      "conditions": [],
+      "confidence": 0.6
+    },
+    {
+      "fromClaimIndex": 28,
+      "toClaimIndex": 47,
+      "type": "DERIVED_FROM",
+      "conditions": ["无"],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 29,
+      "toClaimIndex": 34,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["无"],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 29,
+      "toClaimIndex": 57,
+      "type": "SUPPORTS",
+      "conditions": ["无"],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 29,
+      "toClaimIndex": 61,
+      "type": "RELATED_TO",
+      "conditions": [],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 30,
+      "toClaimIndex": 66,
+      "type": "SUPPORTS",
+      "conditions": ["无"],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 31,
+      "toClaimIndex": 55,
+      "type": "SUPPORTS",
+      "conditions": ["无"],
+      "confidence": 0.5
+    },
+    {
+      "fromClaimIndex": 32,
+      "toClaimIndex": 36,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["无"],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 32,
+      "toClaimIndex": 37,
+      "type": "SUPPORTS",
+      "conditions": ["无"],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 33,
+      "toClaimIndex": 26,
+      "type": "SUPPORTS",
+      "conditions": ["无"],
+      "confidence": 0.5
+    },
+    {
+      "fromClaimIndex": 35,
+      "toClaimIndex": 44,
+      "type": "RELATED_TO",
+      "conditions": [],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 37,
+      "toClaimIndex": 72,
+      "type": "SUPPORTS",
+      "conditions": ["无"],
+      "confidence": 0.5
+    },
+    {
+      "fromClaimIndex": 38,
+      "toClaimIndex": 20,
+      "type": "REQUIRES",
+      "conditions": ["函数足够光滑"],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 38,
+      "toClaimIndex": 50,
+      "type": "DERIVED_FROM",
+      "conditions": ["无"],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 39,
+      "toClaimIndex": 56,
+      "type": "DERIVED_FROM",
+      "conditions": ["无"],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 40,
+      "toClaimIndex": 15,
+      "type": "REQUIRES",
+      "conditions": ["无"],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 41,
+      "toClaimIndex": 60,
+      "type": "DERIVED_FROM",
+      "conditions": ["无"],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 43,
+      "toClaimIndex": 55,
+      "type": "SUPPORTS",
+      "conditions": ["p>0"],
+      "confidence": 0.5
+    },
+    {
+      "fromClaimIndex": 44,
+      "toClaimIndex": 0,
+      "type": "RELATED_TO",
+      "conditions": [],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 44,
+      "toClaimIndex": 35,
+      "type": "RELATED_TO",
+      "conditions": [],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 45,
+      "toClaimIndex": 1,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["无"],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 45,
+      "toClaimIndex": 2,
+      "type": "SUPPORTS",
+      "conditions": ["无"],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 46,
+      "toClaimIndex": 67,
+      "type": "SUPPORTS",
+      "conditions": ["无"],
+      "confidence": 0.6
+    },
+    {
+      "fromClaimIndex": 47,
+      "toClaimIndex": 1,
+      "type": "SUPPORTS",
+      "conditions": ["无"],
+      "confidence": 0.6
+    },
+    {
+      "fromClaimIndex": 47,
+      "toClaimIndex": 28,
+      "type": "REQUIRES",
+      "conditions": ["无"],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 48,
+      "toClaimIndex": 13,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["无"],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 48,
+      "toClaimIndex": 54,
+      "type": "SUPPORTS",
+      "conditions": ["无"],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 50,
+      "toClaimIndex": 15,
+      "type": "REQUIRES",
+      "conditions": ["a=0"],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 50,
+      "toClaimIndex": 61,
+      "type": "RELATED_TO",
+      "conditions": [],
+      "confidence": 0.6
+    },
+    {
+      "fromClaimIndex": 51,
+      "toClaimIndex": 55,
+      "type": "SUPPORTS",
+      "conditions": ["无"],
+      "confidence": 0.5
+    },
+    {
+      "fromClaimIndex": 52,
+      "toClaimIndex": 4,
+      "type": "REQUIRES",
+      "conditions": ["|x|<=1, x≠-1"],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 53,
+      "toClaimIndex": 16,
+      "type": "SUPPORTS",
+      "conditions": ["无"],
+      "confidence": 0.6
+    },
+    {
+      "fromClaimIndex": 54,
+      "toClaimIndex": 48,
+      "type": "SUPPORTS",
+      "conditions": ["无"],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 55,
+      "toClaimIndex": 43,
+      "type": "SUPPORTS",
+      "conditions": ["p>0"],
+      "confidence": 0.5
+    },
+    {
+      "fromClaimIndex": 55,
+      "toClaimIndex": 31,
+      "type": "SUPPORTS",
+      "conditions": ["无"],
+      "confidence": 0.5
+    },
+    {
+      "fromClaimIndex": 56,
+      "toClaimIndex": 39,
+      "type": "DERIVED_FROM",
+      "conditions": ["无"],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 57,
+      "toClaimIndex": 29,
+      "type": "SUPPORTS",
+      "conditions": ["无"],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 58,
+      "toClaimIndex": 3,
+      "type": "SUPPORTS",
+      "conditions": ["无"],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 59,
+      "toClaimIndex": 1,
+      "type": "DERIVED_FROM",
+      "conditions": ["无"],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 60,
+      "toClaimIndex": 41,
+      "type": "REQUIRES",
+      "conditions": ["无"],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 61,
+      "toClaimIndex": 29,
+      "type": "RELATED_TO",
+      "conditions": [],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 62,
+      "toClaimIndex": 21,
+      "type": "RELATED_TO",
+      "conditions": [],
+      "confidence": 0.6
+    },
+    {
+      "fromClaimIndex": 62,
+      "toClaimIndex": 25,
+      "type": "RELATED_TO",
+      "conditions": [],
+      "confidence": 0.6
+    },
+    {
+      "fromClaimIndex": 62,
+      "toClaimIndex": 72,
+      "type": "RELATED_TO",
+      "conditions": [],
+      "confidence": 0.6
+    },
+    {
+      "fromClaimIndex": 64,
+      "toClaimIndex": 5,
+      "type": "SUPPORTS",
+      "conditions": ["无"],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 65,
+      "toClaimIndex": 0,
+      "type": "REQUIRES",
+      "conditions": ["|r| < 1"],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 66,
+      "toClaimIndex": 30,
+      "type": "SUPPORTS",
+      "conditions": ["无"],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 67,
+      "toClaimIndex": 46,
+      "type": "SUPPORTS",
+      "conditions": ["无"],
+      "confidence": 0.6
+    },
+    {
+      "fromClaimIndex": 68,
+      "toClaimIndex": 38,
+      "type": "RELATED_TO",
+      "conditions": [],
+      "confidence": 0.6
+    },
+    {
+      "fromClaimIndex": 69,
+      "toClaimIndex": 32,
+      "type": "RELATED_TO",
+      "conditions": [],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 70,
+      "toClaimIndex": 30,
+      "type": "SUPPORTS",
+      "conditions": ["无"],
+      "confidence": 0.5
+    },
+    {
+      "fromClaimIndex": 72,
+      "toClaimIndex": 11,
+      "type": "REQUIRES",
+      "conditions": ["无"],
+      "confidence": 0.6
+    },
+    {
+      "fromClaimIndex": 72,
+      "toClaimIndex": 62,
+      "type": "RELATED_TO",
+      "conditions": [],
+      "confidence": 0.6
+    },
+    {
+      "fromClaimIndex": 73,
+      "toClaimIndex": 14,
+      "type": "SUPPORTS",
+      "conditions": ["无"],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 74,
+      "toClaimIndex": 30,
+      "type": "SUPPORTS",
+      "conditions": ["无"],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 74,
+      "toClaimIndex": 66,
+      "type": "SUPPORTS",
+      "conditions": ["无"],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 75,
+      "toClaimIndex": 70,
+      "type": "SUPPORTS",
+      "conditions": ["无"],
+      "confidence": 0.5
+    },
+    {
+      "fromClaimIndex": 76,
+      "toClaimIndex": 11,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["无"],
+      "confidence": 0.8
+    }
+  ]
+}

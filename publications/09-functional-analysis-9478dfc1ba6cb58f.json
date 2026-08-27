@@ -1,0 +1,3286 @@
+{
+  "schemaVersion": "v1",
+  "sourceId": "source:09-functional-analysis-9478dfc1ba6cb58f",
+  "runId": "a4e42ea7-30ff-40e0-a58a-3e324ce08fb5",
+  "publishedAt": "2026-07-24T02:47:31.102Z",
+  "claims": [
+    {
+      "id": "claim:9478dfc1ba6cb58f-052f156df6dbd1c6",
+      "statement": "Euler-Lagrange 方程为 ∂L/∂y - d/dx(∂L/∂y') = 0。",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-9#chars-572-669"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:45:43.982Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-9#chars-572-669"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-9#chars-572-669"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:45:43.982Z"
+    },
+    {
+      "id": "claim:9478dfc1ba6cb58f-05929b8c6db069b1",
+      "statement": "泛函是函数的函数，输入函数，输出数。",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-47"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:45:43.982Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-47"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-47"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:45:43.982Z"
+    },
+    {
+      "id": "claim:9478dfc1ba6cb58f-06a3aa261a1d8ba2",
+      "statement": "量子力学的可观测量必须用自伴算子表示：谱=可能的测量值。",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-38#chars-2811-2851"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:45:43.982Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-38#chars-2811-2851"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-38#chars-2811-2851"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:45:43.982Z"
+    },
+    {
+      "id": "claim:9478dfc1ba6cb58f-0c27fbe0e2b1a1d3",
+      "statement": "Banach 空间是完备赋范空间。",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-15"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:45:43.982Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-15"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-15"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:45:43.982Z"
+    },
+    {
+      "id": "claim:9478dfc1ba6cb58f-0e7148fb74211eee",
+      "statement": "Riesz表示定理（Hilbert空间版本）指出每个连续线性泛函f∈H*都可由内积表示为f(x)=⟨x,y⟩对某唯一的y∈H。",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-25#chars-2037-2095"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:45:43.982Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-25#chars-2037-2095"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-25#chars-2037-2095"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:45:43.982Z"
+    },
+    {
+      "id": "claim:9478dfc1ba6cb58f-1370547ce5666a0f",
+      "statement": "泛函分析把特征值推广为谱。",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-1#chars-68-76"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:45:43.982Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-1#chars-68-76"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-1#chars-68-76"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:45:43.982Z"
+    },
+    {
+      "id": "claim:9478dfc1ba6cb58f-1875d12351cef54e",
+      "statement": "无界算子不连续。",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-22"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:45:43.982Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-22"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-22"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:45:43.982Z"
+    },
+    {
+      "id": "claim:9478dfc1ba6cb58f-195c7bd44997fe70",
+      "statement": "这些失效创造了丰富性。",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-48#chars-4755-4771"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:45:43.982Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-48#chars-4755-4771"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-48#chars-4755-4771"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:45:43.982Z"
+    },
+    {
+      "id": "claim:9478dfc1ba6cb58f-206c18fcb49f54d4",
+      "statement": "λI-T不可逆当且仅当λ∈σ(T)。",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-32#chars-2333-2385"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:45:43.982Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-32#chars-2333-2385"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-32#chars-2333-2385"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:45:43.982Z"
+    },
+    {
+      "id": "claim:9478dfc1ba6cb58f-21c2b036913545cb",
+      "statement": "无界算子需要验证闭性。",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-22"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:45:43.982Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-22"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-22"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:45:43.982Z"
+    },
+    {
+      "id": "claim:9478dfc1ba6cb58f-226dbcc62df2c418",
+      "statement": "四大定理涉及完备性带来的免费午餐。",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-47"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:45:43.982Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-47"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-47"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:45:43.982Z"
+    },
+    {
+      "id": "claim:9478dfc1ba6cb58f-23e316c39e6b89e0",
+      "statement": "Hilbert空间中的作用在向量上的泛函本质上就是与某个固定向量做内积。",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-27#chars-2162-2208"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:45:43.982Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-27#chars-2162-2208"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-27#chars-2162-2208"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:45:43.982Z"
+    },
+    {
+      "id": "claim:9478dfc1ba6cb58f-2c7ee7cdf00d693a",
+      "statement": "定积分泛函 J[f] = ∫_a^b f(x)dx 用于计算面积。",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-6"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:45:43.982Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-6"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-6"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:45:43.982Z"
+    },
+    {
+      "id": "claim:9478dfc1ba6cb58f-2cf6d15a2dc76a25",
+      "statement": "在完备空间中，逐点的性质往往能推出全局的性质。",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-18#chars-1753-1780"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:45:43.982Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-18#chars-1753-1780"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-18#chars-1753-1780"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:45:43.982Z"
+    },
+    {
+      "id": "claim:9478dfc1ba6cb58f-2ffda8eeccee6117",
+      "statement": "σ(K)∖{0}=有限重特征值。",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-42#chars-3334-3375"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:45:43.982Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-42#chars-3334-3375"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-42#chars-3334-3375"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:45:43.982Z"
+    },
+    {
+      "id": "claim:9478dfc1ba6cb58f-32a7f03237f4a00e",
+      "statement": "能量泛函 J[f] = ∫ ‖∇f‖² dx 是 Dirichlet 能量。",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-6"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:45:43.982Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-6"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-6"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:45:43.982Z"
+    },
+    {
+      "id": "claim:9478dfc1ba6cb58f-37f3aa0fcaa68536",
+      "statement": "有界算子必然连续。",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-22"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:45:43.982Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-22"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-22"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:45:43.982Z"
+    },
+    {
+      "id": "claim:9478dfc1ba6cb58f-381461387bb1bebc",
+      "statement": "紧算子将有界集的像映为相对紧集。",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-15"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:45:43.982Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-15"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-15"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:45:43.982Z"
+    },
+    {
+      "id": "claim:9478dfc1ba6cb58f-3e5745a740426163",
+      "statement": "无界算子的定义域只能是稠密子空间。",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-22"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:45:43.982Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-22"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-22"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:45:43.982Z"
+    },
+    {
+      "id": "claim:9478dfc1ba6cb58f-430aac8fcebaaaf0",
+      "statement": "Euler-Lagrange 方程是变分法的核心结果。",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-8#chars-489-520"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:45:43.982Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-8#chars-489-520"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-8#chars-489-520"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:45:43.982Z"
+    },
+    {
+      "id": "claim:9478dfc1ba6cb58f-46c027a433327781",
+      "statement": "剩余谱的含义是单射但值域不稠密，例子是unilateral shift。",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-34"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:45:43.982Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-34"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-34"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:45:43.982Z"
+    },
+    {
+      "id": "claim:9478dfc1ba6cb58f-487cf42e24ef8175",
+      "statement": "线性算子是微分、积分、乘法算子。",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-15"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:45:43.982Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-15"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-15"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:45:43.982Z"
+    },
+    {
+      "id": "claim:9478dfc1ba6cb58f-4d5f5b6d9d6d604a",
+      "statement": "谱的三种类型、有界与无界算子的鸿沟、紧性与非紧性的分野构成了现代分析的深层景观。",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-48#chars-4773-4813"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:45:43.982Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-48#chars-4773-4813"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-48#chars-4773-4813"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:45:43.982Z"
+    },
+    {
+      "id": "claim:9478dfc1ba6cb58f-4f5a3031f0f4f1ea",
+      "statement": "将 L 设为 Lagrangian = 动能 - 势能，Euler-Lagrange 方程就给出了系统的运动方程。",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-10#chars-682-741"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:45:43.982Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-10#chars-682-741"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-10#chars-682-741"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:45:43.982Z"
+    },
+    {
+      "id": "claim:9478dfc1ba6cb58f-51d7c78f3f30d9ff",
+      "statement": "连续谱的含义是单射但值域稠密（却非满射），例子是乘法算子(Tf)(x)=xf(x)。",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-34"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:45:43.982Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-34"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-34"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:45:43.982Z"
+    },
+    {
+      "id": "claim:9478dfc1ba6cb58f-52d09edd0e4333b8",
+      "statement": "在无限维中，不可逆的原因有三个层次。",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-33#chars-2409-2427"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:45:43.982Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-33#chars-2409-2427"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-33#chars-2409-2427"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:45:43.982Z"
+    },
+    {
+      "id": "claim:9478dfc1ba6cb58f-53217463fc578441",
+      "statement": "若T=T*，则存在谱分解：T=∫_{σ(T)} λ dE(λ)。",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-37#chars-2707-2765"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:45:43.982Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-37#chars-2707-2765"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-37#chars-2707-2765"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:45:43.982Z"
+    },
+    {
+      "id": "claim:9478dfc1ba6cb58f-55310ac2f6440319",
+      "statement": "泛函分析是线性代数在无限维空间的自然推广。",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-1#chars-30-51"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:45:43.982Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-1#chars-30-51"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-1#chars-30-51"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:45:43.982Z"
+    },
+    {
+      "id": "claim:9478dfc1ba6cb58f-5612070baa6619f2",
+      "statement": "X上的所有连续线性泛函构成对偶空间X*。",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-24#chars-2004-2035"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:45:43.982Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-24#chars-2004-2035"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-24#chars-2004-2035"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:45:43.982Z"
+    },
+    {
+      "id": "claim:9478dfc1ba6cb58f-573788127e6fe60f",
+      "statement": "H≅H*。",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-27#chars-2208-2222"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:45:43.982Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-27#chars-2208-2222"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-27#chars-2208-2222"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:45:43.982Z"
+    },
+    {
+      "id": "claim:9478dfc1ba6cb58f-5bbd5f16a556247b",
+      "statement": "在有限维中，不可逆等于有特征值。",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-33#chars-2390-2409"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:45:43.982Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-33#chars-2390-2409"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-33#chars-2390-2409"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:45:43.982Z"
+    },
+    {
+      "id": "claim:9478dfc1ba6cb58f-5f635e434ce1469b",
+      "statement": "Riesz 表示定理表明 H 同构于 H^*，泛函等于内积。",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-47"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:45:43.982Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-47"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-47"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:45:43.982Z"
+    },
+    {
+      "id": "claim:9478dfc1ba6cb58f-62ee7fefe71f511c",
+      "statement": "Fredholm二择一是线性代数中det A≠0或ker A≠{0}的无限维版本。",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-43#chars-3470-3524"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:45:43.982Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-43#chars-3470-3524"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-43#chars-3470-3524"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:45:43.982Z"
+    },
+    {
+      "id": "claim:9478dfc1ba6cb58f-6c699525c4d20ecf",
+      "statement": "存在紧性与非紧性的分野。",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-48#chars-4791-4800"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:45:43.982Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-48#chars-4791-4800"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-48#chars-4791-4800"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:45:43.982Z"
+    },
+    {
+      "id": "claim:9478dfc1ba6cb58f-6f3f23d80a2dee54",
+      "statement": "在无限维中，有限维中很多理所当然的性质全部失效。",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-48#chars-4714-4754"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:45:43.982Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-48#chars-4714-4754"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-48#chars-4714-4754"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:45:43.982Z"
+    },
+    {
+      "id": "claim:9478dfc1ba6cb58f-71a56b4ac7ad880b",
+      "statement": "一致有界定理（Banach-Steinhaus）：逐点有界 ⇒ 一致有界。",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-17"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:45:43.982Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-17"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-17"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:45:43.982Z"
+    },
+    {
+      "id": "claim:9478dfc1ba6cb58f-76dcd6455364b377",
+      "statement": "谱分解是Fourier变换的终极推广——任何自伴算子都可以对角化为乘法算子。",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-38#chars-2769-2811"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:45:43.982Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-38#chars-2769-2811"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-38#chars-2769-2811"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:45:43.982Z"
+    },
+    {
+      "id": "claim:9478dfc1ba6cb58f-77cce3f44cbc3156",
+      "statement": "无界算子的谱可为整个 ℂ。",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-22"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:45:43.982Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-22"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-22"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:45:43.982Z"
+    },
+    {
+      "id": "claim:9478dfc1ba6cb58f-7a4e125b173a6c30",
+      "statement": "Dirac δ 泛函 J[f] = f(0) 用于在0处采样。",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-6"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:45:43.982Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-6"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-6"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:45:43.982Z"
+    },
+    {
+      "id": "claim:9478dfc1ba6cb58f-80c4dcb460b32155",
+      "statement": "有界算子的谱是有界集。",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-22"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:45:43.982Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-22"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-22"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:45:43.982Z"
+    },
+    {
+      "id": "claim:9478dfc1ba6cb58f-80e567f66f11acc3",
+      "statement": "谱有三种类型。",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-48#chars-4773-4779"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:45:43.982Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-48#chars-4773-4779"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-48#chars-4773-4779"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:45:43.982Z"
+    },
+    {
+      "id": "claim:9478dfc1ba6cb58f-82844cc604351bda",
+      "statement": "点谱的含义是λI-T非单射，例子是真正的特征值。",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-34"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:45:43.982Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-34"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-34"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:45:43.982Z"
+    },
+    {
+      "id": "claim:9478dfc1ba6cb58f-84815c445d9df358",
+      "statement": "f(x)=⟨x,y⟩对某唯一的y∈H。",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-26#chars-2100-2155"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:45:43.982Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-26#chars-2100-2155"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-26#chars-2100-2155"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:45:43.982Z"
+    },
+    {
+      "id": "claim:9478dfc1ba6cb58f-8dc4b64fb454fab6",
+      "statement": "存在有界与无界算子的鸿沟。",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-48#chars-4780-4790"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:45:43.982Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-48#chars-4780-4790"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-48#chars-4780-4790"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:45:43.982Z"
+    },
+    {
+      "id": "claim:9478dfc1ba6cb58f-8e2b19dabba3cd6a",
+      "statement": "有界算子的定义域是全空间。",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-22"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:45:43.982Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-22"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-22"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:45:43.982Z"
+    },
+    {
+      "id": "claim:9478dfc1ba6cb58f-9123adaeca78c358",
+      "statement": "σ_ess(K)={0}。",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-42#chars-3296-3326"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:45:43.982Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-42#chars-3296-3326"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-42#chars-3296-3326"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:45:43.982Z"
+    },
+    {
+      "id": "claim:9478dfc1ba6cb58f-914a9068359d6d35",
+      "statement": "若 T = T^*，则 T 是自伴算子或 Hermitian 算子。",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-36#chars-2624-2653"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:45:43.982Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-36#chars-2624-2653"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-36#chars-2624-2653"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:45:43.982Z"
+    },
+    {
+      "id": "claim:9478dfc1ba6cb58f-97113e6ef725088e",
+      "statement": "泛函分析把算子视作矩阵。",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-1#chars-60-67"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:45:43.982Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-1#chars-60-67"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-1#chars-60-67"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:45:43.982Z"
+    },
+    {
+      "id": "claim:9478dfc1ba6cb58f-9970b8b9ed15793f",
+      "statement": "Hilbert 空间是完备内积空间。",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-15"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:45:43.982Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-15"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-15"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:45:43.982Z"
+    },
+    {
+      "id": "claim:9478dfc1ba6cb58f-a003c3da791c3533",
+      "statement": "最大范数泛函 J[f] = sup_x ‖f(x)‖ 用于最坏情况。",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-6"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:45:43.982Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-6"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-6"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:45:43.982Z"
+    },
+    {
+      "id": "claim:9478dfc1ba6cb58f-a2245bb4222acf0e",
+      "statement": "量子力学、信号处理、偏微分方程的理论基础全部建立在泛函分析之上。",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-1#chars-77-106"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:45:43.982Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-1#chars-77-106"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-1#chars-77-106"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:45:43.982Z"
+    },
+    {
+      "id": "claim:9478dfc1ba6cb58f-a8dab44108d9e818",
+      "statement": "若T=T*（自伴/Hermitian），则σ(T)⊆ℝ。",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-37#chars-2655-2690"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:45:43.982Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-37#chars-2655-2690"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-37#chars-2655-2690"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:45:43.982Z"
+    },
+    {
+      "id": "claim:9478dfc1ba6cb58f-ae617d00969df366",
+      "statement": "有界算子自动闭。",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-22"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:45:43.982Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-22"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-22"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:45:43.982Z"
+    },
+    {
+      "id": "claim:9478dfc1ba6cb58f-b112d7ffc3e4f340",
+      "statement": "紧算子是无限维中最像矩阵的算子。",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-47"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:45:43.982Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-47"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-47"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:45:43.982Z"
+    },
+    {
+      "id": "claim:9478dfc1ba6cb58f-bf39cdc59c43343a",
+      "statement": "谱分解是 Fourier 变换的终极推广。",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-47"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:45:43.982Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-47"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-47"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:45:43.982Z"
+    },
+    {
+      "id": "claim:9478dfc1ba6cb58f-c110ff80dd676cbb",
+      "statement": "Euler-Lagrange 方程是从最小作用量原理推导牛顿力学、电磁学、广义相对论的基础。",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-10#chars-741-773"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:45:43.982Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-10#chars-741-773"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-10#chars-741-773"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:45:43.982Z"
+    },
+    {
+      "id": "claim:9478dfc1ba6cb58f-c4b3dcb5ec314151",
+      "statement": "泛函分析把函数视作向量。",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-1#chars-51-59"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:45:43.982Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-1#chars-51-59"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-1#chars-51-59"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:45:43.982Z"
+    },
+    {
+      "id": "claim:9478dfc1ba6cb58f-c9090a5bd644569b",
+      "statement": "在无限维空间中，算子T的谱σ(T)推广了有限维中矩阵的特征值集合。",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-31#chars-2263-2317"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:45:43.982Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-31#chars-2263-2317"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-31#chars-2263-2317"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:45:43.982Z"
+    },
+    {
+      "id": "claim:9478dfc1ba6cb58f-cc40c1168307d58b",
+      "statement": "弧长泛函 J[f] = ∫_a^b √(1+f'(x)²)dx 用于最短路径。",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-6"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:45:43.982Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-6"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-6"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:45:43.982Z"
+    },
+    {
+      "id": "claim:9478dfc1ba6cb58f-cfc48ad935d73da8",
+      "statement": "若 J[y] = ∫_a^b L(x, y, y')dx 在 y(x) 处取极值，则满足 Euler-Lagrange 方程。",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-8#chars-520-570"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:45:43.982Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-8#chars-520-570"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-8#chars-520-570"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:45:43.982Z"
+    },
+    {
+      "id": "claim:9478dfc1ba6cb58f-d1e15aadb197c142",
+      "statement": "Hahn-Banach 定理：子空间上的线性泛函可延拓到全空间。",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-17"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:45:43.982Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-17"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-17"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:45:43.982Z"
+    },
+    {
+      "id": "claim:9478dfc1ba6cb58f-d258ac6b3076f7aa",
+      "statement": "泛函分析的核心哲学是无限维线性代数与拓扑完备性的结合。",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-48#chars-4691-4713"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:45:43.982Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-48#chars-4691-4713"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-48#chars-4691-4713"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:45:43.982Z"
+    },
+    {
+      "id": "claim:9478dfc1ba6cb58f-d70c3a736faab20f",
+      "statement": "有界算子满足 ‖T‖ = sup_{‖x‖=1} ‖Tx‖ < ∞。",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-15"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:45:43.982Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-15"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-15"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:45:43.982Z"
+    },
+    {
+      "id": "claim:9478dfc1ba6cb58f-e1d2ac16226c4ed0",
+      "statement": "Fredholm二择一：(I-K)x=y要么对任意y有唯一解，要么齐次方程(I-K)x=0有非零解。",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-43#chars-3382-3470"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:45:43.982Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-43#chars-3382-3470"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-43#chars-3382-3470"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:45:43.982Z"
+    },
+    {
+      "id": "claim:9478dfc1ba6cb58f-e26e321d2f547741",
+      "statement": "若T=T*，则不同特征值的特征向量正交。",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-37#chars-2691-2706"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:45:43.982Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-37#chars-2691-2706"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-37#chars-2691-2706"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:45:43.982Z"
+    },
+    {
+      "id": "claim:9478dfc1ba6cb58f-e6c98f9a8e327777",
+      "statement": "谱比特征值更广，涉及不可逆性的三层结构。",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-47"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:45:43.982Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-47"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-47"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:45:43.982Z"
+    },
+    {
+      "id": "claim:9478dfc1ba6cb58f-e8081e85ada20a22",
+      "statement": "紧算子的谱除了可能的0之外，完全由特征值构成。",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-41#chars-3248-3291"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:45:43.982Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-41#chars-3248-3291"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-41#chars-3248-3291"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:45:43.982Z"
+    },
+    {
+      "id": "claim:9478dfc1ba6cb58f-e90313bb0b7da2c5",
+      "statement": "闭图像定理：若算子的图像是闭集，则算子连续。",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-17"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:45:43.982Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-17"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-17"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:45:43.982Z"
+    },
+    {
+      "id": "claim:9478dfc1ba6cb58f-ebe2d3dd016a802f",
+      "statement": "Euler-Lagrange 方程是泛函极值的必要条件。",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-47"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:45:43.982Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-47"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-47"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:45:43.982Z"
+    },
+    {
+      "id": "claim:9478dfc1ba6cb58f-ef5f374785bd2634",
+      "statement": "开映射定理：Banach 空间之间的连续线性满射把开集映到开集。",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-17"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:45:43.982Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-17"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-17"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:45:43.982Z"
+    },
+    {
+      "id": "claim:9478dfc1ba6cb58f-f2bd55a46f0c6f24",
+      "statement": "泛函 J: V → ℝ（或 ℂ）的输入是函数，输出是数。",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-5#chars-140-197"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:45:43.982Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-5#chars-140-197"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:09-functional-analysis-9478dfc1ba6cb58f-5#chars-140-197"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-24T02:45:43.982Z"
+    }
+  ],
+  "concepts": [
+    {
+      "id": "concept:0505313a6f44d0f3",
+      "name": "特征值",
+      "aliases": [
+        "特征值"
+      ],
+      "boundary": "使得Tf=λf的λ",
+      "domain": "线性代数"
+    },
+    {
+      "id": "concept:09a7a65086af7059",
+      "name": "最大范数泛函",
+      "aliases": [
+        "最大范数泛函"
+      ],
+      "boundary": "J[f]=sup‖f(x)‖",
+      "domain": "泛函分析"
+    },
+    {
+      "id": "concept:0b4d6b82b1816a7c",
+      "name": "Hahn-Banach定理",
+      "aliases": [
+        "Hahn-Banach 定理"
+      ],
+      "boundary": "子空间上泛函可延拓到全空间",
+      "domain": "泛函分析"
+    },
+    {
+      "id": "concept:0eadfd1a5d6da0af",
+      "name": "有界算子",
+      "aliases": [
+        "有界算子"
+      ],
+      "boundary": "满足‖T‖<∞的线性算子",
+      "domain": "泛函分析"
+    },
+    {
+      "id": "concept:17046d97aa1eba86",
+      "name": "Dirichlet能量",
+      "aliases": [
+        "Dirichlet 能量"
+      ],
+      "boundary": "∫‖∇f‖²dx",
+      "domain": "数学物理"
+    },
+    {
+      "id": "concept:1721d3beb2c1ec4a",
+      "name": "Riesz表示定理",
+      "aliases": [
+        "Riesz 表示定理",
+        "Riesz表示定理"
+      ],
+      "boundary": "Hilbert空间上连续线性泛函可表示为内积",
+      "domain": "泛函分析"
+    },
+    {
+      "id": "concept:173ef0b37fd9929d",
+      "name": "特征向量",
+      "aliases": [
+        "特征向量"
+      ],
+      "boundary": "满足Tf=λf的非零向量",
+      "domain": "线性代数"
+    },
+    {
+      "id": "concept:20225dddb73ca898",
+      "name": "剩余谱",
+      "aliases": [
+        "剩余谱"
+      ],
+      "boundary": "单射但值域不稠密的λ集合",
+      "domain": "泛函分析"
+    },
+    {
+      "id": "concept:2202a2213684c5e7",
+      "name": "信号处理",
+      "aliases": [
+        "信号处理"
+      ],
+      "boundary": "处理信号的技术",
+      "domain": "工程"
+    },
+    {
+      "id": "concept:2226f858d6fb3451",
+      "name": "弧长泛函",
+      "aliases": [
+        "弧长泛函"
+      ],
+      "boundary": "J[f]=∫√(1+f'²)dx",
+      "domain": "变分法"
+    },
+    {
+      "id": "concept:248829cda84615e4",
+      "name": "四大定理",
+      "aliases": [
+        "四大定理"
+      ],
+      "boundary": "泛函分析中四个基本定理",
+      "domain": "泛函分析"
+    },
+    {
+      "id": "concept:2d71f6cade747836",
+      "name": "积分算子",
+      "aliases": [
+        "积分算子"
+      ],
+      "boundary": "积分变换算子",
+      "domain": "泛函分析"
+    },
+    {
+      "id": "concept:2f6010578c0722b3",
+      "name": "偏微分方程",
+      "aliases": [
+        "偏微分方程"
+      ],
+      "boundary": "含偏导数的方程",
+      "domain": "数学"
+    },
+    {
+      "id": "concept:33a33396a17d4175-334e09d896072f92",
+      "name": "完备性",
+      "aliases": [
+        "完备",
+        "完备性"
+      ],
+      "boundary": "每个Cauchy列都收敛到空间内的点",
+      "domain": "泛函分析"
+    },
+    {
+      "id": "concept:33a33396a17d4175-5efb6ce48c550a27",
+      "name": "Banach空间",
+      "aliases": [
+        "Banach 空间",
+        "Banach空间",
+        "完备赋范空间"
+      ],
+      "boundary": "完备的赋范空间",
+      "domain": "泛函分析"
+    },
+    {
+      "id": "concept:35d9356b4b3e3cca",
+      "name": "泛函",
+      "aliases": [
+        "泛函"
+      ],
+      "boundary": "从函数空间到数域的映射",
+      "domain": "泛函分析"
+    },
+    {
+      "id": "concept:38b4716c49cbb763",
+      "name": "牛顿力学",
+      "aliases": [
+        "牛顿力学"
+      ],
+      "boundary": "经典力学",
+      "domain": "物理"
+    },
+    {
+      "id": "concept:3b728514f88a0a58",
+      "name": "最小作用量原理",
+      "aliases": [
+        "最小作用量原理"
+      ],
+      "boundary": "物理系统演化使作用量取极值",
+      "domain": "物理"
+    },
+    {
+      "id": "concept:41787cad4dc79f25",
+      "name": "一致有界定理",
+      "aliases": [
+        "Banach-Steinhaus",
+        "一致有界定理"
+      ],
+      "boundary": "逐点有界蕴含一致有界",
+      "domain": "泛函分析"
+    },
+    {
+      "id": "concept:425618143888da06",
+      "name": "unilateral shift",
+      "aliases": [
+        "unilateral shift"
+      ],
+      "boundary": "单侧移位算子",
+      "domain": "泛函分析"
+    },
+    {
+      "id": "concept:441eef179bfe64eb",
+      "name": "有限维",
+      "aliases": [
+        "有限维"
+      ],
+      "boundary": "向量空间具有有限基",
+      "domain": "线性代数"
+    },
+    {
+      "id": "concept:47c2ead95aab6af1",
+      "name": "连续谱",
+      "aliases": [
+        "连续谱"
+      ],
+      "boundary": "单射但值域稠密非满射的λ集合",
+      "domain": "泛函分析"
+    },
+    {
+      "id": "concept:49c998309cc73ecc",
+      "name": "Lagrangian",
+      "aliases": [
+        "Lagrangian"
+      ],
+      "boundary": "动能减势能",
+      "domain": "物理"
+    },
+    {
+      "id": "concept:4abcc8d7ae14d67b",
+      "name": "范数",
+      "aliases": [
+        "范数"
+      ],
+      "boundary": "向量长度的度量",
+      "domain": "泛函分析"
+    },
+    {
+      "id": "concept:4f5bf2444ef20ad8",
+      "name": "乘法算子",
+      "aliases": [
+        "乘法算子"
+      ],
+      "boundary": "形式为 (Tf)(x) = φ(x)f(x)",
+      "domain": "泛函分析"
+    },
+    {
+      "id": "concept:55319b746d751e6e",
+      "name": "无界算子",
+      "aliases": [
+        "无界算子"
+      ],
+      "boundary": "不连续的线性算子",
+      "domain": "泛函分析"
+    },
+    {
+      "id": "concept:5888dd50765a4880",
+      "name": "变分法",
+      "aliases": [
+        "变分法"
+      ],
+      "boundary": "研究泛函极值的数学分支",
+      "domain": "数学"
+    },
+    {
+      "id": "concept:62f8afb1ff727679",
+      "name": "定积分泛函",
+      "aliases": [
+        "定积分泛函"
+      ],
+      "boundary": "J[f]=∫f(x)dx",
+      "domain": "变分法"
+    },
+    {
+      "id": "concept:6ce28a26c5d36163",
+      "name": "闭图像定理",
+      "aliases": [
+        "闭图像定理"
+      ],
+      "boundary": "闭图像蕴含连续性",
+      "domain": "泛函分析"
+    },
+    {
+      "id": "concept:73cef5a249ab2815",
+      "name": "连续线性泛函",
+      "aliases": [
+        "连续线性泛函"
+      ],
+      "boundary": "有界线性泛函",
+      "domain": "泛函分析"
+    },
+    {
+      "id": "concept:8168daa5c02aa1a5",
+      "name": "广义相对论",
+      "aliases": [
+        "广义相对论"
+      ],
+      "boundary": "爱因斯坦的引力理论",
+      "domain": "物理"
+    },
+    {
+      "id": "concept:8a0cb433f4def201",
+      "name": "Fredholm二择一",
+      "aliases": [
+        "Fredholm二择一"
+      ],
+      "boundary": "紧扰动恒等算子的可解性二择一",
+      "domain": "泛函分析"
+    },
+    {
+      "id": "concept:8b59cb0811f8b4c4",
+      "name": "Hilbert空间",
+      "aliases": [
+        "Hilbert 空间",
+        "Hilbert空间"
+      ],
+      "boundary": "完备的内积空间，即每个Cauchy列收敛",
+      "domain": "泛函分析"
+    },
+    {
+      "id": "concept:8e2db094ea23c346",
+      "name": "紧性",
+      "aliases": [
+        "紧性"
+      ],
+      "boundary": "任意开覆盖有有限子覆盖",
+      "domain": "拓扑"
+    },
+    {
+      "id": "concept:8ecdaff5fdc247aa",
+      "name": "谱",
+      "aliases": [
+        "谱"
+      ],
+      "boundary": "算子不可逆的λ集合",
+      "domain": "泛函分析"
+    },
+    {
+      "id": "concept:8ed9bc461218aca1",
+      "name": "点谱",
+      "aliases": [
+        "点谱"
+      ],
+      "boundary": "λI-T非单射的λ集合",
+      "domain": "泛函分析"
+    },
+    {
+      "id": "concept:9b1817bdad2cdab8",
+      "name": "紧算子",
+      "aliases": [
+        "紧算子"
+      ],
+      "boundary": "将有界集映为相对紧集的算子",
+      "domain": "泛函分析"
+    },
+    {
+      "id": "concept:a0409d3f55fecb8a",
+      "name": "微分算子",
+      "aliases": [
+        "微分算子"
+      ],
+      "boundary": "求导算子",
+      "domain": "泛函分析"
+    },
+    {
+      "id": "concept:a6eac638d58d43f0",
+      "name": "稠密子空间",
+      "aliases": [
+        "稠密子空间"
+      ],
+      "boundary": "闭包为全空间的子空间",
+      "domain": "泛函分析"
+    },
+    {
+      "id": "concept:ab25f76e0838b3f4",
+      "name": "非紧性",
+      "aliases": [
+        "非紧性"
+      ],
+      "boundary": "不满足紧性",
+      "domain": "拓扑"
+    },
+    {
+      "id": "concept:b1c199d8ba847549",
+      "name": "谱分解",
+      "aliases": [
+        "谱分解"
+      ],
+      "boundary": "自伴算子对角化为乘法算子",
+      "domain": "泛函分析"
+    },
+    {
+      "id": "concept:b2e1289e99894b6b",
+      "name": "对偶空间",
+      "aliases": [
+        "对偶空间"
+      ],
+      "boundary": "所有连续线性泛函构成的空间",
+      "domain": "泛函分析"
+    },
+    {
+      "id": "concept:b7e3592bb2c363c4",
+      "name": "电磁学",
+      "aliases": [
+        "电磁学"
+      ],
+      "boundary": "研究电磁现象的学科",
+      "domain": "物理"
+    },
+    {
+      "id": "concept:b8b534bfafe4bcec",
+      "name": "Fourier变换",
+      "aliases": [
+        "Fourier 变换",
+        "Fourier变换"
+      ],
+      "boundary": "函数到频率域的变换",
+      "domain": "分析"
+    },
+    {
+      "id": "concept:b93f2708d974c562",
+      "name": "线性算子",
+      "aliases": [
+        "线性算子"
+      ],
+      "boundary": "保持线性运算的映射",
+      "domain": "泛函分析"
+    },
+    {
+      "id": "concept:c26757143f3952ae",
+      "name": "自伴算子",
+      "aliases": [
+        "Hermitian算子",
+        "自伴算子"
+      ],
+      "boundary": "满足T=T*的算子",
+      "domain": "泛函分析"
+    },
+    {
+      "id": "concept:c5c67696490529e8",
+      "name": "Euler-Lagrange方程",
+      "aliases": [
+        "Euler-Lagrange 方程"
+      ],
+      "boundary": "变分法中泛函极值的必要条件",
+      "domain": "变分法"
+    },
+    {
+      "id": "concept:c5f5ba5154075a3e",
+      "name": "Dirac δ泛函",
+      "aliases": [
+        "Dirac δ 泛函"
+      ],
+      "boundary": "J[f]=f(0)",
+      "domain": "泛函分析"
+    },
+    {
+      "id": "concept:c65b36f1ead997f7",
+      "name": "无限维",
+      "aliases": [
+        "无限维"
+      ],
+      "boundary": "向量空间不具有有限基",
+      "domain": "泛函分析"
+    },
+    {
+      "id": "concept:cfede0112c406b10",
+      "name": "能量泛函",
+      "aliases": [
+        "能量泛函"
+      ],
+      "boundary": "J[f]=∫‖∇f‖²dx",
+      "domain": "数学物理"
+    },
+    {
+      "id": "concept:d233897afc55b467",
+      "name": "闭性",
+      "aliases": [
+        "闭性"
+      ],
+      "boundary": "算子的图像是闭集",
+      "domain": "泛函分析"
+    },
+    {
+      "id": "concept:ee34c12a20f6f08b",
+      "name": "开映射定理",
+      "aliases": [
+        "开映射定理"
+      ],
+      "boundary": "连续线性满射将开集映为开集",
+      "domain": "泛函分析"
+    },
+    {
+      "id": "concept:f5bb4676d0984e21",
+      "name": "量子力学",
+      "aliases": [
+        "量子力学"
+      ],
+      "boundary": "描述微观世界的物理理论",
+      "domain": "物理"
+    },
+    {
+      "id": "concept:fca997999f3d773b",
+      "name": "内积",
+      "aliases": [
+        "内积"
+      ],
+      "boundary": "Hilbert空间中的内积",
+      "domain": "泛函分析"
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel:9478dfc1ba6cb58f-04089a9960946623",
+      "from": "claim:9478dfc1ba6cb58f-cfc48ad935d73da8",
+      "to": "claim:9478dfc1ba6cb58f-052f156df6dbd1c6",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-8#chars-520-570",
+        "span:09-functional-analysis-9478dfc1ba6cb58f-9#chars-572-669"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:46:22.955Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.9,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:9478dfc1ba6cb58f-041b8029f2d618ff",
+      "from": "claim:9478dfc1ba6cb58f-ae617d00969df366",
+      "to": "claim:9478dfc1ba6cb58f-37f3aa0fcaa68536",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-22"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:46:22.955Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.7,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:9478dfc1ba6cb58f-18e7f1de980d9511",
+      "from": "claim:9478dfc1ba6cb58f-1370547ce5666a0f",
+      "to": "claim:9478dfc1ba6cb58f-c9090a5bd644569b",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-1#chars-68-76",
+        "span:09-functional-analysis-9478dfc1ba6cb58f-31#chars-2263-2317"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:46:22.955Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.8,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:9478dfc1ba6cb58f-1fe0b643146b264a",
+      "from": "claim:9478dfc1ba6cb58f-4f5a3031f0f4f1ea",
+      "to": "claim:9478dfc1ba6cb58f-052f156df6dbd1c6",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-10#chars-682-741",
+        "span:09-functional-analysis-9478dfc1ba6cb58f-9#chars-572-669"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:46:22.955Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.8,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:9478dfc1ba6cb58f-56a38ca8e3263330",
+      "from": "claim:9478dfc1ba6cb58f-55310ac2f6440319",
+      "to": "claim:9478dfc1ba6cb58f-d258ac6b3076f7aa",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-1#chars-30-51",
+        "span:09-functional-analysis-9478dfc1ba6cb58f-48#chars-4691-4713"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:46:22.955Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.7,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:9478dfc1ba6cb58f-584f7f0b209a9907",
+      "from": "claim:9478dfc1ba6cb58f-914a9068359d6d35",
+      "to": "claim:9478dfc1ba6cb58f-a8dab44108d9e818",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-36#chars-2624-2653",
+        "span:09-functional-analysis-9478dfc1ba6cb58f-37#chars-2655-2690"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:46:22.955Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.8,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:9478dfc1ba6cb58f-820a4e18f5538b19",
+      "from": "claim:9478dfc1ba6cb58f-052f156df6dbd1c6",
+      "to": "claim:9478dfc1ba6cb58f-cfc48ad935d73da8",
+      "type": "DERIVED_FROM",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-8#chars-520-570",
+        "span:09-functional-analysis-9478dfc1ba6cb58f-9#chars-572-669"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:46:22.955Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.9,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:9478dfc1ba6cb58f-924fcd32b993dc08",
+      "from": "claim:9478dfc1ba6cb58f-06a3aa261a1d8ba2",
+      "to": "claim:9478dfc1ba6cb58f-a8dab44108d9e818",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-37#chars-2655-2690",
+        "span:09-functional-analysis-9478dfc1ba6cb58f-38#chars-2811-2851"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:46:22.955Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.8,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:9478dfc1ba6cb58f-9bd493b159dd0172",
+      "from": "claim:9478dfc1ba6cb58f-052f156df6dbd1c6",
+      "to": "claim:9478dfc1ba6cb58f-430aac8fcebaaaf0",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-8#chars-489-520",
+        "span:09-functional-analysis-9478dfc1ba6cb58f-9#chars-572-669"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:46:22.955Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.9,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:9478dfc1ba6cb58f-ace479eefa62b29a",
+      "from": "claim:9478dfc1ba6cb58f-c110ff80dd676cbb",
+      "to": "claim:9478dfc1ba6cb58f-430aac8fcebaaaf0",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-10#chars-741-773",
+        "span:09-functional-analysis-9478dfc1ba6cb58f-8#chars-489-520"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:46:22.955Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.8,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:9478dfc1ba6cb58f-b1d7e0259d6d1b67",
+      "from": "claim:9478dfc1ba6cb58f-6c699525c4d20ecf",
+      "to": "claim:9478dfc1ba6cb58f-4d5f5b6d9d6d604a",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-48#chars-4773-4813",
+        "span:09-functional-analysis-9478dfc1ba6cb58f-48#chars-4791-4800"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:46:22.955Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.7,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:9478dfc1ba6cb58f-cb7ab9f73bf45d60",
+      "from": "claim:9478dfc1ba6cb58f-c9090a5bd644569b",
+      "to": "claim:9478dfc1ba6cb58f-1370547ce5666a0f",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-1#chars-68-76",
+        "span:09-functional-analysis-9478dfc1ba6cb58f-31#chars-2263-2317"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:46:22.955Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.8,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:9478dfc1ba6cb58f-d7fc084de83a541c",
+      "from": "claim:9478dfc1ba6cb58f-0e7148fb74211eee",
+      "to": "claim:9478dfc1ba6cb58f-84815c445d9df358",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-25#chars-2037-2095",
+        "span:09-functional-analysis-9478dfc1ba6cb58f-26#chars-2100-2155"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:46:22.955Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.9,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:9478dfc1ba6cb58f-dc8f8a89d9fca319",
+      "from": "claim:9478dfc1ba6cb58f-d258ac6b3076f7aa",
+      "to": "claim:9478dfc1ba6cb58f-55310ac2f6440319",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-1#chars-30-51",
+        "span:09-functional-analysis-9478dfc1ba6cb58f-48#chars-4691-4713"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:46:22.955Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.7,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:9478dfc1ba6cb58f-f0e9d1500eaea1ba",
+      "from": "claim:9478dfc1ba6cb58f-1875d12351cef54e",
+      "to": "claim:9478dfc1ba6cb58f-37f3aa0fcaa68536",
+      "type": "CONTRADICTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-22"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:46:22.955Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.9,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:9478dfc1ba6cb58f-ff42f68329c3e618",
+      "from": "claim:9478dfc1ba6cb58f-6f3f23d80a2dee54",
+      "to": "claim:9478dfc1ba6cb58f-195c7bd44997fe70",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:09-functional-analysis-9478dfc1ba6cb58f-48#chars-4714-4754",
+        "span:09-functional-analysis-9478dfc1ba6cb58f-48#chars-4755-4771"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-24T02:46:22.955Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.6,
+      "consumedBy": []
+    }
+  ]
+}

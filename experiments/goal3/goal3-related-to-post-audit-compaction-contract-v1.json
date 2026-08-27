@@ -1,0 +1,77 @@
+{
+	"schemaVersion": "wge-goal3-related-to-post-audit-compaction-contract/v1",
+	"status": "FROZEN_BEFORE_IMPLEMENTATION",
+	"createdAt": "2026-08-11T00:00:00+08:00",
+	"stageBRead": false,
+	"frozenInputs": {
+		"controlledReplayReport": "experiments/goal3/related-to-batch-runs/v9-batch-utility-controlled-v2/report.json",
+		"controlledReplayReportSha256": "3c12a216638b4835a77ba9f9e087a3e94372f423980369f453feb55756b07e91",
+		"relationDecisions": "experiments/goal3/related-to-batch-runs/v9-batch-utility-controlled-v2/relation-decisions.jsonl",
+		"relationDecisionsSha256": "c65e97882606f55daa0ab5128cc5e443308c215cc0fe257d02ede8a1dfd29d59",
+		"manualReview": "experiments/goal3/related-to-batch-runs/v9-batch-utility-controlled-v2/review.json",
+		"manualReviewSha256": "0662db3acb2acd672dff1e503ce563c775cd3645cdeeb6b6e6c602ea6363e23d",
+		"auditedRelatedToPassCount": 17
+	},
+	"decision": {
+		"accepted": "BATCHED_UTILITY_AUDIT_TRANSPORT",
+		"rejected": "DIRECT_PUBLICATION_OF_EVERY_INDIVIDUALLY_USEFUL_RELATED_TO_EDGE",
+		"requiredStage": "POST_AUDIT_SET_COMPACTION"
+	},
+	"productionPolicy": {
+		"eligibleTypes": ["RELATED_TO"],
+		"strongRelationTypesBypass": [
+			"SUPERSEDES",
+			"CONTRADICTS",
+			"REQUIRES",
+			"DERIVED_FROM",
+			"EQUIVALENT_UNDER",
+			"SUPPORTS"
+		],
+		"sourcePublicationBudget": 16,
+		"maximumRelatedToPerNewSourceEndpoint": 8,
+		"groupingKey": "new Source Claim endpoint",
+		"rankingInputsAllowed": [
+			"audited Relation confidence",
+			"endpoint statements",
+			"lexical marginal novelty",
+			"stable Relation ID tie-break"
+		],
+		"rankingInputsForbidden": [
+			"benchmark labels",
+			"question IDs",
+			"answer scores",
+			"manual keep/drop labels",
+			"domain-specific keywords"
+		],
+		"deferredState": "DEFERRED_BY_GRAPH_DIVERSITY",
+		"deferredPublicationState": "CANDIDATE",
+		"deferredIsQuarantine": false,
+		"consumerExposure": 0,
+		"ledger": "append-only post-audit lifecycle events"
+	},
+	"accountingInvariants": [
+		"selectedForAudit = quarantinedAfterAudit + auditedPassed",
+		"auditedPassed = canonicalPublished + deferredByGraphDiversity",
+		"deferredByGraphDiversity is neither canonical nor quarantine",
+		"all published strong relations bypass RELATED_TO compaction"
+	],
+	"frozenReplayAcceptance": {
+		"inputAuditedRelatedTo": 17,
+		"expectedCanonicalRelatedTo": 8,
+		"expectedDeferredByGraphDiversity": 9,
+		"expectedConsumerExposureForDeferred": 0,
+		"minimumUtilityAuditTokenReductionRetained": 0.2,
+		"manualReviewSelectedSet": {
+			"harmfulOrUnfaithfulEdges": 0,
+			"requiresSetLevelFacetDiversity": true,
+			"doesNotRequireExactHistoricalRelationIdRecall": true
+		},
+		"allCanonicalEndpointsAndEvidenceResolvable": true,
+		"noCanonicalPublicationWritesDuringReplay": true
+	},
+	"knownOutOfScope": [
+		"Inverse duplicate canonical RELATED_TO edges are a separate graph normalization defect and remain a tracked gap.",
+		"This contract does not treat model audit verdicts as human gold labels.",
+		"This contract does not prove graph answer utility; it controls graph size and cost before later answer-level evaluation."
+	]
+}

@@ -1,0 +1,62 @@
+[
+  {
+    "sampleId": "sample-8c161724-f2a8-45ea-b4a9-6e7249be0688",
+    "questionId": "B-C-HEALTH-002",
+    "answer": "{\n  \"answer\": \"在特定室内场所，如拥挤且通风不良的空间中，与感染者长时间共处时，短距离气溶胶传播不能被排除。\",\n  \"citations\": [\"../../../workbuddy-batch-b/generated/compilation-corpus/health-biology/health-who-july-2020-002.md:1-6\"],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}"
+  },
+  {
+    "sampleId": "sample-9f6cae3d-aaa0-499f-a251-07903536ef00",
+    "questionId": "B-C-HEALTH-002",
+    "answer": "{\n  \"answer\": \"在特定室内场所，如拥挤且通风不良的空间，与感染者长时间接触的条件下，短距离气溶胶传播不能被排除。\",\n  \"citations\": [\n    \"span:health-who-july-2020-002-a1c7e701eebb9dc1-2#chars-413-615\",\n    \"span:health-who-july-2020-002-a1c7e701eebb9dc1-2#chars-447-594\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}"
+  },
+  {
+    "sampleId": "sample-6f50913a-de94-4402-860a-930ece41f7db",
+    "questionId": "B-E-HEALTH-005",
+    "answer": "{\n  \"answer\": \"2020年3月29日，WHO发布科学简报，未明确承认空气传播。2020年7月9日，WHO更新简报，指出在特定室内拥挤、通风不良且长时间接触的情况下，不能排除短距离气溶胶传播。2020年10月20日，WHO承认气溶胶可传播病毒，但仅限于特定环境。此后至2021年，WHO逐步调整建议，称气溶胶可携带病毒超过1米并在空气中停留。\",\n  \"citations\": [\n    \"SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/health-biology/health-nature-airborne-2022-003.md:1-6\",\n    \"SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/health-biology/health-who-july-2020-002.md:1-6\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": [\n    \"2020年3月29日简报的具体内容未在上下文中详细说明\",\n    \"2020年7月9日更新是否首次提及气溶胶传播不确定\"\n  ]\n}"
+  },
+  {
+    "sampleId": "sample-632a2c58-2650-405b-b6d9-62ed677eb5ea",
+    "questionId": "B-E-HEALTH-005",
+    "answer": "{\n  \"answer\": \"根据检索上下文，从2020年3月到2020年7月期间，没有关于空气传播适用范围变化的可证实信息。唯一相关的时间点是2020年10月20日，世界卫生组织（WHO）才承认气溶胶可以传播病毒，但这超出了问题指定的时间范围。\",\n  \"citations\": [\n    \"claim:14069d5a982d18de-30df60c9afb3e05b\",\n    \"evidence:health-nature-airborne-2022-003-14069d5a982d18de-2#chars-213-334\"\n  ],\n  \"insufficient\": true,\n  \"uncertainties\": [\n    \"检索上下文未提供2020年3月至7月期间空气传播适用范围变化的任何信息。\"\n  ]\n}"
+  },
+  {
+    "sampleId": "sample-436a264e-0455-47f9-8198-1fd002e8e084",
+    "questionId": "B-C-HIST-003",
+    "answer": "{\n  \"answer\": \"使用归档 vesuvius 仓库时必须保留的状态条件包括：仓库已被所有者于 2024 年 11 月 21 日归档，现在是只读的；该库处于测试阶段，界面可能会发生变化；数据在后台流式传输，仅提供请求的区域。\",\n  \"citations\": [\n    \"claim:5505a1ba1fcb1b68-a2289f49fcb0ff64\",\n    \"claim:5505a1ba1fcb1b68-d303dae0fc053d75\",\n    \"claim:5505a1ba1fcb1b68-9acfc0780eb2b345\",\n    \"claim:5505a1ba1fcb1b68-92eeebabc9812a65\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}"
+  },
+  {
+    "sampleId": "sample-e40dfda4-f998-4a74-8b40-2b847e7b4e55",
+    "questionId": "B-C-HIST-003",
+    "answer": "{\n  \"answer\": \"归档 vesuvius 仓库是只读的，必须使用新的维护仓库 https://github.com/ScrollPrize/villa/tree/main/vesuvius。\",\n  \"citations\": [\n    \"SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/history-humanities/history-vesuvius-github-2024-002.md:1-12\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}"
+  },
+  {
+    "sampleId": "sample-fc831411-08f6-4f7d-b94c-b32fd9b14dc9",
+    "questionId": "B-X-HIST-006",
+    "answer": "{\n  \"answer\": \"根据提供的上下文，仅有一条关于GitHub库维护地址的Claim和一条原文证据，没有涉及论文、GitHub库和Nature报道分别能回答哪一层问题的信息。上下文不足，无法回答。\",\n  \"citations\": [\"claim:5505a1ba1fcb1b68-825b50a16ede0106\", \"span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-2#chars-135-235\"],\n  \"insufficient\": true,\n  \"uncertainties\": [\"未提供论文、GitHub库和Nature报道分别能回答哪一层问题的相关信息\"]\n}"
+  },
+  {
+    "sampleId": "sample-0d030f89-0689-4458-9c4f-04fe0d14fa91",
+    "questionId": "B-X-HIST-006",
+    "answer": "{\n  \"answer\": \"论文、GitHub 库和 Nature 报道分别能回答不同层级的问题：论文通常回答研究的方法、结果和结论等核心科学问题；GitHub 库（如 ScrollPrize/vesuvius）主要回答代码实现、数据访问和工具使用等操作性问题；Nature 报道则回答研究背景、意义和公众关注点等宏观问题。\",\n  \"citations\": [\"SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/history-humanities/history-vesuvius-github-2024-002.md:1-12\"],\n  \"insufficient\": false,\n  \"uncertainties\": [\"具体问题层级划分可能因论文、库和报道内容而异，需结合具体实例判断。\"]\n}"
+  },
+  {
+    "sampleId": "sample-00801da4-ca94-4d9b-8d19-00dcae3df077",
+    "questionId": "B-C-DESIGN-002",
+    "answer": "{\n  \"answer\": \"在采用 WCAG 2.2 后，如果政策要求符合 WCAG 2.0 或 2.1，则可能仍需测试和报告 4.1.1。\",\n  \"citations\": [\"SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-wcag22-2023-002.md:1-16\"],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}"
+  },
+  {
+    "sampleId": "sample-e4ad7104-7f23-423f-9c37-b380d78457bf",
+    "questionId": "B-C-DESIGN-002",
+    "answer": "{\n  \"answer\": \"当政策要求符合 WCAG 2.0 或 2.1 时，采用 WCAG 2.2 后仍可能需要继续测试和报告 4.1.1。\",\n  \"citations\": [\n    \"claim:1da3417e06ff5435-e9295b4993a17258\",\n    \"claim:1da3417e06ff5435-50f420b0776ab205\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}"
+  },
+  {
+    "sampleId": "sample-90a53ca4-3b0a-4f2c-89a3-fe11fc638106",
+    "questionId": "B-X-DESIGN-005",
+    "answer": "{\n  \"answer\": \"Issue #2705 与最终 WCAG 2.2 对 Dragging Movements 的关系是：Issue #2705 中提出的成功标准 2.5.7 Dragging Movements (Level AA) 被最终 WCAG 2.2 采纳，成为新增的 9 个成功标准之一。该标准要求所有通过拖拽操作实现的功能都可以通过单指针不拖拽的方式完成，除非拖拽是必要的或功能由用户代理决定且作者未修改。\",\n  \"citations\": [\n    \"claim:1da3417e06ff5435-fda7e8c14ff6f23b\",\n    \"claim:d40218e811ec1166-3121f577072c04bb\",\n    \"span:design-wcag22-2023-002-1da3417e06ff5435-3#chars-550-892\",\n    \"span:design-wcag-issue-2705-003-d40218e811ec1166-1#chars-47-331\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}"
+  },
+  {
+    "sampleId": "sample-7c621530-2da4-44dc-b6d0-8b5a3f7a673a",
+    "questionId": "B-X-DESIGN-005",
+    "answer": "{\n  \"answer\": \"Issue #2705 是对 WCAG 2.2 草案中成功标准 2.5.7 Dragging Movements 的反馈，要求移除该标准，直到完成对所有受影响输入模态的研究。最终 WCAG 2.2 保留了 2.5.7 Dragging Movements 作为新的 AA 级成功标准。\",\n  \"citations\": [\n    \"SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-wcag-issue-2705-003.md:1-8\",\n    \"SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-wcag22-2023-002.md:1-16\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}"
+  }
+]

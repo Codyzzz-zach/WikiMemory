@@ -1,0 +1,1863 @@
+{
+  "schemaVersion": "v1",
+  "sourceId": "source:05-functions-mappings-7e02712717a02820",
+  "runId": "ece6d152-dbaf-486c-a5c2-5be35cc42909",
+  "publishedAt": "2026-07-24T02:44:00.545Z",
+  "claims": [
+    {
+      "claim": {
+        "id": "claim:7e02712717a02820-5c07a27c98625ffb",
+        "statement": "微分算子无界是微分方程比代数方程难的原因。",
+        "evidenceSpanIds": [
+          "span:05-functions-mappings-7e02712717a02820-34#chars-3062-3081"
+        ],
+        "conditions": [],
+        "derivation": "EXTRACTED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:42:37.228Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "confidence": 1,
+        "claimKind": "FACT",
+        "scope": {
+          "type": "GLOBAL"
+        },
+        "provenanceRefs": [
+          {
+            "type": "SourceSpan",
+            "spanId": "span:05-functions-mappings-7e02712717a02820-34#chars-3062-3081"
+          }
+        ],
+        "supportingEvidenceRefs": [
+          {
+            "type": "SourceSpan",
+            "spanId": "span:05-functions-mappings-7e02712717a02820-34#chars-3062-3081"
+          }
+        ],
+        "knowledgeVersion": "v1",
+        "recordedAt": "2026-07-24T02:42:37.228Z"
+      },
+      "issues": [
+        {
+          "code": "SEMANTIC_SUPPORT_FAILED",
+          "severity": "error",
+          "affectedObject": "claim:7e02712717a02820-5c07a27c98625ffb",
+          "detail": "support：证据没有明确支持 Claim 的全部断言；证据 [0:05-functions-mappings#block-34] “这就是为什么微分方程比代数方程难得多。”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "SEMANTIC_ADDITION_MAJOR",
+          "severity": "error",
+          "affectedObject": "claim:7e02712717a02820-5c07a27c98625ffb",
+          "detail": "addition：Claim 添加了证据未表达的内容；证据 [0:05-functions-mappings#block-34] “这就是为什么微分方程比代数方程难得多。”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "SEMANTIC_INFERENCE_WRONG",
+          "severity": "warning",
+          "affectedObject": "claim:7e02712717a02820-5c07a27c98625ffb",
+          "detail": "inference：Claim 把推断表述成了原文事实；证据 [0:05-functions-mappings#block-34] “这就是为什么微分方程比代数方程难得多。”",
+          "recommendedState": "CANONICAL"
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "relation": {
+        "id": "rel:7e02712717a02820-05f78f40655cd765",
+        "from": "claim:7e02712717a02820-e08428990b11a063",
+        "to": "claim:7e02712717a02820-1aa72aeacc3fd801",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:05-functions-mappings-7e02712717a02820-6#chars-229-254",
+          "span:05-functions-mappings-7e02712717a02820-6#chars-254-281"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:43:00.676Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:7e02712717a02820-05f78f40655cd765",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:05-functions-mappings#block-6] “关键转变：函数不是\"公式\"，而是**对应关系**。”; [1:05-functions-mappings#block-6] “\"不可用初等函数表达\"的函数远远多于\"有公式\"的函数。”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:7e02712717a02820-06c62013bb08439b",
+        "from": "claim:7e02712717a02820-056675e2c7d3bbd3",
+        "to": "claim:7e02712717a02820-5c07a27c98625ffb",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "UNVERIFIED",
+        "relationAuditVersion": null,
+        "evidenceSpanIds": [
+          "span:05-functions-mappings-7e02712717a02820-34#chars-3032-3060",
+          "span:05-functions-mappings-7e02712717a02820-34#chars-3062-3081"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:43:00.676Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_ENDPOINT_QUARANTINED",
+          "severity": "error",
+          "affectedObject": "rel:7e02712717a02820-06c62013bb08439b",
+          "detail": "to 端点未通过 Lint（Quarantined）: claim:7e02712717a02820-5c07a27c98625ffb",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:7e02712717a02820-16e6a198d4f82fc1",
+        "from": "claim:7e02712717a02820-4302493da201acdd",
+        "to": "claim:7e02712717a02820-47b702032740fcaa",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:05-functions-mappings-7e02712717a02820-12#chars-877-918",
+          "span:05-functions-mappings-7e02712717a02820-13"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:43:00.676Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:7e02712717a02820-16e6a198d4f82fc1",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:05-functions-mappings#block-12] “当 $X$ 和 $Y$ 有额外的数学结构时，\"好的\"映射应该**保持**这些结构。”; [1:05-functions-mappings#block-13] “| 结构 | 保持结构的映射 | 条件 | |------|-------------|------| | 序 | 单调函数 | $x \\leq y \\Righ”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:7e02712717a02820-1c106de06c62f4f0",
+        "from": "claim:7e02712717a02820-bdbed2d8b5cabfd6",
+        "to": "claim:7e02712717a02820-47b702032740fcaa",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:05-functions-mappings-7e02712717a02820-12#chars-877-918",
+          "span:05-functions-mappings-7e02712717a02820-13"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:43:00.676Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:7e02712717a02820-1c106de06c62f4f0",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:05-functions-mappings#block-12] “当 $X$ 和 $Y$ 有额外的数学结构时，\"好的\"映射应该**保持**这些结构。”; [1:05-functions-mappings#block-13] “| 结构 | 保持结构的映射 | 条件 | |------|-------------|------| | 序 | 单调函数 | $x \\leq y \\Righ”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:7e02712717a02820-225c612a0c8e9ed2",
+        "from": "claim:7e02712717a02820-ea158e8d688f8740",
+        "to": "claim:7e02712717a02820-45f0ffcee612f42c",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:05-functions-mappings-7e02712717a02820-30"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:43:00.676Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.6,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:7e02712717a02820-225c612a0c8e9ed2",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:05-functions-mappings#block-30] “| 算子类型 | 形式 | 例子 | |---------|------|------| | 微分算子 | $Tf = f'$ | $\\frac{d}{dx}:”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:7e02712717a02820-256fc6e49d285658",
+        "from": "claim:7e02712717a02820-2df5cd91c770a58f",
+        "to": "claim:7e02712717a02820-beb093a46a6d0d62",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:05-functions-mappings-7e02712717a02820-1#chars-43-103",
+          "span:05-functions-mappings-7e02712717a02820-43#chars-4316-4421"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:43:00.676Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:7e02712717a02820-256fc6e49d285658",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:05-functions-mappings#block-1] “从中学课本的 $y=f(x)$ 到现代数学的函子 (functor)，\"映射\"的概念在每一次泛化中获得更强大的表达能力。”; [1:05-functions-mappings#block-43] “> 💡 **核心哲学**：函数概念的三级跳——(1) 从\"公式\"到\"对应关系\"；(2) 从\"函数\"到\"映射\"（保持结构）；(3) 从\"函数的函数\"到\"算子\"（”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:7e02712717a02820-2cf1cc3a5f07b7cd",
+        "from": "claim:7e02712717a02820-3dda803c4e4dde19",
+        "to": "claim:7e02712717a02820-7e87bf22b471c4c6",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:05-functions-mappings-7e02712717a02820-18#chars-1328-1373",
+          "span:05-functions-mappings-7e02712717a02820-19"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:43:00.676Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:7e02712717a02820-2cf1cc3a5f07b7cd",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:05-functions-mappings#block-18] “**变换** = 把函数从\"时域/空域\"变到\"频域/特征域\"，使得原来困难的操作变得简单。”; [1:05-functions-mappings#block-19] “| 变换 | 公式 | 核心作用 | |------|------|---------| | **Fourier** | $\\hat{f}(\\omega) = ”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:7e02712717a02820-2cf1cc3a5f07b7cd",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:05-functions-mappings#block-18] “**变换** = 把函数从\"时域/空域\"变到\"频域/特征域\"，使得原来困难的操作变得简单。”; [1:05-functions-mappings#block-19] “| 变换 | 公式 | 核心作用 | |------|------|---------| | **Fourier** | $\\hat{f}(\\omega) = ”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:7e02712717a02820-44bfc313be0fc32e",
+        "from": "claim:7e02712717a02820-5c07a27c98625ffb",
+        "to": "claim:7e02712717a02820-056675e2c7d3bbd3",
+        "type": "DERIVED_FROM",
+        "conditions": [],
+        "conditionStatus": "UNVERIFIED",
+        "relationAuditVersion": null,
+        "evidenceSpanIds": [
+          "span:05-functions-mappings-7e02712717a02820-34#chars-3032-3060",
+          "span:05-functions-mappings-7e02712717a02820-34#chars-3062-3081"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:43:00.676Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_ENDPOINT_QUARANTINED",
+          "severity": "error",
+          "affectedObject": "rel:7e02712717a02820-44bfc313be0fc32e",
+          "detail": "from 端点未通过 Lint（Quarantined）: claim:7e02712717a02820-5c07a27c98625ffb",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:7e02712717a02820-4b1e19774abd388c",
+        "from": "claim:7e02712717a02820-0bc82717b933f0e1",
+        "to": "claim:7e02712717a02820-35f0febedb8f829f",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:05-functions-mappings-7e02712717a02820-8"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:43:00.676Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:7e02712717a02820-4b1e19774abd388c",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:05-functions-mappings#block-8] “| 性质 | 定义 | 直观 | |------|------|------| | **单射** | $f(x_1)=f(x_2) \\Rightarrow x_”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:7e02712717a02820-4b1e19774abd388c",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:05-functions-mappings#block-8] “| 性质 | 定义 | 直观 | |------|------|------| | **单射** | $f(x_1)=f(x_2) \\Rightarrow x_”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:7e02712717a02820-5329539bb3777cba",
+        "from": "claim:7e02712717a02820-9a5132464f856037",
+        "to": "claim:7e02712717a02820-10e1720ba9dea1cc",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:05-functions-mappings-7e02712717a02820-30"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:43:00.676Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.6,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:7e02712717a02820-5329539bb3777cba",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:05-functions-mappings#block-30] “| 算子类型 | 形式 | 例子 | |---------|------|------| | 微分算子 | $Tf = f'$ | $\\frac{d}{dx}:”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:7e02712717a02820-5329539bb3777cba",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:05-functions-mappings#block-30] “| 算子类型 | 形式 | 例子 | |---------|------|------| | 微分算子 | $Tf = f'$ | $\\frac{d}{dx}:”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:7e02712717a02820-555bf81c465cf749",
+        "from": "claim:7e02712717a02820-beb093a46a6d0d62",
+        "to": "claim:7e02712717a02820-2df5cd91c770a58f",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:05-functions-mappings-7e02712717a02820-1#chars-43-103",
+          "span:05-functions-mappings-7e02712717a02820-43#chars-4316-4421"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:43:00.676Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:7e02712717a02820-555bf81c465cf749",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:05-functions-mappings#block-1] “从中学课本的 $y=f(x)$ 到现代数学的函子 (functor)，\"映射\"的概念在每一次泛化中获得更强大的表达能力。”; [1:05-functions-mappings#block-43] “> 💡 **核心哲学**：函数概念的三级跳——(1) 从\"公式\"到\"对应关系\"；(2) 从\"函数\"到\"映射\"（保持结构）；(3) 从\"函数的函数\"到\"算子\"（”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:7e02712717a02820-67061570e43723f3",
+        "from": "claim:7e02712717a02820-242de70f3401ac93",
+        "to": "claim:7e02712717a02820-47b702032740fcaa",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:05-functions-mappings-7e02712717a02820-12#chars-877-918",
+          "span:05-functions-mappings-7e02712717a02820-13"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:43:00.676Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:7e02712717a02820-67061570e43723f3",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:05-functions-mappings#block-12] “当 $X$ 和 $Y$ 有额外的数学结构时，\"好的\"映射应该**保持**这些结构。”; [1:05-functions-mappings#block-13] “| 结构 | 保持结构的映射 | 条件 | |------|-------------|------| | 序 | 单调函数 | $x \\leq y \\Righ”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:7e02712717a02820-6ec9f46a54e5a309",
+        "from": "claim:7e02712717a02820-5b3ec0910c8f7305",
+        "to": "claim:7e02712717a02820-3a57a079fc7d14cb",
+        "type": "EQUIVALENT_UNDER",
+        "conditions": [
+          "在函数的定义中"
+        ],
+        "conditionStatus": "UNVERIFIED",
+        "relationAuditVersion": null,
+        "evidenceSpanIds": [
+          "span:05-functions-mappings-7e02712717a02820-4#chars-126-174",
+          "span:05-functions-mappings-7e02712717a02820-5#chars-176-225"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:43:00.676Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_EQUIVALENCE_REVIEW_REQUIRED",
+          "severity": "error",
+          "affectedObject": "rel:7e02712717a02820-6ec9f46a54e5a309",
+          "detail": "EQUIVALENT_UNDER 自动审计在真实抽检中 4/4 误判；独立人工复核或校准门禁完成前禁止自动晋级",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:7e02712717a02820-720c5d7b081b05b6",
+        "from": "claim:7e02712717a02820-3a57a079fc7d14cb",
+        "to": "claim:7e02712717a02820-5b3ec0910c8f7305",
+        "type": "EQUIVALENT_UNDER",
+        "conditions": [
+          "在函数的定义中"
+        ],
+        "conditionStatus": "UNVERIFIED",
+        "relationAuditVersion": null,
+        "evidenceSpanIds": [
+          "span:05-functions-mappings-7e02712717a02820-4#chars-126-174",
+          "span:05-functions-mappings-7e02712717a02820-5#chars-176-225"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:43:00.676Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_EQUIVALENCE_REVIEW_REQUIRED",
+          "severity": "error",
+          "affectedObject": "rel:7e02712717a02820-720c5d7b081b05b6",
+          "detail": "EQUIVALENT_UNDER 自动审计在真实抽检中 4/4 误判；独立人工复核或校准门禁完成前禁止自动晋级",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:7e02712717a02820-72c8de87a537ba92",
+        "from": "claim:7e02712717a02820-45f0ffcee612f42c",
+        "to": "claim:7e02712717a02820-056675e2c7d3bbd3",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:05-functions-mappings-7e02712717a02820-30",
+          "span:05-functions-mappings-7e02712717a02820-34#chars-3032-3060"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:43:00.676Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:7e02712717a02820-72c8de87a537ba92",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:05-functions-mappings#block-30] “| 算子类型 | 形式 | 例子 | |---------|------|------| | 微分算子 | $Tf = f'$ | $\\frac{d}{dx}:”; [1:05-functions-mappings#block-34] “微分算子 $\\frac{d}{dx}$ 是**无界**的”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:7e02712717a02820-75656d0bb8846107",
+        "from": "claim:7e02712717a02820-35f0febedb8f829f",
+        "to": "claim:7e02712717a02820-e6fadfa9a23b1e2e",
+        "type": "DERIVED_FROM",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:05-functions-mappings-7e02712717a02820-8"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:43:00.676Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:7e02712717a02820-75656d0bb8846107",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:05-functions-mappings#block-8] “| 性质 | 定义 | 直观 | |------|------|------| | **单射** | $f(x_1)=f(x_2) \\Rightarrow x_”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:7e02712717a02820-78a6d98933461d3a",
+        "from": "claim:7e02712717a02820-4b44dfd542547883",
+        "to": "claim:7e02712717a02820-fd1c634627222eca",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:05-functions-mappings-7e02712717a02820-30"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:43:00.676Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.6,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:7e02712717a02820-78a6d98933461d3a",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:05-functions-mappings#block-30] “| 算子类型 | 形式 | 例子 | |---------|------|------| | 微分算子 | $Tf = f'$ | $\\frac{d}{dx}:”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:7e02712717a02820-892c18951319ea98",
+        "from": "claim:7e02712717a02820-017bff68a13a5d9e",
+        "to": "claim:7e02712717a02820-47b702032740fcaa",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:05-functions-mappings-7e02712717a02820-12#chars-877-918",
+          "span:05-functions-mappings-7e02712717a02820-14#chars-1247-1288"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:43:00.676Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:7e02712717a02820-892c18951319ea98",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:05-functions-mappings#block-12] “当 $X$ 和 $Y$ 有额外的数学结构时，\"好的\"映射应该**保持**这些结构。”; [1:05-functions-mappings#block-14] “这在 $\\S$18 范畴论中将获得终极统一——范畴 = 对象 + 保持结构的态射。”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:7e02712717a02820-892c18951319ea98",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:05-functions-mappings#block-12] “当 $X$ 和 $Y$ 有额外的数学结构时，\"好的\"映射应该**保持**这些结构。”; [1:05-functions-mappings#block-14] “这在 $\\S$18 范畴论中将获得终极统一——范畴 = 对象 + 保持结构的态射。”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:7e02712717a02820-94130e1a669cbf76",
+        "from": "claim:7e02712717a02820-fd1c634627222eca",
+        "to": "claim:7e02712717a02820-4b44dfd542547883",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:05-functions-mappings-7e02712717a02820-30"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:43:00.676Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.6,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:7e02712717a02820-94130e1a669cbf76",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:05-functions-mappings#block-30] “| 算子类型 | 形式 | 例子 | |---------|------|------| | 微分算子 | $Tf = f'$ | $\\frac{d}{dx}:”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:7e02712717a02820-94130e1a669cbf76",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:05-functions-mappings#block-30] “| 算子类型 | 形式 | 例子 | |---------|------|------| | 微分算子 | $Tf = f'$ | $\\frac{d}{dx}:”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:7e02712717a02820-a05b2bbc91929f28",
+        "from": "claim:7e02712717a02820-6866e9a61851d0b0",
+        "to": "claim:7e02712717a02820-47b702032740fcaa",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:05-functions-mappings-7e02712717a02820-12#chars-877-918",
+          "span:05-functions-mappings-7e02712717a02820-13"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:43:00.676Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:7e02712717a02820-a05b2bbc91929f28",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:05-functions-mappings#block-12] “当 $X$ 和 $Y$ 有额外的数学结构时，\"好的\"映射应该**保持**这些结构。”; [1:05-functions-mappings#block-13] “| 结构 | 保持结构的映射 | 条件 | |------|-------------|------| | 序 | 单调函数 | $x \\leq y \\Righ”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:7e02712717a02820-a903b578960fceaa",
+        "from": "claim:7e02712717a02820-2eb6a4ee3764a145",
+        "to": "claim:7e02712717a02820-9fc614b1617e7ec7",
+        "type": "EQUIVALENT_UNDER",
+        "conditions": [
+          "在函数空间的正则性层级中"
+        ],
+        "conditionStatus": "UNVERIFIED",
+        "relationAuditVersion": null,
+        "evidenceSpanIds": [
+          "span:05-functions-mappings-7e02712717a02820-37#chars-3130-3456",
+          "span:05-functions-mappings-7e02712717a02820-39#chars-3476-3848"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:43:00.676Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_EQUIVALENCE_REVIEW_REQUIRED",
+          "severity": "error",
+          "affectedObject": "rel:7e02712717a02820-a903b578960fceaa",
+          "detail": "EQUIVALENT_UNDER 自动审计在真实抽检中 4/4 误判；独立人工复核或校准门禁完成前禁止自动晋级",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:7e02712717a02820-ab8eb9d28111b4d4",
+        "from": "claim:7e02712717a02820-d4f3c3b889df3080",
+        "to": "claim:7e02712717a02820-03522d71ff27a7f6",
+        "type": "EQUIVALENT_UNDER",
+        "conditions": [
+          "在线性算子中"
+        ],
+        "conditionStatus": "UNVERIFIED",
+        "relationAuditVersion": null,
+        "evidenceSpanIds": [
+          "span:05-functions-mappings-7e02712717a02820-32#chars-2943-2964",
+          "span:05-functions-mappings-7e02712717a02820-33#chars-2966-3028"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:43:00.676Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_EQUIVALENCE_REVIEW_REQUIRED",
+          "severity": "error",
+          "affectedObject": "rel:7e02712717a02820-ab8eb9d28111b4d4",
+          "detail": "EQUIVALENT_UNDER 自动审计在真实抽检中 4/4 误判；独立人工复核或校准门禁完成前禁止自动晋级",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:7e02712717a02820-ae089906fc64a5b5",
+        "from": "claim:7e02712717a02820-4d77453ef87e4578",
+        "to": "claim:7e02712717a02820-8f064c995bffa492",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:05-functions-mappings-7e02712717a02820-30"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:43:00.676Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.6,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:7e02712717a02820-ae089906fc64a5b5",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:05-functions-mappings#block-30] “| 算子类型 | 形式 | 例子 | |---------|------|------| | 微分算子 | $Tf = f'$ | $\\frac{d}{dx}:”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:7e02712717a02820-b222dd5fc2c089cc",
+        "from": "claim:7e02712717a02820-eedf37417f29e662",
+        "to": "claim:7e02712717a02820-056675e2c7d3bbd3",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:05-functions-mappings-7e02712717a02820-34#chars-3032-3060",
+          "span:05-functions-mappings-7e02712717a02820-34#chars-3081-3107"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:43:00.676Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:7e02712717a02820-b222dd5fc2c089cc",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:05-functions-mappings#block-34] “微分算子 $\\frac{d}{dx}$ 是**无界**的”; [1:05-functions-mappings#block-34] “无界算子的谱理论是量子力学的数学基础（$\\S$9）。”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:7e02712717a02820-cc82eca72cbed68e",
+        "from": "claim:7e02712717a02820-45f0ffcee612f42c",
+        "to": "claim:7e02712717a02820-ea158e8d688f8740",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:05-functions-mappings-7e02712717a02820-30"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:43:00.676Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.6,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:7e02712717a02820-cc82eca72cbed68e",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:05-functions-mappings#block-30] “| 算子类型 | 形式 | 例子 | |---------|------|------| | 微分算子 | $Tf = f'$ | $\\frac{d}{dx}:”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:7e02712717a02820-cc82eca72cbed68e",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:05-functions-mappings#block-30] “| 算子类型 | 形式 | 例子 | |---------|------|------| | 微分算子 | $Tf = f'$ | $\\frac{d}{dx}:”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:7e02712717a02820-d3f9e922432a5be4",
+        "from": "claim:7e02712717a02820-e6fadfa9a23b1e2e",
+        "to": "claim:7e02712717a02820-35f0febedb8f829f",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:05-functions-mappings-7e02712717a02820-8"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:43:00.676Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:7e02712717a02820-d3f9e922432a5be4",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:05-functions-mappings#block-8] “| 性质 | 定义 | 直观 | |------|------|------| | **单射** | $f(x_1)=f(x_2) \\Rightarrow x_”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:7e02712717a02820-d3f9e922432a5be4",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:05-functions-mappings#block-8] “| 性质 | 定义 | 直观 | |------|------|------| | **单射** | $f(x_1)=f(x_2) \\Rightarrow x_”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:7e02712717a02820-d40dc4122558aa84",
+        "from": "claim:7e02712717a02820-9fc614b1617e7ec7",
+        "to": "claim:7e02712717a02820-2eb6a4ee3764a145",
+        "type": "EQUIVALENT_UNDER",
+        "conditions": [
+          "在函数空间的正则性层级中"
+        ],
+        "conditionStatus": "UNVERIFIED",
+        "relationAuditVersion": null,
+        "evidenceSpanIds": [
+          "span:05-functions-mappings-7e02712717a02820-37#chars-3130-3456",
+          "span:05-functions-mappings-7e02712717a02820-39#chars-3476-3848"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:43:00.676Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_EQUIVALENCE_REVIEW_REQUIRED",
+          "severity": "error",
+          "affectedObject": "rel:7e02712717a02820-d40dc4122558aa84",
+          "detail": "EQUIVALENT_UNDER 自动审计在真实抽检中 4/4 误判；独立人工复核或校准门禁完成前禁止自动晋级",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:7e02712717a02820-d7f44761194be256",
+        "from": "claim:7e02712717a02820-1aa72aeacc3fd801",
+        "to": "claim:7e02712717a02820-9ca023fd937f8202",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:05-functions-mappings-7e02712717a02820-1#chars-16-43",
+          "span:05-functions-mappings-7e02712717a02820-6#chars-229-254"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:43:00.676Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:7e02712717a02820-d7f44761194be256",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:05-functions-mappings#block-1] “函数是数学中最重要的抽象——输入与输出之间的确定关系。”; [1:05-functions-mappings#block-6] “关键转变：函数不是\"公式\"，而是**对应关系**。”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:7e02712717a02820-d8c684e3ac37c854",
+        "from": "claim:7e02712717a02820-03522d71ff27a7f6",
+        "to": "claim:7e02712717a02820-d4f3c3b889df3080",
+        "type": "EQUIVALENT_UNDER",
+        "conditions": [
+          "在线性算子中"
+        ],
+        "conditionStatus": "UNVERIFIED",
+        "relationAuditVersion": null,
+        "evidenceSpanIds": [
+          "span:05-functions-mappings-7e02712717a02820-32#chars-2943-2964",
+          "span:05-functions-mappings-7e02712717a02820-33#chars-2966-3028"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:43:00.676Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_EQUIVALENCE_REVIEW_REQUIRED",
+          "severity": "error",
+          "affectedObject": "rel:7e02712717a02820-d8c684e3ac37c854",
+          "detail": "EQUIVALENT_UNDER 自动审计在真实抽检中 4/4 误判；独立人工复核或校准门禁完成前禁止自动晋级",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:7e02712717a02820-e0371f2e0c16f56f",
+        "from": "claim:7e02712717a02820-35f0febedb8f829f",
+        "to": "claim:7e02712717a02820-0bc82717b933f0e1",
+        "type": "DERIVED_FROM",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:05-functions-mappings-7e02712717a02820-8"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:43:00.676Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:7e02712717a02820-e0371f2e0c16f56f",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:05-functions-mappings#block-8] “| 性质 | 定义 | 直观 | |------|------|------| | **单射** | $f(x_1)=f(x_2) \\Rightarrow x_”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:7e02712717a02820-e09c25221b8cc84e",
+        "from": "claim:7e02712717a02820-757f1f3fa38781db",
+        "to": "claim:7e02712717a02820-47b702032740fcaa",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:05-functions-mappings-7e02712717a02820-12#chars-877-918",
+          "span:05-functions-mappings-7e02712717a02820-13"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:43:00.676Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:7e02712717a02820-e09c25221b8cc84e",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:05-functions-mappings#block-12] “当 $X$ 和 $Y$ 有额外的数学结构时，\"好的\"映射应该**保持**这些结构。”; [1:05-functions-mappings#block-13] “| 结构 | 保持结构的映射 | 条件 | |------|-------------|------| | 序 | 单调函数 | $x \\leq y \\Righ”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:7e02712717a02820-e11cdc1e6c7c93b2",
+        "from": "claim:7e02712717a02820-7e87bf22b471c4c6",
+        "to": "claim:7e02712717a02820-cde44cccdde17919",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:05-functions-mappings-7e02712717a02820-18#chars-1328-1373",
+          "span:05-functions-mappings-7e02712717a02820-42#chars-3871-4314"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:43:00.676Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:7e02712717a02820-e11cdc1e6c7c93b2",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:05-functions-mappings#block-18] “**变换** = 把函数从\"时域/空域\"变到\"频域/特征域\"，使得原来困难的操作变得简单。”; [1:05-functions-mappings#block-42] “| # | 关键概念 | 直觉 | 连接章节 | |---|---------|------|---------| | 1 | **函数 = 对应关系** | ”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:7e02712717a02820-e11cdc1e6c7c93b2",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:05-functions-mappings#block-18] “**变换** = 把函数从\"时域/空域\"变到\"频域/特征域\"，使得原来困难的操作变得简单。”; [1:05-functions-mappings#block-42] “| # | 关键概念 | 直觉 | 连接章节 | |---|---------|------|---------| | 1 | **函数 = 对应关系** | ”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:7e02712717a02820-e89b9fd8ca8b9be9",
+        "from": "claim:7e02712717a02820-63d23190d9b21ca4",
+        "to": "claim:7e02712717a02820-7e87bf22b471c4c6",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:05-functions-mappings-7e02712717a02820-18#chars-1328-1373",
+          "span:05-functions-mappings-7e02712717a02820-19"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:43:00.676Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:7e02712717a02820-e89b9fd8ca8b9be9",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:05-functions-mappings#block-18] “**变换** = 把函数从\"时域/空域\"变到\"频域/特征域\"，使得原来困难的操作变得简单。”; [1:05-functions-mappings#block-19] “| 变换 | 公式 | 核心作用 | |------|------|---------| | **Fourier** | $\\hat{f}(\\omega) = ”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:7e02712717a02820-ee705a9cd4482aa9",
+        "from": "claim:7e02712717a02820-116a9a49353d524d",
+        "to": "claim:7e02712717a02820-195740430f11fdd5",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:05-functions-mappings-7e02712717a02820-28#chars-2632-2669",
+          "span:05-functions-mappings-7e02712717a02820-29#chars-2671-2691"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:43:00.676Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:7e02712717a02820-ee705a9cd4482aa9",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:05-functions-mappings#block-28] “**算子** $T: V \\to W$ 是两个**函数空间**之间的映射。”; [1:05-functions-mappings#block-29] “这在 $\\S$9 泛函分析中是核心概念。”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:7e02712717a02820-f54e77b3b47e2930",
+        "from": "claim:7e02712717a02820-e160ef7a3ba480ac",
+        "to": "claim:7e02712717a02820-7e87bf22b471c4c6",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:05-functions-mappings-7e02712717a02820-18#chars-1328-1373",
+          "span:05-functions-mappings-7e02712717a02820-19"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:43:00.676Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:7e02712717a02820-f54e77b3b47e2930",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:05-functions-mappings#block-18] “**变换** = 把函数从\"时域/空域\"变到\"频域/特征域\"，使得原来困难的操作变得简单。”; [1:05-functions-mappings#block-19] “| 变换 | 公式 | 核心作用 | |------|------|---------| | **Fourier** | $\\hat{f}(\\omega) = ”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:7e02712717a02820-fdf19d23423bab46",
+        "from": "claim:7e02712717a02820-67b8de7721d103d9",
+        "to": "claim:7e02712717a02820-2c66480c74ccfebd",
+        "type": "REQUIRES",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:05-functions-mappings-7e02712717a02820-19",
+          "span:05-functions-mappings-7e02712717a02820-22#chars-1683-1770"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:43:00.676Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:7e02712717a02820-fdf19d23423bab46",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:05-functions-mappings#block-19] “| 变换 | 公式 | 核心作用 | |------|------|---------| | **Fourier** | $\\hat{f}(\\omega) = ”; [1:05-functions-mappings#block-22] “$$ f(t) = \\frac{1}{2\\pi} \\int_{-\\infty}^\\infty \\hat{f}(\\omega) e^{i\\omega t} d\\o”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:7e02712717a02820-fdf19d23423bab46",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:05-functions-mappings#block-19] “| 变换 | 公式 | 核心作用 | |------|------|---------| | **Fourier** | $\\hat{f}(\\omega) = ”; [1:05-functions-mappings#block-22] “$$ f(t) = \\frac{1}{2\\pi} \\int_{-\\infty}^\\infty \\hat{f}(\\omega) e^{i\\omega t} d\\o”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:7e02712717a02820-ff3a58d4ba3fb761",
+        "from": "claim:7e02712717a02820-cde44cccdde17919",
+        "to": "claim:7e02712717a02820-beb093a46a6d0d62",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:05-functions-mappings-7e02712717a02820-42#chars-3871-4314",
+          "span:05-functions-mappings-7e02712717a02820-43#chars-4316-4421"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:43:00.676Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:7e02712717a02820-ff3a58d4ba3fb761",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:05-functions-mappings#block-42] “| # | 关键概念 | 直觉 | 连接章节 | |---|---------|------|---------| | 1 | **函数 = 对应关系** | ”; [1:05-functions-mappings#block-43] “> 💡 **核心哲学**：函数概念的三级跳——(1) 从\"公式\"到\"对应关系\"；(2) 从\"函数\"到\"映射\"（保持结构）；(3) 从\"函数的函数\"到\"算子\"（”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-075fec5421f87594",
+        "from": "claim:7e02712717a02820-195740430f11fdd5",
+        "to": "claim:33a33396a17d4175-9d9be89e0601431b",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:02-spaces-33a33396a17d4175-30#chars-2664-2695",
+          "span:05-functions-mappings-7e02712717a02820-28#chars-2632-2669"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:43:53.999Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.5,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-075fec5421f87594",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:02-spaces#block-30] “连续函数空间 $C[0,1]$：**无限维！**（没有有限基）”; [1:05-functions-mappings#block-28] “**算子** $T: V \\to W$ 是两个**函数空间**之间的映射。”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-075fec5421f87594",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:02-spaces#block-30] “连续函数空间 $C[0,1]$：**无限维！**（没有有限基）”; [1:05-functions-mappings#block-28] “**算子** $T: V \\to W$ 是两个**函数空间**之间的映射。”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-12b6dcfb9e538fdc",
+        "from": "claim:7e02712717a02820-44efa19fedc2d30c",
+        "to": "claim:33a33396a17d4175-aaf4860e28d1685c",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:02-spaces-33a33396a17d4175-37#chars-3348-3373",
+          "span:05-functions-mappings-7e02712717a02820-13"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:43:53.999Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.5,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-12b6dcfb9e538fdc",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:02-spaces#block-37] “**对称性**：$d(x,y) = d(y,x)$”; [1:05-functions-mappings#block-13] “| 结构 | 保持结构的映射 | 条件 | |------|-------------|------| | 序 | 单调函数 | $x \\leq y \\Righ”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-12b6dcfb9e538fdc",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:02-spaces#block-37] “**对称性**：$d(x,y) = d(y,x)$”; [1:05-functions-mappings#block-13] “| 结构 | 保持结构的映射 | 条件 | |------|-------------|------| | 序 | 单调函数 | $x \\leq y \\Righ”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-496e2c6369b4976a",
+        "from": "claim:e7ea8bc17c2cc4ab-c1a2fff3ab5f702f",
+        "to": "claim:7e02712717a02820-3a57a079fc7d14cb",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-5#chars-146-237",
+          "span:05-functions-mappings-7e02712717a02820-5#chars-176-225"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:43:53.999Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-496e2c6369b4976a",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-5] “**数列** = 定义在自然数上的函数：$a: \\mathbb{N} \\to \\mathbb{R}$（或 $\\mathbb{C}$），记作 $(a_n)_{n=”; [1:05-functions-mappings#block-5] “$$ \\forall x \\in X, \\exists! y \\in Y: f(x) = y $$”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-496e2c6369b4976a",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-5] “**数列** = 定义在自然数上的函数：$a: \\mathbb{N} \\to \\mathbb{R}$（或 $\\mathbb{C}$），记作 $(a_n)_{n=”; [1:05-functions-mappings#block-5] “$$ \\forall x \\in X, \\exists! y \\in Y: f(x) = y $$”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-4c77a3e318a695dd",
+        "from": "claim:7e02712717a02820-017bff68a13a5d9e",
+        "to": "claim:33a33396a17d4175-d32c5dbd5d97cfc6",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:02-spaces-33a33396a17d4175-36#chars-3224-3290",
+          "span:05-functions-mappings-7e02712717a02820-14#chars-1247-1288"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:43:53.999Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.5,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-4c77a3e318a695dd",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:02-spaces#block-36] “度量空间是一个集合 $X$ 配上一个距离函数 $d: X \\times X \\to \\mathbb{R}_{\\geq 0}$，满足：”; [1:05-functions-mappings#block-14] “这在 $\\S$18 范畴论中将获得终极统一——范畴 = 对象 + 保持结构的态射。”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-4c77a3e318a695dd",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:02-spaces#block-36] “度量空间是一个集合 $X$ 配上一个距离函数 $d: X \\times X \\to \\mathbb{R}_{\\geq 0}$，满足：”; [1:05-functions-mappings#block-14] “这在 $\\S$18 范畴论中将获得终极统一——范畴 = 对象 + 保持结构的态射。”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-5337c8c99bfbfbc5",
+        "from": "claim:33a33396a17d4175-805fb4ab5d394c0a",
+        "to": "claim:7e02712717a02820-4b44dfd542547883",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:02-spaces-33a33396a17d4175-66#chars-5775-5800",
+          "span:05-functions-mappings-7e02712717a02820-30"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:43:53.999Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-5337c8c99bfbfbc5",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:02-spaces#block-66] “- **正交投影**：找到子空间中最接近某点的元素”; [1:05-functions-mappings#block-30] “| 算子类型 | 形式 | 例子 | |---------|------|------| | 微分算子 | $Tf = f'$ | $\\frac{d}{dx}:”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-637ecb65321ce161",
+        "from": "claim:33a33396a17d4175-d32c5dbd5d97cfc6",
+        "to": "claim:7e02712717a02820-017bff68a13a5d9e",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:02-spaces-33a33396a17d4175-36#chars-3224-3290",
+          "span:05-functions-mappings-7e02712717a02820-14#chars-1247-1288"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:43:53.999Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.5,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-637ecb65321ce161",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:02-spaces#block-36] “度量空间是一个集合 $X$ 配上一个距离函数 $d: X \\times X \\to \\mathbb{R}_{\\geq 0}$，满足：”; [1:05-functions-mappings#block-14] “这在 $\\S$18 范畴论中将获得终极统一——范畴 = 对象 + 保持结构的态射。”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-637ecb65321ce161",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:02-spaces#block-36] “度量空间是一个集合 $X$ 配上一个距离函数 $d: X \\times X \\to \\mathbb{R}_{\\geq 0}$，满足：”; [1:05-functions-mappings#block-14] “这在 $\\S$18 范畴论中将获得终极统一——范畴 = 对象 + 保持结构的态射。”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-7e6979d4db2d0ade",
+        "from": "claim:33a33396a17d4175-aaf4860e28d1685c",
+        "to": "claim:7e02712717a02820-44efa19fedc2d30c",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:02-spaces-33a33396a17d4175-37#chars-3348-3373",
+          "span:05-functions-mappings-7e02712717a02820-13"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:43:53.999Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.5,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-7e6979d4db2d0ade",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:02-spaces#block-37] “**对称性**：$d(x,y) = d(y,x)$”; [1:05-functions-mappings#block-13] “| 结构 | 保持结构的映射 | 条件 | |------|-------------|------| | 序 | 单调函数 | $x \\leq y \\Righ”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-7e6979d4db2d0ade",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:02-spaces#block-37] “**对称性**：$d(x,y) = d(y,x)$”; [1:05-functions-mappings#block-13] “| 结构 | 保持结构的映射 | 条件 | |------|-------------|------| | 序 | 单调函数 | $x \\leq y \\Righ”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-854098838f811bf6",
+        "from": "claim:33a33396a17d4175-9d9be89e0601431b",
+        "to": "claim:7e02712717a02820-195740430f11fdd5",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:02-spaces-33a33396a17d4175-30#chars-2664-2695",
+          "span:05-functions-mappings-7e02712717a02820-28#chars-2632-2669"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:43:53.999Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.5,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-854098838f811bf6",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:02-spaces#block-30] “连续函数空间 $C[0,1]$：**无限维！**（没有有限基）”; [1:05-functions-mappings#block-28] “**算子** $T: V \\to W$ 是两个**函数空间**之间的映射。”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-a9c559bc7d35690d",
+        "from": "claim:e7ea8bc17c2cc4ab-27c597597c9fb62c",
+        "to": "claim:7e02712717a02820-116a9a49353d524d",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-51#chars-6553-6597",
+          "span:05-functions-mappings-7e02712717a02820-29#chars-2671-2691"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:43:53.999Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-a9c559bc7d35690d",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-51] “这就是为什么在 $\\S$9 泛函分析中要研究**算子的一致收敛**，而不仅仅是逐点收敛。”; [1:05-functions-mappings#block-29] “这在 $\\S$9 泛函分析中是核心概念。”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-a9c559bc7d35690d",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-51] “这就是为什么在 $\\S$9 泛函分析中要研究**算子的一致收敛**，而不仅仅是逐点收敛。”; [1:05-functions-mappings#block-29] “这在 $\\S$9 泛函分析中是核心概念。”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-cb43070920f3fee0",
+        "from": "claim:7e02712717a02820-242de70f3401ac93",
+        "to": "claim:e7ea8bc17c2cc4ab-1dd3bf2da010f272",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-50#chars-6371-6397",
+          "span:05-functions-mappings-7e02712717a02820-13"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:43:53.999Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.5,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-cb43070920f3fee0",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-50] “POINT -.- NOTE1[\"可能丢失连续性\"]”; [1:05-functions-mappings#block-13] “| 结构 | 保持结构的映射 | 条件 | |------|-------------|------| | 序 | 单调函数 | $x \\leq y \\Righ”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-cb43070920f3fee0",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-50] “POINT -.- NOTE1[\"可能丢失连续性\"]”; [1:05-functions-mappings#block-13] “| 结构 | 保持结构的映射 | 条件 | |------|-------------|------| | 序 | 单调函数 | $x \\leq y \\Righ”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-d1506fd253a070cd",
+        "from": "claim:7e02712717a02820-116a9a49353d524d",
+        "to": "claim:e7ea8bc17c2cc4ab-27c597597c9fb62c",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-51#chars-6553-6597",
+          "span:05-functions-mappings-7e02712717a02820-29#chars-2671-2691"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:43:53.999Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-d1506fd253a070cd",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-51] “这就是为什么在 $\\S$9 泛函分析中要研究**算子的一致收敛**，而不仅仅是逐点收敛。”; [1:05-functions-mappings#block-29] “这在 $\\S$9 泛函分析中是核心概念。”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-de91f202feb8e90c",
+        "from": "claim:e7ea8bc17c2cc4ab-1dd3bf2da010f272",
+        "to": "claim:7e02712717a02820-242de70f3401ac93",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "relationAuditVersion": "v1.2",
+        "evidenceSpanIds": [
+          "span:03-sequences-limits-e7ea8bc17c2cc4ab-50#chars-6371-6397",
+          "span:05-functions-mappings-7e02712717a02820-13"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-24T02:43:53.999Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.5,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-de91f202feb8e90c",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-50] “POINT -.- NOTE1[\"可能丢失连续性\"]”; [1:05-functions-mappings#block-13] “| 结构 | 保持结构的映射 | 条件 | |------|-------------|------| | 序 | 单调函数 | $x \\leq y \\Righ”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-de91f202feb8e90c",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:03-sequences-limits#block-50] “POINT -.- NOTE1[\"可能丢失连续性\"]”; [1:05-functions-mappings#block-13] “| 结构 | 保持结构的映射 | 条件 | |------|-------------|------| | 序 | 单调函数 | $x \\leq y \\Righ”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    }
+  ]
+}

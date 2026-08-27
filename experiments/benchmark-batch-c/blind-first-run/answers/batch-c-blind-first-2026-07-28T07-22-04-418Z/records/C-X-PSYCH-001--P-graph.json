@@ -1,0 +1,50 @@
+{
+  "runId": "batch-c-blind-first-2026-07-28T07-22-04-418Z",
+  "sampleId": "sample-40dd7325-1eca-405f-9417-bf11d71caf63",
+  "questionId": "C-X-PSYCH-001",
+  "group": "P-graph",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "temperature": 0,
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 1636,
+    "completionTokens": 116,
+    "totalTokens": 1752,
+    "promptCacheHitTokens": 1536,
+    "promptCacheMissTokens": 100,
+    "reasoningTokens": 0
+  },
+  "latencyMs": 1718,
+  "promptHash": "66cbe4a2f66b0bb4b4fb6d97db02af6fdb0c7e0e13a7acc97e1b32000a4a0852",
+  "contextHash": "150d8e4ba07075245dbbac1a62c16e04e9cab85ede4f76b81131c57c92d7e563",
+  "estimatedContextTokens": 1133,
+  "estimatedInputTokens": 1355,
+  "retrievedClaims": [
+    "claim:adb285a63645fee4-bf99c4465e762307",
+    "claim:adb285a63645fee4-603d9950c123f1ab",
+    "claim:adb285a63645fee4-13188dbeecc062ee",
+    "claim:adb285a63645fee4-267dd736bec2e232",
+    "claim:adb285a63645fee4-34585b952514d2cc",
+    "claim:adb285a63645fee4-3b262618fcf6042e",
+    "claim:adb285a63645fee4-43492018319a4468",
+    "claim:adb285a63645fee4-4607fc993dc2c9fd",
+    "claim:adb285a63645fee4-50af184b6eca28a3",
+    "claim:adb285a63645fee4-5206ac18f2edd7c7"
+  ],
+  "retrievedRelations": [],
+  "retrievedSources": [
+    "source:c-psych-002-adb285a63645fee4"
+  ],
+  "citationValidation": {
+    "valid": true,
+    "citationCount": 0,
+    "invalid": []
+  },
+  "request": {
+    "systemPrompt": "你是受证据约束的问答 Agent。只使用本次请求提供的检索上下文回答。\n要求：保留影响结论的条件、时间、例外、来源角色与不确定性；关键结论引用上下文中的 SOURCE、EVIDENCE 或 CLAIM 标识；上下文不足时明确说明，不得用外部常识补齐。\n只输出严格 JSON：{\"answer\":\"...\",\"citations\":[\"...\"],\"insufficient\":false,\"uncertainties\":[\"...\"]}。",
+    "userPrompt": "# 问题\nMany Labs 项目 (Klein et al., 2014) 的复制成功率与 OSC (2015) 的复制成功率存在显著差异。这两种研究方法在设计上有哪些关键不同？这些差异如何影响了对心理学可复制性的整体评估？\n\n# 检索上下文\n## TASK MAP\n主题: Many Labs 项目 (Klein et al., 2014) 的复制成功率与 OSC (2015) 的复制成功率存在显著差异。这两种研究方法在设计上有哪些关键不同？这些差异如何影响了对心理学可复制性的整体评估？\n地图主题: 研究, osc, 影响, 项目, 2014\n关键概念: 第五次评估报告, IPCC第六次评估报告, 不利影响, Many Labs Replication Project, Open Science Collaboration (OSC)\n已知争议: 0 个\n最近变化: 5 条\n找到 10 条相关 Claim\n找到 0 条关系\n找到 10 条原文证据\n\n## CLAIM claim:adb285a63645fee4-bf99c4465e762307\n该内容来源于 Journal of Open Psychology Data 和 OSF 项目页面。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:adb285a63645fee4-603d9950c123f1ab\n该研究发表在 Social Psychology (2014), Vol. 45, pp. 142-152。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:adb285a63645fee4-13188dbeecc062ee\nThe dataset is stored on the Open Science Framework website.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:adb285a63645fee4-267dd736bec2e232\n数据论文的 DOI 是 10.5334/jopd.ad。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:adb285a63645fee4-34585b952514d2cc\nThe aggregate sample had a mean age of 25.98.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:adb285a63645fee4-3b262618fcf6042e\nThe effects included Sunk costs (Oppenheimer, Meyvis, & Davidenko, 2009).\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:adb285a63645fee4-43492018319a4468\nParticipant ethnicity was 65.1% White, 6.7% Black or African American, 6.5% East Asian, 4.5% South Asian, 17.2% Other or Unknown.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:adb285a63645fee4-4607fc993dc2c9fd\n作者包括 Richard A. Klein, Kate A. Ratliff, Michelangelo Vianello, Reginald B. Adams Jr. 等 50 多位作者。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:adb285a63645fee4-50af184b6eca28a3\nThe effects included Low-vs.-high category scales (Schwarz, Hippler, Deutsch, & Strack, 1985).\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:adb285a63645fee4-5206ac18f2edd7c7\nThe effects included Flag Priming (Carter, Ferguson, & Hassin, 2011).\nConditions: none\nValidity: SUPPORTED\n\n## EVIDENCE span:c-psych-002-adb285a63645fee4-2#chars-100-233\n*Content sourced from Journal of Open Psychology Data (openpsychologydata.metajnl.com) and OSF project page (https://osf.io/wx7ck/).*\n\n## EVIDENCE span:c-psych-002-adb285a63645fee4-3#chars-350-489\n**Published in:** Social Psychology (2014), Vol. 45, pp. 142-152; data paper in Journal of Open Psychology Data (2014), Vol. 2, Issue 1, e4\n\n## EVIDENCE span:c-psych-002-adb285a63645fee4-13#chars-2322-2382\nThe dataset is stored on the Open Science Framework website.\n\n## EVIDENCE span:c-psych-002-adb285a63645fee4-3#chars-490-567\n**DOI:** 10.5334/jopd.ad (data paper); 10.1177/1948550614547449 (main article\n\n## EVIDENCE span:c-psych-002-adb285a63645fee4-7#chars-1126-1171\nThe aggregate sample had a mean age of 25.98.\n\n## EVIDENCE span:c-psych-002-adb285a63645fee4-9#chars-1507-1558\nSunk costs (Oppenheimer, Meyvis, & Davidenko, 2009)\n\n## EVIDENCE span:c-psych-002-adb285a63645fee4-7#chars-1172-1302\nParticipant ethnicity was: 65.1% White, 6.7% Black or African American, 6.5% East Asian, 4.5% South Asian, 17.2% Other or Unknown.\n\n## EVIDENCE span:c-psych-002-adb285a63645fee4-3#chars-235-349\n**Authors:** Richard A. Klein, Kate A. Ratliff, Michelangelo Vianello, Reginald B. Adams Jr., et al. (50+ authors)\n\n## EVIDENCE span:c-psych-002-adb285a63645fee4-9#chars-1713-1785\nLow-vs.-high category scales (Schwarz, Hippler, Deutsch, & Strack, 1985)\n\n## EVIDENCE span:c-psych-002-adb285a63645fee4-9#chars-1908-1955\nFlag Priming (Carter, Ferguson, & Hassin, 2011)\n\n## CONFLICTS AND CONDITIONS\n🔎 Source source:c-psych-002-adb285a63645fee4 provenance: uri=experiments/benchmark-batch-c/stage-a-freeze/compilation-corpus/psychology-reproducibility/c-psych-002.md; sourceType=md; sourceRole=P/C-implementation; author=Richard A. Klein, Kate A. Ratliff, Michelangelo Vianello, et al.; canonicalUrl=https://doi.org/10.1177/1948550614547449; publishedAt=Tue Jul 01 2014 08:00:00 GMT+0800 (China Standard Time); versionRef='doi:10.1177/1948550614547449; OSF: osf.io/wx7ck'\n\n## KNOWN GAPS\n未找到关系——Graph 可能尚未建立跨材料边"
+  },
+  "answer": "{\n  \"answer\": \"根据提供的检索上下文，仅包含 Many Labs 项目 (Klein et al., 2014) 的信息，未提及 OSC (2015) 的研究设计或复制成功率。因此无法比较两种研究方法的关键不同，也无法评估这些差异对心理学可复制性整体评估的影响。\",\n  \"citations\": [],\n  \"insufficient\": true,\n  \"uncertainties\": [\n    \"缺乏 OSC (2015) 的研究设计细节和复制成功率数据\",\n    \"未提供两种方法的直接比较信息\"\n  ]\n}",
+  "answerFormatValid": true
+}

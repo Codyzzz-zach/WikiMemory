@@ -1,0 +1,23 @@
+{
+  "schemaVersion": "wge-batch-c-frozen-execution/v1",
+  "frozenAt": "2026-07-28T07:00:12Z",
+  "implementationCommit": "7371d21e374e6e7d120c7cbcc7f532070b83aa0c",
+  "stageAStatus": "CONDITIONALLY_ACCEPTED_HASH_RESEALED",
+  "stageBRead": false,
+  "hashes": {
+    "configSha256": "76f3538a6933a43ee79a39f462679c78405ce8044583bc2796ba487530ba9426",
+    "selectionSha256": "18a5a28686bf3a1a3ec9620d36599f9d2c6a2439d9b951f2e31a84f9a0ecd640",
+    "questionsSha256": "3cfe6ed87ddfb88902d35c417f27c6a8ebf806e3139e0acc37d34fa9ad11a34d"
+  },
+  "models": {
+    "compiler": "deepseek-v4-flash",
+    "answer": "deepseek-v4-flash",
+    "judge": "deepseek-v4-flash"
+  },
+  "temperature": 0,
+  "thinking": false,
+  "contextBudgetTokens": 12000,
+  "maxGraphDepth": 3,
+  "answerMaxTokens": 1200,
+  "firstRunPolicy": "Answers are append-only and must never be overwritten; all repairs are post-hoc."
+}

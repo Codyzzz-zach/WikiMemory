@@ -1,0 +1,54 @@
+{
+	"schemaVersion": "wge-goal3-pack-cost-ledger-contract/v1.1",
+	"status": "PREREGISTERED_IMPLEMENTATION_DEFECT_REPAIR",
+	"createdAt": "2026-08-10T11:04:00+08:00",
+	"supersedes": {
+		"path": "experiments/goal3/goal3-pack-cost-ledger-contract-v1.json",
+		"sha256": "424b64bc763ea7c1137ef11f308240a43045cdb8333f32a21c162499246e8b28",
+		"reason": "Correct candidateBudgetPerRow=40 from an exact count to candidateBudgetCeilingPerRow=40. The immutable first report remains the sole identity source."
+	},
+	"unchangedRules": "All cost layers, algorithms, optimization-family eligibility/pass thresholds, decision rules and stop rules are inherited byte-for-byte by reference from the superseded v1 contract. This amendment changes no observed-cost threshold.",
+	"frozenInputs": {
+		"epsiFirstReport": {
+			"path": "experiments/goal3/evidence-preserving-source-insertion-runs/evidence-preserving-source-insertion-v1/report.json",
+			"sha256": "92acf19a2a0870c2bb577ccefcdf7455422612e0390dae56f8edde3c434e8086",
+			"rowCount": 100,
+			"questionCount": 50
+		},
+		"epsiCorrectedAggregate": {
+			"path": "experiments/goal3/epsi-aggregate-rescore-runs/epsi-aggregate-rescore-v1/report.json",
+			"sha256": "c37035a755be76c09d281688be0f1ec100e5fa983eed57edd1a1dbe1149feac9"
+		},
+		"s50IndexPointer": {
+			"path": "experiments/goal3/pack-runs/pack-v5/indexes/S50/current.json",
+			"sha256": "9fe5c5d1fb5d23f886f5fdacbbcc7b12bb3874841bcb73f0bf9fa2ee638197fa",
+			"indexVersion": "f120407a3e0cc90eb265f4392bcfae19c7e68dc752e760db7d77e023d093695d"
+		},
+		"persistentIndexImplementation": {
+			"path": "src/retrieval/persistent-index.ts",
+			"sha256": "97e311dfbe3d918e224381783a32f8eb3bd56c7c5dd61f19644d8db48508819a"
+		},
+		"knowledgeTypes": {
+			"path": "src/types/index.ts",
+			"sha256": "eed53c5c82ae68a28ca25f3a77ff7a30beb4e091d756c2ce0c79e32ae7069735"
+		}
+	},
+	"frozenPopulation": {
+		"arms": ["L40_STRONG", "EPSI40"],
+		"datasets": {
+			"batchC": 18,
+			"batchB": 32
+		},
+		"questionCount": 50,
+		"rowCount": 100,
+		"candidateBudgetCeilingPerRow": 40,
+		"candidateCountMustMatchFirstReport": true,
+		"candidateSetsMustComeFromFirstReport": true,
+		"rerunRetrieval": false
+	},
+	"repairBoundary": [
+		"Accept 1 to 40 candidates only when candidateClaimCount exactly matches the immutable row's candidateClaimIds length.",
+		"Do not pad short rows, rerun retrieval or discard any row.",
+		"Use run id pack-cost-ledger-v1-1; do not write pack-cost-ledger-v1."
+	]
+}

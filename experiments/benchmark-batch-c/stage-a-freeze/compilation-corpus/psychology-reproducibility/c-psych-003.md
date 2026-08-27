@@ -1,0 +1,48 @@
+---
+sourceId: c-psych-003
+title: Comment on 'Estimating the reproducibility of psychological science' / Harvard Gazette coverage
+domain: psychology-reproducibility
+sourceRole: S-analysis
+platform: journal
+author: Daniel T. Gilbert, Gary King, Stephen Pettigrew, Timothy D. Wilson
+canonicalUrl: https://www.science.org/doi/10.1126/science.aad7243
+publishedAt: Fri Mar 04 2016 08:00:00 GMT+0800 (China Standard Time)
+capturedAt: Tue Jul 28 2026 14:00:00 GMT+0800 (China Standard Time)
+versionRef: 'doi:10.1126/science.aad7243; coverage: news.harvard.edu/gazette 2016-03-03'
+mediaType: paper
+language: en
+usage: internal-only
+accessStatus: partial
+evaluatorSnapshotHash: sha256:77b3cb4ce1abb82684265e6cddd683fd74417530b9f6bb140ece9d11391fa45d
+evaluatorUpstreamArtifactHash: sha256:3cb35e50527f6e6d4bbe124d544606dadf4e424c2246c167472bb0df7ba35226
+---
+
+# Comment on 'Estimating the reproducibility of psychological science' / Harvard Gazette coverage
+
+## Source Snapshot
+
+*Note: Science comment behind paywall. Content sourced from PubMed abstract and Harvard Gazette coverage (https://news.harvard.edu/gazette/story/2016/03/study-that-undercut-psych-research-got-it-wrong/), both publicly accessible.*
+
+**Authors:** Daniel T. Gilbert (Harvard), Gary King (Harvard), Stephen Pettigrew (Harvard), Timothy D. Wilson (University of Virginia)
+**Published:** Science, Vol. 351, Issue 6277, pp. 1037, 4 March 2016
+**DOI:** 10.1126/science.aad7243
+
+### Abstract (verbatim from PubMed)
+
+"A paper from the Open Science Collaboration (Research Articles, 28 August 2015, aac4716) attempting to replicate 100 published studies suggests that the reproducibility of psychological science is surprisingly low. We show that this article contains three statistical errors and provides no support for such a conclusion. Indeed, the data are consistent with the opposite conclusion, namely, that the reproducibility of psychological science is quite high."
+
+### Key Arguments (verbatim from Harvard Gazette coverage)
+
+Gary King on sampling: "If you want to estimate a parameter of a population, then you either have to randomly sample from that population or make statistical corrections for the fact that you didn't. The OSC did neither."
+
+Daniel Gilbert on the sampling rules: "What they did is create an idiosyncratic, arbitrary list of sampling rules that excluded the majority of psychology's subfields from the sample, that excluded entire classes of studies whose methods are probably among the best in science from the sample, and so on. Then they proceeded to violate all of their own rules."
+
+Gary King on statistical error: "When they did their calculations, they failed to consider the fact that their replication studies were not just new samples from the same population. They were often quite different from the originals in many ways, and those differences are a source of statistical error. So we did the calculation the right way and then applied it to their data. And guess what? The number of failures they observed was just about what you should expect to observe by chance alone — even if all 100 of the original findings were true. The failure of the replication studies to match the original studies was a failure of the replications, not of the originals."
+
+Gary King on fidelity and failure rates: "We used this as a rough index of fidelity, and when we did, we discovered something important: The low-fidelity replications were an astonishing four times more likely to fail. What that suggests is that the infidelities did not just create random statistical noise — they actually biased the studies toward failure."
+
+Gary King on meta-science principles: "I think the big takeaway point here is that meta-science must obey the rules of science. All the rules about sampling and calculating error and keeping experimenters blind to the hypothesis — all of those rules must apply whether you are studying people or studying the replicability of a science. Meta-science does not get a pass. It is not exempt."
+
+### OSC Response (acknowledged by Gilbert)
+
+"We were glad to see that in their response to our comment, the OSC quibbled about a number of minor issues but conceded the major one, which is that their paper does not provide evidence for the pessimistic conclusions that most people have drawn from it."

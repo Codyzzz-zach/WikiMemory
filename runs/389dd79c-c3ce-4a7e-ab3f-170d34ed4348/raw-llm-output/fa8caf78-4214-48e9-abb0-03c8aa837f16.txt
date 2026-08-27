@@ -1,0 +1,28 @@
+{
+  "verdict": "warning",
+  "dimensions": {
+    "support": {
+      "result": "pass",
+      "evidence": "z_1 \\cdot z_2 = r_1r_2 \\cdot e^{i(\\theta_1 + \\theta_2}"
+    },
+    "addition": {
+      "result": "pass",
+      "evidence": "Claim 中除了原文公式外，增加了对公式的定性解释“两个复数相乘的模等于模的乘积，辐角等于辐角之和”，但该解释合理概括了公式含义，未添加原文没有的事实。"
+    },
+    "inference": {
+      "result": "fail",
+      "evidence": "Claim 将原文公式直接陈述为事实，未提及任何推断标记，但原文公式本身是事实陈述，无需推断标记。不过原文仅给出公式，未明确说明“模等于模的乘积，辐角等于辐角之和”，该解释属于对公式的推断。"
+    },
+    "limits": {
+      "result": "pass",
+      "evidence": "原文未给出限制条件，Claim 也未添加限制，符合原文。"
+    },
+    "citation": {
+      "result": "pass",
+      "evidence": "Claim 引用原文公式部分精确对应 SourceSpan。"
+    }
+  },
+  "anchor": "z_1 \\cdot z_2 = r_1r_2 \\cdot e^{i(\\theta_1 + \\theta_2}",
+  "failedDimensions": ["inference"],
+  "issues": ["Claim 将原文公式解释为“模等于模的乘积，辐角等于辐角之和”属于推断，但未明确标记为推断。"]
+}

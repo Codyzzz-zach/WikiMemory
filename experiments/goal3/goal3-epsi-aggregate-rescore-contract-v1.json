@@ -1,0 +1,67 @@
+{
+	"schemaVersion": "wge-goal3-epsi-aggregate-rescore-contract/v1",
+	"status": "PREREGISTERED_AFTER_AGGREGATE_DEFECT_DISCOVERY",
+	"createdAt": "2026-08-04T20:12:00+08:00",
+	"purpose": "Repair the combined-summary aggregation defect in the immutable EPSI v1 report without rerunning retrieval or altering any candidate set, per-question comparison, Gold match or cost row.",
+	"observedDefect": {
+		"sourceReport": "experiments/goal3/evidence-preserving-source-insertion-runs/evidence-preserving-source-insertion-v1/report.json",
+		"symptom": "combined.summaries contains two rows with questions=0 and null recall even though the report contains 100 valid rows and combined.comparison contains 50 paired questions.",
+		"rootCause": "The summarize function filtered row.datasetId === 'combined'; physical rows are labeled batchC or batchB, so the combined selection was empty.",
+		"unaffected": [
+			"All 100 candidate rows",
+			"Batch C summaries and comparison",
+			"Batch B summaries and comparison",
+			"Combined per-question comparison",
+			"Evidence-union preservation",
+			"Frozen retrieval and selector outputs"
+		]
+	},
+	"frozenInputs": {
+		"sourceReport": {
+			"path": "experiments/goal3/evidence-preserving-source-insertion-runs/evidence-preserving-source-insertion-v1/report.json",
+			"sha256": "92acf19a2a0870c2bb577ccefcdf7455422612e0390dae56f8edde3c434e8086"
+		},
+		"sourceManifest": {
+			"path": "experiments/goal3/evidence-preserving-source-insertion-runs/evidence-preserving-source-insertion-v1/run-manifest.json",
+			"sha256": "8bcdb99ab5824167b4f97e4381e301cdfc8ac9b86a82c8fb6cf6678c9b2bdd7a"
+		},
+		"sourceContract": {
+			"path": "experiments/goal3/goal3-evidence-preserving-source-insertion-contract-v1.json",
+			"sha256": "69f51eb05adfe1a01a718e72cad64c2eb8a0475dfc9a415450b14d08713ce925"
+		},
+		"sourceFreeze": {
+			"path": "experiments/goal3/goal3-evidence-preserving-source-insertion-freeze-v1.json",
+			"sha256": "f918938398f37006a99255e56c5d7ddb64f9536cd59f63d957e64955ff8d89de"
+		}
+	},
+	"fixedAlgorithm": [
+		"Verify every frozen input hash before parsing the source report.",
+		"Require exactly 100 unique rows: 50 question IDs, exactly one L40_STRONG and one EPSI40 row per question, with datasetId batchC or batchB.",
+		"Recompute combined summaries by selecting all rows for each arm, not by requiring a physical combined dataset row.",
+		"Recompute Batch C and Batch B summaries and require byte-normalized semantic equality with their v1 summary values.",
+		"Recompute the combined per-question comparison from immutable row fields and require semantic equality with the v1 combined comparison.",
+		"Recompute the verdict from corrected combined summaries and the frozen combined comparison under the original v1 decision rules.",
+		"Hash every row candidateClaimIds/candidateSpanIds/candidateSourceIds tuple and prove it is copied unchanged; do not call retrieval or read Gold."
+	],
+	"fixed": {
+		"network": false,
+		"modelCalls": 0,
+		"retrievalCalls": 0,
+		"expectedRows": 100,
+		"expectedQuestions": 50,
+		"arms": ["L40_STRONG", "EPSI40"],
+		"tokenCeilingRatio": 1.1
+	},
+	"decisionRules": {
+		"CORRECTED_FULL_PASS": "Corrected v1 FULL_PASS conditions hold with valid combined summaries.",
+		"CORRECTED_SAFE_DISCOVERY_COST_UNPROVEN": "At least one strict source win, zero source/evidence losses, union and budgets pass, token ceiling passes, but no non-latency cost advantage.",
+		"CORRECTED_SAFE_BUT_NO_DISCOVERY": "Safety checks pass but there is no strict source win.",
+		"REWORK": "Any frozen hash mismatch, row/candidate mutation, pairing error, dataset-summary drift, combined-comparison drift, overwrite, network/model/retrieval use or non-determinism."
+	},
+	"prohibitions": [
+		"Do not modify or overwrite the immutable EPSI v1 report or manifest.",
+		"Do not rerun retrieval, parse Gold, read Context Pack or Relation, or alter candidate rows.",
+		"Do not change budgets, eviction rules or decision thresholds.",
+		"Do not treat this post-hoc report repair as blind product evidence."
+	]
+}

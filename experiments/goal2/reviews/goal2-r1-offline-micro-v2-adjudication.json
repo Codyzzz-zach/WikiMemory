@@ -1,0 +1,51 @@
+{
+	"schemaVersion": "wge-goal2-offline-adjudication/v1",
+	"status": "COMPLETE_POST_HOC_DEV_REVIEW",
+	"reviewedAt": "2026-07-29",
+	"reviewer": "Codex",
+	"authority": "MANUAL_DEV_RELEVANCE_REVIEW_NOT_HUMAN_GOLD",
+	"input": {
+		"report": "experiments/goal2/runs/goal2-r1-offline-micro-v2/offline-report.json",
+		"sha256": "04276daa3035bf47408e5c0fa66373bd4024928e307f5d915e0400f7fa8d7044"
+	},
+	"criterion": "Every Graph-added Claim must be task-relevant; this review does not assert that the trade is answer-quality-positive.",
+	"controlVerdict": "PASS_NO_UNRELATED_GRAPH_CLAIM",
+	"reviews": [
+		{
+			"questionId": "PILOT-H2-01",
+			"questionClass": "target",
+			"verdict": "RELEVANT_TRADEOFF_REQUIRES_ANSWER_TEST",
+			"addedClaimIds": ["claim:80440e2182e5653f-d1c80ec9bda36ba7"],
+			"removedClaimIds": ["claim:33a33396a17d4175-92f0384fb17d1720"],
+			"rationale": "The added Claim states that the real numbers are complete and is directly relevant to completion from rationals to reals. The removed metric-space completeness definition is also relevant, so no improvement is claimed offline; the paired answer test must decide the trade."
+		},
+		{
+			"questionId": "PILOT-H2-22",
+			"questionClass": "target",
+			"verdict": "RELEVANT_TRADEOFF_REQUIRES_ANSWER_TEST",
+			"addedClaimIds": ["claim:80440e2182e5653f-d1c80ec9bda36ba7"],
+			"removedClaimIds": ["claim:33a33396a17d4175-f61bd8bdddda89dc"],
+			"rationale": "The added real-number completeness Claim is relevant to the example carried by the answer path. The removed formal Cauchy definition is also relevant; this is a real cost-quality trade, not an offline win."
+		},
+		{
+			"questionId": "PILOT-C05",
+			"questionClass": "control",
+			"verdict": "PASS_RELEVANT_REPLACEMENT",
+			"addedClaimIds": [
+				"claim:80440e2182e5653f-d1c80ec9bda36ba7",
+				"claim:80440e2182e5653f-d89b79ca37b88b53"
+			],
+			"removedClaimIds": [
+				"claim:e7ea8bc17c2cc4ab-762e52171f5fb5d4",
+				"claim:e7ea8bc17c2cc4ab-ef4f93b1a8a89990"
+			],
+			"rationale": "The question asks whether every Cauchy sequence converges. Real completeness and the contrast between holes in Q and completeness of R are relevant; uniform and pointwise convergence definitions are not necessary to answer it. This control replacement is therefore not unrelated content."
+		}
+	],
+	"unchangedControls": ["PILOT-D01", "PILOT-D03", "PILOT-INS-D10"],
+	"limitations": [
+		"This is post-hoc review on revealed Dev questions.",
+		"It establishes task relevance only, not answer benefit or blind generalization.",
+		"No question, Gold field, source filename or review verdict is read by the R1 selector."
+	]
+}

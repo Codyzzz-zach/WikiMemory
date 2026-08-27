@@ -1,0 +1,37 @@
+{
+  "runId": "pilot-f19d0043-1099-4226-91e3-c58911e39df6",
+  "questionId": "PILOT-INS-D10",
+  "category": "INSUFFICIENT",
+  "group": "E-min",
+  "corpusHash": "86268a6fbd559d17bb005c4c7bd64d3d1c91b2146010c625e9f2fc2fcb37d938",
+  "knowledgeVersion": "kv:e2f961a26664588188f91fe7",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "temperature": 0,
+  "promptHash": "8fcb39ff6e6d635d48cd3cf19f3a767ac0e0651e92322ac6e72f1330170c7809",
+  "request": {
+    "systemPrompt": "你是一个受证据约束的问答 Agent。只使用本次请求提供的检索上下文回答问题。\n要求：\n1. 保留所有影响结论的条件、例外和不确定性。\n2. 每个关键结论引用上下文中的 SOURCE、EVIDENCE 或 CLAIM 标识。\n3. 如果上下文不足，明确回答 insufficient，不得依赖外部常识补齐。\n4. 只输出严格 JSON：{\"answer\":\"...\",\"citations\":[\"...\"],\"insufficient\":false,\"uncertainties\":[\"...\"]}。",
+    "userPrompt": "# 问题\nLebesgue 积分与 Riemann 积分的切分视角有何不同？\n\n# 检索上下文\n## TASK MAP\n主题: Lebesgue 积分与 Riemann 积分的切分视角有何不同？\n地图主题: 数集, 算子, 空间, 定义, 自然\n关键概念: 连通性, 单射, 浮点数, 无理数, 交换环\n已知争议: 0 个\n最近变化: 5 条\n找到 0 条相关 Claim\n找到 0 条关系\n找到 0 条原文证据\n\n## KNOWN GAPS\nSeed Retriever 未找到可靠匹配——知识库可能未覆盖此主题，或相关原文尚未编译为 Canonical Claim\n未找到关系——Graph 可能尚未建立跨材料边"
+  },
+  "contextHash": "635ec52e140b7987b2535d9c159c5e6aae45c75d5665bf1335066d8f49e28b94",
+  "estimatedContextTokens": 171,
+  "estimatedTotalInputTokens": 348,
+  "usage": {
+    "promptTokens": 304,
+    "completionTokens": 44,
+    "totalTokens": 348,
+    "promptCacheHitTokens": 256,
+    "promptCacheMissTokens": 48,
+    "reasoningTokens": 0
+  },
+  "latencyMs": 1009,
+  "finishReason": "stop",
+  "toolCalls": 1,
+  "retrievedClaims": [],
+  "retrievedRelations": [],
+  "evidenceSpans": [],
+  "retrievedSources": [],
+  "droppedContext": [],
+  "answer": "{\"answer\":\"insufficient\",\"citations\":[],\"insufficient\":true,\"uncertainties\":[\"检索上下文未提供关于 Lebesgue 积分与 Riemann 积分切分视角差异的任何信息。\"]}",
+  "errors": []
+}

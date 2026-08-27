@@ -1,0 +1,32 @@
+{
+  "verdict": "failed",
+  "dimensions": {
+    "support": {
+      "result": "fail",
+      "evidence": "原文证据仅包含“有乘法逆元 | ❌”，但并未明确提及整数集Z或其具体性质。"
+    },
+    "addition": {
+      "result": "fail",
+      "evidence": "Claim 中“整数集Z”在原文证据中未出现，属于额外添加的信息。"
+    },
+    "inference": {
+      "result": "pass",
+      "evidence": "无推断，Claim 为直接断言。"
+    },
+    "limits": {
+      "result": "pass",
+      "evidence": "无适用条件或例外需要保留。"
+    },
+    "citation": {
+      "result": "fail",
+      "evidence": "原文证据未提及整数集Z，因此Claim无法准确对应引用的span。"
+    }
+  },
+  "anchor": "有乘法逆元 | ❌",
+  "failedDimensions": ["support", "addition", "citation"],
+  "issues": [
+    "原文证据未明确支持Claim中关于整数集Z的断言",
+    "Claim添加了原文中未提及的“整数集Z”",
+    "Claim引用的span内容与Claim讨论的对象不一致"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+	"schemaVersion": "wge-batch-c-iteration-summary/v1",
+	"iterationId": "batch-c-iteration-002-multilingual-fusion",
+	"status": "TARGETED_POST_HOC_VALIDATED",
+	"productPriority": "Chinese questions over predominantly English knowledge assets",
+	"implementation": {
+		"approach": "Compile-time Chinese retrieval aliases plus original-language-first fusion",
+		"canonicalClaimsMutated": false,
+		"aliasesExposedAsEvidence": false,
+		"aliasProjectionCount": 189,
+		"aliasModel": "deepseek-v4-flash",
+		"aliasPromptVersion": "retrieval-alias-zh-v1",
+		"aliasIndexSha256": "e427cc9c889cf1f01436eee6207977dcfd929069a47439ed651c44a67eb1092d",
+		"staleProjectionRule": "claim statement hash mismatch disables the projection",
+		"fusionRule": "preserve the complete original-language Top-K and append at most four alias-only candidates"
+	},
+	"offlineRetrieval": {
+		"primaryQuestions": 16,
+		"requiredEvidenceItems": 28,
+		"P-seed": { "before": 0.429, "after": 0.571 },
+		"P-graph": { "before": 0.464, "after": 0.607 },
+		"regressedEvidenceItems": 0,
+		"preparationTreeSha256": "93509bb8b7e8db4f802c6e9828f56c5ff58353629516652dcdae47a8e2297bd6"
+	},
+	"targetedOnlineEvaluation": {
+		"questions": 4,
+		"selectionRule": "Only questions with newly retrieved Gold evidence and weak blind-first-run compiled answers",
+		"B": { "averageTotal": 9.5, "hardFailures": 0, "totalTokens": 11196 },
+		"P-seed": {
+			"averageTotal": 15.25,
+			"hardFailures": 0,
+			"totalTokens": 13536,
+			"pairedVsB": { "wins": 2, "ties": 2, "losses": 0, "averageDifference": 5.75 }
+		},
+		"P-graph": {
+			"averageTotal": 15.75,
+			"hardFailures": 0,
+			"totalTokens": 21550,
+			"pairedVsB": { "wins": 3, "ties": 1, "losses": 0, "averageDifference": 6.25 }
+		},
+		"answerTreeSha256": "6bfd2ba6c16a218d34de9243290867277d25ab0195dffaa2c467915e112fbfae"
+	},
+	"decision": "Accept multilingual retrieval aliases. The dominant gain comes from Seed retrieval; Graph adds only 0.5 average points over Seed while using substantially more tokens, so Graph expansion remains unproven for default use.",
+	"limitations": [
+		"Stage B Gold is evaluator-corrected but post-answer provisional Gold.",
+		"Answer and judge use the same model family; results are diagnostic, not confirmatory.",
+		"This targeted run contains only questions whose offline evidence recall improved and must not be reported as a full Batch C score."
+	]
+}

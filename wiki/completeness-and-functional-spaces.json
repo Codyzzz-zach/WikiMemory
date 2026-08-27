@@ -1,0 +1,32 @@
+{
+  "id": "wiki:completeness-and-functional-spaces",
+  "stableAddress": "wiki://analysis/completeness-and-functional-spaces",
+  "coreQuestion": "完备性如何从数系中的“无洞”推广为函数空间中核心定理的共同前提？",
+  "currentUnderstanding": "完备性把“内部已经稳定”的 Cauchy 列与“极限仍留在当前空间”连接起来。有理数不完备，而实数通过补足缺失极限成为完备对象；在一般空间中，同一原则定义完备度量空间。赋范空间加上完备性得到 Banach 空间，内积空间加上完备性得到 Hilbert 空间。泛函分析中的开映射、一致有界等核心结果依赖相应的 Banach 完备性，不能把这些结论无条件推广到任意赋范空间。",
+  "disputes": [
+    "Cauchy 性只说明后期项彼此接近；是否收敛到空间内的点取决于空间是否完备。",
+    "Hilbert 空间带有内积诱导的范数；不能反过来断言每个 Banach 空间的范数都来自内积。"
+  ],
+  "claimRefs": [
+    "claim:80440e2182e5653f-1d1341c978df0a68",
+    "claim:80440e2182e5653f-4384f68c38d1c16d",
+    "claim:33a33396a17d4175-f61bd8bdddda89dc",
+    "claim:33a33396a17d4175-92f0384fb17d1720",
+    "claim:33a33396a17d4175-6d70b1c82ab10765",
+    "claim:33a33396a17d4175-c57d84208e8f6275",
+    "claim:e7ea8bc17c2cc4ab-adcf8db0c33ee742",
+    "claim:9478dfc1ba6cb58f-0c27fbe0e2b1a1d3",
+    "claim:9478dfc1ba6cb58f-9970b8b9ed15793f",
+    "claim:9478dfc1ba6cb58f-ef5f374785bd2634",
+    "claim:9478dfc1ba6cb58f-71a56b4ac7ad880b"
+  ],
+  "conceptRefs": [
+    "concept:33a33396a17d4175-334e09d896072f92",
+    "concept:4484d76309918dd3",
+    "concept:33a33396a17d4175-5efb6ce48c550a27",
+    "concept:8b59cb0811f8b4c4"
+  ],
+  "dependencies": [],
+  "publicationState": "CANONICAL",
+  "updatedAt": "2026-07-24T02:45:00.000Z"
+}

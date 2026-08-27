@@ -1,0 +1,29 @@
+{
+  "verdict": "failed",
+  "supersessionEffect": "NOT_APPLICABLE",
+  "dimensions": {
+    "identity": {
+      "result": "pass",
+      "evidenceSpanIndexes": [0, 1]
+    },
+    "relation": {
+      "result": "fail",
+      "evidenceSpanIndexes": [0, 1]
+    },
+    "type": {
+      "result": "fail",
+      "evidenceSpanIndexes": [0, 1]
+    },
+    "direction": {
+      "result": "pass",
+      "evidenceSpanIndexes": [0, 1]
+    },
+    "conditions": {
+      "result": "fail",
+      "evidenceSpanIndexes": [0]
+    }
+  },
+  "anchorSpanIndex": 0,
+  "failedDimensions": ["relation", "type", "conditions"],
+  "supportingEvidenceSpanIndexes": []
+}

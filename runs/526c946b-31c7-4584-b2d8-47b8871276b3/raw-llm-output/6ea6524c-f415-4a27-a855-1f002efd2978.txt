@@ -1,0 +1,89 @@
+{
+  "propositions": [
+    {
+      "text": "空间概念是数学从具体走向抽象的典范，每一层抽象丢掉一些结构，也获得更广的适用范围。",
+      "exactQuote": "从教室里的三维直觉出发，逐步抽象到无限维量子态空间——\"空间\"这个概念是数学从具体走向抽象的典范。每一层抽象丢掉一些结构，也获得更广的适用范围。",
+      "blockId": "02-spaces#block-1"
+    },
+    {
+      "text": "在数学中，"空间"等于一个集合加上附加结构。",
+      "exactQuote": "在数学中，\"空间\" = **一个集合 + 附加结构**。",
+      "blockId": "02-spaces#block-4"
+    },
+    {
+      "text": "不同的结构定义了不同的空间类型。",
+      "exactQuote": "不同的结构定义了不同的空间类型。",
+      "blockId": "02-spaces#block-4"
+    },
+    {
+      "text": "欧几里得空间 R^n 是我们最熟悉的空间，我们生活在其中的三维空间 R^3。",
+      "exactQuote": "这是我们最熟悉的空间——我们生活在其中的三维空间 $\\mathbb{R}^3$。",
+      "blockId": "02-spaces#block-11"
+    },
+    {
+      "text": "R^n 定义为所有n元实数组的集合。",
+      "exactQuote": "$$\\mathbb{R}^n = \\{(x_1, x_2, \\ldots, x_n) \\mid x_i \\in \\mathbb{R}\\}$$",
+      "blockId": "02-spaces#block-12"
+    },
+    {
+      "text": "欧几里得结构包括线性结构和内积。",
+      "exactQuote": "**欧几里得结构 = 线性结构 + 内积**：",
+      "blockId": "02-spaces#block-13"
+    },
+    {
+      "text": "向量加法定义为分量分别相加。",
+      "exactQuote": "- **向量加法**：$(x_i) + (y_i) = (x_i + y_i)$",
+      "blockId": "02-spaces#block-14"
+    },
+    {
+      "text": "标量乘法定义为每个分量乘以标量。",
+      "exactQuote": "- **标量乘法**：$c \\cdot (x_i) = (c x_i)$",
+      "blockId": "02-spaces#block-14"
+    },
+    {
+      "text": "内积（点积）定义为对应分量乘积之和。",
+      "exactQuote": "- **内积（点积）**：$\\langle x, y \\rangle = \\sum_{i=1}^n x_i y_i$",
+      "blockId": "02-spaces#block-14"
+    },
+    {
+      "text": "欧氏距离定义为差的欧氏范数。",
+      "exactQuote": "- **欧氏距离**：$d(x,y) = \\sqrt{\\sum (x_i - y_i)^2}$",
+      "blockId": "02-spaces#block-14"
+    },
+    {
+      "text": "欧氏范数定义为内积的平方根。",
+      "exactQuote": "- **欧氏范数**：$\\|x\\| = \\sqrt{\\langle x, x \\rangle}$",
+      "blockId": "02-spaces#block-14"
+    },
+    {
+      "text": "欧氏空间是所有空间的原型。",
+      "exactQuote": "### 为什么欧氏空间是所有空间的原型？",
+      "blockId": "02-spaces#block-15"
+    },
+    {
+      "text": "欧氏空间同时拥有线性、距离、内积三种结构，而且它们是自然兼容的。",
+      "exactQuote": "因为它**同时拥有**线性、距离、内积三种结构，而且它们是自然兼容的：",
+      "blockId": "02-spaces#block-16"
+    },
+    {
+      "text": "在欧氏空间中，范数的平方等于内积，距离等于差的范数。",
+      "exactQuote": "$$\\|x\\|^2 = \\langle x, x \\rangle, \\quad d(x,y) = \\|x - y\\|$$",
+      "blockId": "02-spaces#block-17"
+    },
+    {
+      "text": "下面的所有空间类型都是对 R^n 的某一方面进行推广或削弱。",
+      "exactQuote": "下面的所有空间类型都是对 $\\mathbb{R}^n$ 的某一方面进行**推广或削弱**。",
+      "blockId": "02-spaces#block-18"
+    },
+    {
+      "text": "R^n 太具体了，因为它假设我们有一组坐标。",
+      "exactQuote": "$\\mathbb{R}^n$ 太具体了——它假设我们有一组坐标 $(x_1,\\ldots,x_n)$。",
+      "blockId": "02-spaces#block-23"
+    },
+    {
+      "text": "很多数学对象也满足"可加可缩"的性质。",
+      "exactQuote": "但很多数学对象也满足\"可加可缩\"的性质：",
+      "blockId": "02-spaces#block-23"
+    }
+  ]
+}

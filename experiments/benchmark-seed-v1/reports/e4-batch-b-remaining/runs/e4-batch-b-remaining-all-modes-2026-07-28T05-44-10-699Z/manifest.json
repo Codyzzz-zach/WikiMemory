@@ -1,0 +1,103 @@
+{
+  "runId": "e4-batch-b-remaining-all-modes-2026-07-28T05-44-10-699Z",
+  "selectionPath": "/Users/mixi/Desktop/WikiMemory/experiments/benchmark-seed-v1/e4-smoke/batch-b-remaining-selection.json",
+  "taskFile": "workbuddy-batch-b/generated/candidates/tasks.jsonl",
+  "questionIds": [
+    "B-F-HEALTH-001",
+    "B-T-HEALTH-003",
+    "B-K-HEALTH-004",
+    "B-X-HEALTH-006",
+    "B-R-HEALTH-007",
+    "B-A-HEALTH-008",
+    "B-U-HEALTH-009",
+    "B-F-HEALTH-010",
+    "B-R-HEALTH-011",
+    "B-F-HIST-001",
+    "B-R-HIST-002",
+    "B-K-HIST-004",
+    "B-E-HIST-005",
+    "B-A-HIST-007",
+    "B-U-HIST-008",
+    "B-T-HIST-009",
+    "B-F-HIST-010",
+    "B-F-DESIGN-001",
+    "B-E-DESIGN-003",
+    "B-K-DESIGN-004",
+    "B-R-DESIGN-006",
+    "B-F-DESIGN-007",
+    "B-U-DESIGN-008",
+    "B-A-DESIGN-009",
+    "B-C-DESIGN-010",
+    "B-K-DESIGN-011"
+  ],
+  "modes": [
+    {
+      "id": "B",
+      "pilotGroup": "B",
+      "graphExpansion": false
+    },
+    {
+      "id": "P-seed",
+      "pilotGroup": "P",
+      "graphExpansion": false
+    },
+    {
+      "id": "P-graph",
+      "pilotGroup": "P",
+      "graphExpansion": true
+    }
+  ],
+  "repetitions": 1,
+  "config": {
+    "schemaVersion": "wge-pilot-config/v1",
+    "status": "LOCKED",
+    "corpus": [
+      "../../../workbuddy-batch-b/generated/compilation-corpus/health-biology/health-who-march-2020-001.md",
+      "../../../workbuddy-batch-b/generated/compilation-corpus/health-biology/health-who-july-2020-002.md",
+      "../../../workbuddy-batch-b/generated/compilation-corpus/health-biology/health-nature-airborne-2022-003.md",
+      "../../../workbuddy-batch-b/generated/compilation-corpus/health-biology/health-who-terminology-2024-004.md",
+      "../../../workbuddy-batch-b/generated/compilation-corpus/history-humanities/history-educelab-paper-2023-001.md",
+      "../../../workbuddy-batch-b/generated/compilation-corpus/history-humanities/history-vesuvius-github-2024-002.md",
+      "../../../workbuddy-batch-b/generated/compilation-corpus/history-humanities/history-nature-scroll-2024-003.md",
+      "../../../workbuddy-batch-b/generated/compilation-corpus/history-humanities/history-scrollprize-2026-004.md",
+      "../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-wcag21-2018-001.md",
+      "../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-wcag22-2023-002.md",
+      "../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-wcag-issue-2705-003.md",
+      "../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-webaim-checklist-2024-004.md"
+    ],
+    "compiler": {
+      "model": "deepseek-v4-flash",
+      "temperature": 0,
+      "thinkingDisabled": true
+    },
+    "answer": {
+      "model": "deepseek-v4-flash",
+      "temperature": 0,
+      "thinkingDisabled": true,
+      "maxOutputTokens": 1200
+    },
+    "judge": {
+      "model": "deepseek-v4-flash",
+      "temperature": 0,
+      "thinkingDisabled": true,
+      "maxOutputTokens": 1200
+    },
+    "retrieval": {
+      "contextBudgetTokens": 12000,
+      "maxGraphDepth": 3,
+      "maxFolderChunks": 16,
+      "folderChunkChars": 1800
+    },
+    "execution": {
+      "groups": [
+        "B",
+        "P"
+      ],
+      "externalRetrievalNetwork": false,
+      "maxToolCalls": 1,
+      "timeoutMs": 120000
+    }
+  },
+  "answerModelReturned": "deepseek-v4-flash",
+  "judgeModelReturned": "deepseek-v4-flash"
+}

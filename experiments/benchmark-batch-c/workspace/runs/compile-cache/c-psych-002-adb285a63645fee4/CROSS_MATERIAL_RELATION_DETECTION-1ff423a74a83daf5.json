@@ -1,0 +1,6 @@
+{
+  "kind": "VALID",
+  "content": "{\n  \"relations\": [\n    {\n      \"fromClaimIndex\": 17,\n      \"toClaimIndex\": 36,\n      \"type\": \"RELATED_TO\",\n      \"conditions\": [],\n      \"confidence\": 0.6\n    },\n    {\n      \"fromClaimIndex\": 22,\n      \"toClaimIndex\": 37,\n      \"type\": \"RELATED_TO\",\n      \"conditions\": [],\n      \"confidence\": 0.5\n    }\n  ]\n}",
+  "model": "deepseek-v4-flash",
+  "outputHash": "7e4fc3a8cceb38a7"
+}

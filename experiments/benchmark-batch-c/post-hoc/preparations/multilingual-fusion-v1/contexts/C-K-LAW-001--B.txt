@@ -1,0 +1,132 @@
+## SOURCE ../stage-a-freeze/compilation-corpus/law-public-policy/c-law-003.md:22-30 score=18.561
+## Source Snapshot
+
+*Content sourced from GDPRhub.eu (https://gdprhub.eu/index.php?curid=5944). Publicly accessible GDPR case law wiki.*
+
+**Case:** DPC (Ireland) — IN-20-8-1
+**Authority:** DPC (Ireland), bound by EDPB Article 65 decision
+**Fine:** €1,200,000,000
+**Relevant Law:** Articles 45, 46, 49, 60(4), 65(1)(a) GDPR
+
+## SOURCE ../stage-a-freeze/compilation-corpus/law-public-policy/c-law-002.md:1-19 score=17.079
+---
+sourceId: c-law-002
+title: DPC (Ireland) Final Decision IN-20-8-1 — Meta Platforms Ireland Limited (GDPR data transfers)
+domain: law-public-policy
+sourceRole: P/C-implementation
+platform: official
+author: Data Protection Commission (Ireland)
+canonicalUrl: https://www.edpb.europa.eu/news/news/2023/12-billion-euro-fine-facebook-result-edpb-binding-decision_en
+publishedAt: Fri May 12 2023 08:00:00 GMT+0800 (China Standard Time)
+capturedAt: Tue Jul 28 2026 14:00:00 GMT+0800 (China Standard Time)
+versionRef: DPC Case IN-20-8-1; EDPB Binding Decision 13 April 2023
+mediaType: docs
+language: en
+usage: internal-only
+accessStatus: full
+evaluatorSnapshotHash: sha256:6f64eea096fdabb05e90ffb068b18d08b7576b8ebdba9f0a5d04b4f1776b7421
+evaluatorUpstreamArtifactHash: sha256:e46ea8fbdb92d77e71a0d445970d0f17e244b756873cb903a4d94ada69452ac5
+---
+
+## SOURCE ../stage-a-freeze/compilation-corpus/law-public-policy/c-law-002.md:22-31 score=15.502
+## Source Snapshot
+
+*Content sourced from EDPB press release (https://www.edpb.europa.eu/), DPC announcement, and RegSol/GDPRhub analyses. All publicly accessible.*
+
+**Decision Date:** 12 May 2023
+**Announcement Date:** 22 May 2023
+**Authority:** Data Protection Commission (Ireland), Lead Supervisory Authority
+**EDPB Binding Decision:** 13 April 2023 (Article 65 dispute resolution)
+**Case Reference:** IN-20-8-1
+
+## SOURCE ../stage-a-freeze/compilation-corpus/law-public-policy/c-law-003.md:1-19 score=14.357
+---
+sourceId: c-law-003
+title: 'GDPRhub Analysis: DPC (Ireland) — IN-20-8-1 (Meta data transfers)'
+domain: law-public-policy
+sourceRole: S-analysis
+platform: wiki
+author: GDPRhub contributors (noyb/GDPRhub project)
+canonicalUrl: https://gdprhub.eu/index.php?curid=5944
+publishedAt: Thu Jun 01 2023 08:00:00 GMT+0800 (China Standard Time)
+capturedAt: Tue Jul 28 2026 14:00:00 GMT+0800 (China Standard Time)
+versionRef: curid=5944; version as of 2023
+mediaType: article
+language: en
+usage: internal-only
+accessStatus: full
+evaluatorSnapshotHash: sha256:12d82c5c850337812eb836ae1e40ade8e3de798ee5757a315f29393c9a6ed84a
+evaluatorUpstreamArtifactHash: sha256:92100a58dfce67e41bb27f696fde8f206c95250b65300477a02ed428de24dca6
+---
+
+## SOURCE ../stage-a-freeze/compilation-corpus/law-public-policy/c-law-003.md:20-21 score=14.357
+# GDPRhub Analysis: DPC (Ireland) — IN-20-8-1 (Meta data transfers)
+
+## SOURCE ../stage-a-freeze/compilation-corpus/law-public-policy/c-law-004.md:38-43 score=13.615
+### Other Meta GDPR Penalties (January 2023)
+
+In January 2023, the Irish DPC fined Meta Platforms Ireland Limited €390 million total — €210 million for Facebook and €180 million for Instagram — for violations related to the legal basis for personalized advertising (Articles 5(1)(a), 6(1), 12, 13(1)(c) GDPR). Meta had relied on "contractual necessity" (Article 6(1)(b)) as the legal basis, but the EDPB determined this was not valid and that user consent was required.
+
+"Meta assumed that the acceptance of the updated terms of use constituted a contract between Meta and the user, since the processing of the data would be necessary for the provision as well as the improvement of the services."
+
+## SOURCE ../stage-a-freeze/compilation-corpus/law-public-policy/c-law-002.md:20-21 score=13.482
+# DPC (Ireland) Final Decision IN-20-8-1 — Meta Platforms Ireland Limited (GDPR data transfers)
+
+## SOURCE ../stage-a-freeze/compilation-corpus/law-public-policy/c-law-002.md:32-37 score=10.018
+### Finding of Infringement (verbatim from DPC announcement)
+
+"The decision records that Meta Ireland infringed Article 46(1) GDPR when it continued to transfer personal data from the EU/EEA to the USA following the delivery of the CJEU's judgment in Data Protection Commissioner v Facebook Ireland Limited and Maximillian Schrems."
+
+"While Meta Ireland effected those transfers on the basis of the updated Standard Contractual Clauses ('SCCs') that were adopted by the European Commission in 2021 in conjunction with additional supplementary measures that were implemented by Meta Ireland, the DPC found that these arrangements did not address the risks to the fundamental rights and freedoms of data subjects that were identified by the CJEU in its judgment."
+
+## SOURCE ../stage-a-freeze/compilation-corpus/law-public-policy/c-law-002.md:38-47 score=10.018
+### DPC's Specific Findings
+
+"US law does not provide a level of protection that is equivalent to that provided by EU law."
+
+"Neither the 2010 SCCs, nor the 2021 SCCs, could compensate for the inadequate protection provided by US law."
+
+"The measures set out in Meta's record of safeguards...do not compensate for the inadequate protection provided by US law."
+
+"It is not open to Meta to rely on the derogations provided for in Article 49(1) of the GDPR when making the data transfers."
+
+## SOURCE ../stage-a-freeze/compilation-corpus/law-public-policy/c-law-003.md:45-50 score=10.018
+### On Derogations
+
+"Finally, Meta Ireland could not rely on derogations under Article 49 GDPR, as derogations to fundamental rights enshrined in the European Charter of Fundamental Rights shall be interpreted strictly."
+
+"Moreover, according to the Irish DPC, derogations under Article 49 GDPR can only be invoked for 'occasional and non-repetitive' transfers, which was clearly not the case with the Meta group, whose business model is based on massive and continuous transatlantic exchanges of data."
+
+## SOURCE ../stage-a-freeze/compilation-corpus/law-public-policy/c-law-002.md:60-63 score=8.885
+### Dispute Resolution Background
+
+The DPC initially proposed only a suspension order without a fine. Four of 47 Concerned Supervisory Authorities objected. The EDPB determined that a fine should be imposed and that Meta must also address already-transferred data. The DPC was bound to follow the EDPB's binding decision.
+
+## SOURCE ../stage-a-freeze/compilation-corpus/law-public-policy/c-law-002.md:56-59 score=7.722
+### EDPB Statement (verbatim)
+
+"The EDPB found that Meta IE's infringement is very serious since it concerns transfers that are systematic, repetitive and continuous. Facebook has millions of users in Europe, so the volume of personal data transferred is massive. The unprecedented fine is a strong signal to organisations that serious infringements have far-reaching consequences."
+
+## SOURCE ../stage-a-freeze/compilation-corpus/law-public-policy/c-law-003.md:51-54 score=7.566
+### On the DPC's Initial Reluctance to Fine
+
+"On the one hand, the Irish DPA found that the suspension of the transfers was already sufficient to enforce the GDPR and a fine on top of it would have been excessive. On the other hand, the Irish DPA claimed that several complex legal issues concerning data transfers were solved for the first time before the CJEU in the Schrems II judgement."
+
+## SOURCE ../stage-a-freeze/compilation-corpus/law-public-policy/c-law-002.md:48-55 score=7.183
+### Corrective Powers Exercised
+
+1. Administrative fine: **€1.2 billion** — the largest GDPR fine ever imposed.
+
+2. Suspension order (Article 58(2)(j) GDPR): Meta Ireland must suspend any future transfer of personal data to the US within **five months** from notification.
+
+3. Compliance order (Article 58(2)(d) GDPR): Meta Ireland must bring processing into compliance with Chapter V GDPR by ceasing unlawful processing, including storage, in the US, within **six months** from notification.
+
+## SOURCE ../stage-a-freeze/compilation-corpus/law-public-policy/c-law-003.md:37-40 score=7.183
+### On Standard Contractual Clauses
+
+"Second, the Irish DPA found that Standard Contractual Clauses (SCCs) pursuant to Article 46(2)(c) GDPR invoked by Meta Ireland could not compensate for the lack of an equivalent level of data protection. In particular, SCCs did not (and could not) address the activity of U.S. intelligence agencies or the lack of judicial remedies against such activity."
+
+## SOURCE ../stage-a-freeze/compilation-corpus/law-public-policy/c-law-004.md:34-37 score=5.511
+### Business Impact Analysis
+
+According to enforcementtracker.com, this was the largest GDPR fine ever imposed. Prior major GDPR fines included: Amazon (€746 million, Luxembourg, 2021), WhatsApp (€225 million, Ireland, 2021), and Meta's separate €390 million fine (Ireland, January 2023) for GDPR violations related to personalized advertising legal basis.

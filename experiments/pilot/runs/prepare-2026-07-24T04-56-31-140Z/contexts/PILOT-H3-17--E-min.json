@@ -1,0 +1,42 @@
+{
+  "runId": "prepare-2026-07-24T04-56-31-140Z",
+  "category": "H3",
+  "corpusHash": "86268a6fbd559d17bb005c4c7bd64d3d1c91b2146010c625e9f2fc2fcb37d938",
+  "group": "E-min",
+  "questionId": "PILOT-H3-17",
+  "context": "## TASK MAP\n主题: Riesz 表示定理如何连接线性泛函、对偶空间、内积与 Hilbert 完备性？\n地图主题: maclaurin, \\rangle, a_n, $\\langle, 0$\n关键概念: 连通性, 单射, 浮点数, 无理数, 交换环\n已知争议: 0 个\n最近变化: 5 条\n找到 9 条相关 Claim\n找到 1 条关系\n找到 9 条原文证据\n\n## CLAIM claim:9478dfc1ba6cb58f-0e7148fb74211eee\nRiesz表示定理（Hilbert空间版本）指出每个连续线性泛函f∈H*都可由内积表示为f(x)=⟨x,y⟩对某唯一的y∈H。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:33a33396a17d4175-52ea70f5124a7a46\nHilbert 空间允许 Fourier 级数：$\\{e^{inx}\\}_{n=-\\infty}^\\infty$ 是 $L^2[-\\pi,\\pi]$ 中的一组正交基。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:33a33396a17d4175-805fb4ab5d394c0a\nHilbert 空间允许正交投影：找到子空间中最接近某点的元素。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:33a33396a17d4175-81349b735066881b\nHilbert 空间允许正交基：用一组相互垂直的基向量表示空间中任何元素。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:33a33396a17d4175-c57d84208e8f6275\nHilbert 空间是完备的内积空间。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:9478dfc1ba6cb58f-23e316c39e6b89e0\nHilbert空间中的作用在向量上的泛函本质上就是与某个固定向量做内积。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:9478dfc1ba6cb58f-5f635e434ce1469b\nRiesz 表示定理表明 H 同构于 H^*，泛函等于内积。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:9478dfc1ba6cb58f-9970b8b9ed15793f\nHilbert 空间是完备内积空间。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:9478dfc1ba6cb58f-84815c445d9df358\nf(x)=⟨x,y⟩对某唯一的y∈H。\nConditions: none\nValidity: SUPPORTED\n\n## RELATION rel:9478dfc1ba6cb58f-d7fc084de83a541c\nclaim:9478dfc1ba6cb58f-0e7148fb74211eee --[SUPPORTS]--> claim:9478dfc1ba6cb58f-84815c445d9df358\nConditions: none\n\n## WIKI wiki://analysis/completeness-and-functional-spaces\nQuestion: 完备性如何从数系中的“无洞”推广为函数空间中核心定理的共同前提？\n完备性把“内部已经稳定”的 Cauchy 列与“极限仍留在当前空间”连接起来。有理数不完备，而实数通过补足缺失极限成为完备对象；在一般空间中，同一原则定义完备度量空间。赋范空间加上完备性得到 Banach 空间，内积空间加上完备性得到 Hilbert 空间。泛函分析中的开映射、一致有界等核心结果依赖相应的 Banach 完备性，不能把这些结论无条件推广到任意赋范空间。\nDisputes: Cauchy 性只说明后期项彼此接近；是否收敛到空间内的点取决于空间是否完备。; Hilbert 空间带有内积诱导的范数；不能反过来断言每个 Banach 空间的范数都来自内积。\n\n## WIKI wiki://analysis/fourier-projection-and-spectrum\nQuestion: 为什么 Fourier 分析可以同时理解为函数展开、Hilbert 空间投影和算子谱分解的原型？\nFourier 变换把函数或信号分解到频率成分；Fourier 级数则把函数写成三角或复指数基的级数。在 L² 型 Hilbert 空间里，这些系数可理解为函数在正交基方向上的坐标，有限项近似对应投影到有限维子空间。泛函分析进一步把这种“选基后对角化”的思想推广到算子：自伴算子的谱分解是 Fourier 分解观念的抽象延伸。函数展开的具体收敛方式仍需单独说明，不能从坐标或投影视角推出所有函数都逐点收敛。\nDisputes: 函数展开、L² 收敛、逐点收敛和一致收敛是不同命题，不能相互替代。; 谱分解的适用对象和条件必须保留；不能把自伴算子的结论推广到任意算子。\n\n## EVIDENCE span:09-functional-analysis-9478dfc1ba6cb58f-25#chars-2037-2095\n**Riesz 表示定理**（Hilbert空间版本）：每个连续线性泛函 $f \\in H^*$ 都可由内积表示为：\n\n## EVIDENCE span:02-spaces-33a33396a17d4175-66#chars-5832-5907\n- **Fourier 级数**：$\\{e^{inx}\\}_{n=-\\infty}^\\infty$ 是 $L^2[-\\pi,\\pi]$ 中的一组正交基\n\n## EVIDENCE span:02-spaces-33a33396a17d4175-66#chars-5775-5800\n- **正交投影**：找到子空间中最接近某点的元素\n\n## EVIDENCE span:02-spaces-33a33396a17d4175-66#chars-5801-5831\n- **正交基**：用一组相互垂直的基向量表示空间中任何元素\n\n## EVIDENCE span:02-spaces-33a33396a17d4175-61#chars-5644-5668\n**Hilbert 空间 = 完备的内积空间**\n\n## EVIDENCE span:09-functional-analysis-9478dfc1ba6cb58f-27#chars-2162-2208\n这意味着 Hilbert 空间中的\"作用在向量上的泛函\"本质上就是\"与某个固定向量做内积\"。\n\n## EVIDENCE span:09-functional-analysis-9478dfc1ba6cb58f-47\n| # | 关键概念 | 直觉 | 连接章节 |\n|---|---------|------|---------|\n| 1 | **泛函 = 函数的函数** | 输入函数，输出数 | $\\S$12 变分法 |\n| 2 | **Euler-Lagrange** | 泛函极值的必要条件 | $\\S$12, $\\S$19 |\n| 3 | **四大定理** | 完备性带来的\"免费午餐\" | $\\S$2 Banach空间 |\n| 4 | **Riesz表示** | $H \\cong H^*$，泛函=内积 | $\\S$2 Hilbert空间 |\n| 5 | **谱 > 特征值** | 不可逆性的三层结构 | $\\S$13 特征值 |\n| 6 | **紧算子** | 无限维中最像矩阵的 | 积分方程 |\n| 7 | **谱分解** | Fourier变换的终极推广 | $\\S$5 变换 |\n\n## EVIDENCE span:09-functional-analysis-9478dfc1ba6cb58f-15\n| 对象 | 有限维类比 | 无限维特征 |\n|------|-----------|-----------|\n| Banach空间 | $\\mathbb{R}^n$ | 完备赋范空间 |\n| Hilbert空间 | $\\mathbb{R}^n$ 带内积 | 完备内积空间 |\n| 线性算子 | 矩阵 $A \\in M_{n\\times n}$ | 微分/积分/乘法算子 |\n| 有界算子 | — | $\\|T\\| = \\sup_{\\|x\\|=1}\\|Tx\\| < \\infty$ |\n| 紧算子 | — | 有界集的像是相对紧的 |\n\n## EVIDENCE span:09-functional-analysis-9478dfc1ba6cb58f-26#chars-2100-2155\nf(x) = \\langle x, y \\rangle \\quad \\text{对某唯一的 } y \\in H",
+  "estimatedContextTokens": 1820,
+  "retrievedClaims": [
+    "claim:9478dfc1ba6cb58f-0e7148fb74211eee",
+    "claim:33a33396a17d4175-52ea70f5124a7a46",
+    "claim:33a33396a17d4175-805fb4ab5d394c0a",
+    "claim:33a33396a17d4175-81349b735066881b",
+    "claim:33a33396a17d4175-c57d84208e8f6275",
+    "claim:9478dfc1ba6cb58f-23e316c39e6b89e0",
+    "claim:9478dfc1ba6cb58f-5f635e434ce1469b",
+    "claim:9478dfc1ba6cb58f-9970b8b9ed15793f",
+    "claim:9478dfc1ba6cb58f-84815c445d9df358"
+  ],
+  "retrievedRelations": [
+    "rel:9478dfc1ba6cb58f-d7fc084de83a541c"
+  ],
+  "evidenceSpans": [
+    "span:09-functional-analysis-9478dfc1ba6cb58f-25#chars-2037-2095",
+    "span:02-spaces-33a33396a17d4175-66#chars-5832-5907",
+    "span:02-spaces-33a33396a17d4175-66#chars-5775-5800",
+    "span:02-spaces-33a33396a17d4175-66#chars-5801-5831",
+    "span:02-spaces-33a33396a17d4175-61#chars-5644-5668",
+    "span:09-functional-analysis-9478dfc1ba6cb58f-27#chars-2162-2208",
+    "span:09-functional-analysis-9478dfc1ba6cb58f-47",
+    "span:09-functional-analysis-9478dfc1ba6cb58f-15",
+    "span:09-functional-analysis-9478dfc1ba6cb58f-26#chars-2100-2155"
+  ],
+  "retrievedSources": [
+    "source:09-functional-analysis-9478dfc1ba6cb58f",
+    "source:02-spaces-33a33396a17d4175"
+  ],
+  "droppedContext": [],
+  "knowledgeVersion": "kv:e2f961a26664588188f91fe7",
+  "contextHash": "4a881ffa45255bf0fb09b6a89140602e6df809981b1efc64b5b9dc9334344d02",
+  "toolCalls": 1
+}

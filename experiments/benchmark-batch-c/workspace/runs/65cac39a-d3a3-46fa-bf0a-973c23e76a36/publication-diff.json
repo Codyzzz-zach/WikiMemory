@@ -1,0 +1,55 @@
+{
+  "schemaVersion": "pilot-publication-diff/v1",
+  "runId": "65cac39a-d3a3-46fa-bf0a-973c23e76a36",
+  "sourceId": "source:c-climate-003-0edc89a8f2de72a2",
+  "generatedAt": "2026-07-28T07:12:38.394Z",
+  "status": "PASS",
+  "acceptedReview": false,
+  "runtime": {
+    "requestedModel": "deepseek-v4-flash",
+    "temperature": 0,
+    "semanticAuditVersion": "v2.3",
+    "relationAuditVersion": "v1.7",
+    "sourceHash": "0edc89a8f2de72a2"
+  },
+  "baseline": null,
+  "candidate": {
+    "claims": 21,
+    "concepts": 19,
+    "relations": 8,
+    "quarantinedClaims": 0,
+    "quarantinedRelations": 6,
+    "quarantineRate": 0
+  },
+  "diff": {
+    "retainedClaimIds": 0,
+    "addedClaimIds": [
+      "claim:0edc89a8f2de72a2-07323a3fd50f07bb",
+      "claim:0edc89a8f2de72a2-09f6d31a030a9377",
+      "claim:0edc89a8f2de72a2-0bceee8405f1bef2",
+      "claim:0edc89a8f2de72a2-2956da6b48b7727b",
+      "claim:0edc89a8f2de72a2-2b4f4747b0b4555b",
+      "claim:0edc89a8f2de72a2-34ee6e8d394f4af9",
+      "claim:0edc89a8f2de72a2-3b0c485a82328631",
+      "claim:0edc89a8f2de72a2-3b52478ca03beb2c",
+      "claim:0edc89a8f2de72a2-3cb894138005274f",
+      "claim:0edc89a8f2de72a2-5e678125bfe07b24",
+      "claim:0edc89a8f2de72a2-5fc413e99c5640e5",
+      "claim:0edc89a8f2de72a2-786c26b66e4f1a32",
+      "claim:0edc89a8f2de72a2-7d0230cd80366497",
+      "claim:0edc89a8f2de72a2-88b76c4683f14636",
+      "claim:0edc89a8f2de72a2-90a2e2a705c9431d",
+      "claim:0edc89a8f2de72a2-a5adbb37b74a0a73",
+      "claim:0edc89a8f2de72a2-ba3f0dfaa71f44d6",
+      "claim:0edc89a8f2de72a2-d46b5a1c037d2094",
+      "claim:0edc89a8f2de72a2-d924f918ba53913c",
+      "claim:0edc89a8f2de72a2-e37697e6e8be4c8e",
+      "claim:0edc89a8f2de72a2-fe9f0b7654b15a2c"
+    ],
+    "removedClaimIds": [],
+    "claimRetentionRate": null,
+    "claimCountChangeRate": null,
+    "conditionsDropped": []
+  },
+  "issues": []
+}

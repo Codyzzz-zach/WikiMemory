@@ -1,0 +1,28 @@
+{
+  "concepts": [
+    {
+      "name": "airborne transmission",
+      "aliases": [],
+      "boundary": "transmission of microbes via droplet nuclei",
+      "domain": "epidemiology"
+    },
+    {
+      "name": "droplet nuclei",
+      "aliases": [],
+      "boundary": "particles <5μm in diameter that can remain in air and travel >1m",
+      "domain": "aerosol science"
+    },
+    {
+      "name": "aerosol-generating procedures",
+      "aliases": ["procedures that generate aerosols"],
+      "boundary": "medical procedures producing aerosols, e.g., intubation, bronchoscopy, suctioning, nebulization, manual ventilation, prone positioning, ventilator disconnection, non-invasive ventilation, tracheostomy, CPR",
+      "domain": "medicine"
+    },
+    {
+      "name": "COVID-19",
+      "aliases": [],
+      "boundary": "disease caused by SARS-CoV-2",
+      "domain": "virology"
+    }
+  ]
+}

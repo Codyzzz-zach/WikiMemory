@@ -1,0 +1,85 @@
+{
+  "schemaVersion": "wge-m1-wiki-correction-contract/v1",
+  "status": "PREREGISTERED",
+  "goal": "证明 WikiModule 能作为可审计的知识物化视图，在正式纠错后原子失效并重建，同时正确改变受影响回答且不伤害无关知识。",
+  "hypothesis": {
+    "primary": "证据闭包的 WikiModule 在 T2 纠错后能够保持 stableAddress 不变、替换失效 Claim，并让受影响问题从旧答案更新为新答案。",
+    "null": "WikiModule 只能被隔离或仍携带旧引用，无法形成可验证的纠错闭环。"
+  },
+  "frozenInputs": {
+    "repoCommitAtPreregistration": "8829e408215590d39ddaf40431931dee0277e9b3",
+    "baselineTrackedDiffSha256ExcludingRuns": "cbae3ccf908309efa75b8243a31e408229b41302d8d1ef38d5eae4c930beaf86",
+    "datasetManifestSha256": "47619fe55b5470fe537b7c9b3a665c1dfc30b2c85896d3e342cd322767624227",
+    "questionsSha256": "dd4a741f26f3eb24715a840e6cb4a63831b8414d1ca29805f3572bc51b22e6ce",
+    "selectionSha256": "13f9f6f7d0447336ea92555700466d04eb9f93eedc021c11a8d800f83646df33",
+    "runConfigSha256": "02cacbccbbb189e8aab3f72c0847000f24cfa883a1f091550ff7113391a5b2a1",
+    "datasetValidation": {
+      "status": "PASS",
+      "domains": 3,
+      "documents": 24,
+      "questions": 36,
+      "goldStates": 144,
+      "corpusCharacters": 13550
+    }
+  },
+  "mechanismUnderTest": "evidence-grounded-wiki-materialized-view-lifecycle",
+  "implementationConstraints": [
+    "不得增加领域名、题目词或答案词驱动的生产分支",
+    "v1 Wiki assertion 必须由单个 Canonical Claim 及其 conditions 确定性渲染",
+    "WikiModule 只有在全部 claimRefs 均存活、全部证据可解析且物化哈希一致时才可进入 Context Pack",
+    "纠错事务必须先保留旧模块隔离副本，再以同一 id 与 stableAddress 重建",
+    "任何失败必须恢复事务前最后健康状态",
+    "开发阶段不得读取 benchmark-s200 的 Stage B 或其他封存 gold"
+  ],
+  "gates": [
+    {
+      "id": "M1-G0",
+      "name": "输入冻结",
+      "pass": "所有冻结 hash 一致，evolution 数据验证 PASS"
+    },
+    {
+      "id": "M1-G1",
+      "name": "逐断言证据闭包",
+      "pass": "Canonical Wiki 的每个 assertion 都映射到一个 ACTIVE Claim，Claim 状态允许消费，且 evidenceSpanIds 全部可解析"
+    },
+    {
+      "id": "M1-G2",
+      "name": "消费 fail-closed",
+      "pass": "缺支撑合同、部分引用失效、部分引用未入 Pack、物化文本或哈希被篡改时 WikiModule 均不得进入 Prompt"
+    },
+    {
+      "id": "M1-G3",
+      "name": "纠错重建",
+      "pass": "3/3 受影响模块被发现；stableAddress 100% 保持；旧 Claim 引用为 0；替代 Claim 引用为 3/3；旧模块隔离副本为 3/3"
+    },
+    {
+      "id": "M1-G4",
+      "name": "硬回归与原子性",
+      "pass": "3/3 无关模块字节级不变；故障注入后 Canonical、Quarantine 和 knowledgeVersion 全部恢复"
+    },
+    {
+      "id": "M1-G5",
+      "name": "回答效果",
+      "pass": "受影响题 3/3 在 T2 不复发 T0 旧答案；无关题 3/3 无硬退化；W 相对相同检索基线的实际 token 与调用成本完整留痕"
+    }
+  ],
+  "executionOrder": [
+    "M1-G0",
+    "M1-G1",
+    "M1-G2",
+    "M1-G3",
+    "M1-G4",
+    "M1-G5"
+  ],
+  "stopRules": [
+    "任一下层 gate 失败，不运行回答实验",
+    "发现 Stage B 被读取，实验作废并重新冻结",
+    "若需要领域特判才能通过，机制判负而不是修改题目",
+    "首轮结果不得覆盖；修复后结果只能标记 post-hoc"
+  ],
+  "authoritySeparation": {
+    "codex": "实现、编排、留痕与最终裁决",
+    "deepseek": "仅在下层门禁通过后执行知识编译或同配置回答，不拥有发布和评分权限",
+    "reasonix": "可做独立只读复核，不拥有生产文件写入、gold 解封或最终裁决权限"
+  }
+}

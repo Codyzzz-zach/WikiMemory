@@ -1,0 +1,97 @@
+## TASK MAP
+主题: 判断：WebAIM 的‘2023 年移除’说明 WCAG 2.1 从发布之日起就没有 4.1.1。
+地图主题: wcag, 2.1, 4.1.1, 移除, webaim
+关键概念: WCAG 2.1, Success Criterion 4.1.1 Parsing, WCAG 2.0, WCAG 2.2, WCAG
+已知争议: 0 个
+最近变化: 5 条
+找到 10 条相关 Claim
+找到 0 条关系
+找到 10 条原文证据
+
+## CLAIM claim:b89787b6b83f3605-2b879b185f80c3ed
+Success Criterion 4.1.1 Parsing 自2023年起已从WCAG中移除。
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:1da3417e06ff5435-e9295b4993a17258
+Authors that are required by policy to conform with WCAG 2.0 or 2.1 may need to continue to test and report 4.1.1.
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:b89787b6b83f3605-d524b881aa3a2622
+Success Criterion 4.1.1 Parsing 不再有用。
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:1da3417e06ff5435-50f420b0776ab205
+WCAG 2.2 has removed one success criterion, 4.1.1 Parsing.
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:1da3417e06ff5435-0131b383bb68d5d6
+WCAG 2.2 builds on and is backwards compatible with WCAG 2.1.
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:1da3417e06ff5435-4043dbf2773f336c
+Requirements have been added that build on WCAG 2.1 and 2.0.
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:1da3417e06ff5435-4f47a3d28c2c5675
+Web pages that conform to WCAG 2.2 are at least as accessible as pages that conform to WCAG 2.1.
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:1da3417e06ff5435-e42233e831e0f66d
+Authors that are required by policy to conform with WCAG 2.0 or 2.1 will be able to update content to WCAG 2.2.
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:b89787b6b83f3605-7d429224411b6b4e
+WebAIM WCAG 2 Checklist 是一个文档标题。
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:a379c869d6fd01c5-5e7756a095157543
+Web pages that conform to WCAG 2.1 also conform to WCAG 2.0.
+Conditions: none
+Validity: SUPPORTED
+
+## EVIDENCE span:design-webaim-checklist-2024-004-b89787b6b83f3605-1#chars-107-145
+as of 2023 has been removed from WCAG.
+
+## EVIDENCE span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-449-494
+may need to continue to test and report 4.1.1
+
+## EVIDENCE span:design-webaim-checklist-2024-004-b89787b6b83f3605-1#chars-27-102
+Success Criterion 4.1.1 Parsing: This success criterion is no longer useful
+
+## EVIDENCE span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-274-331
+WCAG 2.2 has removed one success criterion, 4.1.1 Parsing
+
+## EVIDENCE span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-51-111
+WCAG 2.2 builds on and is backwards compatible with WCAG 2.1
+
+## EVIDENCE span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-218-272
+Requirements have been added that build on 2.1 and 2.0
+
+## EVIDENCE span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-121-216
+web pages that conform to WCAG 2.2 are at least as accessible as pages that conform to WCAG 2.1
+
+## EVIDENCE span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-333-443
+Authors that are required by policy to conform with WCAG 2.0 or 2.1 will be able to update content to WCAG 2.2
+
+## EVIDENCE span:design-webaim-checklist-2024-004-b89787b6b83f3605-0#chars-2-25
+WebAIM WCAG 2 Checklist
+
+## EVIDENCE span:design-wcag21-2018-001-a379c869d6fd01c5-1#chars-121-180
+web pages that conform to WCAG 2.1 also conform to WCAG 2.0
+
+## CONFLICTS AND CONDITIONS
+🔎 Source source:design-wcag21-2018-001-a379c869d6fd01c5 provenance: uri=workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-wcag21-2018-001.md; sourceType=md; role=unknown
+🔎 Source source:design-wcag22-2023-002-1da3417e06ff5435 provenance: uri=workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-wcag22-2023-002.md; sourceType=md; role=unknown
+🔎 Source source:design-webaim-checklist-2024-004-b89787b6b83f3605 provenance: uri=workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-webaim-checklist-2024-004.md; sourceType=md; role=unknown
+
+## KNOWN GAPS
+未找到关系——Graph 可能尚未建立跨材料边

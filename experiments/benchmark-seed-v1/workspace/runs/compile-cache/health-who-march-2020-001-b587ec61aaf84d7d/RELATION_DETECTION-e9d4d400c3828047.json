@@ -1,0 +1,6 @@
+{
+  "kind": "VALID",
+  "content": "{\n  \"relations\": [\n    {\n      \"fromClaimIndex\": 0,\n      \"toClaimIndex\": 1,\n      \"type\": \"REQUIRES\",\n      \"conditions\": [\"specific circumstances and settings where procedures or support treatments that generate aerosols are performed\"],\n      \"confidence\": 0.9\n    },\n    {\n      \"fromClaimIndex\": 2,\n      \"toClaimIndex\": 3,\n      \"type\": \"SUPPORTS\",\n      \"conditions\": [],\n      \"confidence\": 0.8\n    },\n    {\n      \"fromClaimIndex\": 4,\n      \"toClaimIndex\": 2,\n      \"type\": \"DERIVED_FROM\",\n      \"conditions\": [],\n      \"confidence\": 0.7\n    },\n    {\n      \"fromClaimIndex\": 4,\n      \"toClaimIndex\": 3,\n      \"type\": \"DERIVED_FROM\",\n      \"conditions\": [],\n      \"confidence\": 0.7\n    }\n  ]\n}",
+  "model": "deepseek-v4-flash",
+  "outputHash": "894a7cfd03005081"
+}

@@ -1,0 +1,79 @@
+{
+  "schemaVersion": "wge-e4-smoke-answer-ablation/v1",
+  "status": "DIRECTIONAL_MEASURED",
+  "runId": "e4-graph-ablation-2026-07-28T05-07-06-494Z",
+  "createdAt": "2026-07-28T05:07:29.063Z",
+  "taskFileSha256": "sha256:8238d998134795451c162bbba4da4833eb75c8a015f7840a1a359388fd7bca53",
+  "answerModelRequested": "deepseek-v4-flash",
+  "answerModelReturned": "deepseek-v4-flash",
+  "judgeModelRequested": "deepseek-v4-flash",
+  "judgeModelReturned": "deepseek-v4-flash",
+  "experimentType": "SEED_VS_GRAPH",
+  "repetitions": 3,
+  "groups": [
+    {
+      "group": "P-seed",
+      "samples": 3,
+      "averageTotal": 8,
+      "standardDeviationTotal": 0,
+      "minimumTotal": 8,
+      "maximumTotal": 8,
+      "averageRequiredPointCoverage": 2,
+      "averageConditionFidelity": 2,
+      "averageEvidenceGrounding": 2,
+      "averageAnswerabilityDiscipline": 2,
+      "hardFailures": 0
+    },
+    {
+      "group": "P-graph",
+      "samples": 3,
+      "averageTotal": 8,
+      "standardDeviationTotal": 0,
+      "minimumTotal": 8,
+      "maximumTotal": 8,
+      "averageRequiredPointCoverage": 2,
+      "averageConditionFidelity": 2,
+      "averageEvidenceGrounding": 2,
+      "averageAnswerabilityDiscipline": 2,
+      "hardFailures": 0
+    }
+  ],
+  "perQuestion": [
+    {
+      "questionId": "B-E-HEALTH-005",
+      "groups": [
+        {
+          "group": "P-seed",
+          "samples": 3,
+          "averageTotal": 8,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 8,
+          "maximumTotal": 8,
+          "averageRequiredPointCoverage": 2,
+          "averageConditionFidelity": 2,
+          "averageEvidenceGrounding": 2,
+          "averageAnswerabilityDiscipline": 2,
+          "hardFailures": 0
+        },
+        {
+          "group": "P-graph",
+          "samples": 3,
+          "averageTotal": 8,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 8,
+          "maximumTotal": 8,
+          "averageRequiredPointCoverage": 2,
+          "averageConditionFidelity": 2,
+          "averageEvidenceGrounding": 2,
+          "averageAnswerabilityDiscipline": 2,
+          "hardFailures": 0
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Six public directional questions are insufficient for a confirmatory product claim.",
+    "The same model family generated answers and judge scores; human audit is still required.",
+    "E-min was not run because no generic Gold-independent WikiModule builder exists."
+  ]
+}

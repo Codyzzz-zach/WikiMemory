@@ -1,0 +1,54 @@
+{
+  "runId": "e4-batch-b-remaining-all-modes-2026-07-28T05-44-10-699Z",
+  "sampleId": "sample-1f107de3-f41e-4d09-95eb-eaf1e701f205",
+  "questionId": "B-T-HIST-009",
+  "group": "B",
+  "pilotGroup": "B",
+  "graphExpansion": false,
+  "repetition": 1,
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "temperature": 0,
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 286,
+    "completionTokens": 124,
+    "totalTokens": 410,
+    "promptCacheHitTokens": 0,
+    "promptCacheMissTokens": 286,
+    "reasoningTokens": 0
+  },
+  "latencyMs": 1887,
+  "promptHash": "sha256:fa67b2622b8f39a2bedcf1b19b37f6a3ffd55bf7133f5fea8a07e5f2388edee2",
+  "contextHash": "20aea1761e3a093f6448d7ce9879d38ea1bc1fc339c2790891f643b93d112c18",
+  "estimatedContextTokens": 143,
+  "estimatedInputTokens": 310,
+  "retrievedClaims": [],
+  "retrievedRelations": [],
+  "retrievedSources": [
+    "../../../workbuddy-batch-b/generated/compilation-corpus/history-humanities/history-scrollprize-2026-004.md"
+  ],
+  "droppedContext": [],
+  "retrievalTrace": {
+    "strategy": "folder-lexical",
+    "queryFeatureCount": 17,
+    "corpusChunkCount": 12,
+    "matchedChunkCount": 1,
+    "maxFolderChunks": 16,
+    "candidates": [
+      {
+        "id": "../../../workbuddy-batch-b/generated/compilation-corpus/history-humanities/history-scrollprize-2026-004.md#L1-L6",
+        "rank": 1,
+        "score": 2.8718021769015913,
+        "selected": true,
+        "dropReason": null
+      }
+    ]
+  },
+  "request": {
+    "systemPrompt": "你是受证据约束的问答 Agent。只使用本次请求提供的检索上下文回答。\n要求：保留影响结论的条件、时间、例外、来源角色与不确定性；关键结论引用上下文中的 SOURCE、EVIDENCE 或 CLAIM 标识；上下文不足时明确说明，不得用外部常识补齐。\n只输出严格 JSON：{\"answer\":\"...\",\"citations\":[\"...\"],\"insufficient\":false,\"uncertainties\":[\"...\"]}。",
+    "userPrompt": "# 问题\n归档仓库与 2026 项目进展的时间关系是什么？\n\n# 检索上下文\n## SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/history-humanities/history-scrollprize-2026-004.md:1-6 score=2.872\n# Vesuvius Challenge project timeline\n\nVesuvius Challenge launched in March 2023 with a Grand Prize for the first team to recover four passages of 140 characters from a Herculaneum scroll. Within a year, the prize was claimed. The quest was just beginning.\n\nIn 2026, PHerc. 1667 became the first Herculaneum scroll to be virtually unwrapped and read end to end. The challenge now moves onto its next stage: reading multiple entire scrolls."
+  },
+  "answer": "{\n  \"answer\": \"根据上下文，2026年PHerc. 1667成为首个被完全虚拟展开并从头到尾阅读的赫库兰尼姆卷轴，而归档仓库与2026项目进展的时间关系未在上下文中提及。\",\n  \"citations\": [\"../../../workbuddy-batch-b/generated/compilation-corpus/history-humanities/history-scrollprize-2026-004.md:1-6\"],\n  \"insufficient\": true,\n  \"uncertainties\": [\"上下文未提供归档仓库与2026项目进展的时间关系信息\"]\n}",
+  "answerFormatValid": true
+}

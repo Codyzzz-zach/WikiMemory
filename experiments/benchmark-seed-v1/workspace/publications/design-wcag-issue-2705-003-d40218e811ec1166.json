@@ -1,0 +1,263 @@
+{
+  "schemaVersion": "v1",
+  "sourceId": "source:design-wcag-issue-2705-003-d40218e811ec1166",
+  "runId": "70c9e962-4ec2-4320-8193-9cea199d3459",
+  "publishedAt": "2026-07-27T09:58:05.191Z",
+  "claims": [
+    {
+      "id": "claim:d40218e811ec1166-09499dce953a0a91",
+      "statement": "More considerations are needed for various platforms.",
+      "evidenceSpanIds": [
+        "span:design-wcag-issue-2705-003-d40218e811ec1166-3#chars-445-602"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:57:45.377Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:design-wcag-issue-2705-003-d40218e811ec1166-3#chars-445-602"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:design-wcag-issue-2705-003-d40218e811ec1166-3#chars-445-602"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-27T09:57:45.377Z"
+    },
+    {
+      "id": "claim:d40218e811ec1166-21341d7bbebecc13",
+      "statement": "The group requests that this Success Criterion be removed until research is completed for all affected input modalities.",
+      "evidenceSpanIds": [
+        "span:design-wcag-issue-2705-003-d40218e811ec1166-2#chars-333-443"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:57:45.377Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:design-wcag-issue-2705-003-d40218e811ec1166-2#chars-333-443"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:design-wcag-issue-2705-003-d40218e811ec1166-2#chars-333-443"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-27T09:57:45.377Z"
+    },
+    {
+      "id": "claim:d40218e811ec1166-3121f577072c04bb",
+      "statement": "Success Criterion 2.5.7 Dragging Movements (Level AA) requires that all functionality using a dragging movement can be achieved by a single pointer without dragging, unless dragging is essential or the functionality is determined by the user agent and not modified by the author.",
+      "evidenceSpanIds": [
+        "span:design-wcag-issue-2705-003-d40218e811ec1166-1#chars-47-331"
+      ],
+      "conditions": [
+        "unless dragging is essential or the functionality is determined by the user agent and not modified by the author"
+      ],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:57:45.377Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:design-wcag-issue-2705-003-d40218e811ec1166-1#chars-47-331"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:design-wcag-issue-2705-003-d40218e811ec1166-1#chars-47-331"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-27T09:57:45.377Z"
+    },
+    {
+      "id": "claim:d40218e811ec1166-f30bb9542bb62fad",
+      "statement": "There should not be an imposition of all mobile requirements on all desktop content.",
+      "evidenceSpanIds": [
+        "span:design-wcag-issue-2705-003-d40218e811ec1166-3#chars-445-602"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:57:45.377Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:design-wcag-issue-2705-003-d40218e811ec1166-3#chars-445-602"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:design-wcag-issue-2705-003-d40218e811ec1166-3#chars-445-602"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-27T09:57:45.377Z"
+    }
+  ],
+  "concepts": [
+    {
+      "id": "concept:10c93f579f4379b1",
+      "name": "User Agent",
+      "aliases": [
+        "user agent"
+      ],
+      "boundary": "Software that renders web content, e.g., browser",
+      "domain": "Web accessibility"
+    },
+    {
+      "id": "concept:165c4bcd82ae50dc",
+      "name": "Mobile Requirements",
+      "aliases": [
+        "mobile requirements"
+      ],
+      "boundary": "Accessibility requirements specific to mobile devices",
+      "domain": "Web accessibility"
+    },
+    {
+      "id": "concept:3c0851e000b5cc8c",
+      "name": "Input Modality",
+      "aliases": [
+        "input modalities"
+      ],
+      "boundary": "Methods of user input such as touch, mouse, keyboard",
+      "domain": "Web accessibility"
+    },
+    {
+      "id": "concept:51e754693fbd0e62",
+      "name": "Desktop Content",
+      "aliases": [
+        "desktop content"
+      ],
+      "boundary": "Web content designed for desktop platforms",
+      "domain": "Web accessibility"
+    },
+    {
+      "id": "concept:6410ccb7080fcd9f",
+      "name": "Single Pointer",
+      "aliases": [
+        "single pointer"
+      ],
+      "boundary": "A pointing device such as a mouse, touch, or stylus",
+      "domain": "Web accessibility"
+    },
+    {
+      "id": "concept:686883beaced8c22",
+      "name": "Essential",
+      "aliases": [
+        "essential"
+      ],
+      "boundary": "Exception where dragging is necessary for the functionality",
+      "domain": "Web accessibility"
+    },
+    {
+      "id": "concept:8e01da8747d6bbf7",
+      "name": "Dragging Movements",
+      "aliases": [
+        "dragging movement"
+      ],
+      "boundary": "A type of input modality involving drag gestures",
+      "domain": "Web accessibility"
+    },
+    {
+      "id": "concept:ba1d8ce9a9bcdfb8",
+      "name": "Platform",
+      "aliases": [
+        "platforms"
+      ],
+      "boundary": "Various platforms including mobile and desktop",
+      "domain": "Web accessibility"
+    },
+    {
+      "id": "concept:eb3643d4e9285a1d",
+      "name": "Author",
+      "aliases": [
+        "author"
+      ],
+      "boundary": "Content creator or developer",
+      "domain": "Web accessibility"
+    },
+    {
+      "id": "concept:ed76a47d1408514f",
+      "name": "Success Criterion",
+      "aliases": [
+        "Success Criterion"
+      ],
+      "boundary": "A specific requirement in WCAG",
+      "domain": "Web accessibility"
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel:d40218e811ec1166-06f4f183e6d17426",
+      "from": "claim:d40218e811ec1166-09499dce953a0a91",
+      "to": "claim:d40218e811ec1166-f30bb9542bb62fad",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:design-wcag-issue-2705-003-d40218e811ec1166-3#chars-445-602"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:57:49.714Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.7,
+      "consumedBy": []
+    }
+  ]
+}

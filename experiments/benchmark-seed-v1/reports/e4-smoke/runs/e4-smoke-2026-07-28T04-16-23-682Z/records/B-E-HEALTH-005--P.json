@@ -1,0 +1,104 @@
+{
+  "runId": "e4-smoke-2026-07-28T04-16-23-682Z",
+  "sampleId": "sample-632a2c58-2650-405b-b6d9-62ed677eb5ea",
+  "questionId": "B-E-HEALTH-005",
+  "group": "P",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "temperature": 0,
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 492,
+    "completionTokens": 175,
+    "totalTokens": 667,
+    "promptCacheHitTokens": 0,
+    "promptCacheMissTokens": 492,
+    "reasoningTokens": 0
+  },
+  "latencyMs": 1955,
+  "promptHash": "sha256:229b67b9a4093d24bd0b747b2037dcf2a5e8171c7518c2a67f5242b5d98f081f",
+  "contextHash": "7f6db7dbbb3aca25d47578058415e741a287c6d9f965c54f1748c2783da17b33",
+  "estimatedContextTokens": 304,
+  "estimatedInputTokens": 478,
+  "retrievedClaims": [
+    "claim:5505a1ba1fcb1b68-9acfc0780eb2b345",
+    "claim:14069d5a982d18de-30df60c9afb3e05b"
+  ],
+  "retrievedRelations": [],
+  "retrievedSources": [
+    "source:history-vesuvius-github-2024-002-5505a1ba1fcb1b68",
+    "source:health-nature-airborne-2022-003-14069d5a982d18de"
+  ],
+  "droppedContext": [],
+  "retrievalTrace": {
+    "strategy": "claim-seed-graph",
+    "retrieval": {
+      "queryFeatureCount": 36,
+      "eligibleClaimCount": 67,
+      "matchedClaimCount": 2,
+      "usedEvidenceText": true,
+      "candidates": [
+        {
+          "claimId": "claim:5505a1ba1fcb1b68-9acfc0780eb2b345",
+          "rank": 1,
+          "score": 5.029289471795735,
+          "channels": [
+            "c2"
+          ],
+          "matchedFeatureCount": 2
+        },
+        {
+          "claimId": "claim:14069d5a982d18de-30df60c9afb3e05b",
+          "rank": 2,
+          "score": 4.777824998205949,
+          "channels": [
+            "w"
+          ],
+          "matchedFeatureCount": 1
+        }
+      ]
+    },
+    "graph": {
+      "seedClaimIds": [
+        "claim:5505a1ba1fcb1b68-9acfc0780eb2b345",
+        "claim:14069d5a982d18de-30df60c9afb3e05b"
+      ],
+      "expandedClaimIds": [
+        "claim:5505a1ba1fcb1b68-9acfc0780eb2b345",
+        "claim:14069d5a982d18de-30df60c9afb3e05b"
+      ],
+      "expandedRelationIds": []
+    },
+    "budget": {
+      "selectedClaimIds": [
+        "claim:5505a1ba1fcb1b68-9acfc0780eb2b345",
+        "claim:14069d5a982d18de-30df60c9afb3e05b"
+      ],
+      "selectedRelationIds": [],
+      "selectedEvidenceSpanIds": [
+        "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-5#chars-519-570",
+        "span:health-nature-airborne-2022-003-14069d5a982d18de-2#chars-213-334"
+      ],
+      "selectedWikiModuleIds": [],
+      "dropped": [],
+      "finalEstimatedTokens": 826
+    },
+    "serializationBudget": {
+      "selectedIds": [
+        "task-map",
+        "claim:5505a1ba1fcb1b68-9acfc0780eb2b345",
+        "claim:14069d5a982d18de-30df60c9afb3e05b",
+        "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-5#chars-519-570",
+        "span:health-nature-airborne-2022-003-14069d5a982d18de-2#chars-213-334",
+        "known-gaps"
+      ],
+      "droppedIds": []
+    }
+  },
+  "request": {
+    "systemPrompt": "你是受证据约束的问答 Agent。只使用本次请求提供的检索上下文回答。\n要求：保留影响结论的条件、时间、例外、来源角色与不确定性；关键结论引用上下文中的 SOURCE、EVIDENCE 或 CLAIM 标识；上下文不足时明确说明，不得用外部常识补齐。\n只输出严格 JSON：{\"answer\":\"...\",\"citations\":[\"...\"],\"insufficient\":false,\"uncertainties\":[\"...\"]}。",
+    "userPrompt": "# 问题\n从 2020-03 到 2020-07，空气传播适用范围发生了什么可证实变化？\n\n# 检索上下文\n## TASK MAP\n主题: 从 2020-03 到 2020-07，空气传播适用范围发生了什么可证实变化？\n地图主题: the, of, and, to, in\n关键概念: User Agent, Mobile Requirements, Input Modality, Desktop Content, Single Pointer\n已知争议: 0 个\n最近变化: 5 条\n找到 2 条相关 Claim\n找到 0 条关系\n找到 2 条原文证据\n\n## CLAIM claim:5505a1ba1fcb1b68-9acfc0780eb2b345\nvesuvius 处于测试阶段，界面可能会发生变化。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:14069d5a982d18de-30df60c9afb3e05b\nIt took until 20 October 2020 for the WHO to acknowledge that aerosols can transmit the virus.\nConditions: none\nValidity: SUPPORTED\n\n## EVIDENCE span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-5#chars-519-570\n`vesuvius` is in beta and the interface may change.\n\n## EVIDENCE span:health-nature-airborne-2022-003-14069d5a982d18de-2#chars-213-334\nIt took until 20 October 2020 for the agency to acknowledge that aerosols — tiny specks of fluid — can transmit the virus\n\n## KNOWN GAPS\n未找到关系——Graph 可能尚未建立跨材料边"
+  },
+  "answer": "{\n  \"answer\": \"根据检索上下文，从2020年3月到2020年7月期间，没有关于空气传播适用范围变化的可证实信息。唯一相关的时间点是2020年10月20日，世界卫生组织（WHO）才承认气溶胶可以传播病毒，但这超出了问题指定的时间范围。\",\n  \"citations\": [\n    \"claim:14069d5a982d18de-30df60c9afb3e05b\",\n    \"evidence:health-nature-airborne-2022-003-14069d5a982d18de-2#chars-213-334\"\n  ],\n  \"insufficient\": true,\n  \"uncertainties\": [\n    \"检索上下文未提供2020年3月至7月期间空气传播适用范围变化的任何信息。\"\n  ]\n}",
+  "answerFormatValid": true
+}

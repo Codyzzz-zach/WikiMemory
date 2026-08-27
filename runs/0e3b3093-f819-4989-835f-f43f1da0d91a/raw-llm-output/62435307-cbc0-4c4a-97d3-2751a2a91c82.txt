@@ -1,0 +1,220 @@
+{
+  "concepts": [
+    {
+      "name": "欧氏空间",
+      "aliases": ["欧几里得结构", "欧几里得空间"],
+      "boundary": "同时具有线性、内积、距离结构且自然兼容的空间，原型为R^n",
+      "domain": "泛函分析/几何"
+    },
+    {
+      "name": "向量空间",
+      "aliases": ["线性空间"],
+      "boundary": "集合V配备加法和标量乘法，满足向量空间公理",
+      "domain": "线性代数"
+    },
+    {
+      "name": "赋范空间",
+      "aliases": ["赋范向量空间"],
+      "boundary": "向量空间上配备了范数，满足正定性、齐次性、三角不等式",
+      "domain": "泛函分析"
+    },
+    {
+      "name": "度量空间",
+      "aliases": ["距离空间"],
+      "boundary": "集合X配备距离函数，满足正定性、对称性、三角不等式",
+      "domain": "拓扑/分析"
+    },
+    {
+      "name": "拓扑空间",
+      "aliases": [],
+      "boundary": "集合X配备开集族，满足开集公理",
+      "domain": "拓扑学"
+    },
+    {
+      "name": "内积空间",
+      "aliases": [],
+      "boundary": "向量空间上配备了内积，满足正定性、共轭对称性、对第一个变量线性",
+      "domain": "泛函分析"
+    },
+    {
+      "name": "Hilbert空间",
+      "aliases": [],
+      "boundary": "完备的内积空间，即每个Cauchy列收敛",
+      "domain": "泛函分析"
+    },
+    {
+      "name": "Banach空间",
+      "aliases": [],
+      "boundary": "完备的赋范空间",
+      "domain": "泛函分析"
+    },
+    {
+      "name": "基",
+      "aliases": [],
+      "boundary": "一组线性无关且生成整个空间的向量集合",
+      "domain": "线性代数"
+    },
+    {
+      "name": "正交基",
+      "aliases": [],
+      "boundary": "基中向量两两正交",
+      "domain": "线性代数/泛函分析"
+    },
+    {
+      "name": "完备基",
+      "aliases": [],
+      "boundary": "在Hilbert空间中，指一组正交基使得任何元素可展开",
+      "domain": "泛函分析"
+    },
+    {
+      "name": "维度",
+      "aliases": [],
+      "boundary": "任何一组基中向量的个数",
+      "domain": "线性代数"
+    },
+    {
+      "name": "有限维",
+      "aliases": [],
+      "boundary": "向量空间具有有限基",
+      "domain": "线性代数"
+    },
+    {
+      "name": "无限维",
+      "aliases": [],
+      "boundary": "向量空间不具有有限基",
+      "domain": "泛函分析"
+    },
+    {
+      "name": "内积",
+      "aliases": ["点积", "⟨,⟩"],
+      "boundary": "满足正定性、共轭对称性、对第一个变量线性的双线性形式",
+      "domain": "线性代数"
+    },
+    {
+      "name": "范数",
+      "aliases": ["‖·‖"],
+      "boundary": "满足正定性、齐次性、三角不等式的函数",
+      "domain": "泛函分析"
+    },
+    {
+      "name": "距离函数",
+      "aliases": ["度量", "d(x,y)"],
+      "boundary": "满足正定性、对称性、三角不等式的函数",
+      "domain": "拓扑/分析"
+    },
+    {
+      "name": "欧氏距离",
+      "aliases": ["d_2"],
+      "boundary": "d(x,y)=√∑(x_i-y_i)^2",
+      "domain": "几何"
+    },
+    {
+      "name": "曼哈顿距离",
+      "aliases": ["d_1"],
+      "boundary": "d(x,y)=∑|x_i-y_i|",
+      "domain": "几何/分析"
+    },
+    {
+      "name": "切比雪夫距离",
+      "aliases": ["d_∞"],
+      "boundary": "d(x,y)=max_i|x_i-y_i|",
+      "domain": "几何/分析"
+    },
+    {
+      "name": "离散度量",
+      "aliases": [],
+      "boundary": "d(x,y)=0当x=y，否则1",
+      "domain": "拓扑"
+    },
+    {
+      "name": "欧氏范数",
+      "aliases": [],
+      "boundary": "‖x‖=√⟨x,x⟩",
+      "domain": "泛函分析"
+    },
+    {
+      "name": "完备性",
+      "aliases": [],
+      "boundary": "每个Cauchy列收敛到空间内的点",
+      "domain": "泛函分析"
+    },
+    {
+      "name": "Cauchy列",
+      "aliases": [],
+      "boundary": "满足对任意ε>0，存在N使得m,n>N时‖x_m-x_n‖<ε的序列",
+      "domain": "分析"
+    },
+    {
+      "name": "正交",
+      "aliases": ["⊥"],
+      "boundary": "两个向量的内积为0",
+      "domain": "线性代数"
+    },
+    {
+      "name": "正交投影",
+      "aliases": [],
+      "boundary": "将元素投影到子空间上，使得差向量垂直于子空间",
+      "domain": "泛函分析"
+    },
+    {
+      "name": "Fourier级数",
+      "aliases": [],
+      "boundary": "用三角函数系表示周期函数",
+      "domain": "分析"
+    },
+    {
+      "name": "L^2[a,b]空间",
+      "aliases": [],
+      "boundary": "平方可积函数空间，内积为∫f ḡ",
+      "domain": "泛函分析"
+    },
+    {
+      "name": "ℓ^2空间",
+      "aliases": [],
+      "boundary": "平方和收敛的序列空间",
+      "domain": "泛函分析"
+    },
+    {
+      "name": "多项式空间P_n",
+      "aliases": [],
+      "boundary": "次数≤n的多项式全体，基为{1,x,...,x^n}",
+      "domain": "线性代数"
+    },
+    {
+      "name": "连续函数空间C[0,1]",
+      "aliases": [],
+      "boundary": "区间[0,1]上连续函数全体",
+      "domain": "泛函分析"
+    },
+    {
+      "name": "标准基",
+      "aliases": [],
+      "boundary": "R^n中的e_i=(0,...,1,...0)",
+      "domain": "线性代数"
+    },
+    {
+      "name": "开集",
+      "aliases": [],
+      "boundary": "度量空间中由开球生成的集合",
+      "domain": "拓扑"
+    },
+    {
+      "name": "开球",
+      "aliases": [],
+      "boundary": "B(x,r)={y|d(x,y)<r}",
+      "domain": "拓扑"
+    },
+    {
+      "name": "空间是一个集合+结构",
+      "aliases": [],
+      "boundary": "空间定义为集合加上某种附加结构",
+      "domain": "数学基础"
+    },
+    {
+      "name": "结构添加",
+      "aliases": [],
+      "boundary": "从裸集合逐步添加线性、距离、内积、开集等结构",
+      "domain": "数学基础"
+    }
+  ]
+}

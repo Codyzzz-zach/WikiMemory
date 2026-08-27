@@ -1,0 +1,188 @@
+{
+  "claims": [
+    {
+      "statement": "A paper from the Open Science Collaboration attempting to replicate 100 published studies suggests that the reproducibility of psychological science is surprisingly low.",
+      "evidenceQuotes": ["A paper from the Open Science Collaboration (Research Articles, 28 August 2015, aac4716) attempting to replicate 100 published studies suggests that the reproducibility of psychological science is surprisingly low."],
+      "blockIds": ["c-psych-003#block-5"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "Gilbert, King, Pettigrew, and Wilson show that the OSC article contains three statistical errors.",
+      "evidenceQuotes": ["We show that this article contains three statistical errors and provides no support for such a conclusion."],
+      "blockIds": ["c-psych-003#block-5"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "The OSC article provides no support for the conclusion that reproducibility is low.",
+      "evidenceQuotes": ["We show that this article contains three statistical errors and provides no support for such a conclusion."],
+      "blockIds": ["c-psych-003#block-5"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "The data are consistent with the opposite conclusion that the reproducibility of psychological science is quite high.",
+      "evidenceQuotes": ["Indeed, the data are consistent with the opposite conclusion, namely, that the reproducibility of psychological science is quite high."],
+      "blockIds": ["c-psych-003#block-5"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "To estimate a parameter of a population, you must either randomly sample from that population or make statistical corrections for not doing so.",
+      "evidenceQuotes": ["If you want to estimate a parameter of a population, then you either have to randomly sample from that population or make statistical corrections for the fact that you didn't."],
+      "blockIds": ["c-psych-003#block-7"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "The OSC did neither random sampling nor statistical corrections.",
+      "evidenceQuotes": ["The OSC did neither."],
+      "blockIds": ["c-psych-003#block-7"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "The OSC created an idiosyncratic, arbitrary list of sampling rules that excluded the majority of psychology's subfields from the sample.",
+      "evidenceQuotes": ["What they did is create an idiosyncratic, arbitrary list of sampling rules that excluded the majority of psychology's subfields from the sample, that excluded entire classes of studies whose methods are probably among the best in science from the sample, and so on."],
+      "blockIds": ["c-psych-003#block-8"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "The OSC excluded entire classes of studies whose methods are probably among the best in science from the sample.",
+      "evidenceQuotes": ["What they did is create an idiosyncratic, arbitrary list of sampling rules that excluded the majority of psychology's subfields from the sample, that excluded entire classes of studies whose methods are probably among the best in science from the sample, and so on."],
+      "blockIds": ["c-psych-003#block-8"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "The OSC proceeded to violate all of their own sampling rules.",
+      "evidenceQuotes": ["Then they proceeded to violate all of their own rules."],
+      "blockIds": ["c-psych-003#block-8"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "The OSC failed to consider that their replication studies were often quite different from the originals in many ways, and those differences are a source of statistical error.",
+      "evidenceQuotes": ["When they did their calculations, they failed to consider the fact that their replication studies were not just new samples from the same population. They were often quite different from the originals in many ways, and those differences are a source of statistical error."],
+      "blockIds": ["c-psych-003#block-9"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "When the calculation was done correctly and applied to the OSC data, the number of failures observed was just about what should be expected by chance alone, even if all 100 original findings were true.",
+      "evidenceQuotes": ["So we did the calculation the right way and then applied it to their data. And guess what? The number of failures they observed was just about what you should expect to observe by chance alone — even if all 100 of the original findings were true."],
+      "blockIds": ["c-psych-003#block-9"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "The failure of the replication studies to match the original studies was a failure of the replications, not of the originals.",
+      "evidenceQuotes": ["The failure of the replication studies to match the original studies was a failure of the replications, not of the originals."],
+      "blockIds": ["c-psych-003#block-9"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "Low-fidelity replications were four times more likely to fail than high-fidelity replications.",
+      "evidenceQuotes": ["The low-fidelity replications were an astonishing four times more likely to fail."],
+      "blockIds": ["c-psych-003#block-10"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "The infidelities did not just create random statistical noise; they actually biased the studies toward failure.",
+      "evidenceQuotes": ["What that suggests is that the infidelities did not just create random statistical noise — they actually biased the studies toward failure."],
+      "blockIds": ["c-psych-003#block-10"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "Meta-science must obey the rules of science.",
+      "evidenceQuotes": ["I think the big takeaway point here is that meta-science must obey the rules of science."],
+      "blockIds": ["c-psych-003#block-11"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "All the rules about sampling and calculating error and keeping experimenters blind to the hypothesis must apply whether you are studying people or studying the replicability of a science.",
+      "evidenceQuotes": ["All the rules about sampling and calculating error and keeping experimenters blind to the hypothesis — all of those rules must apply whether you are studying people or studying the replicability of a science."],
+      "blockIds": ["c-psych-003#block-11"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "Meta-science is not exempt from the rules of science.",
+      "evidenceQuotes": ["Meta-science does not get a pass. It is not exempt."],
+      "blockIds": ["c-psych-003#block-11"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "In their response to the comment, the OSC quibbled about minor issues but conceded the major one: their paper does not provide evidence for the pessimistic conclusions most people have drawn from it.",
+      "evidenceQuotes": ["We were glad to see that in their response to our comment, the OSC quibbled about a number of minor issues but conceded the major one, which is that their paper does not provide evidence for the pessimistic conclusions that most people have drawn from it."],
+      "blockIds": ["c-psych-003#block-13"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "该研究的科学评论需要付费才能查看。",
+      "evidenceQuotes": ["*Note: Science comment behind paywall. Content sourced from PubMed abstract and Harvard Gazette coverage (https://news.harvard.edu/gazette/story/2016/03/study-that-undercut-psych-research-got-it-wrong/), both publicly accessible.*"],
+      "blockIds": ["c-psych-003#block-2"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "该研究的内容来源于PubMed摘要和哈佛公报的报道。",
+      "evidenceQuotes": ["Content sourced from PubMed abstract and Harvard Gazette coverage (https://news.harvard.edu/gazette/story/2016/03/study-that-undercut-psych-research-got-it-wrong/), both publicly accessible."],
+      "blockIds": ["c-psych-003#block-2"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "该研究的作者包括Daniel T. Gilbert、Gary King、Stephen Pettigrew和Timothy D. Wilson。",
+      "evidenceQuotes": ["**Authors:** Daniel T. Gilbert (Harvard), Gary King (Harvard), Stephen Pettigrew (Harvard), Timothy D. Wilson (University of Virginia)"],
+      "blockIds": ["c-psych-003#block-3"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "该研究发表在《科学》杂志第351卷第6277期第1037页。",
+      "evidenceQuotes": ["**Published:** Science, Vol. 351, Issue 6277, pp. 1037, 4 March 2016"],
+      "blockIds": ["c-psych-003#block-3"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "该研究的DOI是10.1126/science.aad7243。",
+      "evidenceQuotes": ["**DOI:** 10.1126/science.aad7243"],
+      "blockIds": ["c-psych-003#block-3"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    }
+  ]
+}

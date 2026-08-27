@@ -1,0 +1,893 @@
+{
+  "schemaVersion": "wge-e1-structural-evaluation/v1",
+  "status": "MEASURED",
+  "suiteId": "benchmark-seed-six-domain-v1",
+  "workspace": "experiments/benchmark-seed-v1/workspace",
+  "inputHashes": {
+    "facts": "sha256:1cf6718c0dd89ebf123d9b0e6ba0c5a684a6b8912be9e0137a87a954b09e5a2a",
+    "relations": "sha256:01e1bc37e393c08d02c8b248b69c80ec2484c13f69d738fabbce4f3a0b66d5dc"
+  },
+  "counts": {
+    "sources": 12,
+    "claims": 67,
+    "relations": 44,
+    "factAnchors": 36,
+    "relationAnchors": 9
+  },
+  "metrics": {
+    "factEvidenceRecall": 1,
+    "conditionExplicitRecall": 0.5556,
+    "timeScopeExplicitRecall": 0.2353,
+    "attributionExplicitRecall": 0,
+    "relationTypeDirectionRecall": 0.1111,
+    "relationConditionExplicitRecall": 0,
+    "brokenEvidence": 0
+  },
+  "hardFailures": [],
+  "limitations": [
+    "This pass measures structural conservation, not full semantic equivalence.",
+    "Condition recall only checks that conditions remain explicit; a semantic critic must check their meaning.",
+    "Time and attribution checks are conservative string-signal tests and may undercount valid paraphrases.",
+    "Candidate anchors are Codex-curated directional references, not independent human Gold."
+  ],
+  "facts": [
+    {
+      "factId": "FACT-HEALTH-001",
+      "sourceId": "health-who-march-2020-001",
+      "statementKind": "fact",
+      "matchedClaimIds": [
+        "claim:b587ec61aaf84d7d-aae2124ec2ae0b65",
+        "claim:b587ec61aaf84d7d-f9e6d8b51f46b89d",
+        "claim:b587ec61aaf84d7d-ffaa41d4d0fe03ab"
+      ],
+      "matchedStatements": [
+        "Droplet nuclei can remain in the air for long periods of time.",
+        "Droplet nuclei can be transmitted to others over distances greater than 1 m.",
+        "Airborne transmission refers to the presence of microbes within droplet nuclei, which are particles <5μm in diameter."
+      ],
+      "evidenceCovered": true,
+      "conditionsExpected": [],
+      "conditionsExplicit": true,
+      "timeScopeExpected": "as-of:2020-03-29",
+      "timeScopeExplicit": false,
+      "attributionExpected": null,
+      "attributionExplicit": true
+    },
+    {
+      "factId": "FACT-HEALTH-002",
+      "sourceId": "health-who-march-2020-001",
+      "statementKind": "fact",
+      "matchedClaimIds": [
+        "claim:b587ec61aaf84d7d-474d339f3670f6c4",
+        "claim:b587ec61aaf84d7d-7bc5b6c3a357763e"
+      ],
+      "matchedStatements": [
+        "In the context of COVID-19, airborne transmission may be possible in specific circumstances and settings where procedures or support treatments that generate aerosols are performed.",
+        "Procedures that generate aerosols include endotracheal intubation, bronchoscopy, open suctioning, administration of nebulized treatment, manual ventilation before intubation, turning the patient to the prone position, disconnecting the patient from the ventilator, non-invasive positive-pressure ventilation, tracheostomy, and cardiopulmonary resuscitation."
+      ],
+      "evidenceCovered": true,
+      "conditionsExpected": [
+        "历史版本",
+        "限定于产生气溶胶的程序或支持治疗"
+      ],
+      "conditionsExplicit": true,
+      "timeScopeExpected": "as-of:2020-03-29",
+      "timeScopeExplicit": false,
+      "attributionExpected": null,
+      "attributionExplicit": true
+    },
+    {
+      "factId": "FACT-HEALTH-003",
+      "sourceId": "health-who-march-2020-001",
+      "statementKind": "fact",
+      "matchedClaimIds": [
+        "claim:b587ec61aaf84d7d-474d339f3670f6c4",
+        "claim:b587ec61aaf84d7d-7bc5b6c3a357763e"
+      ],
+      "matchedStatements": [
+        "In the context of COVID-19, airborne transmission may be possible in specific circumstances and settings where procedures or support treatments that generate aerosols are performed.",
+        "Procedures that generate aerosols include endotracheal intubation, bronchoscopy, open suctioning, administration of nebulized treatment, manual ventilation before intubation, turning the patient to the prone position, disconnecting the patient from the ventilator, non-invasive positive-pressure ventilation, tracheostomy, and cardiopulmonary resuscitation."
+      ],
+      "evidenceCovered": true,
+      "conditionsExpected": [],
+      "conditionsExplicit": true,
+      "timeScopeExpected": "as-of:2020-03-29",
+      "timeScopeExplicit": false,
+      "attributionExpected": null,
+      "attributionExplicit": true
+    },
+    {
+      "factId": "FACT-HEALTH-004",
+      "sourceId": "health-who-july-2020-002",
+      "statementKind": "fact",
+      "matchedClaimIds": [
+        "claim:a1c7e701eebb9dc1-64202515b32c05d0",
+        "claim:a1c7e701eebb9dc1-8c2b8fcbcdf52208",
+        "claim:a1c7e701eebb9dc1-d1c7990108ad78ca"
+      ],
+      "matchedStatements": [
+        "该文档是对2020年3月29日发布的科学简报的更新。",
+        "该更新包含了关于SARS-CoV-2传播的新科学证据。",
+        "SARS-CoV-2是导致COVID-19的病毒。"
+      ],
+      "evidenceCovered": true,
+      "conditionsExpected": [],
+      "conditionsExplicit": true,
+      "timeScopeExpected": "as-of:2020-07-09",
+      "timeScopeExplicit": true,
+      "attributionExpected": null,
+      "attributionExplicit": true
+    },
+    {
+      "factId": "FACT-HEALTH-005",
+      "sourceId": "health-who-july-2020-002",
+      "statementKind": "fact",
+      "matchedClaimIds": [
+        "claim:a1c7e701eebb9dc1-1b6548c486ad1fd5",
+        "claim:a1c7e701eebb9dc1-271d5603ab397f55"
+      ],
+      "matchedStatements": [
+        "短距离气溶胶传播在特定室内场所尤其值得关注。",
+        "短距离气溶胶传播不能排除。"
+      ],
+      "evidenceCovered": true,
+      "conditionsExpected": [
+        "特定室内地点",
+        "拥挤且通风不足",
+        "与感染者长时间共处"
+      ],
+      "conditionsExplicit": true,
+      "timeScopeExpected": "as-of:2020-07-09",
+      "timeScopeExplicit": false,
+      "attributionExpected": null,
+      "attributionExplicit": true
+    },
+    {
+      "factId": "FACT-HEALTH-006",
+      "sourceId": "health-who-july-2020-002",
+      "statementKind": "scope-interpretation",
+      "matchedClaimIds": [
+        "claim:a1c7e701eebb9dc1-1b6548c486ad1fd5",
+        "claim:a1c7e701eebb9dc1-271d5603ab397f55"
+      ],
+      "matchedStatements": [
+        "短距离气溶胶传播在特定室内场所尤其值得关注。",
+        "短距离气溶胶传播不能排除。"
+      ],
+      "evidenceCovered": true,
+      "conditionsExpected": [
+        "不得提高证据强度"
+      ],
+      "conditionsExplicit": true,
+      "timeScopeExpected": "as-of:2020-07-09",
+      "timeScopeExplicit": false,
+      "attributionExpected": null,
+      "attributionExplicit": true
+    },
+    {
+      "factId": "FACT-HEALTH-007",
+      "sourceId": "health-nature-airborne-2022-003",
+      "statementKind": "reported-chronology",
+      "matchedClaimIds": [
+        "claim:14069d5a982d18de-0b2bf91f663f56a8"
+      ],
+      "matchedStatements": [
+        "On 23 December, the World Health Organization (WHO) used the word 'airborne' to describe the virus SARS-CoV-2."
+      ],
+      "evidenceCovered": true,
+      "conditionsExpected": [],
+      "conditionsExplicit": true,
+      "timeScopeExpected": "as-reported:2022-04-07",
+      "timeScopeExplicit": false,
+      "attributionExpected": "Nature",
+      "attributionExplicit": false
+    },
+    {
+      "factId": "FACT-HEALTH-008",
+      "sourceId": "health-nature-airborne-2022-003",
+      "statementKind": "author-synthesis",
+      "matchedClaimIds": [
+        "claim:14069d5a982d18de-30df60c9afb3e05b",
+        "claim:14069d5a982d18de-fb6c9ddf92a42cc2",
+        "claim:14069d5a982d18de-ff33cb8a69885a6f"
+      ],
+      "matchedStatements": [
+        "It took until 20 October 2020 for the WHO to acknowledge that aerosols can transmit the virus.",
+        "The WHO said that aerosol transmission was a concern only in specific settings, such as indoor, crowded and inadequately ventilated spaces.",
+        "Over the next six months, the WHO gradually altered its advice to say that aerosols could carry the virus for more than a metre and remain in the air."
+      ],
+      "evidenceCovered": true,
+      "conditionsExpected": [],
+      "conditionsExplicit": true,
+      "timeScopeExpected": "as-reported:2022-04-07",
+      "timeScopeExplicit": false,
+      "attributionExpected": "Nature",
+      "attributionExplicit": false
+    },
+    {
+      "factId": "FACT-HEALTH-009",
+      "sourceId": "health-nature-airborne-2022-003",
+      "statementKind": "source-attribution",
+      "matchedClaimIds": [
+        "claim:14069d5a982d18de-30df60c9afb3e05b",
+        "claim:14069d5a982d18de-fb6c9ddf92a42cc2",
+        "claim:14069d5a982d18de-ff33cb8a69885a6f"
+      ],
+      "matchedStatements": [
+        "It took until 20 October 2020 for the WHO to acknowledge that aerosols can transmit the virus.",
+        "The WHO said that aerosol transmission was a concern only in specific settings, such as indoor, crowded and inadequately ventilated spaces.",
+        "Over the next six months, the WHO gradually altered its advice to say that aerosols could carry the virus for more than a metre and remain in the air."
+      ],
+      "evidenceCovered": true,
+      "conditionsExpected": [],
+      "conditionsExplicit": true,
+      "timeScopeExpected": null,
+      "timeScopeExplicit": true,
+      "attributionExpected": "Nature",
+      "attributionExplicit": false
+    },
+    {
+      "factId": "FACT-HEALTH-010",
+      "sourceId": "health-who-terminology-2024-004",
+      "statementKind": "fact",
+      "matchedClaimIds": [
+        "claim:50fd4599b9553875-e5004be37e4a4be8",
+        "claim:50fd4599b9553875-e76415a67338b449"
+      ],
+      "matchedStatements": [
+        "Under the umbrella of 'through the air transmission', two descriptors can be used.",
+        "The descriptor 'through the air' can be used in a general way to characterize an infectious disease where the main mode of transmission involves the pathogen travelling through the air or being suspended in the air."
+      ],
+      "evidenceCovered": true,
+      "conditionsExpected": [],
+      "conditionsExplicit": true,
+      "timeScopeExpected": "as-of:2024-04-18",
+      "timeScopeExplicit": false,
+      "attributionExpected": null,
+      "attributionExplicit": true
+    },
+    {
+      "factId": "FACT-HEALTH-011",
+      "sourceId": "health-who-terminology-2024-004",
+      "statementKind": "fact",
+      "matchedClaimIds": [
+        "claim:50fd4599b9553875-2de9e0481e7c8e64",
+        "claim:50fd4599b9553875-9bb1be629366d05d",
+        "claim:50fd4599b9553875-e77df938b6f36c19"
+      ],
+      "matchedStatements": [
+        "The distance of airborne transmission or inhalation depends on various factors (airflow, humidity, temperature, ventilation etc).",
+        "Airborne transmission or inhalation is used for cases when IRPs are expelled into the air and inhaled by another person.",
+        "Airborne transmission or inhalation can occur at a short or long distance from the infectious person."
+      ],
+      "evidenceCovered": true,
+      "conditionsExpected": [
+        "距离受气流、湿度、温度和通风等因素影响"
+      ],
+      "conditionsExplicit": false,
+      "timeScopeExpected": "as-of:2024-04-18",
+      "timeScopeExplicit": false,
+      "attributionExpected": null,
+      "attributionExplicit": true
+    },
+    {
+      "factId": "FACT-HEALTH-012",
+      "sourceId": "health-who-terminology-2024-004",
+      "statementKind": "fact",
+      "matchedClaimIds": [
+        "claim:50fd4599b9553875-c49634bbf6841943"
+      ],
+      "matchedStatements": [
+        "Direct deposition is used for cases when IRPs are expelled into the air from an infectious person, and are then directly deposited on the exposed mouth, nose or eyes of another person nearby."
+      ],
+      "evidenceCovered": true,
+      "conditionsExpected": [],
+      "conditionsExplicit": true,
+      "timeScopeExpected": "as-of:2024-04-18",
+      "timeScopeExplicit": false,
+      "attributionExpected": null,
+      "attributionExplicit": true
+    },
+    {
+      "factId": "FACT-HIST-001",
+      "sourceId": "history-educelab-paper-2023-001",
+      "statementKind": "fact",
+      "matchedClaimIds": [
+        "claim:e71279e71acc04bd-6d5b2c429c801f73",
+        "claim:e71279e71acc04bd-f06d3f1ce6a9a65a"
+      ],
+      "matchedStatements": [
+        "The enhanced virtual unwrapping pipeline combines machine learning with a novel geometric framework linking 3D and 2D images.",
+        "EduceLab-Scrolls is a complete software pipeline for revealing hidden texts of the Herculaneum papyri using X-ray CT images."
+      ],
+      "evidenceCovered": true,
+      "conditionsExpected": [],
+      "conditionsExplicit": true,
+      "timeScopeExpected": null,
+      "timeScopeExplicit": true,
+      "attributionExpected": null,
+      "attributionExplicit": true
+    },
+    {
+      "factId": "FACT-HIST-002",
+      "sourceId": "history-educelab-paper-2023-001",
+      "statementKind": "fact",
+      "matchedClaimIds": [
+        "claim:e71279e71acc04bd-367243e68b140409"
+      ],
+      "matchedStatements": [
+        "The method is capable of revealing accurate lines of text on scroll fragments with known ground truth."
+      ],
+      "evidenceCovered": true,
+      "conditionsExpected": [
+        "对象是有已知 ground truth 的碎片"
+      ],
+      "conditionsExplicit": true,
+      "timeScopeExpected": null,
+      "timeScopeExplicit": true,
+      "attributionExpected": null,
+      "attributionExplicit": true
+    },
+    {
+      "factId": "FACT-HIST-003",
+      "sourceId": "history-educelab-paper-2023-001",
+      "statementKind": "fact",
+      "matchedClaimIds": [
+        "claim:e71279e71acc04bd-1c4f658d21aa94b4"
+      ],
+      "matchedStatements": [
+        "Revealed text is verified using visual confirmation, quantitative image metrics, and scholarly review."
+      ],
+      "evidenceCovered": true,
+      "conditionsExpected": [],
+      "conditionsExplicit": true,
+      "timeScopeExpected": null,
+      "timeScopeExplicit": true,
+      "attributionExpected": null,
+      "attributionExplicit": true
+    },
+    {
+      "factId": "FACT-HIST-004",
+      "sourceId": "history-vesuvius-github-2024-002",
+      "statementKind": "fact",
+      "matchedClaimIds": [
+        "claim:5505a1ba1fcb1b68-a2289f49fcb0ff64",
+        "claim:5505a1ba1fcb1b68-d303dae0fc053d75"
+      ],
+      "matchedStatements": [
+        "该仓库于 2024 年 11 月 21 日被所有者归档。",
+        "该仓库现在是只读的。"
+      ],
+      "evidenceCovered": true,
+      "conditionsExpected": [],
+      "conditionsExplicit": true,
+      "timeScopeExpected": "as-of:2024-11-21",
+      "timeScopeExplicit": true,
+      "attributionExpected": null,
+      "attributionExplicit": true
+    },
+    {
+      "factId": "FACT-HIST-005",
+      "sourceId": "history-vesuvius-github-2024-002",
+      "statementKind": "fact",
+      "matchedClaimIds": [
+        "claim:5505a1ba1fcb1b68-825b50a16ede0106"
+      ],
+      "matchedStatements": [
+        "该库现在维护在 https://github.com/ScrollPrize/villa/tree/main/vesuvius。"
+      ],
+      "evidenceCovered": true,
+      "conditionsExpected": [],
+      "conditionsExplicit": true,
+      "timeScopeExpected": null,
+      "timeScopeExplicit": true,
+      "attributionExpected": null,
+      "attributionExplicit": true
+    },
+    {
+      "factId": "FACT-HIST-006",
+      "sourceId": "history-vesuvius-github-2024-002",
+      "statementKind": "fact",
+      "matchedClaimIds": [
+        "claim:5505a1ba1fcb1b68-35e4f1b989767484",
+        "claim:5505a1ba1fcb1b68-9acfc0780eb2b345"
+      ],
+      "matchedStatements": [
+        "并非所有维苏威挑战赛的数据目前都可用——数据将继续添加到库中。",
+        "vesuvius 处于测试阶段，界面可能会发生变化。"
+      ],
+      "evidenceCovered": true,
+      "conditionsExpected": [
+        "beta",
+        "数据覆盖不完整"
+      ],
+      "conditionsExplicit": false,
+      "timeScopeExpected": null,
+      "timeScopeExplicit": true,
+      "attributionExpected": null,
+      "attributionExplicit": true
+    },
+    {
+      "factId": "FACT-HIST-007",
+      "sourceId": "history-nature-scroll-2024-003",
+      "statementKind": "fact",
+      "matchedClaimIds": [
+        "claim:b98a3ae4860a6edc-3c7148205b4853be",
+        "claim:b98a3ae4860a6edc-95aab89f959ee2e9",
+        "claim:b98a3ae4860a6edc-fd2b496dae5aceca"
+      ],
+      "matchedStatements": [
+        "The scroll was buried 2,000 years ago by the eruption of Mount Vesuvius.",
+        "A team of student researchers has made a giant contribution to solving one of the biggest mysteries in archaeology.",
+        "The contribution was made by revealing the content of Greek writing inside a charred scroll."
+      ],
+      "evidenceCovered": true,
+      "conditionsExpected": [],
+      "conditionsExplicit": true,
+      "timeScopeExpected": null,
+      "timeScopeExplicit": true,
+      "attributionExpected": null,
+      "attributionExplicit": true
+    },
+    {
+      "factId": "FACT-HIST-008",
+      "sourceId": "history-nature-scroll-2024-003",
+      "statementKind": "fact",
+      "matchedClaimIds": [
+        "claim:b98a3ae4860a6edc-704f0702fd830045"
+      ],
+      "matchedStatements": [
+        "The winners of a contest called the Vesuvius Challenge trained their machine-learning algorithms on scans of the rolled-up papyrus."
+      ],
+      "evidenceCovered": true,
+      "conditionsExpected": [],
+      "conditionsExplicit": true,
+      "timeScopeExpected": null,
+      "timeScopeExplicit": true,
+      "attributionExpected": null,
+      "attributionExplicit": true
+    },
+    {
+      "factId": "FACT-HIST-009",
+      "sourceId": "history-nature-scroll-2024-003",
+      "statementKind": "reported-interpretation",
+      "matchedClaimIds": [
+        "claim:b98a3ae4860a6edc-704f0702fd830045",
+        "claim:b98a3ae4860a6edc-8283c241b4571c9c",
+        "claim:b98a3ae4860a6edc-eb659af5a9f64d88"
+      ],
+      "matchedStatements": [
+        "The winners of a contest called the Vesuvius Challenge trained their machine-learning algorithms on scans of the rolled-up papyrus.",
+        "The training unveiled a previously unknown philosophical work.",
+        "The philosophical work discusses the senses and pleasure."
+      ],
+      "evidenceCovered": true,
+      "conditionsExpected": [],
+      "conditionsExplicit": true,
+      "timeScopeExpected": null,
+      "timeScopeExplicit": true,
+      "attributionExpected": "Nature",
+      "attributionExplicit": false
+    },
+    {
+      "factId": "FACT-HIST-010",
+      "sourceId": "history-scrollprize-2026-004",
+      "statementKind": "fact",
+      "matchedClaimIds": [
+        "claim:4ab2f152a60c6bbe-39dbff7d3d0408e6",
+        "claim:4ab2f152a60c6bbe-e301af57ef26e82d"
+      ],
+      "matchedStatements": [
+        "The Vesuvius Challenge had a Grand Prize for the first team to recover four passages of 140 characters from a Herculaneum scroll.",
+        "Vesuvius Challenge was launched in March 2023."
+      ],
+      "evidenceCovered": true,
+      "conditionsExpected": [],
+      "conditionsExplicit": true,
+      "timeScopeExpected": "as-of:2023-03",
+      "timeScopeExplicit": true,
+      "attributionExpected": null,
+      "attributionExplicit": true
+    },
+    {
+      "factId": "FACT-HIST-011",
+      "sourceId": "history-scrollprize-2026-004",
+      "statementKind": "project-reported-result",
+      "matchedClaimIds": [
+        "claim:4ab2f152a60c6bbe-901bc3b35d2cc86e"
+      ],
+      "matchedStatements": [
+        "In 2026, PHerc. 1667 became the first Herculaneum scroll to be virtually unwrapped and read end to end."
+      ],
+      "evidenceCovered": true,
+      "conditionsExpected": [],
+      "conditionsExplicit": true,
+      "timeScopeExpected": "as-of:2026",
+      "timeScopeExplicit": true,
+      "attributionExpected": "project",
+      "attributionExplicit": false
+    },
+    {
+      "factId": "FACT-HIST-012",
+      "sourceId": "history-scrollprize-2026-004",
+      "statementKind": "fact",
+      "matchedClaimIds": [
+        "claim:4ab2f152a60c6bbe-d83a71026c2b4d86"
+      ],
+      "matchedStatements": [
+        "The challenge now moves onto its next stage: reading multiple entire scrolls."
+      ],
+      "evidenceCovered": true,
+      "conditionsExpected": [],
+      "conditionsExplicit": true,
+      "timeScopeExpected": null,
+      "timeScopeExplicit": true,
+      "attributionExpected": null,
+      "attributionExplicit": true
+    },
+    {
+      "factId": "FACT-DESIGN-001",
+      "sourceId": "design-wcag21-2018-001",
+      "statementKind": "fact",
+      "matchedClaimIds": [
+        "claim:a379c869d6fd01c5-5e7756a095157543",
+        "claim:a379c869d6fd01c5-dd9dfa26cc601b87"
+      ],
+      "matchedStatements": [
+        "Web pages that conform to WCAG 2.1 also conform to WCAG 2.0.",
+        "WCAG 2.1 builds on and is backwards compatible with WCAG 2.0."
+      ],
+      "evidenceCovered": true,
+      "conditionsExpected": [],
+      "conditionsExplicit": true,
+      "timeScopeExpected": null,
+      "timeScopeExplicit": true,
+      "attributionExpected": null,
+      "attributionExplicit": true
+    },
+    {
+      "factId": "FACT-DESIGN-002",
+      "sourceId": "design-wcag21-2018-001",
+      "statementKind": "fact",
+      "matchedClaimIds": [
+        "claim:a379c869d6fd01c5-04b919f4bee1dda9"
+      ],
+      "matchedStatements": [
+        "Success Criterion 4.1.1 Parsing is Level A."
+      ],
+      "evidenceCovered": true,
+      "conditionsExpected": [],
+      "conditionsExplicit": true,
+      "timeScopeExpected": "standard:WCAG-2.1",
+      "timeScopeExplicit": false,
+      "attributionExpected": null,
+      "attributionExplicit": true
+    },
+    {
+      "factId": "FACT-DESIGN-003",
+      "sourceId": "design-wcag21-2018-001",
+      "statementKind": "fact",
+      "matchedClaimIds": [
+        "claim:a379c869d6fd01c5-04b919f4bee1dda9",
+        "claim:a379c869d6fd01c5-4d6c29b01ebc3687",
+        "claim:a379c869d6fd01c5-866398fd8b6c9f1d",
+        "claim:a379c869d6fd01c5-c0d22573fe6f8aec",
+        "claim:a379c869d6fd01c5-c214e98e5362ef12"
+      ],
+      "matchedStatements": [
+        "Success Criterion 4.1.1 Parsing is Level A.",
+        "In content implemented using markup languages, elements have complete start and end tags.",
+        "In content implemented using markup languages, any IDs are unique, except where the specifications allow these features.",
+        "In content implemented using markup languages, elements are nested according to their specifications.",
+        "In content implemented using markup languages, elements do not contain duplicate attributes."
+      ],
+      "evidenceCovered": true,
+      "conditionsExpected": [
+        "适用于用标记语言实现的内容",
+        "规范允许的例外除外"
+      ],
+      "conditionsExplicit": true,
+      "timeScopeExpected": "standard:WCAG-2.1",
+      "timeScopeExplicit": false,
+      "attributionExpected": null,
+      "attributionExplicit": true
+    },
+    {
+      "factId": "FACT-DESIGN-004",
+      "sourceId": "design-wcag22-2023-002",
+      "statementKind": "fact",
+      "matchedClaimIds": [
+        "claim:1da3417e06ff5435-0131b383bb68d5d6",
+        "claim:1da3417e06ff5435-4043dbf2773f336c",
+        "claim:1da3417e06ff5435-4f47a3d28c2c5675",
+        "claim:1da3417e06ff5435-50f420b0776ab205"
+      ],
+      "matchedStatements": [
+        "WCAG 2.2 builds on and is backwards compatible with WCAG 2.1.",
+        "Requirements have been added that build on WCAG 2.1 and 2.0.",
+        "Web pages that conform to WCAG 2.2 are at least as accessible as pages that conform to WCAG 2.1.",
+        "WCAG 2.2 has removed one success criterion, 4.1.1 Parsing."
+      ],
+      "evidenceCovered": true,
+      "conditionsExpected": [],
+      "conditionsExplicit": true,
+      "timeScopeExpected": "standard:WCAG-2.2",
+      "timeScopeExplicit": false,
+      "attributionExpected": null,
+      "attributionExplicit": true
+    },
+    {
+      "factId": "FACT-DESIGN-005",
+      "sourceId": "design-wcag22-2023-002",
+      "statementKind": "fact",
+      "matchedClaimIds": [
+        "claim:1da3417e06ff5435-e42233e831e0f66d",
+        "claim:1da3417e06ff5435-e9295b4993a17258"
+      ],
+      "matchedStatements": [
+        "Authors that are required by policy to conform with WCAG 2.0 or 2.1 will be able to update content to WCAG 2.2.",
+        "Authors that are required by policy to conform with WCAG 2.0 or 2.1 may need to continue to test and report 4.1.1."
+      ],
+      "evidenceCovered": true,
+      "conditionsExpected": [
+        "适用政策仍引用 WCAG 2.0 或 2.1"
+      ],
+      "conditionsExplicit": false,
+      "timeScopeExpected": null,
+      "timeScopeExplicit": true,
+      "attributionExpected": null,
+      "attributionExplicit": true
+    },
+    {
+      "factId": "FACT-DESIGN-006",
+      "sourceId": "design-wcag22-2023-002",
+      "statementKind": "fact",
+      "matchedClaimIds": [
+        "claim:1da3417e06ff5435-fda7e8c14ff6f23b"
+      ],
+      "matchedStatements": [
+        "The following success criteria are new in WCAG 2.2: 2.4.11 Focus Not Obscured (Minimum) (AA), 2.4.12 Focus Not Obscured (Enhanced) (AAA), 2.4.13 Focus Appearance (AAA), 2.5.7 Dragging Movements (AA), 2.5.8 Target Size (Minimum) (AA), 3.2.6 Consistent Help (A), 3.3.7 Redundant Entry (A), 3.3.8 Accessible Authentication (Minimum) (AA), 3.3.9 Accessible Authentication (Enhanced) (AAA)."
+      ],
+      "evidenceCovered": true,
+      "conditionsExpected": [],
+      "conditionsExplicit": true,
+      "timeScopeExpected": null,
+      "timeScopeExplicit": true,
+      "attributionExpected": null,
+      "attributionExplicit": true
+    },
+    {
+      "factId": "FACT-DESIGN-007",
+      "sourceId": "design-wcag-issue-2705-003",
+      "statementKind": "proposal-quotation",
+      "matchedClaimIds": [
+        "claim:d40218e811ec1166-3121f577072c04bb"
+      ],
+      "matchedStatements": [
+        "Success Criterion 2.5.7 Dragging Movements (Level AA) requires that all functionality using a dragging movement can be achieved by a single pointer without dragging, unless dragging is essential or the functionality is determined by the user agent and not modified by the author."
+      ],
+      "evidenceCovered": true,
+      "conditionsExpected": [],
+      "conditionsExplicit": true,
+      "timeScopeExpected": null,
+      "timeScopeExplicit": true,
+      "attributionExpected": "issue",
+      "attributionExplicit": false
+    },
+    {
+      "factId": "FACT-DESIGN-008",
+      "sourceId": "design-wcag-issue-2705-003",
+      "statementKind": "author-proposal",
+      "matchedClaimIds": [
+        "claim:d40218e811ec1166-21341d7bbebecc13"
+      ],
+      "matchedStatements": [
+        "The group requests that this Success Criterion be removed until research is completed for all affected input modalities."
+      ],
+      "evidenceCovered": true,
+      "conditionsExpected": [],
+      "conditionsExplicit": true,
+      "timeScopeExpected": null,
+      "timeScopeExplicit": true,
+      "attributionExpected": "issue",
+      "attributionExplicit": false
+    },
+    {
+      "factId": "FACT-DESIGN-009",
+      "sourceId": "design-wcag-issue-2705-003",
+      "statementKind": "author-opinion",
+      "matchedClaimIds": [
+        "claim:d40218e811ec1166-09499dce953a0a91",
+        "claim:d40218e811ec1166-f30bb9542bb62fad"
+      ],
+      "matchedStatements": [
+        "More considerations are needed for various platforms.",
+        "There should not be an imposition of all mobile requirements on all desktop content."
+      ],
+      "evidenceCovered": true,
+      "conditionsExpected": [],
+      "conditionsExplicit": true,
+      "timeScopeExpected": null,
+      "timeScopeExplicit": true,
+      "attributionExpected": "issue",
+      "attributionExplicit": false
+    },
+    {
+      "factId": "FACT-DESIGN-010",
+      "sourceId": "design-webaim-checklist-2024-004",
+      "statementKind": "secondary-summary",
+      "matchedClaimIds": [
+        "claim:b89787b6b83f3605-2b879b185f80c3ed",
+        "claim:b89787b6b83f3605-d524b881aa3a2622"
+      ],
+      "matchedStatements": [
+        "Success Criterion 4.1.1 Parsing 自2023年起已从WCAG中移除。",
+        "Success Criterion 4.1.1 Parsing 不再有用。"
+      ],
+      "evidenceCovered": true,
+      "conditionsExpected": [],
+      "conditionsExplicit": true,
+      "timeScopeExpected": null,
+      "timeScopeExplicit": true,
+      "attributionExpected": "WebAIM",
+      "attributionExplicit": false
+    },
+    {
+      "factId": "FACT-DESIGN-011",
+      "sourceId": "design-webaim-checklist-2024-004",
+      "statementKind": "secondary-summary",
+      "matchedClaimIds": [
+        "claim:b89787b6b83f3605-2b879b185f80c3ed",
+        "claim:b89787b6b83f3605-d524b881aa3a2622"
+      ],
+      "matchedStatements": [
+        "Success Criterion 4.1.1 Parsing 自2023年起已从WCAG中移除。",
+        "Success Criterion 4.1.1 Parsing 不再有用。"
+      ],
+      "evidenceCovered": true,
+      "conditionsExpected": [],
+      "conditionsExplicit": true,
+      "timeScopeExpected": null,
+      "timeScopeExplicit": true,
+      "attributionExpected": "WebAIM",
+      "attributionExplicit": false
+    },
+    {
+      "factId": "FACT-DESIGN-012",
+      "sourceId": "design-webaim-checklist-2024-004",
+      "statementKind": "scope-interpretation",
+      "matchedClaimIds": [
+        "claim:b89787b6b83f3605-2b879b185f80c3ed",
+        "claim:b89787b6b83f3605-d524b881aa3a2622"
+      ],
+      "matchedStatements": [
+        "Success Criterion 4.1.1 Parsing 自2023年起已从WCAG中移除。",
+        "Success Criterion 4.1.1 Parsing 不再有用。"
+      ],
+      "evidenceCovered": true,
+      "conditionsExpected": [
+        "版本与时间必须保留"
+      ],
+      "conditionsExplicit": false,
+      "timeScopeExpected": null,
+      "timeScopeExplicit": true,
+      "attributionExpected": null,
+      "attributionExplicit": true
+    }
+  ],
+  "relations": [
+    {
+      "anchorId": "REL-HEALTH-001",
+      "fromFact": "FACT-HEALTH-005",
+      "toFact": "FACT-HEALTH-002",
+      "expectedType": "SUPERSEDES",
+      "matchedRelationIds": [],
+      "typeAndDirectionMatched": false,
+      "conditionsExpected": [
+        "2020-07-09 更新 2020-03-29 简报",
+        "只扩大到简报明确描述的特定室内条件"
+      ],
+      "conditionsExplicit": false
+    },
+    {
+      "anchorId": "REL-HEALTH-002",
+      "fromFact": "FACT-HEALTH-008",
+      "toFact": "FACT-HEALTH-005",
+      "expectedType": "DERIVED_FROM",
+      "matchedRelationIds": [],
+      "typeAndDirectionMatched": false,
+      "conditionsExpected": [
+        "Nature 是二手时间线解释，不是 WHO 规范文本"
+      ],
+      "conditionsExplicit": false
+    },
+    {
+      "anchorId": "REL-HEALTH-003",
+      "fromFact": "FACT-HEALTH-010",
+      "toFact": "FACT-HEALTH-005",
+      "expectedType": "RELATED_TO",
+      "matchedRelationIds": [],
+      "typeAndDirectionMatched": false,
+      "conditionsExpected": [
+        "2024 是跨病原体术语框架，2020 是 COVID-19 科学简报；不能标成直接替代"
+      ],
+      "conditionsExplicit": false
+    },
+    {
+      "anchorId": "REL-HIST-001",
+      "fromFact": "FACT-HIST-008",
+      "toFact": "FACT-HIST-001",
+      "expectedType": "RELATED_TO",
+      "matchedRelationIds": [],
+      "typeAndDirectionMatched": false,
+      "conditionsExpected": [
+        "报道中的竞赛方法与论文管线共享技术主题，但不是同一项结果"
+      ],
+      "conditionsExplicit": false
+    },
+    {
+      "anchorId": "REL-HIST-002",
+      "fromFact": "FACT-HIST-011",
+      "toFact": "FACT-HIST-010",
+      "expectedType": "SUPERSEDES",
+      "matchedRelationIds": [],
+      "typeAndDirectionMatched": false,
+      "conditionsExpected": [
+        "仅在‘项目已达到的最高阅读里程碑’这一状态槽位内",
+        "项目官网自述，需论文交叉验证"
+      ],
+      "conditionsExplicit": false
+    },
+    {
+      "anchorId": "REL-HIST-003",
+      "fromFact": "FACT-HIST-005",
+      "toFact": "FACT-HIST-004",
+      "expectedType": "RELATED_TO",
+      "matchedRelationIds": [],
+      "typeAndDirectionMatched": false,
+      "conditionsExpected": [
+        "归档 README 明确给出后继维护位置"
+      ],
+      "conditionsExplicit": false
+    },
+    {
+      "anchorId": "REL-DESIGN-001",
+      "fromFact": "FACT-DESIGN-004",
+      "toFact": "FACT-DESIGN-002",
+      "expectedType": "SUPERSEDES",
+      "matchedRelationIds": [],
+      "typeAndDirectionMatched": false,
+      "conditionsExpected": [
+        "仅当符合性目标是 WCAG 2.2",
+        "仍受 WCAG 2.0/2.1 政策约束时可能继续测试 4.1.1"
+      ],
+      "conditionsExplicit": false
+    },
+    {
+      "anchorId": "REL-DESIGN-002",
+      "fromFact": "FACT-DESIGN-008",
+      "toFact": "FACT-DESIGN-006",
+      "expectedType": "CONTRADICTS",
+      "matchedRelationIds": [],
+      "typeAndDirectionMatched": false,
+      "conditionsExpected": [
+        "冲突是 issue 作者的移除建议与最终标准保留 2.5.7，不是世界事实冲突"
+      ],
+      "conditionsExplicit": false
+    },
+    {
+      "anchorId": "REL-DESIGN-003",
+      "fromFact": "FACT-DESIGN-010",
+      "toFact": "FACT-DESIGN-004",
+      "expectedType": "SUPPORTS",
+      "matchedRelationIds": [
+        "rel:cross-59e2e7d1788246d7"
+      ],
+      "typeAndDirectionMatched": true,
+      "conditionsExpected": [
+        "WebAIM 为二手清单，不能增加独立规范权威"
+      ],
+      "conditionsExplicit": false
+    }
+  ]
+}

@@ -1,0 +1,3251 @@
+{
+  "schemaVersion": "v1",
+  "sourceId": "source:03-sequences-limits-e7ea8bc17c2cc4ab",
+  "runId": "74c1f631-a487-49ae-ba6a-c7d3c3f4243d",
+  "publishedAt": "2026-07-23T16:59:32.924Z",
+  "claims": [
+    {
+      "id": "claim:e7ea8bc17c2cc4ab-02610b4e92ce3e70",
+      "statement": "几何级数 ∑ ar^{n-1} 的收敛条件是 |r| < 1。",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-29"
+      ],
+      "conditions": [
+        "|r| < 1"
+      ],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.363Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-29"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-29"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:33:04.363Z"
+    },
+    {
+      "id": "claim:e7ea8bc17c2cc4ab-03fa695ee7a422d8",
+      "statement": "cos x 的 Maclaurin 级数收敛半径为 ∞。",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-39"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.363Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-39"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-39"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:33:04.363Z"
+    },
+    {
+      "id": "claim:e7ea8bc17c2cc4ab-07e8ca8a41f4452d",
+      "statement": "sin x 的 Maclaurin 级数为 ∑_{n=0}^∞ (-1)^n x^{2n+1}/(2n+1)!。",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-39"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.363Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-39"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-39"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:33:04.363Z"
+    },
+    {
+      "id": "claim:e7ea8bc17c2cc4ab-0ba5617a37879d03",
+      "statement": "ln(1+x) 的 Maclaurin 级数为 ∑_{n=1}^∞ (-1)^{n+1} x^n/n。",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-39"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.363Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-39"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-39"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:33:04.363Z"
+    },
+    {
+      "id": "claim:e7ea8bc17c2cc4ab-0c3f7068eace3173",
+      "statement": "级数的收敛性取决于部分和数列的极限。",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-25#chars-2510-2537"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.363Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-25#chars-2510-2537"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-25#chars-2510-2537"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:33:04.363Z"
+    },
+    {
+      "id": "claim:e7ea8bc17c2cc4ab-0d852a3382e059d1",
+      "statement": "1/(1-x) 的 Maclaurin 级数收敛半径为 1。",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-39"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.363Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-39"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-39"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:33:04.363Z"
+    },
+    {
+      "id": "claim:e7ea8bc17c2cc4ab-0ede92f2a50f9084",
+      "statement": "q^n (|q|<1) 的极限是 0。",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-20"
+      ],
+      "conditions": [
+        "|q|<1"
+      ],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.363Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-20"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-20"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:33:04.363Z"
+    },
+    {
+      "id": "claim:e7ea8bc17c2cc4ab-107fd249daab0630",
+      "statement": "\"无穷\"曾经是数学的禁区。",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-1#chars-16-29"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.363Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-1#chars-16-29"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-1#chars-16-29"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:33:04.363Z"
+    },
+    {
+      "id": "claim:e7ea8bc17c2cc4ab-1179d617ab1927f1",
+      "statement": "级数是数列的累加：∑_{n=1}^∞ a_n = lim_{N→∞} ∑_{n=1}^N a_n。",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-24#chars-2429-2508"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.363Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-24#chars-2429-2508"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-24#chars-2429-2508"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:33:04.363Z"
+    },
+    {
+      "id": "claim:e7ea8bc17c2cc4ab-1c5584b932e99d50",
+      "statement": "极限不是“到达”，而是“任意逼近”。",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-55#chars-7032-7059"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.363Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-55#chars-7032-7059"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-55#chars-7032-7059"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:33:04.363Z"
+    },
+    {
+      "id": "claim:e7ea8bc17c2cc4ab-1dd3bf2da010f272",
+      "statement": "逐点收敛可能丢失连续性。",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-50#chars-6371-6397"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.363Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-50#chars-6371-6397"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-50#chars-6371-6397"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:33:04.363Z"
+    },
+    {
+      "id": "claim:e7ea8bc17c2cc4ab-27c597597c9fb62c",
+      "statement": "在 §9 泛函分析中要研究算子的一致收敛，而不仅仅是逐点收敛。",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-51#chars-6553-6597"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.363Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-51#chars-6553-6597"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-51#chars-6553-6597"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:33:04.363Z"
+    },
+    {
+      "id": "claim:e7ea8bc17c2cc4ab-281deed57a6d6f97",
+      "statement": "ε-N 定义可以逐词翻译为：“无论你要求多小的误差 ε，我都能找到一个位置 N，使得第 N 项之后的所有项与 L 的偏差都不超过 ε。”",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-14#chars-972-1046"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.363Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-14#chars-972-1046"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-14#chars-972-1046"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:33:04.363Z"
+    },
+    {
+      "id": "claim:e7ea8bc17c2cc4ab-28db2687beed1921",
+      "statement": "交错调和级数 ∑ (-1)^{n-1}/n 收敛到 ln 2。",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-29"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.363Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-29"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-29"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:33:04.363Z"
+    },
+    {
+      "id": "claim:e7ea8bc17c2cc4ab-294aad5979a3de5f",
+      "statement": "Maclaurin 级数是 a=0 的特例。",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-36#chars-4209-4236"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.363Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-36#chars-4209-4236"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-36#chars-4209-4236"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:33:04.363Z"
+    },
+    {
+      "id": "claim:e7ea8bc17c2cc4ab-299b0a9eebcfbe7c",
+      "statement": "Cauchy列定义为：∀ε>0, ∃N, ∀m,n>N: |a_m - a_n| < ε。",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-8"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.363Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-8"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-8"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:33:04.363Z"
+    },
+    {
+      "id": "claim:e7ea8bc17c2cc4ab-2a0831af092ad417",
+      "statement": "(1 + 1/n)^n 的极限是 e。",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-20"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.363Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-20"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-20"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:33:04.363Z"
+    },
+    {
+      "id": "claim:e7ea8bc17c2cc4ab-2f8ab0bff341b76a",
+      "statement": "等差数列定义为 a_{n+1} = a_n + d。",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-8"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.363Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-8"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-8"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:33:04.363Z"
+    },
+    {
+      "id": "claim:e7ea8bc17c2cc4ab-37a64557c3661847",
+      "statement": "1/(1-x) 的 Maclaurin 级数为 ∑_{n=0}^∞ x^n。",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-39"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.363Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-39"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-39"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:33:04.363Z"
+    },
+    {
+      "id": "claim:e7ea8bc17c2cc4ab-3b7a0b55e34b6691",
+      "statement": "如果函数足够光滑，可以用它在某点的各阶导数构造一个幂级数。",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-34#chars-4101-4130"
+      ],
+      "conditions": [
+        "函数足够光滑"
+      ],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.363Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-34#chars-4101-4130"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-34#chars-4101-4130"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:33:04.363Z"
+    },
+    {
+      "id": "claim:e7ea8bc17c2cc4ab-3ff4c29c480587f9",
+      "statement": "依测度收敛的定义是 $\\mu(\\{\\|f_n-f\\|>\\epsilon\\}) \\to 0$。",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-49#chars-6166-6201"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.363Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-49#chars-6166-6201"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-49#chars-6166-6201"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:33:04.363Z"
+    },
+    {
+      "id": "claim:e7ea8bc17c2cc4ab-4e2db7677b3ec251",
+      "statement": "ε-N 论证像一个挑战游戏：对手出 ε，我方出 N，如果总能赢，极限成立。",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-16#chars-1369-1445"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.363Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-16#chars-1369-1445"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-16#chars-1369-1445"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:33:04.363Z"
+    },
+    {
+      "id": "claim:e7ea8bc17c2cc4ab-5170a04e6415d960",
+      "statement": "递推数列定义为 a_{n+1} = f(a_n) 或 a_{n+2} = f(a_n, a_{n+1})。",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-8"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.363Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-8"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-8"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:33:04.363Z"
+    },
+    {
+      "id": "claim:e7ea8bc17c2cc4ab-5380fb0ab1f53bee",
+      "statement": "$L^p$ 收敛的定义是 $\\int \\|f_n-f\\|^p \\to 0$。",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-49"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.363Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-49"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-49"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:33:04.363Z"
+    },
+    {
+      "id": "claim:e7ea8bc17c2cc4ab-58454e7eee4bde6f",
+      "statement": "本章既是微积分的基石，也是分析学的方法论核心。",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-1#chars-84-107"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.363Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-1#chars-84-107"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-1#chars-84-107"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:33:04.363Z"
+    },
+    {
+      "id": "claim:e7ea8bc17c2cc4ab-592520431d8f3851",
+      "statement": "等比数列定义为 a_{n+1} = a_n · q。",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-8"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.363Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-8"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-8"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:33:04.363Z"
+    },
+    {
+      "id": "claim:e7ea8bc17c2cc4ab-5af4111393db6422",
+      "statement": "e^x 的 Maclaurin 级数为 ∑_{n=0}^∞ x^n/n!。",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-39"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.363Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-39"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-39"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:33:04.363Z"
+    },
+    {
+      "id": "claim:e7ea8bc17c2cc4ab-62d2ef837b1c0052",
+      "statement": "Lagrange 余项允许在数值计算中控制精度，给定所需精度可反推需要的项数。",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-45#chars-5863-5900"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.363Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-45#chars-5863-5900"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-45#chars-5863-5900"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:33:04.363Z"
+    },
+    {
+      "id": "claim:e7ea8bc17c2cc4ab-63af72dabe89e16f",
+      "statement": "极限概念的严格化（19世纪的 ε-δ 革命）是数学史上从直觉到精确的最大飞跃。",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-1#chars-29-84"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.363Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-1#chars-29-84"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-1#chars-29-84"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:33:04.363Z"
+    },
+    {
+      "id": "claim:e7ea8bc17c2cc4ab-63f16c60977b2469",
+      "statement": "sin n / n 的极限是 0（由夹逼定理）。",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-20"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.363Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-20"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-20"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:33:04.363Z"
+    },
+    {
+      "id": "claim:e7ea8bc17c2cc4ab-6687882ec7900386",
+      "statement": "一致收敛是“好的”收敛，它保证极限函数继承逼近函数序列的优良性质（连续、可导、可积）。",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-51#chars-6508-6553"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.363Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-51#chars-6508-6553"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-51#chars-6508-6553"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:33:04.363Z"
+    },
+    {
+      "id": "claim:e7ea8bc17c2cc4ab-66946ad79d5b7782",
+      "statement": "这是现代分析学的精髓。",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-55#chars-7151-7162"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.363Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-55#chars-7151-7162"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-55#chars-7151-7162"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:33:04.363Z"
+    },
+    {
+      "id": "claim:e7ea8bc17c2cc4ab-6f6a4936ff7b1be4",
+      "statement": "Lagrange余项用于精确控制近似误差。",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-54"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.363Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-54"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-54"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:33:04.363Z"
+    },
+    {
+      "id": "claim:e7ea8bc17c2cc4ab-722d33fc1d688ebb",
+      "statement": "p-级数 ∑ 1/n^p 的收敛条件是 p > 1。",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-29"
+      ],
+      "conditions": [
+        "p > 1"
+      ],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.363Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-29"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-29"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:33:04.363Z"
+    },
+    {
+      "id": "claim:e7ea8bc17c2cc4ab-762e52171f5fb5d4",
+      "statement": "一致收敛的定义是 $\\sup_x \\|f_n(x)-f(x)\\| \\to 0$。",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-49"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.363Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-49"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-49"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:33:04.363Z"
+    },
+    {
+      "id": "claim:e7ea8bc17c2cc4ab-7d13eec4ee017d80",
+      "statement": "Taylor级数用多项式无限逼近光滑函数。",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-54"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.363Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-54"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-54"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:33:04.363Z"
+    },
+    {
+      "id": "claim:e7ea8bc17c2cc4ab-7eb30748d7d95e77",
+      "statement": "欧拉公式 e^{iθ} = cos θ + i sin θ 可以从 e^x、sin x、cos x 各自的 Taylor 展开直接推出。",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-40#chars-4744-4835"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.363Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-40#chars-4744-4835"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-40#chars-4744-4835"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:33:04.363Z"
+    },
+    {
+      "id": "claim:e7ea8bc17c2cc4ab-83ca0c95c9d98825",
+      "statement": "Maclaurin 级数公式为 f(x) = f(0) + f'(0)x + f''(0)/2! x^2 + f'''(0)/3! x^3 + ...。",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-37#chars-4242-4311"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.363Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-37#chars-4242-4311"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-37#chars-4242-4311"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:33:04.363Z"
+    },
+    {
+      "id": "claim:e7ea8bc17c2cc4ab-83dfb49b8578b573",
+      "statement": "级数 ∑ 1/n! 收敛。",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-29"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.363Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-29"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-29"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:33:04.363Z"
+    },
+    {
+      "id": "claim:e7ea8bc17c2cc4ab-8ff9b6cc65112903",
+      "statement": "1/n^p (p>0) 的极限是 0。",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-20"
+      ],
+      "conditions": [
+        "p>0"
+      ],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.363Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-20"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-20"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:33:04.363Z"
+    },
+    {
+      "id": "claim:e7ea8bc17c2cc4ab-902aad625263a115",
+      "statement": "几何级数与p-级数是收敛判别法的两个基准。",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-54"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.363Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-54"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-54"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:33:04.363Z"
+    },
+    {
+      "id": "claim:e7ea8bc17c2cc4ab-90898101d65b1615",
+      "statement": "sin x 的 Maclaurin 级数收敛半径为 ∞。",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-39"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.363Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-39"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-39"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:33:04.363Z"
+    },
+    {
+      "id": "claim:e7ea8bc17c2cc4ab-92b05785fac6823c",
+      "statement": "调和级数 ∑ 1/n 发散。",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-29"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.363Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-29"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-29"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:33:04.363Z"
+    },
+    {
+      "id": "claim:e7ea8bc17c2cc4ab-936964a2e23a58e1",
+      "statement": "e^x 的 Maclaurin 级数收敛半径为 ∞。",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-39"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.363Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-39"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-39"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:33:04.363Z"
+    },
+    {
+      "id": "claim:e7ea8bc17c2cc4ab-955c8cc667a798fd",
+      "statement": "数列极限定义为：lim_{n→∞} a_n = L 当且仅当 ∀ε > 0, ∃N ∈ ℕ, ∀n > N: |a_n - L| < ε。",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-13#chars-844-959"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.363Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-13#chars-844-959"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-13#chars-844-959"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:33:04.363Z"
+    },
+    {
+      "id": "claim:e7ea8bc17c2cc4ab-9ac36c692cbeaa65",
+      "statement": "数列是离散动力系统的最简形式——它描述了一个量在离散时间步骤上的演化。",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-7#chars-281-320"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.363Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-7#chars-281-320"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-7#chars-281-320"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:33:04.363Z"
+    },
+    {
+      "id": "claim:e7ea8bc17c2cc4ab-9f53e5a35611ef1a",
+      "statement": "Taylor 级数公式为 f(x) = ∑_{n=0}^∞ f^{(n)}(a)/n! (x-a)^n。",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-35#chars-4151-4204"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.363Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-35#chars-4151-4204"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-35#chars-4151-4204"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:33:04.363Z"
+    },
+    {
+      "id": "claim:e7ea8bc17c2cc4ab-9f762f2f4e22f39d",
+      "statement": "n 次根号下 n (√[n]{n}) 的极限是 1。",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-20"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.363Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-20"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-20"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:33:04.363Z"
+    },
+    {
+      "id": "claim:e7ea8bc17c2cc4ab-a02aa08f5e1c03aa",
+      "statement": "ln(1+x) 的 Maclaurin 级数收敛半径为 1。",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-39"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.363Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-39"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-39"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:33:04.363Z"
+    },
+    {
+      "id": "claim:e7ea8bc17c2cc4ab-adcf8db0c33ee742",
+      "statement": "Cauchy列是内部稳定的数列，在没有“外部极限”时也能判断。",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-54"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.363Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-54"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-54"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:33:04.363Z"
+    },
+    {
+      "id": "claim:e7ea8bc17c2cc4ab-adeb058728bb1903",
+      "statement": "ε-N 定义是用逻辑量词精确刻画“无限接近”的关键概念。",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-54"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.363Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-54"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-54"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:33:04.363Z"
+    },
+    {
+      "id": "claim:e7ea8bc17c2cc4ab-b0a1307d4dcc4369",
+      "statement": "1/n 的极限是 0。",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-20"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.363Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-20"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-20"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:33:04.363Z"
+    },
+    {
+      "id": "claim:e7ea8bc17c2cc4ab-b21af8e470488c66",
+      "statement": "将 x = iθ 代入 e^x 展开，分离实部和虚部即可得到欧拉公式。",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-40#chars-4837-4872"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.363Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-40#chars-4837-4872"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-40#chars-4837-4872"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:33:04.363Z"
+    },
+    {
+      "id": "claim:e7ea8bc17c2cc4ab-bf69379101dba880",
+      "statement": "Lagrange 余项公式为 R_n(x) = f^{(n+1)}(ξ)/(n+1)! (x-a)^{n+1}，其中 ξ 在 a 和 x 之间。",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-44#chars-5761-5858"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.363Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-44#chars-5761-5858"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-44#chars-5761-5858"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:33:04.363Z"
+    },
+    {
+      "id": "claim:e7ea8bc17c2cc4ab-c1a2fff3ab5f702f",
+      "statement": "数列是定义在自然数上的函数：a: ℕ → ℝ（或 ℂ），记作 (a_n)_{n=1}^∞。",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-5#chars-146-237"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.363Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-5#chars-146-237"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-5#chars-146-237"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:33:04.363Z"
+    },
+    {
+      "id": "claim:e7ea8bc17c2cc4ab-c63c389fb0e91b45",
+      "statement": "cos x 的 Maclaurin 级数为 ∑_{n=0}^∞ (-1)^n x^{2n}/(2n)!。",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-39"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.363Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-39"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-39"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:33:04.363Z"
+    },
+    {
+      "id": "claim:e7ea8bc17c2cc4ab-d45c9ec8b39db963",
+      "statement": "级数 ∑ 1/n! 收敛到 e。",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-29"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.363Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-29"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-29"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:33:04.363Z"
+    },
+    {
+      "id": "claim:e7ea8bc17c2cc4ab-d4659e5a55f4a046",
+      "statement": "Taylor 级数截断到 n 项的误差由 Lagrange 余项给出。",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-43#chars-5719-5755"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.363Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-43#chars-5719-5755"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-43#chars-5719-5755"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:33:04.363Z"
+    },
+    {
+      "id": "claim:e7ea8bc17c2cc4ab-db51556143767653",
+      "statement": "依测度收敛出现在概率论中。",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-49#chars-6204-6223"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.363Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-49#chars-6204-6223"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-49#chars-6204-6223"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:33:04.363Z"
+    },
+    {
+      "id": "claim:e7ea8bc17c2cc4ab-ddb0ddb62da7ae3f",
+      "statement": "级数等于无穷和，是部分和序列的极限。",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-54"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.363Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-54"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-54"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:33:04.363Z"
+    },
+    {
+      "id": "claim:e7ea8bc17c2cc4ab-ddeb97bcba920640",
+      "statement": "几何级数 ∑ ar^{n-1} 收敛时和为 a/(1-r)。",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-29"
+      ],
+      "conditions": [
+        "|r| < 1"
+      ],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.363Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-29"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-29"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:33:04.363Z"
+    },
+    {
+      "id": "claim:e7ea8bc17c2cc4ab-e35ac7ff4fe72d46",
+      "statement": "19世纪，Cauchy、Weierstrass 等人用逻辑量词给出了极限的精确刻画。",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-12#chars-780-820"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.363Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-12#chars-780-820"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-12#chars-780-820"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:33:04.363Z"
+    },
+    {
+      "id": "claim:e7ea8bc17c2cc4ab-e96ba74017c95ec0",
+      "statement": "调和级数的部分和渐近于 ln n + γ。",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-29"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.363Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-29"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-29"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:33:04.363Z"
+    },
+    {
+      "id": "claim:e7ea8bc17c2cc4ab-e9cff07b08d10afd",
+      "statement": "该级数在收敛半径内等于原函数。",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-34#chars-4131-4145"
+      ],
+      "conditions": [
+        "在收敛半径内"
+      ],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.363Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-34#chars-4131-4145"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-34#chars-4131-4145"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:33:04.363Z"
+    },
+    {
+      "id": "claim:e7ea8bc17c2cc4ab-edcf3c99a605d9b7",
+      "statement": "\"无限接近\"导致了大量混乱和错误。",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-12#chars-755-780"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.363Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-12#chars-755-780"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-12#chars-755-780"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:33:04.363Z"
+    },
+    {
+      "id": "claim:e7ea8bc17c2cc4ab-ee99571d12fc1545",
+      "statement": "p-级数 ∑ 1/n^p 收敛时和为 ζ(p)。",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-29"
+      ],
+      "conditions": [
+        "p > 1"
+      ],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.363Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-29"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-29"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:33:04.363Z"
+    },
+    {
+      "id": "claim:e7ea8bc17c2cc4ab-ef4f93b1a8a89990",
+      "statement": "逐点收敛的定义是对每个 $x$，$f_n(x) \\to f(x)$。",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-49#chars-5998-6023"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.363Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-49#chars-5998-6023"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-49#chars-5998-6023"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:33:04.363Z"
+    },
+    {
+      "id": "claim:e7ea8bc17c2cc4ab-f211dd23a63f96d6",
+      "statement": "交错调和级数 ∑ (-1)^{n-1}/n 条件收敛。",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-29"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.363Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-29"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-29"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:33:04.363Z"
+    },
+    {
+      "id": "claim:e7ea8bc17c2cc4ab-f3d5ea6830ecb93e",
+      "statement": "$\\epsilon$-$N$ 和 $\\epsilon$-$\\delta$ 语言将“无穷”这个哲学概念操作化，即不需要真的“走完无限步”，只需要证明无论多小的误差都可以在有限步内达到。",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-55#chars-7059-7151"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.363Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-55#chars-7059-7151"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-55#chars-7059-7151"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:33:04.363Z"
+    },
+    {
+      "id": "claim:e7ea8bc17c2cc4ab-fb54d3b4e4c13eb5",
+      "statement": "18世纪的数学家说\"a_n 无限接近 L\"就够了。",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-12#chars-726-755"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.363Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-12#chars-726-755"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:03-sequences-limits-e7ea8bc17c2cc4ab-12#chars-726-755"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:33:04.363Z"
+    }
+  ],
+  "concepts": [
+    {
+      "id": "concept:1115e8950647680e",
+      "name": "收敛条件",
+      "aliases": [],
+      "boundary": "级数",
+      "domain": "微积分"
+    },
+    {
+      "id": "concept:203f0f13e0b4f4d4",
+      "name": "ε-N 定义",
+      "aliases": [
+        "epsilon-N 定义",
+        "ε-N 定义"
+      ],
+      "boundary": "极限定义",
+      "domain": "微积分"
+    },
+    {
+      "id": "concept:276f6ce893ff2bdf",
+      "name": "Maclaurin 级数",
+      "aliases": [
+        "Maclaurin级数"
+      ],
+      "boundary": "幂级数",
+      "domain": "微积分"
+    },
+    {
+      "id": "concept:29453a2e66bc0f10",
+      "name": "Taylor级数",
+      "aliases": [
+        "泰勒级数"
+      ],
+      "boundary": "幂级数",
+      "domain": "微积分"
+    },
+    {
+      "id": "concept:3354fe2592617863",
+      "name": "一致收敛",
+      "aliases": [],
+      "boundary": "收敛",
+      "domain": "分析"
+    },
+    {
+      "id": "concept:35f67bbf57f124cd",
+      "name": "数列",
+      "aliases": [],
+      "boundary": "序列",
+      "domain": "微积分"
+    },
+    {
+      "id": "concept:3eb7b77ce0764e82",
+      "name": "交错调和级数",
+      "aliases": [],
+      "boundary": "级数",
+      "domain": "微积分"
+    },
+    {
+      "id": "concept:4484d76309918dd3",
+      "name": "Cauchy列",
+      "aliases": [
+        "柯西列"
+      ],
+      "boundary": "满足对任意ε>0，存在N使得m,n>N时‖x_m-x_n‖<ε的序列",
+      "domain": "分析"
+    },
+    {
+      "id": "concept:453b1ea675092abe",
+      "name": "ε-δ 语言",
+      "aliases": [],
+      "boundary": "极限定义",
+      "domain": "微积分"
+    },
+    {
+      "id": "concept:4e784dea8fff294a",
+      "name": "泛函分析",
+      "aliases": [],
+      "boundary": "数学分支",
+      "domain": "数学"
+    },
+    {
+      "id": "concept:510c980062e9b7b7",
+      "name": "递推数列",
+      "aliases": [],
+      "boundary": "序列",
+      "domain": "微积分"
+    },
+    {
+      "id": "concept:52ebdbd82f1c5691",
+      "name": "ε-N 定义（极限）",
+      "aliases": [],
+      "boundary": "极限定义",
+      "domain": "微积分"
+    },
+    {
+      "id": "concept:58fa0d0063779918",
+      "name": "依测度收敛",
+      "aliases": [],
+      "boundary": "收敛",
+      "domain": "实分析"
+    },
+    {
+      "id": "concept:5c21dad72b79091f",
+      "name": "sin x 的 Maclaurin 级数",
+      "aliases": [],
+      "boundary": "幂级数",
+      "domain": "微积分"
+    },
+    {
+      "id": "concept:5f9184d09f8edb4f",
+      "name": "无穷",
+      "aliases": [],
+      "boundary": "概念",
+      "domain": "数学"
+    },
+    {
+      "id": "concept:69e81c5030567f37",
+      "name": "幂级数",
+      "aliases": [],
+      "boundary": "级数",
+      "domain": "微积分"
+    },
+    {
+      "id": "concept:796eeee58a92fe7c",
+      "name": "ε-δ 革命",
+      "aliases": [],
+      "boundary": "历史",
+      "domain": "数学史"
+    },
+    {
+      "id": "concept:83dfba923efd4017",
+      "name": "ln(1+x) 的 Maclaurin 级数",
+      "aliases": [],
+      "boundary": "幂级数",
+      "domain": "微积分"
+    },
+    {
+      "id": "concept:84d41859246b9f35",
+      "name": "欧拉公式",
+      "aliases": [],
+      "boundary": "公式",
+      "domain": "复分析"
+    },
+    {
+      "id": "concept:86c90dc21bda4720",
+      "name": "L^p 收敛",
+      "aliases": [
+        "Lp 收敛"
+      ],
+      "boundary": "收敛",
+      "domain": "实分析"
+    },
+    {
+      "id": "concept:888d12169b216773",
+      "name": "等比数列",
+      "aliases": [],
+      "boundary": "序列",
+      "domain": "微积分"
+    },
+    {
+      "id": "concept:8e3fa3708926e453",
+      "name": "收敛半径",
+      "aliases": [],
+      "boundary": "幂级数",
+      "domain": "微积分"
+    },
+    {
+      "id": "concept:8ec59a3c464b4ed8",
+      "name": "级数的收敛性",
+      "aliases": [],
+      "boundary": "级数",
+      "domain": "微积分"
+    },
+    {
+      "id": "concept:97e04cbec60a107a",
+      "name": "收敛半径内",
+      "aliases": [],
+      "boundary": "幂级数",
+      "domain": "微积分"
+    },
+    {
+      "id": "concept:a0f5418c49ab96e1",
+      "name": "部分和数列",
+      "aliases": [],
+      "boundary": "序列",
+      "domain": "微积分"
+    },
+    {
+      "id": "concept:a64918b04979c687",
+      "name": "ln 2",
+      "aliases": [],
+      "boundary": "常数",
+      "domain": "数学"
+    },
+    {
+      "id": "concept:acc2f8c26e94f559",
+      "name": "e^x 的 Maclaurin 级数",
+      "aliases": [],
+      "boundary": "幂级数",
+      "domain": "微积分"
+    },
+    {
+      "id": "concept:af19aaa9c6e52be2",
+      "name": "等差数列",
+      "aliases": [],
+      "boundary": "序列",
+      "domain": "微积分"
+    },
+    {
+      "id": "concept:bb742cf0cbfbb5b0",
+      "name": "1/(1-x) 的 Maclaurin 级数",
+      "aliases": [],
+      "boundary": "幂级数",
+      "domain": "微积分"
+    },
+    {
+      "id": "concept:c2bb6dfdbddc6c05",
+      "name": "Taylor 级数公式",
+      "aliases": [],
+      "boundary": "公式",
+      "domain": "微积分"
+    },
+    {
+      "id": "concept:d5854a188a0a769b",
+      "name": "调和级数",
+      "aliases": [],
+      "boundary": "级数",
+      "domain": "微积分"
+    },
+    {
+      "id": "concept:d9073f3846568294",
+      "name": "e",
+      "aliases": [],
+      "boundary": "常数",
+      "domain": "数学"
+    },
+    {
+      "id": "concept:db101f6c168f1086",
+      "name": "逐点收敛",
+      "aliases": [],
+      "boundary": "收敛",
+      "domain": "分析"
+    },
+    {
+      "id": "concept:e82f62e6a811df07",
+      "name": "p-级数",
+      "aliases": [],
+      "boundary": "级数",
+      "domain": "微积分"
+    },
+    {
+      "id": "concept:f151cc9fa251c8dc",
+      "name": "极限",
+      "aliases": [],
+      "boundary": "分析",
+      "domain": "微积分"
+    },
+    {
+      "id": "concept:f15d6e8e4fdbdfd3",
+      "name": "条件收敛",
+      "aliases": [],
+      "boundary": "级数",
+      "domain": "微积分"
+    },
+    {
+      "id": "concept:f366a7078d75e2e6",
+      "name": "几何级数",
+      "aliases": [],
+      "boundary": "级数",
+      "domain": "微积分"
+    },
+    {
+      "id": "concept:f59662b37f5bf6db",
+      "name": "Lagrange 余项",
+      "aliases": [
+        "拉格朗日余项"
+      ],
+      "boundary": "泰勒展开",
+      "domain": "微积分"
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel:e7ea8bc17c2cc4ab-0098a4abd0cdbf39",
+      "from": "claim:e7ea8bc17c2cc4ab-a02aa08f5e1c03aa",
+      "to": "claim:e7ea8bc17c2cc4ab-0ba5617a37879d03",
+      "type": "REQUIRES",
+      "conditions": [
+        "|x|<=1, x≠-1"
+      ],
+      "conditionStatus": "PRESERVED",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-39"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.381Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.7,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:e7ea8bc17c2cc4ab-0f1611c5d22d2916",
+      "from": "claim:e7ea8bc17c2cc4ab-5af4111393db6422",
+      "to": "claim:e7ea8bc17c2cc4ab-936964a2e23a58e1",
+      "type": "DERIVED_FROM",
+      "conditions": [
+        "无"
+      ],
+      "conditionStatus": "PRESERVED",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-39"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.381Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.8,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:e7ea8bc17c2cc4ab-1024a6d72638aefd",
+      "from": "claim:e7ea8bc17c2cc4ab-936964a2e23a58e1",
+      "to": "claim:e7ea8bc17c2cc4ab-5af4111393db6422",
+      "type": "REQUIRES",
+      "conditions": [
+        "无"
+      ],
+      "conditionStatus": "PRESERVED",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-39"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.381Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.8,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:e7ea8bc17c2cc4ab-206672c5bd18de78",
+      "from": "claim:e7ea8bc17c2cc4ab-9f53e5a35611ef1a",
+      "to": "claim:e7ea8bc17c2cc4ab-294aad5979a3de5f",
+      "type": "REQUIRES",
+      "conditions": [
+        "a=0"
+      ],
+      "conditionStatus": "PRESERVED",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-35#chars-4151-4204",
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-36#chars-4209-4236"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.381Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.8,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:e7ea8bc17c2cc4ab-2bfb61135564323b",
+      "from": "claim:e7ea8bc17c2cc4ab-02610b4e92ce3e70",
+      "to": "claim:e7ea8bc17c2cc4ab-ddeb97bcba920640",
+      "type": "DERIVED_FROM",
+      "conditions": [
+        "|r| < 1"
+      ],
+      "conditionStatus": "PRESERVED",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-29"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.381Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.9,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:e7ea8bc17c2cc4ab-6ab3f92fea68418a",
+      "from": "claim:e7ea8bc17c2cc4ab-ddeb97bcba920640",
+      "to": "claim:e7ea8bc17c2cc4ab-02610b4e92ce3e70",
+      "type": "REQUIRES",
+      "conditions": [
+        "|r| < 1"
+      ],
+      "conditionStatus": "PRESERVED",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-29"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.381Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.9,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:e7ea8bc17c2cc4ab-6bce5c3d93bd369d",
+      "from": "claim:e7ea8bc17c2cc4ab-3b7a0b55e34b6691",
+      "to": "claim:e7ea8bc17c2cc4ab-9f53e5a35611ef1a",
+      "type": "SUPPORTS",
+      "conditions": [
+        "函数足够光滑"
+      ],
+      "conditionStatus": "PRESERVED",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-34#chars-4101-4130",
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-35#chars-4151-4204"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.381Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.7,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:e7ea8bc17c2cc4ab-72ed7f183b6531cc",
+      "from": "claim:e7ea8bc17c2cc4ab-fb54d3b4e4c13eb5",
+      "to": "claim:e7ea8bc17c2cc4ab-edcf3c99a605d9b7",
+      "type": "SUPPORTS",
+      "conditions": [
+        "无"
+      ],
+      "conditionStatus": "PRESERVED",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-12#chars-726-755",
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-12#chars-755-780"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.381Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.5,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:e7ea8bc17c2cc4ab-88317c72f82687ff",
+      "from": "claim:e7ea8bc17c2cc4ab-f3d5ea6830ecb93e",
+      "to": "claim:e7ea8bc17c2cc4ab-e35ac7ff4fe72d46",
+      "type": "SUPPORTS",
+      "conditions": [
+        "无"
+      ],
+      "conditionStatus": "PRESERVED",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-12#chars-780-820",
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-55#chars-7059-7151"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.381Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.7,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:e7ea8bc17c2cc4ab-8a0dd320b92ad727",
+      "from": "claim:e7ea8bc17c2cc4ab-294aad5979a3de5f",
+      "to": "claim:e7ea8bc17c2cc4ab-83ca0c95c9d98825",
+      "type": "DERIVED_FROM",
+      "conditions": [
+        "无"
+      ],
+      "conditionStatus": "PRESERVED",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-36#chars-4209-4236",
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-37#chars-4242-4311"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.381Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.8,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:e7ea8bc17c2cc4ab-8b159fe957608914",
+      "from": "claim:e7ea8bc17c2cc4ab-e96ba74017c95ec0",
+      "to": "claim:e7ea8bc17c2cc4ab-92b05785fac6823c",
+      "type": "SUPPORTS",
+      "conditions": [
+        "无"
+      ],
+      "conditionStatus": "PRESERVED",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-29"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.381Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.6,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:e7ea8bc17c2cc4ab-8fa88a57a58fdaa3",
+      "from": "claim:e7ea8bc17c2cc4ab-0ba5617a37879d03",
+      "to": "claim:e7ea8bc17c2cc4ab-a02aa08f5e1c03aa",
+      "type": "DERIVED_FROM",
+      "conditions": [
+        "无"
+      ],
+      "conditionStatus": "PRESERVED",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-39"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.381Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.8,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:e7ea8bc17c2cc4ab-9383f1f832d4614d",
+      "from": "claim:e7ea8bc17c2cc4ab-07e8ca8a41f4452d",
+      "to": "claim:e7ea8bc17c2cc4ab-90898101d65b1615",
+      "type": "DERIVED_FROM",
+      "conditions": [
+        "无"
+      ],
+      "conditionStatus": "PRESERVED",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-39"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.381Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.8,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:e7ea8bc17c2cc4ab-9b805e20744d910d",
+      "from": "claim:e7ea8bc17c2cc4ab-f3d5ea6830ecb93e",
+      "to": "claim:e7ea8bc17c2cc4ab-63af72dabe89e16f",
+      "type": "SUPPORTS",
+      "conditions": [
+        "无"
+      ],
+      "conditionStatus": "PRESERVED",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-55#chars-7059-7151",
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-1#chars-29-84"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.381Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.7,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:e7ea8bc17c2cc4ab-9f6534a27de4e574",
+      "from": "claim:e7ea8bc17c2cc4ab-62d2ef837b1c0052",
+      "to": "claim:e7ea8bc17c2cc4ab-bf69379101dba880",
+      "type": "SUPPORTS",
+      "conditions": [
+        "无"
+      ],
+      "conditionStatus": "PRESERVED",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-44#chars-5761-5858",
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-45#chars-5863-5900"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.381Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.7,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:e7ea8bc17c2cc4ab-a4b688e50f80418a",
+      "from": "claim:e7ea8bc17c2cc4ab-37a64557c3661847",
+      "to": "claim:e7ea8bc17c2cc4ab-0d852a3382e059d1",
+      "type": "REQUIRES",
+      "conditions": [
+        "|x|<1"
+      ],
+      "conditionStatus": "PRESERVED",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-39"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.381Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.8,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:e7ea8bc17c2cc4ab-a67212cec964cd98",
+      "from": "claim:e7ea8bc17c2cc4ab-ddb0ddb62da7ae3f",
+      "to": "claim:e7ea8bc17c2cc4ab-0c3f7068eace3173",
+      "type": "SUPPORTS",
+      "conditions": [
+        "无"
+      ],
+      "conditionStatus": "PRESERVED",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-25#chars-2510-2537",
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-54"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.381Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.8,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:e7ea8bc17c2cc4ab-aa7db5f39879ca0c",
+      "from": "claim:e7ea8bc17c2cc4ab-7eb30748d7d95e77",
+      "to": "claim:e7ea8bc17c2cc4ab-b21af8e470488c66",
+      "type": "DERIVED_FROM",
+      "conditions": [
+        "无"
+      ],
+      "conditionStatus": "PRESERVED",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-40#chars-4744-4835",
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-40#chars-4837-4872"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.381Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.7,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:e7ea8bc17c2cc4ab-ad9123dc467f48c0",
+      "from": "claim:e7ea8bc17c2cc4ab-955c8cc667a798fd",
+      "to": "claim:e7ea8bc17c2cc4ab-adeb058728bb1903",
+      "type": "SUPPORTS",
+      "conditions": [
+        "无"
+      ],
+      "conditionStatus": "PRESERVED",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-13#chars-844-959",
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-54"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.381Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.8,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:e7ea8bc17c2cc4ab-b02b5d5a39ec8fd9",
+      "from": "claim:e7ea8bc17c2cc4ab-e35ac7ff4fe72d46",
+      "to": "claim:e7ea8bc17c2cc4ab-63af72dabe89e16f",
+      "type": "SUPPORTS",
+      "conditions": [
+        "无"
+      ],
+      "conditionStatus": "PRESERVED",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-12#chars-780-820",
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-1#chars-29-84"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.381Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.8,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:e7ea8bc17c2cc4ab-ba27481ab2de8c74",
+      "from": "claim:e7ea8bc17c2cc4ab-90898101d65b1615",
+      "to": "claim:e7ea8bc17c2cc4ab-07e8ca8a41f4452d",
+      "type": "SUPPORTS",
+      "conditions": [
+        "无"
+      ],
+      "conditionStatus": "PRESERVED",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-39"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.381Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.8,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:e7ea8bc17c2cc4ab-bd40ef15a598cdb9",
+      "from": "claim:e7ea8bc17c2cc4ab-0d852a3382e059d1",
+      "to": "claim:e7ea8bc17c2cc4ab-37a64557c3661847",
+      "type": "SUPPORTS",
+      "conditions": [
+        "无"
+      ],
+      "conditionStatus": "PRESERVED",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-39"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.381Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.7,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:e7ea8bc17c2cc4ab-ceeb47f67a91cc7c",
+      "from": "claim:e7ea8bc17c2cc4ab-b21af8e470488c66",
+      "to": "claim:e7ea8bc17c2cc4ab-7eb30748d7d95e77",
+      "type": "DERIVED_FROM",
+      "conditions": [
+        "无"
+      ],
+      "conditionStatus": "PRESERVED",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-40#chars-4744-4835",
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-40#chars-4837-4872"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:33:04.381Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.7,
+      "consumedBy": []
+    }
+  ]
+}

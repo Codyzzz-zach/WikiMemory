@@ -1,0 +1,2397 @@
+{
+  "schemaVersion": "v1",
+  "sourceId": "source:health-who-terminology-2024-004-50fd4599b9553875",
+  "runId": "ee3fa5ee-549a-42e9-9368-b30045473843",
+  "publishedAt": "2026-07-27T09:55:28.358Z",
+  "claims": [],
+  "relations": [
+    {
+      "relation": {
+        "id": "rel:50fd4599b9553875-5395c571fcc90c20",
+        "from": "claim:50fd4599b9553875-e76415a67338b449",
+        "to": "claim:50fd4599b9553875-e5004be37e4a4be8",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:health-who-terminology-2024-004-50fd4599b9553875-1#chars-315-397",
+          "span:health-who-terminology-2024-004-50fd4599b9553875-1#chars-99-314"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:54:46.436Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:50fd4599b9553875-5395c571fcc90c20",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:health-who-terminology-2024-004#block-1] “Under the umbrella of ‘through the air transmission’, two descriptors can be use”; [1:health-who-terminology-2024-004#block-1] “The descriptor ‘through the air’ can be used in a general way to characterize an”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:50fd4599b9553875-5395c571fcc90c20",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:health-who-terminology-2024-004#block-1] “Under the umbrella of ‘through the air transmission’, two descriptors can be use”; [1:health-who-terminology-2024-004#block-1] “The descriptor ‘through the air’ can be used in a general way to characterize an”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:50fd4599b9553875-6854f56f593a4c06",
+        "from": "claim:50fd4599b9553875-e5004be37e4a4be8",
+        "to": "claim:50fd4599b9553875-2de9e0481e7c8e64",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:health-who-terminology-2024-004-50fd4599b9553875-1#chars-315-397",
+          "span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-621-707"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:54:46.436Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:50fd4599b9553875-6854f56f593a4c06",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:health-who-terminology-2024-004#block-1] “Under the umbrella of ‘through the air transmission’, two descriptors can be use”; [1:health-who-terminology-2024-004#block-2] “distance depends on various factors (airflow, humidity, temperature, ventilation”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:50fd4599b9553875-6854f56f593a4c06",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:health-who-terminology-2024-004#block-1] “Under the umbrella of ‘through the air transmission’, two descriptors can be use”; [1:health-who-terminology-2024-004#block-2] “distance depends on various factors (airflow, humidity, temperature, ventilation”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-04be9b0e24f188cf",
+        "from": "claim:50fd4599b9553875-e5004be37e4a4be8",
+        "to": "claim:14069d5a982d18de-fb6c9ddf92a42cc2",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:health-nature-airborne-2022-003-14069d5a982d18de-2#chars-340-458",
+          "span:health-who-terminology-2024-004-50fd4599b9553875-1#chars-315-397"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:55:05.761Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.5,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-04be9b0e24f188cf",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:health-nature-airborne-2022-003#block-2] “the WHO said this was a concern only in specific settings, such as indoor, crowd”; [1:health-who-terminology-2024-004#block-1] “Under the umbrella of ‘through the air transmission’, two descriptors can be use”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-04be9b0e24f188cf",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:health-nature-airborne-2022-003#block-2] “the WHO said this was a concern only in specific settings, such as indoor, crowd”; [1:health-who-terminology-2024-004#block-1] “Under the umbrella of ‘through the air transmission’, two descriptors can be use”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-04be9b0e24f188cf",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:health-nature-airborne-2022-003#block-2] “the WHO said this was a concern only in specific settings, such as indoor, crowd”; [1:health-who-terminology-2024-004#block-1] “Under the umbrella of ‘through the air transmission’, two descriptors can be use”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-056ed147e6f3ac06",
+        "from": "claim:50fd4599b9553875-2de9e0481e7c8e64",
+        "to": "claim:a1c7e701eebb9dc1-d1c7990108ad78ca",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:health-who-july-2020-002-a1c7e701eebb9dc1-1#chars-368-411",
+          "span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-621-707"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:55:05.761Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.3,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-056ed147e6f3ac06",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:health-who-july-2020-002#block-1] “SARS-CoV-2, the virus that causes COVID-19.”; [1:health-who-terminology-2024-004#block-2] “distance depends on various factors (airflow, humidity, temperature, ventilation”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-056ed147e6f3ac06",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:health-who-july-2020-002#block-1] “SARS-CoV-2, the virus that causes COVID-19.”; [1:health-who-terminology-2024-004#block-2] “distance depends on various factors (airflow, humidity, temperature, ventilation”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-056ed147e6f3ac06",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:health-who-july-2020-002#block-1] “SARS-CoV-2, the virus that causes COVID-19.”; [1:health-who-terminology-2024-004#block-2] “distance depends on various factors (airflow, humidity, temperature, ventilation”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_DIRECTION_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-056ed147e6f3ac06",
+          "detail": "direction：Relation 未通过边级语义审计；证据 [0:health-who-july-2020-002#block-1] “SARS-CoV-2, the virus that causes COVID-19.”; [1:health-who-terminology-2024-004#block-2] “distance depends on various factors (airflow, humidity, temperature, ventilation”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-0aececc966abd8fa",
+        "from": "claim:50fd4599b9553875-e5004be37e4a4be8",
+        "to": "claim:b587ec61aaf84d7d-7bc5b6c3a357763e",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:health-who-march-2020-001-b587ec61aaf84d7d-2#chars-536-856",
+          "span:health-who-terminology-2024-004-50fd4599b9553875-1#chars-315-397"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:55:05.761Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.3,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-0aececc966abd8fa",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:health-who-march-2020-001#block-2] “i.e., endotracheal intubation, bronchoscopy, open suctioning, administration of ”; [1:health-who-terminology-2024-004#block-1] “Under the umbrella of ‘through the air transmission’, two descriptors can be use”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-0aececc966abd8fa",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:health-who-march-2020-001#block-2] “i.e., endotracheal intubation, bronchoscopy, open suctioning, administration of ”; [1:health-who-terminology-2024-004#block-1] “Under the umbrella of ‘through the air transmission’, two descriptors can be use”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-0aececc966abd8fa",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:health-who-march-2020-001#block-2] “i.e., endotracheal intubation, bronchoscopy, open suctioning, administration of ”; [1:health-who-terminology-2024-004#block-1] “Under the umbrella of ‘through the air transmission’, two descriptors can be use”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-109b3fe1cff5aba9",
+        "from": "claim:50fd4599b9553875-e5004be37e4a4be8",
+        "to": "claim:b587ec61aaf84d7d-aae2124ec2ae0b65",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:health-who-march-2020-001-b587ec61aaf84d7d-1#chars-241-287",
+          "span:health-who-terminology-2024-004-50fd4599b9553875-1#chars-315-397"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:55:05.761Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.4,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-109b3fe1cff5aba9",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:health-who-march-2020-001#block-1] “can remain in the air for long periods of time”; [1:health-who-terminology-2024-004#block-1] “Under the umbrella of ‘through the air transmission’, two descriptors can be use”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-109b3fe1cff5aba9",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:health-who-march-2020-001#block-1] “can remain in the air for long periods of time”; [1:health-who-terminology-2024-004#block-1] “Under the umbrella of ‘through the air transmission’, two descriptors can be use”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-109b3fe1cff5aba9",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:health-who-march-2020-001#block-1] “can remain in the air for long periods of time”; [1:health-who-terminology-2024-004#block-1] “Under the umbrella of ‘through the air transmission’, two descriptors can be use”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_DIRECTION_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-109b3fe1cff5aba9",
+          "detail": "direction：Relation 未通过边级语义审计；证据 [0:health-who-march-2020-001#block-1] “can remain in the air for long periods of time”; [1:health-who-terminology-2024-004#block-1] “Under the umbrella of ‘through the air transmission’, two descriptors can be use”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-1230dce2faf3d782",
+        "from": "claim:50fd4599b9553875-c49634bbf6841943",
+        "to": "claim:14069d5a982d18de-ff33cb8a69885a6f",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:health-nature-airborne-2022-003-14069d5a982d18de-2#chars-459-612",
+          "span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-712-896"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:55:05.761Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.4,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-1230dce2faf3d782",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:health-nature-airborne-2022-003#block-2] “Over the next six months, the agency gradually altered its advice to say that ae”; [1:health-who-terminology-2024-004#block-2] “Direct deposition, for cases when IRPs are expelled into the air from an infecti”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-1230dce2faf3d782",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:health-nature-airborne-2022-003#block-2] “Over the next six months, the agency gradually altered its advice to say that ae”; [1:health-who-terminology-2024-004#block-2] “Direct deposition, for cases when IRPs are expelled into the air from an infecti”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-1230dce2faf3d782",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:health-nature-airborne-2022-003#block-2] “Over the next six months, the agency gradually altered its advice to say that ae”; [1:health-who-terminology-2024-004#block-2] “Direct deposition, for cases when IRPs are expelled into the air from an infecti”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-18dedc23a1673283",
+        "from": "claim:50fd4599b9553875-9bb1be629366d05d",
+        "to": "claim:14069d5a982d18de-ff33cb8a69885a6f",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:health-nature-airborne-2022-003-14069d5a982d18de-2#chars-459-612",
+          "span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-402-515"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:55:05.761Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.5,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-18dedc23a1673283",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:health-nature-airborne-2022-003#block-2] “Over the next six months, the agency gradually altered its advice to say that ae”; [1:health-who-terminology-2024-004#block-2] “Airborne transmission or inhalation, for cases when IRPs are expelled into the a”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-18dedc23a1673283",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:health-nature-airborne-2022-003#block-2] “Over the next six months, the agency gradually altered its advice to say that ae”; [1:health-who-terminology-2024-004#block-2] “Airborne transmission or inhalation, for cases when IRPs are expelled into the a”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-18dedc23a1673283",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:health-nature-airborne-2022-003#block-2] “Over the next six months, the agency gradually altered its advice to say that ae”; [1:health-who-terminology-2024-004#block-2] “Airborne transmission or inhalation, for cases when IRPs are expelled into the a”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-292dd3006d904dd3",
+        "from": "claim:50fd4599b9553875-c49634bbf6841943",
+        "to": "claim:b587ec61aaf84d7d-aae2124ec2ae0b65",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:health-who-march-2020-001-b587ec61aaf84d7d-1#chars-241-287",
+          "span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-712-896"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:55:05.761Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.4,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-292dd3006d904dd3",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:health-who-march-2020-001#block-1] “can remain in the air for long periods of time”; [1:health-who-terminology-2024-004#block-2] “Direct deposition, for cases when IRPs are expelled into the air from an infecti”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-292dd3006d904dd3",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:health-who-march-2020-001#block-1] “can remain in the air for long periods of time”; [1:health-who-terminology-2024-004#block-2] “Direct deposition, for cases when IRPs are expelled into the air from an infecti”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-292dd3006d904dd3",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:health-who-march-2020-001#block-1] “can remain in the air for long periods of time”; [1:health-who-terminology-2024-004#block-2] “Direct deposition, for cases when IRPs are expelled into the air from an infecti”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-29cee521483fc8a2",
+        "from": "claim:50fd4599b9553875-c49634bbf6841943",
+        "to": "claim:b587ec61aaf84d7d-f9e6d8b51f46b89d",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:health-who-march-2020-001-b587ec61aaf84d7d-1#chars-292-348",
+          "span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-712-896"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:55:05.761Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.4,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-29cee521483fc8a2",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:health-who-march-2020-001#block-1] “be transmitted to others over distances greater than 1 m”; [1:health-who-terminology-2024-004#block-2] “Direct deposition, for cases when IRPs are expelled into the air from an infecti”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-29cee521483fc8a2",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:health-who-march-2020-001#block-1] “be transmitted to others over distances greater than 1 m”; [1:health-who-terminology-2024-004#block-2] “Direct deposition, for cases when IRPs are expelled into the air from an infecti”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-29cee521483fc8a2",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:health-who-march-2020-001#block-1] “be transmitted to others over distances greater than 1 m”; [1:health-who-terminology-2024-004#block-2] “Direct deposition, for cases when IRPs are expelled into the air from an infecti”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-2a122e2e0b48ca5a",
+        "from": "claim:50fd4599b9553875-c49634bbf6841943",
+        "to": "claim:14069d5a982d18de-fb6c9ddf92a42cc2",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:health-nature-airborne-2022-003-14069d5a982d18de-2#chars-340-458",
+          "span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-712-896"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:55:05.761Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.4,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-2a122e2e0b48ca5a",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:health-nature-airborne-2022-003#block-2] “the WHO said this was a concern only in specific settings, such as indoor, crowd”; [1:health-who-terminology-2024-004#block-2] “Direct deposition, for cases when IRPs are expelled into the air from an infecti”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-2a122e2e0b48ca5a",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:health-nature-airborne-2022-003#block-2] “the WHO said this was a concern only in specific settings, such as indoor, crowd”; [1:health-who-terminology-2024-004#block-2] “Direct deposition, for cases when IRPs are expelled into the air from an infecti”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-2a122e2e0b48ca5a",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:health-nature-airborne-2022-003#block-2] “the WHO said this was a concern only in specific settings, such as indoor, crowd”; [1:health-who-terminology-2024-004#block-2] “Direct deposition, for cases when IRPs are expelled into the air from an infecti”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-2a338cdc6cbb482a",
+        "from": "claim:50fd4599b9553875-e76415a67338b449",
+        "to": "claim:14069d5a982d18de-ff33cb8a69885a6f",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:health-nature-airborne-2022-003-14069d5a982d18de-2#chars-459-612",
+          "span:health-who-terminology-2024-004-50fd4599b9553875-1#chars-99-314"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:55:05.761Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.5,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-2a338cdc6cbb482a",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:health-nature-airborne-2022-003#block-2] “Over the next six months, the agency gradually altered its advice to say that ae”; [1:health-who-terminology-2024-004#block-1] “The descriptor ‘through the air’ can be used in a general way to characterize an”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-2a338cdc6cbb482a",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:health-nature-airborne-2022-003#block-2] “Over the next six months, the agency gradually altered its advice to say that ae”; [1:health-who-terminology-2024-004#block-1] “The descriptor ‘through the air’ can be used in a general way to characterize an”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-2a338cdc6cbb482a",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:health-nature-airborne-2022-003#block-2] “Over the next six months, the agency gradually altered its advice to say that ae”; [1:health-who-terminology-2024-004#block-1] “The descriptor ‘through the air’ can be used in a general way to characterize an”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-2b82221eb2975ff9",
+        "from": "claim:50fd4599b9553875-e5004be37e4a4be8",
+        "to": "claim:b587ec61aaf84d7d-f9e6d8b51f46b89d",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:health-who-march-2020-001-b587ec61aaf84d7d-1#chars-292-348",
+          "span:health-who-terminology-2024-004-50fd4599b9553875-1#chars-315-397"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:55:05.761Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.4,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-2b82221eb2975ff9",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:health-who-march-2020-001#block-1] “be transmitted to others over distances greater than 1 m”; [1:health-who-terminology-2024-004#block-1] “Under the umbrella of ‘through the air transmission’, two descriptors can be use”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-2b82221eb2975ff9",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:health-who-march-2020-001#block-1] “be transmitted to others over distances greater than 1 m”; [1:health-who-terminology-2024-004#block-1] “Under the umbrella of ‘through the air transmission’, two descriptors can be use”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-2b82221eb2975ff9",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:health-who-march-2020-001#block-1] “be transmitted to others over distances greater than 1 m”; [1:health-who-terminology-2024-004#block-1] “Under the umbrella of ‘through the air transmission’, two descriptors can be use”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-2daad7ef4c32376c",
+        "from": "claim:50fd4599b9553875-c49634bbf6841943",
+        "to": "claim:b587ec61aaf84d7d-474d339f3670f6c4",
+        "type": "RELATED_TO",
+        "conditions": [
+          "specific circumstances and settings where procedures or support treatments that generate aerosols are performed"
+        ],
+        "conditionStatus": "PRESERVED",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:health-who-march-2020-001-b587ec61aaf84d7d-2#chars-351-534",
+          "span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-712-896"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:55:05.761Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.5,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-2daad7ef4c32376c",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:health-who-march-2020-001#block-2] “In the context of COVID-19, airborne transmission may be possible in specific ci”; [1:health-who-terminology-2024-004#block-2] “Direct deposition, for cases when IRPs are expelled into the air from an infecti”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-2daad7ef4c32376c",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:health-who-march-2020-001#block-2] “In the context of COVID-19, airborne transmission may be possible in specific ci”; [1:health-who-terminology-2024-004#block-2] “Direct deposition, for cases when IRPs are expelled into the air from an infecti”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-2daad7ef4c32376c",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:health-who-march-2020-001#block-2] “In the context of COVID-19, airborne transmission may be possible in specific ci”; [1:health-who-terminology-2024-004#block-2] “Direct deposition, for cases when IRPs are expelled into the air from an infecti”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-31ff548b8f9381bd",
+        "from": "claim:50fd4599b9553875-e5004be37e4a4be8",
+        "to": "claim:b587ec61aaf84d7d-ffaa41d4d0fe03ab",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:health-who-march-2020-001-b587ec61aaf84d7d-1#chars-51-239",
+          "span:health-who-terminology-2024-004-50fd4599b9553875-1#chars-315-397"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:55:05.761Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.4,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-31ff548b8f9381bd",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:health-who-march-2020-001#block-1] “Airborne transmission is different from droplet transmission as it refers to the”; [1:health-who-terminology-2024-004#block-1] “Under the umbrella of ‘through the air transmission’, two descriptors can be use”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-31ff548b8f9381bd",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:health-who-march-2020-001#block-1] “Airborne transmission is different from droplet transmission as it refers to the”; [1:health-who-terminology-2024-004#block-1] “Under the umbrella of ‘through the air transmission’, two descriptors can be use”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-31ff548b8f9381bd",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:health-who-march-2020-001#block-1] “Airborne transmission is different from droplet transmission as it refers to the”; [1:health-who-terminology-2024-004#block-1] “Under the umbrella of ‘through the air transmission’, two descriptors can be use”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-423cde3bdb832180",
+        "from": "claim:50fd4599b9553875-9bb1be629366d05d",
+        "to": "claim:b587ec61aaf84d7d-f9e6d8b51f46b89d",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:health-who-march-2020-001-b587ec61aaf84d7d-1#chars-292-348",
+          "span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-402-515"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:55:05.761Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.5,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-423cde3bdb832180",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:health-who-march-2020-001#block-1] “be transmitted to others over distances greater than 1 m”; [1:health-who-terminology-2024-004#block-2] “Airborne transmission or inhalation, for cases when IRPs are expelled into the a”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-423cde3bdb832180",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:health-who-march-2020-001#block-1] “be transmitted to others over distances greater than 1 m”; [1:health-who-terminology-2024-004#block-2] “Airborne transmission or inhalation, for cases when IRPs are expelled into the a”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-423cde3bdb832180",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:health-who-march-2020-001#block-1] “be transmitted to others over distances greater than 1 m”; [1:health-who-terminology-2024-004#block-2] “Airborne transmission or inhalation, for cases when IRPs are expelled into the a”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-59828a6db861eabc",
+        "from": "claim:50fd4599b9553875-2de9e0481e7c8e64",
+        "to": "claim:b587ec61aaf84d7d-474d339f3670f6c4",
+        "type": "RELATED_TO",
+        "conditions": [
+          "specific circumstances and settings where procedures or support treatments that generate aerosols are performed"
+        ],
+        "conditionStatus": "PRESERVED",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:health-who-march-2020-001-b587ec61aaf84d7d-2#chars-351-534",
+          "span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-621-707"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:55:05.761Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.6,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-59828a6db861eabc",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:health-who-march-2020-001#block-2] “In the context of COVID-19, airborne transmission may be possible in specific ci”; [1:health-who-terminology-2024-004#block-2] “distance depends on various factors (airflow, humidity, temperature, ventilation”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-59828a6db861eabc",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:health-who-march-2020-001#block-2] “In the context of COVID-19, airborne transmission may be possible in specific ci”; [1:health-who-terminology-2024-004#block-2] “distance depends on various factors (airflow, humidity, temperature, ventilation”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-59828a6db861eabc",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:health-who-march-2020-001#block-2] “In the context of COVID-19, airborne transmission may be possible in specific ci”; [1:health-who-terminology-2024-004#block-2] “distance depends on various factors (airflow, humidity, temperature, ventilation”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_CONDITIONS_MISSING",
+          "severity": "error",
+          "affectedObject": "rel:cross-59828a6db861eabc",
+          "detail": "conditions：Relation 未通过边级语义审计；证据 [0:health-who-march-2020-001#block-2] “In the context of COVID-19, airborne transmission may be possible in specific ci”; [1:health-who-terminology-2024-004#block-2] “distance depends on various factors (airflow, humidity, temperature, ventilation”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-598edd8d806a794d",
+        "from": "claim:50fd4599b9553875-c49634bbf6841943",
+        "to": "claim:14069d5a982d18de-30df60c9afb3e05b",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:health-nature-airborne-2022-003-14069d5a982d18de-2#chars-213-334",
+          "span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-712-896"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:55:05.761Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.4,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-598edd8d806a794d",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:health-nature-airborne-2022-003#block-2] “It took until 20 October 2020 for the agency to acknowledge that aerosols — tiny”; [1:health-who-terminology-2024-004#block-2] “Direct deposition, for cases when IRPs are expelled into the air from an infecti”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-598edd8d806a794d",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:health-nature-airborne-2022-003#block-2] “It took until 20 October 2020 for the agency to acknowledge that aerosols — tiny”; [1:health-who-terminology-2024-004#block-2] “Direct deposition, for cases when IRPs are expelled into the air from an infecti”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-598edd8d806a794d",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:health-nature-airborne-2022-003#block-2] “It took until 20 October 2020 for the agency to acknowledge that aerosols — tiny”; [1:health-who-terminology-2024-004#block-2] “Direct deposition, for cases when IRPs are expelled into the air from an infecti”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_DIRECTION_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-598edd8d806a794d",
+          "detail": "direction：Relation 未通过边级语义审计；证据 [0:health-nature-airborne-2022-003#block-2] “It took until 20 October 2020 for the agency to acknowledge that aerosols — tiny”; [1:health-who-terminology-2024-004#block-2] “Direct deposition, for cases when IRPs are expelled into the air from an infecti”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-59d1078bd92b8759",
+        "from": "claim:50fd4599b9553875-2de9e0481e7c8e64",
+        "to": "claim:b587ec61aaf84d7d-7bc5b6c3a357763e",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:health-who-march-2020-001-b587ec61aaf84d7d-2#chars-536-856",
+          "span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-621-707"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:55:05.761Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.4,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-59d1078bd92b8759",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:health-who-march-2020-001#block-2] “i.e., endotracheal intubation, bronchoscopy, open suctioning, administration of ”; [1:health-who-terminology-2024-004#block-2] “distance depends on various factors (airflow, humidity, temperature, ventilation”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-59d1078bd92b8759",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:health-who-march-2020-001#block-2] “i.e., endotracheal intubation, bronchoscopy, open suctioning, administration of ”; [1:health-who-terminology-2024-004#block-2] “distance depends on various factors (airflow, humidity, temperature, ventilation”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-59d1078bd92b8759",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:health-who-march-2020-001#block-2] “i.e., endotracheal intubation, bronchoscopy, open suctioning, administration of ”; [1:health-who-terminology-2024-004#block-2] “distance depends on various factors (airflow, humidity, temperature, ventilation”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-6061ac947204cc28",
+        "from": "claim:50fd4599b9553875-e76415a67338b449",
+        "to": "claim:14069d5a982d18de-0b2bf91f663f56a8",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:health-nature-airborne-2022-003-14069d5a982d18de-1#chars-55-211",
+          "span:health-who-terminology-2024-004-50fd4599b9553875-1#chars-99-314"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:55:05.761Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.5,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-6061ac947204cc28",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:health-nature-airborne-2022-003#block-1] “On 23 December, the World Health Organization (WHO) uttered the one word it had ”; [1:health-who-terminology-2024-004#block-1] “The descriptor ‘through the air’ can be used in a general way to characterize an”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-6061ac947204cc28",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:health-nature-airborne-2022-003#block-1] “On 23 December, the World Health Organization (WHO) uttered the one word it had ”; [1:health-who-terminology-2024-004#block-1] “The descriptor ‘through the air’ can be used in a general way to characterize an”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-6061ac947204cc28",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:health-nature-airborne-2022-003#block-1] “On 23 December, the World Health Organization (WHO) uttered the one word it had ”; [1:health-who-terminology-2024-004#block-1] “The descriptor ‘through the air’ can be used in a general way to characterize an”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-633c06090da2507b",
+        "from": "claim:50fd4599b9553875-e76415a67338b449",
+        "to": "claim:b587ec61aaf84d7d-7bc5b6c3a357763e",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:health-who-march-2020-001-b587ec61aaf84d7d-2#chars-536-856",
+          "span:health-who-terminology-2024-004-50fd4599b9553875-1#chars-99-314"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:55:05.761Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.3,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-633c06090da2507b",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:health-who-march-2020-001#block-2] “i.e., endotracheal intubation, bronchoscopy, open suctioning, administration of ”; [1:health-who-terminology-2024-004#block-1] “The descriptor ‘through the air’ can be used in a general way to characterize an”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-633c06090da2507b",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:health-who-march-2020-001#block-2] “i.e., endotracheal intubation, bronchoscopy, open suctioning, administration of ”; [1:health-who-terminology-2024-004#block-1] “The descriptor ‘through the air’ can be used in a general way to characterize an”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-633c06090da2507b",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:health-who-march-2020-001#block-2] “i.e., endotracheal intubation, bronchoscopy, open suctioning, administration of ”; [1:health-who-terminology-2024-004#block-1] “The descriptor ‘through the air’ can be used in a general way to characterize an”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-66e5f0267133903b",
+        "from": "claim:50fd4599b9553875-2de9e0481e7c8e64",
+        "to": "claim:14069d5a982d18de-ff33cb8a69885a6f",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:health-nature-airborne-2022-003-14069d5a982d18de-2#chars-459-612",
+          "span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-621-707"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:55:05.761Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.5,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-66e5f0267133903b",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:health-nature-airborne-2022-003#block-2] “Over the next six months, the agency gradually altered its advice to say that ae”; [1:health-who-terminology-2024-004#block-2] “distance depends on various factors (airflow, humidity, temperature, ventilation”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-66e5f0267133903b",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:health-nature-airborne-2022-003#block-2] “Over the next six months, the agency gradually altered its advice to say that ae”; [1:health-who-terminology-2024-004#block-2] “distance depends on various factors (airflow, humidity, temperature, ventilation”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-66e5f0267133903b",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:health-nature-airborne-2022-003#block-2] “Over the next six months, the agency gradually altered its advice to say that ae”; [1:health-who-terminology-2024-004#block-2] “distance depends on various factors (airflow, humidity, temperature, ventilation”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-69a47fe959ae333b",
+        "from": "claim:50fd4599b9553875-e77df938b6f36c19",
+        "to": "claim:14069d5a982d18de-ff33cb8a69885a6f",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:health-nature-airborne-2022-003-14069d5a982d18de-2#chars-459-612",
+          "span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-516-616"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:55:05.761Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.6,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-69a47fe959ae333b",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:health-nature-airborne-2022-003#block-2] “Over the next six months, the agency gradually altered its advice to say that ae”; [1:health-who-terminology-2024-004#block-2] “Airborne transmission or inhalation can occur at a short or long distance from t”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-69a47fe959ae333b",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:health-nature-airborne-2022-003#block-2] “Over the next six months, the agency gradually altered its advice to say that ae”; [1:health-who-terminology-2024-004#block-2] “Airborne transmission or inhalation can occur at a short or long distance from t”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-69a47fe959ae333b",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:health-nature-airborne-2022-003#block-2] “Over the next six months, the agency gradually altered its advice to say that ae”; [1:health-who-terminology-2024-004#block-2] “Airborne transmission or inhalation can occur at a short or long distance from t”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_DIRECTION_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-69a47fe959ae333b",
+          "detail": "direction：Relation 未通过边级语义审计；证据 [0:health-nature-airborne-2022-003#block-2] “Over the next six months, the agency gradually altered its advice to say that ae”; [1:health-who-terminology-2024-004#block-2] “Airborne transmission or inhalation can occur at a short or long distance from t”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_CONDITIONS_MISSING",
+          "severity": "error",
+          "affectedObject": "rel:cross-69a47fe959ae333b",
+          "detail": "conditions：Relation 未通过边级语义审计；证据 [0:health-nature-airborne-2022-003#block-2] “Over the next six months, the agency gradually altered its advice to say that ae”; [1:health-who-terminology-2024-004#block-2] “Airborne transmission or inhalation can occur at a short or long distance from t”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-69d84c5b13625f27",
+        "from": "claim:50fd4599b9553875-e77df938b6f36c19",
+        "to": "claim:14069d5a982d18de-30df60c9afb3e05b",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:health-nature-airborne-2022-003-14069d5a982d18de-2#chars-213-334",
+          "span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-516-616"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:55:05.761Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.5,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-69d84c5b13625f27",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:health-nature-airborne-2022-003#block-2] “It took until 20 October 2020 for the agency to acknowledge that aerosols — tiny”; [1:health-who-terminology-2024-004#block-2] “Airborne transmission or inhalation can occur at a short or long distance from t”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-69d84c5b13625f27",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:health-nature-airborne-2022-003#block-2] “It took until 20 October 2020 for the agency to acknowledge that aerosols — tiny”; [1:health-who-terminology-2024-004#block-2] “Airborne transmission or inhalation can occur at a short or long distance from t”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-69d84c5b13625f27",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:health-nature-airborne-2022-003#block-2] “It took until 20 October 2020 for the agency to acknowledge that aerosols — tiny”; [1:health-who-terminology-2024-004#block-2] “Airborne transmission or inhalation can occur at a short or long distance from t”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_DIRECTION_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-69d84c5b13625f27",
+          "detail": "direction：Relation 未通过边级语义审计；证据 [0:health-nature-airborne-2022-003#block-2] “It took until 20 October 2020 for the agency to acknowledge that aerosols — tiny”; [1:health-who-terminology-2024-004#block-2] “Airborne transmission or inhalation can occur at a short or long distance from t”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_CONDITIONS_MISSING",
+          "severity": "error",
+          "affectedObject": "rel:cross-69d84c5b13625f27",
+          "detail": "conditions：Relation 未通过边级语义审计；证据 [0:health-nature-airborne-2022-003#block-2] “It took until 20 October 2020 for the agency to acknowledge that aerosols — tiny”; [1:health-who-terminology-2024-004#block-2] “Airborne transmission or inhalation can occur at a short or long distance from t”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-6b509fb31dc8e9df",
+        "from": "claim:50fd4599b9553875-c49634bbf6841943",
+        "to": "claim:b587ec61aaf84d7d-7bc5b6c3a357763e",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:health-who-march-2020-001-b587ec61aaf84d7d-2#chars-536-856",
+          "span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-712-896"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:55:05.761Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.3,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-6b509fb31dc8e9df",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:health-who-march-2020-001#block-2] “i.e., endotracheal intubation, bronchoscopy, open suctioning, administration of ”; [1:health-who-terminology-2024-004#block-2] “Direct deposition, for cases when IRPs are expelled into the air from an infecti”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-6b509fb31dc8e9df",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:health-who-march-2020-001#block-2] “i.e., endotracheal intubation, bronchoscopy, open suctioning, administration of ”; [1:health-who-terminology-2024-004#block-2] “Direct deposition, for cases when IRPs are expelled into the air from an infecti”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-6b509fb31dc8e9df",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:health-who-march-2020-001#block-2] “i.e., endotracheal intubation, bronchoscopy, open suctioning, administration of ”; [1:health-who-terminology-2024-004#block-2] “Direct deposition, for cases when IRPs are expelled into the air from an infecti”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-6f807275f01bc9c7",
+        "from": "claim:50fd4599b9553875-e76415a67338b449",
+        "to": "claim:14069d5a982d18de-30df60c9afb3e05b",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:health-nature-airborne-2022-003-14069d5a982d18de-2#chars-213-334",
+          "span:health-who-terminology-2024-004-50fd4599b9553875-1#chars-99-314"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:55:05.761Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.5,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-6f807275f01bc9c7",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:health-nature-airborne-2022-003#block-2] “It took until 20 October 2020 for the agency to acknowledge that aerosols — tiny”; [1:health-who-terminology-2024-004#block-1] “The descriptor ‘through the air’ can be used in a general way to characterize an”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-6f807275f01bc9c7",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:health-nature-airborne-2022-003#block-2] “It took until 20 October 2020 for the agency to acknowledge that aerosols — tiny”; [1:health-who-terminology-2024-004#block-1] “The descriptor ‘through the air’ can be used in a general way to characterize an”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-6f807275f01bc9c7",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:health-nature-airborne-2022-003#block-2] “It took until 20 October 2020 for the agency to acknowledge that aerosols — tiny”; [1:health-who-terminology-2024-004#block-1] “The descriptor ‘through the air’ can be used in a general way to characterize an”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-775699a2fd69becf",
+        "from": "claim:50fd4599b9553875-9bb1be629366d05d",
+        "to": "claim:b587ec61aaf84d7d-7bc5b6c3a357763e",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:health-who-march-2020-001-b587ec61aaf84d7d-2#chars-536-856",
+          "span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-402-515"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:55:05.761Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.4,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-775699a2fd69becf",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:health-who-march-2020-001#block-2] “i.e., endotracheal intubation, bronchoscopy, open suctioning, administration of ”; [1:health-who-terminology-2024-004#block-2] “Airborne transmission or inhalation, for cases when IRPs are expelled into the a”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-775699a2fd69becf",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:health-who-march-2020-001#block-2] “i.e., endotracheal intubation, bronchoscopy, open suctioning, administration of ”; [1:health-who-terminology-2024-004#block-2] “Airborne transmission or inhalation, for cases when IRPs are expelled into the a”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-775699a2fd69becf",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:health-who-march-2020-001#block-2] “i.e., endotracheal intubation, bronchoscopy, open suctioning, administration of ”; [1:health-who-terminology-2024-004#block-2] “Airborne transmission or inhalation, for cases when IRPs are expelled into the a”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-8b105accc66d2476",
+        "from": "claim:50fd4599b9553875-e5004be37e4a4be8",
+        "to": "claim:14069d5a982d18de-0b2bf91f663f56a8",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:health-nature-airborne-2022-003-14069d5a982d18de-1#chars-55-211",
+          "span:health-who-terminology-2024-004-50fd4599b9553875-1#chars-315-397"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:55:05.761Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.5,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-8b105accc66d2476",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:health-nature-airborne-2022-003#block-1] “On 23 December, the World Health Organization (WHO) uttered the one word it had ”; [1:health-who-terminology-2024-004#block-1] “Under the umbrella of ‘through the air transmission’, two descriptors can be use”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-8b105accc66d2476",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:health-nature-airborne-2022-003#block-1] “On 23 December, the World Health Organization (WHO) uttered the one word it had ”; [1:health-who-terminology-2024-004#block-1] “Under the umbrella of ‘through the air transmission’, two descriptors can be use”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-8b105accc66d2476",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:health-nature-airborne-2022-003#block-1] “On 23 December, the World Health Organization (WHO) uttered the one word it had ”; [1:health-who-terminology-2024-004#block-1] “Under the umbrella of ‘through the air transmission’, two descriptors can be use”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-8d2dbaf7cc619157",
+        "from": "claim:50fd4599b9553875-e77df938b6f36c19",
+        "to": "claim:a1c7e701eebb9dc1-d1c7990108ad78ca",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:health-who-july-2020-002-a1c7e701eebb9dc1-1#chars-368-411",
+          "span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-516-616"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:55:05.761Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.3,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-8d2dbaf7cc619157",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:health-who-july-2020-002#block-1] “SARS-CoV-2, the virus that causes COVID-19.”; [1:health-who-terminology-2024-004#block-2] “Airborne transmission or inhalation can occur at a short or long distance from t”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-8d2dbaf7cc619157",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:health-who-july-2020-002#block-1] “SARS-CoV-2, the virus that causes COVID-19.”; [1:health-who-terminology-2024-004#block-2] “Airborne transmission or inhalation can occur at a short or long distance from t”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-8d2dbaf7cc619157",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:health-who-july-2020-002#block-1] “SARS-CoV-2, the virus that causes COVID-19.”; [1:health-who-terminology-2024-004#block-2] “Airborne transmission or inhalation can occur at a short or long distance from t”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_DIRECTION_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-8d2dbaf7cc619157",
+          "detail": "direction：Relation 未通过边级语义审计；证据 [0:health-who-july-2020-002#block-1] “SARS-CoV-2, the virus that causes COVID-19.”; [1:health-who-terminology-2024-004#block-2] “Airborne transmission or inhalation can occur at a short or long distance from t”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-96102d8317d1ef0f",
+        "from": "claim:50fd4599b9553875-9bb1be629366d05d",
+        "to": "claim:a1c7e701eebb9dc1-d1c7990108ad78ca",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:health-who-july-2020-002-a1c7e701eebb9dc1-1#chars-368-411",
+          "span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-402-515"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:55:05.761Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.3,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-96102d8317d1ef0f",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:health-who-july-2020-002#block-1] “SARS-CoV-2, the virus that causes COVID-19.”; [1:health-who-terminology-2024-004#block-2] “Airborne transmission or inhalation, for cases when IRPs are expelled into the a”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-96102d8317d1ef0f",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:health-who-july-2020-002#block-1] “SARS-CoV-2, the virus that causes COVID-19.”; [1:health-who-terminology-2024-004#block-2] “Airborne transmission or inhalation, for cases when IRPs are expelled into the a”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-96102d8317d1ef0f",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:health-who-july-2020-002#block-1] “SARS-CoV-2, the virus that causes COVID-19.”; [1:health-who-terminology-2024-004#block-2] “Airborne transmission or inhalation, for cases when IRPs are expelled into the a”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_DIRECTION_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-96102d8317d1ef0f",
+          "detail": "direction：Relation 未通过边级语义审计；证据 [0:health-who-july-2020-002#block-1] “SARS-CoV-2, the virus that causes COVID-19.”; [1:health-who-terminology-2024-004#block-2] “Airborne transmission or inhalation, for cases when IRPs are expelled into the a”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-98404b358b325019",
+        "from": "claim:50fd4599b9553875-2de9e0481e7c8e64",
+        "to": "claim:14069d5a982d18de-30df60c9afb3e05b",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:health-nature-airborne-2022-003-14069d5a982d18de-2#chars-213-334",
+          "span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-621-707"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:55:05.761Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.5,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-98404b358b325019",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:health-nature-airborne-2022-003#block-2] “It took until 20 October 2020 for the agency to acknowledge that aerosols — tiny”; [1:health-who-terminology-2024-004#block-2] “distance depends on various factors (airflow, humidity, temperature, ventilation”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-98404b358b325019",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:health-nature-airborne-2022-003#block-2] “It took until 20 October 2020 for the agency to acknowledge that aerosols — tiny”; [1:health-who-terminology-2024-004#block-2] “distance depends on various factors (airflow, humidity, temperature, ventilation”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-98404b358b325019",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:health-nature-airborne-2022-003#block-2] “It took until 20 October 2020 for the agency to acknowledge that aerosols — tiny”; [1:health-who-terminology-2024-004#block-2] “distance depends on various factors (airflow, humidity, temperature, ventilation”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-992d0b2b04a91984",
+        "from": "claim:50fd4599b9553875-2de9e0481e7c8e64",
+        "to": "claim:b587ec61aaf84d7d-ffaa41d4d0fe03ab",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:health-who-march-2020-001-b587ec61aaf84d7d-1#chars-51-239",
+          "span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-621-707"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:55:05.761Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.5,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-992d0b2b04a91984",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:health-who-march-2020-001#block-1] “Airborne transmission is different from droplet transmission as it refers to the”; [1:health-who-terminology-2024-004#block-2] “distance depends on various factors (airflow, humidity, temperature, ventilation”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-992d0b2b04a91984",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:health-who-march-2020-001#block-1] “Airborne transmission is different from droplet transmission as it refers to the”; [1:health-who-terminology-2024-004#block-2] “distance depends on various factors (airflow, humidity, temperature, ventilation”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-9d3c0bbf269efa8f",
+        "from": "claim:50fd4599b9553875-e76415a67338b449",
+        "to": "claim:a1c7e701eebb9dc1-d1c7990108ad78ca",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:health-who-july-2020-002-a1c7e701eebb9dc1-1#chars-368-411",
+          "span:health-who-terminology-2024-004-50fd4599b9553875-1#chars-99-314"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:55:05.761Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.3,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-9d3c0bbf269efa8f",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:health-who-july-2020-002#block-1] “SARS-CoV-2, the virus that causes COVID-19.”; [1:health-who-terminology-2024-004#block-1] “The descriptor ‘through the air’ can be used in a general way to characterize an”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-9d3c0bbf269efa8f",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:health-who-july-2020-002#block-1] “SARS-CoV-2, the virus that causes COVID-19.”; [1:health-who-terminology-2024-004#block-1] “The descriptor ‘through the air’ can be used in a general way to characterize an”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-9d3c0bbf269efa8f",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:health-who-july-2020-002#block-1] “SARS-CoV-2, the virus that causes COVID-19.”; [1:health-who-terminology-2024-004#block-1] “The descriptor ‘through the air’ can be used in a general way to characterize an”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_DIRECTION_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-9d3c0bbf269efa8f",
+          "detail": "direction：Relation 未通过边级语义审计；证据 [0:health-who-july-2020-002#block-1] “SARS-CoV-2, the virus that causes COVID-19.”; [1:health-who-terminology-2024-004#block-1] “The descriptor ‘through the air’ can be used in a general way to characterize an”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-afafc36e7b3ea829",
+        "from": "claim:50fd4599b9553875-e76415a67338b449",
+        "to": "claim:b587ec61aaf84d7d-f9e6d8b51f46b89d",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:health-who-march-2020-001-b587ec61aaf84d7d-1#chars-292-348",
+          "span:health-who-terminology-2024-004-50fd4599b9553875-1#chars-99-314"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:55:05.761Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.4,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-afafc36e7b3ea829",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:health-who-march-2020-001#block-1] “be transmitted to others over distances greater than 1 m”; [1:health-who-terminology-2024-004#block-1] “The descriptor ‘through the air’ can be used in a general way to characterize an”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-afafc36e7b3ea829",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:health-who-march-2020-001#block-1] “be transmitted to others over distances greater than 1 m”; [1:health-who-terminology-2024-004#block-1] “The descriptor ‘through the air’ can be used in a general way to characterize an”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-afafc36e7b3ea829",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:health-who-march-2020-001#block-1] “be transmitted to others over distances greater than 1 m”; [1:health-who-terminology-2024-004#block-1] “The descriptor ‘through the air’ can be used in a general way to characterize an”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-b02f2b9aeabf405e",
+        "from": "claim:50fd4599b9553875-e76415a67338b449",
+        "to": "claim:14069d5a982d18de-fb6c9ddf92a42cc2",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:health-nature-airborne-2022-003-14069d5a982d18de-2#chars-340-458",
+          "span:health-who-terminology-2024-004-50fd4599b9553875-1#chars-99-314"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:55:05.761Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.5,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-b02f2b9aeabf405e",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:health-nature-airborne-2022-003#block-2] “the WHO said this was a concern only in specific settings, such as indoor, crowd”; [1:health-who-terminology-2024-004#block-1] “The descriptor ‘through the air’ can be used in a general way to characterize an”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-b02f2b9aeabf405e",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:health-nature-airborne-2022-003#block-2] “the WHO said this was a concern only in specific settings, such as indoor, crowd”; [1:health-who-terminology-2024-004#block-1] “The descriptor ‘through the air’ can be used in a general way to characterize an”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-b02f2b9aeabf405e",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:health-nature-airborne-2022-003#block-2] “the WHO said this was a concern only in specific settings, such as indoor, crowd”; [1:health-who-terminology-2024-004#block-1] “The descriptor ‘through the air’ can be used in a general way to characterize an”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-b5c305e95d15bc7f",
+        "from": "claim:50fd4599b9553875-9bb1be629366d05d",
+        "to": "claim:14069d5a982d18de-30df60c9afb3e05b",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:health-nature-airborne-2022-003-14069d5a982d18de-2#chars-213-334",
+          "span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-402-515"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:55:05.761Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.5,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-b5c305e95d15bc7f",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:health-nature-airborne-2022-003#block-2] “It took until 20 October 2020 for the agency to acknowledge that aerosols — tiny”; [1:health-who-terminology-2024-004#block-2] “Airborne transmission or inhalation, for cases when IRPs are expelled into the a”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-b5c305e95d15bc7f",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:health-nature-airborne-2022-003#block-2] “It took until 20 October 2020 for the agency to acknowledge that aerosols — tiny”; [1:health-who-terminology-2024-004#block-2] “Airborne transmission or inhalation, for cases when IRPs are expelled into the a”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-b5c305e95d15bc7f",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:health-nature-airborne-2022-003#block-2] “It took until 20 October 2020 for the agency to acknowledge that aerosols — tiny”; [1:health-who-terminology-2024-004#block-2] “Airborne transmission or inhalation, for cases when IRPs are expelled into the a”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-ba8ef617d52f2895",
+        "from": "claim:50fd4599b9553875-e77df938b6f36c19",
+        "to": "claim:b587ec61aaf84d7d-7bc5b6c3a357763e",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:health-who-march-2020-001-b587ec61aaf84d7d-2#chars-536-856",
+          "span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-516-616"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:55:05.761Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.4,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-ba8ef617d52f2895",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:health-who-march-2020-001#block-2] “i.e., endotracheal intubation, bronchoscopy, open suctioning, administration of ”; [1:health-who-terminology-2024-004#block-2] “Airborne transmission or inhalation can occur at a short or long distance from t”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-ba8ef617d52f2895",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:health-who-march-2020-001#block-2] “i.e., endotracheal intubation, bronchoscopy, open suctioning, administration of ”; [1:health-who-terminology-2024-004#block-2] “Airborne transmission or inhalation can occur at a short or long distance from t”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-ba8ef617d52f2895",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:health-who-march-2020-001#block-2] “i.e., endotracheal intubation, bronchoscopy, open suctioning, administration of ”; [1:health-who-terminology-2024-004#block-2] “Airborne transmission or inhalation can occur at a short or long distance from t”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_DIRECTION_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-ba8ef617d52f2895",
+          "detail": "direction：Relation 未通过边级语义审计；证据 [0:health-who-march-2020-001#block-2] “i.e., endotracheal intubation, bronchoscopy, open suctioning, administration of ”; [1:health-who-terminology-2024-004#block-2] “Airborne transmission or inhalation can occur at a short or long distance from t”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-bc847ef8c12f0c3d",
+        "from": "claim:50fd4599b9553875-e5004be37e4a4be8",
+        "to": "claim:a1c7e701eebb9dc1-d1c7990108ad78ca",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:health-who-july-2020-002-a1c7e701eebb9dc1-1#chars-368-411",
+          "span:health-who-terminology-2024-004-50fd4599b9553875-1#chars-315-397"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:55:05.761Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.3,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-bc847ef8c12f0c3d",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:health-who-july-2020-002#block-1] “SARS-CoV-2, the virus that causes COVID-19.”; [1:health-who-terminology-2024-004#block-1] “Under the umbrella of ‘through the air transmission’, two descriptors can be use”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-bc847ef8c12f0c3d",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:health-who-july-2020-002#block-1] “SARS-CoV-2, the virus that causes COVID-19.”; [1:health-who-terminology-2024-004#block-1] “Under the umbrella of ‘through the air transmission’, two descriptors can be use”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-bc847ef8c12f0c3d",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:health-who-july-2020-002#block-1] “SARS-CoV-2, the virus that causes COVID-19.”; [1:health-who-terminology-2024-004#block-1] “Under the umbrella of ‘through the air transmission’, two descriptors can be use”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_DIRECTION_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-bc847ef8c12f0c3d",
+          "detail": "direction：Relation 未通过边级语义审计；证据 [0:health-who-july-2020-002#block-1] “SARS-CoV-2, the virus that causes COVID-19.”; [1:health-who-terminology-2024-004#block-1] “Under the umbrella of ‘through the air transmission’, two descriptors can be use”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-bce613ec6ea6a1d6",
+        "from": "claim:50fd4599b9553875-c49634bbf6841943",
+        "to": "claim:b587ec61aaf84d7d-ffaa41d4d0fe03ab",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:health-who-march-2020-001-b587ec61aaf84d7d-1#chars-51-239",
+          "span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-712-896"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:55:05.761Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.4,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-bce613ec6ea6a1d6",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:health-who-march-2020-001#block-1] “Airborne transmission is different from droplet transmission as it refers to the”; [1:health-who-terminology-2024-004#block-2] “Direct deposition, for cases when IRPs are expelled into the air from an infecti”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-bce613ec6ea6a1d6",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:health-who-march-2020-001#block-1] “Airborne transmission is different from droplet transmission as it refers to the”; [1:health-who-terminology-2024-004#block-2] “Direct deposition, for cases when IRPs are expelled into the air from an infecti”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-bce613ec6ea6a1d6",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:health-who-march-2020-001#block-1] “Airborne transmission is different from droplet transmission as it refers to the”; [1:health-who-terminology-2024-004#block-2] “Direct deposition, for cases when IRPs are expelled into the air from an infecti”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-c5b51d36b67f2365",
+        "from": "claim:50fd4599b9553875-e5004be37e4a4be8",
+        "to": "claim:14069d5a982d18de-ff33cb8a69885a6f",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:health-nature-airborne-2022-003-14069d5a982d18de-2#chars-459-612",
+          "span:health-who-terminology-2024-004-50fd4599b9553875-1#chars-315-397"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:55:05.761Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.5,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-c5b51d36b67f2365",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:health-nature-airborne-2022-003#block-2] “Over the next six months, the agency gradually altered its advice to say that ae”; [1:health-who-terminology-2024-004#block-1] “Under the umbrella of ‘through the air transmission’, two descriptors can be use”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-c5b51d36b67f2365",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:health-nature-airborne-2022-003#block-2] “Over the next six months, the agency gradually altered its advice to say that ae”; [1:health-who-terminology-2024-004#block-1] “Under the umbrella of ‘through the air transmission’, two descriptors can be use”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-c5b51d36b67f2365",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:health-nature-airborne-2022-003#block-2] “Over the next six months, the agency gradually altered its advice to say that ae”; [1:health-who-terminology-2024-004#block-1] “Under the umbrella of ‘through the air transmission’, two descriptors can be use”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-cc65ad8df187b8ef",
+        "from": "claim:50fd4599b9553875-9bb1be629366d05d",
+        "to": "claim:b587ec61aaf84d7d-474d339f3670f6c4",
+        "type": "RELATED_TO",
+        "conditions": [
+          "specific circumstances and settings where procedures or support treatments that generate aerosols are performed"
+        ],
+        "conditionStatus": "PRESERVED",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:health-who-march-2020-001-b587ec61aaf84d7d-2#chars-351-534",
+          "span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-402-515"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:55:05.761Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.6,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-cc65ad8df187b8ef",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:health-who-march-2020-001#block-2] “In the context of COVID-19, airborne transmission may be possible in specific ci”; [1:health-who-terminology-2024-004#block-2] “Airborne transmission or inhalation, for cases when IRPs are expelled into the a”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-cc65ad8df187b8ef",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:health-who-march-2020-001#block-2] “In the context of COVID-19, airborne transmission may be possible in specific ci”; [1:health-who-terminology-2024-004#block-2] “Airborne transmission or inhalation, for cases when IRPs are expelled into the a”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-cc65ad8df187b8ef",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:health-who-march-2020-001#block-2] “In the context of COVID-19, airborne transmission may be possible in specific ci”; [1:health-who-terminology-2024-004#block-2] “Airborne transmission or inhalation, for cases when IRPs are expelled into the a”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-e0f328c19eca6038",
+        "from": "claim:50fd4599b9553875-e5004be37e4a4be8",
+        "to": "claim:14069d5a982d18de-30df60c9afb3e05b",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:health-nature-airborne-2022-003-14069d5a982d18de-2#chars-213-334",
+          "span:health-who-terminology-2024-004-50fd4599b9553875-1#chars-315-397"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:55:05.761Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.5,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-e0f328c19eca6038",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:health-nature-airborne-2022-003#block-2] “It took until 20 October 2020 for the agency to acknowledge that aerosols — tiny”; [1:health-who-terminology-2024-004#block-1] “Under the umbrella of ‘through the air transmission’, two descriptors can be use”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-e0f328c19eca6038",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:health-nature-airborne-2022-003#block-2] “It took until 20 October 2020 for the agency to acknowledge that aerosols — tiny”; [1:health-who-terminology-2024-004#block-1] “Under the umbrella of ‘through the air transmission’, two descriptors can be use”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-e0f328c19eca6038",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:health-nature-airborne-2022-003#block-2] “It took until 20 October 2020 for the agency to acknowledge that aerosols — tiny”; [1:health-who-terminology-2024-004#block-1] “Under the umbrella of ‘through the air transmission’, two descriptors can be use”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_DIRECTION_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-e0f328c19eca6038",
+          "detail": "direction：Relation 未通过边级语义审计；证据 [0:health-nature-airborne-2022-003#block-2] “It took until 20 October 2020 for the agency to acknowledge that aerosols — tiny”; [1:health-who-terminology-2024-004#block-1] “Under the umbrella of ‘through the air transmission’, two descriptors can be use”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-e277135c5833131c",
+        "from": "claim:50fd4599b9553875-c49634bbf6841943",
+        "to": "claim:a1c7e701eebb9dc1-d1c7990108ad78ca",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:health-who-july-2020-002-a1c7e701eebb9dc1-1#chars-368-411",
+          "span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-712-896"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:55:05.761Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.3,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-e277135c5833131c",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:health-who-july-2020-002#block-1] “SARS-CoV-2, the virus that causes COVID-19.”; [1:health-who-terminology-2024-004#block-2] “Direct deposition, for cases when IRPs are expelled into the air from an infecti”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-e277135c5833131c",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:health-who-july-2020-002#block-1] “SARS-CoV-2, the virus that causes COVID-19.”; [1:health-who-terminology-2024-004#block-2] “Direct deposition, for cases when IRPs are expelled into the air from an infecti”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-e277135c5833131c",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:health-who-july-2020-002#block-1] “SARS-CoV-2, the virus that causes COVID-19.”; [1:health-who-terminology-2024-004#block-2] “Direct deposition, for cases when IRPs are expelled into the air from an infecti”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_DIRECTION_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-e277135c5833131c",
+          "detail": "direction：Relation 未通过边级语义审计；证据 [0:health-who-july-2020-002#block-1] “SARS-CoV-2, the virus that causes COVID-19.”; [1:health-who-terminology-2024-004#block-2] “Direct deposition, for cases when IRPs are expelled into the air from an infecti”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-e42bca4c1e5ecb5c",
+        "from": "claim:50fd4599b9553875-2de9e0481e7c8e64",
+        "to": "claim:b587ec61aaf84d7d-f9e6d8b51f46b89d",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:health-who-march-2020-001-b587ec61aaf84d7d-1#chars-292-348",
+          "span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-621-707"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:55:05.761Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.5,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-e42bca4c1e5ecb5c",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:health-who-march-2020-001#block-1] “be transmitted to others over distances greater than 1 m”; [1:health-who-terminology-2024-004#block-2] “distance depends on various factors (airflow, humidity, temperature, ventilation”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-e42bca4c1e5ecb5c",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:health-who-march-2020-001#block-1] “be transmitted to others over distances greater than 1 m”; [1:health-who-terminology-2024-004#block-2] “distance depends on various factors (airflow, humidity, temperature, ventilation”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-eab88d76b25fe815",
+        "from": "claim:50fd4599b9553875-e76415a67338b449",
+        "to": "claim:b587ec61aaf84d7d-aae2124ec2ae0b65",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:health-who-march-2020-001-b587ec61aaf84d7d-1#chars-241-287",
+          "span:health-who-terminology-2024-004-50fd4599b9553875-1#chars-99-314"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:55:05.761Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.4,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-eab88d76b25fe815",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:health-who-march-2020-001#block-1] “can remain in the air for long periods of time”; [1:health-who-terminology-2024-004#block-1] “The descriptor ‘through the air’ can be used in a general way to characterize an”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-eab88d76b25fe815",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:health-who-march-2020-001#block-1] “can remain in the air for long periods of time”; [1:health-who-terminology-2024-004#block-1] “The descriptor ‘through the air’ can be used in a general way to characterize an”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-eab88d76b25fe815",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:health-who-march-2020-001#block-1] “can remain in the air for long periods of time”; [1:health-who-terminology-2024-004#block-1] “The descriptor ‘through the air’ can be used in a general way to characterize an”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-ef8d59ab67ff38a1",
+        "from": "claim:50fd4599b9553875-e76415a67338b449",
+        "to": "claim:b587ec61aaf84d7d-ffaa41d4d0fe03ab",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:health-who-march-2020-001-b587ec61aaf84d7d-1#chars-51-239",
+          "span:health-who-terminology-2024-004-50fd4599b9553875-1#chars-99-314"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:55:05.761Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.4,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-ef8d59ab67ff38a1",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:health-who-march-2020-001#block-1] “Airborne transmission is different from droplet transmission as it refers to the”; [1:health-who-terminology-2024-004#block-1] “The descriptor ‘through the air’ can be used in a general way to characterize an”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-ef8d59ab67ff38a1",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:health-who-march-2020-001#block-1] “Airborne transmission is different from droplet transmission as it refers to the”; [1:health-who-terminology-2024-004#block-1] “The descriptor ‘through the air’ can be used in a general way to characterize an”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-f9cd0d44bbd1ed9e",
+        "from": "claim:50fd4599b9553875-e5004be37e4a4be8",
+        "to": "claim:b587ec61aaf84d7d-474d339f3670f6c4",
+        "type": "RELATED_TO",
+        "conditions": [
+          "specific circumstances and settings where procedures or support treatments that generate aerosols are performed"
+        ],
+        "conditionStatus": "PRESERVED",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:health-who-march-2020-001-b587ec61aaf84d7d-2#chars-351-534",
+          "span:health-who-terminology-2024-004-50fd4599b9553875-1#chars-315-397"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:55:05.761Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.4,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-f9cd0d44bbd1ed9e",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:health-who-march-2020-001#block-2] “In the context of COVID-19, airborne transmission may be possible in specific ci”; [1:health-who-terminology-2024-004#block-1] “Under the umbrella of ‘through the air transmission’, two descriptors can be use”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-f9cd0d44bbd1ed9e",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:health-who-march-2020-001#block-2] “In the context of COVID-19, airborne transmission may be possible in specific ci”; [1:health-who-terminology-2024-004#block-1] “Under the umbrella of ‘through the air transmission’, two descriptors can be use”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-f9cd0d44bbd1ed9e",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:health-who-march-2020-001#block-2] “In the context of COVID-19, airborne transmission may be possible in specific ci”; [1:health-who-terminology-2024-004#block-1] “Under the umbrella of ‘through the air transmission’, two descriptors can be use”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_CONDITIONS_MISSING",
+          "severity": "error",
+          "affectedObject": "rel:cross-f9cd0d44bbd1ed9e",
+          "detail": "conditions：Relation 未通过边级语义审计；证据 [0:health-who-march-2020-001#block-2] “In the context of COVID-19, airborne transmission may be possible in specific ci”; [1:health-who-terminology-2024-004#block-1] “Under the umbrella of ‘through the air transmission’, two descriptors can be use”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    }
+  ]
+}

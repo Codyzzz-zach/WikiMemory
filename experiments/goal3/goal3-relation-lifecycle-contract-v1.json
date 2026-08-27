@@ -1,0 +1,92 @@
+{
+  "schemaVersion": "wge-goal3-relation-lifecycle-contract/v1",
+  "status": "FROZEN_BEFORE_IMPLEMENTATION",
+  "stageBRead": false,
+  "objective": "Separate generated cross-material Relation candidates from the bounded set selected for expensive audit and from canonical Graph edges, without silently deleting deferred candidates or tuning ranking against audit outcomes.",
+  "baseline": {
+    "run": "experiments/goal3/s200-runs/compile-v7-graph-utility-12source-v28",
+    "completionSha256": "175df580205d1b7601d3b76979793f91d6ce835ee5df882cb660d72c91170111",
+    "relationFunnelSha256": "a5dd3dda70f8d24f12e48704bcab2c984b75ef455ebff729745cca67575923da",
+    "publicationAndQuarantineAggregateSha256": "66a3fa2661df1ac09fa56d50aa4424765f945ebae6b1bf122a2e83067f94e95f",
+    "generatedCrossRelations": 249,
+    "canonicalCrossRelations": 7,
+    "canonicalCrossRelationIdsDiagnosticOnly": [
+      "rel:cross-060af6c51bc659b0",
+      "rel:cross-181111432f171705",
+      "rel:cross-63d7dfddb7eceabf",
+      "rel:cross-b10907d08ba6cc5a",
+      "rel:cross-d498da79f736b3c9",
+      "rel:cross-d86076c8d2787706",
+      "rel:cross-ddf5c3c817bb1ec8"
+    ]
+  },
+  "lifecycle": {
+    "GENERATED_CANDIDATE": "A detector proposal persisted in the append-only candidate ledger; never directly consumable.",
+    "SELECTED_FOR_AUDIT": "A bounded candidate admitted to the existing semantic, type and utility gates; still not consumable.",
+    "DEFERRED_BY_BUDGET": "A generated candidate retained in the ledger but not audited in this run; never consumable and not equivalent to quarantine.",
+    "CANONICAL": "A selected candidate that passes every applicable gate and is published through the existing atomic publication path.",
+    "QUARANTINED": "A selected candidate that was audited and failed or produced an invalid audit."
+  },
+  "ledger": {
+    "path": "runs/relation-candidate-ledger.jsonl",
+    "schemaVersion": "wge-relation-candidate-ledger/v1",
+    "appendOnly": true,
+    "requiredFields": [
+      "runId",
+      "sourceId",
+      "relation",
+      "generatedRank",
+      "selectionState",
+      "selectionReason",
+      "auditBudget",
+      "maxEndpointFanOut",
+      "createdAt"
+    ]
+  },
+  "rankingContract": {
+    "forbiddenInputs": [
+      "audit verdict",
+      "quarantine issue code",
+      "Stage B answer or gold label",
+      "benchmark question text"
+    ],
+    "orderedKeys": [
+      "explicit governance priority: SUPERSEDES before ordinary candidates",
+      "model-provided confidence descending",
+      "stable Relation id ascending"
+    ],
+    "endpointFanOut": "Greedy diversity constraint over both endpoints after ranking; deferred candidates remain recoverable in the ledger."
+  },
+  "offlineArms": [
+    { "id": "CONTROL", "auditBudgetPerSource": null, "maxEndpointFanOut": null },
+    { "id": "B24", "auditBudgetPerSource": 24, "maxEndpointFanOut": null },
+    { "id": "B24_F4", "auditBudgetPerSource": 24, "maxEndpointFanOut": 4 },
+    { "id": "B16_F4_EXPLORATORY", "auditBudgetPerSource": 16, "maxEndpointFanOut": 4 }
+  ],
+  "primaryArm": "B24_F4",
+  "offlineAcceptance": {
+    "candidateAccountingExact": true,
+    "diagnosticCanonicalRecall": 1.0,
+    "minimumCandidateCompression": 0.4,
+    "modelCalls": 0,
+    "deterministicDeferredSampleSize": 24,
+    "maximumApparentHighValueMissesInDeferredSample": 0,
+    "deferredConsumerExposure": 0
+  },
+  "endToEndAcceptance": {
+    "sequence": [3, 12],
+    "sourceFailures": 0,
+    "candidateAccountingExact": true,
+    "deferredConsumerExposure": 0,
+    "minimumCrossAuditCandidateReductionAgainstSameRunGenerated": 0.35,
+    "minimumRelationAuditTokenReductionAgainstUnboundedReplay": 0.2,
+    "canonicalEvidenceAndEndpointsResolvable": true,
+    "noScaleBeyond12WithoutNewAuthorization": true
+  },
+  "interpretationLimits": [
+    "The seven baseline canonical edges are a diagnostic set, not a human gold standard.",
+    "Passing offline replay does not prove unseen-domain recall.",
+    "A lower token count is not a pass if candidates disappear instead of entering Deferred state.",
+    "Deferred is not Quarantine: it carries no semantic failure judgment."
+  ]
+}

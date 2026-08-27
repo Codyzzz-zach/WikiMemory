@@ -1,0 +1,183 @@
+{
+  "schemaVersion": "v1",
+  "sourceId": "source:design-webaim-checklist-2024-004-b89787b6b83f3605",
+  "runId": "31774385-abd0-4c75-b131-9bd0f25c8507",
+  "publishedAt": "2026-07-27T09:58:18.692Z",
+  "claims": [
+    {
+      "id": "claim:b89787b6b83f3605-2b879b185f80c3ed",
+      "statement": "Success Criterion 4.1.1 Parsing 自2023年起已从WCAG中移除。",
+      "evidenceSpanIds": [
+        "span:design-webaim-checklist-2024-004-b89787b6b83f3605-1#chars-107-145"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:58:09.634Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:design-webaim-checklist-2024-004-b89787b6b83f3605-1#chars-107-145"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:design-webaim-checklist-2024-004-b89787b6b83f3605-1#chars-107-145"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-27T09:58:09.634Z"
+    },
+    {
+      "id": "claim:b89787b6b83f3605-7d429224411b6b4e",
+      "statement": "WebAIM WCAG 2 Checklist 是一个文档标题。",
+      "evidenceSpanIds": [
+        "span:design-webaim-checklist-2024-004-b89787b6b83f3605-0#chars-2-25"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:58:09.634Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:design-webaim-checklist-2024-004-b89787b6b83f3605-0#chars-2-25"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:design-webaim-checklist-2024-004-b89787b6b83f3605-0#chars-2-25"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-27T09:58:09.634Z"
+    },
+    {
+      "id": "claim:b89787b6b83f3605-d524b881aa3a2622",
+      "statement": "Success Criterion 4.1.1 Parsing 不再有用。",
+      "evidenceSpanIds": [
+        "span:design-webaim-checklist-2024-004-b89787b6b83f3605-1#chars-27-102"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:58:09.634Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:design-webaim-checklist-2024-004-b89787b6b83f3605-1#chars-27-102"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:design-webaim-checklist-2024-004-b89787b6b83f3605-1#chars-27-102"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-27T09:58:09.634Z"
+    }
+  ],
+  "concepts": [
+    {
+      "id": "concept:422f17a564a95754",
+      "name": "WCAG",
+      "aliases": [],
+      "boundary": "Web内容无障碍指南",
+      "domain": "Web无障碍"
+    },
+    {
+      "id": "concept:6559cf9c58d0219f",
+      "name": "Success Criterion 4.1.1 Parsing",
+      "aliases": [],
+      "boundary": "WCAG成功标准，具体指解析准则",
+      "domain": "Web无障碍"
+    },
+    {
+      "id": "concept:9bd079eb5e4dbceb",
+      "name": "WebAIM WCAG 2 Checklist",
+      "aliases": [],
+      "boundary": "WebAIM提供的WCAG 2检查清单文档",
+      "domain": "Web无障碍"
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel:b89787b6b83f3605-1f64fb64981e37c1",
+      "from": "claim:b89787b6b83f3605-2b879b185f80c3ed",
+      "to": "claim:b89787b6b83f3605-d524b881aa3a2622",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:design-webaim-checklist-2024-004-b89787b6b83f3605-1#chars-107-145",
+        "span:design-webaim-checklist-2024-004-b89787b6b83f3605-1#chars-27-102"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:58:12.486Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.9,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:cross-59e2e7d1788246d7",
+      "from": "claim:b89787b6b83f3605-2b879b185f80c3ed",
+      "to": "claim:1da3417e06ff5435-50f420b0776ab205",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-274-331",
+        "span:design-webaim-checklist-2024-004-b89787b6b83f3605-1#chars-107-145"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:58:16.844Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "cross-material-detect",
+      "confidence": 0.9,
+      "consumedBy": []
+    }
+  ]
+}

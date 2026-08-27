@@ -1,0 +1,63 @@
+{
+  "runId": "batch-c-posthoc-2026-07-28T09-52-47-761Z",
+  "sampleId": "sample-7031f90e-d545-4ee9-943b-656beee4fff1",
+  "questionId": "C-K-PSYCH-001",
+  "group": "P-seed",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "temperature": 0,
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 3088,
+    "completionTokens": 389,
+    "totalTokens": 3477,
+    "promptCacheHitTokens": 256,
+    "promptCacheMissTokens": 2832,
+    "reasoningTokens": 0
+  },
+  "latencyMs": 2938,
+  "promptHash": "46d1b6286f9788c45af6c86d862b1a3b664f230b4623e0311e05fab2d961abc8",
+  "contextHash": "9a51ad05a600df67d60237af444cc83aa2d989d9db2a28cd2223443cb6649dd0",
+  "estimatedContextTokens": 2595,
+  "estimatedInputTokens": 2861,
+  "retrievedClaims": [
+    "claim:e5061e9956aa43aa-6d89b2dd1efe941d",
+    "claim:e5061e9956aa43aa-0e4ed06319cdf8f7",
+    "claim:e5061e9956aa43aa-3a7c29fb11c19fce",
+    "claim:e5061e9956aa43aa-8ebeb95906825d8c",
+    "claim:e5061e9956aa43aa-e56f517c73cbbcf0",
+    "claim:e5061e9956aa43aa-fb5a0920af18457d",
+    "claim:e5061e9956aa43aa-23d6421835389c1e",
+    "claim:e5061e9956aa43aa-0bc95d168cd785a4",
+    "claim:e5061e9956aa43aa-7c1a342b1c8c1813",
+    "claim:e5061e9956aa43aa-8f4c3087c78c3e7e",
+    "claim:08f4f1f4eb388c06-b7358d918b6741a7",
+    "claim:08f4f1f4eb388c06-06d433cbfd18102a",
+    "claim:08f4f1f4eb388c06-98bbd61106afc39e",
+    "claim:08f4f1f4eb388c06-a6a1002ab06055f5",
+    "claim:08f4f1f4eb388c06-359db3a1c1ff5ab8",
+    "claim:08f4f1f4eb388c06-5a1eca00ccef74b9",
+    "claim:08f4f1f4eb388c06-12af1f73e66615a0",
+    "claim:08f4f1f4eb388c06-65df6845dea7acf3",
+    "claim:08f4f1f4eb388c06-6ef2efdb71d13a42",
+    "claim:e5061e9956aa43aa-b79d759ee8909418",
+    "claim:08f4f1f4eb388c06-9d3d87bb413cd0f9",
+    "claim:08f4f1f4eb388c06-cc032c5f6d34ae62"
+  ],
+  "retrievedRelations": [],
+  "retrievedSources": [
+    "source:c-psych-004-e5061e9956aa43aa",
+    "source:c-psych-003-08f4f1f4eb388c06"
+  ],
+  "citationValidation": {
+    "valid": true,
+    "citationCount": 2,
+    "invalid": []
+  },
+  "request": {
+    "systemPrompt": "你是受证据约束的问答 Agent。只使用本次请求提供的检索上下文回答。\n要求：保留影响结论的条件、时间、例外、来源角色与不确定性；关键结论引用上下文中的 SOURCE、EVIDENCE 或 CLAIM 标识；上下文不足时明确说明，不得用外部常识补齐。\n只输出严格 JSON：{\"answer\":\"...\",\"citations\":[\"...\"],\"insufficient\":false,\"uncertainties\":[\"...\"]}。",
+    "userPrompt": "# 问题\nNature 杂志对1,576名研究者的调查 (Baker, 2016) 显示52%的人认为存在显著的可复制性危机，而 Gilbert 等人 (2016) 认为 OSC 的数据与心理学可复制性很高这一相反结论一致。这两类证据分别代表什么类型的来源（研究者主观感知 vs. 对原始数据的再分析），它们各自能支持什么结论？\n\n# 检索上下文\n## TASK MAP\n主题: Nature 杂志对1,576名研究者的调查 (Baker, 2016) 显示52%的人认为存在显著的可复制性危机，而 Gilbert 等人 (2016) 认为 OSC 的数据与心理学可复制性很高这一相反结论一致。这两类证据分别代表什么类型的来源（研究者主观感知 vs. 对原始数据的再分析），它们各自能支持什么结论？\n地图主题: 研究, osc, 来源, 究者, 研究者\n关键概念: Paris Agreement global stocktake, international carbon credits, Supplementary measures, Organisational Measures, Technical Measures\n已知争议: 0 个\n最近变化: 5 条\n找到 22 条相关 Claim\n找到 0 条关系\n找到 21 条原文证据\n\n## CLAIM claim:e5061e9956aa43aa-6d89b2dd1efe941d\n52%的受访者认为存在‘显著的可重复性危机’。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:e5061e9956aa43aa-0e4ed06319cdf8f7\n该调查抽样了1576名跨学科研究者。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:e5061e9956aa43aa-3a7c29fb11c19fce\n物理学家和化学家对其各自领域的可重复性表达了最大的信心。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:e5061e9956aa43aa-8ebeb95906825d8c\n超过一半的研究者曾未能重复自己的实验。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:e5061e9956aa43aa-e56f517c73cbbcf0\n只有少数研究者（不到20%）表示曾因其他研究者无法重复其工作而被联系。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:e5061e9956aa43aa-fb5a0920af18457d\n超过70%的研究者曾尝试但未能重复另一位科学家的实验。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:e5061e9956aa43aa-23d6421835389c1e\n该调查通过电子邮件发送给《自然》杂志读者，并在附属网站和社交媒体上发布广告。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:e5061e9956aa43aa-0bc95d168cd785a4\n文章发表在Nature期刊第533卷，页码为452-454。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:e5061e9956aa43aa-7c1a342b1c8c1813\n即使排名最低的项目——期刊检查表——也获得了高达69%的支持率。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:e5061e9956aa43aa-8f4c3087c78c3e7e\n该调查可能选择了对可重复性问题更关注的受访者。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:08f4f1f4eb388c06-b7358d918b6741a7\nThe data are consistent with the opposite conclusion that the reproducibility of psychological science is quite high.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:08f4f1f4eb388c06-06d433cbfd18102a\nAll the rules about sampling and calculating error and keeping experimenters blind to the hypothesis must apply whether you are studying people or studying the replicability of a science.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:08f4f1f4eb388c06-98bbd61106afc39e\nThe OSC created an idiosyncratic, arbitrary list of sampling rules that excluded the majority of psychology's subfields from the sample.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:08f4f1f4eb388c06-a6a1002ab06055f5\nThe OSC failed to consider that their replication studies were often quite different from the originals in many ways, and those differences are a source of statistical error.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:08f4f1f4eb388c06-359db3a1c1ff5ab8\nThe OSC article provides no support for the conclusion that reproducibility is low.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:08f4f1f4eb388c06-5a1eca00ccef74b9\nA paper from the Open Science Collaboration attempting to replicate 100 published studies suggests that the reproducibility of psychological science is surprisingly low.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:08f4f1f4eb388c06-12af1f73e66615a0\nMeta-science must obey the rules of science.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:08f4f1f4eb388c06-65df6845dea7acf3\nMeta-science is not exempt from the rules of science.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:08f4f1f4eb388c06-6ef2efdb71d13a42\nThe OSC excluded entire classes of studies whose methods are probably among the best in science from the sample.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:e5061e9956aa43aa-b79d759ee8909418\n医学专业人士和生物学家对可重复性的信心最低。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:08f4f1f4eb388c06-9d3d87bb413cd0f9\nWhen the calculation was done correctly and applied to the OSC data, the number of failures observed was just about what should be expected by chance alone, even if all 100 original findings were true.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:08f4f1f4eb388c06-cc032c5f6d34ae62\nThe failure of the replication studies to match the original studies was a failure of the replications, not of the originals.\nConditions: none\nValidity: SUPPORTED\n\n## EVIDENCE span:c-psych-004-e5061e9956aa43aa-6#chars-585-669\n52% of those surveyed agree that there is a 'significant crisis' of reproducibility.\n\n## EVIDENCE span:c-psych-004-e5061e9956aa43aa-10#chars-997-1045\nIt sampled 1,576 researchers across disciplines.\n\n## EVIDENCE span:c-psych-004-e5061e9956aa43aa-16#chars-1516-1600\nPhysicists and chemists expressed the greatest confidence in their respective fields\n\n## EVIDENCE span:c-psych-004-e5061e9956aa43aa-5#chars-519-580\nmore than half have failed to reproduce their own experiments\n\n## EVIDENCE span:c-psych-004-e5061e9956aa43aa-18#chars-1734-1883\nBut only a minority of researchers — fewer than 20% — said they had ever been contacted by another researcher who was unable to reproduce their work.\n\n## EVIDENCE span:c-psych-004-e5061e9956aa43aa-5#chars-418-513\nMore than 70% of researchers have tried and failed to reproduce another scientist's experiments\n\n## EVIDENCE span:c-psych-004-e5061e9956aa43aa-10#chars-892-996\nThe survey was emailed to Nature readers and advertised on affiliated websites and social media outlets.\n\n## EVIDENCE span:c-psych-004-e5061e9956aa43aa-3#chars-275-332\n**Published:** Nature, Vol. 533, pp. 452-454, 26 May 2016\n\n## EVIDENCE span:c-psych-004-e5061e9956aa43aa-14#chars-1405-1487\nEven the lowest-ranked item — journal checklists — won a whopping 69% endorsement.\n\n## EVIDENCE span:c-psych-004-e5061e9956aa43aa-10#chars-1046-1128\nThe survey likely selected for respondents more aware of reproducibility concerns.\n\n## EVIDENCE span:c-psych-003-08f4f1f4eb388c06-5#chars-950-1084\nIndeed, the data are consistent with the opposite conclusion, namely, that the reproducibility of psychological science is quite high.\n\n## EVIDENCE span:c-psych-003-08f4f1f4eb388c06-11#chars-2901-3109\nAll the rules about sampling and calculating error and keeping experimenters blind to the hypothesis — all of those rules must apply whether you are studying people or studying the replicability of a science.\n\n## EVIDENCE span:c-psych-003-08f4f1f4eb388c06-8#chars-1409-1674\nWhat they did is create an idiosyncratic, arbitrary list of sampling rules that excluded the majority of psychology's subfields from the sample, that excluded entire classes of studies whose methods are probably among the best in science from the sample, and so on.\n\n## EVIDENCE span:c-psych-003-08f4f1f4eb388c06-9#chars-1765-2036\nWhen they did their calculations, they failed to consider the fact that their replication studies were not just new samples from the same population. They were often quite different from the originals in many ways, and those differences are a source of statistical error.\n\n## EVIDENCE span:c-psych-003-08f4f1f4eb388c06-5#chars-843-949\nWe show that this article contains three statistical errors and provides no support for such a conclusion.\n\n## EVIDENCE span:c-psych-003-08f4f1f4eb388c06-5#chars-628-842\nA paper from the Open Science Collaboration (Research Articles, 28 August 2015, aac4716) attempting to replicate 100 published studies suggests that the reproducibility of psychological science is surprisingly low.\n\n## EVIDENCE span:c-psych-003-08f4f1f4eb388c06-11#chars-2812-2900\nI think the big takeaway point here is that meta-science must obey the rules of science.\n\n## EVIDENCE span:c-psych-003-08f4f1f4eb388c06-11#chars-3110-3161\nMeta-science does not get a pass. It is not exempt.\n\n## EVIDENCE span:c-psych-004-e5061e9956aa43aa-16#chars-1608-1689\nmedical professionals and biologists had the least confidence in reproducibility.\n\n## EVIDENCE span:c-psych-003-08f4f1f4eb388c06-9#chars-2037-2283\nSo we did the calculation the right way and then applied it to their data. And guess what? The number of failures they observed was just about what you should expect to observe by chance alone — even if all 100 of the original findings were true.\n\n## EVIDENCE span:c-psych-003-08f4f1f4eb388c06-9#chars-2284-2409\nThe failure of the replication studies to match the original studies was a failure of the replications, not of the originals.\n\n## CONFLICTS AND CONDITIONS\n🔎 Source source:c-psych-003-08f4f1f4eb388c06 provenance: uri=experiments/benchmark-batch-c/stage-a-freeze/compilation-corpus/psychology-reproducibility/c-psych-003.md; sourceType=md; sourceRole=S-analysis; author=Daniel T. Gilbert, Gary King, Stephen Pettigrew, Timothy D. Wilson; canonicalUrl=https://www.science.org/doi/10.1126/science.aad7243; publishedAt=Fri Mar 04 2016 08:00:00 GMT+0800 (China Standard Time); versionRef='doi:10.1126/science.aad7243; coverage: news.harvard.edu/gazette 2016-03-03'\n🔎 Source source:c-psych-004-e5061e9956aa43aa provenance: uri=experiments/benchmark-batch-c/stage-a-freeze/compilation-corpus/psychology-reproducibility/c-psych-004.md; sourceType=md; sourceRole=U/S-response; author=Monya Baker (Nature); canonicalUrl=https://www.nature.com/articles/533452a; publishedAt=Wed May 25 2016 08:00:00 GMT+0800 (China Standard Time); versionRef=doi:10.1038/533452a\n\n## KNOWN GAPS\n未找到关系——Graph 可能尚未建立跨材料边"
+  },
+  "answer": "{\n  \"answer\": \"Baker (2016) 的调查属于研究者主观感知类型，基于对1,576名研究者的问卷调查，显示52%的受访者认为存在显著的可复制性危机（SOURCE: c-psych-004-e5061e9956aa43aa, EVIDENCE: span:c-psych-004-e5061e9956aa43aa-6#chars-585-669）。该调查能支持研究者对可复制性危机的普遍担忧，但调查可能选择了对可重复性问题更关注的受访者（CLAIM: claim:e5061e9956aa43aa-8f4c3087c78c3e7e）。Gilbert 等人 (2016) 属于对原始数据的再分析类型，他们重新分析了OSC的复制数据，认为OSC的数据与心理学可复制性很高这一相反结论一致（SOURCE: c-psych-003-08f4f1f4eb388c06, EVIDENCE: span:c-psych-003-08f4f1f4eb388c06-5#chars-950-1084）。该再分析能支持心理学可复制性较高的结论，但存在争议，因为OSC原研究认为可复制性低（CLAIM: claim:08f4f1f4eb388c06-5a1eca00ccef74b9）。\",\n  \"citations\": [\n    \"c-psych-004-e5061e9956aa43aa\",\n    \"c-psych-003-08f4f1f4eb388c06\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": [\n    \"Baker调查可能因自选偏差而高估危机感知\",\n    \"Gilbert等人的再分析结论与OSC原结论相悖，存在方法争议\"\n  ]\n}",
+  "answerFormatValid": true
+}

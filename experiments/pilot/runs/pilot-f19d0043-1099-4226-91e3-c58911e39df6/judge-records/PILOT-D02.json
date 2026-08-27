@@ -1,0 +1,48 @@
+{
+  "questionId": "PILOT-D02",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "request": {
+    "systemPrompt": "你是知识系统的盲测评分员。你只按提供的 Gold 和评分合同评价匿名答案，不判断答案来自哪个实验组。\n必须逐项核对 requiredClaims、mustMentionConditions、forbiddenClaims、answerability 和证据引用。\nsourceRisk.present=true 时，Gold 风险说明是允许使用的人工审计结论；不得把源材料的过强表述当成正确答案。\n只输出严格 JSON：{\"scores\":[{\"sampleId\":\"...\",\"requiredClaimCoverage\":0,\"conditionFidelity\":0,\"evidenceGrounding\":0,\"answerabilityDiscipline\":0,\"hardFailure\":false,\"rationale\":\"...\"}]}。",
+    "userPrompt": "# 评分合同\n{\n  \"dimensions\": {\n    \"requiredClaimCoverage\": {\n      \"score0\": \"没有覆盖 requiredClaims，或核心结论相反\",\n      \"score1\": \"覆盖部分 requiredClaims，但缺少一项以上关键连接\",\n      \"score2\": \"完整覆盖全部 requiredClaims\"\n    },\n    \"conditionFidelity\": {\n      \"score0\": \"触发 forbiddenClaims，或删除了决定结论的条件\",\n      \"score1\": \"方向基本正确，但条件、例外或必要/充分强度表达不完整\",\n      \"score2\": \"保留全部 mustMentionConditions，且未触发 forbiddenClaims\"\n    },\n    \"evidenceGrounding\": {\n      \"score0\": \"关键结论没有可解析引用，或引用与结论无关\",\n      \"score1\": \"有相关引用，但关键结论存在未落到证据的部分\",\n      \"score2\": \"关键结论均由当前上下文标识支持，引用位置正确\"\n    },\n    \"answerabilityDiscipline\": {\n      \"score0\": \"证据不足时仍编造答案，或证据充分时错误拒答\",\n      \"score1\": \"表达了不确定性，但回答/拒答边界不够准确\",\n      \"score2\": \"严格遵守该题 answerability，充分回答或明确拒答\"\n    }\n  },\n  \"totalScore\": 8,\n  \"hardFailure\": \"任何 forbiddenClaim、伪造引用、把 insufficient 题当作已由语料证明，均记 hardFailure；该样本总分最高为 2。\"\n}\n\n# 题目与 Gold\n{\n  \"question\": \"度量空间与拓扑空间分别保留了什么结构？\",\n  \"answerability\": \"answerable\",\n  \"requiredClaims\": [\n    \"度量空间具有距离函数\",\n    \"拓扑空间以开集描述邻近与连续性\",\n    \"度量可以通过开球诱导拓扑\"\n  ],\n  \"mustMentionConditions\": [],\n  \"forbiddenClaims\": [\n    \"每个拓扑空间都天然带有度量\"\n  ],\n  \"sourceRisk\": {\n    \"present\": false,\n    \"detail\": \"\"\n  },\n  \"evidence\": [\n    {\n      \"sourceFile\": \"mathtest-material/02-spaces.md\",\n      \"heading\": \"2.4 度量空间\",\n      \"exactQuote\": \"**定义**：度量空间是一个集合 $X$ 配上一个距离函数 $d: X \\\\times X \\\\to \\\\mathbb{R}_{\\\\geq 0}$\",\n      \"supportsRequiredClaims\": [\n        0\n      ]\n    },\n    {\n      \"sourceFile\": \"mathtest-material/02-spaces.md\",\n      \"heading\": \"度量空间 → 拓扑空间\",\n      \"exactQuote\": \"任何度量空间自然诱导一个拓扑：以**开球** $B(x,r) = \\\\{y \\\\mid d(x,y) < r\\\\}$ 生成开集。这是 $\\\\S$7 拓扑学的起点——拓扑空间是度量空间的进一步推广，它丢掉了距离数值，只保留\\\"开集\\\"的概念。\",\n      \"supportsRequiredClaims\": [\n        1,\n        2\n      ]\n    }\n  ]\n}\n\n# 匿名答案\n[\n  {\n    \"sampleId\": \"sample-9ff0b7a4-60ba-404e-af61-c3df13450add\",\n    \"questionId\": \"PILOT-D02\",\n    \"answer\": \"{\\n  \\\"answer\\\": \\\"度量空间保留了距离结构（远近），拓扑空间保留了开集结构（邻近性）。\\\",\\n  \\\"citations\\\": [\\n    \\\"SOURCE mathtest-material/02-spaces.md:316-331\\\",\\n    \\\"SOURCE mathtest-material/02-spaces.md:191-196\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\"\n  },\n  {\n    \"sampleId\": \"sample-00a69c0f-5ee2-4d6d-86b4-48258c603802\",\n    \"questionId\": \"PILOT-D02\",\n    \"answer\": \"{\\n  \\\"answer\\\": \\\"度量空间保留距离结构（距离函数 d），拓扑空间保留开集结构（开集概念）。度量空间通过开球生成开集，自然诱导一个拓扑，但拓扑空间去掉了距离数值，只保留开集。\\\",\\n  \\\"citations\\\": [\\n    \\\"claim:33a33396a17d4175-58316ab57e9e7927\\\",\\n    \\\"claim:33a33396a17d4175-d32c5dbd5d97cfc6\\\",\\n    \\\"claim:33a33396a17d4175-e6cea537d48d01a9\\\",\\n    \\\"span:02-spaces-33a33396a17d4175-42#chars-4412-4448\\\",\\n    \\\"span:02-spaces-33a33396a17d4175-36#chars-3224-3290\\\",\\n    \\\"span:02-spaces-33a33396a17d4175-42#chars-4334-4395\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\"\n  },\n  {\n    \"sampleId\": \"sample-06ed60be-9af6-48fe-8202-5c79446ed1e3\",\n    \"questionId\": \"PILOT-D02\",\n    \"answer\": \"{\\n  \\\"answer\\\": \\\"度量空间保留距离结构（距离函数 d），拓扑空间保留开集结构（开集概念）。度量空间通过开球生成开集，自然诱导一个拓扑，但拓扑空间去掉了距离数值，只保留开集。\\\",\\n  \\\"citations\\\": [\\n    \\\"claim:33a33396a17d4175-58316ab57e9e7927\\\",\\n    \\\"claim:33a33396a17d4175-d32c5dbd5d97cfc6\\\",\\n    \\\"claim:33a33396a17d4175-e6cea537d48d01a9\\\",\\n    \\\"span:02-spaces-33a33396a17d4175-42#chars-4412-4448\\\",\\n    \\\"span:02-spaces-33a33396a17d4175-36#chars-3224-3290\\\",\\n    \\\"span:02-spaces-33a33396a17d4175-42#chars-4334-4395\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\"\n  }\n]"
+  },
+  "usage": {
+    "promptTokens": 1592,
+    "completionTokens": 398,
+    "totalTokens": 1990,
+    "promptCacheHitTokens": 384,
+    "promptCacheMissTokens": 1208,
+    "reasoningTokens": 0
+  },
+  "finishReason": "stop",
+  "rawResponse": "{\n  \"scores\": [\n    {\n      \"sampleId\": \"sample-9ff0b7a4-60ba-404e-af61-c3df13450add\",\n      \"requiredClaimCoverage\": 1,\n      \"conditionFidelity\": 2,\n      \"evidenceGrounding\": 1,\n      \"answerabilityDiscipline\": 2,\n      \"hardFailure\": false,\n      \"rationale\": \"覆盖了requiredClaims中的0和1，但缺少第2条（度量通过开球诱导拓扑）。条件 fidelity 良好，无forbiddenClaims。证据引用位置正确，但缺少对诱导拓扑的引用。answerability正确回答。\"\n    },\n    {\n      \"sampleId\": \"sample-00a69c0f-5ee2-4d6d-86b4-48258c603802\",\n      \"requiredClaimCoverage\": 2,\n      \"conditionFidelity\": 2,\n      \"evidenceGrounding\": 2,\n      \"answerabilityDiscipline\": 2,\n      \"hardFailure\": false,\n      \"rationale\": \"完整覆盖所有requiredClaims，包括度量空间有距离函数、拓扑空间以开集描述邻近、度量通过开球诱导拓扑。无forbiddenClaims。证据引用充分且正确。answerability正确。\"\n    },\n    {\n      \"sampleId\": \"sample-06ed60be-9af6-48fe-8202-5c79446ed1e3\",\n      \"requiredClaimCoverage\": 2,\n      \"conditionFidelity\": 2,\n      \"evidenceGrounding\": 2,\n      \"answerabilityDiscipline\": 2,\n      \"hardFailure\": false,\n      \"rationale\": \"与sample-00a69c0f相同，完整覆盖所有requiredClaims，无forbiddenClaims，证据引用充分，answerability正确。\"\n    }\n  ]\n}",
+  "parsed": [
+    {
+      "sampleId": "sample-9ff0b7a4-60ba-404e-af61-c3df13450add",
+      "requiredClaimCoverage": 1,
+      "conditionFidelity": 2,
+      "evidenceGrounding": 1,
+      "answerabilityDiscipline": 2,
+      "hardFailure": false,
+      "rationale": "覆盖了requiredClaims中的0和1，但缺少第2条（度量通过开球诱导拓扑）。条件 fidelity 良好，无forbiddenClaims。证据引用位置正确，但缺少对诱导拓扑的引用。answerability正确回答。"
+    },
+    {
+      "sampleId": "sample-00a69c0f-5ee2-4d6d-86b4-48258c603802",
+      "requiredClaimCoverage": 2,
+      "conditionFidelity": 2,
+      "evidenceGrounding": 2,
+      "answerabilityDiscipline": 2,
+      "hardFailure": false,
+      "rationale": "完整覆盖所有requiredClaims，包括度量空间有距离函数、拓扑空间以开集描述邻近、度量通过开球诱导拓扑。无forbiddenClaims。证据引用充分且正确。answerability正确。"
+    },
+    {
+      "sampleId": "sample-06ed60be-9af6-48fe-8202-5c79446ed1e3",
+      "requiredClaimCoverage": 2,
+      "conditionFidelity": 2,
+      "evidenceGrounding": 2,
+      "answerabilityDiscipline": 2,
+      "hardFailure": false,
+      "rationale": "与sample-00a69c0f相同，完整覆盖所有requiredClaims，无forbiddenClaims，证据引用充分，answerability正确。"
+    }
+  ]
+}

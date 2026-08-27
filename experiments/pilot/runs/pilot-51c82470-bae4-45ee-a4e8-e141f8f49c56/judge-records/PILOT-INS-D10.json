@@ -1,0 +1,48 @@
+{
+  "questionId": "PILOT-INS-D10",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "request": {
+    "systemPrompt": "你是知识系统的盲测评分员。你只按提供的 Gold 和评分合同评价匿名答案，不判断答案来自哪个实验组。\n必须逐项核对 requiredClaims、mustMentionConditions、forbiddenClaims、answerability 和证据引用。\nsourceRisk.present=true 时，Gold 风险说明是允许使用的人工审计结论；不得把源材料的过强表述当成正确答案。\n只输出严格 JSON：{\"scores\":[{\"sampleId\":\"...\",\"requiredClaimCoverage\":0,\"conditionFidelity\":0,\"evidenceGrounding\":0,\"answerabilityDiscipline\":0,\"hardFailure\":false,\"rationale\":\"...\"}]}。",
+    "userPrompt": "# 评分合同\n{\n  \"dimensions\": {\n    \"requiredClaimCoverage\": {\n      \"score0\": \"没有覆盖 requiredClaims，或核心结论相反\",\n      \"score1\": \"覆盖部分 requiredClaims，但缺少一项以上关键连接\",\n      \"score2\": \"完整覆盖全部 requiredClaims\"\n    },\n    \"conditionFidelity\": {\n      \"score0\": \"触发 forbiddenClaims，或删除了决定结论的条件\",\n      \"score1\": \"方向基本正确，但条件、例外或必要/充分强度表达不完整\",\n      \"score2\": \"保留全部 mustMentionConditions，且未触发 forbiddenClaims\"\n    },\n    \"evidenceGrounding\": {\n      \"score0\": \"关键结论没有可解析引用，或引用与结论无关\",\n      \"score1\": \"有相关引用，但关键结论存在未落到证据的部分\",\n      \"score2\": \"关键结论均由当前上下文标识支持，引用位置正确\"\n    },\n    \"answerabilityDiscipline\": {\n      \"score0\": \"证据不足时仍编造答案，或证据充分时错误拒答\",\n      \"score1\": \"表达了不确定性，但回答/拒答边界不够准确\",\n      \"score2\": \"严格遵守该题 answerability，充分回答或明确拒答\"\n    }\n  },\n  \"totalScore\": 8,\n  \"hardFailure\": \"任何 forbiddenClaim、伪造引用、把 insufficient 题当作已由语料证明，均记 hardFailure；该样本总分最高为 2。\"\n}\n\n# 题目与 Gold\n{\n  \"question\": \"Lebesgue 积分与 Riemann 积分的切分视角有何不同？\",\n  \"answerability\": \"insufficient\",\n  \"requiredClaims\": [],\n  \"mustMentionConditions\": [\n    \"当前五篇冻结语料不包含第 10 章，不能从现有证据充分回答\"\n  ],\n  \"forbiddenClaims\": [\n    \"伪造来自当前五篇语料的 Lebesgue/Riemann 对比证据\"\n  ],\n  \"sourceRisk\": {\n    \"present\": false,\n    \"detail\": \"当前冻结语料不包含 10-measure-integration；正确行为是拒绝从现有上下文伪造 Lebesgue/Riemann 对比。\"\n  },\n  \"evidence\": []\n}\n\n# 匿名答案\n[\n  {\n    \"sampleId\": \"sample-bc16a0de-cfb9-49d1-b85b-af93a21184d4\",\n    \"questionId\": \"PILOT-INS-D10\",\n    \"answer\": \"{\\\"answer\\\":\\\"insufficient\\\",\\\"citations\\\":[],\\\"insufficient\\\":true,\\\"uncertainties\\\":[\\\"检索上下文未提供任何关于 Lebesgue 积分与 Riemann 积分切分视角差异的信息。\\\"]}\"\n  },\n  {\n    \"sampleId\": \"sample-d71cb368-8fec-481c-bbe1-5c2e82c85bb3\",\n    \"questionId\": \"PILOT-INS-D10\",\n    \"answer\": \"{\\n  \\\"answer\\\": \\\"Lebesgue 积分与 Riemann 积分的切分视角不同：Riemann 积分从定义域（x 轴）切分，将区间分成小区间，在每个小区间上取函数值近似；Lebesgue 积分从值域（y 轴）切分，将函数值分成不同水平集，然后测量每个水平集对应的定义域测度。这种视角差异使得 Lebesgue 积分能处理更不规则的函数，并具有更好的极限性质。\\\",\\n  \\\"citations\\\": [\\n    \\\"SOURCE mathtest-material/01-number-systems.md:239-266\\\",\\n    \\\"SOURCE mathtest-material/02-spaces.md:209-227\\\",\\n    \\\"SOURCE mathtest-material/05-functions-mappings.md:174-187\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\"\n  },\n  {\n    \"sampleId\": \"sample-ac9d1d6b-581f-4751-aba0-8131470cc89b\",\n    \"questionId\": \"PILOT-INS-D10\",\n    \"answer\": \"{\\\"answer\\\":\\\"insufficient\\\",\\\"citations\\\":[],\\\"insufficient\\\":true,\\\"uncertainties\\\":[\\\"检索上下文未提供任何关于 Lebesgue 积分与 Riemann 积分切分视角差异的信息。\\\"]}\"\n  }\n]"
+  },
+  "usage": {
+    "promptTokens": 1109,
+    "completionTokens": 358,
+    "totalTokens": 1467,
+    "promptCacheHitTokens": 384,
+    "promptCacheMissTokens": 725,
+    "reasoningTokens": 0
+  },
+  "finishReason": "stop",
+  "rawResponse": "{\n  \"scores\": [\n    {\n      \"sampleId\": \"sample-bc16a0de-cfb9-49d1-b85b-af93a21184d4\",\n      \"requiredClaimCoverage\": 2,\n      \"conditionFidelity\": 2,\n      \"evidenceGrounding\": 2,\n      \"answerabilityDiscipline\": 2,\n      \"hardFailure\": false,\n      \"rationale\": \"正确拒答，满足mustMentionConditions，无forbiddenClaims，证据引用为空（合理），严格遵守insufficient要求。\"\n    },\n    {\n      \"sampleId\": \"sample-d71cb368-8fec-481c-bbe1-5c2e82c85bb3\",\n      \"requiredClaimCoverage\": 2,\n      \"conditionFidelity\": 0,\n      \"evidenceGrounding\": 0,\n      \"answerabilityDiscipline\": 0,\n      \"hardFailure\": true,\n      \"rationale\": \"伪造了Lebesgue/Riemann对比证据（引用不相关），触发forbiddenClaims，且answerability为insufficient却给出详细回答，hardFailure。\"\n    },\n    {\n      \"sampleId\": \"sample-ac9d1d6b-581f-4751-aba0-8131470cc89b\",\n      \"requiredClaimCoverage\": 2,\n      \"conditionFidelity\": 2,\n      \"evidenceGrounding\": 2,\n      \"answerabilityDiscipline\": 2,\n      \"hardFailure\": false,\n      \"rationale\": \"正确拒答，满足mustMentionConditions，无forbiddenClaims，证据引用为空（合理），严格遵守insufficient要求。\"\n    }\n  ]\n}",
+  "parsed": [
+    {
+      "sampleId": "sample-bc16a0de-cfb9-49d1-b85b-af93a21184d4",
+      "requiredClaimCoverage": 2,
+      "conditionFidelity": 2,
+      "evidenceGrounding": 2,
+      "answerabilityDiscipline": 2,
+      "hardFailure": false,
+      "rationale": "正确拒答，满足mustMentionConditions，无forbiddenClaims，证据引用为空（合理），严格遵守insufficient要求。"
+    },
+    {
+      "sampleId": "sample-d71cb368-8fec-481c-bbe1-5c2e82c85bb3",
+      "requiredClaimCoverage": 2,
+      "conditionFidelity": 0,
+      "evidenceGrounding": 0,
+      "answerabilityDiscipline": 0,
+      "hardFailure": true,
+      "rationale": "伪造了Lebesgue/Riemann对比证据（引用不相关），触发forbiddenClaims，且answerability为insufficient却给出详细回答，hardFailure。"
+    },
+    {
+      "sampleId": "sample-ac9d1d6b-581f-4751-aba0-8131470cc89b",
+      "requiredClaimCoverage": 2,
+      "conditionFidelity": 2,
+      "evidenceGrounding": 2,
+      "answerabilityDiscipline": 2,
+      "hardFailure": false,
+      "rationale": "正确拒答，满足mustMentionConditions，无forbiddenClaims，证据引用为空（合理），严格遵守insufficient要求。"
+    }
+  ]
+}

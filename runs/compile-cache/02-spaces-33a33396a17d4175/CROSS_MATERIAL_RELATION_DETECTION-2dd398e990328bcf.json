@@ -1,0 +1,6 @@
+{
+  "kind": "VALID",
+  "content": "{\n  \"relations\": [\n    {\n      \"fromClaimIndex\": 57,\n      \"toClaimIndex\": 89,\n      \"type\": \"EQUIVALENT_UNDER\",\n      \"conditions\": [\"在完备度量空间的定义下\"],\n      \"confidence\": 0.9\n    },\n    {\n      \"fromClaimIndex\": 90,\n      \"toClaimIndex\": 99,\n      \"type\": \"EQUIVALENT_UNDER\",\n      \"conditions\": [\"实数集 R 的完备性概念相同\"],\n      \"confidence\": 0.9\n    },\n    {\n      \"fromClaimIndex\": 91,\n      \"toClaimIndex\": 97,\n      \"type\": \"EQUIVALENT_UNDER\",\n      \"conditions\": [\"有理数集 Q 的不完备性概念相同\"],\n      \"confidence\": 0.9\n    },\n    {\n      \"fromClaimIndex\": 100,\n      \"toClaimIndex\": 96,\n      \"type\": \"EQUIVALENT_UNDER\",\n      \"conditions\": [\"实数集 R 的 Cauchy 收敛性质相同\"],\n      \"confidence\": 0.9\n    }\n  ]\n}",
+  "model": "deepseek-v4-flash",
+  "outputHash": "43bcbe57286c9c7d"
+}

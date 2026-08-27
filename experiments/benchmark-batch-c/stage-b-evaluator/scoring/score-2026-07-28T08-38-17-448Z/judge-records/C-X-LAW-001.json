@@ -1,0 +1,51 @@
+{
+  "questionId": "C-X-LAW-001",
+  "promptHash": "243e9b2bf677591a3fee6e68568379483fe09ee74ae7746c9ed6ba88470ef1b6",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 2386,
+    "completionTokens": 3978,
+    "totalTokens": 6364,
+    "promptCacheHitTokens": 256,
+    "promptCacheMissTokens": 2130,
+    "reasoningTokens": 3592
+  },
+  "raw": "[\n  {\n    \"sampleId\": \"sample-e543a10c-6b95-4e5e-90d6-5ae92a777ad9\",\n    \"requiredPointCoverage\": 4,\n    \"conditionFidelity\": 4,\n    \"evidenceGrounding\": 4,\n    \"answerabilityDiscipline\": 4,\n    \"sourceRoleTemporalDiscipline\": 4,\n    \"hardFailure\": false,\n    \"hardFailureTypes\": [],\n    \"rationale\": \"准确覆盖三点；条件引用正确；引用充分；回答恰当；区分事实与分析。\"\n  },\n  {\n    \"sampleId\": \"sample-8425b48e-8372-43cf-a6e0-908d592ceb16\",\n    \"requiredPointCoverage\": 4,\n    \"conditionFidelity\": 4,\n    \"evidenceGrounding\": 2,\n    \"answerabilityDiscipline\": 4,\n    \"sourceRoleTemporalDiscipline\": 4,\n    \"hardFailure\": false,\n    \"hardFailureTypes\": [],\n    \"rationale\": \"要点覆盖好，但部分引用无效，证据支撑不足。\"\n  },\n  {\n    \"sampleId\": \"sample-2e5e4ece-c2b9-42a2-b9aa-54d3c391b7f3\",\n    \"requiredPointCoverage\": 1,\n    \"conditionFidelity\": 0,\n    \"evidenceGrounding\": 1,\n    \"answerabilityDiscipline\": 2,\n    \"sourceRoleTemporalDiscipline\": 3,\n    \"hardFailure\": false,\n    \"hardFailureTypes\": [],\n    \"rationale\": \"p1理由错误(用户同意必需)；条件失真；引用不支撑；回答整体有误；角色区分可接受。\"\n  }\n]",
+  "rows": [
+    {
+      "sampleId": "sample-e543a10c-6b95-4e5e-90d6-5ae92a777ad9",
+      "requiredPointCoverage": 4,
+      "conditionFidelity": 4,
+      "evidenceGrounding": 4,
+      "answerabilityDiscipline": 4,
+      "sourceRoleTemporalDiscipline": 4,
+      "hardFailure": false,
+      "hardFailureTypes": [],
+      "rationale": "准确覆盖三点；条件引用正确；引用充分；回答恰当；区分事实与分析。"
+    },
+    {
+      "sampleId": "sample-8425b48e-8372-43cf-a6e0-908d592ceb16",
+      "requiredPointCoverage": 4,
+      "conditionFidelity": 4,
+      "evidenceGrounding": 2,
+      "answerabilityDiscipline": 4,
+      "sourceRoleTemporalDiscipline": 4,
+      "hardFailure": false,
+      "hardFailureTypes": [],
+      "rationale": "要点覆盖好，但部分引用无效，证据支撑不足。"
+    },
+    {
+      "sampleId": "sample-2e5e4ece-c2b9-42a2-b9aa-54d3c391b7f3",
+      "requiredPointCoverage": 1,
+      "conditionFidelity": 0,
+      "evidenceGrounding": 1,
+      "answerabilityDiscipline": 2,
+      "sourceRoleTemporalDiscipline": 3,
+      "hardFailure": false,
+      "hardFailureTypes": [],
+      "rationale": "p1理由错误(用户同意必需)；条件失真；引用不支撑；回答整体有误；角色区分可接受。"
+    }
+  ]
+}

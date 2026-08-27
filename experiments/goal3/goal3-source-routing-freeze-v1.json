@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "wge-goal3-source-routing-freeze/v1",
+  "status": "FROZEN_BEFORE_FIRST_REPORT",
+  "frozenAt": "2026-08-04T18:46:00+08:00",
+  "contract": {
+    "path": "experiments/goal3/goal3-source-routing-contract-v1.json",
+    "sha256": "ccb17561cb619a0f6da432869e053dab2328e8089fdd722be3ab7214edd3d663"
+  },
+  "implementation": {
+    "persistentIndex": {
+      "path": "src/retrieval/persistent-index.ts",
+      "sha256": "97e311dfbe3d918e224381783a32f8eb3bd56c7c5dd61f19644d8db48508819a"
+    },
+    "sourceRouting": {
+      "path": "src/retrieval/source-routing.ts",
+      "sha256": "15caaf0586ded8850e64f0e32031ca3e5735c8443010e9a7e7b7af374ebf7b19"
+    },
+    "sourceRoutingTests": {
+      "path": "src/retrieval/source-routing.test.ts",
+      "sha256": "11a4a4674975bf398476d20fb593c2224b33a503adbde8cbe7c2bc6ab714fc9e"
+    },
+    "sourceRoutingRunner": {
+      "path": "scripts/run-goal3-source-routing.ts",
+      "sha256": "92de940cea2f37fa702cbed6fde6d163376bdf46326370b7f7094776a7e03e6c"
+    }
+  },
+  "verification": {
+    "lint": "PASS",
+    "typecheck": "PASS",
+    "testFiles": 24,
+    "testsPassed": 175,
+    "testsFailed": 0,
+    "retrievalTestFiles": 4,
+    "retrievalTestsPassed": 56
+  },
+  "prohibitions": [
+    "Do not modify the contract, frozen questions, diagnostic Gold, routingPoolBudget, sourceBudget or candidateBudget before the first report.",
+    "Do not call an answer model or serialize routed candidates into Context Pack.",
+    "Do not use Relation, domain rules, question IDs or Gold in routing.",
+    "Do not overwrite the first run directory."
+  ]
+}

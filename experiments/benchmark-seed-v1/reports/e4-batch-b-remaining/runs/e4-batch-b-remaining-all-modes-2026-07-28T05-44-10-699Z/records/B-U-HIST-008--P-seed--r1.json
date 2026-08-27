@@ -1,0 +1,76 @@
+{
+  "runId": "e4-batch-b-remaining-all-modes-2026-07-28T05-44-10-699Z",
+  "sampleId": "sample-5f9e877d-6b2a-4c69-a951-49580cfd0f77",
+  "questionId": "B-U-HIST-008",
+  "group": "P-seed",
+  "pilotGroup": "P",
+  "graphExpansion": false,
+  "repetition": 1,
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "temperature": 0,
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 287,
+    "completionTokens": 83,
+    "totalTokens": 370,
+    "promptCacheHitTokens": 128,
+    "promptCacheMissTokens": 159,
+    "reasoningTokens": 0
+  },
+  "latencyMs": 1589,
+  "promptHash": "sha256:588fd8506db400071eadcc4ee9726aba64a5692c059f1e492f00180c80d67f30",
+  "contextHash": "aed1254b90e00e364fc45736ee079b4e17c4962ed0119a3130cae580ac4a4f1b",
+  "estimatedContextTokens": 165,
+  "estimatedInputTokens": 335,
+  "retrievedClaims": [],
+  "retrievedRelations": [],
+  "retrievedSources": [],
+  "droppedContext": [],
+  "retrievalTrace": {
+    "strategy": "claim-seed-only",
+    "graphDepth": 0,
+    "temporalScope": {
+      "applied": false,
+      "startMonth": null,
+      "endMonth": null,
+      "excludedClaimIds": []
+    },
+    "retrieval": {
+      "queryFeatureCount": 30,
+      "eligibleClaimCount": 67,
+      "matchedClaimCount": 0,
+      "usedEvidenceText": true,
+      "usedSourceMetadata": true,
+      "resolvedEvidenceRefCount": 67,
+      "unresolvedEvidenceRefCount": 0,
+      "candidates": []
+    },
+    "graph": {
+      "seedClaimIds": [],
+      "expandedClaimIds": [],
+      "expandedRelationIds": []
+    },
+    "budget": {
+      "selectedClaimIds": [],
+      "selectedRelationIds": [],
+      "selectedEvidenceSpanIds": [],
+      "selectedWikiModuleIds": [],
+      "dropped": [],
+      "finalEstimatedTokens": 237
+    },
+    "serializationBudget": {
+      "selectedIds": [
+        "task-map",
+        "known-gaps"
+      ],
+      "droppedIds": []
+    }
+  },
+  "request": {
+    "systemPrompt": "你是受证据约束的问答 Agent。只使用本次请求提供的检索上下文回答。\n要求：保留影响结论的条件、时间、例外、来源角色与不确定性；关键结论引用上下文中的 SOURCE、EVIDENCE 或 CLAIM 标识；上下文不足时明确说明，不得用外部常识补齐。\n只输出严格 JSON：{\"answer\":\"...\",\"citations\":[\"...\"],\"insufficient\":false,\"uncertainties\":[\"...\"]}。",
+    "userPrompt": "# 问题\n为博物馆观众写一段‘AI 已读完所有纸卷’的展签。\n\n# 检索上下文\n## TASK MAP\n主题: 为博物馆观众写一段‘AI 已读完所有纸卷’的展签。\n地图主题: the, of, and, to, in\n关键概念: User Agent, Mobile Requirements, Input Modality, Desktop Content, Single Pointer\n已知争议: 0 个\n最近变化: 5 条\n找到 0 条相关 Claim\n找到 0 条关系\n找到 0 条原文证据\n\n## KNOWN GAPS\nSeed Retriever 未找到可靠匹配——知识库可能未覆盖此主题，或相关原文尚未编译为 Canonical Claim\n未找到关系——Graph 可能尚未建立跨材料边"
+  },
+  "answer": "{\"answer\":\"抱歉，根据现有检索上下文，我无法找到关于‘AI 已读完所有纸卷’的任何信息。上下文未包含相关展签内容、AI 与纸卷的关系或任何可引用的证据。\",\"citations\":[],\"insufficient\":true,\"uncertainties\":[\"检索上下文未提供任何与‘AI 已读完所有纸卷’相关的信息。\"]}",
+  "answerFormatValid": true
+}

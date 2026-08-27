@@ -1,0 +1,94 @@
+## TASK MAP
+主题: GitHub issue #2705 的移除建议是否代表 W3C 最终决定？
+地图主题: 移除, github
+关键概念: aerosol transmission, airborne transmission, through the air transmission, airborne transmission, machine learning
+已知争议: 0 个
+最近变化: 5 条
+找到 10 条相关 Claim
+找到 0 条关系
+找到 9 条原文证据
+
+## CLAIM claim:d40218e811ec1166-3121f577072c04bb
+Success Criterion 2.5.7 Dragging Movements (Level AA) requires that all functionality using a dragging movement can be achieved by a single pointer without dragging, unless dragging is essential or the functionality is determined by the user agent and not modified by the author.
+Conditions: unless dragging is essential or the functionality is determined by the user agent and not modified by the author
+Validity: SUPPORTED
+
+## CLAIM claim:d40218e811ec1166-09499dce953a0a91
+More considerations are needed for various platforms.
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:d40218e811ec1166-21341d7bbebecc13
+The group requests that this Success Criterion be removed until research is completed for all affected input modalities.
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:d40218e811ec1166-f30bb9542bb62fad
+There should not be an imposition of all mobile requirements on all desktop content.
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:5505a1ba1fcb1b68-35e4f1b989767484
+并非所有维苏威挑战赛的数据目前都可用——数据将继续添加到库中。
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:5505a1ba1fcb1b68-5b081e72929d1868
+该库来自维苏威挑战赛，是一个用于访问古代卷轴 CT 扫描的 Python 库。
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:5505a1ba1fcb1b68-825b50a16ede0106
+该库现在维护在 https://github.com/ScrollPrize/villa/tree/main/vesuvius。
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:5505a1ba1fcb1b68-92eeebabc9812a65
+数据在后台流式传输，仅提供请求的区域。
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:5505a1ba1fcb1b68-9acfc0780eb2b345
+vesuvius 处于测试阶段，界面可能会发生变化。
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:5505a1ba1fcb1b68-a2289f49fcb0ff64
+该仓库于 2024 年 11 月 21 日被所有者归档。
+Conditions: none
+Validity: SUPPORTED
+
+## EVIDENCE span:design-wcag-issue-2705-003-d40218e811ec1166-1#chars-47-331
+Success Criterion 2.5.7 Dragging Movements (Level AA): All functionality that uses a dragging movement for operation can be achieved by a single pointer without dragging, unless dragging is essential or the functionality is determined by the user agent and not modified by the author.
+
+## EVIDENCE span:design-wcag-issue-2705-003-d40218e811ec1166-3#chars-445-602
+We believe more considerations are needed for various platforms, and that there shouldn’t be an imposition of all mobile requirements on all desktop content.
+
+## EVIDENCE span:design-wcag-issue-2705-003-d40218e811ec1166-2#chars-333-443
+We kindly request that the group remove this SC until research is completed for all affected input modalities.
+
+## EVIDENCE span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-5#chars-571-674
+Not all Vesuvius Challenge data is currently available - data will continue to be added to the library.
+
+## EVIDENCE span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-3#chars-237-321
+From Vesuvius Challenge, a Python library for accessing CT scans of ancient scrolls.
+
+## EVIDENCE span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-2#chars-135-235
+Now maintained at https://github.com/ScrollPrize/villa/tree/main/vesuvius (this repository archived)
+
+## EVIDENCE span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-4#chars-446-517
+Data is streamed in the background, only serving the requested regions.
+
+## EVIDENCE span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-5#chars-519-570
+`vesuvius` is in beta and the interface may change.
+
+## EVIDENCE span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-1#chars-48-106
+This repository was archived by the owner on Nov 21, 2024.
+
+## CONFLICTS AND CONDITIONS
+📌 Claim claim:d40218e811ec1166-3121f577072c04bb 适用条件: unless dragging is essential or the functionality is determined by the user agent and not modified by the author
+🔎 Source source:design-wcag-issue-2705-003-d40218e811ec1166 provenance: uri=workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-wcag-issue-2705-003.md; sourceType=md; role=unknown
+🔎 Source source:history-vesuvius-github-2024-002-5505a1ba1fcb1b68 provenance: uri=workbuddy-batch-b/generated/compilation-corpus/history-humanities/history-vesuvius-github-2024-002.md; sourceType=md; role=unknown
+
+## KNOWN GAPS
+未找到关系——Graph 可能尚未建立跨材料边

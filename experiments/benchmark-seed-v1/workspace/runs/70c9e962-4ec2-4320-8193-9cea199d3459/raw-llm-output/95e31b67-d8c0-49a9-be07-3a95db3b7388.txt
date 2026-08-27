@@ -1,0 +1,18 @@
+{
+  "relations": [
+    {
+      "fromClaimIndex": 0,
+      "toClaimIndex": 3,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 1,
+      "toClaimIndex": 2,
+      "type": "RELATED_TO",
+      "conditions": [],
+      "confidence": 0.6
+    }
+  ]
+}

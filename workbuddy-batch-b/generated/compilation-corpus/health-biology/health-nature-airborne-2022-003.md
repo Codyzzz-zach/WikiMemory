@@ -1,0 +1,5 @@
+# Why the WHO took two years to say COVID is airborne
+
+On 23 December, the World Health Organization (WHO) uttered the one word it had previously seemed incapable of applying to the virus SARS-CoV-2: ‘airborne’.
+
+It took until 20 October 2020 for the agency to acknowledge that aerosols — tiny specks of fluid — can transmit the virus, but the WHO said this was a concern only in specific settings, such as indoor, crowded and inadequately ventilated spaces. Over the next six months, the agency gradually altered its advice to say that aerosols could carry the virus for more than a metre and remain in the air.

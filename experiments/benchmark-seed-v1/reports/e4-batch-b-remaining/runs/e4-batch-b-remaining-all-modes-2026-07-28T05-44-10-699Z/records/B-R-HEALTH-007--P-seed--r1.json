@@ -1,0 +1,175 @@
+{
+  "runId": "e4-batch-b-remaining-all-modes-2026-07-28T05-44-10-699Z",
+  "sampleId": "sample-bc6e5358-5fca-44e0-86c9-25c8b7287c17",
+  "questionId": "B-R-HEALTH-007",
+  "group": "P-seed",
+  "pilotGroup": "P",
+  "graphExpansion": false,
+  "repetition": 1,
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "temperature": 0,
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 845,
+    "completionTokens": 133,
+    "totalTokens": 978,
+    "promptCacheHitTokens": 0,
+    "promptCacheMissTokens": 845,
+    "reasoningTokens": 0
+  },
+  "latencyMs": 1641,
+  "promptHash": "sha256:fd1fcdcec6de6a420e7780c2a9afdf4d6cf330a5b8853cecb0e1644182303bb5",
+  "contextHash": "ae6c311b515ddd8f7381ba973a4ba1b5eb184004fc0573f11fce946197b805de",
+  "estimatedContextTokens": 661,
+  "estimatedInputTokens": 829,
+  "retrievedClaims": [
+    "claim:50fd4599b9553875-c49634bbf6841943",
+    "claim:50fd4599b9553875-2de9e0481e7c8e64",
+    "claim:5505a1ba1fcb1b68-a4e0bf4dcf441832",
+    "claim:50fd4599b9553875-e77df938b6f36c19",
+    "claim:50fd4599b9553875-9bb1be629366d05d"
+  ],
+  "retrievedRelations": [],
+  "retrievedSources": [
+    "source:health-who-terminology-2024-004-50fd4599b9553875",
+    "source:history-vesuvius-github-2024-002-5505a1ba1fcb1b68"
+  ],
+  "droppedContext": [],
+  "retrievalTrace": {
+    "strategy": "claim-seed-only",
+    "graphDepth": 0,
+    "temporalScope": {
+      "applied": false,
+      "startMonth": null,
+      "endMonth": null,
+      "excludedClaimIds": []
+    },
+    "retrieval": {
+      "queryFeatureCount": 30,
+      "eligibleClaimCount": 67,
+      "matchedClaimCount": 5,
+      "usedEvidenceText": true,
+      "usedSourceMetadata": true,
+      "resolvedEvidenceRefCount": 67,
+      "unresolvedEvidenceRefCount": 0,
+      "candidates": [
+        {
+          "claimId": "claim:50fd4599b9553875-c49634bbf6841943",
+          "rank": 1,
+          "score": 27.33671606812655,
+          "channels": [
+            "g3",
+            "source",
+            "w"
+          ],
+          "matchedFeatureCount": 16
+        },
+        {
+          "claimId": "claim:50fd4599b9553875-2de9e0481e7c8e64",
+          "rank": 2,
+          "score": 10.979664484457489,
+          "channels": [
+            "g3",
+            "source",
+            "w"
+          ],
+          "matchedFeatureCount": 10
+        },
+        {
+          "claimId": "claim:5505a1ba1fcb1b68-a4e0bf4dcf441832",
+          "rank": 3,
+          "score": 10.873007372552113,
+          "channels": [
+            "g3",
+            "source",
+            "w"
+          ],
+          "matchedFeatureCount": 10
+        },
+        {
+          "claimId": "claim:50fd4599b9553875-e77df938b6f36c19",
+          "rank": 4,
+          "score": 10.70898052943035,
+          "channels": [
+            "g3",
+            "source",
+            "w"
+          ],
+          "matchedFeatureCount": 10
+        },
+        {
+          "claimId": "claim:50fd4599b9553875-9bb1be629366d05d",
+          "rank": 5,
+          "score": 9.716298821777592,
+          "channels": [
+            "g3",
+            "source",
+            "w"
+          ],
+          "matchedFeatureCount": 9
+        }
+      ]
+    },
+    "graph": {
+      "seedClaimIds": [
+        "claim:50fd4599b9553875-c49634bbf6841943",
+        "claim:50fd4599b9553875-2de9e0481e7c8e64",
+        "claim:5505a1ba1fcb1b68-a4e0bf4dcf441832",
+        "claim:50fd4599b9553875-e77df938b6f36c19",
+        "claim:50fd4599b9553875-9bb1be629366d05d"
+      ],
+      "expandedClaimIds": [
+        "claim:50fd4599b9553875-c49634bbf6841943",
+        "claim:50fd4599b9553875-2de9e0481e7c8e64",
+        "claim:5505a1ba1fcb1b68-a4e0bf4dcf441832",
+        "claim:50fd4599b9553875-e77df938b6f36c19",
+        "claim:50fd4599b9553875-9bb1be629366d05d"
+      ],
+      "expandedRelationIds": []
+    },
+    "budget": {
+      "selectedClaimIds": [
+        "claim:50fd4599b9553875-c49634bbf6841943",
+        "claim:50fd4599b9553875-2de9e0481e7c8e64",
+        "claim:5505a1ba1fcb1b68-a4e0bf4dcf441832",
+        "claim:50fd4599b9553875-e77df938b6f36c19",
+        "claim:50fd4599b9553875-9bb1be629366d05d"
+      ],
+      "selectedRelationIds": [],
+      "selectedEvidenceSpanIds": [
+        "span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-712-896",
+        "span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-621-707",
+        "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-4#chars-323-445",
+        "span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-516-616",
+        "span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-402-515"
+      ],
+      "selectedWikiModuleIds": [],
+      "dropped": [],
+      "finalEstimatedTokens": 1869
+    },
+    "serializationBudget": {
+      "selectedIds": [
+        "task-map",
+        "claim:50fd4599b9553875-c49634bbf6841943",
+        "claim:50fd4599b9553875-2de9e0481e7c8e64",
+        "claim:5505a1ba1fcb1b68-a4e0bf4dcf441832",
+        "claim:50fd4599b9553875-e77df938b6f36c19",
+        "claim:50fd4599b9553875-9bb1be629366d05d",
+        "span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-712-896",
+        "span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-621-707",
+        "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-4#chars-323-445",
+        "span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-516-616",
+        "span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-402-515",
+        "known-gaps"
+      ],
+      "droppedIds": []
+    }
+  },
+  "request": {
+    "systemPrompt": "你是受证据约束的问答 Agent。只使用本次请求提供的检索上下文回答。\n要求：保留影响结论的条件、时间、例外、来源角色与不确定性；关键结论引用上下文中的 SOURCE、EVIDENCE 或 CLAIM 标识；上下文不足时明确说明，不得用外部常识补齐。\n只输出严格 JSON：{\"answer\":\"...\",\"citations\":[\"...\"],\"insufficient\":false,\"uncertainties\":[\"...\"]}。",
+    "userPrompt": "# 问题\n找出支持‘direct deposition 与 inhalation 并列’的来源。\n\n# 检索上下文\n## TASK MAP\n主题: 找出支持‘direct deposition 与 inhalation 并列’的来源。\n地图主题: the, of, and, to, in\n关键概念: User Agent, Mobile Requirements, Input Modality, Desktop Content, Single Pointer\n已知争议: 0 个\n最近变化: 5 条\n找到 5 条相关 Claim\n找到 0 条关系\n找到 5 条原文证据\n\n## CLAIM claim:50fd4599b9553875-c49634bbf6841943\nDirect deposition is used for cases when IRPs are expelled into the air from an infectious person, and are then directly deposited on the exposed mouth, nose or eyes of another person nearby.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:50fd4599b9553875-2de9e0481e7c8e64\nThe distance of airborne transmission or inhalation depends on various factors (airflow, humidity, temperature, ventilation etc).\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:5505a1ba1fcb1b68-a4e0bf4dcf441832\nvesuvius 允许直接访问卷轴数据，无需管理下载脚本或在本地存储数 TB 的 CT 扫描数据。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:50fd4599b9553875-e77df938b6f36c19\nAirborne transmission or inhalation can occur at a short or long distance from the infectious person.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:50fd4599b9553875-9bb1be629366d05d\nAirborne transmission or inhalation is used for cases when IRPs are expelled into the air and inhaled by another person.\nConditions: none\nValidity: SUPPORTED\n\n## EVIDENCE span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-712-896\nDirect deposition, for cases when IRPs are expelled into the air from an infectious person, and are then directly deposited on the exposed mouth, nose or eyes of another person nearby.\n\n## EVIDENCE span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-621-707\ndistance depends on various factors (airflow, humidity, temperature, ventilation etc).\n\n## EVIDENCE span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-4#chars-323-445\n`vesuvius` allows direct access to scroll data without managing download scripts or storing terabytes of CT scans locally.\n\n## EVIDENCE span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-516-616\nAirborne transmission or inhalation can occur at a short or long distance from the infectious person\n\n## EVIDENCE span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-402-515\nAirborne transmission or inhalation, for cases when IRPs are expelled into the air and inhaled by another person.\n\n## KNOWN GAPS\n未找到关系——Graph 可能尚未建立跨材料边"
+  },
+  "answer": "{\n  \"answer\": \"支持‘direct deposition 与 inhalation 并列’的来源是 WHO 术语文档中的证据，其中将 direct deposition 和 airborne transmission or inhalation 作为并列的传播途径进行描述。\",\n  \"citations\": [\n    \"span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-712-896\",\n    \"span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-402-515\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}",
+  "answerFormatValid": true
+}

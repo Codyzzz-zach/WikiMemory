@@ -1,0 +1,340 @@
+{
+  "schemaVersion": "wge-pilot-gold/v1",
+  "questionSetId": "five-doc-pilot-16",
+  "status": "FROZEN",
+  "frozenAt": "2026-07-24",
+  "frozenBy": "product-owner-delegated-codex-audit",
+  "scoringContract": {
+    "dimensions": {
+      "requiredClaimCoverage": {
+        "score0": "没有覆盖 requiredClaims，或核心结论相反",
+        "score1": "覆盖部分 requiredClaims，但缺少一项以上关键连接",
+        "score2": "完整覆盖全部 requiredClaims"
+      },
+      "conditionFidelity": {
+        "score0": "触发 forbiddenClaims，或删除了决定结论的条件",
+        "score1": "方向基本正确，但条件、例外或必要/充分强度表达不完整",
+        "score2": "保留全部 mustMentionConditions，且未触发 forbiddenClaims"
+      },
+      "evidenceGrounding": {
+        "score0": "关键结论没有可解析引用，或引用与结论无关",
+        "score1": "有相关引用，但关键结论存在未落到证据的部分",
+        "score2": "关键结论均由当前上下文标识支持，引用位置正确"
+      },
+      "answerabilityDiscipline": {
+        "score0": "证据不足时仍编造答案，或证据充分时错误拒答",
+        "score1": "表达了不确定性，但回答/拒答边界不够准确",
+        "score2": "严格遵守该题 answerability，充分回答或明确拒答"
+      }
+    },
+    "totalScore": 8,
+    "hardFailure": "任何 forbiddenClaim、伪造引用、把 insufficient 题当作已由语料证明，均记 hardFailure；该样本总分最高为 2。"
+  },
+  "questionGold": [
+    {
+      "id": "PILOT-D01",
+      "sourceRisk": { "present": false, "detail": "" },
+      "evidence": [
+        {
+          "sourceFile": "mathtest-material/01-number-systems.md",
+          "heading": "1.1 自然数 $\\mathbb{N}$",
+          "exactQuote": "**关键洞察**：自然数的本质不是\"0,1,2,3...\"这些符号，而是**递归结构**——从零出发，反复应用\"后继\"操作，生成无穷无尽的序列。这就是为什么数学归纳法如此根本：它直接编码了自然数的构造方式。",
+          "supportsRequiredClaims": [0, 1]
+        }
+      ]
+    },
+    {
+      "id": "PILOT-D02",
+      "sourceRisk": { "present": false, "detail": "" },
+      "evidence": [
+        {
+          "sourceFile": "mathtest-material/02-spaces.md",
+          "heading": "2.4 度量空间",
+          "exactQuote": "**定义**：度量空间是一个集合 $X$ 配上一个距离函数 $d: X \\times X \\to \\mathbb{R}_{\\geq 0}$",
+          "supportsRequiredClaims": [0]
+        },
+        {
+          "sourceFile": "mathtest-material/02-spaces.md",
+          "heading": "度量空间 → 拓扑空间",
+          "exactQuote": "任何度量空间自然诱导一个拓扑：以**开球** $B(x,r) = \\{y \\mid d(x,y) < r\\}$ 生成开集。这是 $\\S$7 拓扑学的起点——拓扑空间是度量空间的进一步推广，它丢掉了距离数值，只保留\"开集\"的概念。",
+          "supportsRequiredClaims": [1, 2]
+        }
+      ]
+    },
+    {
+      "id": "PILOT-D03",
+      "sourceRisk": { "present": false, "detail": "" },
+      "evidence": [
+        {
+          "sourceFile": "mathtest-material/03-sequences-limits.md",
+          "heading": "3.5 收敛性：不仅仅是\"有极限\"",
+          "exactQuote": "| **逐点收敛** | 对每个 $x$，$f_n(x) \\to f(x)$ | 最弱，可能丢失连续性 |\n| **一致收敛** | $\\sup_x \\|f_n(x)-f(x)\\| \\to 0$ | 保持连续性 |",
+          "supportsRequiredClaims": [0, 1]
+        },
+        {
+          "sourceFile": "mathtest-material/03-sequences-limits.md",
+          "heading": "3.5 收敛性：不仅仅是\"有极限\"",
+          "exactQuote": "UNIF[\"一致收敛\"] -->|\"⇒\"| POINT[\"逐点收敛\"]",
+          "supportsRequiredClaims": [2]
+        }
+      ]
+    },
+    {
+      "id": "PILOT-D09",
+      "sourceRisk": { "present": false, "detail": "" },
+      "evidence": [
+        {
+          "sourceFile": "mathtest-material/02-spaces.md",
+          "heading": "2.5 赋范空间与 Banach 空间",
+          "exactQuote": "> **Banach 空间 = 完备的赋范空间**",
+          "supportsRequiredClaims": [0]
+        },
+        {
+          "sourceFile": "mathtest-material/02-spaces.md",
+          "heading": "2.6 内积空间与 Hilbert 空间",
+          "exactQuote": "内积诱导范数：$\\|x\\| = \\sqrt{\\langle x, x \\rangle}$\n\n> **Hilbert 空间 = 完备的内积空间**",
+          "supportsRequiredClaims": [1, 2]
+        }
+      ]
+    },
+    {
+      "id": "PILOT-H2-01",
+      "sourceRisk": { "present": false, "detail": "" },
+      "evidence": [
+        {
+          "sourceFile": "mathtest-material/01-number-systems.md",
+          "heading": "实数的核心性质：完备性",
+          "exactQuote": "| **完备性** | ❌ | ✅ |\n| 上确界存在性 | ❌ | ✅ 有上界必有上确界 |\n| Cauchy 列必收敛 | ❌ | ✅ |",
+          "supportsRequiredClaims": [0, 1]
+        },
+        {
+          "sourceFile": "mathtest-material/02-spaces.md",
+          "heading": "完备性：Banach 空间",
+          "exactQuote": "如果空间中每个 Cauchy 列都收敛到空间内的一个点，这个空间就是**完备的**。",
+          "supportsRequiredClaims": [2]
+        }
+      ]
+    },
+    {
+      "id": "PILOT-H2-03",
+      "sourceRisk": { "present": false, "detail": "" },
+      "evidence": [
+        {
+          "sourceFile": "mathtest-material/02-spaces.md",
+          "heading": "2.5 赋范空间与 Banach 空间",
+          "exactQuote": "范数自然地导出距离：$d(x,y) = \\|x-y\\|$。所以 $(V, \\|\\cdot\\|)$ 构成赋范空间，也自动成为度量空间。",
+          "supportsRequiredClaims": [0]
+        },
+        {
+          "sourceFile": "mathtest-material/05-functions-mappings.md",
+          "heading": "有界性与连续性",
+          "exactQuote": "在线性算子中，**有界性 = 连续性**：\n\n$$\n\\|T\\| = \\sup_{\\|f\\|=1} \\|Tf\\| < \\infty \\iff T \\text{ 连续}\n$$",
+          "supportsRequiredClaims": [1, 2]
+        }
+      ]
+    },
+    {
+      "id": "PILOT-H2-06",
+      "sourceRisk": { "present": false, "detail": "" },
+      "evidence": [
+        {
+          "sourceFile": "mathtest-material/02-spaces.md",
+          "heading": "为什么 Hilbert 空间如此重要？",
+          "exactQuote": "- **正交基**：用一组相互垂直的基向量表示空间中任何元素\n- **Fourier 级数**：$\\{e^{inx}\\}_{n=-\\infty}^\\infty$ 是 $L^2[-\\pi,\\pi]$ 中的一组正交基",
+          "supportsRequiredClaims": [0, 1]
+        },
+        {
+          "sourceFile": "mathtest-material/05-functions-mappings.md",
+          "heading": "为什么 Fourier 变换如此重要？",
+          "exactQuote": "它把一个函数（信号）分解为不同频率的正弦波叠加：",
+          "supportsRequiredClaims": [1]
+        },
+        {
+          "sourceFile": "mathtest-material/09-functional-analysis.md",
+          "heading": "自伴算子的谱定理",
+          "exactQuote": "> 谱分解是 Fourier 变换的终极推广——任何自伴算子都可以\"对角化\"为乘法算子。",
+          "supportsRequiredClaims": [2]
+        }
+      ]
+    },
+    {
+      "id": "PILOT-H2-20",
+      "sourceRisk": { "present": false, "detail": "" },
+      "evidence": [
+        {
+          "sourceFile": "mathtest-material/05-functions-mappings.md",
+          "heading": "5.4 算子：以函数为输入的函数",
+          "exactQuote": "**算子** $T: V \\to W$ 是两个**函数空间**之间的映射。",
+          "supportsRequiredClaims": [0]
+        },
+        {
+          "sourceFile": "mathtest-material/09-functional-analysis.md",
+          "heading": "9.1 泛函：把函数映射为数",
+          "exactQuote": "**泛函** $J: V \\to \\mathbb{R}$（或 $\\mathbb{C}$）——输入是函数，输出是数。",
+          "supportsRequiredClaims": [1]
+        },
+        {
+          "sourceFile": "mathtest-material/09-functional-analysis.md",
+          "heading": "变分法：泛函的最优化",
+          "exactQuote": "**Euler-Lagrange 方程**是变分法的核心结果。若 $J[y] = \\int_a^b L(x, y, y')dx$ 在 $y(x)$ 处取极值，则：",
+          "supportsRequiredClaims": [2]
+        }
+      ]
+    },
+    {
+      "id": "PILOT-H2-22",
+      "sourceRisk": { "present": false, "detail": "" },
+      "evidence": [
+        {
+          "sourceFile": "mathtest-material/03-sequences-limits.md",
+          "heading": "3.1 数列：离散变化的数学描述",
+          "exactQuote": "| Cauchy列 | $\\forall \\epsilon>0, \\exists N, \\forall m,n>N: \\lvert a_m-a_n\\rvert<\\epsilon$ | $a_n = 1/n$ |",
+          "supportsRequiredClaims": [0]
+        },
+        {
+          "sourceFile": "mathtest-material/02-spaces.md",
+          "heading": "完备性：Banach 空间",
+          "exactQuote": "如果空间中每个 Cauchy 列都收敛到空间内的一个点，这个空间就是**完备的**。",
+          "supportsRequiredClaims": [1]
+        },
+        {
+          "sourceFile": "mathtest-material/02-spaces.md",
+          "heading": "完备性：Banach 空间",
+          "exactQuote": "> **不完备的例子**：在 $\\|f\\|_1$ 下，连续函数空间中存在 Cauchy 列收敛到不连续的函数——极限\"跑出了空间\"。",
+          "supportsRequiredClaims": [2]
+        }
+      ]
+    },
+    {
+      "id": "PILOT-H3-02",
+      "sourceRisk": { "present": false, "detail": "" },
+      "evidence": [
+        {
+          "sourceFile": "mathtest-material/03-sequences-limits.md",
+          "heading": "3.3 级数：无穷和的可能性",
+          "exactQuote": "**级数** = 数列的\"累加\"：$\\sum_{n=1}^\\infty a_n = \\lim_{N \\to \\infty} \\sum_{n=1}^N a_n$",
+          "supportsRequiredClaims": [0]
+        },
+        {
+          "sourceFile": "mathtest-material/02-spaces.md",
+          "heading": "为什么 Hilbert 空间如此重要？",
+          "exactQuote": "F[\"函数 f(x)\"] --> FS[\"Fourier级数<br/>=投影到三角函数基\"]",
+          "supportsRequiredClaims": [1]
+        },
+        {
+          "sourceFile": "mathtest-material/09-functional-analysis.md",
+          "heading": "自伴算子的谱定理",
+          "exactQuote": "> 谱分解是 Fourier 变换的终极推广——任何自伴算子都可以\"对角化\"为乘法算子。",
+          "supportsRequiredClaims": [2]
+        }
+      ]
+    },
+    {
+      "id": "PILOT-H3-05",
+      "sourceRisk": { "present": false, "detail": "" },
+      "evidence": [
+        {
+          "sourceFile": "mathtest-material/03-sequences-limits.md",
+          "heading": "3.1 数列：离散变化的数学描述",
+          "exactQuote": "| Cauchy列 | $\\forall \\epsilon>0, \\exists N, \\forall m,n>N: \\lvert a_m-a_n\\rvert<\\epsilon$ | $a_n = 1/n$ |",
+          "supportsRequiredClaims": [0]
+        },
+        {
+          "sourceFile": "mathtest-material/02-spaces.md",
+          "heading": "完备性：Banach 空间",
+          "exactQuote": "> **Banach 空间 = 完备的赋范空间**",
+          "supportsRequiredClaims": [1, 2]
+        },
+        {
+          "sourceFile": "mathtest-material/09-functional-analysis.md",
+          "heading": "四大核心定理",
+          "exactQuote": "> 这四大定理是泛函分析的\"武功秘籍\"——它们告诉你：在完备空间中，**逐点的性质往往能推出全局的性质**。",
+          "supportsRequiredClaims": [3]
+        }
+      ]
+    },
+    {
+      "id": "PILOT-H3-17",
+      "sourceRisk": { "present": false, "detail": "" },
+      "evidence": [
+        {
+          "sourceFile": "mathtest-material/05-functions-mappings.md",
+          "heading": "5.2 映射：保持结构的函数",
+          "exactQuote": "| 线性 | 线性映射 | $f(ax+by) = a f(x) + b f(y)$ |",
+          "supportsRequiredClaims": [0]
+        },
+        {
+          "sourceFile": "mathtest-material/02-spaces.md",
+          "heading": "2.6 内积空间与 Hilbert 空间",
+          "exactQuote": "> **Hilbert 空间 = 完备的内积空间**",
+          "supportsRequiredClaims": [1, 2]
+        },
+        {
+          "sourceFile": "mathtest-material/09-functional-analysis.md",
+          "heading": "对偶空间与 Riesz 表示定理",
+          "exactQuote": "$X$ 上的所有连续线性泛函构成**对偶空间** $X^*$。\n\n**Riesz 表示定理**（Hilbert空间版本）：每个连续线性泛函 $f \\in H^*$ 都可由内积表示为：",
+          "supportsRequiredClaims": [0, 1, 2]
+        }
+      ]
+    },
+    {
+      "id": "PILOT-C01",
+      "sourceRisk": {
+        "present": true,
+        "detail": "第 05 章函数空间层级图无条件画出 L²→C⁰→L¹，遗漏底层测度空间与有限测度条件。本题刻意测试系统是否把源材料的过强图示降级为风险，而不是把纠正伪装成原文事实。"
+      },
+      "evidence": [
+        {
+          "sourceFile": "mathtest-material/05-functions-mappings.md",
+          "heading": "5.5 函数空间的层级",
+          "exactQuote": "MEAS --> INT[\"可积函数 L¹\"]\n    MEAS --> SQINT[\"平方可积 L2 (Hilbert空间)\"]\n    INT --> CONT[\"连续函数 C0\"]\n    SQINT --> CONT",
+          "supportsRequiredClaims": []
+        }
+      ]
+    },
+    {
+      "id": "PILOT-C02",
+      "sourceRisk": { "present": false, "detail": "" },
+      "evidence": [
+        {
+          "sourceFile": "mathtest-material/03-sequences-limits.md",
+          "heading": "收敛判别法速查",
+          "exactQuote": "CHECK_NEC -->|\"否\"| DIV[\"发散 (必要条件)\"]\n    CHECK_NEC -->|\"是\"| POS{\"aₙ ≥ 0 ?\"}",
+          "supportsRequiredClaims": [0, 1]
+        },
+        {
+          "sourceFile": "mathtest-material/03-sequences-limits.md",
+          "heading": "关键级数速查表",
+          "exactQuote": "| 调和级数 $\\sum \\frac{1}{n}$ | **发散** | ∞（$\\sim \\ln n + \\gamma$） |",
+          "supportsRequiredClaims": [2]
+        }
+      ]
+    },
+    {
+      "id": "PILOT-C05",
+      "sourceRisk": { "present": false, "detail": "" },
+      "evidence": [
+        {
+          "sourceFile": "mathtest-material/01-number-systems.md",
+          "heading": "实数的核心性质：完备性",
+          "exactQuote": "| **完备性** | ❌ | ✅ |\n| 上确界存在性 | ❌ | ✅ 有上界必有上确界 |\n| Cauchy 列必收敛 | ❌ | ✅ |",
+          "supportsRequiredClaims": [0, 2]
+        },
+        {
+          "sourceFile": "mathtest-material/02-spaces.md",
+          "heading": "完备性：Banach 空间",
+          "exactQuote": "如果空间中每个 Cauchy 列都收敛到空间内的一个点，这个空间就是**完备的**。",
+          "supportsRequiredClaims": [1]
+        }
+      ]
+    },
+    {
+      "id": "PILOT-INS-D10",
+      "sourceRisk": {
+        "present": false,
+        "detail": "当前冻结语料不包含 10-measure-integration；正确行为是拒绝从现有上下文伪造 Lebesgue/Riemann 对比。"
+      },
+      "evidence": []
+    }
+  ]
+}

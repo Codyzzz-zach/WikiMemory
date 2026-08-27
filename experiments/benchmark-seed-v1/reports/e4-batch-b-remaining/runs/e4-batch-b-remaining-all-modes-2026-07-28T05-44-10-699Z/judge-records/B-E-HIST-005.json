@@ -1,0 +1,48 @@
+{
+  "questionId": "B-E-HIST-005",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 1463,
+    "completionTokens": 527,
+    "totalTokens": 1990,
+    "promptCacheHitTokens": 256,
+    "promptCacheMissTokens": 1207,
+    "reasoningTokens": 0
+  },
+  "request": {
+    "systemPrompt": "你是盲测评分员，不知道答案属于哪个实验组。只按题目、评分锚点、Gold 证据和引用预校验评价，不用外部常识修正答案。\n每个维度独立使用同一 0-4 锚点：4=完整且准确；3=大部分满足，仅轻微遗漏；2=部分满足，存在重要遗漏；1=仅有极少相关内容；0=缺失、反转或与证据冲突。\nrequiredPointCoverage 只看 requiredPoints；conditionFidelity 看条件、时间、来源角色和不确定性；evidenceGrounding 同时看关键结论是否与 Gold 证据一致以及 citationValidation；answerabilityDiscipline 看是否越界、编造或错误拒答。\ncitationValidation.valid 表示引用标识确实存在于该匿名样本收到的上下文。内部 CLAIM/SPAN/SOURCE 标识不需要出现在 Gold 文本中，不得仅因此扣分；但存在性有效不代表语义必然支持，仍需对照答案内容与 Gold。\n若反转来源归属、抹掉关键条件/时间、把提案当最终规范或编造关键事实，hardFailure=true。\n数值必须与 rationale 一致：若 rationale 说“完整覆盖且准确”，对应维度不能低于 3。\n只输出严格 JSON：{\"scores\":[{\"sampleId\":\"...\",\"requiredPointCoverage\":0,\"conditionFidelity\":0,\"evidenceGrounding\":0,\"answerabilityDiscipline\":0,\"hardFailure\":false,\"rationale\":\"...\"}]}。",
+    "userPrompt": "{\"question\":\"Vesuvius Challenge 从 2023 大奖目标到 2026 官网里程碑如何变化？\",\"answerability\":\"answerable\",\"requiredPoints\":[\"从四段各 140 字符到官网称整卷端到端读取\",\"下一阶段转为多份完整纸卷\"],\"forbiddenClaims\":[\"不得省略官网自述边界\"],\"requiredEvidence\":[{\"sourceId\":\"history-scrollprize-2026-004\",\"exactQuote\":\"Vesuvius Challenge launched in March 2023 with a Grand Prize for the first team to recover four passages of 140 characters from a Herculaneum scroll.\",\"role\":\"supports\"},{\"sourceId\":\"history-scrollprize-2026-004\",\"exactQuote\":\"In 2026, PHerc. 1667 became the first Herculaneum scroll to be virtually unwrapped and read end to end.\",\"role\":\"supports\"},{\"sourceId\":\"history-scrollprize-2026-004\",\"exactQuote\":\"The challenge now moves onto its next stage: reading multiple entire scrolls.\",\"role\":\"supports\"}],\"sourcePriorityRule\":\"P/C 决定规范、论文与实现事实；S 只能作为有归属的解释，不能推翻一手版本文本。\",\"anonymousAnswers\":[{\"sampleId\":\"sample-4b02f9ee-6184-4abe-bbc7-e701f2cdb853\",\"questionId\":\"B-E-HIST-005\",\"repetition\":1,\"answer\":\"{\\n  \\\"answer\\\": \\\"2023年3月Vesuvius Challenge启动时，大奖目标是首次从赫库兰尼姆卷轴中恢复四段140字符的文本。到2026年，里程碑变为PHerc. 1667成为首个被虚拟展开并从头到尾阅读的卷轴，挑战进入阅读多个完整卷轴的新阶段。\\\",\\n  \\\"citations\\\": [\\n    \\\"SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/history-humanities/history-scrollprize-2026-004.md:1-6\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\",\"citationValidation\":{\"formatValid\":true,\"total\":1,\"valid\":1,\"invalid\":[]}},{\"sampleId\":\"sample-70a36b68-e001-4e9a-a019-b29cfafda9f0\",\"questionId\":\"B-E-HIST-005\",\"repetition\":1,\"answer\":\"{\\n  \\\"answer\\\": \\\"Vesuvius Challenge 于 2023 年 3 月启动，最初的大奖目标是让第一个团队从赫库兰尼姆卷轴中恢复出四段 140 个字符的段落。到 2026 年，官网里程碑显示挑战已进入下一阶段：阅读多个完整卷轴。\\\",\\n  \\\"citations\\\": [\\n    \\\"claim:4ab2f152a60c6bbe-e301af57ef26e82d\\\",\\n    \\\"claim:4ab2f152a60c6bbe-39dbff7d3d0408e6\\\",\\n    \\\"claim:4ab2f152a60c6bbe-d83a71026c2b4d86\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\",\"citationValidation\":{\"formatValid\":true,\"total\":3,\"valid\":3,\"invalid\":[]}},{\"sampleId\":\"sample-11a7ffb9-d860-4a95-a4be-8b36c610354f\",\"questionId\":\"B-E-HIST-005\",\"repetition\":1,\"answer\":\"{\\n  \\\"answer\\\": \\\"Vesuvius Challenge 于 2023 年 3 月启动，最初的大奖目标是首个从赫库兰尼姆卷轴中恢复四段 140 字符文本的团队。该大奖在一年内被领取。随后挑战进入下一阶段：阅读多个完整卷轴。到 2026 年，PHerc. 1667 成为首个被虚拟展开并从头到尾阅读的赫库兰尼姆卷轴。\\\",\\n  \\\"citations\\\": [\\n    \\\"span:history-scrollprize-2026-004-4ab2f152a60c6bbe-1#chars-39-80\\\",\\n    \\\"span:history-scrollprize-2026-004-4ab2f152a60c6bbe-1#chars-81-187\\\",\\n    \\\"span:history-scrollprize-2026-004-4ab2f152a60c6bbe-1#chars-189-226\\\",\\n    \\\"span:history-scrollprize-2026-004-4ab2f152a60c6bbe-2#chars-362-439\\\",\\n    \\\"span:history-scrollprize-2026-004-4ab2f152a60c6bbe-2#chars-258-361\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\",\"citationValidation\":{\"formatValid\":true,\"total\":5,\"valid\":5,\"invalid\":[]}}]}"
+  },
+  "rawResponse": "{\n  \"scores\": [\n    {\n      \"sampleId\": \"sample-4b02f9ee-6184-4abe-bbc7-e701f2cdb853\",\n      \"requiredPointCoverage\": 4,\n      \"conditionFidelity\": 4,\n      \"evidenceGrounding\": 4,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"Required points fully covered: 2023 goal (four 140-char passages) and 2026 milestone (end-to-end reading of PHerc. 1667, next stage multiple scrolls). Condition fidelity: correct time (2023, 2026), source (Vesuvius Challenge), no uncertainty issues. Evidence grounding: key conclusions match Gold evidence; citation valid and supports content. Answerability discipline: no extra claims, no refusal.\"\n    },\n    {\n      \"sampleId\": \"sample-70a36b68-e001-4e9a-a019-b29cfafda9f0\",\n      \"requiredPointCoverage\": 3,\n      \"conditionFidelity\": 3,\n      \"evidenceGrounding\": 3,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"Required points: mentions 2023 goal (four 140-char passages) and next stage (multiple scrolls), but omits the specific 2026 milestone of PHerc. 1667 being read end to end. Condition fidelity: correct time and source, but missing the 2026 milestone detail. Evidence grounding: citations valid and support the mentioned points, but missing the 2026 milestone from Gold. Answerability discipline: no extra claims.\"\n    },\n    {\n      \"sampleId\": \"sample-11a7ffb9-d860-4a95-a4be-8b36c610354f\",\n      \"requiredPointCoverage\": 4,\n      \"conditionFidelity\": 4,\n      \"evidenceGrounding\": 4,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"Required points fully covered: 2023 goal (four 140-char passages), 2026 milestone (PHerc. 1667 end-to-end), and next stage (multiple scrolls). Condition fidelity: correct time, source, no uncertainty. Evidence grounding: all key conclusions match Gold; citations valid and support content. Answerability discipline: no extra claims.\"\n    }\n  ]\n}",
+  "parsed": [
+    {
+      "sampleId": "sample-4b02f9ee-6184-4abe-bbc7-e701f2cdb853",
+      "requiredPointCoverage": 4,
+      "conditionFidelity": 4,
+      "evidenceGrounding": 4,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "Required points fully covered: 2023 goal (four 140-char passages) and 2026 milestone (end-to-end reading of PHerc. 1667, next stage multiple scrolls). Condition fidelity: correct time (2023, 2026), source (Vesuvius Challenge), no uncertainty issues. Evidence grounding: key conclusions match Gold evidence; citation valid and supports content. Answerability discipline: no extra claims, no refusal."
+    },
+    {
+      "sampleId": "sample-70a36b68-e001-4e9a-a019-b29cfafda9f0",
+      "requiredPointCoverage": 3,
+      "conditionFidelity": 3,
+      "evidenceGrounding": 3,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "Required points: mentions 2023 goal (four 140-char passages) and next stage (multiple scrolls), but omits the specific 2026 milestone of PHerc. 1667 being read end to end. Condition fidelity: correct time and source, but missing the 2026 milestone detail. Evidence grounding: citations valid and support the mentioned points, but missing the 2026 milestone from Gold. Answerability discipline: no extra claims."
+    },
+    {
+      "sampleId": "sample-11a7ffb9-d860-4a95-a4be-8b36c610354f",
+      "requiredPointCoverage": 4,
+      "conditionFidelity": 4,
+      "evidenceGrounding": 4,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "Required points fully covered: 2023 goal (four 140-char passages), 2026 milestone (PHerc. 1667 end-to-end), and next stage (multiple scrolls). Condition fidelity: correct time, source, no uncertainty. Evidence grounding: all key conclusions match Gold; citations valid and support content. Answerability discipline: no extra claims."
+    }
+  ]
+}

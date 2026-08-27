@@ -1,0 +1,558 @@
+{
+  "concepts": [
+    {
+      "name": "复数乘法",
+      "aliases": ["复数乘法"],
+      "boundary": "复数乘法的几何意义：缩放加旋转",
+      "domain": "复数运算"
+    },
+    {
+      "name": "完备性",
+      "aliases": ["完备性"],
+      "boundary": "实数集的完备性，区别于有理数集",
+      "domain": "实数分析"
+    },
+    {
+      "name": "自然数",
+      "aliases": ["自然数"],
+      "boundary": "自然数集及其公理定义",
+      "domain": "数论"
+    },
+    {
+      "name": "后继",
+      "aliases": ["后继"],
+      "boundary": "自然数的后继函数",
+      "domain": "自然数公理"
+    },
+    {
+      "name": "有理数集",
+      "aliases": ["有理数集Q", "Q", "有理数集"],
+      "boundary": "有理数的集合，封闭性等",
+      "domain": "数论"
+    },
+    {
+      "name": "复数",
+      "aliases": ["复数"],
+      "boundary": "复数的定义、表示、模、共轭等",
+      "domain": "复数"
+    },
+    {
+      "name": "模",
+      "aliases": ["模", "|z|"],
+      "boundary": "复数的模",
+      "domain": "复数"
+    },
+    {
+      "name": "数学归纳法",
+      "aliases": ["数学归纳法"],
+      "boundary": "数学归纳法原理及其与自然数的关系",
+      "domain": "逻辑基础"
+    },
+    {
+      "name": "自然数集N",
+      "aliases": ["自然数集N", "N"],
+      "boundary": "自然数的集合，封闭性等",
+      "domain": "数论"
+    },
+    {
+      "name": "整数集Z",
+      "aliases": ["整数集Z", "Z"],
+      "boundary": "整数的集合，封闭性等",
+      "domain": "数论"
+    },
+    {
+      "name": "von Neumann序数",
+      "aliases": ["von Neumann序数"],
+      "boundary": "自然数的集合论定义",
+      "domain": "集合论"
+    },
+    {
+      "name": "有理数",
+      "aliases": ["有理数"],
+      "boundary": "有理数的性质，如稠密性",
+      "domain": "数论"
+    },
+    {
+      "name": "复数集C",
+      "aliases": ["复数集C", "C"],
+      "boundary": "复数的集合，封闭性",
+      "domain": "复数"
+    },
+    {
+      "name": "域",
+      "aliases": ["域"],
+      "boundary": "域结构，代数封闭性",
+      "domain": "抽象代数"
+    },
+    {
+      "name": "代数封闭",
+      "aliases": ["代数封闭"],
+      "boundary": "数系的代数封闭性",
+      "domain": "抽象代数"
+    },
+    {
+      "name": "互质分数",
+      "aliases": ["互质的分数"],
+      "boundary": "分子分母互质的有理数",
+      "domain": "数论"
+    },
+    {
+      "name": "完备性",
+      "aliases": ["完备性"],
+      "boundary": "实数集的完备性，数轴无洞",
+      "domain": "实数分析"
+    },
+    {
+      "name": "二维平面表示",
+      "aliases": ["二维平面"],
+      "boundary": "复数的几何表示",
+      "domain": "复数"
+    },
+    {
+      "name": "代数基本定理",
+      "aliases": ["代数基本定理"],
+      "boundary": "复系数多项式根的存在性",
+      "domain": "复数"
+    },
+    {
+      "name": "康托尔对角线法",
+      "aliases": ["Cantor 枚举法", "Cantor 蛇形对角线"],
+      "boundary": "证明实数不可数的方法",
+      "domain": "集合论"
+    },
+    {
+      "name": "实数集R",
+      "aliases": ["实数集R", "R"],
+      "boundary": "实数的集合",
+      "domain": "实数分析"
+    },
+    {
+      "name": "无理数",
+      "aliases": ["无理数"],
+      "boundary": "无理数概念与数轴上的洞",
+      "domain": "实数"
+    },
+    {
+      "name": "极坐标表示",
+      "aliases": ["极坐标表示"],
+      "boundary": "复数的极坐标形式",
+      "domain": "复数"
+    },
+    {
+      "name": "分数",
+      "aliases": ["分数"],
+      "boundary": "分数的引入",
+      "domain": "数论"
+    },
+    {
+      "name": "三次方程",
+      "aliases": ["三次方程"],
+      "boundary": "形如 x^3 = 15x + 4 的方程",
+      "domain": "代数"
+    },
+    {
+      "name": "数系扩张",
+      "aliases": ["数系的扩张", "扩张"],
+      "boundary": "数系扩张的原因和过程",
+      "domain": "数论"
+    },
+    {
+      "name": "良序性",
+      "aliases": ["良序性"],
+      "boundary": "自然数集的良序性质",
+      "domain": "数论"
+    },
+    {
+      "name": "整数集",
+      "aliases": ["整数集"],
+      "boundary": "整数的集合",
+      "domain": "数论"
+    },
+    {
+      "name": "乘法逆元",
+      "aliases": ["乘法逆元"],
+      "boundary": "数的乘法逆元素",
+      "domain": "抽象代数"
+    },
+    {
+      "name": "实数集",
+      "aliases": ["实数集"],
+      "boundary": "实数的集合",
+      "domain": "实数分析"
+    },
+    {
+      "name": "反证法",
+      "aliases": ["反证法"],
+      "boundary": "证明√2无理数的方法",
+      "domain": "逻辑"
+    },
+    {
+      "name": "皮亚诺公理",
+      "aliases": ["皮亚诺公理", "五条公理"],
+      "boundary": "皮亚诺自然数公理",
+      "domain": "数论基础"
+    },
+    {
+      "name": "方程x^2+1=0",
+      "aliases": ["x^2+1=0"],
+      "boundary": "导致复数引入的方程",
+      "domain": "代数"
+    },
+    {
+      "name": "复数相乘",
+      "aliases": ["复数相乘"],
+      "boundary": "复数乘法的模与辐角",
+      "domain": "复数运算"
+    },
+    {
+      "name": "有理数稠密性",
+      "aliases": ["稠密"],
+      "boundary": "有理数在数轴上稠密",
+      "domain": "实数分析"
+    },
+    {
+      "name": "加法单位元",
+      "aliases": ["加法单位元"],
+      "boundary": "数系的加法单位元素",
+      "domain": "抽象代数"
+    },
+    {
+      "name": "有序性",
+      "aliases": ["有序"],
+      "boundary": "数集的有序性质",
+      "domain": "数论"
+    },
+    {
+      "name": "欧拉公式",
+      "aliases": ["欧拉公式", "e^(iθ) = cosθ + i sinθ"],
+      "boundary": "复指数与三角函数关系",
+      "domain": "复数"
+    },
+    {
+      "name": "向量平移",
+      "aliases": ["向量平移"],
+      "boundary": "复数加法几何意义",
+      "domain": "复数运算"
+    },
+    {
+      "name": "减法封闭",
+      "aliases": ["减法封闭"],
+      "boundary": "数集对减法的封闭性",
+      "domain": "数论"
+    },
+    {
+      "name": "负数",
+      "aliases": ["负数"],
+      "boundary": "负数的引入",
+      "domain": "数论"
+    },
+    {
+      "name": "等价类",
+      "aliases": ["等价类"],
+      "boundary": "有理数、整数的构造方法",
+      "domain": "数论基础"
+    },
+    {
+      "name": "Dedekind分割",
+      "aliases": ["Dedekind分割"],
+      "boundary": "用分割定义实数的方法",
+      "domain": "实数分析"
+    },
+    {
+      "name": "共轭",
+      "aliases": ["共轭"],
+      "boundary": "复数的共轭",
+      "domain": "复数"
+    },
+    {
+      "name": "除法不封闭",
+      "aliases": ["除法不封闭"],
+      "boundary": "数集对除法的封闭性",
+      "domain": "数论"
+    },
+    {
+      "name": "良序性丧失",
+      "aliases": ["良序性", "没有最小元"],
+      "boundary": "整数集不具有良序性",
+      "domain": "数论"
+    },
+    {
+      "name": "有理数集",
+      "aliases": ["有理数集Q"],
+      "boundary": "有理数与无理数的并集",
+      "domain": "数论"
+    },
+    {
+      "name": "减法不封闭",
+      "aliases": ["减法不封闭"],
+      "boundary": "自然数对减法不封闭",
+      "domain": "数论"
+    },
+    {
+      "name": "阿贝尔群",
+      "aliases": ["阿贝尔群"],
+      "boundary": "整数关于加法构成群",
+      "domain": "抽象代数"
+    },
+    {
+      "name": "数系扩张",
+      "aliases": ["数系扩张"],
+      "boundary": "第一次数系扩张",
+      "domain": "数论"
+    },
+    {
+      "name": "Python整数",
+      "aliases": ["Python"],
+      "boundary": "Python中的整数运算封闭",
+      "domain": "编程"
+    },
+    {
+      "name": "运算能力",
+      "aliases": ["运算能力"],
+      "boundary": "数系扩张获得更强运算能力",
+      "domain": "数论"
+    },
+    {
+      "name": "整环",
+      "aliases": ["整环"],
+      "boundary": "整数集是整环，无零因子",
+      "domain": "抽象代数"
+    },
+    {
+      "name": "可数性",
+      "aliases": ["可数"],
+      "boundary": "集合的可数性",
+      "domain": "集合论"
+    },
+    {
+      "name": "除法不封闭",
+      "aliases": ["除法不封闭"],
+      "boundary": "自然数对除法不封闭",
+      "domain": "数论"
+    },
+    {
+      "name": "实部",
+      "aliases": ["实部"],
+      "boundary": "复数的实部",
+      "domain": "复数"
+    },
+    {
+      "name": "乘法逆元",
+      "aliases": ["乘法逆元"],
+      "boundary": "整数没有乘法逆元",
+      "domain": "抽象代数"
+    },
+    {
+      "name": "自然数集N",
+      "aliases": ["N"],
+      "boundary": "自然数集有加法单位元0",
+      "domain": "数论"
+    },
+    {
+      "name": "自然数集N",
+      "aliases": ["N"],
+      "boundary": "自然数集有乘法单位元1",
+      "domain": "数论"
+    },
+    {
+      "name": "交换幺半群",
+      "aliases": ["交换幺半群"],
+      "boundary": "自然数对加法和乘法构成交换幺半群",
+      "domain": "抽象代数"
+    },
+    {
+      "name": "代数封闭",
+      "aliases": ["代数封闭"],
+      "boundary": "复数集C是代数封闭的",
+      "domain": "复数"
+    },
+    {
+      "name": "有理数集",
+      "aliases": ["Q"],
+      "boundary": "有理数集不是代数封闭的",
+      "domain": "数论"
+    },
+    {
+      "name": "三次方程",
+      "aliases": ["x^3 = 15x + 4"],
+      "boundary": "16世纪意大利数学家研究的三次方程",
+      "domain": "代数"
+    },
+    {
+      "name": "域",
+      "aliases": ["域"],
+      "boundary": "有理数集构成域",
+      "domain": "抽象代数"
+    },
+    {
+      "name": "自然数集N",
+      "aliases": ["N"],
+      "boundary": "自然数集不是代数封闭的",
+      "domain": "数论"
+    },
+    {
+      "name": "失去性质",
+      "aliases": ["失去性质"],
+      "boundary": "数系扩张可能失去一些性质",
+      "domain": "数论"
+    },
+    {
+      "name": "整数集Z",
+      "aliases": ["Z"],
+      "boundary": "整数集是可数的",
+      "domain": "集合论"
+    },
+    {
+      "name": "乘法单位元1",
+      "aliases": ["乘法单位元1"],
+      "boundary": "整数集有乘法单位元1",
+      "domain": "抽象代数"
+    },
+    {
+      "name": "公理基础",
+      "aliases": ["公理基础"],
+      "boundary": "Frege、Peano、Dedekind等建立的公理基础",
+      "domain": "数学基础"
+    },
+    {
+      "name": "复数集C",
+      "aliases": ["C"],
+      "boundary": "复数集关于乘法封闭",
+      "domain": "复数"
+    },
+    {
+      "name": "Cauchy列",
+      "aliases": ["Cauchy列"],
+      "boundary": "Cauchy列在实数中收敛",
+      "domain": "实数分析"
+    },
+    {
+      "name": "数学归纳法原理",
+      "aliases": ["数学归纳法原理"],
+      "boundary": "皮亚诺公理5",
+      "domain": "逻辑基础"
+    },
+    {
+      "name": "有理数稠密",
+      "aliases": ["稠密"],
+      "boundary": "有理数在数轴上稠密且可数",
+      "domain": "实数分析"
+    },
+    {
+      "name": "欧拉公式",
+      "aliases": ["欧拉公式"],
+      "boundary": "复指数与三角函数的统一",
+      "domain": "复数"
+    },
+    {
+      "name": "Cantor枚举",
+      "aliases": ["Cantor 枚举法"],
+      "boundary": "有理数的枚举方法",
+      "domain": "集合论"
+    },
+    {
+      "name": "整数构造",
+      "aliases": ["有序对"],
+      "boundary": "通过自然数有序对对整数构造",
+      "domain": "数论基础"
+    },
+    {
+      "name": "实数集R",
+      "aliases": ["R"],
+      "boundary": "实数集关于加法封闭",
+      "domain": "实数"
+    },
+    {
+      "name": "Cantor证明",
+      "aliases": ["Cantor"],
+      "boundary": "实数不可数的证明",
+      "domain": "集合论"
+    },
+    {
+      "name": "减法不封闭",
+      "aliases": ["减法不封闭"],
+      "boundary": "自然数的根本缺陷",
+      "domain": "数论"
+    },
+    {
+      "name": "2 = {0,1}",
+      "aliases": ["2"],
+      "boundary": "von Neumann序数表示2",
+      "domain": "集合论"
+    },
+    {
+      "name": "整数代表",
+      "aliases": ["-3"],
+      "boundary": "有序对表示的整数例子",
+      "domain": "数论基础"
+    },
+    {
+      "name": "自然数集N",
+      "aliases": ["N"],
+      "boundary": "自然数集不完备",
+      "domain": "实数分析"
+    },
+    {
+      "name": "平方根2",
+      "aliases": ["√2"],
+      "boundary": "√2不是有理数",
+      "domain": "数论"
+    },
+    {
+      "name": "自然数集N",
+      "aliases": ["N"],
+      "boundary": "自然数集是有序的",
+      "domain": "数论"
+    },
+    {
+      "name": "有理数集Q",
+      "aliases": ["Q"],
+      "boundary": "有理数集是域",
+      "domain": "抽象代数"
+    },
+    {
+      "name": "有理数定义",
+      "aliases": ["有理数定义"],
+      "boundary": "有理数定义为分数a/b",
+      "domain": "数论"
+    },
+    {
+      "name": "自然数的递归结构",
+      "aliases": ["递归结构"],
+      "boundary": "自然数从零开始的后继操作",
+      "domain": "数论基础"
+    },
+    {
+      "name": "无理数引入",
+      "aliases": ["无理数"],
+      "boundary": "极限导致无理数引入",
+      "domain": "实数"
+    },
+    {
+      "name": "虚部",
+      "aliases": ["虚部"],
+      "boundary": "复数的虚部",
+      "domain": "复数"
+    },
+    {
+      "name": "什么数是数",
+      "aliases": ["什么是数"],
+      "boundary": "19世纪末数学家开始追问数的本质",
+      "domain": "数学基础"
+    },
+    {
+      "name": "自然数构造",
+      "aliases": ["von Neumann构造"],
+      "boundary": "自然数等于之前所有自然数的集合",
+      "domain": "集合论"
+    },
+    {
+      "name": "幺半群",
+      "aliases": ["幺半群"],
+      "boundary": "自然数结构是幺半群",
+      "domain": "抽象代数"
+    },
+    {
+      "name": "0 = ∅",
+      "aliases": ["0"],
+      "boundary": "von Neumann序

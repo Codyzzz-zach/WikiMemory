@@ -1,0 +1,31 @@
+{
+  "schemaVersion": "wge-batch-c-public-selection/v1",
+  "status": "LOCKED_BLIND_STAGE_A",
+  "taskFile": "../../batch-c-stage-a/questions/questions-public.jsonl",
+  "taskFileSha256": "3cfe6ed87ddfb88902d35c417f27c6a8ebf806e3139e0acc37d34fa9ad11a34d",
+  "questionIds": [
+    "C-F-PSYCH-001",
+    "C-C-PSYCH-001",
+    "C-T-PSYCH-001",
+    "C-X-PSYCH-001",
+    "C-K-PSYCH-001",
+    "C-A-PSYCH-001",
+    "C-F-CLIMATE-001",
+    "C-C-CLIMATE-001",
+    "C-T-CLIMATE-001",
+    "C-X-CLIMATE-001",
+    "C-K-CLIMATE-001",
+    "C-A-CLIMATE-001",
+    "C-F-LAW-001",
+    "C-C-LAW-001",
+    "C-T-LAW-001",
+    "C-X-LAW-001",
+    "C-K-LAW-001",
+    "C-A-LAW-001"
+  ],
+  "groups": [
+    "B",
+    "P-seed",
+    "P-graph"
+  ]
+}

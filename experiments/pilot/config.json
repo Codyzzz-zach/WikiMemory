@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "wge-pilot-config/v1",
+  "status": "LOCKED",
+  "lockedAt": "2026-07-24",
+  "purpose": "Five-document directional product pilot; not a confirmatory benchmark",
+  "corpus": [
+    "mathtest-material/01-number-systems.md",
+    "mathtest-material/02-spaces.md",
+    "mathtest-material/03-sequences-limits.md",
+    "mathtest-material/05-functions-mappings.md",
+    "mathtest-material/09-functional-analysis.md"
+  ],
+  "compiler": {
+    "model": "deepseek-v4-flash",
+    "temperature": 0,
+    "thinkingDisabled": true
+  },
+  "answer": {
+    "model": "deepseek-v4-flash",
+    "temperature": 0,
+    "thinkingDisabled": true,
+    "maxOutputTokens": 1600
+  },
+  "judge": {
+    "model": "deepseek-v4-flash",
+    "temperature": 0,
+    "thinkingDisabled": true,
+    "maxOutputTokens": 2400
+  },
+  "retrieval": {
+    "contextBudgetTokens": 12000,
+    "maxGraphDepth": 3,
+    "maxFolderChunks": 20,
+    "folderChunkChars": 1800
+  },
+  "execution": {
+    "groups": ["B", "P", "E-min"],
+    "externalRetrievalNetwork": false,
+    "maxToolCalls": 1,
+    "timeoutMs": 120000
+  }
+}

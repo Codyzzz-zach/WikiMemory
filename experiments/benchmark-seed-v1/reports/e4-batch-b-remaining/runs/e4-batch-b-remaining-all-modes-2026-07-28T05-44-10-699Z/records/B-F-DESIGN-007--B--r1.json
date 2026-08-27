@@ -1,0 +1,86 @@
+{
+  "runId": "e4-batch-b-remaining-all-modes-2026-07-28T05-44-10-699Z",
+  "sampleId": "sample-aca45e05-c301-47d0-8d2d-6029aa3b233c",
+  "questionId": "B-F-DESIGN-007",
+  "group": "B",
+  "pilotGroup": "B",
+  "graphExpansion": false,
+  "repetition": 1,
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "temperature": 0,
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 1053,
+    "completionTokens": 218,
+    "totalTokens": 1271,
+    "promptCacheHitTokens": 0,
+    "promptCacheMissTokens": 1053,
+    "reasoningTokens": 0
+  },
+  "latencyMs": 2511,
+  "promptHash": "sha256:3b16eab50b657501645bbb918da06c86883b22fa3bd9714ed00f4e1a4909a3b7",
+  "contextHash": "be69dd4a25ef4c4eb8cc505657f299a3e4832b8a81be6424bb71dc18e04ea05e",
+  "estimatedContextTokens": 813,
+  "estimatedInputTokens": 989,
+  "retrievedClaims": [],
+  "retrievedRelations": [],
+  "retrievedSources": [
+    "../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-webaim-checklist-2024-004.md",
+    "../../../workbuddy-batch-b/generated/compilation-corpus/history-humanities/history-scrollprize-2026-004.md",
+    "../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-wcag-issue-2705-003.md",
+    "../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-wcag21-2018-001.md",
+    "../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-wcag22-2023-002.md"
+  ],
+  "droppedContext": [],
+  "retrievalTrace": {
+    "strategy": "folder-lexical",
+    "queryFeatureCount": 19,
+    "corpusChunkCount": 12,
+    "matchedChunkCount": 5,
+    "maxFolderChunks": 16,
+    "candidates": [
+      {
+        "id": "../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-webaim-checklist-2024-004.md#L1-L4",
+        "rank": 1,
+        "score": 7.293650690722455,
+        "selected": true,
+        "dropReason": null
+      },
+      {
+        "id": "../../../workbuddy-batch-b/generated/compilation-corpus/history-humanities/history-scrollprize-2026-004.md#L1-L6",
+        "rank": 2,
+        "score": 2.466337068793427,
+        "selected": true,
+        "dropReason": null
+      },
+      {
+        "id": "../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-wcag-issue-2705-003.md#L1-L8",
+        "rank": 3,
+        "score": 1.9555114450274365,
+        "selected": true,
+        "dropReason": null
+      },
+      {
+        "id": "../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-wcag21-2018-001.md#L1-L6",
+        "rank": 4,
+        "score": 1.9555114450274365,
+        "selected": true,
+        "dropReason": null
+      },
+      {
+        "id": "../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-wcag22-2023-002.md#L1-L16",
+        "rank": 5,
+        "score": 1.9555114450274365,
+        "selected": true,
+        "dropReason": null
+      }
+    ]
+  },
+  "request": {
+    "systemPrompt": "你是受证据约束的问答 Agent。只使用本次请求提供的检索上下文回答。\n要求：保留影响结论的条件、时间、例外、来源角色与不确定性；关键结论引用上下文中的 SOURCE、EVIDENCE 或 CLAIM 标识；上下文不足时明确说明，不得用外部常识补齐。\n只输出严格 JSON：{\"answer\":\"...\",\"citations\":[\"...\"],\"insufficient\":false,\"uncertainties\":[\"...\"]}。",
+    "userPrompt": "# 问题\n判断：WebAIM 的‘2023 年移除’说明 WCAG 2.1 从发布之日起就没有 4.1.1。\n\n# 检索上下文\n## SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-webaim-checklist-2024-004.md:1-4 score=7.294\n# WebAIM WCAG 2 Checklist\n\nSuccess Criterion 4.1.1 Parsing: This success criterion is no longer useful and as of 2023 has been removed from WCAG.\n\n## SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/history-humanities/history-scrollprize-2026-004.md:1-6 score=2.466\n# Vesuvius Challenge project timeline\n\nVesuvius Challenge launched in March 2023 with a Grand Prize for the first team to recover four passages of 140 characters from a Herculaneum scroll. Within a year, the prize was claimed. The quest was just beginning.\n\nIn 2026, PHerc. 1667 became the first Herculaneum scroll to be virtually unwrapped and read end to end. The challenge now moves onto its next stage: reading multiple entire scrolls.\n\n## SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-wcag-issue-2705-003.md:1-8 score=1.956\n# WCAG 2.2 Draft Feedback: Dragging Movements\n\nSuccess Criterion 2.5.7 Dragging Movements (Level AA): All functionality that uses a dragging movement for operation can be achieved by a single pointer without dragging, unless dragging is essential or the functionality is determined by the user agent and not modified by the author.\n\nWe kindly request that the group remove this SC until research is completed for all affected input modalities.\n\nWe believe more considerations are needed for various platforms, and that there shouldn’t be an imposition of all mobile requirements on all desktop content.\n\n## SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-wcag21-2018-001.md:1-6 score=1.956\n# Web Content Accessibility Guidelines (WCAG) 2.1\n\nWCAG 2.1 builds on and is backwards compatible with WCAG 2.0, meaning web pages that conform to WCAG 2.1 also conform to WCAG 2.0.\n\nSuccess Criterion 4.1.1 Parsing (Level A): In content implemented using markup languages, elements have complete start and end tags, elements are nested according to their specifications, elements do not contain duplicate attributes, and any IDs are unique, except where the specifications allow these features.\n\n## SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-wcag22-2023-002.md:1-16 score=1.956\n# Web Content Accessibility Guidelines (WCAG) 2.2\n\nWCAG 2.2 builds on and is backwards compatible with WCAG 2.1, meaning web pages that conform to WCAG 2.2 are at least as accessible as pages that conform to WCAG 2.1. Requirements have been added that build on 2.1 and 2.0. WCAG 2.2 has removed one success criterion, 4.1.1 Parsing. Authors that are required by policy to conform with WCAG 2.0 or 2.1 will be able to update content to WCAG 2.2, but may need to continue to test and report 4.1.1.\n\nThe following success criteria are new in WCAG 2.2:\n\n- 2.4.11 Focus Not Obscured (Minimum) (AA)\n- 2.4.12 Focus Not Obscured (Enhanced) (AAA)\n- 2.4.13 Focus Appearance (AAA)\n- 2.5.7 Dragging Movements (AA)\n- 2.5.8 Target Size (Minimum) (AA)\n- 3.2.6 Consistent Help (A)\n- 3.3.7 Redundant Entry (A)\n- 3.3.8 Accessible Authentication (Minimum) (AA)\n- 3.3.9 Accessible Authentication (Enhanced) (AAA)"
+  },
+  "answer": "{\n  \"answer\": \"否。WebAIM 的‘2023 年移除’指的是 WCAG 2.2 移除了 4.1.1，而非 WCAG 2.1。WCAG 2.1 从发布之日起包含 4.1.1，该准则在 WCAG 2.2 中才被移除。\",\n  \"citations\": [\n    \"SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-webaim-checklist-2024-004.md:1-4\",\n    \"SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-wcag21-2018-001.md:1-6\",\n    \"SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-wcag22-2023-002.md:1-16\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}",
+  "answerFormatValid": true
+}

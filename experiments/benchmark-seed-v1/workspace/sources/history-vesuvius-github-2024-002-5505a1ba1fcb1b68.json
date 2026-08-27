@@ -1,0 +1,9 @@
+{
+  "id": "source:history-vesuvius-github-2024-002-5505a1ba1fcb1b68",
+  "hash": "5505a1ba1fcb1b68",
+  "uri": "workbuddy-batch-b/generated/compilation-corpus/history-humanities/history-vesuvius-github-2024-002.md",
+  "parsedText": "# ScrollPrize/vesuvius archived Python library\n\nThis repository was archived by the owner on Nov 21, 2024. It is now read-only.\n\nNOTE: Now maintained at https://github.com/ScrollPrize/villa/tree/main/vesuvius (this repository archived)\n\nFrom Vesuvius Challenge, a Python library for accessing CT scans of ancient scrolls.\n\n`vesuvius` allows direct access to scroll data without managing download scripts or storing terabytes of CT scans locally. Data is streamed in the background, only serving the requested regions.\n\n`vesuvius` is in beta and the interface may change. Not all Vesuvius Challenge data is currently available - data will continue to be added to the library.\n",
+  "sourceType": "md",
+  "loaderVersion": "markdown-v1.1",
+  "createdAt": "2026-07-27T09:55:46.942Z"
+}

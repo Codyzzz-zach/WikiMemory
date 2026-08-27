@@ -1,0 +1,734 @@
+{
+  "schemaVersion": "v1",
+  "sourceId": "source:c-climate-003-0edc89a8f2de72a2",
+  "runId": "65cac39a-d3a3-46fa-bf0a-973c23e76a36",
+  "publishedAt": "2026-07-28T07:12:56.507Z",
+  "claims": [],
+  "relations": [
+    {
+      "relation": {
+        "id": "rel:0edc89a8f2de72a2-30b5a78bd20d9b36",
+        "from": "claim:0edc89a8f2de72a2-2b4f4747b0b4555b",
+        "to": "claim:0edc89a8f2de72a2-3b52478ca03beb2c",
+        "type": "CONTRADICTS",
+        "conditions": [
+          "Claim 4 describes using credits to achieve 87% domestic reduction; claim 7 says Advisory Board opposes counting credits."
+        ],
+        "conditionStatus": "PRESERVED",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-climate-003-0edc89a8f2de72a2-11#chars-1559-1724",
+          "span:c-climate-003-0edc89a8f2de72a2-13#chars-1768-1966"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:12:23.217Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:0edc89a8f2de72a2-30b5a78bd20d9b36",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-climate-003#block-11] “In effect, this flexibility means that emissions within the EU would only need t”; [1:c-climate-003#block-13] “In an unusual intervention that coincided with the proposal itself, the European”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:0edc89a8f2de72a2-30b5a78bd20d9b36",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-climate-003#block-11] “In effect, this flexibility means that emissions within the EU would only need t”; [1:c-climate-003#block-13] “In an unusual intervention that coincided with the proposal itself, the European”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_CONDITIONS_MISSING",
+          "severity": "error",
+          "affectedObject": "rel:0edc89a8f2de72a2-30b5a78bd20d9b36",
+          "detail": "conditions：Relation 未通过边级语义审计；证据 [0:c-climate-003#block-11] “In effect, this flexibility means that emissions within the EU would only need t”; [1:c-climate-003#block-13] “In an unusual intervention that coincided with the proposal itself, the European”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:0edc89a8f2de72a2-358fccfa936306cf",
+        "from": "claim:0edc89a8f2de72a2-2956da6b48b7727b",
+        "to": "claim:0edc89a8f2de72a2-3b52478ca03beb2c",
+        "type": "CONTRADICTS",
+        "conditions": [
+          "Claim 3 describes flexibility to use international credits; claim 7 states Advisory Board said EU should not count such credits."
+        ],
+        "conditionStatus": "PRESERVED",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-climate-003-0edc89a8f2de72a2-11#chars-1389-1558",
+          "span:c-climate-003-0edc89a8f2de72a2-13#chars-1768-1966"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:12:23.217Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:0edc89a8f2de72a2-358fccfa936306cf",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-climate-003#block-11] “Of these, the one that has received the most attention is to allow limited use o”; [1:c-climate-003#block-13] “In an unusual intervention that coincided with the proposal itself, the European”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:0edc89a8f2de72a2-525d5fa73846aaf6",
+        "from": "claim:0edc89a8f2de72a2-07323a3fd50f07bb",
+        "to": "claim:0edc89a8f2de72a2-3cb894138005274f",
+        "type": "SUPPORTS",
+        "conditions": [
+          "Claim 0 states the impact assessment formed basis for 90% target; claim 8 states the 90% target was announced in Feb 2024."
+        ],
+        "conditionStatus": "PRESERVED",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-climate-003-0edc89a8f2de72a2-7#chars-874-1064",
+          "span:c-climate-003-0edc89a8f2de72a2-9#chars-1095-1207"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:12:23.217Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:0edc89a8f2de72a2-525d5fa73846aaf6",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-climate-003#block-7] “This, together with the European Scientific Advisory Board on Climate Change's r”; [1:c-climate-003#block-9] “The headline 90% target for 2040 was announced as part of a roadmap outlined by ”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:0edc89a8f2de72a2-525d5fa73846aaf6",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-climate-003#block-7] “This, together with the European Scientific Advisory Board on Climate Change's r”; [1:c-climate-003#block-9] “The headline 90% target for 2040 was announced as part of a roadmap outlined by ”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:0edc89a8f2de72a2-dc8707fd67695c67",
+        "from": "claim:0edc89a8f2de72a2-a5adbb37b74a0a73",
+        "to": "claim:0edc89a8f2de72a2-e37697e6e8be4c8e",
+        "type": "CONTRADICTS",
+        "conditions": [
+          "Claim 15 sets 55% target; claim 19 says EU is not on track to achieve 2030 target."
+        ],
+        "conditionStatus": "PRESERVED",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-climate-003-0edc89a8f2de72a2-17#chars-2518-2585",
+          "span:c-climate-003-0edc89a8f2de72a2-6#chars-546-705"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:12:23.217Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:0edc89a8f2de72a2-dc8707fd67695c67",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-climate-003#block-17] “As it stands, the EU is not on track to achieve this [2030] target.”; [1:c-climate-003#block-6] “In July 2021, the European Climate Law officially entered into force, setting a ”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:0edc89a8f2de72a2-dc8707fd67695c67",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-climate-003#block-17] “As it stands, the EU is not on track to achieve this [2030] target.”; [1:c-climate-003#block-6] “In July 2021, the European Climate Law officially entered into force, setting a ”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_CONDITIONS_MISSING",
+          "severity": "error",
+          "affectedObject": "rel:0edc89a8f2de72a2-dc8707fd67695c67",
+          "detail": "conditions：Relation 未通过边级语义审计；证据 [0:c-climate-003#block-17] “As it stands, the EU is not on track to achieve this [2030] target.”; [1:c-climate-003#block-6] “In July 2021, the European Climate Law officially entered into force, setting a ”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:0edc89a8f2de72a2-e680ff8cbaeb2c12",
+        "from": "claim:0edc89a8f2de72a2-07323a3fd50f07bb",
+        "to": "claim:0edc89a8f2de72a2-09f6d31a030a9377",
+        "type": "DERIVED_FROM",
+        "conditions": [
+          "The impact assessment in claim 0 is the same as the one published in 2024 in claim 1."
+        ],
+        "conditionStatus": "PRESERVED",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-climate-003-0edc89a8f2de72a2-7#chars-709-873",
+          "span:c-climate-003-0edc89a8f2de72a2-7#chars-874-1064"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:12:23.217Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:0edc89a8f2de72a2-e680ff8cbaeb2c12",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-climate-003#block-7] “In 2024, the commission published an impact assessment, detailing the underlying”; [1:c-climate-003#block-7] “This, together with the European Scientific Advisory Board on Climate Change's r”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:0edc89a8f2de72a2-e680ff8cbaeb2c12",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-climate-003#block-7] “In 2024, the commission published an impact assessment, detailing the underlying”; [1:c-climate-003#block-7] “This, together with the European Scientific Advisory Board on Climate Change's r”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_CONDITIONS_MISSING",
+          "severity": "error",
+          "affectedObject": "rel:0edc89a8f2de72a2-e680ff8cbaeb2c12",
+          "detail": "conditions：Relation 未通过边级语义审计；证据 [0:c-climate-003#block-7] “In 2024, the commission published an impact assessment, detailing the underlying”; [1:c-climate-003#block-7] “This, together with the European Scientific Advisory Board on Climate Change's r”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:0edc89a8f2de72a2-edb3cd4c22d2983e",
+        "from": "claim:0edc89a8f2de72a2-2956da6b48b7727b",
+        "to": "claim:0edc89a8f2de72a2-2b4f4747b0b4555b",
+        "type": "DERIVED_FROM",
+        "conditions": [
+          "Claim 3 introduces flexibility of international carbon credits; claim 4 explains the effect of that flexibility."
+        ],
+        "conditionStatus": "PRESERVED",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-climate-003-0edc89a8f2de72a2-11#chars-1389-1558",
+          "span:c-climate-003-0edc89a8f2de72a2-11#chars-1559-1724"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:12:23.217Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:0edc89a8f2de72a2-edb3cd4c22d2983e",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-climate-003#block-11] “Of these, the one that has received the most attention is to allow limited use o”; [1:c-climate-003#block-11] “In effect, this flexibility means that emissions within the EU would only need t”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:0edc89a8f2de72a2-edb3cd4c22d2983e",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-climate-003#block-11] “Of these, the one that has received the most attention is to allow limited use o”; [1:c-climate-003#block-11] “In effect, this flexibility means that emissions within the EU would only need t”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_CONDITIONS_MISSING",
+          "severity": "error",
+          "affectedObject": "rel:0edc89a8f2de72a2-edb3cd4c22d2983e",
+          "detail": "conditions：Relation 未通过边级语义审计；证据 [0:c-climate-003#block-11] “Of these, the one that has received the most attention is to allow limited use o”; [1:c-climate-003#block-11] “In effect, this flexibility means that emissions within the EU would only need t”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-04fea34de59eef35",
+        "from": "claim:0edc89a8f2de72a2-5fc413e99c5640e5",
+        "to": "claim:83071555dd80fcef-dd36b4190272d0d9",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-climate-002-83071555dd80fcef-12#chars-2184-2480",
+          "span:c-climate-003-0edc89a8f2de72a2-5#chars-388-542"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:12:52.920Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.5,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-04fea34de59eef35",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-climate-002#block-12] “To that end, at the latest within six months of the first global stocktake refer”; [1:c-climate-003#block-5] “The European Commission's new proposal builds on previous targets and roadmaps, ”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-04fea34de59eef35",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-climate-002#block-12] “To that end, at the latest within six months of the first global stocktake refer”; [1:c-climate-003#block-5] “The European Commission's new proposal builds on previous targets and roadmaps, ”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-07d2acd3d149494e",
+        "from": "claim:0edc89a8f2de72a2-07323a3fd50f07bb",
+        "to": "claim:83071555dd80fcef-8a025f5af6d8b5b6",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-climate-002-83071555dd80fcef-14#chars-2584-2684",
+          "span:c-climate-003-0edc89a8f2de72a2-7#chars-874-1064"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:12:52.920Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-07d2acd3d149494e",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [1:c-climate-003#block-7] “This, together with the European Scientific Advisory Board on Climate Change's r”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-07d2acd3d149494e",
+          "detail": "type：Relation 未通过边级语义审计；证据 [1:c-climate-003#block-7] “This, together with the European Scientific Advisory Board on Climate Change's r”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-0af2b991bf67ea10",
+        "from": "claim:0edc89a8f2de72a2-90a2e2a705c9431d",
+        "to": "claim:83071555dd80fcef-b7ee62b88dd7b1b0",
+        "type": "EQUIVALENT_UNDER",
+        "conditions": [
+          "Claim 14 refers to the European Climate Law; Claim 23 identifies Regulation (EU) 2021/1119 as the European Climate Law."
+        ],
+        "conditionStatus": "UNVERIFIED",
+        "supersessionEffect": null,
+        "relationAuditVersion": null,
+        "evidenceSpanIds": [
+          "span:c-climate-002-83071555dd80fcef-0#chars-3-74",
+          "span:c-climate-003-0edc89a8f2de72a2-6#chars-546-705"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:12:52.920Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_EQUIVALENCE_REVIEW_REQUIRED",
+          "severity": "error",
+          "affectedObject": "rel:cross-0af2b991bf67ea10",
+          "detail": "EQUIVALENT_UNDER 自动审计在真实抽检中 4/4 误判；独立人工复核或校准门禁完成前禁止自动晋级",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-155ec805c864d8ac",
+        "from": "claim:0edc89a8f2de72a2-90a2e2a705c9431d",
+        "to": "claim:83071555dd80fcef-6dbb0dd6b9202fac",
+        "type": "EQUIVALENT_UNDER",
+        "conditions": [
+          "Claim 14 states the European Climate Law entered into force in July 2021; Claim 22 states the regulation is also known as the 'European Climate Law'."
+        ],
+        "conditionStatus": "UNVERIFIED",
+        "supersessionEffect": null,
+        "relationAuditVersion": null,
+        "evidenceSpanIds": [
+          "span:c-climate-002-83071555dd80fcef-3#chars-349-389",
+          "span:c-climate-003-0edc89a8f2de72a2-6#chars-546-705"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:12:52.920Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_EQUIVALENCE_REVIEW_REQUIRED",
+          "severity": "error",
+          "affectedObject": "rel:cross-155ec805c864d8ac",
+          "detail": "EQUIVALENT_UNDER 自动审计在真实抽检中 4/4 误判；独立人工复核或校准门禁完成前禁止自动晋级",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-2096ef8a57a7fb4b",
+        "from": "claim:0edc89a8f2de72a2-09f6d31a030a9377",
+        "to": "claim:83071555dd80fcef-dd36b4190272d0d9",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-climate-002-83071555dd80fcef-12#chars-2184-2480",
+          "span:c-climate-003-0edc89a8f2de72a2-7#chars-709-873"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:12:52.920Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.6,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-2096ef8a57a7fb4b",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-climate-002#block-12] “To that end, at the latest within six months of the first global stocktake refer”; [1:c-climate-003#block-7] “In 2024, the commission published an impact assessment, detailing the underlying”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-2096ef8a57a7fb4b",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-climate-002#block-12] “To that end, at the latest within six months of the first global stocktake refer”; [1:c-climate-003#block-7] “In 2024, the commission published an impact assessment, detailing the underlying”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-22df09daf8d8074f",
+        "from": "claim:0edc89a8f2de72a2-3b0c485a82328631",
+        "to": "claim:83071555dd80fcef-b7ee62b88dd7b1b0",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-climate-002-83071555dd80fcef-0#chars-3-74",
+          "span:c-climate-003-0edc89a8f2de72a2-5#chars-388-542"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:12:52.920Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.5,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-22df09daf8d8074f",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-climate-002#block-0] “Regulation (EU) 2021/1119 — European Climate Law (consolidated version)”; [1:c-climate-003#block-5] “The European Commission's new proposal builds on previous targets and roadmaps, ”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-22df09daf8d8074f",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-climate-002#block-0] “Regulation (EU) 2021/1119 — European Climate Law (consolidated version)”; [1:c-climate-003#block-5] “The European Commission's new proposal builds on previous targets and roadmaps, ”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-22df09daf8d8074f",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-climate-002#block-0] “Regulation (EU) 2021/1119 — European Climate Law (consolidated version)”; [1:c-climate-003#block-5] “The European Commission's new proposal builds on previous targets and roadmaps, ”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-56cf90ad915baaea",
+        "from": "claim:0edc89a8f2de72a2-0bceee8405f1bef2",
+        "to": "claim:83071555dd80fcef-dd36b4190272d0d9",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-climate-002-83071555dd80fcef-12#chars-2184-2480",
+          "span:c-climate-003-0edc89a8f2de72a2-15#chars-2194-2383"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:12:52.920Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.5,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-56cf90ad915baaea",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-climate-002#block-12] “To that end, at the latest within six months of the first global stocktake refer”; [1:c-climate-003#block-15] “Certain European countries have been placing pressure on the commission to chang”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-56cf90ad915baaea",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-climate-002#block-12] “To that end, at the latest within six months of the first global stocktake refer”; [1:c-climate-003#block-15] “Certain European countries have been placing pressure on the commission to chang”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-56cf90ad915baaea",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-climate-002#block-12] “To that end, at the latest within six months of the first global stocktake refer”; [1:c-climate-003#block-15] “Certain European countries have been placing pressure on the commission to chang”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-660e4d941f6a58b3",
+        "from": "claim:0edc89a8f2de72a2-07323a3fd50f07bb",
+        "to": "claim:83071555dd80fcef-dd36b4190272d0d9",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-climate-002-83071555dd80fcef-12#chars-2184-2480",
+          "span:c-climate-003-0edc89a8f2de72a2-7#chars-874-1064"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:12:52.920Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.6,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-660e4d941f6a58b3",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-climate-002#block-12] “To that end, at the latest within six months of the first global stocktake refer”; [1:c-climate-003#block-7] “This, together with the European Scientific Advisory Board on Climate Change's r”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-660e4d941f6a58b3",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-climate-002#block-12] “To that end, at the latest within six months of the first global stocktake refer”; [1:c-climate-003#block-7] “This, together with the European Scientific Advisory Board on Climate Change's r”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-660e4d941f6a58b3",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-climate-002#block-12] “To that end, at the latest within six months of the first global stocktake refer”; [1:c-climate-003#block-7] “This, together with the European Scientific Advisory Board on Climate Change's r”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_DIRECTION_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-660e4d941f6a58b3",
+          "detail": "direction：Relation 未通过边级语义审计；证据 [0:c-climate-002#block-12] “To that end, at the latest within six months of the first global stocktake refer”; [1:c-climate-003#block-7] “This, together with the European Scientific Advisory Board on Climate Change's r”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-7825783d5378fc5a",
+        "from": "claim:0edc89a8f2de72a2-3cb894138005274f",
+        "to": "claim:83071555dd80fcef-dd36b4190272d0d9",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-climate-002-83071555dd80fcef-12#chars-2184-2480",
+          "span:c-climate-003-0edc89a8f2de72a2-9#chars-1095-1207"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:12:52.920Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.6,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-7825783d5378fc5a",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-climate-002#block-12] “To that end, at the latest within six months of the first global stocktake refer”; [1:c-climate-003#block-9] “The headline 90% target for 2040 was announced as part of a roadmap outlined by ”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-7825783d5378fc5a",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-climate-002#block-12] “To that end, at the latest within six months of the first global stocktake refer”; [1:c-climate-003#block-9] “The headline 90% target for 2040 was announced as part of a roadmap outlined by ”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-7825783d5378fc5a",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-climate-002#block-12] “To that end, at the latest within six months of the first global stocktake refer”; [1:c-climate-003#block-9] “The headline 90% target for 2040 was announced as part of a roadmap outlined by ”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-df8e0c150df86977",
+        "from": "claim:0edc89a8f2de72a2-a5adbb37b74a0a73",
+        "to": "claim:83071555dd80fcef-4f684f0b7d7d9e0d",
+        "type": "EQUIVALENT_UNDER",
+        "conditions": [
+          "Claim 15 states the European Climate Law set a target of at least 55% reduction by 2030; Claim 25 states the binding Union 2030 climate target is a domestic reduction of at least 55% by 2030."
+        ],
+        "conditionStatus": "UNVERIFIED",
+        "supersessionEffect": null,
+        "relationAuditVersion": null,
+        "evidenceSpanIds": [
+          "span:c-climate-002-83071555dd80fcef-8#chars-1227-1416",
+          "span:c-climate-003-0edc89a8f2de72a2-6#chars-546-705"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:12:52.920Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_EQUIVALENCE_REVIEW_REQUIRED",
+          "severity": "error",
+          "affectedObject": "rel:cross-df8e0c150df86977",
+          "detail": "EQUIVALENT_UNDER 自动审计在真实抽检中 4/4 误判；独立人工复核或校准门禁完成前禁止自动晋级",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    }
+  ]
+}

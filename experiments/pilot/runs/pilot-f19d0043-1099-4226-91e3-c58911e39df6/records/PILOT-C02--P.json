@@ -1,0 +1,68 @@
+{
+  "runId": "pilot-f19d0043-1099-4226-91e3-c58911e39df6",
+  "questionId": "PILOT-C02",
+  "category": "C",
+  "group": "P",
+  "corpusHash": "86268a6fbd559d17bb005c4c7bd64d3d1c91b2146010c625e9f2fc2fcb37d938",
+  "knowledgeVersion": "kv:e2f961a26664588188f91fe7",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "temperature": 0,
+  "promptHash": "e2b9553c72d68fe0531d958cfebeb244b4e40bf9e7574ee20cc0179aa8254b66",
+  "request": {
+    "systemPrompt": "你是一个受证据约束的问答 Agent。只使用本次请求提供的检索上下文回答问题。\n要求：\n1. 保留所有影响结论的条件、例外和不确定性。\n2. 每个关键结论引用上下文中的 SOURCE、EVIDENCE 或 CLAIM 标识。\n3. 如果上下文不足，明确回答 insufficient，不得依赖外部常识补齐。\n4. 只输出严格 JSON：{\"answer\":\"...\",\"citations\":[\"...\"],\"insufficient\":false,\"uncertainties\":[\"...\"]}。",
+    "userPrompt": "# 问题\n若数列满足 $a_n\\to0$，是否足以推出级数 $\\sum a_n$ 收敛？请按材料给出的逻辑强度回答，并说明反例。\n\n# 检索上下文\n## TASK MAP\n主题: 若数列满足 $a_n\\to0$，是否足以推出级数 $\\sum a_n$ 收敛？请按材料给出的逻辑强度回答，并说明反例。\n地图主题: 数集, 算子, 空间, 定义, 自然\n关键概念: 连通性, 单射, 浮点数, 无理数, 交换环\n已知争议: 0 个\n最近变化: 5 条\n找到 14 条相关 Claim\n找到 10 条关系\n找到 2 条原文证据\n\n## CLAIM claim:e7ea8bc17c2cc4ab-02610b4e92ce3e70\n几何级数 ∑ ar^{n-1} 的收敛条件是 |r| < 1。\nConditions: |r| < 1\nValidity: SUPPORTED\n\n## CLAIM claim:e7ea8bc17c2cc4ab-03fa695ee7a422d8\ncos x 的 Maclaurin 级数收敛半径为 ∞。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:e7ea8bc17c2cc4ab-07e8ca8a41f4452d\nsin x 的 Maclaurin 级数为 ∑_{n=0}^∞ (-1)^n x^{2n+1}/(2n+1)!。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:e7ea8bc17c2cc4ab-0ba5617a37879d03\nln(1+x) 的 Maclaurin 级数为 ∑_{n=1}^∞ (-1)^{n+1} x^n/n。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:e7ea8bc17c2cc4ab-0d852a3382e059d1\n1/(1-x) 的 Maclaurin 级数收敛半径为 1。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:e7ea8bc17c2cc4ab-28db2687beed1921\n交错调和级数 ∑ (-1)^{n-1}/n 收敛到 ln 2。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:e7ea8bc17c2cc4ab-37a64557c3661847\n1/(1-x) 的 Maclaurin 级数为 ∑_{n=0}^∞ x^n。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:e7ea8bc17c2cc4ab-5af4111393db6422\ne^x 的 Maclaurin 级数为 ∑_{n=0}^∞ x^n/n!。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:e7ea8bc17c2cc4ab-722d33fc1d688ebb\np-级数 ∑ 1/n^p 的收敛条件是 p > 1。\nConditions: p > 1\nValidity: SUPPORTED\n\n## CLAIM claim:e7ea8bc17c2cc4ab-83dfb49b8578b573\n级数 ∑ 1/n! 收敛。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:e7ea8bc17c2cc4ab-ddeb97bcba920640\n几何级数 ∑ ar^{n-1} 收敛时和为 a/(1-r)。\nConditions: |r| < 1\nValidity: SUPPORTED\n\n## CLAIM claim:e7ea8bc17c2cc4ab-90898101d65b1615\nsin x 的 Maclaurin 级数收敛半径为 ∞。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:e7ea8bc17c2cc4ab-a02aa08f5e1c03aa\nln(1+x) 的 Maclaurin 级数收敛半径为 1。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:e7ea8bc17c2cc4ab-936964a2e23a58e1\ne^x 的 Maclaurin 级数收敛半径为 ∞。\nConditions: none\nValidity: SUPPORTED\n\n## RELATION rel:e7ea8bc17c2cc4ab-2bfb61135564323b\nclaim:e7ea8bc17c2cc4ab-02610b4e92ce3e70 --[DERIVED_FROM]--> claim:e7ea8bc17c2cc4ab-ddeb97bcba920640\nConditions: |r| < 1\n\n## RELATION rel:e7ea8bc17c2cc4ab-6ab3f92fea68418a\nclaim:e7ea8bc17c2cc4ab-ddeb97bcba920640 --[REQUIRES]--> claim:e7ea8bc17c2cc4ab-02610b4e92ce3e70\nConditions: |r| < 1\n\n## RELATION rel:e7ea8bc17c2cc4ab-9383f1f832d4614d\nclaim:e7ea8bc17c2cc4ab-07e8ca8a41f4452d --[DERIVED_FROM]--> claim:e7ea8bc17c2cc4ab-90898101d65b1615\nConditions: 无\n\n## RELATION rel:e7ea8bc17c2cc4ab-ba27481ab2de8c74\nclaim:e7ea8bc17c2cc4ab-90898101d65b1615 --[SUPPORTS]--> claim:e7ea8bc17c2cc4ab-07e8ca8a41f4452d\nConditions: 无\n\n## RELATION rel:e7ea8bc17c2cc4ab-0098a4abd0cdbf39\nclaim:e7ea8bc17c2cc4ab-a02aa08f5e1c03aa --[REQUIRES]--> claim:e7ea8bc17c2cc4ab-0ba5617a37879d03\nConditions: |x|<=1, x≠-1\n\n## RELATION rel:e7ea8bc17c2cc4ab-8fa88a57a58fdaa3\nclaim:e7ea8bc17c2cc4ab-0ba5617a37879d03 --[DERIVED_FROM]--> claim:e7ea8bc17c2cc4ab-a02aa08f5e1c03aa\nConditions: 无\n\n## RELATION rel:e7ea8bc17c2cc4ab-a4b688e50f80418a\nclaim:e7ea8bc17c2cc4ab-37a64557c3661847 --[REQUIRES]--> claim:e7ea8bc17c2cc4ab-0d852a3382e059d1\nConditions: |x|<1\n\n## RELATION rel:e7ea8bc17c2cc4ab-bd40ef15a598cdb9\nclaim:e7ea8bc17c2cc4ab-0d852a3382e059d1 --[SUPPORTS]--> claim:e7ea8bc17c2cc4ab-37a64557c3661847\nConditions: 无\n\n## RELATION rel:e7ea8bc17c2cc4ab-0f1611c5d22d2916\nclaim:e7ea8bc17c2cc4ab-5af4111393db6422 --[DERIVED_FROM]--> claim:e7ea8bc17c2cc4ab-936964a2e23a58e1\nConditions: 无\n\n## RELATION rel:e7ea8bc17c2cc4ab-1024a6d72638aefd\nclaim:e7ea8bc17c2cc4ab-936964a2e23a58e1 --[REQUIRES]--> claim:e7ea8bc17c2cc4ab-5af4111393db6422\nConditions: 无\n\n## EVIDENCE span:03-sequences-limits-e7ea8bc17c2cc4ab-29\n| 级数 | 收敛条件 | 和（若收敛） |\n|------|---------|------------|\n| 几何级数 $\\sum ar^{n-1}$ | $\\lvert r\\rvert < 1$ | $\\frac{a}{1-r}$ |\n| $p$-级数 $\\sum \\frac{1}{n^p}$ | $p > 1$ | $\\zeta(p)$ |\n| 调和级数 $\\sum \\frac{1}{n}$ | **发散** | ∞（$\\sim \\ln n + \\gamma$） |\n| 交错调和 $\\sum \\frac{(-1)^{n-1}}{n}$ | 条件收敛 | $\\ln 2$ |\n| $\\sum \\frac{1}{n!}$ | 收敛 | $e$ |\n\n## EVIDENCE span:03-sequences-limits-e7ea8bc17c2cc4ab-39\n| 函数 | Maclaurin 级数 | 收敛半径 |\n|------|---------------|:---:|\n| $e^x$ | $\\sum_{n=0}^\\infty \\frac{x^n}{n!}$ | $\\infty$ |\n| $\\sin x$ | $\\sum_{n=0}^\\infty (-1)^n \\frac{x^{2n+1}}{(2n+1)!}$ | $\\infty$ |\n| $\\cos x$ | $\\sum_{n=0}^\\infty (-1)^n \\frac{x^{2n}}{(2n)!}$ | $\\infty$ |\n| $\\frac{1}{1-x}$ | $\\sum_{n=0}^\\infty x^n$ | $1$ |\n| $\\ln(1+x)$ | $\\sum_{n=1}^\\infty (-1)^{n+1}\\frac{x^n}{n}$ | $1$ |\n\n## CONFLICTS AND CONDITIONS\n📌 Claim claim:e7ea8bc17c2cc4ab-02610b4e92ce3e70 适用条件: |r| < 1\n📌 Claim claim:e7ea8bc17c2cc4ab-722d33fc1d688ebb 适用条件: p > 1\n📌 Claim claim:e7ea8bc17c2cc4ab-ddeb97bcba920640 适用条件: |r| < 1\n📌 Relation rel:e7ea8bc17c2cc4ab-2bfb61135564323b (DERIVED_FROM) 适用条件: |r| < 1\n📌 Relation rel:e7ea8bc17c2cc4ab-6ab3f92fea68418a (REQUIRES) 适用条件: |r| < 1\n📌 Relation rel:e7ea8bc17c2cc4ab-9383f1f832d4614d (DERIVED_FROM) 适用条件: 无\n📌 Relation rel:e7ea8bc17c2cc4ab-ba27481ab2de8c74 (SUPPORTS) 适用条件: 无\n📌 Relation rel:e7ea8bc17c2cc4ab-0098a4abd0cdbf39 (REQUIRES) 适用条件: |x|<=1, x≠-1\n📌 Relation rel:e7ea8bc17c2cc4ab-8fa88a57a58fdaa3 (DERIVED_FROM) 适用条件: 无\n📌 Relation rel:e7ea8bc17c2cc4ab-a4b688e50f80418a (REQUIRES) 适用条件: |x|<1\n📌 Relation rel:e7ea8bc17c2cc4ab-bd40ef15a598cdb9 (SUPPORTS) 适用条件: 无\n📌 Relation rel:e7ea8bc17c2cc4ab-0f1611c5d22d2916 (DERIVED_FROM) 适用条件: 无\n📌 Relation rel:e7ea8bc17c2cc4ab-1024a6d72638aefd (REQUIRES) 适用条件: 无"
+  },
+  "contextHash": "a6044e2372cb5a2799f15dd4b1364d01f94bc333b60eb3768d36bbd48690e550",
+  "estimatedContextTokens": 1642,
+  "estimatedTotalInputTokens": 1842,
+  "usage": {
+    "promptTokens": 2894,
+    "completionTokens": 80,
+    "totalTokens": 2974,
+    "promptCacheHitTokens": 0,
+    "promptCacheMissTokens": 2894,
+    "reasoningTokens": 0
+  },
+  "latencyMs": 1296,
+  "finishReason": "stop",
+  "toolCalls": 1,
+  "retrievedClaims": [
+    "claim:e7ea8bc17c2cc4ab-02610b4e92ce3e70",
+    "claim:e7ea8bc17c2cc4ab-03fa695ee7a422d8",
+    "claim:e7ea8bc17c2cc4ab-07e8ca8a41f4452d",
+    "claim:e7ea8bc17c2cc4ab-0ba5617a37879d03",
+    "claim:e7ea8bc17c2cc4ab-0d852a3382e059d1",
+    "claim:e7ea8bc17c2cc4ab-28db2687beed1921",
+    "claim:e7ea8bc17c2cc4ab-37a64557c3661847",
+    "claim:e7ea8bc17c2cc4ab-5af4111393db6422",
+    "claim:e7ea8bc17c2cc4ab-722d33fc1d688ebb",
+    "claim:e7ea8bc17c2cc4ab-83dfb49b8578b573",
+    "claim:e7ea8bc17c2cc4ab-ddeb97bcba920640",
+    "claim:e7ea8bc17c2cc4ab-90898101d65b1615",
+    "claim:e7ea8bc17c2cc4ab-a02aa08f5e1c03aa",
+    "claim:e7ea8bc17c2cc4ab-936964a2e23a58e1"
+  ],
+  "retrievedRelations": [
+    "rel:e7ea8bc17c2cc4ab-2bfb61135564323b",
+    "rel:e7ea8bc17c2cc4ab-6ab3f92fea68418a",
+    "rel:e7ea8bc17c2cc4ab-9383f1f832d4614d",
+    "rel:e7ea8bc17c2cc4ab-ba27481ab2de8c74",
+    "rel:e7ea8bc17c2cc4ab-0098a4abd0cdbf39",
+    "rel:e7ea8bc17c2cc4ab-8fa88a57a58fdaa3",
+    "rel:e7ea8bc17c2cc4ab-a4b688e50f80418a",
+    "rel:e7ea8bc17c2cc4ab-bd40ef15a598cdb9",
+    "rel:e7ea8bc17c2cc4ab-0f1611c5d22d2916",
+    "rel:e7ea8bc17c2cc4ab-1024a6d72638aefd"
+  ],
+  "evidenceSpans": [
+    "span:03-sequences-limits-e7ea8bc17c2cc4ab-29",
+    "span:03-sequences-limits-e7ea8bc17c2cc4ab-39"
+  ],
+  "retrievedSources": [
+    "source:03-sequences-limits-e7ea8bc17c2cc4ab"
+  ],
+  "droppedContext": [],
+  "answer": "{\n  \"answer\": \"不能。反例：调和级数 ∑ 1/n，其通项 a_n = 1/n → 0，但级数发散。\",\n  \"citations\": [\"span:03-sequences-limits-e7ea8bc17c2cc4ab-29\"],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}",
+  "errors": []
+}

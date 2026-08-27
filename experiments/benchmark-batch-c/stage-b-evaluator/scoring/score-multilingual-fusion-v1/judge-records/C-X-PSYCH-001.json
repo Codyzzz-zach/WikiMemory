@@ -1,0 +1,51 @@
+{
+  "questionId": "C-X-PSYCH-001",
+  "promptHash": "69cf8a3fb247d3043a2f35b69cece7d9b34cb2e71ca189db1e1c66c412f5b17d",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 2764,
+    "completionTokens": 2498,
+    "totalTokens": 5262,
+    "promptCacheHitTokens": 256,
+    "promptCacheMissTokens": 2508,
+    "reasoningTokens": 2101
+  },
+  "raw": "[\n  {\n    \"sampleId\": \"sample-169c3d32-e5b4-491b-b06d-8412803ef325\",\n    \"requiredPointCoverage\": 1,\n    \"conditionFidelity\": 2,\n    \"evidenceGrounding\": 1,\n    \"answerabilityDiscipline\": 4,\n    \"sourceRoleTemporalDiscipline\": 4,\n    \"hardFailure\": false,\n    \"hardFailureTypes\": [],\n    \"rationale\": \"缺OSC 39%主观评级和关键差异中实验室数与效应选择；引用未直接匹配Gold来源，但无违规\"\n  },\n  {\n    \"sampleId\": \"sample-c12697b2-3a3b-48fb-afe4-82220bfdf83e\",\n    \"requiredPointCoverage\": 1,\n    \"conditionFidelity\": 2,\n    \"evidenceGrounding\": 1,\n    \"answerabilityDiscipline\": 4,\n    \"sourceRoleTemporalDiscipline\": 4,\n    \"hardFailure\": false,\n    \"hardFailureTypes\": [],\n    \"rationale\": \"同样缺OSC具体成功率与差异要点；引用格式无效且缺c-psych-001；条件基本准确\"\n  },\n  {\n    \"sampleId\": \"sample-4b4e07d8-e8be-4309-bf9f-abcd2fa6dd5a\",\n    \"requiredPointCoverage\": 1,\n    \"conditionFidelity\": 2,\n    \"evidenceGrounding\": 1,\n    \"answerabilityDiscipline\": 4,\n    \"sourceRoleTemporalDiscipline\": 4,\n    \"hardFailure\": false,\n    \"hardFailureTypes\": [],\n    \"rationale\": \"缺OSC具体数字与差异细节；引用使用claim ID未显式对应Gold来源；条件表述模糊\"\n  }\n]",
+  "rows": [
+    {
+      "sampleId": "sample-169c3d32-e5b4-491b-b06d-8412803ef325",
+      "requiredPointCoverage": 1,
+      "conditionFidelity": 2,
+      "evidenceGrounding": 1,
+      "answerabilityDiscipline": 4,
+      "sourceRoleTemporalDiscipline": 4,
+      "hardFailure": false,
+      "hardFailureTypes": [],
+      "rationale": "缺OSC 39%主观评级和关键差异中实验室数与效应选择；引用未直接匹配Gold来源，但无违规"
+    },
+    {
+      "sampleId": "sample-c12697b2-3a3b-48fb-afe4-82220bfdf83e",
+      "requiredPointCoverage": 1,
+      "conditionFidelity": 2,
+      "evidenceGrounding": 1,
+      "answerabilityDiscipline": 4,
+      "sourceRoleTemporalDiscipline": 4,
+      "hardFailure": false,
+      "hardFailureTypes": [],
+      "rationale": "同样缺OSC具体成功率与差异要点；引用格式无效且缺c-psych-001；条件基本准确"
+    },
+    {
+      "sampleId": "sample-4b4e07d8-e8be-4309-bf9f-abcd2fa6dd5a",
+      "requiredPointCoverage": 1,
+      "conditionFidelity": 2,
+      "evidenceGrounding": 1,
+      "answerabilityDiscipline": 4,
+      "sourceRoleTemporalDiscipline": 4,
+      "hardFailure": false,
+      "hardFailureTypes": [],
+      "rationale": "缺OSC具体数字与差异细节；引用使用claim ID未显式对应Gold来源；条件表述模糊"
+    }
+  ]
+}

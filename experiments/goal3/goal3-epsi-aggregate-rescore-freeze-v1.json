@@ -1,0 +1,20 @@
+{
+	"schemaVersion": "wge-goal3-epsi-aggregate-rescore-freeze/v1",
+	"status": "FROZEN_BEFORE_FIRST_REPORT",
+	"frozenAt": "2026-08-04T20:18:00+08:00",
+	"contract": {
+		"path": "experiments/goal3/goal3-epsi-aggregate-rescore-contract-v1.json",
+		"sha256": "45ac1dd961b743fe27034fa80b13f1210dfc20a69148066eee041d91c964f0ef"
+	},
+	"implementation": {
+		"runner": {
+			"path": "scripts/rescore-goal3-epsi-aggregate.ts",
+			"sha256": "a1bb2382222522412f59a14f560bf4abe7b9d7858a39551d7584524cf6673694"
+		}
+	},
+	"prohibitions": [
+		"No overwrite of the immutable EPSI v1 report or manifest.",
+		"No retrieval, Gold parsing, model, network, Relation or Context Pack access.",
+		"No candidate, budget, eviction or decision-threshold change."
+	]
+}

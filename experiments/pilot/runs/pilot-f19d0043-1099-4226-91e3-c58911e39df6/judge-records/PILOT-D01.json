@@ -1,0 +1,48 @@
+{
+  "questionId": "PILOT-D01",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "request": {
+    "systemPrompt": "你是知识系统的盲测评分员。你只按提供的 Gold 和评分合同评价匿名答案，不判断答案来自哪个实验组。\n必须逐项核对 requiredClaims、mustMentionConditions、forbiddenClaims、answerability 和证据引用。\nsourceRisk.present=true 时，Gold 风险说明是允许使用的人工审计结论；不得把源材料的过强表述当成正确答案。\n只输出严格 JSON：{\"scores\":[{\"sampleId\":\"...\",\"requiredClaimCoverage\":0,\"conditionFidelity\":0,\"evidenceGrounding\":0,\"answerabilityDiscipline\":0,\"hardFailure\":false,\"rationale\":\"...\"}]}。",
+    "userPrompt": "# 评分合同\n{\n  \"dimensions\": {\n    \"requiredClaimCoverage\": {\n      \"score0\": \"没有覆盖 requiredClaims，或核心结论相反\",\n      \"score1\": \"覆盖部分 requiredClaims，但缺少一项以上关键连接\",\n      \"score2\": \"完整覆盖全部 requiredClaims\"\n    },\n    \"conditionFidelity\": {\n      \"score0\": \"触发 forbiddenClaims，或删除了决定结论的条件\",\n      \"score1\": \"方向基本正确，但条件、例外或必要/充分强度表达不完整\",\n      \"score2\": \"保留全部 mustMentionConditions，且未触发 forbiddenClaims\"\n    },\n    \"evidenceGrounding\": {\n      \"score0\": \"关键结论没有可解析引用，或引用与结论无关\",\n      \"score1\": \"有相关引用，但关键结论存在未落到证据的部分\",\n      \"score2\": \"关键结论均由当前上下文标识支持，引用位置正确\"\n    },\n    \"answerabilityDiscipline\": {\n      \"score0\": \"证据不足时仍编造答案，或证据充分时错误拒答\",\n      \"score1\": \"表达了不确定性，但回答/拒答边界不够准确\",\n      \"score2\": \"严格遵守该题 answerability，充分回答或明确拒答\"\n    }\n  },\n  \"totalScore\": 8,\n  \"hardFailure\": \"任何 forbiddenClaim、伪造引用、把 insufficient 题当作已由语料证明，均记 hardFailure；该样本总分最高为 2。\"\n}\n\n# 题目与 Gold\n{\n  \"question\": \"为什么材料认为自然数的本质是从 0 和后继操作生成的递归结构，而不是“0,1,2,3…”这些符号本身？这如何解释数学归纳法的根本性？\",\n  \"answerability\": \"answerable\",\n  \"requiredClaims\": [\n    \"自然数的本质是从 0 出发反复应用后继操作的递归结构，而非具体符号序列\",\n    \"数学归纳法直接编码了自然数的这种构造方式，因此具有根本性\"\n  ],\n  \"mustMentionConditions\": [],\n  \"forbiddenClaims\": [\n    \"自然数必须从 1 开始\",\n    \"归纳法只是与自然数构造无关的证明技巧\"\n  ],\n  \"sourceRisk\": {\n    \"present\": false,\n    \"detail\": \"\"\n  },\n  \"evidence\": [\n    {\n      \"sourceFile\": \"mathtest-material/01-number-systems.md\",\n      \"heading\": \"1.1 自然数 $\\\\mathbb{N}$\",\n      \"exactQuote\": \"**关键洞察**：自然数的本质不是\\\"0,1,2,3...\\\"这些符号，而是**递归结构**——从零出发，反复应用\\\"后继\\\"操作，生成无穷无尽的序列。这就是为什么数学归纳法如此根本：它直接编码了自然数的构造方式。\",\n      \"supportsRequiredClaims\": [\n        0,\n        1\n      ]\n    }\n  ]\n}\n\n# 匿名答案\n[\n  {\n    \"sampleId\": \"sample-bcc15a33-c670-44f2-9d06-bb5beb9efbb6\",\n    \"questionId\": \"PILOT-D01\",\n    \"answer\": \"{\\n  \\\"answer\\\": \\\"材料认为自然数的本质是递归结构（从0出发反复应用后继操作），而非符号本身，因为Peano公理系统用五条公理精确定义了自然数，其中数学归纳法原理直接编码了这种构造方式：若性质对0成立且由对n成立可推出对S(n)成立，则对一切自然数成立。这解释了数学归纳法的根本性——它正是自然数递归生成结构的逻辑体现。\\\",\\n  \\\"citations\\\": [\\n    \\\"SOURCE mathtest-material/01-number-systems.md:15-30\\\",\\n    \\\"SOURCE mathtest-material/01-number-systems.md:437-451\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\"\n  },\n  {\n    \"sampleId\": \"sample-f1d54a3a-99a0-4d1c-96ff-8d69f8b95393\",\n    \"questionId\": \"PILOT-D01\",\n    \"answer\": \"{\\n  \\\"answer\\\": \\\"材料认为自然数的本质是递归结构，因为自然数不是简单的符号列表，而是由0和后继操作递归生成的无穷序列。这种观点直接解释了数学归纳法的根本性：归纳法原理（若性质对0成立，且由对n成立可推出对S(n)成立，则对一切自然数成立）正是自然数递归构造方式的编码。\\\",\\n  \\\"citations\\\": [\\n    \\\"span:01-number-systems-80440e2182e5653f-8#chars-377-440\\\",\\n    \\\"span:01-number-systems-80440e2182e5653f-8#chars-440-471\\\",\\n    \\\"span:01-number-systems-80440e2182e5653f-6#chars-261-323\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\"\n  },\n  {\n    \"sampleId\": \"sample-7c6a6324-f47e-4b9d-9f1d-8f76706e206c\",\n    \"questionId\": \"PILOT-D01\",\n    \"answer\": \"{\\n  \\\"answer\\\": \\\"材料认为自然数的本质是递归结构而非符号本身，因为自然数的核心在于从0出发反复应用后继操作生成无穷序列的构造方式（EVIDENCE span:01-number-systems-80440e2182e5653f-8#chars-377-440）。这种递归结构直接编码了数学归纳法的原理：若性质对0成立且由对n成立可推出对S(n)成立，则对一切自然数成立（EVIDENCE span:01-number-systems-80440e2182e5653f-6#chars-261-323），因此数学归纳法之所以根本，是因为它直接反映了自然数的构造方式（EVIDENCE span:01-number-systems-80440e2182e5653f-8#chars-440-471）。\\\",\\n  \\\"citations\\\": [\\n    \\\"EVIDENCE span:01-number-systems-80440e2182e5653f-8#chars-377-440\\\",\\n    \\\"EVIDENCE span:01-number-systems-80440e2182e5653f-6#chars-261-323\\\",\\n    \\\"EVIDENCE span:01-number-systems-80440e2182e5653f-8#chars-440-471\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\"\n  }\n]"
+  },
+  "usage": {
+    "promptTokens": 1634,
+    "completionTokens": 353,
+    "totalTokens": 1987,
+    "promptCacheHitTokens": 768,
+    "promptCacheMissTokens": 866,
+    "reasoningTokens": 0
+  },
+  "finishReason": "stop",
+  "rawResponse": "{\n  \"scores\": [\n    {\n      \"sampleId\": \"sample-bcc15a33-c670-44f2-9d06-bb5beb9efbb6\",\n      \"requiredClaimCoverage\": 2,\n      \"conditionFidelity\": 2,\n      \"evidenceGrounding\": 1,\n      \"answerabilityDiscipline\": 2,\n      \"hardFailure\": false,\n      \"rationale\": \"覆盖两个requiredClaims，无forbiddenClaims，引用位置正确但第一个引用范围过大（15-30行可能包含无关内容），第二个引用位置正确。\"\n    },\n    {\n      \"sampleId\": \"sample-f1d54a3a-99a0-4d1c-96ff-8d69f8b95393\",\n      \"requiredClaimCoverage\": 2,\n      \"conditionFidelity\": 2,\n      \"evidenceGrounding\": 2,\n      \"answerabilityDiscipline\": 2,\n      \"hardFailure\": false,\n      \"rationale\": \"覆盖两个requiredClaims，无forbiddenClaims，引用精确到字符范围，证据充分。\"\n    },\n    {\n      \"sampleId\": \"sample-7c6a6324-f47e-4b9d-9f1d-8f76706e206c\",\n      \"requiredClaimCoverage\": 2,\n      \"conditionFidelity\": 2,\n      \"evidenceGrounding\": 2,\n      \"answerabilityDiscipline\": 2,\n      \"hardFailure\": false,\n      \"rationale\": \"覆盖两个requiredClaims，无forbiddenClaims，引用精确到字符范围，证据充分。\"\n    }\n  ]\n}",
+  "parsed": [
+    {
+      "sampleId": "sample-bcc15a33-c670-44f2-9d06-bb5beb9efbb6",
+      "requiredClaimCoverage": 2,
+      "conditionFidelity": 2,
+      "evidenceGrounding": 1,
+      "answerabilityDiscipline": 2,
+      "hardFailure": false,
+      "rationale": "覆盖两个requiredClaims，无forbiddenClaims，引用位置正确但第一个引用范围过大（15-30行可能包含无关内容），第二个引用位置正确。"
+    },
+    {
+      "sampleId": "sample-f1d54a3a-99a0-4d1c-96ff-8d69f8b95393",
+      "requiredClaimCoverage": 2,
+      "conditionFidelity": 2,
+      "evidenceGrounding": 2,
+      "answerabilityDiscipline": 2,
+      "hardFailure": false,
+      "rationale": "覆盖两个requiredClaims，无forbiddenClaims，引用精确到字符范围，证据充分。"
+    },
+    {
+      "sampleId": "sample-7c6a6324-f47e-4b9d-9f1d-8f76706e206c",
+      "requiredClaimCoverage": 2,
+      "conditionFidelity": 2,
+      "evidenceGrounding": 2,
+      "answerabilityDiscipline": 2,
+      "hardFailure": false,
+      "rationale": "覆盖两个requiredClaims，无forbiddenClaims，引用精确到字符范围，证据充分。"
+    }
+  ]
+}

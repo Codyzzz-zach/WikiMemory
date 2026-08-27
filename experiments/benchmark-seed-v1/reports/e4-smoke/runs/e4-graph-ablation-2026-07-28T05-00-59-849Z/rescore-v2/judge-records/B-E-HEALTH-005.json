@@ -1,0 +1,75 @@
+{
+  "questionId": "B-E-HEALTH-005",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 3229,
+    "completionTokens": 831,
+    "totalTokens": 4060,
+    "promptCacheHitTokens": 256,
+    "promptCacheMissTokens": 2973,
+    "reasoningTokens": 0
+  },
+  "request": {
+    "systemPrompt": "你是盲测评分员，不知道答案属于哪个实验组。只按题目、评分锚点、Gold 证据和引用预校验评价，不用外部常识修正答案。\n每个维度独立使用同一 0-4 锚点：4=完整且准确；3=大部分满足，仅轻微遗漏；2=部分满足，存在重要遗漏；1=仅有极少相关内容；0=缺失、反转或与证据冲突。\nrequiredPointCoverage 只看 requiredPoints；conditionFidelity 看条件、时间、来源角色和不确定性；evidenceGrounding 同时看关键结论是否与 Gold 证据一致以及 citationValidation；answerabilityDiscipline 看是否越界、编造或错误拒答。\ncitationValidation.valid 表示引用标识确实存在于该匿名样本收到的上下文。内部 CLAIM/SPAN/SOURCE 标识不需要出现在 Gold 文本中，不得仅因此扣分；但存在性有效不代表语义必然支持，仍需对照答案内容与 Gold。\n若反转来源归属、抹掉关键条件/时间、把提案当最终规范或编造关键事实，hardFailure=true。\n数值必须与 rationale 一致：若 rationale 说“完整覆盖且准确”，对应维度不能低于 3。\n只输出严格 JSON：{\"scores\":[{\"sampleId\":\"...\",\"requiredPointCoverage\":0,\"conditionFidelity\":0,\"evidenceGrounding\":0,\"answerabilityDiscipline\":0,\"hardFailure\":false,\"rationale\":\"...\"}]}。",
+    "userPrompt": "{\"question\":\"从 2020-03 到 2020-07，空气传播适用范围发生了什么可证实变化？\",\"answerability\":\"answerable\",\"requiredPoints\":[\"7 月文件明确更新 3 月文件\",\"从产生气溶胶医疗程序扩展到不能排除特定室内短距离气溶胶传播\"],\"forbiddenClaims\":[\"不得提高为无条件结论\"],\"requiredEvidence\":[{\"sourceId\":\"health-who-march-2020-001\",\"exactQuote\":\"In the context of COVID-19, airborne transmission may be possible in specific circumstances and settings in which procedures or support treatments that generate aerosols are performed; i.e., endotracheal intubation, bronchoscopy, open suctioning, administration of nebulized treatment, manual ventilation before intubation, turning the patient to the prone position, disconnecting the patient from the ventilator, non-invasive positive-pressure ventilation, tracheostomy, and cardiopulmonary resuscitation.\",\"role\":\"supports\"},{\"sourceId\":\"health-who-july-2020-002\",\"exactQuote\":\"This document is an update to the scientific brief published on 29 March 2020 entitled “Modes of transmission of virus causing COVID-19: implications for infection prevention and control (IPC) precaution recommendations” and includes new scientific evidence available on transmission of SARS-CoV-2, the virus that causes COVID-19.\",\"role\":\"supports\"},{\"sourceId\":\"health-who-july-2020-002\",\"exactQuote\":\"Short-range aerosol transmission, particularly in specific indoor locations, such as crowded and inadequately ventilated spaces over a prolonged period of time with infected persons cannot be ruled out.\",\"role\":\"supports\"}],\"sourcePriorityRule\":\"P/C 决定规范、论文与实现事实；S 只能作为有归属的解释，不能推翻一手版本文本。\",\"anonymousAnswers\":[{\"sampleId\":\"sample-691cefa6-a27a-4377-b32b-e0ccb4da0546\",\"answer\":\"{\\n  \\\"answer\\\": \\\"2020年3月29日，WHO的科学简报指出，在COVID-19背景下，空气传播仅在产生气溶胶的操作或支持治疗（如气管插管、支气管镜等）的特定情况下可能发生（claim:b587ec61aaf84d7d-474d339f3670f6c4）。2020年7月，WHO更新了该简报，承认短距离气溶胶传播在特定室内场所（如拥挤且通风不良的空间、长时间接触感染者）不能排除（claim:a1c7e701eebb9dc1-271d5603ab397f55），并指出该更新包含了新的科学证据（claim:a1c7e701eebb9dc1-8c2b8fcbcdf52208）。但WHO直到2020年10月20日才正式承认气溶胶可以传播病毒（claim:14069d5a982d18de-30df60c9afb3e05b）。\\\",\\n  \\\"citations\\\": [\\n    \\\"claim:b587ec61aaf84d7d-474d339f3670f6c4\\\",\\n    \\\"claim:a1c7e701eebb9dc1-271d5603ab397f55\\\",\\n    \\\"claim:a1c7e701eebb9dc1-8c2b8fcbcdf52208\\\",\\n    \\\"claim:14069d5a982d18de-30df60c9afb3e05b\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\",\"citationValidation\":{\"formatValid\":true,\"total\":4,\"valid\":4,\"invalid\":[]}},{\"sampleId\":\"sample-24db0015-7fed-4471-87d8-b751a65635f0\",\"answer\":\"{\\n  \\\"answer\\\": \\\"2020年3月29日发布的WHO科学简报指出，在COVID-19背景下，空气传播可能仅在产生气溶胶的操作或支持治疗（如气管插管、支气管镜等）的特定情况下发生。2020年7月更新的版本纳入了新的科学证据，承认短距离气溶胶传播在特定室内场所（如拥挤且通风不良的空间，与感染者长时间接触）不能排除。但WHO直到2020年10月20日才正式确认气溶胶可传播病毒。\\\",\\n  \\\"citations\\\": [\\n    \\\"health-who-march-2020-001-b587ec61aaf84d7d-2#chars-351-534\\\",\\n    \\\"health-who-july-2020-002-a1c7e701eebb9dc1-1#chars-81-301\\\",\\n    \\\"health-who-july-2020-002-a1c7e701eebb9dc1-2#chars-413-615\\\",\\n    \\\"health-nature-airborne-2022-003-14069d5a982d18de-2#chars-213-334\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": [\\n    \\\"WHO在2020年7月的更新中仍使用'不能排除'的措辞，而非明确确认空气传播。\\\"\\n  ]\\n}\",\"citationValidation\":{\"formatValid\":true,\"total\":4,\"valid\":4,\"invalid\":[]}},{\"sampleId\":\"sample-e3d1e24c-5371-47e1-91db-82121d826e67\",\"answer\":\"{\\n  \\\"answer\\\": \\\"2020年3月29日，WHO的科学简报指出，在COVID-19背景下，空气传播仅在产生气溶胶的操作或支持治疗（如气管插管、支气管镜等）的特定情况下可能发生（claim:b587ec61aaf84d7d-474d339f3670f6c4）。2020年7月更新的科学简报（claim:a1c7e701eebb9dc1-64202515b32c05d0）纳入了新科学证据（claim:a1c7e701eebb9dc1-8c2b8fcbcdf52208），承认短距离气溶胶传播在特定室内场所（如拥挤且通风不良的空间、长时间接触感染者）不能排除（claim:a1c7e701eebb9dc1-271d5603ab397f55）。但WHO直到2020年10月20日才正式承认气溶胶可传播病毒（claim:14069d5a982d18de-30df60c9afb3e05b）。\\\",\\n  \\\"citations\\\": [\\n    \\\"claim:b587ec61aaf84d7d-474d339f3670f6c4\\\",\\n    \\\"claim:a1c7e701eebb9dc1-64202515b32c05d0\\\",\\n    \\\"claim:a1c7e701eebb9dc1-8c2b8fcbcdf52208\\\",\\n    \\\"claim:a1c7e701eebb9dc1-271d5603ab397f55\\\",\\n    \\\"claim:14069d5a982d18de-30df60c9afb3e05b\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\",\"citationValidation\":{\"formatValid\":true,\"total\":5,\"valid\":5,\"invalid\":[]}},{\"sampleId\":\"sample-1c0c2374-b366-4080-80e4-dcf908319f72\",\"answer\":\"{\\n  \\\"answer\\\": \\\"2020年3月29日发布的WHO科学简报指出，在COVID-19背景下，空气传播可能仅在产生气溶胶的操作或支持治疗的具体情况下发生。2020年7月更新的版本纳入了新的科学证据，承认短距离气溶胶传播在特定室内场所（如拥挤且通风不良的空间，与感染者长时间接触）不能排除。但WHO直到2020年10月20日才正式确认气溶胶可传播病毒。\\\",\\n  \\\"citations\\\": [\\n    \\\"health-who-march-2020-001-b587ec61aaf84d7d-2#chars-351-534\\\",\\n    \\\"health-who-july-2020-002-a1c7e701eebb9dc1-1#chars-306-411\\\",\\n    \\\"health-who-july-2020-002-a1c7e701eebb9dc1-2#chars-413-615\\\",\\n    \\\"health-nature-airborne-2022-003-14069d5a982d18de-2#chars-213-334\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": [\\n    \\\"WHO在2020年7月更新中未明确将短距离气溶胶传播列为正式传播途径，仅表示不能排除。\\\"\\n  ]\\n}\",\"citationValidation\":{\"formatValid\":true,\"total\":4,\"valid\":4,\"invalid\":[]}},{\"sampleId\":\"sample-635cfdf8-d41c-4459-9b2a-0a503ae8934f\",\"answer\":\"{\\n  \\\"answer\\\": \\\"2020年3月29日发布的WHO科学简报指出，在COVID-19背景下，空气传播可能仅在产生气溶胶的操作或支持治疗（如气管插管、支气管镜检查等）的特定情况下发生。2020年7月更新的版本纳入了新的科学证据，承认短距离气溶胶传播在特定室内场所（如拥挤且通风不良的空间，与感染者长时间接触）不能排除。但WHO直到2020年10月20日才正式承认气溶胶可传播病毒。\\\",\\n  \\\"citations\\\": [\\n    \\\"health-who-march-2020-001-b587ec61aaf84d7d-2#chars-351-534\\\",\\n    \\\"health-who-july-2020-002-a1c7e701eebb9dc1-1#chars-81-301\\\",\\n    \\\"health-who-july-2020-002-a1c7e701eebb9dc1-2#chars-413-615\\\",\\n    \\\"health-nature-airborne-2022-003-14069d5a982d18de-2#chars-213-334\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": [\\n    \\\"WHO在2020年7月更新中未明确将短距离气溶胶传播列为正式传播途径，仅表示不能排除\\\",\\n    \\\"2020年10月20日的承认与7月更新之间的具体变化过程未在上下文中详细说明\\\"\\n  ]\\n}\",\"citationValidation\":{\"formatValid\":true,\"total\":4,\"valid\":4,\"invalid\":[]}},{\"sampleId\":\"sample-f2c41313-bb66-4bce-b039-c1f0f296a619\",\"answer\":\"{\\n  \\\"answer\\\": \\\"2020年3月29日，WHO的科学简报指出，在COVID-19背景下，空气传播可能仅在产生气溶胶的操作或支持治疗（如气管插管、支气管镜检查等）的特定情况下发生（claim:b587ec61aaf84d7d-474d339f3670f6c4）。2020年7月，WHO更新了该简报，承认短距离气溶胶传播在特定室内场所（如拥挤且通风不良的空间，与感染者长时间接触）不能排除（claim:a1c7e701eebb9dc1-271d5603ab397f55），并指出该更新包含了新的科学证据（claim:a1c7e701eebb9dc1-8c2b8fcbcdf52208）。此外，有资料显示，直到2020年10月20日WHO才正式承认气溶胶可传播病毒（claim:14069d5a982d18de-30df60c9afb3e05b），并在随后六个月逐渐调整建议，称气溶胶可携带病毒超过1米并停留在空气中（claim:14069d5a982d18de-ff33cb8a69885a6f）。\\\",\\n  \\\"citations\\\": [\\n    \\\"claim:b587ec61aaf84d7d-474d339f3670f6c4\\\",\\n    \\\"claim:a1c7e701eebb9dc1-271d5603ab397f55\\\",\\n    \\\"claim:a1c7e701eebb9dc1-8c2b8fcbcdf52208\\\",\\n    \\\"claim:14069d5a982d18de-30df60c9afb3e05b\\\",\\n    \\\"claim:14069d5a982d18de-ff33cb8a69885a6f\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": [\\n    \\\"WHO在2020年7月更新中是否明确将空气传播适用范围从仅限产生气溶胶的操作扩展到特定室内场所，存在不同解读；有资料显示WHO直到2020年10月才正式承认气溶胶传播。\\\"\\n  ]\\n}\",\"citationValidation\":{\"formatValid\":true,\"total\":5,\"valid\":5,\"invalid\":[]}}]}"
+  },
+  "rawResponse": "{\n  \"scores\": [\n    {\n      \"sampleId\": \"sample-691cefa6-a27a-4377-b32b-e0ccb4da0546\",\n      \"requiredPointCoverage\": 3,\n      \"conditionFidelity\": 3,\n      \"evidenceGrounding\": 3,\n      \"answerabilityDiscipline\": 3,\n      \"hardFailure\": false,\n      \"rationale\": \"答案覆盖了requiredPoints：7月文件更新3月文件，以及从产生气溶胶医疗程序扩展到特定室内短距离气溶胶传播。条件、时间、来源角色和不确定性处理得当，但提及了10月20日的信息，该信息不在requiredEvidence中，但未违反forbiddenClaims。证据引用有效，但额外信息可能轻微偏离问题焦点。\"\n    },\n    {\n      \"sampleId\": \"sample-24db0015-7fed-4471-87d8-b751a65635f0\",\n      \"requiredPointCoverage\": 3,\n      \"conditionFidelity\": 3,\n      \"evidenceGrounding\": 3,\n      \"answerabilityDiscipline\": 3,\n      \"hardFailure\": false,\n      \"rationale\": \"答案覆盖了requiredPoints，条件、时间、来源角色和不确定性处理得当。证据引用有效，但提及了10月20日的信息，该信息不在requiredEvidence中，但未违反forbiddenClaims。\"\n    },\n    {\n      \"sampleId\": \"sample-e3d1e24c-5371-47e1-91db-82121d826e67\",\n      \"requiredPointCoverage\": 3,\n      \"conditionFidelity\": 3,\n      \"evidenceGrounding\": 3,\n      \"answerabilityDiscipline\": 3,\n      \"hardFailure\": false,\n      \"rationale\": \"答案覆盖了requiredPoints，条件、时间、来源角色和不确定性处理得当。证据引用有效，但提及了10月20日的信息，该信息不在requiredEvidence中，但未违反forbiddenClaims。\"\n    },\n    {\n      \"sampleId\": \"sample-1c0c2374-b366-4080-80e4-dcf908319f72\",\n      \"requiredPointCoverage\": 3,\n      \"conditionFidelity\": 3,\n      \"evidenceGrounding\": 3,\n      \"answerabilityDiscipline\": 3,\n      \"hardFailure\": false,\n      \"rationale\": \"答案覆盖了requiredPoints，条件、时间、来源角色和不确定性处理得当。证据引用有效，但提及了10月20日的信息，该信息不在requiredEvidence中，但未违反forbiddenClaims。\"\n    },\n    {\n      \"sampleId\": \"sample-635cfdf8-d41c-4459-9b2a-0a503ae8934f\",\n      \"requiredPointCoverage\": 3,\n      \"conditionFidelity\": 3,\n      \"evidenceGrounding\": 3,\n      \"answerabilityDiscipline\": 3,\n      \"hardFailure\": false,\n      \"rationale\": \"答案覆盖了requiredPoints，条件、时间、来源角色和不确定性处理得当。证据引用有效，但提及了10月20日的信息，该信息不在requiredEvidence中，但未违反forbiddenClaims。\"\n    },\n    {\n      \"sampleId\": \"sample-f2c41313-bb66-4bce-b039-c1f0f296a619\",\n      \"requiredPointCoverage\": 3,\n      \"conditionFidelity\": 3,\n      \"evidenceGrounding\": 3,\n      \"answerabilityDiscipline\": 3,\n      \"hardFailure\": false,\n      \"rationale\": \"答案覆盖了requiredPoints，条件、时间、来源角色和不确定性处理得当。证据引用有效，但提及了10月20日及之后的信息，这些信息不在requiredEvidence中，但未违反forbiddenClaims。\"\n    }\n  ]\n}",
+  "parsed": [
+    {
+      "sampleId": "sample-691cefa6-a27a-4377-b32b-e0ccb4da0546",
+      "requiredPointCoverage": 3,
+      "conditionFidelity": 3,
+      "evidenceGrounding": 3,
+      "answerabilityDiscipline": 3,
+      "hardFailure": false,
+      "rationale": "答案覆盖了requiredPoints：7月文件更新3月文件，以及从产生气溶胶医疗程序扩展到特定室内短距离气溶胶传播。条件、时间、来源角色和不确定性处理得当，但提及了10月20日的信息，该信息不在requiredEvidence中，但未违反forbiddenClaims。证据引用有效，但额外信息可能轻微偏离问题焦点。"
+    },
+    {
+      "sampleId": "sample-24db0015-7fed-4471-87d8-b751a65635f0",
+      "requiredPointCoverage": 3,
+      "conditionFidelity": 3,
+      "evidenceGrounding": 3,
+      "answerabilityDiscipline": 3,
+      "hardFailure": false,
+      "rationale": "答案覆盖了requiredPoints，条件、时间、来源角色和不确定性处理得当。证据引用有效，但提及了10月20日的信息，该信息不在requiredEvidence中，但未违反forbiddenClaims。"
+    },
+    {
+      "sampleId": "sample-e3d1e24c-5371-47e1-91db-82121d826e67",
+      "requiredPointCoverage": 3,
+      "conditionFidelity": 3,
+      "evidenceGrounding": 3,
+      "answerabilityDiscipline": 3,
+      "hardFailure": false,
+      "rationale": "答案覆盖了requiredPoints，条件、时间、来源角色和不确定性处理得当。证据引用有效，但提及了10月20日的信息，该信息不在requiredEvidence中，但未违反forbiddenClaims。"
+    },
+    {
+      "sampleId": "sample-1c0c2374-b366-4080-80e4-dcf908319f72",
+      "requiredPointCoverage": 3,
+      "conditionFidelity": 3,
+      "evidenceGrounding": 3,
+      "answerabilityDiscipline": 3,
+      "hardFailure": false,
+      "rationale": "答案覆盖了requiredPoints，条件、时间、来源角色和不确定性处理得当。证据引用有效，但提及了10月20日的信息，该信息不在requiredEvidence中，但未违反forbiddenClaims。"
+    },
+    {
+      "sampleId": "sample-635cfdf8-d41c-4459-9b2a-0a503ae8934f",
+      "requiredPointCoverage": 3,
+      "conditionFidelity": 3,
+      "evidenceGrounding": 3,
+      "answerabilityDiscipline": 3,
+      "hardFailure": false,
+      "rationale": "答案覆盖了requiredPoints，条件、时间、来源角色和不确定性处理得当。证据引用有效，但提及了10月20日的信息，该信息不在requiredEvidence中，但未违反forbiddenClaims。"
+    },
+    {
+      "sampleId": "sample-f2c41313-bb66-4bce-b039-c1f0f296a619",
+      "requiredPointCoverage": 3,
+      "conditionFidelity": 3,
+      "evidenceGrounding": 3,
+      "answerabilityDiscipline": 3,
+      "hardFailure": false,
+      "rationale": "答案覆盖了requiredPoints，条件、时间、来源角色和不确定性处理得当。证据引用有效，但提及了10月20日及之后的信息，这些信息不在requiredEvidence中，但未违反forbiddenClaims。"
+    }
+  ]
+}

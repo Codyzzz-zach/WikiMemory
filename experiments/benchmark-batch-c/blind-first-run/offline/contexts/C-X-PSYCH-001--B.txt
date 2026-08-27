@@ -1,0 +1,124 @@
+## SOURCE ../stage-a-freeze/compilation-corpus/psychology-reproducibility/c-psych-002.md:1-19 score=24.537
+---
+sourceId: c-psych-002
+title: 'Investigating Variation in Replicability: A ''Many Labs'' Replication Project'
+domain: psychology-reproducibility
+sourceRole: P/C-implementation
+platform: journal
+author: Richard A. Klein, Kate A. Ratliff, Michelangelo Vianello, et al.
+canonicalUrl: https://doi.org/10.1177/1948550614547449
+publishedAt: Tue Jul 01 2014 08:00:00 GMT+0800 (China Standard Time)
+capturedAt: Tue Jul 28 2026 14:00:00 GMT+0800 (China Standard Time)
+versionRef: 'doi:10.1177/1948550614547449; OSF: osf.io/wx7ck'
+mediaType: paper
+language: en
+usage: internal-only
+accessStatus: full
+evaluatorSnapshotHash: sha256:c7cd92a4fd79313de377fb538942cf54391f6ef4575e22bbdb2c464501607dfe
+evaluatorUpstreamArtifactHash: sha256:621868cbccf36c776880ff89371d67a55c1f53044ef8b2d417edc1bb2c331f7e
+---
+
+## SOURCE ../stage-a-freeze/compilation-corpus/psychology-reproducibility/c-psych-002.md:22-29 score=16.916
+## Source Snapshot
+
+*Content sourced from Journal of Open Psychology Data (openpsychologydata.metajnl.com) and OSF project page (https://osf.io/wx7ck/).*
+
+**Authors:** Richard A. Klein, Kate A. Ratliff, Michelangelo Vianello, Reginald B. Adams Jr., et al. (50+ authors)
+**Published in:** Social Psychology (2014), Vol. 45, pp. 142-152; data paper in Journal of Open Psychology Data (2014), Vol. 2, Issue 1, e4
+**DOI:** 10.5334/jopd.ad (data paper); 10.1177/1948550614547449 (main article)
+
+## SOURCE ../stage-a-freeze/compilation-corpus/climate-energy-policy/c-climate-001.md:22-29 score=8.314
+## Source Snapshot
+
+*Content sourced from official IPCC website (https://www.ipcc.ch/report/ar6/syr/) and headline statements page. Full report publicly available.*
+
+**Published:** 19 March 2023 (approved at IPCC 58th Session, Interlaken, Switzerland)
+**Core Writing Team:** Hoesung Lee (Chair), Katherine Calvin, Dipak Dasgupta, et al.
+**DOI:** 10.59327/IPCC/AR6-9789291691647
+
+## SOURCE ../stage-a-freeze/compilation-corpus/psychology-reproducibility/c-psych-001.md:45-48 score=8.091
+### Additional detail from OSF project page
+
+The Reproducibility Project: Psychology began in November 2011, finished primary data collection in December 2014, and published a summary of the results in August 2015. The project was coordinated by the Center for Open Science. Ultimately over 270 contributors earned authorship on the summary report and 86 others provided volunteer support.
+
+## SOURCE ../stage-a-freeze/compilation-corpus/psychology-reproducibility/c-psych-003.md:34-43 score=7.909
+### Key Arguments (verbatim from Harvard Gazette coverage)
+
+Gary King on sampling: "If you want to estimate a parameter of a population, then you either have to randomly sample from that population or make statistical corrections for the fact that you didn't. The OSC did neither."
+
+Daniel Gilbert on the sampling rules: "What they did is create an idiosyncratic, arbitrary list of sampling rules that excluded the majority of psychology's subfields from the sample, that excluded entire classes of studies whose methods are probably among the best in science from the sample, and so on. Then they proceeded to violate all of their own rules."
+
+Gary King on statistical error: "When they did their calculations, they failed to consider the fact that their replication studies were not just new samples from the same population. They were often quite different from the originals in many ways, and those differences are a source of statistical error. So we did the calculation the right way and then applied it to their data. And guess what? The number of failures they observed was just about what you should expect to observe by chance alone — even if all 100 of the original findings were true. The failure of the replication studies to match the original studies was a failure of the replications, not of the originals."
+
+Gary King on fidelity and failure rates: "We used this as a rough index of fidelity, and when we did, we discovered something important: The low-fidelity replications were an astonishing four times more likely to fail. What that suggests is that the infidelities did not just create random statistical noise — they actually biased the studies toward failure."
+
+## SOURCE ../stage-a-freeze/compilation-corpus/psychology-reproducibility/c-psych-002.md:20-21 score=7.621
+# Investigating Variation in Replicability: A 'Many Labs' Replication Project
+
+## SOURCE ../stage-a-freeze/compilation-corpus/psychology-reproducibility/c-psych-002.md:30-37 score=7.621
+### Study Design (verbatim from data paper)
+
+"This dataset is from the Many Labs Replication Project in which 13 effects were replicated across 36 samples and over 6,000 participants. Data from the replications are included, along with demographic variables about the participants and contextual information about the environment in which the replication was conducted."
+
+"Our sample was comprised of 6,344 participants recruited from 36 different sources including university subject pools, Amazon Mechanical Turk, Project Implicit, and other sources."
+
+"The aggregate sample had a mean age of 25.98. Participant ethnicity was: 65.1% White, 6.7% Black or African American, 6.5% East Asian, 4.5% South Asian, 17.2% Other or Unknown. Participant gender was 63.6% female, 29.9% male, 6.5% no response."
+
+## SOURCE ../stage-a-freeze/compilation-corpus/psychology-reproducibility/c-psych-003.md:46-49 score=4.445
+### OSC Response (acknowledged by Gilbert)
+
+"We were glad to see that in their response to our comment, the OSC quibbled about a number of minor issues but conceded the major one, which is that their paper does not provide evidence for the pessimistic conclusions that most people have drawn from it."
+
+## SOURCE ../stage-a-freeze/compilation-corpus/psychology-reproducibility/c-psych-001.md:1-19 score=3.934
+---
+sourceId: c-psych-001
+title: Estimating the reproducibility of psychological science
+domain: psychology-reproducibility
+sourceRole: P-primary
+platform: journal
+author: Open Science Collaboration
+canonicalUrl: https://www.science.org/doi/10.1126/science.aac4716
+publishedAt: Fri Aug 28 2015 08:00:00 GMT+0800 (China Standard Time)
+capturedAt: Tue Jul 28 2026 14:00:00 GMT+0800 (China Standard Time)
+versionRef: doi:10.1126/science.aac4716
+mediaType: paper
+language: en
+usage: internal-only
+accessStatus: partial
+evaluatorSnapshotHash: sha256:82520ab2da2c4ac0785ef7c30c2d2980ad04b0a96b1d9d531dc1231923d74d55
+evaluatorUpstreamArtifactHash: sha256:4245b911b24fdda979afc9efd75a18d58baacb14577878c43bc5dbf1923459c3
+---
+
+## SOURCE ../stage-a-freeze/compilation-corpus/psychology-reproducibility/c-psych-001.md:22-30 score=3.934
+## Source Snapshot
+
+*Note: Full text behind paywall. Content sourced from publicly available abstract, ResearchGate preprint, and OSF project page (https://osf.io/ezcuj/).*
+
+**Authors:** Open Science Collaboration (270+ contributors)
+**Journal:** Science, Vol. 349, Issue 6251, aac4716
+**Published:** 28 August 2015
+**DOI:** 10.1126/science.aac4716
+
+## SOURCE ../stage-a-freeze/compilation-corpus/psychology-reproducibility/c-psych-003.md:30-33 score=3.934
+### Abstract (verbatim from PubMed)
+
+"A paper from the Open Science Collaboration (Research Articles, 28 August 2015, aac4716) attempting to replicate 100 published studies suggests that the reproducibility of psychological science is surprisingly low. We show that this article contains three statistical errors and provides no support for such a conclusion. Indeed, the data are consistent with the opposite conclusion, namely, that the reproducibility of psychological science is quite high."
+
+## SOURCE ../stage-a-freeze/compilation-corpus/climate-energy-policy/c-climate-001.md:34-37 score=3.464
+### Headline Statement A.2 — Observed Changes and Impacts
+
+"Widespread and rapid changes in the atmosphere, ocean, cryosphere and biosphere have occurred. Human-caused climate change is already affecting many weather and climate extremes in every region across the globe. This has led to widespread adverse impacts and related losses and damages to nature and people (high confidence). Vulnerable communities who have historically contributed the least to current climate change are disproportionately affected (high confidence)."
+
+## SOURCE ../stage-a-freeze/compilation-corpus/climate-energy-policy/c-climate-004.md:36-43 score=3.464
+### Clean Energy Growth (from IEA press release)
+
+"The phenomenal rise of clean energy technologies such as solar, wind, electric cars and heat pumps is reshaping how we power everything from factories and vehicles to home appliances and heating systems."
+
+"This includes almost 10 times as many electric cars on the road worldwide; solar PV generating more electricity than the entire US power system does currently; renewables' share of the global electricity mix nearing 50%, up from around 30% today; heat pumps and other electric heating systems outselling fossil fuel boilers globally; and three times as much investment going into new offshore wind projects than into new coal- and gas-fired power plants."
+
+"All of those increases are based only on the current policy settings of governments around the world."
+
+## SOURCE ../stage-a-freeze/compilation-corpus/psychology-reproducibility/c-psych-002.md:42-45 score=3.464
+### Key Result
+
+10 of the 13 effects were successfully replicated across the 36 samples, demonstrating that many classic psychological findings are robust when tested with large, diverse samples and standardized protocols.

@@ -1,0 +1,99 @@
+## TASK MAP
+主题: 根据 Open Science Collaboration (2015) 的研究，在100项被复制的心理学研究中，原始研究中有统计显著结果的比例是多少？复制研究中有统计显著结果的比例是多少？
+地图主题: science, 研究, 10, open, 00
+关键概念: 1850-1900年, Union-wide greenhouse gas emissions and removals, Regulation (EU) 2021/1119, Union 2040 climate target, 2030 climate target
+已知争议: 0 个
+最近变化: 5 条
+找到 10 条相关 Claim
+找到 0 条关系
+找到 10 条原文证据
+
+## CLAIM claim:08f4f1f4eb388c06-5a1eca00ccef74b9
+A paper from the Open Science Collaboration attempting to replicate 100 published studies suggests that the reproducibility of psychological science is surprisingly low.
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:0f7730e649dbc238-a678d14d807db125
+The authors are the Open Science Collaboration, with over 270 contributors.
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:0f7730e649dbc238-803bda104d1d3f61
+The project was coordinated by the Center for Open Science.
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:08f4f1f4eb388c06-6fa60fec777bce5d
+该研究发表在《科学》杂志第351卷第6277期第1037页。
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:08f4f1f4eb388c06-a2c943aa0de96d3f
+该研究的DOI是10.1126/science.aad7243。
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:adb285a63645fee4-13188dbeecc062ee
+The dataset is stored on the Open Science Framework website.
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:e5061e9956aa43aa-fb5a0920af18457d
+超过70%的研究者曾尝试但未能重复另一位科学家的实验。
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:c15bf91ea851c3be-f2794c0130f4aee6
+STEPS预测排放仍然高到足以在2100年将全球平均气温推高至约2.4°C。
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:e5061e9956aa43aa-8ebeb95906825d8c
+超过一半的研究者曾未能重复自己的实验。
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:08f4f1f4eb388c06-cb421c6ce5c6137f
+该研究的科学评论需要付费才能查看。
+Conditions: none
+Validity: SUPPORTED
+
+## EVIDENCE span:c-psych-003-08f4f1f4eb388c06-5#chars-628-842
+A paper from the Open Science Collaboration (Research Articles, 28 August 2015, aac4716) attempting to replicate 100 published studies suggests that the reproducibility of psychological science is surprisingly low.
+
+## EVIDENCE span:c-psych-001-0f7730e649dbc238-3#chars-234-293
+**Authors:** Open Science Collaboration (270+ contributors)
+
+## EVIDENCE span:c-psych-001-0f7730e649dbc238-12#chars-1834-1892
+The project was coordinated by the Center for Open Science
+
+## EVIDENCE span:c-psych-003-08f4f1f4eb388c06-3#chars-487-555
+**Published:** Science, Vol. 351, Issue 6277, pp. 1037, 4 March 2016
+
+## EVIDENCE span:c-psych-003-08f4f1f4eb388c06-3#chars-556-588
+**DOI:** 10.1126/science.aad7243
+
+## EVIDENCE span:c-psych-002-adb285a63645fee4-13#chars-2322-2382
+The dataset is stored on the Open Science Framework website.
+
+## EVIDENCE span:c-psych-004-e5061e9956aa43aa-5#chars-418-513
+More than 70% of researchers have tried and failed to reproduce another scientist's experiments
+
+## EVIDENCE span:c-climate-004-c15bf91ea851c3be-5#chars-458-551
+emissions remain high enough to push up global average temperatures to around 2.4 °C in 2100.
+
+## EVIDENCE span:c-psych-004-e5061e9956aa43aa-5#chars-519-580
+more than half have failed to reproduce their own experiments
+
+## EVIDENCE span:c-psych-003-08f4f1f4eb388c06-2#chars-120-350
+*Note: Science comment behind paywall. Content sourced from PubMed abstract and Harvard Gazette coverage (https://news.harvard.edu/gazette/story/2016/03/study-that-undercut-psych-research-got-it-wrong/), both publicly accessible.*
+
+## CONFLICTS AND CONDITIONS
+🔎 Source source:c-climate-004-c15bf91ea851c3be provenance: uri=experiments/benchmark-batch-c/stage-a-freeze/compilation-corpus/climate-energy-policy/c-climate-004.md; sourceType=md; sourceRole=U/S-response; author=International Energy Agency (IEA); canonicalUrl=https://www.iea.org/reports/world-energy-outlook-2023/executive-summary; publishedAt=Tue Oct 24 2023 08:00:00 GMT+0800 (China Standard Time); versionRef='null'
+🔎 Source source:c-psych-001-0f7730e649dbc238 provenance: uri=experiments/benchmark-batch-c/stage-a-freeze/compilation-corpus/psychology-reproducibility/c-psych-001.md; sourceType=md; sourceRole=P-primary; author=Open Science Collaboration; canonicalUrl=https://www.science.org/doi/10.1126/science.aac4716; publishedAt=Fri Aug 28 2015 08:00:00 GMT+0800 (China Standard Time); versionRef=doi:10.1126/science.aac4716
+🔎 Source source:c-psych-002-adb285a63645fee4 provenance: uri=experiments/benchmark-batch-c/stage-a-freeze/compilation-corpus/psychology-reproducibility/c-psych-002.md; sourceType=md; sourceRole=P/C-implementation; author=Richard A. Klein, Kate A. Ratliff, Michelangelo Vianello, et al.; canonicalUrl=https://doi.org/10.1177/1948550614547449; publishedAt=Tue Jul 01 2014 08:00:00 GMT+0800 (China Standard Time); versionRef='doi:10.1177/1948550614547449; OSF: osf.io/wx7ck'
+🔎 Source source:c-psych-003-08f4f1f4eb388c06 provenance: uri=experiments/benchmark-batch-c/stage-a-freeze/compilation-corpus/psychology-reproducibility/c-psych-003.md; sourceType=md; sourceRole=S-analysis; author=Daniel T. Gilbert, Gary King, Stephen Pettigrew, Timothy D. Wilson; canonicalUrl=https://www.science.org/doi/10.1126/science.aad7243; publishedAt=Fri Mar 04 2016 08:00:00 GMT+0800 (China Standard Time); versionRef='doi:10.1126/science.aad7243; coverage: news.harvard.edu/gazette 2016-03-03'
+🔎 Source source:c-psych-004-e5061e9956aa43aa provenance: uri=experiments/benchmark-batch-c/stage-a-freeze/compilation-corpus/psychology-reproducibility/c-psych-004.md; sourceType=md; sourceRole=U/S-response; author=Monya Baker (Nature); canonicalUrl=https://www.nature.com/articles/533452a; publishedAt=Wed May 25 2016 08:00:00 GMT+0800 (China Standard Time); versionRef=doi:10.1038/533452a
+
+## KNOWN GAPS
+未找到关系——Graph 可能尚未建立跨材料边

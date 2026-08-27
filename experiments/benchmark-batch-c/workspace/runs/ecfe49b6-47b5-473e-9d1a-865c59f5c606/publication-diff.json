@@ -1,0 +1,51 @@
+{
+  "schemaVersion": "pilot-publication-diff/v1",
+  "runId": "ecfe49b6-47b5-473e-9d1a-865c59f5c606",
+  "sourceId": "source:c-psych-004-e5061e9956aa43aa",
+  "generatedAt": "2026-07-28T07:09:51.860Z",
+  "status": "PASS",
+  "acceptedReview": false,
+  "runtime": {
+    "requestedModel": "deepseek-v4-flash",
+    "temperature": 0,
+    "semanticAuditVersion": "v2.3",
+    "relationAuditVersion": "v1.7",
+    "sourceHash": "e5061e9956aa43aa"
+  },
+  "baseline": null,
+  "candidate": {
+    "claims": 17,
+    "concepts": 15,
+    "relations": 6,
+    "quarantinedClaims": 1,
+    "quarantinedRelations": 6,
+    "quarantineRate": 0.05555555555555555
+  },
+  "diff": {
+    "retainedClaimIds": 0,
+    "addedClaimIds": [
+      "claim:e5061e9956aa43aa-0bc95d168cd785a4",
+      "claim:e5061e9956aa43aa-0e4ed06319cdf8f7",
+      "claim:e5061e9956aa43aa-23d6421835389c1e",
+      "claim:e5061e9956aa43aa-3a7c29fb11c19fce",
+      "claim:e5061e9956aa43aa-40b4c70ad10649dd",
+      "claim:e5061e9956aa43aa-4a6cebbbda680b78",
+      "claim:e5061e9956aa43aa-6d89b2dd1efe941d",
+      "claim:e5061e9956aa43aa-7c1a342b1c8c1813",
+      "claim:e5061e9956aa43aa-8ebeb95906825d8c",
+      "claim:e5061e9956aa43aa-8f4c3087c78c3e7e",
+      "claim:e5061e9956aa43aa-b79d759ee8909418",
+      "claim:e5061e9956aa43aa-d9b9a23c05ce12fc",
+      "claim:e5061e9956aa43aa-d9cbe112cd41e0de",
+      "claim:e5061e9956aa43aa-e56f517c73cbbcf0",
+      "claim:e5061e9956aa43aa-eefb29a1cc5defc7",
+      "claim:e5061e9956aa43aa-f7a6045ee1116ef8",
+      "claim:e5061e9956aa43aa-fb5a0920af18457d"
+    ],
+    "removedClaimIds": [],
+    "claimRetentionRate": null,
+    "claimCountChangeRate": null,
+    "conditionsDropped": []
+  },
+  "issues": []
+}

@@ -1,0 +1,28 @@
+{
+  "verdict": "passed",
+  "dimensions": {
+    "support": {
+      "result": "pass",
+      "evidence": "x^2 + 1 = 0 \\xrightarrow{\\mathbb{R}} \\text{无解} \\quad \\xrightarrow{\\mathbb{C}} x = \\pm i"
+    },
+    "addition": {
+      "result": "pass",
+      "evidence": ""
+    },
+    "inference": {
+      "result": "pass",
+      "evidence": ""
+    },
+    "limits": {
+      "result": "pass",
+      "evidence": ""
+    },
+    "citation": {
+      "result": "pass",
+      "evidence": ""
+    }
+  },
+  "anchor": "x^2 + 1 = 0 \\xrightarrow{\\mathbb{R}} \\text{无解} \\quad \\xrightarrow{\\mathbb{C}} x = \\pm i",
+  "failedDimensions": [],
+  "issues": []
+}

@@ -1,0 +1,5 @@
+# Vesuvius Challenge project timeline
+
+Vesuvius Challenge launched in March 2023 with a Grand Prize for the first team to recover four passages of 140 characters from a Herculaneum scroll. Within a year, the prize was claimed. The quest was just beginning.
+
+In 2026, PHerc. 1667 became the first Herculaneum scroll to be virtually unwrapped and read end to end. The challenge now moves onto its next stage: reading multiple entire scrolls.

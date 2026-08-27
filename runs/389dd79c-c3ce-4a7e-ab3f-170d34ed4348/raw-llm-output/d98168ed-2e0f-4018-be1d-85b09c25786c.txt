@@ -1,0 +1,33 @@
+{
+  "verdict": "failed",
+  "dimensions": {
+    "support": {
+      "result": "fail",
+      "evidence": "原文仅列出表达式 $a+b$, $a-b$, $a \\times b$ 和两个勾，没有明确断言这些运算在整数集 Z 中封闭。"
+    },
+    "addition": {
+      "result": "fail",
+      "evidence": "Claim 添加了“在整数集 Z 中”和“封闭”的断言，原文并未提及 Z 或封闭性。"
+    },
+    "inference": {
+      "result": "fail",
+      "evidence": "原文没有提供推断的基础，Claim 直接将列举的运算视为封闭，属于无依据的推断。"
+    },
+    "limits": {
+      "result": "fail",
+      "evidence": "原文没有给出任何限定条件，Claim 也未提及，但 limits 维度依赖前序维度。"
+    },
+    "citation": {
+      "result": "pass",
+      "evidence": "Claim 引用的 span 确实包含所列表达式。"
+    }
+  },
+  "anchor": "$a+b$, $a-b$, $a \\times b$ | ✅ | ✅ |",
+  "failedDimensions": ["support", "addition", "inference", "limits"],
+  "issues": [
+    "原文未明确支持加法、减法、乘法在整数集 Z 中封闭的断言。",
+    "Claim 添加了“在整数集 Z 中”和“封闭”这些原文没有的信息。",
+    "原文仅列出运算，Claim 作出了原文未支持的推断。",
+    "原文未提供条件，但 Claim 断言了封闭性，遗漏了可能的隐含条件。"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "verdict": "failed",
+  "dimensions": {
+    "support": { "result": "fail", "evidence": "原文只标注了“乘法封闭 | ✅”，没有陈述具体内容" },
+    "addition": { "result": "fail", "evidence": "Claim 断言“有理数集Q关于乘法封闭”，原文没有提供任何陈述" },
+    "inference": { "result": "pass", "evidence": "无需推断" },
+    "limits": { "result": "pass", "evidence": "无需限制" },
+    "citation": { "result": "pass", "evidence": "引用的span标识与Claim无矛盾" }
+  },
+  "anchor": "乘法封闭 | ✅",
+  "failedDimensions": ["support", "addition"],
+  "issues": ["原文仅有一个标记，没有包含任何文字描述，无法支持Claim的具体断言", "Claim添加了原文中不存在的具体信息“有理数集Q关于乘法封闭”"]
+}

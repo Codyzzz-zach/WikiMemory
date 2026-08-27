@@ -1,0 +1,57 @@
+{
+  "questionId": "C-T-CLIMATE-001",
+  "promptHash": "2fab62bce725268b67d5afa856eff498d296bc51e4abdb7bdd39e5976279b71c",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 2588,
+    "completionTokens": 4756,
+    "totalTokens": 7344,
+    "promptCacheHitTokens": 256,
+    "promptCacheMissTokens": 2332,
+    "reasoningTokens": 4333
+  },
+  "raw": "[\n  {\n    \"sampleId\": \"sample-6635264a-cce6-4ba3-a3dd-2ea6e2a5486e\",\n    \"requiredPointCoverage\": 1,\n    \"conditionFidelity\": 2,\n    \"evidenceGrounding\": 0,\n    \"answerabilityDiscipline\": 0,\n    \"sourceRoleTemporalDiscipline\": 0,\n    \"hardFailure\": true,\n    \"hardFailureTypes\": [\"answerabilityDiscipline\"],\n    \"rationale\": \"未覆盖p1和p2-evaluator；引用无效；直接给出2026目标未承认不可验证；混淆提案与最终法规。\"\n  },\n  {\n    \"sampleId\": \"sample-e0028505-3d6c-4568-bbd1-62a611d444f5\",\n    \"requiredPointCoverage\": 1,\n    \"conditionFidelity\": 3,\n    \"evidenceGrounding\": 2,\n    \"answerabilityDiscipline\": 0,\n    \"sourceRoleTemporalDiscipline\": 0,\n    \"hardFailure\": true,\n    \"hardFailureTypes\": [\"answerabilityDiscipline\"],\n    \"rationale\": \"未覆盖p1和p2-evaluator；p3条件完备；引用有效但未承认partial；混淆时间版本。\"\n  },\n  {\n    \"sampleId\": \"sample-d0f665fd-0033-4a8a-9820-071528f0007b\",\n    \"requiredPointCoverage\": 1,\n    \"conditionFidelity\": 2,\n    \"evidenceGrounding\": 2,\n    \"answerabilityDiscipline\": 0,\n    \"sourceRoleTemporalDiscipline\": 0,\n    \"hardFailure\": true,\n    \"hardFailureTypes\": [\"answerabilityDiscipline\"],\n    \"rationale\": \"未覆盖p1和p2-evaluator；p3条件基本但对国家不具体；未承认partial；混淆法规版本。\"\n  }\n]",
+  "rows": [
+    {
+      "sampleId": "sample-6635264a-cce6-4ba3-a3dd-2ea6e2a5486e",
+      "requiredPointCoverage": 1,
+      "conditionFidelity": 2,
+      "evidenceGrounding": 0,
+      "answerabilityDiscipline": 0,
+      "sourceRoleTemporalDiscipline": 0,
+      "hardFailure": true,
+      "hardFailureTypes": [
+        "answerabilityDiscipline"
+      ],
+      "rationale": "未覆盖p1和p2-evaluator；引用无效；直接给出2026目标未承认不可验证；混淆提案与最终法规。"
+    },
+    {
+      "sampleId": "sample-e0028505-3d6c-4568-bbd1-62a611d444f5",
+      "requiredPointCoverage": 1,
+      "conditionFidelity": 3,
+      "evidenceGrounding": 2,
+      "answerabilityDiscipline": 0,
+      "sourceRoleTemporalDiscipline": 0,
+      "hardFailure": true,
+      "hardFailureTypes": [
+        "answerabilityDiscipline"
+      ],
+      "rationale": "未覆盖p1和p2-evaluator；p3条件完备；引用有效但未承认partial；混淆时间版本。"
+    },
+    {
+      "sampleId": "sample-d0f665fd-0033-4a8a-9820-071528f0007b",
+      "requiredPointCoverage": 1,
+      "conditionFidelity": 2,
+      "evidenceGrounding": 2,
+      "answerabilityDiscipline": 0,
+      "sourceRoleTemporalDiscipline": 0,
+      "hardFailure": true,
+      "hardFailureTypes": [
+        "answerabilityDiscipline"
+      ],
+      "rationale": "未覆盖p1和p2-evaluator；p3条件基本但对国家不具体；未承认partial；混淆法规版本。"
+    }
+  ]
+}

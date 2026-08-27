@@ -1,0 +1,76 @@
+{
+  "runId": "e4-batch-b-remaining-all-modes-2026-07-28T05-44-10-699Z",
+  "sampleId": "sample-3654dd63-d926-4fea-9db3-c7a394da36cc",
+  "questionId": "B-R-HIST-002",
+  "group": "P-seed",
+  "pilotGroup": "P",
+  "graphExpansion": false,
+  "repetition": 1,
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "temperature": 0,
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 267,
+    "completionTokens": 48,
+    "totalTokens": 315,
+    "promptCacheHitTokens": 256,
+    "promptCacheMissTokens": 11,
+    "reasoningTokens": 0
+  },
+  "latencyMs": 1077,
+  "promptHash": "sha256:6324ab5f63e2ea33b40a96440cf8614902daa271335a4317e2377e6ed1ef89ee",
+  "contextHash": "d020119849400456d89cadc92a25f08d051f3bbd94b78d0e36b46f9c13a4053c",
+  "estimatedContextTokens": 157,
+  "estimatedInputTokens": 319,
+  "retrievedClaims": [],
+  "retrievedRelations": [],
+  "retrievedSources": [],
+  "droppedContext": [],
+  "retrievalTrace": {
+    "strategy": "claim-seed-only",
+    "graphDepth": 0,
+    "temporalScope": {
+      "applied": false,
+      "startMonth": null,
+      "endMonth": null,
+      "excludedClaimIds": []
+    },
+    "retrieval": {
+      "queryFeatureCount": 25,
+      "eligibleClaimCount": 67,
+      "matchedClaimCount": 0,
+      "usedEvidenceText": true,
+      "usedSourceMetadata": true,
+      "resolvedEvidenceRefCount": 67,
+      "unresolvedEvidenceRefCount": 0,
+      "candidates": []
+    },
+    "graph": {
+      "seedClaimIds": [],
+      "expandedClaimIds": [],
+      "expandedRelationIds": []
+    },
+    "budget": {
+      "selectedClaimIds": [],
+      "selectedRelationIds": [],
+      "selectedEvidenceSpanIds": [],
+      "selectedWikiModuleIds": [],
+      "dropped": [],
+      "finalEstimatedTokens": 229
+    },
+    "serializationBudget": {
+      "selectedIds": [
+        "task-map",
+        "known-gaps"
+      ],
+      "droppedIds": []
+    }
+  },
+  "request": {
+    "systemPrompt": "你是受证据约束的问答 Agent。只使用本次请求提供的检索上下文回答。\n要求：保留影响结论的条件、时间、例外、来源角色与不确定性；关键结论引用上下文中的 SOURCE、EVIDENCE 或 CLAIM 标识；上下文不足时明确说明，不得用外部常识补齐。\n只输出严格 JSON：{\"answer\":\"...\",\"citations\":[\"...\"],\"insufficient\":false,\"uncertainties\":[\"...\"]}。",
+    "userPrompt": "# 问题\n恢复文本使用了哪三类验证方式？\n\n# 检索上下文\n## TASK MAP\n主题: 恢复文本使用了哪三类验证方式？\n地图主题: the, of, and, to, in\n关键概念: User Agent, Mobile Requirements, Input Modality, Desktop Content, Single Pointer\n已知争议: 0 个\n最近变化: 5 条\n找到 0 条相关 Claim\n找到 0 条关系\n找到 0 条原文证据\n\n## KNOWN GAPS\nSeed Retriever 未找到可靠匹配——知识库可能未覆盖此主题，或相关原文尚未编译为 Canonical Claim\n未找到关系——Graph 可能尚未建立跨材料边"
+  },
+  "answer": "{\"answer\":\"根据提供的检索上下文，未找到关于恢复文本使用的三类验证方式的相关信息。\",\"citations\":[],\"insufficient\":true,\"uncertainties\":[\"检索上下文未包含恢复文本验证方式的相关内容\"]}",
+  "answerFormatValid": true
+}

@@ -1,0 +1,567 @@
+{
+  "schemaVersion": "wge-h1a-wiki-formation-run/v1",
+  "runId": "h1a-dev-v6-final",
+  "status": "PASS",
+  "datasetClass": "REVEALED_DEVELOPMENT",
+  "authority": "FORMATION_ENGINEERING_ONLY",
+  "workspace": "experiments/evolution/runs/controlled-v1-lineage-v15/workspace",
+  "contractPath": "experiments/h1-wiki-formation/contract-v1.json",
+  "inputHashes": {
+    "claims": "acd04e7d47a0633c4b93e57586d60972bde2e36a38210ce911ababe94bf765f9",
+    "concepts": "8d79298d60f2d9e912da2dc58812aab4b6fc81a15de33383d14b03adcc23e6ec",
+    "relations": "092bf2ba00052515c5528df44c896916d42cd1f7a9170120053c25c417d7c3fc",
+    "spans": "b05e00eb3bb2bf2e633c56655c5845784056ec03002dabfa08e30e707ad60e3d",
+    "contract": "6deedf37546e570655a8d1088917fd293361c02fbe86a77ddfa6b827fe299a94"
+  },
+  "options": {
+    "minClaimsPerModule": 2,
+    "maxClaimsPerModule": 8,
+    "maxEvidenceCharsPerModule": 4000
+  },
+  "checks": {
+    "noQuestionInputs": true,
+    "noForbiddenFormationImports": true,
+    "deterministicUnderInputReversal": true,
+    "stableUnderUnrelatedSourceRemoval": true,
+    "allModulesConsumable": true,
+    "bounded": true
+  },
+  "stats": {
+    "inputClaims": 512,
+    "eligibleClaims": 496,
+    "formedModules": 86,
+    "formedAssertions": 496,
+    "rejectedClaims": 16
+  },
+  "moduleSizes": [
+    {
+      "moduleId": "wiki:auto:2b8c97c5d821c616226d0596",
+      "stableAddress": "auto/automated-release-gates/northstar-自动化发布门禁政策/1",
+      "assertions": 4,
+      "evidenceChars": 60
+    },
+    {
+      "moduleId": "wiki:auto:29d2e3d7ddb3440ffba128dd",
+      "stableAddress": "auto/automated-release-gates/p0-服务保留条件/1",
+      "assertions": 6,
+      "evidenceChars": 107
+    },
+    {
+      "moduleId": "wiki:auto:8a3fa76f21c480aebc37d23b",
+      "stableAddress": "auto/automated-release-gates/替代范围/1",
+      "assertions": 4,
+      "evidenceChars": 163
+    },
+    {
+      "moduleId": "wiki:auto:f8df2653583c0d4118f7374e",
+      "stableAddress": "auto/automated-release-gates/自动化门禁/1",
+      "assertions": 8,
+      "evidenceChars": 155
+    },
+    {
+      "moduleId": "wiki:auto:22f2dbee98af60c14340b226",
+      "stableAddress": "auto/automated-release-gates/自动化门禁/2",
+      "assertions": 5,
+      "evidenceChars": 84
+    },
+    {
+      "moduleId": "wiki:auto:b7c27399f3df2b2a44c3d7d4",
+      "stableAddress": "auto/ci-artifact-conventions/northstar-ci-任务与构建产物约定/1",
+      "assertions": 8,
+      "evidenceChars": 174
+    },
+    {
+      "moduleId": "wiki:auto:315f04fbb48b7904945eb2bf",
+      "stableAddress": "auto/ci-artifact-conventions/northstar-ci-任务与构建产物约定/2",
+      "assertions": 8,
+      "evidenceChars": 172
+    },
+    {
+      "moduleId": "wiki:auto:e9e94cb534498abd53e62013",
+      "stableAddress": "auto/ci-artifact-conventions/northstar-ci-任务与构建产物约定/3",
+      "assertions": 7,
+      "evidenceChars": 139
+    },
+    {
+      "moduleId": "wiki:auto:0e15da95003ca5a7f26e4e5d",
+      "stableAddress": "auto/ci-artifact-conventions/northstar-ci-任务与构建产物约定/4",
+      "assertions": 2,
+      "evidenceChars": 29
+    },
+    {
+      "moduleId": "wiki:auto:ee41870973d57435072238dc",
+      "stableAddress": "auto/compute-quota/aster-lab-共享算力配额与长任务管理规定/1",
+      "assertions": 8,
+      "evidenceChars": 142
+    },
+    {
+      "moduleId": "wiki:auto:c4a67b195f5510ec36ede32f",
+      "stableAddress": "auto/compute-quota/aster-lab-共享算力配额与长任务管理规定/2",
+      "assertions": 8,
+      "evidenceChars": 159
+    },
+    {
+      "moduleId": "wiki:auto:f9a83a994fd50ecd34c67143",
+      "stableAddress": "auto/compute-quota/aster-lab-共享算力配额与长任务管理规定/3",
+      "assertions": 7,
+      "evidenceChars": 156
+    },
+    {
+      "moduleId": "wiki:auto:3334f948fa14d7190a6de83a",
+      "stableAddress": "auto/confidential-compute-policy/aster-lab-受控云端医疗计算新规/1",
+      "assertions": 5,
+      "evidenceChars": 84
+    },
+    {
+      "moduleId": "wiki:auto:c77a0615b56d6c1e51396893",
+      "stableAddress": "auto/confidential-compute-policy/两种获批计算模式/1",
+      "assertions": 8,
+      "evidenceChars": 162
+    },
+    {
+      "moduleId": "wiki:auto:cbde2d84678920d864f1e275",
+      "stableAddress": "auto/confidential-compute-policy/两种获批计算模式/2",
+      "assertions": 5,
+      "evidenceChars": 99
+    },
+    {
+      "moduleId": "wiki:auto:9390b1ea4b9c4e1fcd9ea66b",
+      "stableAddress": "auto/confidential-compute-policy/审计/1",
+      "assertions": 5,
+      "evidenceChars": 115
+    },
+    {
+      "moduleId": "wiki:auto:ce91f426f057c8b3cff73b76",
+      "stableAddress": "auto/confidential-compute-policy/替代范围/1",
+      "assertions": 2,
+      "evidenceChars": 131
+    },
+    {
+      "moduleId": "wiki:auto:810d7719c925a77513137434",
+      "stableAddress": "auto/deprecation-recovery/api-弃用/1",
+      "assertions": 7,
+      "evidenceChars": 222
+    },
+    {
+      "moduleId": "wiki:auto:67e17a511f5afb4ea4a8f072",
+      "stableAddress": "auto/deprecation-recovery/api-弃用/2",
+      "assertions": 2,
+      "evidenceChars": 47
+    },
+    {
+      "moduleId": "wiki:auto:a58246c5e7c804b63a99ae37",
+      "stableAddress": "auto/deprecation-recovery/northstar-api-弃用与资源回收规则/1",
+      "assertions": 4,
+      "evidenceChars": 63
+    },
+    {
+      "moduleId": "wiki:auto:b6e949b1b38488bdaecd7b32",
+      "stableAddress": "auto/deprecation-recovery/发布回滚/1",
+      "assertions": 5,
+      "evidenceChars": 117
+    },
+    {
+      "moduleId": "wiki:auto:102bae0c5aec6f54829534b2",
+      "stableAddress": "auto/deprecation-recovery/非生产资源回收/1",
+      "assertions": 5,
+      "evidenceChars": 121
+    },
+    {
+      "moduleId": "wiki:auto:1c8dff35fa73664f92410e1d",
+      "stableAddress": "auto/eco-packaging/harbor-market-简易环保包装优惠计划/1",
+      "assertions": 8,
+      "evidenceChars": 151
+    },
+    {
+      "moduleId": "wiki:auto:8f654ca59bb99f22f052cf99",
+      "stableAddress": "auto/eco-packaging/harbor-market-简易环保包装优惠计划/2",
+      "assertions": 8,
+      "evidenceChars": 190
+    },
+    {
+      "moduleId": "wiki:auto:8439c5ed80bf8a533bb5a7cf",
+      "stableAddress": "auto/eco-packaging/harbor-market-简易环保包装优惠计划/3",
+      "assertions": 5,
+      "evidenceChars": 87
+    },
+    {
+      "moduleId": "wiki:auto:5a60fc858d33c91157fd400c",
+      "stableAddress": "auto/edge-log-residency/northstar-海外边缘节点日志驻留补充规定/1",
+      "assertions": 8,
+      "evidenceChars": 172
+    },
+    {
+      "moduleId": "wiki:auto:c02204a9dc46a6562af3ce8b",
+      "stableAddress": "auto/edge-log-residency/northstar-海外边缘节点日志驻留补充规定/2",
+      "assertions": 8,
+      "evidenceChars": 202
+    },
+    {
+      "moduleId": "wiki:auto:40a28580827c63519fe89bf5",
+      "stableAddress": "auto/edge-log-residency/northstar-海外边缘节点日志驻留补充规定/3",
+      "assertions": 5,
+      "evidenceChars": 100
+    },
+    {
+      "moduleId": "wiki:auto:e132ef5b4144fce6718e4ec2",
+      "stableAddress": "auto/eu-registration-data-dispute/欧洲站注册资料采集分歧记录/1",
+      "assertions": 8,
+      "evidenceChars": 163
+    },
+    {
+      "moduleId": "wiki:auto:ce1655bc78c7d49400d6ecf0",
+      "stableAddress": "auto/eu-registration-data-dispute/欧洲站注册资料采集分歧记录/2",
+      "assertions": 8,
+      "evidenceChars": 176
+    },
+    {
+      "moduleId": "wiki:auto:a28837f1ef5d3087950d14fe",
+      "stableAddress": "auto/eu-registration-data-dispute/欧洲站注册资料采集分歧记录/3",
+      "assertions": 7,
+      "evidenceChars": 139
+    },
+    {
+      "moduleId": "wiki:auto:59b1fe37b1d6aa6932cffe13",
+      "stableAddress": "auto/extended-returns/harbor-market-十五日退货与快速退款修订/1",
+      "assertions": 4,
+      "evidenceChars": 60
+    },
+    {
+      "moduleId": "wiki:auto:abd60f459d2f1752cd92e689",
+      "stableAddress": "auto/extended-returns/快速处理/1",
+      "assertions": 4,
+      "evidenceChars": 123
+    },
+    {
+      "moduleId": "wiki:auto:346e632632797e4ad72bea20",
+      "stableAddress": "auto/extended-returns/新期限与数码产品条件/1",
+      "assertions": 7,
+      "evidenceChars": 202
+    },
+    {
+      "moduleId": "wiki:auto:80dd4b90631d57f15709e8d3",
+      "stableAddress": "auto/extended-returns/替代范围/1",
+      "assertions": 2,
+      "evidenceChars": 83
+    },
+    {
+      "moduleId": "wiki:auto:572a264c27d62be51aa1afaf",
+      "stableAddress": "auto/external-dataset-citation/aster-lab-外部数据集引用与完整性规范/1",
+      "assertions": 8,
+      "evidenceChars": 244
+    },
+    {
+      "moduleId": "wiki:auto:77039d6b5abc90dda77bf227",
+      "stableAddress": "auto/external-dataset-citation/aster-lab-外部数据集引用与完整性规范/2",
+      "assertions": 7,
+      "evidenceChars": 170
+    },
+    {
+      "moduleId": "wiki:auto:68954153ba7288149df8b8bc",
+      "stableAddress": "auto/external-dataset-citation/aster-lab-外部数据集引用与完整性规范/3",
+      "assertions": 2,
+      "evidenceChars": 61
+    },
+    {
+      "moduleId": "wiki:auto:a84618884e1b3d91fb57560a",
+      "stableAddress": "auto/face-research-dispute/aster-lab-真实人脸研究立项分歧纪要/1",
+      "assertions": 8,
+      "evidenceChars": 148
+    },
+    {
+      "moduleId": "wiki:auto:323d9ecfe959ef09f102c73b",
+      "stableAddress": "auto/face-research-dispute/aster-lab-真实人脸研究立项分歧纪要/2",
+      "assertions": 8,
+      "evidenceChars": 140
+    },
+    {
+      "moduleId": "wiki:auto:1dafc473fb7297f06b83000e",
+      "stableAddress": "auto/face-research-dispute/aster-lab-真实人脸研究立项分歧纪要/3",
+      "assertions": 8,
+      "evidenceChars": 139
+    },
+    {
+      "moduleId": "wiki:auto:28ed4445a0e73c699a4e4ab2",
+      "stableAddress": "auto/face-research-dispute/aster-lab-真实人脸研究立项分歧纪要/4",
+      "assertions": 3,
+      "evidenceChars": 41
+    },
+    {
+      "moduleId": "wiki:auto:9d33508a99cb7e05c62b93d2",
+      "stableAddress": "auto/gift-card/harbor-market-电子礼品卡发行与使用说明/1",
+      "assertions": 8,
+      "evidenceChars": 161
+    },
+    {
+      "moduleId": "wiki:auto:fea88fcfae067aaaac481b6f",
+      "stableAddress": "auto/gift-card/harbor-market-电子礼品卡发行与使用说明/2",
+      "assertions": 8,
+      "evidenceChars": 155
+    },
+    {
+      "moduleId": "wiki:auto:d23fcdbf10b1b3855008cfe2",
+      "stableAddress": "auto/gift-card/harbor-market-电子礼品卡发行与使用说明/3",
+      "assertions": 6,
+      "evidenceChars": 127
+    },
+    {
+      "moduleId": "wiki:auto:89bdfd44d16681f03de5ca2a",
+      "stableAddress": "auto/medical-data-security/aster-lab-医疗研究数据安全规程/1",
+      "assertions": 4,
+      "evidenceChars": 64
+    },
+    {
+      "moduleId": "wiki:auto:8e450f537b2c22abfc86d29b",
+      "stableAddress": "auto/medical-data-security/脱敏数据的有限例外/1",
+      "assertions": 7,
+      "evidenceChars": 235
+    },
+    {
+      "moduleId": "wiki:auto:591247eea3a5ac14ceb62966",
+      "stableAddress": "auto/medical-data-security/脱敏数据的有限例外/2",
+      "assertions": 2,
+      "evidenceChars": 77
+    },
+    {
+      "moduleId": "wiki:auto:acd38d78f3e68cb705a7ba8b",
+      "stableAddress": "auto/medical-data-security/默认位置限制/1",
+      "assertions": 2,
+      "evidenceChars": 66
+    },
+    {
+      "moduleId": "wiki:auto:9eb7c07ee48e5f9948c99e46",
+      "stableAddress": "auto/membership-service-levels/harbor-market-会员权益与客服响应标准/1",
+      "assertions": 8,
+      "evidenceChars": 213
+    },
+    {
+      "moduleId": "wiki:auto:01d35ca0640a8b21633c3a45",
+      "stableAddress": "auto/membership-service-levels/harbor-market-会员权益与客服响应标准/2",
+      "assertions": 7,
+      "evidenceChars": 219
+    },
+    {
+      "moduleId": "wiki:auto:74a5f9633aaf7d81177428e4",
+      "stableAddress": "auto/membership-service-levels/harbor-market-会员权益与客服响应标准/3",
+      "assertions": 2,
+      "evidenceChars": 51
+    },
+    {
+      "moduleId": "wiki:auto:f402251a05cd3364dd53104a",
+      "stableAddress": "auto/model-evaluation/aster-lab-模型评测与汇报口径/1",
+      "assertions": 8,
+      "evidenceChars": 212
+    },
+    {
+      "moduleId": "wiki:auto:c3a62f20e80f5ca417c891ce",
+      "stableAddress": "auto/model-evaluation/aster-lab-模型评测与汇报口径/2",
+      "assertions": 7,
+      "evidenceChars": 147
+    },
+    {
+      "moduleId": "wiki:auto:5fb61d8b5c1b95d1f78ddca8",
+      "stableAddress": "auto/peak-event-transport-dispute/星海节-高峰期内部传输配置联合备忘录/1",
+      "assertions": 8,
+      "evidenceChars": 219
+    },
+    {
+      "moduleId": "wiki:auto:c1063f2f1adaf044f3941594",
+      "stableAddress": "auto/peak-event-transport-dispute/星海节-高峰期内部传输配置联合备忘录/2",
+      "assertions": 8,
+      "evidenceChars": 213
+    },
+    {
+      "moduleId": "wiki:auto:8abb6aea947b22bd799f2672",
+      "stableAddress": "auto/peak-event-transport-dispute/星海节-高峰期内部传输配置联合备忘录/3",
+      "assertions": 4,
+      "evidenceChars": 101
+    },
+    {
+      "moduleId": "wiki:auto:abfe51185c7494628efe6019",
+      "stableAddress": "auto/regional-pricing/harbor-market-区域定价与税费规则/1",
+      "assertions": 8,
+      "evidenceChars": 184
+    },
+    {
+      "moduleId": "wiki:auto:427efad7dab170ebff21d609",
+      "stableAddress": "auto/regional-pricing/harbor-market-区域定价与税费规则/2",
+      "assertions": 7,
+      "evidenceChars": 179
+    },
+    {
+      "moduleId": "wiki:auto:f84262c31fa90b4ecec0fb26",
+      "stableAddress": "auto/regional-pricing/harbor-market-区域定价与税费规则/3",
+      "assertions": 2,
+      "evidenceChars": 59
+    },
+    {
+      "moduleId": "wiki:auto:9d16cebc996a73b79a6c6ac3",
+      "stableAddress": "auto/release-governance/northstar-生产发布治理规范/1",
+      "assertions": 4,
+      "evidenceChars": 60
+    },
+    {
+      "moduleId": "wiki:auto:11ec25ccf92ddfec531bb237",
+      "stableAddress": "auto/release-governance/p0-服务附加要求/1",
+      "assertions": 7,
+      "evidenceChars": 195
+    },
+    {
+      "moduleId": "wiki:auto:f563c3928dcf5d1390e9dff6",
+      "stableAddress": "auto/release-governance/标准审批流程/1",
+      "assertions": 7,
+      "evidenceChars": 119
+    },
+    {
+      "moduleId": "wiki:auto:720c1844e5b752d85a33f9b7",
+      "stableAddress": "auto/release-governance/适用范围/1",
+      "assertions": 5,
+      "evidenceChars": 121
+    },
+    {
+      "moduleId": "wiki:auto:2c96a24ec9df2e8e7d5681e8",
+      "stableAddress": "auto/reproducibility/aster-lab-算法结论复现与主干合入标准/1",
+      "assertions": 8,
+      "evidenceChars": 197
+    },
+    {
+      "moduleId": "wiki:auto:d762d3bf6a53b9aff0e2fe91",
+      "stableAddress": "auto/reproducibility/aster-lab-算法结论复现与主干合入标准/2",
+      "assertions": 8,
+      "evidenceChars": 157
+    },
+    {
+      "moduleId": "wiki:auto:e4da237adf0be98d1ca5b241",
+      "stableAddress": "auto/reproducibility/aster-lab-算法结论复现与主干合入标准/3",
+      "assertions": 3,
+      "evidenceChars": 48
+    },
+    {
+      "moduleId": "wiki:auto:f93783c497201dedd8b32260",
+      "stableAddress": "auto/returns-and-refunds/harbor-market-商品退换与退款政策/1",
+      "assertions": 4,
+      "evidenceChars": 60
+    },
+    {
+      "moduleId": "wiki:auto:485cd444b5b54e0e74d59f8b",
+      "stableAddress": "auto/returns-and-refunds/无理由退货/1",
+      "assertions": 7,
+      "evidenceChars": 142
+    },
+    {
+      "moduleId": "wiki:auto:ce04517653d1ff6a74f6b9a1",
+      "stableAddress": "auto/returns-and-refunds/退款处理/1",
+      "assertions": 6,
+      "evidenceChars": 196
+    },
+    {
+      "moduleId": "wiki:auto:4f962afe944b114391ca2999",
+      "stableAddress": "auto/revised-evaluation/aster-lab-评测指标修订通知/1",
+      "assertions": 8,
+      "evidenceChars": 230
+    },
+    {
+      "moduleId": "wiki:auto:f8de8894d91b3fbf968eaefd",
+      "stableAddress": "auto/revised-evaluation/aster-lab-评测指标修订通知/2",
+      "assertions": 7,
+      "evidenceChars": 190
+    },
+    {
+      "moduleId": "wiki:auto:1cbbd9dd68eaba2bad74e79f",
+      "stableAddress": "auto/revised-evaluation/aster-lab-评测指标修订通知/3",
+      "assertions": 2,
+      "evidenceChars": 93
+    },
+    {
+      "moduleId": "wiki:auto:b9bfb23264aaaaabb4e7e6b9",
+      "stableAddress": "auto/transport-security/northstar-api-与服务传输安全标准/1",
+      "assertions": 4,
+      "evidenceChars": 59
+    },
+    {
+      "moduleId": "wiki:auto:d2e7c20e014e35f9b27e19ee",
+      "stableAddress": "auto/transport-security/不受传输协议变更影响的控制/1",
+      "assertions": 8,
+      "evidenceChars": 130
+    },
+    {
+      "moduleId": "wiki:auto:cb9b716e1db35bedb6e09c90",
+      "stableAddress": "auto/transport-security/不受传输协议变更影响的控制/2",
+      "assertions": 3,
+      "evidenceChars": 53
+    },
+    {
+      "moduleId": "wiki:auto:3d9c16fe319800e8df4b7519",
+      "stableAddress": "auto/transport-security/内部服务通信/1",
+      "assertions": 5,
+      "evidenceChars": 104
+    },
+    {
+      "moduleId": "wiki:auto:81494350a81d7b4b4020db71",
+      "stableAddress": "auto/transport-security/外部接口/1",
+      "assertions": 5,
+      "evidenceChars": 106
+    },
+    {
+      "moduleId": "wiki:auto:c263bed887bf4210c3a66d78",
+      "stableAddress": "auto/unified-list-pricing/harbor-market-全球统一商品标价政策/1",
+      "assertions": 8,
+      "evidenceChars": 236
+    },
+    {
+      "moduleId": "wiki:auto:590fb6451bf5b3606c1c38d5",
+      "stableAddress": "auto/unified-list-pricing/harbor-market-全球统一商品标价政策/2",
+      "assertions": 8,
+      "evidenceChars": 220
+    },
+    {
+      "moduleId": "wiki:auto:10944786df584a7cb5bab1ea",
+      "stableAddress": "auto/unified-list-pricing/harbor-market-全球统一商品标价政策/3",
+      "assertions": 2,
+      "evidenceChars": 64
+    },
+    {
+      "moduleId": "wiki:auto:f2b6efe1651095b0e77de45f",
+      "stableAddress": "auto/zero-trust-transport/northstar-零信任传输升级通知/1",
+      "assertions": 4,
+      "evidenceChars": 59
+    },
+    {
+      "moduleId": "wiki:auto:f4b7733948eca3edbe671b27",
+      "stableAddress": "auto/zero-trust-transport/例外管理/1",
+      "assertions": 4,
+      "evidenceChars": 98
+    },
+    {
+      "moduleId": "wiki:auto:01816d827cf332b9236bb827",
+      "stableAddress": "auto/zero-trust-transport/新传输要求/1",
+      "assertions": 7,
+      "evidenceChars": 161
+    },
+    {
+      "moduleId": "wiki:auto:26983f48d22a2233bc833336",
+      "stableAddress": "auto/zero-trust-transport/新传输要求/2",
+      "assertions": 2,
+      "evidenceChars": 68
+    },
+    {
+      "moduleId": "wiki:auto:a9e5e269e365fe9bd9352171",
+      "stableAddress": "auto/zero-trust-transport/明确替代的章节/1",
+      "assertions": 5,
+      "evidenceChars": 182
+    }
+  ],
+  "formationImports": [
+    "node:crypto",
+    "../graph/index.js",
+    "../linter/storage.js",
+    "../types/index.js",
+    "./materialization.js"
+  ],
+  "incrementalPerturbation": {
+    "removedSourceId": "source:gift-card-057b2211d408b831",
+    "removedClaimCount": 22,
+    "unaffectedModuleCount": 83
+  },
+  "formedArtifactsHash": "327a2863344e6299c4958593e1a405c4f15f0e98acc9e1dba36378197152d67d"
+}

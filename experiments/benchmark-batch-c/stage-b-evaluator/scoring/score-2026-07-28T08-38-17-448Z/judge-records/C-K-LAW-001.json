@@ -1,0 +1,51 @@
+{
+  "questionId": "C-K-LAW-001",
+  "promptHash": "573c93110e9b8f393984df5cd5b6ae7971b02999cd181793b9afd84c28519438",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 2043,
+    "completionTokens": 2879,
+    "totalTokens": 4922,
+    "promptCacheHitTokens": 256,
+    "promptCacheMissTokens": 1787,
+    "reasoningTokens": 2462
+  },
+  "raw": "[\n    {\n        \"sampleId\": \"sample-9ec4ec51-73cb-4670-87c6-f8d94437ad25\",\n        \"requiredPointCoverage\": 2,\n        \"conditionFidelity\": 3,\n        \"evidenceGrounding\": 3,\n        \"answerabilityDiscipline\": 4,\n        \"sourceRoleTemporalDiscipline\": 3,\n        \"hardFailure\": false,\n        \"hardFailureTypes\": [],\n        \"rationale\": \"覆盖p1 p3，缺p2中CSA反对数量及违规性质细节；引用有效，不确定性处理得当；未越界；角色区分清晰。\"\n    },\n    {\n        \"sampleId\": \"sample-1dc6090b-cdb8-4fbf-a952-8cda590a66d7\",\n        \"requiredPointCoverage\": 2,\n        \"conditionFidelity\": 3,\n        \"evidenceGrounding\": 3,\n        \"answerabilityDiscipline\": 4,\n        \"sourceRoleTemporalDiscipline\": 3,\n        \"hardFailure\": false,\n        \"hardFailureTypes\": [],\n        \"rationale\": \"覆盖p1 p3，缺p2关键要素；引用支撑；无越界；角色区分，但未提及不确定性。\"\n    },\n    {\n        \"sampleId\": \"sample-b1368cd3-6781-4607-97dc-499572e7f35b\",\n        \"requiredPointCoverage\": 3,\n        \"conditionFidelity\": 3,\n        \"evidenceGrounding\": 2,\n        \"answerabilityDiscipline\": 4,\n        \"sourceRoleTemporalDiscipline\": 3,\n        \"hardFailure\": false,\n        \"hardFailureTypes\": [],\n        \"rationale\": \"覆盖p1 p2（系统性重复持续性）p3，缺CSA反对数量；引用支撑但“批评”表述略超原文；无越界；角色区分。\"\n    }\n]",
+  "rows": [
+    {
+      "sampleId": "sample-9ec4ec51-73cb-4670-87c6-f8d94437ad25",
+      "requiredPointCoverage": 2,
+      "conditionFidelity": 3,
+      "evidenceGrounding": 3,
+      "answerabilityDiscipline": 4,
+      "sourceRoleTemporalDiscipline": 3,
+      "hardFailure": false,
+      "hardFailureTypes": [],
+      "rationale": "覆盖p1 p3，缺p2中CSA反对数量及违规性质细节；引用有效，不确定性处理得当；未越界；角色区分清晰。"
+    },
+    {
+      "sampleId": "sample-1dc6090b-cdb8-4fbf-a952-8cda590a66d7",
+      "requiredPointCoverage": 2,
+      "conditionFidelity": 3,
+      "evidenceGrounding": 3,
+      "answerabilityDiscipline": 4,
+      "sourceRoleTemporalDiscipline": 3,
+      "hardFailure": false,
+      "hardFailureTypes": [],
+      "rationale": "覆盖p1 p3，缺p2关键要素；引用支撑；无越界；角色区分，但未提及不确定性。"
+    },
+    {
+      "sampleId": "sample-b1368cd3-6781-4607-97dc-499572e7f35b",
+      "requiredPointCoverage": 3,
+      "conditionFidelity": 3,
+      "evidenceGrounding": 2,
+      "answerabilityDiscipline": 4,
+      "sourceRoleTemporalDiscipline": 3,
+      "hardFailure": false,
+      "hardFailureTypes": [],
+      "rationale": "覆盖p1 p2（系统性重复持续性）p3，缺CSA反对数量；引用支撑但“批评”表述略超原文；无越界；角色区分。"
+    }
+  ]
+}

@@ -1,0 +1,159 @@
+{
+  "propositions": [
+    {
+      "text": "Cantor 蛇形对角线枚举算法遍历所有正有理数，通过控制分子分母之和递增并跳过非最简分数来生成前 n 个有理数。",
+      "exactQuote": "```python\nfrom math import gcd\n\ndef cantor_zigzag(n):\n    \"\"\"生成前 n 个正有理数的 Cantor 蛇形对角线枚举\"\"\"\n    result = []\n    d = 1\n    while len(result) < n:\n        # 对角线上的所有分数分子+分母 = d+1\n        if d % 2 == 1:\n            # 奇数对角线: 分子从1到d\n            for numerator in range(1, d + 1):\n                denominator = d + 1 - numerator\n                if gcd(numerator, denominator) == 1:\n                    result.append(f\"{numerator}/{denominator}\")\n                    if len(result) >= n:\n                        return result\n        else:\n            # 偶数对角线: 分子从d到1 (反向)\n            for numerator in range(d, 0, -1):\n                denominator = d + 1 - numerator\n                if gcd(numerator, denominator) == 1:\n                    result.append(f\"{numerator}/{denominator}\")\n                    if len(result) >= n:\n                        return result\n        d += 1\n    return result\n\nprint(\"前20个有理数 (Cantor蛇形对角线):\")\nprint(\", \".join(cantor_zigzag(20)))\n```",
+      "blockId": "01-number-systems#block-48"
+    },
+    {
+      "text": "√2 不是有理数。",
+      "exactQuote": "√2 不是有理数",
+      "blockId": "01-number-systems#block-51"
+    },
+    {
+      "text": "经典证明使用反证法：假设 √2 = p/q 为最简分数，则 p^2 = 2q^2。",
+      "exactQuote": "假设 √2 = p/q （最简分数），则 p^2 = 2q^2",
+      "blockId": "01-number-systems#block-53"
+    },
+    {
+      "text": "从 p^2 = 2q^2 可推出 p 为偶数。",
+      "exactQuote": "所以 p 为偶数",
+      "blockId": "01-number-systems#block-53"
+    },
+    {
+      "text": "设 p=2k，代入得 4k^2 = 2q^2 ⇒ q^2 = 2k^2，故 q 也是偶数。",
+      "exactQuote": "设 p=2k，代入得 4k^2 = 2q^2 ⇒ q^2 = 2k^2，故 q 也是偶数",
+      "blockId": "01-number-systems#block-53"
+    },
+    {
+      "text": "p 和 q 都是偶数与最简分数矛盾，所以假设不成立。",
+      "exactQuote": "与最简分数矛盾",
+      "blockId": "01-number-systems#block-53"
+    },
+    {
+      "text": "√2 不是有理数的发现在古希腊引发了\"第一次数学危机\"。",
+      "exactQuote": "这个发现在古希腊引发了\"第一次数学危机\"",
+      "blockId": "01-number-systems#block-54"
+    },
+    {
+      "text": "有理数不能覆盖数轴上所有的点。",
+      "exactQuote": "有理数不能覆盖数轴上所有的点",
+      "blockId": "01-number-systems#block-54"
+    },
+    {
+      "text": "数轴上的\"洞\"需要一种新的数来填。",
+      "exactQuote": "数轴上的\"洞\"需要一种新的数来填",
+      "blockId": "01-number-systems#block-54"
+    },
+    {
+      "text": "Dedekind 在 1872 年给出了实数的精妙定义。",
+      "exactQuote": "Dedekind（1872）给出了实数的精妙定义",
+      "blockId": "01-number-systems#block-56"
+    },
+    {
+      "text": "一个 Dedekind 分割是有理数集 Q 的一个划分 (A,B)，满足：A, B ≠ ∅，A∪B=Q，A∩B=∅。",
+      "exactQuote": "一个 **Dedekind 分割**是有理数集 $\\mathbb{Q}$ 的一个划分 $(A,B)$，满足：\n1. $A, B \\neq \\emptyset$，$A \\cup B = \\mathbb{Q}$，$A \\cap B = \\emptyset$",
+      "blockId": "01-number-systems#block-57"
+    },
+    {
+      "text": "Dedekind 分割要求对所有 a∈A,b∈B 有 a < b。",
+      "exactQuote": "$\\forall a \\in A, \\forall b \\in B: a < b$",
+      "blockId": "01-number-systems#block-57"
+    },
+    {
+      "text": "Dedekind 分割要求 A 没有最大元。",
+      "exactQuote": "$A$ 没有最大元",
+      "blockId": "01-number-systems#block-57"
+    },
+    {
+      "text": "每个 Dedekind 分割定义一个实数。",
+      "exactQuote": "每个这样的分割定义一个实数。",
+      "blockId": "01-number-systems#block-57"
+    },
+    {
+      "text": "实数集 R 包含有理数和无理数。",
+      "exactQuote": "$$\\mathbb{R} = \\mathbb{Q} \\cup \\{\\text{无理数}\\}$$",
+      "blockId": "01-number-systems#block-59"
+    },
+    {
+      "text": "实数集具有完备性，而有理数集不具备。",
+      "exactQuote": "完备性 是 R 与 Q 的本质区别",
+      "blockId": "01-number-systems#block-61"
+    },
+    {
+      "text": "有理数集 Q 具有稠密性。",
+      "exactQuote": "| 性质 | $\\mathbb{Q}$ | $\\mathbb{R}$ |\n|------|-------------|-------------|\n| 稠密性 | ✅ | ✅ |",
+      "blockId": "01-number-systems#block-62"
+    },
+    {
+      "text": "实数集 R 具有稠密性。",
+      "exactQuote": "| 性质 | $\\mathbb{Q}$ | $\\mathbb{R}$ |\n|------|-------------|-------------|\n| 稠密性 | ✅ | ✅ |",
+      "blockId": "01-number-systems#block-62"
+    },
+    {
+      "text": "有理数集 Q 不具有完备性。",
+      "exactQuote": "| **完备性** | ❌ | ✅ |",
+      "blockId": "01-number-systems#block-62"
+    },
+    {
+      "text": "实数集 R 具有完备性。",
+      "exactQuote": "| **完备性** | ❌ | ✅ |",
+      "blockId": "01-number-systems#block-62"
+    },
+    {
+      "text": "有理数集 Q 不具有上确界存在性（有上界未必有上确界）。",
+      "exactQuote": "| 上确界存在性 | ❌ | ✅ 有上界必有上确界 |",
+      "blockId": "01-number-systems#block-62"
+    },
+    {
+      "text": "实数集 R 具有上确界存在性（有上界必有上确界）。",
+      "exactQuote": "| 上确界存在性 | ❌ | ✅ 有上界必有上确界 |",
+      "blockId": "01-number-systems#block-62"
+    },
+    {
+      "text": "有理数集 Q 不具有 Cauchy 列必收敛的性质。",
+      "exactQuote": "| Cauchy 列必收敛 | ❌ | ✅ |",
+      "blockId": "01-number-systems#block-62"
+    },
+    {
+      "text": "实数集 R 具有 Cauchy 列必收敛的性质。",
+      "exactQuote": "| Cauchy 列必收敛 | ❌ | ✅ |",
+      "blockId": "01-number-systems#block-62"
+    },
+    {
+      "text": "有理数集 Q 不具有连通性。",
+      "exactQuote": "| 连通性 | ❌ | ✅ |",
+      "blockId": "01-number-systems#block-62"
+    },
+    {
+      "text": "实数集 R 具有连通性。",
+      "exactQuote": "| 连通性 | ❌ | ✅ |",
+      "blockId": "01-number-systems#block-62"
+    },
+    {
+      "text": "完备性意味着数轴没有\"洞\"。",
+      "exactQuote": "**完备性** = 数轴没有\"洞\"",
+      "blockId": "01-number-systems#block-63"
+    },
+    {
+      "text": "每一个 Cauchy 列都在 R 中有极限。",
+      "exactQuote": "每一个 Cauchy 列都在 $\\mathbb{R}$ 中有极限",
+      "blockId": "01-number-systems#block-63"
+    },
+    {
+      "text": "实数集 R 是不可数的——实数比自然数多得多。",
+      "exactQuote": "Cantor 证明：$\\mathbb{R}$ 不可数——实数比自然数\"多得多\"。",
+      "blockId": "01-number-systems#block-66"
+    },
+    {
+      "text": "假设 (0,1) 中的实数可以列出为 x1, x2, x3, ... 且每个有十进制展开。",
+      "exactQuote": "假设 $(0,1)$ 中的实数可以列出：\n\n$$\n\\begin{aligned}\nx_1 &= 0.a_{11}a_{12}a_{13}\\ldots \\\\\nx_2 &= 0.a_{21}a_{22}a_{23}\\ldots \\\\\nx_3 &= 0.a_{31}a_{32}a_{33}\\ldots\n\\end{aligned}\n$$",
+      "blockId": "01-number-systems#block-68"
+    },
+    {
+      "text": "构造新数 y = 0.b1b2b3... 其中 bi ≠ aii，则 y 不与列表中任何数相同，导致矛盾。",
+      "exactQuote": "构造新数 $y = 0.b_1b_2b_3\\ldots$ 其中 $b_i \\neq a_{ii}$——则 $y$ 不与列表中任何数相同，矛盾！",
+      "blockId": "01-number-systems#block-69"
+    }
+  ]
+}

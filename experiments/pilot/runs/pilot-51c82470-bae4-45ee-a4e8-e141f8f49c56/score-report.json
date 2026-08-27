@@ -1,0 +1,34 @@
+{
+  "judgeModelRequested": "deepseek-v4-flash",
+  "judgeModelReturned": "deepseek-v4-flash",
+  "generatedAt": "2026-07-24T05:01:05.872Z",
+  "report": {
+    "B": {
+      "n": 16,
+      "averageTotal": 7,
+      "averageRequiredClaimCoverage": 1.875,
+      "averageConditionFidelity": 1.6875,
+      "averageEvidenceGrounding": 1.6875,
+      "averageAnswerabilityDiscipline": 1.75,
+      "hardFailures": 2
+    },
+    "P": {
+      "n": 16,
+      "averageTotal": 4.9375,
+      "averageRequiredClaimCoverage": 1.25,
+      "averageConditionFidelity": 1.375,
+      "averageEvidenceGrounding": 1.0625,
+      "averageAnswerabilityDiscipline": 1.25,
+      "hardFailures": 6
+    },
+    "E-min": {
+      "n": 16,
+      "averageTotal": 4.875,
+      "averageRequiredClaimCoverage": 1.25,
+      "averageConditionFidelity": 1.375,
+      "averageEvidenceGrounding": 1,
+      "averageAnswerabilityDiscipline": 1.25,
+      "hardFailures": 6
+    }
+  }
+}

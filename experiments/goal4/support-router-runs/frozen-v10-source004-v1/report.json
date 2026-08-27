@@ -1,0 +1,815 @@
+{
+	"schemaVersion": "wge-goal4-support-router-frozen-replay/v1",
+	"createdAt": "2026-08-11T15:39:04.598Z",
+	"stageBRead": false,
+	"mode": "ZERO_PUBLICATION_FROZEN_CANDIDATE_REPLAY",
+	"contract": "experiments/goal4/goal4-support-preaudit-router-contract-v1.json",
+	"contractSha256": "6ed1110856d562ae4c3adf289155c9ee039efe3047f4c3749d7d5fb0c5706836",
+	"baselineCandidateLedger": "experiments/goal3/s200-runs/compile-v10-post-audit-compaction-4source/workspace/runs/relation-candidate-ledger.jsonl",
+	"baselineCandidateLedgerSha256": "62a8f3135063c8c5168ea6d4cc82e2f0e1617421dd4f31c6cb14d2b0a1012310",
+	"sourceId": "source:s200-ai-llama-004-0c1360ce9e6039ce",
+	"routerVersion": "v1",
+	"model": "deepseek-v4-flash",
+	"temperature": 0,
+	"counts": {
+		"selectedCandidates": 40,
+		"supportCandidates": 23,
+		"relatedToBypassCandidates": 17,
+		"supportFullAudit": 0,
+		"supportDeferredByTypeRouter": 23,
+		"fullAuditTotal": 17,
+		"canonicalAfterUnchangedAudit": 4,
+		"quarantinedAfterUnchangedAudit": 13
+	},
+	"cost": {
+		"baselineTotalRelationAuditTokens": 50732,
+		"baselineLocalRelationAuditTokens": 3784,
+		"baselineCrossRelationAuditTokens": 46948,
+		"routerTokens": 5954,
+		"replayAuditTokens": 22652,
+		"comparableTotalTokens": 32390,
+		"totalReduction": 0.361547,
+		"crossStageReduction": 0.390688
+	},
+	"gates": {
+		"maximumThreeSupportCandidatesRoutedToFullAudit": true,
+		"allSeventeenRelatedToCandidatesBypassedRouter": true,
+		"minimumThirtyPercentComparableTokenReduction": true,
+		"accountingExact": true,
+		"zeroCanonicalPublicationWrites": true,
+		"manualReviewEveryCanonicalEdge": "PENDING_MANUAL_REVIEW"
+	},
+	"routerDecisions": [
+		{
+			"relationId": "rel:cross-6baaeaa19963b74d",
+			"decision": "DEFER_BY_TYPE_ROUTER",
+			"failureModes": [
+				"DEFINITION_TO_DETAIL"
+			],
+			"decisionSource": "MODEL",
+			"error": null
+		},
+		{
+			"relationId": "rel:cross-e8cbf78841e7b673",
+			"decision": "DEFER_BY_TYPE_ROUTER",
+			"failureModes": [
+				"DEFINITION_TO_DETAIL"
+			],
+			"decisionSource": "MODEL",
+			"error": null
+		},
+		{
+			"relationId": "rel:cross-a1ef01536fbf7e19",
+			"decision": "DEFER_BY_TYPE_ROUTER",
+			"failureModes": [
+				"DEFINITION_TO_DETAIL"
+			],
+			"decisionSource": "MODEL",
+			"error": null
+		},
+		{
+			"relationId": "rel:cross-c7b1c98c55894de7",
+			"decision": "DEFER_BY_TYPE_ROUTER",
+			"failureModes": [
+				"DEFINITION_TO_DETAIL"
+			],
+			"decisionSource": "MODEL",
+			"error": null
+		},
+		{
+			"relationId": "rel:cross-03ab58311ade4b7c",
+			"decision": "DEFER_BY_TYPE_ROUTER",
+			"failureModes": [
+				"DEFINITION_TO_DETAIL"
+			],
+			"decisionSource": "MODEL",
+			"error": null
+		},
+		{
+			"relationId": "rel:cross-a77274888e001a54",
+			"decision": "DEFER_BY_TYPE_ROUTER",
+			"failureModes": [
+				"NO_EXPLICIT_SUPPORT"
+			],
+			"decisionSource": "MODEL",
+			"error": null
+		},
+		{
+			"relationId": "rel:cross-a9d4619551a75087",
+			"decision": "DEFER_BY_TYPE_ROUTER",
+			"failureModes": [
+				"DEFINITION_TO_DETAIL"
+			],
+			"decisionSource": "MODEL",
+			"error": null
+		},
+		{
+			"relationId": "rel:cross-2fe78ac9c1f698b5",
+			"decision": "DEFER_BY_TYPE_ROUTER",
+			"failureModes": [
+				"DEFINITION_TO_DETAIL"
+			],
+			"decisionSource": "MODEL",
+			"error": null
+		},
+		{
+			"relationId": "rel:cross-b6621ef616e654b7",
+			"decision": "DEFER_BY_TYPE_ROUTER",
+			"failureModes": [
+				"NO_EXPLICIT_SUPPORT"
+			],
+			"decisionSource": "MODEL",
+			"error": null
+		},
+		{
+			"relationId": "rel:cross-7dd1e59539805fc2",
+			"decision": "DEFER_BY_TYPE_ROUTER",
+			"failureModes": [
+				"NO_EXPLICIT_SUPPORT"
+			],
+			"decisionSource": "MODEL",
+			"error": null
+		},
+		{
+			"relationId": "rel:cross-51787b137606220e",
+			"decision": "DEFER_BY_TYPE_ROUTER",
+			"failureModes": [
+				"NO_EXPLICIT_SUPPORT"
+			],
+			"decisionSource": "MODEL",
+			"error": null
+		},
+		{
+			"relationId": "rel:cross-a6e1f795754519db",
+			"decision": "DEFER_BY_TYPE_ROUTER",
+			"failureModes": [
+				"NO_EXPLICIT_SUPPORT"
+			],
+			"decisionSource": "MODEL",
+			"error": null
+		},
+		{
+			"relationId": "rel:cross-7e94ca04e076bfb9",
+			"decision": "DEFER_BY_TYPE_ROUTER",
+			"failureModes": [
+				"NO_EXPLICIT_SUPPORT"
+			],
+			"decisionSource": "MODEL",
+			"error": null
+		},
+		{
+			"relationId": "rel:cross-9cbd512148e665ac",
+			"decision": "DEFER_BY_TYPE_ROUTER",
+			"failureModes": [
+				"NO_EXPLICIT_SUPPORT"
+			],
+			"decisionSource": "MODEL",
+			"error": null
+		},
+		{
+			"relationId": "rel:cross-93e96fbad4e18607",
+			"decision": "DEFER_BY_TYPE_ROUTER",
+			"failureModes": [
+				"NO_EXPLICIT_SUPPORT"
+			],
+			"decisionSource": "MODEL",
+			"error": null
+		},
+		{
+			"relationId": "rel:cross-7206004a9ce8269c",
+			"decision": "DEFER_BY_TYPE_ROUTER",
+			"failureModes": [
+				"NO_EXPLICIT_SUPPORT"
+			],
+			"decisionSource": "MODEL",
+			"error": null
+		},
+		{
+			"relationId": "rel:cross-2173347fd1c49146",
+			"decision": "DEFER_BY_TYPE_ROUTER",
+			"failureModes": [
+				"PARTIAL_SUPPORT"
+			],
+			"decisionSource": "MODEL",
+			"error": null
+		},
+		{
+			"relationId": "rel:cross-2da2b1963ff77e39",
+			"decision": "DEFER_BY_TYPE_ROUTER",
+			"failureModes": [
+				"NO_EXPLICIT_SUPPORT"
+			],
+			"decisionSource": "MODEL",
+			"error": null
+		},
+		{
+			"relationId": "rel:cross-13f8cc10bf6358d4",
+			"decision": "DEFER_BY_TYPE_ROUTER",
+			"failureModes": [
+				"NO_EXPLICIT_SUPPORT"
+			],
+			"decisionSource": "MODEL",
+			"error": null
+		},
+		{
+			"relationId": "rel:cross-a5d5f465d988d887",
+			"decision": "DEFER_BY_TYPE_ROUTER",
+			"failureModes": [
+				"NO_EXPLICIT_SUPPORT"
+			],
+			"decisionSource": "MODEL",
+			"error": null
+		},
+		{
+			"relationId": "rel:cross-253f84ade5373787",
+			"decision": "DEFER_BY_TYPE_ROUTER",
+			"failureModes": [
+				"NO_EXPLICIT_SUPPORT"
+			],
+			"decisionSource": "MODEL",
+			"error": null
+		},
+		{
+			"relationId": "rel:cross-07b4d1d25e2074ef",
+			"decision": "DEFER_BY_TYPE_ROUTER",
+			"failureModes": [
+				"NO_EXPLICIT_SUPPORT"
+			],
+			"decisionSource": "MODEL",
+			"error": null
+		},
+		{
+			"relationId": "rel:cross-82369ab5696f08be",
+			"decision": "DEFER_BY_TYPE_ROUTER",
+			"failureModes": [
+				"NO_EXPLICIT_SUPPORT"
+			],
+			"decisionSource": "MODEL",
+			"error": null
+		}
+	],
+	"canonical": [
+		{
+			"id": "rel:cross-9fdea76d7a2b51a7",
+			"from": "claim:0c1360ce9e6039ce-94e3397fdeffe810",
+			"to": "claim:095ca9ccaaea22c6-350c6bf21c61bd0a",
+			"type": "RELATED_TO",
+			"conditions": [
+				"Llama 3.1 指 Meta 在 https://llama.meta.com/llama-downloads 分发的基础大语言模型、软件和算法",
+				"作为 Llama 3.1 发布的一部分，Meta 整合了 GitHub 仓库，并添加了一些额外的仓库，以扩展 Llama 的功能，使其成为端到端的 Llama Stack"
+			],
+			"conditionStatus": "PRESERVED",
+			"supersessionEffect": null,
+			"relationAuditVersion": "v2.8",
+			"evidenceSpanIds": [
+				"span:s200-ai-llama-003-095ca9ccaaea22c6-3#chars-194-362",
+				"span:s200-ai-llama-004-0c1360ce9e6039ce-4#chars-333-654"
+			],
+			"derivation": "INFERRED",
+			"validity": "SUPPORTED",
+			"lifecycle": "ACTIVE",
+			"publicationState": "CANONICAL",
+			"validFrom": "2026-08-11T09:13:05.959Z",
+			"validTo": null,
+			"compilerVersion": "v1.2",
+			"source": "cross-material-detect",
+			"confidence": 0.7,
+			"consumedBy": []
+		},
+		{
+			"id": "rel:cross-0ed889162631f563",
+			"from": "claim:0c1360ce9e6039ce-94e3397fdeffe810",
+			"to": "claim:095ca9ccaaea22c6-e43c55e22e939ef1",
+			"type": "RELATED_TO",
+			"conditions": [
+				"Llama 3.1 指 Meta 在 https://llama.meta.com/llama-downloads 分发的基础大语言模型、软件和算法",
+				"该版本包括预训练和指令调优的 Llama 3 语言模型的模型权重和起始代码，包括 8B 到 70B 参数的大小"
+			],
+			"conditionStatus": "PRESERVED",
+			"supersessionEffect": null,
+			"relationAuditVersion": "v2.8",
+			"evidenceSpanIds": [
+				"span:s200-ai-llama-003-095ca9ccaaea22c6-5#chars-1576-1734",
+				"span:s200-ai-llama-004-0c1360ce9e6039ce-4#chars-333-654"
+			],
+			"derivation": "INFERRED",
+			"validity": "SUPPORTED",
+			"lifecycle": "ACTIVE",
+			"publicationState": "CANONICAL",
+			"validFrom": "2026-08-11T09:13:05.959Z",
+			"validTo": null,
+			"compilerVersion": "v1.2",
+			"source": "cross-material-detect",
+			"confidence": 0.6,
+			"consumedBy": []
+		},
+		{
+			"id": "rel:cross-baf878a7bd5d3c6f",
+			"from": "claim:0c1360ce9e6039ce-94e3397fdeffe810",
+			"to": "claim:095ca9ccaaea22c6-b723a1151ccf37f7",
+			"type": "RELATED_TO",
+			"conditions": [
+				"Llama 3.1 指 Meta 在 https://llama.meta.com/llama-downloads 分发的基础大语言模型、软件和算法",
+				"该仓库是加载 Llama 3 模型并运行推理的最小示例"
+			],
+			"conditionStatus": "PRESERVED",
+			"supersessionEffect": null,
+			"relationAuditVersion": "v2.8",
+			"evidenceSpanIds": [
+				"span:s200-ai-llama-003-095ca9ccaaea22c6-5#chars-1739-1824",
+				"span:s200-ai-llama-004-0c1360ce9e6039ce-4#chars-333-654"
+			],
+			"derivation": "INFERRED",
+			"validity": "SUPPORTED",
+			"lifecycle": "ACTIVE",
+			"publicationState": "CANONICAL",
+			"validFrom": "2026-08-11T09:13:05.959Z",
+			"validTo": null,
+			"compilerVersion": "v1.2",
+			"source": "cross-material-detect",
+			"confidence": 0.6,
+			"consumedBy": []
+		},
+		{
+			"id": "rel:cross-1ba1bd96a483be4f",
+			"from": "claim:0c1360ce9e6039ce-94e3397fdeffe810",
+			"to": "claim:095ca9ccaaea22c6-a1fb9da5f2ca45d0",
+			"type": "RELATED_TO",
+			"conditions": [
+				"Llama 3.1 指 Meta 在 https://llama.meta.com/llama-downloads 分发的基础大语言模型、软件和算法",
+				"Meta 建议使用 llama-models 仓库，它是基础模型的中央仓库，包括基本工具、模型卡、许可证和使用政策"
+			],
+			"conditionStatus": "PRESERVED",
+			"supersessionEffect": null,
+			"relationAuditVersion": "v2.8",
+			"evidenceSpanIds": [
+				"span:s200-ai-llama-003-095ca9ccaaea22c6-3#chars-415-579",
+				"span:s200-ai-llama-004-0c1360ce9e6039ce-4#chars-333-654"
+			],
+			"derivation": "INFERRED",
+			"validity": "SUPPORTED",
+			"lifecycle": "ACTIVE",
+			"publicationState": "CANONICAL",
+			"validFrom": "2026-08-11T09:13:05.959Z",
+			"validTo": null,
+			"compilerVersion": "v1.2",
+			"source": "cross-material-detect",
+			"confidence": 0.6,
+			"consumedBy": []
+		}
+	],
+	"quarantined": [
+		{
+			"relation": {
+				"id": "rel:cross-c7051f4ab3be0ec6",
+				"from": "claim:0c1360ce9e6039ce-94e3397fdeffe810",
+				"to": "claim:45c91b38666d7250-200224eac7fa20f3",
+				"type": "RELATED_TO",
+				"conditions": [
+					"Llama 3.1 指 Meta 在 https://llama.meta.com/llama-downloads 分发的基础大语言模型、软件和算法",
+					"本文介绍了一组新的基础模型，称为Llama 3"
+				],
+				"conditionStatus": "PRESERVED",
+				"supersessionEffect": null,
+				"relationAuditVersion": "v2.8",
+				"evidenceSpanIds": [
+					"span:s200-ai-llama-001-45c91b38666d7250-5#chars-584-651",
+					"span:s200-ai-llama-004-0c1360ce9e6039ce-4#chars-333-654"
+				],
+				"derivation": "INFERRED",
+				"validity": "UNRESOLVED",
+				"lifecycle": "ACTIVE",
+				"publicationState": "QUARANTINED",
+				"validFrom": "2026-08-11T09:13:05.959Z",
+				"validTo": null,
+				"compilerVersion": "v1.2",
+				"source": "cross-material-detect",
+				"confidence": 0.6,
+				"consumedBy": []
+			},
+			"issueCodes": [
+				"RELATION_UTILITY_LOW"
+			]
+		},
+		{
+			"relation": {
+				"id": "rel:cross-720951e7362bc622",
+				"from": "claim:0c1360ce9e6039ce-94e3397fdeffe810",
+				"to": "claim:45c91b38666d7250-1e28d9c3f1827b65",
+				"type": "RELATED_TO",
+				"conditions": [
+					"Llama 3.1 指 Meta 在 https://llama.meta.com/llama-downloads 分发的基础大语言模型、软件和算法",
+					"Llama 3是一组语言模型，原生支持多语言、编码、推理和工具使用"
+				],
+				"conditionStatus": "PRESERVED",
+				"supersessionEffect": null,
+				"relationAuditVersion": "v2.8",
+				"evidenceSpanIds": [
+					"span:s200-ai-llama-001-45c91b38666d7250-5#chars-652-757",
+					"span:s200-ai-llama-004-0c1360ce9e6039ce-4#chars-333-654"
+				],
+				"derivation": "INFERRED",
+				"validity": "UNRESOLVED",
+				"lifecycle": "ACTIVE",
+				"publicationState": "QUARANTINED",
+				"validFrom": "2026-08-11T09:13:05.959Z",
+				"validTo": null,
+				"compilerVersion": "v1.2",
+				"source": "cross-material-detect",
+				"confidence": 0.6,
+				"consumedBy": []
+			},
+			"issueCodes": [
+				"RELATION_UTILITY_LOW"
+			]
+		},
+		{
+			"relation": {
+				"id": "rel:cross-9103d0bcd827aa65",
+				"from": "claim:0c1360ce9e6039ce-94e3397fdeffe810",
+				"to": "claim:45c91b38666d7250-3fbaa24aba82c6e5",
+				"type": "RELATED_TO",
+				"conditions": [
+					"Llama 3.1 指 Meta 在 https://llama.meta.com/llama-downloads 分发的基础大语言模型、软件和算法",
+					"Llama 3在众多任务上提供了与领先语言模型（如GPT-4）相当的质量"
+				],
+				"conditionStatus": "PRESERVED",
+				"supersessionEffect": null,
+				"relationAuditVersion": "v2.8",
+				"evidenceSpanIds": [
+					"span:s200-ai-llama-001-45c91b38666d7250-5#chars-929-1042",
+					"span:s200-ai-llama-004-0c1360ce9e6039ce-4#chars-333-654"
+				],
+				"derivation": "INFERRED",
+				"validity": "UNRESOLVED",
+				"lifecycle": "ACTIVE",
+				"publicationState": "QUARANTINED",
+				"validFrom": "2026-08-11T09:13:05.959Z",
+				"validTo": null,
+				"compilerVersion": "v1.2",
+				"source": "cross-material-detect",
+				"confidence": 0.6,
+				"consumedBy": []
+			},
+			"issueCodes": [
+				"RELATION_UTILITY_LOW"
+			]
+		},
+		{
+			"relation": {
+				"id": "rel:cross-b114b4dcb9b43dd8",
+				"from": "claim:0c1360ce9e6039ce-94e3397fdeffe810",
+				"to": "claim:095ca9ccaaea22c6-7b21b3cdebef6799",
+				"type": "RELATED_TO",
+				"conditions": [
+					"Llama 3.1 指 Meta 在 https://llama.meta.com/llama-downloads 分发的基础大语言模型、软件和算法",
+					"Meta Llama 3 repository README 是一个已弃用的仓库，被固定（pinned）在某个版本"
+				],
+				"conditionStatus": "PRESERVED",
+				"supersessionEffect": null,
+				"relationAuditVersion": "v2.8",
+				"evidenceSpanIds": [
+					"span:s200-ai-llama-003-095ca9ccaaea22c6-0#chars-1-59",
+					"span:s200-ai-llama-004-0c1360ce9e6039ce-4#chars-333-654"
+				],
+				"derivation": "INFERRED",
+				"validity": "UNRESOLVED",
+				"lifecycle": "ACTIVE",
+				"publicationState": "QUARANTINED",
+				"validFrom": "2026-08-11T09:13:05.959Z",
+				"validTo": null,
+				"compilerVersion": "v1.2",
+				"source": "cross-material-detect",
+				"confidence": 0.6,
+				"consumedBy": []
+			},
+			"issueCodes": [
+				"RELATION_UTILITY_LOW"
+			]
+		},
+		{
+			"relation": {
+				"id": "rel:cross-8993c68b2bde6039",
+				"from": "claim:0c1360ce9e6039ce-94e3397fdeffe810",
+				"to": "claim:095ca9ccaaea22c6-cbedb4ea17f96ec9",
+				"type": "RELATED_TO",
+				"conditions": [
+					"Llama 3.1 指 Meta 在 https://llama.meta.com/llama-downloads 分发的基础大语言模型、软件和算法",
+					"Meta 建议使用 llama-toolchain 仓库，它提供模型开发（推理、微调、安全防护、合成数据生成）的接口和规范实现"
+				],
+				"conditionStatus": "PRESERVED",
+				"supersessionEffect": null,
+				"relationAuditVersion": "v2.8",
+				"evidenceSpanIds": [
+					"span:s200-ai-llama-003-095ca9ccaaea22c6-3#chars-732-922",
+					"span:s200-ai-llama-004-0c1360ce9e6039ce-4#chars-333-654"
+				],
+				"derivation": "INFERRED",
+				"validity": "UNRESOLVED",
+				"lifecycle": "ACTIVE",
+				"publicationState": "QUARANTINED",
+				"validFrom": "2026-08-11T09:13:05.959Z",
+				"validTo": null,
+				"compilerVersion": "v1.2",
+				"source": "cross-material-detect",
+				"confidence": 0.6,
+				"consumedBy": []
+			},
+			"issueCodes": [
+				"RELATION_IDENTITY_MISMATCH",
+				"RELATION_SEMANTIC_FAILED",
+				"RELATION_TYPE_MISMATCH",
+				"RELATION_DIRECTION_MISMATCH",
+				"RELATION_CONDITIONS_MISSING"
+			]
+		},
+		{
+			"relation": {
+				"id": "rel:cross-49187724f87334c2",
+				"from": "claim:0c1360ce9e6039ce-94e3397fdeffe810",
+				"to": "claim:095ca9ccaaea22c6-1b148f6ac721ed49",
+				"type": "RELATED_TO",
+				"conditions": [
+					"Llama 3.1 指 Meta 在 https://llama.meta.com/llama-downloads 分发的基础大语言模型、软件和算法",
+					"Meta 建议使用 PurpleLlama 仓库，它是 Llama Stack 的关键组件，专注于安全风险和推理时缓解措施"
+				],
+				"conditionStatus": "PRESERVED",
+				"supersessionEffect": null,
+				"relationAuditVersion": "v2.8",
+				"evidenceSpanIds": [
+					"span:s200-ai-llama-003-095ca9ccaaea22c6-3#chars-584-727",
+					"span:s200-ai-llama-004-0c1360ce9e6039ce-4#chars-333-654"
+				],
+				"derivation": "INFERRED",
+				"validity": "UNRESOLVED",
+				"lifecycle": "ACTIVE",
+				"publicationState": "QUARANTINED",
+				"validFrom": "2026-08-11T09:13:05.959Z",
+				"validTo": null,
+				"compilerVersion": "v1.2",
+				"source": "cross-material-detect",
+				"confidence": 0.6,
+				"consumedBy": []
+			},
+			"issueCodes": [
+				"RELATION_IDENTITY_MISMATCH",
+				"RELATION_SEMANTIC_FAILED",
+				"RELATION_TYPE_MISMATCH",
+				"RELATION_DIRECTION_MISMATCH",
+				"RELATION_CONDITIONS_MISSING"
+			]
+		},
+		{
+			"relation": {
+				"id": "rel:cross-9fe86377acc3df87",
+				"from": "claim:0c1360ce9e6039ce-94e3397fdeffe810",
+				"to": "claim:095ca9ccaaea22c6-be472b51f85608da",
+				"type": "RELATED_TO",
+				"conditions": [
+					"Llama 3.1 指 Meta 在 https://llama.meta.com/llama-downloads 分发的基础大语言模型、软件和算法",
+					"Meta 建议使用 llama-cookbook 仓库，它包含社区驱动的脚本和集成"
+				],
+				"conditionStatus": "PRESERVED",
+				"supersessionEffect": null,
+				"relationAuditVersion": "v2.8",
+				"evidenceSpanIds": [
+					"span:s200-ai-llama-003-095ca9ccaaea22c6-3#chars-1134-1239",
+					"span:s200-ai-llama-004-0c1360ce9e6039ce-4#chars-333-654"
+				],
+				"derivation": "INFERRED",
+				"validity": "UNRESOLVED",
+				"lifecycle": "ACTIVE",
+				"publicationState": "QUARANTINED",
+				"validFrom": "2026-08-11T09:13:05.959Z",
+				"validTo": null,
+				"compilerVersion": "v1.2",
+				"source": "cross-material-detect",
+				"confidence": 0.6,
+				"consumedBy": []
+			},
+			"issueCodes": [
+				"RELATION_IDENTITY_MISMATCH",
+				"RELATION_SEMANTIC_FAILED",
+				"RELATION_TYPE_MISMATCH",
+				"RELATION_DIRECTION_MISMATCH",
+				"RELATION_CONDITIONS_MISSING"
+			]
+		},
+		{
+			"relation": {
+				"id": "rel:cross-68cdd35e389398f7",
+				"from": "claim:0c1360ce9e6039ce-94e3397fdeffe810",
+				"to": "claim:095ca9ccaaea22c6-ed413e1450028447",
+				"type": "RELATED_TO",
+				"conditions": [
+					"Llama 3.1 指 Meta 在 https://llama.meta.com/llama-downloads 分发的基础大语言模型、软件和算法",
+					"Meta 建议使用 llama-agentic-system 仓库，它是一个端到端的独立 Llama Stack 系统，带有意见性的底层接口，支持创建代理应用程序"
+				],
+				"conditionStatus": "PRESERVED",
+				"supersessionEffect": null,
+				"relationAuditVersion": "v2.8",
+				"evidenceSpanIds": [
+					"span:s200-ai-llama-003-095ca9ccaaea22c6-3#chars-927-1129",
+					"span:s200-ai-llama-004-0c1360ce9e6039ce-4#chars-333-654"
+				],
+				"derivation": "INFERRED",
+				"validity": "UNRESOLVED",
+				"lifecycle": "ACTIVE",
+				"publicationState": "QUARANTINED",
+				"validFrom": "2026-08-11T09:13:05.959Z",
+				"validTo": null,
+				"compilerVersion": "v1.2",
+				"source": "cross-material-detect",
+				"confidence": 0.6,
+				"consumedBy": []
+			},
+			"issueCodes": [
+				"RELATION_IDENTITY_MISMATCH",
+				"RELATION_SEMANTIC_FAILED",
+				"RELATION_TYPE_MISMATCH",
+				"RELATION_DIRECTION_MISMATCH",
+				"RELATION_CONDITIONS_MISSING"
+			]
+		},
+		{
+			"relation": {
+				"id": "rel:cross-2861afc88d4f6314",
+				"from": "claim:0c1360ce9e6039ce-94e3397fdeffe810",
+				"to": "claim:095ca9ccaaea22c6-f54a72fa25fd7561",
+				"type": "RELATED_TO",
+				"conditions": [
+					"Llama 3.1 指 Meta 在 https://llama.meta.com/llama-downloads 分发的基础大语言模型、软件和算法",
+					"Meta 最新版本的 Llama 现在可供各种规模的个人、创作者、研究人员和企业使用，以便他们负责任地进行实验、创新和扩展他们的想法"
+				],
+				"conditionStatus": "PRESERVED",
+				"supersessionEffect": null,
+				"relationAuditVersion": "v2.8",
+				"evidenceSpanIds": [
+					"span:s200-ai-llama-003-095ca9ccaaea22c6-5#chars-1385-1571",
+					"span:s200-ai-llama-004-0c1360ce9e6039ce-4#chars-333-654"
+				],
+				"derivation": "INFERRED",
+				"validity": "UNRESOLVED",
+				"lifecycle": "ACTIVE",
+				"publicationState": "QUARANTINED",
+				"validFrom": "2026-08-11T09:13:05.959Z",
+				"validTo": null,
+				"compilerVersion": "v1.2",
+				"source": "cross-material-detect",
+				"confidence": 0.6,
+				"consumedBy": []
+			},
+			"issueCodes": [
+				"RELATION_IDENTITY_MISMATCH",
+				"RELATION_SEMANTIC_FAILED",
+				"RELATION_TYPE_MISMATCH",
+				"RELATION_DIRECTION_MISMATCH",
+				"RELATION_CONDITIONS_MISSING"
+			]
+		},
+		{
+			"relation": {
+				"id": "rel:cross-ee4a4e289af7c4c2",
+				"from": "claim:0c1360ce9e6039ce-94e3397fdeffe810",
+				"to": "claim:095ca9ccaaea22c6-93886fda1aa6e436",
+				"type": "RELATED_TO",
+				"conditions": [
+					"Llama 3.1 指 Meta 在 https://llama.meta.com/llama-downloads 分发的基础大语言模型、软件和算法",
+					"Meta 正在释放大型语言模型的力量"
+				],
+				"conditionStatus": "PRESERVED",
+				"supersessionEffect": null,
+				"relationAuditVersion": "v2.8",
+				"evidenceSpanIds": [
+					"span:s200-ai-llama-003-095ca9ccaaea22c6-5#chars-1332-1384",
+					"span:s200-ai-llama-004-0c1360ce9e6039ce-4#chars-333-654"
+				],
+				"derivation": "INFERRED",
+				"validity": "UNRESOLVED",
+				"lifecycle": "ACTIVE",
+				"publicationState": "QUARANTINED",
+				"validFrom": "2026-08-11T09:13:05.959Z",
+				"validTo": null,
+				"compilerVersion": "v1.2",
+				"source": "cross-material-detect",
+				"confidence": 0.5,
+				"consumedBy": []
+			},
+			"issueCodes": [
+				"RELATION_IDENTITY_MISMATCH",
+				"RELATION_SEMANTIC_FAILED",
+				"RELATION_TYPE_MISMATCH",
+				"RELATION_DIRECTION_MISMATCH",
+				"RELATION_CONDITIONS_MISSING"
+			]
+		},
+		{
+			"relation": {
+				"id": "rel:cross-5d37d08541094204",
+				"from": "claim:0c1360ce9e6039ce-94e3397fdeffe810",
+				"to": "claim:095ca9ccaaea22c6-479fac59b5fcc888",
+				"type": "RELATED_TO",
+				"conditions": [
+					"Llama 3.1 指 Meta 在 https://llama.meta.com/llama-downloads 分发的基础大语言模型、软件和算法",
+					"Meta 感谢开发者使用 Llama 模型"
+				],
+				"conditionStatus": "PRESERVED",
+				"supersessionEffect": null,
+				"relationAuditVersion": "v2.8",
+				"evidenceSpanIds": [
+					"span:s200-ai-llama-003-095ca9ccaaea22c6-3#chars-150-193",
+					"span:s200-ai-llama-004-0c1360ce9e6039ce-4#chars-333-654"
+				],
+				"derivation": "INFERRED",
+				"validity": "UNRESOLVED",
+				"lifecycle": "ACTIVE",
+				"publicationState": "QUARANTINED",
+				"validFrom": "2026-08-11T09:13:05.959Z",
+				"validTo": null,
+				"compilerVersion": "v1.2",
+				"source": "cross-material-detect",
+				"confidence": 0.5,
+				"consumedBy": []
+			},
+			"issueCodes": [
+				"RELATION_IDENTITY_MISMATCH",
+				"RELATION_SEMANTIC_FAILED",
+				"RELATION_TYPE_MISMATCH",
+				"RELATION_DIRECTION_MISMATCH",
+				"RELATION_CONDITIONS_MISSING"
+			]
+		},
+		{
+			"relation": {
+				"id": "rel:cross-04bd98b8c1f8a57c",
+				"from": "claim:0c1360ce9e6039ce-94e3397fdeffe810",
+				"to": "claim:ab2154412a13c411-4d4d845a68bb5632",
+				"type": "RELATED_TO",
+				"conditions": [
+					"Llama 3.1 指 Meta 在 https://llama.meta.com/llama-downloads 分发的基础大语言模型、软件和算法",
+					"自 2020 年以来，Meta 在其全球运营中保持了净零温室气体排放，并100%匹配其电力使用与可再生能源"
+				],
+				"conditionStatus": "PRESERVED",
+				"supersessionEffect": null,
+				"relationAuditVersion": "v2.8",
+				"evidenceSpanIds": [
+					"span:s200-ai-llama-002-ab2154412a13c411-18#chars-3524-3676",
+					"span:s200-ai-llama-004-0c1360ce9e6039ce-4#chars-333-654"
+				],
+				"derivation": "INFERRED",
+				"validity": "UNRESOLVED",
+				"lifecycle": "ACTIVE",
+				"publicationState": "QUARANTINED",
+				"validFrom": "2026-08-11T09:13:05.959Z",
+				"validTo": null,
+				"compilerVersion": "v1.2",
+				"source": "cross-material-detect",
+				"confidence": 0.5,
+				"consumedBy": []
+			},
+			"issueCodes": [
+				"RELATION_IDENTITY_MISMATCH",
+				"RELATION_SEMANTIC_FAILED",
+				"RELATION_TYPE_MISMATCH",
+				"RELATION_DIRECTION_MISMATCH",
+				"RELATION_CONDITIONS_MISSING"
+			]
+		},
+		{
+			"relation": {
+				"id": "rel:cross-84cac0bb3b144ac7",
+				"from": "claim:0c1360ce9e6039ce-94e3397fdeffe810",
+				"to": "claim:095ca9ccaaea22c6-7f45a45296b83573",
+				"type": "RELATED_TO",
+				"conditions": [
+					"Llama 3.1 指 Meta 在 https://llama.meta.com/llama-downloads 分发的基础大语言模型、软件和算法",
+					"然后运行脚本：`./download.sh`"
+				],
+				"conditionStatus": "PRESERVED",
+				"supersessionEffect": null,
+				"relationAuditVersion": "v2.8",
+				"evidenceSpanIds": [
+					"span:s200-ai-llama-003-095ca9ccaaea22c6-7#chars-2343-2380",
+					"span:s200-ai-llama-004-0c1360ce9e6039ce-4#chars-333-654"
+				],
+				"derivation": "INFERRED",
+				"validity": "UNRESOLVED",
+				"lifecycle": "ACTIVE",
+				"publicationState": "QUARANTINED",
+				"validFrom": "2026-08-11T09:13:05.959Z",
+				"validTo": null,
+				"compilerVersion": "v1.2",
+				"source": "cross-material-detect",
+				"confidence": 0.5,
+				"consumedBy": []
+			},
+			"issueCodes": [
+				"RELATION_IDENTITY_MISMATCH",
+				"RELATION_SEMANTIC_FAILED",
+				"RELATION_TYPE_MISMATCH",
+				"RELATION_DIRECTION_MISMATCH",
+				"RELATION_CONDITIONS_MISSING"
+			]
+		}
+	]
+}

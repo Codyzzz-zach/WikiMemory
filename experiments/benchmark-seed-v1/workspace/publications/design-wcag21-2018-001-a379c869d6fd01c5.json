@@ -1,0 +1,370 @@
+{
+  "schemaVersion": "v1",
+  "sourceId": "source:design-wcag21-2018-001-a379c869d6fd01c5",
+  "runId": "a8ac7146-befb-42d5-8198-36f9c4ac6687",
+  "publishedAt": "2026-07-27T09:57:11.061Z",
+  "claims": [
+    {
+      "id": "claim:a379c869d6fd01c5-04b919f4bee1dda9",
+      "statement": "Success Criterion 4.1.1 Parsing is Level A.",
+      "evidenceSpanIds": [
+        "span:design-wcag21-2018-001-a379c869d6fd01c5-2#chars-183-224"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:56:59.226Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:design-wcag21-2018-001-a379c869d6fd01c5-2#chars-183-224"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:design-wcag21-2018-001-a379c869d6fd01c5-2#chars-183-224"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-27T09:56:59.226Z"
+    },
+    {
+      "id": "claim:a379c869d6fd01c5-4d6c29b01ebc3687",
+      "statement": "In content implemented using markup languages, elements have complete start and end tags.",
+      "evidenceSpanIds": [
+        "span:design-wcag21-2018-001-a379c869d6fd01c5-2#chars-226-314"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:56:59.226Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:design-wcag21-2018-001-a379c869d6fd01c5-2#chars-226-314"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:design-wcag21-2018-001-a379c869d6fd01c5-2#chars-226-314"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-27T09:56:59.226Z"
+    },
+    {
+      "id": "claim:a379c869d6fd01c5-5e7756a095157543",
+      "statement": "Web pages that conform to WCAG 2.1 also conform to WCAG 2.0.",
+      "evidenceSpanIds": [
+        "span:design-wcag21-2018-001-a379c869d6fd01c5-1#chars-121-180"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:56:59.226Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:design-wcag21-2018-001-a379c869d6fd01c5-1#chars-121-180"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:design-wcag21-2018-001-a379c869d6fd01c5-1#chars-121-180"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-27T09:56:59.226Z"
+    },
+    {
+      "id": "claim:a379c869d6fd01c5-866398fd8b6c9f1d",
+      "statement": "In content implemented using markup languages, any IDs are unique, except where the specifications allow these features.",
+      "evidenceSpanIds": [
+        "span:design-wcag21-2018-001-a379c869d6fd01c5-2#chars-421-493"
+      ],
+      "conditions": [
+        "In content implemented using markup languages"
+      ],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:56:59.226Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:design-wcag21-2018-001-a379c869d6fd01c5-2#chars-421-493"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:design-wcag21-2018-001-a379c869d6fd01c5-2#chars-421-493"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-27T09:56:59.226Z"
+    },
+    {
+      "id": "claim:a379c869d6fd01c5-c0d22573fe6f8aec",
+      "statement": "In content implemented using markup languages, elements are nested according to their specifications.",
+      "evidenceSpanIds": [
+        "span:design-wcag21-2018-001-a379c869d6fd01c5-2#chars-316-369"
+      ],
+      "conditions": [
+        "In content implemented using markup languages"
+      ],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:56:59.226Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:design-wcag21-2018-001-a379c869d6fd01c5-2#chars-316-369"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:design-wcag21-2018-001-a379c869d6fd01c5-2#chars-316-369"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-27T09:56:59.226Z"
+    },
+    {
+      "id": "claim:a379c869d6fd01c5-c214e98e5362ef12",
+      "statement": "In content implemented using markup languages, elements do not contain duplicate attributes.",
+      "evidenceSpanIds": [
+        "span:design-wcag21-2018-001-a379c869d6fd01c5-2#chars-371-415"
+      ],
+      "conditions": [
+        "In content implemented using markup languages"
+      ],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:56:59.226Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:design-wcag21-2018-001-a379c869d6fd01c5-2#chars-371-415"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:design-wcag21-2018-001-a379c869d6fd01c5-2#chars-371-415"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-27T09:56:59.226Z"
+    },
+    {
+      "id": "claim:a379c869d6fd01c5-dd9dfa26cc601b87",
+      "statement": "WCAG 2.1 builds on and is backwards compatible with WCAG 2.0.",
+      "evidenceSpanIds": [
+        "span:design-wcag21-2018-001-a379c869d6fd01c5-1#chars-51-111"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:56:59.226Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:design-wcag21-2018-001-a379c869d6fd01c5-1#chars-51-111"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:design-wcag21-2018-001-a379c869d6fd01c5-1#chars-51-111"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-27T09:56:59.226Z"
+    }
+  ],
+  "concepts": [
+    {
+      "id": "concept:29a4b9514b65997b",
+      "name": "Nested elements",
+      "aliases": [
+        "elements are nested"
+      ],
+      "boundary": "Requirement for element nesting according to specifications",
+      "domain": "Web development"
+    },
+    {
+      "id": "concept:560d7dba4706aaf9",
+      "name": "Markup languages",
+      "aliases": [
+        "markup languages"
+      ],
+      "boundary": "Languages used to structure content on the web",
+      "domain": "Web technologies"
+    },
+    {
+      "id": "concept:5b3141850acf4479",
+      "name": "Backwards compatible",
+      "aliases": [
+        "backwards compatible"
+      ],
+      "boundary": "Property of WCAG 2.1 relative to WCAG 2.0",
+      "domain": "Web accessibility"
+    },
+    {
+      "id": "concept:7c1db50d292692f4",
+      "name": "Level A",
+      "aliases": [
+        "Level A"
+      ],
+      "boundary": "Conformance level in WCAG",
+      "domain": "Web accessibility"
+    },
+    {
+      "id": "concept:872c8a6b7af32c89",
+      "name": "WCAG 2.1",
+      "aliases": [
+        "WCAG 2.1"
+      ],
+      "boundary": "Web Content Accessibility Guidelines version 2.1",
+      "domain": "Web accessibility"
+    },
+    {
+      "id": "concept:8bfc61489544aa88",
+      "name": "Unique IDs",
+      "aliases": [
+        "IDs are unique"
+      ],
+      "boundary": "Requirement for element identifiers in markup languages",
+      "domain": "Web development"
+    },
+    {
+      "id": "concept:9f40bc8522b85380",
+      "name": "Duplicate attributes",
+      "aliases": [
+        "duplicate attributes"
+      ],
+      "boundary": "Prohibition of duplicate attributes in elements",
+      "domain": "Web development"
+    },
+    {
+      "id": "concept:df2300f5bb7139bc",
+      "name": "Success Criterion 4.1.1 Parsing",
+      "aliases": [
+        "Success Criterion 4.1.1 Parsing"
+      ],
+      "boundary": "WCAG 2.1 success criterion",
+      "domain": "Web accessibility"
+    },
+    {
+      "id": "concept:ec9961dfa5c44296",
+      "name": "WCAG 2.0",
+      "aliases": [
+        "WCAG 2.0"
+      ],
+      "boundary": "Web Content Accessibility Guidelines version 2.0",
+      "domain": "Web accessibility"
+    },
+    {
+      "id": "concept:f2a33100a9d78060",
+      "name": "Complete start and end tags",
+      "aliases": [
+        "complete start and end tags"
+      ],
+      "boundary": "Requirement for elements in markup languages",
+      "domain": "Web development"
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel:a379c869d6fd01c5-57f3f5c8e59d5ae3",
+      "from": "claim:a379c869d6fd01c5-dd9dfa26cc601b87",
+      "to": "claim:a379c869d6fd01c5-5e7756a095157543",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:design-wcag21-2018-001-a379c869d6fd01c5-1#chars-121-180",
+        "span:design-wcag21-2018-001-a379c869d6fd01c5-1#chars-51-111"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:57:04.330Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.8,
+      "consumedBy": []
+    }
+  ]
+}

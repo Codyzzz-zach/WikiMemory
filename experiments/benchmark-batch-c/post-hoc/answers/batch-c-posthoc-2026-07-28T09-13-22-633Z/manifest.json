@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "wge-batch-c-blind-answers/v1",
+  "status": "SEALED_POST_HOC",
+  "runId": "batch-c-posthoc-2026-07-28T09-13-22-633Z",
+  "createdAt": "2026-07-28T09:13:25.870Z",
+  "questionFileHash": "sha256:3cfe6ed87ddfb88902d35c417f27c6a8ebf806e3139e0acc37d34fa9ad11a34d",
+  "configHash": "sha256:76f3538a6933a43ee79a39f462679c78405ce8044583bc2796ba487530ba9426",
+  "answerPromptHash": "sha256:b681674e4354285d38c6d65b9e3a2a3ec85199baf2f1bc4e622d7fb989c5b4bc",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "temperature": 0,
+  "contextBudgetTokens": 12000,
+  "questions": 1,
+  "answers": 2,
+  "stageBRead": true,
+  "preparationId": "co-evidence-v1"
+}

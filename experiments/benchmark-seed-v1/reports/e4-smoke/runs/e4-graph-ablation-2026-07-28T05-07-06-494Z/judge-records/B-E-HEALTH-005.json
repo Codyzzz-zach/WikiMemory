@@ -1,0 +1,75 @@
+{
+  "questionId": "B-E-HEALTH-005",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 2417,
+    "completionTokens": 869,
+    "totalTokens": 3286,
+    "promptCacheHitTokens": 512,
+    "promptCacheMissTokens": 1905,
+    "reasoningTokens": 0
+  },
+  "request": {
+    "systemPrompt": "你是盲测评分员，不知道匿名答案属于哪个实验组。只按题目、评分锚点和证据评估，不用外部常识修正答案。\n每项 0-4 分：requiredPointCoverage、conditionFidelity、evidenceGrounding、answerabilityDiscipline。\n若答案反转来源归属、抹掉关键条件/时间、把提案当最终规范、编造上下文外事实，hardFailure=true。\n只输出严格 JSON：{\"scores\":[{\"sampleId\":\"...\",\"requiredPointCoverage\":0,\"conditionFidelity\":0,\"evidenceGrounding\":0,\"answerabilityDiscipline\":0,\"hardFailure\":false,\"rationale\":\"...\"}]}。",
+    "userPrompt": "{\"question\":\"从 2020-03 到 2020-07，空气传播适用范围发生了什么可证实变化？\",\"answerability\":\"answerable\",\"requiredPoints\":[\"7 月文件明确更新 3 月文件\",\"从产生气溶胶医疗程序扩展到不能排除特定室内短距离气溶胶传播\"],\"forbiddenClaims\":[\"不得提高为无条件结论\"],\"requiredEvidence\":[{\"sourceId\":\"health-who-march-2020-001\",\"exactQuote\":\"In the context of COVID-19, airborne transmission may be possible in specific circumstances and settings in which procedures or support treatments that generate aerosols are performed; i.e., endotracheal intubation, bronchoscopy, open suctioning, administration of nebulized treatment, manual ventilation before intubation, turning the patient to the prone position, disconnecting the patient from the ventilator, non-invasive positive-pressure ventilation, tracheostomy, and cardiopulmonary resuscitation.\",\"role\":\"supports\"},{\"sourceId\":\"health-who-july-2020-002\",\"exactQuote\":\"This document is an update to the scientific brief published on 29 March 2020 entitled “Modes of transmission of virus causing COVID-19: implications for infection prevention and control (IPC) precaution recommendations” and includes new scientific evidence available on transmission of SARS-CoV-2, the virus that causes COVID-19.\",\"role\":\"supports\"},{\"sourceId\":\"health-who-july-2020-002\",\"exactQuote\":\"Short-range aerosol transmission, particularly in specific indoor locations, such as crowded and inadequately ventilated spaces over a prolonged period of time with infected persons cannot be ruled out.\",\"role\":\"supports\"}],\"sourcePriorityRule\":\"P/C 决定规范、论文与实现事实；S 只能作为有归属的解释，不能推翻一手版本文本。\",\"anonymousAnswers\":[{\"sampleId\":\"sample-0ae3543b-bee5-4a7c-865a-030363e7d34c\",\"questionId\":\"B-E-HEALTH-005\",\"repetition\":1,\"answer\":\"{\\n  \\\"answer\\\": \\\"2020年3月29日，WHO的科学简报指出空气传播仅在产生气溶胶的特定医疗操作中可能发生（claim:b587ec61aaf84d7d-474d339f3670f6c4）。到2020年7月，WHO更新了简报，承认短距离气溶胶传播在特定室内场所（如拥挤、通风不良的空间）不能排除（claim:a1c7e701eebb9dc1-271d5603ab397f55），并指出气溶胶可携带病毒超过1米并长时间悬浮（claim:14069d5a982d18de-ff33cb8a69885a6f）。\\\",\\n  \\\"citations\\\": [\\n    \\\"claim:b587ec61aaf84d7d-474d339f3670f6c4\\\",\\n    \\\"claim:a1c7e701eebb9dc1-271d5603ab397f55\\\",\\n    \\\"claim:14069d5a982d18de-ff33cb8a69885a6f\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\"},{\"sampleId\":\"sample-d444f091-4a44-49df-809b-b45116598b2f\",\"questionId\":\"B-E-HEALTH-005\",\"repetition\":1,\"answer\":\"{\\n  \\\"answer\\\": \\\"2020年3月29日的科学简报指出，在COVID-19背景下，空气传播可能在特定情况和环境下发生，即执行产生气溶胶的操作或支持治疗时。2020年7月的更新版纳入了新的科学证据，承认短距离气溶胶传播在特定室内场所（如拥挤且通风不良的空间，与感染者长时间接触）不能排除，且尤其值得关注。\\\",\\n  \\\"citations\\\": [\\n    \\\"claim:b587ec61aaf84d7d-474d339f3670f6c4\\\",\\n    \\\"claim:a1c7e701eebb9dc1-271d5603ab397f55\\\",\\n    \\\"claim:a1c7e701eebb9dc1-1b6548c486ad1fd5\\\",\\n    \\\"claim:a1c7e701eebb9dc1-64202515b32c05d0\\\",\\n    \\\"claim:a1c7e701eebb9dc1-8c2b8fcbcdf52208\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\"},{\"sampleId\":\"sample-8bd6cba0-4617-4d2c-bda9-94b10a67d4e2\",\"questionId\":\"B-E-HEALTH-005\",\"repetition\":2,\"answer\":\"{\\n  \\\"answer\\\": \\\"2020年3月29日，WHO的科学简报指出空气传播仅在产生气溶胶的特定医疗操作中可能发生（claim:b587ec61aaf84d7d-474d339f3670f6c4）。到2020年7月，WHO更新了简报，承认短距离气溶胶传播在特定室内场所（如拥挤、通风不良的空间）不能排除（claim:a1c7e701eebb9dc1-271d5603ab397f55），并指出气溶胶可携带病毒超过1米并长时间悬浮（claim:14069d5a982d18de-ff33cb8a69885a6f）。\\\",\\n  \\\"citations\\\": [\\n    \\\"claim:b587ec61aaf84d7d-474d339f3670f6c4\\\",\\n    \\\"claim:a1c7e701eebb9dc1-271d5603ab397f55\\\",\\n    \\\"claim:14069d5a982d18de-ff33cb8a69885a6f\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\"},{\"sampleId\":\"sample-0af545f9-5c8d-4f49-93f3-bd9306b64441\",\"questionId\":\"B-E-HEALTH-005\",\"repetition\":2,\"answer\":\"{\\n  \\\"answer\\\": \\\"2020年3月29日的科学简报指出，在COVID-19背景下，空气传播可能在特定情况和环境下发生，即执行产生气溶胶的操作或支持治疗时（如气管插管、支气管镜检查等）。2020年7月的更新版纳入了新的科学证据，承认短距离气溶胶传播在特定室内场所（如拥挤且通风不良的空间，与感染者长时间接触）不能排除，且尤其值得关注。\\\",\\n  \\\"citations\\\": [\\n    \\\"claim:b587ec61aaf84d7d-474d339f3670f6c4\\\",\\n    \\\"claim:a1c7e701eebb9dc1-271d5603ab397f55\\\",\\n    \\\"claim:a1c7e701eebb9dc1-1b6548c486ad1fd5\\\",\\n    \\\"claim:a1c7e701eebb9dc1-64202515b32c05d0\\\",\\n    \\\"claim:a1c7e701eebb9dc1-8c2b8fcbcdf52208\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\"},{\"sampleId\":\"sample-8ec7c133-ab4b-4181-884b-5fed176f511e\",\"questionId\":\"B-E-HEALTH-005\",\"repetition\":3,\"answer\":\"{\\n  \\\"answer\\\": \\\"2020年3月29日的科学简报指出，在COVID-19背景下，空气传播可能在特定情况和环境下发生，即执行产生气溶胶的操作或支持治疗时。2020年7月的更新版纳入了新的科学证据，承认短距离气溶胶传播在特定室内场所（如拥挤且通风不良的空间，与感染者长时间接触）不能排除，且尤其值得关注。\\\",\\n  \\\"citations\\\": [\\n    \\\"claim:b587ec61aaf84d7d-474d339f3670f6c4\\\",\\n    \\\"claim:a1c7e701eebb9dc1-271d5603ab397f55\\\",\\n    \\\"claim:a1c7e701eebb9dc1-1b6548c486ad1fd5\\\",\\n    \\\"claim:a1c7e701eebb9dc1-64202515b32c05d0\\\",\\n    \\\"claim:a1c7e701eebb9dc1-8c2b8fcbcdf52208\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\"},{\"sampleId\":\"sample-b15adae1-7c4e-4dc9-956e-8033f8ffccaa\",\"questionId\":\"B-E-HEALTH-005\",\"repetition\":3,\"answer\":\"{\\n  \\\"answer\\\": \\\"2020年3月29日，WHO的科学简报指出空气传播仅在产生气溶胶的特定医疗操作中可能发生（claim:b587ec61aaf84d7d-474d339f3670f6c4）。到2020年7月，WHO更新了简报，承认短距离气溶胶传播在特定室内场所（如拥挤且通风不良的空间）不能排除（claim:a1c7e701eebb9dc1-271d5603ab397f55），并指出气溶胶可携带病毒超过1米并长时间悬浮（claim:14069d5a982d18de-ff33cb8a69885a6f）。\\\",\\n  \\\"citations\\\": [\\n    \\\"claim:b587ec61aaf84d7d-474d339f3670f6c4\\\",\\n    \\\"claim:a1c7e701eebb9dc1-271d5603ab397f55\\\",\\n    \\\"claim:14069d5a982d18de-ff33cb8a69885a6f\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\"}]}"
+  },
+  "rawResponse": "{\n  \"scores\": [\n    {\n      \"sampleId\": \"sample-0ae3543b-bee5-4a7c-865a-030363e7d34c\",\n      \"requiredPointCoverage\": 2,\n      \"conditionFidelity\": 2,\n      \"evidenceGrounding\": 2,\n      \"answerabilityDiscipline\": 2,\n      \"hardFailure\": false,\n      \"rationale\": \"Covers both required points (update from March to July, expansion from aerosol-generating procedures to indoor short-range). However, adds claim about aerosols traveling >1m and remaining suspended, which is not in required evidence and may be an inference. Condition fidelity: correctly states March and July positions but adds unsupported detail. Evidence grounding: cites claims but the extra claim (14069d5a...) is not in provided evidence. Answerability discipline: answers the question but includes extra information not strictly required.\"\n    },\n    {\n      \"sampleId\": \"sample-d444f091-4a44-49df-809b-b45116598b2f\",\n      \"requiredPointCoverage\": 2,\n      \"conditionFidelity\": 2,\n      \"evidenceGrounding\": 2,\n      \"answerabilityDiscipline\": 2,\n      \"hardFailure\": false,\n      \"rationale\": \"Covers both required points. Condition fidelity: accurately describes March and July positions. Evidence grounding: cites claims, but some citations (e.g., a1c7e701eebb9dc1-1b6548c486ad1fd5) are not in provided evidence. Answerability discipline: answers the question without extra unsupported claims.\"\n    },\n    {\n      \"sampleId\": \"sample-8bd6cba0-4617-4d2c-bda9-94b10a67d4e2\",\n      \"requiredPointCoverage\": 2,\n      \"conditionFidelity\": 2,\n      \"evidenceGrounding\": 2,\n      \"answerabilityDiscipline\": 2,\n      \"hardFailure\": false,\n      \"rationale\": \"Same as sample-0ae3543b: covers required points but adds unsupported claim about aerosols traveling >1m. Condition fidelity: correct but extra detail. Evidence grounding: extra claim not in evidence. Answerability discipline: includes extra information.\"\n    },\n    {\n      \"sampleId\": \"sample-0af545f9-5c8d-4f49-93f3-bd9306b64441\",\n      \"requiredPointCoverage\": 2,\n      \"conditionFidelity\": 2,\n      \"evidenceGrounding\": 2,\n      \"answerabilityDiscipline\": 2,\n      \"hardFailure\": false,\n      \"rationale\": \"Covers both required points. Condition fidelity: accurate. Evidence grounding: cites claims, some not in provided evidence. Answerability discipline: answers without extra unsupported claims.\"\n    },\n    {\n      \"sampleId\": \"sample-8ec7c133-ab4b-4181-884b-5fed176f511e\",\n      \"requiredPointCoverage\": 2,\n      \"conditionFidelity\": 2,\n      \"evidenceGrounding\": 2,\n      \"answerabilityDiscipline\": 2,\n      \"hardFailure\": false,\n      \"rationale\": \"Same as sample-d444f091: covers required points, accurate condition fidelity, some citations not in evidence, no extra unsupported claims.\"\n    },\n    {\n      \"sampleId\": \"sample-b15adae1-7c4e-4dc9-956e-8033f8ffccaa\",\n      \"requiredPointCoverage\": 2,\n      \"conditionFidelity\": 2,\n      \"evidenceGrounding\": 2,\n      \"answerabilityDiscipline\": 2,\n      \"hardFailure\": false,\n      \"rationale\": \"Same as sample-0ae3543b: covers required points but adds unsupported claim about aerosols traveling >1m. Condition fidelity: correct but extra detail. Evidence grounding: extra claim not in evidence. Answerability discipline: includes extra information.\"\n    }\n  ]\n}",
+  "parsed": [
+    {
+      "sampleId": "sample-0ae3543b-bee5-4a7c-865a-030363e7d34c",
+      "requiredPointCoverage": 2,
+      "conditionFidelity": 2,
+      "evidenceGrounding": 2,
+      "answerabilityDiscipline": 2,
+      "hardFailure": false,
+      "rationale": "Covers both required points (update from March to July, expansion from aerosol-generating procedures to indoor short-range). However, adds claim about aerosols traveling >1m and remaining suspended, which is not in required evidence and may be an inference. Condition fidelity: correctly states March and July positions but adds unsupported detail. Evidence grounding: cites claims but the extra claim (14069d5a...) is not in provided evidence. Answerability discipline: answers the question but includes extra information not strictly required."
+    },
+    {
+      "sampleId": "sample-d444f091-4a44-49df-809b-b45116598b2f",
+      "requiredPointCoverage": 2,
+      "conditionFidelity": 2,
+      "evidenceGrounding": 2,
+      "answerabilityDiscipline": 2,
+      "hardFailure": false,
+      "rationale": "Covers both required points. Condition fidelity: accurately describes March and July positions. Evidence grounding: cites claims, but some citations (e.g., a1c7e701eebb9dc1-1b6548c486ad1fd5) are not in provided evidence. Answerability discipline: answers the question without extra unsupported claims."
+    },
+    {
+      "sampleId": "sample-8bd6cba0-4617-4d2c-bda9-94b10a67d4e2",
+      "requiredPointCoverage": 2,
+      "conditionFidelity": 2,
+      "evidenceGrounding": 2,
+      "answerabilityDiscipline": 2,
+      "hardFailure": false,
+      "rationale": "Same as sample-0ae3543b: covers required points but adds unsupported claim about aerosols traveling >1m. Condition fidelity: correct but extra detail. Evidence grounding: extra claim not in evidence. Answerability discipline: includes extra information."
+    },
+    {
+      "sampleId": "sample-0af545f9-5c8d-4f49-93f3-bd9306b64441",
+      "requiredPointCoverage": 2,
+      "conditionFidelity": 2,
+      "evidenceGrounding": 2,
+      "answerabilityDiscipline": 2,
+      "hardFailure": false,
+      "rationale": "Covers both required points. Condition fidelity: accurate. Evidence grounding: cites claims, some not in provided evidence. Answerability discipline: answers without extra unsupported claims."
+    },
+    {
+      "sampleId": "sample-8ec7c133-ab4b-4181-884b-5fed176f511e",
+      "requiredPointCoverage": 2,
+      "conditionFidelity": 2,
+      "evidenceGrounding": 2,
+      "answerabilityDiscipline": 2,
+      "hardFailure": false,
+      "rationale": "Same as sample-d444f091: covers required points, accurate condition fidelity, some citations not in evidence, no extra unsupported claims."
+    },
+    {
+      "sampleId": "sample-b15adae1-7c4e-4dc9-956e-8033f8ffccaa",
+      "requiredPointCoverage": 2,
+      "conditionFidelity": 2,
+      "evidenceGrounding": 2,
+      "answerabilityDiscipline": 2,
+      "hardFailure": false,
+      "rationale": "Same as sample-0ae3543b: covers required points but adds unsupported claim about aerosols traveling >1m. Condition fidelity: correct but extra detail. Evidence grounding: extra claim not in evidence. Answerability discipline: includes extra information."
+    }
+  ]
+}

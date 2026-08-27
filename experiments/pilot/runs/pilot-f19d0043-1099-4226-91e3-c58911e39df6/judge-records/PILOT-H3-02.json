@@ -1,0 +1,48 @@
+{
+  "questionId": "PILOT-H3-02",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "request": {
+    "systemPrompt": "你是知识系统的盲测评分员。你只按提供的 Gold 和评分合同评价匿名答案，不判断答案来自哪个实验组。\n必须逐项核对 requiredClaims、mustMentionConditions、forbiddenClaims、answerability 和证据引用。\nsourceRisk.present=true 时，Gold 风险说明是允许使用的人工审计结论；不得把源材料的过强表述当成正确答案。\n只输出严格 JSON：{\"scores\":[{\"sampleId\":\"...\",\"requiredClaimCoverage\":0,\"conditionFidelity\":0,\"evidenceGrounding\":0,\"answerabilityDiscipline\":0,\"hardFailure\":false,\"rationale\":\"...\"}]}。",
+    "userPrompt": "# 评分合同\n{\n  \"dimensions\": {\n    \"requiredClaimCoverage\": {\n      \"score0\": \"没有覆盖 requiredClaims，或核心结论相反\",\n      \"score1\": \"覆盖部分 requiredClaims，但缺少一项以上关键连接\",\n      \"score2\": \"完整覆盖全部 requiredClaims\"\n    },\n    \"conditionFidelity\": {\n      \"score0\": \"触发 forbiddenClaims，或删除了决定结论的条件\",\n      \"score1\": \"方向基本正确，但条件、例外或必要/充分强度表达不完整\",\n      \"score2\": \"保留全部 mustMentionConditions，且未触发 forbiddenClaims\"\n    },\n    \"evidenceGrounding\": {\n      \"score0\": \"关键结论没有可解析引用，或引用与结论无关\",\n      \"score1\": \"有相关引用，但关键结论存在未落到证据的部分\",\n      \"score2\": \"关键结论均由当前上下文标识支持，引用位置正确\"\n    },\n    \"answerabilityDiscipline\": {\n      \"score0\": \"证据不足时仍编造答案，或证据充分时错误拒答\",\n      \"score1\": \"表达了不确定性，但回答/拒答边界不够准确\",\n      \"score2\": \"严格遵守该题 answerability，充分回答或明确拒答\"\n    }\n  },\n  \"totalScore\": 8,\n  \"hardFailure\": \"任何 forbiddenClaim、伪造引用、把 insufficient 题当作已由语料证明，均记 hardFailure；该样本总分最高为 2。\"\n}\n\n# 题目与 Gold\n{\n  \"question\": \"Fourier 级数为何既是函数展开、Hilbert 空间投影，又能推广到谱分解？\",\n  \"answerability\": \"answerable\",\n  \"requiredClaims\": [\n    \"Fourier 级数把函数展开为三角或复指数基的级数\",\n    \"在 L² 中系数来自正交投影\",\n    \"谱分解把基展开思想推广到自伴算子\"\n  ],\n  \"mustMentionConditions\": [\n    \"不同函数类别和收敛方式不能混为一谈\"\n  ],\n  \"forbiddenClaims\": [\n    \"所有函数的 Fourier 级数都逐点收敛到原函数\"\n  ],\n  \"sourceRisk\": {\n    \"present\": false,\n    \"detail\": \"\"\n  },\n  \"evidence\": [\n    {\n      \"sourceFile\": \"mathtest-material/03-sequences-limits.md\",\n      \"heading\": \"3.3 级数：无穷和的可能性\",\n      \"exactQuote\": \"**级数** = 数列的\\\"累加\\\"：$\\\\sum_{n=1}^\\\\infty a_n = \\\\lim_{N \\\\to \\\\infty} \\\\sum_{n=1}^N a_n$\",\n      \"supportsRequiredClaims\": [\n        0\n      ]\n    },\n    {\n      \"sourceFile\": \"mathtest-material/02-spaces.md\",\n      \"heading\": \"为什么 Hilbert 空间如此重要？\",\n      \"exactQuote\": \"F[\\\"函数 f(x)\\\"] --> FS[\\\"Fourier级数<br/>=投影到三角函数基\\\"]\",\n      \"supportsRequiredClaims\": [\n        1\n      ]\n    },\n    {\n      \"sourceFile\": \"mathtest-material/09-functional-analysis.md\",\n      \"heading\": \"自伴算子的谱定理\",\n      \"exactQuote\": \"> 谱分解是 Fourier 变换的终极推广——任何自伴算子都可以\\\"对角化\\\"为乘法算子。\",\n      \"supportsRequiredClaims\": [\n        2\n      ]\n    }\n  ]\n}\n\n# 匿名答案\n[\n  {\n    \"sampleId\": \"sample-3909e54e-6458-4f29-81d2-f32f9a9171da\",\n    \"questionId\": \"PILOT-H3-02\",\n    \"answer\": \"{\\n  \\\"answer\\\": \\\"Fourier 级数同时是函数展开、Hilbert 空间投影和谱分解的原型，因为：1) 作为函数展开，它将函数分解为三角或复指数基的级数（EVIDENCE span:05-functions-mappings-7e02712717a02820-21#chars-1657-1681）；2) 在 L² Hilbert 空间中，{e^{inx}} 构成正交基（EVIDENCE span:02-spaces-33a33396a17d4175-66#chars-5832-5907），系数是函数在基上的坐标，有限项近似对应正交投影（EVIDENCE span:02-spaces-33a33396a17d4175-66#chars-5775-5800）；3) 泛函分析将这种“选基对角化”思想推广到自伴算子的谱分解，视为 Fourier 分解的抽象延伸（EVIDENCE span:09-functional-analysis-9478dfc1ba6cb58f-47）。注意：函数展开的具体收敛方式（逐点、L²、一致）需单独说明，不能相互替代；谱分解仅适用于自伴算子，不能推广到任意算子（WIKI wiki://analysis/fourier-projection-and-spectrum）。\\\",\\n  \\\"citations\\\": [\\n    \\\"EVIDENCE span:05-functions-mappings-7e02712717a02820-21#chars-1657-1681\\\",\\n    \\\"EVIDENCE span:02-spaces-33a33396a17d4175-66#chars-5832-5907\\\",\\n    \\\"EVIDENCE span:02-spaces-33a33396a17d4175-66#chars-5775-5800\\\",\\n    \\\"EVIDENCE span:09-functional-analysis-9478dfc1ba6cb58f-47\\\",\\n    \\\"WIKI wiki://analysis/fourier-projection-and-spectrum\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": [\\n    \\\"函数展开的收敛方式（逐点、L²、一致）不能从坐标或投影视角自动推出\\\",\\n    \\\"谱分解仅适用于自伴算子，不能推广到任意算子\\\"\\n  ]\\n}\"\n  },\n  {\n    \"sampleId\": \"sample-f228a64a-01bf-41c5-b3cc-34b6b48932aa\",\n    \"questionId\": \"PILOT-H3-02\",\n    \"answer\": \"{\\n  \\\"answer\\\": \\\"Fourier 级数既是函数展开，因为它在 $L^2[-\\\\\\\\pi,\\\\\\\\pi]$ 中将函数分解为不同频率的正弦波叠加（EVIDENCE span:05-functions-mappings-7e02712717a02820-21#chars-1657-1681）；又是 Hilbert 空间投影，因为 $\\\\\\\\{e^{inx}\\\\\\\\}_{n=-\\\\\\\\infty}^\\\\\\\\infty$ 是 $L^2[-\\\\\\\\pi,\\\\\\\\pi]$ 中的一组正交基（EVIDENCE span:02-spaces-33a33396a17d4175-66#chars-5832-5907），而 Hilbert 空间允许正交投影，即找到子空间中最接近某点的元素（EVIDENCE span:02-spaces-33a33396a17d4175-66#chars-5775-5800）；它能推广到谱分解，因为谱分解是 Fourier 变换的终极推广（EVIDENCE span:09-functional-analysis-9478dfc1ba6cb58f-47），而 Fourier 级数是 Fourier 变换在周期函数上的特例。\\\",\\n  \\\"citations\\\": [\\n    \\\"EVIDENCE span:05-functions-mappings-7e02712717a02820-21#chars-1657-1681\\\",\\n    \\\"EVIDENCE span:02-spaces-33a33396a17d4175-66#chars-5832-5907\\\",\\n    \\\"EVIDENCE span:02-spaces-33a33396a17d4175-66#chars-5775-5800\\\",\\n    \\\"EVIDENCE span:09-functional-analysis-9478dfc1ba6cb58f-47\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\"\n  },\n  {\n    \"sampleId\": \"sample-cc1f1cb0-8344-423f-98ba-02c12837bbb5\",\n    \"questionId\": \"PILOT-H3-02\",\n    \"answer\": \"{\\n  \\\"answer\\\": \\\"Fourier 级数在 $L^2$ 空间中表现为函数在正交基 $\\\\{e^{inx}\\\\}$ 上的正交投影，因此是函数展开和 Hilbert 空间投影。谱分解将自伴算子对角化为乘法算子，是 Fourier 变换的终极推广，因此 Fourier 级数可视为谱分解在周期函数空间的特例。\\\",\\n  \\\"citations\\\": [\\n    \\\"SOURCE mathtest-material/02-spaces.md:242-269\\\",\\n    \\\"SOURCE mathtest-material/02-spaces.md:332-346\\\",\\n    \\\"SOURCE mathtest-material/09-functional-analysis.md:127-153\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\"\n  }\n]"
+  },
+  "usage": {
+    "promptTokens": 2177,
+    "completionTokens": 365,
+    "totalTokens": 2542,
+    "promptCacheHitTokens": 384,
+    "promptCacheMissTokens": 1793,
+    "reasoningTokens": 0
+  },
+  "finishReason": "stop",
+  "rawResponse": "{\n  \"scores\": [\n    {\n      \"sampleId\": \"sample-3909e54e-6458-4f29-81d2-f32f9a9171da\",\n      \"requiredClaimCoverage\": 2,\n      \"conditionFidelity\": 2,\n      \"evidenceGrounding\": 2,\n      \"answerabilityDiscipline\": 2,\n      \"hardFailure\": false,\n      \"rationale\": \"覆盖全部requiredClaims，提及不同收敛方式不能混为一谈，未触发forbiddenClaims，引用正确，充分回答。\"\n    },\n    {\n      \"sampleId\": \"sample-f228a64a-01bf-41c5-b3cc-34b6b48932aa\",\n      \"requiredClaimCoverage\": 2,\n      \"conditionFidelity\": 1,\n      \"evidenceGrounding\": 2,\n      \"answerabilityDiscipline\": 2,\n      \"hardFailure\": false,\n      \"rationale\": \"覆盖全部requiredClaims，但未提及mustMentionConditions（不同函数类别和收敛方式不能混为一谈），引用正确，充分回答。\"\n    },\n    {\n      \"sampleId\": \"sample-cc1f1cb0-8344-423f-98ba-02c12837bbb5\",\n      \"requiredClaimCoverage\": 2,\n      \"conditionFidelity\": 1,\n      \"evidenceGrounding\": 1,\n      \"answerabilityDiscipline\": 2,\n      \"hardFailure\": false,\n      \"rationale\": \"覆盖全部requiredClaims，但未提及mustMentionConditions，引用格式不规范（使用SOURCE而非EVIDENCE span），且未提供具体字符范围，证据支撑不足。\"\n    }\n  ]\n}",
+  "parsed": [
+    {
+      "sampleId": "sample-3909e54e-6458-4f29-81d2-f32f9a9171da",
+      "requiredClaimCoverage": 2,
+      "conditionFidelity": 2,
+      "evidenceGrounding": 2,
+      "answerabilityDiscipline": 2,
+      "hardFailure": false,
+      "rationale": "覆盖全部requiredClaims，提及不同收敛方式不能混为一谈，未触发forbiddenClaims，引用正确，充分回答。"
+    },
+    {
+      "sampleId": "sample-f228a64a-01bf-41c5-b3cc-34b6b48932aa",
+      "requiredClaimCoverage": 2,
+      "conditionFidelity": 1,
+      "evidenceGrounding": 2,
+      "answerabilityDiscipline": 2,
+      "hardFailure": false,
+      "rationale": "覆盖全部requiredClaims，但未提及mustMentionConditions（不同函数类别和收敛方式不能混为一谈），引用正确，充分回答。"
+    },
+    {
+      "sampleId": "sample-cc1f1cb0-8344-423f-98ba-02c12837bbb5",
+      "requiredClaimCoverage": 2,
+      "conditionFidelity": 1,
+      "evidenceGrounding": 1,
+      "answerabilityDiscipline": 2,
+      "hardFailure": false,
+      "rationale": "覆盖全部requiredClaims，但未提及mustMentionConditions，引用格式不规范（使用SOURCE而非EVIDENCE span），且未提供具体字符范围，证据支撑不足。"
+    }
+  ]
+}

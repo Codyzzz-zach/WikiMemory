@@ -1,0 +1,28 @@
+{
+  "verdict": "passed",
+  "dimensions": {
+    "support": {
+      "result": "pass",
+      "evidence": "原文片段为“有序”，直接支持该断言。"
+    },
+    "addition": {
+      "result": "pass",
+      "evidence": "未添加原文之外的信息。"
+    },
+    "inference": {
+      "result": "pass",
+      "evidence": "Claim 直接陈述原文事实，无推断。"
+    },
+    "limits": {
+      "result": "pass",
+      "evidence": "原文无附加条件或限定词，Claim 未遗漏任何限定。"
+    },
+    "citation": {
+      "result": "pass",
+      "evidence": "Claim 正确引用了包含“有序”的原文 span。"
+    }
+  },
+  "anchor": "有序",
+  "failedDimensions": [],
+  "issues": []
+}

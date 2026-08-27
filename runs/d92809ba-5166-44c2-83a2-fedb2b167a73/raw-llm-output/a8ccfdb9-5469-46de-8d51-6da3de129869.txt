@@ -1,0 +1,617 @@
+{
+  "claims": [
+    {
+      "statement": "“无穷”曾经是数学的禁区。",
+      "evidenceQuotes": ["\"无穷\"曾经是数学的禁区。"],
+      "blockIds": ["03-sequences-limits#block-1"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "极限概念的严格化（19世纪的 ε-δ 革命）是数学史上从直觉到精确的最大飞跃。",
+      "evidenceQuotes": ["极限概念的严格化（19世纪的 $\\epsilon$-$\\delta$ 革命）是数学史上从直觉到精确的最大飞跃。"],
+      "blockIds": ["03-sequences-limits#block-1"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "本章既是微积分的基石，也是分析学的方法论核心。",
+      "evidenceQuotes": ["本章既是微积分的基石，也是分析学的方法论核心。"],
+      "blockIds": ["03-sequences-limits#block-1"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "数列是定义在自然数上的函数：a: ℕ → ℝ（或 ℂ），记作 (a_n)_{n=1}^∞。",
+      "evidenceQuotes": ["**数列** = 定义在自然数上的函数：$a: \\mathbb{N} \\to \\mathbb{R}$（或 $\\mathbb{C}$），记作 $(a_n)_{n=1}^\\infty$。"],
+      "blockIds": ["03-sequences-limits#block-5"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "数列是离散动力系统的最简形式——它描述了一个量在离散时间步骤上的演化。",
+      "evidenceQuotes": ["数列是**离散动力系统**的最简形式——它描述了一个量在离散时间步骤上的演化。"],
+      "blockIds": ["03-sequences-limits#block-7"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "等差数列定义为 a_{n+1} = a_n + d。",
+      "evidenceQuotes": ["等差数列 | $a_{n+1} = a_n + d$ | $1, 3, 5, 7, \\ldots$"],
+      "blockIds": ["03-sequences-limits#block-8"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "等比数列定义为 a_{n+1} = a_n · q。",
+      "evidenceQuotes": ["等比数列 | $a_{n+1} = a_n \\cdot q$ | $1, 2, 4, 8, \\ldots$"],
+      "blockIds": ["03-sequences-limits#block-8"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "递推数列定义为 a_{n+1} = f(a_n) 或 a_{n+2} = f(a_n, a_{n+1})。",
+      "evidenceQuotes": ["递推数列 | $a_{n+1} = f(a_n)$ 或 $a_{n+2} = f(a_n, a_{n+1})$ | Fibonacci: $a_{n+2}=a_{n+1}+a_n$"],
+      "blockIds": ["03-sequences-limits#block-8"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "Cauchy列定义为：∀ε>0, ∃N, ∀m,n>N: |a_m - a_n| < ε。",
+      "evidenceQuotes": ["Cauchy列 | $\\forall \\epsilon>0, \\exists N, \\forall m,n>N: \\lvert a_m-a_n\\rvert<\\epsilon$ | $a_n = 1/n$"],
+      "blockIds": ["03-sequences-limits#block-8"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "18世纪的数学家说\"a_n 无限接近 L\"就够了。",
+      "evidenceQuotes": ["18世纪的数学家说\"$a_n$ 无限接近 $L$\"就够了。"],
+      "blockIds": ["03-sequences-limits#block-12"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "\"无限接近\"导致了大量混乱和错误。",
+      "evidenceQuotes": ["但\"无限接近\"是什么意思？这导致了大量混乱和错误。"],
+      "blockIds": ["03-sequences-limits#block-12"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "19世纪，Cauchy、Weierstrass 等人用逻辑量词给出了极限的精确刻画。",
+      "evidenceQuotes": ["19世纪，Cauchy、Weierstrass 等人用逻辑量词给出了精确的刻画。"],
+      "blockIds": ["03-sequences-limits#block-12"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "数列极限定义为：lim_{n→∞} a_n = L 当且仅当 ∀ε > 0, ∃N ∈ ℕ, ∀n > N: |a_n - L| < ε。",
+      "evidenceQuotes": ["$\\lim_{n \\to \\infty} a_n = L$ 当且仅当：\n\n$$\\forall \\epsilon > 0, \\; \\exists N \\in \\mathbb{N}, \\; \\forall n > N: |a_n - L| < \\epsilon$$"],
+      "blockIds": ["03-sequences-limits#block-13"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "ε-N 论证像一个挑战游戏：对手出 ε，我方出 N，如果总能赢，极限成立。",
+      "evidenceQuotes": ["$\\epsilon$-$N$ 论证像一个\"挑战游戏\"。对手出 $\\epsilon$（想要多小就多小），我们出 $N$——如果能永远赢下去，极限就成立了。"],
+      "blockIds": ["03-sequences-limits#block-16"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "1/n 的极限是 0。",
+      "evidenceQuotes": ["$\\frac{1}{n}$ | $0$ | $N = \\lceil 1/\\epsilon \\rceil$"],
+      "blockIds": ["03-sequences-limits#block-20"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "1/n^p (p>0) 的极限是 0。",
+      "evidenceQuotes": ["$\\frac{1}{n^p}$ ($p>0$) | $0$ | 任意多项式倒数→0"],
+      "blockIds": ["03-sequences-limits#block-20"],
+      "conditions": ["p>0"],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "q^n (|q|<1) 的极限是 0。",
+      "evidenceQuotes": ["$q^n$ ($\\lvert q\\rvert<1$) | $0$ | 几何衰减"],
+      "blockIds": ["03-sequences-limits#block-20"],
+      "conditions": ["|q|<1"],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "n 次根号下 n (√[n]{n}) 的极限是 1。",
+      "evidenceQuotes": ["$\\sqrt[n]{n}$ | $1$ | 慢收敛"],
+      "blockIds": ["03-sequences-limits#block-20"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "(1 + 1/n)^n 的极限是 e。",
+      "evidenceQuotes": ["$(1 + \\frac{1}{n})^n$ | $e$ | $\\S$11 常数"],
+      "blockIds": ["03-sequences-limits#block-20"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "sin n / n 的极限是 0（由夹逼定理）。",
+      "evidenceQuotes": ["$\\frac{\\sin n}{n}$ | $0$ | 夹逼定理"],
+      "blockIds": ["03-sequences-limits#block-20"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "级数是数列的累加：∑_{n=1}^∞ a_n = lim_{N→∞} ∑_{n=1}^N a_n。",
+      "evidenceQuotes": ["级数 = 数列的\"累加\"：$\\sum_{n=1}^\\infty a_n = \\lim_{N \\to \\infty} \\sum_{n=1}^N a_n$"],
+      "blockIds": ["03-sequences-limits#block-24"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "级数的收敛性取决于部分和数列的极限。",
+      "evidenceQuotes": ["关键事实：**级数的收敛性取决于部分和数列的极限**。"],
+      "blockIds": ["03-sequences-limits#block-25"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "几何级数 ∑ ar^{n-1} 的收敛条件是 |r| < 1。",
+      "evidenceQuotes": ["几何级数 $\\sum ar^{n-1}$ | $\\lvert r\\rvert < 1$"],
+      "blockIds": ["03-sequences-limits#block-29"],
+      "conditions": ["|r| < 1"],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "几何级数 ∑ ar^{n-1} 收敛时和为 a/(1-r)。",
+      "evidenceQuotes": ["几何级数 $\\sum ar^{n-1}$ | $\\lvert r\\rvert < 1$ | $\\frac{a}{1-r}$"],
+      "blockIds": ["03-sequences-limits#block-29"],
+      "conditions": ["|r| < 1"],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "p-级数 ∑ 1/n^p 的收敛条件是 p > 1。",
+      "evidenceQuotes": ["$p$-级数 $\\sum \\frac{1}{n^p}$ | $p > 1$"],
+      "blockIds": ["03-sequences-limits#block-29"],
+      "conditions": ["p > 1"],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "p-级数 ∑ 1/n^p 收敛时和为 ζ(p)。",
+      "evidenceQuotes": ["$p$-级数 $\\sum \\frac{1}{n^p}$ | $p > 1$ | $\\zeta(p)$"],
+      "blockIds": ["03-sequences-limits#block-29"],
+      "conditions": ["p > 1"],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "调和级数 ∑ 1/n 发散。",
+      "evidenceQuotes": ["调和级数 $\\sum \\frac{1}{n}$ | **发散**"],
+      "blockIds": ["03-sequences-limits#block-29"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "调和级数的部分和渐近于 ln n + γ。",
+      "evidenceQuotes": ["调和级数 $\\sum \\frac{1}{n}$ | **发散** | ∞（$\\sim \\ln n + \\gamma$）"],
+      "blockIds": ["03-sequences-limits#block-29"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "交错调和级数 ∑ (-1)^{n-1}/n 条件收敛。",
+      "evidenceQuotes": ["交错调和 $\\sum \\frac{(-1)^{n-1}}{n}$ | 条件收敛"],
+      "blockIds": ["03-sequences-limits#block-29"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "交错调和级数 ∑ (-1)^{n-1}/n 收敛到 ln 2。",
+      "evidenceQuotes": ["交错调和 $\\sum \\frac{(-1)^{n-1}}{n}$ | 条件收敛 | $\\ln 2$"],
+      "blockIds": ["03-sequences-limits#block-29"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "级数 ∑ 1/n! 收敛。",
+      "evidenceQuotes": ["$\\sum \\frac{1}{n!}$ | 收敛"],
+      "blockIds": ["03-sequences-limits#block-29"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "级数 ∑ 1/n! 收敛到 e。",
+      "evidenceQuotes": ["$\\sum \\frac{1}{n!}$ | 收敛 | $e$"],
+      "blockIds": ["03-sequences-limits#block-29"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "如果函数足够光滑，可以用它在某点的各阶导数构造一个幂级数。",
+      "evidenceQuotes": ["如果函数足够光滑，就可以用它在某点的各阶导数构造一个幂级数"],
+      "blockIds": ["03-sequences-limits#block-34"],
+      "conditions": ["函数足够光滑"],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "该级数在收敛半径内等于原函数。",
+      "evidenceQuotes": ["该级数在收敛半径内等于原函数"],
+      "blockIds": ["03-sequences-limits#block-34"],
+      "conditions": ["在收敛半径内"],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "Taylor 级数公式为 f(x) = ∑_{n=0}^∞ f^{(n)}(a)/n! (x-a)^n。",
+      "evidenceQuotes": ["$$ f(x) = \\sum_{n=0}^\\infty \\frac{f^{(n)}(a)}{n!}(x-a)^n $$"],
+      "blockIds": ["03-sequences-limits#block-35"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "Maclaurin 级数是 a=0 的特例。",
+      "evidenceQuotes": ["**Maclaurin 级数**（$a=0$ 的特例）"],
+      "blockIds": ["03-sequences-limits#block-36"],
+      "conditions": ["a=0"],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "Maclaurin 级数公式为 f(x) = f(0) + f'(0)x + f''(0)/2! x^2 + f'''(0)/3! x^3 + ...。",
+      "evidenceQuotes": ["$$ f(x) = f(0) + f'(0)x + \\frac{f''(0)}{2!}x^2 + \\frac{f'''(0)}{3!}x^3 + \\cdots $$"],
+      "blockIds": ["03-sequences-limits#block-37"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "e^x 的 Maclaurin 级数为 ∑_{n=0}^∞ x^n/n!。",
+      "evidenceQuotes": ["$e^x$ | $\\sum_{n=0}^\\infty \\frac{x^n}{n!}$"],
+      "blockIds": ["03-sequences-limits#block-39"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "e^x 的 Maclaurin 级数收敛半径为 ∞。",
+      "evidenceQuotes": ["$e^x$ | $\\sum_{n=0}^\\infty \\frac{x^n}{n!}$ | $\\infty$"],
+      "blockIds": ["03-sequences-limits#block-39"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "sin x 的 Maclaurin 级数为 ∑_{n=0}^∞ (-1)^n x^{2n+1}/(2n+1)!。",
+      "evidenceQuotes": ["$\\sin x$ | $\\sum_{n=0}^\\infty (-1)^n \\frac{x^{2n+1}}{(2n+1)!}$"],
+      "blockIds": ["03-sequences-limits#block-39"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "sin x 的 Maclaurin 级数收敛半径为 ∞。",
+      "evidenceQuotes": ["$\\sin x$ | $\\sum_{n=0}^\\infty (-1)^n \\frac{x^{2n+1}}{(2n+1)!}$ | $\\infty$"],
+      "blockIds": ["03-sequences-limits#block-39"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "cos x 的 Maclaurin 级数为 ∑_{n=0}^∞ (-1)^n x^{2n}/(2n)!。",
+      "evidenceQuotes": ["$\\cos x$ | $\\sum_{n=0}^\\infty (-1)^n \\frac{x^{2n}}{(2n)!}$"],
+      "blockIds": ["03-sequences-limits#block-39"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "cos x 的 Maclaurin 级数收敛半径为 ∞。",
+      "evidenceQuotes": ["$\\cos x$ | $\\sum_{n=0}^\\infty (-1)^n \\frac{x^{2n}}{(2n)!}$ | $\\infty$"],
+      "blockIds": ["03-sequences-limits#block-39"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "1/(1-x) 的 Maclaurin 级数为 ∑_{n=0}^∞ x^n。",
+      "evidenceQuotes": ["$\\frac{1}{1-x}$ | $\\sum_{n=0}^\\infty x^n$"],
+      "blockIds": ["03-sequences-limits#block-39"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "1/(1-x) 的 Maclaurin 级数收敛半径为 1。",
+      "evidenceQuotes": ["$\\frac{1}{1-x}$ | $\\sum_{n=0}^\\infty x^n$ | $1$"],
+      "blockIds": ["03-sequences-limits#block-39"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "ln(1+x) 的 Maclaurin 级数为 ∑_{n=1}^∞ (-1)^{n+1} x^n/n。",
+      "evidenceQuotes": ["$\\ln(1+x)$ | $\\sum_{n=1}^\\infty (-1)^{n+1}\\frac{x^n}{n}$"],
+      "blockIds": ["03-sequences-limits#block-39"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "ln(1+x) 的 Maclaurin 级数收敛半径为 1。",
+      "evidenceQuotes": ["$\\ln(1+x)$ | $\\sum_{n=1}^\\infty (-1)^{n+1}\\frac{x^n}{n}$ | $1$"],
+      "blockIds": ["03-sequences-limits#block-39"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "欧拉公式 e^{iθ} = cos θ + i sin θ 可以从 e^x、sin x、cos x 各自的 Taylor 展开直接推出。",
+      "evidenceQuotes": ["欧拉公式 $e^{i\\theta} = \\cos\\theta + i\\sin\\theta$ 可以从 $e^x$、$\\sin x$、$\\cos x$ 各自的 Taylor 展开直接推出"],
+      "blockIds": ["03-sequences-limits#block-40"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "将 x = iθ 代入 e^x 展开，分离实部和虚部即可得到欧拉公式。",
+      "evidenceQuotes": ["将 $x=i\\theta$ 代入 $e^x$ 展开，分离实部和虚部即可"],
+      "blockIds": ["03-sequences-limits#block-40"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "Taylor 级数截断到 n 项的误差由 Lagrange 余项给出。",
+      "evidenceQuotes": ["Taylor 级数截断到 $n$ 项的误差由 Lagrange 余项给出"],
+      "blockIds": ["03-sequences-limits#block-43"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "Lagrange 余项公式为 R_n(x) = f^{(n+1)}(ξ)/(n+1)! (x-a)^{n+1}，其中 ξ 在 a 和 x 之间。",
+      "evidenceQuotes": ["$$ R_n(x) = \\frac{f^{(n+1)}(\\xi)}{(n+1)!}(x-a)^{n+1}, \\quad \\xi \\text{ 在 } a \\text{ 和 } x \\text{ 之间} $$"],
+      "blockIds": ["03-sequences-limits#block-44"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "Lagrange 余项允许在数值计算中控制精度，给定所需精度可反推需要的项数。",
+      "evidenceQuotes": ["这让我们可以在数值计算中**控制精度**——给定所需精度，反推需要多少项。"],
+      "blockIds": ["03-sequences-limits#block-45"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "收敛有四种强度：逐点收敛、一致收敛、L^p收敛和依测度收敛。",
+      "evidenceQuotes": ["| 类型 | 定义 | 重要性 |\n|------|------|--------|\n| **逐点收敛** | 对每个 $x$，$f_n(x) \\to f(x)$ | 最弱，可能丢失连续性 |\n| **一致收敛** | $\\sup_x \\|f_n(x)-f(x)\\| \\to 0$ | 保持连续性 |\n| **$L^p$ 收敛** | $\\int \\|f_n-f\\|^p \\to 0$ | 平均收敛（$\\S$10） |\n| **依测度收敛** | $\\mu(\\{\\|f_n-f\\|>\\epsilon\\}) \\to 0$ | 概率论（$\\S$10, $\\S$14） |"],
+      "blockIds": ["03-sequences-limits#block-49"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "逐点收敛的定义是对每个 x，f_n(x) → f(x)。",
+      "evidenceQuotes": ["对每个 $x$，$f_n(x) \\to f(x)$"],
+      "blockIds": ["03-sequences-limits#block-49"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "逐点收敛是最弱的收敛，可能丢失连续性。",
+      "evidenceQuotes": ["最弱，可能丢失连续性"],
+      "blockIds": ["03-sequences-limits#block-49"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "一致收敛的定义是 sup_x ‖f_n(x)-f(x)‖ → 0。",
+      "evidenceQuotes": ["$\\sup_x \\|f_n(x)-f(x)\\| \\to 0$"],
+      "blockIds": ["03-sequences-limits#block-49"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "一致收敛保持连续性。",
+      "evidenceQuotes": ["保持连续性"],
+      "blockIds": ["03-sequences-limits#block-49"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "L^p 收敛的定义是 ∫ ‖f_n-f‖^p → 0。",
+      "evidenceQuotes": ["$\\int \\|f_n-f\\|^p \\to 0$"],
+      "blockIds": ["03-sequences-limits#block-49"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "L^p 收敛表示平均收敛。",
+      "evidenceQuotes": ["平均收敛（$\\S$10）"],
+      "blockIds": ["03-sequences-limits#block-49"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "依测度收敛的定义是 μ({‖f_n-f‖>ε}) → 0。",
+      "evidenceQuotes": ["$\\mu(\\{\\|f_n-f\\|>\\epsilon\\}) \\to 0$"],
+      "blockIds": ["03-sequences-limits#block-49"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "依测度收敛出现在概率论中。",
+      "evidenceQuotes": ["概率论（$\\S$10, $\\S$14）"],
+      "blockIds": ["03-sequences-limits#block-49"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "逐点收敛可能丢失连续性。",
+      "evidenceQuotes": ["POINT -.- NOTE1[\"可能丢失连续性\"]"],
+      "blockIds": ["03-sequences-limits#block-50"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "一致收敛保持连续性、可积性。",
+      "evidenceQuotes": ["UNIF -.- NOTE2[\"保持连续性、可积性\"]"],
+      "blockIds": ["03-sequences-limits#block-50"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "一致收敛是“好的”收敛，它保证极限函数继承逼近函数序列的优良性质（连续、可导、可积）。",
+      "evidenceQuotes": ["一致收敛才是\"好的\"收敛——它保证极限函数继承逼近函数序列的优良性质（连续、可导、可积）。"],
+      "blockIds": ["03-sequences-limits#block-51"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "在 §9 泛函分析中要研究算子的一致收敛，而不仅仅是逐点收敛。",
+      "evidenceQuotes": ["这就是为什么在 $\\S$9 泛函分析中要研究**算子的一致收敛**，而不仅仅是逐点收敛。"],
+      "blockIds": ["03-sequences-limits#block-51"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "极限不是“到达”，而是“任意逼近”。",
+      "evidenceQuotes": ["**核心哲学**：极限不是\"到达\"，而是\"任意逼近\"。"],
+      "blockIds": ["03-sequences-limits#block-55"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "ε-N 和 ε-δ 语言将“无穷”这个哲学概念操作化，即不需要真的“走完无限步”，只需要证明无论多小的误差都可以在有限步内达到。",
+      "evidenceQuotes": ["$\\epsilon$-$N$ 和 $\\epsilon$-$\\delta$ 语言将\"无穷\"这个哲学概念操作化——你不需要真的\"走完无限步\"，只需要证明无论多小的误差都可以在有限步内达到。"],
+      "blockIds": ["03-sequences-limits#block-55"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "这是现代分析学的精髓。",
+      "evidenceQuotes": ["这是现代分析学的精髓。"],
+      "blockIds": ["03-sequences-limits#block-55"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "数列通常表示为 a_1, a_2, a_3, …, a_n, …。",
+      "evidenceQuotes": ["$$ a_1, a_2, a_3, \\ldots, a_n, \\ldots $$"],
+      "blockIds": ["03-sequences-limits#block-6"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "ε-N 定义可以逐词翻译为：“无论你要求多小的误差 ε，我都能找到一个位置 N，使得第 N 项之后的所有项与 L 的偏差都不超过 ε。”",
+      "evidenceQuotes": ["**逐词翻译**：“无论你要求多小的误差 $\\epsilon$，我都能找到一个位置 $N$，使得第 $N$ 项之后的所有项与 $L$ 的偏差都不超过 $\\epsilon$。”"],
+      "blockIds": ["03-sequences-limits#block-14"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "ε-N 定义是用逻辑量词精确刻画“无限接近”的关键概念。",
+      "evidenceQuotes": ["| 1 | **$\\epsilon$-$N$ 定义** | 逻辑量词精确刻画\"无限接近\" | $\\S$12 微积分 |"],
+      "blockIds": ["03-sequences-limits#block-54"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "Cauchy列是内部稳定的数列，在没有“外部极限”时也能判断。",
+      "evidenceQuotes": ["| 2 | **Cauchy列** | 内部稳定的数列，在没有\"外部极限\"时也能判断 | $\\S$2 完备性 |"],
+      "blockIds": ["03-sequences-limits#block-54"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "级数等于无穷和，是部分和序列的极限。",
+      "evidenceQuotes": ["| 3 | **级数 = 无穷和** | 部分和序列的极限 | $\\S$11 常数 |"],
+      "blockIds": ["03-sequences-limits#block-54"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "几何级数与p-级数是收敛判别法的两个基准。",
+      "evidenceQuotes": ["| 4 | **几何级数与 $p$-级数** | 收敛判别法的两个基准 | 全书 |"],
+      "blockIds": ["03-sequences-limits#block-54"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "Taylor级数用多项式无限逼近光滑函数。",
+      "evidenceQuotes": ["| 5 | **Taylor级数** | 用多项式无限逼近光滑函数 | $\\S$5, $\\S$12 |"],
+      "blockIds": ["03-sequences-limits#block-54"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "Lagrange余项用于精确控制近似误差。",
+      "evidenceQuotes": ["| 6 | **Lagrange余项** | 精确控制近似误差 | 数值分析 |"],
+      "blockIds": ["03-sequences-limits#block-54"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "一致收敛与逐点收敛的区别在于，好的收敛保持好的性质。",
+      "evidenceQuotes": ["| 7 | **一致收敛 vs 逐点收敛** | 好的收敛保持好的性质 | $\\S$9 泛函分析 |"],
+      "blockIds": ["03-sequences-limits#block-54"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence":

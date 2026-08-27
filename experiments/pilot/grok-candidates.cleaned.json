@@ -1,0 +1,1202 @@
+{
+	"schemaVersion": "wge-pilot-candidates/v1",
+	"generator": {
+		"model": "Perplexity",
+		"generatedAt": "2026-07-24T11:33:00+08:00",
+		"sourceFiles": [
+			"01-number-systems.md",
+			"02-spaces.md",
+			"03-sequences-limits.md",
+			"04-equations.md",
+			"05-functions-mappings.md"
+		]
+	},
+	"totalQuestions": 24,
+	"questions": [
+		{
+			"id": "CAND-D01",
+			"category": "D",
+			"question": "根据材料，为什么自然数的本质应理解为递归结构，而不是“0,1,2,3…”这些符号本身？这一理解如何直接解释数学归纳法的根本性？",
+			"answerability": "answerable",
+			"requiredSources": ["01-number-systems.md"],
+			"requiredClaims": [
+				"自然数的本质是从零出发反复应用后继操作的递归结构，而非具体符号序列",
+				"数学归纳法直接编码了自然数的这种构造方式，因此是根本的"
+			],
+			"expectedPath": [
+				"01-number-systems.md#1.1 自然数 → 递归结构洞察",
+				"同一节 → 归纳法与构造方式的对应"
+			],
+			"mustMentionConditions": [],
+			"forbiddenClaims": ["自然数必须从1开始", "归纳法只是证明技巧，与自然数定义无关"],
+			"evidence": [
+				{
+					"sourceFile": "01-number-systems.md",
+					"heading": "1.1 自然数 $\\mathbb{N}$",
+					"exactQuote": "自然数的本质不是\"0,1,2,3...\"这些符号，而是**递归结构**——从零出发，反复应用\"后继\"操作，生成无穷无尽的序列。",
+					"supports": "自然数的本质是从零出发反复应用后继操作的递归结构，而非具体符号序列"
+				},
+				{
+					"sourceFile": "01-number-systems.md",
+					"heading": "1.1 自然数 $\\mathbb{N}$",
+					"exactQuote": "这就是为什么数学归纳法如此根本：它直接编码了自然数的构造方式。",
+					"supports": "数学归纳法直接编码了自然数的这种构造方式，因此是根本的"
+				}
+			],
+			"sourceRisk": {
+				"present": false,
+				"detail": ""
+			},
+			"difficulty": 1,
+			"designRationale": "单文档定义解释题：要求把 Peano 构造与归纳法的因果关联讲清，而不是抄写公理列表。",
+			"scoringAnchors": {
+				"score0": "只罗列 Peano 五条公理，或断言自然数本质是符号/计数习惯",
+				"score1": "提到递归/后继，但未说明归纳法为何直接编码构造方式",
+				"score2": "同时说明递归结构本质，以及归纳法因编码该构造而根本"
+			}
+		},
+		{
+			"id": "CAND-D02",
+			"category": "D",
+			"question": "材料如何说明整数相对自然数在代数结构上的升级与代价？请指出获得了什么群/环结构，又失去了什么序性质。",
+			"answerability": "answerable",
+			"requiredSources": ["01-number-systems.md"],
+			"requiredClaims": [
+				"整数通过引入负数解决减法封闭，使 (Z,+) 成为阿贝尔群，并整体成为交换环",
+				"代价是失去自然数的良序性（整数没有最小元）"
+			],
+			"expectedPath": [
+				"01-number-systems.md#1.2 整数 → 代数结构升级表",
+				"同一节关键点 → 失去良序性"
+			],
+			"mustMentionConditions": [],
+			"forbiddenClaims": ["整数对除法也封闭", "整数仍保持良序性"],
+			"evidence": [
+				{
+					"sourceFile": "01-number-systems.md",
+					"heading": "1.2 整数 $\\mathbb{Z}$",
+					"exactQuote": "$\\mathbb{Z}$ 是一个**交换环**——这是 $\\S$8 群环域中将详述的核心结构。",
+					"supports": "整数通过引入负数解决减法封闭，使 (Z,+) 成为阿贝尔群，并整体成为交换环"
+				},
+				{
+					"sourceFile": "01-number-systems.md",
+					"heading": "1.2 整数 $\\mathbb{Z}$",
+					"exactQuote": "整数通过引入\"负数\"解决了减法封闭问题，代价是失去了 $\\mathbb{N}$ 的良序性（整数没有最小元）。但换来的是**群结构**——$(\\mathbb{Z}, +)$ 成为一个阿贝尔群（$\\S$8）。",
+					"supports": "代价是失去自然数的良序性（整数没有最小元）"
+				}
+			],
+			"sourceRisk": {
+				"present": false,
+				"detail": ""
+			},
+			"difficulty": 1,
+			"designRationale": "测试单文档内“结构升级—代价”对照，而非复述构造细节。",
+			"scoringAnchors": {
+				"score0": "只说“有了负数”，或错误声称除法封闭/仍良序",
+				"score1": "提到交换环或阿贝尔群之一，但漏掉失去良序性",
+				"score2": "同时给出交换环/(Z,+)阿贝尔群，以及失去良序性（无最小元）"
+			}
+		},
+		{
+			"id": "CAND-D03",
+			"category": "D",
+			"question": "在空间谱系中，Banach 空间与一般赋范空间的关键差别是什么？材料用 C 上两种范数说明了什么关于完备性的事实？",
+			"answerability": "answerable",
+			"requiredSources": ["02-spaces.md"],
+			"requiredClaims": [
+				"Banach 空间是完备的赋范空间，即每个 Cauchy 列都收敛到空间内一点",
+				"C 在 sup 范数下完备（Banach），在 L1 范数下不完备；不完备时极限可能跑出空间"
+			],
+			"expectedPath": [
+				"02-spaces.md#2.5 赋范空间与 Banach 空间 → 完备性定义",
+				"同一节表格与不完备例子 → C 两种范数"
+			],
+			"mustMentionConditions": ["完备性针对给定范数/度量而言，同一集合换范数完备性可变"],
+			"forbiddenClaims": ["所有赋范空间都是 Banach 空间", "C 在任何范数下都完备"],
+			"evidence": [
+				{
+					"sourceFile": "02-spaces.md",
+					"heading": "2.5 赋范空间与 Banach 空间",
+					"exactQuote": "如果空间中每个 Cauchy 列都收敛到空间内的一个点，这个空间就是**完备的**。\n\n> **Banach 空间 = 完备的赋范空间**",
+					"supports": "Banach 空间是完备的赋范空间，即每个 Cauchy 列都收敛到空间内一点"
+				},
+				{
+					"sourceFile": "02-spaces.md",
+					"heading": "2.5 赋范空间与 Banach 空间",
+					"exactQuote": "| $C$ | $\\|f\\|_\\infty = \\sup\\|f(x)\\|$ | ✅ | Banach空间 |\n| $C$ | $\\|f\\|_1 = \\int\\|f\\|$ | ❌ | 赋范(不完备) |",
+					"supports": "C 在 sup 范数下完备（Banach），在 L1 范数下不完备；不完备时极限可能跑出空间"
+				},
+				{
+					"sourceFile": "02-spaces.md",
+					"heading": "2.5 赋范空间与 Banach 空间",
+					"exactQuote": "在 $\\|f\\|_1$ 下，连续函数空间中存在 Cauchy 列收敛到不连续的函数——极限\"跑出了空间\"。",
+					"supports": "C 在 sup 范数下完备（Banach），在 L1 范数下不完备；不完备时极限可能跑出空间"
+				}
+			],
+			"sourceRisk": {
+				"present": false,
+				"detail": ""
+			},
+			"difficulty": 2,
+			"designRationale": "单文档结构差异题：区分“赋范”与“完备赋范”，并用同一集合不同范数作反差。",
+			"scoringAnchors": {
+				"score0": "把 Banach 说成任意赋范空间，或忽略范数依赖",
+				"score1": "给出 Banach=完备赋范，但未正确对比 C 两种范数",
+				"score2": "定义正确，并说明 ∞-范数完备、L1 不完备及极限跑出空间"
+			}
+		},
+		{
+			"id": "CAND-D04",
+			"category": "D",
+			"question": "材料如何用 ε-N 语言把“数列无限接近 L”操作化？请解释该定义中量词顺序所表达的挑战—应战结构。",
+			"answerability": "answerable",
+			"requiredSources": ["03-sequences-limits.md"],
+			"requiredClaims": [
+				"极限定义是：对任意 ε>0，存在 N，使得所有 n>N 都有 |a_n−L|<ε",
+				"其直观是对手任选任意小 ε，我方找出 N，使之后所有项偏差不超过 ε"
+			],
+			"expectedPath": [
+				"03-sequences-limits.md#3.2 极限：ε-N 定义 → 形式定义",
+				"同一节 → 逐词翻译与挑战游戏图释"
+			],
+			"mustMentionConditions": ["N 通常依赖于 ε"],
+			"forbiddenClaims": ["只需存在某个 n 使 |a_n−L|<ε", "ε 必须取固定常数如 0.01"],
+			"evidence": [
+				{
+					"sourceFile": "03-sequences-limits.md",
+					"heading": "3.2 极限：$\\epsilon$-$N$ 定义",
+					"exactQuote": "**定义**（数列极限）：$\\lim_{n \\to \\infty} a_n = L$ 当且仅当：\n>\n> $$\\forall \\epsilon > 0, \\; \\exists N \\in \\mathbb{N}, \\; \\forall n > N: |a_n - L| < \\epsilon$$",
+					"supports": "极限定义是：对任意 ε>0，存在 N，使得所有 n>N 都有 |a_n−L|<ε"
+				},
+				{
+					"sourceFile": "03-sequences-limits.md",
+					"heading": "3.2 极限：$\\epsilon$-$N$ 定义",
+					"exactQuote": "\"无论你要求多小的误差 $\\epsilon$，我都能找到一个位置 $N$，使得第 $N$ 项之后的所有项与 $L$ 的偏差都不超过 $\\epsilon$。\"",
+					"supports": "其直观是对手任选任意小 ε，我方找出 N，使之后所有项偏差不超过 ε"
+				},
+				{
+					"sourceFile": "03-sequences-limits.md",
+					"heading": "3.2 极限：$\\epsilon$-$N$ 定义",
+					"exactQuote": "$\\epsilon$-$N$ 论证像一个\"挑战游戏\"。对手出 $\\epsilon$（想要多小就多小），我们出 $N$——如果能永远赢下去，极限就成立了。",
+					"supports": "其直观是对手任选任意小 ε，我方找出 N，使之后所有项偏差不超过 ε"
+				}
+			],
+			"sourceRisk": {
+				"present": false,
+				"detail": ""
+			},
+			"difficulty": 1,
+			"designRationale": "单文档定义解释：考查量词顺序与操作化含义，禁止只抄公式。",
+			"scoringAnchors": {
+				"score0": "量词顺序颠倒，或把极限说成“某项等于 L”",
+				"score1": "写出定义但未解释挑战—应战/任意ε结构",
+				"score2": "定义量词正确，并说明任意ε→存在N→此后全部项受控"
+			}
+		},
+		{
+			"id": "CAND-D05",
+			"category": "D",
+			"question": "为何五次及以上一般多项式方程不能用根式求解？材料把“代数可解性”等同于什么群论性质？",
+			"answerability": "answerable",
+			"requiredSources": ["04-equations.md"],
+			"requiredClaims": [
+				"Abel-Ruffini 定理指出五次及以上一般不能根式求解",
+				"Galois 洞见：方程代数可解性等于其 Galois 群的可解性；五次对应 S5 非可解（A5 为单群）"
+			],
+			"expectedPath": ["04-equations.md#4.2 代数方程 → 可解性随次数表", "同一节 → Galois 理论直觉"],
+			"mustMentionConditions": [
+				"针对一般五次（及更高）方程的根式可解性，而非一切特殊五次都无数值根"
+			],
+			"forbiddenClaims": ["五次方程在复数域中无根", "所有五次方程都完全不能求解（含数值法）"],
+			"evidence": [
+				{
+					"sourceFile": "04-equations.md",
+					"heading": "4.2 代数方程：从二次公式到 Galois 理论",
+					"exactQuote": "| $\\geq 5$ | — | ❌ **Abel-Ruffini 定理** |",
+					"supports": "Abel-Ruffini 定理指出五次及以上一般不能根式求解"
+				},
+				{
+					"sourceFile": "04-equations.md",
+					"heading": "4.2 代数方程：从二次公式到 Galois 理论",
+					"exactQuote": "方程的\"可解性\"取决于其根的**对称群**（Galois 群）的结构。",
+					"supports": "Galois 洞见：方程代数可解性等于其 Galois 群的可解性；五次对应 S5 非可解（A5 为单群）"
+				},
+				{
+					"sourceFile": "04-equations.md",
+					"heading": "4.2 代数方程：从二次公式到 Galois 理论",
+					"exactQuote": "- 五次方程：$S_5$，**非可解群**（$A_5$ 是单群）\n\n> 方程的代数可解性 = Galois 群的**可解性**。",
+					"supports": "Galois 洞见：方程代数可解性等于其 Galois 群的可解性；五次对应 S5 非可解（A5 为单群）"
+				}
+			],
+			"sourceRisk": {
+				"present": false,
+				"detail": ""
+			},
+			"difficulty": 2,
+			"designRationale": "单文档因果解释：从 Abel-Ruffini 到 Galois 群可解性，避免与“无复根”混淆。",
+			"scoringAnchors": {
+				"score0": "说五次无复根，或与代数基本定理混淆",
+				"score1": "提到不能根式解，但未连到 Galois 群可解性/S5",
+				"score2": "Abel-Ruffini + 可解性=Galois群可解性 + S5/A5 要点"
+			}
+		},
+		{
+			"id": "CAND-D06",
+			"category": "D",
+			"question": "材料如何区分“函数”“保持结构的映射”与“算子”三级抽象？并说明在线性算子中有界性与连续性的关系，以及微分算子为何使微分方程更难。",
+			"answerability": "answerable",
+			"requiredSources": ["05-functions-mappings.md"],
+			"requiredClaims": [
+				"函数是集合间的对应关系；当定义域值域有结构时，好的映射应保持结构；算子是函数空间之间的映射",
+				"线性算子中有界性等价于连续性；微分算子无界，故微分方程比代数方程难得多"
+			],
+			"expectedPath": [
+				"05-functions-mappings.md#5.1–5.2 → 函数与结构保持映射",
+				"05-functions-mappings.md#5.4 → 算子、有界性与微分算子无界"
+			],
+			"mustMentionConditions": ["有界性=连续性是在线性算子语境下陈述的"],
+			"forbiddenClaims": ["所有算子都有界", "函数必须能用初等公式表达"],
+			"evidence": [
+				{
+					"sourceFile": "05-functions-mappings.md",
+					"heading": "5.1 函数的现代定义",
+					"exactQuote": "关键转变：函数不是\"公式\"，而是**对应关系**。\"不可用初等函数表达\"的函数远远多于\"有公式\"的函数。",
+					"supports": "函数是集合间的对应关系；当定义域值域有结构时，好的映射应保持结构；算子是函数空间之间的映射"
+				},
+				{
+					"sourceFile": "05-functions-mappings.md",
+					"heading": "5.2 映射：保持结构的函数",
+					"exactQuote": "当 $X$ 和 $Y$ 有额外的数学结构时，\"好的\"映射应该**保持**这些结构。",
+					"supports": "函数是集合间的对应关系；当定义域值域有结构时，好的映射应保持结构；算子是函数空间之间的映射"
+				},
+				{
+					"sourceFile": "05-functions-mappings.md",
+					"heading": "5.4 算子：以函数为输入的函数",
+					"exactQuote": "**算子** $T: V \\to W$ 是两个**函数空间**之间的映射。",
+					"supports": "函数是集合间的对应关系；当定义域值域有结构时，好的映射应保持结构；算子是函数空间之间的映射"
+				},
+				{
+					"sourceFile": "05-functions-mappings.md",
+					"heading": "5.4 算子：以函数为输入的函数",
+					"exactQuote": "在线性算子中，**有界性 = 连续性**：",
+					"supports": "线性算子中有界性等价于连续性；微分算子无界，故微分方程比代数方程难得多"
+				},
+				{
+					"sourceFile": "05-functions-mappings.md",
+					"heading": "5.4 算子：以函数为输入的函数",
+					"exactQuote": "微分算子 $\\frac{d}{dx}$ 是**无界**的——这就是为什么微分方程比代数方程难得多。",
+					"supports": "线性算子中有界性等价于连续性；微分算子无界，故微分方程比代数方程难得多"
+				}
+			],
+			"sourceRisk": {
+				"present": false,
+				"detail": ""
+			},
+			"difficulty": 2,
+			"designRationale": "单文档多层概念对比：函数→映射→算子，并抓有界/无界因果。",
+			"scoringAnchors": {
+				"score0": "把函数等同于公式，或声称微分算子有界",
+				"score1": "说出三级之一二，但漏有界=连续或微分无界",
+				"score2": "三级抽象清楚，并在线性算子条件下给出有界=连续与微分无界含义"
+			}
+		},
+		{
+			"id": "CAND-H201",
+			"category": "H2",
+			"question": "实数完备性在数系章节如何刻画？它如何支撑空间章节中“Banach/Hilbert = 完备 + 额外结构”的定义逻辑？",
+			"answerability": "answerable",
+			"requiredSources": ["01-number-systems.md", "02-spaces.md"],
+			"requiredClaims": [
+				"R 相对 Q 的本质区别是完备性：Cauchy 列在 R 中必有极限，数轴无洞",
+				"Banach=完备赋范、Hilbert=完备内积，是把完备性要求加到带范数/内积的向量空间上"
+			],
+			"expectedPath": [
+				"01-number-systems.md#1.4 实数完备性",
+				"02-spaces.md#2.5–2.6 Banach/Hilbert 定义"
+			],
+			"mustMentionConditions": [],
+			"forbiddenClaims": ["有理数也完备", "Hilbert 空间不必完备"],
+			"evidence": [
+				{
+					"sourceFile": "01-number-systems.md",
+					"heading": "1.4 实数 $\\mathbb{R}$",
+					"exactQuote": "> **完备性** = 数轴没有\"洞\"。每一个 Cauchy 列都在 $\\mathbb{R}$ 中有极限。",
+					"supports": "R 相对 Q 的本质区别是完备性：Cauchy 列在 R 中必有极限，数轴无洞"
+				},
+				{
+					"sourceFile": "01-number-systems.md",
+					"heading": "1.4 实数 $\\mathbb{R}$",
+					"exactQuote": "| **完备性** | ❌ | ✅ |\n| 上确界存在性 | ❌ | ✅ 有上界必有上确界 |\n| Cauchy 列必收敛 | ❌ | ✅ |",
+					"supports": "R 相对 Q 的本质区别是完备性：Cauchy 列在 R 中必有极限，数轴无洞"
+				},
+				{
+					"sourceFile": "02-spaces.md",
+					"heading": "2.5 赋范空间与 Banach 空间",
+					"exactQuote": "> **Banach 空间 = 完备的赋范空间**",
+					"supports": "Banach=完备赋范、Hilbert=完备内积，是把完备性要求加到带范数/内积的向量空间上"
+				},
+				{
+					"sourceFile": "02-spaces.md",
+					"heading": "2.6 内积空间与 Hilbert 空间",
+					"exactQuote": "> **Hilbert 空间 = 完备的内积空间**",
+					"supports": "Banach=完备赋范、Hilbert=完备内积，是把完备性要求加到带范数/内积的向量空间上"
+				}
+			],
+			"sourceRisk": {
+				"present": false,
+				"detail": ""
+			},
+			"difficulty": 2,
+			"designRationale": "两跳：数系完备性节点 → 空间完备化命名节点。",
+			"scoringAnchors": {
+				"score0": "混淆 Q/R 完备性，或把 Banach/Hilbert 说成无需完备",
+				"score1": "只答一侧（仅 R 或仅 Banach/Hilbert）",
+				"score2": "两侧都给出，并点明“完备性 + 范数/内积结构”的组合逻辑"
+			}
+		},
+		{
+			"id": "CAND-H202",
+			"category": "H2",
+			"question": "空间章节把 Fourier 级数解释为 Hilbert 空间中的正交投影；函数章节强调 Fourier 变换的时频作用。二者如何共同说明“Fourier 方法”在表示与变换两个层面的角色？",
+			"answerability": "answerable",
+			"requiredSources": ["02-spaces.md", "05-functions-mappings.md"],
+			"requiredClaims": [
+				"在 L2 等 Hilbert 空间中，Fourier 级数是向三角函数正交基的正交投影",
+				"Fourier 变换把信号从时域变到频域做频率分解，并支撑滤波等操作"
+			],
+			"expectedPath": [
+				"02-spaces.md#2.6 Fourier级数=投影",
+				"05-functions-mappings.md#5.3 Fourier 变换"
+			],
+			"mustMentionConditions": [],
+			"forbiddenClaims": ["Fourier 级数与正交性无关", "Fourier 变换只适用于有限维 R^n 向量"],
+			"evidence": [
+				{
+					"sourceFile": "02-spaces.md",
+					"heading": "2.6 内积空间与 Hilbert 空间",
+					"exactQuote": "**Fourier 级数**：$\\{e^{inx}\\}_{n=-\\infty}^\\infty$ 是 $L^2[-\\pi,\\pi]$ 中的一组正交基",
+					"supports": "在 L2 等 Hilbert 空间中，Fourier 级数是向三角函数正交基的正交投影"
+				},
+				{
+					"sourceFile": "02-spaces.md",
+					"heading": "2.8 本章关键点汇总",
+					"exactQuote": "| 8 | **Fourier级数 = 投影** | 三角函数基上的正交投影 | $\\S$5 函数与映射 |",
+					"supports": "在 L2 等 Hilbert 空间中，Fourier 级数是向三角函数正交基的正交投影"
+				},
+				{
+					"sourceFile": "05-functions-mappings.md",
+					"heading": "5.3 变换：改变表示形式",
+					"exactQuote": "它把一个函数（信号）分解为不同频率的正弦波叠加：",
+					"supports": "Fourier 变换把信号从时域变到频域做频率分解，并支撑滤波等操作"
+				},
+				{
+					"sourceFile": "05-functions-mappings.md",
+					"heading": "5.3 变换：改变表示形式",
+					"exactQuote": "| **Fourier** | $\\hat{f}(\\omega) = \\int f(t)e^{-i\\omega t}dt$ | 频率分解 |",
+					"supports": "Fourier 变换把信号从时域变到频域做频率分解，并支撑滤波等操作"
+				}
+			],
+			"sourceRisk": {
+				"present": false,
+				"detail": ""
+			},
+			"difficulty": 2,
+			"designRationale": "两跳连接“级数=投影”与“变换=频域分解”，测跨章同一概念族。",
+			"scoringAnchors": {
+				"score0": "只背公式，或否认正交投影/频域角色",
+				"score1": "只覆盖投影或只覆盖变换一侧",
+				"score2": "明确两侧：Hilbert 正交投影表示 + 时频变换/频率分解"
+			}
+		},
+		{
+			"id": "CAND-H203",
+			"category": "H2",
+			"question": "数列章节给出 Cauchy 列定义，空间章节用 Cauchy 列定义完备性。二者如何衔接，并解释为何“内部稳定”的列在完备空间中保证有极限？",
+			"answerability": "answerable",
+			"requiredSources": ["03-sequences-limits.md", "02-spaces.md"],
+			"requiredClaims": [
+				"Cauchy 列：对任意 ε>0 存在 N，使 m,n>N 时项之间距离小于 ε",
+				"完备空间要求每个 Cauchy 列都收敛到空间内一点；因而内部稳定列不必先指定外部极限对象也能在完备空间中获得极限"
+			],
+			"expectedPath": ["03-sequences-limits.md#3.1/3.6 Cauchy 列", "02-spaces.md#2.5 完备性定义"],
+			"mustMentionConditions": ["收敛到空间内的点（不跑出空间）"],
+			"forbiddenClaims": ["Cauchy 列在任何空间都收敛", "完备性不涉及 Cauchy 列"],
+			"evidence": [
+				{
+					"sourceFile": "03-sequences-limits.md",
+					"heading": "3.1 数列：离散变化的数学描述",
+					"exactQuote": "| Cauchy列 | $\\forall \\epsilon>0, \\exists N, \\forall m,n>N: \\lvert a_m-a_n\\rvert<\\epsilon$ | $a_n = 1/n$ |",
+					"supports": "Cauchy 列：对任意 ε>0 存在 N，使 m,n>N 时项之间距离小于 ε"
+				},
+				{
+					"sourceFile": "03-sequences-limits.md",
+					"heading": "3.6 本章关键点汇总",
+					"exactQuote": "| 2 | **Cauchy列** | 内部稳定的数列，在没有\"外部极限\"时也能判断 | $\\S$2 完备性 |",
+					"supports": "完备空间要求每个 Cauchy 列都收敛到空间内一点；因而内部稳定列不必先指定外部极限对象也能在完备空间中获得极限"
+				},
+				{
+					"sourceFile": "02-spaces.md",
+					"heading": "2.5 赋范空间与 Banach 空间",
+					"exactQuote": "**Cauchy 列**：$\\forall \\epsilon > 0, \\exists N, \\forall m,n > N: \\|x_m - x_n\\| < \\epsilon$\n\n如果空间中每个 Cauchy 列都收敛到空间内的一个点，这个空间就是**完备的**。",
+					"supports": "完备空间要求每个 Cauchy 列都收敛到空间内一点；因而内部稳定列不必先指定外部极限对象也能在完备空间中获得极限"
+				}
+			],
+			"sourceRisk": {
+				"present": false,
+				"detail": ""
+			},
+			"difficulty": 2,
+			"designRationale": "两跳：Cauchy 定义 → 完备性语义，测分析语言在两章间的桥接。",
+			"scoringAnchors": {
+				"score0": "声称任意空间 Cauchy 都收敛",
+				"score1": "定义对但未连到完备性/空间内极限",
+				"score2": "两端定义正确，并说明完备性把内部稳定升级为空间内收敛"
+			}
+		},
+		{
+			"id": "CAND-H204",
+			"category": "H2",
+			"question": "数系章节提到欧拉公式 e^{iθ}=cosθ+i sinθ；数列章节称可由 e^x、sin、cos 的 Taylor 展开推出。请给出材料支持的推导思路链条。",
+			"answerability": "answerable",
+			"requiredSources": ["01-number-systems.md", "03-sequences-limits.md"],
+			"requiredClaims": [
+				"复数章节给出欧拉公式 e^{iθ}=cosθ+i sinθ 作为关键关系",
+				"Taylor 章节指出将 x=iθ 代入 e^x 展开并分离实部虚部，可从三个 Maclaurin 级数推出欧拉公式"
+			],
+			"expectedPath": [
+				"01-number-systems.md#1.5 复数/欧拉公式",
+				"03-sequences-limits.md#3.4 Taylor 级数注意段"
+			],
+			"mustMentionConditions": [
+				"材料给出的是由 Taylor 展开推出的代数路径，不要求完整逐项证明细节超出原文"
+			],
+			"forbiddenClaims": [
+				"欧拉公式仅由几何定义无需分析展开",
+				"材料证明了收敛半径之外仍成立的一般定理（原文未给）"
+			],
+			"evidence": [
+				{
+					"sourceFile": "01-number-systems.md",
+					"heading": "1.5 复数 $\\mathbb{C}$",
+					"exactQuote": "ei 1 0 e, i, , 1, 0",
+					"supports": "复数章节给出欧拉公式 e^{iθ}=cosθ+i sinθ 作为关键关系"
+				},
+				{
+					"sourceFile": "03-sequences-limits.md",
+					"heading": "3.4 Taylor 级数：用多项式逼近一切",
+					"exactQuote": "欧拉公式 $e^{i\\theta} = \\cos\\theta + i\\sin\\theta$ 可以从 $e^x$、$\\sin x$、$\\cos x$ 各自的 Taylor 展开直接推出——将 $x=i\\theta$ 代入 $e^x$ 展开，分离实部和虚部即可。",
+					"supports": "Taylor 章节指出将 x=iθ 代入 e^x 展开并分离实部虚部，可从三个 Maclaurin 级数推出欧拉公式"
+				},
+				{
+					"sourceFile": "03-sequences-limits.md",
+					"heading": "3.4 Taylor 级数：用多项式逼近一切",
+					"exactQuote": "| $e^x$ | $\\sum_{n=0}^\\infty \\frac{x^n}{n!}$ | $\\infty$ |\n| $\\sin x$ | $\\sum_{n=0}^\\infty (-1)^n \\frac{x^{2n+1}}{(2n+1)!}$ | $\\infty$ |\n| $\\cos x$ | $\\sum_{n=0}^\\infty (-1)^n \\frac{x^{2n}}{(2n)!}$ | $\\infty$ |",
+					"supports": "Taylor 章节指出将 x=iθ 代入 e^x 展开并分离实部虚部，可从三个 Maclaurin 级数推出欧拉公式"
+				}
+			],
+			"sourceRisk": {
+				"present": true,
+				"detail": "01 文件在检索摘录中欧拉公式段落被压缩显示；以 03 的明确陈述为主证据。若审计发现 01 原文表述粒度不同，应核对 01 全量文本中的欧拉公式句后再冻结。"
+			},
+			"difficulty": 2,
+			"designRationale": "两跳：复数恒等式陈述 ↔ Taylor 推导机制。",
+			"scoringAnchors": {
+				"score0": "无法连接两章，或编造未出现的证明步骤为原文所无",
+				"score1": "只复述欧拉公式，未提 Taylor 代入 iθ 与分离实虚部",
+				"score2": "点明公式本身 + 由 e/sin/cos 展开代入 x=iθ 推出的材料路径"
+			}
+		},
+		{
+			"id": "CAND-H205",
+			"category": "H2",
+			"question": "方程章节把差分方程与 Logistic 映射视为离散动力学；数列章节把数列定义为自然数到实/复的函数并称其为离散动力系统最简形式。二者如何互相说明？",
+			"answerability": "answerable",
+			"requiredSources": ["03-sequences-limits.md", "04-equations.md"],
+			"requiredClaims": [
+				"数列是定义在自然数上的函数，是离散动力系统的最简形式",
+				"差分方程给出离散时间点上的递推；Logistic 映射 x_{n+1}=r x_n(1-x_n) 展示由确定递推产生收敛/周期/混沌等行为"
+			],
+			"expectedPath": [
+				"03-sequences-limits.md#3.1 数列定义",
+				"04-equations.md#4.5 差分方程与 Logistic"
+			],
+			"mustMentionConditions": [],
+			"forbiddenClaims": ["差分方程与数列无关", "Logistic 映射只在连续时间 ODE 中定义"],
+			"evidence": [
+				{
+					"sourceFile": "03-sequences-limits.md",
+					"heading": "3.1 数列：离散变化的数学描述",
+					"exactQuote": "**数列** = 定义在自然数上的函数：$a: \\mathbb{N} \\to \\mathbb{R}$（或 $\\mathbb{C}$），记作 $(a_n)_{n=1}^\\infty$。",
+					"supports": "数列是定义在自然数上的函数，是离散动力系统的最简形式"
+				},
+				{
+					"sourceFile": "03-sequences-limits.md",
+					"heading": "3.1 数列：离散变化的数学描述",
+					"exactQuote": "数列是**离散动力系统**的最简形式——它描述了一个量在离散时间步骤上的演化。",
+					"supports": "数列是定义在自然数上的函数，是离散动力系统的最简形式"
+				},
+				{
+					"sourceFile": "04-equations.md",
+					"heading": "4.5 差分方程：离散世界的动力学",
+					"exactQuote": "未知量在**离散时间点**上的递推关系：\n\n$$\nx_{n+1} = f(x_n, x_{n-1}, \\ldots, n)\n$$",
+					"supports": "差分方程给出离散时间点上的递推；Logistic 映射 x_{n+1}=r x_n(1-x_n) 展示由确定递推产生收敛/周期/混沌等行为"
+				},
+				{
+					"sourceFile": "04-equations.md",
+					"heading": "4.5 差分方程：离散世界的动力学",
+					"exactQuote": "$$\nx_{n+1} = r x_n (1 - x_n)\n$$\n\n这个简单的二次递推当 $r$ 变化时展示了惊人的行为：收敛 → 周期加倍 → 混沌。",
+					"supports": "差分方程给出离散时间点上的递推；Logistic 映射 x_{n+1}=r x_n(1-x_n) 展示由确定递推产生收敛/周期/混沌等行为"
+				}
+			],
+			"sourceRisk": {
+				"present": false,
+				"detail": ""
+			},
+			"difficulty": 1,
+			"designRationale": "两跳连接离散序列语言与差分方程实例。",
+			"scoringAnchors": {
+				"score0": "把 Logistic 说成连续 PDE/ODE 原型",
+				"score1": "只解释数列或只解释差分一侧",
+				"score2": "说明数列=离散动力最简形式，并以差分/Logistic 递推行为作为方程侧对应"
+			}
+		},
+		{
+			"id": "CAND-H206",
+			"category": "H2",
+			"question": "空间章节给出线性映射所在的向量空间结构；函数章节给出线性映射的保持条件。二者如何共同定义“线性映射”，并与同态“保持运算”的一般思想对齐？",
+			"answerability": "answerable",
+			"requiredSources": ["02-spaces.md", "05-functions-mappings.md"],
+			"requiredClaims": [
+				"向量空间配备加法与标量乘法并满足一组公理，使对象可加可缩",
+				"线性映射满足 f(ax+by)=a f(x)+b f(y)；它是“保持结构映射”表中的线性行，与同态保持运算的思想一致"
+			],
+			"expectedPath": [
+				"02-spaces.md#2.3 向量空间公理",
+				"05-functions-mappings.md#5.2 结构保持映射表"
+			],
+			"mustMentionConditions": [],
+			"forbiddenClaims": [
+				"线性映射只需保持加法不必齐性（与材料公式不符）",
+				"只有 R^n 之间的映射才可能线性"
+			],
+			"evidence": [
+				{
+					"sourceFile": "02-spaces.md",
+					"heading": "2.3 向量空间（线性空间）",
+					"exactQuote": "**向量空间公理**：集合 $V$ 配备运算 $+ : V \\times V \\to V$ 和 $\\cdot : \\mathbb{R} \\times V \\to V$，满足：",
+					"supports": "向量空间配备加法与标量乘法并满足一组公理，使对象可加可缩"
+				},
+				{
+					"sourceFile": "02-spaces.md",
+					"heading": "2.3 向量空间（线性空间）",
+					"exactQuote": "但很多数学对象也满足\"可加可缩\"的性质：",
+					"supports": "向量空间配备加法与标量乘法并满足一组公理，使对象可加可缩"
+				},
+				{
+					"sourceFile": "05-functions-mappings.md",
+					"heading": "5.2 映射：保持结构的函数",
+					"exactQuote": "| 线性 | 线性映射 | $f(ax+by) = a f(x) + b f(y)$ |\n| 拓扑 | 连续映射 | 开集的原像是开集 |",
+					"supports": "线性映射满足 f(ax+by)=a f(x)+b f(y)；它是“保持结构映射”表中的线性行，与同态保持运算的思想一致"
+				},
+				{
+					"sourceFile": "05-functions-mappings.md",
+					"heading": "5.2 映射：保持结构的函数",
+					"exactQuote": "| 代数运算 | 同态 | $f(x \\cdot y) = f(x) \\cdot f(y)$ |",
+					"supports": "线性映射满足 f(ax+by)=a f(x)+b f(y)；它是“保持结构映射”表中的线性行，与同态保持运算的思想一致"
+				}
+			],
+			"sourceRisk": {
+				"present": false,
+				"detail": ""
+			},
+			"difficulty": 2,
+			"designRationale": "两跳：向量空间结构 → 保持该结构的线性映射/同态表。",
+			"scoringAnchors": {
+				"score0": "给出与材料冲突的线性条件",
+				"score1": "只复述线性公式，未连到向量空间结构或同态思想",
+				"score2": "两侧都覆盖：空间公理背景 + 线性保持条件及结构保持总览中的位置"
+			}
+		},
+		{
+			"id": "CAND-H207",
+			"category": "H2",
+			"question": "方程章节在统一视角表中为 ODE 列出存在性工具 Picard-Lindelöf 与唯一性工具 Lipschitz 条件；函数/算子章节强调微分算子无界导致微分方程更难。材料允许怎样把“难”与“存在唯一条件”一起理解？",
+			"answerability": "answerable",
+			"requiredSources": ["04-equations.md", "05-functions-mappings.md"],
+			"requiredClaims": [
+				"ODE 求解框架中存在性常用 Picard-Lindelöf，唯一性与 Lipschitz 条件相关",
+				"微分算子无界是微分方程难于代数方程的材料内原因之一，故更依赖存在唯一与定性分析工具"
+			],
+			"expectedPath": [
+				"04-equations.md#4.6 方程求解统一视角表",
+				"05-functions-mappings.md#5.4 微分算子无界"
+			],
+			"mustMentionConditions": [
+				"不要把 Lipschitz/Picard-Lindelöf 说成对一切 PDE 自动成立（表中 PDE 另有工具）"
+			],
+			"forbiddenClaims": [
+				"所有微分方程都自动全局唯一解",
+				"代数方程也主要由 Picard-Lindelöf 保证存在性"
+			],
+			"evidence": [
+				{
+					"sourceFile": "04-equations.md",
+					"heading": "4.6 方程求解的统一视角",
+					"exactQuote": "| ODE | Picard-Lindelöf | Lipschitz条件 | 积分因子/级数 |",
+					"supports": "ODE 求解框架中存在性常用 Picard-Lindelöf，唯一性与 Lipschitz 条件相关"
+				},
+				{
+					"sourceFile": "04-equations.md",
+					"heading": "4.6 方程求解的统一视角",
+					"exactQuote": "存在性、唯一性、稳定性构成了数学建模的三角框架——先确认问题有意义（存在解），再确认答案确定（唯一），最后确认微小变化不会颠覆结论（稳定）。",
+					"supports": "ODE 求解框架中存在性常用 Picard-Lindelöf，唯一性与 Lipschitz 条件相关"
+				},
+				{
+					"sourceFile": "05-functions-mappings.md",
+					"heading": "5.4 算子：以函数为输入的函数",
+					"exactQuote": "微分算子 $\\frac{d}{dx}$ 是**无界**的——这就是为什么微分方程比代数方程难得多。",
+					"supports": "微分算子无界是微分方程难于代数方程的材料内原因之一，故更依赖存在唯一与定性分析工具"
+				}
+			],
+			"sourceRisk": {
+				"present": false,
+				"detail": ""
+			},
+			"difficulty": 2,
+			"designRationale": "两跳：ODE 存在唯一工具表 ↔ 微分算子无界的难度解释。",
+			"scoringAnchors": {
+				"score0": "把 Picard-Lindelöf 安到代数方程或宣称无条件唯一",
+				"score1": "只提难度或只提存在唯一表，未连接",
+				"score2": "连接无界微分算子难度与 ODE 的 Picard-Lindelöf/Lipschitz 及存在唯一稳定框架"
+			}
+		},
+		{
+			"id": "CAND-H301",
+			"category": "H3",
+			"question": "从有理数不完备（数系）出发，经 Cauchy 列与完备性（数列/空间），说明为何 C 在 L1 范数下不是 Banach 空间，而在 sup 范数下是。请给出至少三步依赖链。",
+			"answerability": "answerable",
+			"requiredSources": ["01-number-systems.md", "03-sequences-limits.md", "02-spaces.md"],
+			"requiredClaims": [
+				"Q 不完备：存在 Cauchy 列不在 Q 中收敛；R 完备",
+				"Cauchy 列刻画内部稳定；完备性要求 Cauchy 列收敛于空间内",
+				"Banach=完备赋范；C 对 ||·||_∞ 完备，对 ||·||_1 不完备（极限可跑出连续函数空间）"
+			],
+			"expectedPath": [
+				"01-number-systems.md#1.4 Q vs R 完备性",
+				"03-sequences-limits.md#Cauchy 列",
+				"02-spaces.md#2.5 Banach 与 C 例子"
+			],
+			"mustMentionConditions": ["完备性依赖于所选取的范数/距离"],
+			"forbiddenClaims": ["Q 完备", "C 在 L1 下仍是 Banach"],
+			"evidence": [
+				{
+					"sourceFile": "01-number-systems.md",
+					"heading": "1.4 实数 $\\mathbb{R}$",
+					"exactQuote": "| **完备性** | ❌ | ✅ |\n| 上确界存在性 | ❌ | ✅ 有上界必有上确界 |\n| Cauchy 列必收敛 | ❌ | ✅ |",
+					"supports": "Q 不完备：存在 Cauchy 列不在 Q 中收敛；R 完备"
+				},
+				{
+					"sourceFile": "03-sequences-limits.md",
+					"heading": "3.1 数列：离散变化的数学描述",
+					"exactQuote": "| Cauchy列 | $\\forall \\epsilon>0, \\exists N, \\forall m,n>N: \\lvert a_m-a_n\\rvert<\\epsilon$ | $a_n = 1/n$ |",
+					"supports": "Cauchy 列刻画内部稳定；完备性要求 Cauchy 列收敛于空间内"
+				},
+				{
+					"sourceFile": "02-spaces.md",
+					"heading": "2.5 赋范空间与 Banach 空间",
+					"exactQuote": "如果空间中每个 Cauchy 列都收敛到空间内的一个点，这个空间就是**完备的**。\n\n> **Banach 空间 = 完备的赋范空间**",
+					"supports": "Banach=完备赋范；C 对 ||·||_∞ 完备，对 ||·||_1 不完备（极限可跑出连续函数空间）"
+				},
+				{
+					"sourceFile": "02-spaces.md",
+					"heading": "2.5 赋范空间与 Banach 空间",
+					"exactQuote": "| $C$ | $\\|f\\|_\\infty = \\sup\\|f(x)\\|$ | ✅ | Banach空间 |\n| $C$ | $\\|f\\|_1 = \\int\\|f\\|$ | ❌ | 赋范(不完备) |",
+					"supports": "Banach=完备赋范；C 对 ||·||_∞ 完备，对 ||·||_1 不完备（极限可跑出连续函数空间）"
+				},
+				{
+					"sourceFile": "02-spaces.md",
+					"heading": "2.5 赋范空间与 Banach 空间",
+					"exactQuote": "在 $\\|f\\|_1$ 下，连续函数空间中存在 Cauchy 列收敛到不连续的函数——极限\"跑出了空间\"。",
+					"supports": "Banach=完备赋范；C 对 ||·||_∞ 完备，对 ||·||_1 不完备（极限可跑出连续函数空间）"
+				}
+			],
+			"sourceRisk": {
+				"present": false,
+				"detail": ""
+			},
+			"difficulty": 3,
+			"designRationale": "三至四跳：数系完备性观念 → Cauchy 语言 → 赋范完备定义 → 具体函数空间反差。",
+			"scoringAnchors": {
+				"score0": "断言 Q 完备或 C 对 L1 完备",
+				"score1": "链上缺一跳（如未提范数依赖或不完备机制）",
+				"score2": "完整三跳以上：Q/R 完备对比、Cauchy/完备定义、C 两范数结论与跑出空间"
+			}
+		},
+		{
+			"id": "CAND-H302",
+			"category": "H3",
+			"question": "连接以下链条：复数与欧拉公式（数系）→ e^x/sin/cos 的 Taylor 展开（数列）→ Fourier/三角基在 L2 中的正交投影（空间）与频域分解（函数）。材料如何支持“指数—三角—频域表示”这条概念路径？",
+			"answerability": "answerable",
+			"requiredSources": [
+				"01-number-systems.md",
+				"03-sequences-limits.md",
+				"02-spaces.md",
+				"05-functions-mappings.md"
+			],
+			"requiredClaims": [
+				"欧拉公式连接指数与三角",
+				"Taylor 展开给出 e^x、sin、cos 的级数并指出可推出欧拉公式",
+				"Hilbert/L2 中三角系为正交基，Fourier 级数即投影；Fourier 变换做频率分解"
+			],
+			"expectedPath": [
+				"01-number-systems.md#复数/欧拉",
+				"03-sequences-limits.md#Taylor",
+				"02-spaces.md#Hilbert/Fourier级数",
+				"05-functions-mappings.md#Fourier变换"
+			],
+			"mustMentionConditions": [],
+			"forbiddenClaims": ["材料给出了完整量子场论推导", "Fourier 与正交性无关"],
+			"evidence": [
+				{
+					"sourceFile": "03-sequences-limits.md",
+					"heading": "3.4 Taylor 级数：用多项式逼近一切",
+					"exactQuote": "欧拉公式 $e^{i\\theta} = \\cos\\theta + i\\sin\\theta$ 可以从 $e^x$、$\\sin x$、$\\cos x$ 各自的 Taylor 展开直接推出——将 $x=i\\theta$ 代入 $e^x$ 展开，分离实部和虚部即可。这正是 $\\S$1 和 $\\S$11 中 $e, i, \\pi$ 深层关系的代数根源。",
+					"supports": "欧拉公式连接指数与三角"
+				},
+				{
+					"sourceFile": "03-sequences-limits.md",
+					"heading": "3.4 Taylor 级数：用多项式逼近一切",
+					"exactQuote": "| $e^x$ | $\\sum_{n=0}^\\infty \\frac{x^n}{n!}$ | $\\infty$ |\n| $\\sin x$ | $\\sum_{n=0}^\\infty (-1)^n \\frac{x^{2n+1}}{(2n+1)!}$ | $\\infty$ |\n| $\\cos x$ | $\\sum_{n=0}^\\infty (-1)^n \\frac{x^{2n}}{(2n)!}$ | $\\infty$ |",
+					"supports": "Taylor 展开给出 e^x、sin、cos 的级数并指出可推出欧拉公式"
+				},
+				{
+					"sourceFile": "02-spaces.md",
+					"heading": "2.6 内积空间与 Hilbert 空间",
+					"exactQuote": "**Fourier 级数**：$\\{e^{inx}\\}_{n=-\\infty}^\\infty$ 是 $L^2[-\\pi,\\pi]$ 中的一组正交基",
+					"supports": "Hilbert/L2 中三角系为正交基，Fourier 级数即投影；Fourier 变换做频率分解"
+				},
+				{
+					"sourceFile": "05-functions-mappings.md",
+					"heading": "5.3 变换：改变表示形式",
+					"exactQuote": "它把一个函数（信号）分解为不同频率的正弦波叠加：",
+					"supports": "Hilbert/L2 中三角系为正交基，Fourier 级数即投影；Fourier 变换做频率分解"
+				}
+			],
+			"sourceRisk": {
+				"present": false,
+				"detail": ""
+			},
+			"difficulty": 3,
+			"designRationale": "四跳跨四章：指数三角恒等式→级数→正交基投影→变换频域。",
+			"scoringAnchors": {
+				"score0": "链条断裂或引入材料外物理理论充当证据",
+				"score1": "只覆盖两跳（如仅欧拉+Taylor）",
+				"score2": "至少三步：欧拉/Taylor、L2 正交投影、Fourier 变换频域分解"
+			}
+		},
+		{
+			"id": "CAND-H303",
+			"category": "H3",
+			"question": "解释材料中的多步链：度量由范数导出（空间）→ 度量诱导拓扑/开球（空间）→ 连续映射定义为开集原像为开集（函数）→ 一致收敛保持连续性（数列）。为什么“好的收敛”与“结构保持的连续性”会在分析中同时出现？",
+			"answerability": "answerable",
+			"requiredSources": ["02-spaces.md", "05-functions-mappings.md", "03-sequences-limits.md"],
+			"requiredClaims": [
+				"范数导出距离 d(x,y)=||x−y||，度量空间用开球生成拓扑",
+				"连续映射：开集原像是开集",
+				"一致收敛强于逐点收敛并保持连续性；逐点收敛可能丢失连续性"
+			],
+			"expectedPath": [
+				"02-spaces.md#2.5 范数→距离",
+				"02-spaces.md#2.4 度量→拓扑",
+				"05-functions-mappings.md#5.2 连续映射",
+				"03-sequences-limits.md#3.5 一致收敛"
+			],
+			"mustMentionConditions": [
+				"一致收敛⇒L^p 收敛在材料中附有“有界域上”等箭头注释，不应无条件推广"
+			],
+			"forbiddenClaims": ["逐点收敛一定保持连续性", "连续映射定义为闭集原像为开集（与材料不符）"],
+			"evidence": [
+				{
+					"sourceFile": "02-spaces.md",
+					"heading": "2.5 赋范空间与 Banach 空间",
+					"exactQuote": "范数自然地导出距离：$d(x,y) = \\|x-y\\|$。所以 $(V, \\|\\cdot\\|)$ 构成赋范空间，也自动成为度量空间。",
+					"supports": "范数导出距离 d(x,y)=||x−y||，度量空间用开球生成拓扑"
+				},
+				{
+					"sourceFile": "02-spaces.md",
+					"heading": "2.4 度量空间",
+					"exactQuote": "任何度量空间自然诱导一个拓扑：以**开球** $B(x,r) = \\{y \\mid d(x,y) < r\\}$ 生成开集。",
+					"supports": "范数导出距离 d(x,y)=||x−y||，度量空间用开球生成拓扑"
+				},
+				{
+					"sourceFile": "05-functions-mappings.md",
+					"heading": "5.2 映射：保持结构的函数",
+					"exactQuote": "| 拓扑 | 连续映射 | 开集的原像是开集 |",
+					"supports": "连续映射：开集原像是开集"
+				},
+				{
+					"sourceFile": "03-sequences-limits.md",
+					"heading": "3.5 收敛性：不仅仅是\"有极限\"",
+					"exactQuote": "| **逐点收敛** | 对每个 $x$，$f_n(x) \\to f(x)$ | 最弱，可能丢失连续性 |\n| **一致收敛** | $\\sup_x \\|f_n(x)-f(x)\\| \\to 0$ | 保持连续性 |",
+					"supports": "一致收敛强于逐点收敛并保持连续性；逐点收敛可能丢失连续性"
+				},
+				{
+					"sourceFile": "03-sequences-limits.md",
+					"heading": "3.5 收敛性：不仅仅是\"有极限\"",
+					"exactQuote": "一致收敛才是\"好的\"收敛——它保证极限函数继承逼近函数序列的优良性质（连续、可导、可积）。",
+					"supports": "一致收敛强于逐点收敛并保持连续性；逐点收敛可能丢失连续性"
+				}
+			],
+			"sourceRisk": {
+				"present": false,
+				"detail": ""
+			},
+			"difficulty": 3,
+			"designRationale": "四跳：范数→度量拓扑→连续定义→一致收敛保结构。",
+			"scoringAnchors": {
+				"score0": "声称逐点收敛保持连续性",
+				"score1": "提到连续或一致收敛，但缺少范数-度量-拓扑链",
+				"score2": "完整连接距离/开球拓扑、开集原像连续性、一致收敛保持连续性"
+			}
+		},
+		{
+			"id": "CAND-H304",
+			"category": "H3",
+			"question": "从“方程=约束”（方程章）到“求解三角：存在/唯一/构造/稳定”，再连到一阶自治 ODE 的不动点稳定性判据 f'(y*)<0，以及差分方程侧的不动点/压缩映射工具。材料如何形成“平衡态—稳定性”的跨连续/离散叙述？",
+			"answerability": "answerable",
+			"requiredSources": ["04-equations.md"],
+			"requiredClaims": [
+				"方程表达对未知量的约束；求解关注存在、唯一、构造/逼近与稳定性",
+				"一阶自治 dy/dt=f(y) 中不动点 f(y*)=0，且 f'(y*)<0 时为稳定吸引子，否则为不稳定排斥子",
+				"差分方程存在性工具含不动点定理，唯一性工具含压缩映射"
+			],
+			"expectedPath": [
+				"04-equations.md#4.1 方程是什么",
+				"04-equations.md#4.6 统一视角",
+				"04-equations.md#4.3 定性理论相图",
+				"04-equations.md#4.6 表中差分行"
+			],
+			"mustMentionConditions": ["稳定性判据材料针对一阶自治系统 dy/dt=f(y) 的不动点线性化直觉"],
+			"forbiddenClaims": [
+				"f'(y*)<0 被材料写成任意维 PDE 的通用充分必要条件",
+				"所有方程类型共用同一存在性定理名称"
+			],
+			"evidence": [
+				{
+					"sourceFile": "04-equations.md",
+					"heading": "4.1 方程是什么？",
+					"exactQuote": "**方程** = 包含未知量的等式，它表达了对未知量的**约束**。",
+					"supports": "方程表达对未知量的约束；求解关注存在、唯一、构造/逼近与稳定性"
+				},
+				{
+					"sourceFile": "04-equations.md",
+					"heading": "4.6 方程求解的统一视角",
+					"exactQuote": "P1[\"1. 判断存在性<br/>解是否存在?\"]\n        P2[\"2. 判断唯一性<br/>有几个解?\"]\n        P3[\"3. 构造/逼近<br/>怎么找到解?\"]\n        P4[\"4. 稳定性分析<br/>解是否稳定?\"]",
+					"supports": "方程表达对未知量的约束；求解关注存在、唯一、构造/逼近与稳定性"
+				},
+				{
+					"sourceFile": "04-equations.md",
+					"heading": "4.3 常微分方程 (ODE)",
+					"exactQuote": "FP[\"不动点 f(y*)=0\"] --> STABLE{\"f'(y*) < 0 ?\"}\n        STABLE -->|\"是\"| ATTRACT[\"稳定吸引子\"]\n        STABLE -->|\"否\"| REPEL[\"不稳定排斥子\"]",
+					"supports": "一阶自治 dy/dt=f(y) 中不动点 f(y*)=0，且 f'(y*)<0 时为稳定吸引子，否则为不稳定排斥子"
+				},
+				{
+					"sourceFile": "04-equations.md",
+					"heading": "4.6 方程求解的统一视角",
+					"exactQuote": "| 差分 | 不动点定理 | 压缩映射 | 迭代/特征值 |",
+					"supports": "差分方程存在性工具含不动点定理，唯一性工具含压缩映射"
+				}
+			],
+			"sourceRisk": {
+				"present": false,
+				"detail": ""
+			},
+			"difficulty": 3,
+			"designRationale": "H3 允许两篇材料中不同知识层级；本题在单文件内取三个明确层级（定义→统一框架→ODE定性→差分工具），满足三跳且不拆句注水。",
+			"scoringAnchors": {
+				"score0": "把稳定性判据无条件推广到材料未给的系统类",
+				"score1": "只复述方程定义或只提不动点，缺少统一框架或离散侧工具",
+				"score2": "覆盖约束观、四步求解框架、一阶自治稳定判据、差分不动点/压缩映射"
+			}
+		},
+		{
+			"id": "CAND-H305",
+			"category": "H3",
+			"question": "构建链条：向量空间可无限维（如 C）（空间）→ 算子是函数空间之间的映射（函数）→ 线性算子有界性=连续性且微分算子无界（函数）→ 方程章因此把 ODE/PDE 的存在唯一工具与代数方程区分开。材料如何支持“无限维线性结构使微分问题更依赖分析条件”？",
+			"answerability": "answerable",
+			"requiredSources": ["02-spaces.md", "05-functions-mappings.md", "04-equations.md"],
+			"requiredClaims": [
+				"C 等函数空间是无限维向量空间",
+				"算子作用于函数空间；线性算子有界⇔连续；微分算子无界导致微分方程更难",
+				"代数方程与 ODE/PDE 在存在唯一工具上不同（如代数基本定理 vs Picard-Lindelöf/Lax-Milgram 等）"
+			],
+			"expectedPath": [
+				"02-spaces.md#2.3 无限维",
+				"05-functions-mappings.md#5.4 算子",
+				"04-equations.md#4.6 分类工具表"
+			],
+			"mustMentionConditions": [],
+			"forbiddenClaims": ["所有无限维算子都无界", "ODE 与代数方程使用完全相同的存在性定理"],
+			"evidence": [
+				{
+					"sourceFile": "02-spaces.md",
+					"heading": "2.3 向量空间（线性空间）",
+					"exactQuote": "- 连续函数空间 $C$：**无限维！**（没有有限基）",
+					"supports": "C 等函数空间是无限维向量空间"
+				},
+				{
+					"sourceFile": "05-functions-mappings.md",
+					"heading": "5.4 算子：以函数为输入的函数",
+					"exactQuote": "**算子** $T: V \\to W$ 是两个**函数空间**之间的映射。",
+					"supports": "算子作用于函数空间；线性算子有界⇔连续；微分算子无界导致微分方程更难"
+				},
+				{
+					"sourceFile": "05-functions-mappings.md",
+					"heading": "5.4 算子：以函数为输入的函数",
+					"exactQuote": "在线性算子中，**有界性 = 连续性**：",
+					"supports": "算子作用于函数空间；线性算子有界⇔连续；微分算子无界导致微分方程更难"
+				},
+				{
+					"sourceFile": "05-functions-mappings.md",
+					"heading": "5.4 算子：以函数为输入的函数",
+					"exactQuote": "微分算子 $\\frac{d}{dx}$ 是**无界**的——这就是为什么微分方程比代数方程难得多。",
+					"supports": "算子作用于函数空间；线性算子有界⇔连续；微分算子无界导致微分方程更难"
+				},
+				{
+					"sourceFile": "04-equations.md",
+					"heading": "4.6 方程求解的统一视角",
+					"exactQuote": "| 代数 | 代数基本定理 | 因式分解 | Galois理论/数值 |\n| ODE | Picard-Lindelöf | Lipschitz条件 | 积分因子/级数 |\n| PDE | Lax-Milgram | 极大值原理 | 分离变量/Green函数 |",
+					"supports": "代数方程与 ODE/PDE 在存在唯一工具上不同（如代数基本定理 vs Picard-Lindelöf/Lax-Milgram 等）"
+				}
+			],
+			"sourceRisk": {
+				"present": false,
+				"detail": ""
+			},
+			"difficulty": 3,
+			"designRationale": "三章三跳：无限维空间 → 算子有界性 → 方程类型工具分化。",
+			"scoringAnchors": {
+				"score0": "抹平代数/ODE 工具差异，或否认微分算子无界",
+				"score1": "缺无限维或缺工具表对比",
+				"score2": "完整：无限维函数空间、算子与无界微分、方程类型不同存在唯一工具"
+			}
+		},
+		{
+			"id": "CAND-C01",
+			"category": "C",
+			"question": "材料称“在线性算子中，有界性=连续性”。若模型回答“任意算子有界当且仅当连续”，是否过度推广？应如何忠实于原文条件？",
+			"answerability": "answerable",
+			"requiredSources": ["05-functions-mappings.md"],
+			"requiredClaims": [
+				"原文把有界性=连续性限制在线性算子语境",
+				"正确回答必须保留“线性”条件，不能推广到一切算子"
+			],
+			"expectedPath": ["05-functions-mappings.md#5.4 有界性与连续性"],
+			"mustMentionConditions": ["仅在线性算子中"],
+			"forbiddenClaims": ["一切算子（含非线性）均有界⇔连续"],
+			"evidence": [
+				{
+					"sourceFile": "05-functions-mappings.md",
+					"heading": "5.4 算子：以函数为输入的函数",
+					"exactQuote": "在线性算子中，**有界性 = 连续性**：",
+					"supports": "原文把有界性=连续性限制在线性算子语境"
+				},
+				{
+					"sourceFile": "05-functions-mappings.md",
+					"heading": "5.4 算子：以函数为输入的函数",
+					"exactQuote": "$$\\|T\\| = \\sup_{\\|f\\|=1} \\|Tf\\| < \\infty \\iff T \\text{ 连续}$$",
+					"supports": "正确回答必须保留“线性”条件，不能推广到一切算子"
+				}
+			],
+			"sourceRisk": {
+				"present": false,
+				"detail": ""
+			},
+			"difficulty": 2,
+			"designRationale": "条件题：测试是否丢失“线性”限定而过强概括。",
+			"scoringAnchors": {
+				"score0": "明确断言任意算子有界⇔连续",
+				"score1": "提到等价但未强调线性条件",
+				"score2": "指出仅线性算子语境成立，并拒绝无条件推广"
+			}
+		},
+		{
+			"id": "CAND-C02",
+			"category": "C",
+			"question": "关于级数，材料写 a_n→0 出现在收敛判别流程中并标注为“必要条件”。若回答“a_n→0 故级数收敛”，错在哪里？请按原文强度纠正。",
+			"answerability": "answerable",
+			"requiredSources": ["03-sequences-limits.md"],
+			"requiredClaims": [
+				"a_n→0 是级数收敛流程中的必要条件；若不成立则发散",
+				"a_n→0 不足以推出收敛（例如调和级数发散）"
+			],
+			"expectedPath": [
+				"03-sequences-limits.md#3.3 收敛判别法",
+				"03-sequences-limits.md#关键级数表 调和级数"
+			],
+			"mustMentionConditions": ["a_n→0 仅为必要条件而非充分条件"],
+			"forbiddenClaims": ["a_n→0 是级数收敛的充分条件", "调和级数收敛"],
+			"evidence": [
+				{
+					"sourceFile": "03-sequences-limits.md",
+					"heading": "3.3 级数：无穷和的可能性",
+					"exactQuote": "SERIES[\"级数 Σaₙ\"] --> CHECK_NEC{\"aₙ → 0 ?\"}\n    CHECK_NEC -->|\"否\"| DIV[\"发散 (必要条件)\"]",
+					"supports": "a_n→0 是级数收敛流程中的必要条件；若不成立则发散"
+				},
+				{
+					"sourceFile": "03-sequences-limits.md",
+					"heading": "3.3 级数：无穷和的可能性",
+					"exactQuote": "| 调和级数 $\\sum \\frac{1}{n}$ | **发散** | ∞（$\\sim \\ln n + \\gamma$） |",
+					"supports": "a_n→0 不足以推出收敛（例如调和级数发散）"
+				}
+			],
+			"sourceRisk": {
+				"present": false,
+				"detail": ""
+			},
+			"difficulty": 2,
+			"designRationale": "反例题：必要条件误当作充分条件；用调和级数作材料内反例。",
+			"scoringAnchors": {
+				"score0": "主张 a_n→0⇒收敛，或称调和级数收敛",
+				"score1": "知道必要但未给出材料内反例",
+				"score2": "明确必要非充分，并引用调和级数等反例"
+			}
+		},
+		{
+			"id": "CAND-C03",
+			"category": "C",
+			"question": "材料在 PDE 分类中给出判别式 Δ=b²−ac 对二阶线性 PDE 的椭圆/抛物/双曲分类，并类比二次曲线。若模型写“任何 PDE（含非线性、高阶）都由 Δ=b²−ac 分类”，是否过强？原文适用范围是什么？",
+			"answerability": "answerable",
+			"requiredSources": ["04-equations.md"],
+			"requiredClaims": [
+				"分类公式针对形如 a u_xx + 2b u_xy + c u_yy + … = 0 的二阶线性 PDE",
+				"不得推广到材料未陈述的任意非线性或任意阶 PDE"
+			],
+			"expectedPath": ["04-equations.md#4.4 判别式：二阶线性 PDE 的分类"],
+			"mustMentionConditions": ["二阶线性 PDE", "对 a,b,c 定义 Δ=b²−ac"],
+			"forbiddenClaims": ["一切 PDE 均可用同一判别式完成分类"],
+			"evidence": [
+				{
+					"sourceFile": "04-equations.md",
+					"heading": "4.4 偏微分方程 (PDE)",
+					"exactQuote": "### 判别式：二阶线性 PDE 的分类\n\n对于 $au_{xx} + 2bu_{xy} + cu_{yy} + \\cdots = 0$：",
+					"supports": "分类公式针对形如 a u_xx + 2b u_xy + c u_yy + … = 0 的二阶线性 PDE"
+				},
+				{
+					"sourceFile": "04-equations.md",
+					"heading": "4.4 偏微分方程 (PDE)",
+					"exactQuote": "$$\\Delta = b^2 - ac \\begin{cases}\n< 0 & \\text{椭圆型} \\\\\n= 0 & \\text{抛物型} \\\\\n> 0 & \\text{双曲型}\n\\end{cases}$$",
+					"supports": "不得推广到材料未陈述的任意非线性或任意阶 PDE"
+				}
+			],
+			"sourceRisk": {
+				"present": false,
+				"detail": ""
+			},
+			"difficulty": 2,
+			"designRationale": "条件题：防止把二阶线性分类器推广到任意 PDE。",
+			"scoringAnchors": {
+				"score0": "对任意 PDE 滥用 Δ 分类",
+				"score1": "写出 Δ 但未强调二阶线性范围",
+				"score2": "明确适用范围为二阶线性，并拒绝过强概括"
+			}
+		},
+		{
+			"id": "CAND-C04",
+			"category": "C",
+			"question": "数系材料用表格对比 Q 与 R 的完备性等性质，并写“完备性=数轴没有洞／每一个 Cauchy 列都在 R 中有极限”。若模型据此断言“任何稠密数系都完备”或“稠密⇒Cauchy 列收敛”，是否忠实？请指出材料实际主张与过强读法。",
+			"answerability": "answerable_with_source_risk",
+			"requiredSources": ["01-number-systems.md"],
+			"requiredClaims": [
+				"材料明确：Q 稠密但不完备；R 稠密且完备",
+				"因此稠密性不能推出完备性；完备性与 Cauchy 列收敛/无洞相联系"
+			],
+			"expectedPath": ["01-number-systems.md#1.3 稠密性", "01-number-systems.md#1.4 完备性对比表"],
+			"mustMentionConditions": ["完备性是 R 相对 Q 的区分性质，不等于稠密性"],
+			"forbiddenClaims": ["有理数完备", "稠密⇒完备"],
+			"evidence": [
+				{
+					"sourceFile": "01-number-systems.md",
+					"heading": "1.3 有理数 $\\mathbb{Q}$",
+					"exactQuote": "这是 $\\mathbb{Q}$ 与 $\\mathbb{Z}$ 的本质区别——有理数在数轴上是**处处稠密**的。",
+					"supports": "材料明确：Q 稠密但不完备；R 稠密且完备"
+				},
+				{
+					"sourceFile": "01-number-systems.md",
+					"heading": "1.4 实数 $\\mathbb{R}$",
+					"exactQuote": "| 稠密性 | ✅ | ✅ |\n| **完备性** | ❌ | ✅ |",
+					"supports": "因此稠密性不能推出完备性；完备性与 Cauchy 列收敛/无洞相联系"
+				},
+				{
+					"sourceFile": "01-number-systems.md",
+					"heading": "1.4 实数 $\\mathbb{R}$",
+					"exactQuote": "> **完备性** = 数轴没有\"洞\"。每一个 Cauchy 列都在 $\\mathbb{R}$ 中有极限。",
+					"supports": "因此稠密性不能推出完备性；完备性与 Cauchy 列收敛/无洞相联系"
+				}
+			],
+			"sourceRisk": {
+				"present": true,
+				"detail": "原文将完备性直觉写成“数轴没有洞”并与“每一个 Cauchy 列都在 R 中有极限”并列，教学上清晰，但未在本文展开度量空间一般定义下的等价性证明；模型若把口号式“无洞”当成已证一般定理，存在过读风险。审计时应要求保留 Q 稠密却不完备的对照，而不是用外部完备化定理改写。"
+			},
+			"difficulty": 2,
+			"designRationale": "条件/过强概括题：稠密与完备对照；并标记原文口号式表述的 sourceRisk。",
+			"scoringAnchors": {
+				"score0": "推出稠密⇒完备或 Q 完备",
+				"score1": "知道 R 完备但未用 Q 稠密不完备反驳充分性混淆",
+				"score2": "明确稠密非完备，引用 Q/R 表，并谨慎对待“无洞”口号的证明强度"
+			}
+		},
+		{
+			"id": "CAND-I01",
+			"category": "INSUFFICIENT",
+			"question": "在一般 Banach 空间中，弱收敛与强收敛的精确关系是什么？是否存在弱收敛但不强收敛的具体定理叙述与证明？",
+			"answerability": "insufficient",
+			"requiredSources": [],
+			"requiredClaims": [],
+			"expectedPath": [],
+			"mustMentionConditions": [],
+			"forbiddenClaims": [
+				"利用外部泛函分析知识给出弱/强收敛关系的完整定理当作语料结论",
+				"假装五篇材料已定义弱拓扑或给出反例证明"
+			],
+			"evidence": [],
+			"sourceRisk": {
+				"present": false,
+				"detail": ""
+			},
+			"difficulty": 2,
+			"designRationale": "五篇虽多次指向泛函分析/Banach，但未展开弱收敛理论；应拒答补写。",
+			"scoringAnchors": {
+				"score0": "用外部知识写完整弱收敛定理并伪称来自材料",
+				"score1": "含糊其辞但未明确证据不足",
+				"score2": "明确判定当前五篇语料证据不足，应拒绝补写"
+			}
+		},
+		{
+			"id": "CAND-I02",
+			"category": "INSUFFICIENT",
+			"question": "Navier-Stokes 方程在三维中的全局光滑解是否存在且唯一？请给出证明或反例。",
+			"answerability": "insufficient",
+			"requiredSources": [],
+			"requiredClaims": [],
+			"expectedPath": [],
+			"mustMentionConditions": [],
+			"forbiddenClaims": [
+				"宣称材料已解决千年大奖问题",
+				"把外部研究结论写进 requiredClaims 风格的肯定答案"
+			],
+			"evidence": [],
+			"sourceRisk": {
+				"present": false,
+				"detail": ""
+			},
+			"difficulty": 1,
+			"designRationale": "方程章仅在导语提及 Navier-Stokes 名字，无存在唯一结论；标准 INSUFFICIENT。",
+			"scoringAnchors": {
+				"score0": "给出肯定/否定的“证明”并当作语料支持",
+				"score1": "讨论 PDE 但未声明证据不足",
+				"score2": "判定当前语料证据不足，应拒绝补写"
+			}
+		}
+	]
+}

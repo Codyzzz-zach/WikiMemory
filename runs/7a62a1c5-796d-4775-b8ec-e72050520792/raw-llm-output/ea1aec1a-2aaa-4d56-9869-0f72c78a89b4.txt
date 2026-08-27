@@ -1,0 +1,349 @@
+{
+  "propositions": [
+    {
+      "text": "一级性质对比总表列出了不同数系在加法封闭性、是否有加法逆元、乘法封闭性、是否有乘法逆元、有序性、可数性、完备性、代数封闭性和结构方面的性质对比。",
+      "exactQuote": "### 一级性质对比总表\n\n| 性质 | $\\mathbb{N}$ | $\\mathbb{Z}$ | $\\mathbb{Q}$ | $\\mathbb{R}$ | $\\mathbb{C}$ |\n|------|:---:|:---:|:---:|:---:|:---:|\n| 加法封闭 | ✅ | ✅ | ✅ | ✅ | ✅ |\n| 有加法逆元 | ❌ | ✅ | ✅ | ✅ | ✅ |\n| 乘法封闭 | ✅ | ✅ | ✅ | ✅ | ✅ |\n| 有乘法逆元 | ❌ | ❌ | ✅ | ✅ | ✅ |\n| 有序 | ✅ | ✅ | ✅ | ✅ | ❌ |\n| 可数 | ✅ | ✅ | ✅ | ❌ | ❌ |\n| 完备 | — | — | ❌ | ✅ | ✅ |\n| 代数封闭 | ❌ | ❌ | ❌ | ❌ | ✅ |\n| **结构** | 幺半群 | 整环 | 域 | 完备有序域 | 代数封闭域 |",
+      "blockId": "01-number-systems#block-97"
+    },
+    {
+      "text": "自然数集 N 是加法封闭的。",
+      "exactQuote": "| 性质 | $\\mathbb{N}$ | $\\mathbb{Z}$ | $\\mathbb{Q}$ | $\\mathbb{R}$ | $\\mathbb{C}$ |\n|------|:---:|:---:|:---:|:---:|:---:|\n| 加法封闭 | ✅ | ✅ | ✅ | ✅ | ✅ |",
+      "blockId": "01-number-systems#block-97",
+      "relatesTo": { "fromPropIndex": 0, "type": "RELATED_TO" }
+    },
+    {
+      "text": "整数集 Z 是加法封闭的。",
+      "exactQuote": "| 性质 | $\\mathbb{N}$ | $\\mathbb{Z}$ | $\\mathbb{Q}$ | $\\mathbb{R}$ | $\\mathbb{C}$ |\n|------|:---:|:---:|:---:|:---:|:---:|\n| 加法封闭 | ✅ | ✅ | ✅ | ✅ | ✅ |",
+      "blockId": "01-number-systems#block-97",
+      "relatesTo": { "fromPropIndex": 0, "type": "RELATED_TO" }
+    },
+    {
+      "text": "有理数集 Q 是加法封闭的。",
+      "exactQuote": "| 性质 | $\\mathbb{N}$ | $\\mathbb{Z}$ | $\\mathbb{Q}$ | $\\mathbb{R}$ | $\\mathbb{C}$ |\n|------|:---:|:---:|:---:|:---:|:---:|\n| 加法封闭 | ✅ | ✅ | ✅ | ✅ | ✅ |",
+      "blockId": "01-number-systems#block-97",
+      "relatesTo": { "fromPropIndex": 0, "type": "RELATED_TO" }
+    },
+    {
+      "text": "实数集 R 是加法封闭的。",
+      "exactQuote": "| 性质 | $\\mathbb{N}$ | $\\mathbb{Z}$ | $\\mathbb{Q}$ | $\\mathbb{R}$ | $\\mathbb{C}$ |\n|------|:---:|:---:|:---:|:---:|:---:|\n| 加法封闭 | ✅ | ✅ | ✅ | ✅ | ✅ |",
+      "blockId": "01-number-systems#block-97",
+      "relatesTo": { "fromPropIndex": 0, "type": "RELATED_TO" }
+    },
+    {
+      "text": "复数集 C 是加法封闭的。",
+      "exactQuote": "| 性质 | $\\mathbb{N}$ | $\\mathbb{Z}$ | $\\mathbb{Q}$ | $\\mathbb{R}$ | $\\mathbb{C}$ |\n|------|:---:|:---:|:---:|:---:|:---:|\n| 加法封闭 | ✅ | ✅ | ✅ | ✅ | ✅ |",
+      "blockId": "01-number-systems#block-97",
+      "relatesTo": { "fromPropIndex": 0, "type": "RELATED_TO" }
+    },
+    {
+      "text": "自然数集 N 没有加法逆元。",
+      "exactQuote": "| 有加法逆元 | ❌ | ✅ | ✅ | ✅ | ✅ |",
+      "blockId": "01-number-systems#block-97",
+      "relatesTo": { "fromPropIndex": 0, "type": "RELATED_TO" }
+    },
+    {
+      "text": "整数集 Z 有加法逆元。",
+      "exactQuote": "| 有加法逆元 | ❌ | ✅ | ✅ | ✅ | ✅ |",
+      "blockId": "01-number-systems#block-97",
+      "relatesTo": { "fromPropIndex": 0, "type": "RELATED_TO" }
+    },
+    {
+      "text": "有理数集 Q 有加法逆元。",
+      "exactQuote": "| 有加法逆元 | ❌ | ✅ | ✅ | ✅ | ✅ |",
+      "blockId": "01-number-systems#block-97",
+      "relatesTo": { "fromPropIndex": 0, "type": "RELATED_TO" }
+    },
+    {
+      "text": "实数集 R 有加法逆元。",
+      "exactQuote": "| 有加法逆元 | ❌ | ✅ | ✅ | ✅ | ✅ |",
+      "blockId": "01-number-systems#block-97",
+      "relatesTo": { "fromPropIndex": 0, "type": "RELATED_TO" }
+    },
+    {
+      "text": "复数集 C 有加法逆元。",
+      "exactQuote": "| 有加法逆元 | ❌ | ✅ | ✅ | ✅ | ✅ |",
+      "blockId": "01-number-systems#block-97",
+      "relatesTo": { "fromPropIndex": 0, "type": "RELATED_TO" }
+    },
+    {
+      "text": "自然数集 N 是乘法封闭的。",
+      "exactQuote": "| 乘法封闭 | ✅ | ✅ | ✅ | ✅ | ✅ |",
+      "blockId": "01-number-systems#block-97",
+      "relatesTo": { "fromPropIndex": 0, "type": "RELATED_TO" }
+    },
+    {
+      "text": "整数集 Z 是乘法封闭的。",
+      "exactQuote": "| 乘法封闭 | ✅ | ✅ | ✅ | ✅ | ✅ |",
+      "blockId": "01-number-systems#block-97",
+      "relatesTo": { "fromPropIndex": 0, "type": "RELATED_TO" }
+    },
+    {
+      "text": "有理数集 Q 是乘法封闭的。",
+      "exactQuote": "| 乘法封闭 | ✅ | ✅ | ✅ | ✅ | ✅ |",
+      "blockId": "01-number-systems#block-97",
+      "relatesTo": { "fromPropIndex": 0, "type": "RELATED_TO" }
+    },
+    {
+      "text": "实数集 R 是乘法封闭的。",
+      "exactQuote": "| 乘法封闭 | ✅ | ✅ | ✅ | ✅ | ✅ |",
+      "blockId": "01-number-systems#block-97",
+      "relatesTo": { "fromPropIndex": 0, "type": "RELATED_TO" }
+    },
+    {
+      "text": "复数集 C 是乘法封闭的。",
+      "exactQuote": "| 乘法封闭 | ✅ | ✅ | ✅ | ✅ | ✅ |",
+      "blockId": "01-number-systems#block-97",
+      "relatesTo": { "fromPropIndex": 0, "type": "RELATED_TO" }
+    },
+    {
+      "text": "自然数集 N 没有乘法逆元。",
+      "exactQuote": "| 有乘法逆元 | ❌ | ❌ | ✅ | ✅ | ✅ |",
+      "blockId": "01-number-systems#block-97",
+      "relatesTo": { "fromPropIndex": 0, "type": "RELATED_TO" }
+    },
+    {
+      "text": "整数集 Z 没有乘法逆元。",
+      "exactQuote": "| 有乘法逆元 | ❌ | ❌ | ✅ | ✅ | ✅ |",
+      "blockId": "01-number-systems#block-97",
+      "relatesTo": { "fromPropIndex": 0, "type": "RELATED_TO" }
+    },
+    {
+      "text": "有理数集 Q 有乘法逆元。",
+      "exactQuote": "| 有乘法逆元 | ❌ | ❌ | ✅ | ✅ | ✅ |",
+      "blockId": "01-number-systems#block-97",
+      "relatesTo": { "fromPropIndex": 0, "type": "RELATED_TO" }
+    },
+    {
+      "text": "实数集 R 有乘法逆元。",
+      "exactQuote": "| 有乘法逆元 | ❌ | ❌ | ✅ | ✅ | ✅ |",
+      "blockId": "01-number-systems#block-97",
+      "relatesTo": { "fromPropIndex": 0, "type": "RELATED_TO" }
+    },
+    {
+      "text": "复数集 C 有乘法逆元。",
+      "exactQuote": "| 有乘法逆元 | ❌ | ❌ | ✅ | ✅ | ✅ |",
+      "blockId": "01-number-systems#block-97",
+      "relatesTo": { "fromPropIndex": 0, "type": "RELATED_TO" }
+    },
+    {
+      "text": "自然数集 N 是有序的。",
+      "exactQuote": "| 有序 | ✅ | ✅ | ✅ | ✅ | ❌ |",
+      "blockId": "01-number-systems#block-97",
+      "relatesTo": { "fromPropIndex": 0, "type": "RELATED_TO" }
+    },
+    {
+      "text": "整数集 Z 是有序的。",
+      "exactQuote": "| 有序 | ✅ | ✅ | ✅ | ✅ | ❌ |",
+      "blockId": "01-number-systems#block-97",
+      "relatesTo": { "fromPropIndex": 0, "type": "RELATED_TO" }
+    },
+    {
+      "text": "有理数集 Q 是有序的。",
+      "exactQuote": "| 有序 | ✅ | ✅ | ✅ | ✅ | ❌ |",
+      "blockId": "01-number-systems#block-97",
+      "relatesTo": { "fromPropIndex": 0, "type": "RELATED_TO" }
+    },
+    {
+      "text": "实数集 R 是有序的。",
+      "exactQuote": "| 有序 | ✅ | ✅ | ✅ | ✅ | ❌ |",
+      "blockId": "01-number-systems#block-97",
+      "relatesTo": { "fromPropIndex": 0, "type": "RELATED_TO" }
+    },
+    {
+      "text": "复数集 C 不是有序的。",
+      "exactQuote": "| 有序 | ✅ | ✅ | ✅ | ✅ | ❌ |",
+      "blockId": "01-number-systems#block-97",
+      "relatesTo": { "fromPropIndex": 0, "type": "RELATED_TO" }
+    },
+    {
+      "text": "自然数集 N 是可数的。",
+      "exactQuote": "| 可数 | ✅ | ✅ | ✅ | ❌ | ❌ |",
+      "blockId": "01-number-systems#block-97",
+      "relatesTo": { "fromPropIndex": 0, "type": "RELATED_TO" }
+    },
+    {
+      "text": "整数集 Z 是可数的。",
+      "exactQuote": "| 可数 | ✅ | ✅ | ✅ | ❌ | ❌ |",
+      "blockId": "01-number-systems#block-97",
+      "relatesTo": { "fromPropIndex": 0, "type": "RELATED_TO" }
+    },
+    {
+      "text": "有理数集 Q 是可数的。",
+      "exactQuote": "| 可数 | ✅ | ✅ | ✅ | ❌ | ❌ |",
+      "blockId": "01-number-systems#block-97",
+      "relatesTo": { "fromPropIndex": 0, "type": "RELATED_TO" }
+    },
+    {
+      "text": "实数集 R 不是可数的。",
+      "exactQuote": "| 可数 | ✅ | ✅ | ✅ | ❌ | ❌ |",
+      "blockId": "01-number-systems#block-97",
+      "relatesTo": { "fromPropIndex": 0, "type": "RELATED_TO" }
+    },
+    {
+      "text": "复数集 C 不是可数的。",
+      "exactQuote": "| 可数 | ✅ | ✅ | ✅ | ❌ | ❌ |",
+      "blockId": "01-number-systems#block-97",
+      "relatesTo": { "fromPropIndex": 0, "type": "RELATED_TO" }
+    },
+    {
+      "text": "自然数集 N 的完备性标记为“—”（不适用）。",
+      "exactQuote": "| 完备 | — | — | ❌ | ✅ | ✅ |",
+      "blockId": "01-number-systems#block-97",
+      "relatesTo": { "fromPropIndex": 0, "type": "RELATED_TO" }
+    },
+    {
+      "text": "整数集 Z 的完备性标记为“—”（不适用）。",
+      "exactQuote": "| 完备 | — | — | ❌ | ✅ | ✅ |",
+      "blockId": "01-number-systems#block-97",
+      "relatesTo": { "fromPropIndex": 0, "type": "RELATED_TO" }
+    },
+    {
+      "text": "有理数集 Q 不是完备的。",
+      "exactQuote": "| 完备 | — | — | ❌ | ✅ | ✅ |",
+      "blockId": "01-number-systems#block-97",
+      "relatesTo": { "fromPropIndex": 0, "type": "RELATED_TO" }
+    },
+    {
+      "text": "实数集 R 是完备的。",
+      "exactQuote": "| 完备 | — | — | ❌ | ✅ | ✅ |",
+      "blockId": "01-number-systems#block-97",
+      "relatesTo": { "fromPropIndex": 0, "type": "RELATED_TO" }
+    },
+    {
+      "text": "复数集 C 是完备的。",
+      "exactQuote": "| 完备 | — | — | ❌ | ✅ | ✅ |",
+      "blockId": "01-number-systems#block-97",
+      "relatesTo": { "fromPropIndex": 0, "type": "RELATED_TO" }
+    },
+    {
+      "text": "自然数集 N 不是代数封闭的。",
+      "exactQuote": "| 代数封闭 | ❌ | ❌ | ❌ | ❌ | ✅ |",
+      "blockId": "01-number-systems#block-97",
+      "relatesTo": { "fromPropIndex": 0, "type": "RELATED_TO" }
+    },
+    {
+      "text": "整数集 Z 不是代数封闭的。",
+      "exactQuote": "| 代数封闭 | ❌ | ❌ | ❌ | ❌ | ✅ |",
+      "blockId": "01-number-systems#block-97",
+      "relatesTo": { "fromPropIndex": 0, "type": "RELATED_TO" }
+    },
+    {
+      "text": "有理数集 Q 不是代数封闭的。",
+      "exactQuote": "| 代数封闭 | ❌ | ❌ | ❌ | ❌ | ✅ |",
+      "blockId": "01-number-systems#block-97",
+      "relatesTo": { "fromPropIndex": 0, "type": "RELATED_TO" }
+    },
+    {
+      "text": "实数集 R 不是代数封闭的。",
+      "exactQuote": "| 代数封闭 | ❌ | ❌ | ❌ | ❌ | ✅ |",
+      "blockId": "01-number-systems#block-97",
+      "relatesTo": { "fromPropIndex": 0, "type": "RELATED_TO" }
+    },
+    {
+      "text": "复数集 C 是代数封闭的。",
+      "exactQuote": "| 代数封闭 | ❌ | ❌ | ❌ | ❌ | ✅ |",
+      "blockId": "01-number-systems#block-97",
+      "relatesTo": { "fromPropIndex": 0, "type": "RELATED_TO" }
+    },
+    {
+      "text": "自然数集 N 的结构是幺半群。",
+      "exactQuote": "| **结构** | 幺半群 | 整环 | 域 | 完备有序域 | 代数封闭域 |",
+      "blockId": "01-number-systems#block-97",
+      "relatesTo": { "fromPropIndex": 0, "type": "RELATED_TO" }
+    },
+    {
+      "text": "整数集 Z 的结构是整环。",
+      "exactQuote": "| **结构** | 幺半群 | 整环 | 域 | 完备有序域 | 代数封闭域 |",
+      "blockId": "01-number-systems#block-97",
+      "relatesTo": { "fromPropIndex": 0, "type": "RELATED_TO" }
+    },
+    {
+      "text": "有理数集 Q 的结构是域。",
+      "exactQuote": "| **结构** | 幺半群 | 整环 | 域 | 完备有序域 | 代数封闭域 |",
+      "blockId": "01-number-systems#block-97",
+      "relatesTo": { "fromPropIndex": 0, "type": "RELATED_TO" }
+    },
+    {
+      "text": "实数集 R 的结构是完备有序域。",
+      "exactQuote": "| **结构** | 幺半群 | 整环 | 域 | 完备有序域 | 代数封闭域 |",
+      "blockId": "01-number-systems#block-97",
+      "relatesTo": { "fromPropIndex": 0, "type": "RELATED_TO" }
+    },
+    {
+      "text": "复数集 C 的结构是代数封闭域。",
+      "exactQuote": "| **结构** | 幺半群 | 整环 | 域 | 完备有序域 | 代数封闭域 |",
+      "blockId": "01-number-systems#block-97",
+      "relatesTo": { "fromPropIndex": 0, "type": "RELATED_TO" }
+    },
+    {
+      "text": "数系扩张的关键概念包括Peano公理、等价类构造、Cantor对角线、Dedekind分割、完备性、代数基本定理、欧拉公式和数系扩张链。",
+      "exactQuote": "| # | 关键概念 | 直觉 | 连接章节 |\n|---|---------|------|---------|\n| 1 | **Peano公理** | 自然数=0+后继的递归结构 | $\\S$17 集合论 |\n| 2 | **等价类构造** | 整数/有理数=有序对的等价类 | $\\S$8 群环域 |\n| 3 | **Cantor对角线** | $\\mathbb{Q}$可数但$\\mathbb{R}$不可数 | $\\S$10 测度论 |\n| 4 | **Dedekind分割** | 实数=有理数轴上的\"刀口\" | $\\S$3 极限 |\n| 5 | **完备性** | $\\mathbb{R}$与$\\mathbb{Q}$的本质鸿沟 | $\\S$3, $\\S$12 微积分 |\n| 6 | **代数基本定理** | $\\mathbb{C}$是代数扩张的终点 | $\\S$8 域扩张 |\n| 7 | **欧拉公式** | $e^{i\\theta}=\\cos\\theta+i\\sin\\theta$ | $\\S$11 常数 |\n| 8 | **数系扩张链** | 每次扩张解决一种\"不够用\" | 全书线索 |",
+      "blockId": "01-number-systems#block-101"
+    },
+    {
+      "text": "Peano公理的关键直觉是自然数等于0加后继的递归结构。",
+      "exactQuote": "| 1 | **Peano公理** | 自然数=0+后继的递归结构 | $\\S$17 集合论 |",
+      "blockId": "01-number-systems#block-101",
+      "relatesTo": { "fromPropIndex": 45, "type": "RELATED_TO" }
+    },
+    {
+      "text": "等价类构造的直觉是整数和有理数可以看作有序对的等价类。",
+      "exactQuote": "| 2 | **等价类构造** | 整数/有理数=有序对的等价类 | $\\S$8 群环域 |",
+      "blockId": "01-number-systems#block-101",
+      "relatesTo": { "fromPropIndex": 45, "type": "RELATED_TO" }
+    },
+    {
+      "text": "Cantor对角线的直觉是有理数集可数但实数集不可数。",
+      "exactQuote": "| 3 | **Cantor对角线** | $\\mathbb{Q}$可数但$\\mathbb{R}$不可数 | $\\S$10 测度论 |",
+      "blockId": "01-number-systems#block-101",
+      "relatesTo": { "fromPropIndex": 45, "type": "RELATED_TO" }
+    },
+    {
+      "text": "Dedekind分割的直觉是把实数看作有理数轴上的刀口。",
+      "exactQuote": "| 4 | **Dedekind分割** | 实数=有理数轴上的\"刀口\" | $\\S$3 极限 |",
+      "blockId": "01-number-systems#block-101",
+      "relatesTo": { "fromPropIndex": 45, "type": "RELATED_TO" }
+    },
+    {
+      "text": "完备性概念强调实数集与有理数集的本质鸿沟。",
+      "exactQuote": "| 5 | **完备性** | $\\mathbb{R}$与$\\mathbb{Q}$的本质鸿沟 | $\\S$3, $\\S$12 微积分 |",
+      "blockId": "01-number-systems#block-101",
+      "relatesTo": { "fromPropIndex": 45, "type": "RELATED_TO" }
+    },
+    {
+      "text": "代数基本定理指出复数集是代数扩张的终点。",
+      "exactQuote": "| 6 | **代数基本定理** | $\\mathbb{C}$是代数扩张的终点 | $\\S$8 域扩张 |",
+      "blockId": "01-number-systems#block-101",
+      "relatesTo": { "fromPropIndex": 45, "type": "RELATED_TO" }
+    },
+    {
+      "text": "欧拉公式为 $e^{i\\theta}=\\cos\\theta+i\\sin\\theta$。",
+      "exactQuote": "| 7 | **欧拉公式** | $e^{i\\theta}=\\cos\\theta+i\\sin\\theta$ | $\\S$11 常数 |",
+      "blockId": "01-number-systems#block-101",
+      "relatesTo": { "fromPropIndex": 45, "type": "RELATED_TO" }
+    },
+    {
+      "text": "数系扩张链的直觉是每次扩张解决一种“不够用”。",
+      "exactQuote": "| 8 | **数系扩张链** | 每次扩张解决一种\"不够用\" | 全书线索 |",
+      "blockId": "01-number-systems#block-101",
+      "relatesTo": { "fromPropIndex": 45, "type": "RELATED_TO" }
+    },
+    {
+      "text": "数系的扩张不是数学家凭空发明，而是被问题的“不够用”逼出来的。",
+      "exactQuote": "> 💡 **核心哲学**：数系的扩张不是数学家凭空发明，而是**被问题的\"不够用\"逼出来的**。减法→负数，除法→分数，极限→无理数，方程→复数。每一步失去一些性质（如 $\\mathbb{C}$ 失去了有序性），但获得了更强大的运算能力。",
+      "blockId": "01-number-systems#block-102"
+    },
+    {
+      "text": "减法导致负数，除法导致分数，极限导致无理数，方程导致复数。",
+      "exactQuote": "减法→负数，除法→分数，极限→无理数，方程→复数。",
+      "blockId": "01-number-systems#block-102",
+      "relatesTo": { "fromPropIndex": 53, "type": "RELATED_TO" }
+    },
+    {
+      "text": "每一步扩张会失去一些性质，例如复数集失去了有序性。",
+      "exactQuote": "每一步失去一些性质（如 $\\mathbb{C}$ 失去了有序性），但获得了更强大的运算能力。",
+      "blockId": "01-number-systems#block-102",
+      "relatesTo": { "fromPropIndex": 53, "type": "RELATED_TO" }
+    }
+  ]
+}

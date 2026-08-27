@@ -1,0 +1,73 @@
+{
+	"schemaVersion": "wge-goal4-strong-relation-proposal-contract/v1",
+	"status": "FROZEN_BEFORE_IMPLEMENTATION",
+	"createdAt": "2026-08-11T00:00:00+08:00",
+	"stageBRead": false,
+	"inputs": {
+		"diagnostic": "experiments/goal4/goal4-strong-relation-proposal-diagnostic-v1.json",
+		"diagnosticSha256": "358e77b29d85656be8947cf9125d4aff47a5b610ea88293498065b97daa25a45",
+		"calibration": "experiments/goal4/goal4-relation-proposal-calibration-v1.json",
+		"calibrationSha256": "b9a95a7a981948b8dc155209c6d02d5e905a780f9600ccd351c17fe732d6fa97"
+	},
+	"objective": "Reduce false strong cross-material Relation proposals and their audit cost without weakening semantic publication gates or suppressing valid strong relations across domains.",
+	"interventionV1": {
+		"allowed": [
+			"Add domain-neutral type and direction contracts for SUPPORTS, REQUIRES and DERIVED_FROM to RELATION_DETECT_SYSTEM.",
+			"Add generic negative examples for co-occurrence, definition-to-detail, partial support and shared-attribute/different-subject errors.",
+			"Clarify that a rejected strong edge may become RELATED_TO only if it independently meets navigation-utility requirements."
+		],
+		"forbidden": [
+			"Source IDs, benchmark question IDs or answer labels in prompts or ranking.",
+			"Llama-, model-card- or AI-specific production heuristics.",
+			"Using downstream audit verdicts as runtime detector inputs.",
+			"Relaxing Relation semantic audit, type critic, evidence resolution or publication fail-closed behavior.",
+			"Changing candidate retrieval, publication budgets or post-audit compaction in this intervention."
+		]
+	},
+	"evaluationOrder": [
+		"Run the frozen 10-case cross-domain calibration without labels in prompts.",
+		"If calibration passes, replay detection for frozen source s200-ai-llama-004 against the same v10 claims and candidate retrieval state.",
+		"If detector gates pass, semantically audit every replay candidate in an isolated workspace with no canonical publication writes.",
+		"Only after offline gates pass may a maximum four-source online canary run."
+	],
+	"calibrationAcceptance": {
+		"minimumExactTypeAccuracy": 0.8,
+		"minimumTrueStrongExactTypeRecall": 0.8333,
+		"maximumFalseStrongPredictionsAcrossWeakOrNoneCases": 0,
+		"maximumCasesWithMultipleConflictingRelations": 0
+	},
+	"frozenSourceReplayAcceptance": {
+		"baselineGeneratedCandidates": 40,
+		"baselineSupportCandidates": 23,
+		"baselineTrueSupportAfterManualReview": 0,
+		"baselineRelationAuditTokens": 50732,
+		"maximumSupportCandidates": 3,
+		"maximumTotalCandidates": 25,
+		"minimumRelationAuditTokenReduction": 0.3,
+		"allReturnedCandidatesAudited": true,
+		"candidateAccountingExact": true,
+		"allCanonicalEdgesRequireExistingSemanticGates": true,
+		"manualReviewEveryCanonicalEdge": true,
+		"maximumHarmfulOrUnfaithfulCanonicalEdges": 0,
+		"canonicalPublicationWrites": 0
+	},
+	"onlineCanaryAcceptance": {
+		"maximumSources": 4,
+		"sourceFailures": 0,
+		"allLifecycleAccountingExact": true,
+		"noIncreaseInHarmfulCanonicalEdges": true,
+		"compareDetectorTypeDistributionAndRelationAuditTokensAgainstV10": true,
+		"noScaleBeyondFourSourcesWithoutNewDecision": true
+	},
+	"decisionRules": {
+		"calibrationFails": "Reject prompt intervention; do not run frozen-source semantic audit.",
+		"calibrationPassesButFrozenSourceCostFails": "Keep diagnosis, reject intervention, and evaluate a separately contracted pre-audit type router.",
+		"offlinePassesButOnlineRegresses": "Revert production prompt and retain only experimental reports.",
+		"allGatesPass": "Accept the detector type-contract change and freeze the resulting prompt version."
+	},
+	"interpretationLimits": [
+		"The v10 model audit is diagnostic evidence, not human gold; manual review of all 23 SUPPORTS candidates supplies the frozen false-positive judgment for that source.",
+		"The calibration set is intentionally small and cross-domain. Passing it establishes guardrails, not general Relation quality.",
+		"This Goal optimizes proposal precision and cost, not answer-level Graph utility."
+	]
+}

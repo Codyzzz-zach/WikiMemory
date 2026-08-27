@@ -1,0 +1,39 @@
+{
+  "questionId": "B-E-HEALTH-005",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 1235,
+    "completionTokens": 466,
+    "totalTokens": 1701,
+    "promptCacheHitTokens": 0,
+    "promptCacheMissTokens": 1235,
+    "reasoningTokens": 0
+  },
+  "request": {
+    "systemPrompt": "你是盲测评分员，不知道匿名答案属于哪个实验组。只按题目、评分锚点和证据评估，不用外部常识修正答案。\n每项 0-4 分：requiredPointCoverage、conditionFidelity、evidenceGrounding、answerabilityDiscipline。\n若答案反转来源归属、抹掉关键条件/时间、把提案当最终规范、编造上下文外事实，hardFailure=true。\n只输出严格 JSON：{\"scores\":[{\"sampleId\":\"...\",\"requiredPointCoverage\":0,\"conditionFidelity\":0,\"evidenceGrounding\":0,\"answerabilityDiscipline\":0,\"hardFailure\":false,\"rationale\":\"...\"}]}。",
+    "userPrompt": "{\"question\":\"从 2020-03 到 2020-07，空气传播适用范围发生了什么可证实变化？\",\"answerability\":\"answerable\",\"requiredPoints\":[\"7 月文件明确更新 3 月文件\",\"从产生气溶胶医疗程序扩展到不能排除特定室内短距离气溶胶传播\"],\"forbiddenClaims\":[\"不得提高为无条件结论\"],\"requiredEvidence\":[{\"sourceId\":\"health-who-march-2020-001\",\"exactQuote\":\"In the context of COVID-19, airborne transmission may be possible in specific circumstances and settings in which procedures or support treatments that generate aerosols are performed; i.e., endotracheal intubation, bronchoscopy, open suctioning, administration of nebulized treatment, manual ventilation before intubation, turning the patient to the prone position, disconnecting the patient from the ventilator, non-invasive positive-pressure ventilation, tracheostomy, and cardiopulmonary resuscitation.\",\"role\":\"supports\"},{\"sourceId\":\"health-who-july-2020-002\",\"exactQuote\":\"This document is an update to the scientific brief published on 29 March 2020 entitled “Modes of transmission of virus causing COVID-19: implications for infection prevention and control (IPC) precaution recommendations” and includes new scientific evidence available on transmission of SARS-CoV-2, the virus that causes COVID-19.\",\"role\":\"supports\"},{\"sourceId\":\"health-who-july-2020-002\",\"exactQuote\":\"Short-range aerosol transmission, particularly in specific indoor locations, such as crowded and inadequately ventilated spaces over a prolonged period of time with infected persons cannot be ruled out.\",\"role\":\"supports\"}],\"sourcePriorityRule\":\"P/C 决定规范、论文与实现事实；S 只能作为有归属的解释，不能推翻一手版本文本。\",\"anonymousAnswers\":[{\"sampleId\":\"sample-4a35d188-0206-44ad-bb0d-38417c7ff346\",\"questionId\":\"B-E-HEALTH-005\",\"answer\":\"{\\n  \\\"answer\\\": \\\"2020年3月29日，WHO发布科学简报，未明确认可空气传播。2020年7月9日更新版承认短距离气溶胶传播在特定室内场所（拥挤、通风不良、长时间接触）不能排除。2020年10月20日，WHO正式承认气溶胶可传播病毒，但仅限于特定环境。随后六个月，WHO逐步调整建议，指出气溶胶可携带病毒超过1米并悬浮在空气中。\\\",\\n  \\\"citations\\\": [\\n    \\\"SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/health-biology/health-nature-airborne-2022-003.md:1-6\\\",\\n    \\\"SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/health-biology/health-who-july-2020-002.md:1-6\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": [\\n    \\\"2020年3月29日简报的具体内容未提供，无法确认当时是否完全排除空气传播。\\\"\\n  ]\\n}\"},{\"sampleId\":\"sample-5b1fbd52-aa26-452f-bfcc-92b24250ca84\",\"questionId\":\"B-E-HEALTH-005\",\"answer\":\"{\\n  \\\"answer\\\": \\\"2020年3月29日，WHO的科学简报指出，在COVID-19背景下，空气传播可能仅在产生气溶胶的操作或支持治疗（如气管插管、支气管镜检查等）的特定情况下发生（claim:b587ec61aaf84d7d-474d339f3670f6c4）。2020年7月，WHO更新了该简报，承认短距离气溶胶传播在特定室内场所（如拥挤且通风不良的空间、长时间接触感染者）不能排除（claim:a1c7e701eebb9dc1-271d5603ab397f55），并指出该更新包含了新的科学证据（claim:a1c7e701eebb9dc1-8c2b8fcbcdf52208）。然而，WHO直到2020年10月20日才正式承认气溶胶可以传播病毒（claim:14069d5a982d18de-30df60c9afb3e05b）。\\\",\\n  \\\"citations\\\": [\\n    \\\"claim:b587ec61aaf84d7d-474d339f3670f6c4\\\",\\n    \\\"claim:a1c7e701eebb9dc1-271d5603ab397f55\\\",\\n    \\\"claim:a1c7e701eebb9dc1-8c2b8fcbcdf52208\\\",\\n    \\\"claim:14069d5a982d18de-30df60c9afb3e05b\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\"}]}"
+  },
+  "rawResponse": "{\n  \"scores\": [\n    {\n      \"sampleId\": \"sample-4a35d188-0206-44ad-bb0d-38417c7ff346\",\n      \"requiredPointCoverage\": 2,\n      \"conditionFidelity\": 2,\n      \"evidenceGrounding\": 1,\n      \"answerabilityDiscipline\": 1,\n      \"hardFailure\": true,\n      \"rationale\": \"答案包含了7月文件更新3月文件以及从产生气溶胶医疗程序扩展到特定室内短距离气溶胶传播，但额外添加了2020年10月20日WHO正式承认气溶胶传播等未在requiredPoints和requiredEvidence中提及的内容，且引用了未提供的来源（health-nature-airborne-2022-003），构成编造上下文外事实。同时，答案中'2020年3月29日，WHO发布科学简报，未明确认可空气传播'的表述与requiredEvidence中3月文件内容不完全一致，存在反转来源归属的嫌疑。因此hardFailure为true。\"\n    },\n    {\n      \"sampleId\": \"sample-5b1fbd52-aa26-452f-bfcc-92b24250ca84\",\n      \"requiredPointCoverage\": 3,\n      \"conditionFidelity\": 3,\n      \"evidenceGrounding\": 3,\n      \"answerabilityDiscipline\": 3,\n      \"hardFailure\": false,\n      \"rationale\": \"答案准确覆盖了requiredPoints：7月文件更新3月文件，以及从产生气溶胶医疗程序扩展到特定室内短距离气溶胶传播。条件忠实：正确引用了3月文件关于产生气溶胶医疗程序的内容和7月文件关于短距离气溶胶传播的内容。证据基础：引用了requiredEvidence中的claim，但额外添加了2020年10月20日WHO正式承认气溶胶传播的claim，该claim未在requiredEvidence中提供，但未明确违反forbiddenClaims（未提高为无条件结论），且未编造上下文外事实（可能来自其他来源）。answerabilityDiscipline：答案直接回答了问题，未超出范围。未发现hardFailure条件。\"\n    }\n  ]\n}",
+  "parsed": [
+    {
+      "sampleId": "sample-4a35d188-0206-44ad-bb0d-38417c7ff346",
+      "requiredPointCoverage": 2,
+      "conditionFidelity": 2,
+      "evidenceGrounding": 1,
+      "answerabilityDiscipline": 1,
+      "hardFailure": true,
+      "rationale": "答案包含了7月文件更新3月文件以及从产生气溶胶医疗程序扩展到特定室内短距离气溶胶传播，但额外添加了2020年10月20日WHO正式承认气溶胶传播等未在requiredPoints和requiredEvidence中提及的内容，且引用了未提供的来源（health-nature-airborne-2022-003），构成编造上下文外事实。同时，答案中'2020年3月29日，WHO发布科学简报，未明确认可空气传播'的表述与requiredEvidence中3月文件内容不完全一致，存在反转来源归属的嫌疑。因此hardFailure为true。"
+    },
+    {
+      "sampleId": "sample-5b1fbd52-aa26-452f-bfcc-92b24250ca84",
+      "requiredPointCoverage": 3,
+      "conditionFidelity": 3,
+      "evidenceGrounding": 3,
+      "answerabilityDiscipline": 3,
+      "hardFailure": false,
+      "rationale": "答案准确覆盖了requiredPoints：7月文件更新3月文件，以及从产生气溶胶医疗程序扩展到特定室内短距离气溶胶传播。条件忠实：正确引用了3月文件关于产生气溶胶医疗程序的内容和7月文件关于短距离气溶胶传播的内容。证据基础：引用了requiredEvidence中的claim，但额外添加了2020年10月20日WHO正式承认气溶胶传播的claim，该claim未在requiredEvidence中提供，但未明确违反forbiddenClaims（未提高为无条件结论），且未编造上下文外事实（可能来自其他来源）。answerabilityDiscipline：答案直接回答了问题，未超出范围。未发现hardFailure条件。"
+    }
+  ]
+}

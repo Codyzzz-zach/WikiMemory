@@ -1,0 +1,588 @@
+{
+  "claims": [
+    {
+      "statement": "泛函分析是线性代数在无限维空间的自然推广。",
+      "evidenceQuotes": ["泛函分析是线性代数在无限维空间的自然推广。"],
+      "blockIds": ["09-functional-analysis#block-1"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "泛函分析把函数视作向量。",
+      "evidenceQuotes": ["它把函数视作向量"],
+      "blockIds": ["09-functional-analysis#block-1"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "泛函分析把算子视作矩阵。",
+      "evidenceQuotes": ["把算子视作矩阵"],
+      "blockIds": ["09-functional-analysis#block-1"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "泛函分析把特征值推广为谱。",
+      "evidenceQuotes": ["把特征值推广为谱"],
+      "blockIds": ["09-functional-analysis#block-1"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "量子力学、信号处理、偏微分方程的理论基础全部建立在泛函分析之上。",
+      "evidenceQuotes": ["量子力学、信号处理、偏微分方程的理论基础全部建立在此之上。"],
+      "blockIds": ["09-functional-analysis#block-1"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "泛函 J: V → ℝ（或 ℂ）的输入是函数，输出是数。",
+      "evidenceQuotes": ["**泛函** $J: V \\to \\mathbb{R}$（或 $\\mathbb{C}$）——输入是函数，输出是数。"],
+      "blockIds": ["09-functional-analysis#block-5"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "定积分泛函 J[f] = ∫_a^b f(x)dx 用于计算面积。",
+      "evidenceQuotes": ["| 定积分 | $J[f] = \\int_a^b f(x)dx$ | 面积 |"],
+      "blockIds": ["09-functional-analysis#block-6"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "弧长泛函 J[f] = ∫_a^b √(1+f'(x)²)dx 用于最短路径。",
+      "evidenceQuotes": ["| 弧长 | $J[f] = \\int_a^b \\sqrt{1+f'(x)^2}dx$ | 最短路径 |"],
+      "blockIds": ["09-functional-analysis#block-6"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "能量泛函 J[f] = ∫ ‖∇f‖² dx 是 Dirichlet 能量。",
+      "evidenceQuotes": ["| 能量 | $J[f] = \\int \\|\\nabla f\\|^2 dx$ | Dirichlet 能量 |"],
+      "blockIds": ["09-functional-analysis#block-6"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "Dirac δ 泛函 J[f] = f(0) 用于在0处采样。",
+      "evidenceQuotes": ["| Dirac δ | $J[f] = f(0)$ | \"在0处采样\" |"],
+      "blockIds": ["09-functional-analysis#block-6"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "最大范数泛函 J[f] = sup_x ‖f(x)‖ 用于最坏情况。",
+      "evidenceQuotes": ["| 最大范数 | $J[f] = \\sup_x \\|f(x)\\|$ | 最坏情况 |"],
+      "blockIds": ["09-functional-analysis#block-6"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "Euler-Lagrange 方程是变分法的核心结果。",
+      "evidenceQuotes": ["**Euler-Lagrange 方程**是变分法的核心结果。"],
+      "blockIds": ["09-functional-analysis#block-8"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "若 J[y] = ∫_a^b L(x, y, y')dx 在 y(x) 处取极值，则满足 Euler-Lagrange 方程。",
+      "evidenceQuotes": ["若 $J[y] = \\int_a^b L(x, y, y')dx$ 在 $y(x)$ 处取极值，则："],
+      "blockIds": ["09-functional-analysis#block-8"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "Euler-Lagrange 方程为 ∂L/∂y - d/dx(∂L/∂y') = 0。",
+      "evidenceQuotes": ["$$\n\\frac{\\partial L}{\\partial y} - \\frac{d}{dx}\\left(\\frac{\\partial L}{\\partial y'}\\right) = 0\n$$"],
+      "blockIds": ["09-functional-analysis#block-9"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "将 L 设为 Lagrangian = 动能 - 势能，Euler-Lagrange 方程就给出了系统的运动方程。",
+      "evidenceQuotes": ["将 $L$ 设为 Lagrangian = 动能 - 势能，Euler-Lagrange 方程就给出了系统的运动方程。"],
+      "blockIds": ["09-functional-analysis#block-10"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "Euler-Lagrange 方程是从最小作用量原理推导牛顿力学、电磁学、广义相对论的基础。",
+      "evidenceQuotes": ["这是从\"最小作用量原理\"推导牛顿力学、电磁学、广义相对论的基础。"],
+      "blockIds": ["09-functional-analysis#block-10"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "Banach 空间是完备赋范空间。",
+      "evidenceQuotes": ["| Banach空间 | $\\mathbb{R}^n$ | 完备赋范空间 |"],
+      "blockIds": ["09-functional-analysis#block-15"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "Hilbert 空间是完备内积空间。",
+      "evidenceQuotes": ["| Hilbert空间 | $\\mathbb{R}^n$ 带内积 | 完备内积空间 |"],
+      "blockIds": ["09-functional-analysis#block-15"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "线性算子是微分、积分、乘法算子。",
+      "evidenceQuotes": ["| 线性算子 | 矩阵 $A \\in M_{n\\times n}$ | 微分/积分/乘法算子 |"],
+      "blockIds": ["09-functional-analysis#block-15"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "有界算子满足 ‖T‖ = sup_{‖x‖=1} ‖Tx‖ < ∞。",
+      "evidenceQuotes": ["| 有界算子 | — | $\\|T\\| = \\sup_{\\|x\\|=1}\\|Tx\\| < \\infty$ |"],
+      "blockIds": ["09-functional-analysis#block-15"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "紧算子将有界集的像映为相对紧集。",
+      "evidenceQuotes": ["| 紧算子 | — | 有界集的像是相对紧的 |"],
+      "blockIds": ["09-functional-analysis#block-15"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "Hahn-Banach 定理：子空间上的线性泛函可延拓到全空间。",
+      "evidenceQuotes": ["| **Hahn-Banach** | 子空间上的线性泛函可延拓到全空间 | 分离凸集，对偶理论 |"],
+      "blockIds": ["09-functional-analysis#block-17"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "开映射定理：Banach 空间之间的连续线性满射把开集映到开集。",
+      "evidenceQuotes": ["| **开映射** | Banach空间之间的连续线性满射把开集映到开集 | 逆算子连续性 |"],
+      "blockIds": ["09-functional-analysis#block-17"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "闭图像定理：若算子的图像是闭集，则算子连续。",
+      "evidenceQuotes": ["| **闭图像** | 若算子的图像是闭集，则算子连续 | 验证无界算子的有界性 |"],
+      "blockIds": ["09-functional-analysis#block-17"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "一致有界定理（Banach-Steinhaus）：逐点有界 ⇒ 一致有界。",
+      "evidenceQuotes": ["| **一致有界 (Banach-Steinhaus)** | 逐点有界 ⇒ 一致有界 | 处处收敛→算子族有界 |"],
+      "blockIds": ["09-functional-analysis#block-17"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "在完备空间中，逐点的性质往往能推出全局的性质。",
+      "evidenceQuotes": ["在完备空间中，**逐点的性质往往能推出全局的性质**。"],
+      "blockIds": ["09-functional-analysis#block-18"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "有界算子必然连续。",
+      "evidenceQuotes": ["| 连续性 | ✅ 必然连续 | ❌ 不连续 |"],
+      "blockIds": ["09-functional-analysis#block-22"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "无界算子不连续。",
+      "evidenceQuotes": ["| 连续性 | ✅ 必然连续 | ❌ 不连续 |"],
+      "blockIds": ["09-functional-analysis#block-22"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "有界算子的定义域是全空间。",
+      "evidenceQuotes": ["| 定义域 | 全空间 | 只能是稠密子空间 |"],
+      "blockIds": ["09-functional-analysis#block-22"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "无界算子的定义域只能是稠密子空间。",
+      "evidenceQuotes": ["| 定义域 | 全空间 | 只能是稠密子空间 |"],
+      "blockIds": ["09-functional-analysis#block-22"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "有界算子自动闭。",
+      "evidenceQuotes": ["| 闭性 | 自动闭 | 需要验证闭性 |"],
+      "blockIds": ["09-functional-analysis#block-22"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "无界算子需要验证闭性。",
+      "evidenceQuotes": ["| 闭性 | 自动闭 | 需要验证闭性 |"],
+      "blockIds": ["09-functional-analysis#block-22"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "有界算子的谱是有界集。",
+      "evidenceQuotes": ["| 谱 | 有界集 | 可为整个 $\\mathbb{C}$ |"],
+      "blockIds": ["09-functional-analysis#block-22"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "无界算子的谱可为整个 ℂ。",
+      "evidenceQuotes": ["| 谱 | 有界集 | 可为整个 $\\mathbb{C}$ |"],
+      "blockIds": ["09-functional-analysis#block-22"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "X上的所有连续线性泛函构成对偶空间X*。",
+      "evidenceQuotes": ["$X$ 上的所有连续线性泛函构成**对偶空间** $X^*$。"],
+      "blockIds": ["09-functional-analysis#block-24"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "Riesz表示定理（Hilbert空间版本）指出每个连续线性泛函f∈H*都可由内积表示为f(x)=⟨x,y⟩对某唯一的y∈H。",
+      "evidenceQuotes": ["**Riesz 表示定理**（Hilbert空间版本）：每个连续线性泛函 $f \\in H^*$ 都可由内积表示为："],
+      "blockIds": ["09-functional-analysis#block-25"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "f(x)=⟨x,y⟩对某唯一的y∈H。",
+      "evidenceQuotes": ["f(x) = \\langle x, y \\rangle \\quad \\text{对某唯一的 } y \\in H"],
+      "blockIds": ["09-functional-analysis#block-26"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "Hilbert空间中的作用在向量上的泛函本质上就是与某个固定向量做内积。",
+      "evidenceQuotes": ["这意味着 Hilbert 空间中的\"作用在向量上的泛函\"本质上就是\"与某个固定向量做内积\"。"],
+      "blockIds": ["09-functional-analysis#block-27"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "H≅H*。",
+      "evidenceQuotes": ["$H \\cong H^*$！"],
+      "blockIds": ["09-functional-analysis#block-27"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "在无限维空间中，算子T的谱σ(T)推广了有限维中矩阵的特征值集合。",
+      "evidenceQuotes": ["在无限维空间中，算子 $T$ 的**谱** $\\sigma(T)$ 推广了有限维中矩阵的**特征值集合**。"],
+      "blockIds": ["09-functional-analysis#block-31"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "λI-T不可逆当且仅当λ∈σ(T)。",
+      "evidenceQuotes": ["\\lambda I - T \\text{ 不可逆} \\iff \\lambda \\in \\sigma(T)"],
+      "blockIds": ["09-functional-analysis#block-32"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "在有限维中，不可逆等于有特征值。",
+      "evidenceQuotes": ["在有限维中，\"不可逆 = 有特征值\"。"],
+      "blockIds": ["09-functional-analysis#block-33"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "在无限维中，不可逆的原因有三个层次。",
+      "evidenceQuotes": ["在无限维中，不可逆的原因有三个层次："],
+      "blockIds": ["09-functional-analysis#block-33"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "点谱的含义是λI-T非单射，例子是真正的特征值。",
+      "evidenceQuotes": ["| **点谱** | $\\lambda I - T$ 非单射 | 真正的特征值 |"],
+      "blockIds": ["09-functional-analysis#block-34"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "连续谱的含义是单射但值域稠密（却非满射），例子是乘法算子(Tf)(x)=xf(x)。",
+      "evidenceQuotes": ["| **连续谱** | 单射但值域稠密（却非满射） | 乘法算子 $(Tf)(x)=xf(x)$ |"],
+      "blockIds": ["09-functional-analysis#block-34"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "剩余谱的含义是单射但值域不稠密，例子是unilateral shift。",
+      "evidenceQuotes": ["| **剩余谱** | 单射但值域不稠密 | unilateral shift |"],
+      "blockIds": ["09-functional-analysis#block-34"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "若T=T*（自伴/Hermitian），则σ(T)⊆ℝ。",
+      "evidenceQuotes": ["1. $\\sigma(T) \\subseteq \\mathbb{R}$"],
+      "blockIds": ["09-functional-analysis#block-37"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "若T=T*，则不同特征值的特征向量正交。",
+      "evidenceQuotes": ["2. 不同特征值的特征向量正交"],
+      "blockIds": ["09-functional-analysis#block-37"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "若T=T*，则存在谱分解：T=∫_{σ(T)} λ dE(λ)。",
+      "evidenceQuotes": ["3. 存在**谱分解**：$T = \\int_{\\sigma(T)} \\lambda \\, dE(\\lambda)$"],
+      "blockIds": ["09-functional-analysis#block-37"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "谱分解是Fourier变换的终极推广——任何自伴算子都可以对角化为乘法算子。",
+      "evidenceQuotes": ["谱分解是 Fourier 变换的终极推广——任何自伴算子都可以\"对角化\"为乘法算子。"],
+      "blockIds": ["09-functional-analysis#block-38"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "量子力学的可观测量必须用自伴算子表示：谱=可能的测量值。",
+      "evidenceQuotes": ["这就是为什么量子力学的可观测量必须用自伴算子表示：**谱 = 可能的测量值**。"],
+      "blockIds": ["09-functional-analysis#block-38"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "紧算子的谱除了可能的0之外，完全由特征值构成。",
+      "evidenceQuotes": ["紧算子是\"最像矩阵\"的无限维算子——它的谱除了可能的 $0$ 之外，完全由特征值构成："],
+      "blockIds": ["09-functional-analysis#block-41"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "σ_ess(K)={0}。",
+      "evidenceQuotes": ["\\sigma_{\\text{ess}}(K) = \\{0\\}"],
+      "blockIds": ["09-functional-analysis#block-42"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "σ(K)∖{0}=有限重特征值。",
+      "evidenceQuotes": ["\\sigma(K) \\setminus \\{0\\} = \\text{有限重特征值}"],
+      "blockIds": ["09-functional-analysis#block-42"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "Fredholm二择一：(I-K)x=y要么对任意y有唯一解，要么齐次方程(I-K)x=0有非零解。",
+      "evidenceQuotes": ["Fredholm 二择一（Fredholm alternative）：$(I-K)x = y$ 要么对任意 $y$ 有唯一解，要么齐次方程 $(I-K)x = 0$ 有非零解。"],
+      "blockIds": ["09-functional-analysis#block-43"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "Fredholm二择一是线性代数中det A≠0或ker A≠{0}的无限维版本。",
+      "evidenceQuotes": ["这正是线性代数中\"$\\det A \\neq 0$ 或 $\\ker A \\neq \\{0\\}$\"的无限维版本。"],
+      "blockIds": ["09-functional-analysis#block-43"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "泛函分析的核心哲学是无限维线性代数与拓扑完备性的结合。",
+      "evidenceQuotes": ["泛函分析 = 无限维线性代数 + 拓扑完备性"],
+      "blockIds": ["09-functional-analysis#block-48"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "在有限维中，所有范数等价是理所当然的。",
+      "evidenceQuotes": ["所有范数等价"],
+      "blockIds": ["09-functional-analysis#block-48"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "在有限维中，线性算子自动连续是理所当然的。",
+      "evidenceQuotes": ["线性算子自动连续"],
+      "blockIds": ["09-functional-analysis#block-48"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "在无限维中，有限维中很多理所当然的性质全部失效。",
+      "evidenceQuotes": ["有限维中的很多\"理所当然\"（如所有范数等价、线性算子自动连续）在无限维中全部失效"],
+      "blockIds": ["09-functional-analysis#block-48"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "这些失效创造了丰富性。",
+      "evidenceQuotes": ["但也正是这些\"失效\"创造了丰富性"],
+      "blockIds": ["09-functional-analysis#block-48"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "谱有三种类型。",
+      "evidenceQuotes": ["谱的三种类型"],
+      "blockIds": ["09-functional-analysis#block-48"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "存在有界与无界算子的鸿沟。",
+      "evidenceQuotes": ["有界与无界算子的鸿沟"],
+      "blockIds": ["09-functional-analysis#block-48"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "存在紧性与非紧性的分野。",
+      "evidenceQuotes": ["紧性与非紧性的分野"],
+      "blockIds": ["09-functional-analysis#block-48"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "谱的三种类型、有界与无界算子的鸿沟、紧性与非紧性的分野构成了现代分析的深层景观。",
+      "evidenceQuotes": ["谱的三种类型、有界与无界算子的鸿沟、紧性与非紧性的分野，构成了现代分析的深层景观"],
+      "blockIds": ["09-functional-analysis#block-48"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "若 T = T^*，则 T 是自伴算子或 Hermitian 算子。",
+      "evidenceQuotes": ["若 $T = T^*$（自伴/ Hermitian），则："],
+      "blockIds": ["09-functional-analysis#block-36"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "泛函是函数的函数，输入函数，输出数。",
+      "evidenceQuotes": ["| 1 | **泛函 = 函数的函数** | 输入函数，输出数 | $\\S$12 变分法 |"],
+      "blockIds": ["09-functional-analysis#block-47"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "Euler-Lagrange 方程是泛函极值的必要条件。",
+      "evidenceQuotes": ["| 2 | **Euler-Lagrange** | 泛函极值的必要条件 | $\\S$12, $\\S$19 |"],
+      "blockIds": ["09-functional-analysis#block-47"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "四大定理涉及完备性带来的免费午餐。",
+      "evidenceQuotes": ["| 3 | **四大定理** | 完备性带来的\"免费午餐\" | $\\S$2 Banach空间 |"],
+      "blockIds": ["09-functional-analysis#block-47"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "Riesz 表示定理表明 H 同构于 H^*，泛函等于内积。",
+      "evidenceQuotes": ["| 4 | **Riesz表示** | $H \\cong H^*$，泛函=内积 | $\\S$2 Hilbert空间 |"],
+      "blockIds": ["09-functional-analysis#block-47"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "谱比特征值更广，涉及不可逆性的三层结构。",
+      "evidenceQuotes": ["| 5 | **谱 > 特征值** | 不可逆性的三层结构 | $\\S$13 特征值 |"],
+      "blockIds": ["09-functional-analysis#block-47"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "紧算子是无限维中最像矩阵的算子。",
+      "evidenceQuotes": ["| 6 | **紧算子** | 无限维中最像矩阵的 | 积分方程 |"],
+      "blockIds": ["09-functional-analysis#block-47"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "谱分解是 Fourier 变换的终极推广。",
+      "evidenceQuotes": ["| 7 | **谱分解** | Fourier变换的终极推广 | $\\S$5 变换 |"],
+      "blockIds": ["09-functional-analysis#block-47"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    }
+  ]
+}

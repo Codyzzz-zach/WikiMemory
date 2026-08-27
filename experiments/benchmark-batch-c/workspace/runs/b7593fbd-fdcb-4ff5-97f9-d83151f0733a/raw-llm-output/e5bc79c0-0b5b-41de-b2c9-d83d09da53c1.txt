@@ -1,0 +1,29 @@
+{
+  "verdict": "passed",
+  "supersessionEffect": "NOT_APPLICABLE",
+  "dimensions": {
+    "identity": {
+      "result": "pass",
+      "evidenceSpanIndexes": [1]
+    },
+    "relation": {
+      "result": "pass",
+      "evidenceSpanIndexes": [1]
+    },
+    "type": {
+      "result": "pass",
+      "evidenceSpanIndexes": [1]
+    },
+    "direction": {
+      "result": "pass",
+      "evidenceSpanIndexes": [1]
+    },
+    "conditions": {
+      "result": "pass",
+      "evidenceSpanIndexes": [1]
+    }
+  },
+  "anchorSpanIndex": 1,
+  "failedDimensions": [],
+  "supportingEvidenceSpanIndexes": [0, 1]
+}

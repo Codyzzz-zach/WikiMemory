@@ -1,0 +1,65 @@
+{
+  "runId": "pilot-f19d0043-1099-4226-91e3-c58911e39df6",
+  "questionId": "PILOT-H2-20",
+  "category": "H2",
+  "group": "P",
+  "corpusHash": "86268a6fbd559d17bb005c4c7bd64d3d1c91b2146010c625e9f2fc2fcb37d938",
+  "knowledgeVersion": "kv:e2f961a26664588188f91fe7",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "temperature": 0,
+  "promptHash": "4ad5ae79c4705f78d97994fb9805c8a8d5bc386ddf9db368fe07255b016d9396",
+  "request": {
+    "systemPrompt": "你是一个受证据约束的问答 Agent。只使用本次请求提供的检索上下文回答问题。\n要求：\n1. 保留所有影响结论的条件、例外和不确定性。\n2. 每个关键结论引用上下文中的 SOURCE、EVIDENCE 或 CLAIM 标识。\n3. 如果上下文不足，明确回答 insufficient，不得依赖外部常识补齐。\n4. 只输出严格 JSON：{\"answer\":\"...\",\"citations\":[\"...\"],\"insufficient\":false,\"uncertainties\":[\"...\"]}。",
+    "userPrompt": "# 问题\n算子和泛函都可以函数为输入，它们的输出有何区别？在此基础上，变分法如何把泛函极值问题转化为 Euler–Lagrange 方程？\n\n# 检索上下文\n## TASK MAP\n主题: 算子和泛函都可以函数为输入，它们的输出有何区别？在此基础上，变分法如何把泛函极值问题转化为 Euler–Lagrange 方程？\n地图主题: 数集, 算子, 空间, 定义, 自然\n关键概念: 连通性, 单射, 浮点数, 无理数, 交换环\n已知争议: 0 个\n最近变化: 5 条\n找到 12 条相关 Claim\n找到 5 条关系\n找到 6 条原文证据\n\n## CLAIM claim:9478dfc1ba6cb58f-05929b8c6db069b1\n泛函是函数的函数，输入函数，输出数。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:9478dfc1ba6cb58f-226dbcc62df2c418\n四大定理涉及完备性带来的免费午餐。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:9478dfc1ba6cb58f-5f635e434ce1469b\nRiesz 表示定理表明 H 同构于 H^*，泛函等于内积。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:9478dfc1ba6cb58f-b112d7ffc3e4f340\n紧算子是无限维中最像矩阵的算子。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:9478dfc1ba6cb58f-bf39cdc59c43343a\n谱分解是 Fourier 变换的终极推广。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:9478dfc1ba6cb58f-e6c98f9a8e327777\n谱比特征值更广，涉及不可逆性的三层结构。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:9478dfc1ba6cb58f-ebe2d3dd016a802f\nEuler-Lagrange 方程是泛函极值的必要条件。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:9478dfc1ba6cb58f-430aac8fcebaaaf0\nEuler-Lagrange 方程是变分法的核心结果。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:9478dfc1ba6cb58f-c110ff80dd676cbb\nEuler-Lagrange 方程是从最小作用量原理推导牛顿力学、电磁学、广义相对论的基础。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:9478dfc1ba6cb58f-cfc48ad935d73da8\n若 J[y] = ∫_a^b L(x, y, y')dx 在 y(x) 处取极值，则满足 Euler-Lagrange 方程。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:9478dfc1ba6cb58f-052f156df6dbd1c6\nEuler-Lagrange 方程为 ∂L/∂y - d/dx(∂L/∂y') = 0。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:9478dfc1ba6cb58f-4f5a3031f0f4f1ea\n将 L 设为 Lagrangian = 动能 - 势能，Euler-Lagrange 方程就给出了系统的运动方程。\nConditions: none\nValidity: SUPPORTED\n\n## RELATION rel:9478dfc1ba6cb58f-9bd493b159dd0172\nclaim:9478dfc1ba6cb58f-052f156df6dbd1c6 --[SUPPORTS]--> claim:9478dfc1ba6cb58f-430aac8fcebaaaf0\nConditions: none\n\n## RELATION rel:9478dfc1ba6cb58f-ace479eefa62b29a\nclaim:9478dfc1ba6cb58f-c110ff80dd676cbb --[SUPPORTS]--> claim:9478dfc1ba6cb58f-430aac8fcebaaaf0\nConditions: none\n\n## RELATION rel:9478dfc1ba6cb58f-04089a9960946623\nclaim:9478dfc1ba6cb58f-cfc48ad935d73da8 --[SUPPORTS]--> claim:9478dfc1ba6cb58f-052f156df6dbd1c6\nConditions: none\n\n## RELATION rel:9478dfc1ba6cb58f-820a4e18f5538b19\nclaim:9478dfc1ba6cb58f-052f156df6dbd1c6 --[DERIVED_FROM]--> claim:9478dfc1ba6cb58f-cfc48ad935d73da8\nConditions: none\n\n## RELATION rel:9478dfc1ba6cb58f-1fe0b643146b264a\nclaim:9478dfc1ba6cb58f-4f5a3031f0f4f1ea --[SUPPORTS]--> claim:9478dfc1ba6cb58f-052f156df6dbd1c6\nConditions: none\n\n## EVIDENCE span:09-functional-analysis-9478dfc1ba6cb58f-47\n| # | 关键概念 | 直觉 | 连接章节 |\n|---|---------|------|---------|\n| 1 | **泛函 = 函数的函数** | 输入函数，输出数 | $\\S$12 变分法 |\n| 2 | **Euler-Lagrange** | 泛函极值的必要条件 | $\\S$12, $\\S$19 |\n| 3 | **四大定理** | 完备性带来的\"免费午餐\" | $\\S$2 Banach空间 |\n| 4 | **Riesz表示** | $H \\cong H^*$，泛函=内积 | $\\S$2 Hilbert空间 |\n| 5 | **谱 > 特征值** | 不可逆性的三层结构 | $\\S$13 特征值 |\n| 6 | **紧算子** | 无限维中最像矩阵的 | 积分方程 |\n| 7 | **谱分解** | Fourier变换的终极推广 | $\\S$5 变换 |\n\n## EVIDENCE span:09-functional-analysis-9478dfc1ba6cb58f-8#chars-489-520\n**Euler-Lagrange 方程**是变分法的核心结果。\n\n## EVIDENCE span:09-functional-analysis-9478dfc1ba6cb58f-10#chars-741-773\n这是从\"最小作用量原理\"推导牛顿力学、电磁学、广义相对论的基础。\n\n## EVIDENCE span:09-functional-analysis-9478dfc1ba6cb58f-8#chars-520-570\n若 $J[y] = \\int_a^b L(x, y, y')dx$ 在 $y(x)$ 处取极值，则：\n\n## EVIDENCE span:09-functional-analysis-9478dfc1ba6cb58f-9#chars-572-669\n$$\n\\frac{\\partial L}{\\partial y} - \\frac{d}{dx}\\left(\\frac{\\partial L}{\\partial y'}\\right) = 0\n$$\n\n## EVIDENCE span:09-functional-analysis-9478dfc1ba6cb58f-10#chars-682-741\n将 $L$ 设为 Lagrangian = 动能 - 势能，Euler-Lagrange 方程就给出了系统的运动方程。"
+  },
+  "contextHash": "de9bb0947571bd8d62a101d2430c0b7e10362099bfaa42df0f137f3ed63643bd",
+  "estimatedContextTokens": 1291,
+  "estimatedTotalInputTokens": 1502,
+  "usage": {
+    "promptTokens": 1885,
+    "completionTokens": 192,
+    "totalTokens": 2077,
+    "promptCacheHitTokens": 0,
+    "promptCacheMissTokens": 1885,
+    "reasoningTokens": 0
+  },
+  "latencyMs": 1817,
+  "finishReason": "stop",
+  "toolCalls": 1,
+  "retrievedClaims": [
+    "claim:9478dfc1ba6cb58f-05929b8c6db069b1",
+    "claim:9478dfc1ba6cb58f-226dbcc62df2c418",
+    "claim:9478dfc1ba6cb58f-5f635e434ce1469b",
+    "claim:9478dfc1ba6cb58f-b112d7ffc3e4f340",
+    "claim:9478dfc1ba6cb58f-bf39cdc59c43343a",
+    "claim:9478dfc1ba6cb58f-e6c98f9a8e327777",
+    "claim:9478dfc1ba6cb58f-ebe2d3dd016a802f",
+    "claim:9478dfc1ba6cb58f-430aac8fcebaaaf0",
+    "claim:9478dfc1ba6cb58f-c110ff80dd676cbb",
+    "claim:9478dfc1ba6cb58f-cfc48ad935d73da8",
+    "claim:9478dfc1ba6cb58f-052f156df6dbd1c6",
+    "claim:9478dfc1ba6cb58f-4f5a3031f0f4f1ea"
+  ],
+  "retrievedRelations": [
+    "rel:9478dfc1ba6cb58f-9bd493b159dd0172",
+    "rel:9478dfc1ba6cb58f-ace479eefa62b29a",
+    "rel:9478dfc1ba6cb58f-04089a9960946623",
+    "rel:9478dfc1ba6cb58f-820a4e18f5538b19",
+    "rel:9478dfc1ba6cb58f-1fe0b643146b264a"
+  ],
+  "evidenceSpans": [
+    "span:09-functional-analysis-9478dfc1ba6cb58f-47",
+    "span:09-functional-analysis-9478dfc1ba6cb58f-8#chars-489-520",
+    "span:09-functional-analysis-9478dfc1ba6cb58f-10#chars-741-773",
+    "span:09-functional-analysis-9478dfc1ba6cb58f-8#chars-520-570",
+    "span:09-functional-analysis-9478dfc1ba6cb58f-9#chars-572-669",
+    "span:09-functional-analysis-9478dfc1ba6cb58f-10#chars-682-741"
+  ],
+  "retrievedSources": [
+    "source:09-functional-analysis-9478dfc1ba6cb58f"
+  ],
+  "droppedContext": [],
+  "answer": "{\n  \"answer\": \"算子和泛函都以函数为输入，但算子输出函数，泛函输出数。变分法通过考虑泛函的变分，令一阶变分为零，并利用分部积分和边界条件，推导出Euler-Lagrange方程，即泛函极值的必要条件。\",\n  \"citations\": [\n    \"claim:9478dfc1ba6cb58f-05929b8c6db069b1\",\n    \"claim:9478dfc1ba6cb58f-ebe2d3dd016a802f\",\n    \"claim:9478dfc1ba6cb58f-cfc48ad935d73da8\",\n    \"claim:9478dfc1ba6cb58f-052f156df6dbd1c6\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}",
+  "errors": []
+}

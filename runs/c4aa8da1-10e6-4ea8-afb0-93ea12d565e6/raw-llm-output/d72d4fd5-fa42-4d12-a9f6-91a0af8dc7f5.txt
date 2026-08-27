@@ -1,0 +1,124 @@
+{
+  "propositions": [
+    {
+      "text": "范数自然地导出距离：d(x,y)=||x-y||。",
+      "exactQuote": "范数自然地导出距离：$d(x,y) = \\|x-y\\|$。",
+      "blockId": "02-spaces#block-48"
+    },
+    {
+      "text": "(V, ||·||) 构成赋范空间，也自动成为度量空间。",
+      "exactQuote": "所以 $(V, \\|\\cdot\\|)$ 构成赋范空间，也自动成为度量空间。",
+      "blockId": "02-spaces#block-48"
+    },
+    {
+      "text": "Cauchy列的定义是：对任意ε>0，存在N，使得当m,n>N时，有||x_m - x_n||<ε。",
+      "exactQuote": "**Cauchy 列**：$\\forall \\epsilon > 0, \\exists N, \\forall m,n > N: \\|x_m - x_n\\| < \\epsilon$",
+      "blockId": "02-spaces#block-50"
+    },
+    {
+      "text": "如果空间中每个Cauchy列都收敛到空间内的一个点，这个空间就是完备的。",
+      "exactQuote": "如果空间中每个 Cauchy 列都收敛到空间内的一个点，这个空间就是**完备的**。",
+      "blockId": "02-spaces#block-51"
+    },
+    {
+      "text": "Banach空间是完备的赋范空间。",
+      "exactQuote": "> **Banach 空间 = 完备的赋范空间**",
+      "blockId": "02-spaces#block-52"
+    },
+    {
+      "text": "R^n 在L2范数下是完备的，属于Banach空间。",
+      "exactQuote": "| $\\mathbb{R}^n$ | $\\|x\\|_2$ | ✅ | Banach空间 |",
+      "blockId": "02-spaces#block-53"
+    },
+    {
+      "text": "C[0,1]在无穷范数下是完备的，属于Banach空间。",
+      "exactQuote": "| $C[0,1]$ | $\\|f\\|_\\infty = \\sup\\|f(x)\\|$ | ✅ | Banach空间 |",
+      "blockId": "02-spaces#block-53"
+    },
+    {
+      "text": "C[0,1]在L1范数下不是完备的，只是赋范空间。",
+      "exactQuote": "| $C[0,1]$ | $\\|f\\|_1 = \\int\\|f\\|$ | ❌ | 赋范(不完备) |",
+      "blockId": "02-spaces#block-53"
+    },
+    {
+      "text": "ℓ^p在p范数下是完备的，属于Banach空间。",
+      "exactQuote": "| $\\ell^p$ | $\\|x\\|_p = (\\sum \\|x_i\\|^p)^{1/p}$ | ✅ | Banach空间 |",
+      "blockId": "02-spaces#block-53"
+    },
+    {
+      "text": "在L1范数下，连续函数空间中存在Cauchy列收敛到不连续的函数，极限跑出了空间，因此不完备。",
+      "exactQuote": "在 $\\|f\\|_1$ 下，连续函数空间中存在 Cauchy 列收敛到不连续的函数——极限\"跑出了空间\"。",
+      "blockId": "02-spaces#block-54"
+    },
+    {
+      "text": "不完备的空间完备化后得到 L^1[0,1]。",
+      "exactQuote": "完备化这个空间得到 $L^1[0,1]$（$\\S$10 测度与积分）。",
+      "blockId": "02-spaces#block-54"
+    },
+    {
+      "text": "内积满足：⟨x,x⟩≥0，且⟨x,x⟩=0当且仅当x=0。",
+      "exactQuote": "1. $\\langle x, x \\rangle \\geq 0$，$\\langle x, x \\rangle = 0 \\iff x = 0$",
+      "blockId": "02-spaces#block-59"
+    },
+    {
+      "text": "内积满足共轭对称性：⟨x,y⟩=⟨y,x⟩的共轭。",
+      "exactQuote": "2. $\\langle x, y \\rangle = \\overline{\\langle y, x \\rangle}$ （共轭对称）",
+      "blockId": "02-spaces#block-59"
+    },
+    {
+      "text": "内积对第一个变量是线性的。",
+      "exactQuote": "3. 对第一个变量线性",
+      "blockId": "02-spaces#block-59"
+    },
+    {
+      "text": "内积诱导范数：||x||=sqrt(⟨x,x⟩)。",
+      "exactQuote": "内积诱导范数：$\\|x\\| = \\sqrt{\\langle x, x \\rangle}$",
+      "blockId": "02-spaces#block-60"
+    },
+    {
+      "text": "Hilbert空间是完备的内积空间。",
+      "exactQuote": "> **Hilbert 空间 = 完备的内积空间**",
+      "blockId": "02-spaces#block-61"
+    },
+    {
+      "text": "Hilbert空间有正交性，可以定义垂直：x⟂y当且仅当⟨x,y⟩=0。",
+      "exactQuote": "因为它有**正交性**——可以定义\"垂直\"：\n\n$$\nx \\perp y \\iff \\langle x, y \\rangle = 0\n$$",
+      "blockId": "02-spaces#block-63"
+    },
+    {
+      "text": "正交投影：找到子空间中最接近某点的元素。",
+      "exactQuote": "- **正交投影**：找到子空间中最接近某点的元素",
+      "blockId": "02-spaces#block-66"
+    },
+    {
+      "text": "正交基：用一组相互垂直的基向量表示空间中任何元素。",
+      "exactQuote": "- **正交基**：用一组相互垂直的基向量表示空间中任何元素",
+      "blockId": "02-spaces#block-66"
+    },
+    {
+      "text": "Fourier级数：{e^{inx}}是L^2[-π,π]中的一组正交基。",
+      "exactQuote": "- **Fourier 级数**：$\\{e^{inx}\\}_{n=-\\infty}^\\infty$ 是 $L^2[-\\pi,\\pi]$ 中的一组正交基",
+      "blockId": "02-spaces#block-66"
+    },
+    {
+      "text": "R^n的内积是⟨x,y⟩=∑x_i y_i，完备基是标准基e_i，应用于几何。",
+      "exactQuote": "| $\\mathbb{R}^n$ | $\\langle x,y \\rangle = \\sum x_i y_i$ | 标准基 $e_i$ | 几何 |",
+      "blockId": "02-spaces#block-69"
+    },
+    {
+      "text": "ℓ^2的内积是⟨x,y⟩=∑x_i y_i的共轭，完备基是e_i=(0,...,1,...)，应用于离散信号。",
+      "exactQuote": "| $\\ell^2$ | $\\langle x,y \\rangle = \\sum x_i \\overline{y_i}$ | $e_i = (0,\\ldots,1,\\ldots)$ | 离散信号 |",
+      "blockId": "02-spaces#block-69"
+    },
+    {
+      "text": "L^2[a,b]的内积是⟨f,g⟩=∫f g的共轭，完备基是三角函数族，应用于连续信号。",
+      "exactQuote": "| $L^2[a,b]$ | $\\langle f,g \\rangle = \\int f \\overline{g}$ | 三角函数族 | 连续信号 |",
+      "blockId": "02-spaces#block-69"
+    },
+    {
+      "text": "C^n的内积是⟨x,y⟩=∑x_i y_i的共轭，完备基是标准基，应用于量子态。",
+      "exactQuote": "| $\\mathbb{C}^n$ | $\\langle x,y \\rangle = \\sum x_i \\overline{y_i}$ | 标准基 | 量子态 |",
+      "blockId": "02-spaces#block-69"
+    }
+  ]
+}

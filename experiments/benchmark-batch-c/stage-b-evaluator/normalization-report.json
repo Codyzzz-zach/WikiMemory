@@ -1,0 +1,28 @@
+{
+  "schemaVersion": "wge-batch-c-evaluator-normalization/v1",
+  "status": "EVALUATOR_NORMALIZED_PROVISIONAL_GOLD",
+  "rawStageBMutated": false,
+  "inputPayloadTreeHash": "e61902fba067b53e9033f58eaa0a25b76aaceb4b814fa3ff387c8fa3ecef57c3",
+  "primaryTaskCount": 16,
+  "diagnosticOnlyTaskIds": [
+    "C-T-CLIMATE-001",
+    "C-K-CLIMATE-001"
+  ],
+  "relationGold": {
+    "accepted": 0,
+    "rejected": 8,
+    "consequence": "Relation precision/recall is not scoreable from the supplied Gold. P-graph remains comparable only at task-answer level."
+  },
+  "episodes": {
+    "accepted": 2,
+    "rejected": 1
+  },
+  "normalizedHashes": {
+    "tasks.jsonl": "0dcdab468b2d6e5ee8801bc96a77085c37d60c556df2454df1a837530eaba15d",
+    "facts.jsonl": "5221e79bb04454ada7ce69bc498b7e4df16ca935bfe1462dc41f512d6cd14674",
+    "relations.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "relations-rejected.jsonl": "3527450795a94dd9aa8f31682341f61119d08e432ac4e3e57e7acad8641d1999",
+    "evolution-episodes.jsonl": "87e62f4b41f7f72116d111fc92b134d822ee7ff60da16e444d74458bcc542aa1",
+    "evolution-episodes-rejected.jsonl": "458030a65739c0303aab446e4e5fd8f3622b8b78c3560762e8ef144b270f6654"
+  }
+}

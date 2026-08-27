@@ -1,0 +1,289 @@
+{
+  "runId": "e4-batch-b-remaining-all-modes-2026-07-28T05-44-10-699Z",
+  "sampleId": "sample-085c5e7b-85ef-4f99-8e1e-03f11d83ea1a",
+  "questionId": "B-T-HIST-009",
+  "group": "P-graph",
+  "pilotGroup": "P",
+  "graphExpansion": true,
+  "repetition": 1,
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "temperature": 0,
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 2582,
+    "completionTokens": 199,
+    "totalTokens": 2781,
+    "promptCacheHitTokens": 0,
+    "promptCacheMissTokens": 2582,
+    "reasoningTokens": 0
+  },
+  "latencyMs": 2584,
+  "promptHash": "sha256:8ef866d7e33c25168c58b470e0501093ba772b8800934a06b191cb22c24b739a",
+  "contextHash": "5eaa883cc3431f867bbb0ad1d1c91f7a3237de47527203fd7e1951fd877531fb",
+  "estimatedContextTokens": 1677,
+  "estimatedInputTokens": 1844,
+  "retrievedClaims": [
+    "claim:5505a1ba1fcb1b68-a2289f49fcb0ff64",
+    "claim:4ab2f152a60c6bbe-39dbff7d3d0408e6",
+    "claim:4ab2f152a60c6bbe-812533cb126e5e48",
+    "claim:4ab2f152a60c6bbe-901bc3b35d2cc86e",
+    "claim:4ab2f152a60c6bbe-a6fd9e7a1c644eed",
+    "claim:4ab2f152a60c6bbe-d83a71026c2b4d86",
+    "claim:4ab2f152a60c6bbe-e301af57ef26e82d",
+    "claim:5505a1ba1fcb1b68-d303dae0fc053d75",
+    "claim:b98a3ae4860a6edc-95aab89f959ee2e9",
+    "claim:b98a3ae4860a6edc-704f0702fd830045",
+    "claim:b98a3ae4860a6edc-3c7148205b4853be",
+    "claim:e71279e71acc04bd-dc4b7534a61f85ee",
+    "claim:b98a3ae4860a6edc-fd2b496dae5aceca",
+    "claim:e71279e71acc04bd-f06d3f1ce6a9a65a"
+  ],
+  "retrievedRelations": [
+    "rel:5505a1ba1fcb1b68-0cbed135f488b346",
+    "rel:4ab2f152a60c6bbe-123dafd4b72f8b9e",
+    "rel:cross-3c6b8385c21665ec",
+    "rel:cross-670f5b5bb894432c",
+    "rel:cross-1a5e232cdc42ca30",
+    "rel:cross-e02014d48b936e87",
+    "rel:4ab2f152a60c6bbe-d276c0e77fb62409",
+    "rel:b98a3ae4860a6edc-fe01487361015f30",
+    "rel:b98a3ae4860a6edc-b39a43fc9bb7bc6e",
+    "rel:e71279e71acc04bd-599718bf2ce73ac7"
+  ],
+  "retrievedSources": [
+    "source:history-vesuvius-github-2024-002-5505a1ba1fcb1b68",
+    "source:history-scrollprize-2026-004-4ab2f152a60c6bbe",
+    "source:history-nature-scroll-2024-003-b98a3ae4860a6edc",
+    "source:history-educelab-paper-2023-001-e71279e71acc04bd"
+  ],
+  "droppedContext": [],
+  "retrievalTrace": {
+    "strategy": "claim-seed-graph",
+    "graphDepth": 3,
+    "temporalScope": {
+      "applied": false,
+      "startMonth": null,
+      "endMonth": null,
+      "excludedClaimIds": []
+    },
+    "retrieval": {
+      "queryFeatureCount": 29,
+      "eligibleClaimCount": 67,
+      "matchedClaimCount": 7,
+      "usedEvidenceText": true,
+      "usedSourceMetadata": true,
+      "resolvedEvidenceRefCount": 67,
+      "unresolvedEvidenceRefCount": 0,
+      "candidates": [
+        {
+          "claimId": "claim:5505a1ba1fcb1b68-a2289f49fcb0ff64",
+          "rank": 1,
+          "score": 4.689294784302204,
+          "channels": [
+            "c2"
+          ],
+          "matchedFeatureCount": 2
+        },
+        {
+          "claimId": "claim:4ab2f152a60c6bbe-39dbff7d3d0408e6",
+          "rank": 2,
+          "score": 3.499362904818779,
+          "channels": [
+            "source",
+            "w"
+          ],
+          "matchedFeatureCount": 1
+        },
+        {
+          "claimId": "claim:4ab2f152a60c6bbe-812533cb126e5e48",
+          "rank": 3,
+          "score": 3.499362904818779,
+          "channels": [
+            "source",
+            "w"
+          ],
+          "matchedFeatureCount": 1
+        },
+        {
+          "claimId": "claim:4ab2f152a60c6bbe-901bc3b35d2cc86e",
+          "rank": 4,
+          "score": 3.499362904818779,
+          "channels": [
+            "source",
+            "w"
+          ],
+          "matchedFeatureCount": 1
+        },
+        {
+          "claimId": "claim:4ab2f152a60c6bbe-a6fd9e7a1c644eed",
+          "rank": 5,
+          "score": 3.499362904818779,
+          "channels": [
+            "source",
+            "w"
+          ],
+          "matchedFeatureCount": 1
+        },
+        {
+          "claimId": "claim:4ab2f152a60c6bbe-d83a71026c2b4d86",
+          "rank": 6,
+          "score": 3.499362904818779,
+          "channels": [
+            "source",
+            "w"
+          ],
+          "matchedFeatureCount": 1
+        },
+        {
+          "claimId": "claim:4ab2f152a60c6bbe-e301af57ef26e82d",
+          "rank": 7,
+          "score": 3.499362904818779,
+          "channels": [
+            "source",
+            "w"
+          ],
+          "matchedFeatureCount": 1
+        }
+      ]
+    },
+    "graph": {
+      "seedClaimIds": [
+        "claim:5505a1ba1fcb1b68-a2289f49fcb0ff64",
+        "claim:4ab2f152a60c6bbe-39dbff7d3d0408e6",
+        "claim:4ab2f152a60c6bbe-812533cb126e5e48",
+        "claim:4ab2f152a60c6bbe-901bc3b35d2cc86e",
+        "claim:4ab2f152a60c6bbe-a6fd9e7a1c644eed",
+        "claim:4ab2f152a60c6bbe-d83a71026c2b4d86",
+        "claim:4ab2f152a60c6bbe-e301af57ef26e82d"
+      ],
+      "expandedClaimIds": [
+        "claim:5505a1ba1fcb1b68-a2289f49fcb0ff64",
+        "claim:4ab2f152a60c6bbe-39dbff7d3d0408e6",
+        "claim:4ab2f152a60c6bbe-812533cb126e5e48",
+        "claim:4ab2f152a60c6bbe-901bc3b35d2cc86e",
+        "claim:4ab2f152a60c6bbe-a6fd9e7a1c644eed",
+        "claim:4ab2f152a60c6bbe-d83a71026c2b4d86",
+        "claim:4ab2f152a60c6bbe-e301af57ef26e82d",
+        "claim:5505a1ba1fcb1b68-d303dae0fc053d75",
+        "claim:b98a3ae4860a6edc-95aab89f959ee2e9",
+        "claim:b98a3ae4860a6edc-704f0702fd830045",
+        "claim:b98a3ae4860a6edc-3c7148205b4853be",
+        "claim:e71279e71acc04bd-dc4b7534a61f85ee",
+        "claim:b98a3ae4860a6edc-fd2b496dae5aceca",
+        "claim:e71279e71acc04bd-f06d3f1ce6a9a65a"
+      ],
+      "expandedRelationIds": [
+        "rel:5505a1ba1fcb1b68-0cbed135f488b346",
+        "rel:4ab2f152a60c6bbe-123dafd4b72f8b9e",
+        "rel:cross-3c6b8385c21665ec",
+        "rel:cross-670f5b5bb894432c",
+        "rel:cross-1a5e232cdc42ca30",
+        "rel:cross-e02014d48b936e87",
+        "rel:4ab2f152a60c6bbe-d276c0e77fb62409",
+        "rel:b98a3ae4860a6edc-fe01487361015f30",
+        "rel:b98a3ae4860a6edc-b39a43fc9bb7bc6e",
+        "rel:e71279e71acc04bd-599718bf2ce73ac7"
+      ]
+    },
+    "budget": {
+      "selectedClaimIds": [
+        "claim:5505a1ba1fcb1b68-a2289f49fcb0ff64",
+        "claim:4ab2f152a60c6bbe-39dbff7d3d0408e6",
+        "claim:4ab2f152a60c6bbe-812533cb126e5e48",
+        "claim:4ab2f152a60c6bbe-901bc3b35d2cc86e",
+        "claim:4ab2f152a60c6bbe-a6fd9e7a1c644eed",
+        "claim:4ab2f152a60c6bbe-d83a71026c2b4d86",
+        "claim:4ab2f152a60c6bbe-e301af57ef26e82d",
+        "claim:5505a1ba1fcb1b68-d303dae0fc053d75",
+        "claim:b98a3ae4860a6edc-95aab89f959ee2e9",
+        "claim:b98a3ae4860a6edc-704f0702fd830045",
+        "claim:b98a3ae4860a6edc-3c7148205b4853be",
+        "claim:e71279e71acc04bd-dc4b7534a61f85ee",
+        "claim:b98a3ae4860a6edc-fd2b496dae5aceca",
+        "claim:e71279e71acc04bd-f06d3f1ce6a9a65a"
+      ],
+      "selectedRelationIds": [
+        "rel:5505a1ba1fcb1b68-0cbed135f488b346",
+        "rel:4ab2f152a60c6bbe-123dafd4b72f8b9e",
+        "rel:cross-3c6b8385c21665ec",
+        "rel:cross-670f5b5bb894432c",
+        "rel:cross-1a5e232cdc42ca30",
+        "rel:cross-e02014d48b936e87",
+        "rel:4ab2f152a60c6bbe-d276c0e77fb62409",
+        "rel:b98a3ae4860a6edc-fe01487361015f30",
+        "rel:b98a3ae4860a6edc-b39a43fc9bb7bc6e",
+        "rel:e71279e71acc04bd-599718bf2ce73ac7"
+      ],
+      "selectedEvidenceSpanIds": [
+        "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-1#chars-48-106",
+        "span:history-scrollprize-2026-004-4ab2f152a60c6bbe-1#chars-81-187",
+        "span:history-scrollprize-2026-004-4ab2f152a60c6bbe-0#chars-0-37",
+        "span:history-scrollprize-2026-004-4ab2f152a60c6bbe-2#chars-258-361",
+        "span:history-scrollprize-2026-004-4ab2f152a60c6bbe-1#chars-189-226",
+        "span:history-scrollprize-2026-004-4ab2f152a60c6bbe-2#chars-362-439",
+        "span:history-scrollprize-2026-004-4ab2f152a60c6bbe-1#chars-39-80",
+        "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-1#chars-107-127",
+        "span:history-nature-scroll-2024-003-b98a3ae4860a6edc-1#chars-59-173",
+        "span:history-nature-scroll-2024-003-b98a3ae4860a6edc-2#chars-299-429",
+        "span:history-nature-scroll-2024-003-b98a3ae4860a6edc-1#chars-240-296",
+        "span:history-educelab-paper-2023-001-e71279e71acc04bd-2#chars-542-678",
+        "span:history-nature-scroll-2024-003-b98a3ae4860a6edc-1#chars-174-239",
+        "span:history-educelab-paper-2023-001-e71279e71acc04bd-1#chars-88-207"
+      ],
+      "selectedWikiModuleIds": [],
+      "dropped": [],
+      "finalEstimatedTokens": 5959
+    },
+    "serializationBudget": {
+      "selectedIds": [
+        "task-map",
+        "claim:5505a1ba1fcb1b68-a2289f49fcb0ff64",
+        "claim:4ab2f152a60c6bbe-39dbff7d3d0408e6",
+        "claim:4ab2f152a60c6bbe-812533cb126e5e48",
+        "claim:4ab2f152a60c6bbe-901bc3b35d2cc86e",
+        "claim:4ab2f152a60c6bbe-a6fd9e7a1c644eed",
+        "claim:4ab2f152a60c6bbe-d83a71026c2b4d86",
+        "claim:4ab2f152a60c6bbe-e301af57ef26e82d",
+        "claim:5505a1ba1fcb1b68-d303dae0fc053d75",
+        "claim:b98a3ae4860a6edc-95aab89f959ee2e9",
+        "claim:b98a3ae4860a6edc-704f0702fd830045",
+        "claim:b98a3ae4860a6edc-3c7148205b4853be",
+        "claim:e71279e71acc04bd-dc4b7534a61f85ee",
+        "claim:b98a3ae4860a6edc-fd2b496dae5aceca",
+        "claim:e71279e71acc04bd-f06d3f1ce6a9a65a",
+        "rel:5505a1ba1fcb1b68-0cbed135f488b346",
+        "rel:4ab2f152a60c6bbe-123dafd4b72f8b9e",
+        "rel:cross-3c6b8385c21665ec",
+        "rel:cross-670f5b5bb894432c",
+        "rel:cross-1a5e232cdc42ca30",
+        "rel:cross-e02014d48b936e87",
+        "rel:4ab2f152a60c6bbe-d276c0e77fb62409",
+        "rel:b98a3ae4860a6edc-fe01487361015f30",
+        "rel:b98a3ae4860a6edc-b39a43fc9bb7bc6e",
+        "rel:e71279e71acc04bd-599718bf2ce73ac7",
+        "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-1#chars-48-106",
+        "span:history-scrollprize-2026-004-4ab2f152a60c6bbe-1#chars-81-187",
+        "span:history-scrollprize-2026-004-4ab2f152a60c6bbe-0#chars-0-37",
+        "span:history-scrollprize-2026-004-4ab2f152a60c6bbe-2#chars-258-361",
+        "span:history-scrollprize-2026-004-4ab2f152a60c6bbe-1#chars-189-226",
+        "span:history-scrollprize-2026-004-4ab2f152a60c6bbe-2#chars-362-439",
+        "span:history-scrollprize-2026-004-4ab2f152a60c6bbe-1#chars-39-80",
+        "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-1#chars-107-127",
+        "span:history-nature-scroll-2024-003-b98a3ae4860a6edc-1#chars-59-173",
+        "span:history-nature-scroll-2024-003-b98a3ae4860a6edc-2#chars-299-429",
+        "span:history-nature-scroll-2024-003-b98a3ae4860a6edc-1#chars-240-296",
+        "span:history-educelab-paper-2023-001-e71279e71acc04bd-2#chars-542-678",
+        "span:history-nature-scroll-2024-003-b98a3ae4860a6edc-1#chars-174-239",
+        "span:history-educelab-paper-2023-001-e71279e71acc04bd-1#chars-88-207"
+      ],
+      "droppedIds": []
+    }
+  },
+  "request": {
+    "systemPrompt": "你是受证据约束的问答 Agent。只使用本次请求提供的检索上下文回答。\n要求：保留影响结论的条件、时间、例外、来源角色与不确定性；关键结论引用上下文中的 SOURCE、EVIDENCE 或 CLAIM 标识；上下文不足时明确说明，不得用外部常识补齐。\n只输出严格 JSON：{\"answer\":\"...\",\"citations\":[\"...\"],\"insufficient\":false,\"uncertainties\":[\"...\"]}。",
+    "userPrompt": "# 问题\n归档仓库与 2026 项目进展的时间关系是什么？\n\n# 检索上下文\n## TASK MAP\n主题: 归档仓库与 2026 项目进展的时间关系是什么？\n地图主题: the, of, and, to, in\n关键概念: User Agent, Mobile Requirements, Input Modality, Desktop Content, Single Pointer\n已知争议: 0 个\n最近变化: 5 条\n找到 14 条相关 Claim\n找到 10 条关系\n找到 14 条原文证据\n\n## CLAIM claim:5505a1ba1fcb1b68-a2289f49fcb0ff64\n该仓库于 2024 年 11 月 21 日被所有者归档。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:4ab2f152a60c6bbe-39dbff7d3d0408e6\nThe Vesuvius Challenge had a Grand Prize for the first team to recover four passages of 140 characters from a Herculaneum scroll.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:4ab2f152a60c6bbe-812533cb126e5e48\nVesuvius Challenge project timeline is the title of the section.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:4ab2f152a60c6bbe-901bc3b35d2cc86e\nIn 2026, PHerc. 1667 became the first Herculaneum scroll to be virtually unwrapped and read end to end.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:4ab2f152a60c6bbe-a6fd9e7a1c644eed\nWithin a year of the launch, the prize was claimed.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:4ab2f152a60c6bbe-d83a71026c2b4d86\nThe challenge now moves onto its next stage: reading multiple entire scrolls.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:4ab2f152a60c6bbe-e301af57ef26e82d\nVesuvius Challenge was launched in March 2023.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:5505a1ba1fcb1b68-d303dae0fc053d75\n该仓库现在是只读的。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:b98a3ae4860a6edc-95aab89f959ee2e9\nA team of student researchers has made a giant contribution to solving one of the biggest mysteries in archaeology.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:b98a3ae4860a6edc-704f0702fd830045\nThe winners of a contest called the Vesuvius Challenge trained their machine-learning algorithms on scans of the rolled-up papyrus.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:b98a3ae4860a6edc-3c7148205b4853be\nThe scroll was buried 2,000 years ago by the eruption of Mount Vesuvius.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:e71279e71acc04bd-dc4b7534a61f85ee\nEduceLab-Scrolls has enabled the discovery, for the first time, of hidden texts from the Herculaneum papyri.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:b98a3ae4860a6edc-fd2b496dae5aceca\nThe contribution was made by revealing the content of Greek writing inside a charred scroll.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:e71279e71acc04bd-f06d3f1ce6a9a65a\nEduceLab-Scrolls is a complete software pipeline for revealing hidden texts of the Herculaneum papyri using X-ray CT images.\nConditions: none\nValidity: SUPPORTED\n\n## RELATION rel:5505a1ba1fcb1b68-0cbed135f488b346\nclaim:5505a1ba1fcb1b68-a2289f49fcb0ff64 --[SUPPORTS]--> claim:5505a1ba1fcb1b68-d303dae0fc053d75\nConditions: none\n\n## RELATION rel:4ab2f152a60c6bbe-123dafd4b72f8b9e\nclaim:4ab2f152a60c6bbe-39dbff7d3d0408e6 --[SUPPORTS]--> claim:4ab2f152a60c6bbe-a6fd9e7a1c644eed\nConditions: none\n\n## RELATION rel:cross-3c6b8385c21665ec\nclaim:4ab2f152a60c6bbe-39dbff7d3d0408e6 --[RELATED_TO]--> claim:b98a3ae4860a6edc-95aab89f959ee2e9\nConditions: none\n\n## RELATION rel:cross-670f5b5bb894432c\nclaim:4ab2f152a60c6bbe-39dbff7d3d0408e6 --[RELATED_TO]--> claim:b98a3ae4860a6edc-704f0702fd830045\nConditions: none\n\n## RELATION rel:cross-1a5e232cdc42ca30\nclaim:4ab2f152a60c6bbe-901bc3b35d2cc86e --[RELATED_TO]--> claim:b98a3ae4860a6edc-3c7148205b4853be\nConditions: none\n\n## RELATION rel:cross-e02014d48b936e87\nclaim:4ab2f152a60c6bbe-901bc3b35d2cc86e --[RELATED_TO]--> claim:e71279e71acc04bd-dc4b7534a61f85ee\nConditions: none\n\n## RELATION rel:4ab2f152a60c6bbe-d276c0e77fb62409\nclaim:4ab2f152a60c6bbe-e301af57ef26e82d --[SUPPORTS]--> claim:4ab2f152a60c6bbe-a6fd9e7a1c644eed\nConditions: none\n\n## RELATION rel:b98a3ae4860a6edc-fe01487361015f30\nclaim:b98a3ae4860a6edc-95aab89f959ee2e9 --[SUPPORTS]--> claim:b98a3ae4860a6edc-fd2b496dae5aceca\nConditions: none\n\n## RELATION rel:b98a3ae4860a6edc-b39a43fc9bb7bc6e\nclaim:b98a3ae4860a6edc-3c7148205b4853be --[RELATED_TO]--> claim:b98a3ae4860a6edc-704f0702fd830045\nConditions: none\n\n## RELATION rel:e71279e71acc04bd-599718bf2ce73ac7\nclaim:e71279e71acc04bd-f06d3f1ce6a9a65a --[SUPPORTS]--> claim:e71279e71acc04bd-dc4b7534a61f85ee\nConditions: none\n\n## EVIDENCE span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-1#chars-48-106\nThis repository was archived by the owner on Nov 21, 2024.\n\n## EVIDENCE span:history-scrollprize-2026-004-4ab2f152a60c6bbe-1#chars-81-187\nwith a Grand Prize for the first team to recover four passages of 140 characters from a Herculaneum scroll\n\n## EVIDENCE span:history-scrollprize-2026-004-4ab2f152a60c6bbe-0#chars-0-37\n# Vesuvius Challenge project timeline\n\n## EVIDENCE span:history-scrollprize-2026-004-4ab2f152a60c6bbe-2#chars-258-361\nIn 2026, PHerc. 1667 became the first Herculaneum scroll to be virtually unwrapped and read end to end.\n\n## EVIDENCE span:history-scrollprize-2026-004-4ab2f152a60c6bbe-1#chars-189-226\nWithin a year, the prize was claimed.\n\n## EVIDENCE span:history-scrollprize-2026-004-4ab2f152a60c6bbe-2#chars-362-439\nThe challenge now moves onto its next stage: reading multiple entire scrolls.\n\n## EVIDENCE span:history-scrollprize-2026-004-4ab2f152a60c6bbe-1#chars-39-80\nVesuvius Challenge launched in March 2023\n\n## EVIDENCE span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-1#chars-107-127\nIt is now read-only.\n\n## EVIDENCE span:history-nature-scroll-2024-003-b98a3ae4860a6edc-1#chars-59-173\nA team of student researchers has made a giant contribution to solving one of the biggest mysteries in archaeology\n\n## EVIDENCE span:history-nature-scroll-2024-003-b98a3ae4860a6edc-2#chars-299-429\nThe winners of a contest called the Vesuvius Challenge trained their machine-learning algorithms on scans of the rolled-up papyrus\n\n## EVIDENCE span:history-nature-scroll-2024-003-b98a3ae4860a6edc-1#chars-240-296\nburied 2,000 years ago by the eruption of Mount Vesuvius\n\n## EVIDENCE span:history-educelab-paper-2023-001-e71279e71acc04bd-2#chars-542-678\nEduceLab-Scrolls has also enabled the discovery, for the first time, of hidden texts from the Herculaneum papyri, which we present here.\n\n## EVIDENCE span:history-nature-scroll-2024-003-b98a3ae4860a6edc-1#chars-174-239\nby revealing the content of Greek writing inside a charred scroll\n\n## EVIDENCE span:history-educelab-paper-2023-001-e71279e71acc04bd-1#chars-88-207\nWe present a complete software pipeline for revealing the hidden texts of the Herculaneum papyri using X-ray CT images."
+  },
+  "answer": "{\n  \"answer\": \"归档仓库于 2024 年 11 月 21 日被所有者归档，而 2026 项目（Vesuvius Challenge）中 PHerc. 1667 在 2026 年被虚拟展开并通读。两者时间关系是归档发生在 2026 项目关键事件之前，但无直接因果或依赖关系。\",\n  \"citations\": [\n    \"span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-1#chars-48-106\",\n    \"span:history-scrollprize-2026-004-4ab2f152a60c6bbe-2#chars-258-361\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": [\n    \"归档仓库与 2026 项目进展之间是否存在直接关联未明确说明。\"\n  ]\n}",
+  "answerFormatValid": true
+}

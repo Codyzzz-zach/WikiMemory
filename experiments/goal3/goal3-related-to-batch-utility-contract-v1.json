@@ -1,0 +1,52 @@
+{
+	"schemaVersion": "wge-goal3-related-to-batch-utility-contract/v1",
+	"status": "FROZEN_BEFORE_BATCH_IMPLEMENTATION",
+	"stageBRead": false,
+	"failedPreAuditRanking": {
+		"report": "experiments/goal3/relation-lifecycle-facet-runs/v9-facet-mmr-v1/report.json",
+		"reportSha256": "e092320aa13c7ecbd823d3dfb628300b6227837a9315a3c7cc1857b6ae3eca47",
+		"review": "experiments/goal3/relation-lifecycle-facet-runs/v9-facet-mmr-v1/deferred-review.json",
+		"reviewSha256": "0449687ed68bb201bbcfcdcfe7fb3e472b2680e88eebc4c0edc864876c663261"
+	},
+	"objective": "Preserve candidate recall under moderate pressure by batching the existing RELATED_TO utility contract, instead of asking lexical pre-audit ranking to predict semantic utility it cannot observe.",
+	"productionChange": {
+		"candidateAuditBudgetPerSource": 64,
+		"newEndpointFanOutBeforeAudit": 64,
+		"utilityBatchMaxItems": 8,
+		"utilityBatchInputTokenBudget": 24000,
+		"envelope": "Every requested Relation id must appear exactly once with the unchanged RelationUtilityCriticVerdict schema.",
+		"failureRecovery": "Invalid or truncated multi-item output recursively splits; an invalid singleton is quarantined fail-closed.",
+		"cache": "Validated per-Relation utility verdicts retain the existing audit-version/model/temperature cache key."
+	},
+	"frozenReplay": {
+		"input": "All 42 v9 pressure-source candidates after the unchanged primary semantic audit path.",
+		"priorPerItemAuditTokens": 73801,
+		"priorPerItemCanonicalDiagnosticCount": 3,
+		"model": "deepseek-v4-flash",
+		"temperature": 0,
+		"thinkingDisabled": true,
+		"writesCanonicalPublication": false
+	},
+	"acceptance": {
+		"objectAccountingExact": true,
+		"minimumPriorCanonicalDiagnosticRecall": 1.0,
+		"minimumAuditTokenReductionVersusPerItemReplay": 0.2,
+		"maximumBatchItems": 8,
+		"invalidBatchSplitsAndSingletonFailsClosed": true,
+		"manualReviewAllAdditionalCanonical": true,
+		"canonicalEvidenceAndEndpointsResolvable": true,
+		"deferredConsumerExposure": 0,
+		"noScaleBeyond12WithoutNewAuthorization": true
+	},
+	"forbiddenChanges": [
+		"No domain-specific keywords or known Relation-id exceptions.",
+		"No weakening of the RELATED_TO utility failure modes or evidence validation.",
+		"No Stage B questions, answers or gold labels.",
+		"No direct publication from batch output."
+	],
+	"interpretationLimits": [
+		"Batching changes transport and cost, not the semantic definition of a useful edge.",
+		"The prior three per-item canonical outcomes are model diagnostics, not human gold labels.",
+		"The 64-candidate pre-audit cap remains a safety bound for larger unseen sources; it is not claimed optimal."
+	]
+}

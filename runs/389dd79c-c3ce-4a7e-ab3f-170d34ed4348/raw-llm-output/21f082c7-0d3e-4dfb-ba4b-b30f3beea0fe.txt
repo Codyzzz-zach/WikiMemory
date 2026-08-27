@@ -1,0 +1,32 @@
+{
+  "verdict": "failed",
+  "dimensions": {
+    "support": {
+      "result": "fail",
+      "evidence": "原文仅写着 '乘法 | ✅ 封闭'，没有声明整数集在乘法下封闭，也未提及整数集 Z。"
+    },
+    "addition": {
+      "result": "fail",
+      "evidence": "Claim 中的 '整数集 Z' 在原文中未出现，属于额外添加。"
+    },
+    "inference": {
+      "result": "pass",
+      "evidence": "无推断问题，但其他维度已判 fail。"
+    },
+    "limits": {
+      "result": "pass",
+      "evidence": "原文无适用条件，Claim 也无条件，故 pass。"
+    },
+    "citation": {
+      "result": "fail",
+      "evidence": "Claim 声称引用 SourceSpan，但 SourceSpan 并未声明整数集 Z 在乘法下封闭，引用错位。"
+    }
+  },
+  "anchor": "乘法 | ✅ 封闭",
+  "failedDimensions": ["support", "addition", "citation"],
+  "issues": [
+    "原文未提及整数集 Z，也未说 Z 在乘法下封闭。",
+    "Claim 添加了 '整数集 Z'，原文没有。",
+    "Citation 不准，原文不包含 Claim 的断言。"
+  ]
+}

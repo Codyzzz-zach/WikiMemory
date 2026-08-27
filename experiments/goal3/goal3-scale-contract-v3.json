@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "wge-goal3-scale-contract/v3",
+  "status": "FROZEN_AFTER_FULL_BATCH_C_RELATION_AUDIT",
+  "supersedes": "goal3-scale-contract-v2.json",
+  "purpose": "Measure bounded candidate-subgraph localization and final Prompt conversion on a multi-domain scale ladder with currently audited Batch C edges.",
+  "targetCorpus": "experiments/goal3/audited-batch-c-v1/workspace",
+  "questions": "experiments/benchmark-batch-c/stage-a-freeze/questions-public.jsonl",
+  "diagnosticGold": "experiments/benchmark-batch-c/stage-b-evaluator/normalized-gold/tasks.jsonl",
+  "relationAudit": {
+    "run": "experiments/goal3/runs/scale-v4/workspaces/S12/experiments/goal1/runs/goal3-batch-c-audit-v3",
+    "input": 117,
+    "accepted": 57,
+    "quarantined": 60,
+    "authority": "DEEPSEEK_DEV_PROXY_NOT_HUMAN_GOLD"
+  },
+  "tiers": [
+    {
+      "id": "S12",
+      "roots": ["experiments/goal3/audited-batch-c-v1/workspace"]
+    },
+    {
+      "id": "S29",
+      "roots": [
+        "experiments/goal3/audited-batch-c-v1/workspace",
+        "experiments/benchmark-seed-v1/workspace",
+        "."
+      ]
+    },
+    {
+      "id": "S50",
+      "roots": [
+        "experiments/goal3/audited-batch-c-v1/workspace",
+        "experiments/benchmark-seed-v1/workspace",
+        ".",
+        "experiments/evolution/runs/controlled-v1-lineage-v9/workspace"
+      ]
+    }
+  ],
+  "arms": ["R0", "R1"],
+  "fixed": {
+    "questionCount": 18,
+    "contextBudgetTokens": 12000,
+    "seedLimit": 10,
+    "maxGraphDepth": 2,
+    "maxCandidateNodes": 40,
+    "restartAlpha": 0.25,
+    "iterations": 25,
+    "network": false,
+    "modelCalls": 0
+  },
+  "layers": {
+    "candidate": "Primary: lexical Seed IDs for R0 versus bounded local-subgraph candidate IDs for R1.",
+    "prompt": "Secondary: Claim/Evidence bundles surviving selector and token budget."
+  },
+  "decisionRules": {
+    "CANDIDATE_LOCALIZATION_SIGNAL": "At S50, R1 has >=1 paired candidate-source recall win, zero candidate source/evidence losses, and candidate size <=40.",
+    "SELECTOR_GAP": "Candidate localization wins but final Prompt recall does not improve.",
+    "END_TO_END_RETRIEVAL_SIGNAL": "Candidate and Prompt recall improve without >5% average Context token increase.",
+    "NO_CANDIDATE_BENEFIT": "No R1 candidate recall win at any tier and no loss.",
+    "REGRESSION": "Any R1 candidate required-source or evidence recall loss.",
+    "ENGINEERING_SCALE_BLOCKER": "Full-corpus scans grow with corpus size; persistent indexes and local adjacency loading remain required."
+  },
+  "interpretationLimits": [
+    "Revealed Stage B Gold makes this a post-hoc mechanism diagnostic, not blind evidence.",
+    "Accepted Relations are DeepSeek proxy judgments pending independent human review.",
+    "Distractor corpora enlarge the search space but do not add audited cross-corpus edges.",
+    "A candidate localization win does not authorize default Graph Prompt expansion."
+  ]
+}

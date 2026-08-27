@@ -1,0 +1,28 @@
+{
+  "verdict": "passed",
+  "dimensions": {
+    "support": {
+      "result": "pass",
+      "evidence": "在 $\\mathbb{C}$ 上再扩张，只会失去域结构，不会获得新的方程解。"
+    },
+    "addition": {
+      "result": "pass",
+      "evidence": "无新增信息"
+    },
+    "inference": {
+      "result": "pass",
+      "evidence": "该陈述为直接断言，无推断标记问题"
+    },
+    "limits": {
+      "result": "pass",
+      "evidence": "原文无额外条件或限定词需保留"
+    },
+    "citation": {
+      "result": "pass",
+      "evidence": "Claim与SourceSpan完全一致"
+    }
+  },
+  "anchor": "在 $\\mathbb{C}$ 上再扩张，只会失去域结构，不会获得新的方程解。",
+  "failedDimensions": [],
+  "issues": []
+}

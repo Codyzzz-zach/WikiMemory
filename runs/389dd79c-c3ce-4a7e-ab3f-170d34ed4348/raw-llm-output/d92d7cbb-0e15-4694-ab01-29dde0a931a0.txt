@@ -1,0 +1,31 @@
+{
+  "verdict": "failed",
+  "dimensions": {
+    "support": {
+      "result": "fail",
+      "evidence": "原文[01-number-systems#block-97]仅包含'代数封闭 | ❌'，未明确提及整数集Z不是代数封闭的断言。"
+    },
+    "addition": {
+      "result": "pass",
+      "evidence": "Claim未添加原文之外的信息。"
+    },
+    "inference": {
+      "result": "pass",
+      "evidence": "Claim为直接断言，不涉及推断标记问题。"
+    },
+    "limits": {
+      "result": "pass",
+      "evidence": "无适用条件或限定词被忽略。"
+    },
+    "citation": {
+      "result": "fail",
+      "evidence": "引用的span[01-number-systems#block-97]内容为'代数封闭 | ❌'，但未提供足够上下文支持Claim关于整数集Z的断言。"
+    }
+  },
+  "anchor": "代数封闭 | ❌",
+  "failedDimensions": ["support", "citation"],
+  "issues": [
+    "support fail：原文证据未明确支持或否定整数集Z的代数封闭性，仅列出'代数封闭 | ❌'，缺乏具体对象。",
+    "citation fail：引用的span内容不足以支撑Claim的具体断言，引用错位或信息不足。"
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "kind": "VALID",
+  "content": "{\n  \"concepts\": [\n    {\"name\": \"上界\", \"aliases\": [], \"boundary\": \"实数集的有界性\", \"domain\": \"数学分析\"},\n    {\"name\": \"上确界\", \"aliases\": [], \"boundary\": \"实数集的有界性\", \"domain\": \"数学分析\"},\n    {\"name\": \"根号2\", \"aliases\": [], \"boundary\": \"代数数\", \"domain\": \"数学\"},\n    {\"name\": \"有理数\", \"aliases\": [], \"boundary\": \"数系\", \"domain\": \"数学\"},\n    {\"name\": \"第一次数学危机\", \"aliases\": [], \"boundary\": \"数学史事件\", \"domain\": \"数学史\"},\n    {\"name\": \"皮亚诺公理\", \"aliases\": [\"五条公理\"], \"boundary\": \"自然数公理化\", \"domain\": \"数学基础\"},\n    {\"name\": \"自然数\", \"aliases\": [], \"boundary\": \"数系\", \"domain\": \"数学\"},\n    {\"name\": \"分割\", \"aliases\": [], \"boundary\": \"戴德金分割\", \"domain\": \"数学分析\"},\n    {\"name\": \"实数\", \"aliases\": [], \"boundary\": \"数系\", \"domain\": \"数学\"},\n    {\"name\": \"Cauchy列\", \"aliases\": [], \"boundary\": \"数列收敛性\", \"domain\": \"数学分析\"},\n    {\"name\": \"Dedekind\", \"aliases\": [\"戴德金\"], \"boundary\": \"数学家\", \"domain\": \"数学史\"}\n  ]\n}",
+  "model": "deepseek-v4-flash",
+  "outputHash": "602ddd797fe0c9fb"
+}

@@ -1,0 +1,39 @@
+{
+  "schemaVersion": "pilot-publication-diff/v1",
+  "runId": "20cd34b6-8d69-451c-a9f6-008263248025",
+  "sourceId": "source:health-who-march-2020-001-b587ec61aaf84d7d",
+  "generatedAt": "2026-07-27T09:46:16.901Z",
+  "status": "PASS",
+  "acceptedReview": false,
+  "runtime": {
+    "requestedModel": "deepseek-v4-flash",
+    "temperature": 0,
+    "semanticAuditVersion": "v2.3",
+    "relationAuditVersion": "v1.7",
+    "sourceHash": "b587ec61aaf84d7d"
+  },
+  "baseline": null,
+  "candidate": {
+    "claims": 5,
+    "concepts": 4,
+    "relations": 1,
+    "quarantinedClaims": 0,
+    "quarantinedRelations": 3,
+    "quarantineRate": 0
+  },
+  "diff": {
+    "retainedClaimIds": 0,
+    "addedClaimIds": [
+      "claim:b587ec61aaf84d7d-474d339f3670f6c4",
+      "claim:b587ec61aaf84d7d-7bc5b6c3a357763e",
+      "claim:b587ec61aaf84d7d-aae2124ec2ae0b65",
+      "claim:b587ec61aaf84d7d-f9e6d8b51f46b89d",
+      "claim:b587ec61aaf84d7d-ffaa41d4d0fe03ab"
+    ],
+    "removedClaimIds": [],
+    "claimRetentionRate": null,
+    "claimCountChangeRate": null,
+    "conditionsDropped": []
+  },
+  "issues": []
+}

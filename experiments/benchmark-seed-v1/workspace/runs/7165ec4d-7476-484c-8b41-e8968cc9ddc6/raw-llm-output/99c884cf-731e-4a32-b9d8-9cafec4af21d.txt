@@ -1,0 +1,60 @@
+{
+  "relations": [
+    {
+      "fromClaimIndex": 0,
+      "toClaimIndex": 1,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 0,
+      "toClaimIndex": 2,
+      "type": "DERIVED_FROM",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 0,
+      "toClaimIndex": 4,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 1,
+      "toClaimIndex": 0,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 2,
+      "toClaimIndex": 0,
+      "type": "DERIVED_FROM",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 3,
+      "toClaimIndex": 5,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 4,
+      "toClaimIndex": 0,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 5,
+      "toClaimIndex": 3,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.9
+    }
+  ]
+}

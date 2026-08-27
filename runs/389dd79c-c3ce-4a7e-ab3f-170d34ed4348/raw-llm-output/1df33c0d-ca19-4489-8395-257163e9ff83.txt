@@ -1,0 +1,17 @@
+{
+  "verdict": "failed",
+  "dimensions": {
+    "support": { "result": "fail", "evidence": "原文只有 '代数封闭 | ❌'，没有声明'有理数集Q不是代数封闭的'的具体判断" },
+    "addition": { "result": "fail", "evidence": "原文没有提及'有理数集Q'，Claim添加了该主体" },
+    "inference": { "result": "pass", "evidence": "Claim是事实陈述，未做推断" },
+    "limits": { "result": "pass", "evidence": "Claim无适用条件，原文也无条件" },
+    "citation": { "result": "fail", "evidence": "引用span不包含Claim中的主体和结论" }
+  },
+  "anchor": "代数封闭 | ❌",
+  "failedDimensions": ["support", "addition", "citation"],
+  "issues": [
+    "原文没有对有理数集Q做出任何陈述，Claim添加了Q这个主体",
+    "原文只给出了否定标记，没有明确声明'不是代数封闭'",
+    "引用span内容不包含Claim中的主体和结论"
+  ]
+}

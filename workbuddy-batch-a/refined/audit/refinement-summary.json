@@ -1,0 +1,18 @@
+{
+  "schemaVersion": "wge-batch-refinement-summary/v1",
+  "input": "workbuddy-batch-a",
+  "output": "workbuddy-batch-a/refined",
+  "counts": {
+    "sources": 14,
+    "factsReviewed": 60,
+    "factsRepaired": 16,
+    "adversarialRisks": 24,
+    "relationsReviewed": 10,
+    "relationsRejected": 9,
+    "tasksReviewed": 62,
+    "tasksRepaired": 17,
+    "evolutionEpisodes": 3,
+    "canaryCases": 12
+  },
+  "statusBoundary": "Model-reviewed provisional data; not human Gold and not blind holdout."
+}

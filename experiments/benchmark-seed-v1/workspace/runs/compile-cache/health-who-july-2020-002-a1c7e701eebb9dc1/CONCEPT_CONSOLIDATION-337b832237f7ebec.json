@@ -1,0 +1,6 @@
+{
+  "kind": "VALID",
+  "content": "{\n  \"concepts\": [\n    {\n      \"name\": \"短距离气溶胶传播\",\n      \"aliases\": [],\n      \"boundary\": \"指在特定室内场所，如拥挤且通风不良的空间，与感染者长时间接触时可能发生的传播方式\",\n      \"domain\": \"流行病学\"\n    },\n    {\n      \"name\": \"特定室内场所\",\n      \"aliases\": [\"拥挤且通风不良的空间\"],\n      \"boundary\": \"指可能导致短距离气溶胶传播的室内环境，如拥挤且通风不良的空间\",\n      \"domain\": \"环境健康\"\n    },\n    {\n      \"name\": \"SARS-CoV-2\",\n      \"aliases\": [],\n      \"boundary\": \"导致COVID-19的病毒\",\n      \"domain\": \"病毒学\"\n    },\n    {\n      \"name\": \"COVID-19\",\n      \"aliases\": [],\n      \"boundary\": \"由SARS-CoV-2引起的疾病\",\n      \"domain\": \"医学\"\n    },\n    {\n      \"name\": \"科学简报\",\n      \"aliases\": [],\n      \"boundary\": \"2020年3月29日发布的关于SARS-CoV-2传播的文档\",\n      \"domain\": \"科学传播\"\n    }\n  ]\n}",
+  "model": "deepseek-v4-flash",
+  "outputHash": "e57b1fa15a16a4a6"
+}

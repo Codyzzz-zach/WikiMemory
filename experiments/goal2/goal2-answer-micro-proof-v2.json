@@ -1,0 +1,545 @@
+{
+  "schemaVersion": "wge-goal2-answer-micro-proof/v1",
+  "status": "FAIL_ANSWER_MICRO_GATE",
+  "createdAt": "2026-07-30T01:09:20.370Z",
+  "inputs": {
+    "answerReport": {
+      "path": "/Users/mixi/Desktop/WikiMemory/experiments/goal2/runs/goal2-r1-answer-micro-v1/adjudicated-score-report.json",
+      "sha256": "bc9982958d5b3d896e626fb5f6fb2e068fb4c432eac685e8dbe93161fbfd9561"
+    },
+    "preparationReport": {
+      "path": "/Users/mixi/Desktop/WikiMemory/experiments/goal2/runs/goal2-r1-offline-micro-v2/offline-report.json",
+      "sha256": "04276daa3035bf47408e5c0fa66373bd4024928e307f5d915e0400f7fa8d7044"
+    }
+  },
+  "checks": {
+    "allAnswerContractsValid": false,
+    "noAdditionalHardFailure": false,
+    "controlsHaveNoHardRegression": true,
+    "aggregateParetoNondominated": false,
+    "traceableTargetRankingBenefit": false,
+    "graphWasReplacementNotAppend": true
+  },
+  "decision": "REWORK_R1_NO_DEV_CORE",
+  "traceableTargetBenefits": [],
+  "aggregate": {
+    "B": {
+      "averageScore": 7.125,
+      "hardFailures": 1,
+      "averageContextTokens": 4942.5,
+      "providerTokens": 44671,
+      "averageLatencyMs": 2640.75
+    },
+    "R0": {
+      "averageScore": 7.75,
+      "hardFailures": 1,
+      "averageContextTokens": 2376.375,
+      "providerTokens": 27768,
+      "averageLatencyMs": 2547.375
+    },
+    "R1": {
+      "averageScore": 7.5,
+      "hardFailures": 2,
+      "averageContextTokens": 2436.25,
+      "providerTokens": 28675,
+      "averageLatencyMs": 3008.75
+    }
+  },
+  "questionRows": [
+    {
+      "questionId": "PILOT-D01",
+      "questionClass": "control",
+      "groups": {
+        "B": {
+          "totalScore": 7,
+          "hardFailure": false,
+          "evidenceGrounding": 1,
+          "contextTokens": 5235,
+          "providerInputTokens": 5648,
+          "providerOutputTokens": 164,
+          "latencyMs": 2998,
+          "answerFormatValid": true,
+          "citationsValid": true
+        },
+        "R0": {
+          "totalScore": 8,
+          "hardFailure": false,
+          "evidenceGrounding": 2,
+          "contextTokens": 2673,
+          "providerInputTokens": 3521,
+          "providerOutputTokens": 201,
+          "latencyMs": 1981,
+          "answerFormatValid": true,
+          "citationsValid": true
+        },
+        "R1": {
+          "totalScore": 8,
+          "hardFailure": false,
+          "evidenceGrounding": 2,
+          "contextTokens": 2673,
+          "providerInputTokens": 3521,
+          "providerOutputTokens": 296,
+          "latencyMs": 3023,
+          "answerFormatValid": true,
+          "citationsValid": true
+        }
+      },
+      "r1VsR0": {
+        "scoreDelta": 0,
+        "evidenceGroundingDelta": 0,
+        "providerTokenDelta": 95,
+        "contextTokenDelta": 0,
+        "latencyDeltaMs": 1042,
+        "r0DominatesR1": true
+      },
+      "selectionTrace": {
+        "changed": false,
+        "addedGraphClaimIds": [],
+        "removedLexicalSeedIds": []
+      }
+    },
+    {
+      "questionId": "PILOT-D03",
+      "questionClass": "control",
+      "groups": {
+        "B": {
+          "totalScore": 8,
+          "hardFailure": false,
+          "evidenceGrounding": 2,
+          "contextTokens": 4761,
+          "providerInputTokens": 5278,
+          "providerOutputTokens": 108,
+          "latencyMs": 2219,
+          "answerFormatValid": true,
+          "citationsValid": true
+        },
+        "R0": {
+          "totalScore": 8,
+          "hardFailure": false,
+          "evidenceGrounding": 2,
+          "contextTokens": 2015,
+          "providerInputTokens": 2762,
+          "providerOutputTokens": 166,
+          "latencyMs": 2066,
+          "answerFormatValid": true,
+          "citationsValid": true
+        },
+        "R1": {
+          "totalScore": 8,
+          "hardFailure": false,
+          "evidenceGrounding": 2,
+          "contextTokens": 2015,
+          "providerInputTokens": 2762,
+          "providerOutputTokens": 167,
+          "latencyMs": 1860,
+          "answerFormatValid": true,
+          "citationsValid": true
+        }
+      },
+      "r1VsR0": {
+        "scoreDelta": 0,
+        "evidenceGroundingDelta": 0,
+        "providerTokenDelta": 1,
+        "contextTokenDelta": 0,
+        "latencyDeltaMs": -206,
+        "r0DominatesR1": true
+      },
+      "selectionTrace": {
+        "changed": false,
+        "addedGraphClaimIds": [],
+        "removedLexicalSeedIds": []
+      }
+    },
+    {
+      "questionId": "PILOT-H2-01",
+      "questionClass": "target",
+      "groups": {
+        "B": {
+          "totalScore": 8,
+          "hardFailure": false,
+          "evidenceGrounding": 2,
+          "contextTokens": 4347,
+          "providerInputTokens": 4697,
+          "providerOutputTokens": 294,
+          "latencyMs": 3974,
+          "answerFormatValid": true,
+          "citationsValid": true
+        },
+        "R0": {
+          "totalScore": 6,
+          "hardFailure": true,
+          "evidenceGrounding": 0,
+          "contextTokens": 2348,
+          "providerInputTokens": 3157,
+          "providerOutputTokens": 597,
+          "latencyMs": 5108,
+          "answerFormatValid": true,
+          "citationsValid": false
+        },
+        "R1": {
+          "totalScore": 6,
+          "hardFailure": true,
+          "evidenceGrounding": 0,
+          "contextTokens": 2466,
+          "providerInputTokens": 3309,
+          "providerOutputTokens": 924,
+          "latencyMs": 6095,
+          "answerFormatValid": true,
+          "citationsValid": false
+        }
+      },
+      "r1VsR0": {
+        "scoreDelta": 0,
+        "evidenceGroundingDelta": 0,
+        "providerTokenDelta": 479,
+        "contextTokenDelta": 118,
+        "latencyDeltaMs": 987,
+        "r0DominatesR1": true
+      },
+      "selectionTrace": {
+        "changed": true,
+        "addedGraphClaimIds": [
+          "claim:80440e2182e5653f-d1c80ec9bda36ba7"
+        ],
+        "removedLexicalSeedIds": [
+          "claim:33a33396a17d4175-92f0384fb17d1720"
+        ]
+      }
+    },
+    {
+      "questionId": "PILOT-H2-22",
+      "questionClass": "target",
+      "groups": {
+        "B": {
+          "totalScore": 8,
+          "hardFailure": false,
+          "evidenceGrounding": 2,
+          "contextTokens": 5739,
+          "providerInputTokens": 6005,
+          "providerOutputTokens": 198,
+          "latencyMs": 2770,
+          "answerFormatValid": true,
+          "citationsValid": true
+        },
+        "R0": {
+          "totalScore": 8,
+          "hardFailure": false,
+          "evidenceGrounding": 2,
+          "contextTokens": 3003,
+          "providerInputTokens": 3851,
+          "providerOutputTokens": 205,
+          "latencyMs": 2223,
+          "answerFormatValid": true,
+          "citationsValid": true
+        },
+        "R1": {
+          "totalScore": 8,
+          "hardFailure": false,
+          "evidenceGrounding": 2,
+          "contextTokens": 3134,
+          "providerInputTokens": 3969,
+          "providerOutputTokens": 201,
+          "latencyMs": 2617,
+          "answerFormatValid": true,
+          "citationsValid": true
+        }
+      },
+      "r1VsR0": {
+        "scoreDelta": 0,
+        "evidenceGroundingDelta": 0,
+        "providerTokenDelta": 114,
+        "contextTokenDelta": 131,
+        "latencyDeltaMs": 394,
+        "r0DominatesR1": true
+      },
+      "selectionTrace": {
+        "changed": true,
+        "addedGraphClaimIds": [
+          "claim:80440e2182e5653f-d1c80ec9bda36ba7"
+        ],
+        "removedLexicalSeedIds": [
+          "claim:33a33396a17d4175-f61bd8bdddda89dc"
+        ]
+      }
+    },
+    {
+      "questionId": "PILOT-H3-05",
+      "questionClass": "target",
+      "groups": {
+        "B": {
+          "totalScore": 8,
+          "hardFailure": false,
+          "evidenceGrounding": 2,
+          "contextTokens": 4841,
+          "providerInputTokens": 5081,
+          "providerOutputTokens": 204,
+          "latencyMs": 2430,
+          "answerFormatValid": true,
+          "citationsValid": true
+        },
+        "R0": {
+          "totalScore": 8,
+          "hardFailure": false,
+          "evidenceGrounding": 2,
+          "contextTokens": 3035,
+          "providerInputTokens": 3943,
+          "providerOutputTokens": 479,
+          "latencyMs": 3928,
+          "answerFormatValid": true,
+          "citationsValid": true
+        },
+        "R1": {
+          "totalScore": 6,
+          "hardFailure": true,
+          "evidenceGrounding": 0,
+          "contextTokens": 3036,
+          "providerInputTokens": 3943,
+          "providerOutputTokens": 476,
+          "latencyMs": 4668,
+          "answerFormatValid": true,
+          "citationsValid": false
+        }
+      },
+      "r1VsR0": {
+        "scoreDelta": -2,
+        "evidenceGroundingDelta": -2,
+        "providerTokenDelta": -3,
+        "contextTokenDelta": 1,
+        "latencyDeltaMs": 740,
+        "r0DominatesR1": false
+      },
+      "selectionTrace": {
+        "changed": true,
+        "addedGraphClaimIds": [],
+        "removedLexicalSeedIds": []
+      }
+    },
+    {
+      "questionId": "PILOT-C02",
+      "questionClass": "target",
+      "groups": {
+        "B": {
+          "totalScore": 8,
+          "hardFailure": false,
+          "evidenceGrounding": 2,
+          "contextTokens": 4648,
+          "providerInputTokens": 5375,
+          "providerOutputTokens": 110,
+          "latencyMs": 1961,
+          "answerFormatValid": true,
+          "citationsValid": true
+        },
+        "R0": {
+          "totalScore": 8,
+          "hardFailure": false,
+          "evidenceGrounding": 2,
+          "contextTokens": 2412,
+          "providerInputTokens": 3523,
+          "providerOutputTokens": 138,
+          "latencyMs": 1830,
+          "answerFormatValid": true,
+          "citationsValid": true
+        },
+        "R1": {
+          "totalScore": 8,
+          "hardFailure": false,
+          "evidenceGrounding": 2,
+          "contextTokens": 2412,
+          "providerInputTokens": 3523,
+          "providerOutputTokens": 92,
+          "latencyMs": 1522,
+          "answerFormatValid": true,
+          "citationsValid": true
+        }
+      },
+      "r1VsR0": {
+        "scoreDelta": 0,
+        "evidenceGroundingDelta": 0,
+        "providerTokenDelta": -46,
+        "contextTokenDelta": 0,
+        "latencyDeltaMs": -308,
+        "r0DominatesR1": false
+      },
+      "selectionTrace": {
+        "changed": true,
+        "addedGraphClaimIds": [],
+        "removedLexicalSeedIds": []
+      }
+    },
+    {
+      "questionId": "PILOT-C05",
+      "questionClass": "control",
+      "groups": {
+        "B": {
+          "totalScore": 8,
+          "hardFailure": false,
+          "evidenceGrounding": 2,
+          "contextTokens": 5078,
+          "providerInputTokens": 5657,
+          "providerOutputTokens": 171,
+          "latencyMs": 2499,
+          "answerFormatValid": true,
+          "citationsValid": true
+        },
+        "R0": {
+          "totalScore": 8,
+          "hardFailure": false,
+          "evidenceGrounding": 2,
+          "contextTokens": 2275,
+          "providerInputTokens": 3215,
+          "providerOutputTokens": 174,
+          "latencyMs": 2274,
+          "answerFormatValid": true,
+          "citationsValid": true
+        },
+        "R1": {
+          "totalScore": 8,
+          "hardFailure": false,
+          "evidenceGrounding": 2,
+          "contextTokens": 2504,
+          "providerInputTokens": 3477,
+          "providerOutputTokens": 172,
+          "latencyMs": 2298,
+          "answerFormatValid": true,
+          "citationsValid": true
+        }
+      },
+      "r1VsR0": {
+        "scoreDelta": 0,
+        "evidenceGroundingDelta": 0,
+        "providerTokenDelta": 260,
+        "contextTokenDelta": 229,
+        "latencyDeltaMs": 24,
+        "r0DominatesR1": true
+      },
+      "selectionTrace": {
+        "changed": true,
+        "addedGraphClaimIds": [
+          "claim:80440e2182e5653f-d1c80ec9bda36ba7",
+          "claim:80440e2182e5653f-d89b79ca37b88b53"
+        ],
+        "removedLexicalSeedIds": [
+          "claim:e7ea8bc17c2cc4ab-762e52171f5fb5d4",
+          "claim:e7ea8bc17c2cc4ab-ef4f93b1a8a89990"
+        ]
+      }
+    },
+    {
+      "questionId": "PILOT-INS-D10",
+      "questionClass": "control",
+      "groups": {
+        "B": {
+          "totalScore": 2,
+          "hardFailure": true,
+          "evidenceGrounding": 0,
+          "contextTokens": 4891,
+          "providerInputTokens": 5510,
+          "providerOutputTokens": 171,
+          "latencyMs": 2275,
+          "answerFormatValid": true,
+          "citationsValid": true
+        },
+        "R0": {
+          "totalScore": 8,
+          "hardFailure": false,
+          "evidenceGrounding": 2,
+          "contextTokens": 1250,
+          "providerInputTokens": 1787,
+          "providerOutputTokens": 49,
+          "latencyMs": 969,
+          "answerFormatValid": true,
+          "citationsValid": true
+        },
+        "R1": {
+          "totalScore": 8,
+          "hardFailure": false,
+          "evidenceGrounding": 2,
+          "contextTokens": 1250,
+          "providerInputTokens": 1787,
+          "providerOutputTokens": 56,
+          "latencyMs": 1987,
+          "answerFormatValid": true,
+          "citationsValid": true
+        }
+      },
+      "r1VsR0": {
+        "scoreDelta": 0,
+        "evidenceGroundingDelta": 0,
+        "providerTokenDelta": 7,
+        "contextTokenDelta": 0,
+        "latencyDeltaMs": 1018,
+        "r0DominatesR1": true
+      },
+      "selectionTrace": {
+        "changed": false,
+        "addedGraphClaimIds": [],
+        "removedLexicalSeedIds": []
+      }
+    }
+  ],
+  "failureAttribution": [
+    {
+      "layer": "answer-contract",
+      "reason": "invalid-format-or-citation"
+    },
+    {
+      "layer": "answer-safety",
+      "reason": "additional-r1-hard-failure"
+    },
+    {
+      "layer": "product-utility",
+      "reason": "r0-aggregate-dominates-r1"
+    },
+    {
+      "layer": "selection-value",
+      "reason": "no-target-score-gain-on-changed-context"
+    },
+    {
+      "layer": "answer-variance",
+      "questionId": "PILOT-D01",
+      "reason": "r0-pair-dominates-r1",
+      "scoreDelta": 0,
+      "providerTokenDelta": 95
+    },
+    {
+      "layer": "answer-variance",
+      "questionId": "PILOT-D03",
+      "reason": "r0-pair-dominates-r1",
+      "scoreDelta": 0,
+      "providerTokenDelta": 1
+    },
+    {
+      "layer": "r1-selection",
+      "questionId": "PILOT-H2-01",
+      "reason": "r0-pair-dominates-r1",
+      "scoreDelta": 0,
+      "providerTokenDelta": 479
+    },
+    {
+      "layer": "r1-selection",
+      "questionId": "PILOT-H2-22",
+      "reason": "r0-pair-dominates-r1",
+      "scoreDelta": 0,
+      "providerTokenDelta": 114
+    },
+    {
+      "layer": "r1-selection",
+      "questionId": "PILOT-C05",
+      "reason": "r0-pair-dominates-r1",
+      "scoreDelta": 0,
+      "providerTokenDelta": 260
+    },
+    {
+      "layer": "answer-variance",
+      "questionId": "PILOT-INS-D10",
+      "reason": "r0-pair-dominates-r1",
+      "scoreDelta": 0,
+      "providerTokenDelta": 7
+    }
+  ],
+  "limitations": [
+    "Scores are AI-proxy judgments over revealed Dev questions, not human Gold adjudication.",
+    "A PASS authorizes Dev Core; it does not complete Goal 2 or establish blind product value.",
+    "A target score gain is traceable to a changed R1 context but is not causal proof by itself."
+  ]
+}

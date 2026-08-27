@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "wge-goal3-scale-contract/v1",
+  "status": "FROZEN_BEFORE_RUN",
+  "purpose": "Test whether bounded Graph navigation improves localization as a multi-domain knowledge base grows; this is not an answer-quality claim.",
+  "targetCorpus": "experiments/benchmark-batch-c/workspace",
+  "questions": "experiments/benchmark-batch-c/stage-a-freeze/questions-public.jsonl",
+  "diagnosticGold": "experiments/benchmark-batch-c/stage-b-evaluator/normalized-gold/tasks.jsonl",
+  "tiers": [
+    {
+      "id": "S12",
+      "roots": ["experiments/benchmark-batch-c/workspace"]
+    },
+    {
+      "id": "S29",
+      "roots": [
+        "experiments/benchmark-batch-c/workspace",
+        "experiments/benchmark-seed-v1/workspace",
+        "."
+      ]
+    },
+    {
+      "id": "S50",
+      "roots": [
+        "experiments/benchmark-batch-c/workspace",
+        "experiments/benchmark-seed-v1/workspace",
+        ".",
+        "experiments/evolution/runs/controlled-v1-lineage-v9/workspace"
+      ]
+    }
+  ],
+  "arms": ["R0", "R1"],
+  "fixed": {
+    "questionCount": 18,
+    "contextBudgetTokens": 12000,
+    "seedLimit": 10,
+    "maxGraphDepth": 2,
+    "maxCandidateNodes": 40,
+    "restartAlpha": 0.25,
+    "iterations": 25,
+    "network": false,
+    "modelCalls": 0
+  },
+  "primaryMetrics": [
+    "requiredSourceRecall",
+    "requiredEvidenceQuoteRecall",
+    "questionsWithAllRequiredSources",
+    "pairedSourceRecallWinsAndLosses"
+  ],
+  "costMetrics": [
+    "averageContextTokens",
+    "averageQueryMilliseconds",
+    "p95QueryMilliseconds",
+    "eligibleClaimsScanned",
+    "relationsGateChecked",
+    "candidateGraphNodes"
+  ],
+  "decisionRules": {
+    "LOCALIZATION_SIGNAL": "At S50, R1 has at least one paired required-source recall win, zero paired losses, and does not reduce required-evidence quote recall.",
+    "PARETO_SIGNAL": "LOCALIZATION_SIGNAL plus average context tokens <= 1.05x R0 and p95 latency <= max(2x R0, R0 + 100ms).",
+    "NO_BENEFIT": "R1 has no recall win at any tier and no recall loss.",
+    "REGRESSION": "R1 loses required-source or required-evidence recall on any question.",
+    "ENGINEERING_SCALE_BLOCKER": "Either arm performs full-corpus scans whose work grows linearly with corpus size; this blocks a production scale claim even if retrieval quality passes."
+  },
+  "interpretationLimits": [
+    "Stage B Gold has already been revealed, so this is a post-hoc mechanism diagnostic, not blind product evidence.",
+    "Additional roots are real multi-domain distractors; they do not add new cross-corpus semantic edges.",
+    "A localization win authorizes a new indexed local-subgraph design. It does not authorize default Graph content in the answer Prompt.",
+    "Synthetic duplication may be used later only for asymptotic engineering tests, never as product-quality evidence."
+  ]
+}

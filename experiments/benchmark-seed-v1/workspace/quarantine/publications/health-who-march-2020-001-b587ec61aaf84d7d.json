@@ -1,0 +1,142 @@
+{
+  "schemaVersion": "v1",
+  "sourceId": "source:health-who-march-2020-001-b587ec61aaf84d7d",
+  "runId": "20cd34b6-8d69-451c-a9f6-008263248025",
+  "publishedAt": "2026-07-27T09:46:16.909Z",
+  "claims": [],
+  "relations": [
+    {
+      "relation": {
+        "id": "rel:b587ec61aaf84d7d-1912a1c9c77762d8",
+        "from": "claim:b587ec61aaf84d7d-ffaa41d4d0fe03ab",
+        "to": "claim:b587ec61aaf84d7d-aae2124ec2ae0b65",
+        "type": "DERIVED_FROM",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:health-who-march-2020-001-b587ec61aaf84d7d-1#chars-241-287",
+          "span:health-who-march-2020-001-b587ec61aaf84d7d-1#chars-51-239"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:46:12.530Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:b587ec61aaf84d7d-1912a1c9c77762d8",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:health-who-march-2020-001#block-1] “can remain in the air for long periods of time”; [1:health-who-march-2020-001#block-1] “Airborne transmission is different from droplet transmission as it refers to the”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:b587ec61aaf84d7d-1912a1c9c77762d8",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:health-who-march-2020-001#block-1] “can remain in the air for long periods of time”; [1:health-who-march-2020-001#block-1] “Airborne transmission is different from droplet transmission as it refers to the”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:b587ec61aaf84d7d-2658827bc480cf46",
+        "from": "claim:b587ec61aaf84d7d-aae2124ec2ae0b65",
+        "to": "claim:b587ec61aaf84d7d-f9e6d8b51f46b89d",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:health-who-march-2020-001-b587ec61aaf84d7d-1#chars-241-287",
+          "span:health-who-march-2020-001-b587ec61aaf84d7d-1#chars-292-348"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:46:12.530Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:b587ec61aaf84d7d-2658827bc480cf46",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:health-who-march-2020-001#block-1] “can remain in the air for long periods of time”; [1:health-who-march-2020-001#block-1] “be transmitted to others over distances greater than 1 m”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:b587ec61aaf84d7d-2658827bc480cf46",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:health-who-march-2020-001#block-1] “can remain in the air for long periods of time”; [1:health-who-march-2020-001#block-1] “be transmitted to others over distances greater than 1 m”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:b587ec61aaf84d7d-58e843d1d4edaeeb",
+        "from": "claim:b587ec61aaf84d7d-ffaa41d4d0fe03ab",
+        "to": "claim:b587ec61aaf84d7d-f9e6d8b51f46b89d",
+        "type": "DERIVED_FROM",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:health-who-march-2020-001-b587ec61aaf84d7d-1#chars-292-348",
+          "span:health-who-march-2020-001-b587ec61aaf84d7d-1#chars-51-239"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:46:12.530Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:b587ec61aaf84d7d-58e843d1d4edaeeb",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:health-who-march-2020-001#block-1] “be transmitted to others over distances greater than 1 m”; [1:health-who-march-2020-001#block-1] “Airborne transmission is different from droplet transmission as it refers to the”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:b587ec61aaf84d7d-58e843d1d4edaeeb",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:health-who-march-2020-001#block-1] “be transmitted to others over distances greater than 1 m”; [1:health-who-march-2020-001#block-1] “Airborne transmission is different from droplet transmission as it refers to the”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:b587ec61aaf84d7d-58e843d1d4edaeeb",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:health-who-march-2020-001#block-1] “be transmitted to others over distances greater than 1 m”; [1:health-who-march-2020-001#block-1] “Airborne transmission is different from droplet transmission as it refers to the”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    }
+  ]
+}

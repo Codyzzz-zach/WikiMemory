@@ -1,0 +1,3247 @@
+{
+  "schemaVersion": "wge-question-association-fixture/v1",
+  "status": "FROZEN_ZERO_CALL_INPUT",
+  "knowledgeBoundary": "HUMAN_SELECTED_CANONICAL_KNOWLEDGE_ONLY",
+  "cases": [
+    {
+      "caseId": "QAB-LAW-01",
+      "domain": "law-public-policy",
+      "sourceId": "source:s200-law-dma-006-0cbb0a59d7c7bc5f",
+      "snapshotId": "ks-2026-08-23T16-11-45-322Z-260d03fcf4ba",
+      "beforeQuestionStateHash": "f7a40f513b491e2170777c90f5b632be3240764d6846735d0d3c58708cd0372d",
+      "claim": {
+        "ref": "claim:0cbb0a59d7c7bc5f-a745403624af6a75",
+        "statement": "守门人门槛要求核心平台服务拥有4500万月活终端用户与1万年度活跃商业用户。",
+        "conditions": [],
+        "validity": "SUPPORTED",
+        "claimKind": "FACT",
+        "scope": {
+          "type": "GLOBAL"
+        },
+        "sourceId": "source:s200-law-dma-006-0cbb0a59d7c7bc5f",
+        "knowledgeVersion": "kv:955566069e2672db8fad3ba4",
+        "evidenceRefs": [
+          {
+            "ref": "span:s200-law-dma-006-0cbb0a59d7c7bc5f-3#chars-317-352",
+            "baseSpanRef": "span:s200-law-dma-006-0cbb0a59d7c7bc5f-3",
+            "sourceId": "source:s200-law-dma-006-0cbb0a59d7c7bc5f"
+          }
+        ]
+      },
+      "question": {
+        "ref": "question:6374d223d73b203bbcfb1990",
+        "canonicalQuestion": "What are the criteria and process for designating an undertaking as a gatekeeper under Regulation (EU) 2022/1925?",
+        "aliases": [
+          "How is a gatekeeper designated under the DMA?",
+          "What are the gatekeeper designation requirements?"
+        ],
+        "boundaries": [
+          "Excludes the specific obligations imposed on gatekeepers.",
+          "Includes the presumption based on quantitative thresholds, the possibility of rebuttal, and the role of designation decisions."
+        ],
+        "domain": "law-public-policy",
+        "scope": {
+          "type": "GLOBAL"
+        },
+        "lifecycle": "ACTIVE",
+        "stateHash": "f7a40f513b491e2170777c90f5b632be3240764d6846735d0d3c58708cd0372d"
+      },
+      "priorClaims": [
+        {
+          "ref": "claim:643d4a41ee2edb9e-cfdd6695f2bbb147",
+          "statement": "bertman 的评论引用了原文，其中提到 Alphabet、Microsoft 和 Samsung 提供了充分论证的理由，表明这些服务不符合各自核心平台服务的网关资格。",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-law-dma-003-643d4a41ee2edb9e",
+          "knowledgeVersion": "kv:d8064ee1840ab22697792efe",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-law-dma-003-643d4a41ee2edb9e-6#chars-364-537",
+              "baseSpanRef": "span:s200-law-dma-003-643d4a41ee2edb9e-6",
+              "sourceId": "source:s200-law-dma-003-643d4a41ee2edb9e"
+            }
+          ]
+        },
+        {
+          "ref": "claim:a7aadcf11ba39143-6275b174b26f3ee2",
+          "statement": "A small number of large undertakings providing core platform services have emerged with considerable economic power.",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-law-dma-001-a7aadcf11ba39143",
+          "knowledgeVersion": "kv:d0a07fbfc36f3e791c4fcc1c",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-law-dma-001-a7aadcf11ba39143-6#chars-742-857",
+              "baseSpanRef": "span:s200-law-dma-001-a7aadcf11ba39143-6",
+              "sourceId": "source:s200-law-dma-001-a7aadcf11ba39143"
+            }
+          ]
+        },
+        {
+          "ref": "claim:a7aadcf11ba39143-9f64936e1e91fccf",
+          "statement": "The rebuttal of the presumption is possible by demonstrating that, although the undertaking meets the quantitative thresholds set out in this Regulation, it does not fulfil the requirements for designation as a gatekeeper.",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-law-dma-001-a7aadcf11ba39143",
+          "knowledgeVersion": "kv:d0a07fbfc36f3e791c4fcc1c",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-law-dma-001-a7aadcf11ba39143-7#chars-1136-1301",
+              "baseSpanRef": "span:s200-law-dma-001-a7aadcf11ba39143-7",
+              "sourceId": "source:s200-law-dma-001-a7aadcf11ba39143"
+            }
+          ]
+        },
+        {
+          "ref": "claim:a7aadcf11ba39143-c8ef3face8d3c85a",
+          "statement": "The decreases in choice can confer on the provider of those services the position of a so-called gatekeeper.",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-law-dma-001-a7aadcf11ba39143",
+          "knowledgeVersion": "kv:d0a07fbfc36f3e791c4fcc1c",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-law-dma-001-a7aadcf11ba39143-5#chars-638-736",
+              "baseSpanRef": "span:s200-law-dma-001-a7aadcf11ba39143-5",
+              "sourceId": "source:s200-law-dma-001-a7aadcf11ba39143"
+            }
+          ]
+        },
+        {
+          "ref": "claim:a7aadcf11ba39143-faf2513e3fa8337a",
+          "statement": "The considerable economic power of those undertakings could qualify them to be designated as gatekeepers pursuant to this Regulation.",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-law-dma-001-a7aadcf11ba39143",
+          "knowledgeVersion": "kv:d0a07fbfc36f3e791c4fcc1c",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-law-dma-001-a7aadcf11ba39143-6#chars-858-942",
+              "baseSpanRef": "span:s200-law-dma-001-a7aadcf11ba39143-6",
+              "sourceId": "source:s200-law-dma-001-a7aadcf11ba39143"
+            }
+          ]
+        },
+        {
+          "ref": "claim:a7aadcf11ba39143-fd96d292b824e7df",
+          "statement": "An undertaking providing core platform services should be able, in exceptional circumstances, to rebut the presumption that the undertaking has a significant impact on the internal market.",
+          "conditions": [
+            "in exceptional circumstances"
+          ],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-law-dma-001-a7aadcf11ba39143",
+          "knowledgeVersion": "kv:d0a07fbfc36f3e791c4fcc1c",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-law-dma-001-a7aadcf11ba39143-7#chars-948-1135",
+              "baseSpanRef": "span:s200-law-dma-001-a7aadcf11ba39143-7",
+              "sourceId": "source:s200-law-dma-001-a7aadcf11ba39143"
+            }
+          ]
+        },
+        {
+          "ref": "claim:d440754de41a0e5a-50c7b7e09026f81e",
+          "statement": "2023年9月，包括Alphabet、亚马逊、苹果、字节跳动、Meta、微软等企业被确认为'看门人'。",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-law-dma-005-d440754de41a0e5a",
+          "knowledgeVersion": "kv:d1a30198321ea2172bb9fdb6",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-law-dma-005-d440754de41a0e5a-3#chars-255-306",
+              "baseSpanRef": "span:s200-law-dma-005-d440754de41a0e5a-3",
+              "sourceId": "source:s200-law-dma-005-d440754de41a0e5a"
+            }
+          ]
+        },
+        {
+          "ref": "claim:d440754de41a0e5a-d15930265f03e045",
+          "statement": "根据法案，市值750亿欧元或年营业额75亿欧元以上，且在欧盟每月至少有4500万活跃用户，每年有1万名商业用户的企业主体可以被认定为'看门人'。",
+          "conditions": [
+            "根据法案"
+          ],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-law-dma-005-d440754de41a0e5a",
+          "knowledgeVersion": "kv:d1a30198321ea2172bb9fdb6",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-law-dma-005-d440754de41a0e5a-3#chars-183-255",
+              "baseSpanRef": "span:s200-law-dma-005-d440754de41a0e5a-3",
+              "sourceId": "source:s200-law-dma-005-d440754de41a0e5a"
+            }
+          ]
+        }
+      ],
+      "priorEvolution": [
+        {
+          "action": "CREATE",
+          "sourceId": "source:s200-law-dma-001-a7aadcf11ba39143",
+          "knowledgeVersion": "kv:d0a07fbfc36f3e791c4fcc1c",
+          "affectedClaimRefs": [
+            "claim:a7aadcf11ba39143-6275b174b26f3ee2",
+            "claim:a7aadcf11ba39143-9f64936e1e91fccf",
+            "claim:a7aadcf11ba39143-c8ef3face8d3c85a",
+            "claim:a7aadcf11ba39143-faf2513e3fa8337a",
+            "claim:a7aadcf11ba39143-fd96d292b824e7df"
+          ],
+          "createdAt": "2026-08-23T15:52:02.138Z"
+        },
+        {
+          "action": "UPDATE",
+          "sourceId": "source:s200-law-dma-003-643d4a41ee2edb9e",
+          "knowledgeVersion": "kv:d8064ee1840ab22697792efe",
+          "affectedClaimRefs": [
+            "claim:643d4a41ee2edb9e-cfdd6695f2bbb147"
+          ],
+          "createdAt": "2026-08-23T16:09:12.140Z"
+        },
+        {
+          "action": "PROMOTE",
+          "sourceId": "source:s200-law-dma-005-d440754de41a0e5a",
+          "knowledgeVersion": "kv:d1a30198321ea2172bb9fdb6",
+          "affectedClaimRefs": [
+            "claim:d440754de41a0e5a-50c7b7e09026f81e",
+            "claim:d440754de41a0e5a-d15930265f03e045"
+          ],
+          "createdAt": "2026-08-23T16:10:26.190Z"
+        }
+      ]
+    },
+    {
+      "caseId": "QAB-LAW-02",
+      "domain": "law-public-policy",
+      "sourceId": "source:s200-law-dma-007-f683e568138750f5",
+      "snapshotId": "ks-2026-08-23T16-13-57-968Z-66705badd332",
+      "beforeQuestionStateHash": "31aa224a1b5e1a5cd0f4224a059ff30d9107990389d95df859fe03f75a4dde21",
+      "claim": {
+        "ref": "claim:f683e568138750f5-630f3d809049fa51",
+        "statement": "DMA 指定六家科技公司为互联网的“守门人”，包括 Alphabet、Amazon、Apple、ByteDance、Meta 和 Microsoft。",
+        "conditions": [],
+        "validity": "SUPPORTED",
+        "claimKind": "FACT",
+        "scope": {
+          "type": "GLOBAL"
+        },
+        "sourceId": "source:s200-law-dma-007-f683e568138750f5",
+        "knowledgeVersion": "kv:ad43232cd40453148832f3d7",
+        "evidenceRefs": [
+          {
+            "ref": "span:s200-law-dma-007-f683e568138750f5-6#chars-443-571",
+            "baseSpanRef": "span:s200-law-dma-007-f683e568138750f5-6",
+            "sourceId": "source:s200-law-dma-007-f683e568138750f5"
+          }
+        ]
+      },
+      "question": {
+        "ref": "question:ef16109045a63c30da83cf06",
+        "canonicalQuestion": "Which companies have been designated as gatekeepers under the Digital Markets Act and what are their core platform services?",
+        "aliases": [
+          "What are the designated gatekeepers and their services?",
+          "Who are the gatekeepers under the DMA?"
+        ],
+        "boundaries": [
+          "Excludes the criteria for designation.",
+          "Includes the list of designated companies and the services they provide."
+        ],
+        "domain": "law-public-policy",
+        "scope": {
+          "type": "GLOBAL"
+        },
+        "lifecycle": "ACTIVE",
+        "stateHash": "31aa224a1b5e1a5cd0f4224a059ff30d9107990389d95df859fe03f75a4dde21"
+      },
+      "priorClaims": [
+        {
+          "ref": "claim:0cbb0a59d7c7bc5f-bf4fec0c2636bb48",
+          "statement": "2023年9月6日，欧盟委员会公布首批六家守门人。",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-law-dma-006-0cbb0a59d7c7bc5f",
+          "knowledgeVersion": "kv:955566069e2672db8fad3ba4",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-law-dma-006-0cbb0a59d7c7bc5f-2#chars-168-197",
+              "baseSpanRef": "span:s200-law-dma-006-0cbb0a59d7c7bc5f-2",
+              "sourceId": "source:s200-law-dma-006-0cbb0a59d7c7bc5f"
+            }
+          ]
+        },
+        {
+          "ref": "claim:0cbb0a59d7c7bc5f-c6594b0886a31660",
+          "statement": "首批六家守门人包括Alphabet（谷歌母公司）、亚马逊、苹果、字节跳动、Meta和微软。",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-law-dma-006-0cbb0a59d7c7bc5f",
+          "knowledgeVersion": "kv:955566069e2672db8fad3ba4",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-law-dma-006-0cbb0a59d7c7bc5f-2#chars-198-234",
+              "baseSpanRef": "span:s200-law-dma-006-0cbb0a59d7c7bc5f-2",
+              "sourceId": "source:s200-law-dma-006-0cbb0a59d7c7bc5f"
+            }
+          ]
+        }
+      ],
+      "priorEvolution": [
+        {
+          "action": "CREATE",
+          "sourceId": "source:s200-law-dma-006-0cbb0a59d7c7bc5f",
+          "knowledgeVersion": "kv:955566069e2672db8fad3ba4",
+          "affectedClaimRefs": [
+            "claim:0cbb0a59d7c7bc5f-bf4fec0c2636bb48",
+            "claim:0cbb0a59d7c7bc5f-c6594b0886a31660"
+          ],
+          "createdAt": "2026-08-23T16:11:45.283Z"
+        }
+      ]
+    },
+    {
+      "caseId": "QAB-LAW-03",
+      "domain": "law-public-policy",
+      "sourceId": "source:s200-law-dma-004-fd5e90d9512564b9",
+      "snapshotId": "ks-2026-08-23T16-12-40-216Z-fb269d9a026a",
+      "beforeQuestionStateHash": "005a69abd0189fd21ad2d572777f5ae8e5bbd7ae9c947e13e45d2d1694e35a8b",
+      "claim": {
+        "ref": "claim:fd5e90d9512564b9-751b7c23e954de25",
+        "statement": "评论主题围绕 iMessage 是否应被指定为守门人服务。",
+        "conditions": [],
+        "validity": "SUPPORTED",
+        "claimKind": "FACT",
+        "scope": {
+          "type": "GLOBAL"
+        },
+        "sourceId": "source:s200-law-dma-004-fd5e90d9512564b9",
+        "knowledgeVersion": "kv:9276dcc98dff94cb595c9f65",
+        "evidenceRefs": [
+          {
+            "ref": "span:s200-law-dma-004-fd5e90d9512564b9-5#chars-280-309",
+            "baseSpanRef": "span:s200-law-dma-004-fd5e90d9512564b9-5",
+            "sourceId": "source:s200-law-dma-004-fd5e90d9512564b9"
+          }
+        ]
+      },
+      "question": {
+        "ref": "question:be6b53e7bf2a2bdff306f6a9",
+        "canonicalQuestion": "What is the public and expert perception of the European Commission's designation of gatekeepers under the Digital Markets Act?",
+        "aliases": [
+          "How do users and commentators view the DMA gatekeeper designations?",
+          "What are the reactions to the DMA gatekeeper designations?"
+        ],
+        "boundaries": [
+          "Excludes official legal analysis and formal regulatory documents.",
+          "Includes commentary from online discussions and public forums."
+        ],
+        "domain": "law-public-policy",
+        "scope": {
+          "type": "GLOBAL"
+        },
+        "lifecycle": "CANDIDATE",
+        "stateHash": "005a69abd0189fd21ad2d572777f5ae8e5bbd7ae9c947e13e45d2d1694e35a8b"
+      },
+      "priorClaims": [
+        {
+          "ref": "claim:643d4a41ee2edb9e-234af2876ef47495",
+          "statement": "用户 bertman 发表了一条评论。",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-law-dma-003-643d4a41ee2edb9e",
+          "knowledgeVersion": "kv:d8064ee1840ab22697792efe",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-law-dma-003-643d4a41ee2edb9e-5#chars-350-362",
+              "baseSpanRef": "span:s200-law-dma-003-643d4a41ee2edb9e-5",
+              "sourceId": "source:s200-law-dma-003-643d4a41ee2edb9e"
+            }
+          ]
+        },
+        {
+          "ref": "claim:643d4a41ee2edb9e-2b94ec6aecd458ef",
+          "statement": "该讨论串的标题是 'Digital Markets Act: Commission designates six gatekeepers'。",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-law-dma-003-643d4a41ee2edb9e",
+          "knowledgeVersion": "kv:d8064ee1840ab22697792efe",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-law-dma-003-643d4a41ee2edb9e-3#chars-132-197",
+              "baseSpanRef": "span:s200-law-dma-003-643d4a41ee2edb9e-3",
+              "sourceId": "source:s200-law-dma-003-643d4a41ee2edb9e"
+            }
+          ]
+        },
+        {
+          "ref": "claim:643d4a41ee2edb9e-3093bac25dc5d44d",
+          "statement": "该讨论串获得了 88 分。",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-law-dma-003-643d4a41ee2edb9e",
+          "knowledgeVersion": "kv:d8064ee1840ab22697792efe",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-law-dma-003-643d4a41ee2edb9e-3#chars-304-314",
+              "baseSpanRef": "span:s200-law-dma-003-643d4a41ee2edb9e-3",
+              "sourceId": "source:s200-law-dma-003-643d4a41ee2edb9e"
+            }
+          ]
+        },
+        {
+          "ref": "claim:643d4a41ee2edb9e-4a20ec8f08db7b39",
+          "statement": "用户 jiofj 发表了一条评论。",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-law-dma-003-643d4a41ee2edb9e",
+          "knowledgeVersion": "kv:d8064ee1840ab22697792efe",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-law-dma-003-643d4a41ee2edb9e-9#chars-725-735",
+              "baseSpanRef": "span:s200-law-dma-003-643d4a41ee2edb9e-9",
+              "sourceId": "source:s200-law-dma-003-643d4a41ee2edb9e"
+            }
+          ]
+        },
+        {
+          "ref": "claim:643d4a41ee2edb9e-5ac99fc8a12c9ea4",
+          "statement": "用户 jerojero 发表了一条评论。",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-law-dma-003-643d4a41ee2edb9e",
+          "knowledgeVersion": "kv:d8064ee1840ab22697792efe",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-law-dma-003-643d4a41ee2edb9e-7#chars-539-552",
+              "baseSpanRef": "span:s200-law-dma-003-643d4a41ee2edb9e-7",
+              "sourceId": "source:s200-law-dma-003-643d4a41ee2edb9e"
+            }
+          ]
+        },
+        {
+          "ref": "claim:643d4a41ee2edb9e-9d666fe6840afd5a",
+          "statement": "jiofj 评论说，没有一家欧洲公司被点名。",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-law-dma-003-643d4a41ee2edb9e",
+          "knowledgeVersion": "kv:d8064ee1840ab22697792efe",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-law-dma-003-643d4a41ee2edb9e-10#chars-737-766",
+              "baseSpanRef": "span:s200-law-dma-003-643d4a41ee2edb9e-10",
+              "sourceId": "source:s200-law-dma-003-643d4a41ee2edb9e"
+            }
+          ]
+        },
+        {
+          "ref": "claim:643d4a41ee2edb9e-a58f814bf374b318",
+          "statement": "该讨论串创建于 2023-09-06T11:25:43Z。",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-law-dma-003-643d4a41ee2edb9e",
+          "knowledgeVersion": "kv:d8064ee1840ab22697792efe",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-law-dma-003-643d4a41ee2edb9e-3#chars-272-301",
+              "baseSpanRef": "span:s200-law-dma-003-643d4a41ee2edb9e-3",
+              "sourceId": "source:s200-law-dma-003-643d4a41ee2edb9e"
+            }
+          ]
+        },
+        {
+          "ref": "claim:643d4a41ee2edb9e-a73c20e41105a70e",
+          "statement": "jerojero 评论说，他原以为 iMessage 会被指定为守门人，但可能仍在调查中，而且公平地说，它并不是一个非常流行的消息应用。",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-law-dma-003-643d4a41ee2edb9e",
+          "knowledgeVersion": "kv:d8064ee1840ab22697792efe",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-law-dma-003-643d4a41ee2edb9e-8#chars-554-723",
+              "baseSpanRef": "span:s200-law-dma-003-643d4a41ee2edb9e-8",
+              "sourceId": "source:s200-law-dma-003-643d4a41ee2edb9e"
+            }
+          ]
+        },
+        {
+          "ref": "claim:643d4a41ee2edb9e-b116354c8e0c0785",
+          "statement": "Hacker News 上有一个关于数字市场法案的讨论串，标题为 'Digital Markets Act: Commission designates six gatekeepers'，项目编号为 37403592。",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-law-dma-003-643d4a41ee2edb9e",
+          "knowledgeVersion": "kv:d8064ee1840ab22697792efe",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-law-dma-003-643d4a41ee2edb9e-0#chars-1-97",
+              "baseSpanRef": "span:s200-law-dma-003-643d4a41ee2edb9e-0",
+              "sourceId": "source:s200-law-dma-003-643d4a41ee2edb9e"
+            }
+          ]
+        }
+      ],
+      "priorEvolution": [
+        {
+          "action": "CREATE",
+          "sourceId": "source:s200-law-dma-003-643d4a41ee2edb9e",
+          "knowledgeVersion": "kv:d8064ee1840ab22697792efe",
+          "affectedClaimRefs": [
+            "claim:643d4a41ee2edb9e-234af2876ef47495",
+            "claim:643d4a41ee2edb9e-2b94ec6aecd458ef",
+            "claim:643d4a41ee2edb9e-3093bac25dc5d44d",
+            "claim:643d4a41ee2edb9e-4a20ec8f08db7b39",
+            "claim:643d4a41ee2edb9e-5ac99fc8a12c9ea4",
+            "claim:643d4a41ee2edb9e-9d666fe6840afd5a",
+            "claim:643d4a41ee2edb9e-a58f814bf374b318",
+            "claim:643d4a41ee2edb9e-a73c20e41105a70e",
+            "claim:643d4a41ee2edb9e-b116354c8e0c0785"
+          ],
+          "createdAt": "2026-08-23T16:09:12.140Z"
+        }
+      ]
+    },
+    {
+      "caseId": "QAB-LAW-04",
+      "domain": "law-public-policy",
+      "sourceId": "source:s200-law-dma-002-8eb1b229ffa0652c",
+      "snapshotId": "ks-2026-08-23T15-53-09-260Z-2c18d6f310db",
+      "beforeQuestionStateHash": "b3b3e1705876ea93b33f64a8ec2ed45791a1097b15bbbcf54a5b778c7c56bd1d",
+      "claim": {
+        "ref": "claim:8eb1b229ffa0652c-7e363db416ec1d1c",
+        "statement": "用户 baal80spam 提问，这难道不会至少提高这些公司生产的硬件的价格吗？",
+        "conditions": [],
+        "validity": "SUPPORTED",
+        "claimKind": "FACT",
+        "scope": {
+          "type": "GLOBAL"
+        },
+        "sourceId": "source:s200-law-dma-002-8eb1b229ffa0652c",
+        "knowledgeVersion": "kv:ce7bc62b772c2c33f75fd768",
+        "evidenceRefs": [
+          {
+            "ref": "span:s200-law-dma-002-8eb1b229ffa0652c-10#chars-842-926",
+            "baseSpanRef": "span:s200-law-dma-002-8eb1b229ffa0652c-10",
+            "sourceId": "source:s200-law-dma-002-8eb1b229ffa0652c"
+          }
+        ]
+      },
+      "question": {
+        "ref": "question:6374d223d73b203bbcfb1990",
+        "canonicalQuestion": "What are the criteria and process for designating an undertaking as a gatekeeper under Regulation (EU) 2022/1925?",
+        "aliases": [
+          "How is a gatekeeper designated under the DMA?",
+          "What are the gatekeeper designation requirements?"
+        ],
+        "boundaries": [
+          "Excludes the specific obligations imposed on gatekeepers.",
+          "Includes the presumption based on quantitative thresholds, the possibility of rebuttal, and the role of designation decisions."
+        ],
+        "domain": "law-public-policy",
+        "scope": {
+          "type": "GLOBAL"
+        },
+        "lifecycle": "ACTIVE",
+        "stateHash": "b3b3e1705876ea93b33f64a8ec2ed45791a1097b15bbbcf54a5b778c7c56bd1d"
+      },
+      "priorClaims": [
+        {
+          "ref": "claim:a7aadcf11ba39143-6275b174b26f3ee2",
+          "statement": "A small number of large undertakings providing core platform services have emerged with considerable economic power.",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-law-dma-001-a7aadcf11ba39143",
+          "knowledgeVersion": "kv:d0a07fbfc36f3e791c4fcc1c",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-law-dma-001-a7aadcf11ba39143-6#chars-742-857",
+              "baseSpanRef": "span:s200-law-dma-001-a7aadcf11ba39143-6",
+              "sourceId": "source:s200-law-dma-001-a7aadcf11ba39143"
+            }
+          ]
+        },
+        {
+          "ref": "claim:a7aadcf11ba39143-9f64936e1e91fccf",
+          "statement": "The rebuttal of the presumption is possible by demonstrating that, although the undertaking meets the quantitative thresholds set out in this Regulation, it does not fulfil the requirements for designation as a gatekeeper.",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-law-dma-001-a7aadcf11ba39143",
+          "knowledgeVersion": "kv:d0a07fbfc36f3e791c4fcc1c",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-law-dma-001-a7aadcf11ba39143-7#chars-1136-1301",
+              "baseSpanRef": "span:s200-law-dma-001-a7aadcf11ba39143-7",
+              "sourceId": "source:s200-law-dma-001-a7aadcf11ba39143"
+            }
+          ]
+        },
+        {
+          "ref": "claim:a7aadcf11ba39143-c8ef3face8d3c85a",
+          "statement": "The decreases in choice can confer on the provider of those services the position of a so-called gatekeeper.",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-law-dma-001-a7aadcf11ba39143",
+          "knowledgeVersion": "kv:d0a07fbfc36f3e791c4fcc1c",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-law-dma-001-a7aadcf11ba39143-5#chars-638-736",
+              "baseSpanRef": "span:s200-law-dma-001-a7aadcf11ba39143-5",
+              "sourceId": "source:s200-law-dma-001-a7aadcf11ba39143"
+            }
+          ]
+        },
+        {
+          "ref": "claim:a7aadcf11ba39143-faf2513e3fa8337a",
+          "statement": "The considerable economic power of those undertakings could qualify them to be designated as gatekeepers pursuant to this Regulation.",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-law-dma-001-a7aadcf11ba39143",
+          "knowledgeVersion": "kv:d0a07fbfc36f3e791c4fcc1c",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-law-dma-001-a7aadcf11ba39143-6#chars-858-942",
+              "baseSpanRef": "span:s200-law-dma-001-a7aadcf11ba39143-6",
+              "sourceId": "source:s200-law-dma-001-a7aadcf11ba39143"
+            }
+          ]
+        },
+        {
+          "ref": "claim:a7aadcf11ba39143-fd96d292b824e7df",
+          "statement": "An undertaking providing core platform services should be able, in exceptional circumstances, to rebut the presumption that the undertaking has a significant impact on the internal market.",
+          "conditions": [
+            "in exceptional circumstances"
+          ],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-law-dma-001-a7aadcf11ba39143",
+          "knowledgeVersion": "kv:d0a07fbfc36f3e791c4fcc1c",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-law-dma-001-a7aadcf11ba39143-7#chars-948-1135",
+              "baseSpanRef": "span:s200-law-dma-001-a7aadcf11ba39143-7",
+              "sourceId": "source:s200-law-dma-001-a7aadcf11ba39143"
+            }
+          ]
+        }
+      ],
+      "priorEvolution": [
+        {
+          "action": "CREATE",
+          "sourceId": "source:s200-law-dma-001-a7aadcf11ba39143",
+          "knowledgeVersion": "kv:d0a07fbfc36f3e791c4fcc1c",
+          "affectedClaimRefs": [
+            "claim:a7aadcf11ba39143-6275b174b26f3ee2",
+            "claim:a7aadcf11ba39143-9f64936e1e91fccf",
+            "claim:a7aadcf11ba39143-c8ef3face8d3c85a",
+            "claim:a7aadcf11ba39143-faf2513e3fa8337a",
+            "claim:a7aadcf11ba39143-fd96d292b824e7df"
+          ],
+          "createdAt": "2026-08-23T15:52:02.138Z"
+        }
+      ]
+    },
+    {
+      "caseId": "QAB-LAW-05",
+      "domain": "law-public-policy",
+      "sourceId": "source:s200-law-dma-007-f683e568138750f5",
+      "snapshotId": "ks-2026-08-23T16-13-57-968Z-66705badd332",
+      "beforeQuestionStateHash": "31aa224a1b5e1a5cd0f4224a059ff30d9107990389d95df859fe03f75a4dde21",
+      "claim": {
+        "ref": "claim:f683e568138750f5-2c51784f3d0a04b7",
+        "statement": "该讨论串创建于 2025-03-13T22:12:31Z。",
+        "conditions": [],
+        "validity": "SUPPORTED",
+        "claimKind": "FACT",
+        "scope": {
+          "type": "GLOBAL"
+        },
+        "sourceId": "source:s200-law-dma-007-f683e568138750f5",
+        "knowledgeVersion": "kv:ad43232cd40453148832f3d7",
+        "evidenceRefs": [
+          {
+            "ref": "span:s200-law-dma-007-f683e568138750f5-3#chars-348-377",
+            "baseSpanRef": "span:s200-law-dma-007-f683e568138750f5-3",
+            "sourceId": "source:s200-law-dma-007-f683e568138750f5"
+          }
+        ]
+      },
+      "question": {
+        "ref": "question:be6b53e7bf2a2bdff306f6a9",
+        "canonicalQuestion": "What is the public and expert perception of the European Commission's designation of gatekeepers under the Digital Markets Act?",
+        "aliases": [
+          "How do users and commentators view the DMA gatekeeper designations?",
+          "What are the reactions to the DMA gatekeeper designations?"
+        ],
+        "boundaries": [
+          "Excludes official legal analysis and formal regulatory documents.",
+          "Includes commentary from online discussions and public forums."
+        ],
+        "domain": "law-public-policy",
+        "scope": {
+          "type": "GLOBAL"
+        },
+        "lifecycle": "CANDIDATE",
+        "stateHash": "31aa224a1b5e1a5cd0f4224a059ff30d9107990389d95df859fe03f75a4dde21"
+      },
+      "priorClaims": [
+        {
+          "ref": "claim:643d4a41ee2edb9e-234af2876ef47495",
+          "statement": "用户 bertman 发表了一条评论。",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-law-dma-003-643d4a41ee2edb9e",
+          "knowledgeVersion": "kv:d8064ee1840ab22697792efe",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-law-dma-003-643d4a41ee2edb9e-5#chars-350-362",
+              "baseSpanRef": "span:s200-law-dma-003-643d4a41ee2edb9e-5",
+              "sourceId": "source:s200-law-dma-003-643d4a41ee2edb9e"
+            }
+          ]
+        },
+        {
+          "ref": "claim:643d4a41ee2edb9e-2b94ec6aecd458ef",
+          "statement": "该讨论串的标题是 'Digital Markets Act: Commission designates six gatekeepers'。",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-law-dma-003-643d4a41ee2edb9e",
+          "knowledgeVersion": "kv:d8064ee1840ab22697792efe",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-law-dma-003-643d4a41ee2edb9e-3#chars-132-197",
+              "baseSpanRef": "span:s200-law-dma-003-643d4a41ee2edb9e-3",
+              "sourceId": "source:s200-law-dma-003-643d4a41ee2edb9e"
+            }
+          ]
+        },
+        {
+          "ref": "claim:643d4a41ee2edb9e-3093bac25dc5d44d",
+          "statement": "该讨论串获得了 88 分。",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-law-dma-003-643d4a41ee2edb9e",
+          "knowledgeVersion": "kv:d8064ee1840ab22697792efe",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-law-dma-003-643d4a41ee2edb9e-3#chars-304-314",
+              "baseSpanRef": "span:s200-law-dma-003-643d4a41ee2edb9e-3",
+              "sourceId": "source:s200-law-dma-003-643d4a41ee2edb9e"
+            }
+          ]
+        },
+        {
+          "ref": "claim:643d4a41ee2edb9e-4a20ec8f08db7b39",
+          "statement": "用户 jiofj 发表了一条评论。",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-law-dma-003-643d4a41ee2edb9e",
+          "knowledgeVersion": "kv:d8064ee1840ab22697792efe",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-law-dma-003-643d4a41ee2edb9e-9#chars-725-735",
+              "baseSpanRef": "span:s200-law-dma-003-643d4a41ee2edb9e-9",
+              "sourceId": "source:s200-law-dma-003-643d4a41ee2edb9e"
+            }
+          ]
+        },
+        {
+          "ref": "claim:643d4a41ee2edb9e-5ac99fc8a12c9ea4",
+          "statement": "用户 jerojero 发表了一条评论。",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-law-dma-003-643d4a41ee2edb9e",
+          "knowledgeVersion": "kv:d8064ee1840ab22697792efe",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-law-dma-003-643d4a41ee2edb9e-7#chars-539-552",
+              "baseSpanRef": "span:s200-law-dma-003-643d4a41ee2edb9e-7",
+              "sourceId": "source:s200-law-dma-003-643d4a41ee2edb9e"
+            }
+          ]
+        },
+        {
+          "ref": "claim:643d4a41ee2edb9e-9d666fe6840afd5a",
+          "statement": "jiofj 评论说，没有一家欧洲公司被点名。",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-law-dma-003-643d4a41ee2edb9e",
+          "knowledgeVersion": "kv:d8064ee1840ab22697792efe",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-law-dma-003-643d4a41ee2edb9e-10#chars-737-766",
+              "baseSpanRef": "span:s200-law-dma-003-643d4a41ee2edb9e-10",
+              "sourceId": "source:s200-law-dma-003-643d4a41ee2edb9e"
+            }
+          ]
+        },
+        {
+          "ref": "claim:643d4a41ee2edb9e-a58f814bf374b318",
+          "statement": "该讨论串创建于 2023-09-06T11:25:43Z。",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-law-dma-003-643d4a41ee2edb9e",
+          "knowledgeVersion": "kv:d8064ee1840ab22697792efe",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-law-dma-003-643d4a41ee2edb9e-3#chars-272-301",
+              "baseSpanRef": "span:s200-law-dma-003-643d4a41ee2edb9e-3",
+              "sourceId": "source:s200-law-dma-003-643d4a41ee2edb9e"
+            }
+          ]
+        },
+        {
+          "ref": "claim:643d4a41ee2edb9e-a73c20e41105a70e",
+          "statement": "jerojero 评论说，他原以为 iMessage 会被指定为守门人，但可能仍在调查中，而且公平地说，它并不是一个非常流行的消息应用。",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-law-dma-003-643d4a41ee2edb9e",
+          "knowledgeVersion": "kv:d8064ee1840ab22697792efe",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-law-dma-003-643d4a41ee2edb9e-8#chars-554-723",
+              "baseSpanRef": "span:s200-law-dma-003-643d4a41ee2edb9e-8",
+              "sourceId": "source:s200-law-dma-003-643d4a41ee2edb9e"
+            }
+          ]
+        },
+        {
+          "ref": "claim:643d4a41ee2edb9e-b116354c8e0c0785",
+          "statement": "Hacker News 上有一个关于数字市场法案的讨论串，标题为 'Digital Markets Act: Commission designates six gatekeepers'，项目编号为 37403592。",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-law-dma-003-643d4a41ee2edb9e",
+          "knowledgeVersion": "kv:d8064ee1840ab22697792efe",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-law-dma-003-643d4a41ee2edb9e-0#chars-1-97",
+              "baseSpanRef": "span:s200-law-dma-003-643d4a41ee2edb9e-0",
+              "sourceId": "source:s200-law-dma-003-643d4a41ee2edb9e"
+            }
+          ]
+        },
+        {
+          "ref": "claim:fd5e90d9512564b9-2b10ba3fadd64b50",
+          "statement": "Hacker News 上有一个标题为“Apple's iMessage avoids EU's Digital Markets Act regulation”的帖子。",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-law-dma-004-fd5e90d9512564b9",
+          "knowledgeVersion": "kv:9276dcc98dff94cb595c9f65",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-law-dma-004-fd5e90d9512564b9-3#chars-133-199",
+              "baseSpanRef": "span:s200-law-dma-004-fd5e90d9512564b9-3",
+              "sourceId": "source:s200-law-dma-004-fd5e90d9512564b9"
+            }
+          ]
+        },
+        {
+          "ref": "claim:fd5e90d9512564b9-751b7c23e954de25",
+          "statement": "评论主题围绕 iMessage 是否应被指定为守门人服务。",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-law-dma-004-fd5e90d9512564b9",
+          "knowledgeVersion": "kv:9276dcc98dff94cb595c9f65",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-law-dma-004-fd5e90d9512564b9-5#chars-280-309",
+              "baseSpanRef": "span:s200-law-dma-004-fd5e90d9512564b9-5",
+              "sourceId": "source:s200-law-dma-004-fd5e90d9512564b9"
+            }
+          ]
+        }
+      ],
+      "priorEvolution": [
+        {
+          "action": "CREATE",
+          "sourceId": "source:s200-law-dma-003-643d4a41ee2edb9e",
+          "knowledgeVersion": "kv:d8064ee1840ab22697792efe",
+          "affectedClaimRefs": [
+            "claim:643d4a41ee2edb9e-234af2876ef47495",
+            "claim:643d4a41ee2edb9e-2b94ec6aecd458ef",
+            "claim:643d4a41ee2edb9e-3093bac25dc5d44d",
+            "claim:643d4a41ee2edb9e-4a20ec8f08db7b39",
+            "claim:643d4a41ee2edb9e-5ac99fc8a12c9ea4",
+            "claim:643d4a41ee2edb9e-9d666fe6840afd5a",
+            "claim:643d4a41ee2edb9e-a58f814bf374b318",
+            "claim:643d4a41ee2edb9e-a73c20e41105a70e",
+            "claim:643d4a41ee2edb9e-b116354c8e0c0785"
+          ],
+          "createdAt": "2026-08-23T16:09:12.140Z"
+        },
+        {
+          "action": "UPDATE",
+          "sourceId": "source:s200-law-dma-004-fd5e90d9512564b9",
+          "knowledgeVersion": "kv:9276dcc98dff94cb595c9f65",
+          "affectedClaimRefs": [
+            "claim:fd5e90d9512564b9-2b10ba3fadd64b50",
+            "claim:fd5e90d9512564b9-751b7c23e954de25"
+          ],
+          "createdAt": "2026-08-23T16:12:40.175Z"
+        }
+      ]
+    },
+    {
+      "caseId": "QAB-LAW-06",
+      "domain": "law-public-policy",
+      "sourceId": "source:s200-law-dma-004-fd5e90d9512564b9",
+      "snapshotId": "ks-2026-08-23T16-12-40-216Z-fb269d9a026a",
+      "beforeQuestionStateHash": "005a69abd0189fd21ad2d572777f5ae8e5bbd7ae9c947e13e45d2d1694e35a8b",
+      "claim": {
+        "ref": "claim:fd5e90d9512564b9-751b7c23e954de25",
+        "statement": "评论主题围绕 iMessage 是否应被指定为守门人服务。",
+        "conditions": [],
+        "validity": "SUPPORTED",
+        "claimKind": "FACT",
+        "scope": {
+          "type": "GLOBAL"
+        },
+        "sourceId": "source:s200-law-dma-004-fd5e90d9512564b9",
+        "knowledgeVersion": "kv:9276dcc98dff94cb595c9f65",
+        "evidenceRefs": [
+          {
+            "ref": "span:s200-law-dma-004-fd5e90d9512564b9-5#chars-280-309",
+            "baseSpanRef": "span:s200-law-dma-004-fd5e90d9512564b9-5",
+            "sourceId": "source:s200-law-dma-004-fd5e90d9512564b9"
+          }
+        ]
+      },
+      "question": {
+        "ref": "question:6374d223d73b203bbcfb1990",
+        "canonicalQuestion": "What are the criteria and process for designating an undertaking as a gatekeeper under Regulation (EU) 2022/1925?",
+        "aliases": [
+          "How is a gatekeeper designated under the DMA?",
+          "What are the gatekeeper designation requirements?"
+        ],
+        "boundaries": [
+          "Excludes the specific obligations imposed on gatekeepers.",
+          "Includes the presumption based on quantitative thresholds, the possibility of rebuttal, and the role of designation decisions."
+        ],
+        "domain": "law-public-policy",
+        "scope": {
+          "type": "GLOBAL"
+        },
+        "lifecycle": "ACTIVE",
+        "stateHash": "005a69abd0189fd21ad2d572777f5ae8e5bbd7ae9c947e13e45d2d1694e35a8b"
+      },
+      "priorClaims": [
+        {
+          "ref": "claim:0cbb0a59d7c7bc5f-6890c8ae2cf591df",
+          "statement": "DMA把满足特定门槛的大型在线平台指定为「守门人」（gatekeeper）。",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-law-dma-006-0cbb0a59d7c7bc5f",
+          "knowledgeVersion": "kv:955566069e2672db8fad3ba4",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-law-dma-006-0cbb0a59d7c7bc5f-2#chars-109-143",
+              "baseSpanRef": "span:s200-law-dma-006-0cbb0a59d7c7bc5f-2",
+              "sourceId": "source:s200-law-dma-006-0cbb0a59d7c7bc5f"
+            }
+          ]
+        },
+        {
+          "ref": "claim:0cbb0a59d7c7bc5f-a745403624af6a75",
+          "statement": "守门人门槛要求核心平台服务拥有4500万月活终端用户与1万年度活跃商业用户。",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-law-dma-006-0cbb0a59d7c7bc5f",
+          "knowledgeVersion": "kv:955566069e2672db8fad3ba4",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-law-dma-006-0cbb0a59d7c7bc5f-3#chars-317-352",
+              "baseSpanRef": "span:s200-law-dma-006-0cbb0a59d7c7bc5f-3",
+              "sourceId": "source:s200-law-dma-006-0cbb0a59d7c7bc5f"
+            }
+          ]
+        },
+        {
+          "ref": "claim:0cbb0a59d7c7bc5f-b8a1ee22688af362",
+          "statement": "守门人门槛要求欧盟三财年年营业额达75亿欧元或市值达750亿欧元。",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-law-dma-006-0cbb0a59d7c7bc5f",
+          "knowledgeVersion": "kv:955566069e2672db8fad3ba4",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-law-dma-006-0cbb0a59d7c7bc5f-3#chars-287-316",
+              "baseSpanRef": "span:s200-law-dma-006-0cbb0a59d7c7bc5f-3",
+              "sourceId": "source:s200-law-dma-006-0cbb0a59d7c7bc5f"
+            }
+          ]
+        },
+        {
+          "ref": "claim:0cbb0a59d7c7bc5f-bf4fec0c2636bb48",
+          "statement": "2023年9月6日，欧盟委员会公布首批六家守门人。",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-law-dma-006-0cbb0a59d7c7bc5f",
+          "knowledgeVersion": "kv:955566069e2672db8fad3ba4",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-law-dma-006-0cbb0a59d7c7bc5f-2#chars-168-197",
+              "baseSpanRef": "span:s200-law-dma-006-0cbb0a59d7c7bc5f-2",
+              "sourceId": "source:s200-law-dma-006-0cbb0a59d7c7bc5f"
+            }
+          ]
+        },
+        {
+          "ref": "claim:0cbb0a59d7c7bc5f-c6594b0886a31660",
+          "statement": "首批六家守门人包括Alphabet（谷歌母公司）、亚马逊、苹果、字节跳动、Meta和微软。",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-law-dma-006-0cbb0a59d7c7bc5f",
+          "knowledgeVersion": "kv:955566069e2672db8fad3ba4",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-law-dma-006-0cbb0a59d7c7bc5f-2#chars-198-234",
+              "baseSpanRef": "span:s200-law-dma-006-0cbb0a59d7c7bc5f-2",
+              "sourceId": "source:s200-law-dma-006-0cbb0a59d7c7bc5f"
+            }
+          ]
+        },
+        {
+          "ref": "claim:643d4a41ee2edb9e-cfdd6695f2bbb147",
+          "statement": "bertman 的评论引用了原文，其中提到 Alphabet、Microsoft 和 Samsung 提供了充分论证的理由，表明这些服务不符合各自核心平台服务的网关资格。",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-law-dma-003-643d4a41ee2edb9e",
+          "knowledgeVersion": "kv:d8064ee1840ab22697792efe",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-law-dma-003-643d4a41ee2edb9e-6#chars-364-537",
+              "baseSpanRef": "span:s200-law-dma-003-643d4a41ee2edb9e-6",
+              "sourceId": "source:s200-law-dma-003-643d4a41ee2edb9e"
+            }
+          ]
+        },
+        {
+          "ref": "claim:a7aadcf11ba39143-6275b174b26f3ee2",
+          "statement": "A small number of large undertakings providing core platform services have emerged with considerable economic power.",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-law-dma-001-a7aadcf11ba39143",
+          "knowledgeVersion": "kv:d0a07fbfc36f3e791c4fcc1c",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-law-dma-001-a7aadcf11ba39143-6#chars-742-857",
+              "baseSpanRef": "span:s200-law-dma-001-a7aadcf11ba39143-6",
+              "sourceId": "source:s200-law-dma-001-a7aadcf11ba39143"
+            }
+          ]
+        },
+        {
+          "ref": "claim:a7aadcf11ba39143-9f64936e1e91fccf",
+          "statement": "The rebuttal of the presumption is possible by demonstrating that, although the undertaking meets the quantitative thresholds set out in this Regulation, it does not fulfil the requirements for designation as a gatekeeper.",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-law-dma-001-a7aadcf11ba39143",
+          "knowledgeVersion": "kv:d0a07fbfc36f3e791c4fcc1c",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-law-dma-001-a7aadcf11ba39143-7#chars-1136-1301",
+              "baseSpanRef": "span:s200-law-dma-001-a7aadcf11ba39143-7",
+              "sourceId": "source:s200-law-dma-001-a7aadcf11ba39143"
+            }
+          ]
+        },
+        {
+          "ref": "claim:a7aadcf11ba39143-c8ef3face8d3c85a",
+          "statement": "The decreases in choice can confer on the provider of those services the position of a so-called gatekeeper.",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-law-dma-001-a7aadcf11ba39143",
+          "knowledgeVersion": "kv:d0a07fbfc36f3e791c4fcc1c",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-law-dma-001-a7aadcf11ba39143-5#chars-638-736",
+              "baseSpanRef": "span:s200-law-dma-001-a7aadcf11ba39143-5",
+              "sourceId": "source:s200-law-dma-001-a7aadcf11ba39143"
+            }
+          ]
+        },
+        {
+          "ref": "claim:a7aadcf11ba39143-faf2513e3fa8337a",
+          "statement": "The considerable economic power of those undertakings could qualify them to be designated as gatekeepers pursuant to this Regulation.",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-law-dma-001-a7aadcf11ba39143",
+          "knowledgeVersion": "kv:d0a07fbfc36f3e791c4fcc1c",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-law-dma-001-a7aadcf11ba39143-6#chars-858-942",
+              "baseSpanRef": "span:s200-law-dma-001-a7aadcf11ba39143-6",
+              "sourceId": "source:s200-law-dma-001-a7aadcf11ba39143"
+            }
+          ]
+        },
+        {
+          "ref": "claim:a7aadcf11ba39143-fd96d292b824e7df",
+          "statement": "An undertaking providing core platform services should be able, in exceptional circumstances, to rebut the presumption that the undertaking has a significant impact on the internal market.",
+          "conditions": [
+            "in exceptional circumstances"
+          ],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-law-dma-001-a7aadcf11ba39143",
+          "knowledgeVersion": "kv:d0a07fbfc36f3e791c4fcc1c",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-law-dma-001-a7aadcf11ba39143-7#chars-948-1135",
+              "baseSpanRef": "span:s200-law-dma-001-a7aadcf11ba39143-7",
+              "sourceId": "source:s200-law-dma-001-a7aadcf11ba39143"
+            }
+          ]
+        },
+        {
+          "ref": "claim:d440754de41a0e5a-50c7b7e09026f81e",
+          "statement": "2023年9月，包括Alphabet、亚马逊、苹果、字节跳动、Meta、微软等企业被确认为'看门人'。",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-law-dma-005-d440754de41a0e5a",
+          "knowledgeVersion": "kv:d1a30198321ea2172bb9fdb6",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-law-dma-005-d440754de41a0e5a-3#chars-255-306",
+              "baseSpanRef": "span:s200-law-dma-005-d440754de41a0e5a-3",
+              "sourceId": "source:s200-law-dma-005-d440754de41a0e5a"
+            }
+          ]
+        },
+        {
+          "ref": "claim:d440754de41a0e5a-d15930265f03e045",
+          "statement": "根据法案，市值750亿欧元或年营业额75亿欧元以上，且在欧盟每月至少有4500万活跃用户，每年有1万名商业用户的企业主体可以被认定为'看门人'。",
+          "conditions": [
+            "根据法案"
+          ],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-law-dma-005-d440754de41a0e5a",
+          "knowledgeVersion": "kv:d1a30198321ea2172bb9fdb6",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-law-dma-005-d440754de41a0e5a-3#chars-183-255",
+              "baseSpanRef": "span:s200-law-dma-005-d440754de41a0e5a-3",
+              "sourceId": "source:s200-law-dma-005-d440754de41a0e5a"
+            }
+          ]
+        }
+      ],
+      "priorEvolution": [
+        {
+          "action": "CREATE",
+          "sourceId": "source:s200-law-dma-001-a7aadcf11ba39143",
+          "knowledgeVersion": "kv:d0a07fbfc36f3e791c4fcc1c",
+          "affectedClaimRefs": [
+            "claim:a7aadcf11ba39143-6275b174b26f3ee2",
+            "claim:a7aadcf11ba39143-9f64936e1e91fccf",
+            "claim:a7aadcf11ba39143-c8ef3face8d3c85a",
+            "claim:a7aadcf11ba39143-faf2513e3fa8337a",
+            "claim:a7aadcf11ba39143-fd96d292b824e7df"
+          ],
+          "createdAt": "2026-08-23T15:52:02.138Z"
+        },
+        {
+          "action": "UPDATE",
+          "sourceId": "source:s200-law-dma-003-643d4a41ee2edb9e",
+          "knowledgeVersion": "kv:d8064ee1840ab22697792efe",
+          "affectedClaimRefs": [
+            "claim:643d4a41ee2edb9e-cfdd6695f2bbb147"
+          ],
+          "createdAt": "2026-08-23T16:09:12.140Z"
+        },
+        {
+          "action": "PROMOTE",
+          "sourceId": "source:s200-law-dma-005-d440754de41a0e5a",
+          "knowledgeVersion": "kv:d1a30198321ea2172bb9fdb6",
+          "affectedClaimRefs": [
+            "claim:d440754de41a0e5a-50c7b7e09026f81e",
+            "claim:d440754de41a0e5a-d15930265f03e045"
+          ],
+          "createdAt": "2026-08-23T16:10:26.190Z"
+        },
+        {
+          "action": "UPDATE",
+          "sourceId": "source:s200-law-dma-006-0cbb0a59d7c7bc5f",
+          "knowledgeVersion": "kv:955566069e2672db8fad3ba4",
+          "affectedClaimRefs": [
+            "claim:0cbb0a59d7c7bc5f-6890c8ae2cf591df",
+            "claim:0cbb0a59d7c7bc5f-a745403624af6a75",
+            "claim:0cbb0a59d7c7bc5f-b8a1ee22688af362",
+            "claim:0cbb0a59d7c7bc5f-bf4fec0c2636bb48",
+            "claim:0cbb0a59d7c7bc5f-c6594b0886a31660"
+          ],
+          "createdAt": "2026-08-23T16:11:45.283Z"
+        }
+      ]
+    },
+    {
+      "caseId": "QAB-PSY-01",
+      "domain": "psychology-reproducibility",
+      "sourceId": "source:s200-psych-nudge-001-6d554407ab44ff34",
+      "snapshotId": "ks-2026-08-23T15-35-20-744Z-9ce47bd11b03",
+      "beforeQuestionStateHash": "a47b2be0053cd06193bb3aee604fb62e0fa5175ae3924aead20c6d77eed501b8",
+      "claim": {
+        "ref": "claim:6d554407ab44ff34-0c8dc4245d643e17",
+        "statement": "作者得出结论，参考文献3中分析的“助推”文献具有严重的发表偏倚。",
+        "conditions": [],
+        "validity": "SUPPORTED",
+        "claimKind": "FACT",
+        "scope": {
+          "type": "GLOBAL"
+        },
+        "sourceId": "source:s200-psych-nudge-001-6d554407ab44ff34",
+        "knowledgeVersion": "kv:0de2b0cda898f0c387cf7f2e",
+        "evidenceRefs": [
+          {
+            "ref": "span:s200-psych-nudge-001-6d554407ab44ff34-9#chars-1465-1568",
+            "baseSpanRef": "span:s200-psych-nudge-001-6d554407ab44ff34-9",
+            "sourceId": "source:s200-psych-nudge-001-6d554407ab44ff34"
+          }
+        ]
+      },
+      "question": {
+        "ref": "question:216bff0a347664f84a379395",
+        "canonicalQuestion": "选择架构干预文献中存在多大程度的发表偏倚？",
+        "aliases": [
+          "助推研究的发表偏倚",
+          "选择架构干预的出版偏差"
+        ],
+        "boundaries": [
+          "包括对发表偏倚的估计及其对效应量的影响，不包括其他类型的偏倚"
+        ],
+        "domain": "psychology-reproducibility",
+        "scope": {
+          "type": "GLOBAL"
+        },
+        "lifecycle": "CANDIDATE",
+        "stateHash": "a47b2be0053cd06193bb3aee604fb62e0fa5175ae3924aead20c6d77eed501b8"
+      },
+      "priorClaims": [
+        {
+          "ref": "claim:c582a49fd9949d90-c6ff62b8a9b3f2ab",
+          "statement": "该分析进一步揭示了文献中存在对积极结果的中等程度的发表偏倚。",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-psych-nudge-002-c582a49fd9949d90",
+          "knowledgeVersion": "kv:6ef4a4f680386301d0faaa19",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-psych-nudge-002-c582a49fd9949d90-4#chars-1029-1128",
+              "baseSpanRef": "span:s200-psych-nudge-002-c582a49fd9949d90-4",
+              "sourceId": "source:s200-psych-nudge-002-c582a49fd9949d90"
+            }
+          ]
+        }
+      ],
+      "priorEvolution": [
+        {
+          "action": "CREATE",
+          "sourceId": "source:s200-psych-nudge-002-c582a49fd9949d90",
+          "knowledgeVersion": "kv:6ef4a4f680386301d0faaa19",
+          "affectedClaimRefs": [
+            "claim:c582a49fd9949d90-c6ff62b8a9b3f2ab"
+          ],
+          "createdAt": "2026-08-23T15:26:07.940Z"
+        }
+      ]
+    },
+    {
+      "caseId": "QAB-PSY-02",
+      "domain": "psychology-reproducibility",
+      "sourceId": "source:s200-psych-nudge-003-ba1c34566ae9e463",
+      "snapshotId": "ks-2026-08-23T15-43-58-564Z-df554de6c5cd",
+      "beforeQuestionStateHash": "d7fc42571a9b44e93e8f3a124fd3228edf1e9c027eb69a53201a29516430d498",
+      "claim": {
+        "ref": "claim:ba1c34566ae9e463-bfc65f5a6b7083c3",
+        "statement": "该块标题为 'Rejoinder – No Evidence for Nudging After Adjusting for Publication Bias'，表明在调整发表偏倚后，没有证据支持助推的有效性。",
+        "conditions": [],
+        "validity": "SUPPORTED",
+        "claimKind": "FACT",
+        "scope": {
+          "type": "GLOBAL"
+        },
+        "sourceId": "source:s200-psych-nudge-003-ba1c34566ae9e463",
+        "knowledgeVersion": "kv:7f5f93d8f6dfdba257381cfe",
+        "evidenceRefs": [
+          {
+            "ref": "span:s200-psych-nudge-003-ba1c34566ae9e463-2#chars-126-198",
+            "baseSpanRef": "span:s200-psych-nudge-003-ba1c34566ae9e463-2",
+            "sourceId": "source:s200-psych-nudge-003-ba1c34566ae9e463"
+          }
+        ]
+      },
+      "question": {
+        "ref": "question:fd7afd5d18a0abcdba1c8a83",
+        "canonicalQuestion": "发表偏倚校正如何影响对助推有效性的结论？",
+        "aliases": [
+          "发表偏倚对助推结论的影响",
+          "校正发表偏倚后的助推有效性"
+        ],
+        "boundaries": [
+          "包括校正发表偏倚后对助推有效性的重新评估，不包括未校正的原始分析"
+        ],
+        "domain": "psychology-reproducibility",
+        "scope": {
+          "type": "GLOBAL"
+        },
+        "lifecycle": "ACTIVE",
+        "stateHash": "d7fc42571a9b44e93e8f3a124fd3228edf1e9c027eb69a53201a29516430d498"
+      },
+      "priorClaims": [
+        {
+          "ref": "claim:077188d7915ccaf6-073eb866ff9a2208",
+          "statement": "用户 akyu 评论道：没有证据表明助推不等于助推不存在。",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-psych-nudge-004-077188d7915ccaf6",
+          "knowledgeVersion": "kv:678128fa2ea448dc4eb1fece",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-psych-nudge-004-077188d7915ccaf6-8#chars-646-696",
+              "baseSpanRef": "span:s200-psych-nudge-004-077188d7915ccaf6-8",
+              "sourceId": "source:s200-psych-nudge-004-077188d7915ccaf6"
+            }
+          ]
+        },
+        {
+          "ref": "claim:077188d7915ccaf6-0abcbd113352d05c",
+          "statement": "用户 mikkergp 评论道：如果发表偏倚是排除不支持假设的结果，那么他们是如何考虑这一点的？",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-psych-nudge-004-077188d7915ccaf6",
+          "knowledgeVersion": "kv:678128fa2ea448dc4eb1fece",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-psych-nudge-004-077188d7915ccaf6-6#chars-356-491",
+              "baseSpanRef": "span:s200-psych-nudge-004-077188d7915ccaf6-6",
+              "sourceId": "source:s200-psych-nudge-004-077188d7915ccaf6"
+            }
+          ]
+        },
+        {
+          "ref": "claim:077188d7915ccaf6-17996256c7c683e8",
+          "statement": "该线程的标题是 'No evidence for nudging after adjusting for publication bias'。",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-psych-nudge-004-077188d7915ccaf6",
+          "knowledgeVersion": "kv:678128fa2ea448dc4eb1fece",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-psych-nudge-004-077188d7915ccaf6-3#chars-134-201",
+              "baseSpanRef": "span:s200-psych-nudge-004-077188d7915ccaf6-3",
+              "sourceId": "source:s200-psych-nudge-004-077188d7915ccaf6"
+            }
+          ]
+        },
+        {
+          "ref": "claim:077188d7915ccaf6-623c7ec174c1f376",
+          "statement": "该线程链接到一篇 PNAS 文章，URL 为 https://www.pnas.org/doi/10.1073/pnas.2200300119。",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-psych-nudge-004-077188d7915ccaf6",
+          "knowledgeVersion": "kv:678128fa2ea448dc4eb1fece",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-psych-nudge-004-077188d7915ccaf6-3#chars-204-257",
+              "baseSpanRef": "span:s200-psych-nudge-004-077188d7915ccaf6-3",
+              "sourceId": "source:s200-psych-nudge-004-077188d7915ccaf6"
+            }
+          ]
+        },
+        {
+          "ref": "claim:077188d7915ccaf6-e6ecbd107ba7a8f2",
+          "statement": "Hacker News 上有一个标题为 'No evidence for nudging after adjusting for publication bias' 的线程，其项目编号为 32213587。",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-psych-nudge-004-077188d7915ccaf6",
+          "knowledgeVersion": "kv:678128fa2ea448dc4eb1fece",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-psych-nudge-004-077188d7915ccaf6-0#chars-1-99",
+              "baseSpanRef": "span:s200-psych-nudge-004-077188d7915ccaf6-0",
+              "sourceId": "source:s200-psych-nudge-004-077188d7915ccaf6"
+            }
+          ]
+        },
+        {
+          "ref": "claim:20604090ad3bc5f3-049e253c9f77c374",
+          "statement": "该帖子的标题是 'No evidence for nudging after adjusting for publication bias'。",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-psych-nudge-005-20604090ad3bc5f3",
+          "knowledgeVersion": "kv:0f31845aa5967afe1923c0f4",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-psych-nudge-005-20604090ad3bc5f3-3#chars-156-223",
+              "baseSpanRef": "span:s200-psych-nudge-005-20604090ad3bc5f3-3",
+              "sourceId": "source:s200-psych-nudge-005-20604090ad3bc5f3"
+            }
+          ]
+        },
+        {
+          "ref": "claim:20604090ad3bc5f3-d31bb9d74d7b363d",
+          "statement": "尽管 'nudge' 方法很流行，但它因 '证据基础有限' 而受到批评。",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-psych-nudge-005-20604090ad3bc5f3",
+          "knowledgeVersion": "kv:0f31845aa5967afe1923c0f4",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-psych-nudge-005-20604090ad3bc5f3-6#chars-468-585",
+              "baseSpanRef": "span:s200-psych-nudge-005-20604090ad3bc5f3-6",
+              "sourceId": "source:s200-psych-nudge-005-20604090ad3bc5f3"
+            }
+          ]
+        },
+        {
+          "ref": "claim:6d554407ab44ff34-36a820f7a79499dc",
+          "statement": "与Mertens等人相反，作者的贝叶斯分析表明，在纠正这种偏倚后，没有证据表明助推作为行为改变工具是有效的。",
+          "conditions": [
+            "在纠正这种偏倚后"
+          ],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-psych-nudge-001-6d554407ab44ff34",
+          "knowledgeVersion": "kv:0de2b0cda898f0c387cf7f2e",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-psych-nudge-001-6d554407ab44ff34-9#chars-1569-1747",
+              "baseSpanRef": "span:s200-psych-nudge-001-6d554407ab44ff34-9",
+              "sourceId": "source:s200-psych-nudge-001-6d554407ab44ff34"
+            }
+          ]
+        },
+        {
+          "ref": "claim:6d554407ab44ff34-4df4fa82e65a4740",
+          "statement": "当发表偏倚得到适当校正后，没有证据表明助推的有效性仍然存在。",
+          "conditions": [
+            "当发表偏倚得到适当校正后"
+          ],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-psych-nudge-001-6d554407ab44ff34",
+          "knowledgeVersion": "kv:0de2b0cda898f0c387cf7f2e",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-psych-nudge-001-6d554407ab44ff34-5#chars-937-1057",
+              "baseSpanRef": "span:s200-psych-nudge-001-6d554407ab44ff34-5",
+              "sourceId": "source:s200-psych-nudge-001-6d554407ab44ff34"
+            }
+          ]
+        },
+        {
+          "ref": "claim:6d554407ab44ff34-e55402a7821f316a",
+          "statement": "在调整发表偏倚后，没有证据表明助推（nudging）有效。",
+          "conditions": [
+            "在调整发表偏倚后"
+          ],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-psych-nudge-001-6d554407ab44ff34",
+          "knowledgeVersion": "kv:0de2b0cda898f0c387cf7f2e",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-psych-nudge-001-6d554407ab44ff34-3#chars-132-192",
+              "baseSpanRef": "span:s200-psych-nudge-001-6d554407ab44ff34-3",
+              "sourceId": "source:s200-psych-nudge-001-6d554407ab44ff34"
+            }
+          ]
+        }
+      ],
+      "priorEvolution": [
+        {
+          "action": "CREATE",
+          "sourceId": "source:s200-psych-nudge-001-6d554407ab44ff34",
+          "knowledgeVersion": "kv:0de2b0cda898f0c387cf7f2e",
+          "affectedClaimRefs": [
+            "claim:6d554407ab44ff34-36a820f7a79499dc",
+            "claim:6d554407ab44ff34-4df4fa82e65a4740",
+            "claim:6d554407ab44ff34-e55402a7821f316a"
+          ],
+          "createdAt": "2026-08-23T15:35:20.726Z"
+        },
+        {
+          "action": "UPDATE",
+          "sourceId": "source:s200-psych-nudge-004-077188d7915ccaf6",
+          "knowledgeVersion": "kv:678128fa2ea448dc4eb1fece",
+          "affectedClaimRefs": [
+            "claim:077188d7915ccaf6-073eb866ff9a2208",
+            "claim:077188d7915ccaf6-0abcbd113352d05c",
+            "claim:077188d7915ccaf6-17996256c7c683e8",
+            "claim:077188d7915ccaf6-623c7ec174c1f376",
+            "claim:077188d7915ccaf6-e6ecbd107ba7a8f2"
+          ],
+          "createdAt": "2026-08-23T15:36:34.689Z"
+        },
+        {
+          "action": "PROMOTE",
+          "sourceId": "source:s200-psych-nudge-005-20604090ad3bc5f3",
+          "knowledgeVersion": "kv:0f31845aa5967afe1923c0f4",
+          "affectedClaimRefs": [
+            "claim:20604090ad3bc5f3-049e253c9f77c374",
+            "claim:20604090ad3bc5f3-d31bb9d74d7b363d"
+          ],
+          "createdAt": "2026-08-23T15:37:25.957Z"
+        }
+      ]
+    },
+    {
+      "caseId": "QAB-PSY-03",
+      "domain": "psychology-reproducibility",
+      "sourceId": "source:s200-psych-nudge-003-ba1c34566ae9e463",
+      "snapshotId": "ks-2026-08-23T15-43-58-564Z-df554de6c5cd",
+      "beforeQuestionStateHash": "d7fc42571a9b44e93e8f3a124fd3228edf1e9c027eb69a53201a29516430d498",
+      "claim": {
+        "ref": "claim:ba1c34566ae9e463-bfc65f5a6b7083c3",
+        "statement": "该块标题为 'Rejoinder – No Evidence for Nudging After Adjusting for Publication Bias'，表明在调整发表偏倚后，没有证据支持助推的有效性。",
+        "conditions": [],
+        "validity": "SUPPORTED",
+        "claimKind": "FACT",
+        "scope": {
+          "type": "GLOBAL"
+        },
+        "sourceId": "source:s200-psych-nudge-003-ba1c34566ae9e463",
+        "knowledgeVersion": "kv:7f5f93d8f6dfdba257381cfe",
+        "evidenceRefs": [
+          {
+            "ref": "span:s200-psych-nudge-003-ba1c34566ae9e463-2#chars-126-198",
+            "baseSpanRef": "span:s200-psych-nudge-003-ba1c34566ae9e463-2",
+            "sourceId": "source:s200-psych-nudge-003-ba1c34566ae9e463"
+          }
+        ]
+      },
+      "question": {
+        "ref": "question:216bff0a347664f84a379395",
+        "canonicalQuestion": "选择架构干预文献中存在多大程度的发表偏倚？",
+        "aliases": [
+          "助推研究的发表偏倚",
+          "选择架构干预的出版偏差"
+        ],
+        "boundaries": [
+          "包括对发表偏倚的估计及其对效应量的影响，不包括其他类型的偏倚"
+        ],
+        "domain": "psychology-reproducibility",
+        "scope": {
+          "type": "GLOBAL"
+        },
+        "lifecycle": "ACTIVE",
+        "stateHash": "d7fc42571a9b44e93e8f3a124fd3228edf1e9c027eb69a53201a29516430d498"
+      },
+      "priorClaims": [
+        {
+          "ref": "claim:077188d7915ccaf6-073eb866ff9a2208",
+          "statement": "用户 akyu 评论道：没有证据表明助推不等于助推不存在。",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-psych-nudge-004-077188d7915ccaf6",
+          "knowledgeVersion": "kv:678128fa2ea448dc4eb1fece",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-psych-nudge-004-077188d7915ccaf6-8#chars-646-696",
+              "baseSpanRef": "span:s200-psych-nudge-004-077188d7915ccaf6-8",
+              "sourceId": "source:s200-psych-nudge-004-077188d7915ccaf6"
+            }
+          ]
+        },
+        {
+          "ref": "claim:077188d7915ccaf6-0abcbd113352d05c",
+          "statement": "用户 mikkergp 评论道：如果发表偏倚是排除不支持假设的结果，那么他们是如何考虑这一点的？",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-psych-nudge-004-077188d7915ccaf6",
+          "knowledgeVersion": "kv:678128fa2ea448dc4eb1fece",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-psych-nudge-004-077188d7915ccaf6-6#chars-356-491",
+              "baseSpanRef": "span:s200-psych-nudge-004-077188d7915ccaf6-6",
+              "sourceId": "source:s200-psych-nudge-004-077188d7915ccaf6"
+            }
+          ]
+        },
+        {
+          "ref": "claim:077188d7915ccaf6-17996256c7c683e8",
+          "statement": "该线程的标题是 'No evidence for nudging after adjusting for publication bias'。",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-psych-nudge-004-077188d7915ccaf6",
+          "knowledgeVersion": "kv:678128fa2ea448dc4eb1fece",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-psych-nudge-004-077188d7915ccaf6-3#chars-134-201",
+              "baseSpanRef": "span:s200-psych-nudge-004-077188d7915ccaf6-3",
+              "sourceId": "source:s200-psych-nudge-004-077188d7915ccaf6"
+            }
+          ]
+        },
+        {
+          "ref": "claim:077188d7915ccaf6-623c7ec174c1f376",
+          "statement": "该线程链接到一篇 PNAS 文章，URL 为 https://www.pnas.org/doi/10.1073/pnas.2200300119。",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-psych-nudge-004-077188d7915ccaf6",
+          "knowledgeVersion": "kv:678128fa2ea448dc4eb1fece",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-psych-nudge-004-077188d7915ccaf6-3#chars-204-257",
+              "baseSpanRef": "span:s200-psych-nudge-004-077188d7915ccaf6-3",
+              "sourceId": "source:s200-psych-nudge-004-077188d7915ccaf6"
+            }
+          ]
+        },
+        {
+          "ref": "claim:077188d7915ccaf6-e6ecbd107ba7a8f2",
+          "statement": "Hacker News 上有一个标题为 'No evidence for nudging after adjusting for publication bias' 的线程，其项目编号为 32213587。",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-psych-nudge-004-077188d7915ccaf6",
+          "knowledgeVersion": "kv:678128fa2ea448dc4eb1fece",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-psych-nudge-004-077188d7915ccaf6-0#chars-1-99",
+              "baseSpanRef": "span:s200-psych-nudge-004-077188d7915ccaf6-0",
+              "sourceId": "source:s200-psych-nudge-004-077188d7915ccaf6"
+            }
+          ]
+        },
+        {
+          "ref": "claim:20604090ad3bc5f3-049e253c9f77c374",
+          "statement": "该帖子的标题是 'No evidence for nudging after adjusting for publication bias'。",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-psych-nudge-005-20604090ad3bc5f3",
+          "knowledgeVersion": "kv:0f31845aa5967afe1923c0f4",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-psych-nudge-005-20604090ad3bc5f3-3#chars-156-223",
+              "baseSpanRef": "span:s200-psych-nudge-005-20604090ad3bc5f3-3",
+              "sourceId": "source:s200-psych-nudge-005-20604090ad3bc5f3"
+            }
+          ]
+        },
+        {
+          "ref": "claim:20604090ad3bc5f3-d31bb9d74d7b363d",
+          "statement": "尽管 'nudge' 方法很流行，但它因 '证据基础有限' 而受到批评。",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-psych-nudge-005-20604090ad3bc5f3",
+          "knowledgeVersion": "kv:0f31845aa5967afe1923c0f4",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-psych-nudge-005-20604090ad3bc5f3-6#chars-468-585",
+              "baseSpanRef": "span:s200-psych-nudge-005-20604090ad3bc5f3-6",
+              "sourceId": "source:s200-psych-nudge-005-20604090ad3bc5f3"
+            }
+          ]
+        },
+        {
+          "ref": "claim:6d554407ab44ff34-0c8dc4245d643e17",
+          "statement": "作者得出结论，参考文献3中分析的“助推”文献具有严重的发表偏倚。",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-psych-nudge-001-6d554407ab44ff34",
+          "knowledgeVersion": "kv:0de2b0cda898f0c387cf7f2e",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-psych-nudge-001-6d554407ab44ff34-9#chars-1465-1568",
+              "baseSpanRef": "span:s200-psych-nudge-001-6d554407ab44ff34-9",
+              "sourceId": "source:s200-psych-nudge-001-6d554407ab44ff34"
+            }
+          ]
+        },
+        {
+          "ref": "claim:6d554407ab44ff34-2a609006be39580a",
+          "statement": "Mertens等人通过Egger回归发现了显著的发表偏倚。",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-psych-nudge-001-6d554407ab44ff34",
+          "knowledgeVersion": "kv:0de2b0cda898f0c387cf7f2e",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-psych-nudge-001-6d554407ab44ff34-6#chars-1061-1140",
+              "baseSpanRef": "span:s200-psych-nudge-001-6d554407ab44ff34-6",
+              "sourceId": "source:s200-psych-nudge-001-6d554407ab44ff34"
+            }
+          ]
+        },
+        {
+          "ref": "claim:6d554407ab44ff34-625559e9e9f74d29",
+          "statement": "Mertens等人的敏感性分析表明，如果发表偏倚严重，真实效应量可能低至d=0.08。",
+          "conditions": [
+            "如果发表偏倚严重"
+          ],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-psych-nudge-001-6d554407ab44ff34",
+          "knowledgeVersion": "kv:0de2b0cda898f0c387cf7f2e",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-psych-nudge-001-6d554407ab44ff34-6#chars-1141-1266",
+              "baseSpanRef": "span:s200-psych-nudge-001-6d554407ab44ff34-6",
+              "sourceId": "source:s200-psych-nudge-001-6d554407ab44ff34"
+            }
+          ]
+        },
+        {
+          "ref": "claim:6d554407ab44ff34-74392f435907d5e4",
+          "statement": "一种新提出的偏倚校正技术——稳健贝叶斯元分析（RoBMA）——避免了关于发表偏倚是否“严重”的全有或全无的争论。",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-psych-nudge-001-6d554407ab44ff34",
+          "knowledgeVersion": "kv:0de2b0cda898f0c387cf7f2e",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-psych-nudge-001-6d554407ab44ff34-7#chars-1270-1434",
+              "baseSpanRef": "span:s200-psych-nudge-001-6d554407ab44ff34-7",
+              "sourceId": "source:s200-psych-nudge-001-6d554407ab44ff34"
+            }
+          ]
+        },
+        {
+          "ref": "claim:6d554407ab44ff34-a400485f546e8137",
+          "statement": "作者提出，Mertens等人发现的“中度发表偏倚”才是真正的头条新闻。",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-psych-nudge-001-6d554407ab44ff34",
+          "knowledgeVersion": "kv:0de2b0cda898f0c387cf7f2e",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-psych-nudge-001-6d554407ab44ff34-5#chars-852-936",
+              "baseSpanRef": "span:s200-psych-nudge-001-6d554407ab44ff34-5",
+              "sourceId": "source:s200-psych-nudge-001-6d554407ab44ff34"
+            }
+          ]
+        },
+        {
+          "ref": "claim:c582a49fd9949d90-c6ff62b8a9b3f2ab",
+          "statement": "该分析进一步揭示了文献中存在对积极结果的中等程度的发表偏倚。",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-psych-nudge-002-c582a49fd9949d90",
+          "knowledgeVersion": "kv:6ef4a4f680386301d0faaa19",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-psych-nudge-002-c582a49fd9949d90-4#chars-1029-1128",
+              "baseSpanRef": "span:s200-psych-nudge-002-c582a49fd9949d90-4",
+              "sourceId": "source:s200-psych-nudge-002-c582a49fd9949d90"
+            }
+          ]
+        }
+      ],
+      "priorEvolution": [
+        {
+          "action": "CREATE",
+          "sourceId": "source:s200-psych-nudge-002-c582a49fd9949d90",
+          "knowledgeVersion": "kv:6ef4a4f680386301d0faaa19",
+          "affectedClaimRefs": [
+            "claim:c582a49fd9949d90-c6ff62b8a9b3f2ab"
+          ],
+          "createdAt": "2026-08-23T15:26:07.940Z"
+        },
+        {
+          "action": "PROMOTE",
+          "sourceId": "source:s200-psych-nudge-001-6d554407ab44ff34",
+          "knowledgeVersion": "kv:0de2b0cda898f0c387cf7f2e",
+          "affectedClaimRefs": [
+            "claim:6d554407ab44ff34-0c8dc4245d643e17",
+            "claim:6d554407ab44ff34-2a609006be39580a",
+            "claim:6d554407ab44ff34-625559e9e9f74d29",
+            "claim:6d554407ab44ff34-74392f435907d5e4",
+            "claim:6d554407ab44ff34-a400485f546e8137"
+          ],
+          "createdAt": "2026-08-23T15:35:20.726Z"
+        },
+        {
+          "action": "UPDATE",
+          "sourceId": "source:s200-psych-nudge-004-077188d7915ccaf6",
+          "knowledgeVersion": "kv:678128fa2ea448dc4eb1fece",
+          "affectedClaimRefs": [
+            "claim:077188d7915ccaf6-073eb866ff9a2208",
+            "claim:077188d7915ccaf6-0abcbd113352d05c",
+            "claim:077188d7915ccaf6-17996256c7c683e8",
+            "claim:077188d7915ccaf6-623c7ec174c1f376",
+            "claim:077188d7915ccaf6-e6ecbd107ba7a8f2"
+          ],
+          "createdAt": "2026-08-23T15:36:34.689Z"
+        },
+        {
+          "action": "UPDATE",
+          "sourceId": "source:s200-psych-nudge-005-20604090ad3bc5f3",
+          "knowledgeVersion": "kv:0f31845aa5967afe1923c0f4",
+          "affectedClaimRefs": [
+            "claim:20604090ad3bc5f3-049e253c9f77c374",
+            "claim:20604090ad3bc5f3-d31bb9d74d7b363d"
+          ],
+          "createdAt": "2026-08-23T15:37:25.957Z"
+        }
+      ]
+    },
+    {
+      "caseId": "QAB-PSY-04",
+      "domain": "psychology-reproducibility",
+      "sourceId": "source:s200-psych-nudge-004-077188d7915ccaf6",
+      "snapshotId": "ks-2026-08-23T15-36-34-710Z-61c27d7cd04b",
+      "beforeQuestionStateHash": "4c2c29186c5f4fb2af25b9549bd4bda1c43690b5d5ced3f226c0e1c3af4117bd",
+      "claim": {
+        "ref": "claim:077188d7915ccaf6-623c7ec174c1f376",
+        "statement": "该线程链接到一篇 PNAS 文章，URL 为 https://www.pnas.org/doi/10.1073/pnas.2200300119。",
+        "conditions": [],
+        "validity": "SUPPORTED",
+        "claimKind": "FACT",
+        "scope": {
+          "type": "GLOBAL"
+        },
+        "sourceId": "source:s200-psych-nudge-004-077188d7915ccaf6",
+        "knowledgeVersion": "kv:678128fa2ea448dc4eb1fece",
+        "evidenceRefs": [
+          {
+            "ref": "span:s200-psych-nudge-004-077188d7915ccaf6-3#chars-204-257",
+            "baseSpanRef": "span:s200-psych-nudge-004-077188d7915ccaf6-3",
+            "sourceId": "source:s200-psych-nudge-004-077188d7915ccaf6"
+          }
+        ]
+      },
+      "question": {
+        "ref": "question:216bff0a347664f84a379395",
+        "canonicalQuestion": "选择架构干预文献中存在多大程度的发表偏倚？",
+        "aliases": [
+          "助推研究的发表偏倚",
+          "选择架构干预的出版偏差"
+        ],
+        "boundaries": [
+          "包括对发表偏倚的估计及其对效应量的影响，不包括其他类型的偏倚"
+        ],
+        "domain": "psychology-reproducibility",
+        "scope": {
+          "type": "GLOBAL"
+        },
+        "lifecycle": "ACTIVE",
+        "stateHash": "4c2c29186c5f4fb2af25b9549bd4bda1c43690b5d5ced3f226c0e1c3af4117bd"
+      },
+      "priorClaims": [
+        {
+          "ref": "claim:6d554407ab44ff34-0c8dc4245d643e17",
+          "statement": "作者得出结论，参考文献3中分析的“助推”文献具有严重的发表偏倚。",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-psych-nudge-001-6d554407ab44ff34",
+          "knowledgeVersion": "kv:0de2b0cda898f0c387cf7f2e",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-psych-nudge-001-6d554407ab44ff34-9#chars-1465-1568",
+              "baseSpanRef": "span:s200-psych-nudge-001-6d554407ab44ff34-9",
+              "sourceId": "source:s200-psych-nudge-001-6d554407ab44ff34"
+            }
+          ]
+        },
+        {
+          "ref": "claim:6d554407ab44ff34-2a609006be39580a",
+          "statement": "Mertens等人通过Egger回归发现了显著的发表偏倚。",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-psych-nudge-001-6d554407ab44ff34",
+          "knowledgeVersion": "kv:0de2b0cda898f0c387cf7f2e",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-psych-nudge-001-6d554407ab44ff34-6#chars-1061-1140",
+              "baseSpanRef": "span:s200-psych-nudge-001-6d554407ab44ff34-6",
+              "sourceId": "source:s200-psych-nudge-001-6d554407ab44ff34"
+            }
+          ]
+        },
+        {
+          "ref": "claim:6d554407ab44ff34-625559e9e9f74d29",
+          "statement": "Mertens等人的敏感性分析表明，如果发表偏倚严重，真实效应量可能低至d=0.08。",
+          "conditions": [
+            "如果发表偏倚严重"
+          ],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-psych-nudge-001-6d554407ab44ff34",
+          "knowledgeVersion": "kv:0de2b0cda898f0c387cf7f2e",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-psych-nudge-001-6d554407ab44ff34-6#chars-1141-1266",
+              "baseSpanRef": "span:s200-psych-nudge-001-6d554407ab44ff34-6",
+              "sourceId": "source:s200-psych-nudge-001-6d554407ab44ff34"
+            }
+          ]
+        },
+        {
+          "ref": "claim:6d554407ab44ff34-74392f435907d5e4",
+          "statement": "一种新提出的偏倚校正技术——稳健贝叶斯元分析（RoBMA）——避免了关于发表偏倚是否“严重”的全有或全无的争论。",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-psych-nudge-001-6d554407ab44ff34",
+          "knowledgeVersion": "kv:0de2b0cda898f0c387cf7f2e",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-psych-nudge-001-6d554407ab44ff34-7#chars-1270-1434",
+              "baseSpanRef": "span:s200-psych-nudge-001-6d554407ab44ff34-7",
+              "sourceId": "source:s200-psych-nudge-001-6d554407ab44ff34"
+            }
+          ]
+        },
+        {
+          "ref": "claim:6d554407ab44ff34-a400485f546e8137",
+          "statement": "作者提出，Mertens等人发现的“中度发表偏倚”才是真正的头条新闻。",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-psych-nudge-001-6d554407ab44ff34",
+          "knowledgeVersion": "kv:0de2b0cda898f0c387cf7f2e",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-psych-nudge-001-6d554407ab44ff34-5#chars-852-936",
+              "baseSpanRef": "span:s200-psych-nudge-001-6d554407ab44ff34-5",
+              "sourceId": "source:s200-psych-nudge-001-6d554407ab44ff34"
+            }
+          ]
+        },
+        {
+          "ref": "claim:c582a49fd9949d90-c6ff62b8a9b3f2ab",
+          "statement": "该分析进一步揭示了文献中存在对积极结果的中等程度的发表偏倚。",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-psych-nudge-002-c582a49fd9949d90",
+          "knowledgeVersion": "kv:6ef4a4f680386301d0faaa19",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-psych-nudge-002-c582a49fd9949d90-4#chars-1029-1128",
+              "baseSpanRef": "span:s200-psych-nudge-002-c582a49fd9949d90-4",
+              "sourceId": "source:s200-psych-nudge-002-c582a49fd9949d90"
+            }
+          ]
+        }
+      ],
+      "priorEvolution": [
+        {
+          "action": "CREATE",
+          "sourceId": "source:s200-psych-nudge-002-c582a49fd9949d90",
+          "knowledgeVersion": "kv:6ef4a4f680386301d0faaa19",
+          "affectedClaimRefs": [
+            "claim:c582a49fd9949d90-c6ff62b8a9b3f2ab"
+          ],
+          "createdAt": "2026-08-23T15:26:07.940Z"
+        },
+        {
+          "action": "PROMOTE",
+          "sourceId": "source:s200-psych-nudge-001-6d554407ab44ff34",
+          "knowledgeVersion": "kv:0de2b0cda898f0c387cf7f2e",
+          "affectedClaimRefs": [
+            "claim:6d554407ab44ff34-0c8dc4245d643e17",
+            "claim:6d554407ab44ff34-2a609006be39580a",
+            "claim:6d554407ab44ff34-625559e9e9f74d29",
+            "claim:6d554407ab44ff34-74392f435907d5e4",
+            "claim:6d554407ab44ff34-a400485f546e8137"
+          ],
+          "createdAt": "2026-08-23T15:35:20.726Z"
+        }
+      ]
+    },
+    {
+      "caseId": "QAB-PSY-05",
+      "domain": "psychology-reproducibility",
+      "sourceId": "source:s200-psych-nudge-004-077188d7915ccaf6",
+      "snapshotId": "ks-2026-08-23T15-36-34-710Z-61c27d7cd04b",
+      "beforeQuestionStateHash": "4c2c29186c5f4fb2af25b9549bd4bda1c43690b5d5ced3f226c0e1c3af4117bd",
+      "claim": {
+        "ref": "claim:077188d7915ccaf6-e6ecbd107ba7a8f2",
+        "statement": "Hacker News 上有一个标题为 'No evidence for nudging after adjusting for publication bias' 的线程，其项目编号为 32213587。",
+        "conditions": [],
+        "validity": "SUPPORTED",
+        "claimKind": "FACT",
+        "scope": {
+          "type": "GLOBAL"
+        },
+        "sourceId": "source:s200-psych-nudge-004-077188d7915ccaf6",
+        "knowledgeVersion": "kv:678128fa2ea448dc4eb1fece",
+        "evidenceRefs": [
+          {
+            "ref": "span:s200-psych-nudge-004-077188d7915ccaf6-0#chars-1-99",
+            "baseSpanRef": "span:s200-psych-nudge-004-077188d7915ccaf6-0",
+            "sourceId": "source:s200-psych-nudge-004-077188d7915ccaf6"
+          }
+        ]
+      },
+      "question": {
+        "ref": "question:fd7afd5d18a0abcdba1c8a83",
+        "canonicalQuestion": "发表偏倚校正如何影响对助推有效性的结论？",
+        "aliases": [
+          "发表偏倚对助推结论的影响",
+          "校正发表偏倚后的助推有效性"
+        ],
+        "boundaries": [
+          "包括校正发表偏倚后对助推有效性的重新评估，不包括未校正的原始分析"
+        ],
+        "domain": "psychology-reproducibility",
+        "scope": {
+          "type": "GLOBAL"
+        },
+        "lifecycle": "CANDIDATE",
+        "stateHash": "4c2c29186c5f4fb2af25b9549bd4bda1c43690b5d5ced3f226c0e1c3af4117bd"
+      },
+      "priorClaims": [
+        {
+          "ref": "claim:6d554407ab44ff34-36a820f7a79499dc",
+          "statement": "与Mertens等人相反，作者的贝叶斯分析表明，在纠正这种偏倚后，没有证据表明助推作为行为改变工具是有效的。",
+          "conditions": [
+            "在纠正这种偏倚后"
+          ],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-psych-nudge-001-6d554407ab44ff34",
+          "knowledgeVersion": "kv:0de2b0cda898f0c387cf7f2e",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-psych-nudge-001-6d554407ab44ff34-9#chars-1569-1747",
+              "baseSpanRef": "span:s200-psych-nudge-001-6d554407ab44ff34-9",
+              "sourceId": "source:s200-psych-nudge-001-6d554407ab44ff34"
+            }
+          ]
+        },
+        {
+          "ref": "claim:6d554407ab44ff34-4df4fa82e65a4740",
+          "statement": "当发表偏倚得到适当校正后，没有证据表明助推的有效性仍然存在。",
+          "conditions": [
+            "当发表偏倚得到适当校正后"
+          ],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-psych-nudge-001-6d554407ab44ff34",
+          "knowledgeVersion": "kv:0de2b0cda898f0c387cf7f2e",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-psych-nudge-001-6d554407ab44ff34-5#chars-937-1057",
+              "baseSpanRef": "span:s200-psych-nudge-001-6d554407ab44ff34-5",
+              "sourceId": "source:s200-psych-nudge-001-6d554407ab44ff34"
+            }
+          ]
+        },
+        {
+          "ref": "claim:6d554407ab44ff34-e55402a7821f316a",
+          "statement": "在调整发表偏倚后，没有证据表明助推（nudging）有效。",
+          "conditions": [
+            "在调整发表偏倚后"
+          ],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-psych-nudge-001-6d554407ab44ff34",
+          "knowledgeVersion": "kv:0de2b0cda898f0c387cf7f2e",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-psych-nudge-001-6d554407ab44ff34-3#chars-132-192",
+              "baseSpanRef": "span:s200-psych-nudge-001-6d554407ab44ff34-3",
+              "sourceId": "source:s200-psych-nudge-001-6d554407ab44ff34"
+            }
+          ]
+        }
+      ],
+      "priorEvolution": [
+        {
+          "action": "CREATE",
+          "sourceId": "source:s200-psych-nudge-001-6d554407ab44ff34",
+          "knowledgeVersion": "kv:0de2b0cda898f0c387cf7f2e",
+          "affectedClaimRefs": [
+            "claim:6d554407ab44ff34-36a820f7a79499dc",
+            "claim:6d554407ab44ff34-4df4fa82e65a4740",
+            "claim:6d554407ab44ff34-e55402a7821f316a"
+          ],
+          "createdAt": "2026-08-23T15:35:20.726Z"
+        }
+      ]
+    },
+    {
+      "caseId": "QAB-PSY-06",
+      "domain": "psychology-reproducibility",
+      "sourceId": "source:s200-psych-nudge-004-077188d7915ccaf6",
+      "snapshotId": "ks-2026-08-23T15-36-34-710Z-61c27d7cd04b",
+      "beforeQuestionStateHash": "4c2c29186c5f4fb2af25b9549bd4bda1c43690b5d5ced3f226c0e1c3af4117bd",
+      "claim": {
+        "ref": "claim:077188d7915ccaf6-0abcbd113352d05c",
+        "statement": "用户 mikkergp 评论道：如果发表偏倚是排除不支持假设的结果，那么他们是如何考虑这一点的？",
+        "conditions": [],
+        "validity": "SUPPORTED",
+        "claimKind": "FACT",
+        "scope": {
+          "type": "GLOBAL"
+        },
+        "sourceId": "source:s200-psych-nudge-004-077188d7915ccaf6",
+        "knowledgeVersion": "kv:678128fa2ea448dc4eb1fece",
+        "evidenceRefs": [
+          {
+            "ref": "span:s200-psych-nudge-004-077188d7915ccaf6-6#chars-356-491",
+            "baseSpanRef": "span:s200-psych-nudge-004-077188d7915ccaf6-6",
+            "sourceId": "source:s200-psych-nudge-004-077188d7915ccaf6"
+          }
+        ]
+      },
+      "question": {
+        "ref": "question:216bff0a347664f84a379395",
+        "canonicalQuestion": "选择架构干预文献中存在多大程度的发表偏倚？",
+        "aliases": [
+          "助推研究的发表偏倚",
+          "选择架构干预的出版偏差"
+        ],
+        "boundaries": [
+          "包括对发表偏倚的估计及其对效应量的影响，不包括其他类型的偏倚"
+        ],
+        "domain": "psychology-reproducibility",
+        "scope": {
+          "type": "GLOBAL"
+        },
+        "lifecycle": "ACTIVE",
+        "stateHash": "4c2c29186c5f4fb2af25b9549bd4bda1c43690b5d5ced3f226c0e1c3af4117bd"
+      },
+      "priorClaims": [
+        {
+          "ref": "claim:6d554407ab44ff34-0c8dc4245d643e17",
+          "statement": "作者得出结论，参考文献3中分析的“助推”文献具有严重的发表偏倚。",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-psych-nudge-001-6d554407ab44ff34",
+          "knowledgeVersion": "kv:0de2b0cda898f0c387cf7f2e",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-psych-nudge-001-6d554407ab44ff34-9#chars-1465-1568",
+              "baseSpanRef": "span:s200-psych-nudge-001-6d554407ab44ff34-9",
+              "sourceId": "source:s200-psych-nudge-001-6d554407ab44ff34"
+            }
+          ]
+        },
+        {
+          "ref": "claim:6d554407ab44ff34-2a609006be39580a",
+          "statement": "Mertens等人通过Egger回归发现了显著的发表偏倚。",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-psych-nudge-001-6d554407ab44ff34",
+          "knowledgeVersion": "kv:0de2b0cda898f0c387cf7f2e",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-psych-nudge-001-6d554407ab44ff34-6#chars-1061-1140",
+              "baseSpanRef": "span:s200-psych-nudge-001-6d554407ab44ff34-6",
+              "sourceId": "source:s200-psych-nudge-001-6d554407ab44ff34"
+            }
+          ]
+        },
+        {
+          "ref": "claim:6d554407ab44ff34-625559e9e9f74d29",
+          "statement": "Mertens等人的敏感性分析表明，如果发表偏倚严重，真实效应量可能低至d=0.08。",
+          "conditions": [
+            "如果发表偏倚严重"
+          ],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-psych-nudge-001-6d554407ab44ff34",
+          "knowledgeVersion": "kv:0de2b0cda898f0c387cf7f2e",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-psych-nudge-001-6d554407ab44ff34-6#chars-1141-1266",
+              "baseSpanRef": "span:s200-psych-nudge-001-6d554407ab44ff34-6",
+              "sourceId": "source:s200-psych-nudge-001-6d554407ab44ff34"
+            }
+          ]
+        },
+        {
+          "ref": "claim:6d554407ab44ff34-74392f435907d5e4",
+          "statement": "一种新提出的偏倚校正技术——稳健贝叶斯元分析（RoBMA）——避免了关于发表偏倚是否“严重”的全有或全无的争论。",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-psych-nudge-001-6d554407ab44ff34",
+          "knowledgeVersion": "kv:0de2b0cda898f0c387cf7f2e",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-psych-nudge-001-6d554407ab44ff34-7#chars-1270-1434",
+              "baseSpanRef": "span:s200-psych-nudge-001-6d554407ab44ff34-7",
+              "sourceId": "source:s200-psych-nudge-001-6d554407ab44ff34"
+            }
+          ]
+        },
+        {
+          "ref": "claim:6d554407ab44ff34-a400485f546e8137",
+          "statement": "作者提出，Mertens等人发现的“中度发表偏倚”才是真正的头条新闻。",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-psych-nudge-001-6d554407ab44ff34",
+          "knowledgeVersion": "kv:0de2b0cda898f0c387cf7f2e",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-psych-nudge-001-6d554407ab44ff34-5#chars-852-936",
+              "baseSpanRef": "span:s200-psych-nudge-001-6d554407ab44ff34-5",
+              "sourceId": "source:s200-psych-nudge-001-6d554407ab44ff34"
+            }
+          ]
+        },
+        {
+          "ref": "claim:c582a49fd9949d90-c6ff62b8a9b3f2ab",
+          "statement": "该分析进一步揭示了文献中存在对积极结果的中等程度的发表偏倚。",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-psych-nudge-002-c582a49fd9949d90",
+          "knowledgeVersion": "kv:6ef4a4f680386301d0faaa19",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-psych-nudge-002-c582a49fd9949d90-4#chars-1029-1128",
+              "baseSpanRef": "span:s200-psych-nudge-002-c582a49fd9949d90-4",
+              "sourceId": "source:s200-psych-nudge-002-c582a49fd9949d90"
+            }
+          ]
+        }
+      ],
+      "priorEvolution": [
+        {
+          "action": "CREATE",
+          "sourceId": "source:s200-psych-nudge-002-c582a49fd9949d90",
+          "knowledgeVersion": "kv:6ef4a4f680386301d0faaa19",
+          "affectedClaimRefs": [
+            "claim:c582a49fd9949d90-c6ff62b8a9b3f2ab"
+          ],
+          "createdAt": "2026-08-23T15:26:07.940Z"
+        },
+        {
+          "action": "PROMOTE",
+          "sourceId": "source:s200-psych-nudge-001-6d554407ab44ff34",
+          "knowledgeVersion": "kv:0de2b0cda898f0c387cf7f2e",
+          "affectedClaimRefs": [
+            "claim:6d554407ab44ff34-0c8dc4245d643e17",
+            "claim:6d554407ab44ff34-2a609006be39580a",
+            "claim:6d554407ab44ff34-625559e9e9f74d29",
+            "claim:6d554407ab44ff34-74392f435907d5e4",
+            "claim:6d554407ab44ff34-a400485f546e8137"
+          ],
+          "createdAt": "2026-08-23T15:35:20.726Z"
+        }
+      ]
+    },
+    {
+      "caseId": "QAB-TEC-01",
+      "domain": "technology",
+      "sourceId": "source:s200-tech-gomod-003-661ef155a51cdc7e",
+      "snapshotId": "ks-2026-08-23T15-46-12-509Z-fddd3373e03c",
+      "beforeQuestionStateHash": "8e9f8cbd8dadf369449fa54e0b15b6dda7805fced2d4a68a0d8d97ac105663ab",
+      "claim": {
+        "ref": "claim:661ef155a51cdc7e-df82c6beb329bc37",
+        "statement": "GitHub issue #24301 的标签包括 'Proposal' 和 'Proposal-Accepted'。",
+        "conditions": [],
+        "validity": "SUPPORTED",
+        "claimKind": "FACT",
+        "scope": {
+          "type": "GLOBAL"
+        },
+        "sourceId": "source:s200-tech-gomod-003-661ef155a51cdc7e",
+        "knowledgeVersion": "kv:daafe6d0a92dc8a260191487",
+        "evidenceRefs": [
+          {
+            "ref": "span:s200-tech-gomod-003-661ef155a51cdc7e-3#chars-313-382",
+            "baseSpanRef": "span:s200-tech-gomod-003-661ef155a51cdc7e-3",
+            "sourceId": "source:s200-tech-gomod-003-661ef155a51cdc7e"
+          }
+        ]
+      },
+      "question": {
+        "ref": "question:9461145467c7b99470b61313",
+        "canonicalQuestion": "Go 包版本管理提案的演进和正式化过程是怎样的？",
+        "aliases": [
+          "Go 版本管理提案历史",
+          "提案到集成"
+        ],
+        "boundaries": [
+          "不包括提案的具体技术细节",
+          "包括提案的讨论、调整、正式提交和集成到 Go 版本的过程"
+        ],
+        "domain": "technology",
+        "scope": {
+          "type": "GLOBAL"
+        },
+        "lifecycle": "ACTIVE",
+        "stateHash": "8e9f8cbd8dadf369449fa54e0b15b6dda7805fced2d4a68a0d8d97ac105663ab"
+      },
+      "priorClaims": [
+        {
+          "ref": "claim:8a6707125352ffba-0da3233c2e940d67",
+          "statement": "基于该讨论，作者将调整提案和原型，然后提交正式的 Go 提案，以便作为可选功能集成到 Go 1.11 中。",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-tech-gomod-005-8a6707125352ffba",
+          "knowledgeVersion": "kv:85ee7b2247948ebf3579c132",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-tech-gomod-005-8a6707125352ffba-5#chars-1742-1930",
+              "baseSpanRef": "span:s200-tech-gomod-005-8a6707125352ffba-5",
+              "sourceId": "source:s200-tech-gomod-005-8a6707125352ffba"
+            }
+          ]
+        },
+        {
+          "ref": "claim:8a6707125352ffba-f3577ede0e83cce4",
+          "statement": "作者打算这篇文章成为关于什么有效什么无效的富有成效讨论的开始。",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-tech-gomod-005-8a6707125352ffba",
+          "knowledgeVersion": "kv:85ee7b2247948ebf3579c132",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-tech-gomod-005-8a6707125352ffba-5#chars-1645-1741",
+              "baseSpanRef": "span:s200-tech-gomod-005-8a6707125352ffba-5",
+              "sourceId": "source:s200-tech-gomod-005-8a6707125352ffba"
+            }
+          ]
+        },
+        {
+          "ref": "claim:8a6707125352ffba-f7d7e756361aa1f6",
+          "statement": "这篇文章概述了一个提案，并附带一个原型演示，该演示今天就可以尝试，并有望成为最终 go 命令集成的基础。",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-tech-gomod-005-8a6707125352ffba",
+          "knowledgeVersion": "kv:85ee7b2247948ebf3579c132",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-tech-gomod-005-8a6707125352ffba-5#chars-1453-1640",
+              "baseSpanRef": "span:s200-tech-gomod-005-8a6707125352ffba-5",
+              "sourceId": "source:s200-tech-gomod-005-8a6707125352ffba"
+            }
+          ]
+        }
+      ],
+      "priorEvolution": [
+        {
+          "action": "CREATE",
+          "sourceId": "source:s200-tech-gomod-005-8a6707125352ffba",
+          "knowledgeVersion": "kv:85ee7b2247948ebf3579c132",
+          "affectedClaimRefs": [
+            "claim:8a6707125352ffba-0da3233c2e940d67",
+            "claim:8a6707125352ffba-f3577ede0e83cce4",
+            "claim:8a6707125352ffba-f7d7e756361aa1f6"
+          ],
+          "createdAt": "2026-08-23T15:45:10.958Z"
+        }
+      ]
+    },
+    {
+      "caseId": "QAB-TEC-02",
+      "domain": "technology",
+      "sourceId": "source:s200-tech-gomod-003-661ef155a51cdc7e",
+      "snapshotId": "ks-2026-08-23T15-46-12-509Z-fddd3373e03c",
+      "beforeQuestionStateHash": "8e9f8cbd8dadf369449fa54e0b15b6dda7805fced2d4a68a0d8d97ac105663ab",
+      "claim": {
+        "ref": "claim:661ef155a51cdc7e-2e19fd12dba9857d",
+        "statement": "GitHub issue #24301 创建于 2018-03-07T17:38:21Z。",
+        "conditions": [],
+        "validity": "SUPPORTED",
+        "claimKind": "FACT",
+        "scope": {
+          "type": "GLOBAL"
+        },
+        "sourceId": "source:s200-tech-gomod-003-661ef155a51cdc7e",
+        "knowledgeVersion": "kv:daafe6d0a92dc8a260191487",
+        "evidenceRefs": [
+          {
+            "ref": "span:s200-tech-gomod-003-661ef155a51cdc7e-3#chars-407-443",
+            "baseSpanRef": "span:s200-tech-gomod-003-661ef155a51cdc7e-3",
+            "sourceId": "source:s200-tech-gomod-003-661ef155a51cdc7e"
+          }
+        ]
+      },
+      "question": {
+        "ref": "question:9461145467c7b99470b61313",
+        "canonicalQuestion": "Go 包版本管理提案的演进和正式化过程是怎样的？",
+        "aliases": [
+          "Go 版本管理提案历史",
+          "提案到集成"
+        ],
+        "boundaries": [
+          "不包括提案的具体技术细节",
+          "包括提案的讨论、调整、正式提交和集成到 Go 版本的过程"
+        ],
+        "domain": "technology",
+        "scope": {
+          "type": "GLOBAL"
+        },
+        "lifecycle": "ACTIVE",
+        "stateHash": "8e9f8cbd8dadf369449fa54e0b15b6dda7805fced2d4a68a0d8d97ac105663ab"
+      },
+      "priorClaims": [
+        {
+          "ref": "claim:8a6707125352ffba-0da3233c2e940d67",
+          "statement": "基于该讨论，作者将调整提案和原型，然后提交正式的 Go 提案，以便作为可选功能集成到 Go 1.11 中。",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-tech-gomod-005-8a6707125352ffba",
+          "knowledgeVersion": "kv:85ee7b2247948ebf3579c132",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-tech-gomod-005-8a6707125352ffba-5#chars-1742-1930",
+              "baseSpanRef": "span:s200-tech-gomod-005-8a6707125352ffba-5",
+              "sourceId": "source:s200-tech-gomod-005-8a6707125352ffba"
+            }
+          ]
+        },
+        {
+          "ref": "claim:8a6707125352ffba-f3577ede0e83cce4",
+          "statement": "作者打算这篇文章成为关于什么有效什么无效的富有成效讨论的开始。",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-tech-gomod-005-8a6707125352ffba",
+          "knowledgeVersion": "kv:85ee7b2247948ebf3579c132",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-tech-gomod-005-8a6707125352ffba-5#chars-1645-1741",
+              "baseSpanRef": "span:s200-tech-gomod-005-8a6707125352ffba-5",
+              "sourceId": "source:s200-tech-gomod-005-8a6707125352ffba"
+            }
+          ]
+        },
+        {
+          "ref": "claim:8a6707125352ffba-f7d7e756361aa1f6",
+          "statement": "这篇文章概述了一个提案，并附带一个原型演示，该演示今天就可以尝试，并有望成为最终 go 命令集成的基础。",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-tech-gomod-005-8a6707125352ffba",
+          "knowledgeVersion": "kv:85ee7b2247948ebf3579c132",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-tech-gomod-005-8a6707125352ffba-5#chars-1453-1640",
+              "baseSpanRef": "span:s200-tech-gomod-005-8a6707125352ffba-5",
+              "sourceId": "source:s200-tech-gomod-005-8a6707125352ffba"
+            }
+          ]
+        }
+      ],
+      "priorEvolution": [
+        {
+          "action": "CREATE",
+          "sourceId": "source:s200-tech-gomod-005-8a6707125352ffba",
+          "knowledgeVersion": "kv:85ee7b2247948ebf3579c132",
+          "affectedClaimRefs": [
+            "claim:8a6707125352ffba-0da3233c2e940d67",
+            "claim:8a6707125352ffba-f3577ede0e83cce4",
+            "claim:8a6707125352ffba-f7d7e756361aa1f6"
+          ],
+          "createdAt": "2026-08-23T15:45:10.958Z"
+        }
+      ]
+    },
+    {
+      "caseId": "QAB-TEC-03",
+      "domain": "technology",
+      "sourceId": "source:s200-tech-gomod-004-ec6a188223216072",
+      "snapshotId": "ks-2026-08-23T15-49-32-342Z-173c504538e3",
+      "beforeQuestionStateHash": "a729d2c3e4cd234a48d3ef73ed7b40a5d87cfda089e0262baa6e8084ce89d991",
+      "claim": {
+        "ref": "claim:ec6a188223216072-8f626dea7924fecb",
+        "statement": "Go 1.25 中没有影响 Go 程序的语言更改。",
+        "conditions": [],
+        "validity": "SUPPORTED",
+        "claimKind": "FACT",
+        "scope": {
+          "type": "GLOBAL"
+        },
+        "sourceId": "source:s200-tech-gomod-004-ec6a188223216072",
+        "knowledgeVersion": "kv:08d992061bd5eab595ad0ce0",
+        "evidenceRefs": [
+          {
+            "ref": "span:s200-tech-gomod-004-ec6a188223216072-5#chars-459-525",
+            "baseSpanRef": "span:s200-tech-gomod-004-ec6a188223216072-5",
+            "sourceId": "source:s200-tech-gomod-004-ec6a188223216072"
+          }
+        ]
+      },
+      "question": {
+        "ref": "question:fd46a361f2c948a98df8f9f1",
+        "canonicalQuestion": "Go 模块的引入和默认化过程是怎样的？",
+        "aliases": [
+          "Go 模块的引入时间线",
+          "模块模式成为默认的过程"
+        ],
+        "boundaries": [
+          "不包括模块的具体使用细节",
+          "包括 Go 版本中模块支持的引入、演进和成为默认模式的过程"
+        ],
+        "domain": "technology",
+        "scope": {
+          "type": "GLOBAL"
+        },
+        "lifecycle": "CANDIDATE",
+        "stateHash": "a729d2c3e4cd234a48d3ef73ed7b40a5d87cfda089e0262baa6e8084ce89d991"
+      },
+      "priorClaims": [
+        {
+          "ref": "claim:556c43a12d828b9f-68765fc9133f4389",
+          "statement": "从Go 1.13开始，模块模式将成为所有开发的默认模式。",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-tech-gomod-002-556c43a12d828b9f",
+          "knowledgeVersion": "kv:0ece49740834cb89d6db9864",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-tech-gomod-002-556c43a12d828b9f-8#chars-1347-1420",
+              "baseSpanRef": "span:s200-tech-gomod-002-556c43a12d828b9f-8",
+              "sourceId": "source:s200-tech-gomod-002-556c43a12d828b9f"
+            }
+          ]
+        },
+        {
+          "ref": "claim:556c43a12d828b9f-794081503f485dee",
+          "statement": "从Go 1.11开始，当当前目录或任何父目录有go.mod时，go命令启用模块的使用，前提是该目录在$GOPATH/src之外。",
+          "conditions": [
+            "目录在$GOPATH/src之外"
+          ],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-tech-gomod-002-556c43a12d828b9f",
+          "knowledgeVersion": "kv:0ece49740834cb89d6db9864",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-tech-gomod-002-556c43a12d828b9f-7#chars-1057-1225",
+              "baseSpanRef": "span:s200-tech-gomod-002-556c43a12d828b9f-7",
+              "sourceId": "source:s200-tech-gomod-002-556c43a12d828b9f"
+            }
+          ]
+        },
+        {
+          "ref": "claim:556c43a12d828b9f-d4dde3fa8b96bef8",
+          "statement": "Go 1.11和1.12包含对模块的初步支持。",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-tech-gomod-002-556c43a12d828b9f",
+          "knowledgeVersion": "kv:0ece49740834cb89d6db9864",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-tech-gomod-002-556c43a12d828b9f-5#chars-391-447",
+              "baseSpanRef": "span:s200-tech-gomod-002-556c43a12d828b9f-5",
+              "sourceId": "source:s200-tech-gomod-002-556c43a12d828b9f"
+            }
+          ]
+        }
+      ],
+      "priorEvolution": [
+        {
+          "action": "CREATE",
+          "sourceId": "source:s200-tech-gomod-002-556c43a12d828b9f",
+          "knowledgeVersion": "kv:0ece49740834cb89d6db9864",
+          "affectedClaimRefs": [
+            "claim:556c43a12d828b9f-68765fc9133f4389",
+            "claim:556c43a12d828b9f-794081503f485dee",
+            "claim:556c43a12d828b9f-d4dde3fa8b96bef8"
+          ],
+          "createdAt": "2026-08-23T15:47:24.797Z"
+        }
+      ]
+    },
+    {
+      "caseId": "QAB-TEC-04",
+      "domain": "technology",
+      "sourceId": "source:s200-tech-gomod-001-d32360156bddb0d4",
+      "snapshotId": "ks-2026-08-23T15-48-35-856Z-ebaedc0f7518",
+      "beforeQuestionStateHash": "09ec449d48e6751481c190fb6c23545cfcaaff6064732900dd71c91613016dce",
+      "claim": {
+        "ref": "claim:d32360156bddb0d4-44650e066d4eeb68",
+        "statement": "A module is a collection of packages that are released, versioned, and distributed together.",
+        "conditions": [],
+        "validity": "SUPPORTED",
+        "claimKind": "FACT",
+        "scope": {
+          "type": "GLOBAL"
+        },
+        "sourceId": "source:s200-tech-gomod-001-d32360156bddb0d4",
+        "knowledgeVersion": "kv:ba117057df6312491377fd11",
+        "evidenceRefs": [
+          {
+            "ref": "span:s200-tech-gomod-001-d32360156bddb0d4-5#chars-442-534",
+            "baseSpanRef": "span:s200-tech-gomod-001-d32360156bddb0d4-5",
+            "sourceId": "source:s200-tech-gomod-001-d32360156bddb0d4"
+          }
+        ]
+      },
+      "question": {
+        "ref": "question:fd46a361f2c948a98df8f9f1",
+        "canonicalQuestion": "Go 模块的引入和默认化过程是怎样的？",
+        "aliases": [
+          "Go 模块的引入时间线",
+          "模块模式成为默认的过程"
+        ],
+        "boundaries": [
+          "不包括模块的具体使用细节",
+          "包括 Go 版本中模块支持的引入、演进和成为默认模式的过程"
+        ],
+        "domain": "technology",
+        "scope": {
+          "type": "GLOBAL"
+        },
+        "lifecycle": "CANDIDATE",
+        "stateHash": "09ec449d48e6751481c190fb6c23545cfcaaff6064732900dd71c91613016dce"
+      },
+      "priorClaims": [
+        {
+          "ref": "claim:556c43a12d828b9f-68765fc9133f4389",
+          "statement": "从Go 1.13开始，模块模式将成为所有开发的默认模式。",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-tech-gomod-002-556c43a12d828b9f",
+          "knowledgeVersion": "kv:0ece49740834cb89d6db9864",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-tech-gomod-002-556c43a12d828b9f-8#chars-1347-1420",
+              "baseSpanRef": "span:s200-tech-gomod-002-556c43a12d828b9f-8",
+              "sourceId": "source:s200-tech-gomod-002-556c43a12d828b9f"
+            }
+          ]
+        },
+        {
+          "ref": "claim:556c43a12d828b9f-794081503f485dee",
+          "statement": "从Go 1.11开始，当当前目录或任何父目录有go.mod时，go命令启用模块的使用，前提是该目录在$GOPATH/src之外。",
+          "conditions": [
+            "目录在$GOPATH/src之外"
+          ],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-tech-gomod-002-556c43a12d828b9f",
+          "knowledgeVersion": "kv:0ece49740834cb89d6db9864",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-tech-gomod-002-556c43a12d828b9f-7#chars-1057-1225",
+              "baseSpanRef": "span:s200-tech-gomod-002-556c43a12d828b9f-7",
+              "sourceId": "source:s200-tech-gomod-002-556c43a12d828b9f"
+            }
+          ]
+        },
+        {
+          "ref": "claim:556c43a12d828b9f-d4dde3fa8b96bef8",
+          "statement": "Go 1.11和1.12包含对模块的初步支持。",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-tech-gomod-002-556c43a12d828b9f",
+          "knowledgeVersion": "kv:0ece49740834cb89d6db9864",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-tech-gomod-002-556c43a12d828b9f-5#chars-391-447",
+              "baseSpanRef": "span:s200-tech-gomod-002-556c43a12d828b9f-5",
+              "sourceId": "source:s200-tech-gomod-002-556c43a12d828b9f"
+            }
+          ]
+        }
+      ],
+      "priorEvolution": [
+        {
+          "action": "CREATE",
+          "sourceId": "source:s200-tech-gomod-002-556c43a12d828b9f",
+          "knowledgeVersion": "kv:0ece49740834cb89d6db9864",
+          "affectedClaimRefs": [
+            "claim:556c43a12d828b9f-68765fc9133f4389",
+            "claim:556c43a12d828b9f-794081503f485dee",
+            "claim:556c43a12d828b9f-d4dde3fa8b96bef8"
+          ],
+          "createdAt": "2026-08-23T15:47:24.797Z"
+        }
+      ]
+    },
+    {
+      "caseId": "QAB-TEC-05",
+      "domain": "technology",
+      "sourceId": "source:s200-tech-gomod-001-d32360156bddb0d4",
+      "snapshotId": "ks-2026-08-23T15-48-35-856Z-ebaedc0f7518",
+      "beforeQuestionStateHash": "09ec449d48e6751481c190fb6c23545cfcaaff6064732900dd71c91613016dce",
+      "claim": {
+        "ref": "claim:d32360156bddb0d4-579f7f34ab0e22c5",
+        "statement": "Modules are how Go manages dependencies.",
+        "conditions": [],
+        "validity": "SUPPORTED",
+        "claimKind": "FACT",
+        "scope": {
+          "type": "GLOBAL"
+        },
+        "sourceId": "source:s200-tech-gomod-001-d32360156bddb0d4",
+        "knowledgeVersion": "kv:ba117057df6312491377fd11",
+        "evidenceRefs": [
+          {
+            "ref": "span:s200-tech-gomod-001-d32360156bddb0d4-3#chars-82-122",
+            "baseSpanRef": "span:s200-tech-gomod-001-d32360156bddb0d4-3",
+            "sourceId": "source:s200-tech-gomod-001-d32360156bddb0d4"
+          }
+        ]
+      },
+      "question": {
+        "ref": "question:fd46a361f2c948a98df8f9f1",
+        "canonicalQuestion": "Go 模块的引入和默认化过程是怎样的？",
+        "aliases": [
+          "Go 模块的引入时间线",
+          "模块模式成为默认的过程"
+        ],
+        "boundaries": [
+          "不包括模块的具体使用细节",
+          "包括 Go 版本中模块支持的引入、演进和成为默认模式的过程"
+        ],
+        "domain": "technology",
+        "scope": {
+          "type": "GLOBAL"
+        },
+        "lifecycle": "CANDIDATE",
+        "stateHash": "09ec449d48e6751481c190fb6c23545cfcaaff6064732900dd71c91613016dce"
+      },
+      "priorClaims": [
+        {
+          "ref": "claim:556c43a12d828b9f-68765fc9133f4389",
+          "statement": "从Go 1.13开始，模块模式将成为所有开发的默认模式。",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-tech-gomod-002-556c43a12d828b9f",
+          "knowledgeVersion": "kv:0ece49740834cb89d6db9864",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-tech-gomod-002-556c43a12d828b9f-8#chars-1347-1420",
+              "baseSpanRef": "span:s200-tech-gomod-002-556c43a12d828b9f-8",
+              "sourceId": "source:s200-tech-gomod-002-556c43a12d828b9f"
+            }
+          ]
+        },
+        {
+          "ref": "claim:556c43a12d828b9f-794081503f485dee",
+          "statement": "从Go 1.11开始，当当前目录或任何父目录有go.mod时，go命令启用模块的使用，前提是该目录在$GOPATH/src之外。",
+          "conditions": [
+            "目录在$GOPATH/src之外"
+          ],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-tech-gomod-002-556c43a12d828b9f",
+          "knowledgeVersion": "kv:0ece49740834cb89d6db9864",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-tech-gomod-002-556c43a12d828b9f-7#chars-1057-1225",
+              "baseSpanRef": "span:s200-tech-gomod-002-556c43a12d828b9f-7",
+              "sourceId": "source:s200-tech-gomod-002-556c43a12d828b9f"
+            }
+          ]
+        },
+        {
+          "ref": "claim:556c43a12d828b9f-d4dde3fa8b96bef8",
+          "statement": "Go 1.11和1.12包含对模块的初步支持。",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-tech-gomod-002-556c43a12d828b9f",
+          "knowledgeVersion": "kv:0ece49740834cb89d6db9864",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-tech-gomod-002-556c43a12d828b9f-5#chars-391-447",
+              "baseSpanRef": "span:s200-tech-gomod-002-556c43a12d828b9f-5",
+              "sourceId": "source:s200-tech-gomod-002-556c43a12d828b9f"
+            }
+          ]
+        }
+      ],
+      "priorEvolution": [
+        {
+          "action": "CREATE",
+          "sourceId": "source:s200-tech-gomod-002-556c43a12d828b9f",
+          "knowledgeVersion": "kv:0ece49740834cb89d6db9864",
+          "affectedClaimRefs": [
+            "claim:556c43a12d828b9f-68765fc9133f4389",
+            "claim:556c43a12d828b9f-794081503f485dee",
+            "claim:556c43a12d828b9f-d4dde3fa8b96bef8"
+          ],
+          "createdAt": "2026-08-23T15:47:24.797Z"
+        }
+      ]
+    },
+    {
+      "caseId": "QAB-TEC-06",
+      "domain": "technology",
+      "sourceId": "source:s200-tech-gomod-003-661ef155a51cdc7e",
+      "snapshotId": "ks-2026-08-23T15-46-12-509Z-fddd3373e03c",
+      "beforeQuestionStateHash": "8e9f8cbd8dadf369449fa54e0b15b6dda7805fced2d4a68a0d8d97ac105663ab",
+      "claim": {
+        "ref": "claim:661ef155a51cdc7e-44d6591607d02f34",
+        "statement": "GitHub issue #24301 的标题是 'cmd/go: add package version support to Go toolchain'。",
+        "conditions": [],
+        "validity": "SUPPORTED",
+        "claimKind": "FACT",
+        "scope": {
+          "type": "GLOBAL"
+        },
+        "sourceId": "source:s200-tech-gomod-003-661ef155a51cdc7e",
+        "knowledgeVersion": "kv:daafe6d0a92dc8a260191487",
+        "evidenceRefs": [
+          {
+            "ref": "span:s200-tech-gomod-003-661ef155a51cdc7e-3#chars-217-279",
+            "baseSpanRef": "span:s200-tech-gomod-003-661ef155a51cdc7e-3",
+            "sourceId": "source:s200-tech-gomod-003-661ef155a51cdc7e"
+          }
+        ]
+      },
+      "question": {
+        "ref": "question:cf8cead85caf83ea0864ad3c",
+        "canonicalQuestion": "Go 包版本管理对 go get 命令和现有工作流程的影响是什么？",
+        "aliases": [
+          "go get 与版本管理",
+          "版本管理对 go get 的影响"
+        ],
+        "boundaries": [
+          "不包括 go get 的完整历史或所有用法",
+          "包括版本管理如何与 go get 共存、保留其优点、改变其行为"
+        ],
+        "domain": "technology",
+        "scope": {
+          "type": "GLOBAL"
+        },
+        "lifecycle": "ACTIVE",
+        "stateHash": "8e9f8cbd8dadf369449fa54e0b15b6dda7805fced2d4a68a0d8d97ac105663ab"
+      },
+      "priorClaims": [
+        {
+          "ref": "claim:8a6707125352ffba-06ddd9eda9a1db85",
+          "statement": "简而言之，需要添加包版本管理，但需要在不破坏 go get 的情况下进行。",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-tech-gomod-005-8a6707125352ffba",
+          "knowledgeVersion": "kv:85ee7b2247948ebf3579c132",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-tech-gomod-005-8a6707125352ffba-5#chars-1358-1448",
+              "baseSpanRef": "span:s200-tech-gomod-005-8a6707125352ffba-5",
+              "sourceId": "source:s200-tech-gomod-005-8a6707125352ffba"
+            }
+          ]
+        },
+        {
+          "ref": "claim:8a6707125352ffba-80ddaad441bfe6ba",
+          "statement": "该提案保留了 go get 的最佳部分，增加了可重现构建，采用语义化版本，消除 vendoring，弃用 GOPATH 以支持基于项目的流程，并为从 dep 及其前身的平滑迁移提供了途径。",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-tech-gomod-005-8a6707125352ffba",
+          "knowledgeVersion": "kv:85ee7b2247948ebf3579c132",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-tech-gomod-005-8a6707125352ffba-6#chars-1934-2178",
+              "baseSpanRef": "span:s200-tech-gomod-005-8a6707125352ffba-6",
+              "sourceId": "source:s200-tech-gomod-005-8a6707125352ffba"
+            }
+          ]
+        },
+        {
+          "ref": "claim:8a6707125352ffba-c920d11ac87f47a5",
+          "statement": "尽管必须添加版本管理，但也不能移除当前 go 命令的最佳部分：其简单性、速度和可理解性。",
+          "conditions": [],
+          "validity": "SUPPORTED",
+          "claimKind": "FACT",
+          "scope": {
+            "type": "GLOBAL"
+          },
+          "sourceId": "source:s200-tech-gomod-005-8a6707125352ffba",
+          "knowledgeVersion": "kv:85ee7b2247948ebf3579c132",
+          "evidenceRefs": [
+            {
+              "ref": "span:s200-tech-gomod-005-8a6707125352ffba-4#chars-1210-1354",
+              "baseSpanRef": "span:s200-tech-gomod-005-8a6707125352ffba-4",
+              "sourceId": "source:s200-tech-gomod-005-8a6707125352ffba"
+            }
+          ]
+        }
+      ],
+      "priorEvolution": [
+        {
+          "action": "CREATE",
+          "sourceId": "source:s200-tech-gomod-005-8a6707125352ffba",
+          "knowledgeVersion": "kv:85ee7b2247948ebf3579c132",
+          "affectedClaimRefs": [
+            "claim:8a6707125352ffba-06ddd9eda9a1db85",
+            "claim:8a6707125352ffba-80ddaad441bfe6ba",
+            "claim:8a6707125352ffba-c920d11ac87f47a5"
+          ],
+          "createdAt": "2026-08-23T15:45:10.958Z"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "schemaVersion": "wge-provisional-canary/v2",
+  "status": "provisional-reviewed-not-human-gold",
+  "refinementVersion": "batch-a-gold-refinement/v1",
+  "purpose": "Only validates loading, evidence resolution, immutable input identity, and run contract.",
+  "prohibitions": [
+    "Do not optimize architecture or prompts against aggregate canary score.",
+    "Do not describe this model-reviewed canary as human Gold."
+  ],
+  "cases": [
+    {
+      "caseId": "F-AI-001",
+      "domain": [
+        "ai"
+      ],
+      "questionType": "F",
+      "evidenceCount": 1
+    },
+    {
+      "caseId": "F-AI-003",
+      "domain": [
+        "ai"
+      ],
+      "questionType": "F",
+      "evidenceCount": 1
+    },
+    {
+      "caseId": "R-AI-001",
+      "domain": [
+        "ai"
+      ],
+      "questionType": "R",
+      "evidenceCount": 1
+    },
+    {
+      "caseId": "C-AI-002",
+      "domain": [
+        "ai"
+      ],
+      "questionType": "C",
+      "evidenceCount": 1
+    },
+    {
+      "caseId": "F-TECH-004",
+      "domain": [
+        "technology"
+      ],
+      "questionType": "F",
+      "evidenceCount": 1
+    },
+    {
+      "caseId": "X-TECH-001",
+      "domain": [
+        "technology"
+      ],
+      "questionType": "X",
+      "evidenceCount": 3
+    },
+    {
+      "caseId": "K-TECH-002",
+      "domain": [
+        "technology"
+      ],
+      "questionType": "K",
+      "evidenceCount": 3
+    },
+    {
+      "caseId": "T-TECH-002",
+      "domain": [
+        "technology"
+      ],
+      "questionType": "T",
+      "evidenceCount": 1
+    },
+    {
+      "caseId": "F-FIN-001",
+      "domain": [
+        "finance"
+      ],
+      "questionType": "F",
+      "evidenceCount": 1
+    },
+    {
+      "caseId": "R-FIN-001",
+      "domain": [
+        "finance"
+      ],
+      "questionType": "R",
+      "evidenceCount": 2
+    },
+    {
+      "caseId": "C-FIN-001",
+      "domain": [
+        "finance"
+      ],
+      "questionType": "C",
+      "evidenceCount": 2
+    },
+    {
+      "caseId": "X-FIN-001",
+      "domain": [
+        "finance"
+      ],
+      "questionType": "X",
+      "evidenceCount": 4
+    }
+  ]
+}

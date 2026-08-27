@@ -1,0 +1,212 @@
+{
+  "claims": [
+    {
+      "statement": "DPC (Ireland) Final Decision IN-20-8-1 concerns Meta Platforms Ireland Limited and GDPR data transfers.",
+      "evidenceQuotes": ["DPC (Ireland) Final Decision IN-20-8-1 — Meta Platforms Ireland Limited (GDPR data transfers)"],
+      "blockIds": ["c-law-002#block-0"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "The decision date is 12 May 2023.",
+      "evidenceQuotes": ["Decision Date: 12 May 2023"],
+      "blockIds": ["c-law-002#block-3"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "The announcement date is 22 May 2023.",
+      "evidenceQuotes": ["Announcement Date: 22 May 2023"],
+      "blockIds": ["c-law-002#block-3"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "The authority is the Data Protection Commission (Ireland), Lead Supervisory Authority.",
+      "evidenceQuotes": ["Authority: Data Protection Commission (Ireland), Lead Supervisory Authority"],
+      "blockIds": ["c-law-002#block-3"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "The EDPB Binding Decision was on 13 April 2023 under Article 65 dispute resolution.",
+      "evidenceQuotes": ["EDPB Binding Decision: 13 April 2023 (Article 65 dispute resolution)"],
+      "blockIds": ["c-law-002#block-3"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "The case reference is IN-20-8-1.",
+      "evidenceQuotes": ["Case Reference: IN-20-8-1"],
+      "blockIds": ["c-law-002#block-3"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "Meta Ireland infringed Article 46(1) GDPR when it continued to transfer personal data from the EU/EEA to the USA after the CJEU's judgment in Data Protection Commissioner v Facebook Ireland Limited and Maximillian Schrems.",
+      "evidenceQuotes": ["The decision records that Meta Ireland infringed Article 46(1) GDPR when it continued to transfer personal data from the EU/EEA to the USA following the delivery of the CJEU's judgment in Data Protection Commissioner v Facebook Ireland Limited and Maximillian Schrems."],
+      "blockIds": ["c-law-002#block-5"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "Meta Ireland effected those transfers on the basis of the updated Standard Contractual Clauses ('SCCs') adopted by the European Commission in 2021.",
+      "evidenceQuotes": ["While Meta Ireland effected those transfers on the basis of the updated Standard Contractual Clauses ('SCCs') that were adopted by the European Commission in 2021"],
+      "blockIds": ["c-law-002#block-6"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "Meta Ireland implemented additional supplementary measures.",
+      "evidenceQuotes": ["in conjunction with additional supplementary measures that were implemented by Meta Ireland"],
+      "blockIds": ["c-law-002#block-6"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "The DPC found that these arrangements did not address the risks to the fundamental rights and freedoms of data subjects identified by the CJEU in its judgment.",
+      "evidenceQuotes": ["the DPC found that these arrangements did not address the risks to the fundamental rights and freedoms of data subjects that were identified by the CJEU in its judgment."],
+      "blockIds": ["c-law-002#block-6"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "US law does not provide a level of protection equivalent to that provided by EU law.",
+      "evidenceQuotes": ["US law does not provide a level of protection that is equivalent to that provided by EU law."],
+      "blockIds": ["c-law-002#block-8"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "Neither the 2010 SCCs nor the 2021 SCCs could compensate for the inadequate protection provided by US law.",
+      "evidenceQuotes": ["Neither the 2010 SCCs, nor the 2021 SCCs, could compensate for the inadequate protection provided by US law."],
+      "blockIds": ["c-law-002#block-9"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "The measures set out in Meta's record of safeguards do not compensate for the inadequate protection provided by US law.",
+      "evidenceQuotes": ["The measures set out in Meta's record of safeguards...do not compensate for the inadequate protection provided by US law."],
+      "blockIds": ["c-law-002#block-10"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "It is not open to Meta to rely on the derogations provided for in Article 49(1) of the GDPR when making the data transfers.",
+      "evidenceQuotes": ["It is not open to Meta to rely on the derogations provided for in Article 49(1) of the GDPR when making the data transfers."],
+      "blockIds": ["c-law-002#block-11"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "An administrative fine of €1.2 billion was imposed, the largest GDPR fine ever.",
+      "evidenceQuotes": ["Administrative fine: €1.2 billion — the largest GDPR fine ever imposed."],
+      "blockIds": ["c-law-002#block-13"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "Meta Ireland must suspend any future transfer of personal data to the US within five months from notification under Article 58(2)(j) GDPR.",
+      "evidenceQuotes": ["Suspension order (Article 58(2)(j) GDPR): Meta Ireland must suspend any future transfer of personal data to the US within five months from notification."],
+      "blockIds": ["c-law-002#block-13"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "Meta Ireland must bring processing into compliance with Chapter V GDPR by ceasing unlawful processing, including storage, in the US within six months from notification under Article 58(2)(d) GDPR.",
+      "evidenceQuotes": ["Compliance order (Article 58(2)(d) GDPR): Meta Ireland must bring processing into compliance with Chapter V GDPR by ceasing unlawful processing, including storage, in the US within six months from notification."],
+      "blockIds": ["c-law-002#block-13"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "The EDPB found that Meta IE's infringement is very serious because it concerns transfers that are systematic, repetitive and continuous.",
+      "evidenceQuotes": ["The EDPB found that Meta IE's infringement is very serious since it concerns transfers that are systematic, repetitive and continuous."],
+      "blockIds": ["c-law-002#block-15"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "Facebook has millions of users in Europe, so the volume of personal data transferred is massive.",
+      "evidenceQuotes": ["Facebook has millions of users in Europe, so the volume of personal data transferred is massive."],
+      "blockIds": ["c-law-002#block-15"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "The unprecedented fine is a strong signal to organisations that serious infringements have far-reaching consequences.",
+      "evidenceQuotes": ["The unprecedented fine is a strong signal to organisations that serious infringements have far-reaching consequences."],
+      "blockIds": ["c-law-002#block-15"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "The DPC initially proposed only a suspension order without a fine.",
+      "evidenceQuotes": ["The DPC initially proposed only a suspension order without a fine."],
+      "blockIds": ["c-law-002#block-17"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "Four of 47 Concerned Supervisory Authorities objected to the DPC's initial proposal.",
+      "evidenceQuotes": ["Four of 47 Concerned Supervisory Authorities objected."],
+      "blockIds": ["c-law-002#block-17"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "The EDPB determined that a fine should be imposed and that Meta must also address already-transferred data.",
+      "evidenceQuotes": ["The EDPB determined that a fine should be imposed and that Meta must also address already-transferred data."],
+      "blockIds": ["c-law-002#block-17"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "The DPC was bound to follow the EDPB's binding decision.",
+      "evidenceQuotes": ["The DPC was bound to follow the EDPB's binding decision."],
+      "blockIds": ["c-law-002#block-17"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "Meta announced it would appeal the decision and seek a stay with the courts to pause implementation deadlines.",
+      "evidenceQuotes": ["Meta announced it would appeal the decision and seek a stay with the courts to pause implementation deadlines."],
+      "blockIds": ["c-law-002#block-19"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "The content is sourced from EDPB press release, DPC announcement, and RegSol/GDPRhub analyses.",
+      "evidenceQuotes": ["*Content sourced from EDPB press release (https://www.edpb.europa.eu/), DPC announcement, and RegSol/GDPRhub analyses. All publicly accessible.*"],
+      "blockIds": ["c-law-002#block-2"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    }
+  ]
+}

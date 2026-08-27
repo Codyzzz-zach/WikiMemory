@@ -1,0 +1,150 @@
+{
+  "schemaVersion": "wge-goal2-proof/v1",
+  "status": "REWORK_R1_NO_DEV_CORE",
+  "createdAt": "2026-07-30",
+  "objective": "Evaluate whether an audited, bounded Graph can replace or reorder R0 Claim slots under the same visible budget and create an explainable quality/cost Pareto improvement without hard regressions.",
+  "inputs": {
+    "contract": {
+      "path": "experiments/goal2/goal2-contract-v1.json",
+      "sha256": "2cdd7b0917c0cbb15f7e52794b7d2d45f61bb0bbba19c76ce82b0a81e4b033fd"
+    },
+    "offlineEntryProof": {
+      "path": "experiments/goal2/goal2-offline-entry-proof-v1.json",
+      "sha256": "98207dac8480a5f0712a0740271b5138f40adf7ce8528badcb963bdb2c2dbab9"
+    },
+    "rawAnswerReport": {
+      "path": "experiments/goal2/runs/goal2-r1-answer-micro-v1/score-report.json",
+      "sha256": "c8a60a64be3be8f04bd69b8d008e3db3cb1ef0bde6e1710dbe7c05fa7538b8b3"
+    },
+    "adjudication": {
+      "path": "experiments/goal2/reviews/goal2-answer-micro-v1-adjudication.json",
+      "sha256": "03e520459c77c4ecfaee6bc41810b06948481bb5536648a6d3c780a48d424150"
+    },
+    "adjudicatedAnswerReport": {
+      "path": "experiments/goal2/runs/goal2-r1-answer-micro-v1/adjudicated-score-report.json",
+      "sha256": "bc9982958d5b3d896e626fb5f6fb2e068fb4c432eac685e8dbe93161fbfd9561"
+    },
+    "answerMicroProof": {
+      "path": "experiments/goal2/goal2-answer-micro-proof-v2.json",
+      "sha256": "d3394f3b2751c664230df23f32d31fb71dce503a04f3380300f77704c0e198d0"
+    }
+  },
+  "implementation": {
+    "mode": "OPT_IN_EXPERIMENTAL_NOT_DEFAULT_PRODUCTION",
+    "trustedEdgesOnly": true,
+    "candidateNodeLimit": 40,
+    "maximumDepth": 2,
+    "protectedLexicalSeeds": 3,
+    "randomWalkRestartAlpha": 0.25,
+    "randomWalkIterations": 25,
+    "primaryClaimSlots": 10,
+    "nonSafetyExpansionRequiresIndependentAnchors": 2,
+    "visibleR1RelationsInMicro": 0,
+    "claimCountPolicy": "R1 primary and co-evidence ceilings equal R0; Graph replaces or reorders and cannot append capacity.",
+    "defaultPathChanged": false
+  },
+  "offlineResult": {
+    "status": "PASS_OFFLINE_ENTRY_GATE",
+    "questions": 8,
+    "r0AverageClaims": 14.88,
+    "r1AverageClaims": 14.88,
+    "r0AverageContextTokens": 2376.38,
+    "r1AverageContextTokens": 2436.25,
+    "evidenceAndEndpointClosure": true,
+    "allGraphAddedClaimsTaskRelevantByPostHocDevReview": true,
+    "limitations": "Relevance review did not claim answer benefit and used revealed Dev questions."
+  },
+  "answerMicro": {
+    "questions": 8,
+    "groups": ["B", "R0", "R1"],
+    "model": "deepseek-v4-flash",
+    "temperature": 0,
+    "adjudicatedMetrics": {
+      "B": {
+        "averageScore": 7.125,
+        "hardFailures": 1,
+        "providerTokens": 44671,
+        "averageContextTokens": 4942.5,
+        "averageLatencyMs": 2640.75
+      },
+      "R0": {
+        "averageScore": 7.75,
+        "hardFailures": 1,
+        "providerTokens": 27768,
+        "averageContextTokens": 2376.375,
+        "averageLatencyMs": 2547.375
+      },
+      "R1": {
+        "averageScore": 7.5,
+        "hardFailures": 2,
+        "providerTokens": 28675,
+        "averageContextTokens": 2436.25,
+        "averageLatencyMs": 3008.75
+      }
+    },
+    "r1VsR0": {
+      "averageScoreDelta": -0.25,
+      "hardFailureDelta": 1,
+      "providerTokenDelta": 907,
+      "providerTokenDeltaPercent": 3.27,
+      "averageContextTokenDelta": 59.875,
+      "averageLatencyDeltaMs": 461.375,
+      "averageLatencyDeltaPercent": 18.11,
+      "traceableTargetScoreBenefits": 0,
+      "aggregateDominatedByR0": true
+    },
+    "replacementCases": [
+      {
+        "questionId": "PILOT-H2-01",
+        "scoreDelta": 0,
+        "providerTokenDelta": 479,
+        "finding": "Relevant replacement, no answer gain, higher cost."
+      },
+      {
+        "questionId": "PILOT-H2-22",
+        "scoreDelta": 0,
+        "providerTokenDelta": 114,
+        "finding": "Relevant replacement, no answer gain, higher cost."
+      },
+      {
+        "questionId": "PILOT-C05",
+        "scoreDelta": 0,
+        "providerTokenDelta": 260,
+        "finding": "Relevant replacement removed unrelated convergence modes, but the answer was already saturated and cost increased."
+      }
+    ],
+    "additionalHardFailure": {
+      "questionId": "PILOT-H3-05",
+      "group": "R1",
+      "finding": "R1 emitted two evidence identifiers absent from its context while R0 used resolvable Claim identifiers. This is an observed target hard regression."
+    }
+  },
+  "gates": {
+    "boundedAndTrustedStructure": true,
+    "replacementNotAppend": true,
+    "visibleGraphTaskNecessity": true,
+    "controlsHaveNoAdditionalHardFailure": true,
+    "allAnswerContractsValid": false,
+    "noAdditionalHardFailureOverall": false,
+    "aggregateParetoNondominated": false,
+    "traceableTargetRankingBenefit": false,
+    "answerMicroPassed": false,
+    "devCoreAuthorized": false
+  },
+  "devCore": {
+    "status": "NOT_RUN_BY_FROZEN_STOP_RULE",
+    "reason": "The pre-registered contract forbids Dev Core when the answer Micro gate fails. Running it would spend quota and weaken the experimental contract rather than add admissible evidence."
+  },
+  "decision": {
+    "verdict": "REWORK",
+    "production": "Keep R0 as the online default. Do not enable this R1 policy.",
+    "graphInfrastructure": "Retain audited Graph for governance, impact analysis and bounded candidate diagnostics; the failed online selector does not invalidate the Graph substrate.",
+    "nextHypothesis": "A future R1 must prove marginal task utility before replacement, account for closed Claim+Evidence size during ranking, and avoid reordering unchanged sets unless expected utility exceeds cost. It requires a new frozen contract and run; current Dev questions remain regression assets."
+  },
+  "limitations": [
+    "Questions are revealed single-domain Dev assets and the judge is an AI proxy.",
+    "One post-hoc adjudication corrected a judge application error that was contradicted by the frozen scoring contract; raw output remains immutable.",
+    "The correction made R1 worse relative to R0 and therefore cannot create a deceptive positive reward.",
+    "No Dev Core or blind generalization claim is made."
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "runId": "e4-batch-b-remaining-all-modes-2026-07-28T05-44-10-699Z",
+  "sampleId": "sample-8716fa25-fd53-4f9a-8f20-c3bbfbf55bde",
+  "questionId": "B-A-DESIGN-009",
+  "group": "B",
+  "pilotGroup": "B",
+  "graphExpansion": false,
+  "repetition": 1,
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "temperature": 0,
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 135,
+    "completionTokens": 87,
+    "totalTokens": 222,
+    "promptCacheHitTokens": 0,
+    "promptCacheMissTokens": 135,
+    "reasoningTokens": 0
+  },
+  "latencyMs": 1651,
+  "promptHash": "sha256:bb4e9ba95416f7ea8b17e395347c2555c599c971a5c0f156301a0c8b0325f21c",
+  "contextHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "estimatedContextTokens": 1,
+  "estimatedInputTokens": 165,
+  "retrievedClaims": [],
+  "retrievedRelations": [],
+  "retrievedSources": [],
+  "droppedContext": [],
+  "retrievalTrace": {
+    "strategy": "folder-lexical",
+    "queryFeatureCount": 16,
+    "corpusChunkCount": 12,
+    "matchedChunkCount": 0,
+    "maxFolderChunks": 16,
+    "candidates": []
+  },
+  "request": {
+    "systemPrompt": "你是受证据约束的问答 Agent。只使用本次请求提供的检索上下文回答。\n要求：保留影响结论的条件、时间、例外、来源角色与不确定性；关键结论引用上下文中的 SOURCE、EVIDENCE 或 CLAIM 标识；上下文不足时明确说明，不得用外部常识补齐。\n只输出严格 JSON：{\"answer\":\"...\",\"citations\":[\"...\"],\"insufficient\":false,\"uncertainties\":[\"...\"]}。",
+    "userPrompt": "# 问题\n该产品是否符合欧洲无障碍法全部要求？\n\n# 检索上下文\n"
+  },
+  "answer": "{\"answer\":\"根据上下文，产品符合欧洲无障碍法（EN 301 549）要求，但仅针对WCAG 2.1 Level AA标准，且未提及全部要求。\",\"citations\":[\"CLAIM-1\"],\"insufficient\":true,\"uncertainties\":[\"上下文未明确说明产品是否符合欧洲无障碍法的全部要求，仅提及符合WCAG 2.1 Level AA标准。\"]}",
+  "answerFormatValid": true
+}

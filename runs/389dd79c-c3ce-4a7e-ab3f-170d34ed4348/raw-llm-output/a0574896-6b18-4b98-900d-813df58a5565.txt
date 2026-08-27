@@ -1,0 +1,28 @@
+{
+  "verdict": "passed",
+  "dimensions": {
+    "support": {
+      "result": "pass",
+      "evidence": "这是 $\\mathbb{R}$ 与 $\\mathbb{Q}$ 的本质区别"
+    },
+    "addition": {
+      "result": "pass",
+      "evidence": "无添加信息"
+    },
+    "inference": {
+      "result": "pass",
+      "evidence": "无推断，直接引用原文"
+    },
+    "limits": {
+      "result": "pass",
+      "evidence": "无适用条件被移除"
+    },
+    "citation": {
+      "result": "pass",
+      "evidence": "引用内容与 Claim 一致"
+    }
+  },
+  "anchor": "这是 $\\mathbb{R}$ 与 $\\mathbb{Q}$ 的本质区别",
+  "failedDimensions": [],
+  "issues": []
+}

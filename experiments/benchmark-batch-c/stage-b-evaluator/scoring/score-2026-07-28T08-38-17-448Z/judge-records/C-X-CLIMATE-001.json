@@ -1,0 +1,51 @@
+{
+  "questionId": "C-X-CLIMATE-001",
+  "promptHash": "c906ac6dbac3e2caf7d3ab81a39f035900a47455357a55fcc0e843527239073a",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 2220,
+    "completionTokens": 2365,
+    "totalTokens": 4585,
+    "promptCacheHitTokens": 256,
+    "promptCacheMissTokens": 1964,
+    "reasoningTokens": 2018
+  },
+  "raw": "[\n  {\n    \"sampleId\": \"sample-814a33d2-3895-4d9b-8dbc-6692ef24c966\",\n    \"requiredPointCoverage\": 0,\n    \"conditionFidelity\": 0,\n    \"evidenceGrounding\": 0,\n    \"answerabilityDiscipline\": 0,\n    \"sourceRoleTemporalDiscipline\": 0,\n    \"hardFailure\": false,\n    \"hardFailureTypes\": [],\n    \"rationale\": \"拒答，应回答但声称信息不足\"\n  },\n  {\n    \"sampleId\": \"sample-5a9f385c-e582-4242-a552-587879c9d05c\",\n    \"requiredPointCoverage\": 4,\n    \"conditionFidelity\": 4,\n    \"evidenceGrounding\": 1,\n    \"answerabilityDiscipline\": 4,\n    \"sourceRoleTemporalDiscipline\": 3,\n    \"hardFailure\": false,\n    \"hardFailureTypes\": [],\n    \"rationale\": \"覆盖要点，条件好，引用均无效\"\n  },\n  {\n    \"sampleId\": \"sample-ba733ed5-3937-406a-9160-43e713a8783b\",\n    \"requiredPointCoverage\": 0,\n    \"conditionFidelity\": 0,\n    \"evidenceGrounding\": 0,\n    \"answerabilityDiscipline\": 0,\n    \"sourceRoleTemporalDiscipline\": 0,\n    \"hardFailure\": false,\n    \"hardFailureTypes\": [],\n    \"rationale\": \"拒答，应回答但声称信息不足\"\n  }\n]",
+  "rows": [
+    {
+      "sampleId": "sample-814a33d2-3895-4d9b-8dbc-6692ef24c966",
+      "requiredPointCoverage": 0,
+      "conditionFidelity": 0,
+      "evidenceGrounding": 0,
+      "answerabilityDiscipline": 0,
+      "sourceRoleTemporalDiscipline": 0,
+      "hardFailure": false,
+      "hardFailureTypes": [],
+      "rationale": "拒答，应回答但声称信息不足"
+    },
+    {
+      "sampleId": "sample-5a9f385c-e582-4242-a552-587879c9d05c",
+      "requiredPointCoverage": 4,
+      "conditionFidelity": 4,
+      "evidenceGrounding": 1,
+      "answerabilityDiscipline": 4,
+      "sourceRoleTemporalDiscipline": 3,
+      "hardFailure": false,
+      "hardFailureTypes": [],
+      "rationale": "覆盖要点，条件好，引用均无效"
+    },
+    {
+      "sampleId": "sample-ba733ed5-3937-406a-9160-43e713a8783b",
+      "requiredPointCoverage": 0,
+      "conditionFidelity": 0,
+      "evidenceGrounding": 0,
+      "answerabilityDiscipline": 0,
+      "sourceRoleTemporalDiscipline": 0,
+      "hardFailure": false,
+      "hardFailureTypes": [],
+      "rationale": "拒答，应回答但声称信息不足"
+    }
+  ]
+}

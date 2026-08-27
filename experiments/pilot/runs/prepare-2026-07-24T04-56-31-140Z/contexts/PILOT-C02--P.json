@@ -1,0 +1,43 @@
+{
+  "runId": "prepare-2026-07-24T04-56-31-140Z",
+  "category": "C",
+  "corpusHash": "86268a6fbd559d17bb005c4c7bd64d3d1c91b2146010c625e9f2fc2fcb37d938",
+  "group": "P",
+  "questionId": "PILOT-C02",
+  "context": "## TASK MAP\n主题: 若数列满足 $a_n\\to0$，是否足以推出级数 $\\sum a_n$ 收敛？请按材料给出的逻辑强度回答，并说明反例。\n地图主题: maclaurin, \\rangle, a_n, $\\langle, 0$\n关键概念: 连通性, 单射, 浮点数, 无理数, 交换环\n已知争议: 0 个\n最近变化: 5 条\n找到 8 条相关 Claim\n找到 3 条关系\n找到 8 条原文证据\n\n## CLAIM claim:80440e2182e5653f-10a95ba642d5f530\n欧拉公式：$e^{i\\pi} + 1 = 0$。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:33a33396a17d4175-52b77b6623878145\n内积的第一个条件是 $\\langle x, x \\rangle \\geq 0$，且 $\\langle x, x \\rangle = 0 \\iff x = 0$。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:33a33396a17d4175-a1256162969d9b33\n$x \\perp y \\iff \\langle x, y \\rangle = 0$。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:e7ea8bc17c2cc4ab-1179d617ab1927f1\n级数是数列的累加：∑_{n=1}^∞ a_n = lim_{N→∞} ∑_{n=1}^N a_n。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:e7ea8bc17c2cc4ab-299b0a9eebcfbe7c\nCauchy列定义为：∀ε>0, ∃N, ∀m,n>N: |a_m - a_n| < ε。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:33a33396a17d4175-fb4f069d7b7a3635\n内积 $\\langle \\cdot, \\cdot \\rangle: V \\times V \\to \\mathbb{R}$（或 $\\mathbb{C}$）满足三个条件。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:33a33396a17d4175-f61bd8bdddda89dc\nCauchy 列的定义是：$\\forall \\epsilon > 0, \\exists N, \\forall m,n > N: \\|x_m - x_n\\| < \\epsilon$。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:33a33396a17d4175-bc34a5170ba42b6f\n内积的第二个条件是 $\\langle x, y \\rangle = \\overline{\\langle y, x \\rangle}$（共轭对称）。\nConditions: none\nValidity: SUPPORTED\n\n## RELATION rel:33a33396a17d4175-8426bd67961893a7\nclaim:33a33396a17d4175-52b77b6623878145 --[SUPPORTS]--> claim:33a33396a17d4175-fb4f069d7b7a3635\nConditions: none\n\n## RELATION rel:cross-eade4b35ddd56c3c\nclaim:33a33396a17d4175-f61bd8bdddda89dc --[RELATED_TO]--> claim:e7ea8bc17c2cc4ab-299b0a9eebcfbe7c\nConditions: none\n\n## RELATION rel:33a33396a17d4175-35cf797850348e07\nclaim:33a33396a17d4175-bc34a5170ba42b6f --[SUPPORTS]--> claim:33a33396a17d4175-fb4f069d7b7a3635\nConditions: none\n\n## EVIDENCE span:01-number-systems-80440e2182e5653f-84#chars-8194-8210\ne^{i\\pi} + 1 = 0\n\n## EVIDENCE span:02-spaces-33a33396a17d4175-59#chars-5445-5515\n1. $\\langle x, x \\rangle \\geq 0$，$\\langle x, x \\rangle = 0 \\iff x = 0$\n\n## EVIDENCE span:02-spaces-33a33396a17d4175-64#chars-5722-5761\nx \\perp y \\iff \\langle x, y \\rangle = 0\n\n## EVIDENCE span:03-sequences-limits-e7ea8bc17c2cc4ab-24#chars-2429-2508\n**级数** = 数列的\"累加\"：$\\sum_{n=1}^\\infty a_n = \\lim_{N \\to \\infty} \\sum_{n=1}^N a_n$\n\n## EVIDENCE span:03-sequences-limits-e7ea8bc17c2cc4ab-8\n| 类型 | 定义 | 例子 |\n|------|------|------|\n| 等差数列 | $a_{n+1} = a_n + d$ | $1, 3, 5, 7, \\ldots$ |\n| 等比数列 | $a_{n+1} = a_n \\cdot q$ | $1, 2, 4, 8, \\ldots$ |\n| 递推数列 | $a_{n+1} = f(a_n)$ 或 $a_{n+2} = f(a_n, a_{n+1})$ | Fibonacci: $a_{n+2}=a_{n+1}+a_n$ |\n| Cauchy列 | $\\forall \\epsilon>0, \\exists N, \\forall m,n>N: \\lvert a_m-a_n\\rvert<\\epsilon$ | $a_n = 1/n$ |\n\n## EVIDENCE span:02-spaces-33a33396a17d4175-58#chars-5360-5443\n**内积** $\\langle \\cdot, \\cdot \\rangle: V \\times V \\to \\mathbb{R}$（或 $\\mathbb{C}$）满足：\n\n## EVIDENCE span:02-spaces-33a33396a17d4175-50#chars-4772-4861\n**Cauchy 列**：$\\forall \\epsilon > 0, \\exists N, \\forall m,n > N: \\|x_m - x_n\\| < \\epsilon$\n\n## EVIDENCE span:02-spaces-33a33396a17d4175-59#chars-5516-5582\n2. $\\langle x, y \\rangle = \\overline{\\langle y, x \\rangle}$ （共轭对称）",
+  "estimatedContextTokens": 985,
+  "retrievedClaims": [
+    "claim:80440e2182e5653f-10a95ba642d5f530",
+    "claim:33a33396a17d4175-52b77b6623878145",
+    "claim:33a33396a17d4175-a1256162969d9b33",
+    "claim:e7ea8bc17c2cc4ab-1179d617ab1927f1",
+    "claim:e7ea8bc17c2cc4ab-299b0a9eebcfbe7c",
+    "claim:33a33396a17d4175-fb4f069d7b7a3635",
+    "claim:33a33396a17d4175-f61bd8bdddda89dc",
+    "claim:33a33396a17d4175-bc34a5170ba42b6f"
+  ],
+  "retrievedRelations": [
+    "rel:33a33396a17d4175-8426bd67961893a7",
+    "rel:cross-eade4b35ddd56c3c",
+    "rel:33a33396a17d4175-35cf797850348e07"
+  ],
+  "evidenceSpans": [
+    "span:01-number-systems-80440e2182e5653f-84#chars-8194-8210",
+    "span:02-spaces-33a33396a17d4175-59#chars-5445-5515",
+    "span:02-spaces-33a33396a17d4175-64#chars-5722-5761",
+    "span:03-sequences-limits-e7ea8bc17c2cc4ab-24#chars-2429-2508",
+    "span:03-sequences-limits-e7ea8bc17c2cc4ab-8",
+    "span:02-spaces-33a33396a17d4175-58#chars-5360-5443",
+    "span:02-spaces-33a33396a17d4175-50#chars-4772-4861",
+    "span:02-spaces-33a33396a17d4175-59#chars-5516-5582"
+  ],
+  "retrievedSources": [
+    "source:01-number-systems-80440e2182e5653f",
+    "source:02-spaces-33a33396a17d4175",
+    "source:03-sequences-limits-e7ea8bc17c2cc4ab"
+  ],
+  "droppedContext": [],
+  "knowledgeVersion": "kv:e2f961a26664588188f91fe7",
+  "contextHash": "251e89d0a57f321b82b38bf822d5ff5ea08d3e662db6dea1150a2005d69c6de7",
+  "toolCalls": 1
+}

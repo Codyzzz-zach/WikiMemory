@@ -1,0 +1,285 @@
+{
+  "schemaVersion": "wge-batch-c-stage-b-structural-audit/v1",
+  "status": "PROVISIONAL_REQUIRES_INDEPENDENT_SEMANTIC_REVIEW",
+  "rawStageBMutated": false,
+  "seal": {
+    "files": 8,
+    "fileFailures": [],
+    "declaredPayloadTreeHash": "e61902fba067b53e9033f58eaa0a25b76aaceb4b814fa3ff387c8fa3ecef57c3",
+    "actualPayloadTreeHash": "e61902fba067b53e9033f58eaa0a25b76aaceb4b814fa3ff387c8fa3ecef57c3",
+    "payloadTreePass": true,
+    "goldStatus": "post-answer-created-model-reviewed-provisional-gold",
+    "reviewerModel": "Same as generator (self-review only)"
+  },
+  "questions": {
+    "stageAQuestionHash": "3cfe6ed87ddfb88902d35c417f27c6a8ebf806e3139e0acc37d34fa9ad11a34d",
+    "declaredStageAQuestionHash": "3cfe6ed87ddfb88902d35c417f27c6a8ebf806e3139e0acc37d34fa9ad11a34d",
+    "hashPass": true,
+    "stageACount": 18,
+    "stageBCount": 18,
+    "missingTaskIds": [],
+    "extraTaskIds": [],
+    "answerabilityMismatches": [
+      {
+        "caseId": "C-A-CLIMATE-001",
+        "stageA": "partial",
+        "stageB": "answerable"
+      },
+      {
+        "caseId": "C-A-LAW-001",
+        "stageA": "partial",
+        "stageB": "answerable"
+      },
+      {
+        "caseId": "C-A-PSYCH-001",
+        "stageA": "partial",
+        "stageB": "answerable"
+      }
+    ]
+  },
+  "gold": {
+    "facts": 38,
+    "relations": 8,
+    "tasks": 18,
+    "episodes": 3,
+    "duplicateFactIds": [],
+    "relationEndpointFailures": []
+  },
+  "quotes": {
+    "total": 91,
+    "exactMatches": 73,
+    "failures": [
+      {
+        "itemType": "task",
+        "itemId": "C-F-CLIMATE-001",
+        "sourceId": "c-climate-001",
+        "exactQuote": "Human activities, principally through emissions of greenhouse gases, have unequivocally caused global warming, with global surface temperature reaching 1.1°C above 1850-1900 in 2011-2020.",
+        "upstreamUrl": "https://www.ipcc.ch/report/ar6/syr/",
+        "sourceExists": true,
+        "exactMatch": false,
+        "upstreamDiffersFromCanonical": false
+      },
+      {
+        "itemType": "task",
+        "itemId": "C-C-CLIMATE-001",
+        "sourceId": "c-climate-002",
+        "exactQuote": "the Union shall aim to achieve a higher volume of its net carbon sink in 2030",
+        "upstreamUrl": "https://eur-lex.europa.eu/eli/reg/2021/1119/oj",
+        "sourceExists": true,
+        "exactMatch": false,
+        "upstreamDiffersFromCanonical": false
+      },
+      {
+        "itemType": "task",
+        "itemId": "C-F-LAW-001",
+        "sourceId": "c-law-001",
+        "exactQuote": "subliminal techniques likely to cause a person, or another, significant harm; exploiting vulnerabilities due to age, disability or social or economic situation; social scoring",
+        "upstreamUrl": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj",
+        "sourceExists": true,
+        "exactMatch": false,
+        "upstreamDiffersFromCanonical": false
+      },
+      {
+        "itemType": "task",
+        "itemId": "C-F-LAW-001",
+        "sourceId": "c-law-001",
+        "exactQuote": "up to €35 million or 7% of the total worldwide annual turnover of the preceding financial year (whichever is higher) for infringements on prohibited practices",
+        "upstreamUrl": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj",
+        "sourceExists": true,
+        "exactMatch": false,
+        "upstreamDiffersFromCanonical": false
+      },
+      {
+        "itemType": "task",
+        "itemId": "C-C-LAW-001",
+        "sourceId": "c-law-001",
+        "exactQuote": "2 February 2025: Rules on prohibited AI practices come into effect",
+        "upstreamUrl": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj",
+        "sourceExists": true,
+        "exactMatch": false,
+        "upstreamDiffersFromCanonical": false
+      },
+      {
+        "itemType": "task",
+        "itemId": "C-C-LAW-001",
+        "sourceId": "c-law-001",
+        "exactQuote": "2 August 2026: Rules on high-risk AI systems (use cases - Annex III) come into effect",
+        "upstreamUrl": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj",
+        "sourceExists": true,
+        "exactMatch": false,
+        "upstreamDiffersFromCanonical": false
+      },
+      {
+        "itemType": "task",
+        "itemId": "C-T-LAW-001",
+        "sourceId": "c-law-002",
+        "exactQuote": "an administrative fine in the amount of €1.2 billion",
+        "upstreamUrl": "https://www.edpb.europa.eu/news/news/2023/12-billion-euro-fine-facebook-result-edpb-binding-decision_en",
+        "sourceExists": true,
+        "exactMatch": false,
+        "upstreamDiffersFromCanonical": false
+      },
+      {
+        "itemType": "fact",
+        "itemId": "C-FACT-LAW-002",
+        "sourceId": "c-law-001",
+        "exactQuote": "subliminal techniques likely to cause a person, or another, significant harm; exploiting vulnerabilities due to age, disability or social or economic situation; social scoring",
+        "upstreamUrl": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj",
+        "sourceExists": true,
+        "exactMatch": false,
+        "upstreamDiffersFromCanonical": false
+      },
+      {
+        "itemType": "fact",
+        "itemId": "C-FACT-LAW-003",
+        "sourceId": "c-law-001",
+        "exactQuote": "up to €35 million or 7% of the total worldwide annual turnover of the preceding financial year (whichever is higher) for infringements on prohibited practices",
+        "upstreamUrl": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj",
+        "sourceExists": true,
+        "exactMatch": false,
+        "upstreamDiffersFromCanonical": false
+      },
+      {
+        "itemType": "fact",
+        "itemId": "C-FACT-LAW-004",
+        "sourceId": "c-law-001",
+        "exactQuote": "2 February 2025: Rules on prohibited AI practices come into effect",
+        "upstreamUrl": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj",
+        "sourceExists": true,
+        "exactMatch": false,
+        "upstreamDiffersFromCanonical": false
+      },
+      {
+        "itemType": "fact",
+        "itemId": "C-FACT-LAW-004",
+        "sourceId": "c-law-001",
+        "exactQuote": "2 August 2026: Rules on high-risk AI systems (use cases - Annex III) come into effect",
+        "upstreamUrl": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj",
+        "sourceExists": true,
+        "exactMatch": false,
+        "upstreamDiffersFromCanonical": false
+      },
+      {
+        "itemType": "fact",
+        "itemId": "C-FACT-LAW-005",
+        "sourceId": "c-law-002",
+        "exactQuote": "an administrative fine in the amount of €1.2 billion",
+        "upstreamUrl": "https://www.edpb.europa.eu/news/news/2023/12-billion-euro-fine-facebook-result-edpb-binding-decision_en",
+        "sourceExists": true,
+        "exactMatch": false,
+        "upstreamDiffersFromCanonical": false
+      },
+      {
+        "itemType": "fact",
+        "itemId": "C-FACT-LAW-006",
+        "sourceId": "c-law-002",
+        "exactQuote": "While Meta Ireland effected those transfers on the basis of the updated Standard Contractual Clauses that were adopted by the European Commission in 2021 in conjunction with additional supplementary measures that were implemented by Meta Ireland, the DPC found that these arrangements did not address the risks to the fundamental rights and freedoms of data subjects that were identified by the CJEU in its judgment.",
+        "upstreamUrl": "https://www.edpb.europa.eu/news/news/2023/12-billion-euro-fine-facebook-result-edpb-binding-decision_en",
+        "sourceExists": true,
+        "exactMatch": false,
+        "upstreamDiffersFromCanonical": false
+      },
+      {
+        "itemType": "fact",
+        "itemId": "C-FACT-LAW-007",
+        "sourceId": "c-law-002",
+        "exactQuote": "requiring Meta Ireland to suspend any future transfer of personal data to the US within the period of five months from the date of notification of the DPC's decision to Meta Ireland",
+        "upstreamUrl": "https://www.edpb.europa.eu/news/news/2023/12-billion-euro-fine-facebook-result-edpb-binding-decision_en",
+        "sourceExists": true,
+        "exactMatch": false,
+        "upstreamDiffersFromCanonical": false
+      },
+      {
+        "itemType": "relation",
+        "itemId": "C-REL-CLIMATE-001",
+        "sourceId": "c-climate-002",
+        "exactQuote": "the binding Union 2030 climate target shall be a domestic reduction of net greenhouse gas emissions by at least 55 % compared to 1990 levels by 2030.",
+        "upstreamUrl": null,
+        "sourceExists": true,
+        "exactMatch": false,
+        "upstreamDiffersFromCanonical": false
+      },
+      {
+        "itemType": "relation",
+        "itemId": "C-REL-CLIMATE-003",
+        "sourceId": "c-climate-002",
+        "exactQuote": "the binding Union 2030 climate target shall be a domestic reduction of net greenhouse gas emissions by at least 55 %",
+        "upstreamUrl": null,
+        "sourceExists": true,
+        "exactMatch": false,
+        "upstreamDiffersFromCanonical": false
+      },
+      {
+        "itemType": "relation",
+        "itemId": "C-REL-LAW-001",
+        "sourceId": "c-law-002",
+        "exactQuote": "an administrative fine in the amount of €1.2 billion",
+        "upstreamUrl": null,
+        "sourceExists": true,
+        "exactMatch": false,
+        "upstreamDiffersFromCanonical": false
+      },
+      {
+        "itemType": "relation",
+        "itemId": "C-REL-LAW-002",
+        "sourceId": "c-law-002",
+        "exactQuote": "an administrative fine in the amount of €1.2 billion",
+        "upstreamUrl": null,
+        "sourceExists": true,
+        "exactMatch": false,
+        "upstreamDiffersFromCanonical": false
+      }
+    ],
+    "upstreamDiffersFromCanonical": [
+      {
+        "itemType": "task",
+        "itemId": "C-T-PSYCH-001",
+        "sourceId": "c-psych-003",
+        "exactQuote": "The low-fidelity replications were an astonishing four times more likely to fail.",
+        "upstreamUrl": "https://news.harvard.edu/gazette/story/2016/03/study-that-undercut-psych-research-got-it-wrong/",
+        "sourceExists": true,
+        "exactMatch": true,
+        "upstreamDiffersFromCanonical": true
+      },
+      {
+        "itemType": "task",
+        "itemId": "C-T-PSYCH-001",
+        "sourceId": "c-psych-003",
+        "exactQuote": "their paper does not provide evidence for the pessimistic conclusions that most people have drawn from it",
+        "upstreamUrl": "https://news.harvard.edu/gazette/story/2016/03/study-that-undercut-psych-research-got-it-wrong/",
+        "sourceExists": true,
+        "exactMatch": true,
+        "upstreamDiffersFromCanonical": true
+      },
+      {
+        "itemType": "fact",
+        "itemId": "C-FACT-PSYCH-013",
+        "sourceId": "c-psych-003",
+        "exactQuote": "The low-fidelity replications were an astonishing four times more likely to fail.",
+        "upstreamUrl": "https://news.harvard.edu/gazette/story/2016/03/study-that-undercut-psych-research-got-it-wrong/",
+        "sourceExists": true,
+        "exactMatch": true,
+        "upstreamDiffersFromCanonical": true
+      }
+    ]
+  },
+  "review": {
+    "entries": 67,
+    "expectedEntries": 67,
+    "missingReviewIds": [],
+    "duplicateReviewIds": [],
+    "reviewerModels": [
+      "WorkBuddy (self-review — same model, no independent session)",
+      "WorkBuddy (self-review)"
+    ],
+    "independent": false,
+    "verdictCounts": {
+      "pass": 67
+    }
+  },
+  "limitations": [
+    "The Gold was created after the blind answers and is diagnostic provisional Gold, not precommitted Gold.",
+    "The supplied review was performed by the generator itself and is not independent.",
+    "Exact string presence does not prove that a quote supports the full Gold claim or relation semantics."
+  ]
+}

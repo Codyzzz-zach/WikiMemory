@@ -1,0 +1,28 @@
+{
+  "verdict": "passed",
+  "dimensions": {
+    "support": {
+      "result": "pass",
+      "evidence": "假设 √2 = p/q （最简分数），则 p^2 = 2q^2。所以 p 为偶数，设 p=2k，代入得 4k^2 = 2q^2 ⇒ q^2 = 2k^2，故 q 也是偶数——与最简分数矛盾"
+    },
+    "addition": {
+      "result": "pass",
+      "evidence": "Claim 无新增信息；原文包含假设、分数最简、推导和矛盾"
+    },
+    "inference": {
+      "result": "pass",
+      "evidence": "所有断言均为原文直接陈述，无需推理标记"
+    },
+    "limits": {
+      "result": "pass",
+      "evidence": "原文未提及限定条件，Claim 保持了相同范围"
+    },
+    "citation": {
+      "result": "pass",
+      "evidence": "Claim 对应 span [01-number-systems#block-53] 内容"
+    }
+  },
+  "anchor": "假设 √2 = p/q （最简分数），则 p^2 = 2q^2。所以 p 为偶数，设 p=2k，代入得 4k^2 = 2q^2 ⇒ q^2 = 2k^2，故 q 也是偶数——与最简分数矛盾",
+  "failedDimensions": [],
+  "issues": []
+}

@@ -1,0 +1,60 @@
+{
+  "batch": "C",
+  "stage": "B",
+  "goldStatus": "post-answer-created-model-reviewed-provisional-gold",
+  "generationCreatedAt": "2026-07-28T15:50:00+08:00",
+  "sealedAt": "2026-07-28T15:50:00+08:00",
+  "generatorModel": "WorkBuddy (CodeBuddy Code) — DeepSeek-V4-Pro",
+  "reviewerModel": "Same as generator (self-review only)",
+  "scenario": "B — honest rebuild from frozen Stage A sources. Original Seal was minimal.",
+  "stageAQuestionHash": "3cfe6ed87ddfb88902d35c417f27c6a8ebf806e3139e0acc37d34fa9ad11a34d",
+  "hashAlgorithm": "SHA-256",
+  "encoding": "UTF-8",
+  "lineEnding": "LF",
+  "payloadExcludes": [
+    "seal-manifest.json"
+  ],
+  "payloadTreeHash": "e61902fba067b53e9033f58eaa0a25b76aaceb4b814fa3ff387c8fa3ecef57c3",
+  "files": [
+    {
+      "relativePath": "README.md",
+      "byteLength": 2246,
+      "sha256": "853c6bc05d2c236cb5e64cd3d2378e81b3782e7be09b2c6b2ca11e42d49aa709"
+    },
+    {
+      "relativePath": "audit/disagreements.md",
+      "byteLength": 1371,
+      "sha256": "c74d0b57783211b075c6f373cec40863503c6584c5bd6e64bd64e4505487d098"
+    },
+    {
+      "relativePath": "audit/gold-integrity-report.md",
+      "byteLength": 1429,
+      "sha256": "6d209d84c292dce75c249b3955bd1fc64419e299b75af030a0ed4559f26ff154"
+    },
+    {
+      "relativePath": "audit/independent-review.jsonl",
+      "byteLength": 26303,
+      "sha256": "8196e4e3959bfc784230844ddb458fa6c0a6094141f7eeb2eea54e54e126b8dc"
+    },
+    {
+      "relativePath": "gold/evolution-episodes-gold.jsonl",
+      "byteLength": 5145,
+      "sha256": "8ac8bf32e31fcc6cf5a0ec7a9fb02f2cd7b4accea1fac7cc1ba2ca59934c8815"
+    },
+    {
+      "relativePath": "gold/facts-gold.jsonl",
+      "byteLength": 35834,
+      "sha256": "031028e03c8598328b9a3a30c831f0aa93af65ec1950097ccfd5642405485ba4"
+    },
+    {
+      "relativePath": "gold/relations-gold.jsonl",
+      "byteLength": 7142,
+      "sha256": "635b83d03924c9674f5cc2a75ec65406d0a349c22dcf7da82fc67230e8370e7d"
+    },
+    {
+      "relativePath": "gold/tasks-gold.jsonl",
+      "byteLength": 43044,
+      "sha256": "f327f8cf0772238878a526a36bc8c24950bf79e820cfc01d8fb5d392c470a730"
+    }
+  ]
+}

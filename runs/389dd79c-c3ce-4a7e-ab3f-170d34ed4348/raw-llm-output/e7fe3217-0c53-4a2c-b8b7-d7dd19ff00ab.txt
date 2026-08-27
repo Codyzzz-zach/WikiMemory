@@ -1,0 +1,13 @@
+{
+  "verdict": "passed",
+  "dimensions": {
+    "support": { "result": "pass", "evidence": "[01-number-systems#block-102] 数系的扩张不是数学家凭空发明，而是**被问题的\"不够用\"逼出来的**。" },
+    "addition": { "result": "pass", "evidence": "无额外信息" },
+    "inference": { "result": "pass", "evidence": "原文为事实陈述，无推断" },
+    "limits": { "result": "pass", "evidence": "无适用条件需要保留" },
+    "citation": { "result": "pass", "evidence": "Claim 准确对应 block-102" }
+  },
+  "anchor": "被问题的\"不够用\"逼出来的",
+  "failedDimensions": [],
+  "issues": []
+}

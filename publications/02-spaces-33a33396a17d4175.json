@@ -1,0 +1,2608 @@
+{
+  "schemaVersion": "v1",
+  "sourceId": "source:02-spaces-33a33396a17d4175",
+  "runId": "06a8cb99-b3bb-405d-8e33-e5649ede8a5c",
+  "publishedAt": "2026-07-23T16:59:32.652Z",
+  "claims": [
+    {
+      "id": "claim:33a33396a17d4175-04fae87adfe0b796",
+      "statement": "所有基的大小都相同，这就是维度。",
+      "evidenceSpanIds": [
+        "span:02-spaces-33a33396a17d4175-28#chars-2497-2517"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:27:44.729Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-28#chars-2497-2517"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-28#chars-2497-2517"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:27:44.729Z"
+    },
+    {
+      "id": "claim:33a33396a17d4175-07205bc184b77466",
+      "statement": "$\\ell^2$ 的内积是 $\\langle x,y \\rangle = \\sum x_i \\overline{y_i}$，完备基是 $e_i = (0,\\ldots,1,\\ldots)$，应用于离散信号。",
+      "evidenceSpanIds": [
+        "span:02-spaces-33a33396a17d4175-69"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:27:44.729Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-69"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-69"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:27:44.729Z"
+    },
+    {
+      "id": "claim:33a33396a17d4175-0cbc839885b7d24f",
+      "statement": "范数满足正定性：∥x∥ ≥ 0，且 ∥x∥=0 当且仅当 x=0。",
+      "evidenceSpanIds": [
+        "span:02-spaces-33a33396a17d4175-47"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:27:44.729Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-47"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-47"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:27:44.729Z"
+    },
+    {
+      "id": "claim:33a33396a17d4175-1ac3c46a165e0cb3",
+      "statement": "欧氏空间是'满配'——什么结构都有。",
+      "evidenceSpanIds": [
+        "span:02-spaces-33a33396a17d4175-74#chars-7832-7850"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:27:44.729Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-74#chars-7832-7850"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-74#chars-7832-7850"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:27:44.729Z"
+    },
+    {
+      "id": "claim:33a33396a17d4175-20db362d06156aa4",
+      "statement": "向量加法：(xᵢ) + (yᵢ) = (xᵢ + yᵢ)。",
+      "evidenceSpanIds": [
+        "span:02-spaces-33a33396a17d4175-14#chars-1019-1059"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:27:44.729Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-14#chars-1019-1059"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-14#chars-1019-1059"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:27:44.729Z"
+    },
+    {
+      "id": "claim:33a33396a17d4175-218562e30c00beea",
+      "statement": "往其他方向推广时，我们每次只去掉一种结构，研究'还剩下什么'。",
+      "evidenceSpanIds": [
+        "span:02-spaces-33a33396a17d4175-74#chars-7850-7881"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:27:44.729Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-74#chars-7850-7881"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-74#chars-7850-7881"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:27:44.729Z"
+    },
+    {
+      "id": "claim:33a33396a17d4175-226a8e67423bcc04",
+      "statement": "标量乘法的分配律包括 c(u+v)=cu+cv 和 (c+d)u=cu+du。",
+      "evidenceSpanIds": [
+        "span:02-spaces-33a33396a17d4175-26#chars-2368-2398"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:27:44.729Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-26#chars-2368-2398"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-26#chars-2368-2398"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:27:44.729Z"
+    },
+    {
+      "id": "claim:33a33396a17d4175-2720ac293420909b",
+      "statement": "欧几里得结构 = 线性结构 + 内积。",
+      "evidenceSpanIds": [
+        "span:02-spaces-33a33396a17d4175-13#chars-994-1017"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:27:44.729Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-13#chars-994-1017"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-13#chars-994-1017"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:27:44.729Z"
+    },
+    {
+      "id": "claim:33a33396a17d4175-3820b4db68e7f911",
+      "statement": "标量乘法：c · (xᵢ) = (c xᵢ)。",
+      "evidenceSpanIds": [
+        "span:02-spaces-33a33396a17d4175-14#chars-1060-1096"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:27:44.729Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-14#chars-1060-1096"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-14#chars-1060-1096"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:27:44.729Z"
+    },
+    {
+      "id": "claim:33a33396a17d4175-3daf64c75814dc3c",
+      "statement": "次数 ≤ n 的多项式空间 P_n 的基是 {1,x,x^2,...,x^n}，维度为 n+1。",
+      "evidenceSpanIds": [
+        "span:02-spaces-33a33396a17d4175-30#chars-2601-2661"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:27:44.729Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-30#chars-2601-2661"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-30#chars-2601-2661"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:27:44.729Z"
+    },
+    {
+      "id": "claim:33a33396a17d4175-422a5d83871f9031",
+      "statement": "加法交换群公理包括 u+v=v+u、(u+v)+w=u+(v+w) 以及存在零元素 0 和负元素 -v。",
+      "evidenceSpanIds": [
+        "span:02-spaces-33a33396a17d4175-26#chars-2305-2348"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:27:44.729Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-26#chars-2305-2348"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-26#chars-2305-2348"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:27:44.729Z"
+    },
+    {
+      "id": "claim:33a33396a17d4175-474f254664c49580",
+      "statement": "距离函数满足正定性：d(x,y) ≥ 0，且 d(x,y)=0 当且仅当 x=y。",
+      "evidenceSpanIds": [
+        "span:02-spaces-33a33396a17d4175-37#chars-3295-3344"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:27:44.729Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-37#chars-3295-3344"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-37#chars-3295-3344"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:27:44.729Z"
+    },
+    {
+      "id": "claim:33a33396a17d4175-4950e4c49740163a",
+      "statement": "范数自然地导出距离：$d(x,y) = \\|x-y\\|$。",
+      "evidenceSpanIds": [
+        "span:02-spaces-33a33396a17d4175-48#chars-4685-4714"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:27:44.729Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-48#chars-4685-4714"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-48#chars-4685-4714"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:27:44.729Z"
+    },
+    {
+      "id": "claim:33a33396a17d4175-4caca798370d0f3d",
+      "statement": "欧氏距离：d(x,y) = √∑(xᵢ - yᵢ)²。",
+      "evidenceSpanIds": [
+        "span:02-spaces-33a33396a17d4175-14#chars-1156-1203"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:27:44.729Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-14#chars-1156-1203"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-14#chars-1156-1203"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:27:44.729Z"
+    },
+    {
+      "id": "claim:33a33396a17d4175-521f0026cd31b4b8",
+      "statement": "向量空间公理要求集合 V 配备加法运算 + : V × V → V 和标量乘法运算 · : R × V → V。",
+      "evidenceSpanIds": [
+        "span:02-spaces-33a33396a17d4175-25#chars-2166-2252"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:27:44.729Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-25#chars-2166-2252"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-25#chars-2166-2252"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:27:44.729Z"
+    },
+    {
+      "id": "claim:33a33396a17d4175-52b77b6623878145",
+      "statement": "内积的第一个条件是 $\\langle x, x \\rangle \\geq 0$，且 $\\langle x, x \\rangle = 0 \\iff x = 0$。",
+      "evidenceSpanIds": [
+        "span:02-spaces-33a33396a17d4175-59#chars-5445-5515"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:27:44.729Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-59#chars-5445-5515"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-59#chars-5445-5515"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:27:44.729Z"
+    },
+    {
+      "id": "claim:33a33396a17d4175-52ea70f5124a7a46",
+      "statement": "Hilbert 空间允许 Fourier 级数：$\\{e^{inx}\\}_{n=-\\infty}^\\infty$ 是 $L^2[-\\pi,\\pi]$ 中的一组正交基。",
+      "evidenceSpanIds": [
+        "span:02-spaces-33a33396a17d4175-66#chars-5832-5907"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:27:44.729Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-66#chars-5832-5907"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-66#chars-5832-5907"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:27:44.729Z"
+    },
+    {
+      "id": "claim:33a33396a17d4175-58316ab57e9e7927",
+      "statement": "拓扑空间是度量空间的进一步推广，它丢掉了距离数值，只保留开集的概念。",
+      "evidenceSpanIds": [
+        "span:02-spaces-33a33396a17d4175-42#chars-4412-4448"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:27:44.729Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-42#chars-4412-4448"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-42#chars-4412-4448"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:27:44.729Z"
+    },
+    {
+      "id": "claim:33a33396a17d4175-5bfebccc9567417f",
+      "statement": "内积的第三个条件是对第一个变量线性。",
+      "evidenceSpanIds": [
+        "span:02-spaces-33a33396a17d4175-59#chars-5583-5594"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:27:44.729Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-59#chars-5583-5594"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-59#chars-5583-5594"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:27:44.729Z"
+    },
+    {
+      "id": "claim:33a33396a17d4175-5c05908f28bd7944",
+      "statement": "R^n 上的欧氏距离定义为 d_2(x,y) = sqrt(∑(x_i-y_i)^2)。",
+      "evidenceSpanIds": [
+        "span:02-spaces-33a33396a17d4175-39#chars-3499-3535"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:27:44.729Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-39#chars-3499-3535"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-39#chars-3499-3535"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:27:44.729Z"
+    },
+    {
+      "id": "claim:33a33396a17d4175-6067f579330c104b",
+      "statement": "R^n 上的切比雪夫距离定义为 d_∞(x,y) = max_i ||x_i-y_i||。",
+      "evidenceSpanIds": [
+        "span:02-spaces-33a33396a17d4175-39"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:27:44.729Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-39"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-39"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:27:44.729Z"
+    },
+    {
+      "id": "claim:33a33396a17d4175-6d70b1c82ab10765",
+      "statement": "Banach 空间是完备的赋范空间。",
+      "evidenceSpanIds": [
+        "span:02-spaces-33a33396a17d4175-52#chars-4909-4932"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:27:44.729Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-52#chars-4909-4932"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-52#chars-4909-4932"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:27:44.729Z"
+    },
+    {
+      "id": "claim:33a33396a17d4175-805fb4ab5d394c0a",
+      "statement": "Hilbert 空间允许正交投影：找到子空间中最接近某点的元素。",
+      "evidenceSpanIds": [
+        "span:02-spaces-33a33396a17d4175-66#chars-5775-5800"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:27:44.729Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-66#chars-5775-5800"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-66#chars-5775-5800"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:27:44.729Z"
+    },
+    {
+      "id": "claim:33a33396a17d4175-81349b735066881b",
+      "statement": "Hilbert 空间允许正交基：用一组相互垂直的基向量表示空间中任何元素。",
+      "evidenceSpanIds": [
+        "span:02-spaces-33a33396a17d4175-66#chars-5801-5831"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:27:44.729Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-66#chars-5801-5831"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-66#chars-5801-5831"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:27:44.729Z"
+    },
+    {
+      "id": "claim:33a33396a17d4175-8260abc6b22d29d8",
+      "statement": "维度定义为任何一组基中的向量个数。",
+      "evidenceSpanIds": [
+        "span:02-spaces-33a33396a17d4175-29#chars-2527-2549"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:27:44.729Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-29#chars-2527-2549"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-29#chars-2527-2549"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:27:44.729Z"
+    },
+    {
+      "id": "claim:33a33396a17d4175-851cd62670665688",
+      "statement": "有限维与无限维是向量空间的第一个大分岔口。",
+      "evidenceSpanIds": [
+        "span:02-spaces-33a33396a17d4175-31#chars-2699-2723"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:27:44.729Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-31#chars-2699-2723"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-31#chars-2699-2723"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:27:44.729Z"
+    },
+    {
+      "id": "claim:33a33396a17d4175-896358a13fb1a79e",
+      "statement": "不同的结构定义了不同的空间类型。",
+      "evidenceSpanIds": [
+        "span:02-spaces-33a33396a17d4175-4#chars-135-151"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:27:44.729Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-4#chars-135-151"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-4#chars-135-151"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:27:44.729Z"
+    },
+    {
+      "id": "claim:33a33396a17d4175-8f51714c9f008157",
+      "statement": "内积诱导范数：$\\|x\\| = \\sqrt{\\langle x, x \\rangle}$。",
+      "evidenceSpanIds": [
+        "span:02-spaces-33a33396a17d4175-60#chars-5596-5640"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:27:44.729Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-60#chars-5596-5640"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-60#chars-5596-5640"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:27:44.729Z"
+    },
+    {
+      "id": "claim:33a33396a17d4175-92f0384fb17d1720",
+      "statement": "如果空间中每个 Cauchy 列都收敛到空间内的一个点，这个空间就是完备的。",
+      "evidenceSpanIds": [
+        "span:02-spaces-33a33396a17d4175-51#chars-4863-4905"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:27:44.729Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-51#chars-4863-4905"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-51#chars-4863-4905"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:27:44.729Z"
+    },
+    {
+      "id": "claim:33a33396a17d4175-982aae16d53301a2",
+      "statement": "距离函数满足三角不等式：d(x,z) ≤ d(x,y) + d(y,z)。",
+      "evidenceSpanIds": [
+        "span:02-spaces-33a33396a17d4175-37#chars-3377-3416"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:27:44.729Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-37#chars-3377-3416"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-37#chars-3377-3416"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:27:44.729Z"
+    },
+    {
+      "id": "claim:33a33396a17d4175-9bb7e607988b66a4",
+      "statement": "从裸集合出发，每一步添加结构（距离、线性、开集、内积）创造出不同品种的空间。",
+      "evidenceSpanIds": [
+        "span:02-spaces-33a33396a17d4175-6#chars-706-744"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:27:44.729Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-6#chars-706-744"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-6#chars-706-744"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:27:44.729Z"
+    },
+    {
+      "id": "claim:33a33396a17d4175-9d9be89e0601431b",
+      "statement": "连续函数空间 C[0,1] 是无限维的，没有有限基。",
+      "evidenceSpanIds": [
+        "span:02-spaces-33a33396a17d4175-30#chars-2664-2695"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:27:44.729Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-30#chars-2664-2695"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-30#chars-2664-2695"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:27:44.729Z"
+    },
+    {
+      "id": "claim:33a33396a17d4175-a01593b19cebe9ba",
+      "statement": "在数学中，'空间' = 一个集合 + 附加结构。",
+      "evidenceSpanIds": [
+        "span:02-spaces-33a33396a17d4175-4#chars-107-134"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:27:44.729Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-4#chars-107-134"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-4#chars-107-134"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:27:44.729Z"
+    },
+    {
+      "id": "claim:33a33396a17d4175-a0d4455e06e3e901",
+      "statement": "$L^2[a,b]$ 的内积是 $\\langle f,g \\rangle = \\int f \\overline{g}$，完备基是三角函数族，应用于连续信号。",
+      "evidenceSpanIds": [
+        "span:02-spaces-33a33396a17d4175-69"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:27:44.729Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-69"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-69"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:27:44.729Z"
+    },
+    {
+      "id": "claim:33a33396a17d4175-a1256162969d9b33",
+      "statement": "$x \\perp y \\iff \\langle x, y \\rangle = 0$。",
+      "evidenceSpanIds": [
+        "span:02-spaces-33a33396a17d4175-64#chars-5722-5761"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:27:44.729Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-64#chars-5722-5761"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-64#chars-5722-5761"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:27:44.729Z"
+    },
+    {
+      "id": "claim:33a33396a17d4175-aaf4860e28d1685c",
+      "statement": "距离函数满足对称性：d(x,y) = d(y,x)。",
+      "evidenceSpanIds": [
+        "span:02-spaces-33a33396a17d4175-37#chars-3348-3373"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:27:44.729Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-37#chars-3348-3373"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-37#chars-3348-3373"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:27:44.729Z"
+    },
+    {
+      "id": "claim:33a33396a17d4175-ada647407ee05e48",
+      "statement": "内积（点积）：⟨x, y⟩ = ∑_{i=1}^n x_i y_i。",
+      "evidenceSpanIds": [
+        "span:02-spaces-33a33396a17d4175-14#chars-1097-1155"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:27:44.729Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-14#chars-1097-1155"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-14#chars-1097-1155"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:27:44.729Z"
+    },
+    {
+      "id": "claim:33a33396a17d4175-b3a2ca345bda7718",
+      "statement": "标量乘法的结合律是 (cd)u = c(du)。",
+      "evidenceSpanIds": [
+        "span:02-spaces-33a33396a17d4175-26#chars-2418-2433"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:27:44.729Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-26#chars-2418-2433"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-26#chars-2418-2433"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:27:44.729Z"
+    },
+    {
+      "id": "claim:33a33396a17d4175-bad668d3c9191da2",
+      "statement": "单位标量公理是 1·u = u。",
+      "evidenceSpanIds": [
+        "span:02-spaces-33a33396a17d4175-26#chars-2449-2464"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:27:44.729Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-26#chars-2449-2464"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-26#chars-2449-2464"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:27:44.729Z"
+    },
+    {
+      "id": "claim:33a33396a17d4175-bc34a5170ba42b6f",
+      "statement": "内积的第二个条件是 $\\langle x, y \\rangle = \\overline{\\langle y, x \\rangle}$（共轭对称）。",
+      "evidenceSpanIds": [
+        "span:02-spaces-33a33396a17d4175-59#chars-5516-5582"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:27:44.729Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-59#chars-5516-5582"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-59#chars-5516-5582"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:27:44.729Z"
+    },
+    {
+      "id": "claim:33a33396a17d4175-bcb44cdf6d7d57d3",
+      "statement": "R^n 的标准基是 e1,...,en，维度为 n。",
+      "evidenceSpanIds": [
+        "span:02-spaces-33a33396a17d4175-30#chars-2556-2598"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:27:44.729Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-30#chars-2556-2598"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-30#chars-2556-2598"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:27:44.729Z"
+    },
+    {
+      "id": "claim:33a33396a17d4175-c3d8425593fe6472",
+      "statement": "所以 $(V, \\|\\cdot\\|)$ 构成赋范空间，也自动成为度量空间。",
+      "evidenceSpanIds": [
+        "span:02-spaces-33a33396a17d4175-48#chars-4714-4751"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:27:44.729Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-48#chars-4714-4751"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-48#chars-4714-4751"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:27:44.729Z"
+    },
+    {
+      "id": "claim:33a33396a17d4175-c57d84208e8f6275",
+      "statement": "Hilbert 空间是完备的内积空间。",
+      "evidenceSpanIds": [
+        "span:02-spaces-33a33396a17d4175-61#chars-5644-5668"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:27:44.729Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-61#chars-5644-5668"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-61#chars-5644-5668"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:27:44.729Z"
+    },
+    {
+      "id": "claim:33a33396a17d4175-c58d8da1bdba73c7",
+      "statement": "范数满足三角不等式：∥x+y∥ ≤ ∥x∥+∥y∥。",
+      "evidenceSpanIds": [
+        "span:02-spaces-33a33396a17d4175-47"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:27:44.729Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-47"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-47"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:27:44.729Z"
+    },
+    {
+      "id": "claim:33a33396a17d4175-c89b50eace7b28a6",
+      "statement": "欧氏范数：‖x‖ = √⟨x, x⟩。",
+      "evidenceSpanIds": [
+        "span:02-spaces-33a33396a17d4175-14#chars-1204-1252"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:27:44.729Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-14#chars-1204-1252"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-14#chars-1204-1252"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:27:44.729Z"
+    },
+    {
+      "id": "claim:33a33396a17d4175-c9d5923499c228c8",
+      "statement": "$\\mathbb{R}^n$ 的内积是 $\\langle x,y \\rangle = \\sum x_i y_i$，完备基是标准基 $e_i$，应用于几何。",
+      "evidenceSpanIds": [
+        "span:02-spaces-33a33396a17d4175-69"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:27:44.729Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-69"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-69"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:27:44.729Z"
+    },
+    {
+      "id": "claim:33a33396a17d4175-cb6f6f736c877213",
+      "statement": "离散度量定义为 d(x,y)=0 当 x=y，否则 d(x,y)=1。",
+      "evidenceSpanIds": [
+        "span:02-spaces-33a33396a17d4175-39#chars-3691-3748"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:27:44.729Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-39#chars-3691-3748"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-39#chars-3691-3748"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:27:44.729Z"
+    },
+    {
+      "id": "claim:33a33396a17d4175-d32c5dbd5d97cfc6",
+      "statement": "度量空间是一个集合 X 配上距离函数 d: X × X → R_{≥0}。",
+      "evidenceSpanIds": [
+        "span:02-spaces-33a33396a17d4175-36#chars-3224-3290"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:27:44.729Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-36#chars-3224-3290"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-36#chars-3224-3290"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:27:44.729Z"
+    },
+    {
+      "id": "claim:33a33396a17d4175-dad798e9c86ba5d3",
+      "statement": "范数满足齐次性：∥αx∥ = |α|·∥x∥。",
+      "evidenceSpanIds": [
+        "span:02-spaces-33a33396a17d4175-47"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:27:44.729Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-47"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-47"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:27:44.729Z"
+    },
+    {
+      "id": "claim:33a33396a17d4175-ddc34f389b34c043",
+      "statement": "R^n 上的曼哈顿距离定义为 d_1(x,y) = ∑||x_i-y_i||。",
+      "evidenceSpanIds": [
+        "span:02-spaces-33a33396a17d4175-39"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:27:44.729Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-39"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-39"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:27:44.729Z"
+    },
+    {
+      "id": "claim:33a33396a17d4175-e34a583f9fd77b38",
+      "statement": "在向量空间上叠加一个范数 ∥·∥: V → R_{≥0}。",
+      "evidenceSpanIds": [
+        "span:02-spaces-33a33396a17d4175-46#chars-4494-4550"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:27:44.729Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-46#chars-4494-4550"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-46#chars-4494-4550"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:27:44.729Z"
+    },
+    {
+      "id": "claim:33a33396a17d4175-e66e2c5ebe1f16f9",
+      "statement": "$\\mathbb{C}^n$ 的内积是 $\\langle x,y \\rangle = \\sum x_i \\overline{y_i}$，完备基是标准基，应用于量子态。",
+      "evidenceSpanIds": [
+        "span:02-spaces-33a33396a17d4175-69"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:27:44.729Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-69"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-69"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:27:44.729Z"
+    },
+    {
+      "id": "claim:33a33396a17d4175-e6cea537d48d01a9",
+      "statement": "任何度量空间自然诱导一个拓扑，以开球 B(x,r) = {y | d(x,y)<r} 生成开集。",
+      "evidenceSpanIds": [
+        "span:02-spaces-33a33396a17d4175-42#chars-4334-4395"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:27:44.729Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-42#chars-4334-4395"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-42#chars-4334-4395"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:27:44.729Z"
+    },
+    {
+      "id": "claim:33a33396a17d4175-ee67979c9b43e52f",
+      "statement": "下面的所有空间类型都是对 ℝⁿ 的某一方面进行推广或削弱。",
+      "evidenceSpanIds": [
+        "span:02-spaces-33a33396a17d4175-18#chars-1377-1422"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:27:44.729Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-18#chars-1377-1422"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-18#chars-1377-1422"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:27:44.729Z"
+    },
+    {
+      "id": "claim:33a33396a17d4175-f61bd8bdddda89dc",
+      "statement": "Cauchy 列的定义是：$\\forall \\epsilon > 0, \\exists N, \\forall m,n > N: \\|x_m - x_n\\| < \\epsilon$。",
+      "evidenceSpanIds": [
+        "span:02-spaces-33a33396a17d4175-50#chars-4772-4861"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:27:44.729Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-50#chars-4772-4861"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-50#chars-4772-4861"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:27:44.729Z"
+    },
+    {
+      "id": "claim:33a33396a17d4175-f8820fe8bb7904d1",
+      "statement": "‖x‖² = ⟨x, x⟩, d(x,y) = ‖x - y‖。",
+      "evidenceSpanIds": [
+        "span:02-spaces-33a33396a17d4175-17#chars-1318-1370"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:27:44.729Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-17#chars-1318-1370"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-17#chars-1318-1370"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:27:44.729Z"
+    },
+    {
+      "id": "claim:33a33396a17d4175-fb4f069d7b7a3635",
+      "statement": "内积 $\\langle \\cdot, \\cdot \\rangle: V \\times V \\to \\mathbb{R}$（或 $\\mathbb{C}$）满足三个条件。",
+      "evidenceSpanIds": [
+        "span:02-spaces-33a33396a17d4175-58#chars-5360-5443"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:27:44.729Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-58#chars-5360-5443"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:02-spaces-33a33396a17d4175-58#chars-5360-5443"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:27:44.729Z"
+    }
+  ],
+  "concepts": [
+    {
+      "id": "concept:05bc57f888dee6ed",
+      "name": "度量空间",
+      "aliases": [
+        "距离空间"
+      ],
+      "boundary": "集合X配备距离函数，满足正定性、对称性、三角不等式",
+      "domain": "拓扑/分析"
+    },
+    {
+      "id": "concept:0899e98581440637",
+      "name": "赋范空间",
+      "aliases": [
+        "赋范向量空间"
+      ],
+      "boundary": "向量空间上配备了范数，满足正定性、齐次性、三角不等式",
+      "domain": "泛函分析"
+    },
+    {
+      "id": "concept:15f5e610bcc3bf59",
+      "name": "维度",
+      "aliases": [],
+      "boundary": "任何一组基中向量的个数",
+      "domain": "线性代数"
+    },
+    {
+      "id": "concept:17c8a02694371d39",
+      "name": "切比雪夫距离",
+      "aliases": [
+        "d_∞"
+      ],
+      "boundary": "d(x,y)=max_i|x_i-y_i|",
+      "domain": "几何/分析"
+    },
+    {
+      "id": "concept:1a8ba1fe1cb686f4",
+      "name": "结构添加",
+      "aliases": [],
+      "boundary": "从裸集合逐步添加线性、距离、内积、开集等结构",
+      "domain": "数学基础"
+    },
+    {
+      "id": "concept:1ed7258bf043e2a9",
+      "name": "距离函数",
+      "aliases": [
+        "d(x,y)",
+        "度量"
+      ],
+      "boundary": "满足正定性、对称性、三角不等式的函数",
+      "domain": "拓扑/分析"
+    },
+    {
+      "id": "concept:21a631dc431e3f99",
+      "name": "开集",
+      "aliases": [],
+      "boundary": "度量空间中由开球生成的集合",
+      "domain": "拓扑"
+    },
+    {
+      "id": "concept:24f65559f2943a38",
+      "name": "标准基",
+      "aliases": [],
+      "boundary": "R^n中的e_i=(0,...,1,...0)",
+      "domain": "线性代数"
+    },
+    {
+      "id": "concept:2fb41ffd6d4deab8",
+      "name": "内积",
+      "aliases": [
+        "⟨,⟩",
+        "点积"
+      ],
+      "boundary": "满足正定性、共轭对称性、对第一个变量线性的双线性形式",
+      "domain": "线性代数"
+    },
+    {
+      "id": "concept:33a33396a17d4175-159b6ccb43e59d9f",
+      "name": "欧氏距离",
+      "aliases": [
+        "d_2",
+        "欧几里得距离"
+      ],
+      "boundary": "d(x,y)=√(∑(x_i-y_i)^2)",
+      "domain": "几何"
+    },
+    {
+      "id": "concept:33a33396a17d4175-334e09d896072f92",
+      "name": "完备性",
+      "aliases": [
+        "完备"
+      ],
+      "boundary": "每个Cauchy列都收敛到空间内的点",
+      "domain": "泛函分析"
+    },
+    {
+      "id": "concept:33a33396a17d4175-5efb6ce48c550a27",
+      "name": "Banach空间",
+      "aliases": [
+        "Banach空间",
+        "完备赋范空间"
+      ],
+      "boundary": "完备的赋范空间",
+      "domain": "泛函分析"
+    },
+    {
+      "id": "concept:441eef179bfe64eb",
+      "name": "有限维",
+      "aliases": [],
+      "boundary": "向量空间具有有限基",
+      "domain": "线性代数"
+    },
+    {
+      "id": "concept:4484d76309918dd3",
+      "name": "Cauchy列",
+      "aliases": [
+        "柯西列"
+      ],
+      "boundary": "满足对任意ε>0，存在N使得m,n>N时‖x_m-x_n‖<ε的序列",
+      "domain": "分析"
+    },
+    {
+      "id": "concept:50b28686534a56f4",
+      "name": "离散度量",
+      "aliases": [],
+      "boundary": "d(x,y)=0当x=y，否则1",
+      "domain": "拓扑"
+    },
+    {
+      "id": "concept:5164c1e960703ae9",
+      "name": "基",
+      "aliases": [
+        "基向量"
+      ],
+      "boundary": "一组线性无关且生成整个空间的向量集合",
+      "domain": "线性代数"
+    },
+    {
+      "id": "concept:5d287e9abed758d3",
+      "name": "完备基",
+      "aliases": [],
+      "boundary": "在Hilbert空间中，指一组正交基使得任何元素可展开",
+      "domain": "泛函分析"
+    },
+    {
+      "id": "concept:5e87359e6cf7ea71",
+      "name": "L^2[a,b]空间",
+      "aliases": [],
+      "boundary": "平方可积函数空间，内积为∫f ḡ",
+      "domain": "泛函分析"
+    },
+    {
+      "id": "concept:7147d86cb415f5e3",
+      "name": "正交",
+      "aliases": [
+        "⊥"
+      ],
+      "boundary": "两个向量的内积为0",
+      "domain": "线性代数"
+    },
+    {
+      "id": "concept:727bc3badb68a7fa",
+      "name": "拓扑空间",
+      "aliases": [],
+      "boundary": "集合X配备开集族，满足开集公理",
+      "domain": "拓扑学"
+    },
+    {
+      "id": "concept:88e201556c840d33",
+      "name": "连续函数空间C[0,1]",
+      "aliases": [],
+      "boundary": "区间[0,1]上连续函数全体",
+      "domain": "泛函分析"
+    },
+    {
+      "id": "concept:8b59cb0811f8b4c4",
+      "name": "Hilbert空间",
+      "aliases": [],
+      "boundary": "完备的内积空间，即每个Cauchy列收敛",
+      "domain": "泛函分析"
+    },
+    {
+      "id": "concept:92de8f05f485b96f",
+      "name": "向量空间",
+      "aliases": [
+        "线性空间"
+      ],
+      "boundary": "定义在域上的集合，配备加法和标量乘法，满足公理",
+      "domain": "线性代数"
+    },
+    {
+      "id": "concept:9e4ba1d34d8e3f3d",
+      "name": "Fourier级数",
+      "aliases": [],
+      "boundary": "用三角函数系表示周期函数",
+      "domain": "分析"
+    },
+    {
+      "id": "concept:a4fbf4cb32bcddf8",
+      "name": "欧氏范数",
+      "aliases": [],
+      "boundary": "‖x‖=√⟨x,x⟩",
+      "domain": "泛函分析"
+    },
+    {
+      "id": "concept:aa5d84e7fa4b09ea",
+      "name": "内积空间",
+      "aliases": [
+        "准希尔伯特空间"
+      ],
+      "boundary": "向量空间上配备了内积，满足正定性、共轭对称性、对第一个变量线性",
+      "domain": "泛函分析"
+    },
+    {
+      "id": "concept:b4a66115d79f73ef",
+      "name": "范数",
+      "aliases": [
+        "‖·‖",
+        "长度"
+      ],
+      "boundary": "从V到ℝ≥0的映射，满足非负、齐次、三角不等式",
+      "domain": "泛函分析"
+    },
+    {
+      "id": "concept:b73f1380b95329aa",
+      "name": "多项式空间P_n",
+      "aliases": [],
+      "boundary": "次数≤n的多项式全体，基为{1,x,...,x^n}",
+      "domain": "线性代数"
+    },
+    {
+      "id": "concept:b93d8d5f6991d868",
+      "name": "曼哈顿距离",
+      "aliases": [
+        "d_1"
+      ],
+      "boundary": "d(x,y)=∑|x_i-y_i|",
+      "domain": "几何/分析"
+    },
+    {
+      "id": "concept:bb3b42fda6c07d1e",
+      "name": "正交投影",
+      "aliases": [],
+      "boundary": "将元素投影到子空间上，使得差向量垂直于子空间",
+      "domain": "泛函分析"
+    },
+    {
+      "id": "concept:bc81dcdc5908d3f1",
+      "name": "欧氏空间",
+      "aliases": [
+        "欧几里得空间",
+        "欧几里得结构"
+      ],
+      "boundary": "同时具有线性、内积、距离结构且自然兼容的空间，原型为R^n",
+      "domain": "泛函分析/几何"
+    },
+    {
+      "id": "concept:c65b36f1ead997f7",
+      "name": "无限维",
+      "aliases": [],
+      "boundary": "向量空间不具有有限基",
+      "domain": "泛函分析"
+    },
+    {
+      "id": "concept:d18defb5bbb1b9a1",
+      "name": "正交基",
+      "aliases": [],
+      "boundary": "基中向量两两正交",
+      "domain": "线性代数/泛函分析"
+    },
+    {
+      "id": "concept:d884ce7a29da577c",
+      "name": "空间是一个集合+结构",
+      "aliases": [],
+      "boundary": "空间定义为集合加上某种附加结构",
+      "domain": "数学基础"
+    },
+    {
+      "id": "concept:fa9ecb9bedcbf7c6",
+      "name": "ℓ^2空间",
+      "aliases": [],
+      "boundary": "平方和收敛的序列空间",
+      "domain": "泛函分析"
+    },
+    {
+      "id": "concept:ff46a3895a63dc94",
+      "name": "开球",
+      "aliases": [],
+      "boundary": "B(x,r)={y|d(x,y)<r}",
+      "domain": "拓扑"
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel:33a33396a17d4175-126d82c9056b8252",
+      "from": "claim:33a33396a17d4175-e34a583f9fd77b38",
+      "to": "claim:33a33396a17d4175-0cbc839885b7d24f",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:02-spaces-33a33396a17d4175-46#chars-4494-4550",
+        "span:02-spaces-33a33396a17d4175-47"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:28:05.986Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 1,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:33a33396a17d4175-144e150ac216bb0c",
+      "from": "claim:33a33396a17d4175-f8820fe8bb7904d1",
+      "to": "claim:33a33396a17d4175-4950e4c49740163a",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:02-spaces-33a33396a17d4175-17#chars-1318-1370",
+        "span:02-spaces-33a33396a17d4175-48#chars-4685-4714"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:28:05.986Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 1,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:33a33396a17d4175-2526c29c8edbc47c",
+      "from": "claim:33a33396a17d4175-8f51714c9f008157",
+      "to": "claim:33a33396a17d4175-f8820fe8bb7904d1",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:02-spaces-33a33396a17d4175-17#chars-1318-1370",
+        "span:02-spaces-33a33396a17d4175-60#chars-5596-5640"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:28:05.986Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 1,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:33a33396a17d4175-35939e27ba56ac1f",
+      "from": "claim:33a33396a17d4175-ada647407ee05e48",
+      "to": "claim:33a33396a17d4175-c9d5923499c228c8",
+      "type": "RELATED_TO",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:02-spaces-33a33396a17d4175-14#chars-1097-1155",
+        "span:02-spaces-33a33396a17d4175-69"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:28:05.986Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 1,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:33a33396a17d4175-35cf797850348e07",
+      "from": "claim:33a33396a17d4175-bc34a5170ba42b6f",
+      "to": "claim:33a33396a17d4175-fb4f069d7b7a3635",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:02-spaces-33a33396a17d4175-58#chars-5360-5443",
+        "span:02-spaces-33a33396a17d4175-59#chars-5516-5582"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:28:05.986Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 1,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:33a33396a17d4175-5dfc8528ac64dc1a",
+      "from": "claim:33a33396a17d4175-e34a583f9fd77b38",
+      "to": "claim:33a33396a17d4175-c58d8da1bdba73c7",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:02-spaces-33a33396a17d4175-46#chars-4494-4550",
+        "span:02-spaces-33a33396a17d4175-47"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:28:05.986Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 1,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:33a33396a17d4175-6b7327be7f465e3a",
+      "from": "claim:33a33396a17d4175-d32c5dbd5d97cfc6",
+      "to": "claim:33a33396a17d4175-982aae16d53301a2",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:02-spaces-33a33396a17d4175-36#chars-3224-3290",
+        "span:02-spaces-33a33396a17d4175-37#chars-3377-3416"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:28:05.986Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 1,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:33a33396a17d4175-7fd6634d71ce1301",
+      "from": "claim:33a33396a17d4175-c89b50eace7b28a6",
+      "to": "claim:33a33396a17d4175-8f51714c9f008157",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:02-spaces-33a33396a17d4175-14#chars-1204-1252",
+        "span:02-spaces-33a33396a17d4175-60#chars-5596-5640"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:28:05.986Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 1,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:33a33396a17d4175-8426bd67961893a7",
+      "from": "claim:33a33396a17d4175-52b77b6623878145",
+      "to": "claim:33a33396a17d4175-fb4f069d7b7a3635",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:02-spaces-33a33396a17d4175-58#chars-5360-5443",
+        "span:02-spaces-33a33396a17d4175-59#chars-5445-5515"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:28:05.986Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 1,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:33a33396a17d4175-912b09aee60da489",
+      "from": "claim:33a33396a17d4175-a01593b19cebe9ba",
+      "to": "claim:33a33396a17d4175-896358a13fb1a79e",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:02-spaces-33a33396a17d4175-4#chars-107-134",
+        "span:02-spaces-33a33396a17d4175-4#chars-135-151"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:28:05.986Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 1,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:33a33396a17d4175-989a591f5925fb98",
+      "from": "claim:33a33396a17d4175-d32c5dbd5d97cfc6",
+      "to": "claim:33a33396a17d4175-474f254664c49580",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:02-spaces-33a33396a17d4175-36#chars-3224-3290",
+        "span:02-spaces-33a33396a17d4175-37#chars-3295-3344"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:28:05.986Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 1,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:33a33396a17d4175-e24397e1e2b05bbe",
+      "from": "claim:33a33396a17d4175-6d70b1c82ab10765",
+      "to": "claim:33a33396a17d4175-92f0384fb17d1720",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:02-spaces-33a33396a17d4175-51#chars-4863-4905",
+        "span:02-spaces-33a33396a17d4175-52#chars-4909-4932"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:28:05.986Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 1,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:33a33396a17d4175-f0080e0d6fdcdf2d",
+      "from": "claim:33a33396a17d4175-e6cea537d48d01a9",
+      "to": "claim:33a33396a17d4175-58316ab57e9e7927",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:02-spaces-33a33396a17d4175-42#chars-4334-4395",
+        "span:02-spaces-33a33396a17d4175-42#chars-4412-4448"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:28:05.986Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.9,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:cross-3a9dd655ef80000e",
+      "from": "claim:80440e2182e5653f-1d1341c978df0a68",
+      "to": "claim:33a33396a17d4175-92f0384fb17d1720",
+      "type": "RELATED_TO",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-63#chars-5987-6040",
+        "span:02-spaces-33a33396a17d4175-51#chars-4863-4905"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:42:51.908Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "cross-material-detect",
+      "confidence": 0.7,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:cross-cef896f2700a0e6c",
+      "from": "claim:80440e2182e5653f-d1c80ec9bda36ba7",
+      "to": "claim:33a33396a17d4175-92f0384fb17d1720",
+      "type": "RELATED_TO",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-97",
+        "span:02-spaces-33a33396a17d4175-51#chars-4863-4905"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:42:51.908Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "cross-material-detect",
+      "confidence": 0.7,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:cross-eade4b35ddd56c3c",
+      "from": "claim:33a33396a17d4175-f61bd8bdddda89dc",
+      "to": "claim:e7ea8bc17c2cc4ab-299b0a9eebcfbe7c",
+      "type": "RELATED_TO",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:02-spaces-33a33396a17d4175-50#chars-4772-4861",
+        "span:03-sequences-limits-e7ea8bc17c2cc4ab-8"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:42:51.908Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "cross-material-detect",
+      "confidence": 0.9,
+      "consumedBy": []
+    }
+  ]
+}

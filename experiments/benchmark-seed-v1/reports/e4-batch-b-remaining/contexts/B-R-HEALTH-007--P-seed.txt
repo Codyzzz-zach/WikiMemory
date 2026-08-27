@@ -1,0 +1,56 @@
+## TASK MAP
+主题: 找出支持‘direct deposition 与 inhalation 并列’的来源。
+地图主题: inhalation, direct, deposition
+关键概念: Mobile Requirements, Input Modality, Platform, Success Criterion, Backwards compatible
+已知争议: 0 个
+最近变化: 5 条
+找到 5 条相关 Claim
+找到 0 条关系
+找到 5 条原文证据
+
+## CLAIM claim:50fd4599b9553875-c49634bbf6841943
+Direct deposition is used for cases when IRPs are expelled into the air from an infectious person, and are then directly deposited on the exposed mouth, nose or eyes of another person nearby.
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:50fd4599b9553875-2de9e0481e7c8e64
+The distance of airborne transmission or inhalation depends on various factors (airflow, humidity, temperature, ventilation etc).
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:5505a1ba1fcb1b68-a4e0bf4dcf441832
+vesuvius 允许直接访问卷轴数据，无需管理下载脚本或在本地存储数 TB 的 CT 扫描数据。
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:50fd4599b9553875-e77df938b6f36c19
+Airborne transmission or inhalation can occur at a short or long distance from the infectious person.
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:50fd4599b9553875-9bb1be629366d05d
+Airborne transmission or inhalation is used for cases when IRPs are expelled into the air and inhaled by another person.
+Conditions: none
+Validity: SUPPORTED
+
+## EVIDENCE span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-712-896
+Direct deposition, for cases when IRPs are expelled into the air from an infectious person, and are then directly deposited on the exposed mouth, nose or eyes of another person nearby.
+
+## EVIDENCE span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-621-707
+distance depends on various factors (airflow, humidity, temperature, ventilation etc).
+
+## EVIDENCE span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-4#chars-323-445
+`vesuvius` allows direct access to scroll data without managing download scripts or storing terabytes of CT scans locally.
+
+## EVIDENCE span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-516-616
+Airborne transmission or inhalation can occur at a short or long distance from the infectious person
+
+## EVIDENCE span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-402-515
+Airborne transmission or inhalation, for cases when IRPs are expelled into the air and inhaled by another person.
+
+## CONFLICTS AND CONDITIONS
+🔎 Source source:health-who-terminology-2024-004-50fd4599b9553875 provenance: uri=workbuddy-batch-b/generated/compilation-corpus/health-biology/health-who-terminology-2024-004.md; sourceType=md; role=unknown
+🔎 Source source:history-vesuvius-github-2024-002-5505a1ba1fcb1b68 provenance: uri=workbuddy-batch-b/generated/compilation-corpus/history-humanities/history-vesuvius-github-2024-002.md; sourceType=md; role=unknown
+
+## KNOWN GAPS
+未找到关系——Graph 可能尚未建立跨材料边

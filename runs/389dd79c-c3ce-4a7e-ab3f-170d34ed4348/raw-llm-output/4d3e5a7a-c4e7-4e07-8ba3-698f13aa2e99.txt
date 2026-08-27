@@ -1,0 +1,13 @@
+{
+  "verdict": "passed",
+  "dimensions": {
+    "support": { "result": "pass", "evidence": "(mathbb{Q}, +, times) text{ 是域}" },
+    "addition": { "result": "pass", "evidence": "" },
+    "inference": { "result": "pass", "evidence": "" },
+    "limits": { "result": "pass", "evidence": "" },
+    "citation": { "result": "pass", "evidence": "[01-number-systems#block-42]" }
+  },
+  "anchor": "(mathbb{Q}, +, times) text{ 是域}",
+  "failedDimensions": [],
+  "issues": []
+}

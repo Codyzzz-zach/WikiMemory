@@ -1,0 +1,13 @@
+{
+  "verdict": "passed",
+  "dimensions": {
+    "support": { "result": "pass", "evidence": "这个发现在古希腊引发了\"第一次数学危机\"" },
+    "addition": { "result": "pass", "evidence": "原文已有相同信息，无额外添加" },
+    "inference": { "result": "pass", "evidence": "Claim为直接陈述，无需推断标记" },
+    "limits": { "result": "pass", "evidence": "Claim未添加任何限制或条件，原文也无额外限制" },
+    "citation": { "result": "pass", "evidence": "Claim内容与编号[01-number-systems#block-54]的原文完全对应" }
+  },
+  "anchor": "这个发现在古希腊引发了\"第一次数学危机\"",
+  "failedDimensions": [],
+  "issues": []
+}

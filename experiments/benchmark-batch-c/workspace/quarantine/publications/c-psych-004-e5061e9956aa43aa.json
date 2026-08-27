@@ -1,0 +1,363 @@
+{
+  "schemaVersion": "v1",
+  "sourceId": "source:c-psych-004-e5061e9956aa43aa",
+  "runId": "ecfe49b6-47b5-473e-9d1a-865c59f5c606",
+  "publishedAt": "2026-07-28T07:09:52.487Z",
+  "claims": [
+    {
+      "claim": {
+        "id": "claim:e5061e9956aa43aa-d8f05fa1742becb9",
+        "statement": "该内容来源于Nature新闻专题（https://www.nature.com/articles/533452a）以及公开可获取的摘要（sciencesprings.wordpress.com, phys.org）。",
+        "evidenceSpanIds": [
+          "span:c-psych-004-e5061e9956aa43aa-2#chars-89-249"
+        ],
+        "conditions": [],
+        "derivation": "EXTRACTED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:09:33.174Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "confidence": 1,
+        "claimKind": "FACT",
+        "scope": {
+          "type": "GLOBAL"
+        },
+        "provenanceRefs": [
+          {
+            "type": "SourceSpan",
+            "spanId": "span:c-psych-004-e5061e9956aa43aa-2#chars-89-249"
+          }
+        ],
+        "supportingEvidenceRefs": [
+          {
+            "type": "SourceSpan",
+            "spanId": "span:c-psych-004-e5061e9956aa43aa-2#chars-89-249"
+          }
+        ],
+        "knowledgeVersion": "v1",
+        "recordedAt": "2026-07-28T07:09:33.174Z"
+      },
+      "issues": [
+        {
+          "code": "SEMANTIC_SUPPORT_FAILED",
+          "severity": "error",
+          "affectedObject": "claim:e5061e9956aa43aa-d8f05fa1742becb9",
+          "detail": "support：证据没有明确支持 Claim 的全部断言；证据 [0:c-psych-004#block-2] “*Content sourced from Nature news feature (https://www.nature.com/articles/53345”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "SEMANTIC_ADDITION_MAJOR",
+          "severity": "error",
+          "affectedObject": "claim:e5061e9956aa43aa-d8f05fa1742becb9",
+          "detail": "addition：Claim 添加了证据未表达的内容；证据 [0:c-psych-004#block-2] “*Content sourced from Nature news feature (https://www.nature.com/articles/53345”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "SEMANTIC_CITATION_FAILED",
+          "severity": "error",
+          "affectedObject": "claim:e5061e9956aa43aa-d8f05fa1742becb9",
+          "detail": "citation：Claim 与所引用的证据位置不对应；证据 [0:c-psych-004#block-2] “*Content sourced from Nature news feature (https://www.nature.com/articles/53345”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "relation": {
+        "id": "rel:e5061e9956aa43aa-2102a1fd16101458",
+        "from": "claim:e5061e9956aa43aa-7c1a342b1c8c1813",
+        "to": "claim:e5061e9956aa43aa-40b4c70ad10649dd",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-psych-004-e5061e9956aa43aa-13#chars-1298-1401",
+          "span:c-psych-004-e5061e9956aa43aa-14#chars-1405-1487"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:09:40.277Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.6,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:e5061e9956aa43aa-2102a1fd16101458",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-psych-004#block-13] “About 80% of respondents thought that funders and publishers should do more to i”; [1:c-psych-004#block-14] “Even the lowest-ranked item — journal checklists — won a whopping 69% endorsemen”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:e5061e9956aa43aa-2102a1fd16101458",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-psych-004#block-13] “About 80% of respondents thought that funders and publishers should do more to i”; [1:c-psych-004#block-14] “Even the lowest-ranked item — journal checklists — won a whopping 69% endorsemen”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:e5061e9956aa43aa-2102a1fd16101458",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-psych-004#block-13] “About 80% of respondents thought that funders and publishers should do more to i”; [1:c-psych-004#block-14] “Even the lowest-ranked item — journal checklists — won a whopping 69% endorsemen”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:e5061e9956aa43aa-2c2a198c8229bc3f",
+        "from": "claim:e5061e9956aa43aa-0bc95d168cd785a4",
+        "to": "claim:e5061e9956aa43aa-d8f05fa1742becb9",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "UNVERIFIED",
+        "supersessionEffect": null,
+        "relationAuditVersion": null,
+        "evidenceSpanIds": [
+          "span:c-psych-004-e5061e9956aa43aa-2#chars-89-249",
+          "span:c-psych-004-e5061e9956aa43aa-3#chars-275-332"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:09:40.277Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_ENDPOINT_QUARANTINED",
+          "severity": "error",
+          "affectedObject": "rel:e5061e9956aa43aa-2c2a198c8229bc3f",
+          "detail": "to 端点未通过 Lint（Quarantined）: claim:e5061e9956aa43aa-d8f05fa1742becb9",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:e5061e9956aa43aa-6429d0f2f71c9f54",
+        "from": "claim:e5061e9956aa43aa-d9b9a23c05ce12fc",
+        "to": "claim:e5061e9956aa43aa-eefb29a1cc5defc7",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-psych-004-e5061e9956aa43aa-7#chars-673-761",
+          "span:c-psych-004-e5061e9956aa43aa-8#chars-765-865"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:09:40.277Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:e5061e9956aa43aa-6429d0f2f71c9f54",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-psych-004#block-7] “73% of respondents think that at least half of the papers in their field can be ”; [1:c-psych-004#block-8] “Fewer than 31% think that failure to reproduce published results means the resul”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:e5061e9956aa43aa-6429d0f2f71c9f54",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-psych-004#block-7] “73% of respondents think that at least half of the papers in their field can be ”; [1:c-psych-004#block-8] “Fewer than 31% think that failure to reproduce published results means the resul”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:e5061e9956aa43aa-6429d0f2f71c9f54",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-psych-004#block-7] “73% of respondents think that at least half of the papers in their field can be ”; [1:c-psych-004#block-8] “Fewer than 31% think that failure to reproduce published results means the resul”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_DIRECTION_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:e5061e9956aa43aa-6429d0f2f71c9f54",
+          "detail": "direction：Relation 未通过边级语义审计；证据 [0:c-psych-004#block-7] “73% of respondents think that at least half of the papers in their field can be ”; [1:c-psych-004#block-8] “Fewer than 31% think that failure to reproduce published results means the resul”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:e5061e9956aa43aa-a034fb9bed8c183d",
+        "from": "claim:e5061e9956aa43aa-40b4c70ad10649dd",
+        "to": "claim:e5061e9956aa43aa-d9cbe112cd41e0de",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-psych-004-e5061e9956aa43aa-12#chars-1169-1294",
+          "span:c-psych-004-e5061e9956aa43aa-13#chars-1298-1401"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:09:40.277Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:e5061e9956aa43aa-a034fb9bed8c183d",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-psych-004#block-12] “Nearly 90% — more than 1,000 people — ticked 'More robust experimental design', ”; [1:c-psych-004#block-13] “About 80% of respondents thought that funders and publishers should do more to i”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:e5061e9956aa43aa-a034fb9bed8c183d",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-psych-004#block-12] “Nearly 90% — more than 1,000 people — ticked 'More robust experimental design', ”; [1:c-psych-004#block-13] “About 80% of respondents thought that funders and publishers should do more to i”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:e5061e9956aa43aa-a034fb9bed8c183d",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-psych-004#block-12] “Nearly 90% — more than 1,000 people — ticked 'More robust experimental design', ”; [1:c-psych-004#block-13] “About 80% of respondents thought that funders and publishers should do more to i”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:e5061e9956aa43aa-bdd1c24e6d2d4c2c",
+        "from": "claim:e5061e9956aa43aa-0bc95d168cd785a4",
+        "to": "claim:e5061e9956aa43aa-4a6cebbbda680b78",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-psych-004-e5061e9956aa43aa-3#chars-251-274",
+          "span:c-psych-004-e5061e9956aa43aa-3#chars-275-332"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:09:40.277Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:e5061e9956aa43aa-bdd1c24e6d2d4c2c",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-psych-004#block-3] “**Author:** Monya Baker”; [1:c-psych-004#block-3] “**Published:** Nature, Vol. 533, pp. 452-454, 26 May 2016”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:e5061e9956aa43aa-bdd1c24e6d2d4c2c",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-psych-004#block-3] “**Author:** Monya Baker”; [1:c-psych-004#block-3] “**Published:** Nature, Vol. 533, pp. 452-454, 26 May 2016”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:e5061e9956aa43aa-bdd1c24e6d2d4c2c",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-psych-004#block-3] “**Author:** Monya Baker”; [1:c-psych-004#block-3] “**Published:** Nature, Vol. 533, pp. 452-454, 26 May 2016”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_DIRECTION_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:e5061e9956aa43aa-bdd1c24e6d2d4c2c",
+          "detail": "direction：Relation 未通过边级语义审计；证据 [0:c-psych-004#block-3] “**Author:** Monya Baker”; [1:c-psych-004#block-3] “**Published:** Nature, Vol. 533, pp. 452-454, 26 May 2016”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:e5061e9956aa43aa-c6632d4ec18a1629",
+        "from": "claim:e5061e9956aa43aa-0e4ed06319cdf8f7",
+        "to": "claim:e5061e9956aa43aa-8f4c3087c78c3e7e",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-psych-004-e5061e9956aa43aa-10#chars-1046-1128",
+          "span:c-psych-004-e5061e9956aa43aa-10#chars-997-1045"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:09:40.277Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:e5061e9956aa43aa-c6632d4ec18a1629",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-psych-004#block-10] “The survey likely selected for respondents more aware of reproducibility concern”; [1:c-psych-004#block-10] “It sampled 1,576 researchers across disciplines.”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:e5061e9956aa43aa-c6632d4ec18a1629",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-psych-004#block-10] “The survey likely selected for respondents more aware of reproducibility concern”; [1:c-psych-004#block-10] “It sampled 1,576 researchers across disciplines.”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:e5061e9956aa43aa-c6632d4ec18a1629",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-psych-004#block-10] “The survey likely selected for respondents more aware of reproducibility concern”; [1:c-psych-004#block-10] “It sampled 1,576 researchers across disciplines.”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    }
+  ]
+}

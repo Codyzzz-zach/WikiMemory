@@ -1,0 +1,48 @@
+{
+  "questionId": "PILOT-C01",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "request": {
+    "systemPrompt": "你是知识系统的盲测评分员。你只按提供的 Gold 和评分合同评价匿名答案，不判断答案来自哪个实验组。\n必须逐项核对 requiredClaims、mustMentionConditions、forbiddenClaims、answerability 和证据引用。\nsourceRisk.present=true 时，Gold 风险说明是允许使用的人工审计结论；不得把源材料的过强表述当成正确答案。\n只输出严格 JSON：{\"scores\":[{\"sampleId\":\"...\",\"requiredClaimCoverage\":0,\"conditionFidelity\":0,\"evidenceGrounding\":0,\"answerabilityDiscipline\":0,\"hardFailure\":false,\"rationale\":\"...\"}]}。",
+    "userPrompt": "# 评分合同\n{\n  \"dimensions\": {\n    \"requiredClaimCoverage\": {\n      \"score0\": \"没有覆盖 requiredClaims，或核心结论相反\",\n      \"score1\": \"覆盖部分 requiredClaims，但缺少一项以上关键连接\",\n      \"score2\": \"完整覆盖全部 requiredClaims\"\n    },\n    \"conditionFidelity\": {\n      \"score0\": \"触发 forbiddenClaims，或删除了决定结论的条件\",\n      \"score1\": \"方向基本正确，但条件、例外或必要/充分强度表达不完整\",\n      \"score2\": \"保留全部 mustMentionConditions，且未触发 forbiddenClaims\"\n    },\n    \"evidenceGrounding\": {\n      \"score0\": \"关键结论没有可解析引用，或引用与结论无关\",\n      \"score1\": \"有相关引用，但关键结论存在未落到证据的部分\",\n      \"score2\": \"关键结论均由当前上下文标识支持，引用位置正确\"\n    },\n    \"answerabilityDiscipline\": {\n      \"score0\": \"证据不足时仍编造答案，或证据充分时错误拒答\",\n      \"score1\": \"表达了不确定性，但回答/拒答边界不够准确\",\n      \"score2\": \"严格遵守该题 answerability，充分回答或明确拒答\"\n    }\n  },\n  \"totalScore\": 8,\n  \"hardFailure\": \"任何 forbiddenClaim、伪造引用、把 insufficient 题当作已由语料证明，均记 hardFailure；该样本总分最高为 2。\"\n}\n\n# 题目与 Gold\n{\n  \"question\": \"L² 是否总是 L¹ 的子集？\",\n  \"answerability\": \"answerable_with_source_risk\",\n  \"requiredClaims\": [\n    \"一般测度空间中不能无条件断言 L² 包含于 L¹\",\n    \"有限测度空间是 L² 包含于 L¹ 的常见充分背景\"\n  ],\n  \"mustMentionConditions\": [\n    \"底层测度空间条件\",\n    \"有限测度是常见充分条件\"\n  ],\n  \"forbiddenClaims\": [\n    \"对任意测度空间都有 L² 属于 L¹\"\n  ],\n  \"sourceRisk\": {\n    \"present\": true,\n    \"detail\": \"第 05 章函数空间层级图无条件画出 L²→C⁰→L¹，遗漏底层测度空间与有限测度条件。本题刻意测试系统是否把源材料的过强图示降级为风险，而不是把纠正伪装成原文事实。\"\n  },\n  \"evidence\": [\n    {\n      \"sourceFile\": \"mathtest-material/05-functions-mappings.md\",\n      \"heading\": \"5.5 函数空间的层级\",\n      \"exactQuote\": \"MEAS --> INT[\\\"可积函数 L¹\\\"]\\n    MEAS --> SQINT[\\\"平方可积 L2 (Hilbert空间)\\\"]\\n    INT --> CONT[\\\"连续函数 C0\\\"]\\n    SQINT --> CONT\",\n      \"supportsRequiredClaims\": []\n    }\n  ]\n}\n\n# 匿名答案\n[\n  {\n    \"sampleId\": \"sample-b801206f-1cbf-4e1d-87a3-1cc82ce18b45\",\n    \"questionId\": \"PILOT-C01\",\n    \"answer\": \"{\\n  \\\"answer\\\": \\\"上下文未提供 L¹ 和 L² 的定义，无法判断 L² 是否总是 L¹ 的子集。\\\",\\n  \\\"citations\\\": [],\\n  \\\"insufficient\\\": true,\\n  \\\"uncertainties\\\": [\\\"上下文未定义 L¹ 和 L²，无法进行子集关系判断。\\\"]\\n}\"\n  },\n  {\n    \"sampleId\": \"sample-65b9edf8-251c-47e1-bcf0-2bb22fde68c5\",\n    \"questionId\": \"PILOT-C01\",\n    \"answer\": \"{\\\"answer\\\":\\\"insufficient\\\",\\\"citations\\\":[],\\\"insufficient\\\":true,\\\"uncertainties\\\":[\\\"上下文未定义 L¹ 和 L²，也未讨论它们之间的包含关系。\\\"]}\"\n  },\n  {\n    \"sampleId\": \"sample-acc2ac70-1823-4e5d-8dcb-a348f42136eb\",\n    \"questionId\": \"PILOT-C01\",\n    \"answer\": \"{\\n  \\\"answer\\\": \\\"否，L² 不总是 L¹ 的子集。根据函数空间层级图，L¹（可积函数）和 L²（平方可积函数）都是可测函数的子集，但两者之间没有包含关系。\\\",\\n  \\\"citations\\\": [\\n    \\\"mathtest-material/05-functions-mappings.md:158-173\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\"\n  }\n]"
+  },
+  "usage": {
+    "promptTokens": 1206,
+    "completionTokens": 644,
+    "totalTokens": 1850,
+    "promptCacheHitTokens": 384,
+    "promptCacheMissTokens": 822,
+    "reasoningTokens": 0
+  },
+  "finishReason": "stop",
+  "rawResponse": "{\n  \"scores\": [\n    {\n      \"sampleId\": \"sample-b801206f-1cbf-4e1d-87a3-1cc82ce18b45\",\n      \"requiredClaimCoverage\": 0,\n      \"conditionFidelity\": 0,\n      \"evidenceGrounding\": 0,\n      \"answerabilityDiscipline\": 0,\n      \"hardFailure\": true,\n      \"rationale\": \"答案声称上下文未定义L¹和L²，但证据中明确给出了定义和层级图，属于伪造引用（无引用）且错误拒答。answerability为answerable_with_source_risk，应回答而非拒答。触发hardFailure。\"\n    },\n    {\n      \"sampleId\": \"sample-65b9edf8-251c-47e1-bcf0-2bb22fde68c5\",\n      \"requiredClaimCoverage\": 0,\n      \"conditionFidelity\": 0,\n      \"evidenceGrounding\": 0,\n      \"answerabilityDiscipline\": 0,\n      \"hardFailure\": true,\n      \"rationale\": \"答案声称上下文未定义L¹和L²，但证据中明确给出了定义和层级图，属于错误拒答。answerability为answerable_with_source_risk，应回答。触发hardFailure。\"\n    },\n    {\n      \"sampleId\": \"sample-acc2ac70-1823-4e5d-8dcb-a348f42136eb\",\n      \"requiredClaimCoverage\": 0,\n      \"conditionFidelity\": 0,\n      \"evidenceGrounding\": 0,\n      \"answerabilityDiscipline\": 0,\n      \"hardFailure\": true,\n      \"rationale\": \"答案断言L²不总是L¹的子集，且两者没有包含关系，但requiredClaims要求说明一般测度空间中不能无条件断言L²包含于L¹，且有限测度空间是常见充分条件。答案未提及测度空间条件，且直接否定包含关系，与requiredClaims部分矛盾。同时，答案引用层级图，但sourceRisk指出该图遗漏条件，属于过强表述，答案未纠正反而直接采用，触发forbiddenClaims（对任意测度空间都有L²属于L¹的反面？但答案说没有包含关系，实际上forbiddenClaims是断言L²属于L¹，答案未断言，但未提及条件，且引用风险源，属于证据误用。更关键的是，答案声称两者没有包含关系，但requiredClaims要求说明有限测度空间下L²包含于L¹，答案未提及，且直接否定，导致requiredClaimCoverage为0。同时，未提及mustMentionConditions，conditionFidelity为0。evidenceGrounding：引用层级图，但该图不支持答案的结论（图显示L²→C⁰→L¹，暗示包含关系），答案却得出无包含关系，属于引用与结论无关。answerabilityDiscipline：应回答，但回答错误。综合触发hardFailure。\"\n    }\n  ]\n}",
+  "parsed": [
+    {
+      "sampleId": "sample-b801206f-1cbf-4e1d-87a3-1cc82ce18b45",
+      "requiredClaimCoverage": 0,
+      "conditionFidelity": 0,
+      "evidenceGrounding": 0,
+      "answerabilityDiscipline": 0,
+      "hardFailure": true,
+      "rationale": "答案声称上下文未定义L¹和L²，但证据中明确给出了定义和层级图，属于伪造引用（无引用）且错误拒答。answerability为answerable_with_source_risk，应回答而非拒答。触发hardFailure。"
+    },
+    {
+      "sampleId": "sample-65b9edf8-251c-47e1-bcf0-2bb22fde68c5",
+      "requiredClaimCoverage": 0,
+      "conditionFidelity": 0,
+      "evidenceGrounding": 0,
+      "answerabilityDiscipline": 0,
+      "hardFailure": true,
+      "rationale": "答案声称上下文未定义L¹和L²，但证据中明确给出了定义和层级图，属于错误拒答。answerability为answerable_with_source_risk，应回答。触发hardFailure。"
+    },
+    {
+      "sampleId": "sample-acc2ac70-1823-4e5d-8dcb-a348f42136eb",
+      "requiredClaimCoverage": 0,
+      "conditionFidelity": 0,
+      "evidenceGrounding": 0,
+      "answerabilityDiscipline": 0,
+      "hardFailure": true,
+      "rationale": "答案断言L²不总是L¹的子集，且两者没有包含关系，但requiredClaims要求说明一般测度空间中不能无条件断言L²包含于L¹，且有限测度空间是常见充分条件。答案未提及测度空间条件，且直接否定包含关系，与requiredClaims部分矛盾。同时，答案引用层级图，但sourceRisk指出该图遗漏条件，属于过强表述，答案未纠正反而直接采用，触发forbiddenClaims（对任意测度空间都有L²属于L¹的反面？但答案说没有包含关系，实际上forbiddenClaims是断言L²属于L¹，答案未断言，但未提及条件，且引用风险源，属于证据误用。更关键的是，答案声称两者没有包含关系，但requiredClaims要求说明有限测度空间下L²包含于L¹，答案未提及，且直接否定，导致requiredClaimCoverage为0。同时，未提及mustMentionConditions，conditionFidelity为0。evidenceGrounding：引用层级图，但该图不支持答案的结论（图显示L²→C⁰→L¹，暗示包含关系），答案却得出无包含关系，属于引用与结论无关。answerabilityDiscipline：应回答，但回答错误。综合触发hardFailure。"
+    }
+  ]
+}

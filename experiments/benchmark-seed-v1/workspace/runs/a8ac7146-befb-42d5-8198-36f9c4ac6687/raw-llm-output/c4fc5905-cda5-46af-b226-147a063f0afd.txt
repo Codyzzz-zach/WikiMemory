@@ -1,0 +1,44 @@
+{
+  "propositions": [
+    {
+      "text": "WCAG 2.1 builds on WCAG 2.0.",
+      "exactQuote": "WCAG 2.1 builds on and is backwards compatible with WCAG 2.0",
+      "blockId": "design-wcag21-2018-001#block-1"
+    },
+    {
+      "text": "WCAG 2.1 is backwards compatible with WCAG 2.0.",
+      "exactQuote": "WCAG 2.1 builds on and is backwards compatible with WCAG 2.0",
+      "blockId": "design-wcag21-2018-001#block-1"
+    },
+    {
+      "text": "Web pages that conform to WCAG 2.1 also conform to WCAG 2.0.",
+      "exactQuote": "web pages that conform to WCAG 2.1 also conform to WCAG 2.0",
+      "blockId": "design-wcag21-2018-001#block-1"
+    },
+    {
+      "text": "Success Criterion 4.1.1 Parsing is Level A.",
+      "exactQuote": "Success Criterion 4.1.1 Parsing (Level A)",
+      "blockId": "design-wcag21-2018-001#block-2"
+    },
+    {
+      "text": "In content implemented using markup languages, elements have complete start and end tags.",
+      "exactQuote": "In content implemented using markup languages, elements have complete start and end tags",
+      "blockId": "design-wcag21-2018-001#block-2"
+    },
+    {
+      "text": "In content implemented using markup languages, elements are nested according to their specifications.",
+      "exactQuote": "elements are nested according to their specifications",
+      "blockId": "design-wcag21-2018-001#block-2"
+    },
+    {
+      "text": "In content implemented using markup languages, elements do not contain duplicate attributes.",
+      "exactQuote": "elements do not contain duplicate attributes",
+      "blockId": "design-wcag21-2018-001#block-2"
+    },
+    {
+      "text": "In content implemented using markup languages, any IDs are unique, except where the specifications allow these features.",
+      "exactQuote": "any IDs are unique, except where the specifications allow these features",
+      "blockId": "design-wcag21-2018-001#block-2"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "verdict": "passed",
+  "dimensions": {
+    "support": {
+      "result": "pass",
+      "evidence": "\\forall p,q \\in \\mathbb{Q}, p < q \\implies \\exists r = \\frac{p+q}{2} \\in \\mathbb{Q}, \\; p < r < q"
+    },
+    "addition": {
+      "result": "pass",
+      "evidence": "原文未添加额外信息"
+    },
+    "inference": {
+      "result": "pass",
+      "evidence": "Claim 直接引用原文中的全称量化陈述，未引入推断"
+    },
+    "limits": {
+      "result": "pass",
+      "evidence": "原文无额外条件"
+    },
+    "citation": {
+      "result": "pass",
+      "evidence": "Claim 中的每个元素均对应原文"
+    }
+  },
+  "anchor": "\\forall p,q \\in \\mathbb{Q}, p < q \\implies \\exists r = \\frac{p+q}{2} \\in \\mathbb{Q}, \\; p < r < q",
+  "failedDimensions": [],
+  "issues": []
+}

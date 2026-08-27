@@ -1,0 +1,68 @@
+## SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/health-biology/health-who-july-2020-002.md:1-6 score=10.101
+# Transmission of SARS-CoV-2: implications for infection prevention precautions
+
+This document is an update to the scientific brief published on 29 March 2020 entitled “Modes of transmission of virus causing COVID-19: implications for infection prevention and control (IPC) precaution recommendations” and includes new scientific evidence available on transmission of SARS-CoV-2, the virus that causes COVID-19.
+
+Short-range aerosol transmission, particularly in specific indoor locations, such as crowded and inadequately ventilated spaces over a prolonged period of time with infected persons cannot be ruled out.
+
+## SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-wcag-issue-2705-003.md:1-8 score=1.486
+# WCAG 2.2 Draft Feedback: Dragging Movements
+
+Success Criterion 2.5.7 Dragging Movements (Level AA): All functionality that uses a dragging movement for operation can be achieved by a single pointer without dragging, unless dragging is essential or the functionality is determined by the user agent and not modified by the author.
+
+We kindly request that the group remove this SC until research is completed for all affected input modalities.
+
+We believe more considerations are needed for various platforms, and that there shouldn’t be an imposition of all mobile requirements on all desktop content.
+
+## SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-wcag22-2023-002.md:1-16 score=1.486
+# Web Content Accessibility Guidelines (WCAG) 2.2
+
+WCAG 2.2 builds on and is backwards compatible with WCAG 2.1, meaning web pages that conform to WCAG 2.2 are at least as accessible as pages that conform to WCAG 2.1. Requirements have been added that build on 2.1 and 2.0. WCAG 2.2 has removed one success criterion, 4.1.1 Parsing. Authors that are required by policy to conform with WCAG 2.0 or 2.1 will be able to update content to WCAG 2.2, but may need to continue to test and report 4.1.1.
+
+The following success criteria are new in WCAG 2.2:
+
+- 2.4.11 Focus Not Obscured (Minimum) (AA)
+- 2.4.12 Focus Not Obscured (Enhanced) (AAA)
+- 2.4.13 Focus Appearance (AAA)
+- 2.5.7 Dragging Movements (AA)
+- 2.5.8 Target Size (Minimum) (AA)
+- 3.2.6 Consistent Help (A)
+- 3.3.7 Redundant Entry (A)
+- 3.3.8 Accessible Authentication (Minimum) (AA)
+- 3.3.9 Accessible Authentication (Enhanced) (AAA)
+
+## SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/health-biology/health-who-march-2020-001.md:1-6 score=1.486
+# Modes of transmission of virus causing COVID-19
+
+Airborne transmission is different from droplet transmission as it refers to the presence of microbes within droplet nuclei, which are generally considered to be particles <5μm in diameter, can remain in the air for long periods of time and be transmitted to others over distances greater than 1 m.
+
+In the context of COVID-19, airborne transmission may be possible in specific circumstances and settings in which procedures or support treatments that generate aerosols are performed; i.e., endotracheal intubation, bronchoscopy, open suctioning, administration of nebulized treatment, manual ventilation before intubation, turning the patient to the prone position, disconnecting the patient from the ventilator, non-invasive positive-pressure ventilation, tracheostomy, and cardiopulmonary resuscitation.
+
+## SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/health-biology/health-who-terminology-2024-004.md:1-8 score=1.486
+# Leading health agencies outline updated terminology for pathogens that transmit through the air
+
+The descriptor ‘through the air’ can be used in a general way to characterize an infectious disease where the main mode of transmission involves the pathogen travelling through the air or being suspended in the air. Under the umbrella of ‘through the air transmission’, two descriptors can be used:
+
+1. Airborne transmission or inhalation, for cases when IRPs are expelled into the air and inhaled by another person. Airborne transmission or inhalation can occur at a short or long distance from the infectious person and distance depends on various factors (airflow, humidity, temperature, ventilation etc).
+
+2. Direct deposition, for cases when IRPs are expelled into the air from an infectious person, and are then directly deposited on the exposed mouth, nose or eyes of another person nearby.
+
+## SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/history-humanities/history-scrollprize-2026-004.md:1-6 score=1.486
+# Vesuvius Challenge project timeline
+
+Vesuvius Challenge launched in March 2023 with a Grand Prize for the first team to recover four passages of 140 characters from a Herculaneum scroll. Within a year, the prize was claimed. The quest was just beginning.
+
+In 2026, PHerc. 1667 became the first Herculaneum scroll to be virtually unwrapped and read end to end. The challenge now moves onto its next stage: reading multiple entire scrolls.
+
+## SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/history-humanities/history-vesuvius-github-2024-002.md:1-12 score=1.486
+# ScrollPrize/vesuvius archived Python library
+
+This repository was archived by the owner on Nov 21, 2024. It is now read-only.
+
+NOTE: Now maintained at https://github.com/ScrollPrize/villa/tree/main/vesuvius (this repository archived)
+
+From Vesuvius Challenge, a Python library for accessing CT scans of ancient scrolls.
+
+`vesuvius` allows direct access to scroll data without managing download scripts or storing terabytes of CT scans locally. Data is streamed in the background, only serving the requested regions.
+
+`vesuvius` is in beta and the interface may change. Not all Vesuvius Challenge data is currently available - data will continue to be added to the library.

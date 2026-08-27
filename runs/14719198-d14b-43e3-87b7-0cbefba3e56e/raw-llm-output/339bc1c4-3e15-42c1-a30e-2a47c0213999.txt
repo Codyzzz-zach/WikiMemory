@@ -1,0 +1,334 @@
+{
+  "concepts": [
+    {
+      "name": "复数",
+      "aliases": ["复数", "复数集", "复数集C", "C"],
+      "boundary": "复数的定义、运算、性质及其在数系扩张中的角色",
+      "domain": "数学/数系"
+    },
+    {
+      "name": "自然数",
+      "aliases": ["自然数", "自然数集", "自然数集N", "ℕ", "N", "自然数集合ℕ"],
+      "boundary": "自然数的定义、性质、运算封闭性及结构",
+      "domain": "数学/数系"
+    },
+    {
+      "name": "有理数",
+      "aliases": ["有理数", "有理数集", "有理数集Q", "ℚ", "Q"],
+      "boundary": "有理数的定义、性质、运算封闭性、可数性、稠密性、完备性",
+      "domain": "数学/数系"
+    },
+    {
+      "name": "整数",
+      "aliases": ["整数", "整数集", "整数集Z", "ℤ", "Z", "整数集合ℤ", "整数集合Z"],
+      "boundary": "整数的定义、性质、运算封闭性、结构",
+      "domain": "数学/数系"
+    },
+    {
+      "name": "实数",
+      "aliases": ["实数", "实数集", "实数集R", "ℝ", "R", "实数集 R"],
+      "boundary": "实数的定义、性质、完备性、有序性、不可数性、运算封闭性",
+      "domain": "数学/数系"
+    },
+    {
+      "name": "加法",
+      "aliases": ["加法"],
+      "boundary": "加法运算及其在数系中的封闭性",
+      "domain": "数学/运算"
+    },
+    {
+      "name": "乘法",
+      "aliases": ["乘法"],
+      "boundary": "乘法运算及其在数系中的封闭性",
+      "domain": "数学/运算"
+    },
+    {
+      "name": "减法",
+      "aliases": ["减法"],
+      "boundary": "减法运算及其封闭性",
+      "domain": "数学/运算"
+    },
+    {
+      "name": "除法",
+      "aliases": ["除法"],
+      "boundary": "除法运算及其封闭性",
+      "domain": "数学/运算"
+    },
+    {
+      "name": "封闭性",
+      "aliases": ["封闭", "封闭的"],
+      "boundary": "运算在数集上的封闭性质",
+      "domain": "数学/代数结构"
+    },
+    {
+      "name": "域",
+      "aliases": ["域", "域结构"],
+      "boundary": "域的定义、性质、例子",
+      "domain": "数学/代数结构"
+    },
+    {
+      "name": "幺半群",
+      "aliases": ["幺半群"],
+      "boundary": "幺半群的定义、性质、例子",
+      "domain": "数学/代数结构"
+    },
+    {
+      "name": "整环",
+      "aliases": ["整环"],
+      "boundary": "整环的定义、性质、例子",
+      "domain": "数学/代数结构"
+    },
+    {
+      "name": "交换环",
+      "aliases": ["交换环"],
+      "boundary": "交换环的定义、性质、例子",
+      "domain": "数学/代数结构"
+    },
+    {
+      "name": "阿贝尔群",
+      "aliases": ["阿贝尔群", "群结构"],
+      "boundary": "阿贝尔群的定义、性质、例子",
+      "domain": "数学/代数结构"
+    },
+    {
+      "name": "群",
+      "aliases": ["群"],
+      "boundary": "群的定义、性质",
+      "domain": "数学/代数结构"
+    },
+    {
+      "name": "加法逆元",
+      "aliases": ["加法逆元", "加法逆元-a"],
+      "boundary": "加法逆元的概念",
+      "domain": "数学/代数结构"
+    },
+    {
+      "name": "乘法逆元",
+      "aliases": ["乘法逆元", "乘法逆元（除数非零）"],
+      "boundary": "乘法逆元的概念",
+      "domain": "数学/代数结构"
+    },
+    {
+      "name": "加法单位元",
+      "aliases": ["加法单位元", "零元"],
+      "boundary": "加法单位元的概念",
+      "domain": "数学/代数结构"
+    },
+    {
+      "name": "乘法单位元",
+      "aliases": ["乘法单位元"],
+      "boundary": "乘法单位元的概念",
+      "domain": "数学/代数结构"
+    },
+    {
+      "name": "零因子",
+      "aliases": ["零因子"],
+      "boundary": "零因子的概念",
+      "domain": "数学/代数结构"
+    },
+    {
+      "name": "有序",
+      "aliases": ["有序的"],
+      "boundary": "数集的有序性质",
+      "domain": "数学/序理论"
+    },
+    {
+      "name": "良序性",
+      "aliases": ["良序性"],
+      "boundary": "自然数的良序性质",
+      "domain": "数学/序理论"
+    },
+    {
+      "name": "可数",
+      "aliases": ["可数的"],
+      "boundary": "集合的可数性",
+      "domain": "数学/集合论"
+    },
+    {
+      "name": "不可数",
+      "aliases": ["不可数的"],
+      "boundary": "集合的不可数性",
+      "domain": "数学/集合论"
+    },
+    {
+      "name": "完备性",
+      "aliases": ["完备性", "完备"],
+      "boundary": "数系的完备性概念，如Cauchy列收敛、上确界存在性",
+      "domain": "数学/分析"
+    },
+    {
+      "name": "稠密性",
+      "aliases": ["稠密性", "稠密"],
+      "boundary": "数集在数轴上的稠密性质",
+      "domain": "数学/序理论"
+    },
+    {
+      "name": "连通性",
+      "aliases": ["连通性"],
+      "boundary": "数集的连通性质",
+      "domain": "数学/拓扑"
+    },
+    {
+      "name": "上确界存在性",
+      "aliases": ["上确界存在性", "上确界"],
+      "boundary": "上确界存在性性质",
+      "domain": "数学/分析"
+    },
+    {
+      "name": "Cauchy列",
+      "aliases": ["Cauchy列"],
+      "boundary": "Cauchy列的概念",
+      "domain": "数学/分析"
+    },
+    {
+      "name": "后继函数",
+      "aliases": ["后继", "后继操作", "后继函数S(n)"],
+      "boundary": "自然数的后继函数",
+      "domain": "数学/数理逻辑"
+    },
+    {
+      "name": "数学归纳法",
+      "aliases": ["数学归纳法原理"],
+      "boundary": "数学归纳法原理",
+      "domain": "数学/数理逻辑"
+    },
+    {
+      "name": "Peano公理",
+      "aliases": ["Peano公理", "皮亚诺公理"],
+      "boundary": "Peano公理体系",
+      "domain": "数学/数理逻辑"
+    },
+    {
+      "name": "等价类",
+      "aliases": ["等价类", "等价类构造"],
+      "boundary": "等价类的概念及其在数系构造中的应用",
+      "domain": "数学/集合论"
+    },
+    {
+      "name": "有序对",
+      "aliases": ["有序对", "有序对(a,b)"],
+      "boundary": "有序对的概念",
+      "domain": "数学/集合论"
+    },
+    {
+      "name": "Dedekind分割",
+      "aliases": ["Dedekind分割", "Dedekind 分割"],
+      "boundary": "Dedekind分割的定义、性质及其在实数构造中的应用",
+      "domain": "数学/分析"
+    },
+    {
+      "name": "Cantor对角线",
+      "aliases": ["Cantor对角线", "Cantor 对角论证法", "Cantor对角线的直觉"],
+      "boundary": "Cantor对角线论证法",
+      "domain": "数学/集合论"
+    },
+    {
+      "name": "Cantor枚举法",
+      "aliases": ["Cantor枚举法", "Cantor 蛇形对角线枚举算法"],
+      "boundary": "Cantor枚举有理数的方法",
+      "domain": "数学/集合论"
+    },
+    {
+      "name": "代数基本定理",
+      "aliases": ["代数基本定理"],
+      "boundary": "代数基本定理的内容及其在复数域中的作用",
+      "domain": "数学/代数"
+    },
+    {
+      "name": "代数封闭",
+      "aliases": ["代数封闭", "代数封闭域"],
+      "boundary": "代数封闭的概念",
+      "domain": "数学/代数"
+    },
+    {
+      "name": "欧拉公式",
+      "aliases": ["欧拉公式", "一般欧拉公式"],
+      "boundary": "欧拉公式 e^(iθ)=cosθ+isinθ 及其推论",
+      "domain": "数学/复分析"
+    },
+    {
+      "name": "欧拉恒等式",
+      "aliases": ["欧拉恒等式"],
+      "boundary": "欧拉恒等式 e^(iπ)+1=0",
+      "domain": "数学/复分析"
+    },
+    {
+      "name": "复数的模",
+      "aliases": ["复数的模", "模"],
+      "boundary": "复数的模的定义与性质",
+      "domain": "数学/复分析"
+    },
+    {
+      "name": "复数的辐角",
+      "aliases": ["辐角"],
+      "boundary": "复数的辐角的概念",
+      "domain": "数学/复分析"
+    },
+    {
+      "name": "复数的实部",
+      "aliases": ["实部", "实部Re(z)"],
+      "boundary": "复数的实部",
+      "domain": "数学/复分析"
+    },
+    {
+      "name": "复数的虚部",
+      "aliases": ["虚部", "虚部Im(z)"],
+      "boundary": "复数的虚部",
+      "domain": "数学/复分析"
+    },
+    {
+      "name": "复数的共轭",
+      "aliases": ["共轭"],
+      "boundary": "复数的共轭",
+      "domain": "数学/复分析"
+    },
+    {
+      "name": "极坐标表示",
+      "aliases": ["极坐标表示"],
+      "boundary": "复数的极坐标形式",
+      "domain": "数学/复分析"
+    },
+    {
+      "name": "数系扩张",
+      "aliases": ["数系扩张", "数系扩张链", "扩张"],
+      "boundary": "数系从自然数到复数的扩张过程",
+      "domain": "数学/数系"
+    },
+    {
+      "name": "矢量平移",
+      "aliases": ["平移"],
+      "boundary": "复数加法的几何解释",
+      "domain": "数学/几何"
+    },
+    {
+      "name": "缩放加旋转",
+      "aliases": ["缩放加旋转"],
+      "boundary": "复数乘法的几何解释",
+      "domain": "数学/几何"
+    },
+    {
+      "name": "第一次数学危机",
+      "aliases": ["第一次数学危机"],
+      "boundary": "√2不是有理数的发现引发的危机",
+      "domain": "数学/历史"
+    },
+    {
+      "name": "von Neumann构造",
+      "aliases": ["von Neumann", "von Neumann 构造"],
+      "boundary": "von Neumann对自然数的集合论构造",
+      "domain": "数学/集合论"
+    },
+    {
+      "name": "平方根",
+      "aliases": ["√", "√2"],
+      "boundary": "平方根的概念",
+      "domain": "数学/代数"
+    },
+    {
+      "name": "代数基本定理",
+      "aliases": ["代数基本定理"],
+      "boundary": "代数基本定理",
+      "domain": "数学/代数"
+    }
+  ]
+}

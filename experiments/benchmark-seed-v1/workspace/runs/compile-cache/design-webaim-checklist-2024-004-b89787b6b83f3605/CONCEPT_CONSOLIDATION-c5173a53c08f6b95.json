@@ -1,0 +1,6 @@
+{
+  "kind": "VALID",
+  "content": "{\n  \"concepts\": [\n    {\n      \"name\": \"Success Criterion 4.1.1 Parsing\",\n      \"aliases\": [],\n      \"boundary\": \"WCAG成功标准，具体指解析准则\",\n      \"domain\": \"Web无障碍\"\n    },\n    {\n      \"name\": \"WCAG\",\n      \"aliases\": [],\n      \"boundary\": \"Web内容无障碍指南\",\n      \"domain\": \"Web无障碍\"\n    },\n    {\n      \"name\": \"WebAIM WCAG 2 Checklist\",\n      \"aliases\": [],\n      \"boundary\": \"WebAIM提供的WCAG 2检查清单文档\",\n      \"domain\": \"Web无障碍\"\n    }\n  ]\n}",
+  "model": "deepseek-v4-flash",
+  "outputHash": "1a153128f2dc773e"
+}

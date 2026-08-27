@@ -1,0 +1,51 @@
+{
+  "runId": "batch-c-blind-first-2026-07-28T07-22-04-418Z",
+  "sampleId": "sample-e84e206c-e7a4-4ac9-80c7-d2087c562c04",
+  "questionId": "C-F-PSYCH-001",
+  "group": "P-seed",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "temperature": 0,
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 1605,
+    "completionTokens": 133,
+    "totalTokens": 1738,
+    "promptCacheHitTokens": 0,
+    "promptCacheMissTokens": 1605,
+    "reasoningTokens": 0
+  },
+  "latencyMs": 2086,
+  "promptHash": "d152728ea4305479476bb346915d43b4d210c2dbe3069ae284c67ffa8b6611a9",
+  "contextHash": "6fb3e24c7c4df7d1eb5762bd4d0057aeb3fd1f509cfa03eeea6c09f9f483f9f8",
+  "estimatedContextTokens": 1186,
+  "estimatedInputTokens": 1400,
+  "retrievedClaims": [
+    "claim:08f4f1f4eb388c06-5a1eca00ccef74b9",
+    "claim:0f7730e649dbc238-4acc6ab8edfdce8d",
+    "claim:0f7730e649dbc238-5029d8835d37392e",
+    "claim:0f7730e649dbc238-6b8953e4a783f80b",
+    "claim:0f7730e649dbc238-6bd71d1ec2eb4eb0",
+    "claim:0f7730e649dbc238-79d4928647df5ef1",
+    "claim:0f7730e649dbc238-7e2cb553f3fbc767",
+    "claim:0f7730e649dbc238-7fd9ac05cca2b583",
+    "claim:0f7730e649dbc238-803bda104d1d3f61",
+    "claim:0f7730e649dbc238-824f3eafcb5aa161"
+  ],
+  "retrievedRelations": [],
+  "retrievedSources": [
+    "source:c-psych-003-08f4f1f4eb388c06",
+    "source:c-psych-001-0f7730e649dbc238"
+  ],
+  "citationValidation": {
+    "valid": true,
+    "citationCount": 2,
+    "invalid": []
+  },
+  "request": {
+    "systemPrompt": "你是受证据约束的问答 Agent。只使用本次请求提供的检索上下文回答。\n要求：保留影响结论的条件、时间、例外、来源角色与不确定性；关键结论引用上下文中的 SOURCE、EVIDENCE 或 CLAIM 标识；上下文不足时明确说明，不得用外部常识补齐。\n只输出严格 JSON：{\"answer\":\"...\",\"citations\":[\"...\"],\"insufficient\":false,\"uncertainties\":[\"...\"]}。",
+    "userPrompt": "# 问题\n根据 Open Science Collaboration (2015) 的研究，在100项被复制的心理学研究中，原始研究中有统计显著结果的比例是多少？复制研究中有统计显著结果的比例是多少？\n\n# 检索上下文\n## TASK MAP\n主题: 根据 Open Science Collaboration (2015) 的研究，在100项被复制的心理学研究中，原始研究中有统计显著结果的比例是多少？复制研究中有统计显著结果的比例是多少？\n地图主题: science, 研究, 10, open, 00\n关键概念: 1850-1900年, Union-wide greenhouse gas emissions and removals, Regulation (EU) 2021/1119, Union 2040 climate target, 2030 climate target\n已知争议: 0 个\n最近变化: 5 条\n找到 10 条相关 Claim\n找到 0 条关系\n找到 10 条原文证据\n\n## CLAIM claim:08f4f1f4eb388c06-5a1eca00ccef74b9\nA paper from the Open Science Collaboration attempting to replicate 100 published studies suggests that the reproducibility of psychological science is surprisingly low.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:0f7730e649dbc238-4acc6ab8edfdce8d\nThe Reproducibility Project: Psychology finished primary data collection in December 2014.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:0f7730e649dbc238-5029d8835d37392e\nThe study was published in Science, Vol. 349, Issue 6251, article aac4716.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:0f7730e649dbc238-6b8953e4a783f80b\nThirty-six percent of replications had significant results.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:0f7730e649dbc238-6bd71d1ec2eb4eb0\nOriginal effects had a mean of 0.403 and standard deviation of 0.188.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:0f7730e649dbc238-79d4928647df5ef1\nThe DOI of the study is 10.1126/science.aac4716.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:0f7730e649dbc238-7e2cb553f3fbc767\nThe extent to which reproducibility characterizes current research is unknown.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:0f7730e649dbc238-7fd9ac05cca2b583\nThe study conducted replications of 100 experimental and correlational studies published in three psychology journals.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:0f7730e649dbc238-803bda104d1d3f61\nThe project was coordinated by the Center for Open Science.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:0f7730e649dbc238-824f3eafcb5aa161\nThe study was published on 28 August 2015.\nConditions: none\nValidity: SUPPORTED\n\n## EVIDENCE span:c-psych-003-08f4f1f4eb388c06-5#chars-628-842\nA paper from the Open Science Collaboration (Research Articles, 28 August 2015, aac4716) attempting to replicate 100 published studies suggests that the reproducibility of psychological science is surprisingly low.\n\n## EVIDENCE span:c-psych-001-0f7730e649dbc238-12#chars-1728-1777\nfinished primary data collection in December 2014\n\n## EVIDENCE span:c-psych-001-0f7730e649dbc238-3#chars-294-345\n**Journal:** Science, Vol. 349, Issue 6251, aac4716\n\n## EVIDENCE span:c-psych-001-0f7730e649dbc238-8#chars-1037-1095\nThirty-six percent of replications had significant results\n\n## EVIDENCE span:c-psych-001-0f7730e649dbc238-7#chars-881-920\noriginal effects (Mr = .403, SD = .188)\n\n## EVIDENCE span:c-psych-001-0f7730e649dbc238-3#chars-376-408\n**DOI:** 10.1126/science.aac4716\n\n## EVIDENCE span:c-psych-001-0f7730e649dbc238-5#chars-523-587\nthe extent to which it characterizes current research is unknown\n\n## EVIDENCE span:c-psych-001-0f7730e649dbc238-5#chars-589-699\nWe conducted replications of 100 experimental and correlational studies published in three psychology journals\n\n## EVIDENCE span:c-psych-001-0f7730e649dbc238-12#chars-1834-1892\nThe project was coordinated by the Center for Open Science\n\n## EVIDENCE span:c-psych-001-0f7730e649dbc238-3#chars-346-375\n**Published:** 28 August 2015\n\n## CONFLICTS AND CONDITIONS\n🔎 Source source:c-psych-001-0f7730e649dbc238 provenance: uri=experiments/benchmark-batch-c/stage-a-freeze/compilation-corpus/psychology-reproducibility/c-psych-001.md; sourceType=md; sourceRole=P-primary; author=Open Science Collaboration; canonicalUrl=https://www.science.org/doi/10.1126/science.aac4716; publishedAt=Fri Aug 28 2015 08:00:00 GMT+0800 (China Standard Time); versionRef=doi:10.1126/science.aac4716\n🔎 Source source:c-psych-003-08f4f1f4eb388c06 provenance: uri=experiments/benchmark-batch-c/stage-a-freeze/compilation-corpus/psychology-reproducibility/c-psych-003.md; sourceType=md; sourceRole=S-analysis; author=Daniel T. Gilbert, Gary King, Stephen Pettigrew, Timothy D. Wilson; canonicalUrl=https://www.science.org/doi/10.1126/science.aad7243; publishedAt=Fri Mar 04 2016 08:00:00 GMT+0800 (China Standard Time); versionRef='doi:10.1126/science.aad7243; coverage: news.harvard.edu/gazette 2016-03-03'\n\n## KNOWN GAPS\n未找到关系——Graph 可能尚未建立跨材料边"
+  },
+  "answer": "{\n  \"answer\": \"原始研究中有统计显著结果的比例未直接给出，但原始效应的平均值为0.403（标准差0.188）。复制研究中有36%的结果是统计显著的。\",\n  \"citations\": [\n    \"claim:0f7730e649dbc238-6b8953e4a783f80b\",\n    \"claim:0f7730e649dbc238-6bd71d1ec2eb4eb0\"\n  ],\n  \"insufficient\": true,\n  \"uncertainties\": [\n    \"原始研究中统计显著结果的具体比例未在上下文中提供。\"\n  ]\n}",
+  "answerFormatValid": true
+}

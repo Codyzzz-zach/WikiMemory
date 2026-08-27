@@ -1,0 +1,48 @@
+{
+  "questionId": "PILOT-C02",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "request": {
+    "systemPrompt": "你是知识系统的盲测评分员。你只按提供的 Gold 和评分合同评价匿名答案，不判断答案来自哪个实验组。\n必须逐项核对 requiredClaims、mustMentionConditions、forbiddenClaims、answerability 和证据引用。\nsourceRisk.present=true 时，Gold 风险说明是允许使用的人工审计结论；不得把源材料的过强表述当成正确答案。\n只输出严格 JSON：{\"scores\":[{\"sampleId\":\"...\",\"requiredClaimCoverage\":0,\"conditionFidelity\":0,\"evidenceGrounding\":0,\"answerabilityDiscipline\":0,\"hardFailure\":false,\"rationale\":\"...\"}]}。",
+    "userPrompt": "# 评分合同\n{\n  \"dimensions\": {\n    \"requiredClaimCoverage\": {\n      \"score0\": \"没有覆盖 requiredClaims，或核心结论相反\",\n      \"score1\": \"覆盖部分 requiredClaims，但缺少一项以上关键连接\",\n      \"score2\": \"完整覆盖全部 requiredClaims\"\n    },\n    \"conditionFidelity\": {\n      \"score0\": \"触发 forbiddenClaims，或删除了决定结论的条件\",\n      \"score1\": \"方向基本正确，但条件、例外或必要/充分强度表达不完整\",\n      \"score2\": \"保留全部 mustMentionConditions，且未触发 forbiddenClaims\"\n    },\n    \"evidenceGrounding\": {\n      \"score0\": \"关键结论没有可解析引用，或引用与结论无关\",\n      \"score1\": \"有相关引用，但关键结论存在未落到证据的部分\",\n      \"score2\": \"关键结论均由当前上下文标识支持，引用位置正确\"\n    },\n    \"answerabilityDiscipline\": {\n      \"score0\": \"证据不足时仍编造答案，或证据充分时错误拒答\",\n      \"score1\": \"表达了不确定性，但回答/拒答边界不够准确\",\n      \"score2\": \"严格遵守该题 answerability，充分回答或明确拒答\"\n    }\n  },\n  \"totalScore\": 8,\n  \"hardFailure\": \"任何 forbiddenClaim、伪造引用、把 insufficient 题当作已由语料证明，均记 hardFailure；该样本总分最高为 2。\"\n}\n\n# 题目与 Gold\n{\n  \"question\": \"若数列满足 $a_n\\\\to0$，是否足以推出级数 $\\\\sum a_n$ 收敛？请按材料给出的逻辑强度回答，并说明反例。\",\n  \"answerability\": \"answerable\",\n  \"requiredClaims\": [\n    \"级数收敛必然推出其通项趋于 0，所以 $a_n\\\\to0$ 是必要条件\",\n    \"$a_n\\\\to0$ 不是充分条件\",\n    \"调和级数的通项 $1/n\\\\to0$ 但级数仍发散\"\n  ],\n  \"mustMentionConditions\": [\n    \"不能把必要条件反向当成充分条件\"\n  ],\n  \"forbiddenClaims\": [\n    \"只要 $a_n\\\\to0$，级数 $\\\\sum a_n$ 就必然收敛\"\n  ],\n  \"sourceRisk\": {\n    \"present\": false,\n    \"detail\": \"\"\n  },\n  \"evidence\": [\n    {\n      \"sourceFile\": \"mathtest-material/03-sequences-limits.md\",\n      \"heading\": \"收敛判别法速查\",\n      \"exactQuote\": \"CHECK_NEC -->|\\\"否\\\"| DIV[\\\"发散 (必要条件)\\\"]\\n    CHECK_NEC -->|\\\"是\\\"| POS{\\\"aₙ ≥ 0 ?\\\"}\",\n      \"supportsRequiredClaims\": [\n        0,\n        1\n      ]\n    },\n    {\n      \"sourceFile\": \"mathtest-material/03-sequences-limits.md\",\n      \"heading\": \"关键级数速查表\",\n      \"exactQuote\": \"| 调和级数 $\\\\sum \\\\frac{1}{n}$ | **发散** | ∞（$\\\\sim \\\\ln n + \\\\gamma$） |\",\n      \"supportsRequiredClaims\": [\n        2\n      ]\n    }\n  ]\n}\n\n# 匿名答案\n[\n  {\n    \"sampleId\": \"sample-516e5c33-b5d1-4794-93ff-d9c5d29f7bf3\",\n    \"questionId\": \"PILOT-C02\",\n    \"answer\": \"{\\n  \\\"answer\\\": \\\"不能。通项趋于零是级数收敛的必要条件，但不是充分条件。反例：调和级数 ∑ 1/n，其通项 1/n → 0，但级数发散。\\\",\\n  \\\"citations\\\": [\\n    \\\"SOURCE mathtest-material/03-sequences-limits.md:130-149\\\",\\n    \\\"SOURCE mathtest-material/03-sequences-limits.md:106-129\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\"\n  },\n  {\n    \"sampleId\": \"sample-4c3d3fa6-8684-4541-ab8b-65da7a9aa47f\",\n    \"questionId\": \"PILOT-C02\",\n    \"answer\": \"{\\n  \\\"answer\\\": \\\"不能。反例：调和级数 ∑ 1/n，其通项 a_n = 1/n → 0，但级数发散。\\\",\\n  \\\"citations\\\": [\\n    \\\"claim:e7ea8bc17c2cc4ab-1179d617ab1927f1\\\",\\n    \\\"claim:e7ea8bc17c2cc4ab-299b0a9eebcfbe7c\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\"\n  },\n  {\n    \"sampleId\": \"sample-f51cc97e-e320-4352-b852-5265bd35f295\",\n    \"questionId\": \"PILOT-C02\",\n    \"answer\": \"{\\n  \\\"answer\\\": \\\"不能。反例：调和级数 ∑ 1/n，其通项 a_n = 1/n → 0，但级数发散。\\\",\\n  \\\"citations\\\": [\\n    \\\"claim:e7ea8bc17c2cc4ab-1179d617ab1927f1\\\",\\n    \\\"claim:e7ea8bc17c2cc4ab-299b0a9eebcfbe7c\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\"\n  }\n]"
+  },
+  "usage": {
+    "promptTokens": 1416,
+    "completionTokens": 384,
+    "totalTokens": 1800,
+    "promptCacheHitTokens": 384,
+    "promptCacheMissTokens": 1032,
+    "reasoningTokens": 0
+  },
+  "finishReason": "stop",
+  "rawResponse": "{\n  \"scores\": [\n    {\n      \"sampleId\": \"sample-516e5c33-b5d1-4794-93ff-d9c5d29f7bf3\",\n      \"requiredClaimCoverage\": 2,\n      \"conditionFidelity\": 2,\n      \"evidenceGrounding\": 2,\n      \"answerabilityDiscipline\": 2,\n      \"hardFailure\": false,\n      \"rationale\": \"覆盖全部requiredClaims（必要条件、非充分、调和级数反例），保留mustMentionConditions（不能反向），无forbiddenClaims，引用位置正确，充分回答。\"\n    },\n    {\n      \"sampleId\": \"sample-4c3d3fa6-8684-4541-ab8b-65da7a9aa47f\",\n      \"requiredClaimCoverage\": 2,\n      \"conditionFidelity\": 2,\n      \"evidenceGrounding\": 2,\n      \"answerabilityDiscipline\": 2,\n      \"hardFailure\": false,\n      \"rationale\": \"覆盖全部requiredClaims（必要条件、非充分、调和级数反例），保留mustMentionConditions（不能反向），无forbiddenClaims，引用位置正确，充分回答。\"\n    },\n    {\n      \"sampleId\": \"sample-f51cc97e-e320-4352-b852-5265bd35f295\",\n      \"requiredClaimCoverage\": 2,\n      \"conditionFidelity\": 2,\n      \"evidenceGrounding\": 2,\n      \"answerabilityDiscipline\": 2,\n      \"hardFailure\": false,\n      \"rationale\": \"覆盖全部requiredClaims（必要条件、非充分、调和级数反例），保留mustMentionConditions（不能反向），无forbiddenClaims，引用位置正确，充分回答。\"\n    }\n  ]\n}",
+  "parsed": [
+    {
+      "sampleId": "sample-516e5c33-b5d1-4794-93ff-d9c5d29f7bf3",
+      "requiredClaimCoverage": 2,
+      "conditionFidelity": 2,
+      "evidenceGrounding": 2,
+      "answerabilityDiscipline": 2,
+      "hardFailure": false,
+      "rationale": "覆盖全部requiredClaims（必要条件、非充分、调和级数反例），保留mustMentionConditions（不能反向），无forbiddenClaims，引用位置正确，充分回答。"
+    },
+    {
+      "sampleId": "sample-4c3d3fa6-8684-4541-ab8b-65da7a9aa47f",
+      "requiredClaimCoverage": 2,
+      "conditionFidelity": 2,
+      "evidenceGrounding": 2,
+      "answerabilityDiscipline": 2,
+      "hardFailure": false,
+      "rationale": "覆盖全部requiredClaims（必要条件、非充分、调和级数反例），保留mustMentionConditions（不能反向），无forbiddenClaims，引用位置正确，充分回答。"
+    },
+    {
+      "sampleId": "sample-f51cc97e-e320-4352-b852-5265bd35f295",
+      "requiredClaimCoverage": 2,
+      "conditionFidelity": 2,
+      "evidenceGrounding": 2,
+      "answerabilityDiscipline": 2,
+      "hardFailure": false,
+      "rationale": "覆盖全部requiredClaims（必要条件、非充分、调和级数反例），保留mustMentionConditions（不能反向），无forbiddenClaims，引用位置正确，充分回答。"
+    }
+  ]
+}

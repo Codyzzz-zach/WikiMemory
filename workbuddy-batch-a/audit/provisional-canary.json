@@ -1,0 +1,37 @@
+{
+  "schemaVersion": "wge-provisional-canary/v1",
+  "status": "provisional-not-gold",
+  "createdAt": "2026-07-27",
+  "sourceTaskFile": "../candidates/tasks.jsonl",
+  "purpose": [
+    "验证测试数据装载",
+    "验证 requiredEvidence 可解析",
+    "验证运行 manifest 与错误归因壳",
+    "禁止用于架构调参或产品效果宣称"
+  ],
+  "cases": [
+    {"caseId": "F-AI-001", "domain": "ai"},
+    {"caseId": "F-AI-003", "domain": "ai"},
+    {"caseId": "R-AI-001", "domain": "ai"},
+    {"caseId": "C-AI-002", "domain": "ai"},
+    {"caseId": "F-TECH-004", "domain": "technology"},
+    {"caseId": "X-TECH-001", "domain": "technology"},
+    {"caseId": "K-TECH-002", "domain": "technology"},
+    {"caseId": "T-TECH-002", "domain": "technology"},
+    {"caseId": "F-FIN-001", "domain": "finance"},
+    {"caseId": "R-FIN-001", "domain": "finance"},
+    {"caseId": "C-FIN-001", "domain": "finance"},
+    {"caseId": "X-FIN-001", "domain": "finance"}
+  ],
+  "entryGate": [
+    "对应 task 在 candidates/tasks.jsonl 中存在且 status=candidate",
+    "所有 requiredEvidence exactQuote 位于对应 Source Snapshot",
+    "运行时不得读取其他 candidate 的 Gold 答案字段作为知识"
+  ],
+  "exitGate": [
+    "12/12 测试项成功装载",
+    "所有 evidence sourceId 和 quote 成功解析",
+    "每题保存 knowledgeVersion、promptHash、实际 tokens 与错误归因",
+    "失败项完整保留，不以平均分替代失败报告"
+  ]
+}

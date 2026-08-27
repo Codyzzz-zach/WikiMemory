@@ -1,0 +1,21 @@
+{
+  "schemaVersion": "wge-e4-smoke-selection/v1",
+  "status": "FROZEN_DIRECTIONAL",
+  "frozenAt": "2026-07-28",
+  "taskFile": "workbuddy-batch-b/generated/candidates/tasks.jsonl",
+  "taskFileSha256": "sha256:8238d998134795451c162bbba4da4833eb75c8a015f7840a1a359388fd7bca53",
+  "questionIds": [
+    "B-C-HEALTH-002",
+    "B-E-HEALTH-005",
+    "B-C-HIST-003",
+    "B-X-HIST-006",
+    "B-C-DESIGN-002",
+    "B-X-DESIGN-005"
+  ],
+  "groups": [
+    "B",
+    "P"
+  ],
+  "eMinStatus": "BLOCKED_MISSING_GENERIC_WIKIMODULE_BUILDER",
+  "eMinReason": "当前没有从 Canonical Claim 通用生成并独立审计 WikiModule 的生产链。禁止使用题目 requiredPoints 或 Gold 手工编写模块。"
+}

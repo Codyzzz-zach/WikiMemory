@@ -1,0 +1,75 @@
+{
+  "questionId": "B-C-HEALTH-002",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 1442,
+    "completionTokens": 724,
+    "totalTokens": 2166,
+    "promptCacheHitTokens": 256,
+    "promptCacheMissTokens": 1186,
+    "reasoningTokens": 0
+  },
+  "request": {
+    "systemPrompt": "你是盲测评分员，不知道匿名答案属于哪个实验组。只按题目、评分锚点和证据评估，不用外部常识修正答案。\n每项 0-4 分：requiredPointCoverage、conditionFidelity、evidenceGrounding、answerabilityDiscipline。\n若答案反转来源归属、抹掉关键条件/时间、把提案当最终规范、编造上下文外事实，hardFailure=true。\n只输出严格 JSON：{\"scores\":[{\"sampleId\":\"...\",\"requiredPointCoverage\":0,\"conditionFidelity\":0,\"evidenceGrounding\":0,\"answerabilityDiscipline\":0,\"hardFailure\":false,\"rationale\":\"...\"}]}。",
+    "userPrompt": "{\"question\":\"2020-07 简报在什么条件下说短距离气溶胶传播不能被排除？\",\"answerability\":\"answerable\",\"requiredPoints\":[\"拥挤、通风不足、长时间与感染者共处的特定室内地点\"],\"forbiddenClaims\":[\"不得改成所有室内场景\"],\"requiredEvidence\":[{\"sourceId\":\"health-who-july-2020-002\",\"exactQuote\":\"Short-range aerosol transmission, particularly in specific indoor locations, such as crowded and inadequately ventilated spaces over a prolonged period of time with infected persons cannot be ruled out.\",\"role\":\"supports\"}],\"sourcePriorityRule\":\"P/C 决定规范、论文与实现事实；S 只能作为有归属的解释，不能推翻一手版本文本。\",\"anonymousAnswers\":[{\"sampleId\":\"sample-40cae7ba-66d2-455b-82bb-5a5a67d11e1f\",\"questionId\":\"B-C-HEALTH-002\",\"repetition\":1,\"answer\":\"{\\n  \\\"answer\\\": \\\"在特定室内场所，如拥挤且通风不良的空间，与感染者长时间接触的条件下，短距离气溶胶传播不能被排除。\\\",\\n  \\\"citations\\\": [\\n    \\\"span:health-who-july-2020-002-a1c7e701eebb9dc1-2#chars-413-615\\\",\\n    \\\"span:health-who-july-2020-002-a1c7e701eebb9dc1-2#chars-447-594\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\"},{\"sampleId\":\"sample-cca27a89-842d-46af-a02d-cb53a7077897\",\"questionId\":\"B-C-HEALTH-002\",\"repetition\":1,\"answer\":\"{\\n  \\\"answer\\\": \\\"在特定室内场所，如拥挤且通风不良的空间，与感染者长时间接触的条件下，短距离气溶胶传播不能被排除。\\\",\\n  \\\"citations\\\": [\\n    \\\"health-who-july-2020-002-a1c7e701eebb9dc1-2#chars-413-615\\\",\\n    \\\"health-who-july-2020-002-a1c7e701eebb9dc1-2#chars-447-594\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\"},{\"sampleId\":\"sample-df6f090f-ed4c-4bf6-9899-7f928986f404\",\"questionId\":\"B-C-HEALTH-002\",\"repetition\":2,\"answer\":\"{\\n  \\\"answer\\\": \\\"在特定室内场所，如拥挤且通风不良的空间，与感染者长时间接触的条件下，短距离气溶胶传播不能被排除。\\\",\\n  \\\"citations\\\": [\\n    \\\"health-who-july-2020-002-a1c7e701eebb9dc1-2#chars-413-615\\\",\\n    \\\"health-who-july-2020-002-a1c7e701eebb9dc1-2#chars-447-594\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\"},{\"sampleId\":\"sample-3366dbab-108a-472c-9f99-e6ea2f42429e\",\"questionId\":\"B-C-HEALTH-002\",\"repetition\":2,\"answer\":\"{\\n  \\\"answer\\\": \\\"在特定室内场所，如拥挤且通风不良的空间，与感染者长时间接触的条件下，短距离气溶胶传播不能被排除。\\\",\\n  \\\"citations\\\": [\\n    \\\"span:health-who-july-2020-002-a1c7e701eebb9dc1-2#chars-413-615\\\",\\n    \\\"span:health-who-july-2020-002-a1c7e701eebb9dc1-2#chars-447-594\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\"},{\"sampleId\":\"sample-c3710b95-1d96-4a37-9a65-4a2e80c9d163\",\"questionId\":\"B-C-HEALTH-002\",\"repetition\":3,\"answer\":\"{\\n  \\\"answer\\\": \\\"在特定室内场所，如拥挤且通风不良的空间，与感染者长时间接触的条件下，短距离气溶胶传播不能被排除。\\\",\\n  \\\"citations\\\": [\\n    \\\"health-who-july-2020-002-a1c7e701eebb9dc1-2#chars-413-615\\\",\\n    \\\"health-who-july-2020-002-a1c7e701eebb9dc1-2#chars-447-594\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\"},{\"sampleId\":\"sample-8b389b7f-c2be-48b0-8c8f-04a7a201c161\",\"questionId\":\"B-C-HEALTH-002\",\"repetition\":3,\"answer\":\"{\\n  \\\"answer\\\": \\\"在特定室内场所，如拥挤且通风不良的空间，与感染者长时间接触的条件下，短距离气溶胶传播不能被排除。\\\",\\n  \\\"citations\\\": [\\n    \\\"span:health-who-july-2020-002-a1c7e701eebb9dc1-2#chars-413-615\\\",\\n    \\\"span:health-who-july-2020-002-a1c7e701eebb9dc1-2#chars-447-594\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\"}]}"
+  },
+  "rawResponse": "{\n  \"scores\": [\n    {\n      \"sampleId\": \"sample-40cae7ba-66d2-455b-82bb-5a5a67d11e1f\",\n      \"requiredPointCoverage\": 4,\n      \"conditionFidelity\": 4,\n      \"evidenceGrounding\": 4,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"答案准确覆盖了所有requiredPoints（拥挤、通风不足、长时间与感染者共处的特定室内地点），未引入forbiddenClaims，引用证据准确且与原文一致，未超出可回答范围。\"\n    },\n    {\n      \"sampleId\": \"sample-cca27a89-842d-46af-a02d-cb53a7077897\",\n      \"requiredPointCoverage\": 4,\n      \"conditionFidelity\": 4,\n      \"evidenceGrounding\": 4,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"答案准确覆盖了所有requiredPoints，未引入forbiddenClaims，引用证据准确且与原文一致，未超出可回答范围。\"\n    },\n    {\n      \"sampleId\": \"sample-df6f090f-ed4c-4bf6-9899-7f928986f404\",\n      \"requiredPointCoverage\": 4,\n      \"conditionFidelity\": 4,\n      \"evidenceGrounding\": 4,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"答案准确覆盖了所有requiredPoints，未引入forbiddenClaims，引用证据准确且与原文一致，未超出可回答范围。\"\n    },\n    {\n      \"sampleId\": \"sample-3366dbab-108a-472c-9f99-e6ea2f42429e\",\n      \"requiredPointCoverage\": 4,\n      \"conditionFidelity\": 4,\n      \"evidenceGrounding\": 4,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"答案准确覆盖了所有requiredPoints，未引入forbiddenClaims，引用证据准确且与原文一致，未超出可回答范围。\"\n    },\n    {\n      \"sampleId\": \"sample-c3710b95-1d96-4a37-9a65-4a2e80c9d163\",\n      \"requiredPointCoverage\": 4,\n      \"conditionFidelity\": 4,\n      \"evidenceGrounding\": 4,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"答案准确覆盖了所有requiredPoints，未引入forbiddenClaims，引用证据准确且与原文一致，未超出可回答范围。\"\n    },\n    {\n      \"sampleId\": \"sample-8b389b7f-c2be-48b0-8c8f-04a7a201c161\",\n      \"requiredPointCoverage\": 4,\n      \"conditionFidelity\": 4,\n      \"evidenceGrounding\": 4,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"答案准确覆盖了所有requiredPoints，未引入forbiddenClaims，引用证据准确且与原文一致，未超出可回答范围。\"\n    }\n  ]\n}",
+  "parsed": [
+    {
+      "sampleId": "sample-40cae7ba-66d2-455b-82bb-5a5a67d11e1f",
+      "requiredPointCoverage": 4,
+      "conditionFidelity": 4,
+      "evidenceGrounding": 4,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "答案准确覆盖了所有requiredPoints（拥挤、通风不足、长时间与感染者共处的特定室内地点），未引入forbiddenClaims，引用证据准确且与原文一致，未超出可回答范围。"
+    },
+    {
+      "sampleId": "sample-cca27a89-842d-46af-a02d-cb53a7077897",
+      "requiredPointCoverage": 4,
+      "conditionFidelity": 4,
+      "evidenceGrounding": 4,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "答案准确覆盖了所有requiredPoints，未引入forbiddenClaims，引用证据准确且与原文一致，未超出可回答范围。"
+    },
+    {
+      "sampleId": "sample-df6f090f-ed4c-4bf6-9899-7f928986f404",
+      "requiredPointCoverage": 4,
+      "conditionFidelity": 4,
+      "evidenceGrounding": 4,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "答案准确覆盖了所有requiredPoints，未引入forbiddenClaims，引用证据准确且与原文一致，未超出可回答范围。"
+    },
+    {
+      "sampleId": "sample-3366dbab-108a-472c-9f99-e6ea2f42429e",
+      "requiredPointCoverage": 4,
+      "conditionFidelity": 4,
+      "evidenceGrounding": 4,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "答案准确覆盖了所有requiredPoints，未引入forbiddenClaims，引用证据准确且与原文一致，未超出可回答范围。"
+    },
+    {
+      "sampleId": "sample-c3710b95-1d96-4a37-9a65-4a2e80c9d163",
+      "requiredPointCoverage": 4,
+      "conditionFidelity": 4,
+      "evidenceGrounding": 4,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "答案准确覆盖了所有requiredPoints，未引入forbiddenClaims，引用证据准确且与原文一致，未超出可回答范围。"
+    },
+    {
+      "sampleId": "sample-8b389b7f-c2be-48b0-8c8f-04a7a201c161",
+      "requiredPointCoverage": 4,
+      "conditionFidelity": 4,
+      "evidenceGrounding": 4,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "答案准确覆盖了所有requiredPoints，未引入forbiddenClaims，引用证据准确且与原文一致，未超出可回答范围。"
+    }
+  ]
+}

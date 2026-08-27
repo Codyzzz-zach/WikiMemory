@@ -1,0 +1,48 @@
+{
+  "questionId": "B-F-HIST-010",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 1154,
+    "completionTokens": 624,
+    "totalTokens": 1778,
+    "promptCacheHitTokens": 256,
+    "promptCacheMissTokens": 898,
+    "reasoningTokens": 0
+  },
+  "request": {
+    "systemPrompt": "你是盲测评分员，不知道答案属于哪个实验组。只按题目、评分锚点、Gold 证据和引用预校验评价，不用外部常识修正答案。\n每个维度独立使用同一 0-4 锚点：4=完整且准确；3=大部分满足，仅轻微遗漏；2=部分满足，存在重要遗漏；1=仅有极少相关内容；0=缺失、反转或与证据冲突。\nrequiredPointCoverage 只看 requiredPoints；conditionFidelity 看条件、时间、来源角色和不确定性；evidenceGrounding 同时看关键结论是否与 Gold 证据一致以及 citationValidation；answerabilityDiscipline 看是否越界、编造或错误拒答。\ncitationValidation.valid 表示引用标识确实存在于该匿名样本收到的上下文。内部 CLAIM/SPAN/SOURCE 标识不需要出现在 Gold 文本中，不得仅因此扣分；但存在性有效不代表语义必然支持，仍需对照答案内容与 Gold。\n若反转来源归属、抹掉关键条件/时间、把提案当最终规范或编造关键事实，hardFailure=true。\n数值必须与 rationale 一致：若 rationale 说“完整覆盖且准确”，对应维度不能低于 3。\n只输出严格 JSON：{\"scores\":[{\"sampleId\":\"...\",\"requiredPointCoverage\":0,\"conditionFidelity\":0,\"evidenceGrounding\":0,\"answerabilityDiscipline\":0,\"hardFailure\":false,\"rationale\":\"...\"}]}。",
+    "userPrompt": "{\"question\":\"判断：Nature 2024 报道的是整卷从头到尾已经读完。\",\"answerability\":\"answerable\",\"requiredPoints\":[\"错误；2024 是 passages，整卷里程碑来自 2026 官网\"],\"forbiddenClaims\":[\"不得发生时间穿越\"],\"requiredEvidence\":[{\"sourceId\":\"history-nature-scroll-2024-003\",\"exactQuote\":\"A team of student researchers has made a giant contribution to solving one of the biggest mysteries in archaeology by revealing the content of Greek writing inside a charred scroll buried 2,000 years ago by the eruption of Mount Vesuvius.\",\"role\":\"supports\"},{\"sourceId\":\"history-nature-scroll-2024-003\",\"exactQuote\":\"The winners of a contest called the Vesuvius Challenge trained their machine-learning algorithms on scans of the rolled-up papyrus\",\"role\":\"supports\"},{\"sourceId\":\"history-scrollprize-2026-004\",\"exactQuote\":\"In 2026, PHerc. 1667 became the first Herculaneum scroll to be virtually unwrapped and read end to end.\",\"role\":\"supports\"}],\"sourcePriorityRule\":\"P/C 决定规范、论文与实现事实；S 只能作为有归属的解释，不能推翻一手版本文本。\",\"anonymousAnswers\":[{\"sampleId\":\"sample-2a02eb58-16bf-4801-b0aa-1c98728d047e\",\"questionId\":\"B-F-HIST-010\",\"repetition\":1,\"answer\":\"{\\n  \\\"answer\\\": \\\"否。上下文未提及Nature 2024报道的整卷从头到尾已经读完。相关claim显示，2026年PHerc. 1667成为第一份被虚拟展开并从头到尾阅读的赫库兰尼姆卷轴（claim:4ab2f152a60c6bbe-901bc3b35d2cc86e），但未说明该报道来自Nature 2024。\\\",\\n  \\\"citations\\\": [\\\"claim:4ab2f152a60c6bbe-901bc3b35d2cc86e\\\"],\\n  \\\"insufficient\\\": true,\\n  \\\"uncertainties\\\": [\\\"上下文未提供Nature 2024报道的具体内容，无法判断是否涉及整卷从头到尾读完。\\\"]\\n}\",\"citationValidation\":{\"formatValid\":true,\"total\":1,\"valid\":1,\"invalid\":[]}},{\"sampleId\":\"sample-2cce26fc-9daa-46c3-81a0-7fd801adf007\",\"questionId\":\"B-F-HIST-010\",\"repetition\":1,\"answer\":\"{\\n  \\\"answer\\\": \\\"上下文未提供关于Nature 2024报道是否被整卷从头到尾读完的信息。\\\",\\n  \\\"citations\\\": [],\\n  \\\"insufficient\\\": true,\\n  \\\"uncertainties\\\": [\\\"上下文仅包含关于维苏威火山卷轴和WHO关于SARS-CoV-2空气传播的声明，未涉及Nature 2024报道的阅读状态。\\\"]\\n}\",\"citationValidation\":{\"formatValid\":true,\"total\":0,\"valid\":0,\"invalid\":[]}},{\"sampleId\":\"sample-add02256-a292-454c-ba14-e6d09e214d18\",\"questionId\":\"B-F-HIST-010\",\"repetition\":1,\"answer\":\"{\\n  \\\"answer\\\": \\\"否，上下文未提及 Nature 2024 报道，且未提供任何关于整卷从头到尾读完的信息。\\\",\\n  \\\"citations\\\": [],\\n  \\\"insufficient\\\": true,\\n  \\\"uncertainties\\\": [\\\"上下文未包含 Nature 2024 报道的相关内容，无法判断是否报道了整卷从头到尾读完。\\\"]\\n}\",\"citationValidation\":{\"formatValid\":true,\"total\":0,\"valid\":0,\"invalid\":[]}}]}"
+  },
+  "rawResponse": "{\n  \"scores\": [\n    {\n      \"sampleId\": \"sample-2a02eb58-16bf-4801-b0aa-1c98728d047e\",\n      \"requiredPointCoverage\": 3,\n      \"conditionFidelity\": 3,\n      \"evidenceGrounding\": 3,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"requiredPointCoverage: 答案指出上下文未提及Nature 2024报道整卷读完，并正确引用2026年PHerc. 1667成为首卷从头到尾读完，覆盖了requiredPoints的核心内容，但未明确提及'错误'或'passages'，轻微遗漏。conditionFidelity: 答案正确反映了时间（2026年）和条件（虚拟展开并从头到尾阅读），未反转或遗漏关键条件。evidenceGrounding: 答案引用了claim:4ab2f152a60c6bbe-901bc3b35d2cc86e，该引用有效且与Gold证据中2026年里程碑一致，但未直接引用Gold中的exactQuote，不过语义一致。answerabilityDiscipline: 答案未越界、编造或错误拒答，正确判断为否定并基于上下文。\"\n    },\n    {\n      \"sampleId\": \"sample-2cce26fc-9daa-46c3-81a0-7fd801adf007\",\n      \"requiredPointCoverage\": 1,\n      \"conditionFidelity\": 1,\n      \"evidenceGrounding\": 1,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"requiredPointCoverage: 答案仅说上下文未提供信息，未提及requiredPoints中的关键点（错误、passages、2026官网），仅有极少相关内容。conditionFidelity: 未涉及任何条件或时间信息，仅指出缺乏信息。evidenceGrounding: 无引用，且未与Gold证据建立联系，但未与证据冲突。answerabilityDiscipline: 未越界或编造，正确拒答，但拒答理由过于简单。\"\n    },\n    {\n      \"sampleId\": \"sample-add02256-a292-454c-ba14-e6d09e214d18\",\n      \"requiredPointCoverage\": 1,\n      \"conditionFidelity\": 1,\n      \"evidenceGrounding\": 1,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"requiredPointCoverage: 答案仅说上下文未提及，未覆盖requiredPoints中的关键点，仅有极少相关内容。conditionFidelity: 未涉及条件或时间，仅指出缺乏信息。evidenceGrounding: 无引用，未与Gold证据建立联系，但未冲突。answerabilityDiscipline: 未越界或编造，正确拒答。\"\n    }\n  ]\n}",
+  "parsed": [
+    {
+      "sampleId": "sample-2a02eb58-16bf-4801-b0aa-1c98728d047e",
+      "requiredPointCoverage": 3,
+      "conditionFidelity": 3,
+      "evidenceGrounding": 3,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "requiredPointCoverage: 答案指出上下文未提及Nature 2024报道整卷读完，并正确引用2026年PHerc. 1667成为首卷从头到尾读完，覆盖了requiredPoints的核心内容，但未明确提及'错误'或'passages'，轻微遗漏。conditionFidelity: 答案正确反映了时间（2026年）和条件（虚拟展开并从头到尾阅读），未反转或遗漏关键条件。evidenceGrounding: 答案引用了claim:4ab2f152a60c6bbe-901bc3b35d2cc86e，该引用有效且与Gold证据中2026年里程碑一致，但未直接引用Gold中的exactQuote，不过语义一致。answerabilityDiscipline: 答案未越界、编造或错误拒答，正确判断为否定并基于上下文。"
+    },
+    {
+      "sampleId": "sample-2cce26fc-9daa-46c3-81a0-7fd801adf007",
+      "requiredPointCoverage": 1,
+      "conditionFidelity": 1,
+      "evidenceGrounding": 1,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "requiredPointCoverage: 答案仅说上下文未提供信息，未提及requiredPoints中的关键点（错误、passages、2026官网），仅有极少相关内容。conditionFidelity: 未涉及任何条件或时间信息，仅指出缺乏信息。evidenceGrounding: 无引用，且未与Gold证据建立联系，但未与证据冲突。answerabilityDiscipline: 未越界或编造，正确拒答，但拒答理由过于简单。"
+    },
+    {
+      "sampleId": "sample-add02256-a292-454c-ba14-e6d09e214d18",
+      "requiredPointCoverage": 1,
+      "conditionFidelity": 1,
+      "evidenceGrounding": 1,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "requiredPointCoverage: 答案仅说上下文未提及，未覆盖requiredPoints中的关键点，仅有极少相关内容。conditionFidelity: 未涉及条件或时间，仅指出缺乏信息。evidenceGrounding: 无引用，未与Gold证据建立联系，但未冲突。answerabilityDiscipline: 未越界或编造，正确拒答。"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "questionId": "C-C-CLIMATE-001",
+  "promptHash": "7c9df9021ad3d3da12aad0c909bb9e05622a4f877a5efa1bde8ec40c477b16f2",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 1632,
+    "completionTokens": 2113,
+    "totalTokens": 3745,
+    "promptCacheHitTokens": 256,
+    "promptCacheMissTokens": 1376,
+    "reasoningTokens": 1672
+  },
+  "raw": "[\n  {\n    \"sampleId\": \"sample-a5079d79-8bcc-4231-90ee-f78f9c0d3f61\",\n    \"requiredPointCoverage\": 0,\n    \"conditionFidelity\": 0,\n    \"evidenceGrounding\": 0,\n    \"answerabilityDiscipline\": 0,\n    \"sourceRoleTemporalDiscipline\": 0,\n    \"hardFailure\": true,\n    \"hardFailureTypes\": [\"Claiming no cap exists\"],\n    \"rationale\": \"声称欧盟气候法未规定净清除量上限，与Gold明确规定的225 MtCO2e上限直接矛盾，触发硬失败规则。\"\n  },\n  {\n    \"sampleId\": \"sample-322d4553-844c-45df-afa2-5275c3871220\",\n    \"requiredPointCoverage\": 0,\n    \"conditionFidelity\": 0,\n    \"evidenceGrounding\": 0,\n    \"answerabilityDiscipline\": 0,\n    \"sourceRoleTemporalDiscipline\": 0,\n    \"hardFailure\": true,\n    \"hardFailureTypes\": [\"Claiming no cap exists\"],\n    \"rationale\": \"同样声称无法确定上限，未给出正确数值，违反Gold明确的答案内容。\"\n  },\n  {\n    \"sampleId\": \"sample-0f605e6b-d2f6-403c-9e46-e34195946614\",\n    \"requiredPointCoverage\": 2,\n    \"conditionFidelity\": 2,\n    \"evidenceGrounding\": 2,\n    \"answerabilityDiscipline\": 3,\n    \"sourceRoleTemporalDiscipline\": 4,\n    \"hardFailure\": true,\n    \"hardFailureTypes\": [\"Omitting the simultaneous aim for higher carbon sink\"],\n    \"rationale\": \"正确给出上限225 MtCO2e并解释了防止过度依赖的政策意义，但遗漏了法律同时要求追求更高净碳汇（双重目标）这一点，触发硬失败规则；其余维度因部分覆盖和引用不符完全要求而扣分。\"\n  }\n]",
+  "rows": [
+    {
+      "sampleId": "sample-a5079d79-8bcc-4231-90ee-f78f9c0d3f61",
+      "requiredPointCoverage": 0,
+      "conditionFidelity": 0,
+      "evidenceGrounding": 0,
+      "answerabilityDiscipline": 0,
+      "sourceRoleTemporalDiscipline": 0,
+      "hardFailure": true,
+      "hardFailureTypes": [
+        "Claiming no cap exists"
+      ],
+      "rationale": "声称欧盟气候法未规定净清除量上限，与Gold明确规定的225 MtCO2e上限直接矛盾，触发硬失败规则。"
+    },
+    {
+      "sampleId": "sample-322d4553-844c-45df-afa2-5275c3871220",
+      "requiredPointCoverage": 0,
+      "conditionFidelity": 0,
+      "evidenceGrounding": 0,
+      "answerabilityDiscipline": 0,
+      "sourceRoleTemporalDiscipline": 0,
+      "hardFailure": true,
+      "hardFailureTypes": [
+        "Claiming no cap exists"
+      ],
+      "rationale": "同样声称无法确定上限，未给出正确数值，违反Gold明确的答案内容。"
+    },
+    {
+      "sampleId": "sample-0f605e6b-d2f6-403c-9e46-e34195946614",
+      "requiredPointCoverage": 2,
+      "conditionFidelity": 2,
+      "evidenceGrounding": 2,
+      "answerabilityDiscipline": 3,
+      "sourceRoleTemporalDiscipline": 4,
+      "hardFailure": true,
+      "hardFailureTypes": [
+        "Omitting the simultaneous aim for higher carbon sink"
+      ],
+      "rationale": "正确给出上限225 MtCO2e并解释了防止过度依赖的政策意义，但遗漏了法律同时要求追求更高净碳汇（双重目标）这一点，触发硬失败规则；其余维度因部分覆盖和引用不符完全要求而扣分。"
+    }
+  ]
+}

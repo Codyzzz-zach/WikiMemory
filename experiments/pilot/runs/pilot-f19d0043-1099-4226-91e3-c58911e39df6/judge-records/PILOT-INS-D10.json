@@ -1,0 +1,48 @@
+{
+  "questionId": "PILOT-INS-D10",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "request": {
+    "systemPrompt": "你是知识系统的盲测评分员。你只按提供的 Gold 和评分合同评价匿名答案，不判断答案来自哪个实验组。\n必须逐项核对 requiredClaims、mustMentionConditions、forbiddenClaims、answerability 和证据引用。\nsourceRisk.present=true 时，Gold 风险说明是允许使用的人工审计结论；不得把源材料的过强表述当成正确答案。\n只输出严格 JSON：{\"scores\":[{\"sampleId\":\"...\",\"requiredClaimCoverage\":0,\"conditionFidelity\":0,\"evidenceGrounding\":0,\"answerabilityDiscipline\":0,\"hardFailure\":false,\"rationale\":\"...\"}]}。",
+    "userPrompt": "# 评分合同\n{\n  \"dimensions\": {\n    \"requiredClaimCoverage\": {\n      \"score0\": \"没有覆盖 requiredClaims，或核心结论相反\",\n      \"score1\": \"覆盖部分 requiredClaims，但缺少一项以上关键连接\",\n      \"score2\": \"完整覆盖全部 requiredClaims\"\n    },\n    \"conditionFidelity\": {\n      \"score0\": \"触发 forbiddenClaims，或删除了决定结论的条件\",\n      \"score1\": \"方向基本正确，但条件、例外或必要/充分强度表达不完整\",\n      \"score2\": \"保留全部 mustMentionConditions，且未触发 forbiddenClaims\"\n    },\n    \"evidenceGrounding\": {\n      \"score0\": \"关键结论没有可解析引用，或引用与结论无关\",\n      \"score1\": \"有相关引用，但关键结论存在未落到证据的部分\",\n      \"score2\": \"关键结论均由当前上下文标识支持，引用位置正确\"\n    },\n    \"answerabilityDiscipline\": {\n      \"score0\": \"证据不足时仍编造答案，或证据充分时错误拒答\",\n      \"score1\": \"表达了不确定性，但回答/拒答边界不够准确\",\n      \"score2\": \"严格遵守该题 answerability，充分回答或明确拒答\"\n    }\n  },\n  \"totalScore\": 8,\n  \"hardFailure\": \"任何 forbiddenClaim、伪造引用、把 insufficient 题当作已由语料证明，均记 hardFailure；该样本总分最高为 2。\"\n}\n\n# 题目与 Gold\n{\n  \"question\": \"Lebesgue 积分与 Riemann 积分的切分视角有何不同？\",\n  \"answerability\": \"insufficient\",\n  \"requiredClaims\": [],\n  \"mustMentionConditions\": [\n    \"当前五篇冻结语料不包含第 10 章，不能从现有证据充分回答\"\n  ],\n  \"forbiddenClaims\": [\n    \"伪造来自当前五篇语料的 Lebesgue/Riemann 对比证据\"\n  ],\n  \"sourceRisk\": {\n    \"present\": false,\n    \"detail\": \"当前冻结语料不包含 10-measure-integration；正确行为是拒绝从现有上下文伪造 Lebesgue/Riemann 对比。\"\n  },\n  \"evidence\": []\n}\n\n# 匿名答案\n[\n  {\n    \"sampleId\": \"sample-946b16fc-ee88-4dc4-9988-5bb474f8c8b7\",\n    \"questionId\": \"PILOT-INS-D10\",\n    \"answer\": \"{\\n  \\\"answer\\\": \\\"Lebesgue 积分与 Riemann 积分的切分视角不同：Riemann 积分切分定义域（x 轴），在每个小区间上取函数值近似，要求函数“足够连续”；Lebesgue 积分切分值域（y 轴），将值域分成小段，测量每个值段对应的原像集的测度，从而能处理更不规则的函数。\\\",\\n  \\\"citations\\\": [],\\n  \\\"insufficient\\\": true,\\n  \\\"uncertainties\\\": [\\\"检索上下文未直接讨论 Lebesgue 积分与 Riemann 积分的切分视角差异。\\\"]\\n}\"\n  },\n  {\n    \"sampleId\": \"sample-e25077e4-2cbf-4399-addd-ead57c11b5a2\",\n    \"questionId\": \"PILOT-INS-D10\",\n    \"answer\": \"{\\\"answer\\\":\\\"insufficient\\\",\\\"citations\\\":[],\\\"insufficient\\\":true,\\\"uncertainties\\\":[\\\"检索上下文未提供关于 Lebesgue 积分与 Riemann 积分切分视角差异的任何信息。\\\"]}\"\n  },\n  {\n    \"sampleId\": \"sample-d6fc314c-3816-4186-99e1-23e5a110ef33\",\n    \"questionId\": \"PILOT-INS-D10\",\n    \"answer\": \"{\\\"answer\\\":\\\"insufficient\\\",\\\"citations\\\":[],\\\"insufficient\\\":true,\\\"uncertainties\\\":[\\\"检索上下文未提供关于 Lebesgue 积分与 Riemann 积分切分视角差异的任何信息。\\\"]}\"\n  }\n]"
+  },
+  "usage": {
+    "promptTokens": 1048,
+    "completionTokens": 375,
+    "totalTokens": 1423,
+    "promptCacheHitTokens": 384,
+    "promptCacheMissTokens": 664,
+    "reasoningTokens": 0
+  },
+  "finishReason": "stop",
+  "rawResponse": "{\n  \"scores\": [\n    {\n      \"sampleId\": \"sample-946b16fc-ee88-4dc4-9988-5bb474f8c8b7\",\n      \"requiredClaimCoverage\": 2,\n      \"conditionFidelity\": 0,\n      \"evidenceGrounding\": 0,\n      \"answerabilityDiscipline\": 0,\n      \"hardFailure\": true,\n      \"rationale\": \"requiredClaims为空，覆盖满分。但答案提供了具体对比内容，触发了forbiddenClaims（伪造来自当前语料的对比证据），且evidence为空，证据不足时仍编造答案，违反answerabilityDiscipline。hardFailure。\"\n    },\n    {\n      \"sampleId\": \"sample-e25077e4-2cbf-4399-addd-ead57c11b5a2\",\n      \"requiredClaimCoverage\": 2,\n      \"conditionFidelity\": 2,\n      \"evidenceGrounding\": 2,\n      \"answerabilityDiscipline\": 2,\n      \"hardFailure\": false,\n      \"rationale\": \"requiredClaims为空，覆盖满分。明确拒答并说明原因，满足mustMentionConditions，未触发forbiddenClaims。无证据引用但拒答合理，answerabilityDiscipline满分。\"\n    },\n    {\n      \"sampleId\": \"sample-d6fc314c-3816-4186-99e1-23e5a110ef33\",\n      \"requiredClaimCoverage\": 2,\n      \"conditionFidelity\": 2,\n      \"evidenceGrounding\": 2,\n      \"answerabilityDiscipline\": 2,\n      \"hardFailure\": false,\n      \"rationale\": \"与sample-e25077e4相同，完全符合要求。\"\n    }\n  ]\n}",
+  "parsed": [
+    {
+      "sampleId": "sample-946b16fc-ee88-4dc4-9988-5bb474f8c8b7",
+      "requiredClaimCoverage": 2,
+      "conditionFidelity": 0,
+      "evidenceGrounding": 0,
+      "answerabilityDiscipline": 0,
+      "hardFailure": true,
+      "rationale": "requiredClaims为空，覆盖满分。但答案提供了具体对比内容，触发了forbiddenClaims（伪造来自当前语料的对比证据），且evidence为空，证据不足时仍编造答案，违反answerabilityDiscipline。hardFailure。"
+    },
+    {
+      "sampleId": "sample-e25077e4-2cbf-4399-addd-ead57c11b5a2",
+      "requiredClaimCoverage": 2,
+      "conditionFidelity": 2,
+      "evidenceGrounding": 2,
+      "answerabilityDiscipline": 2,
+      "hardFailure": false,
+      "rationale": "requiredClaims为空，覆盖满分。明确拒答并说明原因，满足mustMentionConditions，未触发forbiddenClaims。无证据引用但拒答合理，answerabilityDiscipline满分。"
+    },
+    {
+      "sampleId": "sample-d6fc314c-3816-4186-99e1-23e5a110ef33",
+      "requiredClaimCoverage": 2,
+      "conditionFidelity": 2,
+      "evidenceGrounding": 2,
+      "answerabilityDiscipline": 2,
+      "hardFailure": false,
+      "rationale": "与sample-e25077e4相同，完全符合要求。"
+    }
+  ]
+}

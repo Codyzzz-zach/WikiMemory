@@ -1,0 +1,54 @@
+{
+  "runId": "e4-batch-b-remaining-all-modes-2026-07-28T05-44-10-699Z",
+  "sampleId": "sample-aec70fad-bc95-4017-a655-01b698c04c82",
+  "questionId": "B-A-HEALTH-008",
+  "group": "B",
+  "pilotGroup": "B",
+  "graphExpansion": false,
+  "repetition": 1,
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "temperature": 0,
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 294,
+    "completionTokens": 75,
+    "totalTokens": 369,
+    "promptCacheHitTokens": 0,
+    "promptCacheMissTokens": 294,
+    "reasoningTokens": 0
+  },
+  "latencyMs": 1338,
+  "promptHash": "sha256:65cb22ea2b5c5937654e0ccbb8d0dfc13dff26424200d64fe39ed13591239c0e",
+  "contextHash": "20aea1761e3a093f6448d7ce9879d38ea1bc1fc339c2790891f643b93d112c18",
+  "estimatedContextTokens": 143,
+  "estimatedInputTokens": 322,
+  "retrievedClaims": [],
+  "retrievedRelations": [],
+  "retrievedSources": [
+    "../../../workbuddy-batch-b/generated/compilation-corpus/history-humanities/history-scrollprize-2026-004.md"
+  ],
+  "droppedContext": [],
+  "retrievalTrace": {
+    "strategy": "folder-lexical",
+    "queryFeatureCount": 28,
+    "corpusChunkCount": 12,
+    "matchedChunkCount": 1,
+    "maxFolderChunks": 16,
+    "candidates": [
+      {
+        "id": "../../../workbuddy-batch-b/generated/compilation-corpus/history-humanities/history-scrollprize-2026-004.md#L1-L6",
+        "rank": 1,
+        "score": 2.8718021769015913,
+        "selected": true,
+        "dropReason": null
+      }
+    ]
+  },
+  "request": {
+    "systemPrompt": "你是受证据约束的问答 Agent。只使用本次请求提供的检索上下文回答。\n要求：保留影响结论的条件、时间、例外、来源角色与不确定性；关键结论引用上下文中的 SOURCE、EVIDENCE 或 CLAIM 标识；上下文不足时明确说明，不得用外部常识补齐。\n只输出严格 JSON：{\"answer\":\"...\",\"citations\":[\"...\"],\"insufficient\":false,\"uncertainties\":[\"...\"]}。",
+    "userPrompt": "# 问题\n根据本批材料，空气传播在 2026 年所有呼吸道感染中的精确占比是多少？\n\n# 检索上下文\n## SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/history-humanities/history-scrollprize-2026-004.md:1-6 score=2.872\n# Vesuvius Challenge project timeline\n\nVesuvius Challenge launched in March 2023 with a Grand Prize for the first team to recover four passages of 140 characters from a Herculaneum scroll. Within a year, the prize was claimed. The quest was just beginning.\n\nIn 2026, PHerc. 1667 became the first Herculaneum scroll to be virtually unwrapped and read end to end. The challenge now moves onto its next stage: reading multiple entire scrolls."
+  },
+  "answer": "{\"answer\":\"上下文未提供空气传播在2026年所有呼吸道感染中的精确占比。\",\"citations\":[],\"insufficient\":true,\"uncertainties\":[\"上下文仅提及2026年PHerc. 1667成为首个被虚拟展开并通读的赫库兰尼姆卷轴，未涉及呼吸道感染或空气传播数据。\"]}",
+  "answerFormatValid": true
+}

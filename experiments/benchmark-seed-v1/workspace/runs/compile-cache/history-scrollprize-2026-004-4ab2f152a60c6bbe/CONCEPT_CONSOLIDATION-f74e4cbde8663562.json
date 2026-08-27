@@ -1,0 +1,6 @@
+{
+  "kind": "VALID",
+  "content": "{\n  \"concepts\": [\n    {\n      \"name\": \"Vesuvius Challenge\",\n      \"aliases\": [\"Vesuvius Challenge\"],\n      \"boundary\": \"A competition launched in March 2023 to read Herculaneum scrolls.\",\n      \"domain\": \"History/Archaeology\"\n    },\n    {\n      \"name\": \"Grand Prize\",\n      \"aliases\": [\"Grand Prize\", \"prize\"],\n      \"boundary\": \"The main award for the first team to recover four passages of 140 characters from a Herculaneum scroll.\",\n      \"domain\": \"Competition\"\n    },\n    {\n      \"name\": \"Herculaneum scroll\",\n      \"aliases\": [\"Herculaneum scroll\", \"scroll\"],\n      \"boundary\": \"Ancient scrolls from Herculaneum, such as PHerc. 1667.\",\n      \"domain\": \"Archaeology\"\n    },\n    {\n      \"name\": \"PHerc. 1667\",\n      \"aliases\": [\"PHerc. 1667\"],\n      \"boundary\": \"A specific Herculaneum scroll that was virtually unwrapped and read end to end in 2026.\",\n      \"domain\": \"Archaeology\"\n    },\n    {\n      \"name\": \"Vesuvius Challenge project timeline\",\n      \"aliases\": [\"Vesuvius Challenge project timeline\"],\n      \"boundary\": \"The title of a section describing the timeline of the Vesuvius Challenge.\",\n      \"domain\": \"Documentation\"\n    }\n  ]\n}",
+  "model": "deepseek-v4-flash",
+  "outputHash": "89ca56dbe280cb38"
+}

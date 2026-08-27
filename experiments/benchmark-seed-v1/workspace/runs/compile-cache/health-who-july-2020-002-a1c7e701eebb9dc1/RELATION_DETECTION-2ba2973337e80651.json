@@ -1,0 +1,6 @@
+{
+  "kind": "VALID",
+  "content": "{\n  \"relations\": [\n    {\n      \"fromClaimIndex\": 0,\n      \"toClaimIndex\": 1,\n      \"type\": \"SUPPORTS\",\n      \"conditions\": [\"在特定室内场所，如拥挤且通风不良的空间，与感染者长时间接触\"],\n      \"confidence\": 0.9\n    },\n    {\n      \"fromClaimIndex\": 2,\n      \"toClaimIndex\": 3,\n      \"type\": \"SUPPORTS\",\n      \"conditions\": [],\n      \"confidence\": 0.8\n    }\n  ]\n}",
+  "model": "deepseek-v4-flash",
+  "outputHash": "9ad6c61d1792ac59"
+}

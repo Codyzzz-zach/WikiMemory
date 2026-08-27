@@ -1,0 +1,23 @@
+{
+  "runId": "prepare-2026-07-24T04-56-31-140Z",
+  "category": "C",
+  "corpusHash": "86268a6fbd559d17bb005c4c7bd64d3d1c91b2146010c625e9f2fc2fcb37d938",
+  "group": "B",
+  "questionId": "PILOT-C01",
+  "context": "## SOURCE mathtest-material/05-functions-mappings.md:158-173 score=9.671\n## 5.5 函数空间的层级\n\n```mermaid\ngraph TD\n    ALL[\"所有函数 X→Y\"] --> MEAS[\"可测函数\"]\n    MEAS --> INT[\"可积函数 L¹\"]\n    MEAS --> SQINT[\"平方可积 L2 (Hilbert空间)\"]\n    INT --> CONT[\"连续函数 C0\"]\n    SQINT --> CONT\n    CONT --> DIFF[\"可微函数 C1\"]\n    DIFF --> SMOOTH[\"光滑函数 C-infinity\"]\n    SMOOTH --> ANALYTIC[\"解析函数 C-omega\"]\n    \n    style SQINT fill:#2980b9,color:#fff\n```\n\n## SOURCE mathtest-material/01-number-systems.md:31-40 score=5.182\n### 核心性质\n\n| 性质 | 说明 | 例子 |\n|------|------|------|\n| 良序性 | 任何非空子集有最小元 | $\\{3,5,1\\} \\to 1$ 最小 |\n| 加法封闭 | $a,b \\in \\mathbb{N} \\Rightarrow a+b \\in \\mathbb{N}$ | $3+5=8$ |\n| 乘法封闭 | $a,b \\in \\mathbb{N} \\Rightarrow a \\times b \\in \\mathbb{N}$ | $3 \\times 5=15$ |\n| 减法不封闭 | $a-b$ 可能不是自然数 | $3-5$ 无意义（在 $\\mathbb{N}$ 内） |\n| 除法不封闭 | $a \\div b$ 可能不是自然数 | $3 \\div 5$ 不是自然数 |\n\n## SOURCE mathtest-material/03-sequences-limits.md:36-75 score=5.182\n### 为什么需要严格定义？\n\n18世纪的数学家说\"$a_n$ 无限接近 $L$\"就够了。但\"无限接近\"是什么意思？这导致了大量混乱和错误。19世纪，Cauchy、Weierstrass 等人用逻辑量词给出了精确的刻画。\n\n> **定义**（数列极限）：$\\lim_{n \\to \\infty} a_n = L$ 当且仅当：\n>\n> $$\\forall \\epsilon > 0, \\; \\exists N \\in \\mathbb{N}, \\; \\forall n > N: |a_n - L| < \\epsilon$$\n\n**逐词翻译**：\"无论你要求多小的误差 $\\epsilon$，我都能找到一个位置 $N$，使得第 $N$ 项之后的所有项与 $L$ 的偏差都不超过 $\\epsilon$。\"\n\n```mermaid\ngraph LR\n    subgraph \"ε-N 论证结构\"\n        A[\"对手选 ε>0<br/>-任意小-\"] --> B[\"我方找 N<br/>-通常 N=N(ε)-\"]\n        B --> C[\"验证: 对所有 n>N<br/>|aₙ-L| < ε\"]\n        C --> D[\"若成立 → 极限为 L\"]\n    end\n    \n    style A fill:#ffaaaa\n    style B fill:#aaffaa\n    style C fill:#aaaaff\n    style D fill:#ffffaa\n```\n\n**图释**：$\\epsilon$-$N$ 论证像一个\"挑战游戏\"。对手出 $\\epsilon$（想要多小就多小），我们出 $N$——如果能永远赢下去，极限就成立了。\n\n![ε-N论证——'你要多小，我都能找到对应的N！'](../images/03-sequences-limits/03-sequences-limits_ε-N论证-挑战游戏.png)\n\n```python\nimport math\n\ndef verify_limit(a_n, L, epsilon, N_func):\n    \"\"\"验证数列极限: 给定 epsilon，检查 N 是否足够\"\"\"\n    N = N_func(epsilon)\n    max_error = 0\n    for n in range(N+1, N+100):\n        error = abs(a_n(n) - L)\n        max_error = max(max_error, error)\n    return max_error < epsilon, N, max_error\n\n## SOURCE mathtest-material/02-spaces.md:111-146 score=4.489\n### 核心概念：基与维度\n\n向量空间中最深刻的事实是——所有基的大小都相同，这就是**维度**。\n\n$$\n\\dim V = \\text{任何一组基中的向量个数}\n$$\n\n- $\\mathbb{R}^n$：标准基 $e_1,\\ldots,e_n$，维度 $n$\n- 次数 $\\leq n$ 的多项式空间 $P_n$：基 $\\{1,x,x^2,\\ldots,x^n\\}$，维度 $n+1$\n- 连续函数空间 $C[0,1]$：**无限维！**（没有有限基）\n\n> 有限维 vs 无限维是向量空间的第一个大分岔口。 $\\S$13 线性代数专注于有限维，而本章下半部分的泛函分析进入无限维世界。\n\n```mermaid\ngraph LR\n    subgraph \"有限维向量空间\"\n        RN[\"ℝⁿ<br/>dim=n\"] \n        PN[\"Pₙ<br/>dim=n+1\"]\n        MM[\"m×n矩阵<br/>dim=mn\"]\n    end\n    subgraph \"无限维向量空间\"\n        CF[\"C[0,1]<br/>连续函数\"]\n        L2[\"L²<br/>平方可积\"]\n        SEQ[\"ℓ²<br/>平方可和序列\"]\n    end\n    RN -->|\"当 n→∞\"| SEQ\n    PN -->|\"当 n→∞\"| CF\n    \n    style CF fill:#e74c3c,color:#fff\n    style L2 fill:#e74c3c,color:#fff\n    style SEQ fill:#e74c3c,color:#fff\n```\n\n---\n\n## SOURCE mathtest-material/02-spaces.md:242-269 score=4.489\n### 为什么 Hilbert 空间如此重要？\n\n因为它有**正交性**——可以定义\"垂直\"：\n\n$$\nx \\perp y \\iff \\langle x, y \\rangle = 0\n$$\n\n这使我们可以做：\n- **正交投影**：找到子空间中最接近某点的元素\n- **正交基**：用一组相互垂直的基向量表示空间中任何元素\n- **Fourier 级数**：$\\{e^{inx}\\}_{n=-\\infty}^\\infty$ 是 $L^2[-\\pi,\\pi]$ 中的一组正交基\n\n```mermaid\ngraph TD\n    subgraph \"几何直觉\"\n        P[\"点 P\"] --> PROJ[\"投影到直线L\"]\n    end\n    subgraph \"Hilbert 空间推广\"\n        F[\"函数 f(x)\"] --> FS[\"Fourier级数<br/>=投影到三角函数基\"]\n    end\n    \n    P -.- |\"在ℝ³中\"| PROJ\n    F -.- |\"在L²中\"| FS\n    \n    style FS fill:#2980b9,color:#fff\n```",
+  "estimatedContextTokens": 1410,
+  "retrievedClaims": [],
+  "retrievedRelations": [],
+  "evidenceSpans": [],
+  "retrievedSources": [
+    "mathtest-material/05-functions-mappings.md",
+    "mathtest-material/01-number-systems.md",
+    "mathtest-material/03-sequences-limits.md",
+    "mathtest-material/02-spaces.md",
+    "mathtest-material/02-spaces.md"
+  ],
+  "droppedContext": [],
+  "knowledgeVersion": "kv:e2f961a26664588188f91fe7",
+  "contextHash": "c3f79539d6a75ddca605285a765efae1009ee04698b11043b789b4152152a167",
+  "toolCalls": 1
+}

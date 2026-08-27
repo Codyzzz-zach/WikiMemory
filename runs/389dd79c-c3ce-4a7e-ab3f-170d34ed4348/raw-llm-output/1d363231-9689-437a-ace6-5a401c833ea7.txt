@@ -1,0 +1,28 @@
+{
+  "verdict": "passed",
+  "dimensions": {
+    "support": {
+      "result": "pass",
+      "evidence": "\\mathbb{C} = \\{a + bi \\mid a,b \\in \\mathbb{R}, i^2 = -1"
+    },
+    "addition": {
+      "result": "pass",
+      "evidence": "Claim 中所有信息均可在原文中找到对应，无新增信息。"
+    },
+    "inference": {
+      "result": "pass",
+      "evidence": "Claim 为原文的直接复述，无推断成分。"
+    },
+    "limits": {
+      "result": "pass",
+      "evidence": "原文无额外条件或限定词，Claim 完整保留了原文的表述。"
+    },
+    "citation": {
+      "result": "pass",
+      "evidence": "Claim 内容与来源 [01-number-systems#block-76] 中的字符串完全匹配。"
+    }
+  },
+  "anchor": "\\mathbb{C} = \\{a + bi \\mid a,b \\in \\mathbb{R}, i^2 = -1",
+  "failedDimensions": [],
+  "issues": []
+}

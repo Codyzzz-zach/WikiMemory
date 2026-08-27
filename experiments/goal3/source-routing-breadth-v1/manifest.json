@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "wge-goal3-source-routing-breadth-input/v1",
+  "status": "POST_HOC_DEV_REGRESSION",
+  "source": {
+    "path": "/Users/mixi/Desktop/WikiMemory/workbuddy-batch-b/generated/candidates/tasks.jsonl",
+    "sha256": "8238d998134795451c162bbba4da4833eb75c8a015f7840a1a359388fd7bca53",
+    "count": 32
+  },
+  "questions": {
+    "sha256": "f38648e7b96bb877efc2c8abda9d0c2322538255d70880871e048816dd357d76",
+    "count": 32
+  },
+  "diagnosticGold": {
+    "sha256": "fc23d7b46a5c066e0e10b0410dbec57f3e75408f6ccba59166e2bebef42af0e2",
+    "count": 32
+  }
+}

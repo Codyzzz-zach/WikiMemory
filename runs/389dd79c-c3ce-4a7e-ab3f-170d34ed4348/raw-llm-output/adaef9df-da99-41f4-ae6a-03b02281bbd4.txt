@@ -1,0 +1,28 @@
+{
+  "verdict": "passed",
+  "dimensions": {
+    "support": {
+      "result": "pass",
+      "evidence": "每个这样的分割定义一个实数。"
+    },
+    "addition": {
+      "result": "pass",
+      "evidence": "无额外信息。"
+    },
+    "inference": {
+      "result": "pass",
+      "evidence": "陈述与原文一致，无推断。"
+    },
+    "limits": {
+      "result": "pass",
+      "evidence": "无限制条件被忽略。"
+    },
+    "citation": {
+      "result": "pass",
+      "evidence": "引用对应原文。"
+    }
+  },
+  "anchor": "每个这样的分割定义一个实数。",
+  "failedDimensions": [],
+  "issues": []
+}

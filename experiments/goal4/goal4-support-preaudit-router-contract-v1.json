@@ -1,0 +1,87 @@
+{
+	"schemaVersion": "wge-goal4-support-preaudit-router-contract/v1",
+	"status": "FROZEN_BEFORE_ROUTER_IMPLEMENTATION",
+	"createdAt": "2026-08-11T00:00:00+08:00",
+	"stageBRead": false,
+	"supersedesPromptPath": {
+		"v1Report": "experiments/goal4/calibration-runs/type-contract-v1/report.json",
+		"v2Report": "experiments/goal4/calibration-runs/type-contract-v2/report.json",
+		"v2RejectionReviewSha256": "f246a36a460ec19a2859fcc27d2d44e93949150a5679d0c6aeabd4f61dc7df58",
+		"decision": "Production RELATION_DETECT_SYSTEM was restored; router evaluation starts from the pre-Goal4 detector prompt."
+	},
+	"calibration": {
+		"path": "experiments/goal4/goal4-support-router-calibration-v1.json",
+		"sha256": "7ab9953dbf122a06178eb55daef8b43025081de9501d90672e5d06b37eafc22a",
+		"positiveFullAuditCases": 6,
+		"negativeDeferredCases": 6
+	},
+	"routerContract": {
+		"scope": "cross-material SUPPORTS candidates only",
+		"decision": "FULL_AUDIT | DEFER_BY_TYPE_ROUTER",
+		"inputs": [
+			"Relation ID",
+			"From Claim statement and conditions",
+			"To Claim statement and conditions"
+		],
+		"forbiddenInputs": [
+			"benchmark labels or question IDs",
+			"downstream semantic-audit verdicts",
+			"source-, product- or domain-specific heuristics"
+		],
+		"batchMaximumItems": 8,
+		"temperature": 0,
+		"thinkingDisabled": true,
+		"failurePolicy": "FAIL_OPEN_TO_FULL_AUDIT",
+		"nonSupportTypes": "BYPASS_TO_EXISTING_FULL_AUDIT",
+		"deferredState": "DEFERRED_BY_TYPE_ROUTER",
+		"deferredPublicationState": "CANDIDATE",
+		"deferredIsQuarantine": false,
+		"deferredConsumerExposure": 0,
+		"publicationAuthority": false
+	},
+	"accountingInvariants": [
+		"selectedAfterSourceBudget = fullAuditSelected + deferredByTypeRouter",
+		"fullAuditSelected = quarantinedAfterAudit + auditedPassed",
+		"auditedPassed = canonicalPublished + deferredByGraphDiversity",
+		"router failures and malformed singleton responses enter fullAuditSelected"
+	],
+	"calibrationAcceptance": {
+		"minimumFullAuditRecallOnPositiveSupportCases": 0.8333,
+		"minimumDeferredPrecisionOnNegativeSupportCases": 0.8333,
+		"maximumMalformedOrMissingDecisions": 0,
+		"labelsIncludedInPrompt": false
+	},
+	"frozenSourceReplay": {
+		"sourceId": "source:s200-ai-llama-004-0c1360ce9e6039ce",
+		"baselineSelectedCandidates": 40,
+		"baselineSupportCandidates": 23,
+		"baselineRelatedToCandidates": 17,
+		"baselineRelationAuditTokens": 50732,
+		"manualFalseSupportCandidates": 23,
+		"maximumSupportCandidatesRoutedToFullAudit": 3,
+		"allRelatedToCandidatesBypassRouter": true,
+		"minimumCombinedRouterPlusRelationAuditTokenReduction": 0.3,
+		"allFullAuditCandidatesUseUnchangedSemanticGates": true,
+		"manualReviewEveryCanonicalEdge": true,
+		"maximumHarmfulOrUnfaithfulCanonicalEdges": 0,
+		"canonicalPublicationWrites": 0
+	},
+	"implementationAcceptance": {
+		"invalidBatchSplitsRecursively": true,
+		"invalidSingletonRetriesThenFailsOpen": true,
+		"routerDecisionsUseAppendOnlyLedger": true,
+		"consumerReadsCanonicalPublicationsOnly": true,
+		"existingStrongAndWeakAuditTestsRemainGreen": true
+	},
+	"decisionRules": {
+		"calibrationFails": "Do not integrate router into production orchestration.",
+		"calibrationPassesButFrozenReplayCostFails": "Reject router because complexity did not earn its cost.",
+		"offlinePasses": "Integrate behind the frozen lifecycle contract, then run at most a four-source canary.",
+		"onlineRegresses": "Disable router and retain reports for diagnosis."
+	},
+	"interpretationLimits": [
+		"A router defer is a scheduling decision, not a semantic judgment or quarantine verdict.",
+		"The router cannot make an edge canonical and cannot weaken the existing semantic gates.",
+		"This optimization is accepted only if measured combined cost falls while positive SUPPORTS recall remains bounded."
+	]
+}

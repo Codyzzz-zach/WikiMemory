@@ -1,0 +1,232 @@
+{
+  "concepts": [
+    {
+      "name": "热泵",
+      "aliases": ["热泵"],
+      "boundary": "一种电加热系统",
+      "domain": "能源技术"
+    },
+    {
+      "name": "电加热系统",
+      "aliases": ["电加热系统"],
+      "boundary": "包括热泵在内的电加热设备",
+      "domain": "能源技术"
+    },
+    {
+      "name": "化石燃料锅炉",
+      "aliases": ["化石燃料锅炉"],
+      "boundary": "使用化石燃料的锅炉",
+      "domain": "能源技术"
+    },
+    {
+      "name": "太阳能",
+      "aliases": ["太阳能"],
+      "boundary": "太阳能技术，包括光伏",
+      "domain": "可再生能源"
+    },
+    {
+      "name": "风能",
+      "aliases": ["风能"],
+      "boundary": "风力发电技术",
+      "domain": "可再生能源"
+    },
+    {
+      "name": "电动汽车",
+      "aliases": ["电动汽车"],
+      "boundary": "电动驱动的车辆",
+      "domain": "交通"
+    },
+    {
+      "name": "清洁能源技术",
+      "aliases": ["清洁能源技术"],
+      "boundary": "包括太阳能、风能、电动汽车、热泵等",
+      "domain": "能源技术"
+    },
+    {
+      "name": "可再生能源容量",
+      "aliases": ["可再生能源容量"],
+      "boundary": "可再生能源发电装机容量",
+      "domain": "能源"
+    },
+    {
+      "name": "能效提升速度",
+      "aliases": ["能效提升速度"],
+      "boundary": "能源效率提高的速率",
+      "domain": "能源"
+    },
+    {
+      "name": "电气化",
+      "aliases": ["电气化"],
+      "boundary": "用电力替代化石燃料的过程",
+      "domain": "能源"
+    },
+    {
+      "name": "甲烷排放",
+      "aliases": ["甲烷排放"],
+      "boundary": "化石燃料运营中的甲烷释放",
+      "domain": "环境"
+    },
+    {
+      "name": "化石燃料运营",
+      "aliases": ["化石燃料运营"],
+      "boundary": "化石燃料的开采、运输和使用过程",
+      "domain": "能源"
+    },
+    {
+      "name": "能源部门",
+      "aliases": ["能源部门"],
+      "boundary": "能源生产和消费的行业",
+      "domain": "能源"
+    },
+    {
+      "name": "升温1.5°C路径",
+      "aliases": ["限制升温1.5°C路径"],
+      "boundary": "将全球变暖限制在1.5°C的排放路径",
+      "domain": "气候"
+    },
+    {
+      "name": "减排量",
+      "aliases": ["减排量"],
+      "boundary": "温室气体排放的减少量",
+      "domain": "环境"
+    },
+    {
+      "name": "太阳能光伏发电",
+      "aliases": ["太阳能光伏发电"],
+      "boundary": "利用光伏效应发电",
+      "domain": "可再生能源"
+    },
+    {
+      "name": "美国电力系统",
+      "aliases": ["美国电力系统"],
+      "boundary": "美国的电力生产和输配系统",
+      "domain": "能源"
+    },
+    {
+      "name": "国际能源署",
+      "aliases": ["国际能源署"],
+      "boundary": "政府间能源组织",
+      "domain": "组织"
+    },
+    {
+      "name": "排放曲线",
+      "aliases": ["排放曲线"],
+      "boundary": "温室气体排放随时间的变化趋势",
+      "domain": "环境"
+    },
+    {
+      "name": "海上风电",
+      "aliases": ["海上风电"],
+      "boundary": "在海上建设的风力发电项目",
+      "domain": "可再生能源"
+    },
+    {
+      "name": "燃煤发电厂",
+      "aliases": ["燃煤发电厂"],
+      "boundary": "以煤为燃料的发电厂",
+      "domain": "能源"
+    },
+    {
+      "name": "燃气发电厂",
+      "aliases": ["燃气发电厂"],
+      "boundary": "以天然气为燃料的发电厂",
+      "domain": "能源"
+    },
+    {
+      "name": "政策设定",
+      "aliases": ["政策设定"],
+      "boundary": "政府制定的能源和环境政策",
+      "domain": "政策"
+    },
+    {
+      "name": "化石燃料",
+      "aliases": ["化石燃料"],
+      "boundary": "煤炭、石油、天然气等",
+      "domain": "能源"
+    },
+    {
+      "name": "全球能源供应",
+      "aliases": ["全球能源供应"],
+      "boundary": "全球一次能源供应总量",
+      "domain": "能源"
+    },
+    {
+      "name": "STEPS",
+      "aliases": ["STEPS"],
+      "boundary": "国际能源署的既定政策情景",
+      "domain": "能源模型"
+    },
+    {
+      "name": "能源相关的二氧化碳排放",
+      "aliases": ["能源相关的二氧化碳排放"],
+      "boundary": "能源活动产生的CO2排放",
+      "domain": "环境"
+    },
+    {
+      "name": "巴黎",
+      "aliases": ["巴黎"],
+      "boundary": "法国首都",
+      "domain": "地点"
+    },
+    {
+      "name": "Fatih Birol",
+      "aliases": ["Fatih Birol"],
+      "boundary": "国际能源署执行主任",
+      "domain": "人物"
+    },
+    {
+      "name": "煤炭需求峰值",
+      "aliases": ["煤炭需求峰值"],
+      "boundary": "煤炭需求达到最高点",
+      "domain": "能源"
+    },
+    {
+      "name": "石油需求峰值",
+      "aliases": ["石油需求峰值"],
+      "boundary": "石油需求达到最高点",
+      "domain": "能源"
+    },
+    {
+      "name": "天然气需求峰值",
+      "aliases": ["天然气需求峰值"],
+      "boundary": "天然气需求达到最高点",
+      "domain": "能源"
+    },
+    {
+      "name": "WEO情景",
+      "aliases": ["WEO情景"],
+      "boundary": "世界能源展望中的情景",
+      "domain": "能源模型"
+    },
+    {
+      "name": "世界能源展望2023",
+      "aliases": ["世界能源展望2023"],
+      "boundary": "国际能源署2023年发布的报告",
+      "domain": "报告"
+    },
+    {
+      "name": "清洁能源转型",
+      "aliases": ["向清洁能源的转型"],
+      "boundary": "从化石燃料向清洁能源的转变",
+      "domain": "能源"
+    },
+    {
+      "name": "可再生能源",
+      "aliases": ["可再生能源"],
+      "boundary": "太阳能、风能等可再生来源的能源",
+      "domain": "能源"
+    },
+    {
+      "name": "全球电力结构",
+      "aliases": ["全球电力结构"],
+      "boundary": "全球发电量的能源构成",
+      "domain": "能源"
+    },
+    {
+      "name": "全球平均气温",
+      "aliases": ["全球平均气温"],
+      "boundary": "地球表面的平均温度",
+      "domain": "气候"
+    }
+  ]
+}

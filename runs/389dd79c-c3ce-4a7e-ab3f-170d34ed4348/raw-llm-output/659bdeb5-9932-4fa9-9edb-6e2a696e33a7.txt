@@ -1,0 +1,119 @@
+{
+  "propositions": [
+    {
+      "text": "16世纪，意大利数学家发现三次方程 x^3 = 15x + 4 的求解过程中出现了 sqrt(-121)。",
+      "exactQuote": "16世纪，意大利数学家发现三次方程 $x^3 = 15x + 4$ 的求解过程中出现了 $\\sqrt{-121}$。",
+      "blockId": "01-number-systems#block-74"
+    },
+    {
+      "text": "方程 x^3 = 15x + 4 的最终答案 x=4 是实数。",
+      "exactQuote": "虽然最终答案 $x=4$ 是实数",
+      "blockId": "01-number-systems#block-74",
+      "relatesTo": { "fromPropIndex": 0, "type": "CONTRADICTS" }
+    },
+    {
+      "text": "在求解三次方程 x^3 = 15x + 4 的过程中，中间步骤必须经过复数。",
+      "exactQuote": "但中间步骤必须经过复数。",
+      "blockId": "01-number-systems#block-74",
+      "relatesTo": { "fromPropIndex": 0, "type": "REQUIRES" }
+    },
+    {
+      "text": "复数迫使数学家正视这个'幽灵'。",
+      "exactQuote": "这迫使数学家正视这个\"幽灵\"。",
+      "blockId": "01-number-systems#block-74",
+      "relatesTo": { "fromPropIndex": 2, "type": "DERIVED_FROM" }
+    },
+    {
+      "text": "复数集 C 定义为 {a + bi | a,b ∈ R, i^2 = -1}。",
+      "exactQuote": "$$\\mathbb{C} = \\{a + bi \\mid a,b \\in \\mathbb{R}, i^2 = -1\\}$$",
+      "blockId": "01-number-systems#block-76"
+    },
+    {
+      "text": "复数的实部 Re(z) = a。",
+      "exactQuote": "- **实部** $\\Re(z) = a$",
+      "blockId": "01-number-systems#block-77"
+    },
+    {
+      "text": "复数的虚部 Im(z) = b。",
+      "exactQuote": "**虚部** $\\Im(z) = b$",
+      "blockId": "01-number-systems#block-77"
+    },
+    {
+      "text": "复数的模 |z| = sqrt(a^2 + b^2)。",
+      "exactQuote": "- **模** $|z| = \\sqrt{a^2 + b^2}$",
+      "blockId": "01-number-systems#block-77"
+    },
+    {
+      "text": "复数的共轭 ̄z = a - bi。",
+      "exactQuote": "- **共轭** $\\overline{z} = a - bi$",
+      "blockId": "01-number-systems#block-77"
+    },
+    {
+      "text": "复数的极坐标表示为 z = r(cosθ + i sinθ) = r e^(iθ)。",
+      "exactQuote": "- **极坐标** $z = r(\\cos\\theta + i\\sin\\theta) = re^{i\\theta}$",
+      "blockId": "01-number-systems#block-77"
+    },
+    {
+      "text": "复数不是'虚'的，把它们画在二维平面上就完全具象化了。",
+      "exactQuote": "复数不是\"虚\"的——把它们画在二维平面上就完全具象化了。",
+      "blockId": "01-number-systems#block-80"
+    },
+    {
+      "text": "复数加法对应于向量平移。",
+      "exactQuote": "加法 = 向量平移",
+      "blockId": "01-number-systems#block-80"
+    },
+    {
+      "text": "复数乘法对应于缩放加旋转。",
+      "exactQuote": "乘法 = 缩放 + 旋转",
+      "blockId": "01-number-systems#block-80"
+    },
+    {
+      "text": "两个复数相乘的模等于模的乘积，辐角等于辐角之和：z1·z2 = r1 r2 e^(i(θ1+θ2))。",
+      "exactQuote": "$$z_1 \\cdot z_2 = r_1r_2 \\cdot e^{i(\\theta_1 + \\theta_2)}$$",
+      "blockId": "01-number-systems#block-81"
+    },
+    {
+      "text": "欧拉公式 e^(iπ) + 1 = 0 连接了五个最基础的数学常数 e, i, π, 1, 0。",
+      "exactQuote": "这个公式连接了五个最基础的数学常数（$e, i, \\pi, 1, 0$）",
+      "blockId": "01-number-systems#block-85"
+    },
+    {
+      "text": "欧拉公式 e^(iπ) + 1 = 0 连接了三种基本运算：加法、乘法、指数。",
+      "exactQuote": "和三种基本运算（加法、乘法、指数）。",
+      "blockId": "01-number-systems#block-85"
+    },
+    {
+      "text": "更一般地，欧拉公式为 e^(iθ) = cosθ + i sinθ。",
+      "exactQuote": "更一般地：$e^{i\\theta} = \\cos\\theta + i\\sin\\theta$。",
+      "blockId": "01-number-systems#block-86"
+    },
+    {
+      "text": "欧拉公式揭示了复指数与三角函数的深层统一——振动等于复平面上的圆周运动。",
+      "exactQuote": "这揭示了复指数与三角函数的深层统一——振动 = 复平面上的圆周运动。",
+      "blockId": "01-number-systems#block-86",
+      "relatesTo": { "fromPropIndex": 16, "type": "DERIVED_FROM" }
+    },
+    {
+      "text": "代数基本定理：任何 n 次复系数多项式在 C 中恰好有 n 个根（计重数）。",
+      "exactQuote": "**代数基本定理**：任何 $n$ 次复系数多项式在 $\\mathbb{C}$ 中恰好有 $n$ 个根（计重数）。",
+      "blockId": "01-number-systems#block-88"
+    },
+    {
+      "text": "方程 x^2 + 1 = 0 在实数范围内无解，在复数范围内解为 x = ±i。",
+      "exactQuote": "$$x^2 + 1 = 0 \\xrightarrow{\\mathbb{R}} \\text{无解} \\quad \\xrightarrow{\\mathbb{C}} x = \\pm i$$",
+      "blockId": "01-number-systems#block-89"
+    },
+    {
+      "text": "复数集 C 是代数封闭的，数系扩张至此终结。",
+      "exactQuote": "$\\mathbb{C}$ 是**代数封闭的**——数系扩张至此终结",
+      "blockId": "01-number-systems#block-90"
+    },
+    {
+      "text": "在 C 上再扩张，只会失去域结构，不会获得新的方程解。",
+      "exactQuote": "在 $\\mathbb{C}$ 上再扩张，只会失去域结构，不会获得新的方程解。",
+      "blockId": "01-number-systems#block-90",
+      "relatesTo": { "fromPropIndex": 20, "type": "SUPPORTS" }
+    }
+  ]
+}

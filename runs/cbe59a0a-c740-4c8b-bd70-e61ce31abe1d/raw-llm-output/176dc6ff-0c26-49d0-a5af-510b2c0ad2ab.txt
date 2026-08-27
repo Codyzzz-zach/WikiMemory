@@ -1,0 +1,69 @@
+{
+  "propositions": [
+    {
+      "text": "复数集合被定义为形如 a + bi 的数，其中 a 和 b 是实数，且 i 满足 i^2 = -1。",
+      "exactQuote": "$$ \\mathbb{C} = \\{a + bi \\mid a,b \\in \\mathbb{R}, i^2 = -1\\} $$",
+      "blockId": "01-number-systems#block-76"
+    },
+    {
+      "text": "复数的实部 Re(z) 等于 a。",
+      "exactQuote": "**实部** $\\Re(z) = a$",
+      "blockId": "01-number-systems#block-77"
+    },
+    {
+      "text": "复数的虚部 Im(z) 等于 b。",
+      "exactQuote": "**虚部** $\\Im(z) = b$",
+      "blockId": "01-number-systems#block-77"
+    },
+    {
+      "text": "复数的模 |z| 等于 √(a² + b²)。",
+      "exactQuote": "**模** $|z| = \\sqrt{a^2 + b^2}$",
+      "blockId": "01-number-systems#block-77"
+    },
+    {
+      "text": "复数的共轭定义为 a - bi。",
+      "exactQuote": "**共轭** $\\overline{z} = a - bi$",
+      "blockId": "01-number-systems#block-77"
+    },
+    {
+      "text": "复数的极坐标表示为 z = r(cosθ + i sinθ) = r e^{iθ}。",
+      "exactQuote": "**极坐标** $z = r(\\cos\\theta + i\\sin\\theta) = re^{i\\theta}$",
+      "blockId": "01-number-systems#block-77"
+    },
+    {
+      "text": "复数在复平面上的加法对应向量平移，乘法对应缩放和旋转。",
+      "exactQuote": "加法 = 向量平移，乘法 = 缩放 + 旋转。",
+      "blockId": "01-number-systems#block-80"
+    },
+    {
+      "text": "两个复数相乘的模等于各自模的乘积，辐角等于各自辐角之和。",
+      "exactQuote": "$$ z_1 \\cdot z_2 = r_1r_2 \\cdot e^{i(\\theta_1 + \\theta_2)} $$",
+      "blockId": "01-number-systems#block-81"
+    },
+    {
+      "text": "欧拉公式 e^{iπ} + 1 = 0 连接了五个最基础的数学常数 e、i、π、1、0 和三种基本运算加法、乘法、指数。",
+      "exactQuote": "这个公式连接了五个最基础的数学常数（$e, i, \\pi, 1, 0$）和三种基本运算（加法、乘法、指数）。",
+      "blockId": "01-number-systems#block-85"
+    },
+    {
+      "text": "一般欧拉公式 e^{iθ} = cosθ + i sinθ 揭示了复指数与三角函数的深层统一：振动等于复平面上的圆周运动。",
+      "exactQuote": "更一般地：$e^{i\\theta} = \\cos\\theta + i\\sin\\theta$。这揭示了复指数与三角函数的深层统一——振动 = 复平面上的圆周运动。",
+      "blockId": "01-number-systems#block-86"
+    },
+    {
+      "text": "代数基本定理指出任何 n 次复系数多项式在 ℂ 中恰好有 n 个根（计重数）。",
+      "exactQuote": "**代数基本定理**：任何 $n$ 次复系数多项式在 $\\mathbb{C}$ 中恰好有 $n$ 个根（计重数）。",
+      "blockId": "01-number-systems#block-88"
+    },
+    {
+      "text": "方程 x² + 1 = 0 在实数范围内无解，在复数范围内解为 x = ±i。",
+      "exactQuote": "$$ x^2 + 1 = 0 \\xrightarrow{\\mathbb{R}} \\text{无解} \\quad \\xrightarrow{\\mathbb{C}} x = \\pm i $$",
+      "blockId": "01-number-systems#block-89"
+    },
+    {
+      "text": "ℂ 是代数封闭的，数系扩张至此终结：在 ℂ 上再扩张，只会失去域结构，不会获得新的方程解。",
+      "exactQuote": "$\\mathbb{C}$ 是**代数封闭的**——数系扩张至此终结：在 $\\mathbb{C}$ 上再扩张，只会失去域结构，不会获得新的方程解。",
+      "blockId": "01-number-systems#block-90"
+    }
+  ]
+}

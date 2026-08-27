@@ -1,0 +1,46 @@
+{
+  "schemaVersion": "wge-goal3-relation-lifecycle-repair-contract/v1",
+  "status": "FROZEN_BEFORE_REPAIR_IMPLEMENTATION",
+  "stageBRead": false,
+  "supersedesPrimaryArmOnly": "B24_F4 in goal3-relation-lifecycle-contract-v1.json",
+  "failedRun": {
+    "report": "experiments/goal3/relation-lifecycle-runs/lifecycle-offline-v1/report.json",
+    "reportSha256": "72ef32a4efe671b815bc34e7c262d68fbf32adebcd14c351dbbabf89f0f5c4f8",
+    "deferredReview": "experiments/goal3/relation-lifecycle-runs/lifecycle-offline-v1/deferred-review.json",
+    "deferredReviewSha256": "3abdeb13448a4fd1173b3d61952df6db69d2a2c8447f785b2d1a2b84720dc38c",
+    "failure": "A source-wide ranking starved long-tail new-Claim topics, while raw endpoint fan-out conflated different attributes of the same entity."
+  },
+  "repairArm": {
+    "id": "B24_F4_COVERAGE",
+    "auditBudgetPerSource": 24,
+    "maxEndpointFanOut": 4,
+    "rankingPasses": [
+      "Select explicit SUPERSEDES governance candidates first.",
+      "Coverage pass: seek the highest-ranked admissible candidate for each new-Source Claim endpoint before giving any new endpoint a second edge.",
+      "Fill remaining budget by confidence descending and stable Relation id.",
+      "When a preferred old endpoint reaches fan-out, try another candidate for the same new endpoint before deferring that topic."
+    ],
+    "forbiddenInputs": [
+      "audit verdict",
+      "quarantine issue code",
+      "Stage B answer or gold label",
+      "benchmark question text",
+      "the two manually identified missed Relation ids"
+    ]
+  },
+  "acceptance": {
+    "candidateAccountingExact": true,
+    "diagnosticCanonicalRecall": 1.0,
+    "minimumCandidateCompression": 0.4,
+    "minimumNewEndpointCoverage": 0.9,
+    "modelCalls": 0,
+    "deterministicDeferredSampleSize": 24,
+    "maximumApparentHighValueMissesInDeferredSample": 0,
+    "deferredConsumerExposure": 0
+  },
+  "interpretationLimits": [
+    "Coverage is defined over new-Source Claim endpoints that have at least one generated cross candidate, not over every Claim in the Source.",
+    "Coverage-first does not make a candidate true; selected candidates still pass the unchanged semantic, type and utility gates.",
+    "The repair is rejected if it merely reorders the two known missed ids without improving generic new-endpoint coverage."
+  ]
+}

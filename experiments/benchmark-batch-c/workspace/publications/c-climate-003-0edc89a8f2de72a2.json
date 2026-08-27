@@ -1,0 +1,1104 @@
+{
+  "schemaVersion": "v1",
+  "sourceId": "source:c-climate-003-0edc89a8f2de72a2",
+  "runId": "65cac39a-d3a3-46fa-bf0a-973c23e76a36",
+  "publishedAt": "2026-07-28T07:12:56.507Z",
+  "claims": [
+    {
+      "id": "claim:0edc89a8f2de72a2-07323a3fd50f07bb",
+      "statement": "The impact assessment, together with the European Scientific Advisory Board on Climate Change's report and advice from the UN's Intergovernmental Panel on Climate Change, formed the basis for the 90% target.",
+      "evidenceSpanIds": [
+        "span:c-climate-003-0edc89a8f2de72a2-7#chars-874-1064"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:12:11.508Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-climate-003-0edc89a8f2de72a2-7#chars-874-1064"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-climate-003-0edc89a8f2de72a2-7#chars-874-1064"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:12:11.508Z"
+    },
+    {
+      "id": "claim:0edc89a8f2de72a2-09f6d31a030a9377",
+      "statement": "In 2024, the commission published an impact assessment detailing the underlying qualitative analysis it had undertaken around emissions reduction targets for 2040.",
+      "evidenceSpanIds": [
+        "span:c-climate-003-0edc89a8f2de72a2-7#chars-709-873"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:12:11.508Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-climate-003-0edc89a8f2de72a2-7#chars-709-873"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-climate-003-0edc89a8f2de72a2-7#chars-709-873"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:12:11.508Z"
+    },
+    {
+      "id": "claim:0edc89a8f2de72a2-0bceee8405f1bef2",
+      "statement": "Certain European countries have been placing pressure on the commission to change or adapt the 2040 target, slowing the progress of this week's proposal, which had been due out in February.",
+      "evidenceSpanIds": [
+        "span:c-climate-003-0edc89a8f2de72a2-15#chars-2194-2383"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:12:11.508Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-climate-003-0edc89a8f2de72a2-15#chars-2194-2383"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-climate-003-0edc89a8f2de72a2-15#chars-2194-2383"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:12:11.508Z"
+    },
+    {
+      "id": "claim:0edc89a8f2de72a2-2956da6b48b7727b",
+      "statement": "The flexibility that has received the most attention is to allow limited use of international carbon credits, under Article 6 of the Paris Agreement, starting in 2036.",
+      "evidenceSpanIds": [
+        "span:c-climate-003-0edc89a8f2de72a2-11#chars-1389-1558"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:12:11.508Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-climate-003-0edc89a8f2de72a2-11#chars-1389-1558"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-climate-003-0edc89a8f2de72a2-11#chars-1389-1558"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:12:11.508Z"
+    },
+    {
+      "id": "claim:0edc89a8f2de72a2-2b4f4747b0b4555b",
+      "statement": "This flexibility means that emissions within the EU would only need to fall to 87% below 1990 levels by 2040, with the remaining 3% taking place overseas.",
+      "evidenceSpanIds": [
+        "span:c-climate-003-0edc89a8f2de72a2-11#chars-1559-1724"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:12:11.508Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-climate-003-0edc89a8f2de72a2-11#chars-1559-1724"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-climate-003-0edc89a8f2de72a2-11#chars-1559-1724"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:12:11.508Z"
+    },
+    {
+      "id": "claim:0edc89a8f2de72a2-34ee6e8d394f4af9",
+      "statement": "The proposal would require emissions to fall to 'less than' 850m tonnes of CO2e.",
+      "evidenceSpanIds": [
+        "span:c-climate-003-0edc89a8f2de72a2-9#chars-1208-1340"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:12:11.508Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-climate-003-0edc89a8f2de72a2-9#chars-1208-1340"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-climate-003-0edc89a8f2de72a2-9#chars-1208-1340"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:12:11.508Z"
+    },
+    {
+      "id": "claim:0edc89a8f2de72a2-3b0c485a82328631",
+      "statement": "The European Commission's new proposal builds on previous targets and roadmaps.",
+      "evidenceSpanIds": [
+        "span:c-climate-003-0edc89a8f2de72a2-5#chars-388-542"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:12:11.508Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-climate-003-0edc89a8f2de72a2-5#chars-388-542"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-climate-003-0edc89a8f2de72a2-5#chars-388-542"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:12:11.508Z"
+    },
+    {
+      "id": "claim:0edc89a8f2de72a2-3b52478ca03beb2c",
+      "statement": "The European Scientific Advisory Board on Climate Change stated that the EU should not count such credits towards the 2040 target.",
+      "evidenceSpanIds": [
+        "span:c-climate-003-0edc89a8f2de72a2-13#chars-1768-1966"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:12:11.508Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-climate-003-0edc89a8f2de72a2-13#chars-1768-1966"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-climate-003-0edc89a8f2de72a2-13#chars-1768-1966"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:12:11.508Z"
+    },
+    {
+      "id": "claim:0edc89a8f2de72a2-3cb894138005274f",
+      "statement": "The headline 90% target for 2040 was announced as part of a roadmap outlined by the commission in February 2024.",
+      "evidenceSpanIds": [
+        "span:c-climate-003-0edc89a8f2de72a2-9#chars-1095-1207"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:12:11.508Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-climate-003-0edc89a8f2de72a2-9#chars-1095-1207"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-climate-003-0edc89a8f2de72a2-9#chars-1095-1207"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:12:11.508Z"
+    },
+    {
+      "id": "claim:0edc89a8f2de72a2-5e678125bfe07b24",
+      "statement": "该内容来源于Carbon Brief的一篇公开文章。",
+      "evidenceSpanIds": [
+        "span:c-climate-003-0edc89a8f2de72a2-2#chars-107-272"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:12:11.508Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-climate-003-0edc89a8f2de72a2-2#chars-107-272"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-climate-003-0edc89a8f2de72a2-2#chars-107-272"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:12:11.508Z"
+    },
+    {
+      "id": "claim:0edc89a8f2de72a2-5fc413e99c5640e5",
+      "statement": "The proposal represents a significant step towards enshrining the 2040 target in law.",
+      "evidenceSpanIds": [
+        "span:c-climate-003-0edc89a8f2de72a2-5#chars-388-542"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:12:11.508Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-climate-003-0edc89a8f2de72a2-5#chars-388-542"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-climate-003-0edc89a8f2de72a2-5#chars-388-542"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:12:11.508Z"
+    },
+    {
+      "id": "claim:0edc89a8f2de72a2-786c26b66e4f1a32",
+      "statement": "该文章发布于Carbon Brief，是截至2025年的更新分析。",
+      "evidenceSpanIds": [
+        "span:c-climate-003-0edc89a8f2de72a2-3#chars-274-330"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:12:11.508Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-climate-003-0edc89a8f2de72a2-3#chars-274-330"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-climate-003-0edc89a8f2de72a2-3#chars-274-330"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:12:11.508Z"
+    },
+    {
+      "id": "claim:0edc89a8f2de72a2-7d0230cd80366497",
+      "statement": "The proposal would require 'up to' 400MtCO2e removed from the atmosphere.",
+      "evidenceSpanIds": [
+        "span:c-climate-003-0edc89a8f2de72a2-9#chars-1208-1340"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:12:11.508Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-climate-003-0edc89a8f2de72a2-9#chars-1208-1340"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-climate-003-0edc89a8f2de72a2-9#chars-1208-1340"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:12:11.508Z"
+    },
+    {
+      "id": "claim:0edc89a8f2de72a2-88b76c4683f14636",
+      "statement": "Italy called for the goal to be weakened.",
+      "evidenceSpanIds": [
+        "span:c-climate-003-0edc89a8f2de72a2-15#chars-2384-2490"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:12:11.508Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-climate-003-0edc89a8f2de72a2-15#chars-2384-2490"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-climate-003-0edc89a8f2de72a2-15#chars-2384-2490"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:12:11.508Z"
+    },
+    {
+      "id": "claim:0edc89a8f2de72a2-90a2e2a705c9431d",
+      "statement": "In July 2021, the European Climate Law officially entered into force.",
+      "evidenceSpanIds": [
+        "span:c-climate-003-0edc89a8f2de72a2-6#chars-546-705"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:12:11.508Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-climate-003-0edc89a8f2de72a2-6#chars-546-705"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-climate-003-0edc89a8f2de72a2-6#chars-546-705"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:12:11.508Z"
+    },
+    {
+      "id": "claim:0edc89a8f2de72a2-a5adbb37b74a0a73",
+      "statement": "The European Climate Law set a target of a net GHG reduction of at least 55% by 2030, compared to 1990 levels.",
+      "evidenceSpanIds": [
+        "span:c-climate-003-0edc89a8f2de72a2-6#chars-546-705"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:12:11.508Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-climate-003-0edc89a8f2de72a2-6#chars-546-705"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-climate-003-0edc89a8f2de72a2-6#chars-546-705"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:12:11.508Z"
+    },
+    {
+      "id": "claim:0edc89a8f2de72a2-ba3f0dfaa71f44d6",
+      "statement": "France asked for 'flexibility' to be introduced.",
+      "evidenceSpanIds": [
+        "span:c-climate-003-0edc89a8f2de72a2-15#chars-2384-2490"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:12:11.508Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-climate-003-0edc89a8f2de72a2-15#chars-2384-2490"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-climate-003-0edc89a8f2de72a2-15#chars-2384-2490"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:12:11.508Z"
+    },
+    {
+      "id": "claim:0edc89a8f2de72a2-d46b5a1c037d2094",
+      "statement": "Current projections suggest that, even if all planned climate policies are implemented, the bloc's emissions are set to fall 48% by 2030, rather than 55%.",
+      "evidenceSpanIds": [
+        "span:c-climate-003-0edc89a8f2de72a2-17#chars-2586-2740"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:12:11.508Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-climate-003-0edc89a8f2de72a2-17#chars-2586-2740"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-climate-003-0edc89a8f2de72a2-17#chars-2586-2740"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:12:11.508Z"
+    },
+    {
+      "id": "claim:0edc89a8f2de72a2-d924f918ba53913c",
+      "statement": "该文章的作者是Carbon Brief的工作人员。",
+      "evidenceSpanIds": [
+        "span:c-climate-003-0edc89a8f2de72a2-3#chars-331-361"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:12:11.508Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-climate-003-0edc89a8f2de72a2-3#chars-331-361"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-climate-003-0edc89a8f2de72a2-3#chars-331-361"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:12:11.508Z"
+    },
+    {
+      "id": "claim:0edc89a8f2de72a2-e37697e6e8be4c8e",
+      "statement": "As it stands, the EU is not on track to achieve the 2030 target.",
+      "evidenceSpanIds": [
+        "span:c-climate-003-0edc89a8f2de72a2-17#chars-2518-2585"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:12:11.508Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-climate-003-0edc89a8f2de72a2-17#chars-2518-2585"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-climate-003-0edc89a8f2de72a2-17#chars-2518-2585"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:12:11.508Z"
+    },
+    {
+      "id": "claim:0edc89a8f2de72a2-fe9f0b7654b15a2c",
+      "statement": "The Advisory Board said: 'Using international carbon credits to meet this target, even partially, could undermine domestic value creation by diverting resources from the necessary transformation of the EU's economy.'",
+      "evidenceSpanIds": [
+        "span:c-climate-003-0edc89a8f2de72a2-13#chars-1967-2167"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:12:11.508Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-climate-003-0edc89a8f2de72a2-13#chars-1967-2167"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-climate-003-0edc89a8f2de72a2-13#chars-1967-2167"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:12:11.508Z"
+    }
+  ],
+  "concepts": [
+    {
+      "id": "concept:0045463b1364fc0e",
+      "name": "EU",
+      "aliases": [
+        "EU",
+        "bloc"
+      ],
+      "boundary": "欧盟",
+      "domain": "政治/地理"
+    },
+    {
+      "id": "concept:05d101e147ba1b9b",
+      "name": "net GHG reduction of at least 55% by 2030",
+      "aliases": [
+        "55% by 2030"
+      ],
+      "boundary": "2030年温室气体净减排至少55%",
+      "domain": "气候目标"
+    },
+    {
+      "id": "concept:3f2e900d34dfef43",
+      "name": "impact assessment",
+      "aliases": [
+        "impact assessment"
+      ],
+      "boundary": "影响评估报告",
+      "domain": "政策分析"
+    },
+    {
+      "id": "concept:59a0199a7a0d95ec",
+      "name": "2040 target",
+      "aliases": [
+        "2040 target"
+      ],
+      "boundary": "2040年减排目标",
+      "domain": "气候政策"
+    },
+    {
+      "id": "concept:5b568e654edde261",
+      "name": "400MtCO2e",
+      "aliases": [
+        "400MtCO2e"
+      ],
+      "boundary": "4亿吨二氧化碳当量",
+      "domain": "排放量"
+    },
+    {
+      "id": "concept:69c341ab087481f5",
+      "name": "850m tonnes of CO2e",
+      "aliases": [
+        "850m tonnes of CO2e"
+      ],
+      "boundary": "8.5亿吨二氧化碳当量",
+      "domain": "排放量"
+    },
+    {
+      "id": "concept:754271dbca8e4691",
+      "name": "Carbon Brief",
+      "aliases": [
+        "Carbon Brief"
+      ],
+      "boundary": "英国气候新闻网站",
+      "domain": "媒体"
+    },
+    {
+      "id": "concept:80a9059b42dc07db",
+      "name": "France",
+      "aliases": [
+        "France"
+      ],
+      "boundary": "法国",
+      "domain": "地理/政治"
+    },
+    {
+      "id": "concept:8a83d06a65397f96",
+      "name": "European Commission",
+      "aliases": [
+        "commission"
+      ],
+      "boundary": "欧盟执行机构",
+      "domain": "政治/欧盟"
+    },
+    {
+      "id": "concept:9306b0309f631cd9",
+      "name": "Italy",
+      "aliases": [
+        "Italy"
+      ],
+      "boundary": "意大利",
+      "domain": "地理/政治"
+    },
+    {
+      "id": "concept:95f4008c508a86e6",
+      "name": "international carbon credits",
+      "aliases": [
+        "international carbon credits"
+      ],
+      "boundary": "国际碳信用",
+      "domain": "碳市场"
+    },
+    {
+      "id": "concept:964c89c619ed5189",
+      "name": "European Climate Law",
+      "aliases": [
+        "European Climate Law"
+      ],
+      "boundary": "欧盟气候法",
+      "domain": "法律/气候"
+    },
+    {
+      "id": "concept:9adc155ed880ffdd",
+      "name": "emissions reduction targets for 2040",
+      "aliases": [
+        "emissions reduction targets for 2040"
+      ],
+      "boundary": "2040年减排目标",
+      "domain": "气候政策"
+    },
+    {
+      "id": "concept:9ff7c6aae6f1eb32",
+      "name": "Article 6 of the Paris Agreement",
+      "aliases": [
+        "Article 6 of the Paris Agreement"
+      ],
+      "boundary": "巴黎协定第六条",
+      "domain": "国际气候协议"
+    },
+    {
+      "id": "concept:a603fe1e5b5ace4e",
+      "name": "1990 levels",
+      "aliases": [
+        "1990 levels"
+      ],
+      "boundary": "1990年排放水平",
+      "domain": "气候基准"
+    },
+    {
+      "id": "concept:b23ff5984da26aef",
+      "name": "2030 target",
+      "aliases": [
+        "2030 target"
+      ],
+      "boundary": "2030年减排目标",
+      "domain": "气候政策"
+    },
+    {
+      "id": "concept:e4829c3d22d3b02d",
+      "name": "90% target",
+      "aliases": [
+        "90% target for 2040",
+        "headline 90% target"
+      ],
+      "boundary": "2040年减排90%的目标",
+      "domain": "气候政策"
+    },
+    {
+      "id": "concept:e65d563cc525e0fe",
+      "name": "Intergovernmental Panel on Climate Change",
+      "aliases": [
+        "UN's Intergovernmental Panel on Climate Change"
+      ],
+      "boundary": "联合国政府间气候变化专门委员会",
+      "domain": "科学/气候"
+    },
+    {
+      "id": "concept:ecb2b9471c198073",
+      "name": "European Scientific Advisory Board on Climate Change",
+      "aliases": [
+        "Advisory Board"
+      ],
+      "boundary": "欧盟气候变化科学咨询机构",
+      "domain": "科学/气候"
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel:0edc89a8f2de72a2-13916c979b4e8bef",
+      "from": "claim:0edc89a8f2de72a2-3b52478ca03beb2c",
+      "to": "claim:0edc89a8f2de72a2-fe9f0b7654b15a2c",
+      "type": "SUPPORTS",
+      "conditions": [
+        "Claim 7 states Advisory Board said not to count credits; claim 20 provides a direct quote from the Advisory Board."
+      ],
+      "conditionStatus": "PRESERVED",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:c-climate-003-0edc89a8f2de72a2-13#chars-1768-1966",
+        "span:c-climate-003-0edc89a8f2de72a2-13#chars-1967-2167"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:12:23.217Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.9,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:0edc89a8f2de72a2-3a1bf3b3a3af6ace",
+      "from": "claim:0edc89a8f2de72a2-90a2e2a705c9431d",
+      "to": "claim:0edc89a8f2de72a2-a5adbb37b74a0a73",
+      "type": "SUPPORTS",
+      "conditions": [
+        "Claim 14 states European Climate Law entered into force; claim 15 states the target set by that law."
+      ],
+      "conditionStatus": "PRESERVED",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:c-climate-003-0edc89a8f2de72a2-6#chars-546-705"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:12:23.217Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.9,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:0edc89a8f2de72a2-460463aeaf927d66",
+      "from": "claim:0edc89a8f2de72a2-a5adbb37b74a0a73",
+      "to": "claim:0edc89a8f2de72a2-d46b5a1c037d2094",
+      "type": "CONTRADICTS",
+      "conditions": [
+        "Claim 15 sets 55% reduction target by 2030; claim 17 says projections show only 48% reduction."
+      ],
+      "conditionStatus": "PRESERVED",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:c-climate-003-0edc89a8f2de72a2-17#chars-2586-2740",
+        "span:c-climate-003-0edc89a8f2de72a2-6#chars-546-705"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:12:23.217Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.8,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:0edc89a8f2de72a2-58b1490723731db3",
+      "from": "claim:0edc89a8f2de72a2-d46b5a1c037d2094",
+      "to": "claim:0edc89a8f2de72a2-e37697e6e8be4c8e",
+      "type": "SUPPORTS",
+      "conditions": [
+        "Claim 17 provides projection of 48% reduction; claim 19 concludes EU not on track."
+      ],
+      "conditionStatus": "PRESERVED",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:c-climate-003-0edc89a8f2de72a2-17#chars-2518-2585",
+        "span:c-climate-003-0edc89a8f2de72a2-17#chars-2586-2740"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:12:23.217Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.9,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:0edc89a8f2de72a2-6c2ff85a8cc96d5a",
+      "from": "claim:0edc89a8f2de72a2-34ee6e8d394f4af9",
+      "to": "claim:0edc89a8f2de72a2-7d0230cd80366497",
+      "type": "RELATED_TO",
+      "conditions": [
+        "Both claims are about requirements in the same proposal: emissions limit and removals."
+      ],
+      "conditionStatus": "PRESERVED",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:c-climate-003-0edc89a8f2de72a2-9#chars-1208-1340"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:12:23.217Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.6,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:0edc89a8f2de72a2-9b38592c8717309d",
+      "from": "claim:0edc89a8f2de72a2-0bceee8405f1bef2",
+      "to": "claim:0edc89a8f2de72a2-88b76c4683f14636",
+      "type": "SUPPORTS",
+      "conditions": [
+        "Claim 2 mentions pressure from certain European countries; claim 13 specifies Italy called for weakening."
+      ],
+      "conditionStatus": "PRESERVED",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:c-climate-003-0edc89a8f2de72a2-15#chars-2194-2383",
+        "span:c-climate-003-0edc89a8f2de72a2-15#chars-2384-2490"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:12:23.217Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.7,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:0edc89a8f2de72a2-c9f5d9e14ab7edc3",
+      "from": "claim:0edc89a8f2de72a2-0bceee8405f1bef2",
+      "to": "claim:0edc89a8f2de72a2-ba3f0dfaa71f44d6",
+      "type": "SUPPORTS",
+      "conditions": [
+        "Claim 2 mentions pressure from certain European countries; claim 16 specifies France asked for flexibility."
+      ],
+      "conditionStatus": "PRESERVED",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:c-climate-003-0edc89a8f2de72a2-15#chars-2194-2383",
+        "span:c-climate-003-0edc89a8f2de72a2-15#chars-2384-2490"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:12:23.217Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.7,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:0edc89a8f2de72a2-d458424538dbec23",
+      "from": "claim:0edc89a8f2de72a2-3b0c485a82328631",
+      "to": "claim:0edc89a8f2de72a2-5fc413e99c5640e5",
+      "type": "SUPPORTS",
+      "conditions": [
+        "Claim 6 says proposal builds on previous targets; claim 10 says proposal is a step towards enshrining target in law."
+      ],
+      "conditionStatus": "PRESERVED",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:c-climate-003-0edc89a8f2de72a2-5#chars-388-542"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:12:23.217Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.7,
+      "consumedBy": []
+    }
+  ]
+}

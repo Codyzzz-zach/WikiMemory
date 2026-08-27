@@ -1,0 +1,51 @@
+{
+  "questionId": "C-K-PSYCH-001",
+  "promptHash": "2cd1b82884e95a8e6a64c79a2ef8eabbcb3108b6de7a0fce2f14e1a0933a5170",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 2796,
+    "completionTokens": 3206,
+    "totalTokens": 6002,
+    "promptCacheHitTokens": 256,
+    "promptCacheMissTokens": 2540,
+    "reasoningTokens": 2821
+  },
+  "raw": "[\n  {\n    \"sampleId\": \"sample-eb1bc396-40ea-41f2-a09b-bee2c8ee6dd3\",\n    \"requiredPointCoverage\": 4,\n    \"conditionFidelity\": 4,\n    \"evidenceGrounding\": 3,\n    \"answerabilityDiscipline\": 4,\n    \"sourceRoleTemporalDiscipline\": 4,\n    \"hardFailure\": false,\n    \"hardFailureTypes\": [],\n    \"rationale\": \"清楚区分主观看法和再分析，说明选择偏差与局限，引用支撑，未越界\"\n  },\n  {\n    \"sampleId\": \"sample-1882fc1e-5c9f-4f78-8d38-0564cba1a421\",\n    \"requiredPointCoverage\": 2,\n    \"conditionFidelity\": 3,\n    \"evidenceGrounding\": 1,\n    \"answerabilityDiscipline\": 3,\n    \"sourceRoleTemporalDiscipline\": 3,\n    \"hardFailure\": false,\n    \"hardFailureTypes\": [],\n    \"rationale\": \"缺证据权重比较，再分析证据未实际引用，uncertainty否认证据存在\"\n  },\n  {\n    \"sampleId\": \"sample-2425ff6e-dda5-4feb-8923-135f65a8dba8\",\n    \"requiredPointCoverage\": 2,\n    \"conditionFidelity\": 3,\n    \"evidenceGrounding\": 1,\n    \"answerabilityDiscipline\": 3,\n    \"sourceRoleTemporalDiscipline\": 3,\n    \"hardFailure\": false,\n    \"hardFailureTypes\": [],\n    \"rationale\": \"缺证据权重比较，再分析证据仅claimID，uncertainty称无直接证据\"\n  }\n]",
+  "rows": [
+    {
+      "sampleId": "sample-eb1bc396-40ea-41f2-a09b-bee2c8ee6dd3",
+      "requiredPointCoverage": 4,
+      "conditionFidelity": 4,
+      "evidenceGrounding": 3,
+      "answerabilityDiscipline": 4,
+      "sourceRoleTemporalDiscipline": 4,
+      "hardFailure": false,
+      "hardFailureTypes": [],
+      "rationale": "清楚区分主观看法和再分析，说明选择偏差与局限，引用支撑，未越界"
+    },
+    {
+      "sampleId": "sample-1882fc1e-5c9f-4f78-8d38-0564cba1a421",
+      "requiredPointCoverage": 2,
+      "conditionFidelity": 3,
+      "evidenceGrounding": 1,
+      "answerabilityDiscipline": 3,
+      "sourceRoleTemporalDiscipline": 3,
+      "hardFailure": false,
+      "hardFailureTypes": [],
+      "rationale": "缺证据权重比较，再分析证据未实际引用，uncertainty否认证据存在"
+    },
+    {
+      "sampleId": "sample-2425ff6e-dda5-4feb-8923-135f65a8dba8",
+      "requiredPointCoverage": 2,
+      "conditionFidelity": 3,
+      "evidenceGrounding": 1,
+      "answerabilityDiscipline": 3,
+      "sourceRoleTemporalDiscipline": 3,
+      "hardFailure": false,
+      "hardFailureTypes": [],
+      "rationale": "缺证据权重比较，再分析证据仅claimID，uncertainty称无直接证据"
+    }
+  ]
+}

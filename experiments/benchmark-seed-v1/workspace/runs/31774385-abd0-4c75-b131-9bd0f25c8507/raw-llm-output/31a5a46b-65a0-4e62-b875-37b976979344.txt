@@ -1,0 +1,28 @@
+{
+  "claims": [
+    {
+      "statement": "WebAIM WCAG 2 Checklist 是一个文档标题。",
+      "evidenceQuotes": ["WebAIM WCAG 2 Checklist"],
+      "blockIds": ["design-webaim-checklist-2024-004#block-0"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "Success Criterion 4.1.1 Parsing 不再有用。",
+      "evidenceQuotes": ["Success Criterion 4.1.1 Parsing: This success criterion is no longer useful"],
+      "blockIds": ["design-webaim-checklist-2024-004#block-1"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "Success Criterion 4.1.1 Parsing 自2023年起已从WCAG中移除。",
+      "evidenceQuotes": ["as of 2023 has been removed from WCAG."],
+      "blockIds": ["design-webaim-checklist-2024-004#block-1"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "verdict": "passed",
+  "dimensions": {
+    "support": { "result": "pass", "evidence": "用一把\"刀\"在有理数轴上切下去——刀口位置就是一个实数" },
+    "addition": { "result": "pass", "evidence": "原文与Claim一致，无额外信息" },
+    "inference": { "result": "pass", "evidence": "原文是事实陈述，Claim直接转述" },
+    "limits": { "result": "pass", "evidence": "原文无限定词或条件，Claim未遗漏" },
+    "citation": { "result": "pass", "evidence": "Claim内容完全对应SourceSpan" }
+  },
+  "anchor": "用一把\"刀\"在有理数轴上切下去——刀口位置就是一个实数",
+  "failedDimensions": [],
+  "issues": []
+}

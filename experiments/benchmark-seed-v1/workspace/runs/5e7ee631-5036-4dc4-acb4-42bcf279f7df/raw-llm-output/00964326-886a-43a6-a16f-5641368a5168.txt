@@ -1,0 +1,39 @@
+{
+  "relations": [
+    {
+      "fromClaimIndex": 0,
+      "toClaimIndex": 1,
+      "type": "RELATED_TO",
+      "conditions": [],
+      "confidence": 0.6
+    },
+    {
+      "fromClaimIndex": 1,
+      "toClaimIndex": 2,
+      "type": "DERIVED_FROM",
+      "conditions": [],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 2,
+      "toClaimIndex": 4,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 3,
+      "toClaimIndex": 5,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 5,
+      "toClaimIndex": 0,
+      "type": "RELATED_TO",
+      "conditions": [],
+      "confidence": 0.5
+    }
+  ]
+}

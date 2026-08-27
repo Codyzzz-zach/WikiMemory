@@ -1,0 +1,28 @@
+{
+  "verdict": "passed",
+  "dimensions": {
+    "support": {
+      "result": "pass",
+      "evidence": "一个 Dedekind 分割是有理数集 $\\mathbb{Q}$ 的一个划分 $(A,B)$，满足：1. $A, B \\neq \\emptyset$，$A \\cup B = \\mathbb{Q}$，$A \\cap B = \\emptyset$ 2. $\\forall a \\in A, \\forall b \\in B: a < b$ 3. $A$ 没有最大元"
+    },
+    "addition": {
+      "result": "pass",
+      "evidence": "无额外信息"
+    },
+    "inference": {
+      "result": "pass",
+      "evidence": "无推断，全部为原文直接陈述"
+    },
+    "limits": {
+      "result": "pass",
+      "evidence": "无适用条件或例外需要保留"
+    },
+    "citation": {
+      "result": "pass",
+      "evidence": "Claim 内容与 SourceSpan [01-number-systems#block-57] 完全对应"
+    }
+  },
+  "anchor": "一个 Dedekind 分割是有理数集 $\\mathbb{Q}$ 的一个划分 $(A,B)$，满足：1. $A, B \\neq \\emptyset$，$A \\cup B = \\mathbb{Q}$，$A \\cap B = \\emptyset$ 2. $\\forall a \\in A, \\forall b \\in B: a < b$ 3. $A$ 没有最大元",
+  "failedDimensions": [],
+  "issues": []
+}

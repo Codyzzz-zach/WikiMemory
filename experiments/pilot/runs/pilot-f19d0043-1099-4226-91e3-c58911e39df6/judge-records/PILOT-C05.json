@@ -1,0 +1,48 @@
+{
+  "questionId": "PILOT-C05",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "request": {
+    "systemPrompt": "你是知识系统的盲测评分员。你只按提供的 Gold 和评分合同评价匿名答案，不判断答案来自哪个实验组。\n必须逐项核对 requiredClaims、mustMentionConditions、forbiddenClaims、answerability 和证据引用。\nsourceRisk.present=true 时，Gold 风险说明是允许使用的人工审计结论；不得把源材料的过强表述当成正确答案。\n只输出严格 JSON：{\"scores\":[{\"sampleId\":\"...\",\"requiredClaimCoverage\":0,\"conditionFidelity\":0,\"evidenceGrounding\":0,\"answerabilityDiscipline\":0,\"hardFailure\":false,\"rationale\":\"...\"}]}。",
+    "userPrompt": "# 评分合同\n{\n  \"dimensions\": {\n    \"requiredClaimCoverage\": {\n      \"score0\": \"没有覆盖 requiredClaims，或核心结论相反\",\n      \"score1\": \"覆盖部分 requiredClaims，但缺少一项以上关键连接\",\n      \"score2\": \"完整覆盖全部 requiredClaims\"\n    },\n    \"conditionFidelity\": {\n      \"score0\": \"触发 forbiddenClaims，或删除了决定结论的条件\",\n      \"score1\": \"方向基本正确，但条件、例外或必要/充分强度表达不完整\",\n      \"score2\": \"保留全部 mustMentionConditions，且未触发 forbiddenClaims\"\n    },\n    \"evidenceGrounding\": {\n      \"score0\": \"关键结论没有可解析引用，或引用与结论无关\",\n      \"score1\": \"有相关引用，但关键结论存在未落到证据的部分\",\n      \"score2\": \"关键结论均由当前上下文标识支持，引用位置正确\"\n    },\n    \"answerabilityDiscipline\": {\n      \"score0\": \"证据不足时仍编造答案，或证据充分时错误拒答\",\n      \"score1\": \"表达了不确定性，但回答/拒答边界不够准确\",\n      \"score2\": \"严格遵守该题 answerability，充分回答或明确拒答\"\n    }\n  },\n  \"totalScore\": 8,\n  \"hardFailure\": \"任何 forbiddenClaim、伪造引用、把 insufficient 题当作已由语料证明，均记 hardFailure；该样本总分最高为 2。\"\n}\n\n# 题目与 Gold\n{\n  \"question\": \"每个 Cauchy 列都收敛吗？\",\n  \"answerability\": \"answerable\",\n  \"requiredClaims\": [\n    \"不一定\",\n    \"每个 Cauchy 列收敛是完备空间的定义性要求\",\n    \"有理数提供非完备背景中的反例来源\"\n  ],\n  \"mustMentionConditions\": [\n    \"只在完备空间中保证\"\n  ],\n  \"forbiddenClaims\": [\n    \"任何空间中 Cauchy 列都收敛\"\n  ],\n  \"sourceRisk\": {\n    \"present\": false,\n    \"detail\": \"\"\n  },\n  \"evidence\": [\n    {\n      \"sourceFile\": \"mathtest-material/01-number-systems.md\",\n      \"heading\": \"实数的核心性质：完备性\",\n      \"exactQuote\": \"| **完备性** | ❌ | ✅ |\\n| 上确界存在性 | ❌ | ✅ 有上界必有上确界 |\\n| Cauchy 列必收敛 | ❌ | ✅ |\",\n      \"supportsRequiredClaims\": [\n        0,\n        2\n      ]\n    },\n    {\n      \"sourceFile\": \"mathtest-material/02-spaces.md\",\n      \"heading\": \"完备性：Banach 空间\",\n      \"exactQuote\": \"如果空间中每个 Cauchy 列都收敛到空间内的一个点，这个空间就是**完备的**。\",\n      \"supportsRequiredClaims\": [\n        1\n      ]\n    }\n  ]\n}\n\n# 匿名答案\n[\n  {\n    \"sampleId\": \"sample-da19f065-aa0f-46f5-8d82-76b41de06a97\",\n    \"questionId\": \"PILOT-C05\",\n    \"answer\": \"{\\n  \\\"answer\\\": \\\"不一定。在一般的度量空间中，Cauchy 列不一定收敛；只有在完备空间中，每个 Cauchy 列才收敛。例如，在实数空间 ℝ 中每个 Cauchy 列都收敛，但在有理数空间 ℚ 中则不然。\\\",\\n  \\\"citations\\\": [\\n    \\\"SOURCE mathtest-material/02-spaces.md:209-227\\\",\\n    \\\"SOURCE mathtest-material/01-number-systems.md:239-266\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\"\n  },\n  {\n    \"sampleId\": \"sample-c4e0676e-770e-495d-bde8-9d97c8fd5e6c\",\n    \"questionId\": \"PILOT-C05\",\n    \"answer\": \"{\\n  \\\"answer\\\": \\\"不一定。Cauchy 列是否收敛取决于所在空间是否完备。在完备空间（如实数集 R）中，每个 Cauchy 列都收敛；但在不完备空间（如有理数集 Q）中，存在不收敛的 Cauchy 列。\\\",\\n  \\\"citations\\\": [\\n    \\\"claim:33a33396a17d4175-92f0384fb17d1720\\\",\\n    \\\"claim:80440e2182e5653f-1d1341c978df0a68\\\",\\n    \\\"claim:80440e2182e5653f-4384f68c38d1c16d\\\",\\n    \\\"claim:80440e2182e5653f-fc60845834dda01f\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\"\n  },\n  {\n    \"sampleId\": \"sample-6a0e4990-1e70-47ef-b327-b4d3e86a1c06\",\n    \"questionId\": \"PILOT-C05\",\n    \"answer\": \"{\\n  \\\"answer\\\": \\\"不一定。在完备空间中每个 Cauchy 列都收敛，但在非完备空间中不一定。例如，实数集是完备的，每个 Cauchy 列都收敛；有理数集不完备，存在 Cauchy 列不收敛。\\\",\\n  \\\"citations\\\": [\\n    \\\"claim:33a33396a17d4175-92f0384fb17d1720\\\",\\n    \\\"claim:80440e2182e5653f-1d1341c978df0a68\\\",\\n    \\\"claim:80440e2182e5653f-d1c80ec9bda36ba7\\\",\\n    \\\"claim:80440e2182e5653f-4384f68c38d1c16d\\\",\\n    \\\"claim:80440e2182e5653f-fc60845834dda01f\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\"\n  }\n]"
+  },
+  "usage": {
+    "promptTokens": 1509,
+    "completionTokens": 358,
+    "totalTokens": 1867,
+    "promptCacheHitTokens": 384,
+    "promptCacheMissTokens": 1125,
+    "reasoningTokens": 0
+  },
+  "finishReason": "stop",
+  "rawResponse": "{\n  \"scores\": [\n    {\n      \"sampleId\": \"sample-da19f065-aa0f-46f5-8d82-76b41de06a97\",\n      \"requiredClaimCoverage\": 2,\n      \"conditionFidelity\": 2,\n      \"evidenceGrounding\": 2,\n      \"answerabilityDiscipline\": 2,\n      \"hardFailure\": false,\n      \"rationale\": \"覆盖全部requiredClaims（不一定、完备空间定义、有理数反例），提及完备空间条件，无forbiddenClaims，引用正确且相关，充分回答。\"\n    },\n    {\n      \"sampleId\": \"sample-c4e0676e-770e-495d-bde8-9d97c8fd5e6c\",\n      \"requiredClaimCoverage\": 2,\n      \"conditionFidelity\": 2,\n      \"evidenceGrounding\": 1,\n      \"answerabilityDiscipline\": 2,\n      \"hardFailure\": false,\n      \"rationale\": \"覆盖全部requiredClaims，条件完整，但引用为claim编号而非可解析来源，证据接地性不足。\"\n    },\n    {\n      \"sampleId\": \"sample-6a0e4990-1e70-47ef-b327-b4d3e86a1c06\",\n      \"requiredClaimCoverage\": 2,\n      \"conditionFidelity\": 2,\n      \"evidenceGrounding\": 1,\n      \"answerabilityDiscipline\": 2,\n      \"hardFailure\": false,\n      \"rationale\": \"覆盖全部requiredClaims，条件完整，但引用为claim编号而非可解析来源，证据接地性不足。\"\n    }\n  ]\n}",
+  "parsed": [
+    {
+      "sampleId": "sample-da19f065-aa0f-46f5-8d82-76b41de06a97",
+      "requiredClaimCoverage": 2,
+      "conditionFidelity": 2,
+      "evidenceGrounding": 2,
+      "answerabilityDiscipline": 2,
+      "hardFailure": false,
+      "rationale": "覆盖全部requiredClaims（不一定、完备空间定义、有理数反例），提及完备空间条件，无forbiddenClaims，引用正确且相关，充分回答。"
+    },
+    {
+      "sampleId": "sample-c4e0676e-770e-495d-bde8-9d97c8fd5e6c",
+      "requiredClaimCoverage": 2,
+      "conditionFidelity": 2,
+      "evidenceGrounding": 1,
+      "answerabilityDiscipline": 2,
+      "hardFailure": false,
+      "rationale": "覆盖全部requiredClaims，条件完整，但引用为claim编号而非可解析来源，证据接地性不足。"
+    },
+    {
+      "sampleId": "sample-6a0e4990-1e70-47ef-b327-b4d3e86a1c06",
+      "requiredClaimCoverage": 2,
+      "conditionFidelity": 2,
+      "evidenceGrounding": 1,
+      "answerabilityDiscipline": 2,
+      "hardFailure": false,
+      "rationale": "覆盖全部requiredClaims，条件完整，但引用为claim编号而非可解析来源，证据接地性不足。"
+    }
+  ]
+}

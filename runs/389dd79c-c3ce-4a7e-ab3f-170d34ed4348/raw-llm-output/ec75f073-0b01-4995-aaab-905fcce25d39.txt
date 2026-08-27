@@ -1,0 +1,32 @@
+{
+  "verdict": "failed",
+  "dimensions": {
+    "support": {
+      "result": "fail",
+      "evidence": "原文证据只标注了'加法封闭'，但没有明确说明复数集C关于加法封闭。"
+    },
+    "addition": {
+      "result": "fail",
+      "evidence": "Claim引入了原文证据中没有提及的'复数集C'。"
+    },
+    "inference": {
+      "result": "pass",
+      "evidence": "没有推断。"
+    },
+    "limits": {
+      "result": "pass",
+      "evidence": "没有适用条件或限定词被忽略。"
+    },
+    "citation": {
+      "result": "fail",
+      "evidence": "原文证据指示[01-number-systems#block-97]可能包含其他内容，但仅标注'加法封闭'无法确认是复数集。"
+    }
+  },
+  "anchor": "加法封闭",
+  "failedDimensions": ["support", "addition", "citation"],
+  "issues": [
+    "支撑失败：原文证据仅提及'加法封闭'，没有指定是复数集。",
+    "添加信息：Claim引入了原文证据中没有的'复数集C'。",
+    "引用错误：原文证据标注不足以支持Claim关于复数集的断言。"
+  ]
+}

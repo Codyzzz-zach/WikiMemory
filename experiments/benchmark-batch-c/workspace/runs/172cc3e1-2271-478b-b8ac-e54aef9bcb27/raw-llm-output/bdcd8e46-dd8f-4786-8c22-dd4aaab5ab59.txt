@@ -1,0 +1,116 @@
+{
+  "relations": [
+    {
+      "fromClaimIndex": 0,
+      "toClaimIndex": 12,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 0,
+      "toClaimIndex": 22,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 1,
+      "toClaimIndex": 4,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 1,
+      "toClaimIndex": 8,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 2,
+      "toClaimIndex": 15,
+      "type": "RELATED_TO",
+      "conditions": [],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 2,
+      "toClaimIndex": 19,
+      "type": "RELATED_TO",
+      "conditions": [],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 3,
+      "toClaimIndex": 11,
+      "type": "RELATED_TO",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 3,
+      "toClaimIndex": 21,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 6,
+      "toClaimIndex": 23,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 7,
+      "toClaimIndex": 14,
+      "type": "RELATED_TO",
+      "conditions": [],
+      "confidence": 0.6
+    },
+    {
+      "fromClaimIndex": 9,
+      "toClaimIndex": 2,
+      "type": "DERIVED_FROM",
+      "conditions": ["if no bias in original results is assumed"],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 11,
+      "toClaimIndex": 21,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 14,
+      "toClaimIndex": 18,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["same project"],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 16,
+      "toClaimIndex": 2,
+      "type": "RELATED_TO",
+      "conditions": [],
+      "confidence": 0.6
+    },
+    {
+      "fromClaimIndex": 17,
+      "toClaimIndex": 5,
+      "type": "RELATED_TO",
+      "conditions": [],
+      "confidence": 0.6
+    },
+    {
+      "fromClaimIndex": 20,
+      "toClaimIndex": 2,
+      "type": "RELATED_TO",
+      "conditions": [],
+      "confidence": 0.7
+    }
+  ]
+}

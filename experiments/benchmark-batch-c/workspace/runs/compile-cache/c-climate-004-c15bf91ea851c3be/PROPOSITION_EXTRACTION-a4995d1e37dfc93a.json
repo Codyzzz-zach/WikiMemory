@@ -1,0 +1,6 @@
+{
+  "kind": "VALID",
+  "content": "{\n  \"propositions\": [\n    {\n      \"text\": \"该内容来源于国际能源署网站上的《世界能源展望2023》执行摘要。\",\n      \"exactQuote\": \"*Content sourced from IEA website (https://www.iea.org/reports/world-energy-outlook-2023/executive-summary). Executive summary is publicly accessible.*\",\n      \"blockId\": \"c-climate-004#block-2\"\n    },\n    {\n      \"text\": \"该执行摘要于2023年10月24日在巴黎发布。\",\n      \"exactQuote\": \"**Published:** 24 October 2023, Paris\",\n      \"blockId\": \"c-climate-004#block-3\"\n    },\n    {\n      \"text\": \"该执行摘要的作者是国际能源署。\",\n      \"exactQuote\": \"**Author:** International Energy Agency (IEA)\",\n      \"blockId\": \"c-climate-004#block-3\"\n    },\n    {\n      \"text\": \"国际能源署的执行主任是Fatih Birol。\",\n      \"exactQuote\": \"**Executive Director:** Fatih Birol\",\n      \"blockId\": \"c-climate-004#block-3\"\n    }\n  ]\n}",
+  "model": "deepseek-v4-flash",
+  "outputHash": "3f370b9a4d629d5f"
+}

@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "wge-e4-ablation/v1",
+  "status": "LOCKED",
+  "modes": [
+    { "id": "B", "pilotGroup": "B", "graphExpansion": false },
+    { "id": "P-seed", "pilotGroup": "P", "graphExpansion": false },
+    { "id": "P-graph", "pilotGroup": "P", "graphExpansion": true }
+  ],
+  "controlledVariables": [
+    "question",
+    "corpus",
+    "answer model",
+    "temperature",
+    "context token budget",
+    "Claim and Evidence serialization"
+  ],
+  "independentVariable": "Graph relation expansion after identical Seed retrieval",
+  "goldExposureToRetriever": false,
+  "onlineReplicateGate": "Only run online Graph ablation if offline P-graph changes required-evidence coverage or materially changes context composition versus P-seed."
+}

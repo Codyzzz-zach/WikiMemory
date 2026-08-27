@@ -1,0 +1,55 @@
+{
+  "schemaVersion": "pilot-publication-diff/v1",
+  "runId": "cbd7d43c-1f76-482a-bfc7-48602417a549",
+  "sourceId": "source:c-climate-002-83071555dd80fcef",
+  "generatedAt": "2026-07-28T07:11:48.327Z",
+  "status": "PASS",
+  "acceptedReview": false,
+  "runtime": {
+    "requestedModel": "deepseek-v4-flash",
+    "temperature": 0,
+    "semanticAuditVersion": "v2.3",
+    "relationAuditVersion": "v1.7",
+    "sourceHash": "83071555dd80fcef"
+  },
+  "baseline": null,
+  "candidate": {
+    "claims": 21,
+    "concepts": 8,
+    "relations": 12,
+    "quarantinedClaims": 0,
+    "quarantinedRelations": 29,
+    "quarantineRate": 0
+  },
+  "diff": {
+    "retainedClaimIds": 0,
+    "addedClaimIds": [
+      "claim:83071555dd80fcef-1247295254b1cb74",
+      "claim:83071555dd80fcef-1643ff0387d79ccc",
+      "claim:83071555dd80fcef-1f7b87209efb19ac",
+      "claim:83071555dd80fcef-2c5ae34671163a9c",
+      "claim:83071555dd80fcef-3ac59f7f986a6340",
+      "claim:83071555dd80fcef-4475f205083e4201",
+      "claim:83071555dd80fcef-4f684f0b7d7d9e0d",
+      "claim:83071555dd80fcef-560aec6197357ca3",
+      "claim:83071555dd80fcef-691c40f9ebad4871",
+      "claim:83071555dd80fcef-6dbb0dd6b9202fac",
+      "claim:83071555dd80fcef-7d1ac070441ac1d8",
+      "claim:83071555dd80fcef-888386341facea2e",
+      "claim:83071555dd80fcef-8a025f5af6d8b5b6",
+      "claim:83071555dd80fcef-90d8093db0a83ffd",
+      "claim:83071555dd80fcef-9440ab34072d22f3",
+      "claim:83071555dd80fcef-ae54bbdf4e6130cd",
+      "claim:83071555dd80fcef-b7ee62b88dd7b1b0",
+      "claim:83071555dd80fcef-c3f86901254797f1",
+      "claim:83071555dd80fcef-dd36b4190272d0d9",
+      "claim:83071555dd80fcef-e70d34be90625300",
+      "claim:83071555dd80fcef-ed60c4770cd4569b"
+    ],
+    "removedClaimIds": [],
+    "claimRetentionRate": null,
+    "claimCountChangeRate": null,
+    "conditionsDropped": []
+  },
+  "issues": []
+}

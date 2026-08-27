@@ -1,0 +1,57 @@
+{
+  "questionId": "C-C-LAW-001",
+  "promptHash": "d8b7b0baad2f46d2602f95079345964068b6b334af8eef08416df670c07dad71",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 1792,
+    "completionTokens": 1299,
+    "totalTokens": 3091,
+    "promptCacheHitTokens": 256,
+    "promptCacheMissTokens": 1536,
+    "reasoningTokens": 874
+  },
+  "raw": "[\n  {\n    \"sampleId\": \"sample-c7ed7e3f-4bbe-4dd5-a6c0-8228456a3083\",\n    \"requiredPointCoverage\": 4,\n    \"conditionFidelity\": 4,\n    \"evidenceGrounding\": 4,\n    \"answerabilityDiscipline\": 4,\n    \"sourceRoleTemporalDiscipline\": 4,\n    \"hardFailure\": false,\n    \"hardFailureTypes\": [],\n    \"rationale\": \"正确列出三个日期和风险类别；引用c-law-001法律原文；无硬错误。\"\n  },\n  {\n    \"sampleId\": \"sample-666fdf21-cc60-4882-bf6e-a8fcbac37551\",\n    \"requiredPointCoverage\": 0,\n    \"conditionFidelity\": 0,\n    \"evidenceGrounding\": 0,\n    \"answerabilityDiscipline\": 0,\n    \"sourceRoleTemporalDiscipline\": 0,\n    \"hardFailure\": true,\n    \"hardFailureTypes\": [\"false_date\", \"immediate_effect\"],\n    \"rationale\": \"错误声称禁令2024年8月2日生效，实际为2025年2月2日；引用非法律原文的claim，违反hardFailureRules。\"\n  },\n  {\n    \"sampleId\": \"sample-ab81ab8d-29b1-4119-95bd-ebf618708399\",\n    \"requiredPointCoverage\": 0,\n    \"conditionFidelity\": 0,\n    \"evidenceGrounding\": 0,\n    \"answerabilityDiscipline\": 0,\n    \"sourceRoleTemporalDiscipline\": 0,\n    \"hardFailure\": true,\n    \"hardFailureTypes\": [\"false_date\", \"immediate_effect\"],\n    \"rationale\": \"错误声称禁令2024年8月2日生效，实际为2025年2月2日；引用非法律原文的claim，违反hardFailureRules。\"\n  }\n]",
+  "rows": [
+    {
+      "sampleId": "sample-c7ed7e3f-4bbe-4dd5-a6c0-8228456a3083",
+      "requiredPointCoverage": 4,
+      "conditionFidelity": 4,
+      "evidenceGrounding": 4,
+      "answerabilityDiscipline": 4,
+      "sourceRoleTemporalDiscipline": 4,
+      "hardFailure": false,
+      "hardFailureTypes": [],
+      "rationale": "正确列出三个日期和风险类别；引用c-law-001法律原文；无硬错误。"
+    },
+    {
+      "sampleId": "sample-666fdf21-cc60-4882-bf6e-a8fcbac37551",
+      "requiredPointCoverage": 0,
+      "conditionFidelity": 0,
+      "evidenceGrounding": 0,
+      "answerabilityDiscipline": 0,
+      "sourceRoleTemporalDiscipline": 0,
+      "hardFailure": true,
+      "hardFailureTypes": [
+        "false_date",
+        "immediate_effect"
+      ],
+      "rationale": "错误声称禁令2024年8月2日生效，实际为2025年2月2日；引用非法律原文的claim，违反hardFailureRules。"
+    },
+    {
+      "sampleId": "sample-ab81ab8d-29b1-4119-95bd-ebf618708399",
+      "requiredPointCoverage": 0,
+      "conditionFidelity": 0,
+      "evidenceGrounding": 0,
+      "answerabilityDiscipline": 0,
+      "sourceRoleTemporalDiscipline": 0,
+      "hardFailure": true,
+      "hardFailureTypes": [
+        "false_date",
+        "immediate_effect"
+      ],
+      "rationale": "错误声称禁令2024年8月2日生效，实际为2025年2月2日；引用非法律原文的claim，违反hardFailureRules。"
+    }
+  ]
+}

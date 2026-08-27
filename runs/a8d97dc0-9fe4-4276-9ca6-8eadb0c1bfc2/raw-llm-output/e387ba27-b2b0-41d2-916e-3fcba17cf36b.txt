@@ -1,0 +1,438 @@
+{
+  "relations": [
+    {
+      "fromClaimIndex": 0,
+      "toClaimIndex": 87,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["在向量空间范畴内"],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 1,
+      "toClaimIndex": 56,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 2,
+      "toClaimIndex": 83,
+      "type": "RELATED_TO",
+      "conditions": [],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 3,
+      "toClaimIndex": 65,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["在赋范空间的定义域内"],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 4,
+      "toClaimIndex": 43,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["在 Banach 空间的定义域内"],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 5,
+      "toClaimIndex": 20,
+      "type": "RELATED_TO",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 7,
+      "toClaimIndex": 90,
+      "type": "RELATED_TO",
+      "conditions": [],
+      "confidence": 0.6
+    },
+    {
+      "fromClaimIndex": 9,
+      "toClaimIndex": 72,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 10,
+      "toClaimIndex": 33,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 12,
+      "toClaimIndex": 20,
+      "type": "RELATED_TO",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 13,
+      "toClaimIndex": 85,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 14,
+      "toClaimIndex": 75,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["在欧氏空间中"],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 16,
+      "toClaimIndex": 61,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 17,
+      "toClaimIndex": 65,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 18,
+      "toClaimIndex": 71,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["在 C[0,1] 和 L1 范数下"],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 19,
+      "toClaimIndex": 65,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 20,
+      "toClaimIndex": 83,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["在 R^n 中"],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 21,
+      "toClaimIndex": 91,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 22,
+      "toClaimIndex": 50,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["在欧氏空间中"],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 24,
+      "toClaimIndex": 53,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 27,
+      "toClaimIndex": 61,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 28,
+      "toClaimIndex": 53,
+      "type": "RELATED_TO",
+      "conditions": [],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 29,
+      "toClaimIndex": 87,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 30,
+      "toClaimIndex": 53,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["在度量空间的定义域内"],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 32,
+      "toClaimIndex": 33,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 35,
+      "toClaimIndex": 43,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 37,
+      "toClaimIndex": 76,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 38,
+      "toClaimIndex": 64,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["在数学空间的定义域内"],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 41,
+      "toClaimIndex": 20,
+      "type": "RELATED_TO",
+      "conditions": [],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 43,
+      "toClaimIndex": 76,
+      "type": "RELATED_TO",
+      "conditions": [],
+      "confidence": 0.6
+    },
+    {
+      "fromClaimIndex": 44,
+      "toClaimIndex": 53,
+      "type": "RELATED_TO",
+      "conditions": [],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 45,
+      "toClaimIndex": 43,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 46,
+      "toClaimIndex": 33,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 47,
+      "toClaimIndex": 78,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 48,
+      "toClaimIndex": 14,
+      "type": "RELATED_TO",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 50,
+      "toClaimIndex": 37,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 53,
+      "toClaimIndex": 30,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 54,
+      "toClaimIndex": 21,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 55,
+      "toClaimIndex": 76,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["在 Hilbert 空间的定义域内"],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 57,
+      "toClaimIndex": 74,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 60,
+      "toClaimIndex": 92,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 62,
+      "toClaimIndex": 72,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 63,
+      "toClaimIndex": 33,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 64,
+      "toClaimIndex": 60,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 65,
+      "toClaimIndex": 78,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 66,
+      "toClaimIndex": 43,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 67,
+      "toClaimIndex": 33,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 68,
+      "toClaimIndex": 56,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 70,
+      "toClaimIndex": 39,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 72,
+      "toClaimIndex": 53,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 73,
+      "toClaimIndex": 87,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 75,
+      "toClaimIndex": 14,
+      "type": "RELATED_TO",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 76,
+      "toClaimIndex": 37,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 78,
+      "toClaimIndex": 47,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 82,
+      "toClaimIndex": 37,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 84,
+      "toClaimIndex": 36,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 86,
+      "toClaimIndex": 60,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 88,
+      "toClaimIndex": 20,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 89,
+      "toClaimIndex": 48,
+      "type": "RELATED_TO",
+      "conditions": [],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 90,
+      "toClaimIndex": 7,
+      "type": "RELATED_TO",
+      "conditions": [],
+      "confidence": 0.6
+    },
+    {
+      "fromClaimIndex": 92,
+      "toClaimIndex": 60,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 93,
+      "toClaimIndex": 65,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+	"schemaVersion": "wge-goal4-final-adjudication/v1",
+	"createdAt": "2026-08-12T00:20:00+08:00",
+	"stageBRead": false,
+	"goal": "Reduce false cross-material SUPPORTS audit cost without weakening semantic publication gates.",
+	"evidence": {
+		"calibrationReport": "experiments/goal4/support-router-runs/calibration-v1/report.json",
+		"frozenReplayReport": {
+			"path": "experiments/goal4/support-router-runs/frozen-v10-source004-v1/report.json",
+			"sha256": "89498affd350362c381fef358cd6805cc9905ef7522d22f3d2e4c46d0350d106"
+		},
+		"onlineCanaryValidation": {
+			"path": "experiments/goal3/s200-runs/compile-v11-support-router-4source/goal4-validation.json",
+			"sha256": "7302054364d8d3b51d26a43c369b82b9cab75df8675fd64983746894b6737c3a"
+		},
+		"onlineCanaryManualReview": {
+			"path": "experiments/goal3/s200-runs/compile-v11-support-router-4source/goal4-manual-review.json",
+			"sha256": "5b8d9ea984f65fabf19f7a69438d31be9e241258f621e8993b397b5fd832fe0a"
+		},
+		"pairedCounterfactual": {
+			"path": "experiments/goal4/support-router-runs/online-v11-source003-counterfactual-v1/report.json",
+			"sha256": "f12b26a2640811b6b362a8a54f6676ebc2a8ed82f9eaebd3fa555b70e831c76b"
+		}
+	},
+	"results": {
+		"calibration": "PASS",
+		"frozenZeroPublicationReplay": "PASS",
+		"onlineLifecycleAccountingAndIsolation": "PASS",
+		"onlineManualDeferredSupportRecall": "PASS_40_OF_40_FALSE_SUPPORT",
+		"onlineCanonicalFaithfulness": "PASS_8_OF_8_WITH_CONDITION_METADATA_WARNING",
+		"onlineAbsoluteTotalTokenBudget": "FAIL_321850_GT_300000",
+		"pairedNoRouterEstimate": 345097,
+		"observedRouterRunTokens": 321850,
+		"routerSavingsVersusPairedNoRouterEstimate": 23247,
+		"routerScopeReduction": 0.716947
+	},
+	"adjudication": {
+		"originalOnlineCanaryStatus": "REMAINS_FAILED",
+		"routerFeatureDecision": "ACCEPT_AS_COST_MITIGATION_WITHOUT_CLAIMING_SYSTEM_BUDGET_PASS",
+		"productionIntegration": "KEEP_ENABLED",
+		"publicationAuthority": false,
+		"semanticAuditAuthority": "UNCHANGED",
+		"reason": "The absolute whole-run budget was exceeded, but the exact-candidate paired counterfactual shows that removing the router would increase the same run estimate by 23247 tokens. Disabling the router would therefore worsen the failed system metric. The router is accepted as a bounded mitigation; the 300k system-budget failure is carried forward as a separate pipeline-cost problem."
+	},
+	"protocolDeviationDisclosure": {
+		"originalDecisionRule": "machineOrManualGateFails => disable production router integration",
+		"whyItWasNotAppliedLiterally": "The rule used a whole-pipeline absolute metric as if it were causal evidence about one component. Upstream Claim/Relation output drift and non-SUPPORT RELATED_TO audit dominated the overrun. A post-hoc paired counterfactual on the exact deferred candidates demonstrated that disabling the component would make the metric worse.",
+		"scientificLimit": "This does not retroactively pass the preregistered canary. It records that the preregistered decision rule was overbroad and separates component acceptance from whole-system budget acceptance."
+	},
+	"newSignalsForNextGoal": [
+		"Temperature 0 did not prevent large Relation type/count drift: source 003 moved to 40 SUPPORTS while source 004 moved to 40 non-SUPPORTS candidates.",
+		"The four-source run still costs 321850 tokens even after the router saved an estimated 23247 tokens versus no-router execution.",
+		"Eight canonical RELATED_TO edges are faithful, but their conditions contain endpoint summaries rather than true applicability preconditions.",
+		"The next optimization must target bounded detector output and weak-edge audit economics without source- or domain-specific rules."
+	],
+	"goal4Status": "COMPLETE_WITH_SEPARATED_SYSTEM_BUDGET_FAILURE"
+}

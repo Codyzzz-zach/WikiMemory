@@ -1,0 +1,62 @@
+[
+  {
+    "sampleId": "sample-c7a9fcb7-ee2e-45c3-9ce6-0e2818ea69f7",
+    "questionId": "B-C-HEALTH-002",
+    "answer": "{\n  \"answer\": \"在特定室内场所，如拥挤且通风不良的空间中，与感染者长时间接触时，短距离气溶胶传播不能被排除。\",\n  \"citations\": [\"../../../workbuddy-batch-b/generated/compilation-corpus/health-biology/health-who-july-2020-002.md:1-6\"],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}"
+  },
+  {
+    "sampleId": "sample-16c60a23-dc14-46c1-bb22-3d9719fceedc",
+    "questionId": "B-C-HEALTH-002",
+    "answer": "{\n  \"answer\": \"在特定室内场所，如拥挤且通风不良的空间，与感染者长时间接触的条件下，短距离气溶胶传播不能被排除。\",\n  \"citations\": [\n    \"span:health-who-july-2020-002-a1c7e701eebb9dc1-2#chars-413-615\",\n    \"span:health-who-july-2020-002-a1c7e701eebb9dc1-2#chars-447-594\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}"
+  },
+  {
+    "sampleId": "sample-4a35d188-0206-44ad-bb0d-38417c7ff346",
+    "questionId": "B-E-HEALTH-005",
+    "answer": "{\n  \"answer\": \"2020年3月29日，WHO发布科学简报，未明确认可空气传播。2020年7月9日更新版承认短距离气溶胶传播在特定室内场所（拥挤、通风不良、长时间接触）不能排除。2020年10月20日，WHO正式承认气溶胶可传播病毒，但仅限于特定环境。随后六个月，WHO逐步调整建议，指出气溶胶可携带病毒超过1米并悬浮在空气中。\",\n  \"citations\": [\n    \"SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/health-biology/health-nature-airborne-2022-003.md:1-6\",\n    \"SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/health-biology/health-who-july-2020-002.md:1-6\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": [\n    \"2020年3月29日简报的具体内容未提供，无法确认当时是否完全排除空气传播。\"\n  ]\n}"
+  },
+  {
+    "sampleId": "sample-5b1fbd52-aa26-452f-bfcc-92b24250ca84",
+    "questionId": "B-E-HEALTH-005",
+    "answer": "{\n  \"answer\": \"2020年3月29日，WHO的科学简报指出，在COVID-19背景下，空气传播可能仅在产生气溶胶的操作或支持治疗（如气管插管、支气管镜检查等）的特定情况下发生（claim:b587ec61aaf84d7d-474d339f3670f6c4）。2020年7月，WHO更新了该简报，承认短距离气溶胶传播在特定室内场所（如拥挤且通风不良的空间、长时间接触感染者）不能排除（claim:a1c7e701eebb9dc1-271d5603ab397f55），并指出该更新包含了新的科学证据（claim:a1c7e701eebb9dc1-8c2b8fcbcdf52208）。然而，WHO直到2020年10月20日才正式承认气溶胶可以传播病毒（claim:14069d5a982d18de-30df60c9afb3e05b）。\",\n  \"citations\": [\n    \"claim:b587ec61aaf84d7d-474d339f3670f6c4\",\n    \"claim:a1c7e701eebb9dc1-271d5603ab397f55\",\n    \"claim:a1c7e701eebb9dc1-8c2b8fcbcdf52208\",\n    \"claim:14069d5a982d18de-30df60c9afb3e05b\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}"
+  },
+  {
+    "sampleId": "sample-c1fbd84f-9567-43af-b5ea-76a7df9d66e2",
+    "questionId": "B-C-HIST-003",
+    "answer": "{\n  \"answer\": \"使用归档 vesuvius 仓库时必须保留的状态条件包括：仓库已归档（2024年11月21日）、只读、数据在后台流式传输仅提供请求的区域、并非所有数据当前可用（数据将继续添加）、仓库现在维护在 https://github.com/ScrollPrize/villa/tree/main/vesuvius。\",\n  \"citations\": [\n    \"span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-1#chars-48-106\",\n    \"span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-1#chars-107-127\",\n    \"span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-4#chars-446-517\",\n    \"span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-5#chars-571-674\",\n    \"span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-2#chars-135-235\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}"
+  },
+  {
+    "sampleId": "sample-bda48729-d455-4e91-a494-51fd4000c0e9",
+    "questionId": "B-C-HIST-003",
+    "answer": "{\n  \"answer\": \"使用归档 vesuvius 仓库时必须保留只读状态，因为该仓库已被所有者归档，现在为只读。\",\n  \"citations\": [\n    \"SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/history-humanities/history-vesuvius-github-2024-002.md:1-12\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}"
+  },
+  {
+    "sampleId": "sample-ee346591-8068-427e-871e-012a5ce71ad5",
+    "questionId": "B-X-HIST-006",
+    "answer": "{\n  \"answer\": \"论文（EduceLab-Scrolls）能回答“如何首次发现赫库兰尼姆卷轴隐藏文本”的技术方法问题；GitHub 库（ScrollPrize/vesuvius）能回答“如何访问卷轴 CT 扫描数据”的实践操作问题；Nature 报道能回答“维苏威挑战赛获胜者如何通过机器学习揭示卷轴内容”的宏观成果问题。\",\n  \"citations\": [\n    \"claim:e71279e71acc04bd-dc4b7534a61f85ee\",\n    \"claim:5505a1ba1fcb1b68-a4e0bf4dcf441832\",\n    \"claim:b98a3ae4860a6edc-704f0702fd830045\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}"
+  },
+  {
+    "sampleId": "sample-0a14ffc3-dd0e-4cce-b0d0-bdc692d98c40",
+    "questionId": "B-X-HIST-006",
+    "answer": "{\n  \"answer\": \"论文、GitHub 库和 Nature 报道分别能回答不同层次的问题：GitHub 库（如 ScrollPrize/vesuvius）提供技术实现细节和代码访问，适合回答“如何操作”或“具体实现”的问题；Nature 报道通常提供研究背景、意义和权威结论，适合回答“为什么重要”或“研究结论”的问题；论文则介于两者之间，提供方法、实验和结果，适合回答“如何验证”或“具体方法”的问题。\",\n  \"citations\": [\"SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/history-humanities/history-vesuvius-github-2024-002.md:1-12\"],\n  \"insufficient\": false,\n  \"uncertainties\": [\"未明确区分论文、GitHub 库和 Nature 报道的具体层次，仅基于一般认知推断。\"]\n}"
+  },
+  {
+    "sampleId": "sample-981b09e8-31a9-4dc7-b1d0-735e9963540d",
+    "questionId": "B-C-DESIGN-002",
+    "answer": "{\n  \"answer\": \"当政策要求符合 WCAG 2.0 或 2.1 时，采用 WCAG 2.2 后仍可能需要报告 4.1.1。\",\n  \"citations\": [\n    \"SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-wcag22-2023-002.md:1-16\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}"
+  },
+  {
+    "sampleId": "sample-ff4f941b-665c-464a-83bc-7fc40326facf",
+    "questionId": "B-C-DESIGN-002",
+    "answer": "{\n  \"answer\": \"当政策要求符合 WCAG 2.0 或 2.1 时，采用 WCAG 2.2 后仍可能需要继续测试和报告 4.1.1。\",\n  \"citations\": [\n    \"claim:1da3417e06ff5435-e9295b4993a17258\",\n    \"EVIDENCE span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-449-494\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}"
+  },
+  {
+    "sampleId": "sample-2fbc7ea1-8d56-4dbb-a682-42541bc800c0",
+    "questionId": "B-X-DESIGN-005",
+    "answer": "{\n  \"answer\": \"Issue #2705 请求在完成对所有受影响输入模态的研究之前移除 SC 2.5.7 Dragging Movements，认为需要更多平台考量，且不应将所有移动端要求强加于桌面内容。最终 WCAG 2.2 保留了该 SC，要求所有通过拖拽操作的功能均可通过单指针无拖拽完成，除非拖拽是必要的或功能由用户代理决定且作者未修改。\",\n  \"citations\": [\n    \"claim:d40218e811ec1166-3121f577072c04bb\",\n    \"claim:d40218e811ec1166-09499dce953a0a91\",\n    \"claim:d40218e811ec1166-f30bb9542bb62fad\",\n    \"claim:d40218e811ec1166-21341d7bbebecc13\",\n    \"claim:1da3417e06ff5435-fda7e8c14ff6f23b\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}"
+  },
+  {
+    "sampleId": "sample-5acc24e2-4e2e-41bb-ade2-bd1d9985d434",
+    "questionId": "B-X-DESIGN-005",
+    "answer": "{\n  \"answer\": \"Issue #2705 是对 WCAG 2.2 草案中成功标准 2.5.7 Dragging Movements 的反馈，要求移除该标准，直到完成对所有受影响输入模态的研究。最终 WCAG 2.2 保留了 2.5.7 Dragging Movements 作为 AA 级标准。\",\n  \"citations\": [\n    \"SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-wcag-issue-2705-003.md:1-8\",\n    \"SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-wcag22-2023-002.md:1-16\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}"
+  }
+]

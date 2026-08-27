@@ -1,0 +1,275 @@
+{
+  "schemaVersion": "v1",
+  "sourceId": "source:design-wcag22-2023-002-1da3417e06ff5435",
+  "runId": "7165ec4d-7476-484c-8b41-e8968cc9ddc6",
+  "publishedAt": "2026-07-27T09:57:39.025Z",
+  "claims": [],
+  "relations": [
+    {
+      "relation": {
+        "id": "rel:1da3417e06ff5435-68e10849782e737e",
+        "from": "claim:1da3417e06ff5435-e9295b4993a17258",
+        "to": "claim:1da3417e06ff5435-50f420b0776ab205",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-274-331",
+          "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-449-494"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:57:29.919Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:1da3417e06ff5435-68e10849782e737e",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:design-wcag22-2023-002#block-1] “WCAG 2.2 has removed one success criterion, 4.1.1 Parsing”; [1:design-wcag22-2023-002#block-1] “may need to continue to test and report 4.1.1”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:1da3417e06ff5435-68e10849782e737e",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:design-wcag22-2023-002#block-1] “WCAG 2.2 has removed one success criterion, 4.1.1 Parsing”; [1:design-wcag22-2023-002#block-1] “may need to continue to test and report 4.1.1”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:1da3417e06ff5435-94a904f59fefa460",
+        "from": "claim:1da3417e06ff5435-50f420b0776ab205",
+        "to": "claim:1da3417e06ff5435-e9295b4993a17258",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-274-331",
+          "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-449-494"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:57:29.919Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:1da3417e06ff5435-94a904f59fefa460",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:design-wcag22-2023-002#block-1] “WCAG 2.2 has removed one success criterion, 4.1.1 Parsing”; [1:design-wcag22-2023-002#block-1] “may need to continue to test and report 4.1.1”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:1da3417e06ff5435-94a904f59fefa460",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:design-wcag22-2023-002#block-1] “WCAG 2.2 has removed one success criterion, 4.1.1 Parsing”; [1:design-wcag22-2023-002#block-1] “may need to continue to test and report 4.1.1”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:1da3417e06ff5435-c5f6bd6648e6b582",
+        "from": "claim:1da3417e06ff5435-0131b383bb68d5d6",
+        "to": "claim:1da3417e06ff5435-4f47a3d28c2c5675",
+        "type": "DERIVED_FROM",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-121-216",
+          "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-51-111"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:57:29.919Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:1da3417e06ff5435-c5f6bd6648e6b582",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:design-wcag22-2023-002#block-1] “web pages that conform to WCAG 2.2 are at least as accessible as pages that conf”; [1:design-wcag22-2023-002#block-1] “WCAG 2.2 builds on and is backwards compatible with WCAG 2.1”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-bc3bfcf8da29fa74",
+        "from": "claim:1da3417e06ff5435-50f420b0776ab205",
+        "to": "claim:a379c869d6fd01c5-04b919f4bee1dda9",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:design-wcag21-2018-001-a379c869d6fd01c5-2#chars-183-224",
+          "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-274-331"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:57:37.283Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-bc3bfcf8da29fa74",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:design-wcag21-2018-001#block-2] “Success Criterion 4.1.1 Parsing (Level A)”; [1:design-wcag22-2023-002#block-1] “WCAG 2.2 has removed one success criterion, 4.1.1 Parsing”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-bc3bfcf8da29fa74",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:design-wcag21-2018-001#block-2] “Success Criterion 4.1.1 Parsing (Level A)”; [1:design-wcag22-2023-002#block-1] “WCAG 2.2 has removed one success criterion, 4.1.1 Parsing”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-e26924d77c0467da",
+        "from": "claim:1da3417e06ff5435-4f47a3d28c2c5675",
+        "to": "claim:a379c869d6fd01c5-5e7756a095157543",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:design-wcag21-2018-001-a379c869d6fd01c5-1#chars-121-180",
+          "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-121-216"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:57:37.283Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-e26924d77c0467da",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:design-wcag21-2018-001#block-1] “web pages that conform to WCAG 2.1 also conform to WCAG 2.0”; [1:design-wcag22-2023-002#block-1] “web pages that conform to WCAG 2.2 are at least as accessible as pages that conf”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-e26924d77c0467da",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:design-wcag21-2018-001#block-1] “web pages that conform to WCAG 2.1 also conform to WCAG 2.0”; [1:design-wcag22-2023-002#block-1] “web pages that conform to WCAG 2.2 are at least as accessible as pages that conf”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-e26924d77c0467da",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:design-wcag21-2018-001#block-1] “web pages that conform to WCAG 2.1 also conform to WCAG 2.0”; [1:design-wcag22-2023-002#block-1] “web pages that conform to WCAG 2.2 are at least as accessible as pages that conf”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_DIRECTION_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-e26924d77c0467da",
+          "detail": "direction：Relation 未通过边级语义审计；证据 [0:design-wcag21-2018-001#block-1] “web pages that conform to WCAG 2.1 also conform to WCAG 2.0”; [1:design-wcag22-2023-002#block-1] “web pages that conform to WCAG 2.2 are at least as accessible as pages that conf”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-f7abe0a15da2a688",
+        "from": "claim:1da3417e06ff5435-0131b383bb68d5d6",
+        "to": "claim:a379c869d6fd01c5-dd9dfa26cc601b87",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:design-wcag21-2018-001-a379c869d6fd01c5-1#chars-51-111",
+          "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-51-111"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:57:37.283Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-f7abe0a15da2a688",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:design-wcag21-2018-001#block-1] “WCAG 2.1 builds on and is backwards compatible with WCAG 2.0”; [1:design-wcag22-2023-002#block-1] “WCAG 2.2 builds on and is backwards compatible with WCAG 2.1”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-f7abe0a15da2a688",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:design-wcag21-2018-001#block-1] “WCAG 2.1 builds on and is backwards compatible with WCAG 2.0”; [1:design-wcag22-2023-002#block-1] “WCAG 2.2 builds on and is backwards compatible with WCAG 2.1”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-f7abe0a15da2a688",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:design-wcag21-2018-001#block-1] “WCAG 2.1 builds on and is backwards compatible with WCAG 2.0”; [1:design-wcag22-2023-002#block-1] “WCAG 2.2 builds on and is backwards compatible with WCAG 2.1”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "runId": "e4-batch-b-remaining-all-modes-2026-07-28T05-44-10-699Z",
+  "sampleId": "sample-b0b21999-a243-4be8-a52c-8dd593642f5d",
+  "questionId": "B-K-DESIGN-011",
+  "group": "B",
+  "pilotGroup": "B",
+  "graphExpansion": false,
+  "repetition": 1,
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "temperature": 0,
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 239,
+    "completionTokens": 138,
+    "totalTokens": 377,
+    "promptCacheHitTokens": 0,
+    "promptCacheMissTokens": 239,
+    "reasoningTokens": 0
+  },
+  "latencyMs": 2230,
+  "promptHash": "sha256:8a461d4c4c4663a9af347aaf8504845f8c47dec5c69e56995ad741705a15904a",
+  "contextHash": "ebf5e3e2f4e1cc68d0c78afc42d6ba63026c411216d1e664262b73ecf361c58b",
+  "estimatedContextTokens": 71,
+  "estimatedInputTokens": 244,
+  "retrievedClaims": [],
+  "retrievedRelations": [],
+  "retrievedSources": [
+    "../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-webaim-checklist-2024-004.md"
+  ],
+  "droppedContext": [],
+  "retrievalTrace": {
+    "strategy": "folder-lexical",
+    "queryFeatureCount": 20,
+    "corpusChunkCount": 12,
+    "matchedChunkCount": 1,
+    "maxFolderChunks": 16,
+    "candidates": [
+      {
+        "id": "../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-webaim-checklist-2024-004.md#L1-L4",
+        "rank": 1,
+        "score": 2.8718021769015913,
+        "selected": true,
+        "dropReason": null
+      }
+    ]
+  },
+  "request": {
+    "systemPrompt": "你是受证据约束的问答 Agent。只使用本次请求提供的检索上下文回答。\n要求：保留影响结论的条件、时间、例外、来源角色与不确定性；关键结论引用上下文中的 SOURCE、EVIDENCE 或 CLAIM 标识；上下文不足时明确说明，不得用外部常识补齐。\n只输出严格 JSON：{\"answer\":\"...\",\"citations\":[\"...\"],\"insufficient\":false,\"uncertainties\":[\"...\"]}。",
+    "userPrompt": "# 问题\nWebAIM 与 W3C 都说 4.1.1 被移除，这是否构成两个独立规范来源？\n\n# 检索上下文\n## SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-webaim-checklist-2024-004.md:1-4 score=2.872\n# WebAIM WCAG 2 Checklist\n\nSuccess Criterion 4.1.1 Parsing: This success criterion is no longer useful and as of 2023 has been removed from WCAG."
+  },
+  "answer": "{\n  \"answer\": \"是的，WebAIM 和 W3C 都指出 4.1.1 已被移除，但 WebAIM 是引用 W3C 的决定，因此它们并非两个完全独立的规范来源。\",\n  \"citations\": [\"../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-webaim-checklist-2024-004.md:1-4\"],\n  \"insufficient\": false,\n  \"uncertainties\": [\"上下文未明确说明 W3C 是否直接声明移除，但 WebAIM 的陈述暗示了 W3C 的官方行动。\"]\n}",
+  "answerFormatValid": true
+}

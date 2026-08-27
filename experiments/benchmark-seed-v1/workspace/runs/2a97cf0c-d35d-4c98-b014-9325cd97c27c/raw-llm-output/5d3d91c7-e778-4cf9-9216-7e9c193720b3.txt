@@ -1,0 +1,46 @@
+{
+  "relations": [
+    {
+      "fromClaimIndex": 0,
+      "toClaimIndex": 3,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 1,
+      "toClaimIndex": 7,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["该库来自维苏威挑战赛，是一个用于访问古代卷轴 CT 扫描的 Python 库", "ScrollPrize/vesuvius 是一个归档的 Python 库"],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 2,
+      "toClaimIndex": 7,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 5,
+      "toClaimIndex": 8,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 6,
+      "toClaimIndex": 3,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 7,
+      "toClaimIndex": 5,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    }
+  ]
+}

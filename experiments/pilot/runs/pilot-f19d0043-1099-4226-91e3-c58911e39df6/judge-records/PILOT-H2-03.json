@@ -1,0 +1,48 @@
+{
+  "questionId": "PILOT-H2-03",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "request": {
+    "systemPrompt": "你是知识系统的盲测评分员。你只按提供的 Gold 和评分合同评价匿名答案，不判断答案来自哪个实验组。\n必须逐项核对 requiredClaims、mustMentionConditions、forbiddenClaims、answerability 和证据引用。\nsourceRisk.present=true 时，Gold 风险说明是允许使用的人工审计结论；不得把源材料的过强表述当成正确答案。\n只输出严格 JSON：{\"scores\":[{\"sampleId\":\"...\",\"requiredClaimCoverage\":0,\"conditionFidelity\":0,\"evidenceGrounding\":0,\"answerabilityDiscipline\":0,\"hardFailure\":false,\"rationale\":\"...\"}]}。",
+    "userPrompt": "# 评分合同\n{\n  \"dimensions\": {\n    \"requiredClaimCoverage\": {\n      \"score0\": \"没有覆盖 requiredClaims，或核心结论相反\",\n      \"score1\": \"覆盖部分 requiredClaims，但缺少一项以上关键连接\",\n      \"score2\": \"完整覆盖全部 requiredClaims\"\n    },\n    \"conditionFidelity\": {\n      \"score0\": \"触发 forbiddenClaims，或删除了决定结论的条件\",\n      \"score1\": \"方向基本正确，但条件、例外或必要/充分强度表达不完整\",\n      \"score2\": \"保留全部 mustMentionConditions，且未触发 forbiddenClaims\"\n    },\n    \"evidenceGrounding\": {\n      \"score0\": \"关键结论没有可解析引用，或引用与结论无关\",\n      \"score1\": \"有相关引用，但关键结论存在未落到证据的部分\",\n      \"score2\": \"关键结论均由当前上下文标识支持，引用位置正确\"\n    },\n    \"answerabilityDiscipline\": {\n      \"score0\": \"证据不足时仍编造答案，或证据充分时错误拒答\",\n      \"score1\": \"表达了不确定性，但回答/拒答边界不够准确\",\n      \"score2\": \"严格遵守该题 answerability，充分回答或明确拒答\"\n    }\n  },\n  \"totalScore\": 8,\n  \"hardFailure\": \"任何 forbiddenClaim、伪造引用、把 insufficient 题当作已由语料证明，均记 hardFailure；该样本总分最高为 2。\"\n}\n\n# 题目与 Gold\n{\n  \"question\": \"范数如何先导出度量，而线性算子的有界性又如何通过算子范数与连续性联系起来？\",\n  \"answerability\": \"answerable\",\n  \"requiredClaims\": [\n    \"向量空间上的范数通过 $d(x,y)=\\\\|x-y\\\\|$ 导出度量\",\n    \"线性算子的范数由单位球上的输出范数上确界刻画\",\n    \"在线性算子的前提下，算子范数有限即有界与连续等价\"\n  ],\n  \"mustMentionConditions\": [\n    \"有界性与连续性的等价结论限定在线性算子语境\"\n  ],\n  \"forbiddenClaims\": [\n    \"任意非线性映射都有有界当且仅当连续\",\n    \"范数与度量是毫无联系的独立结构\"\n  ],\n  \"sourceRisk\": {\n    \"present\": false,\n    \"detail\": \"\"\n  },\n  \"evidence\": [\n    {\n      \"sourceFile\": \"mathtest-material/02-spaces.md\",\n      \"heading\": \"2.5 赋范空间与 Banach 空间\",\n      \"exactQuote\": \"范数自然地导出距离：$d(x,y) = \\\\|x-y\\\\|$。所以 $(V, \\\\|\\\\cdot\\\\|)$ 构成赋范空间，也自动成为度量空间。\",\n      \"supportsRequiredClaims\": [\n        0\n      ]\n    },\n    {\n      \"sourceFile\": \"mathtest-material/05-functions-mappings.md\",\n      \"heading\": \"有界性与连续性\",\n      \"exactQuote\": \"在线性算子中，**有界性 = 连续性**：\\n\\n$$\\n\\\\|T\\\\| = \\\\sup_{\\\\|f\\\\|=1} \\\\|Tf\\\\| < \\\\infty \\\\iff T \\\\text{ 连续}\\n$$\",\n      \"supportsRequiredClaims\": [\n        1,\n        2\n      ]\n    }\n  ]\n}\n\n# 匿名答案\n[\n  {\n    \"sampleId\": \"sample-ddd243bf-f240-4926-978e-688725bccd2d\",\n    \"questionId\": \"PILOT-H2-03\",\n    \"answer\": \"{\\n  \\\"answer\\\": \\\"范数通过定义距离 d(x,y)=‖x-y‖ 导出度量。线性算子的有界性定义为算子范数有限：‖T‖=sup_{‖f‖=1}‖Tf‖<∞，且有界性等价于连续性。\\\",\\n  \\\"citations\\\": [\\n    \\\"claim:7e02712717a02820-d4f3c3b889df3080\\\",\\n    \\\"claim:7e02712717a02820-03522d71ff27a7f6\\\",\\n    \\\"evidence span:05-functions-mappings-7e02712717a02820-33#chars-2966-3028\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\"\n  },\n  {\n    \"sampleId\": \"sample-728aba86-a495-4f0d-a55c-a65105599f1e\",\n    \"questionId\": \"PILOT-H2-03\",\n    \"answer\": \"{\\n  \\\"answer\\\": \\\"范数通过定义 d(x,y) = ||x-y|| 自然地导出度量，使赋范空间成为度量空间。线性算子的有界性通过算子范数 ||T|| = sup_{||f||=1} ||Tf|| < ∞ 等价于连续性，即有界性 = 连续性。\\\",\\n  \\\"citations\\\": [\\n    \\\"SOURCE mathtest-material/02-spaces.md:199-208\\\",\\n    \\\"SOURCE mathtest-material/05-functions-mappings.md:146-157\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\"\n  },\n  {\n    \"sampleId\": \"sample-c99830e6-e548-4d6b-9f03-3e6dd7ee1998\",\n    \"questionId\": \"PILOT-H2-03\",\n    \"answer\": \"{\\n  \\\"answer\\\": \\\"范数通过定义距离 d(x,y)=‖x−y‖ 导出度量。线性算子的有界性定义为算子范数有限：‖T‖=sup_{‖f‖=1}‖Tf‖<∞，且有界性等价于连续性。\\\",\\n  \\\"citations\\\": [\\n    \\\"CLAIM:7e02712717a02820-d4f3c3b889df3080\\\",\\n    \\\"CLAIM:7e02712717a02820-03522d71ff27a7f6\\\",\\n    \\\"EVIDENCE:span:05-functions-mappings-7e02712717a02820-32#chars-2943-2964\\\",\\n    \\\"EVIDENCE:span:05-functions-mappings-7e02712717a02820-33#chars-2966-3028\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\"\n  }\n]"
+  },
+  "usage": {
+    "promptTokens": 1598,
+    "completionTokens": 389,
+    "totalTokens": 1987,
+    "promptCacheHitTokens": 384,
+    "promptCacheMissTokens": 1214,
+    "reasoningTokens": 0
+  },
+  "finishReason": "stop",
+  "rawResponse": "{\n  \"scores\": [\n    {\n      \"sampleId\": \"sample-ddd243bf-f240-4926-978e-688725bccd2d\",\n      \"requiredClaimCoverage\": 2,\n      \"conditionFidelity\": 2,\n      \"evidenceGrounding\": 1,\n      \"answerabilityDiscipline\": 2,\n      \"hardFailure\": false,\n      \"rationale\": \"覆盖全部requiredClaims，提及线性算子条件，无forbiddenClaims。引用格式不规范但可解析，关键结论有引用，但缺少对范数导出度量的直接引用，故evidenceGrounding扣1分。\"\n    },\n    {\n      \"sampleId\": \"sample-728aba86-a495-4f0d-a55c-a65105599f1e\",\n      \"requiredClaimCoverage\": 2,\n      \"conditionFidelity\": 2,\n      \"evidenceGrounding\": 2,\n      \"answerabilityDiscipline\": 2,\n      \"hardFailure\": false,\n      \"rationale\": \"完整覆盖requiredClaims，明确提及线性算子条件，无forbiddenClaims。引用格式规范且位置正确，关键结论均有证据支持。\"\n    },\n    {\n      \"sampleId\": \"sample-c99830e6-e548-4d6b-9f03-3e6dd7ee1998\",\n      \"requiredClaimCoverage\": 2,\n      \"conditionFidelity\": 2,\n      \"evidenceGrounding\": 1,\n      \"answerabilityDiscipline\": 2,\n      \"hardFailure\": false,\n      \"rationale\": \"覆盖全部requiredClaims，提及线性算子条件，无forbiddenClaims。引用格式不规范但可解析，关键结论有引用，但缺少对范数导出度量的直接引用，故evidenceGrounding扣1分。\"\n    }\n  ]\n}",
+  "parsed": [
+    {
+      "sampleId": "sample-ddd243bf-f240-4926-978e-688725bccd2d",
+      "requiredClaimCoverage": 2,
+      "conditionFidelity": 2,
+      "evidenceGrounding": 1,
+      "answerabilityDiscipline": 2,
+      "hardFailure": false,
+      "rationale": "覆盖全部requiredClaims，提及线性算子条件，无forbiddenClaims。引用格式不规范但可解析，关键结论有引用，但缺少对范数导出度量的直接引用，故evidenceGrounding扣1分。"
+    },
+    {
+      "sampleId": "sample-728aba86-a495-4f0d-a55c-a65105599f1e",
+      "requiredClaimCoverage": 2,
+      "conditionFidelity": 2,
+      "evidenceGrounding": 2,
+      "answerabilityDiscipline": 2,
+      "hardFailure": false,
+      "rationale": "完整覆盖requiredClaims，明确提及线性算子条件，无forbiddenClaims。引用格式规范且位置正确，关键结论均有证据支持。"
+    },
+    {
+      "sampleId": "sample-c99830e6-e548-4d6b-9f03-3e6dd7ee1998",
+      "requiredClaimCoverage": 2,
+      "conditionFidelity": 2,
+      "evidenceGrounding": 1,
+      "answerabilityDiscipline": 2,
+      "hardFailure": false,
+      "rationale": "覆盖全部requiredClaims，提及线性算子条件，无forbiddenClaims。引用格式不规范但可解析，关键结论有引用，但缺少对范数导出度量的直接引用，故evidenceGrounding扣1分。"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "kind": "VALID",
+  "content": "{\n  \"claims\": [\n    {\n      \"statement\": \"WebAIM WCAG 2 Checklist 是一个文档标题。\",\n      \"evidenceQuotes\": [\"WebAIM WCAG 2 Checklist\"],\n      \"blockIds\": [\"design-webaim-checklist-2024-004#block-0\"],\n      \"conditions\": [],\n      \"derivation\": \"EXTRACTED\",\n      \"confidence\": 1.0\n    },\n    {\n      \"statement\": \"Success Criterion 4.1.1 Parsing 不再有用。\",\n      \"evidenceQuotes\": [\"Success Criterion 4.1.1 Parsing: This success criterion is no longer useful\"],\n      \"blockIds\": [\"design-webaim-checklist-2024-004#block-1\"],\n      \"conditions\": [],\n      \"derivation\": \"EXTRACTED\",\n      \"confidence\": 1.0\n    },\n    {\n      \"statement\": \"Success Criterion 4.1.1 Parsing 自2023年起已从WCAG中移除。\",\n      \"evidenceQuotes\": [\"as of 2023 has been removed from WCAG.\"],\n      \"blockIds\": [\"design-webaim-checklist-2024-004#block-1\"],\n      \"conditions\": [],\n      \"derivation\": \"EXTRACTED\",\n      \"confidence\": 1.0\n    }\n  ]\n}",
+  "model": "deepseek-v4-flash",
+  "outputHash": "8dc41e7f1f28177d"
+}

@@ -1,0 +1,272 @@
+{
+  "schemaVersion": "v1",
+  "sourceId": "source:history-scrollprize-2026-004-4ab2f152a60c6bbe",
+  "runId": "0411c94f-a4ca-4818-ad9c-5f56a706ecbd",
+  "publishedAt": "2026-07-27T09:56:51.016Z",
+  "claims": [
+    {
+      "claim": {
+        "id": "claim:4ab2f152a60c6bbe-a23beb6bec643824",
+        "statement": "The quest was just beginning after the prize was claimed.",
+        "evidenceSpanIds": [
+          "span:history-scrollprize-2026-004-4ab2f152a60c6bbe-1#chars-227-256"
+        ],
+        "conditions": [],
+        "derivation": "EXTRACTED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:56:32.528Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "confidence": 1,
+        "claimKind": "FACT",
+        "scope": {
+          "type": "GLOBAL"
+        },
+        "provenanceRefs": [
+          {
+            "type": "SourceSpan",
+            "spanId": "span:history-scrollprize-2026-004-4ab2f152a60c6bbe-1#chars-227-256"
+          }
+        ],
+        "supportingEvidenceRefs": [
+          {
+            "type": "SourceSpan",
+            "spanId": "span:history-scrollprize-2026-004-4ab2f152a60c6bbe-1#chars-227-256"
+          }
+        ],
+        "knowledgeVersion": "v1",
+        "recordedAt": "2026-07-27T09:56:32.528Z"
+      },
+      "issues": [
+        {
+          "code": "SEMANTIC_SUPPORT_FAILED",
+          "severity": "error",
+          "affectedObject": "claim:4ab2f152a60c6bbe-a23beb6bec643824",
+          "detail": "support：证据没有明确支持 Claim 的全部断言；证据 [0:history-scrollprize-2026-004#block-1] “The quest was just beginning.”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "SEMANTIC_ADDITION_MAJOR",
+          "severity": "error",
+          "affectedObject": "claim:4ab2f152a60c6bbe-a23beb6bec643824",
+          "detail": "addition：Claim 添加了证据未表达的内容；证据 [0:history-scrollprize-2026-004#block-1] “The quest was just beginning.”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "relation": {
+        "id": "rel:4ab2f152a60c6bbe-5f98d594c2025cbc",
+        "from": "claim:4ab2f152a60c6bbe-a23beb6bec643824",
+        "to": "claim:4ab2f152a60c6bbe-d83a71026c2b4d86",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "UNVERIFIED",
+        "supersessionEffect": null,
+        "relationAuditVersion": null,
+        "evidenceSpanIds": [
+          "span:history-scrollprize-2026-004-4ab2f152a60c6bbe-1#chars-227-256",
+          "span:history-scrollprize-2026-004-4ab2f152a60c6bbe-2#chars-362-439"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:56:36.664Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_ENDPOINT_QUARANTINED",
+          "severity": "error",
+          "affectedObject": "rel:4ab2f152a60c6bbe-5f98d594c2025cbc",
+          "detail": "from 端点未通过 Lint（Quarantined）: claim:4ab2f152a60c6bbe-a23beb6bec643824",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:4ab2f152a60c6bbe-ebbd4b23949ac9f9",
+        "from": "claim:4ab2f152a60c6bbe-a6fd9e7a1c644eed",
+        "to": "claim:4ab2f152a60c6bbe-a23beb6bec643824",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "UNVERIFIED",
+        "supersessionEffect": null,
+        "relationAuditVersion": null,
+        "evidenceSpanIds": [
+          "span:history-scrollprize-2026-004-4ab2f152a60c6bbe-1#chars-189-226",
+          "span:history-scrollprize-2026-004-4ab2f152a60c6bbe-1#chars-227-256"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:56:36.664Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_ENDPOINT_QUARANTINED",
+          "severity": "error",
+          "affectedObject": "rel:4ab2f152a60c6bbe-ebbd4b23949ac9f9",
+          "detail": "to 端点未通过 Lint（Quarantined）: claim:4ab2f152a60c6bbe-a23beb6bec643824",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-ab77de7abb64f208",
+        "from": "claim:4ab2f152a60c6bbe-e301af57ef26e82d",
+        "to": "claim:b98a3ae4860a6edc-704f0702fd830045",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:history-nature-scroll-2024-003-b98a3ae4860a6edc-2#chars-299-429",
+          "span:history-scrollprize-2026-004-4ab2f152a60c6bbe-1#chars-39-80"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:56:47.483Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-ab77de7abb64f208",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:history-nature-scroll-2024-003#block-2] “The winners of a contest called the Vesuvius Challenge trained their machine-lea”; [1:history-scrollprize-2026-004#block-1] “Vesuvius Challenge launched in March 2023”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-ab77de7abb64f208",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:history-nature-scroll-2024-003#block-2] “The winners of a contest called the Vesuvius Challenge trained their machine-lea”; [1:history-scrollprize-2026-004#block-1] “Vesuvius Challenge launched in March 2023”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-c8355ea1266a077c",
+        "from": "claim:4ab2f152a60c6bbe-e301af57ef26e82d",
+        "to": "claim:b98a3ae4860a6edc-95aab89f959ee2e9",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:history-nature-scroll-2024-003-b98a3ae4860a6edc-1#chars-59-173",
+          "span:history-scrollprize-2026-004-4ab2f152a60c6bbe-1#chars-39-80"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:56:47.483Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.6,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-c8355ea1266a077c",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:history-nature-scroll-2024-003#block-1] “A team of student researchers has made a giant contribution to solving one of th”; [1:history-scrollprize-2026-004#block-1] “Vesuvius Challenge launched in March 2023”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-c8355ea1266a077c",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:history-nature-scroll-2024-003#block-1] “A team of student researchers has made a giant contribution to solving one of th”; [1:history-scrollprize-2026-004#block-1] “Vesuvius Challenge launched in March 2023”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-c8355ea1266a077c",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:history-nature-scroll-2024-003#block-1] “A team of student researchers has made a giant contribution to solving one of th”; [1:history-scrollprize-2026-004#block-1] “Vesuvius Challenge launched in March 2023”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-d62fcc2dd8947c51",
+        "from": "claim:4ab2f152a60c6bbe-a6fd9e7a1c644eed",
+        "to": "claim:b98a3ae4860a6edc-704f0702fd830045",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:history-nature-scroll-2024-003-b98a3ae4860a6edc-2#chars-299-429",
+          "span:history-scrollprize-2026-004-4ab2f152a60c6bbe-1#chars-189-226"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:56:47.483Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-d62fcc2dd8947c51",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:history-nature-scroll-2024-003#block-2] “The winners of a contest called the Vesuvius Challenge trained their machine-lea”; [1:history-scrollprize-2026-004#block-1] “Within a year, the prize was claimed.”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-d62fcc2dd8947c51",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:history-nature-scroll-2024-003#block-2] “The winners of a contest called the Vesuvius Challenge trained their machine-lea”; [1:history-scrollprize-2026-004#block-1] “Within a year, the prize was claimed.”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-d62fcc2dd8947c51",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:history-nature-scroll-2024-003#block-2] “The winners of a contest called the Vesuvius Challenge trained their machine-lea”; [1:history-scrollprize-2026-004#block-1] “Within a year, the prize was claimed.”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    }
+  ]
+}

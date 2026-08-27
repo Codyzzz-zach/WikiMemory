@@ -1,0 +1,6 @@
+{
+  "kind": "VALID",
+  "content": "{\n  \"relations\": [\n    {\n      \"fromClaimIndex\": 75,\n      \"toClaimIndex\": 6,\n      \"type\": \"EQUIVALENT_UNDER\",\n      \"conditions\": [\"自然数集N的加法封闭性\"],\n      \"confidence\": 1.0\n    },\n    {\n      \"fromClaimIndex\": 49,\n      \"toClaimIndex\": 6,\n      \"type\": \"EQUIVALENT_UNDER\",\n      \"conditions\": [\"自然数集合ℕ的加法封闭性\"],\n      \"confidence\": 1.0\n    }\n  ]\n}",
+  "model": "deepseek-v4-flash",
+  "outputHash": "493d73ca3dde8069"
+}

@@ -1,0 +1,214 @@
+{
+  "propositions": [
+    {
+      "text": "自然数的本质是递归结构——从零出发，反复应用后继操作，生成无穷无尽的序列。",
+      "exactQuote": "自然数的本质不是\"0,1,2,3...\"这些符号，而是递归结构——从零出发，反复应用\"后继\"操作，生成无穷无尽的序列。",
+      "blockId": "01-number-systems#block-8"
+    },
+    {
+      "text": "皮亚诺用五条公理精确定义了自然数。",
+      "exactQuote": "1889年，皮亚诺用五条公理精确定义了自然数：",
+      "blockId": "01-number-systems#block-5"
+    },
+    {
+      "text": "0是自然数。",
+      "exactQuote": "0 是自然数",
+      "blockId": "01-number-systems#block-6"
+    },
+    {
+      "text": "每个自然数n有一个后继S(n)。",
+      "exactQuote": "每个自然数 n 有一个后继 S(n)",
+      "blockId": "01-number-systems#block-6"
+    },
+    {
+      "text": "0不是任何自然数的后继。",
+      "exactQuote": "0 不是任何自然数的后继",
+      "blockId": "01-number-systems#block-6"
+    },
+    {
+      "text": "若S(m)=S(n)，则m=n，即后继函数是单射。",
+      "exactQuote": "若 S(m) = S(n)，则 m = n（后继函数是单射）",
+      "blockId": "01-number-systems#block-6"
+    },
+    {
+      "text": "数学归纳法原理：若某性质对0成立，且由对n成立可推出对S(n)成立，则该性质对一切自然数成立。",
+      "exactQuote": "数学归纳法原理：若某性质对 0 成立，且由对 n 成立可推出对 S(n) 成立，则该性质对一切自然数成立",
+      "blockId": "01-number-systems#block-6"
+    },
+    {
+      "text": "自然数具有良序性：任何非空子集有最小元。",
+      "exactQuote": "良序性: 任何非空子集有最小元",
+      "blockId": "01-number-systems#block-10"
+    },
+    {
+      "text": "自然数对加法封闭。",
+      "exactQuote": "加法封闭: a,b ∈ ℕ ⇒ a+b ∈ ℕ",
+      "blockId": "01-number-systems#block-10"
+    },
+    {
+      "text": "自然数对乘法封闭。",
+      "exactQuote": "乘法封闭: a,b ∈ ℕ ⇒ a×b ∈ ℕ",
+      "blockId": "01-number-systems#block-10"
+    },
+    {
+      "text": "自然数对减法不封闭。",
+      "exactQuote": "减法不封闭: a-b 可能不是自然数",
+      "blockId": "01-number-systems#block-10"
+    },
+    {
+      "text": "自然数对除法不封闭。",
+      "exactQuote": "除法不封闭: a÷b 可能不是自然数",
+      "blockId": "01-number-systems#block-10"
+    },
+    {
+      "text": "自然数的根本缺陷是减法不封闭。",
+      "exactQuote": "自然数的根本缺陷：减法不封闭。",
+      "blockId": "01-number-systems#block-18"
+    },
+    {
+      "text": "整数可以通过自然数有序对(a,b)的等价类构造，其中(a,b)代表a-b这个差。",
+      "exactQuote": "整数可以看作自然数有序对 (a,b) 的等价类，其中 (a,b) 代表\"a-b\"这个差。",
+      "blockId": "01-number-systems#block-19"
+    },
+    {
+      "text": "整数等价关系定义为(a,b)~(c,d)当且仅当a+d=b+c。",
+      "exactQuote": "(a,b) ∼ (c,d) ⇔ a + d = b + c",
+      "blockId": "01-number-systems#block-20"
+    },
+    {
+      "text": "整数是一个交换环。",
+      "exactQuote": "ℤ 是一个交换环",
+      "blockId": "01-number-systems#block-25"
+    },
+    {
+      "text": "整数是一个整环，没有零因子。",
+      "exactQuote": "整数的独特之处在于它还是一个整环（没有零因子：ab=0 ⇒ a=0 或 b=0）。",
+      "blockId": "01-number-systems#block-25"
+    },
+    {
+      "text": "整数的下一个缺陷是除法不封闭。",
+      "exactQuote": "整数的下一个缺陷：除法不封闭。",
+      "blockId": "01-number-systems#block-32"
+    },
+    {
+      "text": "有理数定义为所有形如a/b的数，其中a,b∈ℤ且b≠0。",
+      "exactQuote": "ℚ = { a/b | a,b ∈ ℤ, b ≠ 0 }",
+      "blockId": "01-number-systems#block-33"
+    },
+    {
+      "text": "有理数用等价类构造，a/b ~ c/d当且仅当ad=bc。",
+      "exactQuote": "同样用等价类构造：a/b ∼ c/d ⇔ ad = bc（约分）。",
+      "blockId": "01-number-systems#block-34"
+    },
+    {
+      "text": "任意两个不同的有理数之间，存在无穷多个有理数。",
+      "exactQuote": "任意两个不同的有理数之间，存在无穷多个有理数",
+      "blockId": "01-number-systems#block-36"
+    },
+    {
+      "text": "有理数在数轴上是处处稠密的。",
+      "exactQuote": "有理数在数轴上是处处稠密的。",
+      "blockId": "01-number-systems#block-38"
+    },
+    {
+      "text": "有理数是一个域。",
+      "exactQuote": "ℚ 是一个域（Field）",
+      "blockId": "01-number-systems#block-41"
+    },
+    {
+      "text": "有理数是可数的，可以和自然数一一对应。",
+      "exactQuote": "它是可数的——可以和 ℕ 一一对应。",
+      "blockId": "01-number-systems#block-45"
+    },
+    {
+      "text": "√2不是有理数。",
+      "exactQuote": "√2 不是有理数",
+      "blockId": "01-number-systems#block-51"
+    },
+    {
+      "text": "毕达哥拉斯发现√2不是有理数，引发了第一次数学危机。",
+      "exactQuote": "这个发现在古希腊引发了\"第一次数学危机\"",
+      "blockId": "01-number-systems#block-54"
+    },
+    {
+      "text": "Dedekind分割是实数的严格构造方法。",
+      "exactQuote": "Dedekind（1872）给出了实数的精妙定义",
+      "blockId": "01-number-systems#block-56"
+    },
+    {
+      "text": "一个Dedekind分割是有理数集ℚ的一个划分(A,B)，满足A,B非空，A∪B=ℚ，A∩B=∅，且∀a∈A,∀b∈B有a<b，且A没有最大元。",
+      "exactQuote": "一个 Dedekind 分割是有理数集 ℚ 的一个划分 (A,B)，满足：1. A,B ≠ ∅，A ∪ B = ℚ，A ∩ B = ∅; 2. ∀a∈A, ∀b∈B: a < b; 3. A 没有最大元",
+      "blockId": "01-number-systems#block-57"
+    },
+    {
+      "text": "每个Dedekind分割定义一个实数。",
+      "exactQuote": "每个这样的分割定义一个实数。",
+      "blockId": "01-number-systems#block-57"
+    },
+    {
+      "text": "实数的核心性质是完备性，即数轴没有洞。",
+      "exactQuote": "完备性 = 数轴没有\"洞\"。",
+      "blockId": "01-number-systems#block-63"
+    },
+    {
+      "text": "实数具有完备性：有上界必有上确界。",
+      "exactQuote": "有上界必有上确界",
+      "blockId": "01-number-systems#block-62"
+    },
+    {
+      "text": "实数具有完备性：Cauchy列必收敛。",
+      "exactQuote": "Cauchy 列必收敛",
+      "blockId": "01-number-systems#block-62"
+    },
+    {
+      "text": "实数不可数。",
+      "exactQuote": "ℝ 不可数——实数比自然数\"多得多\"。",
+      "blockId": "01-number-systems#block-66"
+    },
+    {
+      "text": "Cantor用对角线论证证明了实数不可数。",
+      "exactQuote": "Cantor 证明：ℝ 不可数",
+      "blockId": "01-number-systems#block-66"
+    },
+    {
+      "text": "16世纪意大利数学家发现三次方程的求解过程中出现了√-121。",
+      "exactQuote": "16世纪，意大利数学家发现三次方程 x³ = 15x + 4 的求解过程中出现了 √-121。",
+      "blockId": "01-number-systems#block-74"
+    },
+    {
+      "text": "复数定义为a+bi，其中a,b∈ℝ，i²=-1。",
+      "exactQuote": "ℂ = {a + bi | a,b ∈ ℝ, i² = -1}",
+      "blockId": "01-number-systems#block-76"
+    },
+    {
+      "text": "复数的模|z|=√(a²+b²)。",
+      "exactQuote": "模 |z| = √(a²+b²)",
+      "blockId": "01-number-systems#block-77"
+    },
+    {
+      "text": "复数的共轭定义为a-bi。",
+      "exactQuote": "共轭 z̅ = a - bi",
+      "blockId": "01-number-systems#block-77"
+    },
+    {
+      "text": "复数的极坐标形式为z=r(cosθ+isinθ)=re^(iθ)。",
+      "exactQuote": "极坐标 z = r(cosθ + i sinθ) = re^(iθ)",
+      "blockId": "01-number-systems#block-77"
+    },
+    {
+      "text": "欧拉公式e^(iπ)+1=0连接了五个最基础的数学常数和三种基本运算。",
+      "exactQuote": "这个公式连接了五个最基础的数学常数（e, i, π, 1, 0）和三种基本运算（加法、乘法、指数）。",
+      "blockId": "01-number-systems#block-85"
+    },
+    {
+      "text": "代数基本定理：任何n次复系数多项式在ℂ中恰好有n个根。",
+      "exactQuote": "任何 n 次复系数多项式在 ℂ 中恰好有 n 个根（计重数）。",
+      "blockId": "01-number-systems#block-88"
+    },
+    {
+      "text": "复数域是代数封闭的。",
+      "exactQuote": "ℂ 是代数封闭的",
+      "blockId": "01-number-systems#block-90"
+    }
+  ]
+}

@@ -1,0 +1,6494 @@
+{
+  "schemaVersion": "v1",
+  "sourceId": "source:01-number-systems-80440e2182e5653f",
+  "runId": "f856ccd7-381d-42b9-b165-0af345d83476",
+  "publishedAt": "2026-07-23T16:59:32.062Z",
+  "claims": [
+    {
+      "id": "claim:80440e2182e5653f-00396b3f567b5033",
+      "statement": "实数集在加法下封闭。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-97"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-039357ff470ad1d2",
+      "statement": "(Q,+,×)是域。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-42#chars-3544-3577"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-42#chars-3544-3577"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-42#chars-3544-3577"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-04ec296a3292fff1",
+      "statement": "实数集不是代数封闭的。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-97"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-056e5bbf18b28158",
+      "statement": "数系的扩张是被问题的'不够用'逼出来的。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-102#chars-10717-10751"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-102#chars-10717-10751"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-102#chars-10717-10751"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-05cd59169d655147",
+      "statement": "这是$\\mathbb{R}$与$\\mathbb{Q}$的本质区别。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-61#chars-5769-5806"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-61#chars-5769-5806"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-61#chars-5769-5806"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-0646de33744a407a",
+      "statement": "自然数对加法封闭：a,b∈N ⇒ a+b∈N。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-10"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-10"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-10"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-0cfbcf65ba24ad75",
+      "statement": "这个发现在古希腊引发了第一次数学危机，有理数不能覆盖数轴上所有的点。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-54#chars-5278-5315"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-54#chars-5278-5315"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-54#chars-5278-5315"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-0e08d6fb8e3351e0",
+      "statement": "任意两个不同的有理数之间，存在无穷多个有理数。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-36#chars-3054-3077"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-36#chars-3054-3077"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-36#chars-3054-3077"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-10a95ba642d5f530",
+      "statement": "欧拉公式：$e^{i\\pi} + 1 = 0$。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-84#chars-8194-8210"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-84#chars-8194-8210"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-84#chars-8194-8210"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-11af452bd9c39f09",
+      "statement": "有理数在数轴上是处处稠密的，这是Q与Z的本质区别。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-38#chars-3184-3240"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-38#chars-3184-3240"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-38#chars-3184-3240"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-12515b0218391b0a",
+      "statement": "代数基本定理指出任何 n 次复系数多项式在 ℂ 中恰好有 n 个根（计重数）。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-88#chars-8373-8430"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-88#chars-8373-8430"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-88#chars-8373-8430"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-13ec802873dd3501",
+      "statement": "整数集有加法逆元。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-97"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-14dd00e6e28a321f",
+      "statement": "方程 x² + 1 = 0 在实数范围内无解，在复数范围内解为 x = ±i。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-89#chars-8435-8522"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-89#chars-8435-8522"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-89#chars-8435-8522"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-14e5a125571aa9a0",
+      "statement": "ℂ 是代数封闭的，数系扩张至此终结：在 ℂ 上再扩张，只会失去域结构，不会获得新的方程解。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-90#chars-8527-8599"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-90#chars-8527-8599"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-90#chars-8527-8599"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-163c97455ec0b3c2",
+      "statement": "有理数的代数结构是域。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-97"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-1660098cb97558d2",
+      "statement": "整数集定义为$\\mathbb{Z} = \\{\\ldots, -3, -2, -1, 0, 1, 2, 3, \\ldots\\}$。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-22#chars-1774-1819"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-22#chars-1774-1819"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-22#chars-1774-1819"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-16d01246e3103455",
+      "statement": "实数集有加法逆元。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-97"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-1d1341c978df0a68",
+      "statement": "完备性意味着数轴没有洞，每一个Cauchy列都在R中有极限。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-63#chars-5987-6040"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-63#chars-5987-6040"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-63#chars-5987-6040"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-20418659fc07f7b0",
+      "statement": "欧拉公式 e^{iπ} + 1 = 0 连接了五个最基础的数学常数 e、i、π、1、0 和三种基本运算加法、乘法、指数。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-85#chars-8215-8269"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-85#chars-8215-8269"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-85#chars-8215-8269"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-206550cdcbe2c930",
+      "statement": "有理数用等价类构造：a/b ~ c/d 当且仅当 ad=bc（约分）。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-34#chars-2982-3039"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-34#chars-2982-3039"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-34#chars-2982-3039"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-2488266fe58a3dec",
+      "statement": "16世纪，意大利数学家发现三次方程$x^3 = 15x + 4$的求解过程中出现了$\\sqrt{-121}$。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-74#chars-7382-7440"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-74#chars-7382-7440"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-74#chars-7382-7440"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-254f4817bd01b555",
+      "statement": "自然数的集合论定义（von Neumann序数）是公理化集合论的基石。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-12#chars-931-992"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-12#chars-931-992"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-12#chars-931-992"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-2680a68e81fe24e0",
+      "statement": "Z是一个交换环，这是第8章群环域中将详述的核心结构。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-25#chars-2105-2152"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-25#chars-2105-2152"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-25#chars-2105-2152"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-2b8b378d6dc4373a",
+      "statement": "构造新数$y = 0.b_1b_2b_3\\ldots$其中$b_i \\neq a_{ii}$——则$y$不与列表中任何数相同，矛盾。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-69#chars-6625-6696"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-69#chars-6625-6696"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-69#chars-6625-6696"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-2fc899a8a150103a",
+      "statement": "有理数集有乘法逆元。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-97"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-321af57ad10b2b67",
+      "statement": "除法导致分数的出现。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-102#chars-10758-10763"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-102#chars-10758-10763"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-102#chars-10758-10763"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-3322234155067947",
+      "statement": "复数集是完备的。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-97"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-335d0f56119d89cd",
+      "statement": "自然数集在加法下封闭。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-97"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-33aae4331a069886",
+      "statement": "复数的实部 Re(z) 等于 a。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-77#chars-7563-7582"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-77#chars-7563-7582"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-77#chars-7563-7582"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-386874729a2b0239",
+      "statement": "Cantor证明$\\mathbb{R}$不可数——实数比自然数'多得多'。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-66#chars-6408-6446"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-66#chars-6408-6446"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-66#chars-6408-6446"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-399da955516080ff",
+      "statement": "整数的下一个缺陷是除法不封闭，例如3÷5在Z中无解。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-32#chars-2837-2886"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-32#chars-2837-2886"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-32#chars-2837-2886"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-3a97b79b06bc5007",
+      "statement": "虽然Q在数轴上稠密，但它是可数的，可以和N一一对应。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-45#chars-3784-3849"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-45#chars-3784-3849"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-45#chars-3784-3849"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-40c8b919f19d8730",
+      "statement": "从计数石子到量子态的复数——数是人类理解宇宙最底层的语言。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-1#chars-15-44"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-1#chars-15-44"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-1#chars-15-44"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-4384f68c38d1c16d",
+      "statement": "有理数集不完备。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-97"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-441b817c4e2aa25f",
+      "statement": "数学归纳法原理：若某性质对0成立，且由对n成立可推出对S(n)成立，则该性质对一切自然数成立。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-6#chars-261-323"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-6#chars-261-323"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-6#chars-261-323"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-4545b99d84511b7b",
+      "statement": "自然数具有良序性：任何非空子集有最小元。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-10"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-10"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-10"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-4578cb1df5fa4876",
+      "statement": "复数集有乘法逆元。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-97"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-483b0d91f33a6189",
+      "statement": "Dedekind在1872年给出了实数的精妙定义。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-56#chars-5359-5384"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-56#chars-5359-5384"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-56#chars-5359-5384"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-485ba16af22e16f0",
+      "statement": "有理数的扩张方法：Q = {a/b | a,b in Z, b≠0}。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-33#chars-2896-2969"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-33#chars-2896-2969"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-33#chars-2896-2969"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-485c3316aef80581",
+      "statement": "自然数集在乘法下封闭。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-97"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-4a7601c7a0263bbf",
+      "statement": "整数集在加法下封闭。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-97"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-4a7c53f0e5ff715d",
+      "statement": "数轴上的洞需要一种新的数来填。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-54#chars-5315-5332"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-54#chars-5315-5332"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-54#chars-5315-5332"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-50385ed87c9b54ae",
+      "statement": "每一步扩张失去一些性质，如复数失去了有序性。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-102#chars-10777-10823"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-102#chars-10777-10823"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-102#chars-10777-10823"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-52547f3bc1cb4ed6",
+      "statement": "实数集有乘法逆元。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-97"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-537af60b31df3cb7",
+      "statement": "Z还是一个整环，即没有零因子：若ab=0则a=0或b=0。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-25#chars-2152-2218"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-25#chars-2152-2218"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-25#chars-2152-2218"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-5384d97b06ab0b91",
+      "statement": "自然数集不是代数封闭的。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-97"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-54c2b20e1ee0d6ea",
+      "statement": "Q是一个域，加减乘除（除数非零）全部封闭。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-41#chars-3493-3538"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-41#chars-3493-3538"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-41#chars-3493-3538"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-5622207682c366f4",
+      "statement": "例如(0,3)∼(1,4)∼(2,5)都代表-3。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-21#chars-1727-1769"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-21#chars-1727-1769"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-21#chars-1727-1769"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-59bbfaa12f6b7c42",
+      "statement": "直到19世纪末，数学家才开始认真追问'什么是数'，最终由Frege、Peano、Dedekind等人建立了严格的公理基础。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-12#chars-867-931"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-12#chars-867-931"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-12#chars-867-931"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-5faa6c218afbe1a5",
+      "statement": "集合N在加法下封闭。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-24"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-24"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-24"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-65b8119340bf4df6",
+      "statement": "Cantor枚举法列举的有理数序列为：1/1, 1/2, 2/1, 3/1, 2/2, 1/3, 1/4, 2/3, 3/2, 4/1, ...",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-47#chars-3867-3995"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-47#chars-3867-3995"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-47#chars-3867-3995"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-66999ba03f72422a",
+      "statement": "自然数的根本缺陷是减法不封闭：3-5在N中没有答案。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-18#chars-1546-1594"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-18#chars-1546-1594"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-18#chars-1546-1594"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-69aaa764980b9501",
+      "statement": "集合N和Z在乘法下封闭。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-24"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-24"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-24"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-6a9519527ad5660f",
+      "statement": "对于任意p<q，存在r=(p+q)/2属于Q，使得p<r<q。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-37#chars-3082-3179"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-37#chars-3082-3179"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-37#chars-3082-3179"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-7349f9f507e7e046",
+      "statement": "0是自然数。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-6#chars-163-171"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-6#chars-163-171"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-6#chars-163-171"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-738882bb1d0f7c52",
+      "statement": "自然数对乘法封闭：a,b∈N ⇒ a×b∈N。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-10"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-10"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-10"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-751f9238f90c0ac8",
+      "statement": "虽然最终答案$x=4$是实数，但中间步骤必须经过复数。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-74#chars-7440-7469"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-74#chars-7440-7469"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-74#chars-7440-7469"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-75f00bb15a4cf470",
+      "statement": "集合N和Z有乘法单位元1。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-24"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-24"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-24"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-7702e89128023c66",
+      "statement": "证明思路：假设$(0,1)$中的实数可以列出。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-67#chars-6450-6479"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-67#chars-6450-6479"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-67#chars-6450-6479"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-797348eed1bd0bbf",
+      "statement": "Q具有稠密性，但不具有完备性、上确界存在性、Cauchy列必收敛和连通性。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-62#chars-5808-5985"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-62#chars-5808-5985"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-62#chars-5808-5985"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-7a1d30805497c834",
+      "statement": "自然数集定义为$\\mathbb{N} = \\{0, 1, 2, 3, \\ldots\\}$。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-7#chars-328-353"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-7#chars-328-353"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-7#chars-328-353"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-7af894190fc2b021",
+      "statement": "整数集是可数的。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-97"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-7ddd7afabf5d3cda",
+      "statement": "这迫使数学家正视这个'幽灵'。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-74#chars-7469-7482"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-74#chars-7469-7482"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-74#chars-7469-7482"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-7ec40f2591d6bf89",
+      "statement": "自然数是最古老的概念——刻痕计数、结绳记事。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-12#chars-845-867"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-12#chars-845-867"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-12#chars-845-867"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-7eea508a5328eec5",
+      "statement": "整数引入负数解决了减法封闭问题，但失去了N的良序性，整数没有最小元。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-28#chars-2682-2736"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-28#chars-2682-2736"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-28#chars-2682-2736"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-7f232fb823445fd3",
+      "statement": "复数集在加法下封闭。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-97"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-7fdebccae1cff914",
+      "statement": "复数的虚部 Im(z) 等于 b。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-77#chars-7583-7602"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-77#chars-7583-7602"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-77#chars-7583-7602"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-82c8a310982f753e",
+      "statement": "复数集有加法逆元。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-97"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-858a69f92b8e3641",
+      "statement": "列出方式为$x_1 = 0.a_{11}a_{12}a_{13}\\ldots$，$x_2 = 0.a_{21}a_{22}a_{23}\\ldots$，$x_3 = 0.a_{31}a_{32}a_{33}\\ldots$。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-68#chars-6483-6620"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-68#chars-6483-6620"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-68#chars-6483-6620"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-85a8e85bac120b8e",
+      "statement": "自然数的本质是递归结构——从零出发，反复应用后继操作，生成无穷无尽的序列。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-8#chars-377-440"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-8#chars-377-440"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-8#chars-377-440"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-85e456c2f1814d0c",
+      "statement": "有理数集有加法逆元。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-97"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-892ba092fc18193c",
+      "statement": "整数集不是代数封闭的。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-97"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-8a44b33d452a0a57",
+      "statement": "实数的代数结构是完备有序域。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-97"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-8c686feed4137c3a",
+      "statement": "集合N有加法单位元0。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-24"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-24"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-24"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-8d39eb1f9125a423",
+      "statement": "√2不是有理数。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-51#chars-4998-5027"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-51#chars-4998-5027"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-51#chars-4998-5027"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-8d3d4948a5c1e4cc",
+      "statement": "数学归纳法直接编码了自然数的构造方式。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-8#chars-440-471"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-8#chars-440-471"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-8#chars-440-471"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-8eeaa2692f5278d3",
+      "statement": "自然数集是有序的。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-97"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-92836991b4f15f2a",
+      "statement": "自然数对除法不封闭：a÷b可能不是自然数。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-10"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-10"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-10"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-93065625e3d867c1",
+      "statement": "等价关系为(a,b)∼(c,d) ⟺ a+d = b+c。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-20#chars-1687-1722"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-20#chars-1687-1722"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-20#chars-1687-1722"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-93beb758955b02e8",
+      "statement": "自然数的代数结构是幺半群。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-97"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-99080fd285bffcfc",
+      "statement": "自然数集是可数的。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-97"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-996c1abe4f2fb29c",
+      "statement": "自然数集不是完备的。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-97"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-9cb205041f0229cd",
+      "statement": "整数集是有序的。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-97"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-9d400e9825da7205",
+      "statement": "整数集在乘法下封闭。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-97"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-9e8945fe74a2545f",
+      "statement": "经典证明采用反证法：假设√2 = p/q（最简分数），则p² = 2q²，所以p为偶数，设p=2k，代入得4k² = 2q² ⇒ q² = 2k²，故q也是偶数，与最简分数矛盾。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-53#chars-5122-5276"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-53#chars-5122-5276"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-53#chars-5122-5276"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-a50ceffb08cda130",
+      "statement": "集合N没有加法逆元。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-24"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-24"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-24"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-a69f163944989b67",
+      "statement": "N的代数身份是交换幺半群。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-24"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-24"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-24"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-aa770d74714aec72",
+      "statement": "von Neumann的集合论构造中，每个自然数等于它之前所有自然数的集合。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-14#chars-1384-1423"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-14#chars-1384-1423"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-14#chars-1384-1423"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-ac2f3e912ce3e664",
+      "statement": "复数的模 |z| 等于 √(a² + b²)。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-77#chars-7605-7635"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-77#chars-7605-7635"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-77#chars-7605-7635"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-b287f24a2bc2be30",
+      "statement": "复数集是代数封闭的。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-97"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-b4910dd2840eaf36",
+      "statement": "0 = ∅，1 = {0}，2 = {0,1}。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-14#chars-1423-1466"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-14#chars-1423-1466"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-14#chars-1423-1466"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-b4f1b45af3d91918",
+      "statement": "完备性在数列与极限和测度与积分中将反复成为基石。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-63#chars-6040-6077"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-63#chars-6040-6077"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-63#chars-6040-6077"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-b6127b25083ed371",
+      "statement": "自然数集没有加法逆元。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-97"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-b87428fb9ba3e69f",
+      "statement": "整数换来的是群结构：(Z,+)成为一个阿贝尔群（第8章）。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-28#chars-2736-2784"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-28#chars-2736-2784"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-28#chars-2736-2784"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-b8b7b9d9be191a0f",
+      "statement": "集合Z没有乘法逆元，例如2没有整数倒数。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-24"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-24"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-24"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-b985fa0b08a81c53",
+      "statement": "如果刀口正好落在有理数上（如2），对应有理数。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-58#chars-5633-5659"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-58#chars-5633-5659"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-58#chars-5633-5659"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-bd1cd14e4d3daa5b",
+      "statement": "整数可以看作自然数有序对(a,b)的等价类，其中(a,b)代表'a-b'这个差。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-19#chars-1632-1682"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-19#chars-1632-1682"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-19#chars-1632-1682"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-c0f7ba47c90a3305",
+      "statement": "复数的极坐标表示为 z = r(cosθ + i sinθ) = r e^{iθ}。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-77#chars-7671-7727"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-77#chars-7671-7727"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-77#chars-7671-7727"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-c3501258d39cb419",
+      "statement": "有理数集在加法下封闭。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-97"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-c69be624c58593e6",
+      "statement": "减法导致负数的出现。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-102#chars-10752-10757"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-102#chars-10752-10757"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-102#chars-10752-10757"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-c9cdc01ad322aa92",
+      "statement": "一个Dedekind分割是有理数集Q的一个划分(A,B)，满足：A, B ≠ ∅，A∪B=Q，A∩B=∅；∀a∈A, ∀b∈B: a<b；A没有最大元。每个这样的分割定义一个实数。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-57#chars-5386-5596"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-57#chars-5386-5596"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-57#chars-5386-5596"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-ca85f14eb82aa749",
+      "statement": "实数集是有序的。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-97"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-cb1a4e1c38f8e45f",
+      "statement": "直观上，用一把刀在有理数轴上切下去，刀口位置就是一个实数。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-58#chars-5598-5633"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-58#chars-5598-5633"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-58#chars-5598-5633"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-d00a7fa19daa861b",
+      "statement": "一般欧拉公式 e^{iθ} = cosθ + i sinθ 揭示了复指数与三角函数的深层统一：振动等于复平面上的圆周运动。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-86#chars-8271-8351"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-86#chars-8271-8351"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-86#chars-8271-8351"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-d07f6afcb5437a99",
+      "statement": "0不是任何自然数的后继。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-6#chars-205-219"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-6#chars-205-219"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-6#chars-205-219"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-d1c80ec9bda36ba7",
+      "statement": "实数集是完备的。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-97"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-d1cb7bfc388f42f3",
+      "statement": "有理数集是可数的。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-97"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-d396b01857d348a6",
+      "statement": "有理数集不是代数封闭的。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-97"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-d47a732131439e00",
+      "statement": "有理数集是有序的。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-97"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-d7ed5b98ef3b44fb",
+      "statement": "自然数对减法不封闭：a-b可能不是自然数。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-10"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-10"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-10"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-d86764772456034e",
+      "statement": "实数集不可数。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-97"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-d89b79ca37b88b53",
+      "statement": "有理数轴有洞，实数轴完备无洞。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-64#chars-6079-6379"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-64#chars-6079-6379"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-64#chars-6079-6379"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-da20cf1c9a5943c1",
+      "statement": "复数在复平面上的加法对应向量平移，乘法对应缩放和旋转。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-80#chars-7852-7875"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-80#chars-7852-7875"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-80#chars-7852-7875"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-dbaddfa7b8672eb2",
+      "statement": "有理数集在乘法下封闭。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-97"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-de33cf40af0918fc",
+      "statement": "实数集在乘法下封闭。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-97"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-e04a6c4a9894b5da",
+      "statement": "自然数集没有乘法逆元。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-97"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-e1aad6186a65f0f4",
+      "statement": "复数集合被定义为形如 a + bi 的数，其中 a 和 b 是实数，且 i 满足 i^2 = -1。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-76#chars-7499-7554"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-76#chars-7499-7554"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-76#chars-7499-7554"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-e1f525a147f70055",
+      "statement": "如果刀口穿过一个洞（如√2的位置），就创造了一个无理数。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-58#chars-5659-5699"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-58#chars-5659-5699"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-58#chars-5659-5699"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-e2371e53a0f2eb15",
+      "statement": "复数集在乘法下封闭。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-97"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-e3261a18c68e1a92",
+      "statement": "集合N没有乘法逆元。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-24"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-24"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-24"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-e611219202858bcc",
+      "statement": "若S(m)=S(n)，则m=n（后继函数是单射）。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-6#chars-223-257"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-6#chars-223-257"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-6#chars-223-257"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-e6b40913cf9e99a3",
+      "statement": "在Z中，a+b, a-b, a×b封闭；a÷b(b≠0)不封闭；代数身份为整环。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-43#chars-3582-3756"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-43#chars-3582-3756"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-43#chars-3582-3756"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-e9132ca5e78b104e",
+      "statement": "每个自然数n有一个后继S(n)。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-6#chars-175-201"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-6#chars-175-201"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-6#chars-175-201"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-ed88deafef543359",
+      "statement": "集合Z有加法逆元，每个a有-a。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-24"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-24"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-24"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-ee9d30a95c00e116",
+      "statement": "两个复数相乘的模等于各自模的乘积，辐角等于各自辐角之和。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-81#chars-7880-7933"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-81#chars-7880-7933"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-81#chars-7880-7933"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-f235160ba9ff8a16",
+      "statement": "复数的共轭定义为 a - bi。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-77#chars-7638-7668"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-77#chars-7638-7668"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-77#chars-7638-7668"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-f2af4208782b6d95",
+      "statement": "Z的代数身份是交换环。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-24"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-24"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-24"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-f3d8befcaabec74b",
+      "statement": "这个定义让'n<m'等价于'n∈m'。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-14#chars-1466-1496"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-14#chars-1466-1496"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-14#chars-1466-1496"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-f4f7744ef4364946",
+      "statement": "1889年，皮亚诺用五条公理精确定义了自然数。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-5#chars-135-158"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-5#chars-135-158"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-5#chars-135-158"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-f87873e7cf557a42",
+      "statement": "实数集R = 有理数集Q ∪ 无理数。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-59#chars-5701-5750"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-59#chars-5701-5750"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-59#chars-5701-5750"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-fc05ca990bb423ae",
+      "statement": "整数集不是完备的。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-97"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-fc60845834dda01f",
+      "statement": "R具有稠密性、完备性、上确界存在性、Cauchy列必收敛和连通性。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-62#chars-5808-5985"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-62#chars-5808-5985"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-62#chars-5808-5985"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-fe3f5cbec069f088",
+      "statement": "复数集没有有序性质。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-97"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    },
+    {
+      "id": "claim:80440e2182e5653f-fea550123c9d3890",
+      "statement": "整数集没有乘法逆元。",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-97"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:16:18.138Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:01-number-systems-80440e2182e5653f-97"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-23T16:16:18.138Z"
+    }
+  ],
+  "concepts": [
+    {
+      "id": "concept:06bd786731a990b7",
+      "name": "连通性",
+      "aliases": [
+        "连通性"
+      ],
+      "boundary": "拓扑空间不能表示为两个非空开集的并",
+      "domain": "数学-拓扑"
+    },
+    {
+      "id": "concept:0707c9a7a1ca06af",
+      "name": "单射",
+      "aliases": [
+        "单射"
+      ],
+      "boundary": "函数满足如果x≠y则f(x)≠f(y)",
+      "domain": "数学-函数"
+    },
+    {
+      "id": "concept:088d760c7490fd72",
+      "name": "浮点数",
+      "aliases": [
+        "浮点数"
+      ],
+      "boundary": "计算机中表示非整数的数值格式",
+      "domain": "计算机科学-编程"
+    },
+    {
+      "id": "concept:0a01c1fc83d92138",
+      "name": "无理数",
+      "aliases": [
+        "无理数"
+      ],
+      "boundary": "不能表示为两整数之比的实数",
+      "domain": "数学-数论"
+    },
+    {
+      "id": "concept:0aa434f35455b518",
+      "name": "交换环",
+      "aliases": [
+        "交换环"
+      ],
+      "boundary": "满足交换律的环",
+      "domain": "数学-代数"
+    },
+    {
+      "id": "concept:166e7c9b029a09eb",
+      "name": "测度",
+      "aliases": [
+        "测度"
+      ],
+      "boundary": "给集合赋予大小的函数",
+      "domain": "数学-测度论"
+    },
+    {
+      "id": "concept:190215735f30dd11",
+      "name": "整环",
+      "aliases": [
+        "integral domain",
+        "整环"
+      ],
+      "boundary": "无零因子的交换环",
+      "domain": "抽象代数"
+    },
+    {
+      "id": "concept:1a161ac3e160562d",
+      "name": "数学常数",
+      "aliases": [
+        "0",
+        "1",
+        "e",
+        "i",
+        "π",
+        "数学常数"
+      ],
+      "boundary": "数学中固定不变的数",
+      "domain": "数学"
+    },
+    {
+      "id": "concept:1f43dea31ef7d441",
+      "name": "有理数集",
+      "aliases": [
+        "有理数",
+        "有理数集"
+      ],
+      "boundary": "所有可以表示为两个整数之比的数构成的集合",
+      "domain": "数学-数论"
+    },
+    {
+      "id": "concept:1f97b7fb742cacd0",
+      "name": "加法",
+      "aliases": [
+        "+",
+        "加法"
+      ],
+      "boundary": "二元运算，将两个数相加",
+      "domain": "算术、抽象代数"
+    },
+    {
+      "id": "concept:1fedede1cb6ba8a2",
+      "name": "复数集",
+      "aliases": [
+        "C",
+        "ℂ",
+        "复数",
+        "复数集"
+      ],
+      "boundary": "所有复数的集合",
+      "domain": "复分析、代数"
+    },
+    {
+      "id": "concept:2d438ac859df9aa7",
+      "name": "反证法",
+      "aliases": [
+        "反证法"
+      ],
+      "boundary": "先假设命题不成立，推出矛盾，从而证明命题成立",
+      "domain": "数学-逻辑"
+    },
+    {
+      "id": "concept:2efaae5452a3f03a",
+      "name": "数列",
+      "aliases": [
+        "数列"
+      ],
+      "boundary": "按一定顺序排列的一列数",
+      "domain": "数学-分析"
+    },
+    {
+      "id": "concept:30c48c02aa5b8323",
+      "name": "代数封闭域",
+      "aliases": [
+        "代数封闭域"
+      ],
+      "boundary": "每个非常数多项式都有根",
+      "domain": "数学-代数"
+    },
+    {
+      "id": "concept:311239f35ed9b378",
+      "name": "多项式",
+      "aliases": [
+        "多项式"
+      ],
+      "boundary": "形如a_n x^n+...+a_0的表达式",
+      "domain": "代数"
+    },
+    {
+      "id": "concept:3356f79a01bacb78",
+      "name": "等价类",
+      "aliases": [
+        "等价类"
+      ],
+      "boundary": "等价关系下互相等价的元素构成的集合",
+      "domain": "数学-关系理论"
+    },
+    {
+      "id": "concept:363b0d6b746089fd",
+      "name": "上确界存在性",
+      "aliases": [
+        "上确界存在性"
+      ],
+      "boundary": "非空有上界的子集必有上确界",
+      "domain": "数学-分析"
+    },
+    {
+      "id": "concept:37593cc5d77a70af",
+      "name": "自然数集",
+      "aliases": [
+        "N",
+        "ℕ",
+        "自然数",
+        "自然数集",
+        "自然数集N"
+      ],
+      "boundary": "所有自然数的集合（通常含0）",
+      "domain": "数论、集合论"
+    },
+    {
+      "id": "concept:3ba2c03e04595399",
+      "name": "极坐标表示",
+      "aliases": [
+        "极坐标表示"
+      ],
+      "boundary": "用模和辐角表示复数",
+      "domain": "数学-分析"
+    },
+    {
+      "id": "concept:3c7011498988e949",
+      "name": "复数",
+      "aliases": [
+        "复数",
+        "复数集",
+        "复数集合"
+      ],
+      "boundary": "形如a+bi的数，a,b为实数，i^2=-1",
+      "domain": "数学-分析"
+    },
+    {
+      "id": "concept:40b3f52329b8477c",
+      "name": "有理数集",
+      "aliases": [
+        "Q",
+        "ℚ",
+        "有理数",
+        "有理数集"
+      ],
+      "boundary": "所有有理数的集合",
+      "domain": "数论、分析"
+    },
+    {
+      "id": "concept:415acc63b755f507",
+      "name": "不可数集",
+      "aliases": [
+        "不可数",
+        "不可数的"
+      ],
+      "boundary": "不是可数集的无限集",
+      "domain": "数学-集合论"
+    },
+    {
+      "id": "concept:4663a9c875339c10",
+      "name": "虚部",
+      "aliases": [
+        "Im(z)",
+        "虚部"
+      ],
+      "boundary": "复数z=a+bi中的b",
+      "domain": "复分析"
+    },
+    {
+      "id": "concept:4a56d362898e2456",
+      "name": "数学归纳法",
+      "aliases": [
+        "归纳法",
+        "数学归纳法"
+      ],
+      "boundary": "一种证明方法：对自然数命题，若对0成立且能传递则对所有自然数成立",
+      "domain": "数学基础"
+    },
+    {
+      "id": "concept:4d1e36fb94406142",
+      "name": "实部",
+      "aliases": [
+        "Re(z)",
+        "实部"
+      ],
+      "boundary": "复数z=a+bi中的a",
+      "domain": "复分析"
+    },
+    {
+      "id": "concept:4ea613a970b3a683",
+      "name": "实数",
+      "aliases": [
+        "R",
+        "实数",
+        "实数集",
+        "实数集R"
+      ],
+      "boundary": "有理数和无理数的全体",
+      "domain": "数学-数论"
+    },
+    {
+      "id": "concept:521e0b4c57a0d063",
+      "name": "封闭性",
+      "aliases": [
+        "封闭",
+        "封闭的"
+      ],
+      "boundary": "集合对某运算的结果仍在该集合内",
+      "domain": "数学-代数"
+    },
+    {
+      "id": "concept:53768c9b0b918635",
+      "name": "交换环",
+      "aliases": [
+        "commutative ring",
+        "交换环"
+      ],
+      "boundary": "乘法满足交换律的环",
+      "domain": "抽象代数"
+    },
+    {
+      "id": "concept:54a05123dcbf4bfa",
+      "name": "加法逆元",
+      "aliases": [
+        "加法逆元"
+      ],
+      "boundary": "对于元素a，存在b使得a+b=0",
+      "domain": "抽象代数"
+    },
+    {
+      "id": "concept:557bc9e5b75b5af8",
+      "name": "负数",
+      "aliases": [
+        "负数"
+      ],
+      "boundary": "小于0的数",
+      "domain": "数学-数论"
+    },
+    {
+      "id": "concept:5775f18d1713640f",
+      "name": "辐角",
+      "aliases": [
+        "辐角"
+      ],
+      "boundary": "复数在复平面上与实轴的夹角",
+      "domain": "数学-分析"
+    },
+    {
+      "id": "concept:59f5269ab5fdd01c",
+      "name": "代数基本定理",
+      "aliases": [
+        "代数基本定理"
+      ],
+      "boundary": "任何n次复系数多项式在ℂ中恰好有n个根",
+      "domain": "复分析、代数"
+    },
+    {
+      "id": "concept:5bc8b9616a2f1696",
+      "name": "单位元",
+      "aliases": [
+        "乘法单位元",
+        "单位元"
+      ],
+      "boundary": "运算中保持元素不变的元（加法为0，乘法为1）",
+      "domain": "抽象代数"
+    },
+    {
+      "id": "concept:5cc4fe12884c56ac",
+      "name": "群结构",
+      "aliases": [
+        "群"
+      ],
+      "boundary": "满足封闭、结合、单位元、逆元的代数结构",
+      "domain": "数学-代数"
+    },
+    {
+      "id": "concept:607b3746b3221e0d",
+      "name": "无限精度",
+      "aliases": [
+        "无限精度"
+      ],
+      "boundary": "可以表示任意大的整数而不损失精度",
+      "domain": "计算机科学-编程"
+    },
+    {
+      "id": "concept:60a9baf1bd519eb2",
+      "name": "√2",
+      "aliases": [
+        "√2"
+      ],
+      "boundary": "平方等于2的正实数",
+      "domain": "数学-数论"
+    },
+    {
+      "id": "concept:64eee594a02668b3",
+      "name": "缩放和旋转",
+      "aliases": [
+        "缩放和旋转"
+      ],
+      "boundary": "复数乘法对应模缩放和辐角旋转",
+      "domain": "数学-分析"
+    },
+    {
+      "id": "concept:652a4b716ab1d196",
+      "name": "负数",
+      "aliases": [
+        "负数"
+      ],
+      "boundary": "小于0的数",
+      "domain": "数论"
+    },
+    {
+      "id": "concept:6a8df4926629841f",
+      "name": "Dedekind分割",
+      "aliases": [
+        "Dedekind",
+        "Dedekind分割"
+      ],
+      "boundary": "有理数的分割，用于定义实数",
+      "domain": "数学-分析"
+    },
+    {
+      "id": "concept:6b60e29fdc9d0b66",
+      "name": "环",
+      "aliases": [
+        "ring",
+        "环"
+      ],
+      "boundary": "具有加法、乘法两种运算，且满足环公理的代数结构",
+      "domain": "抽象代数"
+    },
+    {
+      "id": "concept:6c98c115f7bc3a1e",
+      "name": "公理化集合论",
+      "aliases": [
+        "公理化集合论"
+      ],
+      "boundary": "用公理系统化定义的集合论",
+      "domain": "数学基础"
+    },
+    {
+      "id": "concept:6ef7e9ee02801139",
+      "name": "数轴",
+      "aliases": [
+        "数轴"
+      ],
+      "boundary": "表示实数的直线",
+      "domain": "几何、分析"
+    },
+    {
+      "id": "concept:6f76d81d801f4046",
+      "name": "最简分数",
+      "aliases": [
+        "最简分数"
+      ],
+      "boundary": "分子分母互素的分数",
+      "domain": "数学-数论"
+    },
+    {
+      "id": "concept:6fac4a28fd7318e7",
+      "name": "幺半群",
+      "aliases": [
+        "幺半群"
+      ],
+      "boundary": "具有单位元的半群",
+      "domain": "数学-代数"
+    },
+    {
+      "id": "concept:71f41150cab9dae4",
+      "name": "分数",
+      "aliases": [
+        "分数"
+      ],
+      "boundary": "形如a/b的数，b≠0",
+      "domain": "算术"
+    },
+    {
+      "id": "concept:73675c968429e4ce",
+      "name": "域",
+      "aliases": [
+        "field",
+        "域"
+      ],
+      "boundary": "具有加法、乘法两种运算，且满足域公理的代数结构",
+      "domain": "抽象代数"
+    },
+    {
+      "id": "concept:75f85098152545c9",
+      "name": "方程",
+      "aliases": [
+        "方程"
+      ],
+      "boundary": "含有未知数的等式",
+      "domain": "代数"
+    },
+    {
+      "id": "concept:779370cff7f02d4d",
+      "name": "完备性",
+      "aliases": [
+        "完备",
+        "完备的"
+      ],
+      "boundary": "所有柯西列收敛",
+      "domain": "数学-分析"
+    },
+    {
+      "id": "concept:7946be6270cf78e6",
+      "name": "完备有序域",
+      "aliases": [
+        "完备有序域"
+      ],
+      "boundary": "满足完备性的有序域",
+      "domain": "数学-分析"
+    },
+    {
+      "id": "concept:7e77c120ce75684f",
+      "name": "无理数",
+      "aliases": [
+        "无理数"
+      ],
+      "boundary": "不是有理数的实数",
+      "domain": "数论"
+    },
+    {
+      "id": "concept:7f15f0e5467d66b4",
+      "name": "加法逆元",
+      "aliases": [
+        "加法逆元"
+      ],
+      "boundary": "对于集合中的每个元素a，存在b使得a+b=0",
+      "domain": "数学-代数"
+    },
+    {
+      "id": "concept:800206240ab22211",
+      "name": "Cauchy列必收敛",
+      "aliases": [
+        "Cauchy列必收敛"
+      ],
+      "boundary": "柯西列一定收敛到实数",
+      "domain": "数学-分析"
+    },
+    {
+      "id": "concept:80eadc753b21d419",
+      "name": "数系扩张",
+      "aliases": [
+        "数系扩张"
+      ],
+      "boundary": "从自然数逐步扩展到复数的过程",
+      "domain": "数学-数论"
+    },
+    {
+      "id": "concept:82bfa6edee441067",
+      "name": "递归结构",
+      "aliases": [
+        "递归结构"
+      ],
+      "boundary": "以递归方式定义的结构",
+      "domain": "计算机科学、数学"
+    },
+    {
+      "id": "concept:839b55c00eb89f4a",
+      "name": "积分",
+      "aliases": [
+        "积分"
+      ],
+      "boundary": "微积分中求面积的方法",
+      "domain": "数学-分析"
+    },
+    {
+      "id": "concept:852eb959f9503836",
+      "name": "数系扩张",
+      "aliases": [
+        "扩张",
+        "数系扩张"
+      ],
+      "boundary": "从自然数逐步扩充到复数的过程",
+      "domain": "数论、数学史"
+    },
+    {
+      "id": "concept:87bd89ecf0d95ace",
+      "name": "von Neumann的集合论构造",
+      "aliases": [
+        "von Neumann的集合论构造"
+      ],
+      "boundary": "用集合定义自然数：0=∅，n+1=n∪{n}",
+      "domain": "数学-集合论"
+    },
+    {
+      "id": "concept:8e5ad5589dd7e609",
+      "name": "有序集",
+      "aliases": [
+        "有序性",
+        "有序的"
+      ],
+      "boundary": "集合上定义了全序关系",
+      "domain": "数学-序理论"
+    },
+    {
+      "id": "concept:97ed29cec3109d0f",
+      "name": "Cantor证明",
+      "aliases": [
+        "Cantor证明"
+      ],
+      "boundary": "康托尔对角线法证明实数不可数",
+      "domain": "数学-集合论"
+    },
+    {
+      "id": "concept:9a76bd4e42e26043",
+      "name": "向量平移",
+      "aliases": [
+        "向量平移"
+      ],
+      "boundary": "向量在空间中平行移动",
+      "domain": "数学-几何"
+    },
+    {
+      "id": "concept:9cb9c0bd36cfe61b",
+      "name": "良序性",
+      "aliases": [
+        "良序性"
+      ],
+      "boundary": "任何非空子集有最小元",
+      "domain": "序理论"
+    },
+    {
+      "id": "concept:9f6b590e039722a2",
+      "name": "极限",
+      "aliases": [
+        "极限"
+      ],
+      "boundary": "数列或函数趋近的值",
+      "domain": "分析"
+    },
+    {
+      "id": "concept:9f9199e96c8c7f13",
+      "name": "阿贝尔群",
+      "aliases": [
+        "阿贝尔群"
+      ],
+      "boundary": "交换群",
+      "domain": "数学-代数"
+    },
+    {
+      "id": "concept:a13911d3cd1a6476",
+      "name": "等价关系",
+      "aliases": [
+        "等价关系"
+      ],
+      "boundary": "满足自反、对称、传递的关系",
+      "domain": "数学-关系理论"
+    },
+    {
+      "id": "concept:a15136b5fc3694da",
+      "name": "整环",
+      "aliases": [
+        "整环"
+      ],
+      "boundary": "无零因子的交换环",
+      "domain": "数学-代数"
+    },
+    {
+      "id": "concept:a1fde147d29e8ecb",
+      "name": "上确界",
+      "aliases": [
+        "上确界"
+      ],
+      "boundary": "最小上界",
+      "domain": "分析"
+    },
+    {
+      "id": "concept:a273d0af8f9bd3c2",
+      "name": "虚数单位",
+      "aliases": [
+        "i"
+      ],
+      "boundary": "满足i²=-1的数",
+      "domain": "复分析"
+    },
+    {
+      "id": "concept:a4359e74895ae195",
+      "name": "完备性",
+      "aliases": [
+        "完备",
+        "完备性"
+      ],
+      "boundary": "度量空间中所有柯西列都收敛的性质",
+      "domain": "分析"
+    },
+    {
+      "id": "concept:a491843e9a03bfcf",
+      "name": "后继",
+      "aliases": [
+        "后继"
+      ],
+      "boundary": "自然数的后一个数",
+      "domain": "数学-数论"
+    },
+    {
+      "id": "concept:a58bfa0c4d76d6d9",
+      "name": "有序性",
+      "aliases": [
+        "有序性"
+      ],
+      "boundary": "集合上具有全序关系",
+      "domain": "序理论"
+    },
+    {
+      "id": "concept:ab0e2d0a47f8b157",
+      "name": "封闭性",
+      "aliases": [
+        "closed",
+        "封闭"
+      ],
+      "boundary": "集合在某种运算下运算结果仍属于该集合的性质",
+      "domain": "抽象代数"
+    },
+    {
+      "id": "concept:abd4a790040107a0",
+      "name": "集合论定义",
+      "aliases": [
+        "集合论定义"
+      ],
+      "boundary": "用集合论语言定义数学对象",
+      "domain": "集合论"
+    },
+    {
+      "id": "concept:ac07785e64cff9f2",
+      "name": "交换幺半群",
+      "aliases": [
+        "交换幺半群"
+      ],
+      "boundary": "满足交换律的幺半群",
+      "domain": "数学-代数"
+    },
+    {
+      "id": "concept:b3de00a583cf7f53",
+      "name": "等价类",
+      "aliases": [
+        "等价类"
+      ],
+      "boundary": "等价关系下的等价类",
+      "domain": "集合论"
+    },
+    {
+      "id": "concept:b4f8b0d043eccbd7",
+      "name": "可数",
+      "aliases": [
+        "可数",
+        "可数性"
+      ],
+      "boundary": "集合与自然数集之间存在双射的性质",
+      "domain": "集合论"
+    },
+    {
+      "id": "concept:b5076ccb8e744483",
+      "name": "Python整数",
+      "aliases": [
+        "Python",
+        "Python整数"
+      ],
+      "boundary": "Python编程语言中的整数类型",
+      "domain": "计算机科学-编程"
+    },
+    {
+      "id": "concept:bafb1ba8c2be2bca",
+      "name": "稠密",
+      "aliases": [
+        "处处稠密",
+        "稠密"
+      ],
+      "boundary": "集合在拓扑空间中任意开集内都有其元素的性质",
+      "domain": "拓扑学、分析"
+    },
+    {
+      "id": "concept:bd6d10f94f5a93e0",
+      "name": "加法单位元",
+      "aliases": [
+        "加法单位元"
+      ],
+      "boundary": "对于加法运算，满足a+0=a的元素",
+      "domain": "数学-代数"
+    },
+    {
+      "id": "concept:c44378f601e3c145",
+      "name": "乘法逆元",
+      "aliases": [
+        "乘法逆元"
+      ],
+      "boundary": "对于非零元素a，存在b使得a×b=1",
+      "domain": "抽象代数"
+    },
+    {
+      "id": "concept:c55f70229bf729ae",
+      "name": "减法",
+      "aliases": [
+        "减法"
+      ],
+      "boundary": "两个数相减的运算",
+      "domain": "数学-算术"
+    },
+    {
+      "id": "concept:c5dcdc68f17aea9b",
+      "name": "有序对",
+      "aliases": [
+        "有序对"
+      ],
+      "boundary": "两个对象按顺序排列组成的对",
+      "domain": "数学-集合论"
+    },
+    {
+      "id": "concept:c846cd75a8c5e09e",
+      "name": "有理数轴",
+      "aliases": [
+        "有理数轴"
+      ],
+      "boundary": "实数轴上有理数所在的点",
+      "domain": "数学-分析"
+    },
+    {
+      "id": "concept:c9f5e4e57c3df7ab",
+      "name": "共轭",
+      "aliases": [
+        "共轭"
+      ],
+      "boundary": "复数a+bi的共轭为a-bi",
+      "domain": "数学-分析"
+    },
+    {
+      "id": "concept:ce1ac89029b7e8a7",
+      "name": "代数封闭",
+      "aliases": [
+        "algebraically closed",
+        "代数封闭"
+      ],
+      "boundary": "一个域中任何非常数多项式都有根的性质",
+      "domain": "域论"
+    },
+    {
+      "id": "concept:d0d1572d58a65808",
+      "name": "复平面",
+      "aliases": [
+        "复平面"
+      ],
+      "boundary": "用平面表示复数的几何方法",
+      "domain": "数学-几何"
+    },
+    {
+      "id": "concept:d110e70cbda79b23",
+      "name": "减法",
+      "aliases": [
+        "-",
+        "减法"
+      ],
+      "boundary": "二元运算，从一个数减去另一个数",
+      "domain": "算术"
+    },
+    {
+      "id": "concept:d1b752c4d9eee741",
+      "name": "不可数",
+      "aliases": [
+        "不可数"
+      ],
+      "boundary": "集合不是可数的",
+      "domain": "集合论"
+    },
+    {
+      "id": "concept:d34bfe045b263dd3",
+      "name": "皮亚诺公理",
+      "aliases": [
+        "皮亚诺",
+        "皮亚诺公理"
+      ],
+      "boundary": "定义自然数的五条公理",
+      "domain": "数学-数论"
+    },
+    {
+      "id": "concept:d57f4c05a12cbab7",
+      "name": "数学危机",
+      "aliases": [
+        "数学危机"
+      ],
+      "boundary": "数学发展中的重大困难时期",
+      "domain": "数学史"
+    },
+    {
+      "id": "concept:d5c9ce8a94fb7eb0",
+      "name": "极限",
+      "aliases": [
+        "极限"
+      ],
+      "boundary": "函数或数列在某个变化过程中的趋势",
+      "domain": "数学-分析"
+    },
+    {
+      "id": "concept:df471c8470295129",
+      "name": "后继操作",
+      "aliases": [
+        "S(n)",
+        "后继",
+        "后继操作"
+      ],
+      "boundary": "将自然数n映射到n+1的操作",
+      "domain": "数论"
+    },
+    {
+      "id": "concept:e09ffcc9ee5e2fda",
+      "name": "除法",
+      "aliases": [
+        "÷",
+        "除法"
+      ],
+      "boundary": "二元运算，将一个数除以另一个非零数",
+      "domain": "算术"
+    },
+    {
+      "id": "concept:e2fb9756e6406cd8",
+      "name": "稠密性",
+      "aliases": [
+        "稠密性"
+      ],
+      "boundary": "任意两个不同实数之间都存在另一个实数",
+      "domain": "数学-分析"
+    },
+    {
+      "id": "concept:e3ab0619a7a4aa31",
+      "name": "代数封闭",
+      "aliases": [
+        "代数封闭"
+      ],
+      "boundary": "域中所有非常系数多项式都有根",
+      "domain": "数学-代数"
+    },
+    {
+      "id": "concept:e4ee1ef5380c9c42",
+      "name": "数学归纳法",
+      "aliases": [
+        "数学归纳法"
+      ],
+      "boundary": "一种证明方法：基础情况成立，且从k到k+1成立",
+      "domain": "数学-逻辑"
+    },
+    {
+      "id": "concept:e54f7a815d94440c",
+      "name": "可数集",
+      "aliases": [
+        "可数",
+        "可数的"
+      ],
+      "boundary": "与自然数集一一对应的集合",
+      "domain": "数学-集合论"
+    },
+    {
+      "id": "concept:e566a0474f5ba756",
+      "name": "Dedekind分割",
+      "aliases": [
+        "Dedekind分割",
+        "Dedekind的实数定义"
+      ],
+      "boundary": "用有理数的分割定义实数",
+      "domain": "数学分析"
+    },
+    {
+      "id": "concept:e7e2857401ec060b",
+      "name": "乘法",
+      "aliases": [
+        "×",
+        "乘法"
+      ],
+      "boundary": "二元运算，将两个数相乘",
+      "domain": "算术、抽象代数"
+    },
+    {
+      "id": "concept:e956b92b47c1e3be",
+      "name": "Cantor枚举法",
+      "aliases": [
+        "Cantor枚举法"
+      ],
+      "boundary": "一种枚举有理数的方法",
+      "domain": "集合论"
+    },
+    {
+      "id": "concept:eae0dd52b569207f",
+      "name": "整数集",
+      "aliases": [
+        "Z",
+        "ℤ",
+        "整数",
+        "整数集"
+      ],
+      "boundary": "所有整数的集合",
+      "domain": "数论"
+    },
+    {
+      "id": "concept:ec21d3351570ee85",
+      "name": "整数集",
+      "aliases": [
+        "Z",
+        "整数",
+        "整数集",
+        "集合Z"
+      ],
+      "boundary": "所有正整数、负整数和零构成的集合",
+      "domain": "数学-数论"
+    },
+    {
+      "id": "concept:ed6c71198d94c235",
+      "name": "根",
+      "aliases": [
+        "根",
+        "根（计重数）"
+      ],
+      "boundary": "使多项式取零的值",
+      "domain": "代数"
+    },
+    {
+      "id": "concept:eee6600cacaf1f5e",
+      "name": "对角线论证",
+      "aliases": [
+        "Cantor对角论证",
+        "对角线论证"
+      ],
+      "boundary": "证明实数不可数的一种方法",
+      "domain": "集合论"
+    },
+    {
+      "id": "concept:efd076441896e113",
+      "name": "实数集",
+      "aliases": [
+        "R",
+        "ℝ",
+        "实数",
+        "实数集"
+      ],
+      "boundary": "所有实数的集合",
+      "domain": "集合论、数学分析"
+    },
+    {
+      "id": "concept:f0e25130fba2a98c",
+      "name": "连通性",
+      "aliases": [
+        "连通性"
+      ],
+      "boundary": "拓扑空间不能分割为两个非空开集的性质",
+      "domain": "拓扑学"
+    },
+    {
+      "id": "concept:f30223f38ddc5613",
+      "name": "欧拉公式",
+      "aliases": [
+        "欧拉公式"
+      ],
+      "boundary": "e^{iπ}+1=0",
+      "domain": "复分析"
+    },
+    {
+      "id": "concept:f411ecc416232f04",
+      "name": "柯西列",
+      "aliases": [
+        "Cauchy列"
+      ],
+      "boundary": "项之间距离趋于零的数列",
+      "domain": "分析"
+    },
+    {
+      "id": "concept:f7fab7bd0c9d7559",
+      "name": "自然数集",
+      "aliases": [
+        "N",
+        "自然数",
+        "自然数集",
+        "集合N"
+      ],
+      "boundary": "从0开始的正整数集合，通常包括0",
+      "domain": "数学-数论"
+    },
+    {
+      "id": "concept:fc8f5983f102fc33",
+      "name": "乘法逆元",
+      "aliases": [
+        "乘法逆元"
+      ],
+      "boundary": "对于每个非零元a，存在b使得a*b=1",
+      "domain": "数学-代数"
+    },
+    {
+      "id": "concept:fdb0300b85c3a0f2",
+      "name": "模",
+      "aliases": [
+        "模",
+        "绝对值"
+      ],
+      "boundary": "复数z=a+bi的模为√(a^2+b^2)",
+      "domain": "数学-分析"
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel:80440e2182e5653f-0977fb806b65ba33",
+      "from": "claim:80440e2182e5653f-485ba16af22e16f0",
+      "to": "claim:80440e2182e5653f-206550cdcbe2c930",
+      "type": "SUPPORTS",
+      "conditions": [
+        "有理数构造为分式等价类"
+      ],
+      "conditionStatus": "PRESERVED",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-33#chars-2896-2969",
+        "span:01-number-systems-80440e2182e5653f-34#chars-2982-3039"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:18:57.645Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.8,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:80440e2182e5653f-09f20fd3510ed804",
+      "from": "claim:80440e2182e5653f-59bbfaa12f6b7c42",
+      "to": "claim:80440e2182e5653f-f4f7744ef4364946",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-12#chars-867-931",
+        "span:01-number-systems-80440e2182e5653f-5#chars-135-158"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:18:57.645Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.8,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:80440e2182e5653f-0d20d4f9529db3ac",
+      "from": "claim:80440e2182e5653f-4384f68c38d1c16d",
+      "to": "claim:80440e2182e5653f-d89b79ca37b88b53",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-64#chars-6079-6379",
+        "span:01-number-systems-80440e2182e5653f-97"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:18:57.645Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.9,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:80440e2182e5653f-144ba14d7e694eb1",
+      "from": "claim:80440e2182e5653f-69aaa764980b9501",
+      "to": "claim:80440e2182e5653f-9d400e9825da7205",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-24",
+        "span:01-number-systems-80440e2182e5653f-97"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:18:57.645Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.8,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:80440e2182e5653f-1d66b910f55e1e27",
+      "from": "claim:80440e2182e5653f-8c686feed4137c3a",
+      "to": "claim:80440e2182e5653f-93beb758955b02e8",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-24",
+        "span:01-number-systems-80440e2182e5653f-97"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:18:57.645Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 1,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:80440e2182e5653f-23cc5f241e02d1a0",
+      "from": "claim:80440e2182e5653f-4a7601c7a0263bbf",
+      "to": "claim:80440e2182e5653f-e6b40913cf9e99a3",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-43#chars-3582-3756",
+        "span:01-number-systems-80440e2182e5653f-97"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:18:57.645Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.9,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:80440e2182e5653f-28967fde615ba4ec",
+      "from": "claim:80440e2182e5653f-1d1341c978df0a68",
+      "to": "claim:80440e2182e5653f-fc60845834dda01f",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-62#chars-5808-5985",
+        "span:01-number-systems-80440e2182e5653f-63#chars-5987-6040"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:18:57.645Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.9,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:80440e2182e5653f-2d78918f389c68b4",
+      "from": "claim:80440e2182e5653f-fe3f5cbec069f088",
+      "to": "claim:80440e2182e5653f-ca85f14eb82aa749",
+      "type": "CONTRADICTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-97"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:18:57.645Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.8,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:80440e2182e5653f-2e06edc0ff386f50",
+      "from": "claim:80440e2182e5653f-85a8e85bac120b8e",
+      "to": "claim:80440e2182e5653f-f4f7744ef4364946",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-5#chars-135-158",
+        "span:01-number-systems-80440e2182e5653f-8#chars-377-440"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:18:57.645Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.8,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:80440e2182e5653f-2fedc9855391b110",
+      "from": "claim:80440e2182e5653f-9e8945fe74a2545f",
+      "to": "claim:80440e2182e5653f-8d39eb1f9125a423",
+      "type": "DERIVED_FROM",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-51#chars-4998-5027",
+        "span:01-number-systems-80440e2182e5653f-53#chars-5122-5276"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:18:57.645Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 1,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:80440e2182e5653f-4dfe36a6f7a85aea",
+      "from": "claim:80440e2182e5653f-66999ba03f72422a",
+      "to": "claim:80440e2182e5653f-7eea508a5328eec5",
+      "type": "SUPPORTS",
+      "conditions": [
+        "自然数减法不封闭，引入负数解决"
+      ],
+      "conditionStatus": "PRESERVED",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-18#chars-1546-1594",
+        "span:01-number-systems-80440e2182e5653f-28#chars-2682-2736"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:18:57.645Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.8,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:80440e2182e5653f-4ec9b6e00dc33a36",
+      "from": "claim:80440e2182e5653f-8d39eb1f9125a423",
+      "to": "claim:80440e2182e5653f-9e8945fe74a2545f",
+      "type": "REQUIRES",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-51#chars-4998-5027",
+        "span:01-number-systems-80440e2182e5653f-53#chars-5122-5276"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:18:57.645Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 1,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:80440e2182e5653f-50c56bc7f984bd3a",
+      "from": "claim:80440e2182e5653f-4a7c53f0e5ff715d",
+      "to": "claim:80440e2182e5653f-d89b79ca37b88b53",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-54#chars-5315-5332",
+        "span:01-number-systems-80440e2182e5653f-64#chars-6079-6379"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:18:57.645Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.8,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:80440e2182e5653f-684b4bf15d213b64",
+      "from": "claim:80440e2182e5653f-2680a68e81fe24e0",
+      "to": "claim:80440e2182e5653f-f2af4208782b6d95",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-24",
+        "span:01-number-systems-80440e2182e5653f-25#chars-2105-2152"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:18:57.645Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.8,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:80440e2182e5653f-7486c348ac763f08",
+      "from": "claim:80440e2182e5653f-0cfbcf65ba24ad75",
+      "to": "claim:80440e2182e5653f-8d39eb1f9125a423",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-54#chars-5278-5315",
+        "span:01-number-systems-80440e2182e5653f-51#chars-4998-5027"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:18:57.645Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.8,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:80440e2182e5653f-7614abbd8dbee2b9",
+      "from": "claim:80440e2182e5653f-bd1cd14e4d3daa5b",
+      "to": "claim:80440e2182e5653f-93065625e3d867c1",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-19#chars-1632-1682",
+        "span:01-number-systems-80440e2182e5653f-20#chars-1687-1722"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:18:57.645Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 1,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:80440e2182e5653f-79ebf3f0b00bba4f",
+      "from": "claim:80440e2182e5653f-12515b0218391b0a",
+      "to": "claim:80440e2182e5653f-b287f24a2bc2be30",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-88#chars-8373-8430",
+        "span:01-number-systems-80440e2182e5653f-97"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:18:57.645Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.9,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:80440e2182e5653f-7dd05bbc01da47ce",
+      "from": "claim:80440e2182e5653f-d89b79ca37b88b53",
+      "to": "claim:80440e2182e5653f-d1c80ec9bda36ba7",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-64#chars-6079-6379",
+        "span:01-number-systems-80440e2182e5653f-97"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:18:57.645Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.8,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:80440e2182e5653f-82266cbcdf55e440",
+      "from": "claim:80440e2182e5653f-7a1d30805497c834",
+      "to": "claim:80440e2182e5653f-85a8e85bac120b8e",
+      "type": "SUPPORTS",
+      "conditions": [
+        "自然数定义包含0和后续"
+      ],
+      "conditionStatus": "PRESERVED",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-7#chars-328-353",
+        "span:01-number-systems-80440e2182e5653f-8#chars-377-440"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:18:57.645Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.7,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:80440e2182e5653f-8d7ac051f99d56a1",
+      "from": "claim:80440e2182e5653f-66999ba03f72422a",
+      "to": "claim:80440e2182e5653f-d7ed5b98ef3b44fb",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-18#chars-1546-1594",
+        "span:01-number-systems-80440e2182e5653f-10"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:18:57.645Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.9,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:80440e2182e5653f-8fc808356fed6007",
+      "from": "claim:80440e2182e5653f-386874729a2b0239",
+      "to": "claim:80440e2182e5653f-d86764772456034e",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-66#chars-6408-6446",
+        "span:01-number-systems-80440e2182e5653f-97"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:18:57.645Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.8,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:80440e2182e5653f-96cd0cc5573b323e",
+      "from": "claim:80440e2182e5653f-fc60845834dda01f",
+      "to": "claim:80440e2182e5653f-d1c80ec9bda36ba7",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-62#chars-5808-5985",
+        "span:01-number-systems-80440e2182e5653f-97"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:18:57.645Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.8,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:80440e2182e5653f-9835674c4e9aae77",
+      "from": "claim:80440e2182e5653f-1d1341c978df0a68",
+      "to": "claim:80440e2182e5653f-4384f68c38d1c16d",
+      "type": "SUPPORTS",
+      "conditions": [
+        "有理数不完备，实数完备"
+      ],
+      "conditionStatus": "PRESERVED",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-63#chars-5987-6040",
+        "span:01-number-systems-80440e2182e5653f-97"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:18:57.645Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.9,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:80440e2182e5653f-983874ae6a7a742b",
+      "from": "claim:80440e2182e5653f-6a9519527ad5660f",
+      "to": "claim:80440e2182e5653f-0e08d6fb8e3351e0",
+      "type": "SUPPORTS",
+      "conditions": [
+        "构造中点为具体有理数证明稠密"
+      ],
+      "conditionStatus": "PRESERVED",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-36#chars-3054-3077",
+        "span:01-number-systems-80440e2182e5653f-37#chars-3082-3179"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:18:57.645Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.7,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:80440e2182e5653f-986ab01e07a2da07",
+      "from": "claim:80440e2182e5653f-3a97b79b06bc5007",
+      "to": "claim:80440e2182e5653f-d1cb7bfc388f42f3",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-45#chars-3784-3849",
+        "span:01-number-systems-80440e2182e5653f-97"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:18:57.645Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.9,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:80440e2182e5653f-9a82404cf302f8db",
+      "from": "claim:80440e2182e5653f-1d1341c978df0a68",
+      "to": "claim:80440e2182e5653f-d1c80ec9bda36ba7",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-63#chars-5987-6040",
+        "span:01-number-systems-80440e2182e5653f-97"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:18:57.645Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.9,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:80440e2182e5653f-9b22b516db927783",
+      "from": "claim:80440e2182e5653f-858a69f92b8e3641",
+      "to": "claim:80440e2182e5653f-7702e89128023c66",
+      "type": "SUPPORTS",
+      "conditions": [
+        "列举实数的小数表示"
+      ],
+      "conditionStatus": "PRESERVED",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-67#chars-6450-6479",
+        "span:01-number-systems-80440e2182e5653f-68#chars-6483-6620"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:18:57.645Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.7,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:80440e2182e5653f-9bc1ab520e05dc94",
+      "from": "claim:80440e2182e5653f-4578cb1df5fa4876",
+      "to": "claim:80440e2182e5653f-52547f3bc1cb4ed6",
+      "type": "SUPPORTS",
+      "conditions": [
+        "复数有乘法逆元，实数也有"
+      ],
+      "conditionStatus": "PRESERVED",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-97"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:18:57.645Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.5,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:80440e2182e5653f-9bc55ad7c65abf49",
+      "from": "claim:80440e2182e5653f-69aaa764980b9501",
+      "to": "claim:80440e2182e5653f-485c3316aef80581",
+      "type": "SUPPORTS",
+      "conditions": [
+        "自然数集在乘法下封闭"
+      ],
+      "conditionStatus": "PRESERVED",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-24",
+        "span:01-number-systems-80440e2182e5653f-97"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:18:57.645Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.8,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:80440e2182e5653f-9f501fa489135c6f",
+      "from": "claim:80440e2182e5653f-12515b0218391b0a",
+      "to": "claim:80440e2182e5653f-14e5a125571aa9a0",
+      "type": "SUPPORTS",
+      "conditions": [
+        "代数基本定理说明复数代数封闭"
+      ],
+      "conditionStatus": "PRESERVED",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-88#chars-8373-8430",
+        "span:01-number-systems-80440e2182e5653f-90#chars-8527-8599"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:18:57.645Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.9,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:80440e2182e5653f-a3f7e37e066710d3",
+      "from": "claim:80440e2182e5653f-537af60b31df3cb7",
+      "to": "claim:80440e2182e5653f-e6b40913cf9e99a3",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-25#chars-2152-2218",
+        "span:01-number-systems-80440e2182e5653f-43#chars-3582-3756"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:18:57.645Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.7,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:80440e2182e5653f-beafed1b9d744993",
+      "from": "claim:80440e2182e5653f-4a7c53f0e5ff715d",
+      "to": "claim:80440e2182e5653f-e1f525a147f70055",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-54#chars-5315-5332",
+        "span:01-number-systems-80440e2182e5653f-58#chars-5659-5699"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:18:57.645Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.7,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:80440e2182e5653f-c564a7a2b1470c91",
+      "from": "claim:80440e2182e5653f-14e5a125571aa9a0",
+      "to": "claim:80440e2182e5653f-04ec296a3292fff1",
+      "type": "SUPPORTS",
+      "conditions": [
+        "实数不是代数封闭的，复数才是"
+      ],
+      "conditionStatus": "PRESERVED",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-90#chars-8527-8599",
+        "span:01-number-systems-80440e2182e5653f-97"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:18:57.645Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.8,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:80440e2182e5653f-c5b64f7b962f33af",
+      "from": "claim:80440e2182e5653f-5faa6c218afbe1a5",
+      "to": "claim:80440e2182e5653f-93beb758955b02e8",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-24",
+        "span:01-number-systems-80440e2182e5653f-97"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:18:57.645Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.9,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:80440e2182e5653f-c64358cfc5558d34",
+      "from": "claim:80440e2182e5653f-ed88deafef543359",
+      "to": "claim:80440e2182e5653f-b87428fb9ba3e69f",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-24",
+        "span:01-number-systems-80440e2182e5653f-28#chars-2736-2784"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:18:57.645Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 1,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:80440e2182e5653f-c78952732023c7fe",
+      "from": "claim:80440e2182e5653f-483b0d91f33a6189",
+      "to": "claim:80440e2182e5653f-c9cdc01ad322aa92",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-56#chars-5359-5384",
+        "span:01-number-systems-80440e2182e5653f-57#chars-5386-5596"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:18:57.645Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.8,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:80440e2182e5653f-d45ecc83e6900240",
+      "from": "claim:80440e2182e5653f-335d0f56119d89cd",
+      "to": "claim:80440e2182e5653f-0646de33744a407a",
+      "type": "SUPPORTS",
+      "conditions": [
+        "自然数集在加法下封闭"
+      ],
+      "conditionStatus": "PRESERVED",
+      "relationAuditVersion": "v1.2",
+      "evidenceSpanIds": [
+        "span:01-number-systems-80440e2182e5653f-10",
+        "span:01-number-systems-80440e2182e5653f-97"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-23T16:18:57.645Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.9,
+      "consumedBy": []
+    }
+  ]
+}

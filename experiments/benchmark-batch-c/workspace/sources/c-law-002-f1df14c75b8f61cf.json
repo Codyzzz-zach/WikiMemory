@@ -1,0 +1,27 @@
+{
+  "id": "source:c-law-002-f1df14c75b8f61cf",
+  "hash": "f1df14c75b8f61cf",
+  "uri": "experiments/benchmark-batch-c/stage-a-freeze/compilation-corpus/law-public-policy/c-law-002.md",
+  "parsedText": "\n# DPC (Ireland) Final Decision IN-20-8-1 — Meta Platforms Ireland Limited (GDPR data transfers)\n\n## Source Snapshot\n\n*Content sourced from EDPB press release (https://www.edpb.europa.eu/), DPC announcement, and RegSol/GDPRhub analyses. All publicly accessible.*\n\n**Decision Date:** 12 May 2023\n**Announcement Date:** 22 May 2023\n**Authority:** Data Protection Commission (Ireland), Lead Supervisory Authority\n**EDPB Binding Decision:** 13 April 2023 (Article 65 dispute resolution)\n**Case Reference:** IN-20-8-1\n\n### Finding of Infringement (verbatim from DPC announcement)\n\n\"The decision records that Meta Ireland infringed Article 46(1) GDPR when it continued to transfer personal data from the EU/EEA to the USA following the delivery of the CJEU's judgment in Data Protection Commissioner v Facebook Ireland Limited and Maximillian Schrems.\"\n\n\"While Meta Ireland effected those transfers on the basis of the updated Standard Contractual Clauses ('SCCs') that were adopted by the European Commission in 2021 in conjunction with additional supplementary measures that were implemented by Meta Ireland, the DPC found that these arrangements did not address the risks to the fundamental rights and freedoms of data subjects that were identified by the CJEU in its judgment.\"\n\n### DPC's Specific Findings\n\n\"US law does not provide a level of protection that is equivalent to that provided by EU law.\"\n\n\"Neither the 2010 SCCs, nor the 2021 SCCs, could compensate for the inadequate protection provided by US law.\"\n\n\"The measures set out in Meta's record of safeguards...do not compensate for the inadequate protection provided by US law.\"\n\n\"It is not open to Meta to rely on the derogations provided for in Article 49(1) of the GDPR when making the data transfers.\"\n\n### Corrective Powers Exercised\n\n1. Administrative fine: **€1.2 billion** — the largest GDPR fine ever imposed.\n\n2. Suspension order (Article 58(2)(j) GDPR): Meta Ireland must suspend any future transfer of personal data to the US within **five months** from notification.\n\n3. Compliance order (Article 58(2)(d) GDPR): Meta Ireland must bring processing into compliance with Chapter V GDPR by ceasing unlawful processing, including storage, in the US, within **six months** from notification.\n\n### EDPB Statement (verbatim)\n\n\"The EDPB found that Meta IE's infringement is very serious since it concerns transfers that are systematic, repetitive and continuous. Facebook has millions of users in Europe, so the volume of personal data transferred is massive. The unprecedented fine is a strong signal to organisations that serious infringements have far-reaching consequences.\"\n\n### Dispute Resolution Background\n\nThe DPC initially proposed only a suspension order without a fine. Four of 47 Concerned Supervisory Authorities objected. The EDPB determined that a fine should be imposed and that Meta must also address already-transferred data. The DPC was bound to follow the EDPB's binding decision.\n\n### Meta's Response\n\nMeta announced it would appeal the decision and seek a stay with the courts to pause implementation deadlines.\n",
+  "sourceType": "md",
+  "loaderVersion": "markdown-v1.2",
+  "metadata": {
+    "sourceId": "c-law-002",
+    "title": "DPC (Ireland) Final Decision IN-20-8-1 — Meta Platforms Ireland Limited (GDPR data transfers)",
+    "domain": "law-public-policy",
+    "sourceRole": "P/C-implementation",
+    "platform": "official",
+    "author": "Data Protection Commission (Ireland)",
+    "canonicalUrl": "https://www.edpb.europa.eu/news/news/2023/12-billion-euro-fine-facebook-result-edpb-binding-decision_en",
+    "publishedAt": "Fri May 12 2023 08:00:00 GMT+0800 (China Standard Time)",
+    "capturedAt": "Tue Jul 28 2026 14:00:00 GMT+0800 (China Standard Time)",
+    "versionRef": "DPC Case IN-20-8-1; EDPB Binding Decision 13 April 2023",
+    "mediaType": "docs",
+    "language": "en",
+    "usage": "internal-only",
+    "accessStatus": "full",
+    "evaluatorSnapshotHash": "sha256:6f64eea096fdabb05e90ffb068b18d08b7576b8ebdba9f0a5d04b4f1776b7421",
+    "evaluatorUpstreamArtifactHash": "sha256:e46ea8fbdb92d77e71a0d445970d0f17e244b756873cb903a4d94ada69452ac5"
+  },
+  "createdAt": "2026-07-28T07:14:42.638Z"
+}

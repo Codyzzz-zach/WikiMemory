@@ -1,0 +1,31 @@
+{
+  "verdict": "failed",
+  "dimensions": {
+    "support": {
+      "result": "fail",
+      "evidence": "原文：'每一步扩张' 在 SourceSpan 中未出现；原文仅提及'但获得了更强大的运算能力'，未提及'每一步扩张'这一行为。"
+    },
+    "addition": {
+      "result": "fail",
+      "evidence": "Claim 添加了'每一步扩张'这一信息，原文中无对应内容。"
+    },
+    "inference": {
+      "result": "pass",
+      "evidence": "无推断问题。"
+    },
+    "limits": {
+      "result": "pass",
+      "evidence": "无限制条件被忽略。"
+    },
+    "citation": {
+      "result": "pass",
+      "evidence": "引用的 span 正确，但其中不包含'每一步扩张'这一信息。"
+    }
+  },
+  "anchor": "但获得了更强大的运算能力",
+  "failedDimensions": ["support", "addition"],
+  "issues": [
+    "SourceSpan 没有提到'每一步扩张'，缺乏对 claim 中此部分的支撑。",
+    "Claim 添加了原文中不存在的'每一步扩张'这一信息。"
+  ]
+}

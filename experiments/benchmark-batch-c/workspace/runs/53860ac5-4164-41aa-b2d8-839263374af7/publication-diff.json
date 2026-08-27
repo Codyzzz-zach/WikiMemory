@@ -1,0 +1,55 @@
+{
+  "schemaVersion": "pilot-publication-diff/v1",
+  "runId": "53860ac5-4164-41aa-b2d8-839263374af7",
+  "sourceId": "source:c-psych-003-08f4f1f4eb388c06",
+  "generatedAt": "2026-07-28T07:08:50.755Z",
+  "status": "PASS",
+  "acceptedReview": false,
+  "runtime": {
+    "requestedModel": "deepseek-v4-flash",
+    "temperature": 0,
+    "semanticAuditVersion": "v2.3",
+    "relationAuditVersion": "v1.7",
+    "sourceHash": "08f4f1f4eb388c06"
+  },
+  "baseline": null,
+  "candidate": {
+    "claims": 21,
+    "concepts": 19,
+    "relations": 5,
+    "quarantinedClaims": 2,
+    "quarantinedRelations": 8,
+    "quarantineRate": 0.08695652173913043
+  },
+  "diff": {
+    "retainedClaimIds": 0,
+    "addedClaimIds": [
+      "claim:08f4f1f4eb388c06-06d433cbfd18102a",
+      "claim:08f4f1f4eb388c06-0f3133566cb643a9",
+      "claim:08f4f1f4eb388c06-12af1f73e66615a0",
+      "claim:08f4f1f4eb388c06-1df6220326f7a438",
+      "claim:08f4f1f4eb388c06-2c77f195d121aaf4",
+      "claim:08f4f1f4eb388c06-359db3a1c1ff5ab8",
+      "claim:08f4f1f4eb388c06-5a1eca00ccef74b9",
+      "claim:08f4f1f4eb388c06-65df6845dea7acf3",
+      "claim:08f4f1f4eb388c06-6ef2efdb71d13a42",
+      "claim:08f4f1f4eb388c06-6fa60fec777bce5d",
+      "claim:08f4f1f4eb388c06-6fb8eb7351f1558a",
+      "claim:08f4f1f4eb388c06-98bbd61106afc39e",
+      "claim:08f4f1f4eb388c06-9d3d87bb413cd0f9",
+      "claim:08f4f1f4eb388c06-a2c943aa0de96d3f",
+      "claim:08f4f1f4eb388c06-a6a1002ab06055f5",
+      "claim:08f4f1f4eb388c06-b7358d918b6741a7",
+      "claim:08f4f1f4eb388c06-be69d5a9f5b7a2ae",
+      "claim:08f4f1f4eb388c06-cb421c6ce5c6137f",
+      "claim:08f4f1f4eb388c06-cc032c5f6d34ae62",
+      "claim:08f4f1f4eb388c06-e6a4094f6f5c1f5f",
+      "claim:08f4f1f4eb388c06-f51a04a7521879df"
+    ],
+    "removedClaimIds": [],
+    "claimRetentionRate": null,
+    "claimCountChangeRate": null,
+    "conditionsDropped": []
+  },
+  "issues": []
+}

@@ -1,0 +1,82 @@
+{
+  "schemaVersion": "wge-m1-wiki-correction-adjudication/v1",
+  "milestone": "M1",
+  "adjudicatedAt": "2026-08-12",
+  "verdict": "PASS_MECHANISM_ONLY",
+  "productUpliftClaim": "NOT_ESTABLISHED",
+  "authoritativeArtifacts": {
+    "contract": "experiments/m1-wiki-correction/contract-v1.json",
+    "structuralReport": {
+      "path": "experiments/m1-wiki-correction/runs/m1-structural-v5-posthoc/report.json",
+      "sha256": "dd70e07b87cefd3dacf37442714aa82b1e11c9370884e2e2e82959eb5ebe97e6"
+    },
+    "sealedAnswers": {
+      "path": "experiments/m1-wiki-correction/answer-runs/m1-answer-v3-posthoc/blind-answers.json",
+      "sha256": "938f97a7f47f9764dbfd1cf83ee0165210e5e74a8f9b67a7be9531d8463f1703"
+    },
+    "strictModelScore": {
+      "path": "experiments/m1-wiki-correction/answer-runs/m1-answer-v3-posthoc/result-strict-v2.json",
+      "sha256": "04d048b4a489ee482020844cdd89d83424f8bd757e613379a4832b21d51fd814",
+      "authority": "DIAGNOSTIC_ONLY"
+    }
+  },
+  "gateDecision": {
+    "M1-G0": "PASS",
+    "M1-G1": "PASS",
+    "M1-G2": "PASS",
+    "M1-G3": "PASS",
+    "M1-G4": "PASS",
+    "M1-G5": "PASS_WITH_ANSWER_COMPLETENESS_GAP"
+  },
+  "provenMechanisms": [
+    "A canonical Wiki assertion is deterministically supported by one active canonical Claim and resolvable evidence.",
+    "A SUPERSEDES-driven transaction found and rebuilt 3/3 affected Wiki modules while preserving stable addresses.",
+    "Old Claim references were removed, replacement references were present, old Wiki copies were quarantined, and 3/3 unrelated modules remained byte-stable.",
+    "Failure injected after Wiki publication restored canonical Wiki, quarantine and knowledgeVersion.",
+    "Materialized Wiki consumption was a real treatment: W packs contained supported Wiki modules while paired R0 packs disabled them.",
+    "The final post-hoc answer run had 12/12 valid formats and citation closure after one bounded citation-repair call; affected old-error recurrence and unrelated hard regression were both zero."
+  ],
+  "notProven": [
+    "M1 does not prove that a one-assertion Wiki improves average answer quality over R0.",
+    "M1 does not prove automatic Wiki formation, multi-source synthesis, best module granularity, or held-out generalization.",
+    "The model judge is not authoritative: its first contract inferred explicit threshold and vulnerability facts from the broad phrase 'tests passed'; the strict contract still assigned identical fact rationales to two materially different answers."
+  ],
+  "manualAudit": {
+    "questionId": "EV-PLAT-001",
+    "goldRequiredFacts": 4,
+    "wExplicitRequiredFacts": [
+      "不再要求三方批准"
+    ],
+    "r0ExplicitRequiredFacts": [],
+    "missingFromBothAnswers": [
+      "覆盖率不低于 80%",
+      "没有严重漏洞",
+      "可全天候自动发布"
+    ],
+    "availableButMissingFromPackClaimIds": [
+      "claim:674a8aeeebc511a6-badf248366e456be",
+      "claim:674a8aeeebc511a6-d853e1a3f0badae4",
+      "claim:674a8aeeebc511a6-18a6b88907b91004",
+      "claim:674a8aeeebc511a6-9768d7193a2c2dbb"
+    ],
+    "rootCause": "The affected Wiki fixture intentionally materialized only the superseded assertion. It proved correction lifecycle, but it was not a complete stable-question knowledge module; R0 retrieval also omitted several active claims required for a complete answer."
+  },
+  "costLedger": {
+    "recordedOnlineTokensAcrossM1AnswerRuns": 328874,
+    "excludes": [
+      "provider-side work from transport failures when no usage record was returned"
+    ],
+    "decisiveV3": {
+      "answerTokensIncludingOneRepair": 105425,
+      "initialJudgeTokens": 9769,
+      "strictRescoreTokens": 10451
+    }
+  },
+  "nextMilestone": {
+    "id": "M2",
+    "name": "完整问题模块与增量纠错",
+    "primaryQuestion": "Can a multi-assertion, evidence-closed Wiki module preserve a complete answer bundle across updates, improve required-fact coverage over the same R0 base, and do so within a fixed visible-token budget?",
+    "requiredMechanism": "Build or curate a complete module around a stable question using multiple single-Claim assertions; update only affected assertions while unrelated assertions and stableAddress remain unchanged.",
+    "stopRule": "Do not request a new held-out set until M2 passes on development episodes without domain-specific branches."
+  }
+}

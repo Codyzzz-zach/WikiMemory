@@ -1,0 +1,60 @@
+---
+sourceId: s200-ai-llama-004
+title: "Llama 3.1 Community License Agreement (pinned)"
+domain: ai
+clusterId: cluster-ai-llama-01
+sourceRole: C-implementation
+platform: github
+author: "Meta Platforms, Inc."
+canonicalUrl: "https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/LICENSE"
+publishedAt: "2024-07-23"
+capturedAt: "2026-08-10T12:35:00+08:00"
+versionRef: "commit e2e67cd8b0feca839666b7082dcc1c4fc0ae11e2 (2024-09-30); Llama 3.1 Version Release Date: July 23, 2024"
+mediaType: legal
+language: en
+usage: internal-only
+accessStatus: full
+snapshotHash: "sha256:47e9ac0b3c12ddf282988b2db4d918698977b375e683309cd71421f3f713acb7"
+collectionMethod: public-api
+licenseOrUsageNote: "许可文本为公开法律文本；内部评测引用。"
+collectionNotes: "与 model card 同 commit 固定，构成许可条款证据。"
+---
+
+# Llama 3.1 Community License Agreement (pinned)
+
+## Source Snapshot
+
+*Verbatim from https://raw.githubusercontent.com/meta-llama/llama-models/e2e67cd8b0feca839666b7082dcc1c4fc0ae11e2/models/llama3_1/LICENSE (captured 2026-08-10).*
+
+> LLAMA 3.1 COMMUNITY LICENSE AGREEMENT
+>
+> Llama 3.1 Version Release Date: July 23, 2024
+
+### Definitions (verbatim)
+
+> "Agreement" means the terms and conditions for use, reproduction, distribution and modification of the Llama Materials set forth herein.
+>
+> "Llama 3.1" means the foundational large language models and software and algorithms, including machine-learning model code, trained model weights, inference-enabling code, training-enabling code, fine-tuning enabling code and other elements of the foregoing distributed by Meta at https://llama.meta.com/llama-downloads.
+>
+> "Meta" or "we" means Meta Platforms Ireland Limited (if you are located in or, if you are an entity, your principal place of business is in the EEA or Switzerland) and Meta Platforms, Inc. (if you are located outside of the EEA or Switzerland).
+>
+> By clicking "I Accept" below or by using or distributing any portion or element of the Llama Materials, you agree to be bound by this Agreement.
+
+### Section 1.b.i (redistribution obligations, verbatim)
+
+> i. If you distribute or make available the Llama Materials (or any derivative works thereof), or a product or service (including another AI model) that contains any of them, you shall (A) provide a copy of this Agreement with any such Llama Materials; and (B) prominently display "Built with Llama" on a related website, user interface, blogpost, about page, or product documentation. If you use the Llama Materials or any outputs or results of the Llama Materials to create, train, fine tune, or otherwise improve an AI model, which is distributed or made available, you shall also include "Llama" at the beginning of any such AI model name.
+
+### Section 2 (Additional Commercial Terms, verbatim)
+
+> 2. Additional Commercial Terms. If, on the Llama 3.1 version release date, the monthly active users of the products or services made available by or for Licensee, or Licensee's affiliates, is greater than 700 million monthly active users in the preceding calendar month, you must request a license from Meta, which Meta may grant to you in its sole discretion, and you are not authorized to exercise any of the rights under this Agreement unless or until Meta otherwise expressly grants you such rights.
+
+### Section 3 (Disclaimer, verbatim)
+
+> 3. Disclaimer of Warranty. UNLESS REQUIRED BY APPLICABLE LAW, THE LLAMA MATERIALS AND ANY OUTPUT AND RESULTS THEREFROM ARE PROVIDED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OF ANY KIND, AND META DISCLAIMS ALL WARRANTIES OF ANY KIND, BOTH EXPRESS AND IMPLIED, INCLUDING, WITHOUT LIMITATION, ANY WARRANTIES OF TITLE, NON-INFRINGEMENT, MERCHANTABILITY, OR FITNESS FOR A PARTICULAR PURPOSE.
+
+## Research Notes
+
+- 来源角色 C-implementation：许可文本是"使用/分发"的规范性约束，属于实现层证据（约束代码/模型的分发行为）。
+- 关键条款：700M MAU 门槛（Section 2）——社区常讨论的"不算真正开源"理由之一；"Built with Llama"署名义务。
+- 与 s200-ai-llama-006（HN 中 ninjin 的 "kind of open" 评论）构成"许可事实 vs 社区解读"的归属对照。
+- 固定版本：Llama 3.1 版许可（2024-07-23 发布日），commit e2e67cd8。

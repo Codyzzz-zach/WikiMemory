@@ -1,0 +1,118 @@
+## SOURCE ../stage-a-freeze/compilation-corpus/psychology-reproducibility/c-psych-003.md:30-33 score=18.690
+### Abstract (verbatim from PubMed)
+
+"A paper from the Open Science Collaboration (Research Articles, 28 August 2015, aac4716) attempting to replicate 100 published studies suggests that the reproducibility of psychological science is surprisingly low. We show that this article contains three statistical errors and provides no support for such a conclusion. Indeed, the data are consistent with the opposite conclusion, namely, that the reproducibility of psychological science is quite high."
+
+## SOURCE ../stage-a-freeze/compilation-corpus/psychology-reproducibility/c-psych-001.md:1-19 score=14.533
+---
+sourceId: c-psych-001
+title: Estimating the reproducibility of psychological science
+domain: psychology-reproducibility
+sourceRole: P-primary
+platform: journal
+author: Open Science Collaboration
+canonicalUrl: https://www.science.org/doi/10.1126/science.aac4716
+publishedAt: Fri Aug 28 2015 08:00:00 GMT+0800 (China Standard Time)
+capturedAt: Tue Jul 28 2026 14:00:00 GMT+0800 (China Standard Time)
+versionRef: doi:10.1126/science.aac4716
+mediaType: paper
+language: en
+usage: internal-only
+accessStatus: partial
+evaluatorSnapshotHash: sha256:82520ab2da2c4ac0785ef7c30c2d2980ad04b0a96b1d9d531dc1231923d74d55
+evaluatorUpstreamArtifactHash: sha256:4245b911b24fdda979afc9efd75a18d58baacb14577878c43bc5dbf1923459c3
+---
+
+## SOURCE ../stage-a-freeze/compilation-corpus/psychology-reproducibility/c-psych-001.md:22-30 score=14.533
+## Source Snapshot
+
+*Note: Full text behind paywall. Content sourced from publicly available abstract, ResearchGate preprint, and OSF project page (https://osf.io/ezcuj/).*
+
+**Authors:** Open Science Collaboration (270+ contributors)
+**Journal:** Science, Vol. 349, Issue 6251, aac4716
+**Published:** 28 August 2015
+**DOI:** 10.1126/science.aac4716
+
+## SOURCE ../stage-a-freeze/compilation-corpus/psychology-reproducibility/c-psych-001.md:45-48 score=10.376
+### Additional detail from OSF project page
+
+The Reproducibility Project: Psychology began in November 2011, finished primary data collection in December 2014, and published a summary of the results in August 2015. The project was coordinated by the Center for Open Science. Ultimately over 270 contributors earned authorship on the summary report and 86 others provided volunteer support.
+
+## SOURCE ../stage-a-freeze/compilation-corpus/psychology-reproducibility/c-psych-001.md:31-34 score=7.135
+### Abstract (verbatim from ResearchGate/public sources)
+
+"Reproducibility is a defining feature of science, but the extent to which it characterizes current research is unknown. We conducted replications of 100 experimental and correlational studies published in three psychology journals using high-powered designs and original materials when available."
+
+## SOURCE ../stage-a-freeze/compilation-corpus/psychology-reproducibility/c-psych-003.md:34-43 score=7.135
+### Key Arguments (verbatim from Harvard Gazette coverage)
+
+Gary King on sampling: "If you want to estimate a parameter of a population, then you either have to randomly sample from that population or make statistical corrections for the fact that you didn't. The OSC did neither."
+
+Daniel Gilbert on the sampling rules: "What they did is create an idiosyncratic, arbitrary list of sampling rules that excluded the majority of psychology's subfields from the sample, that excluded entire classes of studies whose methods are probably among the best in science from the sample, and so on. Then they proceeded to violate all of their own rules."
+
+Gary King on statistical error: "When they did their calculations, they failed to consider the fact that their replication studies were not just new samples from the same population. They were often quite different from the originals in many ways, and those differences are a source of statistical error. So we did the calculation the right way and then applied it to their data. And guess what? The number of failures they observed was just about what you should expect to observe by chance alone — even if all 100 of the original findings were true. The failure of the replication studies to match the original studies was a failure of the replications, not of the originals."
+
+Gary King on fidelity and failure rates: "We used this as a rough index of fidelity, and when we did, we discovered something important: The low-fidelity replications were an astonishing four times more likely to fail. What that suggests is that the infidelities did not just create random statistical noise — they actually biased the studies toward failure."
+
+## SOURCE ../stage-a-freeze/compilation-corpus/psychology-reproducibility/c-psych-002.md:46-49 score=6.442
+### Data Availability
+
+"Data were collected in-lab and online through a standardized procedure administered via an online link. The dataset is stored on the Open Science Framework website." License: CC0 1.0 Universal.
+
+## SOURCE ../stage-a-freeze/compilation-corpus/law-public-policy/c-law-002.md:38-47 score=3.464
+### DPC's Specific Findings
+
+"US law does not provide a level of protection that is equivalent to that provided by EU law."
+
+"Neither the 2010 SCCs, nor the 2021 SCCs, could compensate for the inadequate protection provided by US law."
+
+"The measures set out in Meta's record of safeguards...do not compensate for the inadequate protection provided by US law."
+
+"It is not open to Meta to rely on the derogations provided for in Article 49(1) of the GDPR when making the data transfers."
+
+## SOURCE ../stage-a-freeze/compilation-corpus/psychology-reproducibility/c-psych-002.md:22-29 score=3.464
+## Source Snapshot
+
+*Content sourced from Journal of Open Psychology Data (openpsychologydata.metajnl.com) and OSF project page (https://osf.io/wx7ck/).*
+
+**Authors:** Richard A. Klein, Kate A. Ratliff, Michelangelo Vianello, Reginald B. Adams Jr., et al. (50+ authors)
+**Published in:** Social Psychology (2014), Vol. 45, pp. 142-152; data paper in Journal of Open Psychology Data (2014), Vol. 2, Issue 1, e4
+**DOI:** 10.5334/jopd.ad (data paper); 10.1177/1948550614547449 (main article)
+
+## SOURCE ../stage-a-freeze/compilation-corpus/psychology-reproducibility/c-psych-001.md:20-21 score=2.978
+# Estimating the reproducibility of psychological science
+
+## SOURCE ../stage-a-freeze/compilation-corpus/psychology-reproducibility/c-psych-003.md:1-19 score=2.978
+---
+sourceId: c-psych-003
+title: Comment on 'Estimating the reproducibility of psychological science' / Harvard Gazette coverage
+domain: psychology-reproducibility
+sourceRole: S-analysis
+platform: journal
+author: Daniel T. Gilbert, Gary King, Stephen Pettigrew, Timothy D. Wilson
+canonicalUrl: https://www.science.org/doi/10.1126/science.aad7243
+publishedAt: Fri Mar 04 2016 08:00:00 GMT+0800 (China Standard Time)
+capturedAt: Tue Jul 28 2026 14:00:00 GMT+0800 (China Standard Time)
+versionRef: 'doi:10.1126/science.aad7243; coverage: news.harvard.edu/gazette 2016-03-03'
+mediaType: paper
+language: en
+usage: internal-only
+accessStatus: partial
+evaluatorSnapshotHash: sha256:77b3cb4ce1abb82684265e6cddd683fd74417530b9f6bb140ece9d11391fa45d
+evaluatorUpstreamArtifactHash: sha256:3cb35e50527f6e6d4bbe124d544606dadf4e424c2246c167472bb0df7ba35226
+---
+
+## SOURCE ../stage-a-freeze/compilation-corpus/psychology-reproducibility/c-psych-003.md:20-21 score=2.978
+# Comment on 'Estimating the reproducibility of psychological science' / Harvard Gazette coverage
+
+## SOURCE ../stage-a-freeze/compilation-corpus/psychology-reproducibility/c-psych-003.md:22-29 score=2.978
+## Source Snapshot
+
+*Note: Science comment behind paywall. Content sourced from PubMed abstract and Harvard Gazette coverage (https://news.harvard.edu/gazette/story/2016/03/study-that-undercut-psych-research-got-it-wrong/), both publicly accessible.*
+
+**Authors:** Daniel T. Gilbert (Harvard), Gary King (Harvard), Stephen Pettigrew (Harvard), Timothy D. Wilson (University of Virginia)
+**Published:** Science, Vol. 351, Issue 6277, pp. 1037, 4 March 2016
+**DOI:** 10.1126/science.aad7243
+
+## SOURCE ../stage-a-freeze/compilation-corpus/psychology-reproducibility/c-psych-003.md:44-45 score=2.978
+Gary King on meta-science principles: "I think the big takeaway point here is that meta-science must obey the rules of science. All the rules about sampling and calculating error and keeping experimenters blind to the hypothesis — all of those rules must apply whether you are studying people or studying the replicability of a science. Meta-science does not get a pass. It is not exempt."

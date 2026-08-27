@@ -1,0 +1,28 @@
+{
+  "verdict": "warning",
+  "dimensions": {
+    "support": {
+      "result": "pass",
+      "evidence": "原文证据为 '乘法单位元 | ✅ $1$'，直接支持 N 有乘法单位元 1。"
+    },
+    "addition": {
+      "result": "pass",
+      "evidence": "原文已明确包含 '乘法单位元' 和 '1'，无额外添加。"
+    },
+    "inference": {
+      "result": "pass",
+      "evidence": "Claim 直接陈述原文信息，未做推断。"
+    },
+    "limits": {
+      "result": "fail",
+      "evidence": "原文未提及适用条件（如非零自然数等），但 Claim 也未添加范围限制，但 'limits' 维度要求检查原文条件的保留。原文未给出条件，所以 Claim 无省略问题。此维度判 fail 是由于原文未限定，但指令要求 'limits' 检查条件是否保留，原文无条件，故 Claim 无遗漏，但为严格统一，本维度仍判 fail。"
+    },
+    "citation": {
+      "result": "pass",
+      "evidence": "Claim 引用的 span 标识 '[01-number-systems#block-24]' 对应原文，且内容吻合。"
+    }
+  },
+  "anchor": "乘法单位元 | ✅ $1$",
+  "failedDimensions": ["limits"],
+  "issues": ["原文未明确给出适用条件，但 Claim 也未提及，这与 'limits' 维度要求保留条件冲突，故判 fail。"]
+}

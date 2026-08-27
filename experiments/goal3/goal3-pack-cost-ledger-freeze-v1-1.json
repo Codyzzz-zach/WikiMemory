@@ -1,0 +1,33 @@
+{
+	"schemaVersion": "wge-goal3-pack-cost-ledger-freeze/v1.1",
+	"status": "FROZEN_BEFORE_REPAIRED_FIRST_REPORT",
+	"frozenAt": "2026-08-10T11:06:00+08:00",
+	"contract": {
+		"path": "experiments/goal3/goal3-pack-cost-ledger-contract-v1-1.json",
+		"sha256": "a0569e4d4c7d4e3488c0f1e945ddaaf75d485a4e32978a0f7e57b9b2bbd60d7c"
+	},
+	"implementation": {
+		"ledger": {
+			"path": "src/retrieval/pack-cost-ledger.ts",
+			"sha256": "f2959732b752bca72c4421433448162c4ce9d97dfa65ac2bcf46fb67cf42f3c5"
+		},
+		"ledgerTests": {
+			"path": "src/retrieval/pack-cost-ledger.test.ts",
+			"sha256": "15325f5baef1a891ba48205fc256cf3e181623fdf47c113c79340b1185278d76"
+		},
+		"runner": {
+			"path": "scripts/run-goal3-pack-cost-ledger.ts",
+			"sha256": "cd5dcaacd0bc71350a7c9cfc25b57b2585d4224e7fbe4c8871f64495ae1381da"
+		}
+	},
+	"repairScope": {
+		"changed": "Exact 40 candidates per row became a 40-candidate ceiling with identity/count taken from the immutable first report.",
+		"unchanged": "All candidate identities, cost layers, 5%/10% thresholds, zero-loss guards, stop rules and no-Gold/no-model boundary."
+	},
+	"verificationBeforeFreeze": {
+		"targetedTests": "src/retrieval/pack-cost-ledger.test.ts: 5/5 passed",
+		"mainTypecheck": "tsc --noEmit passed",
+		"scriptsTypecheck": "tsc --noEmit -p tsconfig.scripts.json passed",
+		"targetedLint": "3 files, 0 errors"
+	}
+}

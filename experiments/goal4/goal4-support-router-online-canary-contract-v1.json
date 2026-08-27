@@ -1,0 +1,67 @@
+{
+	"schemaVersion": "wge-goal4-support-router-online-canary-contract/v1",
+	"status": "FROZEN_BEFORE_ONLINE_CANARY",
+	"createdAt": "2026-08-11T23:45:00+08:00",
+	"stageBRead": false,
+	"purpose": "Verify production orchestration, lifecycle isolation and bounded cost after the independent SUPPORTS pre-audit router passed calibration and zero-publication replay.",
+	"gitHead": "8829e408215590d39ddaf40431931dee0277e9b3",
+	"dirtyWorktreeDisclosure": "The experiment freezes exact file hashes because Goal0-Goal4 work is intentionally uncommitted in the shared dirty worktree.",
+	"frozenInputs": {
+		"sourceFreezeManifest": {
+			"path": "experiments/goal3/s200-stage-a-freeze-v1/freeze-manifest.json",
+			"sha256": "344c2a30f754b1ab76d2945de0a791c6f56aafe33ca87c501657c189c387c4e4"
+		},
+		"sourceSelection": "The first four lexicographically sorted Markdown files in the 140-source frozen compilation corpus",
+		"sourceCount": 4,
+		"stageBRead": false
+	},
+	"runtime": {
+		"model": "deepseek-v4-flash",
+		"temperature": 0,
+		"thinkingDisabled": true,
+		"runName": "compile-v11-support-router-4source",
+		"maximumSources": 4,
+		"maximumTotalTokens": 300000
+	},
+	"implementationHashes": {
+		"src/relations/support-router.ts": "af8f435719ae4b18c307ed735253b4479acb95a74c2e3278e9ad9a2debd5226a",
+		"src/relations/support-router.test.ts": "f6fd3c469d7e2361a1bd3ba94373ef3dbb5a2d8acc984a81905d05f3da23dbc9",
+		"src/cli/index.ts": "9761bf6ad1c13dbec165da6db8ef208596433c33efdee3c608db2e806d71c2a6",
+		"src/prompts/index.ts": "9fc1c9f74704a5a41f2b294ba697ee70840b2f95d75c457a5f4587dad00f5fe5",
+		"src/types/schemas.ts": "abbe1280b120ed12ac10588e335c1e04baf8256d2e99ac360afe9bea897e7cdd",
+		"scripts/run-goal3-s200-compile.ts": "073eb5d9cd78c0cc37788ca31b32f29fc89fba42dd38fdda58b5706196df27ec"
+	},
+	"prerequisites": {
+		"routerContractSha256": "6ed1110856d562ae4c3adf289155c9ee039efe3047f4c3749d7d5fb0c5706836",
+		"frozenReplayReportSha256": "89498affd350362c381fef358cd6805cc9905ef7522d22f3d2e4c46d0350d106",
+		"frozenReplayManualReviewSha256": "39635025aac9e428a84ab3d0312a4818741224f1fcca99eefaeabcb781d7c79c"
+	},
+	"machineAcceptance": [
+		"all four Sources finish without compile failure",
+		"generated = selectedBeforeTypeRouter + deferredByAuditBudget for every Source",
+		"selectedBeforeTypeRouter = fullAuditSelected + deferredByTypeRouter for every Source",
+		"fullAuditSelected = auditedPassed + quarantined for every Source",
+		"auditedPassed = canonicalPublished + deferredByGraphDiversity for every Source",
+		"every router ledger decision has relation type SUPPORTS and publicationState CANDIDATE",
+		"every DEFER_BY_TYPE_ROUTER Relation has zero canonical and quarantine publication exposure",
+		"non-SUPPORTS candidates bypass the router and remain in full audit",
+		"all router parse results are valid or invalid singleton results fail open to full audit",
+		"all canonical Relation endpoints and evidence resolve",
+		"total model usage does not exceed 300000 tokens"
+	],
+	"manualAcceptance": [
+		"review every SUPPORTS candidate deferred by the router; no plausible true support may be silently deferred",
+		"review every canonical cross-material Relation for existence, type, direction, conditions and evidence",
+		"maximum harmful or unfaithful canonical Relations is zero"
+	],
+	"decisionRules": {
+		"machineOrManualGateFails": "Disable production router integration; retain artifacts as a rejected canary.",
+		"allGatesPass": "Accept Goal4 router lifecycle and proceed to the next product-value goal; do not scale compilation merely to collect more router counts.",
+		"noSupportPressureObserved": "Canary is orchestration-only evidence; retain frozen replay as the cost evidence and do not claim online optimization validation."
+	},
+	"interpretationLimits": [
+		"A deferred Relation remains a candidate scheduling artifact, not a negative truth label.",
+		"The router has no publication authority and does not replace the semantic audit.",
+		"This canary validates four frozen sources only; it is not evidence of universal domain precision."
+	]
+}

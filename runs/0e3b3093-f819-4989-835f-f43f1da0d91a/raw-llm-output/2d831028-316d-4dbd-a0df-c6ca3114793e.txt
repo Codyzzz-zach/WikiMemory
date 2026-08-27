@@ -1,0 +1,270 @@
+{
+  "relations": [
+    {
+      "fromClaimIndex": 0,
+      "toClaimIndex": 24,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 1,
+      "toClaimIndex": 27,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 2,
+      "toClaimIndex": 49,
+      "type": "RELATED_TO",
+      "conditions": [],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 4,
+      "toClaimIndex": 10,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 6,
+      "toClaimIndex": 14,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 7,
+      "toClaimIndex": 35,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 8,
+      "toClaimIndex": 14,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 10,
+      "toClaimIndex": 14,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 11,
+      "toClaimIndex": 29,
+      "type": "RELATED_TO",
+      "conditions": [],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 12,
+      "toClaimIndex": 42,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 13,
+      "toClaimIndex": 19,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["欧氏距离定义相同"],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 15,
+      "toClaimIndex": 57,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 16,
+      "toClaimIndex": 23,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 18,
+      "toClaimIndex": 57,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 19,
+      "toClaimIndex": 13,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["欧氏距离定义相同"],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 21,
+      "toClaimIndex": 28,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 24,
+      "toClaimIndex": 0,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 27,
+      "toClaimIndex": 56,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 28,
+      "toClaimIndex": 55,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 32,
+      "toClaimIndex": 26,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 33,
+      "toClaimIndex": 27,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 34,
+      "toClaimIndex": 37,
+      "type": "RELATED_TO",
+      "conditions": [],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 35,
+      "toClaimIndex": 3,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 37,
+      "toClaimIndex": 46,
+      "type": "RELATED_TO",
+      "conditions": [],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 40,
+      "toClaimIndex": 57,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 43,
+      "toClaimIndex": 21,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 43,
+      "toClaimIndex": 28,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 44,
+      "toClaimIndex": 49,
+      "type": "RELATED_TO",
+      "conditions": [],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 45,
+      "toClaimIndex": 27,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 48,
+      "toClaimIndex": 11,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 48,
+      "toClaimIndex": 29,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 48,
+      "toClaimIndex": 36,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 51,
+      "toClaimIndex": 2,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 51,
+      "toClaimIndex": 44,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 51,
+      "toClaimIndex": 49,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 53,
+      "toClaimIndex": 17,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 55,
+      "toClaimIndex": 28,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 56,
+      "toClaimIndex": 12,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 1.0
+    }
+  ]
+}

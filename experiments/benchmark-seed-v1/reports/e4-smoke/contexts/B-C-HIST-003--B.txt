@@ -1,0 +1,26 @@
+## SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/history-humanities/history-nature-scroll-2024-003.md:1-6 score=2.179
+# First passages of rolled-up Herculaneum scroll revealed
+
+A team of student researchers has made a giant contribution to solving one of the biggest mysteries in archaeology by revealing the content of Greek writing inside a charred scroll buried 2,000 years ago by the eruption of Mount Vesuvius.
+
+The winners of a contest called the Vesuvius Challenge trained their machine-learning algorithms on scans of the rolled-up papyrus, unveiling a previously unknown philosophical work that discusses the senses and pleasure.
+
+## SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/history-humanities/history-scrollprize-2026-004.md:1-6 score=2.179
+# Vesuvius Challenge project timeline
+
+Vesuvius Challenge launched in March 2023 with a Grand Prize for the first team to recover four passages of 140 characters from a Herculaneum scroll. Within a year, the prize was claimed. The quest was just beginning.
+
+In 2026, PHerc. 1667 became the first Herculaneum scroll to be virtually unwrapped and read end to end. The challenge now moves onto its next stage: reading multiple entire scrolls.
+
+## SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/history-humanities/history-vesuvius-github-2024-002.md:1-12 score=2.179
+# ScrollPrize/vesuvius archived Python library
+
+This repository was archived by the owner on Nov 21, 2024. It is now read-only.
+
+NOTE: Now maintained at https://github.com/ScrollPrize/villa/tree/main/vesuvius (this repository archived)
+
+From Vesuvius Challenge, a Python library for accessing CT scans of ancient scrolls.
+
+`vesuvius` allows direct access to scroll data without managing download scripts or storing terabytes of CT scans locally. Data is streamed in the background, only serving the requested regions.
+
+`vesuvius` is in beta and the interface may change. Not all Vesuvius Challenge data is currently available - data will continue to be added to the library.

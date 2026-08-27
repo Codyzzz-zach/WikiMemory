@@ -1,0 +1,195 @@
+{
+  "schemaVersion": "wge-m2-wiki-answer-result/v1",
+  "runId": "m2-answer-v1",
+  "scoreId": "strict-v1",
+  "judgeContractHash": "5440b9d5a7b40915f4a41cd0542887a41af2a8efbfed840a3e40c8d9969e7067",
+  "status": "PASS",
+  "scores": [
+    {
+      "sampleId": "m2-sample-8f8f122b9fdc883faa0d",
+      "requiredFactCoverage": 0,
+      "conditionFidelity": 1,
+      "answerabilityDiscipline": 1,
+      "evidenceGrounding": 1,
+      "hardFailure": false,
+      "rationale": "答案未提及覆盖率不低于80%、没有严重漏洞、全天候自动发布等requiredFacts，且明确表示无法确定发布时间，因此requiredFactCoverage为0。保留了非P0条件，但未明确所有自动化门禁均满足，且引入构建清单等额外条件，conditionFidelity为1。问题可回答，但答案未给出明确结论，仅列出部分条件并称无法确定，answerabilityDiscipline为1。引用均有效，但未覆盖关键事实，evidenceGrounding为1。",
+      "questionId": "EV-PLAT-001",
+      "category": "affected",
+      "variant": "R0",
+      "total": 3
+    },
+    {
+      "sampleId": "m2-sample-3998674acdb9872ca057",
+      "requiredFactCoverage": 2,
+      "conditionFidelity": 2,
+      "answerabilityDiscipline": 2,
+      "evidenceGrounding": 2,
+      "hardFailure": false,
+      "rationale": "答案明确提及覆盖率不低于80%、没有严重漏洞、全天候自动发布、不再需要三方批准，覆盖所有requiredFacts。保留了非P0和所有自动化门禁均满足的条件，未遗漏或改变条件。问题可回答，答案给出明确结论，未使用forbiddenFacts。所有引用均有效，且与答案内容一致，evidenceGrounding为2。",
+      "questionId": "EV-PLAT-001",
+      "category": "affected",
+      "variant": "W2",
+      "total": 8
+    },
+    {
+      "sampleId": "m2-sample-60cb9bb34102409dc5e0",
+      "requiredFactCoverage": 2,
+      "conditionFidelity": 2,
+      "answerabilityDiscipline": 2,
+      "evidenceGrounding": 2,
+      "hardFailure": false,
+      "rationale": "答案明确包含'至少提前一百八十个自然日'，覆盖requiredFact。无requiredConditions，且未使用forbiddenFacts。问题为ANSWERABLE，答案直接回答，未编造。citationValidation显示所有引用有效，证据充分。",
+      "questionId": "EV-PLAT-005",
+      "category": "unaffected",
+      "variant": "R0",
+      "total": 8
+    },
+    {
+      "sampleId": "m2-sample-198f07640ad9355844eb",
+      "requiredFactCoverage": 2,
+      "conditionFidelity": 2,
+      "answerabilityDiscipline": 2,
+      "evidenceGrounding": 2,
+      "hardFailure": false,
+      "rationale": "答案明确包含'至少提前一百八十个自然日'，覆盖requiredFact。无requiredConditions，且未使用forbiddenFacts。问题为ANSWERABLE，答案直接回答，未编造。citationValidation显示所有引用有效，证据充分。",
+      "questionId": "EV-PLAT-005",
+      "category": "unaffected",
+      "variant": "W2",
+      "total": 8
+    },
+    {
+      "sampleId": "m2-sample-8b9e23e17ae104f14441",
+      "requiredFactCoverage": 2,
+      "conditionFidelity": 2,
+      "answerabilityDiscipline": 2,
+      "evidenceGrounding": 2,
+      "hardFailure": false,
+      "rationale": "答案明确包含'十五个自然日'，覆盖requiredFact；明确保留'普通实物商品'条件，未遗漏或改变；问题为ANSWERABLE，答案直接回答，未编造；citationValidation有效，引用支持答案。",
+      "questionId": "EV-COMM-001",
+      "category": "affected",
+      "variant": "W2",
+      "total": 8
+    },
+    {
+      "sampleId": "m2-sample-c7ccc95bcb79efeb0ecb",
+      "requiredFactCoverage": 2,
+      "conditionFidelity": 2,
+      "answerabilityDiscipline": 2,
+      "evidenceGrounding": 2,
+      "hardFailure": false,
+      "rationale": "答案明确包含'十五个自然日'，覆盖requiredFact；明确保留'普通实物商品'条件；问题为ANSWERABLE，答案直接回答；citationValidation有效，引用支持答案。",
+      "questionId": "EV-COMM-001",
+      "category": "affected",
+      "variant": "R0",
+      "total": 8
+    },
+    {
+      "sampleId": "m2-sample-1c4e722a9536e396c806",
+      "requiredFactCoverage": 2,
+      "conditionFidelity": 2,
+      "answerabilityDiscipline": 2,
+      "evidenceGrounding": 2,
+      "hardFailure": false,
+      "rationale": "答案明确说明SLA只衡量首次人工回复，覆盖requiredFact；无requiredConditions，且未引入额外条件；问题为ANSWERABLE，答案直接回答，未编造；引用验证有效，证据充分。",
+      "questionId": "EV-COMM-005",
+      "category": "unaffected",
+      "variant": "W2",
+      "total": 8
+    },
+    {
+      "sampleId": "m2-sample-3e384868d326f0192b75",
+      "requiredFactCoverage": 2,
+      "conditionFidelity": 2,
+      "answerabilityDiscipline": 2,
+      "evidenceGrounding": 2,
+      "hardFailure": false,
+      "rationale": "答案明确说明SLA只衡量首次人工回复，覆盖requiredFact；无requiredConditions，且未引入额外条件；问题为ANSWERABLE，答案直接回答，未编造；引用验证有效，证据充分。",
+      "questionId": "EV-COMM-005",
+      "category": "unaffected",
+      "variant": "R0",
+      "total": 8
+    },
+    {
+      "sampleId": "m2-sample-1f921399ae2ab79191df",
+      "requiredFactCoverage": 2,
+      "conditionFidelity": 2,
+      "answerabilityDiscipline": 2,
+      "evidenceGrounding": 2,
+      "hardFailure": false,
+      "rationale": "答案明确表达获批机密计算环境可以使用，并提及端到端加密和自有密钥控制，覆盖所有requiredFacts。同时保留项目级审批和批准清单条件，未遗漏或改变条件。未使用forbiddenFacts，对ANSWERABLE问题给出明确回答。citationValidation有效，引用与内容匹配。",
+      "questionId": "EV-RES-001",
+      "category": "affected",
+      "variant": "W2",
+      "total": 8
+    },
+    {
+      "sampleId": "m2-sample-18926b418e8ed7ffc2ad",
+      "requiredFactCoverage": 2,
+      "conditionFidelity": 2,
+      "answerabilityDiscipline": 2,
+      "evidenceGrounding": 2,
+      "hardFailure": false,
+      "rationale": "答案明确表达获批机密计算环境可以使用，并提及端到端加密和自有密钥控制，覆盖所有requiredFacts。同时保留项目级审批和批准清单条件，未遗漏或改变条件。未使用forbiddenFacts，对ANSWERABLE问题给出明确回答。citationValidation有效，引用与内容匹配。",
+      "questionId": "EV-RES-001",
+      "category": "affected",
+      "variant": "R0",
+      "total": 8
+    },
+    {
+      "sampleId": "m2-sample-d4e6280cead290c346a4",
+      "requiredFactCoverage": 2,
+      "conditionFidelity": 2,
+      "answerabilityDiscipline": 2,
+      "evidenceGrounding": 2,
+      "hardFailure": false,
+      "rationale": "答案明确提及'三个不同随机种子'和'收益门槛不变'，覆盖所有requiredFacts；明确保留'以项目登记的核心指标计算收益'的条件，未遗漏或改变条件；问题为ANSWERABLE，答案直接回答，未编造结论；citationValidation显示所有引用有效，证据充分。",
+      "questionId": "EV-RES-005",
+      "category": "unaffected",
+      "variant": "W2",
+      "total": 8
+    },
+    {
+      "sampleId": "m2-sample-2172add8c1d2fbf144fd",
+      "requiredFactCoverage": 2,
+      "conditionFidelity": 2,
+      "answerabilityDiscipline": 2,
+      "evidenceGrounding": 2,
+      "hardFailure": false,
+      "rationale": "答案明确提及'三个不同随机种子'和'收益门槛不变'，覆盖所有requiredFacts；明确保留'以项目登记的核心指标计算收益'的条件，未遗漏或改变条件；问题为ANSWERABLE，答案直接回答，未编造结论；citationValidation显示所有引用有效，证据充分。",
+      "questionId": "EV-RES-005",
+      "category": "unaffected",
+      "variant": "R0",
+      "total": 8
+    }
+  ],
+  "summary": {
+    "R0": {
+      "n": 6,
+      "averageTotal": 7.166666666666667,
+      "hardFailures": 0
+    },
+    "W2": {
+      "n": 6,
+      "averageTotal": 8,
+      "hardFailures": 0
+    }
+  },
+  "gates": {
+    "affectedOldErrorRecurrenceZero": true,
+    "unaffectedHardRegressionZero": true,
+    "wCitationClosure": true
+  },
+  "usage": {
+    "answers": {
+      "promptTokens": 91045,
+      "completionTokens": 4434,
+      "totalTokens": 95479
+    },
+    "judges": {
+      "promptTokens": 8033,
+      "completionTokens": 1730,
+      "totalTokens": 9763
+    }
+  },
+  "createdAt": "2026-08-12T10:03:54.899Z"
+}

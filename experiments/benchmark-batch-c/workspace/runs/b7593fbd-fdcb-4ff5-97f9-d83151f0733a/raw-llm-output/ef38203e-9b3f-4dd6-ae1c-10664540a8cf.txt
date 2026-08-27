@@ -1,0 +1,123 @@
+{
+  "relations": [
+    {
+      "fromClaimIndex": 0,
+      "toClaimIndex": 26,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 2,
+      "toClaimIndex": 25,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 3,
+      "toClaimIndex": 21,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 5,
+      "toClaimIndex": 27,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["same authority DPC (Ireland)"],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 6,
+      "toClaimIndex": 33,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 7,
+      "toClaimIndex": 39,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 8,
+      "toClaimIndex": 11,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 9,
+      "toClaimIndex": 35,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 10,
+      "toClaimIndex": 32,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 12,
+      "toClaimIndex": 30,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 13,
+      "toClaimIndex": 10,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 14,
+      "toClaimIndex": 31,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["same case reference IN-20-8-1"],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 15,
+      "toClaimIndex": 34,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["same fine amount €1,200,000,000"],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 18,
+      "toClaimIndex": 33,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 19,
+      "toClaimIndex": 36,
+      "type": "RELATED_TO",
+      "conditions": [],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 20,
+      "toClaimIndex": 24,
+      "type": "RELATED_TO",
+      "conditions": [],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 21,
+      "toClaimIndex": 32,
+      "type": "SUPPORTS",
+      "conditions": [],
+      "confidence": 0.8
+    }
+  ]
+}

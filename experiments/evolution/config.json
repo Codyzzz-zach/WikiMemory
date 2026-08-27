@@ -1,0 +1,33 @@
+{
+  "schemaVersion": "wge-evolution-experiment-config/v1",
+  "status": "LOCKED",
+  "compiler": {
+    "model": "deepseek-v4-flash",
+    "temperature": 0,
+    "thinkingDisabled": true
+  },
+  "answer": {
+    "model": "deepseek-v4-flash",
+    "temperature": 0,
+    "thinkingDisabled": true,
+    "maxOutputTokens": 1600
+  },
+  "judge": {
+    "model": "deepseek-v4-flash",
+    "temperature": 0,
+    "thinkingDisabled": true,
+    "maxOutputTokens": 2400
+  },
+  "retrieval": {
+    "contextBudgetTokens": 12000,
+    "maxGraphDepth": 3,
+    "maxFolderChunks": 20,
+    "folderChunkChars": 1800
+  },
+  "execution": {
+    "groups": ["B", "P", "E-min"],
+    "externalRetrievalNetwork": false,
+    "maxToolCalls": 1,
+    "timeoutMs": 120000
+  }
+}

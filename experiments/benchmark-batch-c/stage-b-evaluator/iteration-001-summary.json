@@ -1,0 +1,51 @@
+{
+  "schemaVersion": "wge-batch-c-iteration-summary/v1",
+  "iterationId": "batch-c-iteration-001-co-evidence",
+  "status": "TARGETED_POST_HOC_VALIDATED",
+  "goldStatus": "evaluator-reviewed-provisional-post-answer-gold",
+  "stageB": {
+    "rawProducerArtifactPreserved": true,
+    "normalizedGoldTreeSha256": "7aca97b99df71947a5c1241bc13765210f2c356ebc8acfb44000796a7965e54a",
+    "acceptedRelations": 0,
+    "rejectedRelations": 8,
+    "primaryTasks": 16,
+    "diagnosticOnlyTasks": 2
+  },
+  "blindFirstRun": {
+    "B": { "averageTotal": 12.75, "hardFailures": 2 },
+    "P-seed": { "averageTotal": 8.25, "hardFailures": 3 },
+    "P-graph": { "averageTotal": 9.5, "hardFailures": 4 },
+    "conclusion": "Compiled retrieval underperformed raw-folder retrieval; Graph did not justify its added token cost."
+  },
+  "rejectedAttempt": {
+    "id": "source-signal-cap-v1",
+    "reason": "Separating and capping source metadata improved one question but reduced P-seed evidence recall from 0.393 to 0.357 and lost evidence on other tasks. It was reverted."
+  },
+  "acceptedChange": {
+    "id": "co-evidence-v1",
+    "description": "Add at most eight Canonical Claims that share the same resolved source block as a lexical Seed before optional Graph traversal.",
+    "domainSpecificRulesAdded": 0,
+    "retrieval": {
+      "P-seedEvidenceRecallBefore": 0.393,
+      "P-seedEvidenceRecallAfter": 0.429,
+      "P-graphEvidenceRecallBefore": 0.429,
+      "P-graphEvidenceRecallAfter": 0.464,
+      "regressedEvidenceItems": 0,
+      "improvedQuestion": "C-C-LAW-001",
+      "preparationTreeSha256": "fff43e8fc521801220a71c5a74b090ec84cd30db586fc132e0e4ea71ad4a9dab"
+    },
+    "targetedAnswerValidation": {
+      "questionId": "C-C-LAW-001",
+      "before": "Both compiled modes gave the prohibition date as 2 August 2024 and triggered a hard failure.",
+      "after": "Both compiled modes answered 2 February 2025, 2 August 2026 and 2 August 2027 with three valid citations.",
+      "answerTreeSha256": "906e1574fc7ff805c8bb5b4659d2c73288745784721834e3b24c9b7ab088ba92"
+    }
+  },
+  "remainingPrimaryDefect": "Cross-language semantic retrieval remains absent. Chinese questions with no shared named entity cannot reliably retrieve English evidence, so no full post-hoc rerun is justified yet.",
+  "validation": {
+    "tests": "18 files, 99 passed",
+    "lint": "71 files, 0 errors",
+    "typecheck": "passed",
+    "build": "passed"
+  }
+}

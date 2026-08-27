@@ -1,0 +1,226 @@
+{
+  "concepts": [
+    {
+      "name": "范畴",
+      "aliases": [],
+      "boundary": "对象 + 保持结构的态射",
+      "domain": "范畴论"
+    },
+    {
+      "name": "态射",
+      "aliases": [],
+      "boundary": "保持结构的映射",
+      "domain": "范畴论"
+    },
+    {
+      "name": "有界算子",
+      "aliases": ["有界性"],
+      "boundary": "算子范数有限",
+      "domain": "泛函分析"
+    },
+    {
+      "name": "连续算子",
+      "aliases": ["连续性"],
+      "boundary": "有界性等价于连续性",
+      "domain": "泛函分析"
+    },
+    {
+      "name": "微分算子",
+      "aliases": ["d/dx"],
+      "boundary": "形式为 Tf = f'",
+      "domain": "泛函分析"
+    },
+    {
+      "name": "无界算子",
+      "aliases": ["无界"],
+      "boundary": "微分算子是无界的",
+      "domain": "泛函分析"
+    },
+    {
+      "name": "满射",
+      "aliases": [],
+      "boundary": "∀y ∈ Y, ∃x: f(x)=y",
+      "domain": "集合论"
+    },
+    {
+      "name": "乘法算子",
+      "aliases": [],
+      "boundary": "形式为 (Tf)(x) = φ(x)f(x)",
+      "domain": "泛函分析"
+    },
+    {
+      "name": "位置算子",
+      "aliases": [],
+      "boundary": "量子力学中的乘法算子",
+      "domain": "量子力学"
+    },
+    {
+      "name": "算子",
+      "aliases": [],
+      "boundary": "函数的函数，映射 V → W",
+      "domain": "泛函分析"
+    },
+    {
+      "name": "函数空间",
+      "aliases": [],
+      "boundary": "算子定义域和值域",
+      "domain": "泛函分析"
+    },
+    {
+      "name": "函数",
+      "aliases": [],
+      "boundary": "对应关系，输入与输出的确定关系",
+      "domain": "数学基础"
+    },
+    {
+      "name": "连续映射",
+      "aliases": ["保持拓扑结构的映射"],
+      "boundary": "开集的原像是开集",
+      "domain": "拓扑学"
+    },
+    {
+      "name": "Fourier变换",
+      "aliases": [],
+      "boundary": "公式 f̂(ω) = ∫ f(t)e^{-iωt} dt，频率分解",
+      "domain": "调和分析"
+    },
+    {
+      "name": "函子",
+      "aliases": ["functor"],
+      "boundary": "范畴间的映射",
+      "domain": "范畴论"
+    },
+    {
+      "name": "映射",
+      "aliases": [],
+      "boundary": "泛化的函数概念",
+      "domain": "数学基础"
+    },
+    {
+      "name": "函数空间层级",
+      "aliases": ["正则性层级"],
+      "boundary": "可测、可积、平方可积、连续、可微、光滑、解析",
+      "domain": "泛函分析"
+    },
+    {
+      "name": "双射",
+      "aliases": [],
+      "boundary": "既单又满",
+      "domain": "集合论"
+    },
+    {
+      "name": "单射",
+      "aliases": [],
+      "boundary": "f(x1)=f(x2) ⇒ x1=x2",
+      "domain": "集合论"
+    },
+    {
+      "name": "Laplace变换",
+      "aliases": [],
+      "boundary": "公式 F(s) = ∫_0^∞ f(t)e^{-st} dt，ODE转代数方程",
+      "domain": "积分变换"
+    },
+    {
+      "name": "线性映射",
+      "aliases": ["保持线性结构的映射"],
+      "boundary": "f(ax+by) = a f(x) + b f(y)",
+      "domain": "线性代数"
+    },
+    {
+      "name": "等距映射",
+      "aliases": ["保持距离结构的映射"],
+      "boundary": "d(f(x), f(y)) = d(x,y)",
+      "domain": "度量几何"
+    },
+    {
+      "name": "投影算子",
+      "aliases": [],
+      "boundary": "形式 P^2 = P",
+      "domain": "泛函分析"
+    },
+    {
+      "name": "正交投影",
+      "aliases": [],
+      "boundary": "投影到子空间",
+      "domain": "泛函分析"
+    },
+    {
+      "name": "积分算子",
+      "aliases": [],
+      "boundary": "形式 (Tf)(x) = ∫ K(x,y)f(y)dy",
+      "domain": "泛函分析"
+    },
+    {
+      "name": "Z变换",
+      "aliases": [],
+      "boundary": "公式 F(z) = ∑ f[n]z^{-n}，离散信号",
+      "domain": "信号处理"
+    },
+    {
+      "name": "Fourier逆变换",
+      "aliases": [],
+      "boundary": "公式 f(t) = (1/(2π)) ∫_{-∞}^∞ f̂(ω) e^{iωt} dω",
+      "domain": "调和分析"
+    },
+    {
+      "name": "同态",
+      "aliases": ["保持代数运算的映射"],
+      "boundary": "f(x·y) = f(x)·f(y)",
+      "domain": "抽象代数"
+    },
+    {
+      "name": "单调函数",
+      "aliases": ["保持序结构的映射"],
+      "boundary": "x ≤ y ⇒ f(x) ≤ f(y)",
+      "domain": "序理论"
+    },
+    {
+      "name": "变换",
+      "aliases": [],
+      "boundary": "时域/空域到频域/特征域的映射",
+      "domain": "积分变换"
+    },
+    {
+      "name": "Fredholm算子",
+      "aliases": [],
+      "boundary": "积分算子的例子",
+      "domain": "泛函分析"
+    },
+    {
+      "name": "微分同胚",
+      "aliases": ["保持光滑结构的映射"],
+      "boundary": "可微且逆也可微",
+      "domain": "微分几何"
+    },
+    {
+      "name": "函数概念三级跳",
+      "aliases": [],
+      "boundary": "公式→对应关系→映射→算子",
+      "domain": "数学史"
+    },
+    {
+      "name": "卷积定理",
+      "aliases": [],
+      "boundary": "Fourier变换相关",
+      "domain": "调和分析"
+    },
+    {
+      "name": "算子范数",
+      "aliases": [],
+      "boundary": "‖T‖ = sup_{‖f‖=1} ‖Tf‖",
+      "domain": "泛函分析"
+    },
+    {
+      "name": "小波变换",
+      "aliases": [],
+      "boundary": "多尺度分析，局部时频分析",
+      "domain": "信号处理"
+    },
+    {
+      "name": "谱理论",
+      "aliases": [],
+      "boundary": "无界算子的谱理论",
+      "domain": "泛函分析"
+    }
+  ]
+}

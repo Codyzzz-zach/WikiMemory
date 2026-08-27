@@ -1,0 +1,50 @@
+{
+	"schemaVersion": "wge-goal4-strong-relation-proposal-repair-contract/v2",
+	"status": "FROZEN_BEFORE_V2_PROMPT_CHANGE",
+	"createdAt": "2026-08-11T00:00:00+08:00",
+	"stageBRead": false,
+	"parentContract": {
+		"path": "experiments/goal4/goal4-strong-relation-proposal-contract-v1.json",
+		"sha256": "75fffb06e44c93e1ebb5ab37f2901dd74c942f16e30b796ea316ada5ef9e7ab0"
+	},
+	"failedRun": {
+		"report": "experiments/goal4/calibration-runs/type-contract-v1/report.json",
+		"reportSha256": "5cdd9152a9fcdec0a2765361d68fbbbb34ee996acac60f79b663b7149e2eb726",
+		"review": "experiments/goal4/calibration-runs/type-contract-v1/review.json",
+		"reviewSha256": "fb598538940ecdaa8e848555c7b9c2559003aa5ea19ba198697f8a4636c36e90"
+	},
+	"failedGate": {
+		"exactTypeAccuracy": 0.6,
+		"required": 0.8,
+		"cause": "Missed SUPERSEDES in one explicit replacement case and omitted all three intended RELATED_TO navigation cases."
+	},
+	"v2Intervention": {
+		"retain": [
+			"The v1 domain-neutral completeness and direction contracts for SUPPORTS, REQUIRES and DERIVED_FROM.",
+			"The prohibition on automatically downgrading every rejected strong edge to RELATED_TO."
+		],
+		"add": [
+			"When explicit replacement or repeal language exists, emit SUPERSEDES with its scope; logical contradiction may coexist but cannot replace the governance edge.",
+			"RELATED_TO may connect two complementary facets of the same identified object when either endpoint helps navigate to a capability, constraint, comparison, background or boundary at the other endpoint.",
+			"A broad identity/definition and a bounded capability detail can be RELATED_TO, but never SUPPORTS solely because they share the object.",
+			"An introduction that explicitly points to a following detailed rule can be RELATED_TO when that navigation is useful, while remaining invalid as SUPPORTS."
+		],
+		"forbidden": [
+			"Copying calibration case wording into production prompts.",
+			"Any domain, product, source or benchmark identifier.",
+			"Relaxing the independent semantic and utility audits."
+		]
+	},
+	"acceptance": {
+		"minimumExactTypeAccuracy": 0.8,
+		"minimumTrueStrongExactTypeRecall": 0.8333,
+		"maximumFalseStrongPredictionsAcrossWeakOrNoneCases": 0,
+		"maximumCasesWithMultipleConflictingRelations": 0,
+		"minimumRelatedToRecall": 0.6667,
+		"onlyIfAllPassProceedToFrozenSourceReplay": true
+	},
+	"decisionRules": {
+		"fail": "Reject v2 and restore the pre-Goal4 detector prompt before considering a separately contracted router.",
+		"pass": "Proceed to the unchanged frozen-source replay gates in the parent contract."
+	}
+}

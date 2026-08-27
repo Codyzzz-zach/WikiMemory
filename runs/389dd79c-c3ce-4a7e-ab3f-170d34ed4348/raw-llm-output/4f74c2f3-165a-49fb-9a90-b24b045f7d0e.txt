@@ -1,0 +1,28 @@
+{
+  "verdict": "passed",
+  "dimensions": {
+    "support": {
+      "result": "pass",
+      "evidence": "如果刀口穿过一个'洞'（如 √2 的位置），就创造了一个无理数"
+    },
+    "addition": {
+      "result": "pass",
+      "evidence": "无添加信息"
+    },
+    "inference": {
+      "result": "pass",
+      "evidence": "无推断，直接陈述"
+    },
+    "limits": {
+      "result": "pass",
+      "evidence": "无限制条件被省略"
+    },
+    "citation": {
+      "result": "pass",
+      "evidence": "准确引用该段"
+    }
+  },
+  "anchor": "如果刀口穿过一个'洞'（如 √2 的位置），就创造了一个无理数",
+  "failedDimensions": [],
+  "issues": []
+}

@@ -1,0 +1,61 @@
+{
+	"schemaVersion": "wge-goal3-evidence-coverage-rescore-freeze/v1",
+	"status": "FROZEN_BEFORE_FIRST_RESCORE",
+	"frozenAt": "2026-08-04T19:37:15+08:00",
+	"contract": {
+		"path": "experiments/goal3/goal3-evidence-coverage-rescore-contract-v1.json",
+		"sha256": "ff08e91a236549a3a6d600758a0ee7f8ae2662981c759eebe6b288a7983b8f7d"
+	},
+	"inputs": {
+		"batchCReport": {
+			"path": "experiments/goal3/source-routing-runs/source-routing-v1/report.json",
+			"sha256": "352e6c8284580a52e8b46347a9bda072099e9e4a14cb23870e3cc946bfb381bf"
+		},
+		"batchCGold": {
+			"path": "experiments/benchmark-batch-c/stage-b-evaluator/normalized-gold/tasks.jsonl",
+			"sha256": "0dcdab468b2d6e5ee8801bc96a77085c37d60c556df2454df1a837530eaba15d"
+		},
+		"batchBReport": {
+			"path": "experiments/goal3/source-routing-breadth-runs/source-routing-breadth-v1/report.json",
+			"sha256": "5032684f1f2ad735df5b4f5edb0ef5d9064f95850d1ea0df77db0a6daf6e714d"
+		},
+		"batchBGold": {
+			"path": "experiments/goal3/source-routing-breadth-v1/diagnostic-gold.jsonl",
+			"sha256": "fc23d7b46a5c066e0e10b0410dbec57f3e75408f6ccba59166e2bebef42af0e2"
+		},
+		"spanCorpus": {
+			"path": "experiments/goal3/runs/scale-v5/workspaces/S50/sources",
+			"fileCount": 50,
+			"shellManifestSha256": "a14ce5358e69e4ca2afac8b66d55f08f7f46539c51466fdeb9c5cc004bf13f0c"
+		}
+	},
+	"implementation": {
+		"evidenceCoverage": {
+			"path": "src/retrieval/evidence-coverage.ts",
+			"sha256": "fcf18107410d3994e9fbdbcfc71d025b2cd69dd60561bc70cb769fd6569ba3d9"
+		},
+		"evidenceCoverageTests": {
+			"path": "src/retrieval/evidence-coverage.test.ts",
+			"sha256": "4f200edaaa60dd0217ffa8cea08b223bfb242f96d5ab5fa4c65c37055f24ce22"
+		},
+		"rescoreRunner": {
+			"path": "scripts/rescore-goal3-evidence-coverage.ts",
+			"sha256": "764d1b3f270bc7947644c0aaa084e338e740404c5faefb57adf1231bedf4cdb6"
+		}
+	},
+	"verification": {
+		"lint": "PASS: biome check src scripts (109 files)",
+		"typecheck": "PASS: tsc --noEmit and tsc --noEmit -p tsconfig.scripts.json",
+		"testFiles": 25,
+		"testsPassed": 187,
+		"testsFailed": 0,
+		"evidenceCoverageTests": 12
+	},
+	"prohibitions": [
+		"Do not modify either immutable v1 report.",
+		"Do not rerun retrieval or alter candidateClaimIds/candidateSpanIds.",
+		"Do not change L40_STRONG or SR12_40 budgets or ranking.",
+		"Do not use answer-model feedback, Relation, Context Pack, network or model calls.",
+		"Do not treat rescoring as blind product evidence."
+	]
+}

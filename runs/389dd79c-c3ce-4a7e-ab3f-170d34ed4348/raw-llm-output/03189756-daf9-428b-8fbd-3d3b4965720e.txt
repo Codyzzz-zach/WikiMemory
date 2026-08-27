@@ -1,0 +1,28 @@
+{
+  "verdict": "passed",
+  "dimensions": {
+    "support": {
+      "result": "pass",
+      "evidence": "这是 $\\mathbb{Q}$ 与 $\\mathbb{Z}$ 的本质区别——有理数在数轴上是**处处稠密**的。"
+    },
+    "addition": {
+      "result": "pass",
+      "evidence": "无额外信息"
+    },
+    "inference": {
+      "result": "pass",
+      "evidence": "无推断"
+    },
+    "limits": {
+      "result": "pass",
+      "evidence": "无条件限定词"
+    },
+    "citation": {
+      "result": "pass",
+      "evidence": "匹配引用 span"
+    }
+  },
+  "anchor": "这是 $\\mathbb{Q}$ 与 $\\mathbb{Z}$ 的本质区别——有理数在数轴上是**处处稠密**的。",
+  "failedDimensions": [],
+  "issues": []
+}

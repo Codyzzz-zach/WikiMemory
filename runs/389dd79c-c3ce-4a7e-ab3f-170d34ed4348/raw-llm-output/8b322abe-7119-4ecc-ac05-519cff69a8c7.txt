@@ -1,0 +1,28 @@
+{
+  "verdict": "passed",
+  "dimensions": {
+    "support": {
+      "result": "pass",
+      "evidence": "复数不是\"虚\"的——把它们画在二维平面上就完全具象化了。"
+    },
+    "addition": {
+      "result": "pass",
+      "evidence": "无额外信息。"
+    },
+    "inference": {
+      "result": "pass",
+      "evidence": "原文为直接断言。"
+    },
+    "limits": {
+      "result": "pass",
+      "evidence": "无条件限制词。"
+    },
+    "citation": {
+      "result": "pass",
+      "evidence": "引用准确对应原文片段。"
+    }
+  },
+  "anchor": "复数不是\"虚\"的——把它们画在二维平面上就完全具象化了。",
+  "failedDimensions": [],
+  "issues": []
+}

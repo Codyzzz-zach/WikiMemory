@@ -1,0 +1,94 @@
+{
+  "propositions": [
+    {
+      "text": "表格显示空间的谱系从集合开始，逐步添加结构，最终到达欧氏空间。",
+      "exactQuote": "| 空间类型 | 附加结构 | 关键概念 | 完备版本 | 应用领域 |\n|---------|---------|---------|---------|---------|\n| 集合 | 无 | 元素 | — | — |\n| 拓扑空间 | 开集 | 连续性、紧致性 | — | $\\S$7 拓扑学 |\n| 度量空间 | 距离 | Cauchy列、收敛 | 完备度量空间 | 分析、聚类 |\n| 向量空间 | 线性运算 | 基、维度、线性变换 | — | $\\S$13 线性代数 |\n| 赋范空间 | 范数 | 长度、有界性 | **Banach空间** | 泛函分析 |\n| 内积空间 | 内积 | 角度、正交性 | **Hilbert空间** | 量子力学 |\n| 欧氏空间 | 全部以上 | — | $\\mathbb{R}^n$ | 几何、物理 |",
+      "blockId": "02-spaces#block-73",
+      "relatesTo": null
+    },
+    {
+      "text": "欧氏空间是所谓的“满配”空间，具有所有前述结构。",
+      "exactQuote": "欧氏空间是\"满配\"——什么结构都有。",
+      "blockId": "02-spaces#block-74",
+      "relatesTo": null
+    },
+    {
+      "text": "向其他方向推广时，每次只去掉一种结构，研究“还剩下什么”。",
+      "exactQuote": "往其他方向推广时，我们每次只去掉一种结构，研究\"还剩下什么\"。",
+      "blockId": "02-spaces#block-74",
+      "relatesTo": null
+    },
+    {
+      "text": "空间的概念等于集合加结构，不同结构带来不同的空间感。",
+      "exactQuote": "**空间 = 集合 + 结构** | 不同的结构→不同的\"空间感\"",
+      "blockId": "02-spaces#block-77",
+      "relatesTo": null
+    },
+    {
+      "text": "向量空间公理描述了可加可缩的线性世界。",
+      "exactQuote": "**向量空间公理** | 可加可缩 = 线性世界 | $\\S$13 线性代数",
+      "blockId": "02-spaces#block-77",
+      "relatesTo": null
+    },
+    {
+      "text": "基与维度中，有限维和无限维是第一个大分岔。",
+      "exactQuote": "**基与维度** | 有限 vs 无限是第一个大分岔 | $\\S$9, $\\S$13",
+      "blockId": "02-spaces#block-77",
+      "relatesTo": null
+    },
+    {
+      "text": "距离公理中，三角不等式是最关键的一条。",
+      "exactQuote": "**距离公理** | 三角不等式是最关键的一条 | $\\S$7 拓扑",
+      "blockId": "02-spaces#block-77",
+      "relatesTo": null
+    },
+    {
+      "text": "完备性意味着Cauchy列有极限，即没有“洞”。",
+      "exactQuote": "**完备性** | Cauchy列有极限→没有\"洞\" | $\\S$3, $\\S$9, $\\S$10",
+      "blockId": "02-spaces#block-77",
+      "relatesTo": null
+    },
+    {
+      "text": "Banach空间是完备的赋范空间。",
+      "exactQuote": "**Banach空间** | = 完备赋范空间 | $\\S$9 泛函分析",
+      "blockId": "02-spaces#block-77",
+      "relatesTo": null
+    },
+    {
+      "text": "Hilbert空间是完备的内积空间，具有正交性。",
+      "exactQuote": "**Hilbert空间** | = 完备内积空间，有正交性 | $\\S$9, 量子力学",
+      "blockId": "02-spaces#block-77",
+      "relatesTo": null
+    },
+    {
+      "text": "Fourier级数可以理解为在三角函数基上的正交投影。",
+      "exactQuote": "**Fourier级数 = 投影** | 三角函数基上的正交投影 | $\\S$5 函数与映射",
+      "blockId": "02-spaces#block-77",
+      "relatesTo": null
+    },
+    {
+      "text": "数学中的“空间”是一个渐进抽象的谱系。",
+      "exactQuote": "数学中的\"空间\"是一个**渐进抽象**的谱系。",
+      "blockId": "02-spaces#block-78",
+      "relatesTo": null
+    },
+    {
+      "text": "每一层抽象都在“失去具体”和“获得普适”之间做交易。",
+      "exactQuote": "每一层抽象都在\"失去具体\"和\"获得普适\"之间做交易——",
+      "blockId": "02-spaces#block-78",
+      "relatesTo": null
+    },
+    {
+      "text": "拓扑空间没有距离，但能描述任何连续性概念。",
+      "exactQuote": "拓扑空间没有距离，但能描述任何连续性概念；",
+      "blockId": "02-spaces#block-78",
+      "relatesTo": null
+    },
+    {
+      "text": "Hilbert空间失去了有限维的具体性，但能统一描述从量子态到声波的一切。",
+      "exactQuote": "Hilbert空间失去了有限维的具体性，但能统一描述从量子态到声波的一切。",
+      "blockId": "02-spaces#block-78",
+      "relatesTo": null
+    }
+  ]
+}

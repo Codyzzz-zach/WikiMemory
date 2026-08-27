@@ -1,0 +1,849 @@
+{
+  "schemaVersion": "v1",
+  "sourceId": "source:c-psych-004-e5061e9956aa43aa",
+  "runId": "ecfe49b6-47b5-473e-9d1a-865c59f5c606",
+  "publishedAt": "2026-07-28T07:09:52.487Z",
+  "claims": [
+    {
+      "id": "claim:e5061e9956aa43aa-0bc95d168cd785a4",
+      "statement": "文章发表在Nature期刊第533卷，页码为452-454。",
+      "evidenceSpanIds": [
+        "span:c-psych-004-e5061e9956aa43aa-3#chars-275-332"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:09:33.174Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-004-e5061e9956aa43aa-3#chars-275-332"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-004-e5061e9956aa43aa-3#chars-275-332"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:09:33.174Z"
+    },
+    {
+      "id": "claim:e5061e9956aa43aa-0e4ed06319cdf8f7",
+      "statement": "该调查抽样了1576名跨学科研究者。",
+      "evidenceSpanIds": [
+        "span:c-psych-004-e5061e9956aa43aa-10#chars-997-1045"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:09:33.174Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-004-e5061e9956aa43aa-10#chars-997-1045"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-004-e5061e9956aa43aa-10#chars-997-1045"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:09:33.174Z"
+    },
+    {
+      "id": "claim:e5061e9956aa43aa-23d6421835389c1e",
+      "statement": "该调查通过电子邮件发送给《自然》杂志读者，并在附属网站和社交媒体上发布广告。",
+      "evidenceSpanIds": [
+        "span:c-psych-004-e5061e9956aa43aa-10#chars-892-996"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:09:33.174Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-004-e5061e9956aa43aa-10#chars-892-996"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-004-e5061e9956aa43aa-10#chars-892-996"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:09:33.174Z"
+    },
+    {
+      "id": "claim:e5061e9956aa43aa-3a7c29fb11c19fce",
+      "statement": "物理学家和化学家对其各自领域的可重复性表达了最大的信心。",
+      "evidenceSpanIds": [
+        "span:c-psych-004-e5061e9956aa43aa-16#chars-1516-1600"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:09:33.174Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-004-e5061e9956aa43aa-16#chars-1516-1600"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-004-e5061e9956aa43aa-16#chars-1516-1600"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:09:33.174Z"
+    },
+    {
+      "id": "claim:e5061e9956aa43aa-40b4c70ad10649dd",
+      "statement": "约80%的受访者认为资助者和出版商应做更多工作来提高可重复性。",
+      "evidenceSpanIds": [
+        "span:c-psych-004-e5061e9956aa43aa-13#chars-1298-1401"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:09:33.174Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-004-e5061e9956aa43aa-13#chars-1298-1401"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-004-e5061e9956aa43aa-13#chars-1298-1401"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:09:33.174Z"
+    },
+    {
+      "id": "claim:e5061e9956aa43aa-4a6cebbbda680b78",
+      "statement": "作者是Monya Baker。",
+      "evidenceSpanIds": [
+        "span:c-psych-004-e5061e9956aa43aa-3#chars-251-274"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:09:33.174Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-004-e5061e9956aa43aa-3#chars-251-274"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-004-e5061e9956aa43aa-3#chars-251-274"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:09:33.174Z"
+    },
+    {
+      "id": "claim:e5061e9956aa43aa-6d89b2dd1efe941d",
+      "statement": "52%的受访者认为存在‘显著的可重复性危机’。",
+      "evidenceSpanIds": [
+        "span:c-psych-004-e5061e9956aa43aa-6#chars-585-669"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:09:33.174Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-004-e5061e9956aa43aa-6#chars-585-669"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-004-e5061e9956aa43aa-6#chars-585-669"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:09:33.174Z"
+    },
+    {
+      "id": "claim:e5061e9956aa43aa-7c1a342b1c8c1813",
+      "statement": "即使排名最低的项目——期刊检查表——也获得了高达69%的支持率。",
+      "evidenceSpanIds": [
+        "span:c-psych-004-e5061e9956aa43aa-14#chars-1405-1487"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:09:33.174Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-004-e5061e9956aa43aa-14#chars-1405-1487"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-004-e5061e9956aa43aa-14#chars-1405-1487"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:09:33.174Z"
+    },
+    {
+      "id": "claim:e5061e9956aa43aa-8ebeb95906825d8c",
+      "statement": "超过一半的研究者曾未能重复自己的实验。",
+      "evidenceSpanIds": [
+        "span:c-psych-004-e5061e9956aa43aa-5#chars-519-580"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:09:33.174Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-004-e5061e9956aa43aa-5#chars-519-580"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-004-e5061e9956aa43aa-5#chars-519-580"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:09:33.174Z"
+    },
+    {
+      "id": "claim:e5061e9956aa43aa-8f4c3087c78c3e7e",
+      "statement": "该调查可能选择了对可重复性问题更关注的受访者。",
+      "evidenceSpanIds": [
+        "span:c-psych-004-e5061e9956aa43aa-10#chars-1046-1128"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:09:33.174Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-004-e5061e9956aa43aa-10#chars-1046-1128"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-004-e5061e9956aa43aa-10#chars-1046-1128"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:09:33.174Z"
+    },
+    {
+      "id": "claim:e5061e9956aa43aa-b79d759ee8909418",
+      "statement": "医学专业人士和生物学家对可重复性的信心最低。",
+      "evidenceSpanIds": [
+        "span:c-psych-004-e5061e9956aa43aa-16#chars-1608-1689"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:09:33.174Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-004-e5061e9956aa43aa-16#chars-1608-1689"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-004-e5061e9956aa43aa-16#chars-1608-1689"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:09:33.174Z"
+    },
+    {
+      "id": "claim:e5061e9956aa43aa-d9b9a23c05ce12fc",
+      "statement": "73%的受访者认为其所在领域至少一半的论文是可信的。",
+      "evidenceSpanIds": [
+        "span:c-psych-004-e5061e9956aa43aa-7#chars-673-761"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:09:33.174Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-004-e5061e9956aa43aa-7#chars-673-761"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-004-e5061e9956aa43aa-7#chars-673-761"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:09:33.174Z"
+    },
+    {
+      "id": "claim:e5061e9956aa43aa-d9cbe112cd41e0de",
+      "statement": "近90%的受访者选择了‘更稳健的实验设计’、‘更好的统计’和‘更好的指导’。",
+      "evidenceSpanIds": [
+        "span:c-psych-004-e5061e9956aa43aa-12#chars-1169-1294"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:09:33.174Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-004-e5061e9956aa43aa-12#chars-1169-1294"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-004-e5061e9956aa43aa-12#chars-1169-1294"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:09:33.174Z"
+    },
+    {
+      "id": "claim:e5061e9956aa43aa-e56f517c73cbbcf0",
+      "statement": "只有少数研究者（不到20%）表示曾因其他研究者无法重复其工作而被联系。",
+      "evidenceSpanIds": [
+        "span:c-psych-004-e5061e9956aa43aa-18#chars-1734-1883"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:09:33.174Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-004-e5061e9956aa43aa-18#chars-1734-1883"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-004-e5061e9956aa43aa-18#chars-1734-1883"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:09:33.174Z"
+    },
+    {
+      "id": "claim:e5061e9956aa43aa-eefb29a1cc5defc7",
+      "statement": "不到31%的受访者认为未能重复已发表结果意味着该结果很可能是错误的。",
+      "evidenceSpanIds": [
+        "span:c-psych-004-e5061e9956aa43aa-8#chars-765-865"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:09:33.174Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-004-e5061e9956aa43aa-8#chars-765-865"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-004-e5061e9956aa43aa-8#chars-765-865"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:09:33.174Z"
+    },
+    {
+      "id": "claim:e5061e9956aa43aa-f7a6045ee1116ef8",
+      "statement": "文章的DOI是10.1038/533452a。",
+      "evidenceSpanIds": [
+        "span:c-psych-004-e5061e9956aa43aa-3#chars-333-357"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:09:33.174Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-004-e5061e9956aa43aa-3#chars-333-357"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-004-e5061e9956aa43aa-3#chars-333-357"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:09:33.174Z"
+    },
+    {
+      "id": "claim:e5061e9956aa43aa-fb5a0920af18457d",
+      "statement": "超过70%的研究者曾尝试但未能重复另一位科学家的实验。",
+      "evidenceSpanIds": [
+        "span:c-psych-004-e5061e9956aa43aa-5#chars-418-513"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:09:33.174Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-004-e5061e9956aa43aa-5#chars-418-513"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-004-e5061e9956aa43aa-5#chars-418-513"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:09:33.174Z"
+    }
+  ],
+  "concepts": [
+    {
+      "id": "concept:0905ac4e85959454",
+      "name": "化学家",
+      "aliases": [],
+      "boundary": "化学领域的科学家",
+      "domain": "化学"
+    },
+    {
+      "id": "concept:0d35a5d527ee5993",
+      "name": "物理学家",
+      "aliases": [],
+      "boundary": "物理学领域的科学家",
+      "domain": "物理学"
+    },
+    {
+      "id": "concept:18bfd102914a7b7a",
+      "name": "稳健的实验设计",
+      "aliases": [],
+      "boundary": "提高实验可靠性的方法",
+      "domain": "科学方法论"
+    },
+    {
+      "id": "concept:2c34831c60bf8553",
+      "name": "Nature期刊",
+      "aliases": [
+        "Nature",
+        "《自然》杂志"
+      ],
+      "boundary": "学术期刊",
+      "domain": "出版"
+    },
+    {
+      "id": "concept:3151a11839c2c141",
+      "name": "医学专业人士",
+      "aliases": [],
+      "boundary": "医学领域的从业者",
+      "domain": "医学"
+    },
+    {
+      "id": "concept:4848b257a0281551",
+      "name": "更好的指导",
+      "aliases": [],
+      "boundary": "改进研究指导或培训",
+      "domain": "科学教育"
+    },
+    {
+      "id": "concept:56a1f5f0176c0335",
+      "name": "Monya Baker",
+      "aliases": [],
+      "boundary": "个人作者",
+      "domain": "科学写作"
+    },
+    {
+      "id": "concept:5a2b9acb4f9e2c63",
+      "name": "出版商",
+      "aliases": [],
+      "boundary": "出版学术内容的机构",
+      "domain": "出版"
+    },
+    {
+      "id": "concept:6f58b2a54f6dedb7",
+      "name": "期刊检查表",
+      "aliases": [],
+      "boundary": "期刊用于提高可重复性的工具",
+      "domain": "出版"
+    },
+    {
+      "id": "concept:70371170cbba1378",
+      "name": "Nature新闻专题",
+      "aliases": [],
+      "boundary": "Nature期刊的新闻栏目",
+      "domain": "出版"
+    },
+    {
+      "id": "concept:abfa3ea48f0ed5de",
+      "name": "资助者",
+      "aliases": [],
+      "boundary": "提供研究资金的机构或个人",
+      "domain": "科研资助"
+    },
+    {
+      "id": "concept:c46eab3500fcb1bc",
+      "name": "跨学科研究者",
+      "aliases": [
+        "受访者",
+        "研究者",
+        "科学家"
+      ],
+      "boundary": "从事科学研究的个体",
+      "domain": "科学"
+    },
+    {
+      "id": "concept:e4434350feeffa29",
+      "name": "更好的统计",
+      "aliases": [],
+      "boundary": "改进统计方法",
+      "domain": "统计学"
+    },
+    {
+      "id": "concept:f8278df1febcdf3c",
+      "name": "生物学家",
+      "aliases": [],
+      "boundary": "生物学领域的科学家",
+      "domain": "生物学"
+    },
+    {
+      "id": "concept:f9cc4a03d416a91d",
+      "name": "可重复性",
+      "aliases": [
+        "可重复性危机",
+        "可重复性问题"
+      ],
+      "boundary": "科学实验或结果能够被重复验证的特性",
+      "domain": "科学方法论"
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel:e5061e9956aa43aa-067e649ab40d19c8",
+      "from": "claim:e5061e9956aa43aa-0e4ed06319cdf8f7",
+      "to": "claim:e5061e9956aa43aa-23d6421835389c1e",
+      "type": "RELATED_TO",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:c-psych-004-e5061e9956aa43aa-10#chars-892-996",
+        "span:c-psych-004-e5061e9956aa43aa-10#chars-997-1045"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:09:40.277Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.9,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:e5061e9956aa43aa-2e6805c38d51647d",
+      "from": "claim:e5061e9956aa43aa-8ebeb95906825d8c",
+      "to": "claim:e5061e9956aa43aa-fb5a0920af18457d",
+      "type": "RELATED_TO",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:c-psych-004-e5061e9956aa43aa-5#chars-418-513",
+        "span:c-psych-004-e5061e9956aa43aa-5#chars-519-580"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:09:40.277Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.8,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:e5061e9956aa43aa-3d3efaaee298d973",
+      "from": "claim:e5061e9956aa43aa-3a7c29fb11c19fce",
+      "to": "claim:e5061e9956aa43aa-b79d759ee8909418",
+      "type": "CONTRADICTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:c-psych-004-e5061e9956aa43aa-16#chars-1516-1600",
+        "span:c-psych-004-e5061e9956aa43aa-16#chars-1608-1689"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:09:40.277Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.8,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:e5061e9956aa43aa-736bb19aa2c5ebcd",
+      "from": "claim:e5061e9956aa43aa-6d89b2dd1efe941d",
+      "to": "claim:e5061e9956aa43aa-8ebeb95906825d8c",
+      "type": "RELATED_TO",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:c-psych-004-e5061e9956aa43aa-5#chars-519-580",
+        "span:c-psych-004-e5061e9956aa43aa-6#chars-585-669"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:09:40.277Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.7,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:e5061e9956aa43aa-ca3d4746bcd40886",
+      "from": "claim:e5061e9956aa43aa-0bc95d168cd785a4",
+      "to": "claim:e5061e9956aa43aa-f7a6045ee1116ef8",
+      "type": "RELATED_TO",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:c-psych-004-e5061e9956aa43aa-3#chars-275-332",
+        "span:c-psych-004-e5061e9956aa43aa-3#chars-333-357"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:09:40.277Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.9,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:e5061e9956aa43aa-e6a1345b884af46f",
+      "from": "claim:e5061e9956aa43aa-6d89b2dd1efe941d",
+      "to": "claim:e5061e9956aa43aa-fb5a0920af18457d",
+      "type": "RELATED_TO",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:c-psych-004-e5061e9956aa43aa-5#chars-418-513",
+        "span:c-psych-004-e5061e9956aa43aa-6#chars-585-669"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:09:40.277Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.7,
+      "consumedBy": []
+    }
+  ]
+}

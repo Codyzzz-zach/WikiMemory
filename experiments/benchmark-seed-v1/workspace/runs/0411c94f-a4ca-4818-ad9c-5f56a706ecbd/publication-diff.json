@@ -1,0 +1,40 @@
+{
+  "schemaVersion": "pilot-publication-diff/v1",
+  "runId": "0411c94f-a4ca-4818-ad9c-5f56a706ecbd",
+  "sourceId": "source:history-scrollprize-2026-004-4ab2f152a60c6bbe",
+  "generatedAt": "2026-07-27T09:56:40.653Z",
+  "status": "PASS",
+  "acceptedReview": false,
+  "runtime": {
+    "requestedModel": "deepseek-v4-flash",
+    "temperature": 0,
+    "semanticAuditVersion": "v2.3",
+    "relationAuditVersion": "v1.7",
+    "sourceHash": "4ab2f152a60c6bbe"
+  },
+  "baseline": null,
+  "candidate": {
+    "claims": 6,
+    "concepts": 5,
+    "relations": 2,
+    "quarantinedClaims": 1,
+    "quarantinedRelations": 2,
+    "quarantineRate": 0.14285714285714285
+  },
+  "diff": {
+    "retainedClaimIds": 0,
+    "addedClaimIds": [
+      "claim:4ab2f152a60c6bbe-39dbff7d3d0408e6",
+      "claim:4ab2f152a60c6bbe-812533cb126e5e48",
+      "claim:4ab2f152a60c6bbe-901bc3b35d2cc86e",
+      "claim:4ab2f152a60c6bbe-a6fd9e7a1c644eed",
+      "claim:4ab2f152a60c6bbe-d83a71026c2b4d86",
+      "claim:4ab2f152a60c6bbe-e301af57ef26e82d"
+    ],
+    "removedClaimIds": [],
+    "claimRetentionRate": null,
+    "claimCountChangeRate": null,
+    "conditionsDropped": []
+  },
+  "issues": []
+}

@@ -1,0 +1,4340 @@
+{
+  "schemaVersion": "wge-e4-smoke-context-preparation/v1",
+  "status": "PREPARED_OFFLINE",
+  "suiteId": "benchmark-seed-six-domain-v1",
+  "taskFileSha256": "sha256:8238d998134795451c162bbba4da4833eb75c8a015f7840a1a359388fd7bca53",
+  "groups": [
+    "B",
+    "P-seed",
+    "P-graph"
+  ],
+  "eMin": {
+    "status": "BLOCKED_MISSING_GENERIC_WIKIMODULE_BUILDER",
+    "reason": "当前没有从 Canonical Claim 通用生成并独立审计 WikiModule 的生产链。禁止使用题目 requiredPoints 或 Gold 手工编写模块。"
+  },
+  "limitations": [
+    "This report measures retrieval availability before answer generation; it is not an answer-quality result.",
+    "Batch B is public directional validation, not blind human Gold.",
+    "E-min remains blocked until a generic, Gold-independent WikiModule builder exists."
+  ],
+  "summary": [
+    {
+      "group": "B",
+      "pilotGroup": "B",
+      "graphExpansion": false,
+      "questions": 6,
+      "questionsWithFullEvidence": 4,
+      "requiredEvidenceItems": 15,
+      "retrievedEvidenceItems": 11,
+      "stageCounts": {
+        "retrieved": 11,
+        "lexical-no-match": 4
+      },
+      "averageContextTokens": 468
+    },
+    {
+      "group": "P-seed",
+      "pilotGroup": "P",
+      "graphExpansion": false,
+      "questions": 6,
+      "questionsWithFullEvidence": 5,
+      "requiredEvidenceItems": 15,
+      "retrievedEvidenceItems": 14,
+      "stageCounts": {
+        "retrieved": 14,
+        "seed-and-graph-miss": 1
+      },
+      "averageContextTokens": 1166
+    },
+    {
+      "group": "P-graph",
+      "pilotGroup": "P",
+      "graphExpansion": true,
+      "questions": 6,
+      "questionsWithFullEvidence": 5,
+      "requiredEvidenceItems": 15,
+      "retrievedEvidenceItems": 14,
+      "stageCounts": {
+        "retrieved": 14,
+        "seed-and-graph-miss": 1
+      },
+      "averageContextTokens": 2430.17
+    }
+  ],
+  "rows": [
+    {
+      "questionId": "B-C-HEALTH-002",
+      "group": "B",
+      "pilotGroup": "B",
+      "graphExpansion": false,
+      "domain": [
+        "health-biology"
+      ],
+      "question": "2020-07 简报在什么条件下说短距离气溶胶传播不能被排除？",
+      "estimatedContextTokens": 378,
+      "contextHash": "1138b3e5810bdc47f55b4401f3939542b18dfc4ddc04b065513aa7a74b259a99",
+      "retrievedClaims": [],
+      "retrievedRelations": [],
+      "retrievedSources": [
+        "../../../workbuddy-batch-b/generated/compilation-corpus/health-biology/health-nature-airborne-2022-003.md",
+        "../../../workbuddy-batch-b/generated/compilation-corpus/health-biology/health-who-july-2020-002.md"
+      ],
+      "droppedContext": [],
+      "evidenceStages": [
+        {
+          "factId": "FACT-HEALTH-005",
+          "sourceId": "health-who-july-2020-002",
+          "status": "retrieved",
+          "candidateChunkIds": [
+            "../../../workbuddy-batch-b/generated/compilation-corpus/health-biology/health-who-july-2020-002.md#L1-L6"
+          ]
+        }
+      ],
+      "allRequiredEvidenceRetrieved": true,
+      "retrievalTrace": {
+        "strategy": "folder-lexical",
+        "queryFeatureCount": 23,
+        "corpusChunkCount": 12,
+        "matchedChunkCount": 2,
+        "maxFolderChunks": 16,
+        "candidates": [
+          {
+            "id": "../../../workbuddy-batch-b/generated/compilation-corpus/health-biology/health-nature-airborne-2022-003.md#L1-L6",
+            "rank": 1,
+            "score": 2.466337068793427,
+            "selected": true,
+            "dropReason": null
+          },
+          {
+            "id": "../../../workbuddy-batch-b/generated/compilation-corpus/health-biology/health-who-july-2020-002.md#L1-L6",
+            "rank": 2,
+            "score": 2.466337068793427,
+            "selected": true,
+            "dropReason": null
+          }
+        ]
+      }
+    },
+    {
+      "questionId": "B-C-HEALTH-002",
+      "group": "P-seed",
+      "pilotGroup": "P",
+      "graphExpansion": false,
+      "domain": [
+        "health-biology"
+      ],
+      "question": "2020-07 简报在什么条件下说短距离气溶胶传播不能被排除？",
+      "estimatedContextTokens": 1423,
+      "contextHash": "e342961055a60502cc7d00d918cde8871ec582c0657075740fcd040f911cb6dc",
+      "retrievedClaims": [
+        "claim:a1c7e701eebb9dc1-271d5603ab397f55",
+        "claim:a1c7e701eebb9dc1-1b6548c486ad1fd5",
+        "claim:a1c7e701eebb9dc1-64202515b32c05d0",
+        "claim:a1c7e701eebb9dc1-8c2b8fcbcdf52208",
+        "claim:14069d5a982d18de-30df60c9afb3e05b",
+        "claim:a1c7e701eebb9dc1-d1c7990108ad78ca",
+        "claim:b587ec61aaf84d7d-474d339f3670f6c4",
+        "claim:b587ec61aaf84d7d-7bc5b6c3a357763e",
+        "claim:b587ec61aaf84d7d-aae2124ec2ae0b65",
+        "claim:b587ec61aaf84d7d-f9e6d8b51f46b89d"
+      ],
+      "retrievedRelations": [],
+      "retrievedSources": [
+        "source:health-who-july-2020-002-a1c7e701eebb9dc1",
+        "source:health-nature-airborne-2022-003-14069d5a982d18de",
+        "source:health-who-march-2020-001-b587ec61aaf84d7d"
+      ],
+      "droppedContext": [],
+      "evidenceStages": [
+        {
+          "factId": "FACT-HEALTH-005",
+          "sourceId": "health-who-july-2020-002",
+          "status": "retrieved",
+          "expectedClaimIds": [
+            "claim:a1c7e701eebb9dc1-1b6548c486ad1fd5",
+            "claim:a1c7e701eebb9dc1-271d5603ab397f55"
+          ],
+          "selected": [
+            "claim:a1c7e701eebb9dc1-271d5603ab397f55",
+            "claim:a1c7e701eebb9dc1-1b6548c486ad1fd5"
+          ],
+          "exactAnchorTextPresent": true
+        }
+      ],
+      "allRequiredEvidenceRetrieved": true,
+      "retrievalTrace": {
+        "strategy": "claim-seed-only",
+        "graphDepth": 0,
+        "temporalScope": {
+          "applied": false,
+          "startMonth": null,
+          "endMonth": null,
+          "excludedClaimIds": []
+        },
+        "retrieval": {
+          "queryFeatureCount": 43,
+          "eligibleClaimCount": 67,
+          "matchedClaimCount": 10,
+          "usedEvidenceText": true,
+          "usedSourceMetadata": true,
+          "resolvedEvidenceRefCount": 67,
+          "unresolvedEvidenceRefCount": 0,
+          "candidates": [
+            {
+              "claimId": "claim:a1c7e701eebb9dc1-271d5603ab397f55",
+              "rank": 1,
+              "score": 92.56040462630347,
+              "channels": [
+                "c2",
+                "c3",
+                "source",
+                "w"
+              ],
+              "matchedFeatureCount": 19
+            },
+            {
+              "claimId": "claim:a1c7e701eebb9dc1-1b6548c486ad1fd5",
+              "rank": 2,
+              "score": 58.711919952024644,
+              "channels": [
+                "c2",
+                "c3",
+                "source",
+                "w"
+              ],
+              "matchedFeatureCount": 14
+            },
+            {
+              "claimId": "claim:a1c7e701eebb9dc1-64202515b32c05d0",
+              "rank": 3,
+              "score": 5.462691207714437,
+              "channels": [
+                "c2",
+                "source",
+                "w"
+              ],
+              "matchedFeatureCount": 2
+            },
+            {
+              "claimId": "claim:a1c7e701eebb9dc1-8c2b8fcbcdf52208",
+              "rank": 4,
+              "score": 5.083878213687489,
+              "channels": [
+                "c2",
+                "source",
+                "w"
+              ],
+              "matchedFeatureCount": 2
+            },
+            {
+              "claimId": "claim:14069d5a982d18de-30df60c9afb3e05b",
+              "rank": 5,
+              "score": 2.8617918021503437,
+              "channels": [
+                "w"
+              ],
+              "matchedFeatureCount": 1
+            },
+            {
+              "claimId": "claim:a1c7e701eebb9dc1-d1c7990108ad78ca",
+              "rank": 6,
+              "score": 2.8617918021503437,
+              "channels": [
+                "source",
+                "w"
+              ],
+              "matchedFeatureCount": 1
+            },
+            {
+              "claimId": "claim:b587ec61aaf84d7d-474d339f3670f6c4",
+              "rank": 7,
+              "score": 2.8617918021503437,
+              "channels": [
+                "source",
+                "w"
+              ],
+              "matchedFeatureCount": 1
+            },
+            {
+              "claimId": "claim:b587ec61aaf84d7d-7bc5b6c3a357763e",
+              "rank": 8,
+              "score": 2.8617918021503437,
+              "channels": [
+                "source",
+                "w"
+              ],
+              "matchedFeatureCount": 1
+            },
+            {
+              "claimId": "claim:b587ec61aaf84d7d-aae2124ec2ae0b65",
+              "rank": 9,
+              "score": 2.8617918021503437,
+              "channels": [
+                "source",
+                "w"
+              ],
+              "matchedFeatureCount": 1
+            },
+            {
+              "claimId": "claim:b587ec61aaf84d7d-f9e6d8b51f46b89d",
+              "rank": 10,
+              "score": 2.8617918021503437,
+              "channels": [
+                "source",
+                "w"
+              ],
+              "matchedFeatureCount": 1
+            }
+          ]
+        },
+        "graph": {
+          "seedClaimIds": [
+            "claim:a1c7e701eebb9dc1-271d5603ab397f55",
+            "claim:a1c7e701eebb9dc1-1b6548c486ad1fd5",
+            "claim:a1c7e701eebb9dc1-64202515b32c05d0",
+            "claim:a1c7e701eebb9dc1-8c2b8fcbcdf52208",
+            "claim:14069d5a982d18de-30df60c9afb3e05b",
+            "claim:a1c7e701eebb9dc1-d1c7990108ad78ca",
+            "claim:b587ec61aaf84d7d-474d339f3670f6c4",
+            "claim:b587ec61aaf84d7d-7bc5b6c3a357763e",
+            "claim:b587ec61aaf84d7d-aae2124ec2ae0b65",
+            "claim:b587ec61aaf84d7d-f9e6d8b51f46b89d"
+          ],
+          "expandedClaimIds": [
+            "claim:a1c7e701eebb9dc1-271d5603ab397f55",
+            "claim:a1c7e701eebb9dc1-1b6548c486ad1fd5",
+            "claim:a1c7e701eebb9dc1-64202515b32c05d0",
+            "claim:a1c7e701eebb9dc1-8c2b8fcbcdf52208",
+            "claim:14069d5a982d18de-30df60c9afb3e05b",
+            "claim:a1c7e701eebb9dc1-d1c7990108ad78ca",
+            "claim:b587ec61aaf84d7d-474d339f3670f6c4",
+            "claim:b587ec61aaf84d7d-7bc5b6c3a357763e",
+            "claim:b587ec61aaf84d7d-aae2124ec2ae0b65",
+            "claim:b587ec61aaf84d7d-f9e6d8b51f46b89d"
+          ],
+          "expandedRelationIds": []
+        },
+        "budget": {
+          "selectedClaimIds": [
+            "claim:a1c7e701eebb9dc1-271d5603ab397f55",
+            "claim:a1c7e701eebb9dc1-1b6548c486ad1fd5",
+            "claim:a1c7e701eebb9dc1-64202515b32c05d0",
+            "claim:a1c7e701eebb9dc1-8c2b8fcbcdf52208",
+            "claim:14069d5a982d18de-30df60c9afb3e05b",
+            "claim:a1c7e701eebb9dc1-d1c7990108ad78ca",
+            "claim:b587ec61aaf84d7d-474d339f3670f6c4",
+            "claim:b587ec61aaf84d7d-7bc5b6c3a357763e",
+            "claim:b587ec61aaf84d7d-aae2124ec2ae0b65",
+            "claim:b587ec61aaf84d7d-f9e6d8b51f46b89d"
+          ],
+          "selectedRelationIds": [],
+          "selectedEvidenceSpanIds": [
+            "span:health-who-july-2020-002-a1c7e701eebb9dc1-2#chars-413-615",
+            "span:health-who-july-2020-002-a1c7e701eebb9dc1-2#chars-447-594",
+            "span:health-who-july-2020-002-a1c7e701eebb9dc1-1#chars-81-301",
+            "span:health-who-july-2020-002-a1c7e701eebb9dc1-1#chars-306-411",
+            "span:health-nature-airborne-2022-003-14069d5a982d18de-2#chars-213-334",
+            "span:health-who-july-2020-002-a1c7e701eebb9dc1-1#chars-368-411",
+            "span:health-who-march-2020-001-b587ec61aaf84d7d-2#chars-351-534",
+            "span:health-who-march-2020-001-b587ec61aaf84d7d-2#chars-536-856",
+            "span:health-who-march-2020-001-b587ec61aaf84d7d-1#chars-241-287",
+            "span:health-who-march-2020-001-b587ec61aaf84d7d-1#chars-292-348"
+          ],
+          "selectedWikiModuleIds": [],
+          "dropped": [],
+          "finalEstimatedTokens": 3684
+        },
+        "serializationBudget": {
+          "selectedIds": [
+            "task-map",
+            "claim:a1c7e701eebb9dc1-271d5603ab397f55",
+            "claim:a1c7e701eebb9dc1-1b6548c486ad1fd5",
+            "claim:a1c7e701eebb9dc1-64202515b32c05d0",
+            "claim:a1c7e701eebb9dc1-8c2b8fcbcdf52208",
+            "claim:14069d5a982d18de-30df60c9afb3e05b",
+            "claim:a1c7e701eebb9dc1-d1c7990108ad78ca",
+            "claim:b587ec61aaf84d7d-474d339f3670f6c4",
+            "claim:b587ec61aaf84d7d-7bc5b6c3a357763e",
+            "claim:b587ec61aaf84d7d-aae2124ec2ae0b65",
+            "claim:b587ec61aaf84d7d-f9e6d8b51f46b89d",
+            "span:health-who-july-2020-002-a1c7e701eebb9dc1-2#chars-413-615",
+            "span:health-who-july-2020-002-a1c7e701eebb9dc1-2#chars-447-594",
+            "span:health-who-july-2020-002-a1c7e701eebb9dc1-1#chars-81-301",
+            "span:health-who-july-2020-002-a1c7e701eebb9dc1-1#chars-306-411",
+            "span:health-nature-airborne-2022-003-14069d5a982d18de-2#chars-213-334",
+            "span:health-who-july-2020-002-a1c7e701eebb9dc1-1#chars-368-411",
+            "span:health-who-march-2020-001-b587ec61aaf84d7d-2#chars-351-534",
+            "span:health-who-march-2020-001-b587ec61aaf84d7d-2#chars-536-856",
+            "span:health-who-march-2020-001-b587ec61aaf84d7d-1#chars-241-287",
+            "span:health-who-march-2020-001-b587ec61aaf84d7d-1#chars-292-348",
+            "conflicts-and-conditions",
+            "known-gaps"
+          ],
+          "droppedIds": []
+        }
+      }
+    },
+    {
+      "questionId": "B-C-HEALTH-002",
+      "group": "P-graph",
+      "pilotGroup": "P",
+      "graphExpansion": true,
+      "domain": [
+        "health-biology"
+      ],
+      "question": "2020-07 简报在什么条件下说短距离气溶胶传播不能被排除？",
+      "estimatedContextTokens": 3776,
+      "contextHash": "c99413083bb34f8661df320c1ca5852dd720e1040388cd35bd6d3a2c3aee05a2",
+      "retrievedClaims": [
+        "claim:a1c7e701eebb9dc1-271d5603ab397f55",
+        "claim:a1c7e701eebb9dc1-1b6548c486ad1fd5",
+        "claim:a1c7e701eebb9dc1-64202515b32c05d0",
+        "claim:a1c7e701eebb9dc1-8c2b8fcbcdf52208",
+        "claim:14069d5a982d18de-30df60c9afb3e05b",
+        "claim:a1c7e701eebb9dc1-d1c7990108ad78ca",
+        "claim:b587ec61aaf84d7d-474d339f3670f6c4",
+        "claim:b587ec61aaf84d7d-7bc5b6c3a357763e",
+        "claim:b587ec61aaf84d7d-aae2124ec2ae0b65",
+        "claim:b587ec61aaf84d7d-f9e6d8b51f46b89d",
+        "claim:14069d5a982d18de-fb6c9ddf92a42cc2",
+        "claim:50fd4599b9553875-e76415a67338b449",
+        "claim:14069d5a982d18de-ff33cb8a69885a6f",
+        "claim:50fd4599b9553875-2de9e0481e7c8e64",
+        "claim:50fd4599b9553875-9bb1be629366d05d",
+        "claim:50fd4599b9553875-e77df938b6f36c19",
+        "claim:50fd4599b9553875-e5004be37e4a4be8",
+        "claim:50fd4599b9553875-c49634bbf6841943",
+        "claim:b587ec61aaf84d7d-ffaa41d4d0fe03ab"
+      ],
+      "retrievedRelations": [
+        "rel:cross-17a7005384b8f913",
+        "rel:a1c7e701eebb9dc1-6d99eba08b18ee89",
+        "rel:cross-2d8f24974b8bb808",
+        "rel:a1c7e701eebb9dc1-d6dafe5bec47b8d9",
+        "rel:cross-0b718daee2c1da01",
+        "rel:b587ec61aaf84d7d-0e76e9242161332a",
+        "rel:cross-fc7de8337e39a3aa",
+        "rel:cross-ea1586ebc14da71b",
+        "rel:cross-1392876f564273bb",
+        "rel:cross-7534d99eed97d79e",
+        "rel:cross-fcdec587ad0d20fe",
+        "rel:cross-55f1591f1659895d",
+        "rel:cross-f405c400769761ad",
+        "rel:cross-22b88f73b1bfcfa2",
+        "rel:cross-9827b8141d14fefd",
+        "rel:cross-bacfe6fd469eef97",
+        "rel:50fd4599b9553875-d0d05f614805365f",
+        "rel:50fd4599b9553875-704312dd470dff1c",
+        "rel:50fd4599b9553875-dc7633ac0e2a38be",
+        "rel:50fd4599b9553875-fd67d57420424a93",
+        "rel:cross-66637d432ae08fc7",
+        "rel:50fd4599b9553875-9b5cbef50c310bf6",
+        "rel:50fd4599b9553875-bc78e84be4b8b66b"
+      ],
+      "retrievedSources": [
+        "source:health-who-july-2020-002-a1c7e701eebb9dc1",
+        "source:health-nature-airborne-2022-003-14069d5a982d18de",
+        "source:health-who-march-2020-001-b587ec61aaf84d7d",
+        "source:health-who-terminology-2024-004-50fd4599b9553875"
+      ],
+      "droppedContext": [],
+      "evidenceStages": [
+        {
+          "factId": "FACT-HEALTH-005",
+          "sourceId": "health-who-july-2020-002",
+          "status": "retrieved",
+          "expectedClaimIds": [
+            "claim:a1c7e701eebb9dc1-1b6548c486ad1fd5",
+            "claim:a1c7e701eebb9dc1-271d5603ab397f55"
+          ],
+          "selected": [
+            "claim:a1c7e701eebb9dc1-271d5603ab397f55",
+            "claim:a1c7e701eebb9dc1-1b6548c486ad1fd5"
+          ],
+          "exactAnchorTextPresent": true
+        }
+      ],
+      "allRequiredEvidenceRetrieved": true,
+      "retrievalTrace": {
+        "strategy": "claim-seed-graph",
+        "graphDepth": 3,
+        "temporalScope": {
+          "applied": false,
+          "startMonth": null,
+          "endMonth": null,
+          "excludedClaimIds": []
+        },
+        "retrieval": {
+          "queryFeatureCount": 43,
+          "eligibleClaimCount": 67,
+          "matchedClaimCount": 10,
+          "usedEvidenceText": true,
+          "usedSourceMetadata": true,
+          "resolvedEvidenceRefCount": 67,
+          "unresolvedEvidenceRefCount": 0,
+          "candidates": [
+            {
+              "claimId": "claim:a1c7e701eebb9dc1-271d5603ab397f55",
+              "rank": 1,
+              "score": 92.56040462630347,
+              "channels": [
+                "c2",
+                "c3",
+                "source",
+                "w"
+              ],
+              "matchedFeatureCount": 19
+            },
+            {
+              "claimId": "claim:a1c7e701eebb9dc1-1b6548c486ad1fd5",
+              "rank": 2,
+              "score": 58.711919952024644,
+              "channels": [
+                "c2",
+                "c3",
+                "source",
+                "w"
+              ],
+              "matchedFeatureCount": 14
+            },
+            {
+              "claimId": "claim:a1c7e701eebb9dc1-64202515b32c05d0",
+              "rank": 3,
+              "score": 5.462691207714437,
+              "channels": [
+                "c2",
+                "source",
+                "w"
+              ],
+              "matchedFeatureCount": 2
+            },
+            {
+              "claimId": "claim:a1c7e701eebb9dc1-8c2b8fcbcdf52208",
+              "rank": 4,
+              "score": 5.083878213687489,
+              "channels": [
+                "c2",
+                "source",
+                "w"
+              ],
+              "matchedFeatureCount": 2
+            },
+            {
+              "claimId": "claim:14069d5a982d18de-30df60c9afb3e05b",
+              "rank": 5,
+              "score": 2.8617918021503437,
+              "channels": [
+                "w"
+              ],
+              "matchedFeatureCount": 1
+            },
+            {
+              "claimId": "claim:a1c7e701eebb9dc1-d1c7990108ad78ca",
+              "rank": 6,
+              "score": 2.8617918021503437,
+              "channels": [
+                "source",
+                "w"
+              ],
+              "matchedFeatureCount": 1
+            },
+            {
+              "claimId": "claim:b587ec61aaf84d7d-474d339f3670f6c4",
+              "rank": 7,
+              "score": 2.8617918021503437,
+              "channels": [
+                "source",
+                "w"
+              ],
+              "matchedFeatureCount": 1
+            },
+            {
+              "claimId": "claim:b587ec61aaf84d7d-7bc5b6c3a357763e",
+              "rank": 8,
+              "score": 2.8617918021503437,
+              "channels": [
+                "source",
+                "w"
+              ],
+              "matchedFeatureCount": 1
+            },
+            {
+              "claimId": "claim:b587ec61aaf84d7d-aae2124ec2ae0b65",
+              "rank": 9,
+              "score": 2.8617918021503437,
+              "channels": [
+                "source",
+                "w"
+              ],
+              "matchedFeatureCount": 1
+            },
+            {
+              "claimId": "claim:b587ec61aaf84d7d-f9e6d8b51f46b89d",
+              "rank": 10,
+              "score": 2.8617918021503437,
+              "channels": [
+                "source",
+                "w"
+              ],
+              "matchedFeatureCount": 1
+            }
+          ]
+        },
+        "graph": {
+          "seedClaimIds": [
+            "claim:a1c7e701eebb9dc1-271d5603ab397f55",
+            "claim:a1c7e701eebb9dc1-1b6548c486ad1fd5",
+            "claim:a1c7e701eebb9dc1-64202515b32c05d0",
+            "claim:a1c7e701eebb9dc1-8c2b8fcbcdf52208",
+            "claim:14069d5a982d18de-30df60c9afb3e05b",
+            "claim:a1c7e701eebb9dc1-d1c7990108ad78ca",
+            "claim:b587ec61aaf84d7d-474d339f3670f6c4",
+            "claim:b587ec61aaf84d7d-7bc5b6c3a357763e",
+            "claim:b587ec61aaf84d7d-aae2124ec2ae0b65",
+            "claim:b587ec61aaf84d7d-f9e6d8b51f46b89d"
+          ],
+          "expandedClaimIds": [
+            "claim:a1c7e701eebb9dc1-271d5603ab397f55",
+            "claim:a1c7e701eebb9dc1-1b6548c486ad1fd5",
+            "claim:a1c7e701eebb9dc1-64202515b32c05d0",
+            "claim:a1c7e701eebb9dc1-8c2b8fcbcdf52208",
+            "claim:14069d5a982d18de-30df60c9afb3e05b",
+            "claim:a1c7e701eebb9dc1-d1c7990108ad78ca",
+            "claim:b587ec61aaf84d7d-474d339f3670f6c4",
+            "claim:b587ec61aaf84d7d-7bc5b6c3a357763e",
+            "claim:b587ec61aaf84d7d-aae2124ec2ae0b65",
+            "claim:b587ec61aaf84d7d-f9e6d8b51f46b89d",
+            "claim:14069d5a982d18de-fb6c9ddf92a42cc2",
+            "claim:50fd4599b9553875-e76415a67338b449",
+            "claim:14069d5a982d18de-ff33cb8a69885a6f",
+            "claim:50fd4599b9553875-2de9e0481e7c8e64",
+            "claim:50fd4599b9553875-9bb1be629366d05d",
+            "claim:50fd4599b9553875-e77df938b6f36c19",
+            "claim:50fd4599b9553875-e5004be37e4a4be8",
+            "claim:50fd4599b9553875-c49634bbf6841943",
+            "claim:b587ec61aaf84d7d-ffaa41d4d0fe03ab"
+          ],
+          "expandedRelationIds": [
+            "rel:cross-17a7005384b8f913",
+            "rel:a1c7e701eebb9dc1-6d99eba08b18ee89",
+            "rel:cross-2d8f24974b8bb808",
+            "rel:a1c7e701eebb9dc1-d6dafe5bec47b8d9",
+            "rel:cross-0b718daee2c1da01",
+            "rel:b587ec61aaf84d7d-0e76e9242161332a",
+            "rel:cross-fc7de8337e39a3aa",
+            "rel:cross-ea1586ebc14da71b",
+            "rel:cross-1392876f564273bb",
+            "rel:cross-7534d99eed97d79e",
+            "rel:cross-fcdec587ad0d20fe",
+            "rel:cross-55f1591f1659895d",
+            "rel:cross-f405c400769761ad",
+            "rel:cross-22b88f73b1bfcfa2",
+            "rel:cross-9827b8141d14fefd",
+            "rel:cross-bacfe6fd469eef97",
+            "rel:50fd4599b9553875-d0d05f614805365f",
+            "rel:50fd4599b9553875-704312dd470dff1c",
+            "rel:50fd4599b9553875-dc7633ac0e2a38be",
+            "rel:50fd4599b9553875-fd67d57420424a93",
+            "rel:cross-66637d432ae08fc7",
+            "rel:50fd4599b9553875-9b5cbef50c310bf6",
+            "rel:50fd4599b9553875-bc78e84be4b8b66b"
+          ]
+        },
+        "budget": {
+          "selectedClaimIds": [
+            "claim:a1c7e701eebb9dc1-271d5603ab397f55",
+            "claim:a1c7e701eebb9dc1-1b6548c486ad1fd5",
+            "claim:a1c7e701eebb9dc1-64202515b32c05d0",
+            "claim:a1c7e701eebb9dc1-8c2b8fcbcdf52208",
+            "claim:14069d5a982d18de-30df60c9afb3e05b",
+            "claim:a1c7e701eebb9dc1-d1c7990108ad78ca",
+            "claim:b587ec61aaf84d7d-474d339f3670f6c4",
+            "claim:b587ec61aaf84d7d-7bc5b6c3a357763e",
+            "claim:b587ec61aaf84d7d-aae2124ec2ae0b65",
+            "claim:b587ec61aaf84d7d-f9e6d8b51f46b89d",
+            "claim:14069d5a982d18de-fb6c9ddf92a42cc2",
+            "claim:50fd4599b9553875-e76415a67338b449",
+            "claim:14069d5a982d18de-ff33cb8a69885a6f",
+            "claim:50fd4599b9553875-2de9e0481e7c8e64",
+            "claim:50fd4599b9553875-9bb1be629366d05d",
+            "claim:50fd4599b9553875-e77df938b6f36c19",
+            "claim:50fd4599b9553875-e5004be37e4a4be8",
+            "claim:50fd4599b9553875-c49634bbf6841943",
+            "claim:b587ec61aaf84d7d-ffaa41d4d0fe03ab"
+          ],
+          "selectedRelationIds": [
+            "rel:cross-17a7005384b8f913",
+            "rel:a1c7e701eebb9dc1-6d99eba08b18ee89",
+            "rel:cross-2d8f24974b8bb808",
+            "rel:a1c7e701eebb9dc1-d6dafe5bec47b8d9",
+            "rel:cross-0b718daee2c1da01",
+            "rel:b587ec61aaf84d7d-0e76e9242161332a",
+            "rel:cross-fc7de8337e39a3aa",
+            "rel:cross-ea1586ebc14da71b",
+            "rel:cross-1392876f564273bb",
+            "rel:cross-7534d99eed97d79e",
+            "rel:cross-fcdec587ad0d20fe",
+            "rel:cross-55f1591f1659895d",
+            "rel:cross-f405c400769761ad",
+            "rel:cross-22b88f73b1bfcfa2",
+            "rel:cross-9827b8141d14fefd",
+            "rel:cross-bacfe6fd469eef97",
+            "rel:50fd4599b9553875-d0d05f614805365f",
+            "rel:50fd4599b9553875-704312dd470dff1c",
+            "rel:50fd4599b9553875-dc7633ac0e2a38be",
+            "rel:50fd4599b9553875-fd67d57420424a93",
+            "rel:cross-66637d432ae08fc7",
+            "rel:50fd4599b9553875-9b5cbef50c310bf6",
+            "rel:50fd4599b9553875-bc78e84be4b8b66b"
+          ],
+          "selectedEvidenceSpanIds": [
+            "span:health-who-july-2020-002-a1c7e701eebb9dc1-2#chars-413-615",
+            "span:health-who-july-2020-002-a1c7e701eebb9dc1-2#chars-447-594",
+            "span:health-who-july-2020-002-a1c7e701eebb9dc1-1#chars-81-301",
+            "span:health-who-july-2020-002-a1c7e701eebb9dc1-1#chars-306-411",
+            "span:health-nature-airborne-2022-003-14069d5a982d18de-2#chars-213-334",
+            "span:health-who-july-2020-002-a1c7e701eebb9dc1-1#chars-368-411",
+            "span:health-who-march-2020-001-b587ec61aaf84d7d-2#chars-351-534",
+            "span:health-who-march-2020-001-b587ec61aaf84d7d-2#chars-536-856",
+            "span:health-who-march-2020-001-b587ec61aaf84d7d-1#chars-241-287",
+            "span:health-who-march-2020-001-b587ec61aaf84d7d-1#chars-292-348",
+            "span:health-nature-airborne-2022-003-14069d5a982d18de-2#chars-340-458",
+            "span:health-who-terminology-2024-004-50fd4599b9553875-1#chars-99-314",
+            "span:health-nature-airborne-2022-003-14069d5a982d18de-2#chars-459-612",
+            "span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-621-707",
+            "span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-402-515",
+            "span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-516-616",
+            "span:health-who-terminology-2024-004-50fd4599b9553875-1#chars-315-397",
+            "span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-712-896",
+            "span:health-who-march-2020-001-b587ec61aaf84d7d-1#chars-51-239"
+          ],
+          "selectedWikiModuleIds": [],
+          "dropped": [],
+          "finalEstimatedTokens": 10737
+        },
+        "serializationBudget": {
+          "selectedIds": [
+            "task-map",
+            "claim:a1c7e701eebb9dc1-271d5603ab397f55",
+            "claim:a1c7e701eebb9dc1-1b6548c486ad1fd5",
+            "claim:a1c7e701eebb9dc1-64202515b32c05d0",
+            "claim:a1c7e701eebb9dc1-8c2b8fcbcdf52208",
+            "claim:14069d5a982d18de-30df60c9afb3e05b",
+            "claim:a1c7e701eebb9dc1-d1c7990108ad78ca",
+            "claim:b587ec61aaf84d7d-474d339f3670f6c4",
+            "claim:b587ec61aaf84d7d-7bc5b6c3a357763e",
+            "claim:b587ec61aaf84d7d-aae2124ec2ae0b65",
+            "claim:b587ec61aaf84d7d-f9e6d8b51f46b89d",
+            "claim:14069d5a982d18de-fb6c9ddf92a42cc2",
+            "claim:50fd4599b9553875-e76415a67338b449",
+            "claim:14069d5a982d18de-ff33cb8a69885a6f",
+            "claim:50fd4599b9553875-2de9e0481e7c8e64",
+            "claim:50fd4599b9553875-9bb1be629366d05d",
+            "claim:50fd4599b9553875-e77df938b6f36c19",
+            "claim:50fd4599b9553875-e5004be37e4a4be8",
+            "claim:50fd4599b9553875-c49634bbf6841943",
+            "claim:b587ec61aaf84d7d-ffaa41d4d0fe03ab",
+            "rel:cross-17a7005384b8f913",
+            "rel:a1c7e701eebb9dc1-6d99eba08b18ee89",
+            "rel:cross-2d8f24974b8bb808",
+            "rel:a1c7e701eebb9dc1-d6dafe5bec47b8d9",
+            "rel:cross-0b718daee2c1da01",
+            "rel:b587ec61aaf84d7d-0e76e9242161332a",
+            "rel:cross-fc7de8337e39a3aa",
+            "rel:cross-ea1586ebc14da71b",
+            "rel:cross-1392876f564273bb",
+            "rel:cross-7534d99eed97d79e",
+            "rel:cross-fcdec587ad0d20fe",
+            "rel:cross-55f1591f1659895d",
+            "rel:cross-f405c400769761ad",
+            "rel:cross-22b88f73b1bfcfa2",
+            "rel:cross-9827b8141d14fefd",
+            "rel:cross-bacfe6fd469eef97",
+            "rel:50fd4599b9553875-d0d05f614805365f",
+            "rel:50fd4599b9553875-704312dd470dff1c",
+            "rel:50fd4599b9553875-dc7633ac0e2a38be",
+            "rel:50fd4599b9553875-fd67d57420424a93",
+            "rel:cross-66637d432ae08fc7",
+            "rel:50fd4599b9553875-9b5cbef50c310bf6",
+            "rel:50fd4599b9553875-bc78e84be4b8b66b",
+            "span:health-who-july-2020-002-a1c7e701eebb9dc1-2#chars-413-615",
+            "span:health-who-july-2020-002-a1c7e701eebb9dc1-2#chars-447-594",
+            "span:health-who-july-2020-002-a1c7e701eebb9dc1-1#chars-81-301",
+            "span:health-who-july-2020-002-a1c7e701eebb9dc1-1#chars-306-411",
+            "span:health-nature-airborne-2022-003-14069d5a982d18de-2#chars-213-334",
+            "span:health-who-july-2020-002-a1c7e701eebb9dc1-1#chars-368-411",
+            "span:health-who-march-2020-001-b587ec61aaf84d7d-2#chars-351-534",
+            "span:health-who-march-2020-001-b587ec61aaf84d7d-2#chars-536-856",
+            "span:health-who-march-2020-001-b587ec61aaf84d7d-1#chars-241-287",
+            "span:health-who-march-2020-001-b587ec61aaf84d7d-1#chars-292-348",
+            "span:health-nature-airborne-2022-003-14069d5a982d18de-2#chars-340-458",
+            "span:health-who-terminology-2024-004-50fd4599b9553875-1#chars-99-314",
+            "span:health-nature-airborne-2022-003-14069d5a982d18de-2#chars-459-612",
+            "span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-621-707",
+            "span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-402-515",
+            "span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-516-616",
+            "span:health-who-terminology-2024-004-50fd4599b9553875-1#chars-315-397",
+            "span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-712-896",
+            "span:health-who-march-2020-001-b587ec61aaf84d7d-1#chars-51-239",
+            "conflicts-and-conditions"
+          ],
+          "droppedIds": []
+        }
+      }
+    },
+    {
+      "questionId": "B-E-HEALTH-005",
+      "group": "B",
+      "pilotGroup": "B",
+      "graphExpansion": false,
+      "domain": [
+        "health-biology"
+      ],
+      "question": "从 2020-03 到 2020-07，空气传播适用范围发生了什么可证实变化？",
+      "estimatedContextTokens": 378,
+      "contextHash": "1138b3e5810bdc47f55b4401f3939542b18dfc4ddc04b065513aa7a74b259a99",
+      "retrievedClaims": [],
+      "retrievedRelations": [],
+      "retrievedSources": [
+        "../../../workbuddy-batch-b/generated/compilation-corpus/health-biology/health-nature-airborne-2022-003.md",
+        "../../../workbuddy-batch-b/generated/compilation-corpus/health-biology/health-who-july-2020-002.md"
+      ],
+      "droppedContext": [],
+      "evidenceStages": [
+        {
+          "factId": "FACT-HEALTH-002",
+          "sourceId": "health-who-march-2020-001",
+          "status": "lexical-no-match",
+          "candidateChunkIds": []
+        },
+        {
+          "factId": "FACT-HEALTH-004",
+          "sourceId": "health-who-july-2020-002",
+          "status": "retrieved",
+          "candidateChunkIds": [
+            "../../../workbuddy-batch-b/generated/compilation-corpus/health-biology/health-who-july-2020-002.md#L1-L6"
+          ]
+        },
+        {
+          "factId": "FACT-HEALTH-005",
+          "sourceId": "health-who-july-2020-002",
+          "status": "retrieved",
+          "candidateChunkIds": [
+            "../../../workbuddy-batch-b/generated/compilation-corpus/health-biology/health-who-july-2020-002.md#L1-L6"
+          ]
+        }
+      ],
+      "allRequiredEvidenceRetrieved": false,
+      "retrievalTrace": {
+        "strategy": "folder-lexical",
+        "queryFeatureCount": 22,
+        "corpusChunkCount": 12,
+        "matchedChunkCount": 2,
+        "maxFolderChunks": 16,
+        "candidates": [
+          {
+            "id": "../../../workbuddy-batch-b/generated/compilation-corpus/health-biology/health-nature-airborne-2022-003.md#L1-L6",
+            "rank": 1,
+            "score": 2.466337068793427,
+            "selected": true,
+            "dropReason": null
+          },
+          {
+            "id": "../../../workbuddy-batch-b/generated/compilation-corpus/health-biology/health-who-july-2020-002.md#L1-L6",
+            "rank": 2,
+            "score": 2.466337068793427,
+            "selected": true,
+            "dropReason": null
+          }
+        ]
+      }
+    },
+    {
+      "questionId": "B-E-HEALTH-005",
+      "group": "P-seed",
+      "pilotGroup": "P",
+      "graphExpansion": false,
+      "domain": [
+        "health-biology"
+      ],
+      "question": "从 2020-03 到 2020-07，空气传播适用范围发生了什么可证实变化？",
+      "estimatedContextTokens": 1402,
+      "contextHash": "ac045f5ce9241a5a8316a7cc1667f7da8c9963751b791a5d87e55677435ead50",
+      "retrievedClaims": [
+        "claim:a1c7e701eebb9dc1-1b6548c486ad1fd5",
+        "claim:a1c7e701eebb9dc1-271d5603ab397f55",
+        "claim:a1c7e701eebb9dc1-8c2b8fcbcdf52208",
+        "claim:5505a1ba1fcb1b68-9acfc0780eb2b345",
+        "claim:a1c7e701eebb9dc1-64202515b32c05d0",
+        "claim:a1c7e701eebb9dc1-d1c7990108ad78ca",
+        "claim:b587ec61aaf84d7d-474d339f3670f6c4",
+        "claim:b587ec61aaf84d7d-7bc5b6c3a357763e",
+        "claim:b587ec61aaf84d7d-aae2124ec2ae0b65",
+        "claim:b587ec61aaf84d7d-f9e6d8b51f46b89d"
+      ],
+      "retrievedRelations": [],
+      "retrievedSources": [
+        "source:health-who-july-2020-002-a1c7e701eebb9dc1",
+        "source:history-vesuvius-github-2024-002-5505a1ba1fcb1b68",
+        "source:health-who-march-2020-001-b587ec61aaf84d7d"
+      ],
+      "droppedContext": [],
+      "evidenceStages": [
+        {
+          "factId": "FACT-HEALTH-002",
+          "sourceId": "health-who-march-2020-001",
+          "status": "retrieved",
+          "expectedClaimIds": [
+            "claim:b587ec61aaf84d7d-474d339f3670f6c4",
+            "claim:b587ec61aaf84d7d-7bc5b6c3a357763e"
+          ],
+          "selected": [
+            "claim:b587ec61aaf84d7d-474d339f3670f6c4",
+            "claim:b587ec61aaf84d7d-7bc5b6c3a357763e"
+          ],
+          "exactAnchorTextPresent": false
+        },
+        {
+          "factId": "FACT-HEALTH-004",
+          "sourceId": "health-who-july-2020-002",
+          "status": "retrieved",
+          "expectedClaimIds": [
+            "claim:a1c7e701eebb9dc1-64202515b32c05d0",
+            "claim:a1c7e701eebb9dc1-8c2b8fcbcdf52208",
+            "claim:a1c7e701eebb9dc1-d1c7990108ad78ca"
+          ],
+          "selected": [
+            "claim:a1c7e701eebb9dc1-8c2b8fcbcdf52208",
+            "claim:a1c7e701eebb9dc1-64202515b32c05d0",
+            "claim:a1c7e701eebb9dc1-d1c7990108ad78ca"
+          ],
+          "exactAnchorTextPresent": false
+        },
+        {
+          "factId": "FACT-HEALTH-005",
+          "sourceId": "health-who-july-2020-002",
+          "status": "retrieved",
+          "expectedClaimIds": [
+            "claim:a1c7e701eebb9dc1-1b6548c486ad1fd5",
+            "claim:a1c7e701eebb9dc1-271d5603ab397f55"
+          ],
+          "selected": [
+            "claim:a1c7e701eebb9dc1-1b6548c486ad1fd5",
+            "claim:a1c7e701eebb9dc1-271d5603ab397f55"
+          ],
+          "exactAnchorTextPresent": true
+        }
+      ],
+      "allRequiredEvidenceRetrieved": true,
+      "retrievalTrace": {
+        "strategy": "claim-seed-only",
+        "graphDepth": 0,
+        "temporalScope": {
+          "applied": true,
+          "startMonth": "2020-03",
+          "endMonth": "2020-07",
+          "excludedClaimIds": [
+            "claim:14069d5a982d18de-30df60c9afb3e05b",
+            "claim:4ab2f152a60c6bbe-e301af57ef26e82d",
+            "claim:5505a1ba1fcb1b68-a2289f49fcb0ff64"
+          ]
+        },
+        "retrieval": {
+          "queryFeatureCount": 36,
+          "eligibleClaimCount": 64,
+          "matchedClaimCount": 10,
+          "usedEvidenceText": true,
+          "usedSourceMetadata": true,
+          "resolvedEvidenceRefCount": 64,
+          "unresolvedEvidenceRefCount": 0,
+          "candidates": [
+            {
+              "claimId": "claim:a1c7e701eebb9dc1-1b6548c486ad1fd5",
+              "rank": 1,
+              "score": 5.1894871683168216,
+              "channels": [
+                "c2",
+                "source",
+                "w"
+              ],
+              "matchedFeatureCount": 2
+            },
+            {
+              "claimId": "claim:a1c7e701eebb9dc1-271d5603ab397f55",
+              "rank": 2,
+              "score": 5.1894871683168216,
+              "channels": [
+                "c2",
+                "source",
+                "w"
+              ],
+              "matchedFeatureCount": 2
+            },
+            {
+              "claimId": "claim:a1c7e701eebb9dc1-8c2b8fcbcdf52208",
+              "rank": 3,
+              "score": 5.1894871683168216,
+              "channels": [
+                "c2",
+                "source",
+                "w"
+              ],
+              "matchedFeatureCount": 2
+            },
+            {
+              "claimId": "claim:5505a1ba1fcb1b68-9acfc0780eb2b345",
+              "rank": 4,
+              "score": 4.979155654817436,
+              "channels": [
+                "c2"
+              ],
+              "matchedFeatureCount": 2
+            },
+            {
+              "claimId": "claim:a1c7e701eebb9dc1-64202515b32c05d0",
+              "rank": 5,
+              "score": 2.9307415524915594,
+              "channels": [
+                "source",
+                "w"
+              ],
+              "matchedFeatureCount": 1
+            },
+            {
+              "claimId": "claim:a1c7e701eebb9dc1-d1c7990108ad78ca",
+              "rank": 6,
+              "score": 2.9307415524915594,
+              "channels": [
+                "source",
+                "w"
+              ],
+              "matchedFeatureCount": 1
+            },
+            {
+              "claimId": "claim:b587ec61aaf84d7d-474d339f3670f6c4",
+              "rank": 7,
+              "score": 2.9307415524915594,
+              "channels": [
+                "source",
+                "w"
+              ],
+              "matchedFeatureCount": 1
+            },
+            {
+              "claimId": "claim:b587ec61aaf84d7d-7bc5b6c3a357763e",
+              "rank": 8,
+              "score": 2.9307415524915594,
+              "channels": [
+                "source",
+                "w"
+              ],
+              "matchedFeatureCount": 1
+            },
+            {
+              "claimId": "claim:b587ec61aaf84d7d-aae2124ec2ae0b65",
+              "rank": 9,
+              "score": 2.9307415524915594,
+              "channels": [
+                "source",
+                "w"
+              ],
+              "matchedFeatureCount": 1
+            },
+            {
+              "claimId": "claim:b587ec61aaf84d7d-f9e6d8b51f46b89d",
+              "rank": 10,
+              "score": 2.9307415524915594,
+              "channels": [
+                "source",
+                "w"
+              ],
+              "matchedFeatureCount": 1
+            }
+          ]
+        },
+        "graph": {
+          "seedClaimIds": [
+            "claim:a1c7e701eebb9dc1-1b6548c486ad1fd5",
+            "claim:a1c7e701eebb9dc1-271d5603ab397f55",
+            "claim:a1c7e701eebb9dc1-8c2b8fcbcdf52208",
+            "claim:5505a1ba1fcb1b68-9acfc0780eb2b345",
+            "claim:a1c7e701eebb9dc1-64202515b32c05d0",
+            "claim:a1c7e701eebb9dc1-d1c7990108ad78ca",
+            "claim:b587ec61aaf84d7d-474d339f3670f6c4",
+            "claim:b587ec61aaf84d7d-7bc5b6c3a357763e",
+            "claim:b587ec61aaf84d7d-aae2124ec2ae0b65",
+            "claim:b587ec61aaf84d7d-f9e6d8b51f46b89d"
+          ],
+          "expandedClaimIds": [
+            "claim:a1c7e701eebb9dc1-1b6548c486ad1fd5",
+            "claim:a1c7e701eebb9dc1-271d5603ab397f55",
+            "claim:a1c7e701eebb9dc1-8c2b8fcbcdf52208",
+            "claim:5505a1ba1fcb1b68-9acfc0780eb2b345",
+            "claim:a1c7e701eebb9dc1-64202515b32c05d0",
+            "claim:a1c7e701eebb9dc1-d1c7990108ad78ca",
+            "claim:b587ec61aaf84d7d-474d339f3670f6c4",
+            "claim:b587ec61aaf84d7d-7bc5b6c3a357763e",
+            "claim:b587ec61aaf84d7d-aae2124ec2ae0b65",
+            "claim:b587ec61aaf84d7d-f9e6d8b51f46b89d"
+          ],
+          "expandedRelationIds": []
+        },
+        "budget": {
+          "selectedClaimIds": [
+            "claim:a1c7e701eebb9dc1-1b6548c486ad1fd5",
+            "claim:a1c7e701eebb9dc1-271d5603ab397f55",
+            "claim:a1c7e701eebb9dc1-8c2b8fcbcdf52208",
+            "claim:5505a1ba1fcb1b68-9acfc0780eb2b345",
+            "claim:a1c7e701eebb9dc1-64202515b32c05d0",
+            "claim:a1c7e701eebb9dc1-d1c7990108ad78ca",
+            "claim:b587ec61aaf84d7d-474d339f3670f6c4",
+            "claim:b587ec61aaf84d7d-7bc5b6c3a357763e",
+            "claim:b587ec61aaf84d7d-aae2124ec2ae0b65",
+            "claim:b587ec61aaf84d7d-f9e6d8b51f46b89d"
+          ],
+          "selectedRelationIds": [],
+          "selectedEvidenceSpanIds": [
+            "span:health-who-july-2020-002-a1c7e701eebb9dc1-2#chars-447-594",
+            "span:health-who-july-2020-002-a1c7e701eebb9dc1-2#chars-413-615",
+            "span:health-who-july-2020-002-a1c7e701eebb9dc1-1#chars-306-411",
+            "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-5#chars-519-570",
+            "span:health-who-july-2020-002-a1c7e701eebb9dc1-1#chars-81-301",
+            "span:health-who-july-2020-002-a1c7e701eebb9dc1-1#chars-368-411",
+            "span:health-who-march-2020-001-b587ec61aaf84d7d-2#chars-351-534",
+            "span:health-who-march-2020-001-b587ec61aaf84d7d-2#chars-536-856",
+            "span:health-who-march-2020-001-b587ec61aaf84d7d-1#chars-241-287",
+            "span:health-who-march-2020-001-b587ec61aaf84d7d-1#chars-292-348"
+          ],
+          "selectedWikiModuleIds": [],
+          "dropped": [],
+          "finalEstimatedTokens": 3662
+        },
+        "serializationBudget": {
+          "selectedIds": [
+            "task-map",
+            "claim:a1c7e701eebb9dc1-1b6548c486ad1fd5",
+            "claim:a1c7e701eebb9dc1-271d5603ab397f55",
+            "claim:a1c7e701eebb9dc1-8c2b8fcbcdf52208",
+            "claim:5505a1ba1fcb1b68-9acfc0780eb2b345",
+            "claim:a1c7e701eebb9dc1-64202515b32c05d0",
+            "claim:a1c7e701eebb9dc1-d1c7990108ad78ca",
+            "claim:b587ec61aaf84d7d-474d339f3670f6c4",
+            "claim:b587ec61aaf84d7d-7bc5b6c3a357763e",
+            "claim:b587ec61aaf84d7d-aae2124ec2ae0b65",
+            "claim:b587ec61aaf84d7d-f9e6d8b51f46b89d",
+            "span:health-who-july-2020-002-a1c7e701eebb9dc1-2#chars-447-594",
+            "span:health-who-july-2020-002-a1c7e701eebb9dc1-2#chars-413-615",
+            "span:health-who-july-2020-002-a1c7e701eebb9dc1-1#chars-306-411",
+            "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-5#chars-519-570",
+            "span:health-who-july-2020-002-a1c7e701eebb9dc1-1#chars-81-301",
+            "span:health-who-july-2020-002-a1c7e701eebb9dc1-1#chars-368-411",
+            "span:health-who-march-2020-001-b587ec61aaf84d7d-2#chars-351-534",
+            "span:health-who-march-2020-001-b587ec61aaf84d7d-2#chars-536-856",
+            "span:health-who-march-2020-001-b587ec61aaf84d7d-1#chars-241-287",
+            "span:health-who-march-2020-001-b587ec61aaf84d7d-1#chars-292-348",
+            "conflicts-and-conditions",
+            "known-gaps"
+          ],
+          "droppedIds": []
+        }
+      }
+    },
+    {
+      "questionId": "B-E-HEALTH-005",
+      "group": "P-graph",
+      "pilotGroup": "P",
+      "graphExpansion": true,
+      "domain": [
+        "health-biology"
+      ],
+      "question": "从 2020-03 到 2020-07，空气传播适用范围发生了什么可证实变化？",
+      "estimatedContextTokens": 3756,
+      "contextHash": "f7c2ca3d8d9bf478705686ff68baef7a6ef6137239a172fa6c708a44289c2342",
+      "retrievedClaims": [
+        "claim:a1c7e701eebb9dc1-1b6548c486ad1fd5",
+        "claim:a1c7e701eebb9dc1-271d5603ab397f55",
+        "claim:a1c7e701eebb9dc1-8c2b8fcbcdf52208",
+        "claim:5505a1ba1fcb1b68-9acfc0780eb2b345",
+        "claim:a1c7e701eebb9dc1-64202515b32c05d0",
+        "claim:a1c7e701eebb9dc1-d1c7990108ad78ca",
+        "claim:b587ec61aaf84d7d-474d339f3670f6c4",
+        "claim:b587ec61aaf84d7d-7bc5b6c3a357763e",
+        "claim:b587ec61aaf84d7d-aae2124ec2ae0b65",
+        "claim:b587ec61aaf84d7d-f9e6d8b51f46b89d",
+        "claim:14069d5a982d18de-fb6c9ddf92a42cc2",
+        "claim:50fd4599b9553875-e76415a67338b449",
+        "claim:14069d5a982d18de-ff33cb8a69885a6f",
+        "claim:50fd4599b9553875-2de9e0481e7c8e64",
+        "claim:50fd4599b9553875-9bb1be629366d05d",
+        "claim:50fd4599b9553875-e77df938b6f36c19",
+        "claim:50fd4599b9553875-e5004be37e4a4be8",
+        "claim:50fd4599b9553875-c49634bbf6841943",
+        "claim:b587ec61aaf84d7d-ffaa41d4d0fe03ab"
+      ],
+      "retrievedRelations": [
+        "rel:cross-2d8f24974b8bb808",
+        "rel:a1c7e701eebb9dc1-6d99eba08b18ee89",
+        "rel:cross-17a7005384b8f913",
+        "rel:a1c7e701eebb9dc1-d6dafe5bec47b8d9",
+        "rel:cross-0b718daee2c1da01",
+        "rel:b587ec61aaf84d7d-0e76e9242161332a",
+        "rel:cross-fc7de8337e39a3aa",
+        "rel:cross-ea1586ebc14da71b",
+        "rel:cross-1392876f564273bb",
+        "rel:cross-7534d99eed97d79e",
+        "rel:cross-fcdec587ad0d20fe",
+        "rel:cross-55f1591f1659895d",
+        "rel:cross-f405c400769761ad",
+        "rel:cross-22b88f73b1bfcfa2",
+        "rel:cross-9827b8141d14fefd",
+        "rel:cross-bacfe6fd469eef97",
+        "rel:50fd4599b9553875-d0d05f614805365f",
+        "rel:50fd4599b9553875-704312dd470dff1c",
+        "rel:50fd4599b9553875-dc7633ac0e2a38be",
+        "rel:50fd4599b9553875-fd67d57420424a93",
+        "rel:cross-66637d432ae08fc7",
+        "rel:50fd4599b9553875-9b5cbef50c310bf6",
+        "rel:50fd4599b9553875-bc78e84be4b8b66b"
+      ],
+      "retrievedSources": [
+        "source:health-who-july-2020-002-a1c7e701eebb9dc1",
+        "source:history-vesuvius-github-2024-002-5505a1ba1fcb1b68",
+        "source:health-who-march-2020-001-b587ec61aaf84d7d",
+        "source:health-nature-airborne-2022-003-14069d5a982d18de",
+        "source:health-who-terminology-2024-004-50fd4599b9553875"
+      ],
+      "droppedContext": [],
+      "evidenceStages": [
+        {
+          "factId": "FACT-HEALTH-002",
+          "sourceId": "health-who-march-2020-001",
+          "status": "retrieved",
+          "expectedClaimIds": [
+            "claim:b587ec61aaf84d7d-474d339f3670f6c4",
+            "claim:b587ec61aaf84d7d-7bc5b6c3a357763e"
+          ],
+          "selected": [
+            "claim:b587ec61aaf84d7d-474d339f3670f6c4",
+            "claim:b587ec61aaf84d7d-7bc5b6c3a357763e"
+          ],
+          "exactAnchorTextPresent": false
+        },
+        {
+          "factId": "FACT-HEALTH-004",
+          "sourceId": "health-who-july-2020-002",
+          "status": "retrieved",
+          "expectedClaimIds": [
+            "claim:a1c7e701eebb9dc1-64202515b32c05d0",
+            "claim:a1c7e701eebb9dc1-8c2b8fcbcdf52208",
+            "claim:a1c7e701eebb9dc1-d1c7990108ad78ca"
+          ],
+          "selected": [
+            "claim:a1c7e701eebb9dc1-8c2b8fcbcdf52208",
+            "claim:a1c7e701eebb9dc1-64202515b32c05d0",
+            "claim:a1c7e701eebb9dc1-d1c7990108ad78ca"
+          ],
+          "exactAnchorTextPresent": false
+        },
+        {
+          "factId": "FACT-HEALTH-005",
+          "sourceId": "health-who-july-2020-002",
+          "status": "retrieved",
+          "expectedClaimIds": [
+            "claim:a1c7e701eebb9dc1-1b6548c486ad1fd5",
+            "claim:a1c7e701eebb9dc1-271d5603ab397f55"
+          ],
+          "selected": [
+            "claim:a1c7e701eebb9dc1-1b6548c486ad1fd5",
+            "claim:a1c7e701eebb9dc1-271d5603ab397f55"
+          ],
+          "exactAnchorTextPresent": true
+        }
+      ],
+      "allRequiredEvidenceRetrieved": true,
+      "retrievalTrace": {
+        "strategy": "claim-seed-graph",
+        "graphDepth": 3,
+        "temporalScope": {
+          "applied": true,
+          "startMonth": "2020-03",
+          "endMonth": "2020-07",
+          "excludedClaimIds": [
+            "claim:14069d5a982d18de-30df60c9afb3e05b",
+            "claim:4ab2f152a60c6bbe-e301af57ef26e82d",
+            "claim:5505a1ba1fcb1b68-a2289f49fcb0ff64"
+          ]
+        },
+        "retrieval": {
+          "queryFeatureCount": 36,
+          "eligibleClaimCount": 64,
+          "matchedClaimCount": 10,
+          "usedEvidenceText": true,
+          "usedSourceMetadata": true,
+          "resolvedEvidenceRefCount": 64,
+          "unresolvedEvidenceRefCount": 0,
+          "candidates": [
+            {
+              "claimId": "claim:a1c7e701eebb9dc1-1b6548c486ad1fd5",
+              "rank": 1,
+              "score": 5.1894871683168216,
+              "channels": [
+                "c2",
+                "source",
+                "w"
+              ],
+              "matchedFeatureCount": 2
+            },
+            {
+              "claimId": "claim:a1c7e701eebb9dc1-271d5603ab397f55",
+              "rank": 2,
+              "score": 5.1894871683168216,
+              "channels": [
+                "c2",
+                "source",
+                "w"
+              ],
+              "matchedFeatureCount": 2
+            },
+            {
+              "claimId": "claim:a1c7e701eebb9dc1-8c2b8fcbcdf52208",
+              "rank": 3,
+              "score": 5.1894871683168216,
+              "channels": [
+                "c2",
+                "source",
+                "w"
+              ],
+              "matchedFeatureCount": 2
+            },
+            {
+              "claimId": "claim:5505a1ba1fcb1b68-9acfc0780eb2b345",
+              "rank": 4,
+              "score": 4.979155654817436,
+              "channels": [
+                "c2"
+              ],
+              "matchedFeatureCount": 2
+            },
+            {
+              "claimId": "claim:a1c7e701eebb9dc1-64202515b32c05d0",
+              "rank": 5,
+              "score": 2.9307415524915594,
+              "channels": [
+                "source",
+                "w"
+              ],
+              "matchedFeatureCount": 1
+            },
+            {
+              "claimId": "claim:a1c7e701eebb9dc1-d1c7990108ad78ca",
+              "rank": 6,
+              "score": 2.9307415524915594,
+              "channels": [
+                "source",
+                "w"
+              ],
+              "matchedFeatureCount": 1
+            },
+            {
+              "claimId": "claim:b587ec61aaf84d7d-474d339f3670f6c4",
+              "rank": 7,
+              "score": 2.9307415524915594,
+              "channels": [
+                "source",
+                "w"
+              ],
+              "matchedFeatureCount": 1
+            },
+            {
+              "claimId": "claim:b587ec61aaf84d7d-7bc5b6c3a357763e",
+              "rank": 8,
+              "score": 2.9307415524915594,
+              "channels": [
+                "source",
+                "w"
+              ],
+              "matchedFeatureCount": 1
+            },
+            {
+              "claimId": "claim:b587ec61aaf84d7d-aae2124ec2ae0b65",
+              "rank": 9,
+              "score": 2.9307415524915594,
+              "channels": [
+                "source",
+                "w"
+              ],
+              "matchedFeatureCount": 1
+            },
+            {
+              "claimId": "claim:b587ec61aaf84d7d-f9e6d8b51f46b89d",
+              "rank": 10,
+              "score": 2.9307415524915594,
+              "channels": [
+                "source",
+                "w"
+              ],
+              "matchedFeatureCount": 1
+            }
+          ]
+        },
+        "graph": {
+          "seedClaimIds": [
+            "claim:a1c7e701eebb9dc1-1b6548c486ad1fd5",
+            "claim:a1c7e701eebb9dc1-271d5603ab397f55",
+            "claim:a1c7e701eebb9dc1-8c2b8fcbcdf52208",
+            "claim:5505a1ba1fcb1b68-9acfc0780eb2b345",
+            "claim:a1c7e701eebb9dc1-64202515b32c05d0",
+            "claim:a1c7e701eebb9dc1-d1c7990108ad78ca",
+            "claim:b587ec61aaf84d7d-474d339f3670f6c4",
+            "claim:b587ec61aaf84d7d-7bc5b6c3a357763e",
+            "claim:b587ec61aaf84d7d-aae2124ec2ae0b65",
+            "claim:b587ec61aaf84d7d-f9e6d8b51f46b89d"
+          ],
+          "expandedClaimIds": [
+            "claim:a1c7e701eebb9dc1-1b6548c486ad1fd5",
+            "claim:a1c7e701eebb9dc1-271d5603ab397f55",
+            "claim:a1c7e701eebb9dc1-8c2b8fcbcdf52208",
+            "claim:5505a1ba1fcb1b68-9acfc0780eb2b345",
+            "claim:a1c7e701eebb9dc1-64202515b32c05d0",
+            "claim:a1c7e701eebb9dc1-d1c7990108ad78ca",
+            "claim:b587ec61aaf84d7d-474d339f3670f6c4",
+            "claim:b587ec61aaf84d7d-7bc5b6c3a357763e",
+            "claim:b587ec61aaf84d7d-aae2124ec2ae0b65",
+            "claim:b587ec61aaf84d7d-f9e6d8b51f46b89d",
+            "claim:14069d5a982d18de-fb6c9ddf92a42cc2",
+            "claim:50fd4599b9553875-e76415a67338b449",
+            "claim:14069d5a982d18de-ff33cb8a69885a6f",
+            "claim:50fd4599b9553875-2de9e0481e7c8e64",
+            "claim:50fd4599b9553875-9bb1be629366d05d",
+            "claim:50fd4599b9553875-e77df938b6f36c19",
+            "claim:50fd4599b9553875-e5004be37e4a4be8",
+            "claim:50fd4599b9553875-c49634bbf6841943",
+            "claim:b587ec61aaf84d7d-ffaa41d4d0fe03ab"
+          ],
+          "expandedRelationIds": [
+            "rel:cross-2d8f24974b8bb808",
+            "rel:a1c7e701eebb9dc1-6d99eba08b18ee89",
+            "rel:cross-17a7005384b8f913",
+            "rel:a1c7e701eebb9dc1-d6dafe5bec47b8d9",
+            "rel:cross-0b718daee2c1da01",
+            "rel:b587ec61aaf84d7d-0e76e9242161332a",
+            "rel:cross-fc7de8337e39a3aa",
+            "rel:cross-ea1586ebc14da71b",
+            "rel:cross-1392876f564273bb",
+            "rel:cross-7534d99eed97d79e",
+            "rel:cross-fcdec587ad0d20fe",
+            "rel:cross-55f1591f1659895d",
+            "rel:cross-f405c400769761ad",
+            "rel:cross-22b88f73b1bfcfa2",
+            "rel:cross-9827b8141d14fefd",
+            "rel:cross-bacfe6fd469eef97",
+            "rel:50fd4599b9553875-d0d05f614805365f",
+            "rel:50fd4599b9553875-704312dd470dff1c",
+            "rel:50fd4599b9553875-dc7633ac0e2a38be",
+            "rel:50fd4599b9553875-fd67d57420424a93",
+            "rel:cross-66637d432ae08fc7",
+            "rel:50fd4599b9553875-9b5cbef50c310bf6",
+            "rel:50fd4599b9553875-bc78e84be4b8b66b"
+          ]
+        },
+        "budget": {
+          "selectedClaimIds": [
+            "claim:a1c7e701eebb9dc1-1b6548c486ad1fd5",
+            "claim:a1c7e701eebb9dc1-271d5603ab397f55",
+            "claim:a1c7e701eebb9dc1-8c2b8fcbcdf52208",
+            "claim:5505a1ba1fcb1b68-9acfc0780eb2b345",
+            "claim:a1c7e701eebb9dc1-64202515b32c05d0",
+            "claim:a1c7e701eebb9dc1-d1c7990108ad78ca",
+            "claim:b587ec61aaf84d7d-474d339f3670f6c4",
+            "claim:b587ec61aaf84d7d-7bc5b6c3a357763e",
+            "claim:b587ec61aaf84d7d-aae2124ec2ae0b65",
+            "claim:b587ec61aaf84d7d-f9e6d8b51f46b89d",
+            "claim:14069d5a982d18de-fb6c9ddf92a42cc2",
+            "claim:50fd4599b9553875-e76415a67338b449",
+            "claim:14069d5a982d18de-ff33cb8a69885a6f",
+            "claim:50fd4599b9553875-2de9e0481e7c8e64",
+            "claim:50fd4599b9553875-9bb1be629366d05d",
+            "claim:50fd4599b9553875-e77df938b6f36c19",
+            "claim:50fd4599b9553875-e5004be37e4a4be8",
+            "claim:50fd4599b9553875-c49634bbf6841943",
+            "claim:b587ec61aaf84d7d-ffaa41d4d0fe03ab"
+          ],
+          "selectedRelationIds": [
+            "rel:cross-2d8f24974b8bb808",
+            "rel:a1c7e701eebb9dc1-6d99eba08b18ee89",
+            "rel:cross-17a7005384b8f913",
+            "rel:a1c7e701eebb9dc1-d6dafe5bec47b8d9",
+            "rel:cross-0b718daee2c1da01",
+            "rel:b587ec61aaf84d7d-0e76e9242161332a",
+            "rel:cross-fc7de8337e39a3aa",
+            "rel:cross-ea1586ebc14da71b",
+            "rel:cross-1392876f564273bb",
+            "rel:cross-7534d99eed97d79e",
+            "rel:cross-fcdec587ad0d20fe",
+            "rel:cross-55f1591f1659895d",
+            "rel:cross-f405c400769761ad",
+            "rel:cross-22b88f73b1bfcfa2",
+            "rel:cross-9827b8141d14fefd",
+            "rel:cross-bacfe6fd469eef97",
+            "rel:50fd4599b9553875-d0d05f614805365f",
+            "rel:50fd4599b9553875-704312dd470dff1c",
+            "rel:50fd4599b9553875-dc7633ac0e2a38be",
+            "rel:50fd4599b9553875-fd67d57420424a93",
+            "rel:cross-66637d432ae08fc7",
+            "rel:50fd4599b9553875-9b5cbef50c310bf6",
+            "rel:50fd4599b9553875-bc78e84be4b8b66b"
+          ],
+          "selectedEvidenceSpanIds": [
+            "span:health-who-july-2020-002-a1c7e701eebb9dc1-2#chars-447-594",
+            "span:health-who-july-2020-002-a1c7e701eebb9dc1-2#chars-413-615",
+            "span:health-who-july-2020-002-a1c7e701eebb9dc1-1#chars-306-411",
+            "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-5#chars-519-570",
+            "span:health-who-july-2020-002-a1c7e701eebb9dc1-1#chars-81-301",
+            "span:health-who-july-2020-002-a1c7e701eebb9dc1-1#chars-368-411",
+            "span:health-who-march-2020-001-b587ec61aaf84d7d-2#chars-351-534",
+            "span:health-who-march-2020-001-b587ec61aaf84d7d-2#chars-536-856",
+            "span:health-who-march-2020-001-b587ec61aaf84d7d-1#chars-241-287",
+            "span:health-who-march-2020-001-b587ec61aaf84d7d-1#chars-292-348",
+            "span:health-nature-airborne-2022-003-14069d5a982d18de-2#chars-340-458",
+            "span:health-who-terminology-2024-004-50fd4599b9553875-1#chars-99-314",
+            "span:health-nature-airborne-2022-003-14069d5a982d18de-2#chars-459-612",
+            "span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-621-707",
+            "span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-402-515",
+            "span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-516-616",
+            "span:health-who-terminology-2024-004-50fd4599b9553875-1#chars-315-397",
+            "span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-712-896",
+            "span:health-who-march-2020-001-b587ec61aaf84d7d-1#chars-51-239"
+          ],
+          "selectedWikiModuleIds": [],
+          "dropped": [],
+          "finalEstimatedTokens": 10714
+        },
+        "serializationBudget": {
+          "selectedIds": [
+            "task-map",
+            "claim:a1c7e701eebb9dc1-1b6548c486ad1fd5",
+            "claim:a1c7e701eebb9dc1-271d5603ab397f55",
+            "claim:a1c7e701eebb9dc1-8c2b8fcbcdf52208",
+            "claim:5505a1ba1fcb1b68-9acfc0780eb2b345",
+            "claim:a1c7e701eebb9dc1-64202515b32c05d0",
+            "claim:a1c7e701eebb9dc1-d1c7990108ad78ca",
+            "claim:b587ec61aaf84d7d-474d339f3670f6c4",
+            "claim:b587ec61aaf84d7d-7bc5b6c3a357763e",
+            "claim:b587ec61aaf84d7d-aae2124ec2ae0b65",
+            "claim:b587ec61aaf84d7d-f9e6d8b51f46b89d",
+            "claim:14069d5a982d18de-fb6c9ddf92a42cc2",
+            "claim:50fd4599b9553875-e76415a67338b449",
+            "claim:14069d5a982d18de-ff33cb8a69885a6f",
+            "claim:50fd4599b9553875-2de9e0481e7c8e64",
+            "claim:50fd4599b9553875-9bb1be629366d05d",
+            "claim:50fd4599b9553875-e77df938b6f36c19",
+            "claim:50fd4599b9553875-e5004be37e4a4be8",
+            "claim:50fd4599b9553875-c49634bbf6841943",
+            "claim:b587ec61aaf84d7d-ffaa41d4d0fe03ab",
+            "rel:cross-2d8f24974b8bb808",
+            "rel:a1c7e701eebb9dc1-6d99eba08b18ee89",
+            "rel:cross-17a7005384b8f913",
+            "rel:a1c7e701eebb9dc1-d6dafe5bec47b8d9",
+            "rel:cross-0b718daee2c1da01",
+            "rel:b587ec61aaf84d7d-0e76e9242161332a",
+            "rel:cross-fc7de8337e39a3aa",
+            "rel:cross-ea1586ebc14da71b",
+            "rel:cross-1392876f564273bb",
+            "rel:cross-7534d99eed97d79e",
+            "rel:cross-fcdec587ad0d20fe",
+            "rel:cross-55f1591f1659895d",
+            "rel:cross-f405c400769761ad",
+            "rel:cross-22b88f73b1bfcfa2",
+            "rel:cross-9827b8141d14fefd",
+            "rel:cross-bacfe6fd469eef97",
+            "rel:50fd4599b9553875-d0d05f614805365f",
+            "rel:50fd4599b9553875-704312dd470dff1c",
+            "rel:50fd4599b9553875-dc7633ac0e2a38be",
+            "rel:50fd4599b9553875-fd67d57420424a93",
+            "rel:cross-66637d432ae08fc7",
+            "rel:50fd4599b9553875-9b5cbef50c310bf6",
+            "rel:50fd4599b9553875-bc78e84be4b8b66b",
+            "span:health-who-july-2020-002-a1c7e701eebb9dc1-2#chars-447-594",
+            "span:health-who-july-2020-002-a1c7e701eebb9dc1-2#chars-413-615",
+            "span:health-who-july-2020-002-a1c7e701eebb9dc1-1#chars-306-411",
+            "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-5#chars-519-570",
+            "span:health-who-july-2020-002-a1c7e701eebb9dc1-1#chars-81-301",
+            "span:health-who-july-2020-002-a1c7e701eebb9dc1-1#chars-368-411",
+            "span:health-who-march-2020-001-b587ec61aaf84d7d-2#chars-351-534",
+            "span:health-who-march-2020-001-b587ec61aaf84d7d-2#chars-536-856",
+            "span:health-who-march-2020-001-b587ec61aaf84d7d-1#chars-241-287",
+            "span:health-who-march-2020-001-b587ec61aaf84d7d-1#chars-292-348",
+            "span:health-nature-airborne-2022-003-14069d5a982d18de-2#chars-340-458",
+            "span:health-who-terminology-2024-004-50fd4599b9553875-1#chars-99-314",
+            "span:health-nature-airborne-2022-003-14069d5a982d18de-2#chars-459-612",
+            "span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-621-707",
+            "span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-402-515",
+            "span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-516-616",
+            "span:health-who-terminology-2024-004-50fd4599b9553875-1#chars-315-397",
+            "span:health-who-terminology-2024-004-50fd4599b9553875-2#chars-712-896",
+            "span:health-who-march-2020-001-b587ec61aaf84d7d-1#chars-51-239",
+            "conflicts-and-conditions"
+          ],
+          "droppedIds": []
+        }
+      }
+    },
+    {
+      "questionId": "B-C-HIST-003",
+      "group": "B",
+      "pilotGroup": "B",
+      "graphExpansion": false,
+      "domain": [
+        "history-humanities"
+      ],
+      "question": "使用归档 vesuvius 仓库时必须保留哪些状态条件？",
+      "estimatedContextTokens": 511,
+      "contextHash": "c78e72c49f2c3ad232cbdf02bba18c77b7f545ed6b8eb053491e92e652140d17",
+      "retrievedClaims": [],
+      "retrievedRelations": [],
+      "retrievedSources": [
+        "../../../workbuddy-batch-b/generated/compilation-corpus/history-humanities/history-nature-scroll-2024-003.md",
+        "../../../workbuddy-batch-b/generated/compilation-corpus/history-humanities/history-scrollprize-2026-004.md",
+        "../../../workbuddy-batch-b/generated/compilation-corpus/history-humanities/history-vesuvius-github-2024-002.md"
+      ],
+      "droppedContext": [],
+      "evidenceStages": [
+        {
+          "factId": "FACT-HIST-004",
+          "sourceId": "history-vesuvius-github-2024-002",
+          "status": "retrieved",
+          "candidateChunkIds": [
+            "../../../workbuddy-batch-b/generated/compilation-corpus/history-humanities/history-vesuvius-github-2024-002.md#L1-L12"
+          ]
+        },
+        {
+          "factId": "FACT-HIST-005",
+          "sourceId": "history-vesuvius-github-2024-002",
+          "status": "retrieved",
+          "candidateChunkIds": [
+            "../../../workbuddy-batch-b/generated/compilation-corpus/history-humanities/history-vesuvius-github-2024-002.md#L1-L12"
+          ]
+        },
+        {
+          "factId": "FACT-HIST-006",
+          "sourceId": "history-vesuvius-github-2024-002",
+          "status": "retrieved",
+          "candidateChunkIds": [
+            "../../../workbuddy-batch-b/generated/compilation-corpus/history-humanities/history-vesuvius-github-2024-002.md#L1-L12"
+          ]
+        }
+      ],
+      "allRequiredEvidenceRetrieved": true,
+      "retrievalTrace": {
+        "strategy": "folder-lexical",
+        "queryFeatureCount": 17,
+        "corpusChunkCount": 12,
+        "matchedChunkCount": 3,
+        "maxFolderChunks": 16,
+        "candidates": [
+          {
+            "id": "../../../workbuddy-batch-b/generated/compilation-corpus/history-humanities/history-nature-scroll-2024-003.md#L1-L6",
+            "rank": 1,
+            "score": 2.1786549963416464,
+            "selected": true,
+            "dropReason": null
+          },
+          {
+            "id": "../../../workbuddy-batch-b/generated/compilation-corpus/history-humanities/history-scrollprize-2026-004.md#L1-L6",
+            "rank": 2,
+            "score": 2.1786549963416464,
+            "selected": true,
+            "dropReason": null
+          },
+          {
+            "id": "../../../workbuddy-batch-b/generated/compilation-corpus/history-humanities/history-vesuvius-github-2024-002.md#L1-L12",
+            "rank": 3,
+            "score": 2.1786549963416464,
+            "selected": true,
+            "dropReason": null
+          }
+        ]
+      }
+    },
+    {
+      "questionId": "B-C-HIST-003",
+      "group": "P-seed",
+      "pilotGroup": "P",
+      "graphExpansion": false,
+      "domain": [
+        "history-humanities"
+      ],
+      "question": "使用归档 vesuvius 仓库时必须保留哪些状态条件？",
+      "estimatedContextTokens": 923,
+      "contextHash": "0b44a2d7d6e715bccd42c614f27a58e2dd569ebbe0931d514a4456343e296d2e",
+      "retrievedClaims": [
+        "claim:5505a1ba1fcb1b68-a2289f49fcb0ff64",
+        "claim:5505a1ba1fcb1b68-c84e1d5fe016cb20",
+        "claim:5505a1ba1fcb1b68-d303dae0fc053d75",
+        "claim:4ab2f152a60c6bbe-39dbff7d3d0408e6",
+        "claim:4ab2f152a60c6bbe-812533cb126e5e48",
+        "claim:4ab2f152a60c6bbe-e301af57ef26e82d",
+        "claim:5505a1ba1fcb1b68-35e4f1b989767484",
+        "claim:5505a1ba1fcb1b68-5b081e72929d1868",
+        "claim:5505a1ba1fcb1b68-825b50a16ede0106",
+        "claim:5505a1ba1fcb1b68-92eeebabc9812a65"
+      ],
+      "retrievedRelations": [],
+      "retrievedSources": [
+        "source:history-vesuvius-github-2024-002-5505a1ba1fcb1b68",
+        "source:history-scrollprize-2026-004-4ab2f152a60c6bbe"
+      ],
+      "droppedContext": [],
+      "evidenceStages": [
+        {
+          "factId": "FACT-HIST-004",
+          "sourceId": "history-vesuvius-github-2024-002",
+          "status": "retrieved",
+          "expectedClaimIds": [
+            "claim:5505a1ba1fcb1b68-a2289f49fcb0ff64",
+            "claim:5505a1ba1fcb1b68-d303dae0fc053d75"
+          ],
+          "selected": [
+            "claim:5505a1ba1fcb1b68-a2289f49fcb0ff64",
+            "claim:5505a1ba1fcb1b68-d303dae0fc053d75"
+          ],
+          "exactAnchorTextPresent": false
+        },
+        {
+          "factId": "FACT-HIST-005",
+          "sourceId": "history-vesuvius-github-2024-002",
+          "status": "retrieved",
+          "expectedClaimIds": [
+            "claim:5505a1ba1fcb1b68-825b50a16ede0106"
+          ],
+          "selected": [
+            "claim:5505a1ba1fcb1b68-825b50a16ede0106"
+          ],
+          "exactAnchorTextPresent": false
+        },
+        {
+          "factId": "FACT-HIST-006",
+          "sourceId": "history-vesuvius-github-2024-002",
+          "status": "retrieved",
+          "expectedClaimIds": [
+            "claim:5505a1ba1fcb1b68-35e4f1b989767484",
+            "claim:5505a1ba1fcb1b68-9acfc0780eb2b345"
+          ],
+          "selected": [
+            "claim:5505a1ba1fcb1b68-35e4f1b989767484"
+          ],
+          "exactAnchorTextPresent": false
+        }
+      ],
+      "allRequiredEvidenceRetrieved": true,
+      "retrievalTrace": {
+        "strategy": "claim-seed-only",
+        "graphDepth": 0,
+        "temporalScope": {
+          "applied": false,
+          "startMonth": null,
+          "endMonth": null,
+          "excludedClaimIds": []
+        },
+        "retrieval": {
+          "queryFeatureCount": 35,
+          "eligibleClaimCount": 67,
+          "matchedClaimCount": 10,
+          "usedEvidenceText": true,
+          "usedSourceMetadata": true,
+          "resolvedEvidenceRefCount": 67,
+          "unresolvedEvidenceRefCount": 0,
+          "candidates": [
+            {
+              "claimId": "claim:5505a1ba1fcb1b68-a2289f49fcb0ff64",
+              "rank": 1,
+              "score": 12.859667630090602,
+              "channels": [
+                "c2",
+                "g3",
+                "source",
+                "w"
+              ],
+              "matchedFeatureCount": 9
+            },
+            {
+              "claimId": "claim:5505a1ba1fcb1b68-c84e1d5fe016cb20",
+              "rank": 2,
+              "score": 9.372030492884724,
+              "channels": [
+                "c2",
+                "g3",
+                "source",
+                "w"
+              ],
+              "matchedFeatureCount": 8
+            },
+            {
+              "claimId": "claim:5505a1ba1fcb1b68-d303dae0fc053d75",
+              "rank": 3,
+              "score": 9.372030492884724,
+              "channels": [
+                "c2",
+                "g3",
+                "source",
+                "w"
+              ],
+              "matchedFeatureCount": 8
+            },
+            {
+              "claimId": "claim:4ab2f152a60c6bbe-39dbff7d3d0408e6",
+              "rank": 4,
+              "score": 6.11987309376502,
+              "channels": [
+                "g3",
+                "w"
+              ],
+              "matchedFeatureCount": 7
+            },
+            {
+              "claimId": "claim:4ab2f152a60c6bbe-812533cb126e5e48",
+              "rank": 5,
+              "score": 6.11987309376502,
+              "channels": [
+                "g3",
+                "w"
+              ],
+              "matchedFeatureCount": 7
+            },
+            {
+              "claimId": "claim:4ab2f152a60c6bbe-e301af57ef26e82d",
+              "rank": 6,
+              "score": 6.11987309376502,
+              "channels": [
+                "g3",
+                "w"
+              ],
+              "matchedFeatureCount": 7
+            },
+            {
+              "claimId": "claim:5505a1ba1fcb1b68-35e4f1b989767484",
+              "rank": 7,
+              "score": 6.11987309376502,
+              "channels": [
+                "g3",
+                "source",
+                "w"
+              ],
+              "matchedFeatureCount": 7
+            },
+            {
+              "claimId": "claim:5505a1ba1fcb1b68-5b081e72929d1868",
+              "rank": 8,
+              "score": 6.11987309376502,
+              "channels": [
+                "g3",
+                "source",
+                "w"
+              ],
+              "matchedFeatureCount": 7
+            },
+            {
+              "claimId": "claim:5505a1ba1fcb1b68-825b50a16ede0106",
+              "rank": 9,
+              "score": 6.11987309376502,
+              "channels": [
+                "g3",
+                "source",
+                "w"
+              ],
+              "matchedFeatureCount": 7
+            },
+            {
+              "claimId": "claim:5505a1ba1fcb1b68-92eeebabc9812a65",
+              "rank": 10,
+              "score": 6.11987309376502,
+              "channels": [
+                "g3",
+                "source",
+                "w"
+              ],
+              "matchedFeatureCount": 7
+            }
+          ]
+        },
+        "graph": {
+          "seedClaimIds": [
+            "claim:5505a1ba1fcb1b68-a2289f49fcb0ff64",
+            "claim:5505a1ba1fcb1b68-c84e1d5fe016cb20",
+            "claim:5505a1ba1fcb1b68-d303dae0fc053d75",
+            "claim:4ab2f152a60c6bbe-39dbff7d3d0408e6",
+            "claim:4ab2f152a60c6bbe-812533cb126e5e48",
+            "claim:4ab2f152a60c6bbe-e301af57ef26e82d",
+            "claim:5505a1ba1fcb1b68-35e4f1b989767484",
+            "claim:5505a1ba1fcb1b68-5b081e72929d1868",
+            "claim:5505a1ba1fcb1b68-825b50a16ede0106",
+            "claim:5505a1ba1fcb1b68-92eeebabc9812a65"
+          ],
+          "expandedClaimIds": [
+            "claim:5505a1ba1fcb1b68-a2289f49fcb0ff64",
+            "claim:5505a1ba1fcb1b68-c84e1d5fe016cb20",
+            "claim:5505a1ba1fcb1b68-d303dae0fc053d75",
+            "claim:4ab2f152a60c6bbe-39dbff7d3d0408e6",
+            "claim:4ab2f152a60c6bbe-812533cb126e5e48",
+            "claim:4ab2f152a60c6bbe-e301af57ef26e82d",
+            "claim:5505a1ba1fcb1b68-35e4f1b989767484",
+            "claim:5505a1ba1fcb1b68-5b081e72929d1868",
+            "claim:5505a1ba1fcb1b68-825b50a16ede0106",
+            "claim:5505a1ba1fcb1b68-92eeebabc9812a65"
+          ],
+          "expandedRelationIds": []
+        },
+        "budget": {
+          "selectedClaimIds": [
+            "claim:5505a1ba1fcb1b68-a2289f49fcb0ff64",
+            "claim:5505a1ba1fcb1b68-c84e1d5fe016cb20",
+            "claim:5505a1ba1fcb1b68-d303dae0fc053d75",
+            "claim:4ab2f152a60c6bbe-39dbff7d3d0408e6",
+            "claim:4ab2f152a60c6bbe-812533cb126e5e48",
+            "claim:4ab2f152a60c6bbe-e301af57ef26e82d",
+            "claim:5505a1ba1fcb1b68-35e4f1b989767484",
+            "claim:5505a1ba1fcb1b68-5b081e72929d1868",
+            "claim:5505a1ba1fcb1b68-825b50a16ede0106",
+            "claim:5505a1ba1fcb1b68-92eeebabc9812a65"
+          ],
+          "selectedRelationIds": [],
+          "selectedEvidenceSpanIds": [
+            "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-1#chars-48-106",
+            "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-0#chars-0-46",
+            "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-1#chars-107-127",
+            "span:history-scrollprize-2026-004-4ab2f152a60c6bbe-1#chars-81-187",
+            "span:history-scrollprize-2026-004-4ab2f152a60c6bbe-0#chars-0-37",
+            "span:history-scrollprize-2026-004-4ab2f152a60c6bbe-1#chars-39-80",
+            "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-5#chars-571-674",
+            "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-3#chars-237-321",
+            "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-2#chars-135-235",
+            "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-4#chars-446-517"
+          ],
+          "selectedWikiModuleIds": [],
+          "dropped": [],
+          "finalEstimatedTokens": 3248
+        },
+        "serializationBudget": {
+          "selectedIds": [
+            "task-map",
+            "claim:5505a1ba1fcb1b68-a2289f49fcb0ff64",
+            "claim:5505a1ba1fcb1b68-c84e1d5fe016cb20",
+            "claim:5505a1ba1fcb1b68-d303dae0fc053d75",
+            "claim:4ab2f152a60c6bbe-39dbff7d3d0408e6",
+            "claim:4ab2f152a60c6bbe-812533cb126e5e48",
+            "claim:4ab2f152a60c6bbe-e301af57ef26e82d",
+            "claim:5505a1ba1fcb1b68-35e4f1b989767484",
+            "claim:5505a1ba1fcb1b68-5b081e72929d1868",
+            "claim:5505a1ba1fcb1b68-825b50a16ede0106",
+            "claim:5505a1ba1fcb1b68-92eeebabc9812a65",
+            "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-1#chars-48-106",
+            "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-0#chars-0-46",
+            "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-1#chars-107-127",
+            "span:history-scrollprize-2026-004-4ab2f152a60c6bbe-1#chars-81-187",
+            "span:history-scrollprize-2026-004-4ab2f152a60c6bbe-0#chars-0-37",
+            "span:history-scrollprize-2026-004-4ab2f152a60c6bbe-1#chars-39-80",
+            "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-5#chars-571-674",
+            "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-3#chars-237-321",
+            "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-2#chars-135-235",
+            "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-4#chars-446-517",
+            "known-gaps"
+          ],
+          "droppedIds": []
+        }
+      }
+    },
+    {
+      "questionId": "B-C-HIST-003",
+      "group": "P-graph",
+      "pilotGroup": "P",
+      "graphExpansion": true,
+      "domain": [
+        "history-humanities"
+      ],
+      "question": "使用归档 vesuvius 仓库时必须保留哪些状态条件？",
+      "estimatedContextTokens": 1896,
+      "contextHash": "608a24f1e3a7747dfc1fbf623cd2a1e5e5d88bc8510372004f2e2fc97099a723",
+      "retrievedClaims": [
+        "claim:5505a1ba1fcb1b68-a2289f49fcb0ff64",
+        "claim:5505a1ba1fcb1b68-c84e1d5fe016cb20",
+        "claim:5505a1ba1fcb1b68-d303dae0fc053d75",
+        "claim:4ab2f152a60c6bbe-39dbff7d3d0408e6",
+        "claim:4ab2f152a60c6bbe-812533cb126e5e48",
+        "claim:4ab2f152a60c6bbe-e301af57ef26e82d",
+        "claim:5505a1ba1fcb1b68-35e4f1b989767484",
+        "claim:5505a1ba1fcb1b68-5b081e72929d1868",
+        "claim:5505a1ba1fcb1b68-825b50a16ede0106",
+        "claim:5505a1ba1fcb1b68-92eeebabc9812a65",
+        "claim:4ab2f152a60c6bbe-a6fd9e7a1c644eed",
+        "claim:b98a3ae4860a6edc-95aab89f959ee2e9",
+        "claim:b98a3ae4860a6edc-704f0702fd830045",
+        "claim:5505a1ba1fcb1b68-a4e0bf4dcf441832",
+        "claim:b98a3ae4860a6edc-fd2b496dae5aceca",
+        "claim:b98a3ae4860a6edc-3c7148205b4853be",
+        "claim:4ab2f152a60c6bbe-901bc3b35d2cc86e"
+      ],
+      "retrievedRelations": [
+        "rel:5505a1ba1fcb1b68-0cbed135f488b346",
+        "rel:4ab2f152a60c6bbe-123dafd4b72f8b9e",
+        "rel:cross-3c6b8385c21665ec",
+        "rel:cross-670f5b5bb894432c",
+        "rel:4ab2f152a60c6bbe-d276c0e77fb62409",
+        "rel:5505a1ba1fcb1b68-dab0c28a55c1972e",
+        "rel:b98a3ae4860a6edc-fe01487361015f30",
+        "rel:b98a3ae4860a6edc-b39a43fc9bb7bc6e",
+        "rel:cross-1a5e232cdc42ca30"
+      ],
+      "retrievedSources": [
+        "source:history-vesuvius-github-2024-002-5505a1ba1fcb1b68",
+        "source:history-scrollprize-2026-004-4ab2f152a60c6bbe",
+        "source:history-nature-scroll-2024-003-b98a3ae4860a6edc"
+      ],
+      "droppedContext": [],
+      "evidenceStages": [
+        {
+          "factId": "FACT-HIST-004",
+          "sourceId": "history-vesuvius-github-2024-002",
+          "status": "retrieved",
+          "expectedClaimIds": [
+            "claim:5505a1ba1fcb1b68-a2289f49fcb0ff64",
+            "claim:5505a1ba1fcb1b68-d303dae0fc053d75"
+          ],
+          "selected": [
+            "claim:5505a1ba1fcb1b68-a2289f49fcb0ff64",
+            "claim:5505a1ba1fcb1b68-d303dae0fc053d75"
+          ],
+          "exactAnchorTextPresent": false
+        },
+        {
+          "factId": "FACT-HIST-005",
+          "sourceId": "history-vesuvius-github-2024-002",
+          "status": "retrieved",
+          "expectedClaimIds": [
+            "claim:5505a1ba1fcb1b68-825b50a16ede0106"
+          ],
+          "selected": [
+            "claim:5505a1ba1fcb1b68-825b50a16ede0106"
+          ],
+          "exactAnchorTextPresent": false
+        },
+        {
+          "factId": "FACT-HIST-006",
+          "sourceId": "history-vesuvius-github-2024-002",
+          "status": "retrieved",
+          "expectedClaimIds": [
+            "claim:5505a1ba1fcb1b68-35e4f1b989767484",
+            "claim:5505a1ba1fcb1b68-9acfc0780eb2b345"
+          ],
+          "selected": [
+            "claim:5505a1ba1fcb1b68-35e4f1b989767484"
+          ],
+          "exactAnchorTextPresent": false
+        }
+      ],
+      "allRequiredEvidenceRetrieved": true,
+      "retrievalTrace": {
+        "strategy": "claim-seed-graph",
+        "graphDepth": 3,
+        "temporalScope": {
+          "applied": false,
+          "startMonth": null,
+          "endMonth": null,
+          "excludedClaimIds": []
+        },
+        "retrieval": {
+          "queryFeatureCount": 35,
+          "eligibleClaimCount": 67,
+          "matchedClaimCount": 10,
+          "usedEvidenceText": true,
+          "usedSourceMetadata": true,
+          "resolvedEvidenceRefCount": 67,
+          "unresolvedEvidenceRefCount": 0,
+          "candidates": [
+            {
+              "claimId": "claim:5505a1ba1fcb1b68-a2289f49fcb0ff64",
+              "rank": 1,
+              "score": 12.859667630090602,
+              "channels": [
+                "c2",
+                "g3",
+                "source",
+                "w"
+              ],
+              "matchedFeatureCount": 9
+            },
+            {
+              "claimId": "claim:5505a1ba1fcb1b68-c84e1d5fe016cb20",
+              "rank": 2,
+              "score": 9.372030492884724,
+              "channels": [
+                "c2",
+                "g3",
+                "source",
+                "w"
+              ],
+              "matchedFeatureCount": 8
+            },
+            {
+              "claimId": "claim:5505a1ba1fcb1b68-d303dae0fc053d75",
+              "rank": 3,
+              "score": 9.372030492884724,
+              "channels": [
+                "c2",
+                "g3",
+                "source",
+                "w"
+              ],
+              "matchedFeatureCount": 8
+            },
+            {
+              "claimId": "claim:4ab2f152a60c6bbe-39dbff7d3d0408e6",
+              "rank": 4,
+              "score": 6.11987309376502,
+              "channels": [
+                "g3",
+                "w"
+              ],
+              "matchedFeatureCount": 7
+            },
+            {
+              "claimId": "claim:4ab2f152a60c6bbe-812533cb126e5e48",
+              "rank": 5,
+              "score": 6.11987309376502,
+              "channels": [
+                "g3",
+                "w"
+              ],
+              "matchedFeatureCount": 7
+            },
+            {
+              "claimId": "claim:4ab2f152a60c6bbe-e301af57ef26e82d",
+              "rank": 6,
+              "score": 6.11987309376502,
+              "channels": [
+                "g3",
+                "w"
+              ],
+              "matchedFeatureCount": 7
+            },
+            {
+              "claimId": "claim:5505a1ba1fcb1b68-35e4f1b989767484",
+              "rank": 7,
+              "score": 6.11987309376502,
+              "channels": [
+                "g3",
+                "source",
+                "w"
+              ],
+              "matchedFeatureCount": 7
+            },
+            {
+              "claimId": "claim:5505a1ba1fcb1b68-5b081e72929d1868",
+              "rank": 8,
+              "score": 6.11987309376502,
+              "channels": [
+                "g3",
+                "source",
+                "w"
+              ],
+              "matchedFeatureCount": 7
+            },
+            {
+              "claimId": "claim:5505a1ba1fcb1b68-825b50a16ede0106",
+              "rank": 9,
+              "score": 6.11987309376502,
+              "channels": [
+                "g3",
+                "source",
+                "w"
+              ],
+              "matchedFeatureCount": 7
+            },
+            {
+              "claimId": "claim:5505a1ba1fcb1b68-92eeebabc9812a65",
+              "rank": 10,
+              "score": 6.11987309376502,
+              "channels": [
+                "g3",
+                "source",
+                "w"
+              ],
+              "matchedFeatureCount": 7
+            }
+          ]
+        },
+        "graph": {
+          "seedClaimIds": [
+            "claim:5505a1ba1fcb1b68-a2289f49fcb0ff64",
+            "claim:5505a1ba1fcb1b68-c84e1d5fe016cb20",
+            "claim:5505a1ba1fcb1b68-d303dae0fc053d75",
+            "claim:4ab2f152a60c6bbe-39dbff7d3d0408e6",
+            "claim:4ab2f152a60c6bbe-812533cb126e5e48",
+            "claim:4ab2f152a60c6bbe-e301af57ef26e82d",
+            "claim:5505a1ba1fcb1b68-35e4f1b989767484",
+            "claim:5505a1ba1fcb1b68-5b081e72929d1868",
+            "claim:5505a1ba1fcb1b68-825b50a16ede0106",
+            "claim:5505a1ba1fcb1b68-92eeebabc9812a65"
+          ],
+          "expandedClaimIds": [
+            "claim:5505a1ba1fcb1b68-a2289f49fcb0ff64",
+            "claim:5505a1ba1fcb1b68-c84e1d5fe016cb20",
+            "claim:5505a1ba1fcb1b68-d303dae0fc053d75",
+            "claim:4ab2f152a60c6bbe-39dbff7d3d0408e6",
+            "claim:4ab2f152a60c6bbe-812533cb126e5e48",
+            "claim:4ab2f152a60c6bbe-e301af57ef26e82d",
+            "claim:5505a1ba1fcb1b68-35e4f1b989767484",
+            "claim:5505a1ba1fcb1b68-5b081e72929d1868",
+            "claim:5505a1ba1fcb1b68-825b50a16ede0106",
+            "claim:5505a1ba1fcb1b68-92eeebabc9812a65",
+            "claim:4ab2f152a60c6bbe-a6fd9e7a1c644eed",
+            "claim:b98a3ae4860a6edc-95aab89f959ee2e9",
+            "claim:b98a3ae4860a6edc-704f0702fd830045",
+            "claim:5505a1ba1fcb1b68-a4e0bf4dcf441832",
+            "claim:b98a3ae4860a6edc-fd2b496dae5aceca",
+            "claim:b98a3ae4860a6edc-3c7148205b4853be",
+            "claim:4ab2f152a60c6bbe-901bc3b35d2cc86e"
+          ],
+          "expandedRelationIds": [
+            "rel:5505a1ba1fcb1b68-0cbed135f488b346",
+            "rel:4ab2f152a60c6bbe-123dafd4b72f8b9e",
+            "rel:cross-3c6b8385c21665ec",
+            "rel:cross-670f5b5bb894432c",
+            "rel:4ab2f152a60c6bbe-d276c0e77fb62409",
+            "rel:5505a1ba1fcb1b68-dab0c28a55c1972e",
+            "rel:b98a3ae4860a6edc-fe01487361015f30",
+            "rel:b98a3ae4860a6edc-b39a43fc9bb7bc6e",
+            "rel:cross-1a5e232cdc42ca30"
+          ]
+        },
+        "budget": {
+          "selectedClaimIds": [
+            "claim:5505a1ba1fcb1b68-a2289f49fcb0ff64",
+            "claim:5505a1ba1fcb1b68-c84e1d5fe016cb20",
+            "claim:5505a1ba1fcb1b68-d303dae0fc053d75",
+            "claim:4ab2f152a60c6bbe-39dbff7d3d0408e6",
+            "claim:4ab2f152a60c6bbe-812533cb126e5e48",
+            "claim:4ab2f152a60c6bbe-e301af57ef26e82d",
+            "claim:5505a1ba1fcb1b68-35e4f1b989767484",
+            "claim:5505a1ba1fcb1b68-5b081e72929d1868",
+            "claim:5505a1ba1fcb1b68-825b50a16ede0106",
+            "claim:5505a1ba1fcb1b68-92eeebabc9812a65",
+            "claim:4ab2f152a60c6bbe-a6fd9e7a1c644eed",
+            "claim:b98a3ae4860a6edc-95aab89f959ee2e9",
+            "claim:b98a3ae4860a6edc-704f0702fd830045",
+            "claim:5505a1ba1fcb1b68-a4e0bf4dcf441832",
+            "claim:b98a3ae4860a6edc-fd2b496dae5aceca",
+            "claim:b98a3ae4860a6edc-3c7148205b4853be",
+            "claim:4ab2f152a60c6bbe-901bc3b35d2cc86e"
+          ],
+          "selectedRelationIds": [
+            "rel:5505a1ba1fcb1b68-0cbed135f488b346",
+            "rel:4ab2f152a60c6bbe-123dafd4b72f8b9e",
+            "rel:cross-3c6b8385c21665ec",
+            "rel:cross-670f5b5bb894432c",
+            "rel:4ab2f152a60c6bbe-d276c0e77fb62409",
+            "rel:5505a1ba1fcb1b68-dab0c28a55c1972e",
+            "rel:b98a3ae4860a6edc-fe01487361015f30",
+            "rel:b98a3ae4860a6edc-b39a43fc9bb7bc6e",
+            "rel:cross-1a5e232cdc42ca30"
+          ],
+          "selectedEvidenceSpanIds": [
+            "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-1#chars-48-106",
+            "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-0#chars-0-46",
+            "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-1#chars-107-127",
+            "span:history-scrollprize-2026-004-4ab2f152a60c6bbe-1#chars-81-187",
+            "span:history-scrollprize-2026-004-4ab2f152a60c6bbe-0#chars-0-37",
+            "span:history-scrollprize-2026-004-4ab2f152a60c6bbe-1#chars-39-80",
+            "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-5#chars-571-674",
+            "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-3#chars-237-321",
+            "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-2#chars-135-235",
+            "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-4#chars-446-517",
+            "span:history-scrollprize-2026-004-4ab2f152a60c6bbe-1#chars-189-226",
+            "span:history-nature-scroll-2024-003-b98a3ae4860a6edc-1#chars-59-173",
+            "span:history-nature-scroll-2024-003-b98a3ae4860a6edc-2#chars-299-429",
+            "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-4#chars-323-445",
+            "span:history-nature-scroll-2024-003-b98a3ae4860a6edc-1#chars-174-239",
+            "span:history-nature-scroll-2024-003-b98a3ae4860a6edc-1#chars-240-296",
+            "span:history-scrollprize-2026-004-4ab2f152a60c6bbe-2#chars-258-361"
+          ],
+          "selectedWikiModuleIds": [],
+          "dropped": [],
+          "finalEstimatedTokens": 6746
+        },
+        "serializationBudget": {
+          "selectedIds": [
+            "task-map",
+            "claim:5505a1ba1fcb1b68-a2289f49fcb0ff64",
+            "claim:5505a1ba1fcb1b68-c84e1d5fe016cb20",
+            "claim:5505a1ba1fcb1b68-d303dae0fc053d75",
+            "claim:4ab2f152a60c6bbe-39dbff7d3d0408e6",
+            "claim:4ab2f152a60c6bbe-812533cb126e5e48",
+            "claim:4ab2f152a60c6bbe-e301af57ef26e82d",
+            "claim:5505a1ba1fcb1b68-35e4f1b989767484",
+            "claim:5505a1ba1fcb1b68-5b081e72929d1868",
+            "claim:5505a1ba1fcb1b68-825b50a16ede0106",
+            "claim:5505a1ba1fcb1b68-92eeebabc9812a65",
+            "claim:4ab2f152a60c6bbe-a6fd9e7a1c644eed",
+            "claim:b98a3ae4860a6edc-95aab89f959ee2e9",
+            "claim:b98a3ae4860a6edc-704f0702fd830045",
+            "claim:5505a1ba1fcb1b68-a4e0bf4dcf441832",
+            "claim:b98a3ae4860a6edc-fd2b496dae5aceca",
+            "claim:b98a3ae4860a6edc-3c7148205b4853be",
+            "claim:4ab2f152a60c6bbe-901bc3b35d2cc86e",
+            "rel:5505a1ba1fcb1b68-0cbed135f488b346",
+            "rel:4ab2f152a60c6bbe-123dafd4b72f8b9e",
+            "rel:cross-3c6b8385c21665ec",
+            "rel:cross-670f5b5bb894432c",
+            "rel:4ab2f152a60c6bbe-d276c0e77fb62409",
+            "rel:5505a1ba1fcb1b68-dab0c28a55c1972e",
+            "rel:b98a3ae4860a6edc-fe01487361015f30",
+            "rel:b98a3ae4860a6edc-b39a43fc9bb7bc6e",
+            "rel:cross-1a5e232cdc42ca30",
+            "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-1#chars-48-106",
+            "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-0#chars-0-46",
+            "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-1#chars-107-127",
+            "span:history-scrollprize-2026-004-4ab2f152a60c6bbe-1#chars-81-187",
+            "span:history-scrollprize-2026-004-4ab2f152a60c6bbe-0#chars-0-37",
+            "span:history-scrollprize-2026-004-4ab2f152a60c6bbe-1#chars-39-80",
+            "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-5#chars-571-674",
+            "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-3#chars-237-321",
+            "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-2#chars-135-235",
+            "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-4#chars-446-517",
+            "span:history-scrollprize-2026-004-4ab2f152a60c6bbe-1#chars-189-226",
+            "span:history-nature-scroll-2024-003-b98a3ae4860a6edc-1#chars-59-173",
+            "span:history-nature-scroll-2024-003-b98a3ae4860a6edc-2#chars-299-429",
+            "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-4#chars-323-445",
+            "span:history-nature-scroll-2024-003-b98a3ae4860a6edc-1#chars-174-239",
+            "span:history-nature-scroll-2024-003-b98a3ae4860a6edc-1#chars-240-296",
+            "span:history-scrollprize-2026-004-4ab2f152a60c6bbe-2#chars-258-361"
+          ],
+          "droppedIds": []
+        }
+      }
+    },
+    {
+      "questionId": "B-X-HIST-006",
+      "group": "B",
+      "pilotGroup": "B",
+      "graphExpansion": false,
+      "domain": [
+        "history-humanities"
+      ],
+      "question": "论文、GitHub 库和 Nature 报道分别能回答哪一层问题？",
+      "estimatedContextTokens": 203,
+      "contextHash": "d823ed9e027c254744f0ff0f992b031dffe4a5cb34035be91e0fd470e5ab8df9",
+      "retrievedClaims": [],
+      "retrievedRelations": [],
+      "retrievedSources": [
+        "../../../workbuddy-batch-b/generated/compilation-corpus/history-humanities/history-vesuvius-github-2024-002.md"
+      ],
+      "droppedContext": [],
+      "evidenceStages": [
+        {
+          "factId": "FACT-HIST-001",
+          "sourceId": "history-educelab-paper-2023-001",
+          "status": "lexical-no-match",
+          "candidateChunkIds": []
+        },
+        {
+          "factId": "FACT-HIST-005",
+          "sourceId": "history-vesuvius-github-2024-002",
+          "status": "retrieved",
+          "candidateChunkIds": [
+            "../../../workbuddy-batch-b/generated/compilation-corpus/history-humanities/history-vesuvius-github-2024-002.md#L1-L12"
+          ]
+        },
+        {
+          "factId": "FACT-HIST-008",
+          "sourceId": "history-nature-scroll-2024-003",
+          "status": "lexical-no-match",
+          "candidateChunkIds": []
+        },
+        {
+          "factId": "FACT-HIST-009",
+          "sourceId": "history-nature-scroll-2024-003",
+          "status": "lexical-no-match",
+          "candidateChunkIds": []
+        }
+      ],
+      "allRequiredEvidenceRetrieved": false,
+      "retrievalTrace": {
+        "strategy": "folder-lexical",
+        "queryFeatureCount": 17,
+        "corpusChunkCount": 12,
+        "matchedChunkCount": 1,
+        "maxFolderChunks": 16,
+        "candidates": [
+          {
+            "id": "../../../workbuddy-batch-b/generated/compilation-corpus/history-humanities/history-vesuvius-github-2024-002.md#L1-L12",
+            "rank": 1,
+            "score": 2.8718021769015913,
+            "selected": true,
+            "dropReason": null
+          }
+        ]
+      }
+    },
+    {
+      "questionId": "B-X-HIST-006",
+      "group": "P-seed",
+      "pilotGroup": "P",
+      "graphExpansion": false,
+      "domain": [
+        "history-humanities"
+      ],
+      "question": "论文、GitHub 库和 Nature 报道分别能回答哪一层问题？",
+      "estimatedContextTokens": 988,
+      "contextHash": "87ad8789a8b4a36610a6de5734f99c5d419c1a1232de0a4d18827c57c93b224d",
+      "retrievedClaims": [
+        "claim:b98a3ae4860a6edc-704f0702fd830045",
+        "claim:5505a1ba1fcb1b68-35e4f1b989767484",
+        "claim:5505a1ba1fcb1b68-5b081e72929d1868",
+        "claim:5505a1ba1fcb1b68-825b50a16ede0106",
+        "claim:5505a1ba1fcb1b68-92eeebabc9812a65",
+        "claim:5505a1ba1fcb1b68-9acfc0780eb2b345",
+        "claim:5505a1ba1fcb1b68-a2289f49fcb0ff64",
+        "claim:5505a1ba1fcb1b68-a4e0bf4dcf441832",
+        "claim:5505a1ba1fcb1b68-c84e1d5fe016cb20",
+        "claim:5505a1ba1fcb1b68-d303dae0fc053d75"
+      ],
+      "retrievedRelations": [],
+      "retrievedSources": [
+        "source:history-nature-scroll-2024-003-b98a3ae4860a6edc",
+        "source:history-vesuvius-github-2024-002-5505a1ba1fcb1b68"
+      ],
+      "droppedContext": [],
+      "evidenceStages": [
+        {
+          "factId": "FACT-HIST-001",
+          "sourceId": "history-educelab-paper-2023-001",
+          "status": "seed-and-graph-miss",
+          "expectedClaimIds": [
+            "claim:e71279e71acc04bd-6d5b2c429c801f73",
+            "claim:e71279e71acc04bd-f06d3f1ce6a9a65a"
+          ]
+        },
+        {
+          "factId": "FACT-HIST-005",
+          "sourceId": "history-vesuvius-github-2024-002",
+          "status": "retrieved",
+          "expectedClaimIds": [
+            "claim:5505a1ba1fcb1b68-825b50a16ede0106"
+          ],
+          "selected": [
+            "claim:5505a1ba1fcb1b68-825b50a16ede0106"
+          ],
+          "exactAnchorTextPresent": false
+        },
+        {
+          "factId": "FACT-HIST-008",
+          "sourceId": "history-nature-scroll-2024-003",
+          "status": "retrieved",
+          "expectedClaimIds": [
+            "claim:b98a3ae4860a6edc-704f0702fd830045"
+          ],
+          "selected": [
+            "claim:b98a3ae4860a6edc-704f0702fd830045"
+          ],
+          "exactAnchorTextPresent": true
+        },
+        {
+          "factId": "FACT-HIST-009",
+          "sourceId": "history-nature-scroll-2024-003",
+          "status": "retrieved",
+          "expectedClaimIds": [
+            "claim:b98a3ae4860a6edc-704f0702fd830045",
+            "claim:b98a3ae4860a6edc-8283c241b4571c9c",
+            "claim:b98a3ae4860a6edc-eb659af5a9f64d88"
+          ],
+          "selected": [
+            "claim:b98a3ae4860a6edc-704f0702fd830045"
+          ],
+          "exactAnchorTextPresent": false
+        }
+      ],
+      "allRequiredEvidenceRetrieved": false,
+      "retrievalTrace": {
+        "strategy": "claim-seed-only",
+        "graphDepth": 0,
+        "temporalScope": {
+          "applied": false,
+          "startMonth": null,
+          "endMonth": null,
+          "excludedClaimIds": []
+        },
+        "retrieval": {
+          "queryFeatureCount": 33,
+          "eligibleClaimCount": 67,
+          "matchedClaimCount": 10,
+          "usedEvidenceText": true,
+          "usedSourceMetadata": true,
+          "resolvedEvidenceRefCount": 67,
+          "unresolvedEvidenceRefCount": 0,
+          "candidates": [
+            {
+              "claimId": "claim:b98a3ae4860a6edc-704f0702fd830045",
+              "rank": 1,
+              "score": 6.077878972699811,
+              "channels": [
+                "g3",
+                "source",
+                "w"
+              ],
+              "matchedFeatureCount": 6
+            },
+            {
+              "claimId": "claim:5505a1ba1fcb1b68-35e4f1b989767484",
+              "rank": 2,
+              "score": 5.646453642845573,
+              "channels": [
+                "g3",
+                "source",
+                "w"
+              ],
+              "matchedFeatureCount": 5
+            },
+            {
+              "claimId": "claim:5505a1ba1fcb1b68-5b081e72929d1868",
+              "rank": 3,
+              "score": 5.646453642845573,
+              "channels": [
+                "g3",
+                "source",
+                "w"
+              ],
+              "matchedFeatureCount": 5
+            },
+            {
+              "claimId": "claim:5505a1ba1fcb1b68-825b50a16ede0106",
+              "rank": 4,
+              "score": 5.646453642845573,
+              "channels": [
+                "g3",
+                "source",
+                "w"
+              ],
+              "matchedFeatureCount": 5
+            },
+            {
+              "claimId": "claim:5505a1ba1fcb1b68-92eeebabc9812a65",
+              "rank": 5,
+              "score": 5.646453642845573,
+              "channels": [
+                "g3",
+                "source",
+                "w"
+              ],
+              "matchedFeatureCount": 5
+            },
+            {
+              "claimId": "claim:5505a1ba1fcb1b68-9acfc0780eb2b345",
+              "rank": 6,
+              "score": 5.646453642845573,
+              "channels": [
+                "g3",
+                "source",
+                "w"
+              ],
+              "matchedFeatureCount": 5
+            },
+            {
+              "claimId": "claim:5505a1ba1fcb1b68-a2289f49fcb0ff64",
+              "rank": 7,
+              "score": 5.646453642845573,
+              "channels": [
+                "g3",
+                "source",
+                "w"
+              ],
+              "matchedFeatureCount": 5
+            },
+            {
+              "claimId": "claim:5505a1ba1fcb1b68-a4e0bf4dcf441832",
+              "rank": 8,
+              "score": 5.646453642845573,
+              "channels": [
+                "g3",
+                "source",
+                "w"
+              ],
+              "matchedFeatureCount": 5
+            },
+            {
+              "claimId": "claim:5505a1ba1fcb1b68-c84e1d5fe016cb20",
+              "rank": 9,
+              "score": 5.646453642845573,
+              "channels": [
+                "g3",
+                "source",
+                "w"
+              ],
+              "matchedFeatureCount": 5
+            },
+            {
+              "claimId": "claim:5505a1ba1fcb1b68-d303dae0fc053d75",
+              "rank": 10,
+              "score": 5.646453642845573,
+              "channels": [
+                "g3",
+                "source",
+                "w"
+              ],
+              "matchedFeatureCount": 5
+            }
+          ]
+        },
+        "graph": {
+          "seedClaimIds": [
+            "claim:b98a3ae4860a6edc-704f0702fd830045",
+            "claim:5505a1ba1fcb1b68-35e4f1b989767484",
+            "claim:5505a1ba1fcb1b68-5b081e72929d1868",
+            "claim:5505a1ba1fcb1b68-825b50a16ede0106",
+            "claim:5505a1ba1fcb1b68-92eeebabc9812a65",
+            "claim:5505a1ba1fcb1b68-9acfc0780eb2b345",
+            "claim:5505a1ba1fcb1b68-a2289f49fcb0ff64",
+            "claim:5505a1ba1fcb1b68-a4e0bf4dcf441832",
+            "claim:5505a1ba1fcb1b68-c84e1d5fe016cb20",
+            "claim:5505a1ba1fcb1b68-d303dae0fc053d75"
+          ],
+          "expandedClaimIds": [
+            "claim:b98a3ae4860a6edc-704f0702fd830045",
+            "claim:5505a1ba1fcb1b68-35e4f1b989767484",
+            "claim:5505a1ba1fcb1b68-5b081e72929d1868",
+            "claim:5505a1ba1fcb1b68-825b50a16ede0106",
+            "claim:5505a1ba1fcb1b68-92eeebabc9812a65",
+            "claim:5505a1ba1fcb1b68-9acfc0780eb2b345",
+            "claim:5505a1ba1fcb1b68-a2289f49fcb0ff64",
+            "claim:5505a1ba1fcb1b68-a4e0bf4dcf441832",
+            "claim:5505a1ba1fcb1b68-c84e1d5fe016cb20",
+            "claim:5505a1ba1fcb1b68-d303dae0fc053d75"
+          ],
+          "expandedRelationIds": []
+        },
+        "budget": {
+          "selectedClaimIds": [
+            "claim:b98a3ae4860a6edc-704f0702fd830045",
+            "claim:5505a1ba1fcb1b68-35e4f1b989767484",
+            "claim:5505a1ba1fcb1b68-5b081e72929d1868",
+            "claim:5505a1ba1fcb1b68-825b50a16ede0106",
+            "claim:5505a1ba1fcb1b68-92eeebabc9812a65",
+            "claim:5505a1ba1fcb1b68-9acfc0780eb2b345",
+            "claim:5505a1ba1fcb1b68-a2289f49fcb0ff64",
+            "claim:5505a1ba1fcb1b68-a4e0bf4dcf441832",
+            "claim:5505a1ba1fcb1b68-c84e1d5fe016cb20",
+            "claim:5505a1ba1fcb1b68-d303dae0fc053d75"
+          ],
+          "selectedRelationIds": [],
+          "selectedEvidenceSpanIds": [
+            "span:history-nature-scroll-2024-003-b98a3ae4860a6edc-2#chars-299-429",
+            "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-5#chars-571-674",
+            "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-3#chars-237-321",
+            "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-2#chars-135-235",
+            "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-4#chars-446-517",
+            "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-5#chars-519-570",
+            "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-1#chars-48-106",
+            "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-4#chars-323-445",
+            "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-0#chars-0-46",
+            "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-1#chars-107-127"
+          ],
+          "selectedWikiModuleIds": [],
+          "dropped": [],
+          "finalEstimatedTokens": 3334
+        },
+        "serializationBudget": {
+          "selectedIds": [
+            "task-map",
+            "claim:b98a3ae4860a6edc-704f0702fd830045",
+            "claim:5505a1ba1fcb1b68-35e4f1b989767484",
+            "claim:5505a1ba1fcb1b68-5b081e72929d1868",
+            "claim:5505a1ba1fcb1b68-825b50a16ede0106",
+            "claim:5505a1ba1fcb1b68-92eeebabc9812a65",
+            "claim:5505a1ba1fcb1b68-9acfc0780eb2b345",
+            "claim:5505a1ba1fcb1b68-a2289f49fcb0ff64",
+            "claim:5505a1ba1fcb1b68-a4e0bf4dcf441832",
+            "claim:5505a1ba1fcb1b68-c84e1d5fe016cb20",
+            "claim:5505a1ba1fcb1b68-d303dae0fc053d75",
+            "span:history-nature-scroll-2024-003-b98a3ae4860a6edc-2#chars-299-429",
+            "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-5#chars-571-674",
+            "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-3#chars-237-321",
+            "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-2#chars-135-235",
+            "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-4#chars-446-517",
+            "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-5#chars-519-570",
+            "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-1#chars-48-106",
+            "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-4#chars-323-445",
+            "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-0#chars-0-46",
+            "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-1#chars-107-127",
+            "known-gaps"
+          ],
+          "droppedIds": []
+        }
+      }
+    },
+    {
+      "questionId": "B-X-HIST-006",
+      "group": "P-graph",
+      "pilotGroup": "P",
+      "graphExpansion": true,
+      "domain": [
+        "history-humanities"
+      ],
+      "question": "论文、GitHub 库和 Nature 报道分别能回答哪一层问题？",
+      "estimatedContextTokens": 2049,
+      "contextHash": "75a3916e388489ae4c4ac5e878d452340004c117e85eff95f8bac032d9b99e49",
+      "retrievedClaims": [
+        "claim:b98a3ae4860a6edc-704f0702fd830045",
+        "claim:5505a1ba1fcb1b68-35e4f1b989767484",
+        "claim:5505a1ba1fcb1b68-5b081e72929d1868",
+        "claim:5505a1ba1fcb1b68-825b50a16ede0106",
+        "claim:5505a1ba1fcb1b68-92eeebabc9812a65",
+        "claim:5505a1ba1fcb1b68-9acfc0780eb2b345",
+        "claim:5505a1ba1fcb1b68-a2289f49fcb0ff64",
+        "claim:5505a1ba1fcb1b68-a4e0bf4dcf441832",
+        "claim:5505a1ba1fcb1b68-c84e1d5fe016cb20",
+        "claim:5505a1ba1fcb1b68-d303dae0fc053d75",
+        "claim:b98a3ae4860a6edc-3c7148205b4853be",
+        "claim:4ab2f152a60c6bbe-39dbff7d3d0408e6",
+        "claim:4ab2f152a60c6bbe-901bc3b35d2cc86e",
+        "claim:4ab2f152a60c6bbe-a6fd9e7a1c644eed",
+        "claim:b98a3ae4860a6edc-95aab89f959ee2e9",
+        "claim:e71279e71acc04bd-dc4b7534a61f85ee",
+        "claim:4ab2f152a60c6bbe-e301af57ef26e82d",
+        "claim:b98a3ae4860a6edc-fd2b496dae5aceca"
+      ],
+      "retrievedRelations": [
+        "rel:b98a3ae4860a6edc-b39a43fc9bb7bc6e",
+        "rel:cross-670f5b5bb894432c",
+        "rel:5505a1ba1fcb1b68-dab0c28a55c1972e",
+        "rel:5505a1ba1fcb1b68-0cbed135f488b346",
+        "rel:cross-1a5e232cdc42ca30",
+        "rel:4ab2f152a60c6bbe-123dafd4b72f8b9e",
+        "rel:cross-3c6b8385c21665ec",
+        "rel:cross-e02014d48b936e87",
+        "rel:4ab2f152a60c6bbe-d276c0e77fb62409",
+        "rel:b98a3ae4860a6edc-fe01487361015f30"
+      ],
+      "retrievedSources": [
+        "source:history-nature-scroll-2024-003-b98a3ae4860a6edc",
+        "source:history-vesuvius-github-2024-002-5505a1ba1fcb1b68",
+        "source:history-scrollprize-2026-004-4ab2f152a60c6bbe",
+        "source:history-educelab-paper-2023-001-e71279e71acc04bd"
+      ],
+      "droppedContext": [],
+      "evidenceStages": [
+        {
+          "factId": "FACT-HIST-001",
+          "sourceId": "history-educelab-paper-2023-001",
+          "status": "seed-and-graph-miss",
+          "expectedClaimIds": [
+            "claim:e71279e71acc04bd-6d5b2c429c801f73",
+            "claim:e71279e71acc04bd-f06d3f1ce6a9a65a"
+          ]
+        },
+        {
+          "factId": "FACT-HIST-005",
+          "sourceId": "history-vesuvius-github-2024-002",
+          "status": "retrieved",
+          "expectedClaimIds": [
+            "claim:5505a1ba1fcb1b68-825b50a16ede0106"
+          ],
+          "selected": [
+            "claim:5505a1ba1fcb1b68-825b50a16ede0106"
+          ],
+          "exactAnchorTextPresent": false
+        },
+        {
+          "factId": "FACT-HIST-008",
+          "sourceId": "history-nature-scroll-2024-003",
+          "status": "retrieved",
+          "expectedClaimIds": [
+            "claim:b98a3ae4860a6edc-704f0702fd830045"
+          ],
+          "selected": [
+            "claim:b98a3ae4860a6edc-704f0702fd830045"
+          ],
+          "exactAnchorTextPresent": true
+        },
+        {
+          "factId": "FACT-HIST-009",
+          "sourceId": "history-nature-scroll-2024-003",
+          "status": "retrieved",
+          "expectedClaimIds": [
+            "claim:b98a3ae4860a6edc-704f0702fd830045",
+            "claim:b98a3ae4860a6edc-8283c241b4571c9c",
+            "claim:b98a3ae4860a6edc-eb659af5a9f64d88"
+          ],
+          "selected": [
+            "claim:b98a3ae4860a6edc-704f0702fd830045"
+          ],
+          "exactAnchorTextPresent": false
+        }
+      ],
+      "allRequiredEvidenceRetrieved": false,
+      "retrievalTrace": {
+        "strategy": "claim-seed-graph",
+        "graphDepth": 3,
+        "temporalScope": {
+          "applied": false,
+          "startMonth": null,
+          "endMonth": null,
+          "excludedClaimIds": []
+        },
+        "retrieval": {
+          "queryFeatureCount": 33,
+          "eligibleClaimCount": 67,
+          "matchedClaimCount": 10,
+          "usedEvidenceText": true,
+          "usedSourceMetadata": true,
+          "resolvedEvidenceRefCount": 67,
+          "unresolvedEvidenceRefCount": 0,
+          "candidates": [
+            {
+              "claimId": "claim:b98a3ae4860a6edc-704f0702fd830045",
+              "rank": 1,
+              "score": 6.077878972699811,
+              "channels": [
+                "g3",
+                "source",
+                "w"
+              ],
+              "matchedFeatureCount": 6
+            },
+            {
+              "claimId": "claim:5505a1ba1fcb1b68-35e4f1b989767484",
+              "rank": 2,
+              "score": 5.646453642845573,
+              "channels": [
+                "g3",
+                "source",
+                "w"
+              ],
+              "matchedFeatureCount": 5
+            },
+            {
+              "claimId": "claim:5505a1ba1fcb1b68-5b081e72929d1868",
+              "rank": 3,
+              "score": 5.646453642845573,
+              "channels": [
+                "g3",
+                "source",
+                "w"
+              ],
+              "matchedFeatureCount": 5
+            },
+            {
+              "claimId": "claim:5505a1ba1fcb1b68-825b50a16ede0106",
+              "rank": 4,
+              "score": 5.646453642845573,
+              "channels": [
+                "g3",
+                "source",
+                "w"
+              ],
+              "matchedFeatureCount": 5
+            },
+            {
+              "claimId": "claim:5505a1ba1fcb1b68-92eeebabc9812a65",
+              "rank": 5,
+              "score": 5.646453642845573,
+              "channels": [
+                "g3",
+                "source",
+                "w"
+              ],
+              "matchedFeatureCount": 5
+            },
+            {
+              "claimId": "claim:5505a1ba1fcb1b68-9acfc0780eb2b345",
+              "rank": 6,
+              "score": 5.646453642845573,
+              "channels": [
+                "g3",
+                "source",
+                "w"
+              ],
+              "matchedFeatureCount": 5
+            },
+            {
+              "claimId": "claim:5505a1ba1fcb1b68-a2289f49fcb0ff64",
+              "rank": 7,
+              "score": 5.646453642845573,
+              "channels": [
+                "g3",
+                "source",
+                "w"
+              ],
+              "matchedFeatureCount": 5
+            },
+            {
+              "claimId": "claim:5505a1ba1fcb1b68-a4e0bf4dcf441832",
+              "rank": 8,
+              "score": 5.646453642845573,
+              "channels": [
+                "g3",
+                "source",
+                "w"
+              ],
+              "matchedFeatureCount": 5
+            },
+            {
+              "claimId": "claim:5505a1ba1fcb1b68-c84e1d5fe016cb20",
+              "rank": 9,
+              "score": 5.646453642845573,
+              "channels": [
+                "g3",
+                "source",
+                "w"
+              ],
+              "matchedFeatureCount": 5
+            },
+            {
+              "claimId": "claim:5505a1ba1fcb1b68-d303dae0fc053d75",
+              "rank": 10,
+              "score": 5.646453642845573,
+              "channels": [
+                "g3",
+                "source",
+                "w"
+              ],
+              "matchedFeatureCount": 5
+            }
+          ]
+        },
+        "graph": {
+          "seedClaimIds": [
+            "claim:b98a3ae4860a6edc-704f0702fd830045",
+            "claim:5505a1ba1fcb1b68-35e4f1b989767484",
+            "claim:5505a1ba1fcb1b68-5b081e72929d1868",
+            "claim:5505a1ba1fcb1b68-825b50a16ede0106",
+            "claim:5505a1ba1fcb1b68-92eeebabc9812a65",
+            "claim:5505a1ba1fcb1b68-9acfc0780eb2b345",
+            "claim:5505a1ba1fcb1b68-a2289f49fcb0ff64",
+            "claim:5505a1ba1fcb1b68-a4e0bf4dcf441832",
+            "claim:5505a1ba1fcb1b68-c84e1d5fe016cb20",
+            "claim:5505a1ba1fcb1b68-d303dae0fc053d75"
+          ],
+          "expandedClaimIds": [
+            "claim:b98a3ae4860a6edc-704f0702fd830045",
+            "claim:5505a1ba1fcb1b68-35e4f1b989767484",
+            "claim:5505a1ba1fcb1b68-5b081e72929d1868",
+            "claim:5505a1ba1fcb1b68-825b50a16ede0106",
+            "claim:5505a1ba1fcb1b68-92eeebabc9812a65",
+            "claim:5505a1ba1fcb1b68-9acfc0780eb2b345",
+            "claim:5505a1ba1fcb1b68-a2289f49fcb0ff64",
+            "claim:5505a1ba1fcb1b68-a4e0bf4dcf441832",
+            "claim:5505a1ba1fcb1b68-c84e1d5fe016cb20",
+            "claim:5505a1ba1fcb1b68-d303dae0fc053d75",
+            "claim:b98a3ae4860a6edc-3c7148205b4853be",
+            "claim:4ab2f152a60c6bbe-39dbff7d3d0408e6",
+            "claim:4ab2f152a60c6bbe-901bc3b35d2cc86e",
+            "claim:4ab2f152a60c6bbe-a6fd9e7a1c644eed",
+            "claim:b98a3ae4860a6edc-95aab89f959ee2e9",
+            "claim:e71279e71acc04bd-dc4b7534a61f85ee",
+            "claim:4ab2f152a60c6bbe-e301af57ef26e82d",
+            "claim:b98a3ae4860a6edc-fd2b496dae5aceca"
+          ],
+          "expandedRelationIds": [
+            "rel:b98a3ae4860a6edc-b39a43fc9bb7bc6e",
+            "rel:cross-670f5b5bb894432c",
+            "rel:5505a1ba1fcb1b68-dab0c28a55c1972e",
+            "rel:5505a1ba1fcb1b68-0cbed135f488b346",
+            "rel:cross-1a5e232cdc42ca30",
+            "rel:4ab2f152a60c6bbe-123dafd4b72f8b9e",
+            "rel:cross-3c6b8385c21665ec",
+            "rel:cross-e02014d48b936e87",
+            "rel:4ab2f152a60c6bbe-d276c0e77fb62409",
+            "rel:b98a3ae4860a6edc-fe01487361015f30"
+          ]
+        },
+        "budget": {
+          "selectedClaimIds": [
+            "claim:b98a3ae4860a6edc-704f0702fd830045",
+            "claim:5505a1ba1fcb1b68-35e4f1b989767484",
+            "claim:5505a1ba1fcb1b68-5b081e72929d1868",
+            "claim:5505a1ba1fcb1b68-825b50a16ede0106",
+            "claim:5505a1ba1fcb1b68-92eeebabc9812a65",
+            "claim:5505a1ba1fcb1b68-9acfc0780eb2b345",
+            "claim:5505a1ba1fcb1b68-a2289f49fcb0ff64",
+            "claim:5505a1ba1fcb1b68-a4e0bf4dcf441832",
+            "claim:5505a1ba1fcb1b68-c84e1d5fe016cb20",
+            "claim:5505a1ba1fcb1b68-d303dae0fc053d75",
+            "claim:b98a3ae4860a6edc-3c7148205b4853be",
+            "claim:4ab2f152a60c6bbe-39dbff7d3d0408e6",
+            "claim:4ab2f152a60c6bbe-901bc3b35d2cc86e",
+            "claim:4ab2f152a60c6bbe-a6fd9e7a1c644eed",
+            "claim:b98a3ae4860a6edc-95aab89f959ee2e9",
+            "claim:e71279e71acc04bd-dc4b7534a61f85ee",
+            "claim:4ab2f152a60c6bbe-e301af57ef26e82d",
+            "claim:b98a3ae4860a6edc-fd2b496dae5aceca"
+          ],
+          "selectedRelationIds": [
+            "rel:b98a3ae4860a6edc-b39a43fc9bb7bc6e",
+            "rel:cross-670f5b5bb894432c",
+            "rel:5505a1ba1fcb1b68-dab0c28a55c1972e",
+            "rel:5505a1ba1fcb1b68-0cbed135f488b346",
+            "rel:cross-1a5e232cdc42ca30",
+            "rel:4ab2f152a60c6bbe-123dafd4b72f8b9e",
+            "rel:cross-3c6b8385c21665ec",
+            "rel:cross-e02014d48b936e87",
+            "rel:4ab2f152a60c6bbe-d276c0e77fb62409",
+            "rel:b98a3ae4860a6edc-fe01487361015f30"
+          ],
+          "selectedEvidenceSpanIds": [
+            "span:history-nature-scroll-2024-003-b98a3ae4860a6edc-2#chars-299-429",
+            "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-5#chars-571-674",
+            "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-3#chars-237-321",
+            "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-2#chars-135-235",
+            "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-4#chars-446-517",
+            "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-5#chars-519-570",
+            "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-1#chars-48-106",
+            "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-4#chars-323-445",
+            "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-0#chars-0-46",
+            "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-1#chars-107-127",
+            "span:history-nature-scroll-2024-003-b98a3ae4860a6edc-1#chars-240-296",
+            "span:history-scrollprize-2026-004-4ab2f152a60c6bbe-1#chars-81-187",
+            "span:history-scrollprize-2026-004-4ab2f152a60c6bbe-2#chars-258-361",
+            "span:history-scrollprize-2026-004-4ab2f152a60c6bbe-1#chars-189-226",
+            "span:history-nature-scroll-2024-003-b98a3ae4860a6edc-1#chars-59-173",
+            "span:history-educelab-paper-2023-001-e71279e71acc04bd-2#chars-542-678",
+            "span:history-scrollprize-2026-004-4ab2f152a60c6bbe-1#chars-39-80",
+            "span:history-nature-scroll-2024-003-b98a3ae4860a6edc-1#chars-174-239"
+          ],
+          "selectedWikiModuleIds": [],
+          "dropped": [],
+          "finalEstimatedTokens": 7236
+        },
+        "serializationBudget": {
+          "selectedIds": [
+            "task-map",
+            "claim:b98a3ae4860a6edc-704f0702fd830045",
+            "claim:5505a1ba1fcb1b68-35e4f1b989767484",
+            "claim:5505a1ba1fcb1b68-5b081e72929d1868",
+            "claim:5505a1ba1fcb1b68-825b50a16ede0106",
+            "claim:5505a1ba1fcb1b68-92eeebabc9812a65",
+            "claim:5505a1ba1fcb1b68-9acfc0780eb2b345",
+            "claim:5505a1ba1fcb1b68-a2289f49fcb0ff64",
+            "claim:5505a1ba1fcb1b68-a4e0bf4dcf441832",
+            "claim:5505a1ba1fcb1b68-c84e1d5fe016cb20",
+            "claim:5505a1ba1fcb1b68-d303dae0fc053d75",
+            "claim:b98a3ae4860a6edc-3c7148205b4853be",
+            "claim:4ab2f152a60c6bbe-39dbff7d3d0408e6",
+            "claim:4ab2f152a60c6bbe-901bc3b35d2cc86e",
+            "claim:4ab2f152a60c6bbe-a6fd9e7a1c644eed",
+            "claim:b98a3ae4860a6edc-95aab89f959ee2e9",
+            "claim:e71279e71acc04bd-dc4b7534a61f85ee",
+            "claim:4ab2f152a60c6bbe-e301af57ef26e82d",
+            "claim:b98a3ae4860a6edc-fd2b496dae5aceca",
+            "rel:b98a3ae4860a6edc-b39a43fc9bb7bc6e",
+            "rel:cross-670f5b5bb894432c",
+            "rel:5505a1ba1fcb1b68-dab0c28a55c1972e",
+            "rel:5505a1ba1fcb1b68-0cbed135f488b346",
+            "rel:cross-1a5e232cdc42ca30",
+            "rel:4ab2f152a60c6bbe-123dafd4b72f8b9e",
+            "rel:cross-3c6b8385c21665ec",
+            "rel:cross-e02014d48b936e87",
+            "rel:4ab2f152a60c6bbe-d276c0e77fb62409",
+            "rel:b98a3ae4860a6edc-fe01487361015f30",
+            "span:history-nature-scroll-2024-003-b98a3ae4860a6edc-2#chars-299-429",
+            "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-5#chars-571-674",
+            "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-3#chars-237-321",
+            "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-2#chars-135-235",
+            "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-4#chars-446-517",
+            "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-5#chars-519-570",
+            "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-1#chars-48-106",
+            "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-4#chars-323-445",
+            "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-0#chars-0-46",
+            "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-1#chars-107-127",
+            "span:history-nature-scroll-2024-003-b98a3ae4860a6edc-1#chars-240-296",
+            "span:history-scrollprize-2026-004-4ab2f152a60c6bbe-1#chars-81-187",
+            "span:history-scrollprize-2026-004-4ab2f152a60c6bbe-2#chars-258-361",
+            "span:history-scrollprize-2026-004-4ab2f152a60c6bbe-1#chars-189-226",
+            "span:history-nature-scroll-2024-003-b98a3ae4860a6edc-1#chars-59-173",
+            "span:history-educelab-paper-2023-001-e71279e71acc04bd-2#chars-542-678",
+            "span:history-scrollprize-2026-004-4ab2f152a60c6bbe-1#chars-39-80",
+            "span:history-nature-scroll-2024-003-b98a3ae4860a6edc-1#chars-174-239"
+          ],
+          "droppedIds": []
+        }
+      }
+    },
+    {
+      "questionId": "B-C-DESIGN-002",
+      "group": "B",
+      "pilotGroup": "B",
+      "graphExpansion": false,
+      "domain": [
+        "design-accessibility"
+      ],
+      "question": "在什么条件下采用 WCAG 2.2 后仍可能需要报告 4.1.1？",
+      "estimatedContextTokens": 669,
+      "contextHash": "18182d20693b5e22a8e3b7dad0729e9df8ce599da2aa273c3ab82db42e66943e",
+      "retrievedClaims": [],
+      "retrievedRelations": [],
+      "retrievedSources": [
+        "../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-wcag-issue-2705-003.md",
+        "../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-wcag21-2018-001.md",
+        "../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-wcag22-2023-002.md",
+        "../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-webaim-checklist-2024-004.md"
+      ],
+      "droppedContext": [],
+      "evidenceStages": [
+        {
+          "factId": "FACT-DESIGN-005",
+          "sourceId": "design-wcag22-2023-002",
+          "status": "retrieved",
+          "candidateChunkIds": [
+            "../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-wcag22-2023-002.md#L1-L16"
+          ]
+        }
+      ],
+      "allRequiredEvidenceRetrieved": true,
+      "retrievalTrace": {
+        "strategy": "folder-lexical",
+        "queryFeatureCount": 16,
+        "corpusChunkCount": 12,
+        "matchedChunkCount": 4,
+        "maxFolderChunks": 16,
+        "candidates": [
+          {
+            "id": "../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-wcag-issue-2705-003.md#L1-L8",
+            "rank": 1,
+            "score": 1.9555114450274365,
+            "selected": true,
+            "dropReason": null
+          },
+          {
+            "id": "../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-wcag21-2018-001.md#L1-L6",
+            "rank": 2,
+            "score": 1.9555114450274365,
+            "selected": true,
+            "dropReason": null
+          },
+          {
+            "id": "../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-wcag22-2023-002.md#L1-L16",
+            "rank": 3,
+            "score": 1.9555114450274365,
+            "selected": true,
+            "dropReason": null
+          },
+          {
+            "id": "../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-webaim-checklist-2024-004.md#L1-L4",
+            "rank": 4,
+            "score": 1.9555114450274365,
+            "selected": true,
+            "dropReason": null
+          }
+        ]
+      }
+    },
+    {
+      "questionId": "B-C-DESIGN-002",
+      "group": "P-seed",
+      "pilotGroup": "P",
+      "graphExpansion": false,
+      "domain": [
+        "design-accessibility"
+      ],
+      "question": "在什么条件下采用 WCAG 2.2 后仍可能需要报告 4.1.1？",
+      "estimatedContextTokens": 1035,
+      "contextHash": "2355ca85ca4f4f9b11ae59972a85c936bcfc1c70e79277aec45d5d33dd1aad7e",
+      "retrievedClaims": [
+        "claim:1da3417e06ff5435-0131b383bb68d5d6",
+        "claim:1da3417e06ff5435-4043dbf2773f336c",
+        "claim:1da3417e06ff5435-4f47a3d28c2c5675",
+        "claim:1da3417e06ff5435-50f420b0776ab205",
+        "claim:1da3417e06ff5435-e42233e831e0f66d",
+        "claim:1da3417e06ff5435-e9295b4993a17258",
+        "claim:1da3417e06ff5435-fda7e8c14ff6f23b",
+        "claim:a379c869d6fd01c5-5e7756a095157543",
+        "claim:a379c869d6fd01c5-dd9dfa26cc601b87",
+        "claim:b89787b6b83f3605-2b879b185f80c3ed"
+      ],
+      "retrievedRelations": [],
+      "retrievedSources": [
+        "source:design-wcag22-2023-002-1da3417e06ff5435",
+        "source:design-wcag21-2018-001-a379c869d6fd01c5",
+        "source:design-webaim-checklist-2024-004-b89787b6b83f3605"
+      ],
+      "droppedContext": [],
+      "evidenceStages": [
+        {
+          "factId": "FACT-DESIGN-005",
+          "sourceId": "design-wcag22-2023-002",
+          "status": "retrieved",
+          "expectedClaimIds": [
+            "claim:1da3417e06ff5435-e42233e831e0f66d",
+            "claim:1da3417e06ff5435-e9295b4993a17258"
+          ],
+          "selected": [
+            "claim:1da3417e06ff5435-e42233e831e0f66d",
+            "claim:1da3417e06ff5435-e9295b4993a17258"
+          ],
+          "exactAnchorTextPresent": false
+        }
+      ],
+      "allRequiredEvidenceRetrieved": true,
+      "retrievalTrace": {
+        "strategy": "claim-seed-only",
+        "graphDepth": 0,
+        "temporalScope": {
+          "applied": false,
+          "startMonth": null,
+          "endMonth": null,
+          "excludedClaimIds": []
+        },
+        "retrieval": {
+          "queryFeatureCount": 27,
+          "eligibleClaimCount": 67,
+          "matchedClaimCount": 10,
+          "usedEvidenceText": true,
+          "usedSourceMetadata": true,
+          "resolvedEvidenceRefCount": 67,
+          "unresolvedEvidenceRefCount": 0,
+          "candidates": [
+            {
+              "claimId": "claim:1da3417e06ff5435-0131b383bb68d5d6",
+              "rank": 1,
+              "score": 2.6281722409316086,
+              "channels": [
+                "w"
+              ],
+              "matchedFeatureCount": 1
+            },
+            {
+              "claimId": "claim:1da3417e06ff5435-4043dbf2773f336c",
+              "rank": 2,
+              "score": 2.6281722409316086,
+              "channels": [
+                "w"
+              ],
+              "matchedFeatureCount": 1
+            },
+            {
+              "claimId": "claim:1da3417e06ff5435-4f47a3d28c2c5675",
+              "rank": 3,
+              "score": 2.6281722409316086,
+              "channels": [
+                "w"
+              ],
+              "matchedFeatureCount": 1
+            },
+            {
+              "claimId": "claim:1da3417e06ff5435-50f420b0776ab205",
+              "rank": 4,
+              "score": 2.6281722409316086,
+              "channels": [
+                "w"
+              ],
+              "matchedFeatureCount": 1
+            },
+            {
+              "claimId": "claim:1da3417e06ff5435-e42233e831e0f66d",
+              "rank": 5,
+              "score": 2.6281722409316086,
+              "channels": [
+                "w"
+              ],
+              "matchedFeatureCount": 1
+            },
+            {
+              "claimId": "claim:1da3417e06ff5435-e9295b4993a17258",
+              "rank": 6,
+              "score": 2.6281722409316086,
+              "channels": [
+                "w"
+              ],
+              "matchedFeatureCount": 1
+            },
+            {
+              "claimId": "claim:1da3417e06ff5435-fda7e8c14ff6f23b",
+              "rank": 7,
+              "score": 2.6281722409316086,
+              "channels": [
+                "w"
+              ],
+              "matchedFeatureCount": 1
+            },
+            {
+              "claimId": "claim:a379c869d6fd01c5-5e7756a095157543",
+              "rank": 8,
+              "score": 2.6281722409316086,
+              "channels": [
+                "w"
+              ],
+              "matchedFeatureCount": 1
+            },
+            {
+              "claimId": "claim:a379c869d6fd01c5-dd9dfa26cc601b87",
+              "rank": 9,
+              "score": 2.6281722409316086,
+              "channels": [
+                "w"
+              ],
+              "matchedFeatureCount": 1
+            },
+            {
+              "claimId": "claim:b89787b6b83f3605-2b879b185f80c3ed",
+              "rank": 10,
+              "score": 2.6281722409316086,
+              "channels": [
+                "w"
+              ],
+              "matchedFeatureCount": 1
+            }
+          ]
+        },
+        "graph": {
+          "seedClaimIds": [
+            "claim:1da3417e06ff5435-0131b383bb68d5d6",
+            "claim:1da3417e06ff5435-4043dbf2773f336c",
+            "claim:1da3417e06ff5435-4f47a3d28c2c5675",
+            "claim:1da3417e06ff5435-50f420b0776ab205",
+            "claim:1da3417e06ff5435-e42233e831e0f66d",
+            "claim:1da3417e06ff5435-e9295b4993a17258",
+            "claim:1da3417e06ff5435-fda7e8c14ff6f23b",
+            "claim:a379c869d6fd01c5-5e7756a095157543",
+            "claim:a379c869d6fd01c5-dd9dfa26cc601b87",
+            "claim:b89787b6b83f3605-2b879b185f80c3ed"
+          ],
+          "expandedClaimIds": [
+            "claim:1da3417e06ff5435-0131b383bb68d5d6",
+            "claim:1da3417e06ff5435-4043dbf2773f336c",
+            "claim:1da3417e06ff5435-4f47a3d28c2c5675",
+            "claim:1da3417e06ff5435-50f420b0776ab205",
+            "claim:1da3417e06ff5435-e42233e831e0f66d",
+            "claim:1da3417e06ff5435-e9295b4993a17258",
+            "claim:1da3417e06ff5435-fda7e8c14ff6f23b",
+            "claim:a379c869d6fd01c5-5e7756a095157543",
+            "claim:a379c869d6fd01c5-dd9dfa26cc601b87",
+            "claim:b89787b6b83f3605-2b879b185f80c3ed"
+          ],
+          "expandedRelationIds": []
+        },
+        "budget": {
+          "selectedClaimIds": [
+            "claim:1da3417e06ff5435-0131b383bb68d5d6",
+            "claim:1da3417e06ff5435-4043dbf2773f336c",
+            "claim:1da3417e06ff5435-4f47a3d28c2c5675",
+            "claim:1da3417e06ff5435-50f420b0776ab205",
+            "claim:1da3417e06ff5435-e42233e831e0f66d",
+            "claim:1da3417e06ff5435-e9295b4993a17258",
+            "claim:1da3417e06ff5435-fda7e8c14ff6f23b",
+            "claim:a379c869d6fd01c5-5e7756a095157543",
+            "claim:a379c869d6fd01c5-dd9dfa26cc601b87",
+            "claim:b89787b6b83f3605-2b879b185f80c3ed"
+          ],
+          "selectedRelationIds": [],
+          "selectedEvidenceSpanIds": [
+            "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-51-111",
+            "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-218-272",
+            "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-121-216",
+            "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-274-331",
+            "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-333-443",
+            "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-449-494",
+            "span:design-wcag22-2023-002-1da3417e06ff5435-3#chars-550-892",
+            "span:design-wcag21-2018-001-a379c869d6fd01c5-1#chars-121-180",
+            "span:design-wcag21-2018-001-a379c869d6fd01c5-1#chars-51-111",
+            "span:design-webaim-checklist-2024-004-b89787b6b83f3605-1#chars-107-145"
+          ],
+          "selectedWikiModuleIds": [],
+          "dropped": [],
+          "finalEstimatedTokens": 3252
+        },
+        "serializationBudget": {
+          "selectedIds": [
+            "task-map",
+            "claim:1da3417e06ff5435-0131b383bb68d5d6",
+            "claim:1da3417e06ff5435-4043dbf2773f336c",
+            "claim:1da3417e06ff5435-4f47a3d28c2c5675",
+            "claim:1da3417e06ff5435-50f420b0776ab205",
+            "claim:1da3417e06ff5435-e42233e831e0f66d",
+            "claim:1da3417e06ff5435-e9295b4993a17258",
+            "claim:1da3417e06ff5435-fda7e8c14ff6f23b",
+            "claim:a379c869d6fd01c5-5e7756a095157543",
+            "claim:a379c869d6fd01c5-dd9dfa26cc601b87",
+            "claim:b89787b6b83f3605-2b879b185f80c3ed",
+            "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-51-111",
+            "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-218-272",
+            "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-121-216",
+            "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-274-331",
+            "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-333-443",
+            "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-449-494",
+            "span:design-wcag22-2023-002-1da3417e06ff5435-3#chars-550-892",
+            "span:design-wcag21-2018-001-a379c869d6fd01c5-1#chars-121-180",
+            "span:design-wcag21-2018-001-a379c869d6fd01c5-1#chars-51-111",
+            "span:design-webaim-checklist-2024-004-b89787b6b83f3605-1#chars-107-145",
+            "known-gaps"
+          ],
+          "droppedIds": []
+        }
+      }
+    },
+    {
+      "questionId": "B-C-DESIGN-002",
+      "group": "P-graph",
+      "pilotGroup": "P",
+      "graphExpansion": true,
+      "domain": [
+        "design-accessibility"
+      ],
+      "question": "在什么条件下采用 WCAG 2.2 后仍可能需要报告 4.1.1？",
+      "estimatedContextTokens": 1413,
+      "contextHash": "fa59005eafecb51c15a2533effc0362b3e0dfcf061e9bdb78e61e8db7a3b0b6b",
+      "retrievedClaims": [
+        "claim:1da3417e06ff5435-0131b383bb68d5d6",
+        "claim:1da3417e06ff5435-4043dbf2773f336c",
+        "claim:1da3417e06ff5435-4f47a3d28c2c5675",
+        "claim:1da3417e06ff5435-50f420b0776ab205",
+        "claim:1da3417e06ff5435-e42233e831e0f66d",
+        "claim:1da3417e06ff5435-e9295b4993a17258",
+        "claim:1da3417e06ff5435-fda7e8c14ff6f23b",
+        "claim:a379c869d6fd01c5-5e7756a095157543",
+        "claim:a379c869d6fd01c5-dd9dfa26cc601b87",
+        "claim:b89787b6b83f3605-2b879b185f80c3ed",
+        "claim:b89787b6b83f3605-d524b881aa3a2622"
+      ],
+      "retrievedRelations": [
+        "rel:1da3417e06ff5435-25905476559465e3",
+        "rel:1da3417e06ff5435-8973e1ffa670e0f5",
+        "rel:1da3417e06ff5435-9e3e1511ac30b255",
+        "rel:1da3417e06ff5435-d46eb28b10eee035",
+        "rel:1da3417e06ff5435-f7779f6e157ba5c4",
+        "rel:cross-59e2e7d1788246d7",
+        "rel:a379c869d6fd01c5-57f3f5c8e59d5ae3",
+        "rel:b89787b6b83f3605-1f64fb64981e37c1"
+      ],
+      "retrievedSources": [
+        "source:design-wcag22-2023-002-1da3417e06ff5435",
+        "source:design-wcag21-2018-001-a379c869d6fd01c5",
+        "source:design-webaim-checklist-2024-004-b89787b6b83f3605"
+      ],
+      "droppedContext": [],
+      "evidenceStages": [
+        {
+          "factId": "FACT-DESIGN-005",
+          "sourceId": "design-wcag22-2023-002",
+          "status": "retrieved",
+          "expectedClaimIds": [
+            "claim:1da3417e06ff5435-e42233e831e0f66d",
+            "claim:1da3417e06ff5435-e9295b4993a17258"
+          ],
+          "selected": [
+            "claim:1da3417e06ff5435-e42233e831e0f66d",
+            "claim:1da3417e06ff5435-e9295b4993a17258"
+          ],
+          "exactAnchorTextPresent": false
+        }
+      ],
+      "allRequiredEvidenceRetrieved": true,
+      "retrievalTrace": {
+        "strategy": "claim-seed-graph",
+        "graphDepth": 3,
+        "temporalScope": {
+          "applied": false,
+          "startMonth": null,
+          "endMonth": null,
+          "excludedClaimIds": []
+        },
+        "retrieval": {
+          "queryFeatureCount": 27,
+          "eligibleClaimCount": 67,
+          "matchedClaimCount": 10,
+          "usedEvidenceText": true,
+          "usedSourceMetadata": true,
+          "resolvedEvidenceRefCount": 67,
+          "unresolvedEvidenceRefCount": 0,
+          "candidates": [
+            {
+              "claimId": "claim:1da3417e06ff5435-0131b383bb68d5d6",
+              "rank": 1,
+              "score": 2.6281722409316086,
+              "channels": [
+                "w"
+              ],
+              "matchedFeatureCount": 1
+            },
+            {
+              "claimId": "claim:1da3417e06ff5435-4043dbf2773f336c",
+              "rank": 2,
+              "score": 2.6281722409316086,
+              "channels": [
+                "w"
+              ],
+              "matchedFeatureCount": 1
+            },
+            {
+              "claimId": "claim:1da3417e06ff5435-4f47a3d28c2c5675",
+              "rank": 3,
+              "score": 2.6281722409316086,
+              "channels": [
+                "w"
+              ],
+              "matchedFeatureCount": 1
+            },
+            {
+              "claimId": "claim:1da3417e06ff5435-50f420b0776ab205",
+              "rank": 4,
+              "score": 2.6281722409316086,
+              "channels": [
+                "w"
+              ],
+              "matchedFeatureCount": 1
+            },
+            {
+              "claimId": "claim:1da3417e06ff5435-e42233e831e0f66d",
+              "rank": 5,
+              "score": 2.6281722409316086,
+              "channels": [
+                "w"
+              ],
+              "matchedFeatureCount": 1
+            },
+            {
+              "claimId": "claim:1da3417e06ff5435-e9295b4993a17258",
+              "rank": 6,
+              "score": 2.6281722409316086,
+              "channels": [
+                "w"
+              ],
+              "matchedFeatureCount": 1
+            },
+            {
+              "claimId": "claim:1da3417e06ff5435-fda7e8c14ff6f23b",
+              "rank": 7,
+              "score": 2.6281722409316086,
+              "channels": [
+                "w"
+              ],
+              "matchedFeatureCount": 1
+            },
+            {
+              "claimId": "claim:a379c869d6fd01c5-5e7756a095157543",
+              "rank": 8,
+              "score": 2.6281722409316086,
+              "channels": [
+                "w"
+              ],
+              "matchedFeatureCount": 1
+            },
+            {
+              "claimId": "claim:a379c869d6fd01c5-dd9dfa26cc601b87",
+              "rank": 9,
+              "score": 2.6281722409316086,
+              "channels": [
+                "w"
+              ],
+              "matchedFeatureCount": 1
+            },
+            {
+              "claimId": "claim:b89787b6b83f3605-2b879b185f80c3ed",
+              "rank": 10,
+              "score": 2.6281722409316086,
+              "channels": [
+                "w"
+              ],
+              "matchedFeatureCount": 1
+            }
+          ]
+        },
+        "graph": {
+          "seedClaimIds": [
+            "claim:1da3417e06ff5435-0131b383bb68d5d6",
+            "claim:1da3417e06ff5435-4043dbf2773f336c",
+            "claim:1da3417e06ff5435-4f47a3d28c2c5675",
+            "claim:1da3417e06ff5435-50f420b0776ab205",
+            "claim:1da3417e06ff5435-e42233e831e0f66d",
+            "claim:1da3417e06ff5435-e9295b4993a17258",
+            "claim:1da3417e06ff5435-fda7e8c14ff6f23b",
+            "claim:a379c869d6fd01c5-5e7756a095157543",
+            "claim:a379c869d6fd01c5-dd9dfa26cc601b87",
+            "claim:b89787b6b83f3605-2b879b185f80c3ed"
+          ],
+          "expandedClaimIds": [
+            "claim:1da3417e06ff5435-0131b383bb68d5d6",
+            "claim:1da3417e06ff5435-4043dbf2773f336c",
+            "claim:1da3417e06ff5435-4f47a3d28c2c5675",
+            "claim:1da3417e06ff5435-50f420b0776ab205",
+            "claim:1da3417e06ff5435-e42233e831e0f66d",
+            "claim:1da3417e06ff5435-e9295b4993a17258",
+            "claim:1da3417e06ff5435-fda7e8c14ff6f23b",
+            "claim:a379c869d6fd01c5-5e7756a095157543",
+            "claim:a379c869d6fd01c5-dd9dfa26cc601b87",
+            "claim:b89787b6b83f3605-2b879b185f80c3ed",
+            "claim:b89787b6b83f3605-d524b881aa3a2622"
+          ],
+          "expandedRelationIds": [
+            "rel:1da3417e06ff5435-25905476559465e3",
+            "rel:1da3417e06ff5435-8973e1ffa670e0f5",
+            "rel:1da3417e06ff5435-9e3e1511ac30b255",
+            "rel:1da3417e06ff5435-d46eb28b10eee035",
+            "rel:1da3417e06ff5435-f7779f6e157ba5c4",
+            "rel:cross-59e2e7d1788246d7",
+            "rel:a379c869d6fd01c5-57f3f5c8e59d5ae3",
+            "rel:b89787b6b83f3605-1f64fb64981e37c1"
+          ]
+        },
+        "budget": {
+          "selectedClaimIds": [
+            "claim:1da3417e06ff5435-0131b383bb68d5d6",
+            "claim:1da3417e06ff5435-4043dbf2773f336c",
+            "claim:1da3417e06ff5435-4f47a3d28c2c5675",
+            "claim:1da3417e06ff5435-50f420b0776ab205",
+            "claim:1da3417e06ff5435-e42233e831e0f66d",
+            "claim:1da3417e06ff5435-e9295b4993a17258",
+            "claim:1da3417e06ff5435-fda7e8c14ff6f23b",
+            "claim:a379c869d6fd01c5-5e7756a095157543",
+            "claim:a379c869d6fd01c5-dd9dfa26cc601b87",
+            "claim:b89787b6b83f3605-2b879b185f80c3ed",
+            "claim:b89787b6b83f3605-d524b881aa3a2622"
+          ],
+          "selectedRelationIds": [
+            "rel:1da3417e06ff5435-25905476559465e3",
+            "rel:1da3417e06ff5435-8973e1ffa670e0f5",
+            "rel:1da3417e06ff5435-9e3e1511ac30b255",
+            "rel:1da3417e06ff5435-d46eb28b10eee035",
+            "rel:1da3417e06ff5435-f7779f6e157ba5c4",
+            "rel:cross-59e2e7d1788246d7",
+            "rel:a379c869d6fd01c5-57f3f5c8e59d5ae3",
+            "rel:b89787b6b83f3605-1f64fb64981e37c1"
+          ],
+          "selectedEvidenceSpanIds": [
+            "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-51-111",
+            "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-218-272",
+            "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-121-216",
+            "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-274-331",
+            "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-333-443",
+            "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-449-494",
+            "span:design-wcag22-2023-002-1da3417e06ff5435-3#chars-550-892",
+            "span:design-wcag21-2018-001-a379c869d6fd01c5-1#chars-121-180",
+            "span:design-wcag21-2018-001-a379c869d6fd01c5-1#chars-51-111",
+            "span:design-webaim-checklist-2024-004-b89787b6b83f3605-1#chars-107-145",
+            "span:design-webaim-checklist-2024-004-b89787b6b83f3605-1#chars-27-102"
+          ],
+          "selectedWikiModuleIds": [],
+          "dropped": [],
+          "finalEstimatedTokens": 4826
+        },
+        "serializationBudget": {
+          "selectedIds": [
+            "task-map",
+            "claim:1da3417e06ff5435-0131b383bb68d5d6",
+            "claim:1da3417e06ff5435-4043dbf2773f336c",
+            "claim:1da3417e06ff5435-4f47a3d28c2c5675",
+            "claim:1da3417e06ff5435-50f420b0776ab205",
+            "claim:1da3417e06ff5435-e42233e831e0f66d",
+            "claim:1da3417e06ff5435-e9295b4993a17258",
+            "claim:1da3417e06ff5435-fda7e8c14ff6f23b",
+            "claim:a379c869d6fd01c5-5e7756a095157543",
+            "claim:a379c869d6fd01c5-dd9dfa26cc601b87",
+            "claim:b89787b6b83f3605-2b879b185f80c3ed",
+            "claim:b89787b6b83f3605-d524b881aa3a2622",
+            "rel:1da3417e06ff5435-25905476559465e3",
+            "rel:1da3417e06ff5435-8973e1ffa670e0f5",
+            "rel:1da3417e06ff5435-9e3e1511ac30b255",
+            "rel:1da3417e06ff5435-d46eb28b10eee035",
+            "rel:1da3417e06ff5435-f7779f6e157ba5c4",
+            "rel:cross-59e2e7d1788246d7",
+            "rel:a379c869d6fd01c5-57f3f5c8e59d5ae3",
+            "rel:b89787b6b83f3605-1f64fb64981e37c1",
+            "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-51-111",
+            "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-218-272",
+            "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-121-216",
+            "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-274-331",
+            "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-333-443",
+            "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-449-494",
+            "span:design-wcag22-2023-002-1da3417e06ff5435-3#chars-550-892",
+            "span:design-wcag21-2018-001-a379c869d6fd01c5-1#chars-121-180",
+            "span:design-wcag21-2018-001-a379c869d6fd01c5-1#chars-51-111",
+            "span:design-webaim-checklist-2024-004-b89787b6b83f3605-1#chars-107-145",
+            "span:design-webaim-checklist-2024-004-b89787b6b83f3605-1#chars-27-102"
+          ],
+          "droppedIds": []
+        }
+      }
+    },
+    {
+      "questionId": "B-X-DESIGN-005",
+      "group": "B",
+      "pilotGroup": "B",
+      "graphExpansion": false,
+      "domain": [
+        "design-accessibility"
+      ],
+      "question": "比较 issue #2705 与最终 WCAG 2.2 对 Dragging Movements 的关系。",
+      "estimatedContextTokens": 669,
+      "contextHash": "21bf9985da0cd86eef99a89c994a4e5888b799d0c4c377996f6c1d6db9c7a6a2",
+      "retrievedClaims": [],
+      "retrievedRelations": [],
+      "retrievedSources": [
+        "../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-wcag-issue-2705-003.md",
+        "../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-wcag22-2023-002.md",
+        "../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-wcag21-2018-001.md",
+        "../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-webaim-checklist-2024-004.md"
+      ],
+      "droppedContext": [],
+      "evidenceStages": [
+        {
+          "factId": "FACT-DESIGN-007",
+          "sourceId": "design-wcag-issue-2705-003",
+          "status": "retrieved",
+          "candidateChunkIds": [
+            "../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-wcag-issue-2705-003.md#L1-L8"
+          ]
+        },
+        {
+          "factId": "FACT-DESIGN-008",
+          "sourceId": "design-wcag-issue-2705-003",
+          "status": "retrieved",
+          "candidateChunkIds": [
+            "../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-wcag-issue-2705-003.md#L1-L8"
+          ]
+        },
+        {
+          "factId": "FACT-DESIGN-006",
+          "sourceId": "design-wcag22-2023-002",
+          "status": "retrieved",
+          "candidateChunkIds": [
+            "../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-wcag22-2023-002.md#L1-L16"
+          ]
+        }
+      ],
+      "allRequiredEvidenceRetrieved": true,
+      "retrievalTrace": {
+        "strategy": "folder-lexical",
+        "queryFeatureCount": 13,
+        "corpusChunkCount": 12,
+        "matchedChunkCount": 4,
+        "maxFolderChunks": 16,
+        "candidates": [
+          {
+            "id": "../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-wcag-issue-2705-003.md#L1-L8",
+            "rank": 1,
+            "score": 6.888185582614291,
+            "selected": true,
+            "dropReason": null
+          },
+          {
+            "id": "../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-wcag22-2023-002.md#L1-L16",
+            "rank": 2,
+            "score": 6.888185582614291,
+            "selected": true,
+            "dropReason": null
+          },
+          {
+            "id": "../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-wcag21-2018-001.md#L1-L6",
+            "rank": 3,
+            "score": 1.9555114450274365,
+            "selected": true,
+            "dropReason": null
+          },
+          {
+            "id": "../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-webaim-checklist-2024-004.md#L1-L4",
+            "rank": 4,
+            "score": 1.9555114450274365,
+            "selected": true,
+            "dropReason": null
+          }
+        ]
+      }
+    },
+    {
+      "questionId": "B-X-DESIGN-005",
+      "group": "P-seed",
+      "pilotGroup": "P",
+      "graphExpansion": false,
+      "domain": [
+        "design-accessibility"
+      ],
+      "question": "比较 issue #2705 与最终 WCAG 2.2 对 Dragging Movements 的关系。",
+      "estimatedContextTokens": 1225,
+      "contextHash": "b4626a2faa102b2ca7ce7a877956fbd2d014ac9ffcfc5d97506d33d94938226d",
+      "retrievedClaims": [
+        "claim:d40218e811ec1166-3121f577072c04bb",
+        "claim:1da3417e06ff5435-fda7e8c14ff6f23b",
+        "claim:d40218e811ec1166-09499dce953a0a91",
+        "claim:d40218e811ec1166-f30bb9542bb62fad",
+        "claim:d40218e811ec1166-21341d7bbebecc13",
+        "claim:1da3417e06ff5435-4043dbf2773f336c",
+        "claim:1da3417e06ff5435-50f420b0776ab205",
+        "claim:b89787b6b83f3605-2b879b185f80c3ed",
+        "claim:1da3417e06ff5435-e42233e831e0f66d",
+        "claim:1da3417e06ff5435-0131b383bb68d5d6"
+      ],
+      "retrievedRelations": [],
+      "retrievedSources": [
+        "source:design-wcag-issue-2705-003-d40218e811ec1166",
+        "source:design-wcag22-2023-002-1da3417e06ff5435",
+        "source:design-webaim-checklist-2024-004-b89787b6b83f3605"
+      ],
+      "droppedContext": [],
+      "evidenceStages": [
+        {
+          "factId": "FACT-DESIGN-007",
+          "sourceId": "design-wcag-issue-2705-003",
+          "status": "retrieved",
+          "expectedClaimIds": [
+            "claim:d40218e811ec1166-3121f577072c04bb"
+          ],
+          "selected": [
+            "claim:d40218e811ec1166-3121f577072c04bb"
+          ],
+          "exactAnchorTextPresent": true
+        },
+        {
+          "factId": "FACT-DESIGN-008",
+          "sourceId": "design-wcag-issue-2705-003",
+          "status": "retrieved",
+          "expectedClaimIds": [
+            "claim:d40218e811ec1166-21341d7bbebecc13"
+          ],
+          "selected": [
+            "claim:d40218e811ec1166-21341d7bbebecc13"
+          ],
+          "exactAnchorTextPresent": true
+        },
+        {
+          "factId": "FACT-DESIGN-006",
+          "sourceId": "design-wcag22-2023-002",
+          "status": "retrieved",
+          "expectedClaimIds": [
+            "claim:1da3417e06ff5435-fda7e8c14ff6f23b"
+          ],
+          "selected": [
+            "claim:1da3417e06ff5435-fda7e8c14ff6f23b"
+          ],
+          "exactAnchorTextPresent": false
+        }
+      ],
+      "allRequiredEvidenceRetrieved": true,
+      "retrievalTrace": {
+        "strategy": "claim-seed-only",
+        "graphDepth": 0,
+        "temporalScope": {
+          "applied": false,
+          "startMonth": null,
+          "endMonth": null,
+          "excludedClaimIds": []
+        },
+        "retrieval": {
+          "queryFeatureCount": 28,
+          "eligibleClaimCount": 67,
+          "matchedClaimCount": 10,
+          "usedEvidenceText": true,
+          "usedSourceMetadata": true,
+          "resolvedEvidenceRefCount": 67,
+          "unresolvedEvidenceRefCount": 0,
+          "candidates": [
+            {
+              "claimId": "claim:d40218e811ec1166-3121f577072c04bb",
+              "rank": 1,
+              "score": 60.95601595502224,
+              "channels": [
+                "g3",
+                "source",
+                "w"
+              ],
+              "matchedFeatureCount": 21
+            },
+            {
+              "claimId": "claim:1da3417e06ff5435-fda7e8c14ff6f23b",
+              "rank": 2,
+              "score": 34.23573143586768,
+              "channels": [
+                "g3",
+                "w"
+              ],
+              "matchedFeatureCount": 16
+            },
+            {
+              "claimId": "claim:d40218e811ec1166-09499dce953a0a91",
+              "rank": 3,
+              "score": 20.771182284494206,
+              "channels": [
+                "g3",
+                "source",
+                "w"
+              ],
+              "matchedFeatureCount": 10
+            },
+            {
+              "claimId": "claim:d40218e811ec1166-f30bb9542bb62fad",
+              "rank": 4,
+              "score": 20.771182284494206,
+              "channels": [
+                "g3",
+                "source",
+                "w"
+              ],
+              "matchedFeatureCount": 10
+            },
+            {
+              "claimId": "claim:d40218e811ec1166-21341d7bbebecc13",
+              "rank": 5,
+              "score": 18.27016041071806,
+              "channels": [
+                "g3",
+                "source",
+                "w"
+              ],
+              "matchedFeatureCount": 8
+            },
+            {
+              "claimId": "claim:1da3417e06ff5435-4043dbf2773f336c",
+              "rank": 6,
+              "score": 5.036073889976328,
+              "channels": [
+                "g3",
+                "w"
+              ],
+              "matchedFeatureCount": 5
+            },
+            {
+              "claimId": "claim:1da3417e06ff5435-50f420b0776ab205",
+              "rank": 7,
+              "score": 4.438620627907996,
+              "channels": [
+                "g3",
+                "w"
+              ],
+              "matchedFeatureCount": 4
+            },
+            {
+              "claimId": "claim:b89787b6b83f3605-2b879b185f80c3ed",
+              "rank": 8,
+              "score": 4.438620627907996,
+              "channels": [
+                "g3",
+                "w"
+              ],
+              "matchedFeatureCount": 4
+            },
+            {
+              "claimId": "claim:1da3417e06ff5435-e42233e831e0f66d",
+              "rank": 9,
+              "score": 3.066093579784501,
+              "channels": [
+                "g3",
+                "w"
+              ],
+              "matchedFeatureCount": 2
+            },
+            {
+              "claimId": "claim:1da3417e06ff5435-0131b383bb68d5d6",
+              "rank": 10,
+              "score": 2.62169891028892,
+              "channels": [
+                "w"
+              ],
+              "matchedFeatureCount": 1
+            }
+          ]
+        },
+        "graph": {
+          "seedClaimIds": [
+            "claim:d40218e811ec1166-3121f577072c04bb",
+            "claim:1da3417e06ff5435-fda7e8c14ff6f23b",
+            "claim:d40218e811ec1166-09499dce953a0a91",
+            "claim:d40218e811ec1166-f30bb9542bb62fad",
+            "claim:d40218e811ec1166-21341d7bbebecc13",
+            "claim:1da3417e06ff5435-4043dbf2773f336c",
+            "claim:1da3417e06ff5435-50f420b0776ab205",
+            "claim:b89787b6b83f3605-2b879b185f80c3ed",
+            "claim:1da3417e06ff5435-e42233e831e0f66d",
+            "claim:1da3417e06ff5435-0131b383bb68d5d6"
+          ],
+          "expandedClaimIds": [
+            "claim:d40218e811ec1166-3121f577072c04bb",
+            "claim:1da3417e06ff5435-fda7e8c14ff6f23b",
+            "claim:d40218e811ec1166-09499dce953a0a91",
+            "claim:d40218e811ec1166-f30bb9542bb62fad",
+            "claim:d40218e811ec1166-21341d7bbebecc13",
+            "claim:1da3417e06ff5435-4043dbf2773f336c",
+            "claim:1da3417e06ff5435-50f420b0776ab205",
+            "claim:b89787b6b83f3605-2b879b185f80c3ed",
+            "claim:1da3417e06ff5435-e42233e831e0f66d",
+            "claim:1da3417e06ff5435-0131b383bb68d5d6"
+          ],
+          "expandedRelationIds": []
+        },
+        "budget": {
+          "selectedClaimIds": [
+            "claim:d40218e811ec1166-3121f577072c04bb",
+            "claim:1da3417e06ff5435-fda7e8c14ff6f23b",
+            "claim:d40218e811ec1166-09499dce953a0a91",
+            "claim:d40218e811ec1166-f30bb9542bb62fad",
+            "claim:d40218e811ec1166-21341d7bbebecc13",
+            "claim:1da3417e06ff5435-4043dbf2773f336c",
+            "claim:1da3417e06ff5435-50f420b0776ab205",
+            "claim:b89787b6b83f3605-2b879b185f80c3ed",
+            "claim:1da3417e06ff5435-e42233e831e0f66d",
+            "claim:1da3417e06ff5435-0131b383bb68d5d6"
+          ],
+          "selectedRelationIds": [],
+          "selectedEvidenceSpanIds": [
+            "span:design-wcag-issue-2705-003-d40218e811ec1166-1#chars-47-331",
+            "span:design-wcag22-2023-002-1da3417e06ff5435-3#chars-550-892",
+            "span:design-wcag-issue-2705-003-d40218e811ec1166-3#chars-445-602",
+            "span:design-wcag-issue-2705-003-d40218e811ec1166-2#chars-333-443",
+            "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-218-272",
+            "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-274-331",
+            "span:design-webaim-checklist-2024-004-b89787b6b83f3605-1#chars-107-145",
+            "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-333-443",
+            "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-51-111"
+          ],
+          "selectedWikiModuleIds": [],
+          "dropped": [],
+          "finalEstimatedTokens": 3431
+        },
+        "serializationBudget": {
+          "selectedIds": [
+            "task-map",
+            "claim:d40218e811ec1166-3121f577072c04bb",
+            "claim:1da3417e06ff5435-fda7e8c14ff6f23b",
+            "claim:d40218e811ec1166-09499dce953a0a91",
+            "claim:d40218e811ec1166-f30bb9542bb62fad",
+            "claim:d40218e811ec1166-21341d7bbebecc13",
+            "claim:1da3417e06ff5435-4043dbf2773f336c",
+            "claim:1da3417e06ff5435-50f420b0776ab205",
+            "claim:b89787b6b83f3605-2b879b185f80c3ed",
+            "claim:1da3417e06ff5435-e42233e831e0f66d",
+            "claim:1da3417e06ff5435-0131b383bb68d5d6",
+            "span:design-wcag-issue-2705-003-d40218e811ec1166-1#chars-47-331",
+            "span:design-wcag22-2023-002-1da3417e06ff5435-3#chars-550-892",
+            "span:design-wcag-issue-2705-003-d40218e811ec1166-3#chars-445-602",
+            "span:design-wcag-issue-2705-003-d40218e811ec1166-2#chars-333-443",
+            "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-218-272",
+            "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-274-331",
+            "span:design-webaim-checklist-2024-004-b89787b6b83f3605-1#chars-107-145",
+            "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-333-443",
+            "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-51-111",
+            "conflicts-and-conditions",
+            "known-gaps"
+          ],
+          "droppedIds": []
+        }
+      }
+    },
+    {
+      "questionId": "B-X-DESIGN-005",
+      "group": "P-graph",
+      "pilotGroup": "P",
+      "graphExpansion": true,
+      "domain": [
+        "design-accessibility"
+      ],
+      "question": "比较 issue #2705 与最终 WCAG 2.2 对 Dragging Movements 的关系。",
+      "estimatedContextTokens": 1691,
+      "contextHash": "5be5983f0ae4d1b1977c8ef7203984b9e8931f965df5b2182998fd752826ce70",
+      "retrievedClaims": [
+        "claim:d40218e811ec1166-3121f577072c04bb",
+        "claim:1da3417e06ff5435-fda7e8c14ff6f23b",
+        "claim:d40218e811ec1166-09499dce953a0a91",
+        "claim:d40218e811ec1166-f30bb9542bb62fad",
+        "claim:d40218e811ec1166-21341d7bbebecc13",
+        "claim:1da3417e06ff5435-4043dbf2773f336c",
+        "claim:1da3417e06ff5435-50f420b0776ab205",
+        "claim:b89787b6b83f3605-2b879b185f80c3ed",
+        "claim:1da3417e06ff5435-e42233e831e0f66d",
+        "claim:1da3417e06ff5435-0131b383bb68d5d6",
+        "claim:b89787b6b83f3605-d524b881aa3a2622",
+        "claim:1da3417e06ff5435-4f47a3d28c2c5675"
+      ],
+      "retrievedRelations": [
+        "rel:d40218e811ec1166-06f4f183e6d17426",
+        "rel:1da3417e06ff5435-d46eb28b10eee035",
+        "rel:1da3417e06ff5435-f7779f6e157ba5c4",
+        "rel:cross-59e2e7d1788246d7",
+        "rel:b89787b6b83f3605-1f64fb64981e37c1",
+        "rel:1da3417e06ff5435-25905476559465e3",
+        "rel:1da3417e06ff5435-8973e1ffa670e0f5",
+        "rel:1da3417e06ff5435-9e3e1511ac30b255"
+      ],
+      "retrievedSources": [
+        "source:design-wcag-issue-2705-003-d40218e811ec1166",
+        "source:design-wcag22-2023-002-1da3417e06ff5435",
+        "source:design-webaim-checklist-2024-004-b89787b6b83f3605"
+      ],
+      "droppedContext": [],
+      "evidenceStages": [
+        {
+          "factId": "FACT-DESIGN-007",
+          "sourceId": "design-wcag-issue-2705-003",
+          "status": "retrieved",
+          "expectedClaimIds": [
+            "claim:d40218e811ec1166-3121f577072c04bb"
+          ],
+          "selected": [
+            "claim:d40218e811ec1166-3121f577072c04bb"
+          ],
+          "exactAnchorTextPresent": true
+        },
+        {
+          "factId": "FACT-DESIGN-008",
+          "sourceId": "design-wcag-issue-2705-003",
+          "status": "retrieved",
+          "expectedClaimIds": [
+            "claim:d40218e811ec1166-21341d7bbebecc13"
+          ],
+          "selected": [
+            "claim:d40218e811ec1166-21341d7bbebecc13"
+          ],
+          "exactAnchorTextPresent": true
+        },
+        {
+          "factId": "FACT-DESIGN-006",
+          "sourceId": "design-wcag22-2023-002",
+          "status": "retrieved",
+          "expectedClaimIds": [
+            "claim:1da3417e06ff5435-fda7e8c14ff6f23b"
+          ],
+          "selected": [
+            "claim:1da3417e06ff5435-fda7e8c14ff6f23b"
+          ],
+          "exactAnchorTextPresent": false
+        }
+      ],
+      "allRequiredEvidenceRetrieved": true,
+      "retrievalTrace": {
+        "strategy": "claim-seed-graph",
+        "graphDepth": 3,
+        "temporalScope": {
+          "applied": false,
+          "startMonth": null,
+          "endMonth": null,
+          "excludedClaimIds": []
+        },
+        "retrieval": {
+          "queryFeatureCount": 28,
+          "eligibleClaimCount": 67,
+          "matchedClaimCount": 10,
+          "usedEvidenceText": true,
+          "usedSourceMetadata": true,
+          "resolvedEvidenceRefCount": 67,
+          "unresolvedEvidenceRefCount": 0,
+          "candidates": [
+            {
+              "claimId": "claim:d40218e811ec1166-3121f577072c04bb",
+              "rank": 1,
+              "score": 60.95601595502224,
+              "channels": [
+                "g3",
+                "source",
+                "w"
+              ],
+              "matchedFeatureCount": 21
+            },
+            {
+              "claimId": "claim:1da3417e06ff5435-fda7e8c14ff6f23b",
+              "rank": 2,
+              "score": 34.23573143586768,
+              "channels": [
+                "g3",
+                "w"
+              ],
+              "matchedFeatureCount": 16
+            },
+            {
+              "claimId": "claim:d40218e811ec1166-09499dce953a0a91",
+              "rank": 3,
+              "score": 20.771182284494206,
+              "channels": [
+                "g3",
+                "source",
+                "w"
+              ],
+              "matchedFeatureCount": 10
+            },
+            {
+              "claimId": "claim:d40218e811ec1166-f30bb9542bb62fad",
+              "rank": 4,
+              "score": 20.771182284494206,
+              "channels": [
+                "g3",
+                "source",
+                "w"
+              ],
+              "matchedFeatureCount": 10
+            },
+            {
+              "claimId": "claim:d40218e811ec1166-21341d7bbebecc13",
+              "rank": 5,
+              "score": 18.27016041071806,
+              "channels": [
+                "g3",
+                "source",
+                "w"
+              ],
+              "matchedFeatureCount": 8
+            },
+            {
+              "claimId": "claim:1da3417e06ff5435-4043dbf2773f336c",
+              "rank": 6,
+              "score": 5.036073889976328,
+              "channels": [
+                "g3",
+                "w"
+              ],
+              "matchedFeatureCount": 5
+            },
+            {
+              "claimId": "claim:1da3417e06ff5435-50f420b0776ab205",
+              "rank": 7,
+              "score": 4.438620627907996,
+              "channels": [
+                "g3",
+                "w"
+              ],
+              "matchedFeatureCount": 4
+            },
+            {
+              "claimId": "claim:b89787b6b83f3605-2b879b185f80c3ed",
+              "rank": 8,
+              "score": 4.438620627907996,
+              "channels": [
+                "g3",
+                "w"
+              ],
+              "matchedFeatureCount": 4
+            },
+            {
+              "claimId": "claim:1da3417e06ff5435-e42233e831e0f66d",
+              "rank": 9,
+              "score": 3.066093579784501,
+              "channels": [
+                "g3",
+                "w"
+              ],
+              "matchedFeatureCount": 2
+            },
+            {
+              "claimId": "claim:1da3417e06ff5435-0131b383bb68d5d6",
+              "rank": 10,
+              "score": 2.62169891028892,
+              "channels": [
+                "w"
+              ],
+              "matchedFeatureCount": 1
+            }
+          ]
+        },
+        "graph": {
+          "seedClaimIds": [
+            "claim:d40218e811ec1166-3121f577072c04bb",
+            "claim:1da3417e06ff5435-fda7e8c14ff6f23b",
+            "claim:d40218e811ec1166-09499dce953a0a91",
+            "claim:d40218e811ec1166-f30bb9542bb62fad",
+            "claim:d40218e811ec1166-21341d7bbebecc13",
+            "claim:1da3417e06ff5435-4043dbf2773f336c",
+            "claim:1da3417e06ff5435-50f420b0776ab205",
+            "claim:b89787b6b83f3605-2b879b185f80c3ed",
+            "claim:1da3417e06ff5435-e42233e831e0f66d",
+            "claim:1da3417e06ff5435-0131b383bb68d5d6"
+          ],
+          "expandedClaimIds": [
+            "claim:d40218e811ec1166-3121f577072c04bb",
+            "claim:1da3417e06ff5435-fda7e8c14ff6f23b",
+            "claim:d40218e811ec1166-09499dce953a0a91",
+            "claim:d40218e811ec1166-f30bb9542bb62fad",
+            "claim:d40218e811ec1166-21341d7bbebecc13",
+            "claim:1da3417e06ff5435-4043dbf2773f336c",
+            "claim:1da3417e06ff5435-50f420b0776ab205",
+            "claim:b89787b6b83f3605-2b879b185f80c3ed",
+            "claim:1da3417e06ff5435-e42233e831e0f66d",
+            "claim:1da3417e06ff5435-0131b383bb68d5d6",
+            "claim:b89787b6b83f3605-d524b881aa3a2622",
+            "claim:1da3417e06ff5435-4f47a3d28c2c5675"
+          ],
+          "expandedRelationIds": [
+            "rel:d40218e811ec1166-06f4f183e6d17426",
+            "rel:1da3417e06ff5435-d46eb28b10eee035",
+            "rel:1da3417e06ff5435-f7779f6e157ba5c4",
+            "rel:cross-59e2e7d1788246d7",
+            "rel:b89787b6b83f3605-1f64fb64981e37c1",
+            "rel:1da3417e06ff5435-25905476559465e3",
+            "rel:1da3417e06ff5435-8973e1ffa670e0f5",
+            "rel:1da3417e06ff5435-9e3e1511ac30b255"
+          ]
+        },
+        "budget": {
+          "selectedClaimIds": [
+            "claim:d40218e811ec1166-3121f577072c04bb",
+            "claim:1da3417e06ff5435-fda7e8c14ff6f23b",
+            "claim:d40218e811ec1166-09499dce953a0a91",
+            "claim:d40218e811ec1166-f30bb9542bb62fad",
+            "claim:d40218e811ec1166-21341d7bbebecc13",
+            "claim:1da3417e06ff5435-4043dbf2773f336c",
+            "claim:1da3417e06ff5435-50f420b0776ab205",
+            "claim:b89787b6b83f3605-2b879b185f80c3ed",
+            "claim:1da3417e06ff5435-e42233e831e0f66d",
+            "claim:1da3417e06ff5435-0131b383bb68d5d6",
+            "claim:b89787b6b83f3605-d524b881aa3a2622",
+            "claim:1da3417e06ff5435-4f47a3d28c2c5675"
+          ],
+          "selectedRelationIds": [
+            "rel:d40218e811ec1166-06f4f183e6d17426",
+            "rel:1da3417e06ff5435-d46eb28b10eee035",
+            "rel:1da3417e06ff5435-f7779f6e157ba5c4",
+            "rel:cross-59e2e7d1788246d7",
+            "rel:b89787b6b83f3605-1f64fb64981e37c1",
+            "rel:1da3417e06ff5435-25905476559465e3",
+            "rel:1da3417e06ff5435-8973e1ffa670e0f5",
+            "rel:1da3417e06ff5435-9e3e1511ac30b255"
+          ],
+          "selectedEvidenceSpanIds": [
+            "span:design-wcag-issue-2705-003-d40218e811ec1166-1#chars-47-331",
+            "span:design-wcag22-2023-002-1da3417e06ff5435-3#chars-550-892",
+            "span:design-wcag-issue-2705-003-d40218e811ec1166-3#chars-445-602",
+            "span:design-wcag-issue-2705-003-d40218e811ec1166-2#chars-333-443",
+            "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-218-272",
+            "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-274-331",
+            "span:design-webaim-checklist-2024-004-b89787b6b83f3605-1#chars-107-145",
+            "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-333-443",
+            "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-51-111",
+            "span:design-webaim-checklist-2024-004-b89787b6b83f3605-1#chars-27-102",
+            "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-121-216"
+          ],
+          "selectedWikiModuleIds": [],
+          "dropped": [],
+          "finalEstimatedTokens": 5266
+        },
+        "serializationBudget": {
+          "selectedIds": [
+            "task-map",
+            "claim:d40218e811ec1166-3121f577072c04bb",
+            "claim:1da3417e06ff5435-fda7e8c14ff6f23b",
+            "claim:d40218e811ec1166-09499dce953a0a91",
+            "claim:d40218e811ec1166-f30bb9542bb62fad",
+            "claim:d40218e811ec1166-21341d7bbebecc13",
+            "claim:1da3417e06ff5435-4043dbf2773f336c",
+            "claim:1da3417e06ff5435-50f420b0776ab205",
+            "claim:b89787b6b83f3605-2b879b185f80c3ed",
+            "claim:1da3417e06ff5435-e42233e831e0f66d",
+            "claim:1da3417e06ff5435-0131b383bb68d5d6",
+            "claim:b89787b6b83f3605-d524b881aa3a2622",
+            "claim:1da3417e06ff5435-4f47a3d28c2c5675",
+            "rel:d40218e811ec1166-06f4f183e6d17426",
+            "rel:1da3417e06ff5435-d46eb28b10eee035",
+            "rel:1da3417e06ff5435-f7779f6e157ba5c4",
+            "rel:cross-59e2e7d1788246d7",
+            "rel:b89787b6b83f3605-1f64fb64981e37c1",
+            "rel:1da3417e06ff5435-25905476559465e3",
+            "rel:1da3417e06ff5435-8973e1ffa670e0f5",
+            "rel:1da3417e06ff5435-9e3e1511ac30b255",
+            "span:design-wcag-issue-2705-003-d40218e811ec1166-1#chars-47-331",
+            "span:design-wcag22-2023-002-1da3417e06ff5435-3#chars-550-892",
+            "span:design-wcag-issue-2705-003-d40218e811ec1166-3#chars-445-602",
+            "span:design-wcag-issue-2705-003-d40218e811ec1166-2#chars-333-443",
+            "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-218-272",
+            "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-274-331",
+            "span:design-webaim-checklist-2024-004-b89787b6b83f3605-1#chars-107-145",
+            "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-333-443",
+            "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-51-111",
+            "span:design-webaim-checklist-2024-004-b89787b6b83f3605-1#chars-27-102",
+            "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-121-216",
+            "conflicts-and-conditions"
+          ],
+          "droppedIds": []
+        }
+      }
+    }
+  ]
+}

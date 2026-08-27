@@ -1,0 +1,169 @@
+{
+  "schemaVersion": "wge-m2-wiki-completeness-micro/v1",
+  "runId": "m2-structural-v1",
+  "status": "PASS",
+  "createdAt": "2026-08-12T09:57:21.132Z",
+  "datasetClass": "SYNTHETIC_SILVER_DEVELOPMENT",
+  "formationAuthority": "POST_HOC_DEV_CLAIM_BUNDLE",
+  "interpretation": "Development mechanism evidence only; automatic Wiki formation is out of scope.",
+  "frozenInputs": {
+    "selectionSha256": "578843fb52b09a020fe58bb805dff0a38c1edd1539b706b2c3b6663f4d31b235",
+    "contractSha256": "85c1222f9f890c0897e309ffbf3e8b9a4f6b84531fbfc470efa24fc93ed50311",
+    "sourceWorkspace": "experiments/evolution/runs/controlled-v1-lineage-v15/workspace",
+    "beforeKnowledgeVersion": "kv:9be4f21a0679bbc477a15540"
+  },
+  "fixtureAudit": {
+    "mode": "isolated-development-fixture",
+    "relationSemanticAuthority": "M1 preregistered synthetic relation endpoints",
+    "relationAuditVersionAppliedInTemporaryWorkspace": "v2.8"
+  },
+  "transaction": {
+    "snapshotId": "ks-2026-08-12T09-57-21-202Z-74803b375848",
+    "beforeKnowledgeVersion": "kv:9be4f21a0679bbc477a15540",
+    "afterKnowledgeVersion": "kv:e0d8a5c0b2e57bd6737f6d42",
+    "changedSourceIds": [
+      "source:automated-release-gates-674a8aeeebc511a6",
+      "source:confidential-compute-policy-1f9be41b63ec8bde",
+      "source:extended-returns-316dbc8cdd88019f",
+      "source:medical-data-security-7be8350189499981",
+      "source:release-governance-64fed77ca832e02c",
+      "source:returns-and-refunds-c37706bd82032a13"
+    ],
+    "rejectedRelationIds": [],
+    "rebuiltWikiModuleIds": [
+      "wiki:m2:commerce-operations:affected",
+      "wiki:m2:platform-engineering:affected",
+      "wiki:m2:research-operations:affected"
+    ],
+    "impact": {
+      "triggerRelationIds": [
+        "rel:cross-3b73cf563a981df5",
+        "rel:cross-48d36ccae6315835",
+        "rel:cross-a247bfe26d070a90"
+      ],
+      "supersededClaimIds": [
+        "claim:64fed77ca832e02c-0717e9642441daaf",
+        "claim:7be8350189499981-d7fca5218b36ad40",
+        "claim:c37706bd82032a13-d5b02410a10adbfa"
+      ],
+      "disputedClaimIds": [],
+      "staleRelationIds": [
+        "rel:64fed77ca832e02c-67a4d4f24a2d9c42",
+        "rel:7be8350189499981-2f3e1e925bfb11cd",
+        "rel:7be8350189499981-57768a0d902e0fd3",
+        "rel:7be8350189499981-a90bcc729789669a",
+        "rel:c37706bd82032a13-ebaa3ef7338e1369"
+      ],
+      "affectedWikiModuleIds": [
+        "wiki:m2:commerce-operations:affected",
+        "wiki:m2:platform-engineering:affected",
+        "wiki:m2:research-operations:affected"
+      ],
+      "beforeVersion": "ev:80b65a588a2b57244489d24f",
+      "afterVersion": "ev:60b1f15b2509ec1134a6961b"
+    }
+  },
+  "checks": {
+    "moduleCountSix": true,
+    "allModulesConsumable": true,
+    "affectedModulesHaveMultipleAssertions": true,
+    "affectedModulesDiscoveredAndRebuilt": true,
+    "stableAddressesPreserved": true,
+    "replacementIsLocal": true,
+    "unaffectedModulesByteStable": true,
+    "quarantineCopiesPresent": true,
+    "w2RequiredCoverageComplete": true,
+    "w2NeverWorseThanR0": true,
+    "w2StrictlyImprovesAtLeastOne": true,
+    "allPacksWithinBudget": true
+  },
+  "coverage": [
+    {
+      "questionId": "EV-COMM-001",
+      "requiredClaimIds": [
+        "claim:316dbc8cdd88019f-8541960500c8d50a"
+      ],
+      "w2Present": [
+        "claim:316dbc8cdd88019f-8541960500c8d50a"
+      ],
+      "r0Present": [
+        "claim:316dbc8cdd88019f-8541960500c8d50a"
+      ],
+      "w2Missing": [],
+      "r0Missing": [],
+      "w2EstimatedTokens": 5653,
+      "r0EstimatedTokens": 5171,
+      "w2WikiModuleIds": [
+        "wiki:m2:commerce-operations:affected"
+      ],
+      "r0WikiModuleIds": []
+    },
+    {
+      "questionId": "EV-PLAT-001",
+      "requiredClaimIds": [
+        "claim:674a8aeeebc511a6-008ebbacdbf23400",
+        "claim:674a8aeeebc511a6-badf248366e456be",
+        "claim:674a8aeeebc511a6-d853e1a3f0badae4",
+        "claim:674a8aeeebc511a6-18a6b88907b91004",
+        "claim:674a8aeeebc511a6-9768d7193a2c2dbb"
+      ],
+      "w2Present": [
+        "claim:674a8aeeebc511a6-008ebbacdbf23400",
+        "claim:674a8aeeebc511a6-badf248366e456be",
+        "claim:674a8aeeebc511a6-d853e1a3f0badae4",
+        "claim:674a8aeeebc511a6-18a6b88907b91004",
+        "claim:674a8aeeebc511a6-9768d7193a2c2dbb"
+      ],
+      "r0Present": [],
+      "w2Missing": [],
+      "r0Missing": [
+        "claim:674a8aeeebc511a6-008ebbacdbf23400",
+        "claim:674a8aeeebc511a6-badf248366e456be",
+        "claim:674a8aeeebc511a6-d853e1a3f0badae4",
+        "claim:674a8aeeebc511a6-18a6b88907b91004",
+        "claim:674a8aeeebc511a6-9768d7193a2c2dbb"
+      ],
+      "w2EstimatedTokens": 5980,
+      "r0EstimatedTokens": 5970,
+      "w2WikiModuleIds": [],
+      "r0WikiModuleIds": []
+    },
+    {
+      "questionId": "EV-RES-001",
+      "requiredClaimIds": [
+        "claim:1f9be41b63ec8bde-045afc1144f03260",
+        "claim:1f9be41b63ec8bde-9500f6d257c56672",
+        "claim:1f9be41b63ec8bde-9ad2e21b208bc717",
+        "claim:1f9be41b63ec8bde-0f9ebdc40a375ab0",
+        "claim:1f9be41b63ec8bde-9f1e7dd3211cb8c0"
+      ],
+      "w2Present": [
+        "claim:1f9be41b63ec8bde-045afc1144f03260",
+        "claim:1f9be41b63ec8bde-9500f6d257c56672",
+        "claim:1f9be41b63ec8bde-9ad2e21b208bc717",
+        "claim:1f9be41b63ec8bde-0f9ebdc40a375ab0",
+        "claim:1f9be41b63ec8bde-9f1e7dd3211cb8c0"
+      ],
+      "r0Present": [
+        "claim:1f9be41b63ec8bde-045afc1144f03260",
+        "claim:1f9be41b63ec8bde-9500f6d257c56672",
+        "claim:1f9be41b63ec8bde-9ad2e21b208bc717",
+        "claim:1f9be41b63ec8bde-0f9ebdc40a375ab0",
+        "claim:1f9be41b63ec8bde-9f1e7dd3211cb8c0"
+      ],
+      "w2Missing": [],
+      "r0Missing": [],
+      "w2EstimatedTokens": 5999,
+      "r0EstimatedTokens": 5980,
+      "w2WikiModuleIds": [
+        "wiki:m2:research-operations:affected"
+      ],
+      "r0WikiModuleIds": []
+    }
+  ],
+  "counts": {
+    "beforeModules": 6,
+    "afterModules": 6,
+    "quarantineCopies": 3
+  }
+}

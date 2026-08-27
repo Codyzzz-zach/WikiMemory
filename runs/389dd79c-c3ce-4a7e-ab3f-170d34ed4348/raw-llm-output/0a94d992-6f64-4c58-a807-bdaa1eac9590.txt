@@ -1,0 +1,28 @@
+{
+  "verdict": "passed",
+  "dimensions": {
+    "support": {
+      "result": "pass",
+      "evidence": "减法不封闭 | $a-b$ 可能不是自然数"
+    },
+    "addition": {
+      "result": "pass",
+      "evidence": "原文明确给出结论和解释，无额外添加"
+    },
+    "inference": {
+      "result": "pass",
+      "evidence": "原文事实陈述，未见需标记的推断"
+    },
+    "limits": {
+      "result": "pass",
+      "evidence": "原文无额外限制条件需保留"
+    },
+    "citation": {
+      "result": "pass",
+      "evidence": "引用对应原文块中内容"
+    }
+  },
+  "anchor": "减法不封闭 | $a-b$ 可能不是自然数",
+  "failedDimensions": [],
+  "issues": []
+}

@@ -1,0 +1,28 @@
+{
+  "verdict": "passed",
+  "dimensions": {
+    "support": {
+      "result": "pass",
+      "evidence": "同样用等价类构造：$\\frac{a}{b} \\sim \\frac{c}{d} \\iff ad = bc$（约分）。"
+    },
+    "addition": {
+      "result": "pass",
+      "evidence": "无添加信息，Claim 内容完全来自原文。"
+    },
+    "inference": {
+      "result": "pass",
+      "evidence": "Claim 直接引用原文等价关系，未包含推断。"
+    },
+    "limits": {
+      "result": "pass",
+      "evidence": "Claim 保留了原文的等价定义，未丢失条件。"
+    },
+    "citation": {
+      "result": "pass",
+      "evidence": "引用 span 包含所述内容，无错位。"
+    }
+  },
+  "anchor": "同样用等价类构造：$\\frac{a}{b} \\sim \\frac{c}{d} \\iff ad = bc$（约分）。",
+  "failedDimensions": [],
+  "issues": []
+}

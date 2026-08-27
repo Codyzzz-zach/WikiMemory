@@ -1,0 +1,59 @@
+{
+  "schemaVersion": "wge-m2-wiki-completeness-contract/v1",
+  "status": "PREREGISTERED_DEV",
+  "goal": "Test whether a complete multi-assertion Wiki module can preserve evidence closure and improve explicit required-fact availability over the same R0 retrieval base under a fixed visible-token budget.",
+  "dependencies": {
+    "m1Adjudication": "experiments/m1-wiki-correction/adjudication-v1.json",
+    "m1VerdictRequired": "PASS_MECHANISM_ONLY",
+    "transactionRegression": "src/evolution/transaction.test.ts"
+  },
+  "causalScope": {
+    "underTest": [
+      "multi-assertion materialization",
+      "supported Wiki retrieval",
+      "fixed-budget support-Claim admission",
+      "answer completeness after current-knowledge bundling"
+    ],
+    "notUnderTest": [
+      "automatic Wiki formation",
+      "held-out generalization",
+      "production Graph migration",
+      "commercial product value"
+    ]
+  },
+  "constraints": [
+    "Every Wiki assertion maps to exactly one active canonical Claim and resolvable evidence.",
+    "Claim bundles live only in the development experiment and must not create question-, domain- or Gold-specific production branches.",
+    "R0 and W2 use the same retrieval implementation, knowledge snapshot, question and 6000-token visible budget; only materialized Wiki consumption differs.",
+    "The model judge is diagnostic only. Required-fact conclusions must be checked against explicit answer text and frozen Claim coverage.",
+    "No new held-out Stage B or sealed Gold may be read."
+  ],
+  "gates": [
+    {
+      "id": "M2-G0",
+      "pass": "M1 mechanism dependency is intact; selection and configuration hashes are frozen."
+    },
+    {
+      "id": "M2-G1",
+      "pass": "All six modules are materialized and consumable; every assertion has a surviving Claim and evidence; affected modules contain at least three assertions."
+    },
+    {
+      "id": "M2-G2",
+      "pass": "The multi-assertion transaction regression proves that one SUPERSEDES replacement preserves unrelated assertions and stableAddress."
+    },
+    {
+      "id": "M2-G3",
+      "pass": "All W2 requiredClaimIds and the selected materialized Wiki module are visible, W2 has no lower required-Claim coverage than R0 on any affected question, at least one affected question strictly improves, and all packs stay within 6000 estimated tokens."
+    },
+    {
+      "id": "M2-G4",
+      "pass": "Only after G0-G3: paired answers have 100% citation closure, no old forbidden fact, no unaffected hard regression, and W2 explicit required-fact coverage is not lower than R0."
+    }
+  ],
+  "stopRules": [
+    "If G0-G3 fails, do not run online answers.",
+    "Do not tune production code with question IDs, domain keywords or Gold answer strings.",
+    "Do not overwrite first results; any repair is post-hoc and separately named.",
+    "Do not claim automatic Wiki formation from manually frozen development bundles."
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "kind": "VALID",
+  "content": "{\n  \"concepts\": [\n    {\n      \"name\": \"airborne transmission\",\n      \"aliases\": [],\n      \"boundary\": \"transmission of microbes via droplet nuclei\",\n      \"domain\": \"epidemiology\"\n    },\n    {\n      \"name\": \"droplet nuclei\",\n      \"aliases\": [],\n      \"boundary\": \"particles <5μm in diameter that can remain in air and travel >1m\",\n      \"domain\": \"aerosol science\"\n    },\n    {\n      \"name\": \"aerosol-generating procedures\",\n      \"aliases\": [\"procedures that generate aerosols\"],\n      \"boundary\": \"medical procedures producing aerosols, e.g., intubation, bronchoscopy, suctioning, nebulization, manual ventilation, prone positioning, ventilator disconnection, non-invasive ventilation, tracheostomy, CPR\",\n      \"domain\": \"medicine\"\n    },\n    {\n      \"name\": \"COVID-19\",\n      \"aliases\": [],\n      \"boundary\": \"disease caused by SARS-CoV-2\",\n      \"domain\": \"virology\"\n    }\n  ]\n}",
+  "model": "deepseek-v4-flash",
+  "outputHash": "3cefc0924801d345"
+}

@@ -1,0 +1,156 @@
+{
+  "runId": "e4-batch-b-remaining-all-modes-2026-07-28T05-44-10-699Z",
+  "sampleId": "sample-fa329def-134d-4f6d-95e1-2c97b0058d1b",
+  "questionId": "B-K-DESIGN-011",
+  "group": "P-graph",
+  "pilotGroup": "P",
+  "graphExpansion": true,
+  "repetition": 1,
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "temperature": 0,
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 827,
+    "completionTokens": 152,
+    "totalTokens": 979,
+    "promptCacheHitTokens": 0,
+    "promptCacheMissTokens": 827,
+    "reasoningTokens": 0
+  },
+  "latencyMs": 1689,
+  "promptHash": "sha256:d70e8cd2a24455ffa7ad05effe55df4c4cefb15a4f2453fc9c0057c04fc454d2",
+  "contextHash": "3c18aafae2f534654c350aade588c6a310ad0ca54f80c77001c9439e54220030",
+  "estimatedContextTokens": 464,
+  "estimatedInputTokens": 637,
+  "retrievedClaims": [
+    "claim:b89787b6b83f3605-2b879b185f80c3ed",
+    "claim:b89787b6b83f3605-7d429224411b6b4e",
+    "claim:b89787b6b83f3605-d524b881aa3a2622",
+    "claim:1da3417e06ff5435-50f420b0776ab205"
+  ],
+  "retrievedRelations": [
+    "rel:b89787b6b83f3605-1f64fb64981e37c1",
+    "rel:cross-59e2e7d1788246d7"
+  ],
+  "retrievedSources": [
+    "source:design-webaim-checklist-2024-004-b89787b6b83f3605",
+    "source:design-wcag22-2023-002-1da3417e06ff5435"
+  ],
+  "droppedContext": [],
+  "retrievalTrace": {
+    "strategy": "claim-seed-graph",
+    "graphDepth": 3,
+    "temporalScope": {
+      "applied": false,
+      "startMonth": null,
+      "endMonth": null,
+      "excludedClaimIds": []
+    },
+    "retrieval": {
+      "queryFeatureCount": 33,
+      "eligibleClaimCount": 67,
+      "matchedClaimCount": 3,
+      "usedEvidenceText": true,
+      "usedSourceMetadata": true,
+      "resolvedEvidenceRefCount": 67,
+      "unresolvedEvidenceRefCount": 0,
+      "candidates": [
+        {
+          "claimId": "claim:b89787b6b83f3605-2b879b185f80c3ed",
+          "rank": 1,
+          "score": 10.888782728833814,
+          "channels": [
+            "c2",
+            "g3",
+            "source",
+            "w"
+          ],
+          "matchedFeatureCount": 6
+        },
+        {
+          "claimId": "claim:b89787b6b83f3605-7d429224411b6b4e",
+          "rank": 2,
+          "score": 7.455844366767033,
+          "channels": [
+            "g3",
+            "source",
+            "w"
+          ],
+          "matchedFeatureCount": 5
+        },
+        {
+          "claimId": "claim:b89787b6b83f3605-d524b881aa3a2622",
+          "rank": 3,
+          "score": 7.455844366767033,
+          "channels": [
+            "g3",
+            "source",
+            "w"
+          ],
+          "matchedFeatureCount": 5
+        }
+      ]
+    },
+    "graph": {
+      "seedClaimIds": [
+        "claim:b89787b6b83f3605-2b879b185f80c3ed",
+        "claim:b89787b6b83f3605-7d429224411b6b4e",
+        "claim:b89787b6b83f3605-d524b881aa3a2622"
+      ],
+      "expandedClaimIds": [
+        "claim:b89787b6b83f3605-2b879b185f80c3ed",
+        "claim:b89787b6b83f3605-7d429224411b6b4e",
+        "claim:b89787b6b83f3605-d524b881aa3a2622",
+        "claim:1da3417e06ff5435-50f420b0776ab205"
+      ],
+      "expandedRelationIds": [
+        "rel:b89787b6b83f3605-1f64fb64981e37c1",
+        "rel:cross-59e2e7d1788246d7"
+      ]
+    },
+    "budget": {
+      "selectedClaimIds": [
+        "claim:b89787b6b83f3605-2b879b185f80c3ed",
+        "claim:b89787b6b83f3605-7d429224411b6b4e",
+        "claim:b89787b6b83f3605-d524b881aa3a2622",
+        "claim:1da3417e06ff5435-50f420b0776ab205"
+      ],
+      "selectedRelationIds": [
+        "rel:b89787b6b83f3605-1f64fb64981e37c1",
+        "rel:cross-59e2e7d1788246d7"
+      ],
+      "selectedEvidenceSpanIds": [
+        "span:design-webaim-checklist-2024-004-b89787b6b83f3605-1#chars-107-145",
+        "span:design-webaim-checklist-2024-004-b89787b6b83f3605-0#chars-2-25",
+        "span:design-webaim-checklist-2024-004-b89787b6b83f3605-1#chars-27-102",
+        "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-274-331"
+      ],
+      "selectedWikiModuleIds": [],
+      "dropped": [],
+      "finalEstimatedTokens": 1663
+    },
+    "serializationBudget": {
+      "selectedIds": [
+        "task-map",
+        "claim:b89787b6b83f3605-2b879b185f80c3ed",
+        "claim:b89787b6b83f3605-7d429224411b6b4e",
+        "claim:b89787b6b83f3605-d524b881aa3a2622",
+        "claim:1da3417e06ff5435-50f420b0776ab205",
+        "rel:b89787b6b83f3605-1f64fb64981e37c1",
+        "rel:cross-59e2e7d1788246d7",
+        "span:design-webaim-checklist-2024-004-b89787b6b83f3605-1#chars-107-145",
+        "span:design-webaim-checklist-2024-004-b89787b6b83f3605-0#chars-2-25",
+        "span:design-webaim-checklist-2024-004-b89787b6b83f3605-1#chars-27-102",
+        "span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-274-331"
+      ],
+      "droppedIds": []
+    }
+  },
+  "request": {
+    "systemPrompt": "你是受证据约束的问答 Agent。只使用本次请求提供的检索上下文回答。\n要求：保留影响结论的条件、时间、例外、来源角色与不确定性；关键结论引用上下文中的 SOURCE、EVIDENCE 或 CLAIM 标识；上下文不足时明确说明，不得用外部常识补齐。\n只输出严格 JSON：{\"answer\":\"...\",\"citations\":[\"...\"],\"insufficient\":false,\"uncertainties\":[\"...\"]}。",
+    "userPrompt": "# 问题\nWebAIM 与 W3C 都说 4.1.1 被移除，这是否构成两个独立规范来源？\n\n# 检索上下文\n## TASK MAP\n主题: WebAIM 与 W3C 都说 4.1.1 被移除，这是否构成两个独立规范来源？\n地图主题: the, of, and, to, in\n关键概念: User Agent, Mobile Requirements, Input Modality, Desktop Content, Single Pointer\n已知争议: 0 个\n最近变化: 5 条\n找到 4 条相关 Claim\n找到 2 条关系\n找到 4 条原文证据\n\n## CLAIM claim:b89787b6b83f3605-2b879b185f80c3ed\nSuccess Criterion 4.1.1 Parsing 自2023年起已从WCAG中移除。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:b89787b6b83f3605-7d429224411b6b4e\nWebAIM WCAG 2 Checklist 是一个文档标题。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:b89787b6b83f3605-d524b881aa3a2622\nSuccess Criterion 4.1.1 Parsing 不再有用。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:1da3417e06ff5435-50f420b0776ab205\nWCAG 2.2 has removed one success criterion, 4.1.1 Parsing.\nConditions: none\nValidity: SUPPORTED\n\n## RELATION rel:b89787b6b83f3605-1f64fb64981e37c1\nclaim:b89787b6b83f3605-2b879b185f80c3ed --[SUPPORTS]--> claim:b89787b6b83f3605-d524b881aa3a2622\nConditions: none\n\n## RELATION rel:cross-59e2e7d1788246d7\nclaim:b89787b6b83f3605-2b879b185f80c3ed --[SUPPORTS]--> claim:1da3417e06ff5435-50f420b0776ab205\nConditions: none\n\n## EVIDENCE span:design-webaim-checklist-2024-004-b89787b6b83f3605-1#chars-107-145\nas of 2023 has been removed from WCAG.\n\n## EVIDENCE span:design-webaim-checklist-2024-004-b89787b6b83f3605-0#chars-2-25\nWebAIM WCAG 2 Checklist\n\n## EVIDENCE span:design-webaim-checklist-2024-004-b89787b6b83f3605-1#chars-27-102\nSuccess Criterion 4.1.1 Parsing: This success criterion is no longer useful\n\n## EVIDENCE span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-274-331\nWCAG 2.2 has removed one success criterion, 4.1.1 Parsing"
+  },
+  "answer": "{\n  \"answer\": \"是的，WebAIM 和 W3C 都声明 4.1.1 已被移除，但 WebAIM 的声明基于其自身清单，W3C 的声明来自 WCAG 2.2 规范，两者是独立的规范来源。\",\n  \"citations\": [\n    \"span:design-webaim-checklist-2024-004-b89787b6b83f3605-1#chars-107-145\",\n    \"span:design-wcag22-2023-002-1da3417e06ff5435-1#chars-274-331\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}",
+  "answerFormatValid": true
+}

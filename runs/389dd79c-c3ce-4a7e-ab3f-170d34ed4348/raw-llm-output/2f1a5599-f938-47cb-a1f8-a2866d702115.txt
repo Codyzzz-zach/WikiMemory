@@ -1,0 +1,13 @@
+{
+  "verdict": "passed",
+  "dimensions": {
+    "support": { "result": "pass", "evidence": "原文中明确标注"加法封闭 | ✅"，表示复数集对加法封闭。" },
+    "addition": { "result": "pass", "evidence": "Claim 未添加原文中不存在的信息。" },
+    "inference": { "result": "pass", "evidence": "Claim 直接陈述原文信息，无推断。" },
+    "limits": { "result": "pass", "evidence": "Claim 未省略任何限制条件。" },
+    "citation": { "result": "pass", "evidence": "Claim 引用的原文 span 准确对应。" }
+  },
+  "anchor": "加法封闭 | ✅",
+  "failedDimensions": [],
+  "issues": []
+}

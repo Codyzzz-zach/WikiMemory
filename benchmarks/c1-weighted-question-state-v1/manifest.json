@@ -1,0 +1,58 @@
+{
+  "schemaVersion": "wge-c1-contract-micro-manifest/v1",
+  "benchmarkId": "c1-weighted-question-state-v1",
+  "stageContract": "docs/specs/c1-weighted-question-state-contract-v1.md",
+  "status": "C1_A_FROZEN_C1_B_VALIDATED",
+  "frozenOn": "2026-08-25",
+  "scope": {
+    "primaryVariable": "Weighted branch state inside a frozen QuestionFrame",
+    "questionIdentity": "INPUT_ASSUMPTION",
+    "taskRelevanceIncluded": false,
+    "marginalCostIncluded": false,
+    "providerCallsAuthorizedBeforeDeterministicMicro": 0
+  },
+  "assets": [
+    {
+      "role": "INPUT_RECEIPT",
+      "path": "benchmarks/c1-weighted-question-state-v1/input-receipt.json",
+      "sha256": "d932b5af8af8eed62330a398dcf08d43a5339d79acd863b3a2080483a56524d5"
+    },
+    {
+      "role": "REASON_CODES",
+      "path": "benchmarks/c1-weighted-question-state-v1/reason-codes.json",
+      "sha256": "935cd2b901666fd351b57720aa0535e8e20cb9ad2e99174c05c6e85cd9b417d1"
+    },
+    {
+      "role": "PROJECTION_SCHEMA",
+      "path": "benchmarks/c1-weighted-question-state-v1/question-state-projection.schema.json",
+      "sha256": "e6e6cebe6acb1d87250540ce2040353963c3e67fead23034ad7d359f88277a13"
+    },
+    {
+      "role": "EVOLUTION_MICRO",
+      "path": "benchmarks/c1-weighted-question-state-v1/fixtures/evolution-micro.json",
+      "sha256": "34d3099e9a61a015831d302b693ac8073cd18657f0e031e42ca16d86ef9e24bc"
+    },
+    {
+      "role": "I3_FAILURE_SAMPLES",
+      "path": "benchmarks/c1-weighted-question-state-v1/fixtures/i3-failure-samples.json",
+      "sha256": "3b80f3b88fcbc6791d99fa91834ccbdd47fe2bd5d38e628f33516d531151ba69"
+    }
+  ],
+  "microAcceptance": {
+    "requiredTransitions": [
+      "BASELINE_ESTABLISHED",
+      "SCOPED_SUPERSESSION",
+      "SUPERSEDED_HISTORY_RETAINED",
+      "PEER_CONFLICT_PRESERVED"
+    ],
+    "hardFailureCount": 0,
+    "questionMutationCount": 0,
+    "providerCalls": 0,
+    "providerTokens": 0
+  },
+  "nextStageBoundary": {
+    "stage": "C1-C",
+    "authorizedByThisManifest": true,
+    "reason": "All C1-B portable and freeze-host validations passed; C1-C remains a zero-provider-call pure shadow."
+  }
+}

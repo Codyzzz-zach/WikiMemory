@@ -1,0 +1,28 @@
+{
+  "verdict": "passed",
+  "dimensions": {
+    "support": {
+      "result": "pass",
+      "evidence": "2. 每个自然数 $n$ 有一个**后继** $S(n)$"
+    },
+    "addition": {
+      "result": "pass",
+      "evidence": "无额外信息"
+    },
+    "inference": {
+      "result": "pass",
+      "evidence": "无推断"
+    },
+    "limits": {
+      "result": "pass",
+      "evidence": "无限制条件缺失"
+    },
+    "citation": {
+      "result": "pass",
+      "evidence": "Claim 引用的 span 正确对应原文"
+    }
+  },
+  "anchor": "2. 每个自然数 $n$ 有一个**后继** $S(n)$",
+  "failedDimensions": [],
+  "issues": []
+}

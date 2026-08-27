@@ -1,0 +1,54 @@
+{
+  "propositions": [
+    {
+      "text": "图释展示了从裸集合出发，每一步添加结构创造出不同品种的空间。",
+      "exactQuote": "从裸集合出发，每一步添加结构（距离、线性、开集、内积）创造出不同品种的空间。",
+      "blockId": "02-spaces#block-6"
+    },
+    {
+      "text": "这个层级关系是贯穿全章的地图。",
+      "exactQuote": "这个层级关系是贯穿全章的地图。",
+      "blockId": "02-spaces#block-6"
+    },
+    {
+      "text": "三维空间 ℝ³ 是我们最熟悉的空间。",
+      "exactQuote": "这是我们最熟悉的空间——我们生活在其中的三维空间 $\\mathbb{R}^3$。",
+      "blockId": "02-spaces#block-11"
+    },
+    {
+      "text": "下面的所有空间类型都是对 ℝⁿ 的某一方面进行推广或削弱。",
+      "exactQuote": "下面的所有空间类型都是对 $\\mathbb{R}^n$ 的某一方面进行**推广或削弱**。",
+      "blockId": "02-spaces#block-18"
+    },
+    {
+      "text": "ℝⁿ 假设我们有一组坐标 (x₁,…,xₙ)。",
+      "exactQuote": "$\\mathbb{R}^n$ 太具体了——它假设我们有一组坐标 $(x_1,\\ldots,x_n)$。",
+      "blockId": "02-spaces#block-23"
+    },
+    {
+      "text": "很多数学对象也满足可加可缩的性质。",
+      "exactQuote": "但很多数学对象也满足\"可加可缩\"的性质：",
+      "blockId": "02-spaces#block-23"
+    },
+    {
+      "text": "内积 ⟨·,·⟩ 是从 V×V 到 ℝ（或 ℂ）的映射。",
+      "exactQuote": "**内积** $\\langle \\cdot, \\cdot \\rangle: V \\times V \\to \\mathbb{R}$（或 $\\mathbb{C}$）满足：",
+      "blockId": "02-spaces#block-58"
+    },
+    {
+      "text": "内积空间有正交性，可以定义垂直。",
+      "exactQuote": "因为它有**正交性**——可以定义\"垂直\"：",
+      "blockId": "02-spaces#block-63"
+    },
+    {
+      "text": "x ⟂ y 当且仅当 ⟨x, y⟩ = 0。",
+      "exactQuote": "$$ x \\perp y \\iff \\langle x, y \\rangle = 0 $$",
+      "blockId": "02-spaces#block-64"
+    },
+    {
+      "text": "内积空间的正交性使我们可以做某些事情。",
+      "exactQuote": "这使我们可以做：",
+      "blockId": "02-spaces#block-65"
+    }
+  ]
+}

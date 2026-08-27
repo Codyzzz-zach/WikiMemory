@@ -1,0 +1,122 @@
+[
+  {
+    "sampleId": "m2-sample-60cb9bb34102409dc5e0",
+    "questionId": "EV-PLAT-005",
+    "answer": "{\"answer\":\"对外开放的 API 下线前必须至少提前一百八十个自然日发布弃用公告。公告需写明替代接口、迁移示例、停止接受新接入的日期和最终下线日期。仅在代码仓库中标记 deprecated 不算正式公告。若 API 存在已知安全漏洞，可以先关闭受攻击功能，但仍应在二十四小时内发布事件说明和迁移安排。若某个海外 API 进入弃用流程，原有一百八十日公告要求继续适用。\",\"citations\":[\"claim:56ecc1cabeb423a1-8dd57004f3b9b521\",\"claim:56ecc1cabeb423a1-0224bd3f355fc52e\",\"claim:56ecc1cabeb423a1-b1929da6e12b4d1e\",\"claim:56ecc1cabeb423a1-75b09a29c0345143\",\"claim:0818c525160c6e0e-b93581ce28dbd8b3\"],\"insufficient\":false,\"uncertainties\":[]}",
+    "formatValid": true,
+    "citationValidation": {
+      "valid": true,
+      "invalid": []
+    }
+  },
+  {
+    "sampleId": "m2-sample-d4e6280cead290c346a4",
+    "questionId": "EV-RES-005",
+    "answer": "{\n  \"answer\": \"声称有性能改进的新算法合入主干前，必须使用三个不同随机种子独立运行，且三个种子都要完成预定训练步数，没有数据泄漏、数值溢出或人工挑选检查点；只展示表现最好的一个种子不构成复现。以项目已登记的核心指标为准，三个运行结果的中位数相对当前主干基线至少提高2%，且任一运行不得低于基线1%以上。没有正向收益的实验不能以“创新合入”名义进入默认主干。合入时评审人同时检查复现材料和数据附录。外部数据引用是新增的可追踪要求，不改变三随机种子复现门槛。算力时限只管理资源公平性，不决定实验是否可合入主干。所有指标必须在冻结测试集上计算，调参过程中不得查看测试集标签，发现测试集泄漏后本轮分数作废并重新划分数据，报告同时列出均值和运行间波动。采用哪个随机种子和合入门槛由复现标准另行规定，复现标准中“以项目登记的核心指标计算收益”的条款保持不变，因此新实验按F1-Micro或ROUGE-L判断中位数改进。\",\n  \"citations\": [\n    \"claim:8f33cc0f406f07f3-1a47c17a72a9bfeb\",\n    \"claim:8f33cc0f406f07f3-603af98f3c3475cf\",\n    \"claim:8f33cc0f406f07f3-f8912370932ed611\",\n    \"claim:8f33cc0f406f07f3-0ff9498318da211c\",\n    \"claim:8f33cc0f406f07f3-f29fe8b56057f88f\",\n    \"claim:8f33cc0f406f07f3-d2b60b66160a5953\",\n    \"claim:2174c435172ef2e4-200b61cb541a6230\",\n    \"claim:2174c435172ef2e4-3af0c927448f480b\",\n    \"claim:9e26bc258dc04be8-91246961da17ebab\",\n    \"claim:8992d881e04a5255-5c4db46414a62bb5\",\n    \"claim:8992d881e04a5255-c585e36d64258190\",\n    \"claim:8992d881e04a5255-65a1f19845718d25\",\n    \"claim:8992d881e04a5255-f17ad6f4e116e2c1\",\n    \"claim:8992d881e04a5255-0f455ea36d425ae6\",\n    \"claim:367f77cf61ca517c-e9ef5cc1595d3ea9\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}",
+    "formatValid": true,
+    "citationValidation": {
+      "valid": true,
+      "invalid": []
+    }
+  },
+  {
+    "sampleId": "m2-sample-198f07640ad9355844eb",
+    "questionId": "EV-PLAT-005",
+    "answer": "{\n  \"answer\": \"任何已经向其他团队或外部客户开放的 API，在停止服务前必须至少提前一百八十个自然日发布弃用公告。弃用公告需写明替代接口、迁移示例、停止接受新接入的日期和最终下线日期。仅在代码仓库中标记 deprecated 不算正式公告。若 API 存在已知安全漏洞，可以先关闭受攻击功能，但仍应在二十四小时内发布事件说明和迁移安排。\",\n  \"citations\": [\n    \"claim:56ecc1cabeb423a1-8dd57004f3b9b521\",\n    \"claim:56ecc1cabeb423a1-0224bd3f355fc52e\",\n    \"claim:56ecc1cabeb423a1-b1929da6e12b4d1e\",\n    \"claim:56ecc1cabeb423a1-75b09a29c0345143\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}",
+    "formatValid": true,
+    "citationValidation": {
+      "valid": true,
+      "invalid": []
+    }
+  },
+  {
+    "sampleId": "m2-sample-8b9e23e17ae104f14441",
+    "questionId": "EV-COMM-001",
+    "answer": "{\n  \"answer\": \"普通实物商品（包括普通衣服）自签收次日起十五个自然日内可以提出无理由退货。十五日是申请期限，不是仓库必须收货或资金必须到账的期限。存在质量问题时仍进入质量售后流程。\",\n  \"citations\": [\n    \"claim:316dbc8cdd88019f-8541960500c8d50a\",\n    \"claim:316dbc8cdd88019f-441c6ae77fe84ba7\",\n    \"claim:316dbc8cdd88019f-473de43e8391e0e9\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}",
+    "formatValid": true,
+    "citationValidation": {
+      "valid": true,
+      "invalid": []
+    }
+  },
+  {
+    "sampleId": "m2-sample-c7ccc95bcb79efeb0ecb",
+    "questionId": "EV-COMM-001",
+    "answer": "{\"answer\":\"普通实物商品自签收次日起十五个自然日内可以提出无理由退货。\",\"citations\":[\"claim:316dbc8cdd88019f-8541960500c8d50a\",\"span:extended-returns-316dbc8cdd88019f-5#chars-262-290\"],\"insufficient\":false,\"uncertainties\":[]}",
+    "formatValid": true,
+    "citationValidation": {
+      "valid": true,
+      "invalid": []
+    }
+  },
+  {
+    "sampleId": "m2-sample-8f8f122b9fdc883faa0d",
+    "questionId": "EV-PLAT-001",
+    "answer": "{\n  \"answer\": \"非 P0 服务在满足以下条件后可由平台自动发布：本次变更覆盖的自动化测试全部通过（claim:674a8aeeebc511a6-c2ca9f8d759e7a7d）。此外，通过测试但缺少构建清单的产物不得进入发布候选仓库（claim:ed0267ab8abe7125-591bd84e28289de0），且 CI 任务名称合规本身不表示获得生产发布许可（claim:ed0267ab8abe7125-c7eaf69013397227）。因此，除了自动化测试通过外，还需要确保构建清单完整，并可能需要遵循其他发布治理要求。关于发布时间，上下文未明确说明非 P0 服务的具体发布窗口或额外批准流程，因此无法确定具体发布时间。\",\n  \"citations\": [\n    \"claim:674a8aeeebc511a6-c2ca9f8d759e7a7d\",\n    \"claim:ed0267ab8abe7125-591bd84e28289de0\",\n    \"claim:ed0267ab8abe7125-c7eaf69013397227\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": [\n    \"上下文未提供非 P0 服务的具体发布窗口或额外批准流程，因此无法确定具体发布时间。\",\n    \"未提供关于非 P0 服务是否需要人工批准或特定审批人的信息。\"\n  ]\n}",
+    "formatValid": true,
+    "citationValidation": {
+      "valid": true,
+      "invalid": []
+    }
+  },
+  {
+    "sampleId": "m2-sample-1f921399ae2ab79191df",
+    "questionId": "EV-RES-001",
+    "answer": "{\n  \"answer\": \"可以，但仅限列入批准清单的公有云机密计算环境，且需满足端到端加密、密钥由 Aster Lab 自有密钥系统控制、原始可识别数据需项目级审批等条件。普通云虚拟机、个人云账户和未列入清单的区域仍被禁止。\",\n  \"citations\": [\n    \"claim:1f9be41b63ec8bde-045afc1144f03260\",\n    \"claim:1f9be41b63ec8bde-9500f6d257c56672\",\n    \"claim:1f9be41b63ec8bde-9ad2e21b208bc717\",\n    \"claim:1f9be41b63ec8bde-0f9ebdc40a375ab0\",\n    \"claim:1f9be41b63ec8bde-9f1e7dd3211cb8c0\",\n    \"claim:1f9be41b63ec8bde-7a1c18fc063caaff\",\n    \"claim:1f9be41b63ec8bde-c9a7e1b5fd58d181\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}",
+    "formatValid": true,
+    "citationValidation": {
+      "valid": true,
+      "invalid": []
+    }
+  },
+  {
+    "sampleId": "m2-sample-18926b418e8ed7ffc2ad",
+    "questionId": "EV-RES-001",
+    "answer": "{\n  \"answer\": \"可以，但仅限列入批准清单的公有云机密计算环境，且需满足严格条件。Aster Lab 新规明确医疗项目可以使用列入批准清单的公有云机密计算环境（claim:1f9be41b63ec8bde-045afc1144f03260），并取代了旧规中“医疗数据只能在物理隔离本地机房训练”和“脱敏数据只能申请内网私有云”的位置限制（claim:1f9be41b63ec8bde-c9a7e1b5fd58d181）。但这不是“可以把医疗数据直接上传任意公有云”的授权（claim:1f9be41b63ec8bde-9f1e7dd3211cb8c0），原始数据仍不得上传到公有云、个人网盘、普通办公网络或外部协作方账户（claim:7be8350189499981-12d8aa1b9eb0c2fe）。使用该环境必须满足：数据进入硬件可信执行环境前必须端到端加密（claim:1f9be41b63ec8bde-9500f6d257c56672），密钥由 Aster Lab 自有密钥系统控制（claim:1f9be41b63ec8bde-9ad2e21b208bc717），云运维人员不能读取明文（claim:1f9be41b63ec8bde-0efed72c8f9d63ab）。原始可识别数据采用任何一种模式都要经过项目级审批（claim:1f9be41b63ec8bde-0f9ebdc40a375ab0）。通过 k-anonymity 的数据不再被限定在私有云（claim:1f9be41b63ec8bde-73eabb7b2463ef4a），但仍须使用上述获批模式之一（claim:1f9be41b63ec8bde-3a4b99f859fe76bc）。此外，医疗项目也可选择治理委员会批准的联邦学习模式（claim:1f9be41b63ec8bde-93f149b845895f44），其中原始记录留在登记的数据持有节点，不上传到协调服务（claim:1f9be41b63ec8bde-317ef3b8d6692fdf），只交换经过加密和裁剪的模型更新（claim:1f9be41b63ec8bde-8a2d37cd8452c4c0）。\",\n  \"citations\": [\n    \"claim:1f9be41b63ec8bde-045afc1144f03260\",\n    \"claim:1f9be41b63ec8bde-c9a7e1b5fd58d181\",\n    \"claim:1f9be41b63ec8bde-9f1e7dd3211cb8c0\",\n    \"claim:7be8350189499981-12d8aa1b9eb0c2fe\",\n    \"claim:1f9be41b63ec8bde-9500f6d257c56672\",\n    \"claim:1f9be41b63ec8bde-9ad2e21b208bc717\",\n    \"claim:1f9be41b63ec8bde-0efed72c8f9d63ab\",\n    \"claim:1f9be41b63ec8bde-0f9ebdc40a375ab0\",\n    \"claim:1f9be41b63ec8bde-73eabb7b2463ef4a\",\n    \"claim:1f9be41b63ec8bde-3a4b99f859fe76bc\",\n    \"claim:1f9be41b63ec8bde-93f149b845895f44\",\n    \"claim:1f9be41b63ec8bde-317ef3b8d6692fdf\",\n    \"claim:1f9be41b63ec8bde-8a2d37cd8452c4c0\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": [\n    \"批准清单的具体内容未在上下文中给出，无法确认哪些公有云机密计算环境已获批。\",\n    \"项目级审批的具体流程和标准未在上下文中详述。\",\n    \"联邦学习模式与公有云机密计算环境的关系未明确说明，可能为并列的获批模式。\"\n  ]\n}",
+    "formatValid": true,
+    "citationValidation": {
+      "valid": true,
+      "invalid": []
+    }
+  },
+  {
+    "sampleId": "m2-sample-2172add8c1d2fbf144fd",
+    "questionId": "EV-RES-005",
+    "answer": "{\n  \"answer\": \"声称有性能改进的新算法合入主干前，必须使用三个不同随机种子独立运行，且三个种子都要完成预定训练步数，没有数据泄漏、数值溢出或人工挑选检查点；只展示表现最好的一个种子不构成复现。合入时评审人同时检查复现材料和数据附录。所有指标必须在冻结测试集上计算，调参过程中不得查看测试集标签，发现测试集泄漏后本轮分数作废并重新划分数据。报告需同时列出均值和运行间波动。采用哪个随机种子和合入门槛由复现标准另行规定，复现标准中“以项目登记的核心指标计算收益”的条款保持不变，因此新实验按 F1-Micro 或 ROUGE-L 判断中位数改进。没有正向收益的实验可以作为研究记录保存，但不能以“创新合入”名义进入默认主干。算力时限只管理资源公平性，不决定实验是否可合入主干。\",\n  \"citations\": [\n    \"span:reproducibility-8f33cc0f406f07f3-2#chars-93-136\",\n    \"span:reproducibility-8f33cc0f406f07f3-2#chars-136-171\",\n    \"span:reproducibility-8f33cc0f406f07f3-2#chars-171-189\",\n    \"span:external-dataset-citation-2174c435172ef2e4-5#chars-490-513\",\n    \"span:model-evaluation-8992d881e04a5255-4#chars-377-393\",\n    \"span:model-evaluation-8992d881e04a5255-4#chars-393-408\",\n    \"span:model-evaluation-8992d881e04a5255-4#chars-408-431\",\n    \"span:model-evaluation-8992d881e04a5255-4#chars-431-446\",\n    \"span:model-evaluation-8992d881e04a5255-4#chars-446-470\",\n    \"span:revised-evaluation-367f77cf61ca517c-5#chars-453-516\",\n    \"span:reproducibility-8f33cc0f406f07f3-3#chars-289-328\",\n    \"span:compute-quota-9e26bc258dc04be8-5#chars-444-469\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}",
+    "formatValid": true,
+    "citationValidation": {
+      "valid": true,
+      "invalid": []
+    }
+  },
+  {
+    "sampleId": "m2-sample-3998674acdb9872ca057",
+    "questionId": "EV-PLAT-001",
+    "answer": "{\n  \"answer\": \"非 P0 服务通过测试后，不再需要开发、测试、运维三方人工批准（claim:674a8aeeebc511a6-008ebbacdbf23400）。但必须满足以下自动门禁条件，全部满足后可由平台自动发布：1) 变更覆盖率不低于 80%（claim:674a8aeeebc511a6-badf248366e456be）；2) 依赖与镜像扫描不存在严重级别漏洞（claim:674a8aeeebc511a6-d853e1a3f0badae4）；3) 发布单包含可部署的回滚版本和监控负责人（claim:674a8aeeebc511a6-18a6b88907b91004）。任何一项不满足，门禁必须阻止发布（claim:674a8aeeebc511a6-e61bc7c516e84917）。门禁通过后支持全天候发布（claim:674a8aeeebc511a6-9768d7193a2c2dbb）。另外，通过测试但缺少构建清单的产物不得进入发布候选仓库（claim:ed0267ab8abe7125-591bd84e28289de0），因此构建清单也是发布的前提。\",\n  \"citations\": [\n    \"claim:674a8aeeebc511a6-008ebbacdbf23400\",\n    \"claim:674a8aeeebc511a6-badf248366e456be\",\n    \"claim:674a8aeeebc511a6-d853e1a3f0badae4\",\n    \"claim:674a8aeeebc511a6-18a6b88907b91004\",\n    \"claim:674a8aeeebc511a6-e61bc7c516e84917\",\n    \"claim:674a8aeeebc511a6-9768d7193a2c2dbb\",\n    \"claim:ed0267ab8abe7125-591bd84e28289de0\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": [\n    \"未提供关于非 P0 服务是否属于平台团队托管的生产服务的明确说明，但规范适用于所有平台团队托管的生产服务（claim:64fed77ca832e02c-305eefeaecfa3c8e）。\",\n    \"未提供关于变更覆盖率、漏洞扫描、发布单等门禁条件的具体验证方式或例外情况。\"\n  ]\n}",
+    "formatValid": true,
+    "citationValidation": {
+      "valid": true,
+      "invalid": []
+    }
+  },
+  {
+    "sampleId": "m2-sample-1c4e722a9536e396c806",
+    "questionId": "EV-COMM-005",
+    "answer": "{\n  \"answer\": \"黑卡会员在每日09:00–21:00通过App内专属入口发起在线咨询时，享有十分钟首次人工响应SLA。该SLA只衡量客服人员首次有效回复，不承诺十分钟内解决问题、批准退款或使资金到账。电话热线和社交媒体私信不属于专属入口。夜间21:00至次日09:00提交的咨询从次日服务时段开始计算。\",\n  \"citations\": [\n    \"claim:87efe7de4bfc7b99-4e1c5d4b2cd2143b\",\n    \"claim:87efe7de4bfc7b99-1de7c8ac676988f5\",\n    \"claim:87efe7de4bfc7b99-63e3cbc46d4142de\",\n    \"claim:87efe7de4bfc7b99-93023594708809de\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}",
+    "formatValid": true,
+    "citationValidation": {
+      "valid": true,
+      "invalid": []
+    }
+  },
+  {
+    "sampleId": "m2-sample-3e384868d326f0192b75",
+    "questionId": "EV-COMM-005",
+    "answer": "{\n  \"answer\": \"黑卡会员在每日09:00–21:00通过App内专属入口发起在线咨询时，享有十分钟首次人工响应SLA。该SLA只衡量客服人员首次有效回复，不承诺十分钟内解决问题、批准退款或使资金到账。电话热线和社交媒体私信不属于专属入口。夜间21:00至次日09:00提交的咨询从次日服务时段开始计算。\",\n  \"citations\": [\n    \"claim:87efe7de4bfc7b99-4e1c5d4b2cd2143b\",\n    \"claim:87efe7de4bfc7b99-1de7c8ac676988f5\",\n    \"claim:87efe7de4bfc7b99-63e3cbc46d4142de\",\n    \"claim:87efe7de4bfc7b99-93023594708809de\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}",
+    "formatValid": true,
+    "citationValidation": {
+      "valid": true,
+      "invalid": []
+    }
+  }
+]

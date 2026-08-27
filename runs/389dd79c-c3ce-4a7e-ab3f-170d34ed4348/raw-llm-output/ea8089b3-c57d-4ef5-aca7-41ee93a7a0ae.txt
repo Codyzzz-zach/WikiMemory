@@ -1,0 +1,13 @@
+{
+  "verdict": "passed",
+  "dimensions": {
+    "support": { "result": "pass", "evidence": "除法→分数" },
+    "addition": { "result": "pass", "evidence": "原文未包含超出所引用的信息" },
+    "inference": { "result": "pass", "evidence": "原文为直接陈述，无需推断标记" },
+    "limits": { "result": "pass", "evidence": "原文无适用条件或例外" },
+    "citation": { "result": "pass", "evidence": "Claim 准确对应引用 span" }
+  },
+  "anchor": "除法→分数",
+  "failedDimensions": [],
+  "issues": []
+}

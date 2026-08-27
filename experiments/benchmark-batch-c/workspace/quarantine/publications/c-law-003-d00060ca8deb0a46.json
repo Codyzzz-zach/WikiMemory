@@ -1,0 +1,726 @@
+{
+  "schemaVersion": "v1",
+  "sourceId": "source:c-law-003-d00060ca8deb0a46",
+  "runId": "b7593fbd-fdcb-4ff5-97f9-d83151f0733a",
+  "publishedAt": "2026-07-28T07:16:43.473Z",
+  "claims": [
+    {
+      "claim": {
+        "id": "claim:d00060ca8deb0a46-73d228fa88a74fa9",
+        "statement": "SCCs did not address the lack of judicial remedies against the activity of U.S. intelligence agencies.",
+        "evidenceSpanIds": [
+          "span:c-law-003-d00060ca8deb0a46-8#chars-1445-1500"
+        ],
+        "conditions": [],
+        "derivation": "EXTRACTED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:16:04.101Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "confidence": 1,
+        "claimKind": "FACT",
+        "scope": {
+          "type": "GLOBAL"
+        },
+        "provenanceRefs": [
+          {
+            "type": "SourceSpan",
+            "spanId": "span:c-law-003-d00060ca8deb0a46-8#chars-1445-1500"
+          }
+        ],
+        "supportingEvidenceRefs": [
+          {
+            "type": "SourceSpan",
+            "spanId": "span:c-law-003-d00060ca8deb0a46-8#chars-1445-1500"
+          }
+        ],
+        "knowledgeVersion": "v1",
+        "recordedAt": "2026-07-28T07:16:04.101Z"
+      },
+      "issues": [
+        {
+          "code": "SEMANTIC_SUPPORT_FAILED",
+          "severity": "error",
+          "affectedObject": "claim:d00060ca8deb0a46-73d228fa88a74fa9",
+          "detail": "support：证据没有明确支持 Claim 的全部断言；证据 [0:c-law-003#block-8] “or the lack of judicial remedies against such activity.”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "relation": {
+        "id": "rel:d00060ca8deb0a46-0f0b65dadce86aac",
+        "from": "claim:d00060ca8deb0a46-79cf491cd3bdb8dc",
+        "to": "claim:d00060ca8deb0a46-945f8930a876900f",
+        "type": "DERIVED_FROM",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-law-003-d00060ca8deb0a46-5#chars-423-577",
+          "span:c-law-003-d00060ca8deb0a46-5#chars-578-853"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:16:18.685Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:d00060ca8deb0a46-0f0b65dadce86aac",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-law-003#block-5] “First, the Irish DPA ascertained whether US law guaranteed an essentially equiva”; [1:c-law-003#block-5] “This was excluded by the supervisory authority, especially due to the lack of ef”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:d00060ca8deb0a46-0f0b65dadce86aac",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-law-003#block-5] “First, the Irish DPA ascertained whether US law guaranteed an essentially equiva”; [1:c-law-003#block-5] “This was excluded by the supervisory authority, especially due to the lack of ef”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:d00060ca8deb0a46-23cd516f241702b1",
+        "from": "claim:d00060ca8deb0a46-eaaa91b77b58736b",
+        "to": "claim:d00060ca8deb0a46-3911ed7670ce857d",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-law-003-d00060ca8deb0a46-3#chars-244-307",
+          "span:c-law-003-d00060ca8deb0a46-3#chars-333-392"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:16:18.685Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:d00060ca8deb0a46-23cd516f241702b1",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-law-003#block-3] “**Authority:** DPC (Ireland), bound by EDPB Article 65 decision”; [1:c-law-003#block-3] “**Relevant Law:** Articles 45, 46, 49, 60(4), 65(1)(a) GDPR”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:d00060ca8deb0a46-23cd516f241702b1",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-law-003#block-3] “**Authority:** DPC (Ireland), bound by EDPB Article 65 decision”; [1:c-law-003#block-3] “**Relevant Law:** Articles 45, 46, 49, 60(4), 65(1)(a) GDPR”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:d00060ca8deb0a46-23cd516f241702b1",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-law-003#block-3] “**Authority:** DPC (Ireland), bound by EDPB Article 65 decision”; [1:c-law-003#block-3] “**Relevant Law:** Articles 45, 46, 49, 60(4), 65(1)(a) GDPR”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_DIRECTION_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:d00060ca8deb0a46-23cd516f241702b1",
+          "detail": "direction：Relation 未通过边级语义审计；证据 [0:c-law-003#block-3] “**Authority:** DPC (Ireland), bound by EDPB Article 65 decision”; [1:c-law-003#block-3] “**Relevant Law:** Articles 45, 46, 49, 60(4), 65(1)(a) GDPR”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_CONDITIONS_MISSING",
+          "severity": "error",
+          "affectedObject": "rel:d00060ca8deb0a46-23cd516f241702b1",
+          "detail": "conditions：Relation 未通过边级语义审计；证据 [0:c-law-003#block-3] “**Authority:** DPC (Ireland), bound by EDPB Article 65 decision”; [1:c-law-003#block-3] “**Relevant Law:** Articles 45, 46, 49, 60(4), 65(1)(a) GDPR”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:d00060ca8deb0a46-380d6a33dcc0e917",
+        "from": "claim:d00060ca8deb0a46-280b7a37e60ee4d9",
+        "to": "claim:d00060ca8deb0a46-7ec31cc118e6c394",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-law-003-d00060ca8deb0a46-8#chars-1146-1349",
+          "span:c-law-003-d00060ca8deb0a46-8#chars-1350-1444"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:16:18.685Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:d00060ca8deb0a46-380d6a33dcc0e917",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-law-003#block-8] “Second, the Irish DPA found that Standard Contractual Clauses (SCCs) pursuant to”; [1:c-law-003#block-8] “In particular, SCCs did not (and could not) address the activity of U.S. intelli”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:d00060ca8deb0a46-380d6a33dcc0e917",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-law-003#block-8] “Second, the Irish DPA found that Standard Contractual Clauses (SCCs) pursuant to”; [1:c-law-003#block-8] “In particular, SCCs did not (and could not) address the activity of U.S. intelli”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:d00060ca8deb0a46-380d6a33dcc0e917",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-law-003#block-8] “Second, the Irish DPA found that Standard Contractual Clauses (SCCs) pursuant to”; [1:c-law-003#block-8] “In particular, SCCs did not (and could not) address the activity of U.S. intelli”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_DIRECTION_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:d00060ca8deb0a46-380d6a33dcc0e917",
+          "detail": "direction：Relation 未通过边级语义审计；证据 [0:c-law-003#block-8] “Second, the Irish DPA found that Standard Contractual Clauses (SCCs) pursuant to”; [1:c-law-003#block-8] “In particular, SCCs did not (and could not) address the activity of U.S. intelli”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:d00060ca8deb0a46-6ae8c2fa61fd9aa3",
+        "from": "claim:d00060ca8deb0a46-73d228fa88a74fa9",
+        "to": "claim:d00060ca8deb0a46-f7aecec4e3478e80",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "UNVERIFIED",
+        "supersessionEffect": null,
+        "relationAuditVersion": null,
+        "evidenceSpanIds": [
+          "span:c-law-003-d00060ca8deb0a46-5#chars-626-772",
+          "span:c-law-003-d00060ca8deb0a46-8#chars-1445-1500"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:16:18.685Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_ENDPOINT_QUARANTINED",
+          "severity": "error",
+          "affectedObject": "rel:d00060ca8deb0a46-6ae8c2fa61fd9aa3",
+          "detail": "from 端点未通过 Lint（Quarantined）: claim:d00060ca8deb0a46-73d228fa88a74fa9",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:d00060ca8deb0a46-6c59b1c25879abb9",
+        "from": "claim:d00060ca8deb0a46-bf5f6d4b7f49db15",
+        "to": "claim:d00060ca8deb0a46-945f8930a876900f",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-law-003-d00060ca8deb0a46-15#chars-2613-2789",
+          "span:c-law-003-d00060ca8deb0a46-5#chars-423-577"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:16:18.685Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:d00060ca8deb0a46-6c59b1c25879abb9",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-law-003#block-15] “On the other hand, the Irish DPA claimed that several complex legal issues conce”; [1:c-law-003#block-5] “First, the Irish DPA ascertained whether US law guaranteed an essentially equiva”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:d00060ca8deb0a46-6c59b1c25879abb9",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-law-003#block-15] “On the other hand, the Irish DPA claimed that several complex legal issues conce”; [1:c-law-003#block-5] “First, the Irish DPA ascertained whether US law guaranteed an essentially equiva”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:d00060ca8deb0a46-8dd89f9ffadf3c1b",
+        "from": "claim:d00060ca8deb0a46-4d938d71081f1c3a",
+        "to": "claim:d00060ca8deb0a46-aabdfc2e66e8c778",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-law-003-d00060ca8deb0a46-15#chars-2445-2612",
+          "span:c-law-003-d00060ca8deb0a46-3#chars-308-332"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:16:18.685Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.6,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:d00060ca8deb0a46-8dd89f9ffadf3c1b",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-law-003#block-15] “On the one hand, the Irish DPA found that the suspension of the transfers was al”; [1:c-law-003#block-3] “**Fine:** €1,200,000,000”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:d00060ca8deb0a46-8dd89f9ffadf3c1b",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-law-003#block-15] “On the one hand, the Irish DPA found that the suspension of the transfers was al”; [1:c-law-003#block-3] “**Fine:** €1,200,000,000”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:d00060ca8deb0a46-8dd89f9ffadf3c1b",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-law-003#block-15] “On the one hand, the Irish DPA found that the suspension of the transfers was al”; [1:c-law-003#block-3] “**Fine:** €1,200,000,000”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:d00060ca8deb0a46-9fd041fd12c6d880",
+        "from": "claim:d00060ca8deb0a46-280b7a37e60ee4d9",
+        "to": "claim:d00060ca8deb0a46-73d228fa88a74fa9",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "UNVERIFIED",
+        "supersessionEffect": null,
+        "relationAuditVersion": null,
+        "evidenceSpanIds": [
+          "span:c-law-003-d00060ca8deb0a46-8#chars-1350-1444",
+          "span:c-law-003-d00060ca8deb0a46-8#chars-1445-1500"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:16:18.685Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_ENDPOINT_QUARANTINED",
+          "severity": "error",
+          "affectedObject": "rel:d00060ca8deb0a46-9fd041fd12c6d880",
+          "detail": "to 端点未通过 Lint（Quarantined）: claim:d00060ca8deb0a46-73d228fa88a74fa9",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:d00060ca8deb0a46-fbd8fee3f60a7ba8",
+        "from": "claim:d00060ca8deb0a46-2fbabbbfe51960c9",
+        "to": "claim:d00060ca8deb0a46-c0210a1b9ff254ba",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-law-003-d00060ca8deb0a46-12#chars-1915-2113",
+          "span:c-law-003-d00060ca8deb0a46-12#chars-1990-2113"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:16:18.685Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:d00060ca8deb0a46-fbd8fee3f60a7ba8",
+          "detail": "Relation 审计虽返回 passed，但边级支持证据未同时覆盖 FROM 与 TO 端点；拒绝用单侧证据和模型外部知识补全关系",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-0a0a21414c5f9513",
+        "from": "claim:d00060ca8deb0a46-95e950f6fa2880d4",
+        "to": "claim:f1df14c75b8f61cf-29a9ae062f2b6a6d",
+        "type": "EQUIVALENT_UNDER",
+        "conditions": [
+          "same case reference IN-20-8-1"
+        ],
+        "conditionStatus": "UNVERIFIED",
+        "supersessionEffect": null,
+        "relationAuditVersion": null,
+        "evidenceSpanIds": [
+          "span:c-law-002-f1df14c75b8f61cf-3#chars-483-512",
+          "span:c-law-003-d00060ca8deb0a46-3#chars-208-243"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:16:38.297Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 1,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_EQUIVALENCE_REVIEW_REQUIRED",
+          "severity": "error",
+          "affectedObject": "rel:cross-0a0a21414c5f9513",
+          "detail": "EQUIVALENT_UNDER 自动审计在真实抽检中 4/4 误判；独立人工复核或校准门禁完成前禁止自动晋级",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-2f930b79c09fa87a",
+        "from": "claim:d00060ca8deb0a46-aabdfc2e66e8c778",
+        "to": "claim:f1df14c75b8f61cf-04f9905849db1610",
+        "type": "EQUIVALENT_UNDER",
+        "conditions": [
+          "same fine amount €1,200,000,000"
+        ],
+        "conditionStatus": "UNVERIFIED",
+        "supersessionEffect": null,
+        "relationAuditVersion": null,
+        "evidenceSpanIds": [
+          "span:c-law-002-f1df14c75b8f61cf-13#chars-1802-1876",
+          "span:c-law-003-d00060ca8deb0a46-3#chars-308-332"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:16:38.297Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 1,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_EQUIVALENCE_REVIEW_REQUIRED",
+          "severity": "error",
+          "affectedObject": "rel:cross-2f930b79c09fa87a",
+          "detail": "EQUIVALENT_UNDER 自动审计在真实抽检中 4/4 误判；独立人工复核或校准门禁完成前禁止自动晋级",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-30c56a1585ac3e68",
+        "from": "claim:d00060ca8deb0a46-3911ed7670ce857d",
+        "to": "claim:f1df14c75b8f61cf-82d665311e5fe83c",
+        "type": "EQUIVALENT_UNDER",
+        "conditions": [
+          "same authority DPC (Ireland)"
+        ],
+        "conditionStatus": "UNVERIFIED",
+        "supersessionEffect": null,
+        "relationAuditVersion": null,
+        "evidenceSpanIds": [
+          "span:c-law-002-f1df14c75b8f61cf-3#chars-330-409",
+          "span:c-law-003-d00060ca8deb0a46-3#chars-244-307"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:16:38.297Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 1,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_EQUIVALENCE_REVIEW_REQUIRED",
+          "severity": "error",
+          "affectedObject": "rel:cross-30c56a1585ac3e68",
+          "detail": "EQUIVALENT_UNDER 自动审计在真实抽检中 4/4 误判；独立人工复核或校准门禁完成前禁止自动晋级",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-3b4852e581f92ad0",
+        "from": "claim:d00060ca8deb0a46-eaaa91b77b58736b",
+        "to": "claim:f1df14c75b8f61cf-cb4c4ee3e1fb738e",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-law-002-f1df14c75b8f61cf-0#chars-3-96",
+          "span:c-law-003-d00060ca8deb0a46-3#chars-333-392"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:16:38.297Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-3b4852e581f92ad0",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-law-002#block-0] “DPC (Ireland) Final Decision IN-20-8-1 — Meta Platforms Ireland Limited (GDPR da”; [1:c-law-003#block-3] “**Relevant Law:** Articles 45, 46, 49, 60(4), 65(1)(a) GDPR”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-3b4852e581f92ad0",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-law-002#block-0] “DPC (Ireland) Final Decision IN-20-8-1 — Meta Platforms Ireland Limited (GDPR da”; [1:c-law-003#block-3] “**Relevant Law:** Articles 45, 46, 49, 60(4), 65(1)(a) GDPR”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-3b4852e581f92ad0",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-law-002#block-0] “DPC (Ireland) Final Decision IN-20-8-1 — Meta Platforms Ireland Limited (GDPR da”; [1:c-law-003#block-3] “**Relevant Law:** Articles 45, 46, 49, 60(4), 65(1)(a) GDPR”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-ccb1423fe0b40e33",
+        "from": "claim:d00060ca8deb0a46-280b7a37e60ee4d9",
+        "to": "claim:f1df14c75b8f61cf-16ac86ad60574bb5",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-law-002-f1df14c75b8f61cf-6#chars-1105-1274",
+          "span:c-law-003-d00060ca8deb0a46-8#chars-1350-1444"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:16:38.297Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-ccb1423fe0b40e33",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-law-002#block-6] “the DPC found that these arrangements did not address the risks to the fundament”; [1:c-law-003#block-8] “In particular, SCCs did not (and could not) address the activity of U.S. intelli”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-ccb1423fe0b40e33",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-law-002#block-6] “the DPC found that these arrangements did not address the risks to the fundament”; [1:c-law-003#block-8] “In particular, SCCs did not (and could not) address the activity of U.S. intelli”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-ccb1423fe0b40e33",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-law-002#block-6] “the DPC found that these arrangements did not address the risks to the fundament”; [1:c-law-003#block-8] “In particular, SCCs did not (and could not) address the activity of U.S. intelli”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-cf017ee1fc71aa8a",
+        "from": "claim:d00060ca8deb0a46-e6fc251cffd1f09e",
+        "to": "claim:f1df14c75b8f61cf-e77ddeaf086f4b0a",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-law-002-f1df14c75b8f61cf-2#chars-118-262",
+          "span:c-law-003-d00060ca8deb0a46-2#chars-90-206"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:16:38.297Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-cf017ee1fc71aa8a",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:c-law-002#block-2] “*Content sourced from EDPB press release (https://www.edpb.europa.eu/), DPC anno”; [1:c-law-003#block-2] “*Content sourced from GDPRhub.eu (https://gdprhub.eu/index.php?curid=5944). Publ”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-cf017ee1fc71aa8a",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-law-002#block-2] “*Content sourced from EDPB press release (https://www.edpb.europa.eu/), DPC anno”; [1:c-law-003#block-2] “*Content sourced from GDPRhub.eu (https://gdprhub.eu/index.php?curid=5944). Publ”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-cf017ee1fc71aa8a",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-law-002#block-2] “*Content sourced from EDPB press release (https://www.edpb.europa.eu/), DPC anno”; [1:c-law-003#block-2] “*Content sourced from GDPRhub.eu (https://gdprhub.eu/index.php?curid=5944). Publ”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_DIRECTION_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-cf017ee1fc71aa8a",
+          "detail": "direction：Relation 未通过边级语义审计；证据 [0:c-law-002#block-2] “*Content sourced from EDPB press release (https://www.edpb.europa.eu/), DPC anno”; [1:c-law-003#block-2] “*Content sourced from GDPRhub.eu (https://gdprhub.eu/index.php?curid=5944). Publ”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_CONDITIONS_MISSING",
+          "severity": "error",
+          "affectedObject": "rel:cross-cf017ee1fc71aa8a",
+          "detail": "conditions：Relation 未通过边级语义审计；证据 [0:c-law-002#block-2] “*Content sourced from EDPB press release (https://www.edpb.europa.eu/), DPC anno”; [1:c-law-003#block-2] “*Content sourced from GDPRhub.eu (https://gdprhub.eu/index.php?curid=5944). Publ”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-d26dfd7657969174",
+        "from": "claim:d00060ca8deb0a46-0b118c5ef32f8d4c",
+        "to": "claim:f1df14c75b8f61cf-cc31b686dcee3c34",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:c-law-002-f1df14c75b8f61cf-6#chars-1012-1103",
+          "span:c-law-003-d00060ca8deb0a46-10#chars-1535-1725"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-28T07:16:38.297Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.9,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-d26dfd7657969174",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:c-law-002#block-6] “in conjunction with additional supplementary measures that were implemented by M”; [1:c-law-003#block-10] “Third, the supervisory authority considered whether Meta Ireland implemented suf”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-d26dfd7657969174",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:c-law-002#block-6] “in conjunction with additional supplementary measures that were implemented by M”; [1:c-law-003#block-10] “Third, the supervisory authority considered whether Meta Ireland implemented suf”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    }
+  ]
+}

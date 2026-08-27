@@ -1,0 +1,51 @@
+{
+  "questionId": "C-F-CLIMATE-001",
+  "promptHash": "0e6b77e977803c0c9a11b73293b54fa66aac6929d38e02222ac00dc4539f8ed3",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 1527,
+    "completionTokens": 3451,
+    "totalTokens": 4978,
+    "promptCacheHitTokens": 0,
+    "promptCacheMissTokens": 1527,
+    "reasoningTokens": 3077
+  },
+  "raw": "[\n  {\n    \"sampleId\": \"sample-029f0443-fa91-4a09-ae86-5b1e9aebdb98\",\n    \"requiredPointCoverage\": 4,\n    \"conditionFidelity\": 3,\n    \"evidenceGrounding\": 4,\n    \"answerabilityDiscipline\": 4,\n    \"sourceRoleTemporalDiscipline\": 3,\n    \"hardFailure\": false,\n    \"hardFailureTypes\": [],\n    \"rationale\": \"覆盖温度与词语，缺high confidence条件，引用直接但未提版本。\"\n  },\n  {\n    \"sampleId\": \"sample-3589c3f1-61ae-467a-a0cf-2e19d42265e0\",\n    \"requiredPointCoverage\": 4,\n    \"conditionFidelity\": 3,\n    \"evidenceGrounding\": 4,\n    \"answerabilityDiscipline\": 4,\n    \"sourceRoleTemporalDiscipline\": 4,\n    \"hardFailure\": false,\n    \"hardFailureTypes\": [],\n    \"rationale\": \"覆盖要点，缺条件，引用claim，明确报告版本。\"\n  },\n  {\n    \"sampleId\": \"sample-9b8a493c-6e5e-4435-82af-d3b5d4d185b7\",\n    \"requiredPointCoverage\": 4,\n    \"conditionFidelity\": 3,\n    \"evidenceGrounding\": 4,\n    \"answerabilityDiscipline\": 4,\n    \"sourceRoleTemporalDiscipline\": 2,\n    \"hardFailure\": false,\n    \"hardFailureTypes\": [],\n    \"rationale\": \"覆盖要点，缺条件，引用claim，未明报告版本。\"\n  }\n]",
+  "rows": [
+    {
+      "sampleId": "sample-029f0443-fa91-4a09-ae86-5b1e9aebdb98",
+      "requiredPointCoverage": 4,
+      "conditionFidelity": 3,
+      "evidenceGrounding": 4,
+      "answerabilityDiscipline": 4,
+      "sourceRoleTemporalDiscipline": 3,
+      "hardFailure": false,
+      "hardFailureTypes": [],
+      "rationale": "覆盖温度与词语，缺high confidence条件，引用直接但未提版本。"
+    },
+    {
+      "sampleId": "sample-3589c3f1-61ae-467a-a0cf-2e19d42265e0",
+      "requiredPointCoverage": 4,
+      "conditionFidelity": 3,
+      "evidenceGrounding": 4,
+      "answerabilityDiscipline": 4,
+      "sourceRoleTemporalDiscipline": 4,
+      "hardFailure": false,
+      "hardFailureTypes": [],
+      "rationale": "覆盖要点，缺条件，引用claim，明确报告版本。"
+    },
+    {
+      "sampleId": "sample-9b8a493c-6e5e-4435-82af-d3b5d4d185b7",
+      "requiredPointCoverage": 4,
+      "conditionFidelity": 3,
+      "evidenceGrounding": 4,
+      "answerabilityDiscipline": 4,
+      "sourceRoleTemporalDiscipline": 2,
+      "hardFailure": false,
+      "hardFailureTypes": [],
+      "rationale": "覆盖要点，缺条件，引用claim，未明报告版本。"
+    }
+  ]
+}

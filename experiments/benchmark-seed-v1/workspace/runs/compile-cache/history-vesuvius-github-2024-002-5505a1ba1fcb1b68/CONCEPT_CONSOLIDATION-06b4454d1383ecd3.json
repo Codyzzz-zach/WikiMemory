@@ -1,0 +1,6 @@
+{
+  "kind": "VALID",
+  "content": "{\n  \"concepts\": [\n    {\n      \"name\": \"维苏威挑战赛\",\n      \"aliases\": [\"维苏威挑战赛\"],\n      \"boundary\": \"一个竞赛项目\",\n      \"domain\": \"考古学/计算机视觉\"\n    },\n    {\n      \"name\": \"ScrollPrize/vesuvius\",\n      \"aliases\": [\"vesuvius\", \"该库\", \"ScrollPrize/vesuvius\"],\n      \"boundary\": \"一个Python库\",\n      \"domain\": \"软件/数据访问\"\n    },\n    {\n      \"name\": \"古代卷轴CT扫描\",\n      \"aliases\": [\"古代卷轴CT扫描\", \"卷轴数据\", \"CT扫描数据\"],\n      \"boundary\": \"数据资源\",\n      \"domain\": \"考古学/成像\"\n    },\n    {\n      \"name\": \"GitHub仓库\",\n      \"aliases\": [\"仓库\", \"该仓库\"],\n      \"boundary\": \"代码托管仓库\",\n      \"domain\": \"软件开发\"\n    }\n  ]\n}",
+  "model": "deepseek-v4-flash",
+  "outputHash": "ba251ef295244c3b"
+}

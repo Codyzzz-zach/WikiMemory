@@ -1,0 +1,28 @@
+{
+  "verdict": "passed",
+  "dimensions": {
+    "support": {
+      "result": "pass",
+      "evidence": "自然数的集合论定义（von Neumann 序数）是公理化集合论的基石。"
+    },
+    "addition": {
+      "result": "pass",
+      "evidence": "原文无额外信息。"
+    },
+    "inference": {
+      "result": "pass",
+      "evidence": "原文直接陈述，无需推断。"
+    },
+    "limits": {
+      "result": "pass",
+      "evidence": "原文无限定词或条件。"
+    },
+    "citation": {
+      "result": "pass",
+      "evidence": "Claim 与 SourceSpan 指向相同。"
+    }
+  },
+  "anchor": "自然数的集合论定义（von Neumann 序数）是公理化集合论的基石。",
+  "failedDimensions": [],
+  "issues": []
+}

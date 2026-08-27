@@ -1,0 +1,23 @@
+{
+	"schemaVersion": "wge-goal3-relation-lifecycle-repair-contract-addendum/v2.1",
+	"status": "FROZEN_BEFORE_SCHEMA_COMPLETION",
+	"stageBRead": false,
+	"parent": "experiments/goal3/goal3-relation-lifecycle-repair-contract-v2.json",
+	"reason": "The frozen v2 Relation-type priority list omitted the existing DERIVED_FROM enum member. TypeScript exhaustive checking detected the incomplete contract before replay.",
+	"amendment": {
+		"completeRelationTypePriority": [
+			"SUPERSEDES",
+			"CONTRADICTS",
+			"REQUIRES",
+			"DERIVED_FROM",
+			"EQUIVALENT_UNDER",
+			"SUPPORTS",
+			"RELATED_TO"
+		]
+	},
+	"nonChanges": [
+		"No acceptance threshold changes.",
+		"No candidate ids, audit outcomes, benchmark questions or Stage B data were read.",
+		"No implementation or replay result motivated the relative placement beyond covering the production schema exhaustively."
+	]
+}

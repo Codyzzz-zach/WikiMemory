@@ -1,0 +1,164 @@
+{
+  "propositions": [
+    {
+      "text": "级数是数列的累加：∑_{n=1}^∞ a_n = lim_{N→∞} ∑_{n=1}^N a_n。",
+      "exactQuote": "级数 = 数列的\"累加\"：$\\sum_{n=1}^\\infty a_n = \\lim_{N \\to \\infty} \\sum_{n=1}^N a_n$",
+      "blockId": "03-sequences-limits#block-24"
+    },
+    {
+      "text": "级数的收敛性取决于部分和数列的极限。",
+      "exactQuote": "关键事实：**级数的收敛性取决于部分和数列的极限**。",
+      "blockId": "03-sequences-limits#block-25"
+    },
+    {
+      "text": "几何级数 ∑ ar^{n-1} 的收敛条件是 |r| < 1。",
+      "exactQuote": "几何级数 $\\sum ar^{n-1}$ | $\\lvert r\\rvert < 1$",
+      "blockId": "03-sequences-limits#block-29"
+    },
+    {
+      "text": "几何级数 ∑ ar^{n-1} 收敛时和为 a/(1-r)。",
+      "exactQuote": "几何级数 $\\sum ar^{n-1}$ | $\\lvert r\\rvert < 1$ | $\\frac{a}{1-r}$",
+      "blockId": "03-sequences-limits#block-29"
+    },
+    {
+      "text": "p-级数 ∑ 1/n^p 的收敛条件是 p > 1。",
+      "exactQuote": "$p$-级数 $\\sum \\frac{1}{n^p}$ | $p > 1$",
+      "blockId": "03-sequences-limits#block-29"
+    },
+    {
+      "text": "p-级数 ∑ 1/n^p 收敛时和为 ζ(p)。",
+      "exactQuote": "$p$-级数 $\\sum \\frac{1}{n^p}$ | $p > 1$ | $\\zeta(p)$",
+      "blockId": "03-sequences-limits#block-29"
+    },
+    {
+      "text": "调和级数 ∑ 1/n 发散。",
+      "exactQuote": "调和级数 $\\sum \\frac{1}{n}$ | **发散**",
+      "blockId": "03-sequences-limits#block-29"
+    },
+    {
+      "text": "调和级数的部分和渐近于 ln n + γ。",
+      "exactQuote": "调和级数 $\\sum \\frac{1}{n}$ | **发散** | ∞（$\\sim \\ln n + \\gamma$）",
+      "blockId": "03-sequences-limits#block-29"
+    },
+    {
+      "text": "交错调和级数 ∑ (-1)^{n-1}/n 条件收敛。",
+      "exactQuote": "交错调和 $\\sum \\frac{(-1)^{n-1}}{n}$ | 条件收敛",
+      "blockId": "03-sequences-limits#block-29"
+    },
+    {
+      "text": "交错调和级数 ∑ (-1)^{n-1}/n 收敛到 ln 2。",
+      "exactQuote": "交错调和 $\\sum \\frac{(-1)^{n-1}}{n}$ | 条件收敛 | $\\ln 2$",
+      "blockId": "03-sequences-limits#block-29"
+    },
+    {
+      "text": "级数 ∑ 1/n! 收敛。",
+      "exactQuote": "$\\sum \\frac{1}{n!}$ | 收敛",
+      "blockId": "03-sequences-limits#block-29"
+    },
+    {
+      "text": "级数 ∑ 1/n! 收敛到 e。",
+      "exactQuote": "$\\sum \\frac{1}{n!}$ | 收敛 | $e$",
+      "blockId": "03-sequences-limits#block-29"
+    },
+    {
+      "text": "如果函数足够光滑，可以用它在某点的各阶导数构造一个幂级数。",
+      "exactQuote": "如果函数足够光滑，就可以用它在某点的各阶导数构造一个幂级数",
+      "blockId": "03-sequences-limits#block-34"
+    },
+    {
+      "text": "该级数在收敛半径内等于原函数。",
+      "exactQuote": "该级数在收敛半径内等于原函数",
+      "blockId": "03-sequences-limits#block-34"
+    },
+    {
+      "text": "Taylor 级数公式为 f(x) = ∑_{n=0}^∞ f^{(n)}(a)/n! (x-a)^n。",
+      "exactQuote": "$$ f(x) = \\sum_{n=0}^\\infty \\frac{f^{(n)}(a)}{n!}(x-a)^n $$",
+      "blockId": "03-sequences-limits#block-35"
+    },
+    {
+      "text": "Maclaurin 级数是 a=0 的特例。",
+      "exactQuote": "**Maclaurin 级数**（$a=0$ 的特例）",
+      "blockId": "03-sequences-limits#block-36"
+    },
+    {
+      "text": "Maclaurin 级数公式为 f(x) = f(0) + f'(0)x + f''(0)/2! x^2 + f'''(0)/3! x^3 + ...。",
+      "exactQuote": "$$ f(x) = f(0) + f'(0)x + \\frac{f''(0)}{2!}x^2 + \\frac{f'''(0)}{3!}x^3 + \\cdots $$",
+      "blockId": "03-sequences-limits#block-37"
+    },
+    {
+      "text": "e^x 的 Maclaurin 级数为 ∑_{n=0}^∞ x^n/n!。",
+      "exactQuote": "$e^x$ | $\\sum_{n=0}^\\infty \\frac{x^n}{n!}$",
+      "blockId": "03-sequences-limits#block-39"
+    },
+    {
+      "text": "e^x 的 Maclaurin 级数收敛半径为 ∞。",
+      "exactQuote": "$e^x$ | $\\sum_{n=0}^\\infty \\frac{x^n}{n!}$ | $\\infty$",
+      "blockId": "03-sequences-limits#block-39"
+    },
+    {
+      "text": "sin x 的 Maclaurin 级数为 ∑_{n=0}^∞ (-1)^n x^{2n+1}/(2n+1)!。",
+      "exactQuote": "$\\sin x$ | $\\sum_{n=0}^\\infty (-1)^n \\frac{x^{2n+1}}{(2n+1)!}$",
+      "blockId": "03-sequences-limits#block-39"
+    },
+    {
+      "text": "sin x 的 Maclaurin 级数收敛半径为 ∞。",
+      "exactQuote": "$\\sin x$ | $\\sum_{n=0}^\\infty (-1)^n \\frac{x^{2n+1}}{(2n+1)!}$ | $\\infty$",
+      "blockId": "03-sequences-limits#block-39"
+    },
+    {
+      "text": "cos x 的 Maclaurin 级数为 ∑_{n=0}^∞ (-1)^n x^{2n}/(2n)!。",
+      "exactQuote": "$\\cos x$ | $\\sum_{n=0}^\\infty (-1)^n \\frac{x^{2n}}{(2n)!}$",
+      "blockId": "03-sequences-limits#block-39"
+    },
+    {
+      "text": "cos x 的 Maclaurin 级数收敛半径为 ∞。",
+      "exactQuote": "$\\cos x$ | $\\sum_{n=0}^\\infty (-1)^n \\frac{x^{2n}}{(2n)!}$ | $\\infty$",
+      "blockId": "03-sequences-limits#block-39"
+    },
+    {
+      "text": "1/(1-x) 的 Maclaurin 级数为 ∑_{n=0}^∞ x^n。",
+      "exactQuote": "$\\frac{1}{1-x}$ | $\\sum_{n=0}^\\infty x^n$",
+      "blockId": "03-sequences-limits#block-39"
+    },
+    {
+      "text": "1/(1-x) 的 Maclaurin 级数收敛半径为 1。",
+      "exactQuote": "$\\frac{1}{1-x}$ | $\\sum_{n=0}^\\infty x^n$ | $1$",
+      "blockId": "03-sequences-limits#block-39"
+    },
+    {
+      "text": "ln(1+x) 的 Maclaurin 级数为 ∑_{n=1}^∞ (-1)^{n+1} x^n/n。",
+      "exactQuote": "$\\ln(1+x)$ | $\\sum_{n=1}^\\infty (-1)^{n+1}\\frac{x^n}{n}$",
+      "blockId": "03-sequences-limits#block-39"
+    },
+    {
+      "text": "ln(1+x) 的 Maclaurin 级数收敛半径为 1。",
+      "exactQuote": "$\\ln(1+x)$ | $\\sum_{n=1}^\\infty (-1)^{n+1}\\frac{x^n}{n}$ | $1$",
+      "blockId": "03-sequences-limits#block-39"
+    },
+    {
+      "text": "欧拉公式 e^{iθ} = cos θ + i sin θ 可以从 e^x、sin x、cos x 各自的 Taylor 展开直接推出。",
+      "exactQuote": "欧拉公式 $e^{i\\theta} = \\cos\\theta + i\\sin\\theta$ 可以从 $e^x$、$\\sin x$、$\\cos x$ 各自的 Taylor 展开直接推出",
+      "blockId": "03-sequences-limits#block-40"
+    },
+    {
+      "text": "将 x = iθ 代入 e^x 展开，分离实部和虚部即可得到欧拉公式。",
+      "exactQuote": "将 $x=i\\theta$ 代入 $e^x$ 展开，分离实部和虚部即可",
+      "blockId": "03-sequences-limits#block-40"
+    },
+    {
+      "text": "Taylor 级数截断到 n 项的误差由 Lagrange 余项给出。",
+      "exactQuote": "Taylor 级数截断到 $n$ 项的误差由 Lagrange 余项给出",
+      "blockId": "03-sequences-limits#block-43"
+    },
+    {
+      "text": "Lagrange 余项公式为 R_n(x) = f^{(n+1)}(ξ)/(n+1)! (x-a)^{n+1}，其中 ξ 在 a 和 x 之间。",
+      "exactQuote": "$$ R_n(x) = \\frac{f^{(n+1)}(\\xi)}{(n+1)!}(x-a)^{n+1}, \\quad \\xi \\text{ 在 } a \\text{ 和 } x \\text{ 之间} $$",
+      "blockId": "03-sequences-limits#block-44"
+    },
+    {
+      "text": "Lagrange 余项允许在数值计算中控制精度，给定所需精度可反推需要的项数。",
+      "exactQuote": "这让我们可以在数值计算中**控制精度**——给定所需精度，反推需要多少项。",
+      "blockId": "03-sequences-limits#block-45"
+    }
+  ]
+}

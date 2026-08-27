@@ -1,0 +1,28 @@
+{
+  "verdict": "failed",
+  "dimensions": {
+    "support": {
+      "result": "fail",
+      "evidence": "原文只有'有乘法逆元 | ❌'，表示自然数集没有乘法逆元，但缺少明确陈述。"
+    },
+    "addition": {
+      "result": "pass",
+      "evidence": "无额外信息。"
+    },
+    "inference": {
+      "result": "pass",
+      "evidence": "没有做出推断。"
+    },
+    "limits": {
+      "result": "pass",
+      "evidence": "无限制条件。"
+    },
+    "citation": {
+      "result": "pass",
+      "evidence": "引用准确。"
+    }
+  },
+  "anchor": "有乘法逆元 | ❌",
+  "failedDimensions": ["support"],
+  "issues": ["原文仅通过符号'❌'暗示没有乘法逆元，但未明确陈述'自然数集N没有乘法逆元'，支持不足。"]
+}

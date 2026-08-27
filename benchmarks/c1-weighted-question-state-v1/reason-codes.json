@@ -1,0 +1,112 @@
+{
+  "schemaVersion": "wge-c1-reason-codes/v1",
+  "projectionVersion": "c1-question-state-projection/v1",
+  "dimensionReasonCodes": [
+    {
+      "code": "DIRECT_EVIDENCE_PRESENT",
+      "dimension": "grounding",
+      "meaning": "The branch is directly supported by one or more resolvable evidence spans."
+    },
+    {
+      "code": "CLAIM_CLOSURE_COMPLETE",
+      "dimension": "grounding",
+      "meaning": "Every claim used by the branch is present in the frozen input closure."
+    },
+    {
+      "code": "SAME_AUTHORITY_SUCCESSOR",
+      "dimension": "authority",
+      "meaning": "The later branch was issued by the same policy-owning authority as the earlier branch."
+    },
+    {
+      "code": "PEER_AUTHORITIES_EQUAL",
+      "dimension": "authority",
+      "meaning": "The competing branches come from explicitly peer authorities with no ranking evidence."
+    },
+    {
+      "code": "AUTHORITY_NOT_COMPARABLE",
+      "dimension": "authority",
+      "meaning": "The frozen evidence does not justify an authority ordering."
+    },
+    {
+      "code": "EFFECTIVE_BASELINE",
+      "dimension": "currentness",
+      "meaning": "The branch establishes the effective baseline at the evaluated knowledge version."
+    },
+    {
+      "code": "LATER_EFFECTIVE_REPLACEMENT",
+      "dimension": "currentness",
+      "meaning": "A later effective branch explicitly replaces the compared branch."
+    },
+    {
+      "code": "APPLICABILITY_MATCH",
+      "dimension": "applicability",
+      "meaning": "The branch scope matches the evaluated applicability."
+    },
+    {
+      "code": "APPLICABILITY_PARTIAL",
+      "dimension": "applicability",
+      "meaning": "The branch applies only to a strict subset of the evaluated applicability."
+    },
+    {
+      "code": "CONDITION_REQUIRED",
+      "dimension": "applicability",
+      "meaning": "The branch is usable only when its explicit conditions are retained."
+    },
+    {
+      "code": "OUTSIDE_SUPERSESSION_SCOPE",
+      "dimension": "applicability",
+      "meaning": "The branch remains current because the explicit replacement excludes its subject matter."
+    },
+    {
+      "code": "EXPLICIT_SUPERSESSION",
+      "dimension": "relational_support",
+      "meaning": "A grounded relation explicitly replaces the earlier branch within a stated scope."
+    },
+    {
+      "code": "EXPLICIT_CONTRADICTION",
+      "dimension": "relational_support",
+      "meaning": "A grounded relation explicitly records incompatible branches."
+    },
+    {
+      "code": "PEER_CONFLICT_UNRESOLVED",
+      "dimension": "uncertainty",
+      "meaning": "Peer branches conflict and the frozen evidence contains no authorized resolution."
+    },
+    {
+      "code": "NO_AUTHORIZED_DECISION",
+      "dimension": "uncertainty",
+      "meaning": "No authority permitted to decide the issue has issued an effective decision."
+    },
+    {
+      "code": "INSUFFICIENT_EVIDENCE",
+      "dimension": "uncertainty",
+      "meaning": "The input closure is insufficient to rank the branch without fabricated certainty."
+    }
+  ],
+  "transitionCodes": [
+    "BASELINE_ESTABLISHED",
+    "SCOPED_SUPERSESSION",
+    "SUPERSEDED_HISTORY_RETAINED",
+    "INDEPENDENT_CONTROL_PRESERVED",
+    "PEER_CONFLICT_PRESERVED",
+    "NO_AUTHORIZED_DECISION_PRESERVED",
+    "SAME_QUESTION_UPDATE",
+    "DISPUTE_PRESERVED",
+    "AUTHORITY_NOT_FLATTENED",
+    "CONDITION_PRESERVED",
+    "NEW_EVIDENCE_ADDED",
+    "CONFLICT_ATTRIBUTED"
+  ],
+  "hardFailureCodes": [
+    "UNSUPPORTED_ASSERTION",
+    "CONFLICT_FLATTENED",
+    "HISTORY_DROPPED",
+    "CONDITION_DROPPED",
+    "SCOPE_LEAK",
+    "FABRICATED_CERTAINTY",
+    "QUESTION_IDENTITY_MUTATED",
+    "CANONICAL_INPUT_MUTATED",
+    "REPLAY_MISMATCH",
+    "ISOLATION_BREACH"
+  ]
+}

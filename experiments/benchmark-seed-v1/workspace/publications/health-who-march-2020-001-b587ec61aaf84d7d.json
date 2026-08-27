@@ -1,0 +1,240 @@
+{
+  "schemaVersion": "v1",
+  "sourceId": "source:health-who-march-2020-001-b587ec61aaf84d7d",
+  "runId": "20cd34b6-8d69-451c-a9f6-008263248025",
+  "publishedAt": "2026-07-27T09:46:16.909Z",
+  "claims": [
+    {
+      "id": "claim:b587ec61aaf84d7d-474d339f3670f6c4",
+      "statement": "In the context of COVID-19, airborne transmission may be possible in specific circumstances and settings where procedures or support treatments that generate aerosols are performed.",
+      "evidenceSpanIds": [
+        "span:health-who-march-2020-001-b587ec61aaf84d7d-2#chars-351-534"
+      ],
+      "conditions": [
+        "specific circumstances and settings where procedures or support treatments that generate aerosols are performed"
+      ],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:46:08.340Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:health-who-march-2020-001-b587ec61aaf84d7d-2#chars-351-534"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:health-who-march-2020-001-b587ec61aaf84d7d-2#chars-351-534"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-27T09:46:08.340Z"
+    },
+    {
+      "id": "claim:b587ec61aaf84d7d-7bc5b6c3a357763e",
+      "statement": "Procedures that generate aerosols include endotracheal intubation, bronchoscopy, open suctioning, administration of nebulized treatment, manual ventilation before intubation, turning the patient to the prone position, disconnecting the patient from the ventilator, non-invasive positive-pressure ventilation, tracheostomy, and cardiopulmonary resuscitation.",
+      "evidenceSpanIds": [
+        "span:health-who-march-2020-001-b587ec61aaf84d7d-2#chars-536-856"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:46:08.340Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:health-who-march-2020-001-b587ec61aaf84d7d-2#chars-536-856"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:health-who-march-2020-001-b587ec61aaf84d7d-2#chars-536-856"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-27T09:46:08.340Z"
+    },
+    {
+      "id": "claim:b587ec61aaf84d7d-aae2124ec2ae0b65",
+      "statement": "Droplet nuclei can remain in the air for long periods of time.",
+      "evidenceSpanIds": [
+        "span:health-who-march-2020-001-b587ec61aaf84d7d-1#chars-241-287"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:46:08.340Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:health-who-march-2020-001-b587ec61aaf84d7d-1#chars-241-287"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:health-who-march-2020-001-b587ec61aaf84d7d-1#chars-241-287"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-27T09:46:08.340Z"
+    },
+    {
+      "id": "claim:b587ec61aaf84d7d-f9e6d8b51f46b89d",
+      "statement": "Droplet nuclei can be transmitted to others over distances greater than 1 m.",
+      "evidenceSpanIds": [
+        "span:health-who-march-2020-001-b587ec61aaf84d7d-1#chars-292-348"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:46:08.340Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:health-who-march-2020-001-b587ec61aaf84d7d-1#chars-292-348"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:health-who-march-2020-001-b587ec61aaf84d7d-1#chars-292-348"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-27T09:46:08.340Z"
+    },
+    {
+      "id": "claim:b587ec61aaf84d7d-ffaa41d4d0fe03ab",
+      "statement": "Airborne transmission refers to the presence of microbes within droplet nuclei, which are particles <5μm in diameter.",
+      "evidenceSpanIds": [
+        "span:health-who-march-2020-001-b587ec61aaf84d7d-1#chars-51-239"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:46:08.340Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:health-who-march-2020-001-b587ec61aaf84d7d-1#chars-51-239"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:health-who-march-2020-001-b587ec61aaf84d7d-1#chars-51-239"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-27T09:46:08.340Z"
+    }
+  ],
+  "concepts": [
+    {
+      "id": "concept:1c178051087575fe",
+      "name": "droplet nuclei",
+      "aliases": [],
+      "boundary": "particles <5μm in diameter that can remain in air and travel >1m",
+      "domain": "aerosol science"
+    },
+    {
+      "id": "concept:7a6eb2a147e8c9b0",
+      "name": "airborne transmission",
+      "aliases": [],
+      "boundary": "transmission of microbes via droplet nuclei",
+      "domain": "epidemiology"
+    },
+    {
+      "id": "concept:d312faab1c8f7db1",
+      "name": "COVID-19",
+      "aliases": [],
+      "boundary": "disease caused by SARS-CoV-2",
+      "domain": "virology"
+    },
+    {
+      "id": "concept:f145ada8d7b6388c",
+      "name": "aerosol-generating procedures",
+      "aliases": [
+        "procedures that generate aerosols"
+      ],
+      "boundary": "medical procedures producing aerosols, e.g., intubation, bronchoscopy, suctioning, nebulization, manual ventilation, prone positioning, ventilator disconnection, non-invasive ventilation, tracheostomy, CPR",
+      "domain": "medicine"
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel:b587ec61aaf84d7d-0e76e9242161332a",
+      "from": "claim:b587ec61aaf84d7d-474d339f3670f6c4",
+      "to": "claim:b587ec61aaf84d7d-7bc5b6c3a357763e",
+      "type": "REQUIRES",
+      "conditions": [
+        "specific circumstances and settings where procedures or support treatments that generate aerosols are performed"
+      ],
+      "conditionStatus": "PRESERVED",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:health-who-march-2020-001-b587ec61aaf84d7d-2#chars-351-534",
+        "span:health-who-march-2020-001-b587ec61aaf84d7d-2#chars-536-856"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-27T09:46:12.530Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.9,
+      "consumedBy": []
+    }
+  ]
+}

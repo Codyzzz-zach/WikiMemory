@@ -1,0 +1,13 @@
+{
+  "verdict": "failed",
+  "dimensions": {
+    "support": { "result": "fail", "evidence": "原文仅提到『加法 | ✅ 封闭』，未明确指定是自然数集 N 还是其他集合" },
+    "addition": { "result": "fail", "evidence": "Claim 添加了『自然数集 N』这一具体对象，原文仅描述『加法』的封闭性" },
+    "inference": { "result": "pass", "evidence": "不存在推断" },
+    "limits": { "result": "pass", "evidence": "原文无限制条件" },
+    "citation": { "result": "pass", "evidence": "引用块编号正确" }
+  },
+  "anchor": "加法 | ✅ 封闭",
+  "failedDimensions": ["support", "addition"],
+  "issues": ["原文未明确支持『自然数集 N』，存在信息添加或错位"]
+}

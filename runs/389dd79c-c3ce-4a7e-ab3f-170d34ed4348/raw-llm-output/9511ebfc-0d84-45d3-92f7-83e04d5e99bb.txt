@@ -1,0 +1,13 @@
+{
+  "verdict": "passed",
+  "dimensions": {
+    "support": { "result": "pass", "evidence": "乘法 = 缩放 + 旋转" },
+    "addition": { "result": "pass", "evidence": "无额外信息" },
+    "inference": { "result": "pass", "evidence": "直接陈述，无推断" },
+    "limits": { "result": "pass", "evidence": "无条件限制" },
+    "citation": { "result": "pass", "evidence": "与原文一致" }
+  },
+  "anchor": "乘法 = 缩放 + 旋转",
+  "failedDimensions": [],
+  "issues": []
+}

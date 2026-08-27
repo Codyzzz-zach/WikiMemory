@@ -1,0 +1,56 @@
+{
+  "schemaVersion": "pilot-publication-diff/v1",
+  "runId": "b7593fbd-fdcb-4ff5-97f9-d83151f0733a",
+  "sourceId": "source:c-law-003-d00060ca8deb0a46",
+  "generatedAt": "2026-07-28T07:16:33.402Z",
+  "status": "PASS",
+  "acceptedReview": false,
+  "runtime": {
+    "requestedModel": "deepseek-v4-flash",
+    "temperature": 0,
+    "semanticAuditVersion": "v2.3",
+    "relationAuditVersion": "v1.7",
+    "sourceHash": "d00060ca8deb0a46"
+  },
+  "baseline": null,
+  "candidate": {
+    "claims": 22,
+    "concepts": 33,
+    "relations": 9,
+    "quarantinedClaims": 1,
+    "quarantinedRelations": 8,
+    "quarantineRate": 0.043478260869565216
+  },
+  "diff": {
+    "retainedClaimIds": 0,
+    "addedClaimIds": [
+      "claim:d00060ca8deb0a46-0b118c5ef32f8d4c",
+      "claim:d00060ca8deb0a46-12f443d26d9c2348",
+      "claim:d00060ca8deb0a46-280b7a37e60ee4d9",
+      "claim:d00060ca8deb0a46-2efe99e1afe77818",
+      "claim:d00060ca8deb0a46-2fbabbbfe51960c9",
+      "claim:d00060ca8deb0a46-3911ed7670ce857d",
+      "claim:d00060ca8deb0a46-3a71e89936fd0e9b",
+      "claim:d00060ca8deb0a46-4d938d71081f1c3a",
+      "claim:d00060ca8deb0a46-58edf52e64725171",
+      "claim:d00060ca8deb0a46-6c13f42624fc8849",
+      "claim:d00060ca8deb0a46-79cf491cd3bdb8dc",
+      "claim:d00060ca8deb0a46-7d6793d3a9acff57",
+      "claim:d00060ca8deb0a46-7ec31cc118e6c394",
+      "claim:d00060ca8deb0a46-945f8930a876900f",
+      "claim:d00060ca8deb0a46-95e950f6fa2880d4",
+      "claim:d00060ca8deb0a46-aabdfc2e66e8c778",
+      "claim:d00060ca8deb0a46-be21a9d97b87a521",
+      "claim:d00060ca8deb0a46-bf5f6d4b7f49db15",
+      "claim:d00060ca8deb0a46-c0210a1b9ff254ba",
+      "claim:d00060ca8deb0a46-e6fc251cffd1f09e",
+      "claim:d00060ca8deb0a46-eaaa91b77b58736b",
+      "claim:d00060ca8deb0a46-f7aecec4e3478e80"
+    ],
+    "removedClaimIds": [],
+    "claimRetentionRate": null,
+    "claimCountChangeRate": null,
+    "conditionsDropped": []
+  },
+  "issues": []
+}

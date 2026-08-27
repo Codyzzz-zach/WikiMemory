@@ -1,0 +1,31 @@
+{
+  "verdict": "failed",
+  "dimensions": {
+    "support": {
+      "result": "fail",
+      "evidence": "原文仅为\"乘法封闭\"和\"✅\"，未提及\"实数集R\"或\"关于\"等具体断言。"
+    },
+    "addition": {
+      "result": "fail",
+      "evidence": "Claim 中的\"实数集R\"、\"关于\"、\"封闭\"的完整断言在原文中无对应。"
+    },
+    "inference": {
+      "result": "pass",
+      "evidence": "Claim 以事实陈述形式给出，未额外推断，但本身缺乏支撑。"
+    },
+    "limits": {
+      "result": "pass",
+      "evidence": "原文无限制条件，Claim 也未添加限制。"
+    },
+    "citation": {
+      "result": "pass",
+      "evidence": "引用对应[01-number-systems#block-97]，但该span实际内容与Claim不符。"
+    }
+  },
+  "anchor": "乘法封闭",
+  "failedDimensions": ["support", "addition"],
+  "issues": [
+    "原文仅提及\"乘法封闭\"概念和✅标记，未指定\"实数集R\"，Claim 添加了原文没有的主体。",
+    "Claim 断言\"实数集R关于乘法封闭\"是新增信息，原文未明确支持该断言。"
+  ]
+}

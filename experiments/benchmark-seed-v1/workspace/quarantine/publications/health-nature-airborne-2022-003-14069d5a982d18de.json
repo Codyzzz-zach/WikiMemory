@@ -1,0 +1,233 @@
+{
+  "schemaVersion": "v1",
+  "sourceId": "source:health-nature-airborne-2022-003-14069d5a982d18de",
+  "runId": "01968afb-95cd-4ee8-b0a1-020352e0d222",
+  "publishedAt": "2026-07-27T09:47:42.607Z",
+  "claims": [],
+  "relations": [
+    {
+      "relation": {
+        "id": "rel:14069d5a982d18de-6795382c084613a9",
+        "from": "claim:14069d5a982d18de-0b2bf91f663f56a8",
+        "to": "claim:14069d5a982d18de-30df60c9afb3e05b",
+        "type": "DERIVED_FROM",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:health-nature-airborne-2022-003-14069d5a982d18de-1#chars-55-211",
+          "span:health-nature-airborne-2022-003-14069d5a982d18de-2#chars-213-334"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:47:32.492Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.8,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:14069d5a982d18de-6795382c084613a9",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:health-nature-airborne-2022-003#block-1] “On 23 December, the World Health Organization (WHO) uttered the one word it had ”; [1:health-nature-airborne-2022-003#block-2] “It took until 20 October 2020 for the agency to acknowledge that aerosols — tiny”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:14069d5a982d18de-6795382c084613a9",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:health-nature-airborne-2022-003#block-1] “On 23 December, the World Health Organization (WHO) uttered the one word it had ”; [1:health-nature-airborne-2022-003#block-2] “It took until 20 October 2020 for the agency to acknowledge that aerosols — tiny”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:14069d5a982d18de-a067cde1fa2ca5c2",
+        "from": "claim:14069d5a982d18de-30df60c9afb3e05b",
+        "to": "claim:14069d5a982d18de-fb6c9ddf92a42cc2",
+        "type": "SUPPORTS",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:health-nature-airborne-2022-003-14069d5a982d18de-2#chars-213-334",
+          "span:health-nature-airborne-2022-003-14069d5a982d18de-2#chars-340-458"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:47:32.492Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:14069d5a982d18de-a067cde1fa2ca5c2",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:health-nature-airborne-2022-003#block-2] “It took until 20 October 2020 for the agency to acknowledge that aerosols — tiny”; [1:health-nature-airborne-2022-003#block-2] “the WHO said this was a concern only in specific settings, such as indoor, crowd”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:14069d5a982d18de-a067cde1fa2ca5c2",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:health-nature-airborne-2022-003#block-2] “It took until 20 October 2020 for the agency to acknowledge that aerosols — tiny”; [1:health-nature-airborne-2022-003#block-2] “the WHO said this was a concern only in specific settings, such as indoor, crowd”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:14069d5a982d18de-d6f9efa678741bc1",
+        "from": "claim:14069d5a982d18de-30df60c9afb3e05b",
+        "to": "claim:14069d5a982d18de-ff33cb8a69885a6f",
+        "type": "DERIVED_FROM",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:health-nature-airborne-2022-003-14069d5a982d18de-2#chars-213-334",
+          "span:health-nature-airborne-2022-003-14069d5a982d18de-2#chars-459-612"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:47:32.492Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "intra-material-compile",
+        "confidence": 0.7,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:14069d5a982d18de-d6f9efa678741bc1",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:health-nature-airborne-2022-003#block-2] “It took until 20 October 2020 for the agency to acknowledge that aerosols — tiny”; [1:health-nature-airborne-2022-003#block-2] “Over the next six months, the agency gradually altered its advice to say that ae”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:14069d5a982d18de-d6f9efa678741bc1",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:health-nature-airborne-2022-003#block-2] “It took until 20 October 2020 for the agency to acknowledge that aerosols — tiny”; [1:health-nature-airborne-2022-003#block-2] “Over the next six months, the agency gradually altered its advice to say that ae”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-301c0a3988f2002e",
+        "from": "claim:14069d5a982d18de-30df60c9afb3e05b",
+        "to": "claim:a1c7e701eebb9dc1-d1c7990108ad78ca",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:health-nature-airborne-2022-003-14069d5a982d18de-2#chars-213-334",
+          "span:health-who-july-2020-002-a1c7e701eebb9dc1-1#chars-368-411"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:47:39.049Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.6,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_IDENTITY_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-301c0a3988f2002e",
+          "detail": "identity：Relation 未通过边级语义审计；证据 [0:health-nature-airborne-2022-003#block-2] “It took until 20 October 2020 for the agency to acknowledge that aerosols — tiny”; [1:health-who-july-2020-002#block-1] “SARS-CoV-2, the virus that causes COVID-19.”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-301c0a3988f2002e",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:health-nature-airborne-2022-003#block-2] “It took until 20 October 2020 for the agency to acknowledge that aerosols — tiny”; [1:health-who-july-2020-002#block-1] “SARS-CoV-2, the virus that causes COVID-19.”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-301c0a3988f2002e",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:health-nature-airborne-2022-003#block-2] “It took until 20 October 2020 for the agency to acknowledge that aerosols — tiny”; [1:health-who-july-2020-002#block-1] “SARS-CoV-2, the virus that causes COVID-19.”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_DIRECTION_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-301c0a3988f2002e",
+          "detail": "direction：Relation 未通过边级语义审计；证据 [0:health-nature-airborne-2022-003#block-2] “It took until 20 October 2020 for the agency to acknowledge that aerosols — tiny”; [1:health-who-july-2020-002#block-1] “SARS-CoV-2, the virus that causes COVID-19.”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    },
+    {
+      "relation": {
+        "id": "rel:cross-357ac664ab76b40d",
+        "from": "claim:14069d5a982d18de-0b2bf91f663f56a8",
+        "to": "claim:a1c7e701eebb9dc1-d1c7990108ad78ca",
+        "type": "RELATED_TO",
+        "conditions": [],
+        "conditionStatus": "EXPLICIT_NONE",
+        "supersessionEffect": null,
+        "relationAuditVersion": "v1.7",
+        "evidenceSpanIds": [
+          "span:health-nature-airborne-2022-003-14069d5a982d18de-1#chars-55-211",
+          "span:health-who-july-2020-002-a1c7e701eebb9dc1-1#chars-368-411"
+        ],
+        "derivation": "INFERRED",
+        "validity": "UNRESOLVED",
+        "lifecycle": "ACTIVE",
+        "publicationState": "QUARANTINED",
+        "validFrom": "2026-07-27T09:47:39.049Z",
+        "validTo": null,
+        "compilerVersion": "v1.1",
+        "source": "cross-material-detect",
+        "confidence": 0.6,
+        "consumedBy": []
+      },
+      "issues": [
+        {
+          "code": "RELATION_SEMANTIC_FAILED",
+          "severity": "error",
+          "affectedObject": "rel:cross-357ac664ab76b40d",
+          "detail": "relation：Relation 未通过边级语义审计；证据 [0:health-nature-airborne-2022-003#block-1] “On 23 December, the World Health Organization (WHO) uttered the one word it had ”; [1:health-who-july-2020-002#block-1] “SARS-CoV-2, the virus that causes COVID-19.”",
+          "recommendedState": "QUARANTINE"
+        },
+        {
+          "code": "RELATION_TYPE_MISMATCH",
+          "severity": "error",
+          "affectedObject": "rel:cross-357ac664ab76b40d",
+          "detail": "type：Relation 未通过边级语义审计；证据 [0:health-nature-airborne-2022-003#block-1] “On 23 December, the World Health Organization (WHO) uttered the one word it had ”; [1:health-who-july-2020-002#block-1] “SARS-CoV-2, the virus that causes COVID-19.”",
+          "recommendedState": "QUARANTINE"
+        }
+      ]
+    }
+  ]
+}

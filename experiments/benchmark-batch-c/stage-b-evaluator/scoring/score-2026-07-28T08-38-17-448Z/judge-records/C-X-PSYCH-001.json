@@ -1,0 +1,51 @@
+{
+  "questionId": "C-X-PSYCH-001",
+  "promptHash": "c708a10dccc6edc54a98cc8f854f05cbe1cc37912d709022fb7cc9e46a20ed87",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 2038,
+    "completionTokens": 2772,
+    "totalTokens": 4810,
+    "promptCacheHitTokens": 256,
+    "promptCacheMissTokens": 1782,
+    "reasoningTokens": 2392
+  },
+  "raw": "[\n  {\n    \"sampleId\": \"sample-8969e265-8303-41ff-801f-fe91e7fa9180\",\n    \"requiredPointCoverage\": 0,\n    \"conditionFidelity\": 0,\n    \"evidenceGrounding\": 0,\n    \"answerabilityDiscipline\": 0,\n    \"sourceRoleTemporalDiscipline\": 0,\n    \"hardFailure\": false,\n    \"hardFailureTypes\": [],\n    \"rationale\": \"错误拒答，实际可回答；未覆盖任何要点，无引用，无条件区分\"\n  },\n  {\n    \"sampleId\": \"sample-40dd7325-1eca-405f-9417-bf11d71caf63\",\n    \"requiredPointCoverage\": 0,\n    \"conditionFidelity\": 0,\n    \"evidenceGrounding\": 0,\n    \"answerabilityDiscipline\": 0,\n    \"sourceRoleTemporalDiscipline\": 0,\n    \"hardFailure\": false,\n    \"hardFailureTypes\": [],\n    \"rationale\": \"错误拒答，实际可回答；零分表现同前\"\n  },\n  {\n    \"sampleId\": \"sample-c12697b2-3a3b-48fb-afe4-82220bfdf83e\",\n    \"requiredPointCoverage\": 3,\n    \"conditionFidelity\": 2,\n    \"evidenceGrounding\": 3,\n    \"answerabilityDiscipline\": 4,\n    \"sourceRoleTemporalDiscipline\": 3,\n    \"hardFailure\": false,\n    \"hardFailureTypes\": [],\n    \"rationale\": \"覆盖多数要点但漏OSC具体百分比；有不确定性说明；引用存在但部分无效；未越界；区分来源角色但时间稍模糊\"\n  }\n]",
+  "rows": [
+    {
+      "sampleId": "sample-8969e265-8303-41ff-801f-fe91e7fa9180",
+      "requiredPointCoverage": 0,
+      "conditionFidelity": 0,
+      "evidenceGrounding": 0,
+      "answerabilityDiscipline": 0,
+      "sourceRoleTemporalDiscipline": 0,
+      "hardFailure": false,
+      "hardFailureTypes": [],
+      "rationale": "错误拒答，实际可回答；未覆盖任何要点，无引用，无条件区分"
+    },
+    {
+      "sampleId": "sample-40dd7325-1eca-405f-9417-bf11d71caf63",
+      "requiredPointCoverage": 0,
+      "conditionFidelity": 0,
+      "evidenceGrounding": 0,
+      "answerabilityDiscipline": 0,
+      "sourceRoleTemporalDiscipline": 0,
+      "hardFailure": false,
+      "hardFailureTypes": [],
+      "rationale": "错误拒答，实际可回答；零分表现同前"
+    },
+    {
+      "sampleId": "sample-c12697b2-3a3b-48fb-afe4-82220bfdf83e",
+      "requiredPointCoverage": 3,
+      "conditionFidelity": 2,
+      "evidenceGrounding": 3,
+      "answerabilityDiscipline": 4,
+      "sourceRoleTemporalDiscipline": 3,
+      "hardFailure": false,
+      "hardFailureTypes": [],
+      "rationale": "覆盖多数要点但漏OSC具体百分比；有不确定性说明；引用存在但部分无效；未越界；区分来源角色但时间稍模糊"
+    }
+  ]
+}

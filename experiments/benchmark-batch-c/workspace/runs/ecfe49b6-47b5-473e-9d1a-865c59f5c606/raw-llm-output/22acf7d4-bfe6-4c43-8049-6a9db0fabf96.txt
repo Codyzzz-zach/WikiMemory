@@ -1,0 +1,88 @@
+{
+  "relations": [
+    {
+      "fromClaimIndex": 0,
+      "toClaimIndex": 5,
+      "type": "RELATED_TO",
+      "conditions": [],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 0,
+      "toClaimIndex": 16,
+      "type": "RELATED_TO",
+      "conditions": [],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 0,
+      "toClaimIndex": 11,
+      "type": "RELATED_TO",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 1,
+      "toClaimIndex": 2,
+      "type": "RELATED_TO",
+      "conditions": [],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 1,
+      "toClaimIndex": 9,
+      "type": "RELATED_TO",
+      "conditions": [],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 3,
+      "toClaimIndex": 10,
+      "type": "CONTRADICTS",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 6,
+      "toClaimIndex": 8,
+      "type": "RELATED_TO",
+      "conditions": [],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 6,
+      "toClaimIndex": 17,
+      "type": "RELATED_TO",
+      "conditions": [],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 8,
+      "toClaimIndex": 17,
+      "type": "RELATED_TO",
+      "conditions": [],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 12,
+      "toClaimIndex": 15,
+      "type": "RELATED_TO",
+      "conditions": [],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 4,
+      "toClaimIndex": 13,
+      "type": "RELATED_TO",
+      "conditions": [],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 7,
+      "toClaimIndex": 4,
+      "type": "RELATED_TO",
+      "conditions": [],
+      "confidence": 0.6
+    }
+  ]
+}

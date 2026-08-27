@@ -1,0 +1,394 @@
+{
+  "concepts": [
+    {
+      "name": "IPCC",
+      "aliases": ["IPCC"],
+      "boundary": "政府间气候变化专门委员会",
+      "domain": "气候科学"
+    },
+    {
+      "name": "高度脆弱地区",
+      "aliases": ["高度脆弱地区"],
+      "boundary": "气候变化脆弱性高的区域",
+      "domain": "气候变化影响"
+    },
+    {
+      "name": "极低脆弱地区",
+      "aliases": ["极低脆弱地区"],
+      "boundary": "气候变化脆弱性低的区域",
+      "domain": "气候变化影响"
+    },
+    {
+      "name": "洪水",
+      "aliases": ["洪水"],
+      "boundary": "自然灾害类型",
+      "domain": "气象灾害"
+    },
+    {
+      "name": "干旱",
+      "aliases": ["干旱"],
+      "boundary": "自然灾害类型",
+      "domain": "气象灾害"
+    },
+    {
+      "name": "风暴",
+      "aliases": ["风暴"],
+      "boundary": "自然灾害类型",
+      "domain": "气象灾害"
+    },
+    {
+      "name": "人类死亡率",
+      "aliases": ["人类死亡率"],
+      "boundary": "人口统计指标",
+      "domain": "公共卫生"
+    },
+    {
+      "name": "人类引起的气候变化",
+      "aliases": ["人类引起的气候变化"],
+      "boundary": "由人类活动导致的气候变化",
+      "domain": "气候变化"
+    },
+    {
+      "name": "天气和气候极端事件",
+      "aliases": ["天气和气候极端事件"],
+      "boundary": "极端天气和气候现象",
+      "domain": "气象学"
+    },
+    {
+      "name": "化石燃料基础设施",
+      "aliases": ["化石燃料基础设施"],
+      "boundary": "用于化石燃料开采、运输、加工和燃烧的设施",
+      "domain": "能源"
+    },
+    {
+      "name": "二氧化碳排放量",
+      "aliases": ["二氧化碳排放量"],
+      "boundary": "二氧化碳的排放量",
+      "domain": "温室气体排放"
+    },
+    {
+      "name": "1.5°C",
+      "aliases": ["1.5°C"],
+      "boundary": "全球变暖温度目标",
+      "domain": "气候变化"
+    },
+    {
+      "name": "剩余碳预算",
+      "aliases": ["剩余碳预算"],
+      "boundary": "为达到特定温度目标可排放的二氧化碳总量",
+      "domain": "气候变化"
+    },
+    {
+      "name": "报告",
+      "aliases": ["该报告"],
+      "boundary": "IPCC第六次评估报告综合报告",
+      "domain": "气候科学"
+    },
+    {
+      "name": "2023年3月19日",
+      "aliases": ["2023年3月19日"],
+      "boundary": "日期",
+      "domain": "时间"
+    },
+    {
+      "name": "全球变暖",
+      "aliases": ["全球变暖"],
+      "boundary": "地球平均温度上升现象",
+      "domain": "气候变化"
+    },
+    {
+      "name": "二氧化碳净零排放",
+      "aliases": ["二氧化碳净零排放"],
+      "boundary": "人为二氧化碳排放与清除相平衡的状态",
+      "domain": "气候变化减缓"
+    },
+    {
+      "name": "核心撰写团队",
+      "aliases": ["核心撰写团队"],
+      "boundary": "报告的主要作者团队",
+      "domain": "科学报告"
+    },
+    {
+      "name": "Hoesung Lee",
+      "aliases": ["Hoesung Lee"],
+      "boundary": "IPCC主席",
+      "domain": "人物"
+    },
+    {
+      "name": "Katherine Calvin",
+      "aliases": ["Katherine Calvin"],
+      "boundary": "核心撰写团队成员",
+      "domain": "人物"
+    },
+    {
+      "name": "Dipak Dasgupta",
+      "aliases": ["Dipak Dasgupta"],
+      "boundary": "核心撰写团队成员",
+      "domain": "人物"
+    },
+    {
+      "name": "脆弱社区",
+      "aliases": ["脆弱社区"],
+      "boundary": "对气候变化影响敏感且适应能力低的社区",
+      "domain": "社会脆弱性"
+    },
+    {
+      "name": "大气",
+      "aliases": ["大气"],
+      "boundary": "地球的气体层",
+      "domain": "地球科学"
+    },
+    {
+      "name": "海洋",
+      "aliases": ["海洋"],
+      "boundary": "地球的海洋水体",
+      "domain": "地球科学"
+    },
+    {
+      "name": "冰冻圈",
+      "aliases": ["冰冻圈"],
+      "boundary": "地球的冰冻部分",
+      "domain": "地球科学"
+    },
+    {
+      "name": "生物圈",
+      "aliases": ["生物圈"],
+      "boundary": "地球生命存在的区域",
+      "domain": "生态学"
+    },
+    {
+      "name": "人类脆弱性",
+      "aliases": ["人类脆弱性"],
+      "boundary": "人类系统对气候变化不利影响的敏感性和适应能力不足",
+      "domain": "气候变化影响"
+    },
+    {
+      "name": "生态系统脆弱性",
+      "aliases": ["生态系统脆弱性"],
+      "boundary": "生态系统对气候变化不利影响的敏感性和恢复力不足",
+      "domain": "生态学"
+    },
+    {
+      "name": "累积碳排放量",
+      "aliases": ["累积碳排放量"],
+      "boundary": "一段时间内二氧化碳排放的总和",
+      "domain": "温室气体排放"
+    },
+    {
+      "name": "温室气体减排",
+      "aliases": ["温室气体减排"],
+      "boundary": "减少温室气体排放的行动",
+      "domain": "气候变化减缓"
+    },
+    {
+      "name": "2°C",
+      "aliases": ["2°C"],
+      "boundary": "全球变暖温度目标",
+      "domain": "气候变化"
+    },
+    {
+      "name": "第五次评估报告",
+      "aliases": ["第五次评估报告"],
+      "boundary": "IPCC第五次评估报告",
+      "domain": "气候科学"
+    },
+    {
+      "name": "减缓",
+      "aliases": ["减缓"],
+      "boundary": "减少温室气体排放或增强碳汇的行动",
+      "domain": "气候变化减缓"
+    },
+    {
+      "name": "政策",
+      "aliases": ["政策"],
+      "boundary": "政府或组织制定的规则和措施",
+      "domain": "公共政策"
+    },
+    {
+      "name": "法律",
+      "aliases": ["法律"],
+      "boundary": "具有法律约束力的规则",
+      "domain": "法律"
+    },
+    {
+      "name": "不利影响",
+      "aliases": ["不利影响"],
+      "boundary": "气候变化导致的负面后果",
+      "domain": "气候变化影响"
+    },
+    {
+      "name": "损失和损害",
+      "aliases": ["损失和损害"],
+      "boundary": "气候变化引起的不可逆损失和可修复损害",
+      "domain": "气候变化影响"
+    },
+    {
+      "name": "DOI",
+      "aliases": ["DOI"],
+      "boundary": "数字对象标识符",
+      "domain": "出版"
+    },
+    {
+      "name": "10.59327/IPCC/AR6-9789291691647",
+      "aliases": ["10.59327/IPCC/AR6-9789291691647"],
+      "boundary": "报告的数字对象标识符",
+      "domain": "出版"
+    },
+    {
+      "name": "33亿至36亿人",
+      "aliases": ["33亿至36亿人"],
+      "boundary": "人口数量范围",
+      "domain": "人口统计"
+    },
+    {
+      "name": "气候变化",
+      "aliases": ["气候变化"],
+      "boundary": "气候状态的变化",
+      "domain": "气候科学"
+    },
+    {
+      "name": "全球温室气体排放",
+      "aliases": ["全球温室气体排放"],
+      "boundary": "全球范围内温室气体的排放",
+      "domain": "温室气体排放"
+    },
+    {
+      "name": "人类活动",
+      "aliases": ["人类活动"],
+      "boundary": "人类的各种行为",
+      "domain": "人类行为"
+    },
+    {
+      "name": "温室气体排放",
+      "aliases": ["温室气体排放"],
+      "boundary": "温室气体的释放",
+      "domain": "温室气体排放"
+    },
+    {
+      "name": "国家自主贡献",
+      "aliases": ["国家自主贡献", "NDCs"],
+      "boundary": "各国根据《巴黎协定》提交的气候行动计划",
+      "domain": "气候政策"
+    },
+    {
+      "name": "2030年",
+      "aliases": ["2030年"],
+      "boundary": "年份",
+      "domain": "时间"
+    },
+    {
+      "name": "21世纪",
+      "aliases": ["21世纪"],
+      "boundary": "时间区间",
+      "domain": "时间"
+    },
+    {
+      "name": "IPCC第六次评估报告",
+      "aliases": ["IPCC第六次评估报告", "AR6"],
+      "boundary": "IPCC第六次评估报告",
+      "domain": "气候科学"
+    },
+    {
+      "name": "综合报告",
+      "aliases": ["综合报告"],
+      "boundary": "IPCC AR6的综合报告",
+      "domain": "气候科学"
+    },
+    {
+      "name": "决策者摘要",
+      "aliases": ["决策者摘要"],
+      "boundary": "为决策者准备的报告摘要",
+      "domain": "政策"
+    },
+    {
+      "name": "历史排放",
+      "aliases": ["历史排放"],
+      "boundary": "过去的温室气体排放",
+      "domain": "温室气体排放"
+    },
+    {
+      "name": "当前排放",
+      "aliases": ["当前排放"],
+      "boundary": "现在的温室气体排放",
+      "domain": "温室气体排放"
+    },
+    {
+      "name": "不可持续的能源使用",
+      "aliases": ["不可持续的能源使用"],
+      "boundary": "对环境和社会造成负面影响的能源消费模式",
+      "domain": "能源"
+    },
+    {
+      "name": "土地利用",
+      "aliases": ["土地利用"],
+      "boundary": "人类对土地的使用方式",
+      "domain": "土地利用"
+    },
+    {
+      "name": "土地利用变化",
+      "aliases": ["土地利用变化"],
+      "boundary": "土地用途的改变",
+      "domain": "土地利用"
+    },
+    {
+      "name": "生活方式",
+      "aliases": ["生活方式"],
+      "boundary": "个人或群体的生活模式",
+      "domain": "社会"
+    },
+    {
+      "name": "消费模式",
+      "aliases": ["消费模式"],
+      "boundary": "商品和服务的消费方式",
+      "domain": "经济"
+    },
+    {
+      "name": "生产模式",
+      "aliases": ["生产模式"],
+      "boundary": "商品和服务的生产方式",
+      "domain": "经济"
+    },
+    {
+      "name": "全球地表温度",
+      "aliases": ["全球地表温度"],
+      "boundary": "地球表面平均温度",
+      "domain": "气候"
+    },
+    {
+      "name": "1850-1900年",
+      "aliases": ["1850-1900年"],
+      "boundary": "工业化前参考时期",
+      "domain": "时间"
+    },
+    {
+      "name": "1.1°C",
+      "aliases": ["1.1°C"],
+      "boundary": "温度升高值",
+      "domain": "气候变化"
+    },
+    {
+      "name": "已实施政策",
+      "aliases": ["已实施政策"],
+      "boundary": "已经执行的政策",
+      "domain": "政策"
+    },
+    {
+      "name": "预计排放",
+      "aliases": ["预计排放"],
+      "boundary": "对未来排放的预测",
+      "domain": "温室气体排放"
+    },
+    {
+      "name": "资金流",
+      "aliases": ["资金流"],
+      "boundary": "资金的流动",
+      "domain": "金融"
+    },
+    {
+      "name": "气候目标",
+      "aliases": ["气候目标"],
+      "boundary": "应对气候变化的目标",
+      "domain": "气候变化"
+    }
+  ]
+}

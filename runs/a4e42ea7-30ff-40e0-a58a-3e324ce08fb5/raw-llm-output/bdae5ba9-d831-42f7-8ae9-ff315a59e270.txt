@@ -1,0 +1,328 @@
+{
+  "concepts": [
+    {
+      "name": "Euler-Lagrange方程",
+      "aliases": ["Euler-Lagrange 方程"],
+      "boundary": "变分法中泛函极值的必要条件",
+      "domain": "变分法"
+    },
+    {
+      "name": "泛函",
+      "aliases": ["泛函"],
+      "boundary": "从函数空间到数域的映射",
+      "domain": "泛函分析"
+    },
+    {
+      "name": "自伴算子",
+      "aliases": ["自伴算子", "Hermitian算子"],
+      "boundary": "满足T=T*的算子",
+      "domain": "泛函分析"
+    },
+    {
+      "name": "Banach空间",
+      "aliases": ["Banach 空间"],
+      "boundary": "完备赋范空间",
+      "domain": "泛函分析"
+    },
+    {
+      "name": "Riesz表示定理",
+      "aliases": ["Riesz表示定理", "Riesz 表示定理"],
+      "boundary": "Hilbert空间上连续线性泛函可表示为内积",
+      "domain": "泛函分析"
+    },
+    {
+      "name": "谱",
+      "aliases": ["谱"],
+      "boundary": "算子不可逆的λ集合",
+      "domain": "泛函分析"
+    },
+    {
+      "name": "无界算子",
+      "aliases": ["无界算子"],
+      "boundary": "不连续的线性算子",
+      "domain": "泛函分析"
+    },
+    {
+      "name": "有界算子",
+      "aliases": ["有界算子"],
+      "boundary": "满足‖T‖<∞的线性算子",
+      "domain": "泛函分析"
+    },
+    {
+      "name": "紧算子",
+      "aliases": ["紧算子"],
+      "boundary": "将有界集映为相对紧集的算子",
+      "domain": "泛函分析"
+    },
+    {
+      "name": "Hilbert空间",
+      "aliases": ["Hilbert 空间", "Hilbert空间"],
+      "boundary": "完备内积空间",
+      "domain": "泛函分析"
+    },
+    {
+      "name": "对偶空间",
+      "aliases": ["对偶空间"],
+      "boundary": "所有连续线性泛函构成的空间",
+      "domain": "泛函分析"
+    },
+    {
+      "name": "谱分解",
+      "aliases": ["谱分解"],
+      "boundary": "自伴算子对角化为乘法算子",
+      "domain": "泛函分析"
+    },
+    {
+      "name": "Fredholm二择一",
+      "aliases": ["Fredholm二择一"],
+      "boundary": "紧扰动恒等算子的可解性二择一",
+      "domain": "泛函分析"
+    },
+    {
+      "name": "一致有界定理",
+      "aliases": ["一致有界定理", "Banach-Steinhaus"],
+      "boundary": "逐点有界蕴含一致有界",
+      "domain": "泛函分析"
+    },
+    {
+      "name": "Hahn-Banach定理",
+      "aliases": ["Hahn-Banach 定理"],
+      "boundary": "子空间上泛函可延拓到全空间",
+      "domain": "泛函分析"
+    },
+    {
+      "name": "闭图像定理",
+      "aliases": ["闭图像定理"],
+      "boundary": "闭图像蕴含连续性",
+      "domain": "泛函分析"
+    },
+    {
+      "name": "开映射定理",
+      "aliases": ["开映射定理"],
+      "boundary": "连续线性满射将开集映为开集",
+      "domain": "泛函分析"
+    },
+    {
+      "name": "点谱",
+      "aliases": ["点谱"],
+      "boundary": "λI-T非单射的λ集合",
+      "domain": "泛函分析"
+    },
+    {
+      "name": "连续谱",
+      "aliases": ["连续谱"],
+      "boundary": "单射但值域稠密非满射的λ集合",
+      "domain": "泛函分析"
+    },
+    {
+      "name": "剩余谱",
+      "aliases": ["剩余谱"],
+      "boundary": "单射但值域不稠密的λ集合",
+      "domain": "泛函分析"
+    },
+    {
+      "name": "Lagrangian",
+      "aliases": ["Lagrangian"],
+      "boundary": "动能减势能",
+      "domain": "物理"
+    },
+    {
+      "name": "最小作用量原理",
+      "aliases": ["最小作用量原理"],
+      "boundary": "物理系统演化使作用量取极值",
+      "domain": "物理"
+    },
+    {
+      "name": "Dirichlet能量",
+      "aliases": ["Dirichlet 能量"],
+      "boundary": "∫‖∇f‖²dx",
+      "domain": "数学物理"
+    },
+    {
+      "name": "Fourier变换",
+      "aliases": ["Fourier变换", "Fourier 变换"],
+      "boundary": "函数到频率域的变换",
+      "domain": "分析"
+    },
+    {
+      "name": "特征值",
+      "aliases": ["特征值"],
+      "boundary": "使得Tf=λf的λ",
+      "domain": "线性代数"
+    },
+    {
+      "name": "特征向量",
+      "aliases": ["特征向量"],
+      "boundary": "满足Tf=λf的非零向量",
+      "domain": "线性代数"
+    },
+    {
+      "name": "完备性",
+      "aliases": ["完备性"],
+      "boundary": "Cauchy列收敛",
+      "domain": "泛函分析"
+    },
+    {
+      "name": "内积",
+      "aliases": ["内积"],
+      "boundary": "Hilbert空间中的内积",
+      "domain": "泛函分析"
+    },
+    {
+      "name": "范数",
+      "aliases": ["范数"],
+      "boundary": "向量长度的度量",
+      "domain": "泛函分析"
+    },
+    {
+      "name": "线性算子",
+      "aliases": ["线性算子"],
+      "boundary": "保持线性运算的映射",
+      "domain": "泛函分析"
+    },
+    {
+      "name": "连续线性泛函",
+      "aliases": ["连续线性泛函"],
+      "boundary": "有界线性泛函",
+      "domain": "泛函分析"
+    },
+    {
+      "name": "闭性",
+      "aliases": ["闭性"],
+      "boundary": "算子的图像是闭集",
+      "domain": "泛函分析"
+    },
+    {
+      "name": "稠密子空间",
+      "aliases": ["稠密子空间"],
+      "boundary": "闭包为全空间的子空间",
+      "domain": "泛函分析"
+    },
+    {
+      "name": "紧性",
+      "aliases": ["紧性"],
+      "boundary": "任意开覆盖有有限子覆盖",
+      "domain": "拓扑"
+    },
+    {
+      "name": "非紧性",
+      "aliases": ["非紧性"],
+      "boundary": "不满足紧性",
+      "domain": "拓扑"
+    },
+    {
+      "name": "有限维",
+      "aliases": ["有限维"],
+      "boundary": "维数有限的向量空间",
+      "domain": "线性代数"
+    },
+    {
+      "name": "无限维",
+      "aliases": ["无限维"],
+      "boundary": "维数无限的向量空间",
+      "domain": "泛函分析"
+    },
+    {
+      "name": "定积分泛函",
+      "aliases": ["定积分泛函"],
+      "boundary": "J[f]=∫f(x)dx",
+      "domain": "变分法"
+    },
+    {
+      "name": "弧长泛函",
+      "aliases": ["弧长泛函"],
+      "boundary": "J[f]=∫√(1+f'²)dx",
+      "domain": "变分法"
+    },
+    {
+      "name": "Dirac δ泛函",
+      "aliases": ["Dirac δ 泛函"],
+      "boundary": "J[f]=f(0)",
+      "domain": "泛函分析"
+    },
+    {
+      "name": "最大范数泛函",
+      "aliases": ["最大范数泛函"],
+      "boundary": "J[f]=sup‖f(x)‖",
+      "domain": "泛函分析"
+    },
+    {
+      "name": "能量泛函",
+      "aliases": ["能量泛函"],
+      "boundary": "J[f]=∫‖∇f‖²dx",
+      "domain": "数学物理"
+    },
+    {
+      "name": "变分法",
+      "aliases": ["变分法"],
+      "boundary": "研究泛函极值的数学分支",
+      "domain": "数学"
+    },
+    {
+      "name": "量子力学",
+      "aliases": ["量子力学"],
+      "boundary": "描述微观世界的物理理论",
+      "domain": "物理"
+    },
+    {
+      "name": "信号处理",
+      "aliases": ["信号处理"],
+      "boundary": "处理信号的技术",
+      "domain": "工程"
+    },
+    {
+      "name": "偏微分方程",
+      "aliases": ["偏微分方程"],
+      "boundary": "含偏导数的方程",
+      "domain": "数学"
+    },
+    {
+      "name": "牛顿力学",
+      "aliases": ["牛顿力学"],
+      "boundary": "经典力学",
+      "domain": "物理"
+    },
+    {
+      "name": "电磁学",
+      "aliases": ["电磁学"],
+      "boundary": "研究电磁现象的学科",
+      "domain": "物理"
+    },
+    {
+      "name": "广义相对论",
+      "aliases": ["广义相对论"],
+      "boundary": "爱因斯坦的引力理论",
+      "domain": "物理"
+    },
+    {
+      "name": "unilateral shift",
+      "aliases": ["unilateral shift"],
+      "boundary": "单侧移位算子",
+      "domain": "泛函分析"
+    },
+    {
+      "name": "乘法算子",
+      "aliases": ["乘法算子"],
+      "boundary": "(Tf)(x)=xf(x)",
+      "domain": "泛函分析"
+    },
+    {
+      "name": "微分算子",
+      "aliases": ["微分算子"],
+      "boundary": "求导算子",
+      "domain": "泛函分析"
+    },
+    {
+      "name": "积分算子",
+      "aliases": ["积分算子"],
+      "boundary": "积分变换算子",
+      "domain": "泛函分析"
+    },
+    {
+      "name": "四大定理",
+      "aliases": ["四大定理"],
+      "boundary": "泛函分析中四个基本定理",
+      "domain": "泛函分析"
+    }
+  ]
+}

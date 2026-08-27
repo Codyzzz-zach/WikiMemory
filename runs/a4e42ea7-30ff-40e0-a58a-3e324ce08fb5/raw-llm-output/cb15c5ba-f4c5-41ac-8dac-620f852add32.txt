@@ -1,0 +1,326 @@
+{
+  "relations": [
+    {
+      "fromClaimIndex": 48,
+      "toClaimIndex": 71,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["Hilbert空间定义为完备内积空间"],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 3,
+      "toClaimIndex": 72,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["Banach空间定义为完备赋范空间"],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 4,
+      "toClaimIndex": 42,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["Riesz表示定理指出每个连续线性泛函可表示为内积"],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 4,
+      "toClaimIndex": 31,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["Riesz表示定理表明H同构于H*，泛函等于内积"],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 4,
+      "toClaimIndex": 11,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["Hilbert空间中的作用在向量上的泛函本质上就是与某个固定向量做内积"],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 29,
+      "toClaimIndex": 31,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["H≅H*与Riesz表示定理等价"],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 16,
+      "toClaimIndex": 94,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["有界算子等价于连续算子"],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 62,
+      "toClaimIndex": 85,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["有界算子范数定义相同"],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 46,
+      "toClaimIndex": 51,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["自伴算子定义相同"],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 0,
+      "toClaimIndex": 59,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["Euler-Lagrange方程是泛函极值的必要条件"],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 0,
+      "toClaimIndex": 68,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["Euler-Lagrange方程是泛函极值的必要条件"],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 1,
+      "toClaimIndex": 70,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["泛函定义相同"],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 5,
+      "toClaimIndex": 57,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["谱是特征值的推广"],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 5,
+      "toClaimIndex": 65,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["谱比特征值更广"],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 8,
+      "toClaimIndex": 41,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["点谱定义一致"],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 17,
+      "toClaimIndex": 53,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["紧算子定义一致"],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 20,
+      "toClaimIndex": 24,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["剩余谱与连续谱定义不同"],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 21,
+      "toClaimIndex": 95,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["线性算子是核心概念"],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 26,
+      "toClaimIndex": 36,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["谱分解是Fourier变换的终极推广"],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 26,
+      "toClaimIndex": 54,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["谱分解是Fourier变换的终极推广"],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 27,
+      "toClaimIndex": 61,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["泛函分析是无限维线性代数"],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 28,
+      "toClaimIndex": 4,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["对偶空间定义与Riesz表示定理相关"],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 32,
+      "toClaimIndex": 63,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["Fredholm二择一表述一致"],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 35,
+      "toClaimIndex": 60,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["一致有界定理与Hahn-Banach定理不同"],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 40,
+      "toClaimIndex": 65,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["谱有三种类型"],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 44,
+      "toClaimIndex": 16,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["有界算子定义域全空间"],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 48,
+      "toClaimIndex": 79,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["内积诱导范数"],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 48,
+      "toClaimIndex": 88,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["Hilbert空间允许正交投影"],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 48,
+      "toClaimIndex": 89,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["Hilbert空间允许正交基"],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 48,
+      "toClaimIndex": 87,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["Hilbert空间允许Fourier级数"],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 56,
+      "toClaimIndex": 27,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["泛函分析把函数视作向量"],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 57,
+      "toClaimIndex": 65,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["谱推广特征值"],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 66,
+      "toClaimIndex": 14,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["紧算子谱除0外为特征值"],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 67,
+      "toClaimIndex": 52,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["闭图像定理与有界算子自动闭相关"],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 69,
+      "toClaimIndex": 35,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["开映射定理与一致有界定理不同"],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 75,
+      "toClaimIndex": 76,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["不同空间的内积形式不同"],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 77,
+      "toClaimIndex": 80,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["不同空间的内积形式不同"],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 81,
+      "toClaimIndex": 100,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["完备性定义一致"],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 82,
+      "toClaimIndex": 83,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["Q与R性质对比"],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 86,
+      "toClaimIndex": 90,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["Fourier变换定义一致"],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 91,
+      "toClaimIndex": 74,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["乘法算子形式一致"],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 97,
+      "toClaimIndex": 105,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["微分算子例子一致"],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 106,
+      "toClaimIndex": 93,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["积分算子形式一致"],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 102,
+      "toClaimIndex": 103,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["内积条件不同"],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 104,
+      "toClaimIndex": 79,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["欧氏范数定义一致"],
+      "confidence": 1.0
+    },
+    {
+      "fromClaimIndex": 109,
+      "toClaimIndex": 102,
+      "type": "EQUIVALENT_UNDER",
+      "conditions": ["内积条件包含三个"],
+      "confidence": 0.8
+    }
+  ]
+}

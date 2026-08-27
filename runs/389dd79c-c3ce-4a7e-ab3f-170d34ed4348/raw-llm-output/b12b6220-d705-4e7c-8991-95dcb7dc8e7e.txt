@@ -1,0 +1,28 @@
+{
+  "verdict": "passed",
+  "dimensions": {
+    "support": {
+      "result": "pass",
+      "evidence": "换来的是**群结构**——$(\\mathbb{Z}, +)$ 成为一个阿贝尔群"
+    },
+    "addition": {
+      "result": "pass",
+      "evidence": "Claim 内容仅为原文的转述"
+    },
+    "inference": {
+      "result": "pass",
+      "evidence": "原文直接陈述，无推断"
+    },
+    "limits": {
+      "result": "pass",
+      "evidence": "无适用条件或限定词"
+    },
+    "citation": {
+      "result": "pass",
+      "evidence": "引用 span 准确对应"
+    }
+  },
+  "anchor": "换来的是**群结构**——$(\\mathbb{Z}, +)$ 成为一个阿贝尔群",
+  "failedDimensions": [],
+  "issues": []
+}

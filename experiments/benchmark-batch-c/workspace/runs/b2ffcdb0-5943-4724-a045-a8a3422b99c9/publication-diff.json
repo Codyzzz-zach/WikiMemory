@@ -1,0 +1,61 @@
+{
+  "schemaVersion": "pilot-publication-diff/v1",
+  "runId": "b2ffcdb0-5943-4724-a045-a8a3422b99c9",
+  "sourceId": "source:c-psych-002-adb285a63645fee4",
+  "generatedAt": "2026-07-28T07:08:00.148Z",
+  "status": "PASS",
+  "acceptedReview": false,
+  "runtime": {
+    "requestedModel": "deepseek-v4-flash",
+    "temperature": 0,
+    "semanticAuditVersion": "v2.3",
+    "relationAuditVersion": "v1.7",
+    "sourceHash": "adb285a63645fee4"
+  },
+  "baseline": null,
+  "candidate": {
+    "claims": 27,
+    "concepts": 25,
+    "relations": 4,
+    "quarantinedClaims": 0,
+    "quarantinedRelations": 23,
+    "quarantineRate": 0
+  },
+  "diff": {
+    "retainedClaimIds": 0,
+    "addedClaimIds": [
+      "claim:adb285a63645fee4-13188dbeecc062ee",
+      "claim:adb285a63645fee4-267dd736bec2e232",
+      "claim:adb285a63645fee4-34585b952514d2cc",
+      "claim:adb285a63645fee4-3b262618fcf6042e",
+      "claim:adb285a63645fee4-43492018319a4468",
+      "claim:adb285a63645fee4-4607fc993dc2c9fd",
+      "claim:adb285a63645fee4-50af184b6eca28a3",
+      "claim:adb285a63645fee4-5206ac18f2edd7c7",
+      "claim:adb285a63645fee4-5ed279e964d9a212",
+      "claim:adb285a63645fee4-603d9950c123f1ab",
+      "claim:adb285a63645fee4-6777ae78dbb7754f",
+      "claim:adb285a63645fee4-78995c33a069a9ba",
+      "claim:adb285a63645fee4-80a30208abe220b2",
+      "claim:adb285a63645fee4-87507fa3fcd06c10",
+      "claim:adb285a63645fee4-9fe90bf5a4f463e1",
+      "claim:adb285a63645fee4-acef643d378c1148",
+      "claim:adb285a63645fee4-ade584126b07d901",
+      "claim:adb285a63645fee4-b724349a870cf6d1",
+      "claim:adb285a63645fee4-b92f1e7157fe8d45",
+      "claim:adb285a63645fee4-be6645291aaac3d3",
+      "claim:adb285a63645fee4-bf99c4465e762307",
+      "claim:adb285a63645fee4-c9ef45a3fc99b848",
+      "claim:adb285a63645fee4-d037e33e12360e4e",
+      "claim:adb285a63645fee4-d40d0d2aa7bb4110",
+      "claim:adb285a63645fee4-db032d66b7974ee1",
+      "claim:adb285a63645fee4-f5acd79d91c7be49",
+      "claim:adb285a63645fee4-fa555f7409c00e6f"
+    ],
+    "removedClaimIds": [],
+    "claimRetentionRate": null,
+    "claimCountChangeRate": null,
+    "conditionsDropped": []
+  },
+  "issues": []
+}

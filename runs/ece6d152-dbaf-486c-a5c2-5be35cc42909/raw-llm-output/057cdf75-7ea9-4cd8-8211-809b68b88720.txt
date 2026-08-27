@@ -1,0 +1,129 @@
+{
+  "propositions": [
+    {
+      "text": "函数是数学中最重要的抽象——输入与输出之间的确定关系。",
+      "exactQuote": "函数是数学中最重要的抽象——输入与输出之间的确定关系。",
+      "blockId": "05-functions-mappings#block-1"
+    },
+    {
+      "text": "从中学课本的 y=f(x) 到现代数学的函子 (functor)，'映射'的概念在每一次泛化中获得更强大的表达能力。",
+      "exactQuote": "从中学课本的 $y=f(x)$ 到现代数学的函子 (functor)，\"映射\"的概念在每一次泛化中获得更强大的表达能力。",
+      "blockId": "05-functions-mappings#block-1"
+    },
+    {
+      "text": "函数 f: X → Y 是对 X 中每个元素唯一指定 Y 中一个元素。",
+      "exactQuote": "**函数** $f: X \\to Y$ = 对 $X$ 中每个元素唯一指定 $Y$ 中一个元素。",
+      "blockId": "05-functions-mappings#block-4"
+    },
+    {
+      "text": "函数 f: X → Y 满足 ∀x ∈ X, ∃! y ∈ Y: f(x) = y。",
+      "exactQuote": "$$\n\\forall x \\in X, \\exists! y \\in Y: f(x) = y\n$$",
+      "blockId": "05-functions-mappings#block-5"
+    },
+    {
+      "text": "关键转变：函数不是'公式'，而是对应关系。",
+      "exactQuote": "关键转变：函数不是\"公式\"，而是**对应关系**。",
+      "blockId": "05-functions-mappings#block-6"
+    },
+    {
+      "text": "'不可用初等函数表达'的函数远远多于'有公式'的函数。",
+      "exactQuote": "\"不可用初等函数表达\"的函数远远多于\"有公式\"的函数。",
+      "blockId": "05-functions-mappings#block-6"
+    },
+    {
+      "text": "单射的定义：f(x1)=f(x2) ⇒ x1=x2。",
+      "exactQuote": "**单射** | $f(x_1)=f(x_2) \\Rightarrow x_1=x_2$ | 不同输入→不同输出",
+      "blockId": "05-functions-mappings#block-8"
+    },
+    {
+      "text": "满射的定义：∀y ∈ Y, ∃x: f(x)=y。",
+      "exactQuote": "**满射** | $\\forall y \\in Y, \\exists x: f(x)=y$ | 覆盖整个目标域",
+      "blockId": "05-functions-mappings#block-8"
+    },
+    {
+      "text": "双射是既单又满的函数。",
+      "exactQuote": "**双射** | 既单又满 | 一一对应，可逆",
+      "blockId": "05-functions-mappings#block-8"
+    },
+    {
+      "text": "当 X 和 Y 有额外的数学结构时，'好的'映射应该保持这些结构。",
+      "exactQuote": "当 $X$ 和 $Y$ 有额外的数学结构时，\"好的\"映射应该**保持**这些结构。",
+      "blockId": "05-functions-mappings#block-12"
+    },
+    {
+      "text": "保持序结构的映射是单调函数，条件为 x ≤ y ⇒ f(x) ≤ f(y)。",
+      "exactQuote": "| 序 | 单调函数 | $x \\leq y \\Rightarrow f(x) \\leq f(y)$ |",
+      "blockId": "05-functions-mappings#block-13"
+    },
+    {
+      "text": "保持代数运算的映射是同态，条件为 f(x·y) = f(x)·f(y)。",
+      "exactQuote": "| 代数运算 | 同态 | $f(x \\cdot y) = f(x) \\cdot f(y)$ |",
+      "blockId": "05-functions-mappings#block-13"
+    },
+    {
+      "text": "保持线性结构的映射是线性映射，条件为 f(ax+by) = a f(x) + b f(y)。",
+      "exactQuote": "| 线性 | 线性映射 | $f(ax+by) = a f(x) + b f(y)$ |",
+      "blockId": "05-functions-mappings#block-13"
+    },
+    {
+      "text": "保持拓扑结构的映射是连续映射，条件为开集的原像是开集。",
+      "exactQuote": "| 拓扑 | 连续映射 | 开集的原像是开集 |",
+      "blockId": "05-functions-mappings#block-13"
+    },
+    {
+      "text": "保持距离结构的映射是等距映射，条件为 d(f(x), f(y)) = d(x,y)。",
+      "exactQuote": "| 距离 | 等距映射 | $d(f(x), f(y)) = d(x,y)$ |",
+      "blockId": "05-functions-mappings#block-13"
+    },
+    {
+      "text": "保持光滑结构的映射是微分同胚，条件为可微且逆也可微。",
+      "exactQuote": "| 光滑结构 | 微分同胚 | 可微且逆也可微 |",
+      "blockId": "05-functions-mappings#block-13"
+    },
+    {
+      "text": "核心洞见：学习数学就是学习'什么映射保持了什么样的结构'。",
+      "exactQuote": "**核心洞见**：学习数学就是学习\"什么映射保持了什么样的结构\"。",
+      "blockId": "05-functions-mappings#block-14"
+    },
+    {
+      "text": "这在 §18 范畴论中将获得终极统一——范畴 = 对象 + 保持结构的态射。",
+      "exactQuote": "这在 $\\S$18 范畴论中将获得终极统一——范畴 = 对象 + 保持结构的态射。",
+      "blockId": "05-functions-mappings#block-14"
+    },
+    {
+      "text": "变换是把函数从'时域/空域'变到'频域/特征域'，使得原来困难的操作变得简单。",
+      "exactQuote": "**变换** = 把函数从\"时域/空域\"变到\"频域/特征域\"，使得原来困难的操作变得简单。",
+      "blockId": "05-functions-mappings#block-18"
+    },
+    {
+      "text": "Fourier 变换的公式为 f̂(ω) = ∫ f(t)e^{-iωt} dt，核心作用是频率分解。",
+      "exactQuote": "| **Fourier** | $\\hat{f}(\\omega) = \\int f(t)e^{-i\\omega t}dt$ | 频率分解 |",
+      "blockId": "05-functions-mappings#block-19"
+    },
+    {
+      "text": "Laplace 变换的公式为 F(s) = ∫_0^∞ f(t)e^{-st} dt，核心作用是将 ODE 转化为代数方程。",
+      "exactQuote": "| **Laplace** | $F(s) = \\int_0^\\infty f(t)e^{-st}dt$ | ODE→代数方程 |",
+      "blockId": "05-functions-mappings#block-19"
+    },
+    {
+      "text": "Z 变换的公式为 F(z) = ∑ f[n]z^{-n}，用于离散信号。",
+      "exactQuote": "| **Z变换** | $F(z) = \\sum f[n]z^{-n}$ | 离散信号 |",
+      "blockId": "05-functions-mappings#block-19"
+    },
+    {
+      "text": "小波变换是多尺度分析，用于局部时频分析。",
+      "exactQuote": "| **小波** | 多尺度分析 | 局部时频分析 |",
+      "blockId": "05-functions-mappings#block-19"
+    },
+    {
+      "text": "Fourier 变换把一个函数（信号）分解为不同频率的正弦波叠加。",
+      "exactQuote": "它把一个函数（信号）分解为不同频率的正弦波叠加：",
+      "blockId": "05-functions-mappings#block-21"
+    },
+    {
+      "text": "Fourier 逆变换公式为 f(t) = (1/(2π)) ∫_{-∞}^∞ f̂(ω) e^{iωt} dω。",
+      "exactQuote": "$$\nf(t) = \\frac{1}{2\\pi} \\int_{-\\infty}^\\infty \\hat{f}(\\omega) e^{i\\omega t} d\\omega\n$$",
+      "blockId": "05-functions-mappings#block-22"
+    }
+  ]
+}

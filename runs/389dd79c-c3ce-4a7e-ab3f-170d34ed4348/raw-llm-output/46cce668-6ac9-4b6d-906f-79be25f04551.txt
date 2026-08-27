@@ -1,0 +1,28 @@
+{
+  "verdict": "passed",
+  "dimensions": {
+    "support": {
+      "result": "pass",
+      "evidence": "**完备性** = 数轴没有\"洞"
+    },
+    "addition": {
+      "result": "pass",
+      "evidence": "原文只有此断言，无额外信息"
+    },
+    "inference": {
+      "result": "pass",
+      "evidence": "Claim 未做额外推断"
+    },
+    "limits": {
+      "result": "pass",
+      "evidence": "原文无适用条件或限定词"
+    },
+    "citation": {
+      "result": "pass",
+      "evidence": "Claim 内容匹配 SourceSpan"
+    }
+  },
+  "anchor": "**完备性** = 数轴没有\"洞",
+  "failedDimensions": [],
+  "issues": []
+}

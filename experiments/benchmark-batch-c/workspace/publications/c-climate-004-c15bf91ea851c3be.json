@@ -1,0 +1,1244 @@
+{
+  "schemaVersion": "v1",
+  "sourceId": "source:c-climate-004-c15bf91ea851c3be",
+  "runId": "01cc0759-55c4-4e3b-9538-221af25f4627",
+  "publishedAt": "2026-07-28T07:14:02.884Z",
+  "claims": [
+    {
+      "id": "claim:c15bf91ea851c3be-03398e983c0d29f0",
+      "statement": "热泵和其他电加热系统在全球的销量超过化石燃料锅炉。",
+      "evidenceSpanIds": [
+        "span:c-climate-004-c15bf91ea851c3be-9#chars-1519-1605"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:13:17.778Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-climate-004-c15bf91ea851c3be-9#chars-1519-1605"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-climate-004-c15bf91ea851c3be-9#chars-1519-1605"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:13:17.778Z"
+    },
+    {
+      "id": "claim:c15bf91ea851c3be-14966316160a1378",
+      "statement": "太阳能、风能、电动汽车和热泵等清洁能源技术的显著崛起正在重塑我们为从工厂、车辆到家用电器和供暖系统等一切提供动力的方式。",
+      "evidenceSpanIds": [
+        "span:c-climate-004-c15bf91ea851c3be-8#chars-1065-1268"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:13:17.778Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-climate-004-c15bf91ea851c3be-8#chars-1065-1268"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-climate-004-c15bf91ea851c3be-8#chars-1065-1268"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:13:17.778Z"
+    },
+    {
+      "id": "claim:c15bf91ea851c3be-33ffb90d56fb69d8",
+      "statement": "将可再生能源容量增加两倍、将能效提升速度翻倍至每年4%、加速电气化以及大幅减少化石燃料运营中的甲烷排放，共同提供了到2030年使能源部门走上限制升温1.5°C路径所需的80%以上的减排量。",
+      "evidenceSpanIds": [
+        "span:c-climate-004-c15bf91ea851c3be-6#chars-682-1011"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:13:17.778Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-climate-004-c15bf91ea851c3be-6#chars-682-1011"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-climate-004-c15bf91ea851c3be-6#chars-682-1011"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:13:17.778Z"
+    },
+    {
+      "id": "claim:c15bf91ea851c3be-389f286c4f1fc92a",
+      "statement": "这不是一个“是否”的问题，而是一个“多快”的问题——而且越快对我们所有人都越好。",
+      "evidenceSpanIds": [
+        "span:c-climate-004-c15bf91ea851c3be-15#chars-2446-2550"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:13:17.778Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-climate-004-c15bf91ea851c3be-15#chars-2446-2550"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-climate-004-c15bf91ea851c3be-15#chars-2446-2550"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:13:17.778Z"
+    },
+    {
+      "id": "claim:c15bf91ea851c3be-4ab4bce1ac2e0bae",
+      "statement": "该执行摘要的作者是国际能源署。",
+      "evidenceSpanIds": [
+        "span:c-climate-004-c15bf91ea851c3be-3#chars-267-312"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:13:17.778Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-climate-004-c15bf91ea851c3be-3#chars-267-312"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-climate-004-c15bf91ea851c3be-3#chars-267-312"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:13:17.778Z"
+    },
+    {
+      "id": "claim:c15bf91ea851c3be-5dad9e8253a8a18a",
+      "statement": "到2030年使排放曲线向下弯曲所需的关键行动已广为人知，并且在大多数情况下成本效益非常高。",
+      "evidenceSpanIds": [
+        "span:c-climate-004-c15bf91ea851c3be-6#chars-555-681"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:13:17.778Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-climate-004-c15bf91ea851c3be-6#chars-555-681"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-climate-004-c15bf91ea851c3be-6#chars-555-681"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:13:17.778Z"
+    },
+    {
+      "id": "claim:c15bf91ea851c3be-614e9c5f107ee3e1",
+      "statement": "对新海上风电项目的投资是新建燃煤和燃气发电厂投资的三倍。",
+      "evidenceSpanIds": [
+        "span:c-climate-004-c15bf91ea851c3be-9#chars-1606-1726"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:13:17.778Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-climate-004-c15bf91ea851c3be-9#chars-1606-1726"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-climate-004-c15bf91ea851c3be-9#chars-1606-1726"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:13:17.778Z"
+    },
+    {
+      "id": "claim:c15bf91ea851c3be-6eedc621985606fc",
+      "statement": "所有这些增长仅基于世界各国政府当前的政策设定。",
+      "evidenceSpanIds": [
+        "span:c-climate-004-c15bf91ea851c3be-10#chars-1730-1831"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:13:17.778Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-climate-004-c15bf91ea851c3be-10#chars-1730-1831"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-climate-004-c15bf91ea851c3be-10#chars-1730-1831"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:13:17.778Z"
+    },
+    {
+      "id": "claim:c15bf91ea851c3be-7d47377f67f1a670",
+      "statement": "在此情景下，化石燃料在全球能源供应中的份额（几十年来一直停留在80%左右）到2030年将下降至73%。",
+      "evidenceSpanIds": [
+        "span:c-climate-004-c15bf91ea851c3be-13#chars-2187-2328"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:13:17.778Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-climate-004-c15bf91ea851c3be-13#chars-2187-2328"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-climate-004-c15bf91ea851c3be-13#chars-2187-2328"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:13:17.778Z"
+    },
+    {
+      "id": "claim:c15bf91ea851c3be-82569f5301dc007f",
+      "statement": "STEPS预测能源相关的二氧化碳排放在2020年代中期达到峰值。",
+      "evidenceSpanIds": [
+        "span:c-climate-004-c15bf91ea851c3be-5#chars-383-453"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:13:17.778Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-climate-004-c15bf91ea851c3be-5#chars-383-453"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-climate-004-c15bf91ea851c3be-5#chars-383-453"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:13:17.778Z"
+    },
+    {
+      "id": "claim:c15bf91ea851c3be-97558bbabe099916",
+      "statement": "该执行摘要于2023年10月24日在巴黎发布。",
+      "evidenceSpanIds": [
+        "span:c-climate-004-c15bf91ea851c3be-3#chars-229-266"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:13:17.778Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-climate-004-c15bf91ea851c3be-3#chars-229-266"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-climate-004-c15bf91ea851c3be-3#chars-229-266"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:13:17.778Z"
+    },
+    {
+      "id": "claim:c15bf91ea851c3be-b5cc2d130a173482",
+      "statement": "国际能源署的执行主任是Fatih Birol。",
+      "evidenceSpanIds": [
+        "span:c-climate-004-c15bf91ea851c3be-3#chars-313-348"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:13:17.778Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-climate-004-c15bf91ea851c3be-3#chars-313-348"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-climate-004-c15bf91ea851c3be-3#chars-313-348"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:13:17.778Z"
+    },
+    {
+      "id": "claim:c15bf91ea851c3be-b6e639a457bef60d",
+      "statement": "清洁能源技术日益增长的势头和全球结构性经济转变对化石燃料有重大影响，全球煤炭、石油和天然气需求峰值均在本十年内可见——这是基于当前政策设定的WEO情景中首次出现这种情况。",
+      "evidenceSpanIds": [
+        "span:c-climate-004-c15bf91ea851c3be-12#chars-1857-2183"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:13:17.778Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-climate-004-c15bf91ea851c3be-12#chars-1857-2183"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-climate-004-c15bf91ea851c3be-12#chars-1857-2183"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:13:17.778Z"
+    },
+    {
+      "id": "claim:c15bf91ea851c3be-c00b212f54c780a4",
+      "statement": "全球道路上电动汽车的数量几乎是现在的10倍。",
+      "evidenceSpanIds": [
+        "span:c-climate-004-c15bf91ea851c3be-9#chars-1272-1346"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:13:17.778Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-climate-004-c15bf91ea851c3be-9#chars-1272-1346"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-climate-004-c15bf91ea851c3be-9#chars-1272-1346"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:13:17.778Z"
+    },
+    {
+      "id": "claim:c15bf91ea851c3be-d4fc52ac12640010",
+      "statement": "向清洁能源的转型正在全球范围内发生，且不可阻挡。",
+      "evidenceSpanIds": [
+        "span:c-climate-004-c15bf91ea851c3be-15#chars-2370-2445"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:13:17.778Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-climate-004-c15bf91ea851c3be-15#chars-2370-2445"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-climate-004-c15bf91ea851c3be-15#chars-2370-2445"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:13:17.778Z"
+    },
+    {
+      "id": "claim:c15bf91ea851c3be-e62ef9df3cf2a6de",
+      "statement": "可再生能源在全球电力结构中的份额接近50%，而目前约为30%。",
+      "evidenceSpanIds": [
+        "span:c-climate-004-c15bf91ea851c3be-9#chars-1432-1518"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:13:17.778Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-climate-004-c15bf91ea851c3be-9#chars-1432-1518"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-climate-004-c15bf91ea851c3be-9#chars-1432-1518"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:13:17.778Z"
+    },
+    {
+      "id": "claim:c15bf91ea851c3be-f2794c0130f4aee6",
+      "statement": "STEPS预测排放仍然高到足以在2100年将全球平均气温推高至约2.4°C。",
+      "evidenceSpanIds": [
+        "span:c-climate-004-c15bf91ea851c3be-5#chars-458-551"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:13:17.778Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-climate-004-c15bf91ea851c3be-5#chars-458-551"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-climate-004-c15bf91ea851c3be-5#chars-458-551"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:13:17.778Z"
+    }
+  ],
+  "concepts": [
+    {
+      "id": "concept:05a8eceb344a5014",
+      "name": "减排量",
+      "aliases": [
+        "减排量"
+      ],
+      "boundary": "温室气体排放的减少量",
+      "domain": "环境"
+    },
+    {
+      "id": "concept:085f568f594f9580",
+      "name": "燃煤发电厂",
+      "aliases": [
+        "燃煤发电厂"
+      ],
+      "boundary": "以煤为燃料的发电厂",
+      "domain": "能源"
+    },
+    {
+      "id": "concept:12ca36b806a91885",
+      "name": "燃气发电厂",
+      "aliases": [
+        "燃气发电厂"
+      ],
+      "boundary": "以天然气为燃料的发电厂",
+      "domain": "能源"
+    },
+    {
+      "id": "concept:1cb889162d0bf85c",
+      "name": "能源部门",
+      "aliases": [
+        "能源部门"
+      ],
+      "boundary": "能源生产和消费的行业",
+      "domain": "能源"
+    },
+    {
+      "id": "concept:249a48178709489f",
+      "name": "太阳能",
+      "aliases": [
+        "太阳能"
+      ],
+      "boundary": "太阳能技术，包括光伏",
+      "domain": "可再生能源"
+    },
+    {
+      "id": "concept:393735e9685a472f",
+      "name": "煤炭需求峰值",
+      "aliases": [
+        "煤炭需求峰值"
+      ],
+      "boundary": "煤炭需求达到最高点",
+      "domain": "能源"
+    },
+    {
+      "id": "concept:4818478094dca9aa",
+      "name": "天然气需求峰值",
+      "aliases": [
+        "天然气需求峰值"
+      ],
+      "boundary": "天然气需求达到最高点",
+      "domain": "能源"
+    },
+    {
+      "id": "concept:5648ef06c3c69d5a",
+      "name": "国际能源署",
+      "aliases": [
+        "国际能源署"
+      ],
+      "boundary": "政府间能源组织",
+      "domain": "组织"
+    },
+    {
+      "id": "concept:56833bc7d0cfc521",
+      "name": "电加热系统",
+      "aliases": [
+        "电加热系统"
+      ],
+      "boundary": "包括热泵在内的电加热设备",
+      "domain": "能源技术"
+    },
+    {
+      "id": "concept:56fc298baaeb5455",
+      "name": "全球电力结构",
+      "aliases": [
+        "全球电力结构"
+      ],
+      "boundary": "全球发电量的能源构成",
+      "domain": "能源"
+    },
+    {
+      "id": "concept:57347821f38bd010",
+      "name": "STEPS",
+      "aliases": [
+        "STEPS"
+      ],
+      "boundary": "国际能源署的既定政策情景",
+      "domain": "能源模型"
+    },
+    {
+      "id": "concept:57a36ce23552a137",
+      "name": "可再生能源",
+      "aliases": [
+        "可再生能源"
+      ],
+      "boundary": "太阳能、风能等可再生来源的能源",
+      "domain": "能源"
+    },
+    {
+      "id": "concept:5a41e685f2f0ffbf",
+      "name": "清洁能源转型",
+      "aliases": [
+        "向清洁能源的转型"
+      ],
+      "boundary": "从化石燃料向清洁能源的转变",
+      "domain": "能源"
+    },
+    {
+      "id": "concept:5c8bfc97c71efbed",
+      "name": "Fatih Birol",
+      "aliases": [
+        "Fatih Birol"
+      ],
+      "boundary": "国际能源署执行主任",
+      "domain": "人物"
+    },
+    {
+      "id": "concept:623ad9a962ce0a52",
+      "name": "甲烷排放",
+      "aliases": [
+        "甲烷排放"
+      ],
+      "boundary": "化石燃料运营中的甲烷释放",
+      "domain": "环境"
+    },
+    {
+      "id": "concept:66056ec57aee6a8b",
+      "name": "化石燃料",
+      "aliases": [
+        "化石燃料"
+      ],
+      "boundary": "煤炭、石油、天然气等",
+      "domain": "能源"
+    },
+    {
+      "id": "concept:69d201641e73ea91",
+      "name": "热泵",
+      "aliases": [
+        "热泵"
+      ],
+      "boundary": "一种电加热系统",
+      "domain": "能源技术"
+    },
+    {
+      "id": "concept:6a2dfca6b4505ce1",
+      "name": "升温1.5°C路径",
+      "aliases": [
+        "限制升温1.5°C路径"
+      ],
+      "boundary": "将全球变暖限制在1.5°C的排放路径",
+      "domain": "气候"
+    },
+    {
+      "id": "concept:7e5fb579ee3c6192",
+      "name": "海上风电",
+      "aliases": [
+        "海上风电"
+      ],
+      "boundary": "在海上建设的风力发电项目",
+      "domain": "可再生能源"
+    },
+    {
+      "id": "concept:816565eab2fa1902",
+      "name": "全球能源供应",
+      "aliases": [
+        "全球能源供应"
+      ],
+      "boundary": "全球一次能源供应总量",
+      "domain": "能源"
+    },
+    {
+      "id": "concept:89445a91ed19497c",
+      "name": "世界能源展望2023",
+      "aliases": [
+        "世界能源展望2023"
+      ],
+      "boundary": "国际能源署2023年发布的报告",
+      "domain": "报告"
+    },
+    {
+      "id": "concept:8ab7b859a2554383",
+      "name": "风能",
+      "aliases": [
+        "风能"
+      ],
+      "boundary": "风力发电技术",
+      "domain": "可再生能源"
+    },
+    {
+      "id": "concept:8e8963399c3aa80a",
+      "name": "美国电力系统",
+      "aliases": [
+        "美国电力系统"
+      ],
+      "boundary": "美国的电力生产和输配系统",
+      "domain": "能源"
+    },
+    {
+      "id": "concept:8ea98457dbfdd029",
+      "name": "全球平均气温",
+      "aliases": [
+        "全球平均气温"
+      ],
+      "boundary": "地球表面的平均温度",
+      "domain": "气候"
+    },
+    {
+      "id": "concept:916233bf0d14d977",
+      "name": "排放曲线",
+      "aliases": [
+        "排放曲线"
+      ],
+      "boundary": "温室气体排放随时间的变化趋势",
+      "domain": "环境"
+    },
+    {
+      "id": "concept:92ea33b94ac481ad",
+      "name": "能源相关的二氧化碳排放",
+      "aliases": [
+        "能源相关的二氧化碳排放"
+      ],
+      "boundary": "能源活动产生的CO2排放",
+      "domain": "环境"
+    },
+    {
+      "id": "concept:b612744532cea5d0",
+      "name": "化石燃料锅炉",
+      "aliases": [
+        "化石燃料锅炉"
+      ],
+      "boundary": "使用化石燃料的锅炉",
+      "domain": "能源技术"
+    },
+    {
+      "id": "concept:b6902b922edfbd72",
+      "name": "可再生能源容量",
+      "aliases": [
+        "可再生能源容量"
+      ],
+      "boundary": "可再生能源发电装机容量",
+      "domain": "能源"
+    },
+    {
+      "id": "concept:ba3e9922dee5ee29",
+      "name": "电动汽车",
+      "aliases": [
+        "电动汽车"
+      ],
+      "boundary": "电动驱动的车辆",
+      "domain": "交通"
+    },
+    {
+      "id": "concept:bc1d2c3c3b4551b7",
+      "name": "电气化",
+      "aliases": [
+        "电气化"
+      ],
+      "boundary": "用电力替代化石燃料的过程",
+      "domain": "能源"
+    },
+    {
+      "id": "concept:bcae609cb78f2cd4",
+      "name": "石油需求峰值",
+      "aliases": [
+        "石油需求峰值"
+      ],
+      "boundary": "石油需求达到最高点",
+      "domain": "能源"
+    },
+    {
+      "id": "concept:be0ec018dad43dae",
+      "name": "能效提升速度",
+      "aliases": [
+        "能效提升速度"
+      ],
+      "boundary": "能源效率提高的速率",
+      "domain": "能源"
+    },
+    {
+      "id": "concept:d3a4bdac5acdec40",
+      "name": "政策设定",
+      "aliases": [
+        "政策设定"
+      ],
+      "boundary": "政府制定的能源和环境政策",
+      "domain": "政策"
+    },
+    {
+      "id": "concept:d41964033cc8ca01",
+      "name": "巴黎",
+      "aliases": [
+        "巴黎"
+      ],
+      "boundary": "法国首都",
+      "domain": "地点"
+    },
+    {
+      "id": "concept:d42770691e7c92be",
+      "name": "WEO情景",
+      "aliases": [
+        "WEO情景"
+      ],
+      "boundary": "世界能源展望中的情景",
+      "domain": "能源模型"
+    },
+    {
+      "id": "concept:dd00bd13f235329d",
+      "name": "化石燃料运营",
+      "aliases": [
+        "化石燃料运营"
+      ],
+      "boundary": "化石燃料的开采、运输和使用过程",
+      "domain": "能源"
+    },
+    {
+      "id": "concept:efa8b66190971875",
+      "name": "太阳能光伏发电",
+      "aliases": [
+        "太阳能光伏发电"
+      ],
+      "boundary": "利用光伏效应发电",
+      "domain": "可再生能源"
+    },
+    {
+      "id": "concept:f8183f3d53456d92",
+      "name": "清洁能源技术",
+      "aliases": [
+        "清洁能源技术"
+      ],
+      "boundary": "包括太阳能、风能、电动汽车、热泵等",
+      "domain": "能源技术"
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel:c15bf91ea851c3be-2efce0d3c15115e4",
+      "from": "claim:c15bf91ea851c3be-33ffb90d56fb69d8",
+      "to": "claim:c15bf91ea851c3be-5dad9e8253a8a18a",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:c-climate-004-c15bf91ea851c3be-6#chars-555-681",
+        "span:c-climate-004-c15bf91ea851c3be-6#chars-682-1011"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:13:29.537Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.7,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:c15bf91ea851c3be-3caafb050051f35b",
+      "from": "claim:c15bf91ea851c3be-b6e639a457bef60d",
+      "to": "claim:c15bf91ea851c3be-d4fc52ac12640010",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:c-climate-004-c15bf91ea851c3be-12#chars-1857-2183",
+        "span:c-climate-004-c15bf91ea851c3be-15#chars-2370-2445"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:13:29.537Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.8,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:c15bf91ea851c3be-5efa55f1c66d29ff",
+      "from": "claim:c15bf91ea851c3be-03398e983c0d29f0",
+      "to": "claim:c15bf91ea851c3be-14966316160a1378",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:c-climate-004-c15bf91ea851c3be-8#chars-1065-1268",
+        "span:c-climate-004-c15bf91ea851c3be-9#chars-1519-1605"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:13:29.537Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.8,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:c15bf91ea851c3be-61f3253d5062805f",
+      "from": "claim:c15bf91ea851c3be-82569f5301dc007f",
+      "to": "claim:c15bf91ea851c3be-f2794c0130f4aee6",
+      "type": "RELATED_TO",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:c-climate-004-c15bf91ea851c3be-5#chars-383-453",
+        "span:c-climate-004-c15bf91ea851c3be-5#chars-458-551"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:13:29.537Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.7,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:cross-0446588902d3b7f8",
+      "from": "claim:c15bf91ea851c3be-b6e639a457bef60d",
+      "to": "claim:b26d226f500be322-398ef16d4b0abfcd",
+      "type": "RELATED_TO",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:c-climate-001-b26d226f500be322-11#chars-2484-2653",
+        "span:c-climate-004-c15bf91ea851c3be-12#chars-1857-2183"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:13:47.464Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "cross-material-detect",
+      "confidence": 0.6,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:cross-1a7ba1fcd9c58335",
+      "from": "claim:c15bf91ea851c3be-5dad9e8253a8a18a",
+      "to": "claim:b26d226f500be322-e06162dbf4f90ed6",
+      "type": "RELATED_TO",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:c-climate-001-b26d226f500be322-9#chars-1703-1928",
+        "span:c-climate-004-c15bf91ea851c3be-6#chars-555-681"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:13:47.464Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "cross-material-detect",
+      "confidence": 0.6,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:cross-76505f654e99ab70",
+      "from": "claim:c15bf91ea851c3be-33ffb90d56fb69d8",
+      "to": "claim:b26d226f500be322-e06162dbf4f90ed6",
+      "type": "RELATED_TO",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:c-climate-001-b26d226f500be322-9#chars-1703-1928",
+        "span:c-climate-004-c15bf91ea851c3be-6#chars-682-1011"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:13:47.464Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "cross-material-detect",
+      "confidence": 0.6,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:cross-7c97b9c1b1455fbf",
+      "from": "claim:c15bf91ea851c3be-33ffb90d56fb69d8",
+      "to": "claim:b26d226f500be322-398ef16d4b0abfcd",
+      "type": "RELATED_TO",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:c-climate-001-b26d226f500be322-11#chars-2484-2653",
+        "span:c-climate-004-c15bf91ea851c3be-6#chars-682-1011"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:13:47.464Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "cross-material-detect",
+      "confidence": 0.6,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:cross-a0b6b2c67ab1ffa4",
+      "from": "claim:c15bf91ea851c3be-5dad9e8253a8a18a",
+      "to": "claim:b26d226f500be322-4811ce763ff3f4c8",
+      "type": "RELATED_TO",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:c-climate-001-b26d226f500be322-11#chars-2188-2257",
+        "span:c-climate-004-c15bf91ea851c3be-6#chars-555-681"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:13:47.464Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "cross-material-detect",
+      "confidence": 0.6,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:cross-cc44e76c02d97ef6",
+      "from": "claim:c15bf91ea851c3be-f2794c0130f4aee6",
+      "to": "claim:b26d226f500be322-398ef16d4b0abfcd",
+      "type": "RELATED_TO",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:c-climate-001-b26d226f500be322-11#chars-2484-2653",
+        "span:c-climate-004-c15bf91ea851c3be-5#chars-458-551"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:13:47.464Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "cross-material-detect",
+      "confidence": 0.6,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:cross-cfdfa7308227f312",
+      "from": "claim:c15bf91ea851c3be-f2794c0130f4aee6",
+      "to": "claim:b26d226f500be322-af7a69e395340efb",
+      "type": "RELATED_TO",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:c-climate-001-b26d226f500be322-5#chars-712-770",
+        "span:c-climate-004-c15bf91ea851c3be-5#chars-458-551"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:13:47.464Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "cross-material-detect",
+      "confidence": 0.6,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:cross-d1962a0992525778",
+      "from": "claim:c15bf91ea851c3be-f2794c0130f4aee6",
+      "to": "claim:b26d226f500be322-4811ce763ff3f4c8",
+      "type": "RELATED_TO",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:c-climate-001-b26d226f500be322-11#chars-2188-2257",
+        "span:c-climate-004-c15bf91ea851c3be-5#chars-458-551"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:13:47.464Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "cross-material-detect",
+      "confidence": 0.6,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:cross-e68ab711733dbda2",
+      "from": "claim:c15bf91ea851c3be-f2794c0130f4aee6",
+      "to": "claim:b26d226f500be322-e06162dbf4f90ed6",
+      "type": "RELATED_TO",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:c-climate-001-b26d226f500be322-9#chars-1703-1928",
+        "span:c-climate-004-c15bf91ea851c3be-5#chars-458-551"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:13:47.464Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "cross-material-detect",
+      "confidence": 0.6,
+      "consumedBy": []
+    }
+  ]
+}

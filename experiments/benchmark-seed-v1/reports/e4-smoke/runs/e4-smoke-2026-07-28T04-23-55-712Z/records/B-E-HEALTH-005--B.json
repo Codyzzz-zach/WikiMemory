@@ -1,0 +1,59 @@
+{
+  "runId": "e4-smoke-2026-07-28T04-23-55-712Z",
+  "sampleId": "sample-4a35d188-0206-44ad-bb0d-38417c7ff346",
+  "questionId": "B-E-HEALTH-005",
+  "group": "B",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "temperature": 0,
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 480,
+    "completionTokens": 232,
+    "totalTokens": 712,
+    "promptCacheHitTokens": 384,
+    "promptCacheMissTokens": 96,
+    "reasoningTokens": 0
+  },
+  "latencyMs": 2140,
+  "promptHash": "sha256:378375407d5dbf2c96ab71138ef942a1eb522f83f2ce2ba73751b1ed510e5545",
+  "contextHash": "1138b3e5810bdc47f55b4401f3939542b18dfc4ddc04b065513aa7a74b259a99",
+  "estimatedContextTokens": 378,
+  "estimatedInputTokens": 552,
+  "retrievedClaims": [],
+  "retrievedRelations": [],
+  "retrievedSources": [
+    "../../../workbuddy-batch-b/generated/compilation-corpus/health-biology/health-nature-airborne-2022-003.md",
+    "../../../workbuddy-batch-b/generated/compilation-corpus/health-biology/health-who-july-2020-002.md"
+  ],
+  "droppedContext": [],
+  "retrievalTrace": {
+    "strategy": "folder-lexical",
+    "queryFeatureCount": 22,
+    "corpusChunkCount": 12,
+    "matchedChunkCount": 2,
+    "maxFolderChunks": 16,
+    "candidates": [
+      {
+        "id": "../../../workbuddy-batch-b/generated/compilation-corpus/health-biology/health-nature-airborne-2022-003.md#L1-L6",
+        "rank": 1,
+        "score": 2.466337068793427,
+        "selected": true,
+        "dropReason": null
+      },
+      {
+        "id": "../../../workbuddy-batch-b/generated/compilation-corpus/health-biology/health-who-july-2020-002.md#L1-L6",
+        "rank": 2,
+        "score": 2.466337068793427,
+        "selected": true,
+        "dropReason": null
+      }
+    ]
+  },
+  "request": {
+    "systemPrompt": "你是受证据约束的问答 Agent。只使用本次请求提供的检索上下文回答。\n要求：保留影响结论的条件、时间、例外、来源角色与不确定性；关键结论引用上下文中的 SOURCE、EVIDENCE 或 CLAIM 标识；上下文不足时明确说明，不得用外部常识补齐。\n只输出严格 JSON：{\"answer\":\"...\",\"citations\":[\"...\"],\"insufficient\":false,\"uncertainties\":[\"...\"]}。",
+    "userPrompt": "# 问题\n从 2020-03 到 2020-07，空气传播适用范围发生了什么可证实变化？\n\n# 检索上下文\n## SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/health-biology/health-nature-airborne-2022-003.md:1-6 score=2.466\n# Why the WHO took two years to say COVID is airborne\n\nOn 23 December, the World Health Organization (WHO) uttered the one word it had previously seemed incapable of applying to the virus SARS-CoV-2: ‘airborne’.\n\nIt took until 20 October 2020 for the agency to acknowledge that aerosols — tiny specks of fluid — can transmit the virus, but the WHO said this was a concern only in specific settings, such as indoor, crowded and inadequately ventilated spaces. Over the next six months, the agency gradually altered its advice to say that aerosols could carry the virus for more than a metre and remain in the air.\n\n## SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/health-biology/health-who-july-2020-002.md:1-6 score=2.466\n# Transmission of SARS-CoV-2: implications for infection prevention precautions\n\nThis document is an update to the scientific brief published on 29 March 2020 entitled “Modes of transmission of virus causing COVID-19: implications for infection prevention and control (IPC) precaution recommendations” and includes new scientific evidence available on transmission of SARS-CoV-2, the virus that causes COVID-19.\n\nShort-range aerosol transmission, particularly in specific indoor locations, such as crowded and inadequately ventilated spaces over a prolonged period of time with infected persons cannot be ruled out."
+  },
+  "answer": "{\n  \"answer\": \"2020年3月29日，WHO发布科学简报，未明确认可空气传播。2020年7月9日更新版承认短距离气溶胶传播在特定室内场所（拥挤、通风不良、长时间接触）不能排除。2020年10月20日，WHO正式承认气溶胶可传播病毒，但仅限于特定环境。随后六个月，WHO逐步调整建议，指出气溶胶可携带病毒超过1米并悬浮在空气中。\",\n  \"citations\": [\n    \"SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/health-biology/health-nature-airborne-2022-003.md:1-6\",\n    \"SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/health-biology/health-who-july-2020-002.md:1-6\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": [\n    \"2020年3月29日简报的具体内容未提供，无法确认当时是否完全排除空气传播。\"\n  ]\n}",
+  "answerFormatValid": true
+}

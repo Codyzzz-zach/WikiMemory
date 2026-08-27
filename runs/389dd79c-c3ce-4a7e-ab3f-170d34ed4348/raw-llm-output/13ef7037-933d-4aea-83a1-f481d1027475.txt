@@ -1,0 +1,19 @@
+{
+  "verdict": "failed",
+  "dimensions": {
+    "support": { "result": "fail", "evidence": "原文仅包含 '有序' 一词，未提及整数集Z或任何定义。因此不支持Claim。" },
+    "addition": { "result": "fail", "evidence": "Claim 添加了 '整数集Z' 这一具体集合，但原文未提及。" },
+    "inference": { "result": "fail", "evidence": "Claim 未显式标记为推断，而原文无支持。" },
+    "limits": { "result": "fail", "evidence": "Claim 未保留任何限定条件，且原文无条件。" },
+    "citation": { "result": "fail", "evidence": "Claim 引用的 span 仅含 '有序'，与整数集Z无关联，属错位引用。" }
+  },
+  "anchor": "有序",
+  "failedDimensions": ["support", "addition", "inference", "limits", "citation"],
+  "issues": [
+    "原文仅含'有序'一词，未提及整数集Z，因此support失败。",
+    "Claim 添加了原文未有的'整数集Z'，addition失败。",
+    "原文无事实断言，而Claim未标记推断。",
+    "原文无限定条件。",
+    "引用错位，原文未对应整数集Z的有序性。"
+  ]
+}

@@ -1,0 +1,169 @@
+{
+	"schemaVersion": "wge-i3-sim-gate/v1",
+	"status": "FROZEN_SHADOW_DIAGNOSTIC",
+	"authority": {
+		"productBoundary": "HUMAN_SELECTED_MATERIALS_ONLY",
+		"stageAUse": "REVEALED_PUBLIC_DIAGNOSTIC",
+		"stageBUse": "SEALED_CONFIRMATORY_RESERVE",
+		"stageBRead": false,
+		"prohibitedKnowledgeInputs": [
+			"agent-runs",
+			"conversation-logs",
+			"pilot-outcomes",
+			"benchmark-gold"
+		]
+	},
+	"sourceFreeze": {
+		"freezeRoot": "experiments/goal3/s200-stage-a-freeze-v1",
+		"freezeManifest": "experiments/goal3/s200-stage-a-freeze-v1/freeze-manifest.json",
+		"freezeManifestSha256": "sha256:344c2a30f754b1ab76d2945de0a791c6f56aafe33ca87c501657c189c387c4e4",
+		"sourceMetadata": "benchmark-s200-stage-a-v1.1-candidate/manifests/source-manifest.jsonl",
+		"sourceMetadataSha256": "sha256:7c064b586d4f4da1584caab970f78ef1d9e66384b8a72c2d1cae228acd7f534a",
+		"publicQuestions": "benchmark-s200-stage-a-v1.1-candidate/questions/questions-public.jsonl",
+		"publicQuestionsSha256": "sha256:8ac9fa1ccc1c18cf06412a3725ec524037795d5357321527177c5fd360a60cc3",
+		"publicEpisodes": "benchmark-s200-stage-a-v1.1-candidate/episodes/episodes-public.jsonl",
+		"publicEpisodesSha256": "sha256:41d8e19dc57e4107ad4b0dd5de3bf2a2510180343c2081a082cc04aeab6bec14"
+	},
+	"execution": {
+		"compilerModel": "deepseek-v4-flash",
+		"temperature": 0,
+		"semanticLint": true,
+		"knowledgeAccess": "MANAGED",
+		"stageBRead": false
+	},
+	"slice": {
+		"sourceCount": 18,
+		"domainCount": 3,
+		"taskCount": 7,
+		"episodeCount": 3,
+		"episodes": [
+			{
+				"episodeId": "S200-EV-016",
+				"domain": "psychology-reproducibility",
+				"clusterId": "cluster-psych-nudge-01",
+				"changeClassHint": "dispute",
+				"timepoints": [
+					{
+						"timepoint": "T0",
+						"sourceIds": ["s200-psych-nudge-002"]
+					},
+					{
+						"timepoint": "T1",
+						"sourceIds": ["s200-psych-nudge-001", "s200-psych-nudge-004", "s200-psych-nudge-005"]
+					},
+					{
+						"timepoint": "T2",
+						"sourceIds": ["s200-psych-nudge-003"]
+					}
+				],
+				"tasks": [
+					{
+						"taskId": "I3SIM-PSY-01",
+						"seedCaseId": "S200-PSY-001",
+						"prompt": "我在持续维护一份关于助推干预是否可靠的研究判断。根据目前材料，主要效应、适用边界和不确定性分别是什么？新证据改变了哪些旧认识？"
+					},
+					{
+						"taskId": "I3SIM-PSY-02",
+						"seedCaseId": "S200-PSY-002",
+						"prompt": "如果要把助推研究用于政策设计，现有材料支持哪些谨慎结论，又有哪些结果不能外推？请保留来源之间的分歧。"
+					},
+					{
+						"taskId": "I3SIM-PSY-03",
+						"seedCaseId": "S200-PSY-003",
+						"prompt": "围绕助推证据的长期争议，目前哪些主张得到支持、受到反驳或仍未解决？不要把评论和研究证据视为同等权威。"
+					}
+				],
+				"targetTransitions": [
+					"SAME_QUESTION_UPDATE",
+					"DISPUTE_PRESERVED",
+					"AUTHORITY_NOT_FLATTENED"
+				]
+			},
+			{
+				"episodeId": "S200-EV-004",
+				"domain": "technology",
+				"clusterId": "cluster-tech-go-modules-01",
+				"changeClassHint": "supersede",
+				"timepoints": [
+					{
+						"timepoint": "T0",
+						"sourceIds": ["s200-tech-gomod-005", "s200-tech-gomod-003"]
+					},
+					{
+						"timepoint": "T1",
+						"sourceIds": ["s200-tech-gomod-002", "s200-tech-gomod-001"]
+					},
+					{
+						"timepoint": "T2",
+						"sourceIds": ["s200-tech-gomod-004", "s200-tech-gomod-007"]
+					}
+				],
+				"tasks": [
+					{
+						"taskId": "I3SIM-TEC-01",
+						"seedCaseId": "S200-TEC-001",
+						"prompt": "我们正在维护 Go 依赖管理策略。请说明模块系统从早期提案到后续实现的关键变化，并明确哪些早期设计意图已不再代表当前状态。"
+					},
+					{
+						"taskId": "I3SIM-TEC-02",
+						"seedCaseId": "S200-TEC-002",
+						"prompt": "现有材料对 Go module mode 何时启用、何时成为默认分别给出了什么条件？请避免把有条件的默认行为写成无条件规则。"
+					}
+				],
+				"targetTransitions": [
+					"SAME_QUESTION_UPDATE",
+					"SUPERSEDED_HISTORY_RETAINED",
+					"CONDITION_PRESERVED"
+				]
+			},
+			{
+				"episodeId": "S200-EV-020",
+				"domain": "law-public-policy",
+				"clusterId": "cluster-law-dma-01",
+				"changeClassHint": "new-evidence",
+				"timepoints": [
+					{
+						"timepoint": "T0",
+						"sourceIds": ["s200-law-dma-001", "s200-law-dma-002"]
+					},
+					{
+						"timepoint": "T1",
+						"sourceIds": ["s200-law-dma-003", "s200-law-dma-005", "s200-law-dma-006"]
+					},
+					{
+						"timepoint": "T2",
+						"sourceIds": ["s200-law-dma-004", "s200-law-dma-007"]
+					}
+				],
+				"tasks": [
+					{
+						"taskId": "I3SIM-LAW-01",
+						"seedCaseId": "S200-LAW-001",
+						"prompt": "我需要持续维护欧盟 DMA 的实施脉络。现有材料支持哪些关键时间点、认定条件和守门人变化？请区分法规原文、官方行动和评论。"
+					},
+					{
+						"taskId": "I3SIM-LAW-02",
+						"seedCaseId": "S200-LAW-003",
+						"prompt": "关于 DMA 处罚上限和适用口径，不同材料有哪些一致或冲突的说法？当前认识应采用什么条件化表达，哪些问题仍需补证？"
+					}
+				],
+				"targetTransitions": ["SAME_QUESTION_UPDATE", "NEW_EVIDENCE_ADDED", "CONFLICT_ATTRIBUTED"]
+			}
+		]
+	},
+	"budgets": {
+		"contextTokensPerTask": 12000,
+		"maxSourcesPerCommand": 1,
+		"providerTokenSoftLimitPerSource": 80000,
+		"answerCallsBeforeStructuralPass": 0,
+		"maxPairedAnswerCallsPerEpisodeReview": 2,
+		"stopAfterSameFailureCount": 2
+	},
+	"promotion": {
+		"hardFailureTolerance": 0,
+		"minimumCausalWins": 3,
+		"minimumWinningDomains": 2,
+		"minimumPairedOutcomeCoverage": 0.8,
+		"scopeLeakTolerance": 0
+	}
+}

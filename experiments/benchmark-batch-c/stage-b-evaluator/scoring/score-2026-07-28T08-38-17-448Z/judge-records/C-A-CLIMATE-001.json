@@ -1,0 +1,54 @@
+{
+  "questionId": "C-A-CLIMATE-001",
+  "promptHash": "0d71d110298225ea3e1bd7e1fe058a57d5ee291018121563d7ea72880c8489d2",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 2432,
+    "completionTokens": 2774,
+    "totalTokens": 5206,
+    "promptCacheHitTokens": 0,
+    "promptCacheMissTokens": 2432,
+    "reasoningTokens": 2248
+  },
+  "raw": "[\n  {\n    \"sampleId\": \"sample-87786e1c-f558-4af8-8635-00326bc02632\",\n    \"requiredPointCoverage\": 2,\n    \"conditionFidelity\": 3,\n    \"evidenceGrounding\": 2,\n    \"answerabilityDiscipline\": 4,\n    \"sourceRoleTemporalDiscipline\": 3,\n    \"hardFailure\": false,\n    \"hardFailureTypes\": [],\n    \"rationale\": \"覆盖了p1/2部分要点（缺法律目标、48%差距具体数字），p3覆盖好；条件列示准确；引用了c-climate-004和-001但未使用c-climate-003（48%差距）和c-climate-002（目标），证据支撑不完整；answerability正确为partial；来源角色区分基本清晰。\"\n  },\n  {\n    \"sampleId\": \"sample-34ccd64a-67c0-40e8-9324-0587c03391ed\",\n    \"requiredPointCoverage\": 2,\n    \"conditionFidelity\": 3,\n    \"evidenceGrounding\": 2,\n    \"answerabilityDiscipline\": 4,\n    \"sourceRoleTemporalDiscipline\": 3,\n    \"hardFailure\": false,\n    \"hardFailureTypes\": [],\n    \"rationale\": \"类似S1，缺失p1法律目标和p2 48%差距具体数值，但p3未知项全面；条件表达准确；引用仅c-climate-004和-001，缺requiredEvidence的c-climate-003；answerability正确partial；来源角色无混淆。\"\n  },\n  {\n    \"sampleId\": \"sample-87c531ed-1e1a-4a68-8878-4575534f2f69\",\n    \"requiredPointCoverage\": 0,\n    \"conditionFidelity\": 0,\n    \"evidenceGrounding\": 0,\n    \"answerabilityDiscipline\": 0,\n    \"sourceRoleTemporalDiscipline\": 1,\n    \"hardFailure\": true,\n    \"hardFailureTypes\": [\"Claiming question cannot be addressed at all\", \"Ignoring 48% vs 55% gap\"],\n    \"rationale\": \"完全拒绝回答（声称无法判断），违反hardFailureRules；未使用c-climate-003等关键证据，未提及48%差距；未覆盖任何requiredPoint；引用单一来源但未用于条件评估。\"\n  }\n]",
+  "rows": [
+    {
+      "sampleId": "sample-87786e1c-f558-4af8-8635-00326bc02632",
+      "requiredPointCoverage": 2,
+      "conditionFidelity": 3,
+      "evidenceGrounding": 2,
+      "answerabilityDiscipline": 4,
+      "sourceRoleTemporalDiscipline": 3,
+      "hardFailure": false,
+      "hardFailureTypes": [],
+      "rationale": "覆盖了p1/2部分要点（缺法律目标、48%差距具体数字），p3覆盖好；条件列示准确；引用了c-climate-004和-001但未使用c-climate-003（48%差距）和c-climate-002（目标），证据支撑不完整；answerability正确为partial；来源角色区分基本清晰。"
+    },
+    {
+      "sampleId": "sample-34ccd64a-67c0-40e8-9324-0587c03391ed",
+      "requiredPointCoverage": 2,
+      "conditionFidelity": 3,
+      "evidenceGrounding": 2,
+      "answerabilityDiscipline": 4,
+      "sourceRoleTemporalDiscipline": 3,
+      "hardFailure": false,
+      "hardFailureTypes": [],
+      "rationale": "类似S1，缺失p1法律目标和p2 48%差距具体数值，但p3未知项全面；条件表达准确；引用仅c-climate-004和-001，缺requiredEvidence的c-climate-003；answerability正确partial；来源角色无混淆。"
+    },
+    {
+      "sampleId": "sample-87c531ed-1e1a-4a68-8878-4575534f2f69",
+      "requiredPointCoverage": 0,
+      "conditionFidelity": 0,
+      "evidenceGrounding": 0,
+      "answerabilityDiscipline": 0,
+      "sourceRoleTemporalDiscipline": 1,
+      "hardFailure": true,
+      "hardFailureTypes": [
+        "Claiming question cannot be addressed at all",
+        "Ignoring 48% vs 55% gap"
+      ],
+      "rationale": "完全拒绝回答（声称无法判断），违反hardFailureRules；未使用c-climate-003等关键证据，未提及48%差距；未覆盖任何requiredPoint；引用单一来源但未用于条件评估。"
+    }
+  ]
+}

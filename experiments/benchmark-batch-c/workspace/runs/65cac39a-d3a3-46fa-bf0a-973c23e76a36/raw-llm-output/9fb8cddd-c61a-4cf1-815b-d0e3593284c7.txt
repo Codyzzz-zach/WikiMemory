@@ -1,0 +1,102 @@
+{
+  "relations": [
+    {
+      "fromClaimIndex": 0,
+      "toClaimIndex": 1,
+      "type": "DERIVED_FROM",
+      "conditions": ["The impact assessment in claim 0 is the same as the one published in 2024 in claim 1."],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 0,
+      "toClaimIndex": 8,
+      "type": "SUPPORTS",
+      "conditions": ["Claim 0 states the impact assessment formed basis for 90% target; claim 8 states the 90% target was announced in Feb 2024."],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 2,
+      "toClaimIndex": 13,
+      "type": "SUPPORTS",
+      "conditions": ["Claim 2 mentions pressure from certain European countries; claim 13 specifies Italy called for weakening."],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 2,
+      "toClaimIndex": 16,
+      "type": "SUPPORTS",
+      "conditions": ["Claim 2 mentions pressure from certain European countries; claim 16 specifies France asked for flexibility."],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 3,
+      "toClaimIndex": 4,
+      "type": "DERIVED_FROM",
+      "conditions": ["Claim 3 introduces flexibility of international carbon credits; claim 4 explains the effect of that flexibility."],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 3,
+      "toClaimIndex": 7,
+      "type": "CONTRADICTS",
+      "conditions": ["Claim 3 describes flexibility to use international credits; claim 7 states Advisory Board said EU should not count such credits."],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 4,
+      "toClaimIndex": 7,
+      "type": "CONTRADICTS",
+      "conditions": ["Claim 4 describes using credits to achieve 87% domestic reduction; claim 7 says Advisory Board opposes counting credits."],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 5,
+      "toClaimIndex": 12,
+      "type": "RELATED_TO",
+      "conditions": ["Both claims are about requirements in the same proposal: emissions limit and removals."],
+      "confidence": 0.6
+    },
+    {
+      "fromClaimIndex": 6,
+      "toClaimIndex": 10,
+      "type": "SUPPORTS",
+      "conditions": ["Claim 6 says proposal builds on previous targets; claim 10 says proposal is a step towards enshrining target in law."],
+      "confidence": 0.7
+    },
+    {
+      "fromClaimIndex": 7,
+      "toClaimIndex": 20,
+      "type": "SUPPORTS",
+      "conditions": ["Claim 7 states Advisory Board said not to count credits; claim 20 provides a direct quote from the Advisory Board."],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 14,
+      "toClaimIndex": 15,
+      "type": "SUPPORTS",
+      "conditions": ["Claim 14 states European Climate Law entered into force; claim 15 states the target set by that law."],
+      "confidence": 0.9
+    },
+    {
+      "fromClaimIndex": 15,
+      "toClaimIndex": 17,
+      "type": "CONTRADICTS",
+      "conditions": ["Claim 15 sets 55% reduction target by 2030; claim 17 says projections show only 48% reduction."],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 15,
+      "toClaimIndex": 19,
+      "type": "CONTRADICTS",
+      "conditions": ["Claim 15 sets 55% target; claim 19 says EU is not on track to achieve 2030 target."],
+      "confidence": 0.8
+    },
+    {
+      "fromClaimIndex": 17,
+      "toClaimIndex": 19,
+      "type": "SUPPORTS",
+      "conditions": ["Claim 17 provides projection of 48% reduction; claim 19 concludes EU not on track."],
+      "confidence": 0.9
+    }
+  ]
+}

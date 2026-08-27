@@ -1,0 +1,51 @@
+{
+  "questionId": "C-C-PSYCH-001",
+  "promptHash": "c0f7689e646e8eac02a26b32553e45a43f371e508f4bc2a644e4ff1122997d01",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 2022,
+    "completionTokens": 2994,
+    "totalTokens": 5016,
+    "promptCacheHitTokens": 0,
+    "promptCacheMissTokens": 2022,
+    "reasoningTokens": 2596
+  },
+  "raw": "[\n  {\n    \"sampleId\": \"sample-f35c5759-1ad4-4762-87a5-852fd32a0419\",\n    \"requiredPointCoverage\": 1,\n    \"conditionFidelity\": 2,\n    \"evidenceGrounding\": 1,\n    \"answerabilityDiscipline\": 3,\n    \"sourceRoleTemporalDiscipline\": 0,\n    \"hardFailure\": false,\n    \"hardFailureTypes\": [],\n    \"rationale\": \"指标列表错误两个，缺少47%和68%；引入2016批评超出时间范围；证据引用但不准确。\"\n  },\n  {\n    \"sampleId\": \"sample-754b00e0-7efe-4801-a45c-987a0ab276b7\",\n    \"requiredPointCoverage\": 1,\n    \"conditionFidelity\": 2,\n    \"evidenceGrounding\": 1,\n    \"answerabilityDiscipline\": 3,\n    \"sourceRoleTemporalDiscipline\": 1,\n    \"hardFailure\": false,\n    \"hardFailureTypes\": [],\n    \"rationale\": \"指标列表缺少具体数值和CI overlap；证据仅来源名无quote；第五项预测区间非原文指标。\"\n  },\n  {\n    \"sampleId\": \"sample-3980a51d-00b8-4a24-b6e9-6fc6e780b4a2\",\n    \"requiredPointCoverage\": 0,\n    \"conditionFidelity\": 2,\n    \"evidenceGrounding\": 1,\n    \"answerabilityDiscipline\": 0,\n    \"sourceRoleTemporalDiscipline\": 2,\n    \"hardFailure\": false,\n    \"hardFailureTypes\": [],\n    \"rationale\": \"该回答时拒答，违反可答性；未覆盖任何要求要点；证据引用不足以支持拒答。\"\n  }\n]",
+  "rows": [
+    {
+      "sampleId": "sample-f35c5759-1ad4-4762-87a5-852fd32a0419",
+      "requiredPointCoverage": 1,
+      "conditionFidelity": 2,
+      "evidenceGrounding": 1,
+      "answerabilityDiscipline": 3,
+      "sourceRoleTemporalDiscipline": 0,
+      "hardFailure": false,
+      "hardFailureTypes": [],
+      "rationale": "指标列表错误两个，缺少47%和68%；引入2016批评超出时间范围；证据引用但不准确。"
+    },
+    {
+      "sampleId": "sample-754b00e0-7efe-4801-a45c-987a0ab276b7",
+      "requiredPointCoverage": 1,
+      "conditionFidelity": 2,
+      "evidenceGrounding": 1,
+      "answerabilityDiscipline": 3,
+      "sourceRoleTemporalDiscipline": 1,
+      "hardFailure": false,
+      "hardFailureTypes": [],
+      "rationale": "指标列表缺少具体数值和CI overlap；证据仅来源名无quote；第五项预测区间非原文指标。"
+    },
+    {
+      "sampleId": "sample-3980a51d-00b8-4a24-b6e9-6fc6e780b4a2",
+      "requiredPointCoverage": 0,
+      "conditionFidelity": 2,
+      "evidenceGrounding": 1,
+      "answerabilityDiscipline": 0,
+      "sourceRoleTemporalDiscipline": 2,
+      "hardFailure": false,
+      "hardFailureTypes": [],
+      "rationale": "该回答时拒答，违反可答性；未覆盖任何要求要点；证据引用不足以支持拒答。"
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "schemaVersion": "wge-goal1-relation-audit-score/v2",
+  "runId": "goal1-calibration-v2.3-v1",
+  "predictionScope": "all",
+  "sourceReviewRunId": "goal1-v2.3-calibration-v1",
+  "reusedFrozenLabels": true,
+  "reviewer": "Codex composite post-hoc calibration proxy",
+  "reviewerType": "AI_REVIEW_NOT_HUMAN_GOLD",
+  "goldStatus": "POST_HOC_DEV_PROXY",
+  "claimDiscipline": {
+    "mayBeCalledHumanGold": false,
+    "devProxyOnly": false
+  },
+  "thresholds": {
+    "strongPrecision": 0.9,
+    "strongRecall": 0.7
+  },
+  "score": {
+    "overall": {
+      "total": 35,
+      "tp": 15,
+      "fp": 0,
+      "tn": 17,
+      "fn": 3,
+      "precision": 1,
+      "recall": 0.8333333333333334,
+      "accuracy": 0.9142857142857143
+    },
+    "strong": {
+      "total": 30,
+      "tp": 10,
+      "fp": 0,
+      "tn": 17,
+      "fn": 3,
+      "precision": 1,
+      "recall": 0.7692307692307693,
+      "accuracy": 0.9
+    },
+    "duplicatePredictionIds": [],
+    "duplicateReviewIds": [],
+    "missingReviewIds": [],
+    "unexpectedReviewIds": [],
+    "disagreements": [
+      {
+        "relationId": "rel:33a33396a17d4175-144e150ac216bb0c",
+        "type": "SUPPORTS",
+        "auditDecision": "reject",
+        "reviewDecision": "accept"
+      },
+      {
+        "relationId": "rel:9478dfc1ba6cb58f-18e7f1de980d9511",
+        "type": "SUPPORTS",
+        "auditDecision": "reject",
+        "reviewDecision": "accept"
+      },
+      {
+        "relationId": "rel:e7ea8bc17c2cc4ab-6ab3f92fea68418a",
+        "type": "REQUIRES",
+        "auditDecision": "reject",
+        "reviewDecision": "accept"
+      }
+    ],
+    "closed": true
+  },
+  "gate": {
+    "decision": "PASS_DEV_PROXY_GATE",
+    "metricsPassed": true,
+    "evidenceTier": "DEV_PROXY",
+    "failures": []
+  },
+  "decision": "PASS_DEV_PROXY_GATE"
+}

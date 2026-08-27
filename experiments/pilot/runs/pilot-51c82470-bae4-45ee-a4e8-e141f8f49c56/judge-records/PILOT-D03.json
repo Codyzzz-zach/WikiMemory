@@ -1,0 +1,48 @@
+{
+  "questionId": "PILOT-D03",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "request": {
+    "systemPrompt": "你是知识系统的盲测评分员。你只按提供的 Gold 和评分合同评价匿名答案，不判断答案来自哪个实验组。\n必须逐项核对 requiredClaims、mustMentionConditions、forbiddenClaims、answerability 和证据引用。\nsourceRisk.present=true 时，Gold 风险说明是允许使用的人工审计结论；不得把源材料的过强表述当成正确答案。\n只输出严格 JSON：{\"scores\":[{\"sampleId\":\"...\",\"requiredClaimCoverage\":0,\"conditionFidelity\":0,\"evidenceGrounding\":0,\"answerabilityDiscipline\":0,\"hardFailure\":false,\"rationale\":\"...\"}]}。",
+    "userPrompt": "# 评分合同\n{\n  \"dimensions\": {\n    \"requiredClaimCoverage\": {\n      \"score0\": \"没有覆盖 requiredClaims，或核心结论相反\",\n      \"score1\": \"覆盖部分 requiredClaims，但缺少一项以上关键连接\",\n      \"score2\": \"完整覆盖全部 requiredClaims\"\n    },\n    \"conditionFidelity\": {\n      \"score0\": \"触发 forbiddenClaims，或删除了决定结论的条件\",\n      \"score1\": \"方向基本正确，但条件、例外或必要/充分强度表达不完整\",\n      \"score2\": \"保留全部 mustMentionConditions，且未触发 forbiddenClaims\"\n    },\n    \"evidenceGrounding\": {\n      \"score0\": \"关键结论没有可解析引用，或引用与结论无关\",\n      \"score1\": \"有相关引用，但关键结论存在未落到证据的部分\",\n      \"score2\": \"关键结论均由当前上下文标识支持，引用位置正确\"\n    },\n    \"answerabilityDiscipline\": {\n      \"score0\": \"证据不足时仍编造答案，或证据充分时错误拒答\",\n      \"score1\": \"表达了不确定性，但回答/拒答边界不够准确\",\n      \"score2\": \"严格遵守该题 answerability，充分回答或明确拒答\"\n    }\n  },\n  \"totalScore\": 8,\n  \"hardFailure\": \"任何 forbiddenClaim、伪造引用、把 insufficient 题当作已由语料证明，均记 hardFailure；该样本总分最高为 2。\"\n}\n\n# 题目与 Gold\n{\n  \"question\": \"逐点收敛与一致收敛的定义差别是什么？\",\n  \"answerability\": \"answerable\",\n  \"requiredClaims\": [\n    \"逐点收敛允许控制收敛的阶段依赖于点\",\n    \"一致收敛要求一个统一控制适用于所有点\",\n    \"一致收敛强于逐点收敛\"\n  ],\n  \"mustMentionConditions\": [],\n  \"forbiddenClaims\": [\n    \"逐点收敛自动推出一致收敛\"\n  ],\n  \"sourceRisk\": {\n    \"present\": false,\n    \"detail\": \"\"\n  },\n  \"evidence\": [\n    {\n      \"sourceFile\": \"mathtest-material/03-sequences-limits.md\",\n      \"heading\": \"3.5 收敛性：不仅仅是\\\"有极限\\\"\",\n      \"exactQuote\": \"| **逐点收敛** | 对每个 $x$，$f_n(x) \\\\to f(x)$ | 最弱，可能丢失连续性 |\\n| **一致收敛** | $\\\\sup_x \\\\|f_n(x)-f(x)\\\\| \\\\to 0$ | 保持连续性 |\",\n      \"supportsRequiredClaims\": [\n        0,\n        1\n      ]\n    },\n    {\n      \"sourceFile\": \"mathtest-material/03-sequences-limits.md\",\n      \"heading\": \"3.5 收敛性：不仅仅是\\\"有极限\\\"\",\n      \"exactQuote\": \"UNIF[\\\"一致收敛\\\"] -->|\\\"⇒\\\"| POINT[\\\"逐点收敛\\\"]\",\n      \"supportsRequiredClaims\": [\n        2\n      ]\n    }\n  ]\n}\n\n# 匿名答案\n[\n  {\n    \"sampleId\": \"sample-547659ee-fbd0-49a9-a0bf-e28321ff7c91\",\n    \"questionId\": \"PILOT-D03\",\n    \"answer\": \"{\\\"answer\\\":\\\"insufficient\\\",\\\"citations\\\":[],\\\"insufficient\\\":true,\\\"uncertainties\\\":[\\\"检索上下文未提供任何关于逐点收敛与一致收敛定义的信息。\\\"]}\"\n  },\n  {\n    \"sampleId\": \"sample-11fc51fc-d46b-420f-8c5a-30ca24139561\",\n    \"questionId\": \"PILOT-D03\",\n    \"answer\": \"{\\n  \\\"answer\\\": \\\"逐点收敛要求对每个固定的 x，函数值序列 f_n(x) 收敛到 f(x)；一致收敛要求所有 x 上的最大误差 sup|f_n(x)-f(x)| 趋于 0。一致收敛比逐点收敛更强，且能保持连续性等性质。\\\",\\n  \\\"citations\\\": [\\n    \\\"SOURCE mathtest-material/03-sequences-limits.md:238-263\\\",\\n    \\\"SOURCE mathtest-material/03-sequences-limits.md:264-277\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\"\n  },\n  {\n    \"sampleId\": \"sample-ac390441-af77-4208-9fc1-cd0ea30c2b3e\",\n    \"questionId\": \"PILOT-D03\",\n    \"answer\": \"{\\\"answer\\\":\\\"insufficient\\\",\\\"citations\\\":[],\\\"insufficient\\\":true,\\\"uncertainties\\\":[\\\"检索上下文未提供逐点收敛与一致收敛的定义或差别信息。\\\"]}\"\n  }\n]"
+  },
+  "usage": {
+    "promptTokens": 1209,
+    "completionTokens": 334,
+    "totalTokens": 1543,
+    "promptCacheHitTokens": 384,
+    "promptCacheMissTokens": 825,
+    "reasoningTokens": 0
+  },
+  "finishReason": "stop",
+  "rawResponse": "{\n  \"scores\": [\n    {\n      \"sampleId\": \"sample-547659ee-fbd0-49a9-a0bf-e28321ff7c91\",\n      \"requiredClaimCoverage\": 0,\n      \"conditionFidelity\": 2,\n      \"evidenceGrounding\": 0,\n      \"answerabilityDiscipline\": 0,\n      \"hardFailure\": true,\n      \"rationale\": \"答案声称insufficient，但题目是answerable且证据充分，违反了answerabilityDiscipline，构成hardFailure。\"\n    },\n    {\n      \"sampleId\": \"sample-11fc51fc-d46b-420f-8c5a-30ca24139561\",\n      \"requiredClaimCoverage\": 2,\n      \"conditionFidelity\": 2,\n      \"evidenceGrounding\": 2,\n      \"answerabilityDiscipline\": 2,\n      \"hardFailure\": false,\n      \"rationale\": \"完整覆盖所有requiredClaims，未触发forbiddenClaims，引用正确，充分回答。\"\n    },\n    {\n      \"sampleId\": \"sample-ac390441-af77-4208-9fc1-cd0ea30c2b3e\",\n      \"requiredClaimCoverage\": 0,\n      \"conditionFidelity\": 2,\n      \"evidenceGrounding\": 0,\n      \"answerabilityDiscipline\": 0,\n      \"hardFailure\": true,\n      \"rationale\": \"答案声称insufficient，但题目是answerable且证据充分，违反了answerabilityDiscipline，构成hardFailure。\"\n    }\n  ]\n}",
+  "parsed": [
+    {
+      "sampleId": "sample-547659ee-fbd0-49a9-a0bf-e28321ff7c91",
+      "requiredClaimCoverage": 0,
+      "conditionFidelity": 2,
+      "evidenceGrounding": 0,
+      "answerabilityDiscipline": 0,
+      "hardFailure": true,
+      "rationale": "答案声称insufficient，但题目是answerable且证据充分，违反了answerabilityDiscipline，构成hardFailure。"
+    },
+    {
+      "sampleId": "sample-11fc51fc-d46b-420f-8c5a-30ca24139561",
+      "requiredClaimCoverage": 2,
+      "conditionFidelity": 2,
+      "evidenceGrounding": 2,
+      "answerabilityDiscipline": 2,
+      "hardFailure": false,
+      "rationale": "完整覆盖所有requiredClaims，未触发forbiddenClaims，引用正确，充分回答。"
+    },
+    {
+      "sampleId": "sample-ac390441-af77-4208-9fc1-cd0ea30c2b3e",
+      "requiredClaimCoverage": 0,
+      "conditionFidelity": 2,
+      "evidenceGrounding": 0,
+      "answerabilityDiscipline": 0,
+      "hardFailure": true,
+      "rationale": "答案声称insufficient，但题目是answerable且证据充分，违反了answerabilityDiscipline，构成hardFailure。"
+    }
+  ]
+}

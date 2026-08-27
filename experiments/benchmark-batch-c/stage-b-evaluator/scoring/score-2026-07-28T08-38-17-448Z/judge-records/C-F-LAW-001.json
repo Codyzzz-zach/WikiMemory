@@ -1,0 +1,51 @@
+{
+  "questionId": "C-F-LAW-001",
+  "promptHash": "a0eecc46c661c4c751b8c11bd7fc68e6a88cc8f0dedf075da49f9917e083be0e",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 1772,
+    "completionTokens": 2087,
+    "totalTokens": 3859,
+    "promptCacheHitTokens": 256,
+    "promptCacheMissTokens": 1516,
+    "reasoningTokens": 1696
+  },
+  "raw": "[\n  {\n    \"sampleId\": \"sample-88f56c14-c8ad-4cd5-bbec-4c3c81677bb6\",\n    \"requiredPointCoverage\": 2,\n    \"conditionFidelity\": 3,\n    \"evidenceGrounding\": 2,\n    \"answerabilityDiscipline\": 1,\n    \"sourceRoleTemporalDiscipline\": 4,\n    \"hardFailure\": false,\n    \"hardFailureTypes\": [],\n    \"rationale\": \"覆盖8个类别，罚款未答；引用支撑类别，无罚款引用；不应拒答应答部分。\"\n  },\n  {\n    \"sampleId\": \"sample-12023bee-71be-4bb7-95c0-117f2fce7874\",\n    \"requiredPointCoverage\": 2,\n    \"conditionFidelity\": 3,\n    \"evidenceGrounding\": 2,\n    \"answerabilityDiscipline\": 1,\n    \"sourceRoleTemporalDiscipline\": 4,\n    \"hardFailure\": false,\n    \"hardFailureTypes\": [],\n    \"rationale\": \"覆盖8个类别，罚款未答；引用支撑类别，无罚款引用；不应拒答应答部分。\"\n  },\n  {\n    \"sampleId\": \"sample-e1ef7914-98a8-4654-aafc-1470e0f877ba\",\n    \"requiredPointCoverage\": 2,\n    \"conditionFidelity\": 3,\n    \"evidenceGrounding\": 2,\n    \"answerabilityDiscipline\": 1,\n    \"sourceRoleTemporalDiscipline\": 4,\n    \"hardFailure\": false,\n    \"hardFailureTypes\": [],\n    \"rationale\": \"覆盖8个类别，罚款未答；引用支撑类别，无罚款引用；不应拒答应答部分。\"\n  }\n]",
+  "rows": [
+    {
+      "sampleId": "sample-88f56c14-c8ad-4cd5-bbec-4c3c81677bb6",
+      "requiredPointCoverage": 2,
+      "conditionFidelity": 3,
+      "evidenceGrounding": 2,
+      "answerabilityDiscipline": 1,
+      "sourceRoleTemporalDiscipline": 4,
+      "hardFailure": false,
+      "hardFailureTypes": [],
+      "rationale": "覆盖8个类别，罚款未答；引用支撑类别，无罚款引用；不应拒答应答部分。"
+    },
+    {
+      "sampleId": "sample-12023bee-71be-4bb7-95c0-117f2fce7874",
+      "requiredPointCoverage": 2,
+      "conditionFidelity": 3,
+      "evidenceGrounding": 2,
+      "answerabilityDiscipline": 1,
+      "sourceRoleTemporalDiscipline": 4,
+      "hardFailure": false,
+      "hardFailureTypes": [],
+      "rationale": "覆盖8个类别，罚款未答；引用支撑类别，无罚款引用；不应拒答应答部分。"
+    },
+    {
+      "sampleId": "sample-e1ef7914-98a8-4654-aafc-1470e0f877ba",
+      "requiredPointCoverage": 2,
+      "conditionFidelity": 3,
+      "evidenceGrounding": 2,
+      "answerabilityDiscipline": 1,
+      "sourceRoleTemporalDiscipline": 4,
+      "hardFailure": false,
+      "hardFailureTypes": [],
+      "rationale": "覆盖8个类别，罚款未答；引用支撑类别，无罚款引用；不应拒答应答部分。"
+    }
+  ]
+}

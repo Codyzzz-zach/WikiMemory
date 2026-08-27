@@ -1,0 +1,253 @@
+{
+  "runId": "e4-graph-ablation-2026-07-28T05-00-59-849Z",
+  "sampleId": "sample-24db0015-7fed-4471-87d8-b751a65635f0",
+  "questionId": "B-E-HEALTH-005",
+  "group": "P-seed",
+  "pilotGroup": "P",
+  "graphExpansion": false,
+  "repetition": 1,
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "temperature": 0,
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 1670,
+    "completionTokens": 292,
+    "totalTokens": 1962,
+    "promptCacheHitTokens": 0,
+    "promptCacheMissTokens": 1670,
+    "reasoningTokens": 0
+  },
+  "latencyMs": 3638,
+  "promptHash": "sha256:60ebb59441ccbbc3eadd213c9eb20d6000583b74a76f3a3ec69c4794e82739a6",
+  "contextHash": "69b604e346a382d9cea6f03d7e70c247d41d00cb3b01a7c73ded21b6a7ecff9c",
+  "estimatedContextTokens": 1428,
+  "estimatedInputTokens": 1602,
+  "retrievedClaims": [
+    "claim:a1c7e701eebb9dc1-1b6548c486ad1fd5",
+    "claim:a1c7e701eebb9dc1-271d5603ab397f55",
+    "claim:a1c7e701eebb9dc1-8c2b8fcbcdf52208",
+    "claim:5505a1ba1fcb1b68-9acfc0780eb2b345",
+    "claim:14069d5a982d18de-30df60c9afb3e05b",
+    "claim:a1c7e701eebb9dc1-64202515b32c05d0",
+    "claim:a1c7e701eebb9dc1-d1c7990108ad78ca",
+    "claim:b587ec61aaf84d7d-474d339f3670f6c4",
+    "claim:b587ec61aaf84d7d-7bc5b6c3a357763e",
+    "claim:b587ec61aaf84d7d-aae2124ec2ae0b65"
+  ],
+  "retrievedRelations": [],
+  "retrievedSources": [
+    "source:health-who-july-2020-002-a1c7e701eebb9dc1",
+    "source:history-vesuvius-github-2024-002-5505a1ba1fcb1b68",
+    "source:health-nature-airborne-2022-003-14069d5a982d18de",
+    "source:health-who-march-2020-001-b587ec61aaf84d7d"
+  ],
+  "droppedContext": [],
+  "retrievalTrace": {
+    "strategy": "claim-seed-only",
+    "graphDepth": 0,
+    "retrieval": {
+      "queryFeatureCount": 36,
+      "eligibleClaimCount": 67,
+      "matchedClaimCount": 10,
+      "usedEvidenceText": true,
+      "usedSourceMetadata": true,
+      "resolvedEvidenceRefCount": 67,
+      "unresolvedEvidenceRefCount": 0,
+      "candidates": [
+        {
+          "claimId": "claim:a1c7e701eebb9dc1-1b6548c486ad1fd5",
+          "rank": 1,
+          "score": 5.168008586018016,
+          "channels": [
+            "c2",
+            "source",
+            "w"
+          ],
+          "matchedFeatureCount": 2
+        },
+        {
+          "claimId": "claim:a1c7e701eebb9dc1-271d5603ab397f55",
+          "rank": 2,
+          "score": 5.168008586018016,
+          "channels": [
+            "c2",
+            "source",
+            "w"
+          ],
+          "matchedFeatureCount": 2
+        },
+        {
+          "claimId": "claim:a1c7e701eebb9dc1-8c2b8fcbcdf52208",
+          "rank": 3,
+          "score": 5.168008586018016,
+          "channels": [
+            "c2",
+            "source",
+            "w"
+          ],
+          "matchedFeatureCount": 2
+        },
+        {
+          "claimId": "claim:5505a1ba1fcb1b68-9acfc0780eb2b345",
+          "rank": 4,
+          "score": 5.029289471795735,
+          "channels": [
+            "c2"
+          ],
+          "matchedFeatureCount": 2
+        },
+        {
+          "claimId": "claim:14069d5a982d18de-30df60c9afb3e05b",
+          "rank": 5,
+          "score": 2.886523336243001,
+          "channels": [
+            "w"
+          ],
+          "matchedFeatureCount": 1
+        },
+        {
+          "claimId": "claim:a1c7e701eebb9dc1-64202515b32c05d0",
+          "rank": 6,
+          "score": 2.886523336243001,
+          "channels": [
+            "source",
+            "w"
+          ],
+          "matchedFeatureCount": 1
+        },
+        {
+          "claimId": "claim:a1c7e701eebb9dc1-d1c7990108ad78ca",
+          "rank": 7,
+          "score": 2.886523336243001,
+          "channels": [
+            "source",
+            "w"
+          ],
+          "matchedFeatureCount": 1
+        },
+        {
+          "claimId": "claim:b587ec61aaf84d7d-474d339f3670f6c4",
+          "rank": 8,
+          "score": 2.886523336243001,
+          "channels": [
+            "source",
+            "w"
+          ],
+          "matchedFeatureCount": 1
+        },
+        {
+          "claimId": "claim:b587ec61aaf84d7d-7bc5b6c3a357763e",
+          "rank": 9,
+          "score": 2.886523336243001,
+          "channels": [
+            "source",
+            "w"
+          ],
+          "matchedFeatureCount": 1
+        },
+        {
+          "claimId": "claim:b587ec61aaf84d7d-aae2124ec2ae0b65",
+          "rank": 10,
+          "score": 2.886523336243001,
+          "channels": [
+            "source",
+            "w"
+          ],
+          "matchedFeatureCount": 1
+        }
+      ]
+    },
+    "graph": {
+      "seedClaimIds": [
+        "claim:a1c7e701eebb9dc1-1b6548c486ad1fd5",
+        "claim:a1c7e701eebb9dc1-271d5603ab397f55",
+        "claim:a1c7e701eebb9dc1-8c2b8fcbcdf52208",
+        "claim:5505a1ba1fcb1b68-9acfc0780eb2b345",
+        "claim:14069d5a982d18de-30df60c9afb3e05b",
+        "claim:a1c7e701eebb9dc1-64202515b32c05d0",
+        "claim:a1c7e701eebb9dc1-d1c7990108ad78ca",
+        "claim:b587ec61aaf84d7d-474d339f3670f6c4",
+        "claim:b587ec61aaf84d7d-7bc5b6c3a357763e",
+        "claim:b587ec61aaf84d7d-aae2124ec2ae0b65"
+      ],
+      "expandedClaimIds": [
+        "claim:a1c7e701eebb9dc1-1b6548c486ad1fd5",
+        "claim:a1c7e701eebb9dc1-271d5603ab397f55",
+        "claim:a1c7e701eebb9dc1-8c2b8fcbcdf52208",
+        "claim:5505a1ba1fcb1b68-9acfc0780eb2b345",
+        "claim:14069d5a982d18de-30df60c9afb3e05b",
+        "claim:a1c7e701eebb9dc1-64202515b32c05d0",
+        "claim:a1c7e701eebb9dc1-d1c7990108ad78ca",
+        "claim:b587ec61aaf84d7d-474d339f3670f6c4",
+        "claim:b587ec61aaf84d7d-7bc5b6c3a357763e",
+        "claim:b587ec61aaf84d7d-aae2124ec2ae0b65"
+      ],
+      "expandedRelationIds": []
+    },
+    "budget": {
+      "selectedClaimIds": [
+        "claim:a1c7e701eebb9dc1-1b6548c486ad1fd5",
+        "claim:a1c7e701eebb9dc1-271d5603ab397f55",
+        "claim:a1c7e701eebb9dc1-8c2b8fcbcdf52208",
+        "claim:5505a1ba1fcb1b68-9acfc0780eb2b345",
+        "claim:14069d5a982d18de-30df60c9afb3e05b",
+        "claim:a1c7e701eebb9dc1-64202515b32c05d0",
+        "claim:a1c7e701eebb9dc1-d1c7990108ad78ca",
+        "claim:b587ec61aaf84d7d-474d339f3670f6c4",
+        "claim:b587ec61aaf84d7d-7bc5b6c3a357763e",
+        "claim:b587ec61aaf84d7d-aae2124ec2ae0b65"
+      ],
+      "selectedRelationIds": [],
+      "selectedEvidenceSpanIds": [
+        "span:health-who-july-2020-002-a1c7e701eebb9dc1-2#chars-447-594",
+        "span:health-who-july-2020-002-a1c7e701eebb9dc1-2#chars-413-615",
+        "span:health-who-july-2020-002-a1c7e701eebb9dc1-1#chars-306-411",
+        "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-5#chars-519-570",
+        "span:health-nature-airborne-2022-003-14069d5a982d18de-2#chars-213-334",
+        "span:health-who-july-2020-002-a1c7e701eebb9dc1-1#chars-81-301",
+        "span:health-who-july-2020-002-a1c7e701eebb9dc1-1#chars-368-411",
+        "span:health-who-march-2020-001-b587ec61aaf84d7d-2#chars-351-534",
+        "span:health-who-march-2020-001-b587ec61aaf84d7d-2#chars-536-856",
+        "span:health-who-march-2020-001-b587ec61aaf84d7d-1#chars-241-287"
+      ],
+      "selectedWikiModuleIds": [],
+      "dropped": [],
+      "finalEstimatedTokens": 3689
+    },
+    "serializationBudget": {
+      "selectedIds": [
+        "task-map",
+        "claim:a1c7e701eebb9dc1-1b6548c486ad1fd5",
+        "claim:a1c7e701eebb9dc1-271d5603ab397f55",
+        "claim:a1c7e701eebb9dc1-8c2b8fcbcdf52208",
+        "claim:5505a1ba1fcb1b68-9acfc0780eb2b345",
+        "claim:14069d5a982d18de-30df60c9afb3e05b",
+        "claim:a1c7e701eebb9dc1-64202515b32c05d0",
+        "claim:a1c7e701eebb9dc1-d1c7990108ad78ca",
+        "claim:b587ec61aaf84d7d-474d339f3670f6c4",
+        "claim:b587ec61aaf84d7d-7bc5b6c3a357763e",
+        "claim:b587ec61aaf84d7d-aae2124ec2ae0b65",
+        "span:health-who-july-2020-002-a1c7e701eebb9dc1-2#chars-447-594",
+        "span:health-who-july-2020-002-a1c7e701eebb9dc1-2#chars-413-615",
+        "span:health-who-july-2020-002-a1c7e701eebb9dc1-1#chars-306-411",
+        "span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-5#chars-519-570",
+        "span:health-nature-airborne-2022-003-14069d5a982d18de-2#chars-213-334",
+        "span:health-who-july-2020-002-a1c7e701eebb9dc1-1#chars-81-301",
+        "span:health-who-july-2020-002-a1c7e701eebb9dc1-1#chars-368-411",
+        "span:health-who-march-2020-001-b587ec61aaf84d7d-2#chars-351-534",
+        "span:health-who-march-2020-001-b587ec61aaf84d7d-2#chars-536-856",
+        "span:health-who-march-2020-001-b587ec61aaf84d7d-1#chars-241-287",
+        "conflicts-and-conditions",
+        "known-gaps"
+      ],
+      "droppedIds": []
+    }
+  },
+  "request": {
+    "systemPrompt": "你是受证据约束的问答 Agent。只使用本次请求提供的检索上下文回答。\n要求：保留影响结论的条件、时间、例外、来源角色与不确定性；关键结论引用上下文中的 SOURCE、EVIDENCE 或 CLAIM 标识；上下文不足时明确说明，不得用外部常识补齐。\n只输出严格 JSON：{\"answer\":\"...\",\"citations\":[\"...\"],\"insufficient\":false,\"uncertainties\":[\"...\"]}。",
+    "userPrompt": "# 问题\n从 2020-03 到 2020-07，空气传播适用范围发生了什么可证实变化？\n\n# 检索上下文\n## TASK MAP\n主题: 从 2020-03 到 2020-07，空气传播适用范围发生了什么可证实变化？\n地图主题: the, of, and, to, in\n关键概念: User Agent, Mobile Requirements, Input Modality, Desktop Content, Single Pointer\n已知争议: 0 个\n最近变化: 5 条\n找到 10 条相关 Claim\n找到 0 条关系\n找到 10 条原文证据\n\n## CLAIM claim:a1c7e701eebb9dc1-1b6548c486ad1fd5\n短距离气溶胶传播在特定室内场所尤其值得关注。\nConditions: 在特定室内场所，如拥挤且通风不良的空间，与感染者长时间接触\nValidity: SUPPORTED\n\n## CLAIM claim:a1c7e701eebb9dc1-271d5603ab397f55\n短距离气溶胶传播不能排除。\nConditions: 在特定室内场所，如拥挤且通风不良的空间，与感染者长时间接触\nValidity: SUPPORTED\n\n## CLAIM claim:a1c7e701eebb9dc1-8c2b8fcbcdf52208\n该更新包含了关于SARS-CoV-2传播的新科学证据。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:5505a1ba1fcb1b68-9acfc0780eb2b345\nvesuvius 处于测试阶段，界面可能会发生变化。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:14069d5a982d18de-30df60c9afb3e05b\nIt took until 20 October 2020 for the WHO to acknowledge that aerosols can transmit the virus.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:a1c7e701eebb9dc1-64202515b32c05d0\n该文档是对2020年3月29日发布的科学简报的更新。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:a1c7e701eebb9dc1-d1c7990108ad78ca\nSARS-CoV-2是导致COVID-19的病毒。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:b587ec61aaf84d7d-474d339f3670f6c4\nIn the context of COVID-19, airborne transmission may be possible in specific circumstances and settings where procedures or support treatments that generate aerosols are performed.\nConditions: specific circumstances and settings where procedures or support treatments that generate aerosols are performed\nValidity: SUPPORTED\n\n## CLAIM claim:b587ec61aaf84d7d-7bc5b6c3a357763e\nProcedures that generate aerosols include endotracheal intubation, bronchoscopy, open suctioning, administration of nebulized treatment, manual ventilation before intubation, turning the patient to the prone position, disconnecting the patient from the ventilator, non-invasive positive-pressure ventilation, tracheostomy, and cardiopulmonary resuscitation.\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:b587ec61aaf84d7d-aae2124ec2ae0b65\nDroplet nuclei can remain in the air for long periods of time.\nConditions: none\nValidity: SUPPORTED\n\n## EVIDENCE span:health-who-july-2020-002-a1c7e701eebb9dc1-2#chars-447-594\nparticularly in specific indoor locations, such as crowded and inadequately ventilated spaces over a prolonged period of time with infected persons\n\n## EVIDENCE span:health-who-july-2020-002-a1c7e701eebb9dc1-2#chars-413-615\nShort-range aerosol transmission, particularly in specific indoor locations, such as crowded and inadequately ventilated spaces over a prolonged period of time with infected persons cannot be ruled out.\n\n## EVIDENCE span:health-who-july-2020-002-a1c7e701eebb9dc1-1#chars-306-411\nincludes new scientific evidence available on transmission of SARS-CoV-2, the virus that causes COVID-19.\n\n## EVIDENCE span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-5#chars-519-570\n`vesuvius` is in beta and the interface may change.\n\n## EVIDENCE span:health-nature-airborne-2022-003-14069d5a982d18de-2#chars-213-334\nIt took until 20 October 2020 for the agency to acknowledge that aerosols — tiny specks of fluid — can transmit the virus\n\n## EVIDENCE span:health-who-july-2020-002-a1c7e701eebb9dc1-1#chars-81-301\nThis document is an update to the scientific brief published on 29 March 2020 entitled “Modes of transmission of virus causing COVID-19: implications for infection prevention and control (IPC) precaution recommendations”\n\n## EVIDENCE span:health-who-july-2020-002-a1c7e701eebb9dc1-1#chars-368-411\nSARS-CoV-2, the virus that causes COVID-19.\n\n## EVIDENCE span:health-who-march-2020-001-b587ec61aaf84d7d-2#chars-351-534\nIn the context of COVID-19, airborne transmission may be possible in specific circumstances and settings in which procedures or support treatments that generate aerosols are performed\n\n## EVIDENCE span:health-who-march-2020-001-b587ec61aaf84d7d-2#chars-536-856\ni.e., endotracheal intubation, bronchoscopy, open suctioning, administration of nebulized treatment, manual ventilation before intubation, turning the patient to the prone position, disconnecting the patient from the ventilator, non-invasive positive-pressure ventilation, tracheostomy, and cardiopulmonary resuscitation\n\n## EVIDENCE span:health-who-march-2020-001-b587ec61aaf84d7d-1#chars-241-287\ncan remain in the air for long periods of time\n\n## CONFLICTS AND CONDITIONS\n📌 Claim claim:a1c7e701eebb9dc1-1b6548c486ad1fd5 适用条件: 在特定室内场所，如拥挤且通风不良的空间，与感染者长时间接触\n📌 Claim claim:a1c7e701eebb9dc1-271d5603ab397f55 适用条件: 在特定室内场所，如拥挤且通风不良的空间，与感染者长时间接触\n📌 Claim claim:b587ec61aaf84d7d-474d339f3670f6c4 适用条件: specific circumstances and settings where procedures or support treatments that generate aerosols are performed\n\n## KNOWN GAPS\n未找到关系——Graph 可能尚未建立跨材料边"
+  },
+  "answer": "{\n  \"answer\": \"2020年3月29日发布的WHO科学简报指出，在COVID-19背景下，空气传播可能仅在产生气溶胶的操作或支持治疗（如气管插管、支气管镜等）的特定情况下发生。2020年7月更新的版本纳入了新的科学证据，承认短距离气溶胶传播在特定室内场所（如拥挤且通风不良的空间，与感染者长时间接触）不能排除。但WHO直到2020年10月20日才正式确认气溶胶可传播病毒。\",\n  \"citations\": [\n    \"health-who-march-2020-001-b587ec61aaf84d7d-2#chars-351-534\",\n    \"health-who-july-2020-002-a1c7e701eebb9dc1-1#chars-81-301\",\n    \"health-who-july-2020-002-a1c7e701eebb9dc1-2#chars-413-615\",\n    \"health-nature-airborne-2022-003-14069d5a982d18de-2#chars-213-334\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": [\n    \"WHO在2020年7月的更新中仍使用'不能排除'的措辞，而非明确确认空气传播。\"\n  ]\n}",
+  "answerFormatValid": true
+}

@@ -1,0 +1,28 @@
+{
+  "verdict": "passed",
+  "dimensions": {
+    "support": {
+      "result": "pass",
+      "evidence": "整数通过引入\"负数\"解决了减法封闭问题"
+    },
+    "addition": {
+      "result": "pass",
+      "evidence": "原文与claim内容一致，无额外信息"
+    },
+    "inference": {
+      "result": "pass",
+      "evidence": "claim为直接陈述，无需推断标记"
+    },
+    "limits": {
+      "result": "pass",
+      "evidence": "原文无适用条件或例外，claim未添加"
+    },
+    "citation": {
+      "result": "pass",
+      "evidence": "claim内容可完全对应到SourceSpan"
+    }
+  },
+  "anchor": "整数通过引入\"负数\"解决了减法封闭问题",
+  "failedDimensions": [],
+  "issues": []
+}

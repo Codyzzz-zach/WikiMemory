@@ -1,0 +1,28 @@
+{
+  "verdict": "passed",
+  "dimensions": {
+    "support": {
+      "result": "pass",
+      "evidence": "任意两个不同的有理数之间，存在无穷多个有理数"
+    },
+    "addition": {
+      "result": "pass",
+      "evidence": "无添加信息"
+    },
+    "inference": {
+      "result": "pass",
+      "evidence": "原文为直陈事实，无推断"
+    },
+    "limits": {
+      "result": "pass",
+      "evidence": "无条件或限定词遗漏"
+    },
+    "citation": {
+      "result": "pass",
+      "evidence": "引用准确对应"
+    }
+  },
+  "anchor": "任意两个不同的有理数之间，存在无穷多个有理数",
+  "failedDimensions": [],
+  "issues": []
+}

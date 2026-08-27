@@ -1,0 +1,33 @@
+{
+  "verdict": "failed",
+  "dimensions": {
+    "support": {
+      "result": "fail",
+      "evidence": "原文只有‘有加法逆元 | ❌’，未明确提及‘自然数集N’或‘没有加法逆元’"
+    },
+    "addition": {
+      "result": "fail",
+      "evidence": "Claim 添加了‘自然数集N’这一主体，原文未指定"
+    },
+    "inference": {
+      "result": "fail",
+      "evidence": "从‘有加法逆元 | ❌’无法必然推出‘自然数集N没有加法逆元’"
+    },
+    "limits": {
+      "result": "pass",
+      "evidence": "Claim 无限定词，原文亦无适用条件，故一致"
+    },
+    "citation": {
+      "result": "fail",
+      "evidence": "原文 span 未明确对应 Claim 的主体和否定断言"
+    }
+  },
+  "anchor": "有加法逆元 | ❌",
+  "failedDimensions": ["support", "addition", "inference", "citation"],
+  "issues": [
+    "原文未提及自然数集，Claim 添加了该主体",
+    "原文只是一条否定标记，未明确说明自然数集没有加法逆元",
+    "从原文无法直接得出该全称结论",
+    "引用 span 不准确，无法支撑 Claim"
+  ]
+}

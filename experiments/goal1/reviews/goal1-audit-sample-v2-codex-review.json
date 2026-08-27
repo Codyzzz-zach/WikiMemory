@@ -1,0 +1,37 @@
+{
+  "schemaVersion": "wge-goal1-relation-review/v1",
+  "reviewedRunId": "goal1-audit-sample-v2",
+  "reviewer": "Codex product-audit proxy",
+  "reviewerType": "AI_REVIEW_NOT_HUMAN_GOLD",
+  "goldStatus": "DEV_PROXY",
+  "frozenBeforePromptRevision": true,
+  "contract": {
+    "REQUIRES": "From cannot be correctly asserted or applied without To as a prerequisite; helpful context is insufficient.",
+    "DERIVED_FROM": "From is the conclusion or result derived from To; the reverse direction fails.",
+    "SUPPORTS": "From materially supports the complete To claim; co-location, partial overlap, or shared vocabulary is insufficient.",
+    "CONTRADICTS": "From and To address the same semantic subject and slot and cannot both be true under overlapping scope.",
+    "RELATED_TO": "A substantive navigation relation exists, but it does not support a conclusion."
+  },
+  "reviews": [
+    { "relationId": "rel:80440e2182e5653f-2d78918f389c68b4", "decision": "reject", "reason": "Different subjects (complex versus real numbers) can have different orderability without contradiction." },
+    { "relationId": "rel:e7ea8bc17c2cc4ab-8a0dd320b92ad727", "decision": "reject", "reason": "The special-case statement is not derived from the already-specialized formula; the claimed DERIVED_FROM direction is unsupported." },
+    { "relationId": "rel:cross-cef896f2700a0e6c", "decision": "accept", "reason": "The property of real completeness is substantively related to the general Cauchy-sequence definition of completeness." },
+    { "relationId": "rel:7e02712717a02820-717b200e21aa71bf", "decision": "accept", "reason": "The table explicitly links the multiplication-operator form with its position-operator example." },
+    { "relationId": "rel:e7ea8bc17c2cc4ab-0098a4abd0cdbf39", "decision": "reject", "reason": "The table co-reports a series and radius but does not establish the strong necessity claim or its direction." },
+    { "relationId": "rel:cross-7cf4b0eaa7680358", "decision": "reject", "reason": "A specific successor-function instance does not support the general definition of injection; at most it instantiates or relates to it." },
+    { "relationId": "rel:80440e2182e5653f-986ab01e07a2da07", "decision": "accept", "reason": "The From claim directly and completely states the To fact that rational numbers are countable." },
+    { "relationId": "rel:9478dfc1ba6cb58f-f0e9d1500eaea1ba", "decision": "reject", "reason": "Statements about disjoint operator classes are complementary and can both be true, so they do not contradict." },
+    { "relationId": "rel:80440e2182e5653f-2fedc9855391b110", "decision": "reject", "reason": "The proof derives the irrationality conclusion; the stored DERIVED_FROM edge points in the reverse direction." },
+    { "relationId": "rel:cross-3a9dd655ef80000e", "decision": "accept", "reason": "Both claims give substantively matching completeness/Cauchy-sequence formulations across materials." },
+    { "relationId": "rel:33a33396a17d4175-35939e27ba56ac1f", "decision": "accept", "reason": "The two claims share the same R^n inner-product statement and are useful weak navigation neighbors." },
+    { "relationId": "rel:e7ea8bc17c2cc4ab-6ab3f92fea68418a", "decision": "accept", "reason": "The sum formula is explicitly conditional on convergence and therefore requires the |r|<1 condition shown in the same row." },
+    { "relationId": "rel:80440e2182e5653f-c78952732023c7fe", "decision": "accept", "reason": "The colon construction explicitly introduces the following Dedekind-cut definition as the content of Dedekind's definition." },
+    { "relationId": "rel:e7ea8bc17c2cc4ab-8fa88a57a58fdaa3", "decision": "reject", "reason": "The series formula is not derived from the radius; the stored DERIVED_FROM direction is reversed or unsupported." },
+    { "relationId": "rel:cross-eade4b35ddd56c3c", "decision": "accept", "reason": "The two claims are matching Cauchy-sequence definitions in normed-space and scalar notation." },
+    { "relationId": "rel:80440e2182e5653f-4ec9b6e00dc33a36", "decision": "reject", "reason": "The conclusion does not require this one particular proof, and the edge direction does not represent a prerequisite." },
+    { "relationId": "rel:80440e2182e5653f-50c56bc7f984bd3a", "decision": "accept", "reason": "The need to fill rational-line holes directly supports the rational-hole/real-completion visualization." },
+    { "relationId": "rel:e7ea8bc17c2cc4ab-9383f1f832d4614d", "decision": "reject", "reason": "The formula does not derive from the radius; the evidence only co-reports both values." },
+    { "relationId": "rel:e7ea8bc17c2cc4ab-1024a6d72638aefd", "decision": "reject", "reason": "The table co-reports radius and formula but does not establish that the radius claim requires the formula as a strict prerequisite." },
+    { "relationId": "rel:9478dfc1ba6cb58f-56a38ca8e3263330", "decision": "reject", "reason": "The From claim supports only the infinite-dimensional-linear-algebra part, not the complete To claim's topology/completeness component." }
+  ]
+}

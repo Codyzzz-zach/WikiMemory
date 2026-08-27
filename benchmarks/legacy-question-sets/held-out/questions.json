@@ -1,0 +1,20 @@
+{
+  "setId": "held-out",
+  "description": "冻结题集——最终实验前不看结果。用于回答 H1-H5（产品价值、演化价值、Graph 增益、编译保真、安全门禁）。",
+  "frozenAt": "2026-07-22",
+  "status": "FROZEN — 在正式 Benchmark 运行前，不允许查看任何系统在这些题上的输出",
+  "totalQuestions": 60,
+  "categories": {
+    "D": "单文档直接题 ×14（Dev 已用 6 个，剩余 14）",
+    "H2": "两跳跨文档题 ×19（Dev 已用 3 个，剩余 22 取 19）",
+    "H3": "三至四跳知识路径题 ×15（从 20 题中取 15）",
+    "C": "条件/反例题 ×7（Dev 已用 3 个，剩余 7）",
+    "G": "全局结构题 ×5"
+  },
+  "questions": [
+    "PLACEHOLDER — 完整 60 题将在 Phase 2 扩大到 20 篇材料时填充。",
+    "每题含 id/question/category/requiredSources/requiredClaims/expectedPath/forbiddenClaims。",
+    "Gold 题集严格隔离——不进 sources/wiki/relations/embedding/prompt cache。",
+    "两名标注者独立写 requiredClaims 后仲裁冻结。"
+  ]
+}

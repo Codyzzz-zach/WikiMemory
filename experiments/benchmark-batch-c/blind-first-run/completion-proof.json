@@ -1,0 +1,78 @@
+{
+  "schemaVersion": "wge-batch-c-stage-a-completion-proof/v1",
+  "completedAt": "2026-07-28T07:29:37Z",
+  "status": "SEALED_AWAITING_STAGE_B_WITH_RECORDED_FIRST_RUN_FAILURES",
+  "stageBRead": false,
+  "implementationCommit": "7371d21e374e6e7d120c7cbcc7f532070b83aa0c",
+  "freeze": {
+    "stageAStatus": "CONDITIONALLY_ACCEPTED_HASH_RESEALED",
+    "producerHashValidation": "FAILED",
+    "evaluatorQuestionSha256": "3cfe6ed87ddfb88902d35c417f27c6a8ebf806e3139e0acc37d34fa9ad11a34d",
+    "configSha256": "76f3538a6933a43ee79a39f462679c78405ce8044583bc2796ba487530ba9426",
+    "selectionSha256": "18a5a28686bf3a1a3ec9620d36599f9d2c6a2439d9b951f2e31a84f9a0ecd640",
+    "exactCanonicalUrlOverlapWithBatchAB": 0,
+    "sourcePolicy": "Public or openly accessible official pages and bounded excerpts only; no access-control bypass. Composite/secondary-source role limitations remain recorded in evaluator-audit.json."
+  },
+  "compilation": {
+    "requestedModel": "deepseek-v4-flash",
+    "temperature": 0,
+    "thinking": false,
+    "completedSources": 12,
+    "activeClaims": 259,
+    "quarantinedClaims": 7,
+    "consumableRelations": 117,
+    "publicationDirectorySha256": "ba60df9fef4137f002fba88c5c76346a657610ded4dec80b2b4259e42aef68da",
+    "integrity": {
+      "missingRelationEndpoints": 0,
+      "missingRelationAuditVersions": 0,
+      "unverifiedRelationConditions": 0,
+      "unresolvedEvidenceBaseRefs": 0
+    }
+  },
+  "offline": {
+    "status": "PREPARED_BLIND_NO_GOLD",
+    "contextBudgetTokens": 12000,
+    "maximumObservedContextTokens": 5085,
+    "offlineDirectorySha256": "ece60f39ef4d53178f71b57b55d43fc6f6c76c2a117e227bb781e8ff98d4c5af",
+    "retrievalSignals": {
+      "B": {
+        "averageContextTokens": 2067.67,
+        "emptyContexts": 1
+      },
+      "P-seed": {
+        "averageContextTokens": 1475.94,
+        "averageClaims": 9.67,
+        "averageRelations": 0
+      },
+      "P-graph": {
+        "averageContextTokens": 3404.67,
+        "averageClaims": 19.44,
+        "averageRelations": 14.22
+      }
+    },
+    "recordedBlindFailure": "C-A-PSYCH-001 produced an empty B context and unrelated climate contexts for P-seed/P-graph. This was preserved before answering and must only be repaired post-hoc."
+  },
+  "answers": {
+    "runId": "batch-c-blind-first-2026-07-28T07-22-04-418Z",
+    "runDirectory": "experiments/benchmark-batch-c/blind-first-run/answers/batch-c-blind-first-2026-07-28T07-22-04-418Z",
+    "runDirectorySha256": "038fe6ebbc9dac342d1c4ef4b52f77a6d7f1cbef98618715bbc05fc1dc028eb0",
+    "hashDefinition": "SHA-256 of the sorted shasum -a 256 output for every file under runDirectory, computed from the repository root before this proof was added.",
+    "questions": 18,
+    "groups": [
+      "B",
+      "P-seed",
+      "P-graph"
+    ],
+    "sealedAnswers": 54,
+    "finishReasonStop": 54,
+    "validJsonAnswers": 54,
+    "citationContractPass": 45,
+    "citationContractFail": 9,
+    "totalPromptTokens": 153000,
+    "totalCompletionTokens": 12953,
+    "totalTokens": 165953,
+    "firstRunOverwriteAllowed": false
+  },
+  "nextRequiredArtifact": "batch-c-stage-b",
+  "nextAction": "Reveal Stage B only after independently checking this proof and the sealed answer directory hash."
+}

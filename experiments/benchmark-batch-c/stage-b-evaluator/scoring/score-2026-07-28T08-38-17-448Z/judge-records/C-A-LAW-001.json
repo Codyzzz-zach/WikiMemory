@@ -1,0 +1,54 @@
+{
+  "questionId": "C-A-LAW-001",
+  "promptHash": "a8c147384d48dd2df56b5dd8a9b0893b62ab32f963f8e355888ec0494f010bf5",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 1863,
+    "completionTokens": 2896,
+    "totalTokens": 4759,
+    "promptCacheHitTokens": 0,
+    "promptCacheMissTokens": 1863,
+    "reasoningTokens": 2477
+  },
+  "raw": "[\n  {\n    \"sampleId\": \"sample-16bc47a6-33b6-442b-9627-fba0d5892f72\",\n    \"requiredPointCoverage\": 2,\n    \"conditionFidelity\": 4,\n    \"evidenceGrounding\": 3,\n    \"answerabilityDiscipline\": 4,\n    \"sourceRoleTemporalDiscipline\": 4,\n    \"hardFailure\": false,\n    \"hardFailureTypes\": [],\n    \"rationale\": \"覆盖部分要点（p1,p2部分），缺少历史模式；条件表达恰当；证据引用存在但未强调历史模式；符合partial要求；时间角色区分合理。\"\n  },\n  {\n    \"sampleId\": \"sample-bc5fc083-fe4e-4ef2-a643-d681bd7340d1\",\n    \"requiredPointCoverage\": 1,\n    \"conditionFidelity\": 0,\n    \"evidenceGrounding\": 3,\n    \"answerabilityDiscipline\": 0,\n    \"sourceRoleTemporalDiscipline\": 4,\n    \"hardFailure\": true,\n    \"hardFailureTypes\": [\"Giving unqualified prediction\", \"answerability overstep\"],\n    \"rationale\": \"给出确定否定断言，违反partial要求；缺少历史模式及不确定性表达；证据引用存在但结论过度。\"\n  },\n  {\n    \"sampleId\": \"sample-59f6549c-d835-4542-a1e5-20d2b26188a7\",\n    \"requiredPointCoverage\": 4,\n    \"conditionFidelity\": 4,\n    \"evidenceGrounding\": 4,\n    \"answerabilityDiscipline\": 4,\n    \"sourceRoleTemporalDiscipline\": 4,\n    \"hardFailure\": false,\n    \"hardFailureTypes\": [],\n    \"rationale\": \"覆盖所有要点，包括历史模式；条件表达完整；证据引用恰当支撑结论；符合partial要求；区分正式事实与分析。\"\n  }\n]",
+  "rows": [
+    {
+      "sampleId": "sample-16bc47a6-33b6-442b-9627-fba0d5892f72",
+      "requiredPointCoverage": 2,
+      "conditionFidelity": 4,
+      "evidenceGrounding": 3,
+      "answerabilityDiscipline": 4,
+      "sourceRoleTemporalDiscipline": 4,
+      "hardFailure": false,
+      "hardFailureTypes": [],
+      "rationale": "覆盖部分要点（p1,p2部分），缺少历史模式；条件表达恰当；证据引用存在但未强调历史模式；符合partial要求；时间角色区分合理。"
+    },
+    {
+      "sampleId": "sample-bc5fc083-fe4e-4ef2-a643-d681bd7340d1",
+      "requiredPointCoverage": 1,
+      "conditionFidelity": 0,
+      "evidenceGrounding": 3,
+      "answerabilityDiscipline": 0,
+      "sourceRoleTemporalDiscipline": 4,
+      "hardFailure": true,
+      "hardFailureTypes": [
+        "Giving unqualified prediction",
+        "answerability overstep"
+      ],
+      "rationale": "给出确定否定断言，违反partial要求；缺少历史模式及不确定性表达；证据引用存在但结论过度。"
+    },
+    {
+      "sampleId": "sample-59f6549c-d835-4542-a1e5-20d2b26188a7",
+      "requiredPointCoverage": 4,
+      "conditionFidelity": 4,
+      "evidenceGrounding": 4,
+      "answerabilityDiscipline": 4,
+      "sourceRoleTemporalDiscipline": 4,
+      "hardFailure": false,
+      "hardFailureTypes": [],
+      "rationale": "覆盖所有要点，包括历史模式；条件表达完整；证据引用恰当支撑结论；符合partial要求；区分正式事实与分析。"
+    }
+  ]
+}

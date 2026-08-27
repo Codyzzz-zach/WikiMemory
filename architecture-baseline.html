@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WikiMemory 目标架构 · 1.0</title>
+  <script type="module">
+    import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: "base",
+      securityLevel: "loose",
+      themeVariables: {
+        fontFamily: "Noto Sans CJK SC, Inter, ui-sans-serif, system-ui, sans-serif",
+        primaryColor: "#eaf7f1",
+        primaryTextColor: "#172033",
+        primaryBorderColor: "#28745a",
+        lineColor: "#60758d",
+        secondaryColor: "#edf4ff",
+        tertiaryColor: "#fff7e7",
+        fontSize: "13px"
+      },
+      flowchart: { useMaxWidth: true, htmlLabels: true, curve: "basis", nodeSpacing: 32, rankSpacing: 48 },
+      sequence: { useMaxWidth: true, actorMargin: 44, messageMargin: 32 }
+    });
+  </script>
+  <style>
+    :root{--ink:#172033;--muted:#617087;--paper:#fbfcfe;--white:#fff;--line:#d7e0ea;--brand:#0d5c41;--blue:#2f6fbd;--amber:#9b6a1a;--rose:#a83f52;--code:#172235}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:"Noto Sans CJK SC",Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:linear-gradient(180deg,#e9f7f1 0,#fbfcfe 34rem);line-height:1.72}
+    a{color:var(--blue);text-underline-offset:.18em}.page{max-width:1220px;margin:auto;padding:0 24px 72px}header{padding:68px 0 38px}.eyebrow{display:flex;align-items:center;gap:10px;color:var(--brand);font-size:.8rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase}.eyebrow:before{content:"";width:36px;height:2px;background:var(--brand)}
+    h1{max-width:1060px;margin:14px 0 0;font-size:clamp(2.3rem,5.2vw,4.3rem);line-height:1.04;letter-spacing:-.035em}.subtitle{max-width:1000px;margin:24px 0 0;color:#34445a;font-size:clamp(1rem,2vw,1.22rem);line-height:1.78}.meta,nav{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}.chip,nav a{padding:7px 12px;border:1px solid #c9d8d1;border-radius:999px;background:rgba(255,255,255,.82);font-size:.85rem}.chip b{color:var(--brand)}nav a{color:#2b3a50;text-decoration:none;font-weight:650;border-color:var(--line)}
+    section{padding:46px 0;border-top:1px solid var(--line)}.section-head{display:grid;grid-template-columns:minmax(155px,.36fr) minmax(0,1fr);gap:34px;align-items:start;margin-bottom:26px}.kicker{color:var(--blue);font-size:.78rem;font-weight:820;letter-spacing:.09em;text-transform:uppercase}h2{margin:0;font-size:clamp(1.65rem,3vw,2.55rem);line-height:1.15}h3{margin:28px 0 10px;font-size:1.25rem;line-height:1.3}h4{margin:16px 0 8px;font-size:1.03rem;color:#2d3f56}p{margin:0 0 16px}.lead{color:#33455d;font-size:1.05rem;line-height:1.82}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}.card{padding:22px 24px;border:1px solid var(--line);border-radius:10px;background:var(--white);box-shadow:0 8px 24px rgba(32,50,72,.055)}.card h3,.card h4{margin-top:0}.label{color:var(--brand);font-size:.75rem;font-weight:820;letter-spacing:.08em;text-transform:uppercase}.callout{margin:20px 0;padding:20px 24px;border:1px solid #c5daef;border-radius:9px;background:#f4f9fe}.callout.good{border-color:#b8d9cd;background:#f2fbf7}.callout.warn{border-color:#ead5a4;background:#fffaf0}.callout.danger{border-color:#e7c3c9;background:#fdf5f6}
+    table{width:100%;border-collapse:collapse;margin:22px 0;background:#fff;border:1px solid var(--line);box-shadow:0 8px 24px rgba(32,50,72,.045)}th,td{padding:12px 15px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;font-size:.91rem}th{background:#edf5f2;color:#1e3f34;font-size:.78rem;letter-spacing:.04em;text-transform:uppercase}tr:last-child td{border-bottom:0}.diagram{margin:24px 0;padding:22px;background:#fff;border:1px solid var(--line);border-radius:10px;overflow:auto;box-shadow:0 8px 24px rgba(32,50,72,.055)}.mermaid{min-width:720px;text-align:center}
+    code{font-family:"SFMono-Regular",Consolas,monospace;font-size:.87em;background:#eef3f8;padding:2px 5px;border-radius:4px}.schema{padding:18px 20px;background:var(--code);color:#eef7ff;border-radius:9px;overflow:auto;font:13px/1.65 "SFMono-Regular",Consolas,monospace;white-space:pre-wrap}ul,ol{padding-left:24px;margin:10px 0 18px}li{margin:6px 0}.small{font-size:.86rem;color:var(--muted)}footer{padding:32px 0;color:var(--muted);font-size:.88rem}
+    .tag{display:inline-block;padding:2px 8px;border-radius:999px;font-size:.75rem;font-weight:760}.t-core{background:#dff4ea;color:#176143}.t-app{background:#e1eefc;color:#275f9f}.t-later{background:#fff0cc;color:#76500e}.t-no{background:#fae1e5;color:#8d3040}
+    @media(max-width:860px){.section-head,.grid,.grid.three{grid-template-columns:1fr}.mermaid{min-width:560px}}@media print{body{background:#fff}.page{max-width:none}nav{display:none}.card,.diagram,table{box-shadow:none}.diagram,.card,table{break-inside:avoid}}
+  </style>
+</head>
+<body><div class="page">
+<header id="top">
+  <div class="eyebrow">Normative Target Architecture <span class="tag t-core">Architecture 1.2</span></div>
+  <h1>WikiMemory：通用 Agent 的可演化知识与长期记忆层</h1>
+  <p class="subtitle">本文固定 WikiMemory 理想中应当是什么。它定义产品不变量、模块边界、数据与权限模型、Agent 接口和部署形态，不记录某次实验分数、当前对象数量或短期施工状态。当前实现差距见 <a href="docs/status/implementation-status.md">实施状态</a>，历史架构快照见 <a href="docs/history/architecture-baseline-v3.3-2026-08-12.html">v3.3 归档</a>。</p>
+  <div class="meta">
+    <span class="chip"><b>首要消费者</b> 通用 Agent</span><span class="chip"><b>首要受益者</b> 单用户多领域学习者</span>
+    <span class="chip"><b>产品入口</b> MCP 优先，API 同合同</span><span class="chip"><b>部署</b> 本地优先、容器可封装</span>
+    <span class="chip"><b>知识内核</b> Wiki + Typed Graph + Evidence</span><span class="chip"><b>在线原则</b> Graph-capable，不是 always-on</span>
+    <span class="chip"><b>发布日期</b> 2026-08-25</span>
+  </div>
+  <nav aria-label="目录"><a href="#constitution">1·架构宪法</a><a href="#system">2·系统全景</a><a href="#layers">3·分层边界</a><a href="#data">4·知识模型</a><a href="#write">5·写入流</a><a href="#read">6·读取流</a><a href="#correction">7·纠正流</a><a href="#interfaces">8·MCP/API</a><a href="#security">9·权限安全</a><a href="#deployment">10·Docker部署</a><a href="#operations">11·运行治理</a><a href="#evolution">12·演进路线</a><a href="#references">13·开源参照</a></nav>
+</header>
+<main>
+
+<section id="constitution">
+  <div class="section-head"><div class="kicker">01 / Constitution</div><div><h2>架构存在的理由只有一个：让 Agent 随使用可靠地进步</h2></div></div>
+  <p class="lead">WikiMemory 不是文件浏览器、摘要生成器，也不是把整张 Graph 倒进 Prompt 的检索外挂。它持续从人主动选择的材料，以及经权限合同提交的权威声明与纠正中形成问题假设、证据拓扑和可追溯、可版本化、可撤销的知识状态；部分问题在跨来源、跨时间更新中逐渐获得稳定身份，并在任务发生时只交付必要上下文。Agent 运行轨迹、工具日志、一般对话和任务结果不自动成为知识。</p>
+  <div class="grid three">
+    <article class="card"><div class="label">Evidence first</div><h3>原文是证据根</h3><p>Source 与 SourceSpan 不可变。Claim、Relation、Wiki 都是派生视图，随时可以丢弃并从证据重建。</p></article>
+    <article class="card"><div class="label">Agent first</div><h3>Context Pack 是产品输出</h3><p>用户不维护 Wiki 或 Graph；Agent 通过稳定合同获得任务化知识、条件、冲突、缺口和引用。</p></article>
+    <article class="card"><div class="label">Evolution first</div><h3>变化必须影响未来行为</h3><p>新材料或纠正只有在改变后续知识选择、回答或行动时才算完成，不以文件生成或对象数量代替。</p></article>
+    <article class="card"><div class="label">Fail closed</div><h3>不确定可以保存，不能静默污染</h3><p>候选、争议、失效和隔离对象都可保留；默认消费只读取满足证据、状态、权限和审计版本的知识。</p></article>
+    <article class="card"><div class="label">Graph capable</div><h3>Graph 长期存在，在线条件触发</h3><p>Graph 始终服务冲突、替代、影响传播和增量治理；在线候选导航按任务触发，遍历结果不自动进入 Prompt。</p></article>
+    <article class="card"><div class="label">One contract</div><h3>协议不能复制业务逻辑</h3><p>MCP、HTTP API 与 CLI 都调用同一 Application Service；Transport 只负责协议、身份和序列化。</p></article>
+  </div>
+  <div class="callout danger"><b>禁止架构漂移：</b>单个 Dev 题、某次模型分数、当前 Graph 边数或短期 token 变化，不能直接改写本页不变量。架构变更必须来自新的产品约束、可靠事故证据、跨域重复结果或明确的人类决策，并留下 ADR。</div>
+</section>
+
+<section id="system">
+  <div class="section-head"><div class="kicker">02 / System Landscape</div><div><h2>Agent 在前，WikiMemory 在后；模型供应商只是可替换编译依赖</h2></div></div>
+  <div class="diagram"><div class="mermaid">
+flowchart LR
+    U["人类用户"] --> A["通用 Agent<br/>Codex · Claude · 其他客户端"]
+    A --> MCP["MCP Adapter<br/>本地 stdio"]
+    APP["未来应用与自动化"] --> HTTP["HTTP Adapter<br/>Streamable HTTP / REST"]
+    CLI["运维 CLI"] --> SVC["Knowledge Application Service"]
+    MCP --> SVC
+    HTTP --> SVC
+    SVC --> ING["Ingest Service"]
+    SVC --> QRY["Query / Trace Service"]
+    SVC --> COR["Correction / Evolution Service"]
+    SVC --> ADM["Status / Version Service"]
+    ING --> JOB["Durable Job Queue"]
+    JOB --> W["Compiler Worker"]
+    W --> MODEL["可替换 LLM Provider"]
+    ING --> K["Knowledge Core"]
+    QRY --> K
+    COR --> K
+    ADM --> K
+    K --> STORE["Canonical Store + Event Log"]
+    K --> IDX["Rebuildable Retrieval Index"]
+    K --> OBS["Trace · Metrics · Audit Log"]
+  </div></div>
+  <div class="callout good"><b>MVP 部署裁决：</b>逻辑上分层，物理上先保持“模块化单体 + 异步 Worker”。不为架构图提前拆微服务；只有当独立扩缩、故障域或权限边界被真实负载证明时才拆进程或服务。</div>
+</section>
+
+<section id="layers">
+  <div class="section-head"><div class="kicker">03 / Layering</div><div><h2>六层职责：任何入口都不能绕过应用层直接改知识文件</h2></div></div>
+  <table><thead><tr><th>层</th><th>职责</th><th>允许依赖</th><th>明确禁止</th></tr></thead><tbody>
+    <tr><td>Transport</td><td>MCP/HTTP/CLI 协议、输入校验、身份上下文、错误映射</td><td>Application</td><td>直接读写 publication；内嵌编译/检索策略</td></tr>
+    <tr><td>Application</td><td>用例编排、幂等键、授权、事务边界、Job 与 DTO</td><td>Domain ports</td><td>依赖 stdio/Express；解析 CLI 输出</td></tr>
+    <tr><td>Domain</td><td>知识对象、状态机、Graph 语义、门禁、预算与影响规则</td><td>纯类型与 ports</td><td>文件路径、供应商 SDK、协议对象</td></tr>
+    <tr><td>Compiler Worker</td><td>有界批处理、模型调用、候选生成、Lint、差异与发布提案</td><td>Domain + Provider ports</td><td>把 LLM 输出直接当 Canonical；无限重试</td></tr>
+    <tr><td>Persistence</td><td>不可变证据、Canonical/Quarantine、版本、事件、锁与快照</td><td>Domain schema</td><td>由 Transport 绕过事务直接覆盖</td></tr>
+    <tr><td>Projection</td><td>词法/别名/可选向量/邻接/Wiki 索引与 Context transport</td><td>Canonical generation</td><td>成为权威事实源；落后 generation 继续服务</td></tr>
+  </tbody></table>
+  <div class="schema">src/
+  transport/          # mcp/ http/ cli/，薄适配器
+  application/        # ingest/query/trace/correction/status/version 用例
+  domain/             # 知识模型、状态机、策略与 ports
+  workers/            # compiler、periodic-lint、projection-rebuild
+  infrastructure/     # filesystem、locks、model providers、telemetry
+  loaders/            # Markdown 当前实现；HTML/PDF/TeX 以后接 adapter
+
+runtime-data/         # 容器挂载点，不属于镜像
+  evidence/ canonical/ quarantine/ events/ versions/ jobs/ indexes/ logs/</div>
+</section>
+
+<section id="data">
+  <div class="section-head"><div class="kicker">04 / Knowledge Model</div><div><h2>Evidence、Wiki、Graph 三层并存，但只有 Evidence 是证据根</h2></div></div>
+  <div class="diagram"><div class="mermaid">
+flowchart TB
+    SRC["Source<br/>不可变材料快照"] --> SPAN["SourceSpan<br/>精确定位"]
+    ASSERT["AssertedRecord<br/>偏好/决策的权威记录"] --> CLAIM["Claim<br/>最小可判断结论"]
+    SPAN --> CLAIM
+    CLAIM --> CONCEPT["Concept<br/>跨来源稳定身份"]
+    CLAIM --> REL["Relation<br/>类型 · 条件 · 证据 · 时态"]
+    CONCEPT --> REL
+    CLAIM --> WIKI["WikiModule<br/>问题假设的物化派生视图"]
+    REL --> WIKI
+    WIKI --> PACK["Context Pack<br/>任务化、预算化消费"]
+    CLAIM --> PACK
+    REL --> PACK
+    SPAN --> PACK
+  </div></div>
+  <table><thead><tr><th>对象</th><th>权威性</th><th>生命周期</th><th>关键约束</th></tr></thead><tbody>
+    <tr><td>Source / SourceSpan</td><td>不可变证据根</td><td>只追加；版本变化产生新对象</td><td>内容 hash、来源 URI、loader 版本、精确定位</td></tr>
+    <tr><td>AssertedRecord</td><td>主体对偏好/决策的证据</td><td>可撤销、可替代</td><td>principal、scope、authority basis；不能自动证明世界事实</td></tr>
+    <tr><td>Claim</td><td>可审计派生知识</td><td>ACTIVE / SUPERSEDED；SUPPORTED / DISPUTED / UNRESOLVED</td><td>这些是存储与治理状态；产品投影还需结合权威、当前性、适用性、关系支持、任务相关性与不确定性</td></tr>
+    <tr><td>Concept</td><td>身份投影</td><td>可合并、可分叉、可回滚</td><td>同名异义不得强合并；别名不等于证据</td></tr>
+    <tr><td>Relation</td><td>受审计关系</td><td>候选、Canonical、隔离、失效</td><td>端点、类型语义、条件、证据、审计版本全部闭合</td></tr>
+    <tr><td>QuestionFrame / WikiModule</td><td>问题假设身份 / 物化派生视图</td><td>稳定地址、增量重建；身份成熟度待独立评估</td><td>围绕问题假设跨来源组织；稳定地址与可消费状态不等于长期身份成熟；每个 assertion 回到 Canonical Claim</td></tr>
+    <tr><td>Context Pack</td><td>一次任务的临时投影</td><td>按请求生成，不反向成为知识</td><td>知识版本、scope、预算、选择理由、缺口与截断</td></tr>
+  </tbody></table>
+  <div class="callout warn"><b>双时态边界：</b>MVP 必须回答“系统在某个 knowledgeVersion 当时记录了什么”，并保留明确来源版本的取代关系；现实世界任意 valid-time 区间推理是后续能力，不能仅凭字段存在就宣称完成。</div>
+  <div class="callout good"><b>加权证据拓扑：</b><code>CURRENT</code> 不是新的持久化真值轴，而是对 Canonical 证据拓扑的一次可解释投影：在给定知识版本、适用范围和任务下，综合 grounding、authority、currentness、applicability、关系支持、任务价值、不确定性与边际成本，呈现当前领先分支。权重允许先以序位和理由表达，不要求统一概率。新材料增加重新检查的优先级，但不自动淘汰旧分支。完整边界见 <code>docs/specs/wikimemory-convergence-baseline-v1.md</code>。</div>
+  <div class="callout warn"><b>问题身份边界：</b>人类选择材料构成注意力边界，AI 形成的是 QuestionHypothesis。问题文本只是投影；长期身份由 evidence basin、适用边界、更新语义和演化历史逐渐赢得。<code>ACTIVE/CANONICAL</code> 继续作为工程状态，不得等同身份成熟。</div>
+</section>
+
+<section id="write">
+  <div class="section-head"><div class="kicker">05 / Ingest & Compile</div><div><h2>接收材料和学会材料是两个状态；发布与跨材料扫描也是两个可恢复阶段</h2></div></div>
+  <div class="diagram"><div class="mermaid">
+stateDiagram-v2
+    [*] --> RECEIVED: ingest_material
+    RECEIVED --> SOURCE_INGESTED: Loader + hash + SourceSpan
+    SOURCE_INGESTED --> COMPILE_QUEUED: 创建 durable job
+    COMPILE_QUEUED --> COMPILE_RUNNING: Worker 取得租约
+    COMPILE_RUNNING --> COMPILE_PARTIAL: 部分批次/关系阶段失败
+    COMPILE_RUNNING --> COMPILE_FAILED: 有界重试耗尽
+    COMPILE_RUNNING --> CLAIMS_PUBLISHED: Claim 门禁与原子发布通过
+    CLAIMS_PUBLISHED --> RELATION_SCAN_PENDING: 等待跨材料阶段
+    RELATION_SCAN_PENDING --> COMPLETED: Relation 门禁与索引 generation 完成
+    COMPILE_PARTIAL --> COMPILE_QUEUED: resume
+    COMPILE_FAILED --> COMPILE_QUEUED: explicit retry
+    COMPLETED --> COMPILE_QUEUED: recompile/new compiler version
+  </div></div>
+  <ol>
+    <li>Loader 只机械规范化格式，输出统一 <code>LoadedDocument</code>；语义编译不感知 Markdown/PDF/HTML/TeX 细节。</li>
+    <li>Worker 以输入 token 预算分批；每次模型调用立即记录 provider、prompt hash、usage、finish reason、重试和原始输出引用。</li>
+    <li>Claim 和 Relation 分别通过结构门禁与语义门禁；失败对象进入物理 Quarantine，不进入默认索引。</li>
+    <li>单 Source publication 原子替换；跨 Source Relation 是独立阶段。后者失败保留 Claim 发布，并把状态标为 pending，而不是假报完成。</li>
+    <li>发布成功递增 Canonical generation；所有投影以 generation 绑定，陈旧索引必须重建或显式降级。</li>
+  </ol>
+</section>
+
+<section id="read">
+  <div class="section-head"><div class="kicker">06 / Query & Context</div><div><h2>先定位入口，再条件触发 Graph，最后只渲染任务必要闭包</h2></div></div>
+  <div class="diagram"><div class="mermaid">
+flowchart TD
+    Q["task + principal + project + knowledgeAsOf + budget"] --> AUTH["Scope / policy filter"]
+    AUTH --> MAP["Knowledge map + lexical/alias seeds"]
+    MAP --> GAP{"关系意图、安全风险、版本/影响<br/>或可观测 Seed 缺口？"}
+    GAP -->|否| SEL["Closed-unit selector"]
+    GAP -->|是| CG["受审计候选 Graph<br/>深度/节点/关系类型有界"]
+    CG --> RANK["结构相关性 + 风险 + 边际成本排序"]
+    RANK --> SEL
+    SEL --> W["可选 Wiki assertion 闭包"]
+    W --> E["必要 Evidence"]
+    E --> TOK["实际序列化 token 核验"]
+    TOK --> PACK["Context Pack + Selection Trace"]
+  </div></div>
+  <div class="grid three">
+    <article class="card"><div class="label">Seed</div><h3>Graph 不能制造入口</h3><p>先通过词法、别名和结构索引获得可靠 Seed。跨语言投影帮助召回，但永远不是回答证据。</p></article>
+    <article class="card"><div class="label">Candidate graph</div><h3>候选不是 Prompt</h3><p>Graph 用于排序、冲突、依赖、替代和缺口发现；候选节点不会因为被遍历到就自动展示。</p></article>
+    <article class="card"><div class="label">Visible context</div><h3>完整单元竞争预算</h3><p>Claim、条件、provenance 和全部必要 Evidence 作为不可拆原子；关系只有端点可见时才能进入。</p></article>
+  </div>
+  <p>Context Pack 至少返回：<code>knowledgeVersion</code>、<code>scope</code>、知识地图、选中 Claim/Wiki assertions、可见关系路径、SourceSpan、冲突、未知项、截断信息、选择 Trace ID 与序列化 token。它是 Agent 的输入合同，不是最终答案。</p>
+</section>
+
+<section id="correction">
+  <div class="section-head"><div class="kicker">07 / Correction</div><div><h2>自然语言纠正先形成 Proposal；不同权威类型走不同发布路径</h2></div></div>
+  <div class="diagram"><div class="mermaid">
+flowchart TD
+    U["用户自然语言纠正"] --> P["propose_correction<br/>解析对象、类型、scope 与影响"]
+    P --> T{"纠正类型"}
+    T -->|个人偏好| PREF["AssertedRecord<br/>PERSONAL 权威校验"]
+    T -->|项目决策| DEC["AssertedRecord<br/>PROJECT 角色校验"]
+    T -->|外部世界事实| FACT["用户只拥有争议权<br/>旧 Claim 先进入 DISPUTED"]
+    T -->|高风险事实| RISK["强制来源/人工复核<br/>禁止自动确真"]
+    PREF --> PLAN["Impact Plan"]
+    DEC --> PLAN
+    FACT --> EVIDENCE["摄入新材料<br/>编译为 SourceSpan 支撑的 FACT"]
+    EVIDENCE --> EDGE{"审计关系门禁"}
+    EDGE -->|SUPERSEDES| PLAN
+    EDGE -->|CONTRADICTS| PLAN
+    EDGE -->|未审计或无物质证据| WAIT["NEEDS_EVIDENCE<br/>保持争议，不确真"]
+    RISK --> PLAN
+    PLAN --> APPROVE{"策略允许自动提交？"}
+    APPROVE -->|是| TX["Evolution Transaction"]
+    APPROVE -->|否| CONFIRM["显式确认 / 补证据"]
+    CONFIRM --> TX
+    TX --> REBUILD["Claim/Relation/Wiki/Index 局部失效与重建"]
+    REBUILD --> REG["不复发 + 无关任务回归"]
+    REG -->|通过| PUB["发布新 knowledgeVersion"]
+    REG -->|失败| ROLLBACK["自动回滚 + 保留故障证据"]
+  </div></div>
+  <table><thead><tr><th>纠正类型</th><th>用户是否权威</th><th>默认动作</th><th>提交权限</th></tr></thead><tbody>
+    <tr><td>个人偏好</td><td>是，限本人 PERSONAL scope</td><td>可自动生成并提交 AssertedRecord</td><td>普通用户</td></tr>
+    <tr><td>项目决策</td><td>有项目角色时是</td><td>影响摘要后提交 PROJECT scope</td><td>项目写权限</td></tr>
+    <tr><td>外部世界事实</td><td>不是事实证明者</td><td>停止无条件相信旧结论；新主张待证</td><td>提议可普通用户，确真需证据</td></tr>
+    <tr><td>医疗/金融/法律等高风险事实</td><td>不是</td><td>强门禁、权威来源、必要时人工复核</td><td>治理权限</td></tr>
+    <tr><td>删除、全局覆盖、回滚</td><td>取决于所有权</td><td>显式确认、影响预览、审计日志</td><td>管理权限</td></tr>
+  </tbody></table>
+</section>
+
+<section id="interfaces">
+  <div class="section-head"><div class="kicker">08 / Agent Interface</div><div><h2>MCP 优先；读取工具面保持小，写入能力分阶段开放</h2></div></div>
+  <table><thead><tr><th>工具</th><th>阶段</th><th>副作用</th><th>最小响应</th></tr></thead><tbody>
+    <tr><td><code>ingest_material</code></td><td><span class="tag t-core">I1</span></td><td>创建 Source/Job；不承诺已编译</td><td>sourceId、jobId、duplicate、state</td></tr>
+    <tr><td><code>get_ingest_status</code></td><td><span class="tag t-core">I1</span></td><td>无</td><td>stage、progress、lastHealthyVersion、retryability</td></tr>
+    <tr><td><code>query_context</code></td><td><span class="tag t-core">I1</span></td><td>无</td><td>Context Pack、knowledgeVersion、traceId</td></tr>
+    <tr><td><code>trace_knowledge</code></td><td><span class="tag t-core">I1</span></td><td>无</td><td>Claim/Relation/Wiki → SourceSpan 路径</td></tr>
+    <tr><td><code>propose_correction</code></td><td><span class="tag t-app">I2</span></td><td>只创建 Proposal</td><td>类型、scope、影响、风险、所需证据</td></tr>
+    <tr><td><code>propose_natural_language_correction</code></td><td><span class="tag t-app">I2</span></td><td>模型只解析草案；不提交</td><td>typed interpretation、权限派生结果、提交确认类型</td></tr>
+    <tr><td><code>commit_correction</code></td><td><span class="tag t-app">I2</span></td><td>受控知识事务</td><td>before/after version、diff、rollback handle</td></tr>
+    <tr><td><code>resolve_fact_correction</code></td><td><span class="tag t-app">I2</span></td><td>以审计关系执行 FACT 演化</td><td>替代/冲突结果、版本、重建视图、rollback handle</td></tr>
+    <tr><td><code>rollback_correction</code></td><td><span class="tag t-app">I2</span></td><td>只恢复本人该次纠正</td><td>当前版本前置条件、精确确认令牌、恢复版本</td></tr>
+    <tr><td><code>rollback_fact_resolution</code></td><td><span class="tag t-app">I2</span></td><td>无后续知识变更时恢复证据演化</td><td>精确确认令牌、恢复版本；否则要求补偿性纠正</td></tr>
+    <tr><td><code>record_pilot_outcome</code></td><td><span class="tag t-app">I3</span></td><td>显式记录真实任务结果</td><td>outcome、重复解释、纠错复发、硬失败；原文只存 HMAC</td></tr>
+    <tr><td><code>register_pilot_baseline</code></td><td><span class="tag t-app">I3</span></td><td>登记无 WikiMemory Context 的对照臂</td><td>traceId、预算、BASELINE policy；模型与工具同权由实验合同约束</td></tr>
+    <tr><td><code>get_pilot_status</code></td><td><span class="tag t-app">I3</span></td><td>无</td><td>本人查询/反馈覆盖、结果、复发、硬失败、上下文成本</td></tr>
+    <tr><td><code>mark_trusted_checkpoint</code></td><td><span class="tag t-app">I3</span></td><td>标记用户信任版本</td><td>checkpointId、knowledgeVersion、当时 Pilot 状态</td></tr>
+    <tr><td><code>rollback_knowledge</code></td><td><span class="tag t-later">I3</span></td><td>管理级任意知识回滚</td><td>影响预览、治理权限、恢复报告</td></tr>
+  </tbody></table>
+  <div class="callout"><b>协议裁决：</b>本地个人 MVP 先提供 MCP stdio；远程、多客户端或 UI 需要时再提供 Streamable HTTP/REST。两者复用同一 schema 与 Application Service。MCP handler 不调用 CLI，HTTP handler 不复制 MCP 逻辑。</div>
+  <div class="callout warn"><b>工具不是内部函数目录：</b>不向 Agent 暴露 <code>compileSource</code>、Relation 单边审批、任意文件读取或内部 publication 写入。Agent 使用产品动作，内部如何批处理和门禁属于实现细节。</div>
+</section>
+
+<section id="security">
+  <div class="section-head"><div class="kicker">09 / Security & Authority</div><div><h2>单用户 MVP 也必须携带 principal 与 scope，不能把“本地”当作无权限</h2></div></div>
+  <div class="grid">
+    <article class="card"><h3>身份与作用域</h3><ul><li>每个请求都有 <code>principalId</code>；缺失时只允许 GLOBAL 读取。</li><li>PERSONAL 只属于本人；PROJECT 需要项目成员关系。</li><li>domain 只用于主题检索，不是权限边界。</li></ul></article>
+    <article class="card"><h3>工具能力</h3><ul><li>只读、摄入、提议、提交、管理五类 capability 分离。</li><li>写操作必须有幂等键、expectedKnowledgeVersion 和审计 actor。</li><li>回滚、全局覆盖和高风险事实不能由普通查询会话静默执行。</li></ul></article>
+    <article class="card"><h3>数据边界</h3><ul><li>Quarantine、Gold、生产 Canonical 物理分离。</li><li>容器镜像不包含 Benchmark、Stage B、运行日志和密钥。</li><li>原始模型输出按保留策略保存引用，不默认返回 Agent。</li></ul></article>
+    <article class="card"><h3>供应链与网络</h3><ul><li>模型 Provider 只接收明确编译批次；记录 provider/model/version。</li><li>密钥只经 secret/env 注入，不写镜像与状态卷。</li><li>Loader 网络抓取与本地文件摄入分权；MVP 默认只接用户明确投递内容。</li></ul></article>
+  </div>
+</section>
+
+<section id="deployment">
+  <div class="section-head"><div class="kicker">10 / Deployment</div><div><h2>Docker 封装运行内核，不封装研究仓库</h2></div></div>
+  <div class="diagram"><div class="mermaid">
+flowchart TB
+    subgraph HOST["宿主机 / Agent 客户端"]
+      AG["MCP Client"]
+      SEC["Secret / Provider Key"]
+    end
+    subgraph COMPOSE["Docker Compose · 本地 MVP"]
+      MCP["wge-runtime mcp<br/>stdio 或本地 HTTP"]
+      WORKER["wge-runtime worker<br/>编译 + 投影重建"]
+      MCP --- WORKER
+    end
+    subgraph VOL["wge-data 持久卷"]
+      EV["evidence/"]
+      CAN["canonical/ + quarantine/"]
+      EVT["events/ + jobs/ + versions/"]
+      IDX["indexes/ + logs/"]
+    end
+    AG --> MCP
+    SEC -.运行时注入.-> MCP
+    SEC -.运行时注入.-> WORKER
+    MCP --> VOL
+    WORKER --> VOL
+  </div></div>
+  <h3>镜像 allowlist</h3>
+  <div class="schema">COPY package.json package-lock.json ./
+COPY dist/ ./dist/
+COPY migrations/ ./migrations/        # 存在后加入
+COPY config/defaults/ ./config/defaults/  # 存在后加入
+
+# 永不进入镜像
+experiments/ runs/ benchmarks/ tests/ references/
+sources/ publications/ quarantine/ versions/ wiki/ indexes/
+.env .git node_modules raw-llm-output Stage-B Gold</div>
+  <table><thead><tr><th>运行保证</th><th>最低验收</th></tr></thead><tbody>
+    <tr><td>持久性</td><td>容器删除并重建后，挂载卷中的 Source、Canonical、版本和 Job 可恢复。</td></tr>
+    <tr><td>单写者</td><td>Worker 通过租约/锁串行提交 Canonical generation；读请求可并发。</td></tr>
+    <tr><td>升级</td><td>启动先检查 schema/compiler 兼容性；迁移失败不启动写入服务。</td></tr>
+    <tr><td>健康</td><td>区分进程健康、状态卷可读、索引同步、模型 Provider 可用和最后健康知识版本。</td></tr>
+    <tr><td>资源</td><td>编译并发、每 Job token、内存、磁盘和日志保留均有硬上限。</td></tr>
+    <tr><td>备份</td><td>备份证据、Canonical、events 与 versions；索引可重建，不是备份权威对象。</td></tr>
+  </tbody></table>
+  <div class="callout warn"><b>不是现在的目标：</b>Kubernetes、Redis、外部图数据库和多租户服务。JSONL/文件快照与局部索引可先支撑个人 MVP；当并发、查询规模或运维证据证明需要时，再通过 Repository Port 替换存储实现。</div>
+</section>
+
+<section id="operations">
+  <div class="section-head"><div class="kicker">11 / Operability</div><div><h2>每次写入可恢复，每次选择可解释，每次成本可归因</h2></div></div>
+  <table><thead><tr><th>信号</th><th>必须记录</th><th>用途</th></tr></thead><tbody>
+    <tr><td>Ingest/Compile</td><td>jobId、stage、input hash、批次、模型、finish reason、usage、重试、失败原因</td><td>恢复、成本和容量诊断</td></tr>
+    <tr><td>Publication</td><td>before/after knowledgeVersion、diff、Quarantine、generation、原子提交结果</td><td>审计与回滚</td></tr>
+    <tr><td>Query</td><td>scope、seed、Graph trigger、候选、drop reason、闭包、token、traceId</td><td>召回与 Prompt 成本归因</td></tr>
+    <tr><td>Correction</td><td>actor、类型、权威依据、影响对象、审批策略、回归、rollback</td><td>不复发与权限审计</td></tr>
+    <tr><td>Product</td><td>opt-in 查询收据、重复解释、纠正复发、跨材料完整性、引用失败、用户接受/回滚；任务与回答只存带密钥 HMAC</td><td>判断 Agent 是否真实进步，同时避免默认收集原始内容</td></tr>
+  </tbody></table>
+  <p>运行时降级顺序：拒绝陈旧/越权知识 → 使用最后健康 Canonical → 关闭 Graph 可见内容但保留 Seed → 明确报告新材料尚未学会。任何降级都不能把旧状态描述成新状态。</p>
+</section>
+
+<section id="evolution">
+  <div class="section-head"><div class="kicker">12 / Convergence Path</div><div><h2>把已完成的工程内核变成阶段前提，再逐层收敛产品语义</h2></div></div>
+  <table><thead><tr><th>门</th><th>交付</th><th>通过标准</th><th>不做</th></tr></thead><tbody>
+    <tr><td>C0 · Convergence Baseline</td><td>产品命题、能力账本、硬不变量、阶段合同与闭合规则</td><td>当前文档路线一致；I3-Sim 以 NO-GO 闭合；形成可回退的 Git 提交</td><td>不改代码、不续跑模型、不以 Alpha 日期代替收敛</td></tr>
+    <tr><td>C1 · Weighted Question State</td><td>冻结 QuestionFrame 下领先、争议、限域、取代、未决与历史分支的最小可解释表示</td><td>按冻结合同与输入切片验收质量、成本、不确定性和硬不变量；具体阈值在执行前冻结</td><td>不改变问题形成、匹配或 lifecycle；不同时扩 loader、检索、UI、知识来源或真实 Pilot</td></tr>
+    <tr><td>C1.5 · Question Hypothesis Persistence</td><td>问题假设的跨来源/跨时间复用、重叠、分裂、合并与身份成熟</td><td>时间留出、单来源移除、无静默过度合并、歧义保留、身份迁移、重放与成本预算全部通过冻结合同</td><td>不重调 C1 权重，不把一次模型判断、embedding 或主题聚类当作身份真值</td></tr>
+    <tr><td>C2 · Budgeted Information Flow</td><td>确定性预筛、增量复用与歧义模型调用的预算策略</td><td>在可解释的质量—成本前沿上优于无差别调用；允许低价值歧义保持未决</td><td>不追求单一总分或全量确定答案</td></tr>
+    <tr><td>C3 · Longitudinal Use</td><td>真实跨时间、跨任务的持续使用证据</td><td>指标、周期和对照在阶段开始前按真实使用冻结，不沿用未证实的固定百分比</td><td>不以对象数量、发布日期或模型生成题替代真实价值</td></tr>
+  </tbody></table>
+  <div class="callout good"><b>能力账本：</b>I0–I2.5 形成的 Evidence Kernel、Agent Runtime 和 K2-M Question Identity Mechanism 是 C1 的稳定前提，不因路线改名而重做；K2-S Question Identity Semantics 尚未证明，进入 C1.5。Batch A/B/C、数学、Evolution、S200 与 I3-Sim 冻结资产用于回归、输入切片和成本对照，不能再冒充新盲集。每个阶段必须允许 PASS、NARROW、REWORK、STOP 或 NO-GO 闭合，新发现默认进入 Discovery Backlog。</div>
+</section>
+
+<section id="references">
+  <div class="section-head"><div class="kicker">13 / Open-source Evidence</div><div><h2>借鉴边界，而不是复制宣传数字或领域实现</h2></div></div>
+  <table><thead><tr><th>项目</th><th>可验证经验</th><th>WikiMemory 的吸收</th><th>不照搬</th></tr></thead><tbody>
+    <tr><td><a href="https://github.com/modelcontextprotocol/typescript-sdk">MCP TypeScript SDK</a></td><td>tools/resources/prompts、stdio 与 Streamable HTTP；middleware 应保持薄</td><td>Transport 与业务分离，同一 Application Service 支撑多协议</td><td>不因 SDK 示例而扩大默认工具面</td></tr>
+    <tr><td><a href="https://github.com/DeusData/codebase-memory-mcp">codebase-memory-mcp</a></td><td>Agent 负责意图翻译；本地持久索引；小型动态工具面；会话/后台任务协调</td><td>MCP 优先、本地优先、allowlist、状态独立于会话</td><td>代码图 schema、项目自报效果和宽文件权限</td></tr>
+    <tr><td><a href="https://github.com/getzep/graphiti">Graphiti</a></td><td>episode provenance、事实时态窗口、增量图、混合检索、MCP/容器部署</td><td>原始事件追溯、保留历史、Graph 参与检索而非替代证据</td><td>不立即引入 Neo4j/FalkorDB；不把实体三元组当完整 Claim 合同</td></tr>
+    <tr><td><a href="https://github.com/letta-ai/letta">Letta</a></td><td>Agent 状态持久化、memory blocks、API/本地运行、长期 Agent 体验</td><td>把记忆作为产品级状态，并以 Agent 行为验证</td><td>不允许自由重写文本块绕过证据闭包</td></tr>
+    <tr><td><a href="https://github.com/mem0ai/mem0">Mem0</a></td><td>user/session/agent 多层作用域、开发者友好 API、长期记忆评估</td><td>principal/scope 是每次读写的一等输入</td><td>不把个性化记忆评测直接当泛化知识治理结论</td></tr>
+  </tbody></table>
+  <p class="small">这些仓库会继续变化；本文引用的是设计边界，不依赖其版本特定性能数字。外部参考源码与论文放在 <code>references/</code>，不属于 WikiMemory 生产代码、镜像或测试目标。</p>
+</section>
+
+</main>
+<footer>WikiMemory Target Architecture 1.2 · 2026-08-25<br>规范关系：Product Definition 定义产品目标；本文定义目标架构；Knowledge Contract 定义对象语义；Convergence Baseline 定义能力账本、当前阶段与闭合规则；Implementation Status 记录当前事实；Benchmark 定义如何产生证据。历史结果不得自动改写目标事实。</footer>
+</div></body></html>

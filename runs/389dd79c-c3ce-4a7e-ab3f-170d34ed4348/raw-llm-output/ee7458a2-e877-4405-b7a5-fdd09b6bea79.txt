@@ -1,0 +1,28 @@
+{
+  "verdict": "passed",
+  "dimensions": {
+    "support": {
+      "result": "pass",
+      "evidence": "加法 = 向量平移"
+    },
+    "addition": {
+      "result": "pass",
+      "evidence": "无额外信息"
+    },
+    "inference": {
+      "result": "pass",
+      "evidence": "直接陈述，无推断"
+    },
+    "limits": {
+      "result": "pass",
+      "evidence": "无限定条件"
+    },
+    "citation": {
+      "result": "pass",
+      "evidence": "正确引用原文"
+    }
+  },
+  "anchor": "加法 = 向量平移",
+  "failedDimensions": [],
+  "issues": []
+}

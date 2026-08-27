@@ -1,0 +1,1121 @@
+{
+  "schemaVersion": "v1",
+  "sourceId": "source:c-psych-001-0f7730e649dbc238",
+  "runId": "172cc3e1-2271-478b-b8ac-e54aef9bcb27",
+  "publishedAt": "2026-07-28T07:04:54.866Z",
+  "claims": [
+    {
+      "id": "claim:0f7730e649dbc238-4acc6ab8edfdce8d",
+      "statement": "The Reproducibility Project: Psychology finished primary data collection in December 2014.",
+      "evidenceSpanIds": [
+        "span:c-psych-001-0f7730e649dbc238-12#chars-1728-1777"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:04:32.523Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-001-0f7730e649dbc238-12#chars-1728-1777"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-001-0f7730e649dbc238-12#chars-1728-1777"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:04:32.523Z"
+    },
+    {
+      "id": "claim:0f7730e649dbc238-5029d8835d37392e",
+      "statement": "The study was published in Science, Vol. 349, Issue 6251, article aac4716.",
+      "evidenceSpanIds": [
+        "span:c-psych-001-0f7730e649dbc238-3#chars-294-345"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:04:32.523Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-001-0f7730e649dbc238-3#chars-294-345"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-001-0f7730e649dbc238-3#chars-294-345"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:04:32.523Z"
+    },
+    {
+      "id": "claim:0f7730e649dbc238-6b8953e4a783f80b",
+      "statement": "Thirty-six percent of replications had significant results.",
+      "evidenceSpanIds": [
+        "span:c-psych-001-0f7730e649dbc238-8#chars-1037-1095"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:04:32.523Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-001-0f7730e649dbc238-8#chars-1037-1095"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-001-0f7730e649dbc238-8#chars-1037-1095"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:04:32.523Z"
+    },
+    {
+      "id": "claim:0f7730e649dbc238-6bd71d1ec2eb4eb0",
+      "statement": "Original effects had a mean of 0.403 and standard deviation of 0.188.",
+      "evidenceSpanIds": [
+        "span:c-psych-001-0f7730e649dbc238-7#chars-881-920"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:04:32.523Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-001-0f7730e649dbc238-7#chars-881-920"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-001-0f7730e649dbc238-7#chars-881-920"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:04:32.523Z"
+    },
+    {
+      "id": "claim:0f7730e649dbc238-79d4928647df5ef1",
+      "statement": "The DOI of the study is 10.1126/science.aac4716.",
+      "evidenceSpanIds": [
+        "span:c-psych-001-0f7730e649dbc238-3#chars-376-408"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:04:32.523Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-001-0f7730e649dbc238-3#chars-376-408"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-001-0f7730e649dbc238-3#chars-376-408"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:04:32.523Z"
+    },
+    {
+      "id": "claim:0f7730e649dbc238-7e2cb553f3fbc767",
+      "statement": "The extent to which reproducibility characterizes current research is unknown.",
+      "evidenceSpanIds": [
+        "span:c-psych-001-0f7730e649dbc238-5#chars-523-587"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:04:32.523Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-001-0f7730e649dbc238-5#chars-523-587"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-001-0f7730e649dbc238-5#chars-523-587"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:04:32.523Z"
+    },
+    {
+      "id": "claim:0f7730e649dbc238-7fd9ac05cca2b583",
+      "statement": "The study conducted replications of 100 experimental and correlational studies published in three psychology journals.",
+      "evidenceSpanIds": [
+        "span:c-psych-001-0f7730e649dbc238-5#chars-589-699"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:04:32.523Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-001-0f7730e649dbc238-5#chars-589-699"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-001-0f7730e649dbc238-5#chars-589-699"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:04:32.523Z"
+    },
+    {
+      "id": "claim:0f7730e649dbc238-803bda104d1d3f61",
+      "statement": "The project was coordinated by the Center for Open Science.",
+      "evidenceSpanIds": [
+        "span:c-psych-001-0f7730e649dbc238-12#chars-1834-1892"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:04:32.523Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-001-0f7730e649dbc238-12#chars-1834-1892"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-001-0f7730e649dbc238-12#chars-1834-1892"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:04:32.523Z"
+    },
+    {
+      "id": "claim:0f7730e649dbc238-824f3eafcb5aa161",
+      "statement": "The study was published on 28 August 2015.",
+      "evidenceSpanIds": [
+        "span:c-psych-001-0f7730e649dbc238-3#chars-346-375"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:04:32.523Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-001-0f7730e649dbc238-3#chars-346-375"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-001-0f7730e649dbc238-3#chars-346-375"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:04:32.523Z"
+    },
+    {
+      "id": "claim:0f7730e649dbc238-86406e09d4e2463b",
+      "statement": "If no bias in original results is assumed, combining original and replication results left 68% with significant effects.",
+      "evidenceSpanIds": [
+        "span:c-psych-001-0f7730e649dbc238-8#chars-1278-1397"
+      ],
+      "conditions": [
+        "if no bias in original results is assumed"
+      ],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:04:32.523Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-001-0f7730e649dbc238-8#chars-1278-1397"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-001-0f7730e649dbc238-8#chars-1278-1397"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:04:32.523Z"
+    },
+    {
+      "id": "claim:0f7730e649dbc238-8654da6e76f10775",
+      "statement": "Eighty-six others provided volunteer support.",
+      "evidenceSpanIds": [
+        "span:c-psych-001-0f7730e649dbc238-12#chars-1971-2007"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:04:32.523Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-001-0f7730e649dbc238-12#chars-1971-2007"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-001-0f7730e649dbc238-12#chars-1971-2007"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:04:32.523Z"
+    },
+    {
+      "id": "claim:0f7730e649dbc238-979f2ca3e1c0eba7",
+      "statement": "Replication effects had a mean of 0.197 and standard deviation of 0.257.",
+      "evidenceSpanIds": [
+        "span:c-psych-001-0f7730e649dbc238-7#chars-811-853"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:04:32.523Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-001-0f7730e649dbc238-7#chars-811-853"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-001-0f7730e649dbc238-7#chars-811-853"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:04:32.523Z"
+    },
+    {
+      "id": "claim:0f7730e649dbc238-a0efb89317e2d151",
+      "statement": "The Reproducibility Project: Psychology published a summary of the results in August 2015.",
+      "evidenceSpanIds": [
+        "span:c-psych-001-0f7730e649dbc238-12#chars-1783-1832"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:04:32.523Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-001-0f7730e649dbc238-12#chars-1783-1832"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-001-0f7730e649dbc238-12#chars-1783-1832"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:04:32.523Z"
+    },
+    {
+      "id": "claim:0f7730e649dbc238-a2a1c24332b9f4e6",
+      "statement": "The full text is behind a paywall; content sourced from publicly available abstract, ResearchGate preprint, and OSF project page.",
+      "evidenceSpanIds": [
+        "span:c-psych-001-0f7730e649dbc238-2#chars-80-232"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:04:32.523Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-001-0f7730e649dbc238-2#chars-80-232"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-001-0f7730e649dbc238-2#chars-80-232"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:04:32.523Z"
+    },
+    {
+      "id": "claim:0f7730e649dbc238-a678d14d807db125",
+      "statement": "The authors are the Open Science Collaboration, with over 270 contributors.",
+      "evidenceSpanIds": [
+        "span:c-psych-001-0f7730e649dbc238-3#chars-234-293"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:04:32.523Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-001-0f7730e649dbc238-3#chars-234-293"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-001-0f7730e649dbc238-3#chars-234-293"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:04:32.523Z"
+    },
+    {
+      "id": "claim:0f7730e649dbc238-ad224d9bcee9058e",
+      "statement": "Thirty-nine percent of effects were subjectively rated to have replicated the original result.",
+      "evidenceSpanIds": [
+        "span:c-psych-001-0f7730e649dbc238-8#chars-1194-1271"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:04:32.523Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-001-0f7730e649dbc238-8#chars-1194-1271"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-001-0f7730e649dbc238-8#chars-1194-1271"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:04:32.523Z"
+    },
+    {
+      "id": "claim:0f7730e649dbc238-cbf56e09f7320ce1",
+      "statement": "Correlational tests suggest that replication success was better predicted by the strength of original evidence than by characteristics of the original and replication teams.",
+      "evidenceSpanIds": [
+        "span:c-psych-001-0f7730e649dbc238-10#chars-1443-1615"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:04:32.523Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-001-0f7730e649dbc238-10#chars-1443-1615"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-001-0f7730e649dbc238-10#chars-1443-1615"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:04:32.523Z"
+    },
+    {
+      "id": "claim:0f7730e649dbc238-d8077d8950c82fdd",
+      "statement": "Reproducibility is a defining feature of science.",
+      "evidenceSpanIds": [
+        "span:c-psych-001-0f7730e649dbc238-5#chars-469-517"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:04:32.523Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-001-0f7730e649dbc238-5#chars-469-517"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-001-0f7730e649dbc238-5#chars-469-517"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:04:32.523Z"
+    },
+    {
+      "id": "claim:0f7730e649dbc238-e20f898d70439d2e",
+      "statement": "Over 270 contributors earned authorship on the summary report.",
+      "evidenceSpanIds": [
+        "span:c-psych-001-0f7730e649dbc238-12#chars-1905-1966"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:04:32.523Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-001-0f7730e649dbc238-12#chars-1905-1966"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-001-0f7730e649dbc238-12#chars-1905-1966"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:04:32.523Z"
+    },
+    {
+      "id": "claim:0f7730e649dbc238-ed28a79cae9d2d88",
+      "statement": "Forty-seven percent of original effect sizes were in the 95% confidence interval of the replication effect size.",
+      "evidenceSpanIds": [
+        "span:c-psych-001-0f7730e649dbc238-8#chars-1097-1192"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:04:32.523Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-001-0f7730e649dbc238-8#chars-1097-1192"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-001-0f7730e649dbc238-8#chars-1097-1192"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:04:32.523Z"
+    },
+    {
+      "id": "claim:0f7730e649dbc238-ee5064947108a810",
+      "statement": "Ninety-seven percent of original studies had significant results (p < .05).",
+      "evidenceSpanIds": [
+        "span:c-psych-001-0f7730e649dbc238-8#chars-961-1035"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:04:32.523Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-001-0f7730e649dbc238-8#chars-961-1035"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-001-0f7730e649dbc238-8#chars-961-1035"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:04:32.523Z"
+    },
+    {
+      "id": "claim:0f7730e649dbc238-ee87d4aee780322e",
+      "statement": "Replication effects were half the magnitude of original effects, representing a substantial decline.",
+      "evidenceSpanIds": [
+        "span:c-psych-001-0f7730e649dbc238-7#chars-854-956"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:04:32.523Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-001-0f7730e649dbc238-7#chars-854-956"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-001-0f7730e649dbc238-7#chars-854-956"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:04:32.523Z"
+    },
+    {
+      "id": "claim:0f7730e649dbc238-f327d5e045d87405",
+      "statement": "The Reproducibility Project: Psychology began in November 2011.",
+      "evidenceSpanIds": [
+        "span:c-psych-001-0f7730e649dbc238-12#chars-1664-1726"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:04:32.523Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-001-0f7730e649dbc238-12#chars-1664-1726"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-001-0f7730e649dbc238-12#chars-1664-1726"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:04:32.523Z"
+    },
+    {
+      "id": "claim:0f7730e649dbc238-f7a129bd66662ffd",
+      "statement": "The replications used high-powered designs and original materials when available.",
+      "evidenceSpanIds": [
+        "span:c-psych-001-0f7730e649dbc238-5#chars-700-764"
+      ],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:04:32.523Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "confidence": 1,
+      "claimKind": "FACT",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "provenanceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-001-0f7730e649dbc238-5#chars-700-764"
+        }
+      ],
+      "supportingEvidenceRefs": [
+        {
+          "type": "SourceSpan",
+          "spanId": "span:c-psych-001-0f7730e649dbc238-5#chars-700-764"
+        }
+      ],
+      "knowledgeVersion": "v1",
+      "recordedAt": "2026-07-28T07:04:32.523Z"
+    }
+  ],
+  "concepts": [
+    {
+      "id": "concept:1c94942fc7a8dce5",
+      "name": "reproducibility",
+      "aliases": [],
+      "boundary": "A defining feature of science; extent to which it characterizes current research is unknown.",
+      "domain": "Science"
+    },
+    {
+      "id": "concept:45212981bbb50c9d",
+      "name": "Open Science Collaboration",
+      "aliases": [],
+      "boundary": "Authors of the study, with over 270 contributors.",
+      "domain": "Research Collaboration"
+    },
+    {
+      "id": "concept:7d7ffa5df98b77e6",
+      "name": "Reproducibility Project: Psychology",
+      "aliases": [
+        "The Reproducibility Project: Psychology"
+      ],
+      "boundary": "A project that finished primary data collection in December 2014, began in November 2011, published a summary in August 2015, and was coordinated by the Center for Open Science.",
+      "domain": "Psychology"
+    },
+    {
+      "id": "concept:8496fc377e527569",
+      "name": "original effect",
+      "aliases": [
+        "original effect sizes",
+        "original effects"
+      ],
+      "boundary": "Effects from original studies; mean 0.403, SD 0.188; 97% significant (p < .05).",
+      "domain": "Statistics"
+    },
+    {
+      "id": "concept:8590e27e1cbdb739",
+      "name": "replication",
+      "aliases": [
+        "replications"
+      ],
+      "boundary": "Repetition of original studies; 36% had significant results, 39% subjectively rated as replicated, 47% of original effect sizes in 95% CI of replication effect size.",
+      "domain": "Research Methodology"
+    },
+    {
+      "id": "concept:9abe5de3f204a170",
+      "name": "DOI",
+      "aliases": [],
+      "boundary": "Digital Object Identifier of the study: 10.1126/science.aac4716.",
+      "domain": "Publishing"
+    },
+    {
+      "id": "concept:9cba303c05cfbdd9",
+      "name": "replication success",
+      "aliases": [],
+      "boundary": "Predicted by strength of original evidence rather than team characteristics.",
+      "domain": "Research Methodology"
+    },
+    {
+      "id": "concept:ab863c254e9e86f5",
+      "name": "original study",
+      "aliases": [
+        "original research",
+        "original studies"
+      ],
+      "boundary": "Studies that were replicated; 100 experimental and correlational studies from three psychology journals.",
+      "domain": "Psychology"
+    },
+    {
+      "id": "concept:ba374285bb0ed111",
+      "name": "replication effect",
+      "aliases": [
+        "replication effect size",
+        "replication effects"
+      ],
+      "boundary": "Effects from replication studies; mean 0.197, SD 0.257; half the magnitude of original effects.",
+      "domain": "Statistics"
+    },
+    {
+      "id": "concept:bd812f538b55898c",
+      "name": "Center for Open Science",
+      "aliases": [],
+      "boundary": "Coordinator of the Reproducibility Project: Psychology.",
+      "domain": "Organization"
+    },
+    {
+      "id": "concept:d4a875020edb4adc",
+      "name": "high-powered design",
+      "aliases": [
+        "high-powered designs"
+      ],
+      "boundary": "Design used in replications, along with original materials when available.",
+      "domain": "Research Methodology"
+    },
+    {
+      "id": "concept:f45c4f5de24bf7bc",
+      "name": "Science",
+      "aliases": [],
+      "boundary": "A journal where the study was published, Vol. 349, Issue 6251, article aac4716.",
+      "domain": "Publishing"
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel:0f7730e649dbc238-35a255c4aa4225e7",
+      "from": "claim:0f7730e649dbc238-6bd71d1ec2eb4eb0",
+      "to": "claim:0f7730e649dbc238-ee87d4aee780322e",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:c-psych-001-0f7730e649dbc238-7#chars-854-956",
+        "span:c-psych-001-0f7730e649dbc238-7#chars-881-920"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:04:40.621Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.8,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:0f7730e649dbc238-50a9c0e00d8d5daa",
+      "from": "claim:0f7730e649dbc238-5029d8835d37392e",
+      "to": "claim:0f7730e649dbc238-824f3eafcb5aa161",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:c-psych-001-0f7730e649dbc238-3#chars-294-345",
+        "span:c-psych-001-0f7730e649dbc238-3#chars-346-375"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:04:40.621Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.9,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:0f7730e649dbc238-95b179f99e4f1124",
+      "from": "claim:0f7730e649dbc238-ee5064947108a810",
+      "to": "claim:0f7730e649dbc238-6b8953e4a783f80b",
+      "type": "RELATED_TO",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:c-psych-001-0f7730e649dbc238-8#chars-1037-1095",
+        "span:c-psych-001-0f7730e649dbc238-8#chars-961-1035"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:04:40.621Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.7,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:0f7730e649dbc238-9c6f649523f6eba9",
+      "from": "claim:0f7730e649dbc238-d8077d8950c82fdd",
+      "to": "claim:0f7730e649dbc238-7e2cb553f3fbc767",
+      "type": "RELATED_TO",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:c-psych-001-0f7730e649dbc238-5#chars-469-517",
+        "span:c-psych-001-0f7730e649dbc238-5#chars-523-587"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:04:40.621Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.6,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:0f7730e649dbc238-a2da186bef552142",
+      "from": "claim:0f7730e649dbc238-6b8953e4a783f80b",
+      "to": "claim:0f7730e649dbc238-ad224d9bcee9058e",
+      "type": "RELATED_TO",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:c-psych-001-0f7730e649dbc238-8#chars-1037-1095",
+        "span:c-psych-001-0f7730e649dbc238-8#chars-1194-1271"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:04:40.621Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.7,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:0f7730e649dbc238-a4c702aa8beb4d12",
+      "from": "claim:0f7730e649dbc238-803bda104d1d3f61",
+      "to": "claim:0f7730e649dbc238-a678d14d807db125",
+      "type": "RELATED_TO",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:c-psych-001-0f7730e649dbc238-12#chars-1834-1892",
+        "span:c-psych-001-0f7730e649dbc238-3#chars-234-293"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:04:40.621Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.6,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:0f7730e649dbc238-b9280525ad88dca6",
+      "from": "claim:0f7730e649dbc238-979f2ca3e1c0eba7",
+      "to": "claim:0f7730e649dbc238-ee87d4aee780322e",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:c-psych-001-0f7730e649dbc238-7#chars-811-853",
+        "span:c-psych-001-0f7730e649dbc238-7#chars-854-956"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:04:40.621Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.9,
+      "consumedBy": []
+    },
+    {
+      "id": "rel:0f7730e649dbc238-d3ef99ba957d3a2c",
+      "from": "claim:0f7730e649dbc238-7fd9ac05cca2b583",
+      "to": "claim:0f7730e649dbc238-f7a129bd66662ffd",
+      "type": "SUPPORTS",
+      "conditions": [],
+      "conditionStatus": "EXPLICIT_NONE",
+      "supersessionEffect": null,
+      "relationAuditVersion": "v1.7",
+      "evidenceSpanIds": [
+        "span:c-psych-001-0f7730e649dbc238-5#chars-589-699",
+        "span:c-psych-001-0f7730e649dbc238-5#chars-700-764"
+      ],
+      "derivation": "INFERRED",
+      "validity": "SUPPORTED",
+      "lifecycle": "ACTIVE",
+      "publicationState": "CANONICAL",
+      "validFrom": "2026-07-28T07:04:40.621Z",
+      "validTo": null,
+      "compilerVersion": "v1.1",
+      "source": "intra-material-compile",
+      "confidence": 0.7,
+      "consumedBy": []
+    }
+  ]
+}

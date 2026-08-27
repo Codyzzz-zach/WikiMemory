@@ -1,0 +1,172 @@
+{
+  "schemaVersion": "wge-e4-rescore/v2",
+  "status": "DIRECTIONAL_MEASURED",
+  "sourceRun": "/Users/mixi/Desktop/WikiMemory/experiments/benchmark-seed-v1/reports/e4-smoke/runs/e4-graph-ablation-2026-07-28T05-00-59-849Z",
+  "judgePromptHash": "sha256:729ab157c61c543f99e561cfbe1b7921aa8ec249f4552f030ee8dc186a5e5230",
+  "judgeModelRequested": "deepseek-v4-flash",
+  "judgeModelReturned": "deepseek-v4-flash",
+  "groups": [
+    {
+      "group": "P-graph",
+      "samples": 18,
+      "averageTotal": 14.833,
+      "standardDeviationTotal": 1.724,
+      "minimumTotal": 12,
+      "maximumTotal": 16,
+      "hardFailures": 0
+    },
+    {
+      "group": "P-seed",
+      "samples": 18,
+      "averageTotal": 14.056,
+      "standardDeviationTotal": 1.626,
+      "minimumTotal": 12,
+      "maximumTotal": 16,
+      "hardFailures": 0
+    }
+  ],
+  "perQuestion": [
+    {
+      "questionId": "B-C-HEALTH-002",
+      "groups": [
+        {
+          "group": "P-graph",
+          "samples": 3,
+          "averageTotal": 16,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 16,
+          "maximumTotal": 16,
+          "hardFailures": 0
+        },
+        {
+          "group": "P-seed",
+          "samples": 3,
+          "averageTotal": 16,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 16,
+          "maximumTotal": 16,
+          "hardFailures": 0
+        }
+      ]
+    },
+    {
+      "questionId": "B-E-HEALTH-005",
+      "groups": [
+        {
+          "group": "P-graph",
+          "samples": 3,
+          "averageTotal": 12,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 12,
+          "maximumTotal": 12,
+          "hardFailures": 0
+        },
+        {
+          "group": "P-seed",
+          "samples": 3,
+          "averageTotal": 12,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 12,
+          "maximumTotal": 12,
+          "hardFailures": 0
+        }
+      ]
+    },
+    {
+      "questionId": "B-C-HIST-003",
+      "groups": [
+        {
+          "group": "P-graph",
+          "samples": 3,
+          "averageTotal": 16,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 16,
+          "maximumTotal": 16,
+          "hardFailures": 0
+        },
+        {
+          "group": "P-seed",
+          "samples": 3,
+          "averageTotal": 13,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 13,
+          "maximumTotal": 13,
+          "hardFailures": 0
+        }
+      ]
+    },
+    {
+      "questionId": "B-X-HIST-006",
+      "groups": [
+        {
+          "group": "P-graph",
+          "samples": 3,
+          "averageTotal": 16,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 16,
+          "maximumTotal": 16,
+          "hardFailures": 0
+        },
+        {
+          "group": "P-seed",
+          "samples": 3,
+          "averageTotal": 13,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 13,
+          "maximumTotal": 13,
+          "hardFailures": 0
+        }
+      ]
+    },
+    {
+      "questionId": "B-C-DESIGN-002",
+      "groups": [
+        {
+          "group": "P-graph",
+          "samples": 3,
+          "averageTotal": 16,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 16,
+          "maximumTotal": 16,
+          "hardFailures": 0
+        },
+        {
+          "group": "P-seed",
+          "samples": 3,
+          "averageTotal": 16,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 16,
+          "maximumTotal": 16,
+          "hardFailures": 0
+        }
+      ]
+    },
+    {
+      "questionId": "B-X-DESIGN-005",
+      "groups": [
+        {
+          "group": "P-graph",
+          "samples": 3,
+          "averageTotal": 13,
+          "standardDeviationTotal": 0,
+          "minimumTotal": 13,
+          "maximumTotal": 13,
+          "hardFailures": 0
+        },
+        {
+          "group": "P-seed",
+          "samples": 3,
+          "averageTotal": 14.333,
+          "standardDeviationTotal": 1.155,
+          "minimumTotal": 13,
+          "maximumTotal": 15,
+          "hardFailures": 0
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "This remains a same-model directional judge, not human Gold adjudication.",
+    "Citation prevalidation checks identifier presence, not semantic entailment."
+  ]
+}

@@ -1,0 +1,105 @@
+{
+	"schemaVersion": "wge-goal3-source-routing-breadth-contract/v1",
+	"status": "PREREGISTERED_BEFORE_RUNNER",
+	"createdAt": "2026-08-04T19:35:00+08:00",
+	"purpose": "Test whether the unchanged bounded source-routing mechanism observed on Batch C generalizes to Batch B health, history and design questions, and whether its exact-quote displacement risk also replicates.",
+	"interpretation": "Batch B labels are model-generated and already available to the project. This is a post-hoc cross-domain Dev/Regression diagnostic, not blind product evidence and not a human Gold benchmark.",
+	"causalQuestion": "With budgets and implementation unchanged from the Batch C run, does SR12_40 improve required-source coverage over L40_STRONG across three additional domains without losing exact required evidence?",
+	"frozenInputs": {
+		"gitHead": "8829e408215590d39ddaf40431931dee0277e9b3",
+		"dirtyTrackedDiffExcludingLlmLogSha256": "86967c2c1482ffe65d560c9ecc272ea4500bb77aa18a488cbeaedb3824f427e6",
+		"preparationManifest": {
+			"path": "experiments/goal3/source-routing-breadth-v1/manifest.json",
+			"sha256": "2b4ebb8fb81ccb35d7d7e3b4d9283540d50fc6e077f3b8082713c70bc62fb982"
+		},
+		"questions": {
+			"path": "experiments/goal3/source-routing-breadth-v1/questions-public.jsonl",
+			"sha256": "f38648e7b96bb877efc2c8abda9d0c2322538255d70880871e048816dd357d76",
+			"count": 32
+		},
+		"diagnosticGold": {
+			"path": "experiments/goal3/source-routing-breadth-v1/diagnostic-gold.jsonl",
+			"sha256": "fc23d7b46a5c066e0e10b0410dbec57f3e75408f6ccba59166e2bebef42af0e2",
+			"count": 32
+		},
+		"index": {
+			"tier": "S50",
+			"path": "experiments/goal3/pack-runs/pack-v5/indexes/S50",
+			"pointerSha256": "9fe5c5d1fb5d23f886f5fdacbbcc7b12bb3874841bcb73f0bf9fa2ee638197fa"
+		},
+		"implementation": {
+			"persistentIndex": {
+				"path": "src/retrieval/persistent-index.ts",
+				"sha256": "97e311dfbe3d918e224381783a32f8eb3bd56c7c5dd61f19644d8db48508819a"
+			},
+			"sourceRouting": {
+				"path": "src/retrieval/source-routing.ts",
+				"sha256": "15caaf0586ded8850e64f0e32031ca3e5735c8443010e9a7e7b7af374ebf7b19"
+			},
+			"sourceRoutingTests": {
+				"path": "src/retrieval/source-routing.test.ts",
+				"sha256": "11a4a4674975bf398476d20fb593c2224b33a503adbde8cbe7c2bc6ab714fc9e"
+			}
+		}
+	},
+	"arms": [
+		{
+			"id": "L40_STRONG",
+			"routingPoolBudget": 40,
+			"sourceBudget": null,
+			"candidateBudget": 40,
+			"definition": "Top 40 persistent lexical Claim candidates."
+		},
+		{
+			"id": "SR12_40",
+			"routingPoolBudget": 120,
+			"sourceBudget": 12,
+			"candidateBudget": 40,
+			"definition": "Unchanged Batch C mechanism: rank sources by first occurrence in a bounded top-120 lexical pool, select at most 12, guarantee one Claim per selected source, then fill to at most 40 in lexical order."
+		}
+	],
+	"fixed": {
+		"network": false,
+		"modelCalls": 0,
+		"scope": "GLOBAL_ONLY",
+		"tier": "S50",
+		"questionCount": 32,
+		"expectedRowCount": 64,
+		"primaryCandidateBudget": 40,
+		"routingPoolBudget": 120,
+		"sourceBudget": 12,
+		"executionOrder": "ALTERNATE_BY_QUESTION_INDEX",
+		"latencyIsDecisionMetric": false
+	},
+	"metrics": [
+		"requiredSourceRecall",
+		"requiredEvidenceQuoteRecall",
+		"perQuestionSourceWinsAndLossesVsL40",
+		"perQuestionQuoteWinsAndLossesVsL40",
+		"domainBreakdown",
+		"routingPoolClaimCount",
+		"discoveredSourceCount",
+		"selectedSourceCount",
+		"candidateClaimCount",
+		"candidateSourceCount",
+		"candidateClaimsLoaded",
+		"spanShardsReadForRouting",
+		"estimatedEvidenceClosureTokens",
+		"queryLatencyMillisecondsDescriptiveOnly"
+	],
+	"decisionRules": {
+		"BREADTH_SOURCE_PASS": "At S50 SR12_40 aggregate required-source recall is >= L40_STRONG, has at least one strict per-question required-source win, zero per-question required-source losses, and all routing/candidate budgets pass.",
+		"BREADTH_FULL_PASS": "BREADTH_SOURCE_PASS plus aggregate exact-quote recall >= L40_STRONG, zero per-question exact-quote losses, average evidence-closure tokens <=110% of L40, and at least one strict non-latency cost advantage: lower average evidence-closure tokens or fewer average lexical candidate records loaded.",
+		"QUOTE_RISK_REPLICATED": "BREADTH_SOURCE_PASS passes but at least one per-question exact-quote loss occurs. Preserve the source-discovery signal, reject online integration, and require a relevance gate before guaranteed source slots.",
+		"NO_SOURCE_BENEFIT": "There is no strict per-question required-source win over L40_STRONG.",
+		"REWORK": "Any required-source loss, budget violation, scope/time leakage, stale-index acceptance, non-determinism, first-run overwrite, frozen-hash mismatch or Gold access before every candidate set is constructed."
+	},
+	"stopRules": [
+		"Do not change routingPoolBudget, sourceBudget, candidateBudget or source-ranking logic from the frozen Batch C mechanism.",
+		"Do not read or parse diagnostic Gold until both arms have been constructed for all 32 questions.",
+		"Do not generate answers, traverse Relation, build Context Pack, call a model, access the network or mutate canonical state.",
+		"Do not claim latency improvement from this run; alternating order only reduces warm-cache bias and latency remains descriptive.",
+		"Do not treat these model-generated labels as human Gold or blind product evidence.",
+		"Preserve the first report directory and hash; any fix must use a new run id."
+	]
+}

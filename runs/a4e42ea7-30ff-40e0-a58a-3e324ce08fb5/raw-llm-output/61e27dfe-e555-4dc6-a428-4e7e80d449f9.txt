@@ -1,0 +1,174 @@
+{
+  "propositions": [
+    {
+      "text": "泛函分析是线性代数在无限维空间的自然推广。",
+      "exactQuote": "泛函分析是线性代数在无限维空间的自然推广。",
+      "blockId": "09-functional-analysis#block-1"
+    },
+    {
+      "text": "泛函分析把函数视作向量。",
+      "exactQuote": "它把函数视作向量",
+      "blockId": "09-functional-analysis#block-1"
+    },
+    {
+      "text": "泛函分析把算子视作矩阵。",
+      "exactQuote": "把算子视作矩阵",
+      "blockId": "09-functional-analysis#block-1"
+    },
+    {
+      "text": "泛函分析把特征值推广为谱。",
+      "exactQuote": "把特征值推广为谱",
+      "blockId": "09-functional-analysis#block-1"
+    },
+    {
+      "text": "量子力学、信号处理、偏微分方程的理论基础全部建立在泛函分析之上。",
+      "exactQuote": "量子力学、信号处理、偏微分方程的理论基础全部建立在此之上。",
+      "blockId": "09-functional-analysis#block-1"
+    },
+    {
+      "text": "泛函 J: V → ℝ（或 ℂ）的输入是函数，输出是数。",
+      "exactQuote": "**泛函** $J: V \\to \\mathbb{R}$（或 $\\mathbb{C}$）——输入是函数，输出是数。",
+      "blockId": "09-functional-analysis#block-5"
+    },
+    {
+      "text": "定积分泛函 J[f] = ∫_a^b f(x)dx 用于计算面积。",
+      "exactQuote": "| 定积分 | $J[f] = \\int_a^b f(x)dx$ | 面积 |",
+      "blockId": "09-functional-analysis#block-6"
+    },
+    {
+      "text": "弧长泛函 J[f] = ∫_a^b √(1+f'(x)²)dx 用于最短路径。",
+      "exactQuote": "| 弧长 | $J[f] = \\int_a^b \\sqrt{1+f'(x)^2}dx$ | 最短路径 |",
+      "blockId": "09-functional-analysis#block-6"
+    },
+    {
+      "text": "能量泛函 J[f] = ∫ ‖∇f‖² dx 是 Dirichlet 能量。",
+      "exactQuote": "| 能量 | $J[f] = \\int \\|\\nabla f\\|^2 dx$ | Dirichlet 能量 |",
+      "blockId": "09-functional-analysis#block-6"
+    },
+    {
+      "text": "Dirac δ 泛函 J[f] = f(0) 用于在0处采样。",
+      "exactQuote": "| Dirac δ | $J[f] = f(0)$ | \"在0处采样\" |",
+      "blockId": "09-functional-analysis#block-6"
+    },
+    {
+      "text": "最大范数泛函 J[f] = sup_x ‖f(x)‖ 用于最坏情况。",
+      "exactQuote": "| 最大范数 | $J[f] = \\sup_x \\|f(x)\\|$ | 最坏情况 |",
+      "blockId": "09-functional-analysis#block-6"
+    },
+    {
+      "text": "Euler-Lagrange 方程是变分法的核心结果。",
+      "exactQuote": "**Euler-Lagrange 方程**是变分法的核心结果。",
+      "blockId": "09-functional-analysis#block-8"
+    },
+    {
+      "text": "若 J[y] = ∫_a^b L(x, y, y')dx 在 y(x) 处取极值，则满足 Euler-Lagrange 方程。",
+      "exactQuote": "若 $J[y] = \\int_a^b L(x, y, y')dx$ 在 $y(x)$ 处取极值，则：",
+      "blockId": "09-functional-analysis#block-8"
+    },
+    {
+      "text": "Euler-Lagrange 方程为 ∂L/∂y - d/dx(∂L/∂y') = 0。",
+      "exactQuote": "$$\n\\frac{\\partial L}{\\partial y} - \\frac{d}{dx}\\left(\\frac{\\partial L}{\\partial y'}\\right) = 0\n$$",
+      "blockId": "09-functional-analysis#block-9"
+    },
+    {
+      "text": "将 L 设为 Lagrangian = 动能 - 势能，Euler-Lagrange 方程就给出了系统的运动方程。",
+      "exactQuote": "将 $L$ 设为 Lagrangian = 动能 - 势能，Euler-Lagrange 方程就给出了系统的运动方程。",
+      "blockId": "09-functional-analysis#block-10"
+    },
+    {
+      "text": "Euler-Lagrange 方程是从最小作用量原理推导牛顿力学、电磁学、广义相对论的基础。",
+      "exactQuote": "这是从\"最小作用量原理\"推导牛顿力学、电磁学、广义相对论的基础。",
+      "blockId": "09-functional-analysis#block-10"
+    },
+    {
+      "text": "Banach 空间是完备赋范空间。",
+      "exactQuote": "| Banach空间 | $\\mathbb{R}^n$ | 完备赋范空间 |",
+      "blockId": "09-functional-analysis#block-15"
+    },
+    {
+      "text": "Hilbert 空间是完备内积空间。",
+      "exactQuote": "| Hilbert空间 | $\\mathbb{R}^n$ 带内积 | 完备内积空间 |",
+      "blockId": "09-functional-analysis#block-15"
+    },
+    {
+      "text": "线性算子是微分、积分、乘法算子。",
+      "exactQuote": "| 线性算子 | 矩阵 $A \\in M_{n\\times n}$ | 微分/积分/乘法算子 |",
+      "blockId": "09-functional-analysis#block-15"
+    },
+    {
+      "text": "有界算子满足 ‖T‖ = sup_{‖x‖=1} ‖Tx‖ < ∞。",
+      "exactQuote": "| 有界算子 | — | $\\|T\\| = \\sup_{\\|x\\|=1}\\|Tx\\| < \\infty$ |",
+      "blockId": "09-functional-analysis#block-15"
+    },
+    {
+      "text": "紧算子将有界集的像映为相对紧集。",
+      "exactQuote": "| 紧算子 | — | 有界集的像是相对紧的 |",
+      "blockId": "09-functional-analysis#block-15"
+    },
+    {
+      "text": "Hahn-Banach 定理：子空间上的线性泛函可延拓到全空间。",
+      "exactQuote": "| **Hahn-Banach** | 子空间上的线性泛函可延拓到全空间 | 分离凸集，对偶理论 |",
+      "blockId": "09-functional-analysis#block-17"
+    },
+    {
+      "text": "开映射定理：Banach 空间之间的连续线性满射把开集映到开集。",
+      "exactQuote": "| **开映射** | Banach空间之间的连续线性满射把开集映到开集 | 逆算子连续性 |",
+      "blockId": "09-functional-analysis#block-17"
+    },
+    {
+      "text": "闭图像定理：若算子的图像是闭集，则算子连续。",
+      "exactQuote": "| **闭图像** | 若算子的图像是闭集，则算子连续 | 验证无界算子的有界性 |",
+      "blockId": "09-functional-analysis#block-17"
+    },
+    {
+      "text": "一致有界定理（Banach-Steinhaus）：逐点有界 ⇒ 一致有界。",
+      "exactQuote": "| **一致有界 (Banach-Steinhaus)** | 逐点有界 ⇒ 一致有界 | 处处收敛→算子族有界 |",
+      "blockId": "09-functional-analysis#block-17"
+    },
+    {
+      "text": "在完备空间中，逐点的性质往往能推出全局的性质。",
+      "exactQuote": "在完备空间中，**逐点的性质往往能推出全局的性质**。",
+      "blockId": "09-functional-analysis#block-18"
+    },
+    {
+      "text": "有界算子必然连续。",
+      "exactQuote": "| 连续性 | ✅ 必然连续 | ❌ 不连续 |",
+      "blockId": "09-functional-analysis#block-22"
+    },
+    {
+      "text": "无界算子不连续。",
+      "exactQuote": "| 连续性 | ✅ 必然连续 | ❌ 不连续 |",
+      "blockId": "09-functional-analysis#block-22"
+    },
+    {
+      "text": "有界算子的定义域是全空间。",
+      "exactQuote": "| 定义域 | 全空间 | 只能是稠密子空间 |",
+      "blockId": "09-functional-analysis#block-22"
+    },
+    {
+      "text": "无界算子的定义域只能是稠密子空间。",
+      "exactQuote": "| 定义域 | 全空间 | 只能是稠密子空间 |",
+      "blockId": "09-functional-analysis#block-22"
+    },
+    {
+      "text": "有界算子自动闭。",
+      "exactQuote": "| 闭性 | 自动闭 | 需要验证闭性 |",
+      "blockId": "09-functional-analysis#block-22"
+    },
+    {
+      "text": "无界算子需要验证闭性。",
+      "exactQuote": "| 闭性 | 自动闭 | 需要验证闭性 |",
+      "blockId": "09-functional-analysis#block-22"
+    },
+    {
+      "text": "有界算子的谱是有界集。",
+      "exactQuote": "| 谱 | 有界集 | 可为整个 $\\mathbb{C}$ |",
+      "blockId": "09-functional-analysis#block-22"
+    },
+    {
+      "text": "无界算子的谱可为整个 ℂ。",
+      "exactQuote": "| 谱 | 有界集 | 可为整个 $\\mathbb{C}$ |",
+      "blockId": "09-functional-analysis#block-22"
+    }
+  ]
+}

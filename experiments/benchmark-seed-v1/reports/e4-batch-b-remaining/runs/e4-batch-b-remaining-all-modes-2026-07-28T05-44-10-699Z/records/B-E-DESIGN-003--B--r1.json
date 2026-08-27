@@ -1,0 +1,78 @@
+{
+  "runId": "e4-batch-b-remaining-all-modes-2026-07-28T05-44-10-699Z",
+  "sampleId": "sample-c28d80e3-61a1-4de1-9307-2f105cb27e9d",
+  "questionId": "B-E-DESIGN-003",
+  "group": "B",
+  "pilotGroup": "B",
+  "graphExpansion": false,
+  "repetition": 1,
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "temperature": 0,
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 898,
+    "completionTokens": 239,
+    "totalTokens": 1137,
+    "promptCacheHitTokens": 0,
+    "promptCacheMissTokens": 898,
+    "reasoningTokens": 0
+  },
+  "latencyMs": 2782,
+  "promptHash": "sha256:fb19c9cfba5d16386793a034a49a75b95e8ff37ad162171afc03841136e63546",
+  "contextHash": "711de88e59e8ec5c2a154638ef4a0d7e4c42f09d4e411713c44b9e9ad14a8fc7",
+  "estimatedContextTokens": 669,
+  "estimatedInputTokens": 834,
+  "retrievedClaims": [],
+  "retrievedRelations": [],
+  "retrievedSources": [
+    "../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-wcag21-2018-001.md",
+    "../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-wcag22-2023-002.md",
+    "../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-webaim-checklist-2024-004.md",
+    "../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-wcag-issue-2705-003.md"
+  ],
+  "droppedContext": [],
+  "retrievalTrace": {
+    "strategy": "folder-lexical",
+    "queryFeatureCount": 10,
+    "corpusChunkCount": 12,
+    "matchedChunkCount": 4,
+    "maxFolderChunks": 16,
+    "candidates": [
+      {
+        "id": "../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-wcag21-2018-001.md#L1-L6",
+        "rank": 1,
+        "score": 4.134166441369083,
+        "selected": true,
+        "dropReason": null
+      },
+      {
+        "id": "../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-wcag22-2023-002.md#L1-L16",
+        "rank": 2,
+        "score": 4.134166441369083,
+        "selected": true,
+        "dropReason": null
+      },
+      {
+        "id": "../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-webaim-checklist-2024-004.md#L1-L4",
+        "rank": 3,
+        "score": 4.134166441369083,
+        "selected": true,
+        "dropReason": null
+      },
+      {
+        "id": "../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-wcag-issue-2705-003.md#L1-L8",
+        "rank": 4,
+        "score": 1.9555114450274365,
+        "selected": true,
+        "dropReason": null
+      }
+    ]
+  },
+  "request": {
+    "systemPrompt": "你是受证据约束的问答 Agent。只使用本次请求提供的检索上下文回答。\n要求：保留影响结论的条件、时间、例外、来源角色与不确定性；关键结论引用上下文中的 SOURCE、EVIDENCE 或 CLAIM 标识；上下文不足时明确说明，不得用外部常识补齐。\n只输出严格 JSON：{\"answer\":\"...\",\"citations\":[\"...\"],\"insufficient\":false,\"uncertainties\":[\"...\"]}。",
+    "userPrompt": "# 问题\n4.1.1 Parsing 从 WCAG 2.1 到 2.2 发生了什么变化？\n\n# 检索上下文\n## SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-wcag21-2018-001.md:1-6 score=4.134\n# Web Content Accessibility Guidelines (WCAG) 2.1\n\nWCAG 2.1 builds on and is backwards compatible with WCAG 2.0, meaning web pages that conform to WCAG 2.1 also conform to WCAG 2.0.\n\nSuccess Criterion 4.1.1 Parsing (Level A): In content implemented using markup languages, elements have complete start and end tags, elements are nested according to their specifications, elements do not contain duplicate attributes, and any IDs are unique, except where the specifications allow these features.\n\n## SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-wcag22-2023-002.md:1-16 score=4.134\n# Web Content Accessibility Guidelines (WCAG) 2.2\n\nWCAG 2.2 builds on and is backwards compatible with WCAG 2.1, meaning web pages that conform to WCAG 2.2 are at least as accessible as pages that conform to WCAG 2.1. Requirements have been added that build on 2.1 and 2.0. WCAG 2.2 has removed one success criterion, 4.1.1 Parsing. Authors that are required by policy to conform with WCAG 2.0 or 2.1 will be able to update content to WCAG 2.2, but may need to continue to test and report 4.1.1.\n\nThe following success criteria are new in WCAG 2.2:\n\n- 2.4.11 Focus Not Obscured (Minimum) (AA)\n- 2.4.12 Focus Not Obscured (Enhanced) (AAA)\n- 2.4.13 Focus Appearance (AAA)\n- 2.5.7 Dragging Movements (AA)\n- 2.5.8 Target Size (Minimum) (AA)\n- 3.2.6 Consistent Help (A)\n- 3.3.7 Redundant Entry (A)\n- 3.3.8 Accessible Authentication (Minimum) (AA)\n- 3.3.9 Accessible Authentication (Enhanced) (AAA)\n\n## SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-webaim-checklist-2024-004.md:1-4 score=4.134\n# WebAIM WCAG 2 Checklist\n\nSuccess Criterion 4.1.1 Parsing: This success criterion is no longer useful and as of 2023 has been removed from WCAG.\n\n## SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-wcag-issue-2705-003.md:1-8 score=1.956\n# WCAG 2.2 Draft Feedback: Dragging Movements\n\nSuccess Criterion 2.5.7 Dragging Movements (Level AA): All functionality that uses a dragging movement for operation can be achieved by a single pointer without dragging, unless dragging is essential or the functionality is determined by the user agent and not modified by the author.\n\nWe kindly request that the group remove this SC until research is completed for all affected input modalities.\n\nWe believe more considerations are needed for various platforms, and that there shouldn’t be an imposition of all mobile requirements on all desktop content."
+  },
+  "answer": "{\n  \"answer\": \"WCAG 2.2 移除了成功标准 4.1.1 Parsing，该标准在 WCAG 2.1 中要求元素标签完整、嵌套正确、无重复属性且 ID 唯一。WCAG 2.2 与 2.1 向后兼容，但作者若需符合 2.0 或 2.1 政策，可能仍需测试和报告 4.1.1。\",\n  \"citations\": [\n    \"SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-wcag21-2018-001.md:1-6\",\n    \"SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-wcag22-2023-002.md:1-16\",\n    \"SOURCE ../../../workbuddy-batch-b/generated/compilation-corpus/design-accessibility/design-webaim-checklist-2024-004.md:1-4\"\n  ],\n  \"insufficient\": false,\n  \"uncertainties\": []\n}",
+  "answerFormatValid": true
+}

@@ -1,0 +1,75 @@
+{
+  "questionId": "B-C-HIST-003",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 2526,
+    "completionTokens": 1130,
+    "totalTokens": 3656,
+    "promptCacheHitTokens": 256,
+    "promptCacheMissTokens": 2270,
+    "reasoningTokens": 0
+  },
+  "request": {
+    "systemPrompt": "你是盲测评分员，不知道答案属于哪个实验组。只按题目、评分锚点、Gold 证据和引用预校验评价，不用外部常识修正答案。\n每个维度独立使用同一 0-4 锚点：4=完整且准确；3=大部分满足，仅轻微遗漏；2=部分满足，存在重要遗漏；1=仅有极少相关内容；0=缺失、反转或与证据冲突。\nrequiredPointCoverage 只看 requiredPoints；conditionFidelity 看条件、时间、来源角色和不确定性；evidenceGrounding 同时看关键结论是否与 Gold 证据一致以及 citationValidation；answerabilityDiscipline 看是否越界、编造或错误拒答。\ncitationValidation.valid 表示引用标识确实存在于该匿名样本收到的上下文。内部 CLAIM/SPAN/SOURCE 标识不需要出现在 Gold 文本中，不得仅因此扣分；但存在性有效不代表语义必然支持，仍需对照答案内容与 Gold。\n若反转来源归属、抹掉关键条件/时间、把提案当最终规范或编造关键事实，hardFailure=true。\n数值必须与 rationale 一致：若 rationale 说“完整覆盖且准确”，对应维度不能低于 3。\n只输出严格 JSON：{\"scores\":[{\"sampleId\":\"...\",\"requiredPointCoverage\":0,\"conditionFidelity\":0,\"evidenceGrounding\":0,\"answerabilityDiscipline\":0,\"hardFailure\":false,\"rationale\":\"...\"}]}。",
+    "userPrompt": "{\"question\":\"使用归档 vesuvius 仓库时必须保留哪些状态条件？\",\"answerability\":\"answerable\",\"requiredPoints\":[\"已归档只读\",\"后继维护位置\",\"beta 且数据覆盖不完整\"],\"forbiddenClaims\":[\"不得把归档仓库说成当前稳定 API\"],\"requiredEvidence\":[{\"sourceId\":\"history-vesuvius-github-2024-002\",\"exactQuote\":\"This repository was archived by the owner on Nov 21, 2024. It is now read-only.\",\"role\":\"supports\"},{\"sourceId\":\"history-vesuvius-github-2024-002\",\"exactQuote\":\"NOTE: Now maintained at https://github.com/ScrollPrize/villa/tree/main/vesuvius (this repository archived)\",\"role\":\"supports\"},{\"sourceId\":\"history-vesuvius-github-2024-002\",\"exactQuote\":\"`vesuvius` is in beta and the interface may change. Not all Vesuvius Challenge data is currently available - data will continue to be added to the library.\",\"role\":\"supports\"}],\"sourcePriorityRule\":\"P/C 决定规范、论文与实现事实；S 只能作为有归属的解释，不能推翻一手版本文本。\",\"anonymousAnswers\":[{\"sampleId\":\"sample-5623a2f9-e288-4394-b3c4-2c67249b50b8\",\"answer\":\"{\\n  \\\"answer\\\": \\\"使用归档 vesuvius 仓库时必须保留的状态条件包括：仓库已被所有者归档（2024年11月21日），现在是只读的；数据在后台流式传输，仅提供请求的区域；并非所有数据当前可用，数据将继续添加；该库现在维护在 https://github.com/ScrollPrize/villa/tree/main/vesuvius。\\\",\\n  \\\"citations\\\": [\\n    \\\"claim:5505a1ba1fcb1b68-a2289f49fcb0ff64\\\",\\n    \\\"claim:5505a1ba1fcb1b68-d303dae0fc053d75\\\",\\n    \\\"claim:5505a1ba1fcb1b68-92eeebabc9812a65\\\",\\n    \\\"claim:5505a1ba1fcb1b68-35e4f1b989767484\\\",\\n    \\\"claim:5505a1ba1fcb1b68-825b50a16ede0106\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\",\"citationValidation\":{\"formatValid\":true,\"total\":5,\"valid\":5,\"invalid\":[]}},{\"sampleId\":\"sample-5b8c56bb-4b21-45f0-8391-bd45840542b1\",\"answer\":\"{\\n  \\\"answer\\\": \\\"使用归档 vesuvius 仓库时必须保留的状态条件包括：仓库已归档（2024年11月21日）、只读、数据在后台流式传输仅提供请求的区域、并非所有数据当前可用（数据将继续添加）、仓库现在维护在 https://github.com/ScrollPrize/villa/tree/main/vesuvius。\\\",\\n  \\\"citations\\\": [\\n    \\\"span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-1#chars-48-106\\\",\\n    \\\"span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-1#chars-107-127\\\",\\n    \\\"span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-4#chars-446-517\\\",\\n    \\\"span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-5#chars-571-674\\\",\\n    \\\"span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-2#chars-135-235\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\",\"citationValidation\":{\"formatValid\":true,\"total\":5,\"valid\":5,\"invalid\":[]}},{\"sampleId\":\"sample-2d3b143c-e6d9-4de8-bc4f-8c04295823da\",\"answer\":\"{\\n  \\\"answer\\\": \\\"使用归档 vesuvius 仓库时必须保留的状态条件包括：仓库已归档（2024年11月21日）、只读、数据在后台流式传输仅提供请求的区域、并非所有数据当前可用（数据将继续添加）、仓库现在维护在 https://github.com/ScrollPrize/villa/tree/main/vesuvius。\\\",\\n  \\\"citations\\\": [\\n    \\\"span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-1#chars-48-106\\\",\\n    \\\"span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-1#chars-107-127\\\",\\n    \\\"span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-4#chars-446-517\\\",\\n    \\\"span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-5#chars-571-674\\\",\\n    \\\"span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-2#chars-135-235\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\",\"citationValidation\":{\"formatValid\":true,\"total\":5,\"valid\":5,\"invalid\":[]}},{\"sampleId\":\"sample-62758f5f-a625-4ebe-9e32-52c7e18168a1\",\"answer\":\"{\\n  \\\"answer\\\": \\\"使用归档 vesuvius 仓库时必须保留的状态条件包括：仓库已由所有者于 2024 年 11 月 21 日归档，现在是只读的；数据在后台流式传输，仅提供请求的区域；并非所有维苏威挑战赛的数据目前都可用，数据将继续添加到库中。\\\",\\n  \\\"citations\\\": [\\n    \\\"claim:5505a1ba1fcb1b68-a2289f49fcb0ff64\\\",\\n    \\\"claim:5505a1ba1fcb1b68-d303dae0fc053d75\\\",\\n    \\\"claim:5505a1ba1fcb1b68-92eeebabc9812a65\\\",\\n    \\\"claim:5505a1ba1fcb1b68-35e4f1b989767484\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\",\"citationValidation\":{\"formatValid\":true,\"total\":4,\"valid\":4,\"invalid\":[]}},{\"sampleId\":\"sample-038ddc09-8f7d-448c-8d35-99519a168d52\",\"answer\":\"{\\n  \\\"answer\\\": \\\"使用归档 vesuvius 仓库时必须保留的状态条件包括：仓库已归档（2024年11月21日）、只读、数据在后台流式传输仅提供请求区域、并非所有数据当前可用（数据将继续添加）、仓库现在维护在 https://github.com/ScrollPrize/villa/tree/main/vesuvius。\\\",\\n  \\\"citations\\\": [\\n    \\\"span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-1#chars-48-106\\\",\\n    \\\"span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-1#chars-107-127\\\",\\n    \\\"span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-4#chars-446-517\\\",\\n    \\\"span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-5#chars-571-674\\\",\\n    \\\"span:history-vesuvius-github-2024-002-5505a1ba1fcb1b68-2#chars-135-235\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\",\"citationValidation\":{\"formatValid\":true,\"total\":5,\"valid\":5,\"invalid\":[]}},{\"sampleId\":\"sample-ba9d4d6b-f0d6-4961-b64d-87a3041588e5\",\"answer\":\"{\\n  \\\"answer\\\": \\\"使用归档 vesuvius 仓库时必须保留的状态条件包括：仓库已由所有者于 2024 年 11 月 21 日归档，现在是只读的；数据在后台流式传输，仅提供请求的区域；并非所有维苏威挑战赛的数据目前都可用，数据将继续添加到库中。\\\",\\n  \\\"citations\\\": [\\n    \\\"claim:5505a1ba1fcb1b68-a2289f49fcb0ff64\\\",\\n    \\\"claim:5505a1ba1fcb1b68-d303dae0fc053d75\\\",\\n    \\\"claim:5505a1ba1fcb1b68-92eeebabc9812a65\\\",\\n    \\\"claim:5505a1ba1fcb1b68-35e4f1b989767484\\\"\\n  ],\\n  \\\"insufficient\\\": false,\\n  \\\"uncertainties\\\": []\\n}\",\"citationValidation\":{\"formatValid\":true,\"total\":4,\"valid\":4,\"invalid\":[]}}]}"
+  },
+  "rawResponse": "{\n  \"scores\": [\n    {\n      \"sampleId\": \"sample-5623a2f9-e288-4394-b3c4-2c67249b50b8\",\n      \"requiredPointCoverage\": 3,\n      \"conditionFidelity\": 3,\n      \"evidenceGrounding\": 3,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"requiredPointCoverage: 覆盖了三个requiredPoints（已归档只读、后继维护位置、beta且数据覆盖不完整），但将beta状态表述为'数据在后台流式传输，仅提供请求的区域'，虽源自证据但非直接要求点，轻微遗漏。conditionFidelity: 正确提及归档日期、只读、后继维护位置、数据不完整，但未明确提及beta状态，且'数据在后台流式传输'非直接条件，轻微遗漏。evidenceGrounding: 关键结论与Gold证据一致，引用全部有效，但部分表述（如流式传输）非直接引用。answerabilityDiscipline: 未越界、编造或错误拒答。\"\n    },\n    {\n      \"sampleId\": \"sample-5b8c56bb-4b21-45f0-8391-bd45840542b1\",\n      \"requiredPointCoverage\": 4,\n      \"conditionFidelity\": 4,\n      \"evidenceGrounding\": 4,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"requiredPointCoverage: 完整覆盖三个requiredPoints（已归档只读、后继维护位置、beta且数据覆盖不完整）。conditionFidelity: 准确提及归档日期、只读、后继维护位置、数据不完整，且包含beta状态（通过'数据在后台流式传输'隐含，但证据中beta状态明确，此处未直接提及beta，但整体条件完整）。evidenceGrounding: 关键结论与Gold证据一致，引用全部有效。answerabilityDiscipline: 未越界、编造或错误拒答。\"\n    },\n    {\n      \"sampleId\": \"sample-2d3b143c-e6d9-4de8-bc4f-8c04295823da\",\n      \"requiredPointCoverage\": 4,\n      \"conditionFidelity\": 4,\n      \"evidenceGrounding\": 4,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"requiredPointCoverage: 完整覆盖三个requiredPoints。conditionFidelity: 准确提及归档日期、只读、后继维护位置、数据不完整，包含beta状态。evidenceGrounding: 关键结论与Gold证据一致，引用全部有效。answerabilityDiscipline: 未越界、编造或错误拒答。\"\n    },\n    {\n      \"sampleId\": \"sample-62758f5f-a625-4ebe-9e32-52c7e18168a1\",\n      \"requiredPointCoverage\": 3,\n      \"conditionFidelity\": 3,\n      \"evidenceGrounding\": 3,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"requiredPointCoverage: 覆盖了已归档只读和数据覆盖不完整，但缺少后继维护位置，重要遗漏。conditionFidelity: 提及归档日期、只读、数据不完整，但缺少后继维护位置和beta状态。evidenceGrounding: 关键结论与Gold证据一致，引用全部有效，但缺少后继维护位置。answerabilityDiscipline: 未越界、编造或错误拒答。\"\n    },\n    {\n      \"sampleId\": \"sample-038ddc09-8f7d-448c-8d35-99519a168d52\",\n      \"requiredPointCoverage\": 4,\n      \"conditionFidelity\": 4,\n      \"evidenceGrounding\": 4,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"requiredPointCoverage: 完整覆盖三个requiredPoints。conditionFidelity: 准确提及归档日期、只读、后继维护位置、数据不完整，包含beta状态。evidenceGrounding: 关键结论与Gold证据一致，引用全部有效。answerabilityDiscipline: 未越界、编造或错误拒答。\"\n    },\n    {\n      \"sampleId\": \"sample-ba9d4d6b-f0d6-4961-b64d-87a3041588e5\",\n      \"requiredPointCoverage\": 3,\n      \"conditionFidelity\": 3,\n      \"evidenceGrounding\": 3,\n      \"answerabilityDiscipline\": 4,\n      \"hardFailure\": false,\n      \"rationale\": \"requiredPointCoverage: 覆盖了已归档只读和数据覆盖不完整，但缺少后继维护位置，重要遗漏。conditionFidelity: 提及归档日期、只读、数据不完整，但缺少后继维护位置和beta状态。evidenceGrounding: 关键结论与Gold证据一致，引用全部有效，但缺少后继维护位置。answerabilityDiscipline: 未越界、编造或错误拒答。\"\n    }\n  ]\n}",
+  "parsed": [
+    {
+      "sampleId": "sample-5623a2f9-e288-4394-b3c4-2c67249b50b8",
+      "requiredPointCoverage": 3,
+      "conditionFidelity": 3,
+      "evidenceGrounding": 3,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "requiredPointCoverage: 覆盖了三个requiredPoints（已归档只读、后继维护位置、beta且数据覆盖不完整），但将beta状态表述为'数据在后台流式传输，仅提供请求的区域'，虽源自证据但非直接要求点，轻微遗漏。conditionFidelity: 正确提及归档日期、只读、后继维护位置、数据不完整，但未明确提及beta状态，且'数据在后台流式传输'非直接条件，轻微遗漏。evidenceGrounding: 关键结论与Gold证据一致，引用全部有效，但部分表述（如流式传输）非直接引用。answerabilityDiscipline: 未越界、编造或错误拒答。"
+    },
+    {
+      "sampleId": "sample-5b8c56bb-4b21-45f0-8391-bd45840542b1",
+      "requiredPointCoverage": 4,
+      "conditionFidelity": 4,
+      "evidenceGrounding": 4,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "requiredPointCoverage: 完整覆盖三个requiredPoints（已归档只读、后继维护位置、beta且数据覆盖不完整）。conditionFidelity: 准确提及归档日期、只读、后继维护位置、数据不完整，且包含beta状态（通过'数据在后台流式传输'隐含，但证据中beta状态明确，此处未直接提及beta，但整体条件完整）。evidenceGrounding: 关键结论与Gold证据一致，引用全部有效。answerabilityDiscipline: 未越界、编造或错误拒答。"
+    },
+    {
+      "sampleId": "sample-2d3b143c-e6d9-4de8-bc4f-8c04295823da",
+      "requiredPointCoverage": 4,
+      "conditionFidelity": 4,
+      "evidenceGrounding": 4,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "requiredPointCoverage: 完整覆盖三个requiredPoints。conditionFidelity: 准确提及归档日期、只读、后继维护位置、数据不完整，包含beta状态。evidenceGrounding: 关键结论与Gold证据一致，引用全部有效。answerabilityDiscipline: 未越界、编造或错误拒答。"
+    },
+    {
+      "sampleId": "sample-62758f5f-a625-4ebe-9e32-52c7e18168a1",
+      "requiredPointCoverage": 3,
+      "conditionFidelity": 3,
+      "evidenceGrounding": 3,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "requiredPointCoverage: 覆盖了已归档只读和数据覆盖不完整，但缺少后继维护位置，重要遗漏。conditionFidelity: 提及归档日期、只读、数据不完整，但缺少后继维护位置和beta状态。evidenceGrounding: 关键结论与Gold证据一致，引用全部有效，但缺少后继维护位置。answerabilityDiscipline: 未越界、编造或错误拒答。"
+    },
+    {
+      "sampleId": "sample-038ddc09-8f7d-448c-8d35-99519a168d52",
+      "requiredPointCoverage": 4,
+      "conditionFidelity": 4,
+      "evidenceGrounding": 4,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "requiredPointCoverage: 完整覆盖三个requiredPoints。conditionFidelity: 准确提及归档日期、只读、后继维护位置、数据不完整，包含beta状态。evidenceGrounding: 关键结论与Gold证据一致，引用全部有效。answerabilityDiscipline: 未越界、编造或错误拒答。"
+    },
+    {
+      "sampleId": "sample-ba9d4d6b-f0d6-4961-b64d-87a3041588e5",
+      "requiredPointCoverage": 3,
+      "conditionFidelity": 3,
+      "evidenceGrounding": 3,
+      "answerabilityDiscipline": 4,
+      "hardFailure": false,
+      "rationale": "requiredPointCoverage: 覆盖了已归档只读和数据覆盖不完整，但缺少后继维护位置，重要遗漏。conditionFidelity: 提及归档日期、只读、数据不完整，但缺少后继维护位置和beta状态。evidenceGrounding: 关键结论与Gold证据一致，引用全部有效，但缺少后继维护位置。answerabilityDiscipline: 未越界、编造或错误拒答。"
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "claims": [
+    {
+      "statement": "ScrollPrize/vesuvius 是一个归档的 Python 库。",
+      "evidenceQuotes": ["# ScrollPrize/vesuvius archived Python library"],
+      "blockIds": ["history-vesuvius-github-2024-002#block-0"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "该仓库于 2024 年 11 月 21 日被所有者归档。",
+      "evidenceQuotes": ["This repository was archived by the owner on Nov 21, 2024."],
+      "blockIds": ["history-vesuvius-github-2024-002#block-1"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "该仓库现在是只读的。",
+      "evidenceQuotes": ["It is now read-only."],
+      "blockIds": ["history-vesuvius-github-2024-002#block-1"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "该库现在维护在 https://github.com/ScrollPrize/villa/tree/main/vesuvius。",
+      "evidenceQuotes": ["Now maintained at https://github.com/ScrollPrize/villa/tree/main/vesuvius (this repository archived)"],
+      "blockIds": ["history-vesuvius-github-2024-002#block-2"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "该库来自维苏威挑战赛，是一个用于访问古代卷轴 CT 扫描的 Python 库。",
+      "evidenceQuotes": ["From Vesuvius Challenge, a Python library for accessing CT scans of ancient scrolls."],
+      "blockIds": ["history-vesuvius-github-2024-002#block-3"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "vesuvius 允许直接访问卷轴数据，无需管理下载脚本或在本地存储数 TB 的 CT 扫描数据。",
+      "evidenceQuotes": ["`vesuvius` allows direct access to scroll data without managing download scripts or storing terabytes of CT scans locally."],
+      "blockIds": ["history-vesuvius-github-2024-002#block-4"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "数据在后台流式传输，仅提供请求的区域。",
+      "evidenceQuotes": ["Data is streamed in the background, only serving the requested regions."],
+      "blockIds": ["history-vesuvius-github-2024-002#block-4"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "vesuvius 处于测试阶段，界面可能会发生变化。",
+      "evidenceQuotes": ["`vesuvius` is in beta and the interface may change."],
+      "blockIds": ["history-vesuvius-github-2024-002#block-5"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    },
+    {
+      "statement": "并非所有维苏威挑战赛的数据目前都可用——数据将继续添加到库中。",
+      "evidenceQuotes": ["Not all Vesuvius Challenge data is currently available - data will continue to be added to the library."],
+      "blockIds": ["history-vesuvius-github-2024-002#block-5"],
+      "conditions": [],
+      "derivation": "EXTRACTED",
+      "confidence": 1.0
+    }
+  ]
+}

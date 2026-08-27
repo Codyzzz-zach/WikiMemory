@@ -1,0 +1,183 @@
+## TASK MAP
+主题: Many Labs 项目 (Klein et al., 2014) 的复制成功率与 OSC (2015) 的复制成功率存在显著差异。这两种研究方法在设计上有哪些关键不同？这些差异如何影响了对心理学可复制性的整体评估？
+地图主题: 研究, osc, 影响, 项目, 2014
+关键概念: 第五次评估报告, IPCC第六次评估报告, 不利影响, Many Labs Replication Project, Open Science Collaboration (OSC)
+已知争议: 0 个
+最近变化: 5 条
+找到 16 条相关 Claim
+找到 9 条关系
+找到 16 条原文证据
+
+## CLAIM claim:adb285a63645fee4-4607fc993dc2c9fd
+作者包括 Richard A. Klein, Kate A. Ratliff, Michelangelo Vianello, Reginald B. Adams Jr. 等 50 多位作者。
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:adb285a63645fee4-b724349a870cf6d1
+Many Labs Replication Project replicated 13 effects across 36 samples and over 6,000 participants.
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:b26d226f500be322-58510489057c6ffa
+核心撰写团队包括Hoesung Lee（主席）、Katherine Calvin、Dipak Dasgupta等人。
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:08f4f1f4eb388c06-a6a1002ab06055f5
+The OSC failed to consider that their replication studies were often quite different from the originals in many ways, and those differences are a source of statistical error.
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:adb285a63645fee4-603d9950c123f1ab
+该研究发表在 Social Psychology (2014), Vol. 45, pp. 142-152。
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:b26d226f500be322-2a975af54bf3b3bd
+人类引起的气候变化已经影响到全球每个地区的许多天气和气候极端事件。
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:adb285a63645fee4-5ed279e964d9a212
+数据论文发表在 Journal of Open Psychology Data (2014), Vol. 2, Issue 1, e4。
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:adb285a63645fee4-f5acd79d91c7be49
+The replication demonstrated that many classic psychological findings are robust when tested with large, diverse samples and standardized protocols.
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:e5061e9956aa43aa-6d89b2dd1efe941d
+52%的受访者认为存在‘显著的可重复性危机’。
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:0f7730e649dbc238-4acc6ab8edfdce8d
+The Reproducibility Project: Psychology finished primary data collection in December 2014.
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:adb285a63645fee4-d037e33e12360e4e
+10 of the 13 effects were successfully replicated across the 36 samples.
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:adb285a63645fee4-d40d0d2aa7bb4110
+The sample comprised 6,344 participants from 36 sources including university subject pools, Amazon Mechanical Turk, Project Implicit, and other sources.
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:b26d226f500be322-984b2dd68da1b9a2
+这导致了对自然和人类广泛的不利影响以及相关的损失和损害。
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:b26d226f500be322-60bcb09a07cdbc6c
+大气、海洋、冰冻圈和生物圈发生了广泛而迅速的变化。
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:e5061e9956aa43aa-8ebeb95906825d8c
+超过一半的研究者曾未能重复自己的实验。
+Conditions: none
+Validity: SUPPORTED
+
+## CLAIM claim:e5061e9956aa43aa-fb5a0920af18457d
+超过70%的研究者曾尝试但未能重复另一位科学家的实验。
+Conditions: none
+Validity: SUPPORTED
+
+## RELATION rel:adb285a63645fee4-38b99b3420b0d8aa
+claim:adb285a63645fee4-b724349a870cf6d1 --[SUPPORTS]--> claim:adb285a63645fee4-d037e33e12360e4e
+Conditions: none
+
+## RELATION rel:adb285a63645fee4-fdfe7a0c51ea196d
+claim:adb285a63645fee4-d40d0d2aa7bb4110 --[SUPPORTS]--> claim:adb285a63645fee4-b724349a870cf6d1
+Conditions: none
+
+## RELATION rel:b26d226f500be322-7e74e05fc4760d7d
+claim:b26d226f500be322-2a975af54bf3b3bd --[DERIVED_FROM]--> claim:b26d226f500be322-984b2dd68da1b9a2
+Conditions: claim 12 是 claim 2 所述影响的结果
+
+## RELATION rel:b26d226f500be322-9c3a48a61b2f2937
+claim:b26d226f500be322-2a975af54bf3b3bd --[SUPPORTS]--> claim:b26d226f500be322-60bcb09a07cdbc6c
+Conditions: claim 2 指出气候变化影响极端事件，claim 8 描述广泛变化，两者相互支持
+
+## RELATION rel:adb285a63645fee4-0d587d6f4da43b52
+claim:adb285a63645fee4-f5acd79d91c7be49 --[SUPPORTS]--> claim:adb285a63645fee4-d037e33e12360e4e
+Conditions: none
+
+## RELATION rel:adb285a63645fee4-ade5fa10d3818edc
+claim:adb285a63645fee4-d037e33e12360e4e --[SUPPORTS]--> claim:adb285a63645fee4-f5acd79d91c7be49
+Conditions: none
+
+## RELATION rel:e5061e9956aa43aa-736bb19aa2c5ebcd
+claim:e5061e9956aa43aa-6d89b2dd1efe941d --[RELATED_TO]--> claim:e5061e9956aa43aa-8ebeb95906825d8c
+Conditions: none
+
+## RELATION rel:e5061e9956aa43aa-e6a1345b884af46f
+claim:e5061e9956aa43aa-6d89b2dd1efe941d --[RELATED_TO]--> claim:e5061e9956aa43aa-fb5a0920af18457d
+Conditions: none
+
+## RELATION rel:e5061e9956aa43aa-2e6805c38d51647d
+claim:e5061e9956aa43aa-8ebeb95906825d8c --[RELATED_TO]--> claim:e5061e9956aa43aa-fb5a0920af18457d
+Conditions: none
+
+## EVIDENCE span:c-psych-002-adb285a63645fee4-3#chars-235-349
+**Authors:** Richard A. Klein, Kate A. Ratliff, Michelangelo Vianello, Reginald B. Adams Jr., et al. (50+ authors)
+
+## EVIDENCE span:c-psych-002-adb285a63645fee4-5#chars-616-753
+This dataset is from the Many Labs Replication Project in which 13 effects were replicated across 36 samples and over 6,000 participants.
+
+## EVIDENCE span:c-climate-001-b26d226f500be322-3#chars-334-417
+**Core Writing Team:** Hoesung Lee (Chair), Katherine Calvin, Dipak Dasgupta, et al
+
+## EVIDENCE span:c-psych-003-08f4f1f4eb388c06-9#chars-1765-2036
+When they did their calculations, they failed to consider the fact that their replication studies were not just new samples from the same population. They were often quite different from the originals in many ways, and those differences are a source of statistical error.
+
+## EVIDENCE span:c-psych-002-adb285a63645fee4-3#chars-350-489
+**Published in:** Social Psychology (2014), Vol. 45, pp. 142-152; data paper in Journal of Open Psychology Data (2014), Vol. 2, Issue 1, e4
+
+## EVIDENCE span:c-climate-001-b26d226f500be322-7#chars-1189-1305
+Human-caused climate change is already affecting many weather and climate extremes in every region across the globe.
+
+## EVIDENCE span:c-psych-002-adb285a63645fee4-3#chars-416-489
+data paper in Journal of Open Psychology Data (2014), Vol. 2, Issue 1, e4
+
+## EVIDENCE span:c-psych-002-adb285a63645fee4-11#chars-2059-2192
+demonstrating that many classic psychological findings are robust when tested with large, diverse samples and standardized protocols.
+
+## EVIDENCE span:c-psych-004-e5061e9956aa43aa-6#chars-585-669
+52% of those surveyed agree that there is a 'significant crisis' of reproducibility.
+
+## EVIDENCE span:c-psych-001-0f7730e649dbc238-12#chars-1728-1777
+finished primary data collection in December 2014
+
+## EVIDENCE span:c-psych-002-adb285a63645fee4-11#chars-1986-2057
+10 of the 13 effects were successfully replicated across the 36 samples
+
+## EVIDENCE span:c-psych-002-adb285a63645fee4-6#chars-943-1122
+Our sample was comprised of 6,344 participants recruited from 36 different sources including university subject pools, Amazon Mechanical Turk, Project Implicit, and other sources.
+
+## EVIDENCE span:c-climate-001-b26d226f500be322-7#chars-1306-1419
+This has led to widespread adverse impacts and related losses and damages to nature and people (high confidence).
+
+## EVIDENCE span:c-climate-001-b26d226f500be322-7#chars-1094-1188
+Widespread and rapid changes in the atmosphere, ocean, cryosphere and biosphere have occurred.
+
+## EVIDENCE span:c-psych-004-e5061e9956aa43aa-5#chars-519-580
+more than half have failed to reproduce their own experiments
+
+## EVIDENCE span:c-psych-004-e5061e9956aa43aa-5#chars-418-513
+More than 70% of researchers have tried and failed to reproduce another scientist's experiments
+
+## CONFLICTS AND CONDITIONS
+📌 Relation rel:b26d226f500be322-7e74e05fc4760d7d (DERIVED_FROM) 适用条件: claim 12 是 claim 2 所述影响的结果
+📌 Relation rel:b26d226f500be322-9c3a48a61b2f2937 (SUPPORTS) 适用条件: claim 2 指出气候变化影响极端事件，claim 8 描述广泛变化，两者相互支持
+⚠️ SUPPORTS 只表示 Claim 之间存在语义支持，不证明其来源彼此独立、同等权威或都是规范性来源；来源独立性必须依据 Source provenance 单独判断。
+🔎 Source source:c-climate-001-b26d226f500be322 provenance: uri=experiments/benchmark-batch-c/stage-a-freeze/compilation-corpus/climate-energy-policy/c-climate-001.md; sourceType=md; sourceRole=P-primary; author=IPCC (Intergovernmental Panel on Climate Change); canonicalUrl=https://www.ipcc.ch/report/ar6/syr/; publishedAt=Sun Mar 19 2023 08:00:00 GMT+0800 (China Standard Time); versionRef=doi:10.59327/IPCC/AR6-9789291691647
+🔎 Source source:c-psych-001-0f7730e649dbc238 provenance: uri=experiments/benchmark-batch-c/stage-a-freeze/compilation-corpus/psychology-reproducibility/c-psych-001.md; sourceType=md; sourceRole=P-primary; author=Open Science Collaboration; canonicalUrl=https://www.science.org/doi/10.1126/science.aac4716; publishedAt=Fri Aug 28 2015 08:00:00 GMT+0800 (China Standard Time); versionRef=doi:10.1126/science.aac4716
+🔎 Source source:c-psych-002-adb285a63645fee4 provenance: uri=experiments/benchmark-batch-c/stage-a-freeze/compilation-corpus/psychology-reproducibility/c-psych-002.md; sourceType=md; sourceRole=P/C-implementation; author=Richard A. Klein, Kate A. Ratliff, Michelangelo Vianello, et al.; canonicalUrl=https://doi.org/10.1177/1948550614547449; publishedAt=Tue Jul 01 2014 08:00:00 GMT+0800 (China Standard Time); versionRef='doi:10.1177/1948550614547449; OSF: osf.io/wx7ck'
+🔎 Source source:c-psych-003-08f4f1f4eb388c06 provenance: uri=experiments/benchmark-batch-c/stage-a-freeze/compilation-corpus/psychology-reproducibility/c-psych-003.md; sourceType=md; sourceRole=S-analysis; author=Daniel T. Gilbert, Gary King, Stephen Pettigrew, Timothy D. Wilson; canonicalUrl=https://www.science.org/doi/10.1126/science.aad7243; publishedAt=Fri Mar 04 2016 08:00:00 GMT+0800 (China Standard Time); versionRef='doi:10.1126/science.aad7243; coverage: news.harvard.edu/gazette 2016-03-03'
+🔎 Source source:c-psych-004-e5061e9956aa43aa provenance: uri=experiments/benchmark-batch-c/stage-a-freeze/compilation-corpus/psychology-reproducibility/c-psych-004.md; sourceType=md; sourceRole=U/S-response; author=Monya Baker (Nature); canonicalUrl=https://www.nature.com/articles/533452a; publishedAt=Wed May 25 2016 08:00:00 GMT+0800 (China Standard Time); versionRef=doi:10.1038/533452a

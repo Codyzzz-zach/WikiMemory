@@ -1,0 +1,28 @@
+{
+  "verdict": "passed",
+  "dimensions": {
+    "support": {
+      "result": "pass",
+      "evidence": "良序性 | 任何非空子集有最小元"
+    },
+    "addition": {
+      "result": "pass",
+      "evidence": "无额外信息。Claim 与原文一致。"
+    },
+    "inference": {
+      "result": "pass",
+      "evidence": "原文为直接陈述，无推断。"
+    },
+    "limits": {
+      "result": "pass",
+      "evidence": "原文无限制条件，Claim 未增加限制。"
+    },
+    "citation": {
+      "result": "pass",
+      "evidence": "Claim 内容准确对应引用 span。"
+    }
+  },
+  "anchor": "任何非空子集有最小元",
+  "failedDimensions": [],
+  "issues": []
+}

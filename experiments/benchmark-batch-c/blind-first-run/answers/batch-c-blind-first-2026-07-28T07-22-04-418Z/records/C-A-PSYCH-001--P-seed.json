@@ -1,0 +1,45 @@
+{
+  "runId": "batch-c-blind-first-2026-07-28T07-22-04-418Z",
+  "sampleId": "sample-c108709c-6726-4de3-8791-bde8d48d016f",
+  "questionId": "C-A-PSYCH-001",
+  "group": "P-seed",
+  "modelRequested": "deepseek-v4-flash",
+  "modelReturned": "deepseek-v4-flash",
+  "temperature": 0,
+  "finishReason": "stop",
+  "usage": {
+    "promptTokens": 1020,
+    "completionTokens": 75,
+    "totalTokens": 1095,
+    "promptCacheHitTokens": 0,
+    "promptCacheMissTokens": 1020,
+    "reasoningTokens": 0
+  },
+  "latencyMs": 1385,
+  "promptHash": "d996388142627ed0564caf22500f6876864d1d8c5ede528ae58a77d5c4e3b317",
+  "contextHash": "7cb8c4ed5926f28d7b300a80004afac5b3c623fb666980b9e8387361f2cfaffd",
+  "estimatedContextTokens": 882,
+  "estimatedInputTokens": 1097,
+  "retrievedClaims": [
+    "claim:c15bf91ea851c3be-b6e639a457bef60d",
+    "claim:b26d226f500be322-984b2dd68da1b9a2",
+    "claim:b26d226f500be322-bb2a4c546264d226",
+    "claim:c15bf91ea851c3be-6eedc621985606fc"
+  ],
+  "retrievedRelations": [],
+  "retrievedSources": [
+    "source:c-climate-004-c15bf91ea851c3be",
+    "source:c-climate-001-b26d226f500be322"
+  ],
+  "citationValidation": {
+    "valid": true,
+    "citationCount": 0,
+    "invalid": []
+  },
+  "request": {
+    "systemPrompt": "你是受证据约束的问答 Agent。只使用本次请求提供的检索上下文回答。\n要求：保留影响结论的条件、时间、例外、来源角色与不确定性；关键结论引用上下文中的 SOURCE、EVIDENCE 或 CLAIM 标识；上下文不足时明确说明，不得用外部常识补齐。\n只输出严格 JSON：{\"answer\":\"...\",\"citations\":[\"...\"],\"insufficient\":false,\"uncertainties\":[\"...\"]}。",
+    "userPrompt": "# 问题\n基于当前材料，心理学作为一个整体学科，其可复制性究竟是低还是高？如果材料不足以给出确定性结论，请说明哪些关键信息缺失导致了这种不确定性。\n\n# 检索上下文\n## TASK MAP\n主题: 基于当前材料，心理学作为一个整体学科，其可复制性究竟是低还是高？如果材料不足以给出确定性结论，请说明哪些关键信息缺失导致了这种不确定性。\n地图主题: 当前, 导致, 致了, 导致了, 基于\n关键概念: 当前排放, 物理学家, 跨学科研究者\n已知争议: 0 个\n最近变化: 5 条\n找到 4 条相关 Claim\n找到 0 条关系\n找到 4 条原文证据\n\n## CLAIM claim:c15bf91ea851c3be-b6e639a457bef60d\n清洁能源技术日益增长的势头和全球结构性经济转变对化石燃料有重大影响，全球煤炭、石油和天然气需求峰值均在本十年内可见——这是基于当前政策设定的WEO情景中首次出现这种情况。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:b26d226f500be322-984b2dd68da1b9a2\n这导致了对自然和人类广泛的不利影响以及相关的损失和损害。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:b26d226f500be322-bb2a4c546264d226\n人类活动，主要通过温室气体排放，已经明确导致了全球变暖。\nConditions: none\nValidity: SUPPORTED\n\n## CLAIM claim:c15bf91ea851c3be-6eedc621985606fc\n所有这些增长仅基于世界各国政府当前的政策设定。\nConditions: none\nValidity: SUPPORTED\n\n## EVIDENCE span:c-climate-004-c15bf91ea851c3be-12#chars-1857-2183\nThe combination of growing momentum behind clean energy technologies and structural economic shifts around the world has major implications for fossil fuels, with peaks in global demand for coal, oil and natural gas all visible this decade — the first time this has happened in a WEO scenario based on today's policy settings.\n\n## EVIDENCE span:c-climate-001-b26d226f500be322-7#chars-1306-1419\nThis has led to widespread adverse impacts and related losses and damages to nature and people (high confidence).\n\n## EVIDENCE span:c-climate-001-b26d226f500be322-5#chars-524-633\nHuman activities, principally through emissions of greenhouse gases, have unequivocally caused global warming\n\n## EVIDENCE span:c-climate-004-c15bf91ea851c3be-10#chars-1730-1831\nAll of those increases are based only on the current policy settings of governments around the world.\n\n## CONFLICTS AND CONDITIONS\n🔎 Source source:c-climate-001-b26d226f500be322 provenance: uri=experiments/benchmark-batch-c/stage-a-freeze/compilation-corpus/climate-energy-policy/c-climate-001.md; sourceType=md; sourceRole=P-primary; author=IPCC (Intergovernmental Panel on Climate Change); canonicalUrl=https://www.ipcc.ch/report/ar6/syr/; publishedAt=Sun Mar 19 2023 08:00:00 GMT+0800 (China Standard Time); versionRef=doi:10.59327/IPCC/AR6-9789291691647\n🔎 Source source:c-climate-004-c15bf91ea851c3be provenance: uri=experiments/benchmark-batch-c/stage-a-freeze/compilation-corpus/climate-energy-policy/c-climate-004.md; sourceType=md; sourceRole=U/S-response; author=International Energy Agency (IEA); canonicalUrl=https://www.iea.org/reports/world-energy-outlook-2023/executive-summary; publishedAt=Tue Oct 24 2023 08:00:00 GMT+0800 (China Standard Time); versionRef='null'\n\n## KNOWN GAPS\n未找到关系——Graph 可能尚未建立跨材料边"
+  },
+  "answer": "{\"answer\":\"检索上下文未提供关于心理学可复制性的任何信息，所有内容均涉及气候变化与能源政策。因此无法基于当前材料判断心理学的可复制性。\",\"citations\":[],\"insufficient\":true,\"uncertainties\":[\"检索上下文完全未涉及心理学学科，缺乏任何关于心理学可复制性的研究、数据或讨论。\"]}",
+  "answerFormatValid": true
+}

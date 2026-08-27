@@ -1,0 +1,28 @@
+{
+  "verdict": "passed",
+  "dimensions": {
+    "support": {
+      "result": "pass",
+      "evidence": "16世纪，意大利数学家发现三次方程 $x^3 = 15x + 4$ 的求解过程中出现了 $\\sqrt{-121}$。"
+    },
+    "addition": {
+      "result": "pass",
+      "evidence": "无添加信息。"
+    },
+    "inference": {
+      "result": "pass",
+      "evidence": "原文直接陈述，无需推断。"
+    },
+    "limits": {
+      "result": "pass",
+      "evidence": "无限定条件缺失。"
+    },
+    "citation": {
+      "result": "pass",
+      "evidence": "Claim 对应 SourceSpan 的精确内容。"
+    }
+  },
+  "anchor": "16世纪，意大利数学家发现三次方程 $x^3 = 15x + 4$ 的求解过程中出现了 $\\sqrt{-121}$。",
+  "failedDimensions": [],
+  "issues": []
+}

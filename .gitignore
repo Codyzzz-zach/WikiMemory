@@ -1,0 +1,79 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Environment
+.env
+.env.local
+.workbuddy/
+
+# Rebuildable indexes (can be reconstructed from canonical state)
+indexes/
+.codebase-memory/
+experiments/evolution/runs/
+
+# Temporary caches and logs
+*.log
+cache/
+tmp/
+runs/compile-cache/
+runs/audit-cache/
+runs/relation-audit-cache/
+runs/relation-critic-cache/
+runs/**/raw-llm-output/
+
+# Regenerable experiment internals. Contracts, frozen inputs, adjudications and
+# compact final reports remain versioned; bulky workspaces and per-item traces do not.
+experiments/**/workspace/
+experiments/**/workspaces/
+experiments/**/indexes/
+experiments/**/raw-llm-output/
+experiments/**/logs/
+experiments/**/contexts/
+experiments/**/records/
+experiments/**/judge-records*/
+experiments/**/preparations/
+
+# Legacy experiment-run directories stay local by default. A compact report may
+# still be force-added when an adjudication pins it by path and SHA-256. New work
+# should place versioned contracts/adjudications at the goal root, not hide them in runs/.
+experiments/**/runs/
+experiments/**/*-runs/
+experiments/**/graph-experiments/
+experiments/**/dev-diagnostics/
+experiments/**/answer-runs/
+experiments/**/answers/
+experiments/**/*-counterfactuals/
+experiments/**/reasonix-reviews/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# External reference material (not product code, knowledge state, or test target)
+references/*
+!references/README.md
+
+# Transferred archives are retained locally; unpacked, hash-frozen assets remain authoritative.
+benchmarks/archive/*.zip
+
+# Unrevealed S200 Gold remains user-sealed until the preregistered candidate is frozen.
+benchmark-s200-stage-b-sealed/
+benchmark-s200-stage-b-v1.1-sealed/
+
+# Future runtime root. Current legacy knowledge state remains tracked until migration.
+runtime-data/
+
+# Editor
+.vscode/settings.json
+.idea/
+
+# === IMPORTANT ===
+# Legacy knowledge state (wiki/, claims/, concepts/, relations/, sources/, and non-cache runs/)
+# is INTENTIONALLY tracked in Git — this is "knowledge as code".
+# Benchmark datasets now live under benchmarks/; co-located Vitest files remain under src/.
+# Experiment contracts/frozen inputs/adjudications/final reports are evidence-as-code.
+# Rebuildable indexes/workspaces/per-item traces, external references, archives,
+# runtime-data, and temp files are ignored.

@@ -1,0 +1,44 @@
+{
+	"schemaVersion": "wge-goal2-answer-adjudication/v1",
+	"status": "COMPLETE_POST_HOC_CONTRACT_REVIEW",
+	"reviewedAt": "2026-07-30",
+	"reviewer": "Codex",
+	"authority": "MANUAL_DEV_CONTRACT_REVIEW_NOT_HUMAN_GOLD",
+	"input": {
+		"report": "experiments/goal2/runs/goal2-r1-answer-micro-v1/score-report.json",
+		"sha256": "c8a60a64be3be8f04bd69b8d008e3db3cb1ef0bde6e1710dbe7c05fa7538b8b3"
+	},
+	"contractFinding": "The frozen evidenceGrounding contract accepts any resolvable current-context identifier. The judge incorrectly treated valid CLAIM identifiers as fabricated merely because they were not sourceFile/exactQuote entries in Gold.",
+	"overrides": [
+		{
+			"sampleId": "sample-f556dbf8-23b3-40ac-b0fe-fa7f91839110",
+			"questionId": "PILOT-H3-05",
+			"group": "R0",
+			"evidenceGrounding": 2,
+			"hardFailure": false,
+			"rationale": "All six CLAIM citations resolve in the frozen R0 context. The answer contract and scoring contract explicitly allow current-context CLAIM identifiers; the raw judge's sourceFile-only requirement was not in the contract."
+		}
+	],
+	"reviewedWithoutOverride": [
+		{
+			"questionId": "PILOT-H2-01",
+			"group": "R0",
+			"finding": "Hard failure retained: one cited Claim ID is absent from the context."
+		},
+		{
+			"questionId": "PILOT-H2-01",
+			"group": "R1",
+			"finding": "Hard failure retained: one malformed duplicated Claim ID is absent from the context."
+		},
+		{
+			"questionId": "PILOT-H3-05",
+			"group": "R1",
+			"finding": "Hard failure retained: two evidence: identifiers do not exist in the R1 context."
+		}
+	],
+	"limitations": [
+		"This review corrects a scoring-contract application error; it does not rescore semantic coverage.",
+		"The raw judge output and score report remain immutable.",
+		"The correction makes R1 relatively worse and therefore cannot manufacture a positive Graph result."
+	]
+}
